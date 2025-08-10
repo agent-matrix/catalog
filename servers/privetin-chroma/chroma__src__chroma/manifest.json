@@ -1,0 +1,65 @@
+{
+  "description": "heuristic route=/sse; port=6288; file=server.py",
+  "id": "chroma-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "server-source",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "name": "server.py",
+        "uri": "file:///tmp/mcpgit-0cxpokb0/repo/src/chroma/server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/privetin/chroma/7d1b85ab72c9c1c8f9b67f3cacd38f723d93780f/src/chroma/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "server.py",
+        "server-url",
+        "server-source"
+      ],
+      "associated_tools": [],
+      "description": "heuristic route=/sse; port=6288; file=server.py",
+      "name": "chroma",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "chroma-agent-tool",
+      "name": "Chroma",
+      "description": "heuristic route=/sse; port=6288; file=server.py",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Chroma",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "heuristic route=/sse; port=6288; file=server.py",
+  "homepage": "https://github.com/privetin/chroma",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/privetin/chroma.git",
+        "ref": "7d1b85ab72c9c1c8f9b67f3cacd38f723d93780f"
+      }
+    }
+  ]
+}

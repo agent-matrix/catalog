@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: parse-pdf",
+  "id": "netmind_parse_pdf_mcp-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "netmind_parse_pdf_mcp-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/protagolabs/Netmind-Parse-PDF-MCP/54bd3f666ea68360568f83f555849489b1bb3e26/src/netmind_parse_pdf_mcp/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "server-url",
+        "netmind_parse_pdf_mcp-server"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: parse-pdf",
+      "name": "netmind_parse_pdf_mcp",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "netmind_parse_pdf_mcp-agent-tool",
+      "name": "Netmind_Parse_Pdf_Mcp",
+      "description": "FastMCP server name: parse-pdf",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Netmind_Parse_Pdf_Mcp",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: parse-pdf",
+  "homepage": "https://github.com/protagolabs/Netmind-Parse-PDF-MCP",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/protagolabs/Netmind-Parse-PDF-MCP.git",
+        "ref": "54bd3f666ea68360568f83f555849489b1bb3e26"
+      }
+    }
+  ]
+}

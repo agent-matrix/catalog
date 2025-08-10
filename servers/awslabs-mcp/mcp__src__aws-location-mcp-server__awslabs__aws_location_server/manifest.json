@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: awslabs.aws-location-mcp-server",
+  "id": "aws_location_server-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "aws_location_server-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/awslabs/mcp/0821efbc45a5c70dfb7275b72f250c1607fc35f2/src/aws-location-mcp-server/awslabs/aws_location_server/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "aws_location_server-server",
+        "server-url"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: awslabs.aws-location-mcp-server",
+      "name": "aws_location_server",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "aws_location_server-agent-tool",
+      "name": "Aws_Location_Server",
+      "description": "FastMCP server name: awslabs.aws-location-mcp-server",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Aws_Location_Server",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: awslabs.aws-location-mcp-server",
+  "homepage": "https://github.com/awslabs/mcp",
+  "license": "Apache-2.0",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/awslabs/mcp.git",
+        "ref": "0821efbc45a5c70dfb7275b72f250c1607fc35f2"
+      }
+    }
+  ]
+}

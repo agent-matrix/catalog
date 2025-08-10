@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: Naver OpenAPI",
+  "id": "mcp_naver-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "mcp_naver-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/pfldy2850/py-mcp-naver/bc2952c4f5f37901defa4797baae0ddbd8f3f743/mcp_naver/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "server-url",
+        "mcp_naver-server"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: Naver OpenAPI",
+      "name": "mcp_naver",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "mcp_naver-agent-tool",
+      "name": "Mcp_Naver",
+      "description": "FastMCP server name: Naver OpenAPI",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Mcp_Naver",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: Naver OpenAPI",
+  "homepage": "https://github.com/pfldy2850/py-mcp-naver",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/pfldy2850/py-mcp-naver.git",
+        "ref": "bc2952c4f5f37901defa4797baae0ddbd8f3f743"
+      }
+    }
+  ]
+}

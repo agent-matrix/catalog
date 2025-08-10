@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: MCP-Email",
+  "id": "mcp_server_email-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "mcp_server_email-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/Shy2593666979/mcp-server-email/c57b7ea9921b62e588f59cf8fe4646755db9f4e1/src/mcp_server_email/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "server-url",
+        "mcp_server_email-server"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: MCP-Email",
+      "name": "mcp_server_email",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "mcp_server_email-agent-tool",
+      "name": "Mcp_Server_Email",
+      "description": "FastMCP server name: MCP-Email",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Mcp_Server_Email",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: MCP-Email",
+  "homepage": "https://github.com/Shy2593666979/mcp-server-email",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/Shy2593666979/mcp-server-email.git",
+        "ref": "c57b7ea9921b62e588f59cf8fe4646755db9f4e1"
+      }
+    }
+  ]
+}

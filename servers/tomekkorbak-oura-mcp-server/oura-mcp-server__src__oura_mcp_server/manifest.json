@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: Oura API MCP Server",
+  "id": "oura_mcp_server-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "oura_mcp_server-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/tomekkorbak/oura-mcp-server/72416a947547fb6a3aa4c1f18a8838cbceaefc04/src/oura_mcp_server/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "oura_mcp_server-server",
+        "server-url"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: Oura API MCP Server",
+      "name": "oura_mcp_server",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "oura_mcp_server-agent-tool",
+      "name": "Oura_Mcp_Server",
+      "description": "FastMCP server name: Oura API MCP Server",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Oura_Mcp_Server",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: Oura API MCP Server",
+  "homepage": "https://github.com/tomekkorbak/oura-mcp-server",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/tomekkorbak/oura-mcp-server.git",
+        "ref": "72416a947547fb6a3aa4c1f18a8838cbceaefc04"
+      }
+    }
+  ]
+}

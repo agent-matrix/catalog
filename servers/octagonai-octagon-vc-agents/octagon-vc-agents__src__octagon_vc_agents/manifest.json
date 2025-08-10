@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: Octagon VC Agents",
+  "id": "octagon_vc_agents-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "octagon_vc_agents-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/OctagonAI/octagon-vc-agents/8af68fe6ea6f921fa17eb2d2ebb1c63c25d3aee1/src/octagon_vc_agents/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "octagon_vc_agents-server",
+        "server-url"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: Octagon VC Agents",
+      "name": "octagon_vc_agents",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "octagon_vc_agents-agent-tool",
+      "name": "Octagon_Vc_Agents",
+      "description": "FastMCP server name: Octagon VC Agents",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Octagon_Vc_Agents",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: Octagon VC Agents",
+  "homepage": "https://github.com/OctagonAI/octagon-vc-agents",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/OctagonAI/octagon-vc-agents.git",
+        "ref": "8af68fe6ea6f921fa17eb2d2ebb1c63c25d3aee1"
+      }
+    }
+  ]
+}

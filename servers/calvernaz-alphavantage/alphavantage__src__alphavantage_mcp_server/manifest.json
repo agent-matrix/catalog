@@ -1,0 +1,65 @@
+{
+  "description": "heuristic route=/sse; port=8080; file=server.py",
+  "id": "alphavantage_mcp_server-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "server-source",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "name": "server.py",
+        "uri": "file:///tmp/mcpgit-llke3gju/repo/src/alphavantage_mcp_server/server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/calvernaz/alphavantage/8e62f48c470b3dc41941d7ee7246af273a8dea54/src/alphavantage_mcp_server/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "server.py",
+        "server-url",
+        "server-source"
+      ],
+      "associated_tools": [],
+      "description": "heuristic route=/sse; port=8080; file=server.py",
+      "name": "alphavantage_mcp_server",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:8080/sse"
+    },
+    "tool": {
+      "id": "alphavantage_mcp_server-agent-tool",
+      "name": "Alphavantage_Mcp_Server",
+      "description": "heuristic route=/sse; port=8080; file=server.py",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:8080/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Alphavantage_Mcp_Server",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "heuristic route=/sse; port=8080; file=server.py",
+  "homepage": "https://github.com/calvernaz/alphavantage",
+  "license": "Apache-2.0",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/calvernaz/alphavantage.git",
+        "ref": "8e62f48c470b3dc41941d7ee7246af273a8dea54"
+      }
+    }
+  ]
+}

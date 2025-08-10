@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: BICScan",
+  "id": "bicscan_mcp-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "bicscan_mcp-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/ahnlabio/bicscan-mcp/072c48ec4fed9069be88668c85fba871b29bc635/src/bicscan_mcp/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "server-url",
+        "bicscan_mcp-server"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: BICScan",
+      "name": "bicscan_mcp",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "bicscan_mcp-agent-tool",
+      "name": "Bicscan_Mcp",
+      "description": "FastMCP server name: BICScan",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Bicscan_Mcp",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: BICScan",
+  "homepage": "https://github.com/ahnlabio/bicscan-mcp",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/ahnlabio/bicscan-mcp.git",
+        "ref": "072c48ec4fed9069be88668c85fba871b29bc635"
+      }
+    }
+  ]
+}

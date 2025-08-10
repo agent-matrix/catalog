@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: yfinance-production",
+  "id": "yfinance_mcp-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "yfinance_mcp-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/Adity-star/mcp-yfinance-server/53ba6006a024df0ce85c07cf5fd4b6659d25e3a7/yfinance_mcp/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "server-url",
+        "yfinance_mcp-server"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: yfinance-production",
+      "name": "yfinance_mcp",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "yfinance_mcp-agent-tool",
+      "name": "Yfinance_Mcp",
+      "description": "FastMCP server name: yfinance-production",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Yfinance_Mcp",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: yfinance-production",
+  "homepage": "https://github.com/Adity-star/mcp-yfinance-server",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/Adity-star/mcp-yfinance-server.git",
+        "ref": "53ba6006a024df0ce85c07cf5fd4b6659d25e3a7"
+      }
+    }
+  ]
+}

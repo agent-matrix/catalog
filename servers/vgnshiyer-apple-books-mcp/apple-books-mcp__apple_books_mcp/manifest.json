@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: apple-books",
+  "id": "apple_books_mcp-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "apple_books_mcp-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/vgnshiyer/apple-books-mcp/e63ef27eca082bcc8960e24049289af4bec985bf/apple_books_mcp/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "server-url",
+        "apple_books_mcp-server"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: apple-books",
+      "name": "apple_books_mcp",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "apple_books_mcp-agent-tool",
+      "name": "Apple_Books_Mcp",
+      "description": "FastMCP server name: apple-books",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Apple_Books_Mcp",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: apple-books",
+  "homepage": "https://github.com/vgnshiyer/apple-books-mcp",
+  "license": "Apache-2.0",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/vgnshiyer/apple-books-mcp.git",
+        "ref": "e63ef27eca082bcc8960e24049289af4bec985bf"
+      }
+    }
+  ]
+}

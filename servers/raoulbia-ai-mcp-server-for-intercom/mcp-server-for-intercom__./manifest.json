@@ -1,0 +1,53 @@
+{
+  "description": "node mcp indicators in package.json",
+  "id": "repo-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "repo-pkg",
+        "name": "package.json",
+        "type": "inline",
+        "uri": "file://package.json"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "repo-pkg"
+      ],
+      "associated_tools": [],
+      "description": "node mcp indicators in package.json",
+      "name": "repo",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:8080/sse"
+    },
+    "tool": {
+      "id": "repo-agent-tool",
+      "name": "Repo",
+      "description": "node mcp indicators in package.json",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:8080/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Repo",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "node mcp indicators in package.json",
+  "homepage": "https://github.com/raoulbia-ai/mcp-server-for-intercom",
+  "license": "Apache-2.0",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/raoulbia-ai/mcp-server-for-intercom.git",
+        "ref": "d00ed74363f398bdc1c8f78df89b28bc8a91bee5"
+      }
+    }
+  ]
+}

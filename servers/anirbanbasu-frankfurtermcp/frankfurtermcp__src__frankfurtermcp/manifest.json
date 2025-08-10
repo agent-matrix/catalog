@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: test_composition",
+  "id": "frankfurtermcp-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "frankfurtermcp-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/anirbanbasu/frankfurtermcp/112cf9f5a43ea441d7cff9e2d39733f6b6b39fc9/src/frankfurtermcp/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "server-url",
+        "frankfurtermcp-server"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: test_composition",
+      "name": "frankfurtermcp",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "frankfurtermcp-agent-tool",
+      "name": "Frankfurtermcp",
+      "description": "FastMCP server name: test_composition",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Frankfurtermcp",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: test_composition",
+  "homepage": "https://github.com/anirbanbasu/frankfurtermcp",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/anirbanbasu/frankfurtermcp.git",
+        "ref": "112cf9f5a43ea441d7cff9e2d39733f6b6b39fc9"
+      }
+    }
+  ]
+}

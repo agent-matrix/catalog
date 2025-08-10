@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: Flyworks-API",
+  "id": "flyworks_mcp-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "flyworks_mcp-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/Flyworks-AI/flyworks-mcp/3561ded8ac0473eef21451caf7166dabeae47e3e/src/flyworks_mcp/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "flyworks_mcp-server",
+        "server-url"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: Flyworks-API",
+      "name": "flyworks_mcp",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "flyworks_mcp-agent-tool",
+      "name": "Flyworks_Mcp",
+      "description": "FastMCP server name: Flyworks-API",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Flyworks_Mcp",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: Flyworks-API",
+  "homepage": "https://github.com/Flyworks-AI/flyworks-mcp",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/Flyworks-AI/flyworks-mcp.git",
+        "ref": "3561ded8ac0473eef21451caf7166dabeae47e3e"
+      }
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: GMail",
+  "id": "src-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "src-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/gangradeamitesh/mcp-google-email/f60bf432ca5514a77bd391562f4e1b4fd193ce4c/src/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "src-server",
+        "server-url"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: GMail",
+      "name": "src",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "src-agent-tool",
+      "name": "Src",
+      "description": "FastMCP server name: GMail",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Src",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: GMail",
+  "homepage": "https://github.com/gangradeamitesh/mcp-google-email",
+  "license": "",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/gangradeamitesh/mcp-google-email.git",
+        "ref": "f60bf432ca5514a77bd391562f4e1b4fd193ce4c"
+      }
+    }
+  ]
+}

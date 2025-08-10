@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: ocp_mcp_server",
+  "id": "ocp_mcp_server-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "ocp_mcp_server-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/oceanbase/mcp-oceanbase/6b690acfddc236b932a0eaf1c002227cc1dbed38/src/ocp_mcp_server/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "ocp_mcp_server-server",
+        "server-url"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: ocp_mcp_server",
+      "name": "ocp_mcp_server",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "ocp_mcp_server-agent-tool",
+      "name": "Ocp_Mcp_Server",
+      "description": "FastMCP server name: ocp_mcp_server",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Ocp_Mcp_Server",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: ocp_mcp_server",
+  "homepage": "https://github.com/oceanbase/mcp-oceanbase",
+  "license": "Apache-2.0",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/oceanbase/mcp-oceanbase.git",
+        "ref": "6b690acfddc236b932a0eaf1c002227cc1dbed38"
+      }
+    }
+  ]
+}

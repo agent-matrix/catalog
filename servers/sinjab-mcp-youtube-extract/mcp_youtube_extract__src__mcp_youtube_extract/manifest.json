@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: YouTube Video Analyzer",
+  "id": "mcp_youtube_extract-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "mcp_youtube_extract-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/sinjab/mcp_youtube_extract/317ba6c23412c26d284ee305c6a3ca1ad1ece275/src/mcp_youtube_extract/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "server-url",
+        "mcp_youtube_extract-server"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: YouTube Video Analyzer",
+      "name": "mcp_youtube_extract",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "mcp_youtube_extract-agent-tool",
+      "name": "Mcp_Youtube_Extract",
+      "description": "FastMCP server name: YouTube Video Analyzer",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Mcp_Youtube_Extract",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: YouTube Video Analyzer",
+  "homepage": "https://github.com/sinjab/mcp_youtube_extract",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/sinjab/mcp_youtube_extract.git",
+        "ref": "317ba6c23412c26d284ee305c6a3ca1ad1ece275"
+      }
+    }
+  ]
+}

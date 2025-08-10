@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: TOS MCP Server",
+  "id": "mcp_server_tos-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "mcp_server_tos-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/dinghuazhou/sample-mcp-server-tos/0260381747306f043879184ea683088d721f2e00/src/mcp_server_tos/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "server-url",
+        "mcp_server_tos-server"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: TOS MCP Server",
+      "name": "mcp_server_tos",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "mcp_server_tos-agent-tool",
+      "name": "Mcp_Server_Tos",
+      "description": "FastMCP server name: TOS MCP Server",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Mcp_Server_Tos",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: TOS MCP Server",
+  "homepage": "https://github.com/dinghuazhou/sample-mcp-server-tos",
+  "license": "",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/dinghuazhou/sample-mcp-server-tos.git",
+        "ref": "0260381747306f043879184ea683088d721f2e00"
+      }
+    }
+  ]
+}

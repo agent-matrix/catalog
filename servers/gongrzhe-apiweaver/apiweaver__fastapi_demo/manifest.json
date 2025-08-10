@@ -1,0 +1,58 @@
+{
+  "description": "heuristic route=/sse; port=8000; file=main.py",
+  "id": "fastapi_demo-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "main-source",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://main.py"
+      },
+      {
+        "name": "main.py",
+        "uri": "file:///tmp/mcpgit-x48czz0_/repo/fastapi_demo/main.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "main-source",
+        "main.py"
+      ],
+      "associated_tools": [],
+      "description": "heuristic route=/sse; port=8000; file=main.py",
+      "name": "fastapi_demo",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:8000/sse"
+    },
+    "tool": {
+      "id": "fastapi_demo-agent-tool",
+      "name": "Fastapi_Demo",
+      "description": "heuristic route=/sse; port=8000; file=main.py",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:8000/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Fastapi_Demo",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "heuristic route=/sse; port=8000; file=main.py",
+  "homepage": "https://github.com/GongRzhe/APIWeaver",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/GongRzhe/APIWeaver.git",
+        "ref": "3dc565f40d8928e656cc4a1ae4c8c40e37d0dbae"
+      }
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "description": "heuristic route=/sse; port=6288; file=server.py",
+  "id": "s3_mcp_server-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "server-source",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "name": "server.py",
+        "uri": "file:///tmp/mcpgit-offvn_ou/repo/src/s3_mcp_server/server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/aws-samples/sample-mcp-server-s3/ccba106ae3acda67146219f3c5fca84711ce630a/src/s3_mcp_server/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "server.py",
+        "server-url",
+        "server-source"
+      ],
+      "associated_tools": [],
+      "description": "heuristic route=/sse; port=6288; file=server.py",
+      "name": "s3_mcp_server",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "s3_mcp_server-agent-tool",
+      "name": "S3_Mcp_Server",
+      "description": "heuristic route=/sse; port=6288; file=server.py",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "S3_Mcp_Server",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "heuristic route=/sse; port=6288; file=server.py",
+  "homepage": "https://github.com/aws-samples/sample-mcp-server-s3",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/aws-samples/sample-mcp-server-s3.git",
+        "ref": "ccba106ae3acda67146219f3c5fca84711ce630a"
+      }
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "description": "heuristic route=/sse; port=6288; file=app_server.py",
+  "id": "server-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "app_server-source",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://app_server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "app_server-source"
+      ],
+      "associated_tools": [],
+      "description": "heuristic route=/sse; port=6288; file=app_server.py",
+      "name": "server",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "server-agent-tool",
+      "name": "Server",
+      "description": "heuristic route=/sse; port=6288; file=app_server.py",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Server",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "heuristic route=/sse; port=6288; file=app_server.py",
+  "homepage": "https://github.com/lastmile-ai/mcp-agent",
+  "license": "Apache-2.0",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/lastmile-ai/mcp-agent.git",
+        "ref": "e66bd0a65b9251566f2db72a91db31ee442bac65"
+      }
+    }
+  ]
+}

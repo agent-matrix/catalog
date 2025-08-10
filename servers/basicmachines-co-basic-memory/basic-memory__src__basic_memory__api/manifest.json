@@ -1,0 +1,58 @@
+{
+  "description": "heuristic route=/sse; port=6288; file=app.py",
+  "id": "api-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "app-source",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://app.py"
+      },
+      {
+        "name": "app.py",
+        "uri": "file:///tmp/mcpgit-6w5zz1jq/repo/src/basic_memory/api/app.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "app-source",
+        "app.py"
+      ],
+      "associated_tools": [],
+      "description": "heuristic route=/sse; port=6288; file=app.py",
+      "name": "api",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "api-agent-tool",
+      "name": "Api",
+      "description": "heuristic route=/sse; port=6288; file=app.py",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Api",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "heuristic route=/sse; port=6288; file=app.py",
+  "homepage": "https://github.com/basicmachines-co/basic-memory",
+  "license": "GPL",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/basicmachines-co/basic-memory.git",
+        "ref": "63ae9ee0e455041c31239509c641e19507f3b1fe"
+      }
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "description": "heuristic route=/sse; port=5000; file=server.py",
+  "id": "server-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "server-source",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "name": "server.py",
+        "uri": "file:///tmp/mcpgit-ph54wv11/repo/common/server/server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/GongRzhe/A2A-MCP-Server/bc515a5a1b7679272364bf2356ad646b76a83a9a/common/server/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "server.py",
+        "server-url",
+        "server-source"
+      ],
+      "associated_tools": [],
+      "description": "heuristic route=/sse; port=5000; file=server.py",
+      "name": "server",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:5000/sse"
+    },
+    "tool": {
+      "id": "server-agent-tool",
+      "name": "Server",
+      "description": "heuristic route=/sse; port=5000; file=server.py",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:5000/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Server",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "heuristic route=/sse; port=5000; file=server.py",
+  "homepage": "https://github.com/GongRzhe/A2A-MCP-Server",
+  "license": "Apache-2.0",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/GongRzhe/A2A-MCP-Server.git",
+        "ref": "bc515a5a1b7679272364bf2356ad646b76a83a9a"
+      }
+    }
+  ]
+}

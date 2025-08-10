@@ -1,0 +1,65 @@
+{
+  "description": "heuristic route=/sse; port=6288; file=server.py",
+  "id": "chrome_history_mcp-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "server-source",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "name": "server.py",
+        "uri": "file:///tmp/mcpgit-lbggv_az/repo/src/chrome_history_mcp/server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/vincent-pli/chrome-history-mcp/d4fa2d0693ad9378f8539d471a8ab4db6ceb9440/src/chrome_history_mcp/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "server.py",
+        "server-url",
+        "server-source"
+      ],
+      "associated_tools": [],
+      "description": "heuristic route=/sse; port=6288; file=server.py",
+      "name": "chrome_history_mcp",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "chrome_history_mcp-agent-tool",
+      "name": "Chrome_History_Mcp",
+      "description": "heuristic route=/sse; port=6288; file=server.py",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Chrome_History_Mcp",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "heuristic route=/sse; port=6288; file=server.py",
+  "homepage": "https://github.com/vincent-pli/chrome-history-mcp",
+  "license": "Apache-2.0",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/vincent-pli/chrome-history-mcp.git",
+        "ref": "d4fa2d0693ad9378f8539d471a8ab4db6ceb9440"
+      }
+    }
+  ]
+}

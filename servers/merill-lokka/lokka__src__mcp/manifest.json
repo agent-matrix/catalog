@@ -1,0 +1,53 @@
+{
+  "description": "node mcp indicators in package.json",
+  "id": "mcp-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "mcp-pkg",
+        "name": "package.json",
+        "type": "inline",
+        "uri": "file://package.json"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "mcp-pkg"
+      ],
+      "associated_tools": [],
+      "description": "node mcp indicators in package.json",
+      "name": "mcp",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "mcp-agent-tool",
+      "name": "Mcp",
+      "description": "node mcp indicators in package.json",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Mcp",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "node mcp indicators in package.json",
+  "homepage": "https://github.com/merill/lokka",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/merill/lokka.git",
+        "ref": "758d19f49a787576d54970ea7eb3cec8bd071fef"
+      }
+    }
+  ]
+}

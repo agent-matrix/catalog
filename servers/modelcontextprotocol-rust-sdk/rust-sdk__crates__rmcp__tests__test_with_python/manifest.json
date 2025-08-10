@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: Demo",
+  "id": "test_with_python-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "test_with_python-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/modelcontextprotocol/rust-sdk/209dbac50f51737ad953c3a2c8e28f3619b6c277/crates/rmcp/tests/test_with_python/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "server-url",
+        "test_with_python-server"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: Demo",
+      "name": "test_with_python",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "test_with_python-agent-tool",
+      "name": "Test_With_Python",
+      "description": "FastMCP server name: Demo",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Test_With_Python",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: Demo",
+  "homepage": "https://github.com/modelcontextprotocol/rust-sdk",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/modelcontextprotocol/rust-sdk.git",
+        "ref": "209dbac50f51737ad953c3a2c8e28f3619b6c277"
+      }
+    }
+  ]
+}

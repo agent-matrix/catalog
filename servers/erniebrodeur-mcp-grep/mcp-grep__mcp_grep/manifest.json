@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: grep-server",
+  "id": "mcp_grep-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "mcp_grep-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/erniebrodeur/mcp-grep/23eed69c04e51a2aa0a751a1a344190b58283109/mcp_grep/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "server-url",
+        "mcp_grep-server"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: grep-server",
+      "name": "mcp_grep",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "mcp_grep-agent-tool",
+      "name": "Mcp_Grep",
+      "description": "FastMCP server name: grep-server",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Mcp_Grep",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: grep-server",
+  "homepage": "https://github.com/erniebrodeur/mcp-grep",
+  "license": "GPL",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/erniebrodeur/mcp-grep.git",
+        "ref": "23eed69c04e51a2aa0a751a1a344190b58283109"
+      }
+    }
+  ]
+}

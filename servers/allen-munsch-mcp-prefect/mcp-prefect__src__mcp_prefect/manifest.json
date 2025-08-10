@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: Prefect MCP",
+  "id": "mcp_prefect-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "mcp_prefect-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/allen-munsch/mcp-prefect/0ae5a430414416966ee1d9ed288c02fcb6f9090f/src/mcp_prefect/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "mcp_prefect-server",
+        "server-url"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: Prefect MCP",
+      "name": "mcp_prefect",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "mcp_prefect-agent-tool",
+      "name": "Mcp_Prefect",
+      "description": "FastMCP server name: Prefect MCP",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Mcp_Prefect",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: Prefect MCP",
+  "homepage": "https://github.com/allen-munsch/mcp-prefect",
+  "license": "",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/allen-munsch/mcp-prefect.git",
+        "ref": "0ae5a430414416966ee1d9ed288c02fcb6f9090f"
+      }
+    }
+  ]
+}

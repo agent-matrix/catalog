@@ -1,0 +1,45 @@
+{
+  "description": "FastMCP server name: MCP server to help create Vizro dashboards and charts.",
+  "id": "vizro_mcp-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "vizro_mcp-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "vizro_mcp-server"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: MCP server to help create Vizro dashboards and charts.",
+      "name": "vizro_mcp",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "vizro_mcp-agent-tool",
+      "name": "Vizro_Mcp",
+      "description": "FastMCP server name: MCP server to help create Vizro dashboards and charts.",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Vizro_Mcp",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: MCP server to help create Vizro dashboards and charts.",
+  "homepage": "",
+  "license": "Apache-2.0",
+  "artifacts": []
+}

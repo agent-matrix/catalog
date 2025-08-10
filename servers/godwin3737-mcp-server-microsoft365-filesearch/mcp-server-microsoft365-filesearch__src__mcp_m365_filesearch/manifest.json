@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: M365 File Search (SharePoint/OneDrive)",
+  "id": "mcp_m365_filesearch-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "mcp_m365_filesearch-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/godwin3737/mcp-server-microsoft365-filesearch/bf15e74b32a5f240e09ff1aeb3dfd551b00364cf/src/mcp_m365_filesearch/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "server-url",
+        "mcp_m365_filesearch-server"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: M365 File Search (SharePoint/OneDrive)",
+      "name": "mcp_m365_filesearch",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "mcp_m365_filesearch-agent-tool",
+      "name": "Mcp_M365_Filesearch",
+      "description": "FastMCP server name: M365 File Search (SharePoint/OneDrive)",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Mcp_M365_Filesearch",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: M365 File Search (SharePoint/OneDrive)",
+  "homepage": "https://github.com/godwin3737/mcp-server-microsoft365-filesearch",
+  "license": "",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/godwin3737/mcp-server-microsoft365-filesearch.git",
+        "ref": "bf15e74b32a5f240e09ff1aeb3dfd551b00364cf"
+      }
+    }
+  ]
+}

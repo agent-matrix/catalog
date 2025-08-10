@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: teradata-mcp",
+  "id": "teradata_mcp-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "teradata_mcp-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/arturborycki/mcp-teradata/869e7a65622a68ac9617d3ae669692422359ef75/src/teradata_mcp/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "teradata_mcp-server",
+        "server-url"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: teradata-mcp",
+      "name": "teradata_mcp",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "teradata_mcp-agent-tool",
+      "name": "Teradata_Mcp",
+      "description": "FastMCP server name: teradata-mcp",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Teradata_Mcp",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: teradata-mcp",
+  "homepage": "https://github.com/arturborycki/mcp-teradata",
+  "license": "",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/arturborycki/mcp-teradata.git",
+        "ref": "869e7a65622a68ac9617d3ae669692422359ef75"
+      }
+    }
+  ]
+}

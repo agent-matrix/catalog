@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: OpenAlex Academic Research",
+  "id": "alex_mcp-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "alex_mcp-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/drAbreu/alex-mcp/d3204c43869b87bbf42791bba9a74d6252680d4c/src/alex_mcp/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "server-url",
+        "alex_mcp-server"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: OpenAlex Academic Research",
+      "name": "alex_mcp",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "alex_mcp-agent-tool",
+      "name": "Alex_Mcp",
+      "description": "FastMCP server name: OpenAlex Academic Research",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Alex_Mcp",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: OpenAlex Academic Research",
+  "homepage": "https://github.com/drAbreu/alex-mcp",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/drAbreu/alex-mcp.git",
+        "ref": "d3204c43869b87bbf42791bba9a74d6252680d4c"
+      }
+    }
+  ]
+}

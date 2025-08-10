@@ -1,0 +1,58 @@
+{
+  "description": "heuristic route=/sse; port=6288; file=app.py",
+  "id": "text2sql-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "app-source",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://app.py"
+      },
+      {
+        "name": "app.py",
+        "uri": "file:///tmp/mcpgit-wkpd1f4r/repo/examples/text2sql/app.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "app-source",
+        "app.py"
+      ],
+      "associated_tools": [],
+      "description": "heuristic route=/sse; port=6288; file=app.py",
+      "name": "text2sql",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "text2sql-agent-tool",
+      "name": "Text2Sql",
+      "description": "heuristic route=/sse; port=6288; file=app.py",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Text2Sql",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "heuristic route=/sse; port=6288; file=app.py",
+  "homepage": "https://github.com/pingcap/pytidb",
+  "license": "Apache-2.0",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/pingcap/pytidb.git",
+        "ref": "828a34ac5bc289cfe8be6956ef060a120db93cc8"
+      }
+    }
+  ]
+}

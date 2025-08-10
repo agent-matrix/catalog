@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: OpenAI Web Search",
+  "id": "openai_websearch_mcp-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "openai_websearch_mcp-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/ConechoAI/openai-websearch-mcp/5bc0872a2e462c92203b08f16c01c404649e147c/src/openai_websearch_mcp/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "openai_websearch_mcp-server",
+        "server-url"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: OpenAI Web Search",
+      "name": "openai_websearch_mcp",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "openai_websearch_mcp-agent-tool",
+      "name": "Openai_Websearch_Mcp",
+      "description": "FastMCP server name: OpenAI Web Search",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Openai_Websearch_Mcp",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: OpenAI Web Search",
+  "homepage": "https://github.com/ConechoAI/openai-websearch-mcp",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/ConechoAI/openai-websearch-mcp.git",
+        "ref": "5bc0872a2e462c92203b08f16c01c404649e147c"
+      }
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: Alation MCP Server",
+  "id": "alation_ai_agent_mcp-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "alation_ai_agent_mcp-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/Alation/alation-ai-agent-sdk/3ceff454e94fd6ff636ebc32da218ca82283e3ed/python/dist-mcp/alation_ai_agent_mcp/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "alation_ai_agent_mcp-server",
+        "server-url"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: Alation MCP Server",
+      "name": "alation_ai_agent_mcp",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "alation_ai_agent_mcp-agent-tool",
+      "name": "Alation_Ai_Agent_Mcp",
+      "description": "FastMCP server name: Alation MCP Server",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Alation_Ai_Agent_Mcp",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: Alation MCP Server",
+  "homepage": "https://github.com/Alation/alation-ai-agent-sdk",
+  "license": "Apache-2.0",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/Alation/alation-ai-agent-sdk.git",
+        "ref": "3ceff454e94fd6ff636ebc32da218ca82283e3ed"
+      }
+    }
+  ]
+}

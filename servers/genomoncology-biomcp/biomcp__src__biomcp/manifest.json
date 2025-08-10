@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: BioMCP - Biomedical Model Context Protocol Server",
+  "id": "biomcp-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "cli-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/genomoncology/biomcp/abe916979d8f76b215a2f93b0527e7cbb236c432/src/biomcp/cli/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "server-url",
+        "cli-server"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: BioMCP - Biomedical Model Context Protocol Server",
+      "name": "biomcp",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "biomcp-agent-tool",
+      "name": "Biomcp",
+      "description": "FastMCP server name: BioMCP - Biomedical Model Context Protocol Server",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Biomcp",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: BioMCP - Biomedical Model Context Protocol Server",
+  "homepage": "https://github.com/genomoncology/biomcp",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/genomoncology/biomcp.git",
+        "ref": "abe916979d8f76b215a2f93b0527e7cbb236c432"
+      }
+    }
+  ]
+}

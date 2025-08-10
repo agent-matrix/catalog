@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: mcp-pyodbc-server",
+  "id": "mcp_pyodbc_server-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "mcp_pyodbc_server-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/OpenLinkSoftware/mcp-pyodbc-server/bfaaf691622fd7ba4d975e89bc2910d850e6e2e5/mcp_pyodbc_server/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "server-url",
+        "mcp_pyodbc_server-server"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: mcp-pyodbc-server",
+      "name": "mcp_pyodbc_server",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "mcp_pyodbc_server-agent-tool",
+      "name": "Mcp_Pyodbc_Server",
+      "description": "FastMCP server name: mcp-pyodbc-server",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Mcp_Pyodbc_Server",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: mcp-pyodbc-server",
+  "homepage": "https://github.com/OpenLinkSoftware/mcp-pyodbc-server",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/OpenLinkSoftware/mcp-pyodbc-server.git",
+        "ref": "bfaaf691622fd7ba4d975e89bc2910d850e6e2e5"
+      }
+    }
+  ]
+}

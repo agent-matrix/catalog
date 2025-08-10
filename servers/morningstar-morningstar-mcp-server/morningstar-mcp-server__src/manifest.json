@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: Morningstar MCP Server",
+  "id": "src-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "src-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/Morningstar/morningstar-mcp-server/7b4c6db9a17d1000dfb5517a2925568304074c82/src/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "src-server",
+        "server-url"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: Morningstar MCP Server",
+      "name": "src",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "src-agent-tool",
+      "name": "Src",
+      "description": "FastMCP server name: Morningstar MCP Server",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Src",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: Morningstar MCP Server",
+  "homepage": "https://github.com/Morningstar/morningstar-mcp-server",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/Morningstar/morningstar-mcp-server.git",
+        "ref": "7b4c6db9a17d1000dfb5517a2925568304074c82"
+      }
+    }
+  ]
+}

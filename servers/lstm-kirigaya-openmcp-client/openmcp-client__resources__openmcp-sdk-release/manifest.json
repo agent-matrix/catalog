@@ -1,0 +1,53 @@
+{
+  "description": "node mcp indicators in package.json",
+  "id": "openmcp-sdk-release-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "openmcp-sdk-release-pkg",
+        "name": "package.json",
+        "type": "inline",
+        "uri": "file://package.json"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "openmcp-sdk-release-pkg"
+      ],
+      "associated_tools": [],
+      "description": "node mcp indicators in package.json",
+      "name": "openmcp-sdk-release",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "openmcp-sdk-release-agent-tool",
+      "name": "Openmcp Sdk Release",
+      "description": "node mcp indicators in package.json",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Openmcp Sdk Release",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "node mcp indicators in package.json",
+  "homepage": "https://github.com/LSTM-Kirigaya/openmcp-client",
+  "license": "Apache-2.0",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/LSTM-Kirigaya/openmcp-client.git",
+        "ref": "caa6791ba9136a97d45828fce6a87f69b29743a8"
+      }
+    }
+  ]
+}

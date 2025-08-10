@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: arxiv-server",
+  "id": "arxiv_server-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "arxiv_server-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/prashalruchiranga/arxiv-mcp-server/9b0f4cf63fec7d5ebe310354765c5bbcceb82eb3/src/arxiv_server/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "arxiv_server-server",
+        "server-url"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: arxiv-server",
+      "name": "arxiv_server",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "arxiv_server-agent-tool",
+      "name": "Arxiv_Server",
+      "description": "FastMCP server name: arxiv-server",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Arxiv_Server",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: arxiv-server",
+  "homepage": "https://github.com/prashalruchiranga/arxiv-mcp-server",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/prashalruchiranga/arxiv-mcp-server.git",
+        "ref": "9b0f4cf63fec7d5ebe310354765c5bbcceb82eb3"
+      }
+    }
+  ]
+}

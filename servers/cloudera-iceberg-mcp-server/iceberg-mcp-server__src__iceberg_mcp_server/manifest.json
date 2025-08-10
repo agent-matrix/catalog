@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: Cloudera Iceberg MCP Server via Impala",
+  "id": "iceberg_mcp_server-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "iceberg_mcp_server-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/cloudera/iceberg-mcp-server/38a7f3914934ab851254291ed3a2934bcd95f6cd/src/iceberg_mcp_server/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "iceberg_mcp_server-server",
+        "server-url"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: Cloudera Iceberg MCP Server via Impala",
+      "name": "iceberg_mcp_server",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "iceberg_mcp_server-agent-tool",
+      "name": "Iceberg_Mcp_Server",
+      "description": "FastMCP server name: Cloudera Iceberg MCP Server via Impala",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Iceberg_Mcp_Server",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: Cloudera Iceberg MCP Server via Impala",
+  "homepage": "https://github.com/cloudera/iceberg-mcp-server",
+  "license": "Apache-2.0",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/cloudera/iceberg-mcp-server.git",
+        "ref": "38a7f3914934ab851254291ed3a2934bcd95f6cd"
+      }
+    }
+  ]
+}

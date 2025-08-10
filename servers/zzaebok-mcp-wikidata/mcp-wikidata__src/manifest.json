@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: Wikidata MCP Server",
+  "id": "src-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "src-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/zzaebok/mcp-wikidata/230e0456d25831935c0fa4dfe699c900afd3b6bc/src/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "src-server",
+        "server-url"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: Wikidata MCP Server",
+      "name": "src",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "src-agent-tool",
+      "name": "Src",
+      "description": "FastMCP server name: Wikidata MCP Server",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Src",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: Wikidata MCP Server",
+  "homepage": "https://github.com/zzaebok/mcp-wikidata",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/zzaebok/mcp-wikidata.git",
+        "ref": "230e0456d25831935c0fa4dfe699c900afd3b6bc"
+      }
+    }
+  ]
+}

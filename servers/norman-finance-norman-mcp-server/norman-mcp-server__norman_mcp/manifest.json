@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: Norman Finance API",
+  "id": "norman_mcp-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "norman_mcp-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/norman-finance/norman-mcp-server/f9757916e2c83d491d906a073a4f15ddae9cb036/norman_mcp/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "server-url",
+        "norman_mcp-server"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: Norman Finance API",
+      "name": "norman_mcp",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "norman_mcp-agent-tool",
+      "name": "Norman_Mcp",
+      "description": "FastMCP server name: Norman Finance API",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Norman_Mcp",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: Norman Finance API",
+  "homepage": "https://github.com/norman-finance/norman-mcp-server",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/norman-finance/norman-mcp-server.git",
+        "ref": "f9757916e2c83d491d906a073a4f15ddae9cb036"
+      }
+    }
+  ]
+}

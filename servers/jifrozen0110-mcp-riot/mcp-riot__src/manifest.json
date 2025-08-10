@@ -1,0 +1,65 @@
+{
+  "description": "heuristic route=/sse; port=6288; file=server.py",
+  "id": "src-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "server-source",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "name": "server.py",
+        "uri": "file:///tmp/mcpgit-ijzny6i_/repo/src/server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/jifrozen0110/mcp-riot/843b32c5a57d026eb0ebcbc003370a031f04304d/src/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "server.py",
+        "server-url",
+        "server-source"
+      ],
+      "associated_tools": [],
+      "description": "heuristic route=/sse; port=6288; file=server.py",
+      "name": "src",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "src-agent-tool",
+      "name": "Src",
+      "description": "heuristic route=/sse; port=6288; file=server.py",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Src",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "heuristic route=/sse; port=6288; file=server.py",
+  "homepage": "https://github.com/jifrozen0110/mcp-riot",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/jifrozen0110/mcp-riot.git",
+        "ref": "843b32c5a57d026eb0ebcbc003370a031f04304d"
+      }
+    }
+  ]
+}

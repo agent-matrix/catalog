@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: reaper-mcp-server",
+  "id": "reaper_mcp_server-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "reaper_mcp_server-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/dschuler36/reaper-mcp-server/775ade1971f432cb066f85ad0242ef7c9bb6be0e/src/reaper_mcp_server/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "reaper_mcp_server-server",
+        "server-url"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: reaper-mcp-server",
+      "name": "reaper_mcp_server",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "reaper_mcp_server-agent-tool",
+      "name": "Reaper_Mcp_Server",
+      "description": "FastMCP server name: reaper-mcp-server",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Reaper_Mcp_Server",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: reaper-mcp-server",
+  "homepage": "https://github.com/dschuler36/reaper-mcp-server",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/dschuler36/reaper-mcp-server.git",
+        "ref": "775ade1971f432cb066f85ad0242ef7c9bb6be0e"
+      }
+    }
+  ]
+}

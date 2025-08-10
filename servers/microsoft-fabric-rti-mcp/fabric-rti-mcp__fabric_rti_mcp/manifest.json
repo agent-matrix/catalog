@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: fabric-rti-mcp-server",
+  "id": "fabric_rti_mcp-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "fabric_rti_mcp-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/Microsoft/fabric-rti-mcp/a996038399fb76fbb2c93d7c43f23535662a8750/fabric_rti_mcp/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "fabric_rti_mcp-server",
+        "server-url"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: fabric-rti-mcp-server",
+      "name": "fabric_rti_mcp",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "fabric_rti_mcp-agent-tool",
+      "name": "Fabric_Rti_Mcp",
+      "description": "FastMCP server name: fabric-rti-mcp-server",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Fabric_Rti_Mcp",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: fabric-rti-mcp-server",
+  "homepage": "https://github.com/Microsoft/fabric-rti-mcp",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/Microsoft/fabric-rti-mcp.git",
+        "ref": "a996038399fb76fbb2c93d7c43f23535662a8750"
+      }
+    }
+  ]
+}

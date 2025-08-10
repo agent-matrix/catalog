@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: mcp-neo4j-cypher",
+  "id": "mcp_neo4j_cypher-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "mcp_neo4j_cypher-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/neo4j-contrib/mcp-neo4j/3e41629aa374a8bc987124e74a479973dd2dee60/servers/mcp-neo4j-cypher/src/mcp_neo4j_cypher/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "mcp_neo4j_cypher-server",
+        "server-url"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: mcp-neo4j-cypher",
+      "name": "mcp_neo4j_cypher",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "mcp_neo4j_cypher-agent-tool",
+      "name": "Mcp_Neo4J_Cypher",
+      "description": "FastMCP server name: mcp-neo4j-cypher",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Mcp_Neo4J_Cypher",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: mcp-neo4j-cypher",
+  "homepage": "https://github.com/neo4j-contrib/mcp-neo4j",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/neo4j-contrib/mcp-neo4j.git",
+        "ref": "3e41629aa374a8bc987124e74a479973dd2dee60"
+      }
+    }
+  ]
+}

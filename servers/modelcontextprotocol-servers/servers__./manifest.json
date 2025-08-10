@@ -1,0 +1,60 @@
+{
+  "description": "node mcp indicators in package.json",
+  "id": "repo-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "repo-pkg",
+        "name": "package.json",
+        "type": "inline",
+        "uri": "file://package.json"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/modelcontextprotocol/servers/c9f7d0275c7edf17b057e700f4f7d6cad9befd4a/src/time/src/mcp_server_time/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "repo-pkg",
+        "server-url"
+      ],
+      "associated_tools": [],
+      "description": "node mcp indicators in package.json",
+      "name": "repo",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "repo-agent-tool",
+      "name": "Repo",
+      "description": "node mcp indicators in package.json",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Repo",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "node mcp indicators in package.json",
+  "homepage": "https://github.com/modelcontextprotocol/servers",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/modelcontextprotocol/servers.git",
+        "ref": "c9f7d0275c7edf17b057e700f4f7d6cad9befd4a"
+      }
+    }
+  ]
+}

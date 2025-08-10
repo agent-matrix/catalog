@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: ragdocs-server",
+  "id": "ragdocs-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "ragdocs-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/aekanun2020/mcp-server/9b918619f77c61facb15814150e1bb87177d0629/Stable/pyrag_new/ragdocs/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "ragdocs-server",
+        "server-url"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: ragdocs-server",
+      "name": "ragdocs",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "ragdocs-agent-tool",
+      "name": "Ragdocs",
+      "description": "FastMCP server name: ragdocs-server",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Ragdocs",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: ragdocs-server",
+  "homepage": "https://github.com/aekanun2020/mcp-server",
+  "license": "",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/aekanun2020/mcp-server.git",
+        "ref": "9b918619f77c61facb15814150e1bb87177d0629"
+      }
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "description": "heuristic route=/sse; port=8001; file=main.py",
+  "id": "repo-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "main-source",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://main.py"
+      },
+      {
+        "name": "main.py",
+        "uri": "file:///tmp/mcpgit-x98ok_ij/repo/main.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "main-source",
+        "main.py"
+      ],
+      "associated_tools": [],
+      "description": "heuristic route=/sse; port=8001; file=main.py",
+      "name": "repo",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:8001/sse"
+    },
+    "tool": {
+      "id": "repo-agent-tool",
+      "name": "Repo",
+      "description": "heuristic route=/sse; port=8001; file=main.py",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:8001/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Repo",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "heuristic route=/sse; port=8001; file=main.py",
+  "homepage": "https://github.com/TakoData/tako-mcp",
+  "license": "",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/TakoData/tako-mcp.git",
+        "ref": "1458bb521d8cb700eaf9e3018ab8b01ae88efb1c"
+      }
+    }
+  ]
+}

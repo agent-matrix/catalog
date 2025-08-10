@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: Redis MCP Server",
+  "id": "src-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "src-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/prajwalnayak7/mcp-server-redis/9d8a342d6a3c1a06fde6e469ebac50c59790b9bf/src/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "src-server",
+        "server-url"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: Redis MCP Server",
+      "name": "src",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "src-agent-tool",
+      "name": "Src",
+      "description": "FastMCP server name: Redis MCP Server",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Src",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: Redis MCP Server",
+  "homepage": "https://github.com/prajwalnayak7/mcp-server-redis",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/prajwalnayak7/mcp-server-redis.git",
+        "ref": "9d8a342d6a3c1a06fde6e469ebac50c59790b9bf"
+      }
+    }
+  ]
+}

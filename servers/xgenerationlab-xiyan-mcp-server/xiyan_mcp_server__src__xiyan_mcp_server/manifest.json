@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: xiyan",
+  "id": "xiyan_mcp_server-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "xiyan_mcp_server-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/XGenerationLab/xiyan_mcp_server/d78c08da53ad67d530def4d742eafde9dbfebaef/src/xiyan_mcp_server/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "xiyan_mcp_server-server",
+        "server-url"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: xiyan",
+      "name": "xiyan_mcp_server",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "xiyan_mcp_server-agent-tool",
+      "name": "Xiyan_Mcp_Server",
+      "description": "FastMCP server name: xiyan",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Xiyan_Mcp_Server",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: xiyan",
+  "homepage": "https://github.com/XGenerationLab/xiyan_mcp_server",
+  "license": "Apache-2.0",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/XGenerationLab/xiyan_mcp_server.git",
+        "ref": "d78c08da53ad67d530def4d742eafde9dbfebaef"
+      }
+    }
+  ]
+}

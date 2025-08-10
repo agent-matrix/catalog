@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: ip2locationio",
+  "id": "src-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "src-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/ip2location/mcp-ip2location-io/49016ad5f48f2ad3ad2dbd4a0a43b77875271252/src/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "src-server",
+        "server-url"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: ip2locationio",
+      "name": "src",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "src-agent-tool",
+      "name": "Src",
+      "description": "FastMCP server name: ip2locationio",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Src",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: ip2locationio",
+  "homepage": "https://github.com/ip2location/mcp-ip2location-io",
+  "license": "",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/ip2location/mcp-ip2location-io.git",
+        "ref": "49016ad5f48f2ad3ad2dbd4a0a43b77875271252"
+      }
+    }
+  ]
+}

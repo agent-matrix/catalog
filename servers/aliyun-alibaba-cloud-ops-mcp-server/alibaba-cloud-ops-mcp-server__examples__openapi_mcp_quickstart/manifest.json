@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: Example MCP server",
+  "id": "openapi_mcp_quickstart-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "openapi_mcp_quickstart-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/aliyun/alibaba-cloud-ops-mcp-server/d01ebd8d1afc88fd369d77fe1e46e90767736148/examples/openapi_mcp_quickstart/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "openapi_mcp_quickstart-server",
+        "server-url"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: Example MCP server",
+      "name": "openapi_mcp_quickstart",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "openapi_mcp_quickstart-agent-tool",
+      "name": "Openapi_Mcp_Quickstart",
+      "description": "FastMCP server name: Example MCP server",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Openapi_Mcp_Quickstart",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: Example MCP server",
+  "homepage": "https://github.com/aliyun/alibaba-cloud-ops-mcp-server",
+  "license": "Apache-2.0",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/aliyun/alibaba-cloud-ops-mcp-server.git",
+        "ref": "d01ebd8d1afc88fd369d77fe1e46e90767736148"
+      }
+    }
+  ]
+}

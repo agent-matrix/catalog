@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: vectara",
+  "id": "vectara_mcp-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "vectara_mcp-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/vectara/vectara-mcp/3df76949f624043c53fefa1601d5fe2627dbb761/vectara_mcp/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "vectara_mcp-server",
+        "server-url"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: vectara",
+      "name": "vectara_mcp",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "vectara_mcp-agent-tool",
+      "name": "Vectara_Mcp",
+      "description": "FastMCP server name: vectara",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Vectara_Mcp",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: vectara",
+  "homepage": "https://github.com/vectara/vectara-mcp",
+  "license": "Apache-2.0",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/vectara/vectara-mcp.git",
+        "ref": "3df76949f624043c53fefa1601d5fe2627dbb761"
+      }
+    }
+  ]
+}

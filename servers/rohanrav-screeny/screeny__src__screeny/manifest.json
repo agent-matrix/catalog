@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: Screeny",
+  "id": "screeny-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "screeny-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/rohanrav/screeny/e61dcf5645c7670ef23ac03b558e94b7d6429ba6/src/screeny/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "server-url",
+        "screeny-server"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: Screeny",
+      "name": "screeny",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "screeny-agent-tool",
+      "name": "Screeny",
+      "description": "FastMCP server name: Screeny",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Screeny",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: Screeny",
+  "homepage": "https://github.com/rohanrav/screeny",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/rohanrav/screeny.git",
+        "ref": "e61dcf5645c7670ef23ac03b558e94b7d6429ba6"
+      }
+    }
+  ]
+}

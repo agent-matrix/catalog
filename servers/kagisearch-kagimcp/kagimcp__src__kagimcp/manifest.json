@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: kagimcp",
+  "id": "kagimcp-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "kagimcp-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/kagisearch/kagimcp/f2c2157cd520f37c2a926c6434bc03a29a9f5ceb/src/kagimcp/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "server-url",
+        "kagimcp-server"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: kagimcp",
+      "name": "kagimcp",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "kagimcp-agent-tool",
+      "name": "Kagimcp",
+      "description": "FastMCP server name: kagimcp",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Kagimcp",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: kagimcp",
+  "homepage": "https://github.com/kagisearch/kagimcp",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/kagisearch/kagimcp.git",
+        "ref": "f2c2157cd520f37c2a926c6434bc03a29a9f5ceb"
+      }
+    }
+  ]
+}

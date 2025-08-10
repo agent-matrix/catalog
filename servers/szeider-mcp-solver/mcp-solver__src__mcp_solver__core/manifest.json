@@ -1,0 +1,65 @@
+{
+  "description": "heuristic route=/sse; port=6288; file=server.py",
+  "id": "core-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "server-source",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "name": "server.py",
+        "uri": "file:///tmp/mcpgit-z9nq1xd1/repo/src/mcp_solver/core/server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/szeider/mcp-solver/f188688eeac30ff5172caba3e227e40f0c1fdf1a/src/mcp_solver/core/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "server.py",
+        "server-url",
+        "server-source"
+      ],
+      "associated_tools": [],
+      "description": "heuristic route=/sse; port=6288; file=server.py",
+      "name": "core",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "core-agent-tool",
+      "name": "Core",
+      "description": "heuristic route=/sse; port=6288; file=server.py",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Core",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "heuristic route=/sse; port=6288; file=server.py",
+  "homepage": "https://github.com/szeider/mcp-solver",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/szeider/mcp-solver.git",
+        "ref": "f188688eeac30ff5172caba3e227e40f0c1fdf1a"
+      }
+    }
+  ]
+}

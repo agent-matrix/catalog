@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: VMware Fusion MCP Server",
+  "id": "vmware_fusion_mcp-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "vmware_fusion_mcp-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/yeahdongcn/vmware-fusion-mcp-server/1cbfacffe00fb4071dcd90e306b5751532cfaeb2/vmware_fusion_mcp/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "vmware_fusion_mcp-server",
+        "server-url"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: VMware Fusion MCP Server",
+      "name": "vmware_fusion_mcp",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "vmware_fusion_mcp-agent-tool",
+      "name": "Vmware_Fusion_Mcp",
+      "description": "FastMCP server name: VMware Fusion MCP Server",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Vmware_Fusion_Mcp",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: VMware Fusion MCP Server",
+  "homepage": "https://github.com/yeahdongcn/vmware-fusion-mcp-server",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/yeahdongcn/vmware-fusion-mcp-server.git",
+        "ref": "1cbfacffe00fb4071dcd90e306b5751532cfaeb2"
+      }
+    }
+  ]
+}

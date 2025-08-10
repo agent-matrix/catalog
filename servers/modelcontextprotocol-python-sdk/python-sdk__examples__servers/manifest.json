@@ -1,0 +1,95 @@
+{
+  "description": "FastMCP server name: MCP Resource Server; FastMCP server name: Simple Auth MCP Server",
+  "id": "servers-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "mcp_simple_prompt-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "mcp_simple_tool-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "mcp_simple_streamablehttp_stateless-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "mcp_simple_auth-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "mcp_simple_streamablehttp-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "mcp_simple_resource-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/modelcontextprotocol/python-sdk/ef4e167c1a677d7a6064383bf21b675e0e3d6417/examples/servers/simple-prompt/mcp_simple_prompt/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "mcp_simple_auth-server",
+        "mcp_simple_tool-server",
+        "mcp_simple_streamablehttp-server",
+        "mcp_simple_prompt-server",
+        "server-url",
+        "mcp_simple_streamablehttp_stateless-server",
+        "mcp_simple_resource-server"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: MCP Resource Server; FastMCP server name: Simple Auth MCP Server",
+      "name": "servers",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "servers-agent-tool",
+      "name": "Servers",
+      "description": "FastMCP server name: MCP Resource Server; FastMCP server name: Simple Auth MCP Server",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Servers",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: MCP Resource Server; FastMCP server name: Simple Auth MCP Server",
+  "homepage": "https://github.com/modelcontextprotocol/python-sdk",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/modelcontextprotocol/python-sdk.git",
+        "ref": "ef4e167c1a677d7a6064383bf21b675e0e3d6417"
+      }
+    }
+  ]
+}

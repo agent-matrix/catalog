@@ -1,0 +1,60 @@
+{
+  "description": "",
+  "id": "fhir_mcp_server-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "fhir_mcp_server-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/wso2/fhir-mcp-server/dec904fbbe2c3a6cc91ede6685c52defe43f53a0/src/fhir_mcp_server/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "server-url",
+        "fhir_mcp_server-server"
+      ],
+      "associated_tools": [],
+      "description": "",
+      "name": "fhir_mcp_server",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "fhir_mcp_server-agent-tool",
+      "name": "Fhir_Mcp_Server",
+      "description": "",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Fhir_Mcp_Server",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "",
+  "homepage": "https://github.com/wso2/fhir-mcp-server",
+  "license": "Apache-2.0",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/wso2/fhir-mcp-server.git",
+        "ref": "dec904fbbe2c3a6cc91ede6685c52defe43f53a0"
+      }
+    }
+  ]
+}

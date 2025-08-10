@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: usgov_mcp",
+  "id": "repo-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "repo-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/AshwinSundar/congress_gov_mcp/5f90305854a63c311aa1077b415c300c3a05b663/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "repo-server",
+        "server-url"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: usgov_mcp",
+      "name": "repo",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "repo-agent-tool",
+      "name": "Repo",
+      "description": "FastMCP server name: usgov_mcp",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Repo",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: usgov_mcp",
+  "homepage": "https://github.com/AshwinSundar/congress_gov_mcp",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/AshwinSundar/congress_gov_mcp.git",
+        "ref": "5f90305854a63c311aa1077b415c300c3a05b663"
+      }
+    }
+  ]
+}

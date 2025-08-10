@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: joinly",
+  "id": "joinly-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "joinly-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/joinly-ai/joinly/e69427c1444a4e2641bbd58ec2dfebbe2a7c4eb6/joinly/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "joinly-server",
+        "server-url"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: joinly",
+      "name": "joinly",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "joinly-agent-tool",
+      "name": "Joinly",
+      "description": "FastMCP server name: joinly",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Joinly",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: joinly",
+  "homepage": "https://github.com/joinly-ai/joinly",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/joinly-ai/joinly.git",
+        "ref": "e69427c1444a4e2641bbd58ec2dfebbe2a7c4eb6"
+      }
+    }
+  ]
+}

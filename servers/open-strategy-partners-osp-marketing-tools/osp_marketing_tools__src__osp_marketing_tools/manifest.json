@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: osp_marketing_tools",
+  "id": "osp_marketing_tools-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "osp_marketing_tools-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/open-strategy-partners/osp_marketing_tools/83f55198c4d4e7b315565f00792f63373ff9cc67/src/osp_marketing_tools/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "server-url",
+        "osp_marketing_tools-server"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: osp_marketing_tools",
+      "name": "osp_marketing_tools",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "osp_marketing_tools-agent-tool",
+      "name": "Osp_Marketing_Tools",
+      "description": "FastMCP server name: osp_marketing_tools",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Osp_Marketing_Tools",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: osp_marketing_tools",
+  "homepage": "https://github.com/open-strategy-partners/osp_marketing_tools",
+  "license": "",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/open-strategy-partners/osp_marketing_tools.git",
+        "ref": "83f55198c4d4e7b315565f00792f63373ff9cc67"
+      }
+    }
+  ]
+}

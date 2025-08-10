@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: bitable",
+  "id": "bitable_mcp-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "bitable_mcp-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/lloydzhou/bitable-mcp/72c0d3222e5f08abe83694de1f83e8d4a433992c/src/bitable_mcp/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "bitable_mcp-server",
+        "server-url"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: bitable",
+      "name": "bitable_mcp",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "bitable_mcp-agent-tool",
+      "name": "Bitable_Mcp",
+      "description": "FastMCP server name: bitable",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Bitable_Mcp",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: bitable",
+  "homepage": "https://github.com/lloydzhou/bitable-mcp",
+  "license": "",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/lloydzhou/bitable-mcp.git",
+        "ref": "72c0d3222e5f08abe83694de1f83e8d4a433992c"
+      }
+    }
+  ]
+}

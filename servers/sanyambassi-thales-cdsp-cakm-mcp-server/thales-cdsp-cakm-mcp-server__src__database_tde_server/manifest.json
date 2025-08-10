@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: Database TDE MCP Server",
+  "id": "database_tde_server-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "database_tde_server-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/sanyambassi/thales-cdsp-cakm-mcp-server/c5f4785505d6d0c4b2152c9054479e04761852b0/src/database_tde_server/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "server-url",
+        "database_tde_server-server"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: Database TDE MCP Server",
+      "name": "database_tde_server",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "database_tde_server-agent-tool",
+      "name": "Database_Tde_Server",
+      "description": "FastMCP server name: Database TDE MCP Server",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Database_Tde_Server",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: Database TDE MCP Server",
+  "homepage": "https://github.com/sanyambassi/thales-cdsp-cakm-mcp-server",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/sanyambassi/thales-cdsp-cakm-mcp-server.git",
+        "ref": "c5f4785505d6d0c4b2152c9054479e04761852b0"
+      }
+    }
+  ]
+}

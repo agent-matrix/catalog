@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: Strava API MCP Server",
+  "id": "strava_mcp_server-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "strava_mcp_server-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/tomekkorbak/strava-mcp-server/126e9a1225d6702b9aff874418621d778c218617/src/strava_mcp_server/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "server-url",
+        "strava_mcp_server-server"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: Strava API MCP Server",
+      "name": "strava_mcp_server",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "strava_mcp_server-agent-tool",
+      "name": "Strava_Mcp_Server",
+      "description": "FastMCP server name: Strava API MCP Server",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Strava_Mcp_Server",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: Strava API MCP Server",
+  "homepage": "https://github.com/tomekkorbak/strava-mcp-server",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/tomekkorbak/strava-mcp-server.git",
+        "ref": "126e9a1225d6702b9aff874418621d778c218617"
+      }
+    }
+  ]
+}

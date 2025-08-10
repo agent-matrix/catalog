@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: WaveSpeed",
+  "id": "wavespeed_mcp-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "wavespeed_mcp-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/WaveSpeedAI/mcp-server/fa59c4804866a86da2b0efeec6c241ca22f87850/wavespeed_mcp/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "server-url",
+        "wavespeed_mcp-server"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: WaveSpeed",
+      "name": "wavespeed_mcp",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "wavespeed_mcp-agent-tool",
+      "name": "Wavespeed_Mcp",
+      "description": "FastMCP server name: WaveSpeed",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Wavespeed_Mcp",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: WaveSpeed",
+  "homepage": "https://github.com/WaveSpeedAI/mcp-server",
+  "license": "",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/WaveSpeedAI/mcp-server.git",
+        "ref": "fa59c4804866a86da2b0efeec6c241ca22f87850"
+      }
+    }
+  ]
+}

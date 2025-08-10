@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: dappier-mcp",
+  "id": "dappier_mcp-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "dappier_mcp-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/DappierAI/dappier-mcp/38bbde12ef9ea3a7a5fd142d018150c8c53bc63d/src/dappier_mcp/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "dappier_mcp-server",
+        "server-url"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: dappier-mcp",
+      "name": "dappier_mcp",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "dappier_mcp-agent-tool",
+      "name": "Dappier_Mcp",
+      "description": "FastMCP server name: dappier-mcp",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Dappier_Mcp",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: dappier-mcp",
+  "homepage": "https://github.com/DappierAI/dappier-mcp",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/DappierAI/dappier-mcp.git",
+        "ref": "38bbde12ef9ea3a7a5fd142d018150c8c53bc63d"
+      }
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "description": "",
+  "id": "lean_lsp_mcp-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "lean_lsp_mcp-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/oOo0oOo/lean-lsp-mcp/9f65bda9da12df6348dfa74826ad7720ae46a7bb/src/lean_lsp_mcp/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "server-url",
+        "lean_lsp_mcp-server"
+      ],
+      "associated_tools": [],
+      "description": "",
+      "name": "lean_lsp_mcp",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "lean_lsp_mcp-agent-tool",
+      "name": "Lean_Lsp_Mcp",
+      "description": "",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Lean_Lsp_Mcp",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "",
+  "homepage": "https://github.com/oOo0oOo/lean-lsp-mcp",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/oOo0oOo/lean-lsp-mcp.git",
+        "ref": "9f65bda9da12df6348dfa74826ad7720ae46a7bb"
+      }
+    }
+  ]
+}

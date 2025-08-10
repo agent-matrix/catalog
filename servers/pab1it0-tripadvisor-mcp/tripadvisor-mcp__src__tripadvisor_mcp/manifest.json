@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: Tripadvisor Content API MCP",
+  "id": "tripadvisor_mcp-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "tripadvisor_mcp-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/pab1it0/tripadvisor-mcp/ff3bd320cd00012b6474ec7f5036aed0ed7c1289/src/tripadvisor_mcp/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "server-url",
+        "tripadvisor_mcp-server"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: Tripadvisor Content API MCP",
+      "name": "tripadvisor_mcp",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "tripadvisor_mcp-agent-tool",
+      "name": "Tripadvisor_Mcp",
+      "description": "FastMCP server name: Tripadvisor Content API MCP",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Tripadvisor_Mcp",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: Tripadvisor Content API MCP",
+  "homepage": "https://github.com/pab1it0/tripadvisor-mcp",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/pab1it0/tripadvisor-mcp.git",
+        "ref": "ff3bd320cd00012b6474ec7f5036aed0ed7c1289"
+      }
+    }
+  ]
+}

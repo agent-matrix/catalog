@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: imagesorcery-mcp",
+  "id": "imagesorcery_mcp-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "imagesorcery_mcp-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/sunriseapps/imagesorcery-mcp/8a0143facbe46059330a63df5dd33dc510a324c1/src/imagesorcery_mcp/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "imagesorcery_mcp-server",
+        "server-url"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: imagesorcery-mcp",
+      "name": "imagesorcery_mcp",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "imagesorcery_mcp-agent-tool",
+      "name": "Imagesorcery_Mcp",
+      "description": "FastMCP server name: imagesorcery-mcp",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Imagesorcery_Mcp",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: imagesorcery-mcp",
+  "homepage": "https://github.com/sunriseapps/imagesorcery-mcp",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/sunriseapps/imagesorcery-mcp.git",
+        "ref": "8a0143facbe46059330a63df5dd33dc510a324c1"
+      }
+    }
+  ]
+}

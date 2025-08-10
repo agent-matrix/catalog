@@ -1,0 +1,58 @@
+{
+  "description": "heuristic route=/sse; port=7860; file=app.py",
+  "id": "computer_use_agent-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "app-source",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://app.py"
+      },
+      {
+        "name": "app.py",
+        "uri": "file:///tmp/mcpgit-kxllc5xo/repo/examples/computer_use_agent/app.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "app-source",
+        "app.py"
+      ],
+      "associated_tools": [],
+      "description": "heuristic route=/sse; port=7860; file=app.py",
+      "name": "computer_use_agent",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:7860/sse"
+    },
+    "tool": {
+      "id": "computer_use_agent-agent-tool",
+      "name": "Computer_Use_Agent",
+      "description": "heuristic route=/sse; port=7860; file=app.py",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:7860/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Computer_Use_Agent",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "heuristic route=/sse; port=7860; file=app.py",
+  "homepage": "https://github.com/Arize-ai/phoenix",
+  "license": "Elastic License 2.0 (ELv2)",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/Arize-ai/phoenix.git",
+        "ref": "640b1f51d8840d1c4f94d414924770da8f93be05"
+      }
+    }
+  ]
+}

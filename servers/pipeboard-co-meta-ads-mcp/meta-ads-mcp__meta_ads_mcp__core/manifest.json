@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: meta-ads",
+  "id": "core-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "core-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/pipeboard-co/meta-ads-mcp/1a483c5d4d6f333bf909f705ee452603ba7836a5/meta_ads_mcp/core/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "core-server",
+        "server-url"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: meta-ads",
+      "name": "core",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "core-agent-tool",
+      "name": "Core",
+      "description": "FastMCP server name: meta-ads",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Core",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: meta-ads",
+  "homepage": "https://github.com/pipeboard-co/meta-ads-mcp",
+  "license": "Apache-2.0",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/pipeboard-co/meta-ads-mcp.git",
+        "ref": "1a483c5d4d6f333bf909f705ee452603ba7836a5"
+      }
+    }
+  ]
+}

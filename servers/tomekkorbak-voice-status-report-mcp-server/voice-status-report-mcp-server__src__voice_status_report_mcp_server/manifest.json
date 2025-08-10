@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: Voice Status Report",
+  "id": "voice_status_report_mcp_server-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "voice_status_report_mcp_server-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/tomekkorbak/voice-status-report-mcp-server/480a355a21cfc7bacebf3d263ec69e4144d82216/src/voice_status_report_mcp_server/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "server-url",
+        "voice_status_report_mcp_server-server"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: Voice Status Report",
+      "name": "voice_status_report_mcp_server",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "voice_status_report_mcp_server-agent-tool",
+      "name": "Voice_Status_Report_Mcp_Server",
+      "description": "FastMCP server name: Voice Status Report",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Voice_Status_Report_Mcp_Server",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: Voice Status Report",
+  "homepage": "https://github.com/tomekkorbak/voice-status-report-mcp-server",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/tomekkorbak/voice-status-report-mcp-server.git",
+        "ref": "480a355a21cfc7bacebf3d263ec69e4144d82216"
+      }
+    }
+  ]
+}

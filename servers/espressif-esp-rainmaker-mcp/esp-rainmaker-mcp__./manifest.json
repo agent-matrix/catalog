@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: ESP-RainMaker-MCP",
+  "id": "repo-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "repo-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/espressif/esp-rainmaker-mcp/afb272e20ed69ad8f53616063b75195d16cd0be5/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "repo-server",
+        "server-url"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: ESP-RainMaker-MCP",
+      "name": "repo",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "repo-agent-tool",
+      "name": "Repo",
+      "description": "FastMCP server name: ESP-RainMaker-MCP",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Repo",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: ESP-RainMaker-MCP",
+  "homepage": "https://github.com/espressif/esp-rainmaker-mcp",
+  "license": "Apache-2.0",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/espressif/esp-rainmaker-mcp.git",
+        "ref": "afb272e20ed69ad8f53616063b75195d16cd0be5"
+      }
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "description": "heuristic route=/sse; port=6288; file=main.py",
+  "id": "whatsapp-mcp-server-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "main-source",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://main.py"
+      },
+      {
+        "name": "main.py",
+        "uri": "file:///tmp/mcpgit-k6h20fep/repo/whatsapp-mcp-server/main.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "main-source",
+        "main.py"
+      ],
+      "associated_tools": [],
+      "description": "heuristic route=/sse; port=6288; file=main.py",
+      "name": "whatsapp-mcp-server",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "whatsapp-mcp-server-agent-tool",
+      "name": "Whatsapp Mcp Server",
+      "description": "heuristic route=/sse; port=6288; file=main.py",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Whatsapp Mcp Server",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "heuristic route=/sse; port=6288; file=main.py",
+  "homepage": "https://github.com/lharries/whatsapp-mcp",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/lharries/whatsapp-mcp.git",
+        "ref": "7d6a06dcdce1f01dfb24f60e1030d5efba9f3b88"
+      }
+    }
+  ]
+}

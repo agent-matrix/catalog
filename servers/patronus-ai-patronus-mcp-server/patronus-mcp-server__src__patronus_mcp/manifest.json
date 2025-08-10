@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: patronus",
+  "id": "patronus_mcp-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "patronus_mcp-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/patronus-ai/patronus-mcp-server/8ec71e6368c26708f584da61f05eaac36ef90aaa/src/patronus_mcp/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "patronus_mcp-server",
+        "server-url"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: patronus",
+      "name": "patronus_mcp",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "patronus_mcp-agent-tool",
+      "name": "Patronus_Mcp",
+      "description": "FastMCP server name: patronus",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Patronus_Mcp",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: patronus",
+  "homepage": "https://github.com/patronus-ai/patronus-mcp-server",
+  "license": "Apache-2.0",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/patronus-ai/patronus-mcp-server.git",
+        "ref": "8ec71e6368c26708f584da61f05eaac36ef90aaa"
+      }
+    }
+  ]
+}

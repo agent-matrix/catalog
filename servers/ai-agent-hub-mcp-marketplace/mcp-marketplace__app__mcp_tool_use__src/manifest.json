@@ -1,0 +1,58 @@
+{
+  "description": "heuristic route=/sse; port=5000; file=app.py",
+  "id": "src-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "app-source",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://app.py"
+      },
+      {
+        "name": "app.py",
+        "uri": "file:///tmp/mcpgit-ev6qe8ry/repo/app/mcp_tool_use/src/app.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "app-source",
+        "app.py"
+      ],
+      "associated_tools": [],
+      "description": "heuristic route=/sse; port=5000; file=app.py",
+      "name": "src",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:5000/sse"
+    },
+    "tool": {
+      "id": "src-agent-tool",
+      "name": "Src",
+      "description": "heuristic route=/sse; port=5000; file=app.py",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:5000/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Src",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "heuristic route=/sse; port=5000; file=app.py",
+  "homepage": "https://github.com/AI-Agent-Hub/mcp-marketplace",
+  "license": "",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/AI-Agent-Hub/mcp-marketplace.git",
+        "ref": "dcf6d888e4ae1ca2b41a44e8c8cefaf52a685a11"
+      }
+    }
+  ]
+}

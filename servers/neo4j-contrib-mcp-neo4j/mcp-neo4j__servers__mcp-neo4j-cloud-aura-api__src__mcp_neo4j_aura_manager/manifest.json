@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: mcp-neo4j-aura-manager",
+  "id": "mcp_neo4j_aura_manager-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "mcp_neo4j_aura_manager-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/neo4j-contrib/mcp-neo4j/3e41629aa374a8bc987124e74a479973dd2dee60/servers/mcp-neo4j-cloud-aura-api/src/mcp_neo4j_aura_manager/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "server-url",
+        "mcp_neo4j_aura_manager-server"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: mcp-neo4j-aura-manager",
+      "name": "mcp_neo4j_aura_manager",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "mcp_neo4j_aura_manager-agent-tool",
+      "name": "Mcp_Neo4J_Aura_Manager",
+      "description": "FastMCP server name: mcp-neo4j-aura-manager",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Mcp_Neo4J_Aura_Manager",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: mcp-neo4j-aura-manager",
+  "homepage": "https://github.com/neo4j-contrib/mcp-neo4j",
+  "license": "MIT",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/neo4j-contrib/mcp-neo4j.git",
+        "ref": "3e41629aa374a8bc987124e74a479973dd2dee60"
+      }
+    }
+  ]
+}

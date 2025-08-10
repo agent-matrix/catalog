@@ -1,0 +1,60 @@
+{
+  "description": "FastMCP server name: Fewsats MCP Server",
+  "id": "fewsats_mcp-agent",
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [
+      {
+        "id": "fewsats_mcp-server",
+        "name": "server source",
+        "type": "inline",
+        "uri": "file://server.py"
+      },
+      {
+        "id": "server-url",
+        "name": "server.py (raw)",
+        "type": "url",
+        "uri": "https://raw.githubusercontent.com/Fewsats/fewsats-mcp/b0bd632807ab99adfa5517bc1febcc9ca4b2ecdb/src/fewsats_mcp/server.py"
+      }
+    ],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [
+        "fewsats_mcp-server",
+        "server-url"
+      ],
+      "associated_tools": [],
+      "description": "FastMCP server name: Fewsats MCP Server",
+      "name": "fewsats_mcp",
+      "transport": "SSE",
+      "url": "http://127.0.0.1:6288/sse"
+    },
+    "tool": {
+      "id": "fewsats_mcp-agent-tool",
+      "name": "Fewsats_Mcp",
+      "description": "FastMCP server name: Fewsats MCP Server",
+      "integration_type": "MCP",
+      "url": "http://127.0.0.1:6288/sse",
+      "input_schema": {
+        "type": "object",
+        "properties": {}
+      }
+    }
+  },
+  "name": "Fewsats_Mcp",
+  "type": "mcp_server",
+  "version": "0.1.0",
+  "schema_version": 1,
+  "summary": "FastMCP server name: Fewsats MCP Server",
+  "homepage": "https://github.com/Fewsats/fewsats-mcp",
+  "license": "",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/Fewsats/fewsats-mcp.git",
+        "ref": "b0bd632807ab99adfa5517bc1febcc9ca4b2ecdb"
+      }
+    }
+  ]
+}
