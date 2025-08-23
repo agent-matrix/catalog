@@ -1,0 +1,95 @@
+# A clear name for the workflow.
+name: Validate MCP manifest
+
+# This workflow runs on pull requests that modify manifest or index files.
+on:
+  pull_request:
+    paths:
+      - 'servers/**/manifest.json'
+      - 'servers/**/index.json'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Check out the repository's code.
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Node.js environment.
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Step 3: Install the 'glob' package needed by the validation script.
+      # This step was missing in the original file.
+      - name: Install dependencies
+        run: npm install glob
+
+      # Step 4: Run the validation script.
+      # The script is improved to check both manifest and index files,
+      # and it uses GitHub's special logging commands to create annotations
+      # directly on the pull request's "Files changed" tab.
+      - name: Validate manifest and index files
+        run: |
+          node -e '
+            const fs = require("fs");
+            const glob = require("glob");
+
+            let errorCount = 0;
+
+            // Helper to format errors for the GitHub UI
+            function logError(file, message) {
+              errorCount++;
+              // This format creates a file annotation in GitHub
+              console.log(`::error file=${file}::${message}`);
+            }
+
+            console.log("🔍 Validating manifest.json files...");
+            const manifestFiles = glob.sync("servers/**/manifest.json");
+
+            for (const file of manifestFiles) {
+              try {
+                const data = JSON.parse(fs.readFileSync(file, "utf8"));
+                
+                if (data.type !== "mcp_server") {
+                  logError(file, `The "type" must be "mcp_server".`);
+                }
+                
+                for (const key of ["id", "name", "version"]) {
+                  if (!data[key]) {
+                    logError(file, `Required property "${key}" is missing.`);
+                  }
+                }
+                
+                const transport = data?.mcp_registration?.server?.transport;
+                if (transport === "SSE" && !data?.mcp_registration?.server?.url) {
+                  logError(file, `A server with "SSE" transport requires a "url".`);
+                }
+              } catch (e) {
+                logError(file, `Invalid JSON format: ${e.message}`);
+              }
+            }
+            console.log(`✅ Found and validated ${manifestFiles.length} manifest(s).`);
+
+            console.log("\n🔍 Validating index.json files...");
+            const indexFiles = glob.sync("servers/**/index.json");
+
+            for (const file of indexFiles) {
+              try {
+                const data = JSON.parse(fs.readFileSync(file, "utf8"));
+                if (!Array.isArray(data.manifests)) {
+                  logError(file, `Required property "manifests" must be an array.`);
+                }
+              } catch (e) {
+                logError(file, `Invalid JSON format: ${e.message}`);
+              }
+            }
+            console.log(`✅ Found and validated ${indexFiles.length} index file(s).`);
+
+            if (errorCount > 0) {
+              console.log(`\n❌ Found ${errorCount} error(s).`);
+              process.exit(1);
+            }
+          '
