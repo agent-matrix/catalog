@@ -1,0 +1,291 @@
+# This is a descriptive name for the workflow.
+name: Issue → PR (Add MCP server)
+
+# This section defines the trigger for the workflow.
+on:
+  issues:
+    # It runs when an issue is opened, edited, or reopened.
+    types: [opened, edited, reopened]
+
+# These are the permissions the workflow needs to operate.
+permissions:
+  contents: write      # To create branches and commit files.
+  pull-requests: write # To create pull requests.
+  issues: write        # To comment on and add labels to issues.
+
+# This ensures that only one instance of the workflow runs for a given issue at a time.
+concurrency:
+  group: add-server-${{ github.event.issue.number }}
+  cancel-in-progress: false
+
+jobs:
+  issue_to_pr:
+    # This condition ensures the job only runs on issues with the correct title or label.
+    if: >-
+      contains(github.event.issue.title, 'Add server:') ||
+      contains(join(github.event.issue.labels.*.name, ','), 'submission')
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Check out the repository's code.
+      - name: Checkout (for existence checks)
+        uses: actions/checkout@v4
+
+      # Step 2: Parse the issue body to extract data for the new files.
+      - name: Parse issue → build payload (manifest/index/folder)
+        id: parse
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const core = require('@actions/core');
+            const { context } = require('@actions/github');
+            const body = context.payload.issue.body || '';
+
+            // --- Helper Functions to parse the issue body ---
+            function firstJsonBlock(markdown) {
+              const re = /```json\n([\s\S]*?)```/gi;
+              const m = re.exec(markdown);
+              if (!m) return null;
+              try { return JSON.parse(m[1]); } catch(_) { return null; }
+            }
+
+            function jsonByLabel(markdown, label) {
+              const re = new RegExp(label.replace(/[.*+?^${}()|[\]\\]/g,'\\$&') + '[\\s\\S]*?```json\n([\\s\\S]*?)```', 'i');
+              const m = re.exec(markdown);
+              if (!m) return null;
+              try { return JSON.parse(m[1]); } catch(_) { return null; }
+            }
+
+            function valueAfterHeading(md, heading) {
+              const re = new RegExp(`###\\s+${heading.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}\\s*\n([\\s\\S]*?)(?:\n###|$)`, 'i');
+              const m = re.exec(md);
+              if (!m) return null;
+              return m[1].trim();
+            }
+
+            function inferFolder(md) {
+              const m = /\*\*Folder\*\*:\s*servers\/(.+)/i.exec(md);
+              if (m) return m[1].trim().replace(/\s+/g,'-');
+              const fromForm = valueAfterHeading(md, 'Folder slug');
+              if (fromForm) return fromForm.trim();
+              return null;
+            }
+
+            function slugify(s) {
+              return (s||'').toLowerCase().replace(/[^a-z0-9-_]+/g,'-').replace(/--+/g,'-').replace(/(^-|-$)/g,'');
+            }
+
+            // --- Main Parsing Logic ---
+            let manifest = jsonByLabel(body, 'manifest.json') || firstJsonBlock(body);
+            let index = jsonByLabel(body, 'index.json');
+            let folder = inferFolder(body);
+
+            // If no JSON blocks are found, build the manifest from form fields.
+            if (!manifest) {
+              const id = valueAfterHeading(body, 'Server ID');
+              const name = valueAfterHeading(body, 'Server Name');
+              const version = valueAfterHeading(body, 'Version') || '0.1.0';
+              const transport = (valueAfterHeading(body, 'Transport') || 'SSE').toUpperCase();
+              const url = valueAfterHeading(body, 'Server URL (SSE)');
+              const repo = valueAfterHeading(body, 'Repo (git)');
+              const ref = valueAfterHeading(body, 'Ref (tag or commit SHA)');
+              const summary = valueAfterHeading(body, 'Summary') || '';
+              const description = valueAfterHeading(body, 'Description') || '';
+
+              manifest = {
+                schema_version: 1,
+                type: 'mcp_server',
+                id: slugify(id || name || 'my-mcp'),
+                name: name || id || 'My MCP',
+                version,
+                summary,
+                description,
+                artifacts: repo ? [{ kind: 'git', spec: { repo, ref: ref || undefined } }] : undefined,
+                mcp_registration: {
+                  resources: [], prompts: [],
+                  server: {
+                    name: slugify(name || id || 'server'),
+                    description: summary || '',
+                    transport,
+                    url: transport === 'SSE' ? (url || '') : undefined,
+                    associated_tools: [], associated_resources: [], associated_prompts: []
+                  },
+                  tool: {
+                    id: `${slugify(id || name || 'tool')}-tool`,
+                    name: name || id || 'Tool',
+                    description: summary || '',
+                    integration_type: 'MCP',
+                    url: transport === 'SSE' ? (url || '') : undefined,
+                    input_schema: { type: 'object', properties: {} }
+                  }
+                }
+              };
+            }
+
+            if (!index) {
+              index = { manifests: ['manifest.json'] };
+            }
+
+            // --- Validation ---
+            const errs = [];
+            if (!manifest || typeof manifest !== 'object') errs.push('`manifest.json` is missing or invalid.');
+            if (!manifest?.id) errs.push('`manifest.id` is required.');
+            if (!manifest?.name) errs.push('`manifest.name` is required.');
+            if (!manifest?.version) errs.push('`manifest.version` is required.');
+            if (manifest?.mcp_registration?.server?.transport === 'SSE' && !manifest?.mcp_registration?.server?.url) {
+              errs.push('SSE transport requires `mcp_registration.server.url`.');
+            }
+            if (!folder) {
+              folder = slugify(manifest?.id || manifest?.name || 'my-mcp');
+            }
+
+            if (errs.length) {
+              core.setFailed('Validation failed: ' + errs.join('; '));
+              return;
+            }
+
+            // --- Set Outputs ---
+            core.setOutput('folder', folder);
+            core.setOutput('manifest_pretty', JSON.stringify(manifest, null, 2));
+            core.setOutput('index_pretty', JSON.stringify(index, null, 2));
+
+      # Step 3: Get the name of the default branch (e.g., 'main' or 'master').
+      - name: Determine default branch
+        id: repo
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { data: repo } = await github.rest.repos.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+            });
+            return repo.default_branch;
+          result-encoding: string
+
+      # Step 4: Check if a directory for this server already exists.
+      - name: Check if folder exists
+        id: exists
+        run: |
+          if [ -d "servers/${{ steps.parse.outputs.folder }}" ]; then
+            echo "found=true" >> $GITHUB_OUTPUT
+          else
+            echo "found=false" >> $GITHUB_OUTPUT
+          fi
+
+      # Step 5a: If the folder exists, comment on the issue and stop.
+      - name: Comment and exit if duplicate
+        if: steps.exists.outputs.found == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `Thanks for the submission! However, a folder for **servers/${{ steps.parse.outputs.folder }}** already exists. If this is a new version, please choose a different folder slug or create a PR to update the existing entry.`,
+            });
+
+      # Step 5b: If the folder does NOT exist, create a new branch.
+      - name: Create branch
+        if: steps.exists.outputs.found == 'false'
+        id: branch
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { data: ref } = await github.rest.git.getRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: 'heads/${{ steps.repo.result }}',
+            });
+            const branch = `add-server/${{ steps.parse.outputs.folder }}-${context.issue.number}`;
+            try {
+              await github.rest.git.createRef({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                ref: `refs/heads/${branch}`,
+                sha: ref.object.sha,
+              });
+            } catch (e) {
+              if (e.status !== 422) throw e; // 422 means it already exists, which is fine.
+            }
+            return branch;
+          result-encoding: string
+
+      # Step 6: Write the manifest.json and index.json files to the new branch.
+      - name: Write files to branch
+        if: steps.exists.outputs.found == 'false'
+        uses: actions/github-script@v7
+        env:
+          FOLDER: ${{ steps.parse.outputs.folder }}
+          MANIFEST: ${{ steps.parse.outputs.manifest_pretty }}
+          INDEX: ${{ steps.parse.outputs.index_pretty }}
+          BRANCH: ${{ steps.branch.result }}
+        with:
+          script: |
+            const files = [
+              { path: `servers/${process.env.FOLDER}/manifest.json`, content: process.env.MANIFEST },
+              { path: `servers/${process.env.FOLDER}/index.json`, content: process.env.INDEX },
+            ];
+            for (const file of files) {
+              await github.rest.repos.createOrUpdateFileContents({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                path: file.path,
+                message: `feat(catalog): add server '${process.env.FOLDER}'`,
+                content: Buffer.from(file.content).toString('base64'),
+                branch: process.env.BRANCH,
+              });
+            }
+
+      # Step 7: Create a new pull request or update an existing one.
+      - name: Open or update PR
+        if: steps.exists.outputs.found == 'false'
+        id: pr
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const head = '${{ steps.branch.result }}';
+            const { data: prs } = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              head: `${context.repo.owner}:${head}`,
+              state: 'open',
+            });
+
+            const body = `This PR was automatically generated from issue #${context.issue.number}.\n\n**Folder**: \`servers/${{ steps.parse.outputs.folder }}\`\n\n### manifest.json\n\n\`\`\`json\n${{ steps.parse.outputs.manifest_pretty }}\n\`\`\`\n\n### index.json\n\n\`\`\`json\n${{ steps.parse.outputs.index_pretty }}\n\`\`\``;
+            
+            let pr;
+            if (prs.length > 0) {
+              pr = prs[0];
+              // You could update the PR here if needed, e.g., github.rest.pulls.update(...)
+            } else {
+              const { data: newPr } = await github.rest.pulls.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                base: '${{ steps.repo.result }}',
+                head,
+                title: context.payload.issue.title.replace('Add server:', 'feat: Add server'),
+                body,
+              });
+              pr = newPr;
+            }
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: `A pull request for this submission has been opened: #${pr.number}`,
+            });
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              labels: ['auto-pr'],
+            });
+            
+            return pr.number;
+          result-encoding: string
+
+      # Step 8: A final confirmation step.
+      - name: Done
+        if: steps.exists.outputs.found == 'false'
+        run: echo "Successfully created or updated PR #${{ steps.pr.result }}."
