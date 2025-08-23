@@ -64,95 +64,70 @@ You’ll get:
 
 Each URL is a complete MCP manifest and can be installed independently.
 
----
+
+The goal is to create a rich ecosystem where developers can easily find servers to integrate into their projects and contributors can showcase their work.
+
+## How to create new servers ➡️
+You can create a new simply  server by using our templates ready to use.
+
+[https://github.com/agent-matrix/mcp-template](https://github.com/agent-matrix/mcp-template)
 
 
-## Add a new server (Fork → PR)
+## How to Add Your Server (The Easy Way) ✨
 
-**Standard GitHub flow**: fork, branch, commit, PR.
+We've created a fully automated, bot-powered submission process that doesn't require you to fork the repository or use Git. All you need to do is fill out a form!
 
-1. **Create a folder** under `servers/` with a concise slug:
+1. **Prepare Your Information**: Before you start, make sure you have the following details handy:
 
-```
-servers/my-awesome-mcp/
-```
+   * A unique **ID** and **Folder Slug** for your server (e.g., `my-awesome-agent`).
 
-2. **Add your manifest** to `servers/my-awesome-mcp/manifest.json`.
-   Use the richer schema (example below).
+   * The **Server Name** and **Version** number.
 
-3. **Add the per-folder index** `servers/my-awesome-mcp/index.json`:
+   * The **Transport** type:
 
-```json
-{ "manifests": ["manifest.json"] }
-```
+     * `SSE`: For servers that are hosted online and accessible via a URL.
 
-4. **Open a Pull Request**.
-   A maintainer will review and merge. CI will update the top-level catalog index.
+     * `STDIO`: For servers that are run from a Git repository.
 
-### Full manifest example (complete schema, SSE)
+   * A **URL** (if using SSE).
 
-> You can adapt fields (IDs, names, URLs). This example follows the enriched pattern (with `schema_version`, `homepage`, `license`, `artifacts`, and a scaffolded `mcp_registration.tool`).
+   * A **Git Repo URL** and **Ref** (tag or commit hash) (if using STDIO).
 
-```json
-{
-  "schema_version": 1,
-  "type": "mcp_server",
-  "id": "repo-agent",
-  "name": "Repo",
-  "version": "0.1.0",
+   * A short **Summary** and a longer **Description** for your server.
 
-  "summary": "",
-  "description": "",
-  "homepage": "https://github.com/13rac1/videocapture-mcp",
-  "license": "",
+2. **Open a Submission Issue**: Click the link below to open our "Add MCP Server" issue form. It will guide you through providing all the necessary information.
 
-  "artifacts": [
-    {
-      "kind": "git",
-      "spec": {
-        "repo": "https://github.com/13rac1/videocapture-mcp.git",
-        "ref": "f01c45036d626b71f29b530046ada52ce5e88e9a"
-      }
-    }
-  ],
+   ➡️ [**Click Here to Add Your MCP Server**](https://www.google.com/search?q=https://github.com/YOUR_USERNAME/YOUR_REPOSITORY/issues/new%3Fassignees%3D%26labels%3Dadd-server%26template%3Dadd_mcp_server.yml%26title%3D%255BServer%255D%253A%2BADD_YOUR_SERVER_NAME_HERE)
+   *(Note: Please replace YOUR_USERNAME/YOUR_REPOSITORY in the link above with the actual path to your repository if you are hosting this project.)*
 
-  "mcp_registration": {
-    "resources": [],
-    "prompts": [],
-    "server": {
-      "name": "repo",
-      "description": "",
-      "transport": "SSE",
-      "url": "http://127.0.0.1:6288/sse",
-      "associated_tools": [],
-      "associated_resources": [],
-      "associated_prompts": []
-    },
-    "tool": {
-      "id": "repo-agent-tool",
-      "name": "Repo",
-      "description": "",
-      "integration_type": "MCP",
-      "url": "http://127.0.0.1:6288/sse",
-      "input_schema": {
-        "type": "object",
-        "properties": {}
-      }
-    }
-  }
-}
-```
+3. **Submit the Form**: Once you've filled out all the fields, just click "Submit new issue."
 
-**Notes**
+### What Happens Next? ⚙️
 
-* `schema_version`: recommended (currently `1`).
-* `type/id/name/version`: required by consumers.
-* `homepage`/`license`: recommended for provenance.
-* `artifacts`: recommended; include a `git` spec with a stable `ref` (tag or commit SHA).
-* `mcp_registration.server.url`: SSE endpoints typically end with `/sse`.
-* `tool` block is optional but recommended; use an empty input schema if unknown.
+Once you submit the issue, our friendly GitHub bot takes over:
 
----
+1. **Validation**: The bot reads your submission and validates the information provided.
+
+2. **PR Creation**: It automatically creates a new branch, generates the required `manifest.json` and `index.json` files, and opens a Pull Request (PR) on your behalf. A comment will be posted on your issue with a link to the new PR.
+
+3. **Automated Checks**: The PR triggers another workflow that validates the JSON schema and structure of the new files to ensure they meet the catalog's standards.
+
+4. **Review & Merge**: A project maintainer will review the automated PR. If all checks pass and the submission looks good, they will merge it.
+
+5. **Done!** 🎉 Your server is now officially part of the Matrix Hub catalog and will appear on the website.
+
+## Advanced Method: Submitting a Manual Pull Request
+
+If you're comfortable with Git and prefer to submit your entry manually, you can follow these steps.
+
+1. **Fork & Clone**: Fork this repository and clone it to your local machine.
+
+2. **Create a New Branch**: `git checkout -b add-server/your-server-name`
+
+3. **Create a Directory**: Create a new directory for your server under the `servers/` folder. The name should be your unique server slug.
+
+
+
 
 ## Generate/validate manifests with `mcp-ingest`
 
