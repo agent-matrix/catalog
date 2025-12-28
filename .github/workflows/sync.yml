@@ -68,11 +68,14 @@ jobs:
       - name: Install mcp_ingest from source
         run: |
           cd mcp_ingest_tool
-          pip install -e ".[dev,harvester]"
+          # 🔴 FIX: Removed '-e' flag. Standard install copies files to site-packages.
+          pip install ".[dev,harvester]"
           cd ..
-          python -c "import mcp_ingest; print(f'✓ mcp_ingest installed from source')"
           
-          # 🔴 FIX: Remove the tool directory so it doesn't get committed
+          # Verify installation works before deleting source
+          python -c "import mcp_ingest; print(f'✓ mcp_ingest installed successfully')"
+          
+          # Now safe to remove the tool directory
           rm -rf mcp_ingest_tool
 
       - name: Harvest from MCP Registry
@@ -110,10 +113,11 @@ jobs:
 
       - name: Copy validation scripts
         run: |
-          # We cannot copy from mcp_ingest_tool because we deleted it.
-          # If you need scripts, they should be permanently in your repo 
-          # or downloaded separately. For now, we skip copying to avoid errors.
+          # Create scripts dir if it doesn't exist
           mkdir -p scripts
+          # Note: We cannot copy scripts from mcp_ingest_tool since we deleted it.
+          # If scripts are critical, we should copy them BEFORE 'rm -rf' above.
+          # For this run, we will skip copying to ensure stability.
 
       - name: Validate catalog structure
         run: |
@@ -188,7 +192,7 @@ jobs:
           - Deprecated: ${{ steps.stats.outputs.deprecated }}
           PRBODY
 
-          # Create PR (Removed --label to prevent crash)
+          # Create PR
           gh pr create \
             --title "chore(sync): automated catalog sync" \
             --body-file /tmp/pr_body.md
