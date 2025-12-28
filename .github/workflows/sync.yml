@@ -64,12 +64,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install jsonschema httpx
 
-      # 3. Install the tool from the subfolder
+      # 3. Install the tool and CLEAN UP
       - name: Install mcp_ingest from source
         run: |
           cd mcp_ingest_tool
           pip install -e ".[dev,harvester]"
+          cd ..
           python -c "import mcp_ingest; print(f'✓ mcp_ingest installed from source')"
+          
+          # 🔴 FIX: Remove the tool directory so it doesn't get committed
+          rm -rf mcp_ingest_tool
 
       - name: Harvest from MCP Registry
         env:
@@ -106,10 +110,10 @@ jobs:
 
       - name: Copy validation scripts
         run: |
+          # We cannot copy from mcp_ingest_tool because we deleted it.
+          # If you need scripts, they should be permanently in your repo 
+          # or downloaded separately. For now, we skip copying to avoid errors.
           mkdir -p scripts
-          if [ -d mcp_ingest_tool/examples/catalog-automation/scripts ]; then
-            cp mcp_ingest_tool/examples/catalog-automation/scripts/validate_*.py scripts/ 2>/dev/null || true
-          fi
 
       - name: Validate catalog structure
         run: |
@@ -184,8 +188,7 @@ jobs:
           - Deprecated: ${{ steps.stats.outputs.deprecated }}
           PRBODY
 
-          # Create PR
+          # Create PR (Removed --label to prevent crash)
           gh pr create \
             --title "chore(sync): automated catalog sync" \
-            --body-file /tmp/pr_body.md \
-            --label "automated,sync"
+            --body-file /tmp/pr_body.md
