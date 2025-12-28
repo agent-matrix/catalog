@@ -15,57 +15,162 @@
 
 ## Overview
 
-The **Agent-Matrix Catalog** is a public, versioned registry of **MCP servers** (agents/tools) used by MatrixHub.  
-It publishes one canonical `index.json` with **absolute RAW URLs** to each server’s `manifest.json`, plus per-server folders containing a `manifest.json` and a per-folder `index.json`.
+The **Agent-Matrix Catalog** is a production-ready, versioned registry of **MCP servers** (agents/tools) for MatrixHub.
 
-- 🔗 **Top-level RAW index (main branch):**
+### Key Features
 
-This repo is designed for **high-volume**, **append-only** publishing: add new servers via Pull Request; CI refreshes the top index.
+- 🔄 **Automated Daily Sync**: Harvests from `modelcontextprotocol/servers` using `mcp_ingest`
+- 🎯 **Deterministic Structure**: Stable folder mapping with deduplication
+- ✅ **Schema Validation**: All manifests conform to `mcp_server` schema
+- 📦 **Matrix Hub Ready**: Format designed for seamless DB population
+- 🔗 **Discoverable**: Single `index.json` with all server metadata
+
+### Architecture
+
+This catalog is the **source of truth** for Matrix Hub's MCP server registry:
+
+1. **Harvesting**: Uses `mcp_ingest.harvest_source()` to discover servers
+2. **Processing**: Deterministic folder mapping via stable slugging
+3. **Validation**: Schema + structure checks on every PR
+4. **Ingestion**: Matrix Hub reads catalog to populate database
 
 
-## Repository layout
+## Repository Layout
 
 ```
 .
-├─ index.json                 # Top-level catalog of all manifests (absolute RAW URLs)
-└─ servers/
-├─ <server-folder-1>/
-│  ├─ manifest.json       # MCP server manifest
-│  └─ index.json          # Per-folder index (usually \["manifest.json"])
-├─ <server-folder-2>/
-│  ├─ manifest.json
-│  └─ index.json
-└─ ...
+├── index.json                      # Top-level catalog (deterministic, sorted)
+├── schema/
+│   └── mcp_server.schema.json     # JSON Schema for validation
+├── scripts/
+│   ├── sync_mcp_servers.py        # Daily sync orchestrator
+│   ├── validate_catalog_structure.py
+│   └── validate_catalog_schemas.py
+├── mcp-servers/                    # Synced MCP servers
+│   └── github.com/
+│       └── <owner>/
+│           └── <repo>/
+│               └── <stable-slug>/
+│                   ├── manifest.json
+│                   └── provenance.json
+└── servers/                        # Legacy/manual submissions (preserved)
 ```
 
-- **`index.json`** at the repo root contains **absolute** raw URLs to every manifest in `servers/**/manifest.json`.
-- Each **`servers/<folder>/index.json`** lists the manifest(s) in that folder, typically:
-  ```json
-  { "manifests": ["manifest.json"] }
+### Structure Details
 
-## How the index works
+- **`index.json`**: Deterministic catalog with metadata for all servers
+- **`mcp-servers/`**: Auto-synced servers using stable folder mapping
+- **`schema/`**: JSON Schema definitions for validation
+- **`scripts/`**: Automation and validation tooling
 
-Fetch one file:
+## How It Works
+
+### Daily Automated Sync
+
+Every day at 02:15 UTC, a GitHub Action:
+
+1. Runs `mcp_ingest.harvest_source()` against `modelcontextprotocol/servers`
+2. Discovers base repo + README-linked repos
+3. Generates deterministic folder structure with stable slugs
+4. Deduplicates by `(repo, path, transport, id)`
+5. Rebuilds `index.json` with sorted entries
+6. Validates all manifests against schema
+7. Opens PR if changes detected
+
+### Index Format
+
+Fetch the catalog:
 
 ```bash
-curl -s https://raw.githubusercontent.com/agent-matrix/catalog/refs/heads/main/index.json
+curl -s https://raw.githubusercontent.com/agent-matrix/catalog/main/index.json
 ```
 
-You’ll get:
+Example structure:
 
 ```json
 {
-  "manifests": [
-    "https://raw.githubusercontent.com/agent-matrix/catalog/refs/heads/main/servers/<folder-a>/manifest.json",
-    "https://raw.githubusercontent.com/agent-matrix/catalog/refs/heads/main/servers/<folder-b>/manifest.json"
+  "generated_at": "2025-12-28T02:15:00Z",
+  "source": {
+    "harvester": "mcp_ingest.harvest_source",
+    "root_repo": "https://github.com/modelcontextprotocol/servers"
+  },
+  "counts": {
+    "mcp_servers": 42
+  },
+  "items": [
+    {
+      "type": "mcp_server",
+      "id": "filesystem",
+      "name": "Filesystem MCP Server",
+      "transport": "STDIO",
+      "manifest_path": "mcp-servers/github.com/modelcontextprotocol/servers/filesystem/manifest.json",
+      "repo": "https://github.com/modelcontextprotocol/servers",
+      "subpath": "src/filesystem"
+    }
   ]
 }
 ```
 
-Each URL is a complete MCP manifest and can be installed independently.
+### Manifest Format
 
+Each manifest follows the `mcp_ingest` standard with `type: "mcp_server"`:
 
-The goal is to create a rich ecosystem where developers can easily find servers to integrate into their projects and contributors can showcase their work.
+```json
+{
+  "type": "mcp_server",
+  "id": "filesystem",
+  "name": "Filesystem MCP Server",
+  "description": "Access local filesystem",
+  "mcp_registration": {
+    "server": {
+      "transport": "STDIO",
+      "exec": {
+        "cmd": ["npx", "-y", "@modelcontextprotocol/server-filesystem", "/path"]
+      }
+    }
+  },
+  "provenance": {
+    "repo_url": "https://github.com/modelcontextprotocol/servers",
+    "subpath": "src/filesystem",
+    "harvested_at": "2025-12-28T02:15:00Z"
+  }
+}
+```
+
+## Validation & CI
+
+### Automated Checks
+
+All PRs are validated via GitHub Actions:
+
+- **Structure validation**: Ensures manifests have required fields
+- **Schema validation**: All manifests conform to `mcp_server.schema.json`
+- **Linting**: Scripts are checked with `ruff`
+
+### Local Development
+
+Run sync and validation locally:
+
+```bash
+# Setup
+python -m venv .venv
+source .venv/bin/activate
+pip install jsonschema ruff
+
+# Install mcp_ingest (assumes sibling directory)
+pip install -e ../mcp_ingest
+
+# Run sync
+python scripts/sync_mcp_servers.py \
+  --source-repo "https://github.com/modelcontextprotocol/servers" \
+  --catalog-root "." \
+  --out-dir "mcp-servers" \
+  --index-file "index.json"
+
+# Validate
+python scripts/validate_catalog_structure.py
+python scripts/validate_catalog_schemas.py
+```
 
 ## How to create new servers ➡️
 You can create a new simply  server by using our templates ready to use.
@@ -129,23 +234,73 @@ If you're comfortable with Git and prefer to submit your entry manually, you can
 
 
 
-## Generate/validate manifests with `mcp-ingest`
+## Matrix Hub Integration
 
-We recommend the **mcp-ingest** SDK + CLI to produce consistent manifests and indexes.
+This catalog serves as the **source of truth** for Matrix Hub's MCP server database.
 
-### Install
+### Ingestion Flow
+
+1. **Catalog sync** (daily): Auto-updates catalog via PR
+2. **Matrix Hub polling**: Reads `index.json` on schedule or webhook
+3. **DB population**: Upserts servers using manifest data
+4. **User discovery**: Matrix Hub UI surfaces servers for installation
+
+### Manifest → Database Mapping
+
+Each manifest provides DB-ready data:
+
+- **Identity**: `id`, `name`, `version`
+- **Connection**: `mcp_registration.server.{transport, url, exec}`
+- **Metadata**: `description`, `tags`, `license`, `homepage`
+- **Provenance**: `repo_url`, `subpath`, `ref`, `harvested_at`
+
+### For Matrix Hub Developers
+
+To ingest the catalog:
+
+```python
+import requests
+
+# Fetch catalog
+catalog = requests.get(
+    "https://raw.githubusercontent.com/agent-matrix/catalog/main/index.json"
+).json()
+
+# Process each server
+for item in catalog["items"]:
+    manifest_path = item["manifest_path"]
+    manifest_url = f"https://raw.githubusercontent.com/agent-matrix/catalog/main/{manifest_path}"
+    manifest = requests.get(manifest_url).json()
+
+    # Upsert to database
+    upsert_server(
+        server_id=manifest["id"],
+        name=manifest["name"],
+        transport=manifest["mcp_registration"]["server"]["transport"],
+        # ... other fields
+    )
+```
+
+## Working with mcp_ingest
+
+This catalog uses **mcp_ingest** for harvesting and manifest generation.
+
+### For Server Authors
+
+Create manifests for your servers:
 
 ```bash
 pip install mcp-ingest
-```
 
-### Describe/pack a local server (offline)
-
-```bash
-# Emits manifest.json + index.json
+# Generate manifest from local server
 mcp-ingest pack ./path/to/server --out ./dist
 ```
 
+### For Catalog Maintainers
+
+The sync script already uses `mcp_ingest.harvest_source()` to discover servers automatically.
+
+See [mcp_ingest documentation](https://github.com/agent-matrix/mcp_ingest) for details.
 
 ## Credits
 
