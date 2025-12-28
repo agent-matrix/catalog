@@ -1,0 +1,106 @@
+{
+  "description": "MCP server that can perform basic arithmetic operations and parse/evaluate arithmetic expressions.",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:39:05+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-yarnabrina-mcp-learning.stdio.c99fba030a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/yarnabrina/learn-model-context-protocol",
+    "homepage": "https://github.com/yarnabrina/learn-model-context-protocol",
+    "repository": "https://github.com/yarnabrina/learn-model-context-protocol"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "Resolve console scripts from the published package.",
+            "name": "--from",
+            "type": "named",
+            "value": "mcp-learning"
+          },
+          {
+            "description": "Invoke the entry point that starts the MCP server.",
+            "type": "positional",
+            "value": "mcp-server"
+          },
+          {
+            "choices": [
+              "DEBUG",
+              "INFO",
+              "WARNING",
+              "ERROR",
+              "CRITICAL"
+            ],
+            "default": "WARNING",
+            "description": "Log level for server output.",
+            "name": "--log_level",
+            "type": "named",
+            "value": "{log_level}"
+          },
+          "mcp-learning==0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.yarnabrina/mcp-learning",
+  "packages": [
+    {
+      "identifier": "mcp-learning",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "Resolve console scripts from the published package.",
+          "name": "--from",
+          "type": "named",
+          "value": "mcp-learning"
+        },
+        {
+          "description": "Invoke the entry point that starts the MCP server.",
+          "type": "positional",
+          "value": "mcp-server"
+        },
+        {
+          "choices": [
+            "DEBUG",
+            "INFO",
+            "WARNING",
+            "ERROR",
+            "CRITICAL"
+          ],
+          "default": "WARNING",
+          "description": "Log level for server output.",
+          "name": "--log_level",
+          "type": "named",
+          "value": "{log_level}"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://127.0.0.1:8000/mcp"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c99fba030a",
+    "published_at": "2025-11-09T08:22:31.297416Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.yarnabrina/mcp-learning",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2025-11-09T08:22:31.297416Z"
+  },
+  "title": "Learning Model Context Protocol",
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

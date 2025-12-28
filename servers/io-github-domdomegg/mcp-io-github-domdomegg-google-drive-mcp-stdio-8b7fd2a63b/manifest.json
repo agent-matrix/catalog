@@ -1,0 +1,72 @@
+{
+  "description": "Allow AI systems to list, search, upload, download, and manage files and folders in Google Drive.",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-domdomegg-google-drive-mcp.stdio.8b7fd2a63b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/domdomegg/google-drive-mcp.git",
+    "homepage": "https://github.com/domdomegg/google-drive-mcp.git",
+    "repository": "https://github.com/domdomegg/google-drive-mcp.git"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "google-drive-mcp==1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.domdomegg/google-drive-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Transport type.",
+          "isRequired": true,
+          "name": "MCP_TRANSPORT",
+          "value": "http"
+        },
+        {
+          "description": "Google OAuth client ID.",
+          "isRequired": true,
+          "name": "GOOGLE_CLIENT_ID"
+        },
+        {
+          "description": "Google OAuth client secret.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GOOGLE_CLIENT_SECRET"
+        }
+      ],
+      "identifier": "google-drive-mcp",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3000/mcp"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8b7fd2a63b",
+    "published_at": "2025-12-11T03:55:11.964179Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.domdomegg/google-drive-mcp",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2025-12-11T03:55:11.964179Z"
+  },
+  "title": "Google Drive",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

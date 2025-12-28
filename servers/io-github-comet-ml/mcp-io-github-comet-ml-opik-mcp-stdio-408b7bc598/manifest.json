@@ -1,0 +1,83 @@
+{
+  "description": "Interact with Opik prompts, traces, and metrics through the Model Context Protocol.",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-comet-ml-opik-mcp.stdio.408b7bc598",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/comet-ml/opik-mcp",
+    "homepage": "https://github.com/comet-ml/opik-mcp",
+    "repository": "https://github.com/comet-ml/opik-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "description": "Automatically confirm npm prompts when installing.",
+            "name": "-y",
+            "type": "named"
+          },
+          "opik-mcp==0.1.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.comet-ml/opik-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API key from your Opik workspace for authenticating SDK calls.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OPIK_API_KEY"
+        },
+        {
+          "description": "Override the API base URL when using a self-hosted Opik deployment.",
+          "name": "OPIK_API_BASE_URL",
+          "placeholder": "http://localhost:5173/api"
+        },
+        {
+          "description": "Default workspace to scope prompt and trace operations.",
+          "name": "OPIK_WORKSPACE_NAME",
+          "placeholder": "my-workspace"
+        }
+      ],
+      "identifier": "opik-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "description": "Automatically confirm npm prompts when installing.",
+          "name": "-y",
+          "type": "named"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "408b7bc598",
+    "published_at": "2025-11-13T22:51:39.724022Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.comet-ml/opik-mcp",
+    "server_version": "0.1.3",
+    "source": "mcp-registry",
+    "updated_at": "2025-11-13T22:51:39.724022Z"
+  },
+  "title": "Opik MCP Server",
+  "type": "mcp_server",
+  "version": "0.1.3"
+}

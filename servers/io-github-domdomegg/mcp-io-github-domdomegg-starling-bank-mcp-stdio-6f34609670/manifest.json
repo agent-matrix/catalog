@@ -1,0 +1,70 @@
+{
+  "description": "Allow AI systems to view and control your Starling Bank account via MCP.",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:43+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-domdomegg-starling-bank-mcp.stdio.6f34609670",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/domdomegg/starling-bank-mcp.git",
+    "homepage": "https://github.com/domdomegg/starling-bank-mcp.git",
+    "repository": "https://github.com/domdomegg/starling-bank-mcp.git"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "starling-bank-mcp==1.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.domdomegg/starling-bank-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Starling Bank personal access token. Sign up for the Starling Developer Portal, link your account, and create a Personal Access Token.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "STARLING_BANK_ACCESS_TOKEN"
+        },
+        {
+          "description": "Optional: Key UID of the signing key for sending payments.",
+          "isSecret": true,
+          "name": "STARLING_BANK_PRIVATE_KEY_UID"
+        },
+        {
+          "description": "Optional: PEM-encoded signing key for sending payments.",
+          "isSecret": true,
+          "name": "STARLING_BANK_PRIVATE_KEY_PEM"
+        }
+      ],
+      "identifier": "starling-bank-mcp",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6f34609670",
+    "published_at": "2025-12-08T03:10:21.942807Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.domdomegg/starling-bank-mcp",
+    "server_version": "1.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2025-12-08T03:10:21.942807Z"
+  },
+  "title": "Starling Bank",
+  "type": "mcp_server",
+  "version": "1.1.0"
+}

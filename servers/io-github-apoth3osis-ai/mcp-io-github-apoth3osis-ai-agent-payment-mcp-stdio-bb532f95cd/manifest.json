@@ -1,0 +1,68 @@
+{
+  "description": "Secure MCP router providing access to AgentPMT's pay-per-use AI tools marketplace.",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:25+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Apoth3osis-ai-agent-payment-mcp.stdio.bb532f95cd",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Apoth3osis-ai/agent-payment-mcp",
+    "homepage": "https://github.com/Apoth3osis-ai/agent-payment-mcp",
+    "repository": "https://github.com/Apoth3osis-ai/agent-payment-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "binary",
+          "https://github.com/Apoth3osis-ai/agent-payment-mcp/releases/download/v1.1.0/agent-payment-router-windows-amd64.exe"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Apoth3osis-ai/agent-payment-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your AgentPMT API key for authentication",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "x-api-key"
+        },
+        {
+          "description": "Your AgentPMT budget key for spending control",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "x-budget-key"
+        }
+      ],
+      "fileSha256": "c92d00ae7a42a8c40f036b239cc8d4c23e65203abe31809fdd791d93b7483575",
+      "identifier": "https://github.com/Apoth3osis-ai/agent-payment-mcp/releases/download/v1.1.0/agent-payment-router-windows-amd64.exe",
+      "registryType": "mcpb",
+      "runtimeHint": "binary",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "bb532f95cd",
+    "published_at": "2025-10-22T23:35:22.309115Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Apoth3osis-ai/agent-payment-mcp",
+    "server_version": "1.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2025-10-22T23:35:22.309115Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.1.0"
+}

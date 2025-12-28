@@ -1,0 +1,74 @@
+{
+  "description": "MCP Server for VictoriaLogs. Provides integration with VictoriaLogs API and documentation",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:32+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-VictoriaMetrics-Community-mcp-victorialogs.stdio.14d77f54ac",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/VictoriaMetrics-Community/mcp-victorialogs",
+    "homepage": "https://github.com/VictoriaMetrics-Community/mcp-victorialogs",
+    "repository": "https://github.com/VictoriaMetrics-Community/mcp-victorialogs"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.VictoriaMetrics-Community/mcp-victorialogs",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "URL to VictoriaMetrics instance (it should be root URL of vmlingle or vlselect), for example http://localhost:9428 or https://play-vmlogs.victoriametrics.com",
+          "format": "string",
+          "isRequired": true,
+          "name": "VL_INSTANCE_ENTRYPOINT"
+        },
+        {
+          "description": "Type of VictoriaMetrics instance (single / cluster)",
+          "format": "string",
+          "isRequired": true,
+          "name": "VL_INSTANCE_TYPE"
+        },
+        {
+          "description": "Authentication token for VictoriaMetrics API",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "VL_INSTANCE_BEARER_TOKEN"
+        },
+        {
+          "description": "Comma-separated list of tools to disable",
+          "format": "string",
+          "name": "MCP_DISABLED_TOOLS"
+        }
+      ],
+      "identifier": "ghcr.io/victoriametrics-community/mcp-victorialogs:v1.3.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "14d77f54ac",
+    "published_at": "2025-10-01T00:50:57.06251Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.VictoriaMetrics-Community/mcp-victorialogs",
+    "server_version": "1.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2025-10-01T00:50:57.06251Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.3.0"
+}

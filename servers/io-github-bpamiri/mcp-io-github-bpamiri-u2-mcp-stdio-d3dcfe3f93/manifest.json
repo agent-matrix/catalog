@@ -1,0 +1,101 @@
+{
+  "description": "Connect AI assistants to Rocket Universe/UniData MultiValue databases via MCP.",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:36+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-bpamiri-u2-mcp.stdio.d3dcfe3f93",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/bpamiri/u2-mcp",
+    "homepage": "https://github.com/bpamiri/u2-mcp",
+    "repository": "https://github.com/bpamiri/u2-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "u2-mcp==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.bpamiri/u2-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Universe/UniData server hostname or IP address",
+          "name": "U2_HOST"
+        },
+        {
+          "description": "Database username",
+          "name": "U2_USER"
+        },
+        {
+          "description": "Database password",
+          "name": "U2_PASSWORD"
+        },
+        {
+          "description": "Account name to connect to",
+          "name": "U2_ACCOUNT"
+        },
+        {
+          "default": "uvcs",
+          "description": "Service type: 'uvcs' for Universe, 'udcs' for UniData",
+          "name": "U2_SERVICE"
+        },
+        {
+          "default": "31438",
+          "description": "Server port",
+          "name": "U2_PORT"
+        },
+        {
+          "default": "false",
+          "description": "Enable SSL connection",
+          "name": "U2_SSL"
+        },
+        {
+          "default": "false",
+          "description": "Disable write operations for safe exploration",
+          "name": "U2_READ_ONLY"
+        },
+        {
+          "default": "10000",
+          "description": "Maximum records returned from SELECT queries",
+          "name": "U2_MAX_RECORDS"
+        },
+        {
+          "default": "DELETE.FILE,CLEAR.FILE",
+          "description": "Comma-separated list of blocked TCL commands",
+          "name": "U2_BLOCKED_COMMANDS"
+        }
+      ],
+      "identifier": "u2-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d3dcfe3f93",
+    "published_at": "2025-12-17T20:22:31.353273Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.bpamiri/u2-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2025-12-17T20:22:31.353273Z"
+  },
+  "title": "U2 MCP Server",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

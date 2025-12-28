@@ -1,0 +1,72 @@
+{
+  "description": "Allow AI systems to list, search, and manage contacts via Google Contacts.",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-domdomegg-google-contacts-mcp.stdio.6637a2bdf5",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/domdomegg/google-contacts-mcp.git",
+    "homepage": "https://github.com/domdomegg/google-contacts-mcp.git",
+    "repository": "https://github.com/domdomegg/google-contacts-mcp.git"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "google-contacts-mcp==1.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.domdomegg/google-contacts-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Transport type.",
+          "isRequired": true,
+          "name": "MCP_TRANSPORT",
+          "value": "http"
+        },
+        {
+          "description": "Google OAuth client ID.",
+          "isRequired": true,
+          "name": "GOOGLE_CLIENT_ID"
+        },
+        {
+          "description": "Google OAuth client secret.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GOOGLE_CLIENT_SECRET"
+        }
+      ],
+      "identifier": "google-contacts-mcp",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3000/mcp"
+      },
+      "version": "1.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6637a2bdf5",
+    "published_at": "2025-12-28T06:25:51.773496Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.domdomegg/google-contacts-mcp",
+    "server_version": "1.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2025-12-28T06:25:51.773496Z"
+  },
+  "title": "Google Contacts",
+  "type": "mcp_server",
+  "version": "1.1.1"
+}

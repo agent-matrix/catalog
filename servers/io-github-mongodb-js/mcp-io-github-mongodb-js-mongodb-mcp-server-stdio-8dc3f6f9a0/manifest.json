@@ -1,0 +1,291 @@
+{
+  "description": "MongoDB Model Context Protocol Server",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:53+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mongodb-js-mongodb-mcp-server.stdio.8dc3f6f9a0",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/mongodb-js/mongodb-mcp-server",
+    "homepage": "https://github.com/mongodb-js/mongodb-mcp-server",
+    "repository": "https://github.com/mongodb-js/mongodb-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mongodb-js/mongodb-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Atlas API client ID for authentication. Required for running Atlas tools.",
+          "format": "string",
+          "isSecret": true,
+          "name": "MDB_MCP_API_CLIENT_ID"
+        },
+        {
+          "description": "Atlas API client secret for authentication. Required for running Atlas tools.",
+          "format": "string",
+          "isSecret": true,
+          "name": "MDB_MCP_API_CLIENT_SECRET"
+        },
+        {
+          "description": "Time in milliseconds that temporary database users created when connecting to MongoDB Atlas clusters will remain active before being automatically deleted.",
+          "format": "string",
+          "name": "MDB_MCP_ATLAS_TEMPORARY_DATABASE_USER_LIFETIME_MS"
+        },
+        {
+          "description": "An array of tool names that require user confirmation before execution. Requires the client to support elicitation.",
+          "format": "string",
+          "name": "MDB_MCP_CONFIRMATION_REQUIRED_TOOLS"
+        },
+        {
+          "description": "MongoDB connection string for direct database connections. Optional, if not set, you'll need to call the connect tool before interacting with MongoDB data.",
+          "format": "string",
+          "isSecret": true,
+          "name": "MDB_MCP_CONNECTION_STRING"
+        },
+        {
+          "description": "When set to true, disables validation of embeddings dimensions.",
+          "format": "boolean",
+          "name": "MDB_MCP_DISABLE_EMBEDDINGS_VALIDATION"
+        },
+        {
+          "description": "An array of tool names, operation types, and/or categories of tools that will be disabled.",
+          "format": "string",
+          "name": "MDB_MCP_DISABLED_TOOLS"
+        },
+        {
+          "description": "Time in milliseconds between export cleanup cycles that remove expired export files.",
+          "format": "string",
+          "name": "MDB_MCP_EXPORT_CLEANUP_INTERVAL_MS"
+        },
+        {
+          "description": "Time in milliseconds after which an export is considered expired and eligible for cleanup.",
+          "format": "string",
+          "name": "MDB_MCP_EXPORT_TIMEOUT_MS"
+        },
+        {
+          "description": "Folder to store exported data files.",
+          "format": "string",
+          "name": "MDB_MCP_EXPORTS_PATH"
+        },
+        {
+          "description": "Host address to bind the HTTP server to (only used when transport is 'http').",
+          "format": "string",
+          "name": "MDB_MCP_HTTP_HOST"
+        },
+        {
+          "description": "Port number for the HTTP server (only used when transport is 'http').",
+          "format": "string",
+          "name": "MDB_MCP_HTTP_PORT"
+        },
+        {
+          "description": "Idle timeout for a client to disconnect (only applies to http transport).",
+          "format": "string",
+          "name": "MDB_MCP_IDLE_TIMEOUT_MS"
+        },
+        {
+          "description": "When set to true, enforces that query operations must use an index, rejecting queries that perform a collection scan.",
+          "format": "boolean",
+          "name": "MDB_MCP_INDEX_CHECK"
+        },
+        {
+          "description": "Folder to store logs.",
+          "format": "string",
+          "name": "MDB_MCP_LOG_PATH"
+        },
+        {
+          "description": "Comma separated values, possible values are 'mcp', 'disk' and 'stderr'.",
+          "format": "string",
+          "name": "MDB_MCP_LOGGERS"
+        },
+        {
+          "description": "The maximum size in bytes for results from a find or aggregate tool call. This serves as an upper bound for the responseBytesLimit parameter in those tools.",
+          "format": "number",
+          "name": "MDB_MCP_MAX_BYTES_PER_QUERY"
+        },
+        {
+          "description": "The maximum number of documents that can be returned by a find or aggregate tool call. For the find tool, the effective limit will be the smaller of this value and the tool's limit parameter.",
+          "format": "number",
+          "name": "MDB_MCP_MAX_DOCUMENTS_PER_QUERY"
+        },
+        {
+          "description": "Notification timeout for a client to be aware of disconnect (only applies to http transport).",
+          "format": "string",
+          "name": "MDB_MCP_NOTIFICATION_TIMEOUT_MS"
+        },
+        {
+          "description": "When set to true, only allows read, connect, and metadata operation types, disabling create/update/delete operations.",
+          "format": "boolean",
+          "name": "MDB_MCP_READ_ONLY"
+        },
+        {
+          "description": "When set to disabled, disables telemetry collection.",
+          "format": "string",
+          "name": "MDB_MCP_TELEMETRY"
+        },
+        {
+          "description": "Either 'stdio' or 'http'.",
+          "format": "string",
+          "name": "MDB_MCP_TRANSPORT"
+        },
+        {
+          "description": "API key for Voyage AI embeddings service (required for vector search operations with text-to-embedding conversion).",
+          "format": "string",
+          "isSecret": true,
+          "name": "MDB_MCP_VOYAGE_API_KEY"
+        }
+      ],
+      "identifier": "docker.io/mongodb/mongodb-mcp-server:1.2.0",
+      "packageArguments": [
+        {
+          "description": "Atlas API client ID for authentication. Required for running Atlas tools.",
+          "name": "--apiClientId",
+          "type": "named"
+        },
+        {
+          "description": "Atlas API client secret for authentication. Required for running Atlas tools.",
+          "name": "--apiClientSecret",
+          "type": "named"
+        },
+        {
+          "description": "Time in milliseconds that temporary database users created when connecting to MongoDB Atlas clusters will remain active before being automatically deleted.",
+          "name": "--atlasTemporaryDatabaseUserLifetimeMs",
+          "type": "named"
+        },
+        {
+          "description": "An array of tool names that require user confirmation before execution. Requires the client to support elicitation.",
+          "name": "--confirmationRequiredTools",
+          "type": "named"
+        },
+        {
+          "description": "MongoDB connection string for direct database connections. Optional, if not set, you'll need to call the connect tool before interacting with MongoDB data.",
+          "name": "--connectionString",
+          "type": "named"
+        },
+        {
+          "description": "When set to true, disables validation of embeddings dimensions.",
+          "format": "boolean",
+          "name": "--disableEmbeddingsValidation",
+          "type": "named"
+        },
+        {
+          "description": "An array of tool names, operation types, and/or categories of tools that will be disabled.",
+          "name": "--disabledTools",
+          "type": "named"
+        },
+        {
+          "description": "Time in milliseconds between export cleanup cycles that remove expired export files.",
+          "name": "--exportCleanupIntervalMs",
+          "type": "named"
+        },
+        {
+          "description": "Time in milliseconds after which an export is considered expired and eligible for cleanup.",
+          "name": "--exportTimeoutMs",
+          "type": "named"
+        },
+        {
+          "description": "Folder to store exported data files.",
+          "name": "--exportsPath",
+          "type": "named"
+        },
+        {
+          "description": "Host address to bind the HTTP server to (only used when transport is 'http').",
+          "name": "--httpHost",
+          "type": "named"
+        },
+        {
+          "description": "Port number for the HTTP server (only used when transport is 'http').",
+          "name": "--httpPort",
+          "type": "named"
+        },
+        {
+          "description": "Idle timeout for a client to disconnect (only applies to http transport).",
+          "name": "--idleTimeoutMs",
+          "type": "named"
+        },
+        {
+          "description": "When set to true, enforces that query operations must use an index, rejecting queries that perform a collection scan.",
+          "format": "boolean",
+          "name": "--indexCheck",
+          "type": "named"
+        },
+        {
+          "description": "Folder to store logs.",
+          "name": "--logPath",
+          "type": "named"
+        },
+        {
+          "description": "Comma separated values, possible values are 'mcp', 'disk' and 'stderr'.",
+          "name": "--loggers",
+          "type": "named"
+        },
+        {
+          "description": "The maximum size in bytes for results from a find or aggregate tool call. This serves as an upper bound for the responseBytesLimit parameter in those tools.",
+          "format": "number",
+          "name": "--maxBytesPerQuery",
+          "type": "named"
+        },
+        {
+          "description": "The maximum number of documents that can be returned by a find or aggregate tool call. For the find tool, the effective limit will be the smaller of this value and the tool's limit parameter.",
+          "format": "number",
+          "name": "--maxDocumentsPerQuery",
+          "type": "named"
+        },
+        {
+          "description": "Notification timeout for a client to be aware of disconnect (only applies to http transport).",
+          "name": "--notificationTimeoutMs",
+          "type": "named"
+        },
+        {
+          "description": "When set to true, only allows read, connect, and metadata operation types, disabling create/update/delete operations.",
+          "format": "boolean",
+          "name": "--readOnly",
+          "type": "named"
+        },
+        {
+          "description": "When set to disabled, disables telemetry collection.",
+          "name": "--telemetry",
+          "type": "named"
+        },
+        {
+          "description": "Either 'stdio' or 'http'.",
+          "name": "--transport",
+          "type": "named"
+        },
+        {
+          "description": "API key for Voyage AI embeddings service (required for vector search operations with text-to-embedding conversion).",
+          "name": "--voyageApiKey",
+          "type": "named"
+        }
+      ],
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "8dc3f6f9a0",
+    "published_at": "2025-10-24T10:32:48.053911Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mongodb-js/mongodb-mcp-server",
+    "server_version": "1.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2025-10-24T10:32:48.053911Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.2.0"
+}

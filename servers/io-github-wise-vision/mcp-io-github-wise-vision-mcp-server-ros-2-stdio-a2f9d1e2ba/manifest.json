@@ -1,0 +1,87 @@
+{
+  "description": "View ROS 2 nodes and topics, and call services and actions via MCP",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:39:04+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wise-vision-mcp_server_ros_2.stdio.a2f9d1e2ba",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wise-vision/mcp_server_ros_2",
+    "homepage": "https://github.com/wise-vision/mcp_server_ros_2",
+    "repository": "https://github.com/wise-vision/mcp_server_ros_2"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Mount custom messages directory",
+            "name": "-v",
+            "type": "named",
+            "value": "~/mcp_custom_messages:/app/custom_msgs"
+          },
+          "docker.io/mcp/ros2:latest"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wise-vision/mcp_server_ros_2",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Enable custom prompts",
+          "name": "MCP_CUSTOM_PROMPTS",
+          "value": "false"
+        },
+        {
+          "description": "Use local prompts",
+          "name": "MCP_PROMPTS_LOCAL",
+          "value": "false"
+        },
+        {
+          "description": "Path to custom prompts directory",
+          "name": "MCP_PROMPTS_PATH",
+          "value": "/app/ros2_mcp_prompts"
+        },
+        {
+          "description": "Name of the prompts module",
+          "name": "MCP_PROMPTS_MODULE",
+          "value": "extension_prompts"
+        }
+      ],
+      "identifier": "docker.io/mcp/ros2:latest",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "Mount custom messages directory",
+          "name": "-v",
+          "type": "named",
+          "value": "~/mcp_custom_messages:/app/custom_msgs"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "a2f9d1e2ba",
+    "published_at": "2025-11-26T07:59:38.535007Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wise-vision/mcp_server_ros_2",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2025-11-26T07:59:38.535007Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

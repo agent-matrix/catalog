@@ -1,0 +1,121 @@
+{
+  "description": "MCP server that extracts clean, structured content from web pages with anti-bot bypass capabilities.",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-pulsemcp-servers-pulse-fetch.stdio.30f5630f0d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/pulsemcp/mcp-servers",
+    "homepage": "https://github.com/pulsemcp/mcp-servers",
+    "repository": "https://github.com/pulsemcp/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@pulsemcp/pulse-fetch==0.2.14"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.pulsemcp.servers/pulse-fetch",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API key for Firecrawl service to bypass anti-bot measures",
+          "isSecret": true,
+          "name": "FIRECRAWL_API_KEY"
+        },
+        {
+          "description": "Bearer token for BrightData Web Unlocker service",
+          "isSecret": true,
+          "name": "BRIGHTDATA_API_KEY"
+        },
+        {
+          "default": "/tmp/pulse-fetch/strategy.md",
+          "description": "Path to markdown file containing scraping strategy configuration",
+          "name": "STRATEGY_CONFIG_PATH"
+        },
+        {
+          "choices": [
+            "cost",
+            "speed"
+          ],
+          "default": "cost",
+          "description": "Optimization strategy for scraping: cost or speed",
+          "name": "OPTIMIZE_FOR"
+        },
+        {
+          "choices": [
+            "memory",
+            "filesystem"
+          ],
+          "default": "memory",
+          "description": "Storage backend for saved resources: memory or filesystem",
+          "name": "MCP_RESOURCE_STORAGE"
+        },
+        {
+          "default": "/tmp/pulse-fetch/resources",
+          "description": "Directory for filesystem storage (only used with filesystem type)",
+          "name": "MCP_RESOURCE_FILESYSTEM_ROOT"
+        },
+        {
+          "default": "false",
+          "description": "Skip API authentication health checks at startup",
+          "format": "boolean",
+          "name": "SKIP_HEALTH_CHECKS"
+        },
+        {
+          "choices": [
+            "anthropic",
+            "openai",
+            "openai-compatible"
+          ],
+          "description": "LLM provider for extract feature: anthropic, openai, openai-compatible",
+          "name": "LLM_PROVIDER"
+        },
+        {
+          "description": "API key for the chosen LLM provider",
+          "isSecret": true,
+          "name": "LLM_API_KEY"
+        },
+        {
+          "description": "Base URL for OpenAI-compatible providers",
+          "name": "LLM_API_BASE_URL"
+        },
+        {
+          "description": "Specific model to use for extraction",
+          "name": "LLM_MODEL"
+        }
+      ],
+      "identifier": "@pulsemcp/pulse-fetch",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.14"
+    }
+  ],
+  "provenance": {
+    "identity_key": "30f5630f0d",
+    "published_at": "2025-09-09T00:19:19.119118Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.pulsemcp.servers/pulse-fetch",
+    "server_version": "0.2.14",
+    "source": "mcp-registry",
+    "updated_at": "2025-09-09T00:19:19.119118Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.14"
+}

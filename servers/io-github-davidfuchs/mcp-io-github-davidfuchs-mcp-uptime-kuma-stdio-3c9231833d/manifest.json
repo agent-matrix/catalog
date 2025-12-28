@@ -1,0 +1,80 @@
+{
+  "description": "A Model Context Protocol (MCP) server for Uptime Kuma version 2.",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:27+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-DavidFuchs-mcp-uptime-kuma.stdio.3c9231833d",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/DavidFuchs/mcp-uptime-kuma",
+    "homepage": "https://github.com/DavidFuchs/mcp-uptime-kuma",
+    "repository": "https://github.com/DavidFuchs/mcp-uptime-kuma"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.DavidFuchs/mcp-uptime-kuma",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "The URL of your Uptime Kuma instance",
+          "format": "string",
+          "isRequired": true,
+          "name": "UPTIME_KUMA_URL"
+        },
+        {
+          "description": "Your Uptime Kuma username (not required if using JWT token authentication or if authentication is disabled)",
+          "format": "string",
+          "name": "UPTIME_KUMA_USERNAME"
+        },
+        {
+          "description": "Your Uptime Kuma password (not required if using JWT token authentication or if authentication is disabled)",
+          "format": "string",
+          "isSecret": true,
+          "name": "UPTIME_KUMA_PASSWORD"
+        },
+        {
+          "description": "Your 2FA token (only required if two-factor authentication is enabled on your account)",
+          "format": "string",
+          "isSecret": true,
+          "name": "UPTIME_KUMA_2FA_TOKEN"
+        },
+        {
+          "description": "Your JWT token for authentication (takes precedence over username/password if provided)",
+          "format": "string",
+          "isSecret": true,
+          "name": "UPTIME_KUMA_JWT_TOKEN"
+        }
+      ],
+      "identifier": "@davidfuchs/mcp-uptime-kuma",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.6.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "3c9231833d",
+    "published_at": "2025-11-28T21:10:33.868679Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.DavidFuchs/mcp-uptime-kuma",
+    "server_version": "0.6.2",
+    "source": "mcp-registry",
+    "updated_at": "2025-11-28T21:10:33.868679Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.6.2"
+}

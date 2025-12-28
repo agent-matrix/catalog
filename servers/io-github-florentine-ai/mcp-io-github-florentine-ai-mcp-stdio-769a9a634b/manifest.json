@@ -1,0 +1,123 @@
+{
+  "description": "MCP server for Florentine.ai - Natural language to MongoDB aggregations",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:44+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-florentine-ai-mcp.stdio.769a9a634b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/florentine-ai/mcp",
+    "homepage": "https://github.com/florentine-ai/mcp",
+    "repository": "https://github.com/florentine-ai/mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "isRequired": true,
+            "name": "-y",
+            "type": "named",
+            "value": "@florentine-ai/mcp@latest"
+          },
+          "@florentine-ai/mcp==0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.florentine-ai/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your Florentine.ai API key, get it from https://florentine.ai/dashboard",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "FLORENTINE_TOKEN"
+        },
+        {
+          "description": "The LLM service to use, one of 'openai', 'anthropic', 'google' or 'deepseek' (must only be provided if you did not set it in your Florentine.ai account)",
+          "format": "string",
+          "name": "LLM_SERVICE"
+        },
+        {
+          "description": "Your API key for the LLM service (must only be provided if you did not set it in your Florentine.ai account)",
+          "format": "string",
+          "isSecret": true,
+          "name": "LLM_KEY"
+        },
+        {
+          "description": "Session ID for maintaining server-side context across requests",
+          "format": "string",
+          "name": "SESSION_ID"
+        },
+        {
+          "description": "Stringified JSON array of return types for the response",
+          "format": "string",
+          "name": "RETURN_TYPES"
+        },
+        {
+          "description": "Stringified JSON array of values for required inputs keys",
+          "format": "string",
+          "name": "REQUIRED_INPUTS"
+        }
+      ],
+      "identifier": "@florentine-ai/mcp",
+      "packageArguments": [
+        {
+          "description": "The mode to run the MCP server in ('static' or 'dynamic')",
+          "isRequired": true,
+          "name": "--mode",
+          "type": "named",
+          "value": "static"
+        },
+        {
+          "description": "Set to true to enable debug logging",
+          "format": "boolean",
+          "name": "--debug",
+          "type": "named"
+        },
+        {
+          "description": "The path to the log file, must be provided if debug is true",
+          "format": "filepath",
+          "name": "--logpath",
+          "type": "named"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "isRequired": true,
+          "name": "-y",
+          "type": "named",
+          "value": "@florentine-ai/mcp@latest"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "769a9a634b",
+    "published_at": "2025-10-07T12:53:53.745395Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.florentine-ai/mcp",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2025-10-07T12:53:53.745395Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

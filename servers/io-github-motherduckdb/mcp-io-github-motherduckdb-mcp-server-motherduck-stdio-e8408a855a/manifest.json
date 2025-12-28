@@ -1,0 +1,113 @@
+{
+  "description": "Fast analytics and data processing with DuckDB and MotherDuck",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:53+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-motherduckdb-mcp-server-motherduck.stdio.e8408a855a",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/motherduckdb/mcp-server-motherduck",
+    "homepage": "https://github.com/motherduckdb/mcp-server-motherduck",
+    "repository": "https://github.com/motherduckdb/mcp-server-motherduck"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.motherduckdb/mcp-server-motherduck",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Access token to use for MotherDuck database connections",
+          "isSecret": true,
+          "name": "motherduck_token"
+        },
+        {
+          "description": "Home directory for DuckDB (used as default if --home-dir not specified)",
+          "name": "HOME"
+        }
+      ],
+      "identifier": "mcp-server-motherduck",
+      "packageArguments": [
+        {
+          "choices": [
+            "stdio",
+            "sse",
+            "stream"
+          ],
+          "default": "stdio",
+          "description": "Transport type for MCP server",
+          "name": "--transport",
+          "type": "named"
+        },
+        {
+          "default": "8000",
+          "description": "Port to listen on for sse and stream transport mode",
+          "format": "number",
+          "name": "--port",
+          "type": "named"
+        },
+        {
+          "default": "md:",
+          "description": "Path to local DuckDB database file or MotherDuck database",
+          "name": "--db-path",
+          "type": "named"
+        },
+        {
+          "description": "Access token to use for MotherDuck database connections",
+          "isSecret": true,
+          "name": "--motherduck-token",
+          "type": "named"
+        },
+        {
+          "description": "Flag for connecting to DuckDB or MotherDuck in read-only mode",
+          "name": "--read-only",
+          "type": "named"
+        },
+        {
+          "description": "Home directory for DuckDB",
+          "name": "--home-dir",
+          "type": "named"
+        },
+        {
+          "description": "Flag for connecting to MotherDuck in SaaS mode (disables filesystem and write permissions for local DuckDB)",
+          "name": "--saas-mode",
+          "type": "named"
+        },
+        {
+          "description": "Enable JSON responses for HTTP stream (only supported for stream transport)",
+          "name": "--json-response",
+          "type": "named"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.6.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e8408a855a",
+    "published_at": "2025-09-10T15:38:28.952825Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.motherduckdb/mcp-server-motherduck",
+    "server_version": "0.6.4",
+    "source": "mcp-registry",
+    "updated_at": "2025-09-10T15:38:28.952825Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.6.4"
+}

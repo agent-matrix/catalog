@@ -1,0 +1,131 @@
+{
+  "description": "The official MCP Server from Mia-Platform to interact with Mia-Platform Console",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:53+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mia-platform-console-mcp-server.stdio.db1a268b84",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/mia-platform/console-mcp-server",
+    "homepage": "https://github.com/mia-platform/console-mcp-server",
+    "repository": "https://github.com/mia-platform/console-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mia-platform/console-mcp-server",
+  "packages": [
+    {
+      "identifier": "@mia-platform/console-mcp-server",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "description": "The runtime command to execute",
+          "isRequired": true,
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "description": "Run container in interactive mode",
+          "format": "boolean",
+          "isRequired": true,
+          "name": "-i",
+          "type": "named",
+          "value": "true"
+        },
+        {
+          "description": "Automatically remove the container when it exits",
+          "format": "boolean",
+          "name": "--rm",
+          "type": "named",
+          "value": "true"
+        },
+        {
+          "description": "Set the MIA_PLATFORM_CLIENT_ID environment variable in the runtime, which is the client ID of the Service Account of the Mia-Platform Company you want to access.",
+          "isRequired": true,
+          "name": "-e",
+          "type": "named",
+          "value": "MIA_PLATFORM_CLIENT_ID={mia-platform-client-id}",
+          "variables": {
+            "token": {
+              "format": "string",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        },
+        {
+          "description": "Set the MIA_PLATFORM_CLIENT_ID environment variable in the runtime, which is the client secret of the Service Account of the Mia-Platform Company you want to access.",
+          "isRequired": true,
+          "name": "-e",
+          "type": "named",
+          "value": "MIA_PLATFORM_CLIENT_SECRET={mia-platform-client-secret}",
+          "variables": {
+            "token": {
+              "format": "string",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        },
+        {
+          "description": "The container image to run",
+          "isRequired": true,
+          "type": "positional",
+          "value": "ghcr.io/github/github-mcp-server",
+          "valueHint": "image_name"
+        },
+        {
+          "description": "This is to specify the MCP server application",
+          "isRequired": true,
+          "type": "positional",
+          "value": "mcp-server"
+        },
+        {
+          "description": "This is the command to start the MCP server",
+          "isRequired": true,
+          "type": "positional",
+          "value": "start"
+        },
+        {
+          "description": "Flag to inform the server to use the stdio transport",
+          "isRequired": true,
+          "type": "positional",
+          "value": "--stdio"
+        },
+        {
+          "description": "Flag to inform the server about the MCP host to connect to",
+          "isRequired": true,
+          "type": "positional",
+          "value": "--host=https://console.cloud.mia-platform.eu"
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "db1a268b84",
+    "published_at": "2025-11-20T13:53:36.781603Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mia-platform/console-mcp-server",
+    "server_version": "1.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2025-11-20T13:53:36.781603Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.2.2"
+}

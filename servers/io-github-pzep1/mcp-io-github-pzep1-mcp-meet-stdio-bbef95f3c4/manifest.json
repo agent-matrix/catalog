@@ -1,0 +1,89 @@
+{
+  "description": "One-click Google Meet scheduling and Apple Calendar mirroring with smart availability detection",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:56+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-pzep1-mcp-meet.stdio.bbef95f3c4",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/znz-systems/mcp-meet",
+    "homepage": "https://github.com/znz-systems/mcp-meet",
+    "repository": "https://github.com/znz-systems/mcp-meet"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.pzep1/mcp-meet",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Google OAuth Client ID",
+          "format": "string",
+          "isRequired": true,
+          "name": "GOOGLE_CLIENT_ID"
+        },
+        {
+          "description": "Google OAuth Client Secret",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GOOGLE_CLIENT_SECRET"
+        },
+        {
+          "default": "http://localhost:5173/oauth2/callback",
+          "description": "Google OAuth Redirect URI",
+          "format": "string",
+          "name": "GOOGLE_REDIRECT_URI"
+        },
+        {
+          "default": "primary",
+          "description": "Comma-separated list of calendar IDs to check for availability",
+          "format": "string",
+          "name": "CALENDAR_IDS"
+        },
+        {
+          "default": "Meetings",
+          "description": "Name of the Apple Calendar to create events in",
+          "format": "string",
+          "name": "APPLE_CALENDAR_NAME"
+        },
+        {
+          "default": "Europe/London",
+          "description": "Timezone for calendar operations",
+          "format": "string",
+          "name": "TZ"
+        }
+      ],
+      "identifier": "mcp-meet",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "bbef95f3c4",
+    "published_at": "2025-10-09T15:27:11.703854Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.pzep1/mcp-meet",
+    "server_version": "0.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2025-10-09T15:27:11.703854Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.1"
+}

@@ -1,0 +1,78 @@
+{
+  "description": "An MCP server to run arbitrary commands",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-bytedance-mcp-server-commands.stdio.67b9020985",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/bytedance/UI-TARS-desktop",
+    "homepage": "https://github.com/bytedance/UI-TARS-desktop",
+    "repository": "https://github.com/bytedance/UI-TARS-desktop"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "description": "current working directory",
+            "format": "string",
+            "name": "cwd",
+            "type": "named"
+          },
+          "@agent-infra/mcp-server-commands==latest"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.bytedance/mcp-server-commands",
+  "packages": [
+    {
+      "identifier": "@agent-infra/mcp-server-commands",
+      "packageArguments": [
+        {
+          "default": "8089",
+          "description": "Server port number",
+          "format": "number",
+          "isRequired": true,
+          "name": "port",
+          "type": "named"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "description": "current working directory",
+          "format": "string",
+          "name": "cwd",
+          "type": "named"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://127.0.0.1:{port}/mcp"
+      },
+      "version": "latest"
+    }
+  ],
+  "provenance": {
+    "identity_key": "67b9020985",
+    "published_at": "2025-09-09T06:16:30.413724Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.bytedance/mcp-server-commands",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2025-09-09T06:16:30.413724Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

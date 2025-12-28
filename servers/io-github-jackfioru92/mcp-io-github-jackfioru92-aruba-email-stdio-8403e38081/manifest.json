@@ -1,0 +1,79 @@
+{
+  "description": "MCP server for Aruba email and calendar via IMAP/SMTP/CalDAV",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:49+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-jackfioru92-aruba-email.stdio.8403e38081",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/jackfioru92/mcp-aruba-email",
+    "homepage": "https://github.com/jackfioru92/mcp-aruba-email",
+    "repository": "https://github.com/jackfioru92/mcp-aruba-email"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.jackfioru92/aruba-email",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your Aruba email address",
+          "format": "string",
+          "isRequired": true,
+          "name": "EMAIL_USER"
+        },
+        {
+          "description": "Your Aruba email password",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "EMAIL_PASSWORD"
+        },
+        {
+          "description": "IMAP server hostname (default: imaps.aruba.it)",
+          "format": "string",
+          "name": "IMAP_HOST"
+        },
+        {
+          "description": "SMTP server hostname (default: smtps.aruba.it)",
+          "format": "string",
+          "name": "SMTP_HOST"
+        },
+        {
+          "description": "CalDAV server URL (default: https://calendar.aruba.it/dav.php)",
+          "format": "string",
+          "name": "CALDAV_URL"
+        }
+      ],
+      "identifier": "mcp-aruba",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8403e38081",
+    "published_at": "2025-12-08T17:52:01.37779Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.jackfioru92/aruba-email",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2025-12-08T17:52:01.37779Z"
+  },
+  "title": "Aruba Email & Calendar",
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

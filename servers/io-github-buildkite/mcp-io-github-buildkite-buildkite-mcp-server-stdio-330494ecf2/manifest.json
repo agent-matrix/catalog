@@ -1,0 +1,122 @@
+{
+  "description": "MCP server exposing Buildkite API data (pipelines, builds, jobs, tests) to AI tooling and editors.",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-buildkite-buildkite-mcp-server.stdio.330494ecf2",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/buildkite/buildkite-mcp-server",
+    "homepage": "https://github.com/buildkite/buildkite-mcp-server",
+    "repository": "https://github.com/buildkite/buildkite-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "The runtime command to execute",
+            "type": "positional",
+            "value": "run"
+          },
+          {
+            "description": "Run container in interactive mode",
+            "name": "-i",
+            "type": "named"
+          },
+          {
+            "description": "Automatically remove the container when it exits",
+            "name": "--rm",
+            "type": "named"
+          },
+          {
+            "description": "Set an environment variable in the runtime",
+            "name": "-e",
+            "type": "named"
+          },
+          {
+            "description": "Environment variable name",
+            "type": "positional",
+            "value": "BUILDKITE_API_TOKEN"
+          },
+          {
+            "description": "The container image to run",
+            "type": "positional",
+            "value": "ghcr.io/buildkite/buildkite-mcp-server:0.7.0"
+          },
+          "ghcr.io/buildkite/buildkite-mcp-server:0.7.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.buildkite/buildkite-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Buildkite API token for authentication. Get one from https://buildkite.com/user/api-access-tokens",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "BUILDKITE_API_TOKEN"
+        }
+      ],
+      "identifier": "ghcr.io/buildkite/buildkite-mcp-server:0.7.0",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "The runtime command to execute",
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "description": "Run container in interactive mode",
+          "name": "-i",
+          "type": "named"
+        },
+        {
+          "description": "Automatically remove the container when it exits",
+          "name": "--rm",
+          "type": "named"
+        },
+        {
+          "description": "Set an environment variable in the runtime",
+          "name": "-e",
+          "type": "named"
+        },
+        {
+          "description": "Environment variable name",
+          "type": "positional",
+          "value": "BUILDKITE_API_TOKEN"
+        },
+        {
+          "description": "The container image to run",
+          "type": "positional",
+          "value": "ghcr.io/buildkite/buildkite-mcp-server:0.7.0"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "330494ecf2",
+    "published_at": "2025-10-10T05:18:04.942499Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.buildkite/buildkite-mcp-server",
+    "server_version": "0.7.0",
+    "source": "mcp-registry",
+    "updated_at": "2025-10-10T05:18:04.942499Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.7.0"
+}

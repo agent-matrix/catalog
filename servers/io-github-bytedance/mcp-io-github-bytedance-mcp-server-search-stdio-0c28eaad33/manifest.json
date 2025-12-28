@@ -1,0 +1,83 @@
+{
+  "description": "MCP server for web search operations",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-bytedance-mcp-server-search.stdio.0c28eaad33",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/bytedance/UI-TARS-desktop",
+    "homepage": "https://github.com/bytedance/UI-TARS-desktop",
+    "repository": "https://github.com/bytedance/UI-TARS-desktop"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@agent-infra/mcp-server-search==latest"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.bytedance/mcp-server-search",
+  "packages": [
+    {
+      "identifier": "@agent-infra/mcp-server-search",
+      "packageArguments": [
+        {
+          "default": "google",
+          "description": "Search engine to use for browser search (default: google)",
+          "format": "string",
+          "name": "engine",
+          "type": "named"
+        },
+        {
+          "description": "API key for the search provider",
+          "format": "string",
+          "name": "api-key",
+          "type": "named"
+        },
+        {
+          "description": "Base URL for the search provider",
+          "format": "string",
+          "name": "base-url",
+          "type": "named"
+        },
+        {
+          "default": "8089",
+          "description": "Server port number",
+          "format": "number",
+          "isRequired": true,
+          "name": "port",
+          "type": "named"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://127.0.0.1:{port}/mcp"
+      },
+      "version": "latest"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0c28eaad33",
+    "published_at": "2025-09-09T06:16:40.975101Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.bytedance/mcp-server-search",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2025-09-09T06:16:40.975101Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

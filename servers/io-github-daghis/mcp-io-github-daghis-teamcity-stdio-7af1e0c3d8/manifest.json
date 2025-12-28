@@ -1,0 +1,85 @@
+{
+  "description": "MCP server exposing JetBrains TeamCity CI/CD workflows to AI coding assistants",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:27+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Daghis-teamcity.stdio.7af1e0c3d8",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Daghis/teamcity-mcp",
+    "homepage": "https://github.com/Daghis/teamcity-mcp",
+    "repository": "https://github.com/Daghis/teamcity-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y"
+          },
+          "@daghis/teamcity-mcp==1.11.20"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Daghis/teamcity",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of your TeamCity server",
+          "isRequired": true,
+          "name": "TEAMCITY_URL"
+        },
+        {
+          "description": "TeamCity personal access token with required permissions",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "TEAMCITY_TOKEN"
+        },
+        {
+          "choices": [
+            "dev",
+            "full"
+          ],
+          "default": "dev",
+          "description": "Operational mode: dev (default) or full for elevated administrative tools",
+          "name": "MCP_MODE"
+        }
+      ],
+      "identifier": "@daghis/teamcity-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.11.20"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7af1e0c3d8",
+    "published_at": "2025-12-06T20:05:24.306752Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Daghis/teamcity",
+    "server_version": "1.11.20",
+    "source": "mcp-registry",
+    "updated_at": "2025-12-06T20:05:24.306752Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.11.20"
+}

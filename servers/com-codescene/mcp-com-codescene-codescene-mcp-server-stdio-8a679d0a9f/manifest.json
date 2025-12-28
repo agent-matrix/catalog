@@ -1,0 +1,86 @@
+{
+  "description": "An MCP server that provides CodeScene Code Health analysis tools.",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-codescene-codescene-mcp-server.stdio.8a679d0a9f",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/codescene-oss/codescene-mcp-server",
+    "homepage": "https://github.com/codescene-oss/codescene-mcp-server",
+    "repository": "https://github.com/codescene-oss/codescene-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.codescene/codescene-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "CodeScene API Token",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CS_ACCESS_TOKEN"
+        },
+        {
+          "description": "CodeScene ACE API Token",
+          "format": "string",
+          "isSecret": true,
+          "name": "CS_ACE_ACCESS_TOKEN"
+        },
+        {
+          "description": "CodeScene Path to code",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CS_MOUNT_PATH"
+        }
+      ],
+      "identifier": "docker.io/codescene/codescene-mcp:latest",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "Mount the path to code to be analysed by CodeScene",
+          "isRequired": true,
+          "name": "--mount",
+          "type": "named",
+          "value": "type=bind,src={source_path},dst=/mount/,ro",
+          "variables": {
+            "source_path": {
+              "description": "Path to code to be analysed by CodeScene",
+              "format": "filepath",
+              "isRequired": true
+            }
+          }
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "8a679d0a9f",
+    "published_at": "2025-12-12T12:10:03.180543Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.codescene/codescene-mcp-server",
+    "server_version": "1.0.2",
+    "source": "mcp-registry",
+    "updated_at": "2025-12-12T12:10:03.180543Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.2"
+}

@@ -1,0 +1,83 @@
+{
+  "description": "AI-powered MCP server for Apache Druid cluster management and analytic",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:19+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-iunera-druid-mcp-server.stdio.07a47ada7a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/iunera/druid-mcp-server",
+    "homepage": "https://github.com/iunera/druid-mcp-server",
+    "repository": "https://github.com/iunera/druid-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "docker.io/iunera/druid-mcp-server:1.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.iunera/druid-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Druid router URL for connecting to the Druid cluster",
+          "format": "string",
+          "name": "DRUID_ROUTER_URL"
+        },
+        {
+          "description": "Username for Druid authentication (optional)",
+          "format": "string",
+          "name": "DRUID_AUTH_USERNAME"
+        },
+        {
+          "description": "Password for Druid authentication (optional)",
+          "format": "string",
+          "name": "DRUID_AUTH_PASSWORD"
+        },
+        {
+          "description": "Enable SSL/TLS support for Druid connections",
+          "format": "boolean",
+          "name": "DRUID_SSL_ENABLED"
+        },
+        {
+          "description": "Skip SSL certificate verification (for development/testing only)",
+          "format": "boolean",
+          "name": "DRUID_SSL_SKIP_VERIFICATION"
+        },
+        {
+          "description": "Enable read-only mode (only GET requests and SQL queries allowed)",
+          "format": "boolean",
+          "name": "DRUID_MCP_READONLY_ENABLED"
+        }
+      ],
+      "identifier": "docker.io/iunera/druid-mcp-server:1.4.0",
+      "registryType": "oci",
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "07a47ada7a",
+    "published_at": "2025-10-02T21:09:21.736111Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.iunera/druid-mcp-server",
+    "server_version": "1.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2025-10-02T21:09:21.736111Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.4.0"
+}

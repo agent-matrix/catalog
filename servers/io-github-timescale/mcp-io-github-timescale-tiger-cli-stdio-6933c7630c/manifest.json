@@ -1,0 +1,93 @@
+{
+  "description": "Provides programmatic access to Tiger Cloud services, databases, and documentation.",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:39:02+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-timescale-tiger-cli.stdio.6933c7630c",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/timescale/tiger-cli",
+    "homepage": "https://github.com/timescale/tiger-cli",
+    "repository": "https://github.com/timescale/tiger-cli"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.timescale/tiger-cli",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Tiger Cloud API public key for authentication",
+          "format": "string",
+          "isRequired": true,
+          "name": "TIGER_PUBLIC_KEY"
+        },
+        {
+          "description": "Tiger Cloud API secret key for authentication",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "TIGER_SECRET_KEY"
+        }
+      ],
+      "identifier": "ghcr.io/timescale/tiger-cli:0.19.7",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "Mount the config directory into the volume",
+          "name": "--mount",
+          "type": "named",
+          "value": "type=bind,src={source_path},dst=/home/tiger/.config/tiger",
+          "variables": {
+            "source_path": {
+              "default": "${HOME}/.config/tiger",
+              "description": "Source path on host",
+              "format": "filepath",
+              "isRequired": true
+            }
+          }
+        },
+        {
+          "description": "Mount the .pgpass file into the volume",
+          "name": "--mount",
+          "type": "named",
+          "value": "type=bind,src={source_path},dst=/home/tiger/.pgpass",
+          "variables": {
+            "source_path": {
+              "default": "${HOME}/.pgpass",
+              "description": "Source path on host",
+              "format": "filepath",
+              "isRequired": true
+            }
+          }
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "6933c7630c",
+    "published_at": "2025-12-16T19:08:18.018409Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.timescale/tiger-cli",
+    "server_version": "0.19.7",
+    "source": "mcp-registry",
+    "updated_at": "2025-12-16T19:08:18.018409Z"
+  },
+  "title": "Tiger MCP",
+  "type": "mcp_server",
+  "version": "0.19.7"
+}

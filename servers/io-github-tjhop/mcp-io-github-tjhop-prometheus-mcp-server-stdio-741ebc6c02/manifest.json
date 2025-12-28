@@ -1,0 +1,90 @@
+{
+  "description": "An API-complete MCP server to manage Prometheus-compatible backends via comprehensive tools.",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:39:03+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-tjhop-prometheus-mcp-server.stdio.741ebc6c02",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/tjhop/prometheus-mcp-server",
+    "homepage": "https://github.com/tjhop/prometheus-mcp-server",
+    "repository": "https://github.com/tjhop/prometheus-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.tjhop/prometheus-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "URL of the Prometheus instance to connect to (default: \"http://127.0.0.1:9090\")",
+          "format": "string",
+          "isRequired": true,
+          "name": "PROMETHEUS_MCP_SERVER_PROMETHEUS_URL"
+        }
+      ],
+      "identifier": "ghcr.io/tjhop/prometheus-mcp-server:0.11.0",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "The runtime command to execute",
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "description": "Run container in interactive mode",
+          "name": "-i",
+          "type": "named"
+        },
+        {
+          "description": "Automatically remove the container when it exits",
+          "name": "--rm",
+          "type": "named"
+        },
+        {
+          "description": "Set an environment variable in the runtime",
+          "name": "-e",
+          "type": "named"
+        },
+        {
+          "description": "Environment variable name",
+          "type": "positional",
+          "value": "PROMETHEUS_MCP_SERVER_PROMETHEUS_URL",
+          "valueHint": "env_var_name"
+        },
+        {
+          "description": "The container image to run",
+          "type": "positional",
+          "value": "ghcr.io/tjhop/prometheus-mcp-server",
+          "valueHint": "image_name"
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "741ebc6c02",
+    "published_at": "2025-11-21T05:46:51.837572Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.tjhop/prometheus-mcp-server",
+    "server_version": "0.11.0",
+    "source": "mcp-registry",
+    "updated_at": "2025-11-21T05:46:51.837572Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.11.0"
+}

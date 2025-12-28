@@ -1,0 +1,78 @@
+{
+  "description": "An MCP server to extract keyphrases from a text with the BERT model",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:28+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-IvanRublev-keyphrases-mcp.stdio.3edb8aa2f6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/IvanRublev/keyphrases-mcp",
+    "homepage": "https://github.com/IvanRublev/keyphrases-mcp",
+    "repository": "https://github.com/IvanRublev/keyphrases-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "type": "positional",
+            "value": "keyphrases-mcp-server"
+          },
+          {
+            "description": "Directory containing documents to process",
+            "format": "filepath",
+            "isRequired": true,
+            "name": "--allowed-dir",
+            "type": "named",
+            "valueHint": "documents_directory"
+          },
+          "keyphrases-mcp==0.0.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.IvanRublev/keyphrases-mcp",
+  "packages": [
+    {
+      "identifier": "keyphrases-mcp",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "keyphrases-mcp-server"
+        },
+        {
+          "description": "Directory containing documents to process",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "--allowed-dir",
+          "type": "named",
+          "valueHint": "documents_directory"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.0.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "3edb8aa2f6",
+    "published_at": "2025-10-15T23:19:27.424097Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.IvanRublev/keyphrases-mcp",
+    "server_version": "0.0.4",
+    "source": "mcp-registry",
+    "updated_at": "2025-10-15T23:19:27.424097Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.0.4"
+}

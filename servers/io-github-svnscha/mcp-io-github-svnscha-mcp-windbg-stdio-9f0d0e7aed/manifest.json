@@ -1,0 +1,92 @@
+{
+  "description": "A Model Context Protocol server for Windows crash dump analysis using WinDbg/CDB",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:39:01+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-svnscha-mcp-windbg.stdio.9f0d0e7aed",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/svnscha/mcp-windbg",
+    "homepage": "https://github.com/svnscha/mcp-windbg",
+    "repository": "https://github.com/svnscha/mcp-windbg"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "name": "--transport",
+            "type": "named",
+            "value": "streamable-http"
+          },
+          {
+            "default": "8000",
+            "description": "Port for HTTP transport",
+            "name": "--port",
+            "type": "named",
+            "valueHint": "port"
+          },
+          "mcp-windbg==0.12.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.svnscha/mcp-windbg",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Custom path to cdb.exe (optional)",
+          "format": "string",
+          "name": "CDB_PATH"
+        },
+        {
+          "description": "Symbol path for Windows debugging (optional, defaults to Microsoft symbol server)",
+          "format": "string",
+          "name": "_NT_SYMBOL_PATH"
+        }
+      ],
+      "identifier": "mcp-windbg",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "name": "--transport",
+          "type": "named",
+          "value": "streamable-http"
+        },
+        {
+          "default": "8000",
+          "description": "Port for HTTP transport",
+          "name": "--port",
+          "type": "named",
+          "valueHint": "port"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:{port}/mcp"
+      },
+      "version": "0.12.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9f0d0e7aed",
+    "published_at": "2025-12-15T10:59:09.119039Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.svnscha/mcp-windbg",
+    "server_version": "0.12.2",
+    "source": "mcp-registry",
+    "updated_at": "2025-12-15T10:59:09.119039Z"
+  },
+  "title": "MCP Server for WinDbg Crash Analysis",
+  "type": "mcp_server",
+  "version": "0.12.2"
+}

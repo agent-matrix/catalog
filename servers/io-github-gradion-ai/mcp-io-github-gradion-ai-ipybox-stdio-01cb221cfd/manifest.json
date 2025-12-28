@@ -1,0 +1,101 @@
+{
+  "description": "An MCP server for sandboxed Python code execution with IPython and Docker, and file transfer.",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:46+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-gradion-ai-ipybox.stdio.01cb221cfd",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/gradion-ai/ipybox",
+    "homepage": "https://github.com/gradion-ai/ipybox",
+    "repository": "https://github.com/gradion-ai/ipybox"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "ipybox==0.6.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.gradion-ai/ipybox",
+  "packages": [
+    {
+      "identifier": "ipybox",
+      "packageArguments": [
+        {
+          "description": "Required MCP server subcommand",
+          "isRequired": true,
+          "type": "positional",
+          "value": "mcp"
+        },
+        {
+          "description": "Directory allowed for host filesystem operations",
+          "isRepeated": true,
+          "name": "--allowed-dir",
+          "type": "named",
+          "valueHint": "directory_path"
+        },
+        {
+          "description": "Domain, IP address, or CIDR range allowed for outbound network access",
+          "isRepeated": true,
+          "name": "--allowed-domain",
+          "type": "named",
+          "valueHint": "domain_or_ip"
+        },
+        {
+          "description": "Docker image tag to use",
+          "name": "--container-tag",
+          "type": "named",
+          "valueHint": "docker_image_tag"
+        },
+        {
+          "description": "Environment variable for container (KEY=VALUE format)",
+          "isRepeated": true,
+          "name": "--container-env-var",
+          "type": "named",
+          "valueHint": "env_var"
+        },
+        {
+          "description": "Path to file containing container environment variables",
+          "name": "--container-env-file",
+          "type": "named",
+          "valueHint": "file_path"
+        },
+        {
+          "description": "Bind mount for container (host_path:container_path format)",
+          "isRepeated": true,
+          "name": "--container-bind",
+          "type": "named",
+          "valueHint": "bind_mount"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.6.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "01cb221cfd",
+    "published_at": "2025-09-14T09:57:57.864977Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.gradion-ai/ipybox",
+    "server_version": "0.6.6",
+    "source": "mcp-registry",
+    "updated_at": "2025-09-14T09:57:57.864977Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.6.6"
+}

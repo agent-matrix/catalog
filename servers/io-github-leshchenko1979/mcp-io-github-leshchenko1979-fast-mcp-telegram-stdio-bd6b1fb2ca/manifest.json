@@ -1,0 +1,77 @@
+{
+  "description": "Telegram MCP server with search and messaging capabilities",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:51+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-leshchenko1979-fast-mcp-telegram.stdio.bd6b1fb2ca",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/leshchenko1979/fast-mcp-telegram",
+    "homepage": "https://github.com/leshchenko1979/fast-mcp-telegram",
+    "repository": "https://github.com/leshchenko1979/fast-mcp-telegram"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.leshchenko1979/fast-mcp-telegram",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Telegram API ID (from https://my.telegram.org/apps)",
+          "isRequired": true,
+          "name": "API_ID"
+        },
+        {
+          "description": "Telegram API Hash (from https://my.telegram.org/apps)",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "API_HASH"
+        },
+        {
+          "choices": [
+            "stdio",
+            "http-no-auth",
+            "http-auth"
+          ],
+          "default": "stdio",
+          "description": "Server mode: stdio (local), http-no-auth (dev), http-auth (prod)",
+          "name": "SERVER_MODE"
+        },
+        {
+          "description": "Custom session directory (defaults to ~/.config/fast-mcp-telegram/)",
+          "name": "SESSION_DIR"
+        }
+      ],
+      "identifier": "fast-mcp-telegram",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "bd6b1fb2ca",
+    "published_at": "2025-09-15T08:03:29.248076Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.leshchenko1979/fast-mcp-telegram",
+    "server_version": "0.4.5",
+    "source": "mcp-registry",
+    "updated_at": "2025-09-17T14:08:48.781464Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.4.5"
+}
