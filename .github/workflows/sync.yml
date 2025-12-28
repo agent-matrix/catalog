@@ -1,0 +1,191 @@
+name: Sync Catalog from Registry
+
+on:
+  schedule:
+    - cron: "15 2 * * *"   # 02:15 UTC daily
+  workflow_dispatch:       # Allow manual trigger
+    inputs:
+      registry_base_url:
+        description: 'MCP Registry API base URL'
+        required: false
+        default: 'https://registry.modelcontextprotocol.io'
+      enable_github_enrichment:
+        description: 'Enable optional GitHub enrichment (experimental)'
+        required: false
+        type: boolean
+        default: false
+      github_source_repo:
+        description: 'GitHub repo for optional enrichment'
+        required: false
+        default: 'https://github.com/modelcontextprotocol/servers'
+      limit_servers:
+        description: 'Limit number of servers (0 = unlimited, for testing)'
+        required: false
+        default: '0'
+
+# 🟢 REQUIRED: Grant write permission to the default GITHUB_TOKEN
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Checkout the CURRENT repo (catalog)
+      - name: Checkout catalog
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # 2. Checkout the TOOL repo (mcp_ingest) into a subfolder
+      - name: Checkout mcp_ingest tool
+        uses: actions/checkout@v4
+        with:
+          repository: agent-matrix/mcp_ingest
+          path: mcp_ingest_tool
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Cache pip packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-sync-catalog-${{ hashFiles('mcp_ingest_tool/pyproject.toml') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-sync-catalog-
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install jsonschema httpx
+
+      # 3. Install the tool from the subfolder
+      - name: Install mcp_ingest from source
+        run: |
+          cd mcp_ingest_tool
+          pip install -e ".[dev,harvester]"
+          python -c "import mcp_ingest; print(f'✓ mcp_ingest installed from source')"
+
+      - name: Harvest from MCP Registry
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # We are already in the catalog root
+          echo "🔄 Harvesting from MCP Registry API..."
+
+          LIMIT_ARG=""
+          if [ "${{ github.event.inputs.limit_servers }}" != "0" ]; then
+            LIMIT_ARG="--top ${{ github.event.inputs.limit_servers }}"
+          fi
+
+          mcp-ingest harvest-registry \
+            --registry-base "${{ github.event.inputs.registry_base_url || 'https://registry.modelcontextprotocol.io' }}" \
+            --out . \
+            $LIMIT_ARG \
+            --limit 10
+
+          echo "✅ Registry harvest complete"
+
+      - name: Optional GitHub Enrichment
+        if: github.event.inputs.enable_github_enrichment == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "🔄 Running optional GitHub enrichment..."
+          mcp-ingest harvest-source \
+            "${{ github.event.inputs.github_source_repo || 'https://github.com/modelcontextprotocol/servers' }}" \
+            --out ./github_enrichment \
+            --base-only \
+            -y
+          echo "✅ GitHub enrichment complete"
+
+      - name: Copy validation scripts
+        run: |
+          mkdir -p scripts
+          if [ -d mcp_ingest_tool/examples/catalog-automation/scripts ]; then
+            cp mcp_ingest_tool/examples/catalog-automation/scripts/validate_*.py scripts/ 2>/dev/null || true
+          fi
+
+      - name: Validate catalog structure
+        run: |
+          if [ -f scripts/validate_catalog_structure.py ]; then
+            python scripts/validate_catalog_structure.py
+          fi
+
+      - name: Validate catalog schemas
+        run: |
+          if [ -f scripts/validate_catalog_schemas.py ]; then
+            python scripts/validate_catalog_schemas.py
+          fi
+
+      - name: Validate catalog index
+        run: |
+          if [ -f scripts/validate_catalog_index.py ]; then
+            python scripts/validate_catalog_index.py
+          else
+             if [ -f index.json ]; then
+               python -c 'import json; idx=json.load(open("index.json")); assert "manifests" in idx or "items" in idx; print(f"✅ Index valid")' || exit 1
+             fi
+          fi
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if [[ -n $(git status --porcelain) ]]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Get catalog stats
+        id: stats
+        run: |
+          if [ -f index.json ]; then
+            echo "total=$(jq '.counts.total_items // 0' index.json)" >> $GITHUB_OUTPUT
+            echo "active=$(jq '.counts.active_manifests // 0' index.json)" >> $GITHUB_OUTPUT
+            echo "deprecated=$(jq '.counts.deprecated // 0' index.json)" >> $GITHUB_OUTPUT
+          else
+             echo "total=0" >> $GITHUB_OUTPUT; echo "active=0" >> $GITHUB_OUTPUT; echo "deprecated=0" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Push changes and create PR
+        if: steps.changes.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Uses the built-in token
+        run: |
+          # Configure git
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          # Create branch
+          BRANCH="bot/sync-mcp-registry-$(date +%s)"
+          git checkout -b "$BRANCH"
+
+          # Stage and Commit
+          git add -A
+          git commit -m "chore(sync): update MCP servers catalog"
+
+          # Push using default token
+          git push origin "$BRANCH"
+
+          # Create PR body
+          cat > /tmp/pr_body.md <<'PRBODY'
+          ## Automated Catalog Sync
+          Updates from [MCP Registry](${{ github.event.inputs.registry_base_url }}).
+          
+          ### Stats
+          - Total: ${{ steps.stats.outputs.total }}
+          - Active: ${{ steps.stats.outputs.active }}
+          - Deprecated: ${{ steps.stats.outputs.deprecated }}
+          PRBODY
+
+          # Create PR
+          gh pr create \
+            --title "chore(sync): automated catalog sync" \
+            --body-file /tmp/pr_body.md \
+            --label "automated,sync"
