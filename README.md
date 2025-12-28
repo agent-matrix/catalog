@@ -183,7 +183,42 @@ All PRs are validated via GitHub Actions:
 
 ### Local Development
 
-Run sync and validation locally:
+#### Quick Start (Using Makefile)
+
+The easiest way to run sync and validation locally:
+
+```bash
+# Setup virtual environment
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+
+# Install dependencies (automatically tries git checkout, falls back to PyPI)
+make setup
+
+# Run sync with debug logging
+make sync-debug
+
+# Validate results
+make validate
+
+# Or run full test cycle (sync + validate)
+make test
+
+# Check catalog status
+make status
+```
+
+**Available Makefile targets:**
+- `make setup` - Install dependencies (tries git, fallback to PyPI)
+- `make setup-dev` - Clone mcp_ingest repo to .tmp/ for development
+- `make sync` - Run sync with timestamped logs
+- `make sync-debug` - Run sync with verbose logging to logs/sync-debug.log
+- `make validate` - Run all validators
+- `make test` - Full cycle: sync + validate
+- `make status` - Quick catalog status check
+- `make clean` - Clean temporary files
+
+#### Manual Setup (Without Makefile)
 
 ```bash
 # Setup
@@ -191,8 +226,12 @@ python -m venv .venv
 source .venv/bin/activate
 pip install jsonschema ruff
 
-# Install mcp_ingest (assumes sibling directory)
-pip install -e ../mcp_ingest
+# Install mcp_ingest (method 1: from git - recommended for development)
+git clone https://github.com/agent-matrix/mcp_ingest.git .tmp/mcp_ingest
+pip install -e .tmp/mcp_ingest
+
+# Or install mcp_ingest (method 2: from PyPI - simpler, but may be older)
+pip install mcp-ingest
 
 # Run sync
 python scripts/sync_mcp_servers.py \
@@ -204,6 +243,10 @@ python scripts/sync_mcp_servers.py \
 # Validate
 python scripts/validate_catalog_structure.py
 python scripts/validate_catalog_schemas.py
+python scripts/validate_catalog_index.py
+
+# Lint
+ruff check scripts
 ```
 
 ## How to create new servers ➡️

@@ -40,16 +40,33 @@ jobs:
           python -m pip install --upgrade pip
           pip install jsonschema ruff
 
-      - name: Checkout mcp_ingest
+      - name: Checkout mcp_ingest (try git first, fallback to pip)
+        id: checkout-mcp-ingest
+        continue-on-error: true
         uses: actions/checkout@v4
         with:
           repository: agent-matrix/mcp_ingest
-          ref: main  # Pin to specific tag/SHA for production stability
+          ref: main
           path: ./.tmp/mcp_ingest
 
-      - name: Install mcp_ingest
+      - name: Install mcp_ingest from git checkout
+        if: steps.checkout-mcp-ingest.outcome == 'success'
+        continue-on-error: true
+        id: install-from-git
         run: |
           pip install -e ./.tmp/mcp_ingest
+          echo "installed_from=git" >> $GITHUB_OUTPUT
+
+      - name: Install mcp_ingest from PyPI (fallback)
+        if: steps.install-from-git.outcome != 'success'
+        run: |
+          echo "Git checkout or install failed, falling back to PyPI..."
+          pip install mcp-ingest
+          echo "installed_from=pypi" >> $GITHUB_OUTPUT
+
+      - name: Verify mcp_ingest installation
+        run: |
+          python -c "import mcp_ingest; print(f'mcp_ingest installed: {mcp_ingest.__file__}')"
 
       - name: Harvest + sync into catalog
         env:
@@ -65,6 +82,7 @@ jobs:
         run: |
           python scripts/validate_catalog_structure.py
           python scripts/validate_catalog_schemas.py
+          python scripts/validate_catalog_index.py
 
       - name: Lint scripts
         run: ruff check scripts
