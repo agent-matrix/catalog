@@ -46,20 +46,29 @@ This catalog is the **source of truth** for Matrix Hub's MCP server registry:
 │   ├── sync_mcp_servers.py        # Daily sync orchestrator
 │   ├── validate_catalog_structure.py
 │   └── validate_catalog_schemas.py
-├── mcp-servers/                    # Synced MCP servers
-│   └── github.com/
-│       └── <owner>/
-│           └── <repo>/
-│               └── <stable-slug>/
-│                   ├── manifest.json
-│                   └── provenance.json
-└── servers/                        # Legacy/manual submissions (preserved)
+└── servers/                        # Auto-synced MCP servers (deterministic paths)
+    ├── <owner>-<repo>/             # Group directory (e.g., modelcontextprotocol-servers)
+    │   ├── index.json              # Group-level manifest list
+    │   ├── <repo>__./              # Root server variant
+    │   │   ├── manifest.json       # MCP server manifest
+    │   │   ├── provenance.json     # Source + harvest metadata
+    │   │   └── index.json          # Variant-level index
+    │   └── <repo>__<subpath>/      # Nested server variant (e.g., servers__src__filesystem)
+    │       ├── manifest.json
+    │       ├── provenance.json
+    │       └── index.json
+    └── ...
 ```
 
 ### Structure Details
 
-- **`index.json`**: Deterministic catalog with metadata for all servers
-- **`mcp-servers/`**: Auto-synced servers using stable folder mapping
+- **`index.json`**: Deterministic catalog with:
+  - `items[]`: Full audit trail (active + deprecated servers)
+  - `manifests[]`: **Active-only**, **relative paths** for Matrix Hub ingestion
+- **`servers/<owner>-<repo>/`**: Stable group directory using slugified owner-repo
+- **`servers/<owner>-<repo>/<repo>__<subpath>/`**: Deterministic variant directory
+  - Root servers: `<repo>__.` (e.g., `servers__.`)
+  - Nested servers: `<repo>__src__filesystem` (slashes become `__`)
 - **`schema/`**: JSON Schema definitions for validation
 - **`scripts/`**: Automation and validation tooling
 
@@ -71,11 +80,15 @@ Every day at 02:15 UTC, a GitHub Action:
 
 1. Runs `mcp_ingest.harvest_source()` against `modelcontextprotocol/servers`
 2. Discovers base repo + README-linked repos
-3. Generates deterministic folder structure with stable slugs
-4. Deduplicates by `(repo, path, transport, id)`
-5. Rebuilds `index.json` with sorted entries
-6. Validates all manifests against schema
-7. Opens PR if changes detected
+3. Generates deterministic folder structure: `servers/<owner>-<repo>/<repo>__<subpath>/`
+4. Deduplicates by `(repo, path, transport)` — **stable, location-based identity**
+5. Detects manifest ID collisions (prevents DB corruption)
+6. Deprecates missing servers (preserves history, not deleted)
+7. Rebuilds `index.json` with:
+   - `items[]`: All servers (active + deprecated)
+   - `manifests[]`: Active-only relative paths
+8. Validates all manifests against schema
+9. Opens PR if changes detected
 
 ### Index Format
 
@@ -95,7 +108,9 @@ Example structure:
     "root_repo": "https://github.com/modelcontextprotocol/servers"
   },
   "counts": {
-    "mcp_servers": 42
+    "total_items": 150,
+    "active_manifests": 145,
+    "deprecated_added_this_run": 0
   },
   "items": [
     {
@@ -103,13 +118,32 @@ Example structure:
       "id": "filesystem",
       "name": "Filesystem MCP Server",
       "transport": "STDIO",
-      "manifest_path": "mcp-servers/github.com/modelcontextprotocol/servers/filesystem/manifest.json",
+      "status": "active",
+      "manifest_path": "servers/modelcontextprotocol-servers/servers__src__filesystem/manifest.json",
       "repo": "https://github.com/modelcontextprotocol/servers",
       "subpath": "src/filesystem"
+    },
+    {
+      "type": "mcp_server",
+      "id": "old-server",
+      "name": "Deprecated Server",
+      "transport": "SSE",
+      "status": "deprecated",
+      "manifest_path": "servers/example-owner/example__./manifest.json",
+      "repo": "https://github.com/example/owner",
+      "subpath": ""
     }
+  ],
+  "manifests": [
+    "servers/modelcontextprotocol-servers/servers__src__filesystem/manifest.json"
   ]
 }
 ```
+
+**Key Points**:
+- `manifests[]`: **Active-only**, **relative paths** — safe for Matrix Hub ingestion
+- `items[]`: Full audit trail including deprecated servers with `status` field
+- Counts track total items, active manifests, and newly deprecated in this run
 
 ### Manifest Format
 
@@ -164,7 +198,7 @@ pip install -e ../mcp_ingest
 python scripts/sync_mcp_servers.py \
   --source-repo "https://github.com/modelcontextprotocol/servers" \
   --catalog-root "." \
-  --out-dir "mcp-servers" \
+  --servers-dir "servers" \
   --index-file "index.json"
 
 # Validate
@@ -256,7 +290,7 @@ Each manifest provides DB-ready data:
 
 ### For Matrix Hub Developers
 
-To ingest the catalog:
+**Recommended ingestion strategy** (use `manifests[]` for active-only):
 
 ```python
 import requests
@@ -266,10 +300,11 @@ catalog = requests.get(
     "https://raw.githubusercontent.com/agent-matrix/catalog/main/index.json"
 ).json()
 
-# Process each server
-for item in catalog["items"]:
-    manifest_path = item["manifest_path"]
-    manifest_url = f"https://raw.githubusercontent.com/agent-matrix/catalog/main/{manifest_path}"
+# Ingest ACTIVE-ONLY servers using manifests[] (relative paths)
+base_url = "https://raw.githubusercontent.com/agent-matrix/catalog/main"
+
+for manifest_path in catalog["manifests"]:
+    manifest_url = f"{base_url}/{manifest_path}"
     manifest = requests.get(manifest_url).json()
 
     # Upsert to database
@@ -277,9 +312,33 @@ for item in catalog["items"]:
         server_id=manifest["id"],
         name=manifest["name"],
         transport=manifest["mcp_registration"]["server"]["transport"],
+        status="active",  # All items in manifests[] are active
+        lifecycle=manifest.get("lifecycle"),
+        provenance=manifest.get("provenance"),
         # ... other fields
     )
 ```
+
+**Alternative: Use `items[]` for full control** (includes deprecated):
+
+```python
+# For audit trail or deprecated server management
+for item in catalog["items"]:
+    if item["status"] == "active":
+        # Process active servers
+        manifest_url = f"{base_url}/{item['manifest_path']}"
+        manifest = requests.get(manifest_url).json()
+        upsert_server(manifest, status="active")
+    elif item["status"] == "deprecated":
+        # Mark as deprecated in DB (don't delete, preserve history)
+        update_server_status(item["id"], "deprecated")
+```
+
+**Key principles**:
+- **Use `manifests[]`**: Simple, active-only ingestion (recommended)
+- **Use `items[]`**: Full audit trail with status filtering
+- **Never delete**: Mark as deprecated to preserve history
+- **Filter by status**: UI shows active by default, deprecated with warning
 
 ## Working with mcp_ingest
 
