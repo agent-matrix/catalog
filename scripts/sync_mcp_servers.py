@@ -203,6 +203,22 @@ def build_variant_dir(group_dir: Path, repo_full: str, subpath: str) -> Path:
     return group_dir / variant
 
 
+def rebuild_group_indexes(servers_dir: Path) -> None:
+    """
+    Ensure servers/<group>/index.json lists all variant manifests that exist on disk.
+    This prevents deprecated variants from being lost from group indexes.
+    """
+    for group in servers_dir.iterdir():
+        if not group.is_dir():
+            continue
+        relpaths: List[str] = []
+        for mf in group.glob("**/manifest.json"):
+            rel = str(mf.relative_to(group)).replace("\\", "/")
+            relpaths.append(rel)
+        relpaths = sorted(set(relpaths))
+        write_json(group / "index.json", {"manifests": relpaths})
+
+
 # ---------------------------
 # Main
 # ---------------------------
@@ -260,9 +276,6 @@ def main() -> None:
     top_items: List[Dict[str, Any]] = []
     active_manifest_relpaths: List[str] = []
 
-    # Per-group manifest listing
-    group_to_relpaths: Dict[Path, List[str]] = {}
-
     for mp in manifest_paths:
         src_path = resolve_manifest_path(harvest_out, mp)
         if not src_path:
@@ -288,11 +301,11 @@ def main() -> None:
 
         if mid in id_to_key and id_to_key[mid] != key:
             raise SystemExit(
-                "Manifest id collision detected:\n"
+                "Manifest id collision detected (will break DB upserts):\n"
                 f"  id: {mid}\n"
                 f"  key1: {id_to_key[mid]}\n"
                 f"  key2: {key}\n"
-                "This will break DB upserts. Fix upstream ids or implement a deterministic id policy."
+                "Fix upstream or define an ID policy (fail-safe recommended)."
             )
         id_to_key[mid] = key
 
@@ -319,11 +332,10 @@ def main() -> None:
         # Variant-level index.json
         write_json(variant_dir / "index.json", {"manifests": ["./manifest.json"]})
 
-        # Track relpath for top-level + group-level indexes
+        # Track relpath for top-level index
         rel_manifest = str(dest_manifest.relative_to(catalog_root)).replace("\\", "/")
-        rel_variant_manifest = str(dest_manifest.relative_to(group_dir)).replace("\\", "/")
-
-        group_to_relpaths.setdefault(group_dir, []).append(rel_variant_manifest)
+        if "..." in rel_manifest:
+            raise SystemExit(f"Invalid manifest_path contains '...': {rel_manifest}")
 
         seen_keys.add(key)
 
@@ -381,15 +393,18 @@ def main() -> None:
             }
         )
 
-    # Write group-level index.json files (active + deprecated paths are okay here,
-    # but we keep it simple and list everything present under the group)
-    for group_dir, relpaths in group_to_relpaths.items():
-        relpaths_sorted = sorted(set(relpaths))
-        write_json(group_dir / "index.json", {"manifests": relpaths_sorted})
+    # Rebuild group indexes to include all variants (active + deprecated)
+    rebuild_group_indexes(servers_dir)
 
     # Deterministic sort
     top_items.sort(key=lambda x: (str(x.get("id") or ""), str(x.get("manifest_path") or "")))
     active_manifest_relpaths = sorted(set(active_manifest_relpaths))
+
+    # Guarantee all active manifest paths exist on disk
+    for rel in active_manifest_relpaths:
+        p = catalog_root / rel
+        if not p.exists():
+            raise SystemExit(f"index.json.manifests contains missing path: {rel}")
 
     top_index = {
         "generated_at": now_iso(),

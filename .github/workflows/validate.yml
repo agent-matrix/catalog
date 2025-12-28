@@ -31,5 +31,8 @@ jobs:
       - name: Validate schemas
         run: python scripts/validate_catalog_schemas.py
 
+      - name: Validate index integrity
+        run: python scripts/validate_catalog_index.py
+
       - name: Lint scripts
         run: ruff check scripts
