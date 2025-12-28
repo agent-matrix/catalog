@@ -27,6 +27,14 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Cache pip packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('.github/workflows/sync-mcp-servers.yml') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
       - name: Install catalog tooling
         run: |
           python -m pip install --upgrade pip
@@ -36,6 +44,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: agent-matrix/mcp_ingest
+          ref: main  # Pin to specific tag/SHA for production stability
           path: ./.tmp/mcp_ingest
 
       - name: Install mcp_ingest
@@ -49,7 +58,7 @@ jobs:
           python scripts/sync_mcp_servers.py \
             --source-repo "https://github.com/modelcontextprotocol/servers" \
             --catalog-root "." \
-            --out-dir "mcp-servers" \
+            --servers-dir "servers" \
             --index-file "index.json"
 
       - name: Validate structure + schemas

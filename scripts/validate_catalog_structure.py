@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """
-Validate catalog structure and manifest requirements.
+Validate catalog structure and manifest requirements (servers/**).
 
 Ensures:
 - index.json exists and is valid
-- All mcp-servers manifests parse correctly
+- All servers/** manifests parse correctly
 - Required fields are present for Matrix Hub ingestion and DB population
 """
+
 from __future__ import annotations
 
 import json
@@ -15,7 +16,6 @@ from pathlib import Path
 
 
 def main() -> None:
-    """Run structure validation checks."""
     root = Path(".")
     errors = 0
 
@@ -27,18 +27,25 @@ def main() -> None:
     else:
         try:
             index_data = json.loads(index_path.read_text(encoding="utf-8"))
-            print(f"✓ index.json is valid JSON")
+            print("✓ index.json is valid JSON")
 
-            # Validate index structure
+            if "manifests" not in index_data:
+                print("❌ index.json missing 'manifests' field", file=sys.stderr)
+                errors += 1
             if "items" not in index_data:
-                print("⚠️  index.json missing 'items' field", file=sys.stderr)
+                print("⚠️  index.json missing 'items' field (recommended for auditing)", file=sys.stderr)
+
+            if "manifests" in index_data and not isinstance(index_data["manifests"], list):
+                print("❌ index.json 'manifests' must be a list", file=sys.stderr)
+                errors += 1
+
         except Exception as e:
             print(f"❌ Invalid JSON in index.json: {e}", file=sys.stderr)
             errors += 1
 
-    # Validate all mcp-servers manifests
+    # Validate all servers/** manifests
     manifest_count = 0
-    for mf in root.glob("mcp-servers/**/manifest.json"):
+    for mf in root.glob("servers/**/manifest.json"):
         manifest_count += 1
 
         try:
@@ -48,44 +55,41 @@ def main() -> None:
             errors += 1
             continue
 
-        # Check type
         if data.get("type") != "mcp_server":
             print(f"❌ Unexpected type in {mf}: {data.get('type')} (expected 'mcp_server')", file=sys.stderr)
             errors += 1
 
         # Minimum viable keys for Matrix Hub & DB population
-        required_fields = ["id", "name", "mcp_registration"]
-        for field in required_fields:
-            if field not in data:
+        for field in ["id", "name", "mcp_registration"]:
+            if field not in data or data.get(field) in (None, ""):
                 print(f"❌ Missing required field '{field}' in {mf}", file=sys.stderr)
                 errors += 1
 
-        # Check mcp_registration structure
         reg = data.get("mcp_registration") or {}
         server = reg.get("server") or {}
 
-        if "transport" not in server:
+        transport = server.get("transport")
+        if not transport:
             print(f"❌ Missing mcp_registration.server.transport in {mf}", file=sys.stderr)
             errors += 1
         else:
-            transport = server.get("transport")
             if transport not in ["SSE", "STDIO", "WS"]:
                 print(f"⚠️  Unexpected transport '{transport}' in {mf} (expected SSE, STDIO, or WS)", file=sys.stderr)
 
-            # Validate transport-specific requirements
-            if transport == "SSE" or transport == "WS":
-                if "url" not in server or not server.get("url"):
+            if transport in ["SSE", "WS"]:
+                if not server.get("url"):
                     print(f"❌ Missing server.url for {transport} transport in {mf}", file=sys.stderr)
                     errors += 1
             elif transport == "STDIO":
-                if "exec" not in server or not server.get("exec"):
+                if not server.get("exec"):
                     print(f"❌ Missing server.exec for STDIO transport in {mf}", file=sys.stderr)
                     errors += 1
 
     if manifest_count == 0:
-        print("⚠️  No manifests found in mcp-servers/", file=sys.stderr)
+        print("❌ No manifests found in servers/** (sync likely misconfigured)", file=sys.stderr)
+        errors += 1
     else:
-        print(f"✓ Validated {manifest_count} manifests")
+        print(f"✓ Validated {manifest_count} manifests under servers/**")
 
     if errors:
         print(f"\n❌ Validation failed with {errors} error(s)", file=sys.stderr)

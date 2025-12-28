@@ -109,6 +109,52 @@
       },
       "additionalProperties": true
     },
+    "lifecycle": {
+      "type": ["object", "null"],
+      "description": "Lifecycle and deprecation tracking",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["active", "deprecated", "disabled", "deleted"],
+          "description": "Current lifecycle status"
+        },
+        "deprecated_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp when manifest was deprecated"
+        },
+        "reason": {
+          "type": ["string", "null"],
+          "description": "Human-readable deprecation/status reason"
+        },
+        "replaced_by": {
+          "type": ["string", "null"],
+          "description": "ID of replacement server if applicable"
+        },
+        "reactivated_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp when deprecated manifest was reactivated"
+        }
+      },
+      "additionalProperties": true
+    },
+    "harvest": {
+      "type": ["object", "null"],
+      "description": "Harvest tracking metadata",
+      "properties": {
+        "seen_in_latest_run": {
+          "type": "boolean",
+          "description": "Whether this manifest was found in the most recent harvest"
+        },
+        "last_seen_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp of last successful harvest"
+        }
+      },
+      "additionalProperties": true
+    },
     "tags": {
       "type": "array",
       "items": {
@@ -136,5 +182,115 @@
       "description": "Source code repository URL"
     }
   },
-  "additionalProperties": true
+  "additionalProperties": true,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "mcp_registration": {
+            "properties": {
+              "server": {
+                "properties": {
+                  "transport": {
+                    "const": "SSE"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "mcp_registration": {
+            "properties": {
+              "server": {
+                "required": ["url"],
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mcp_registration": {
+            "properties": {
+              "server": {
+                "properties": {
+                  "transport": {
+                    "const": "WS"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "mcp_registration": {
+            "properties": {
+              "server": {
+                "required": ["url"],
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mcp_registration": {
+            "properties": {
+              "server": {
+                "properties": {
+                  "transport": {
+                    "const": "STDIO"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "mcp_registration": {
+            "properties": {
+              "server": {
+                "required": ["exec"],
+                "properties": {
+                  "exec": {
+                    "type": "object",
+                    "required": ["cmd"],
+                    "properties": {
+                      "cmd": {
+                        "type": "array",
+                        "minItems": 1
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
 }

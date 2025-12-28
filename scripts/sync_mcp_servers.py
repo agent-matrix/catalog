@@ -1,147 +1,223 @@
 #!/usr/bin/env python3
 """
-Production-ready sync script for agent-matrix/catalog.
-Uses mcp_ingest.harvest.source to discover MCP servers, then deterministically
-rebuilds the catalog structure with stable slugging and deduplication.
+Daily sync for agent-matrix/catalog using mcp_ingest, writing to servers/** only.
+
+Outputs:
+- servers/<owner>-<repo>/index.json
+- servers/<owner>-<repo>/<repo>__<subpath>/manifest.json
+- servers/<owner>-<repo>/<repo>__<subpath>/index.json
+- servers/<owner>-<repo>/<repo>__<subpath>/provenance.json
+- top-level index.json
+
+Key goals:
+- Deterministic paths (no churn)
+- Deprecation instead of deletion
+- Active-only manifests[] in top-level index.json (prevents ingesting deprecated)
+- Collision detection on manifest.id (prevents DB clobber)
 """
+
 from __future__ import annotations
 
 import argparse
 import json
-import os
+import re
 import shutil
 from dataclasses import dataclass
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any
+from typing import Any, Dict, Iterable, List, Optional, Tuple
 
 from mcp_ingest.harvest.source import harvest_source
-from mcp_ingest.utils.slug import slug_from_repo_and_path
 
+
+# ---------------------------
+# Small utilities
+# ---------------------------
 
 def now_iso() -> str:
-    """Return current UTC timestamp in ISO format."""
     return datetime.now(timezone.utc).replace(microsecond=0).isoformat()
 
-
 def read_json(path: Path) -> Any:
-    """Read and parse JSON file."""
     return json.loads(path.read_text(encoding="utf-8"))
 
-
 def write_json(path: Path, obj: Any) -> None:
-    """Write object as formatted JSON with deterministic sorting."""
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(obj, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
-
 def norm_repo_full(repo_url: str) -> str:
     """
-    Normalize GitHub repo URL to owner/repo format.
-
-    Examples:
-        https://github.com/owner/repo -> owner/repo
-        https://github.com/owner/repo.git -> owner/repo
+    Normalize GitHub repo URL to owner/repo
     """
-    repo_url = repo_url.strip().rstrip("/")
-    if "github.com/" in repo_url:
-        repo_url = repo_url.split("github.com/", 1)[1]
-    if repo_url.endswith(".git"):
-        repo_url = repo_url[:-4]
-    return repo_url
+    s = (repo_url or "").strip().rstrip("/")
+    if "github.com/" in s:
+        s = s.split("github.com/", 1)[1]
+    if s.endswith(".git"):
+        s = s[:-4]
+    # In case someone passes owner/repo already:
+    s = s.strip("/")
+    return s
 
+def safe_slug(s: str) -> str:
+    """
+    Lowercase + replace non [a-z0-9]+ with single '-' and strip.
+    """
+    s = s.lower()
+    s = re.sub(r"[^a-z0-9]+", "-", s)
+    s = s.strip("-")
+    return s or "unknown"
+
+def subpath_to_variant(repo: str, subpath: str) -> str:
+    """
+    Build the per-server "variant directory" name:
+      <repo>__<subpath>  with '/' -> '__'
+    Root is represented as '.' (so folder becomes '<repo>__.') which matches your current repo.
+    """
+    sp = (subpath or "").lstrip("/").strip()
+    if not sp:
+        sp = "."
+    sp = sp.replace("\\", "/")
+    sp = sp.replace("/", "__")
+    return f"{repo}__{sp}"
+
+def resolve_manifest_path(harvest_out: Path, mp: str) -> Optional[Path]:
+    """
+    Resolve manifest path from mcp_ingest harvested index.
+    """
+    p = Path(mp)
+    if p.is_absolute() and p.exists():
+        return p
+
+    p2 = (harvest_out / p).resolve()
+    if p2.exists():
+        return p2
+
+    # last resort: filename search
+    matches = list(harvest_out.rglob(p.name))
+    if len(matches) == 1:
+        return matches[0]
+    return None
+
+
+# ---------------------------
+# Identity + lifecycle
+# ---------------------------
 
 @dataclass(frozen=True)
-class CatalogItemKey:
-    """Unique key for deduplication of catalog items."""
-    repo: str
-    path: str
-    transport: str
-    manifest_id: str
+class CatalogKey:
+    repo_full: str      # owner/repo
+    subpath: str        # '' or 'src/...'
+    transport: str      # SSE/STDIO/WS/UNKNOWN
 
-
-def extract_source_repo_path(manifest: dict[str, Any]) -> tuple[str, str]:
-    """
-    Extract repository and subpath from manifest provenance.
-
-    mcp_ingest manifests may include source/provenance fields depending on harvesters.
-    We try best-effort extraction. If missing, fall back to "unknown".
-
-    Returns:
-        tuple[str, str]: (normalized_repo, subpath)
-    """
+def extract_source_repo_path(manifest: Dict[str, Any]) -> Tuple[str, str]:
     prov = manifest.get("provenance") or {}
     repo_url = prov.get("repo_url") or prov.get("repo") or prov.get("source_repo") or ""
     subpath = prov.get("subpath") or prov.get("path") or prov.get("source_path") or ""
-    return (norm_repo_full(str(repo_url)) if repo_url else "unknown/unknown", str(subpath or "").lstrip("/"))
+    repo_full = norm_repo_full(str(repo_url)) if repo_url else "unknown/unknown"
+    return repo_full, str(subpath or "").lstrip("/")
 
-
-def extract_transport(manifest: dict[str, Any]) -> str:
-    """
-    Extract transport type from MCP server manifest.
-
-    Returns transport in uppercase: "SSE", "STDIO", "WS", or "UNKNOWN".
-    """
+def extract_transport(manifest: Dict[str, Any]) -> str:
     reg = manifest.get("mcp_registration") or {}
     server = reg.get("server") or {}
-    transport = str(server.get("transport") or "").upper().strip()
-    return transport or "UNKNOWN"
+    t = str(server.get("transport") or "").upper().strip()
+    return t or "UNKNOWN"
+
+def mark_active_seen(manifest: Dict[str, Any]) -> Dict[str, Any]:
+    ts = now_iso()
+
+    lifecycle = manifest.get("lifecycle") or {}
+    if lifecycle.get("status") == "deprecated":
+        lifecycle["status"] = "active"
+        lifecycle["reactivated_at"] = ts
+    lifecycle.setdefault("status", "active")
+    manifest["lifecycle"] = lifecycle
+
+    harvest = manifest.get("harvest") or {}
+    harvest["seen_in_latest_run"] = True
+    harvest["last_seen_at"] = ts
+    manifest["harvest"] = harvest
+    return manifest
+
+def mark_deprecated(manifest: Dict[str, Any], reason: str) -> Dict[str, Any]:
+    ts = now_iso()
+
+    lifecycle = manifest.get("lifecycle") or {}
+    if lifecycle.get("status") != "disabled":
+        lifecycle["status"] = "deprecated"
+    lifecycle.setdefault("deprecated_at", ts)
+    lifecycle["reason"] = reason
+    lifecycle.setdefault("replaced_by", None)
+    manifest["lifecycle"] = lifecycle
+
+    harvest = manifest.get("harvest") or {}
+    harvest["seen_in_latest_run"] = False
+    harvest.setdefault("last_seen_at", ts)
+    manifest["harvest"] = harvest
+    return manifest
 
 
-def build_catalog_folder(out_dir: Path, repo_full: str, subpath: str) -> Path:
+# ---------------------------
+# Catalog scanning (existing)
+# ---------------------------
+
+def iter_existing_manifests(servers_dir: Path) -> Iterable[Path]:
+    yield from servers_dir.glob("**/manifest.json")
+
+def load_existing_by_key(servers_dir: Path) -> Dict[CatalogKey, Path]:
     """
-    Build deterministic catalog folder path using stable slugging.
+    Map stable key -> manifest.json path.
+    This is used to deprecate "missing" entries without relying on manifest.id.
+    """
+    out: Dict[CatalogKey, Path] = {}
+    for mf in iter_existing_manifests(servers_dir):
+        try:
+            m = read_json(mf)
+        except Exception:
+            continue
+        if m.get("type") != "mcp_server":
+            continue
+        repo_full, subpath = extract_source_repo_path(m)
+        transport = extract_transport(m)
+        key = CatalogKey(repo_full=repo_full, subpath=subpath, transport=transport)
+        out[key] = mf
+    return out
 
-    Structure: out_dir/github.com/owner/repo/stable-slug/
 
-    Args:
-        out_dir: Base output directory (e.g., mcp-servers)
-        repo_full: Repository in owner/repo format
-        subpath: Subpath within repository
+# ---------------------------
+# Path building (servers/**)
+# ---------------------------
 
-    Returns:
-        Path to catalog folder for this server
+def build_group_dir(servers_dir: Path, repo_full: str) -> Path:
+    """
+    servers/<owner>-<repo>
     """
     owner, repo = (repo_full.split("/", 1) + ["unknown"])[:2]
-    stable = slug_from_repo_and_path(owner, repo, subpath or "")
-    return out_dir / "github.com" / owner / repo / stable
+    group = f"{safe_slug(owner)}-{safe_slug(repo)}"
+    return servers_dir / group
 
+def build_variant_dir(group_dir: Path, repo_full: str, subpath: str) -> Path:
+    """
+    servers/<owner>-<repo>/<repo>__<subpath>
+    """
+    _, repo = (repo_full.split("/", 1) + ["unknown"])[:2]
+    variant = subpath_to_variant(safe_slug(repo), subpath)
+    return group_dir / variant
+
+
+# ---------------------------
+# Main
+# ---------------------------
 
 def main() -> None:
-    """Main sync orchestration."""
-    ap = argparse.ArgumentParser(
-        description="Sync MCP servers catalog using mcp_ingest harvester"
-    )
-    ap.add_argument(
-        "--source-repo",
-        required=True,
-        help="Root repo to harvest (e.g., https://github.com/modelcontextprotocol/servers)"
-    )
-    ap.add_argument(
-        "--catalog-root",
-        required=True,
-        help="Path to catalog root (usually '.')"
-    )
-    ap.add_argument(
-        "--out-dir",
-        required=True,
-        help="Catalog output directory for MCP servers (e.g., mcp-servers)"
-    )
-    ap.add_argument(
-        "--index-file",
-        required=True,
-        help="Top-level catalog index file (e.g., index.json)"
-    )
-    ap.add_argument(
-        "--max-parallel",
-        type=int,
-        default=4,
-        help="Maximum parallel harvesting operations"
-    )
+    ap = argparse.ArgumentParser(description="Sync MCP servers into servers/** using mcp_ingest")
+    ap.add_argument("--source-repo", required=True, help="Root repo to harvest (e.g., https://github.com/modelcontextprotocol/servers)")
+    ap.add_argument("--catalog-root", default=".", help="Path to catalog root")
+    ap.add_argument("--servers-dir", default="servers", help="Output directory (must be servers)")
+    ap.add_argument("--index-file", default="index.json", help="Top-level index.json path")
+    ap.add_argument("--max-parallel", type=int, default=4)
     args = ap.parse_args()
 
     catalog_root = Path(args.catalog_root).resolve()
-    out_dir = (catalog_root / args.out_dir).resolve()
+    servers_dir = (catalog_root / args.servers_dir).resolve()
     index_file = (catalog_root / args.index_file).resolve()
 
     # Temp harvest output
@@ -150,12 +226,14 @@ def main() -> None:
         shutil.rmtree(harvest_out)
     harvest_out.mkdir(parents=True, exist_ok=True)
 
-    print(f"Starting harvest of {args.source_repo}...")
-    print(f"Output will be written to {out_dir}")
+    servers_dir.mkdir(parents=True, exist_ok=True)
 
-    # Run mcp_ingest harvester
-    # GITHUB_TOKEN should be set via environment for better API limits
-    summary = harvest_source(
+    # Load existing by stable key for deprecation tracking
+    existing_by_key = load_existing_by_key(servers_dir)
+    seen_keys: set[CatalogKey] = set()
+
+    # Run harvest
+    harvest_source(
         repo_url=args.source_repo,
         out_dir=harvest_out,
         yes=True,
@@ -166,62 +244,67 @@ def main() -> None:
         log_file=None,
     )
 
-    # Read harvested index
     top_index_path = harvest_out / "index.json"
     if not top_index_path.exists():
         raise SystemExit(f"mcp_ingest did not produce merged index at {top_index_path}")
 
     harvested_index = read_json(top_index_path)
     manifest_paths = harvested_index.get("manifests") or harvested_index.get("manifest_paths") or []
-
     if not manifest_paths:
         raise SystemExit(f"No manifests found in {top_index_path}")
 
-    print(f"Found {len(manifest_paths)} manifests from harvest")
+    # Collision detection on manifest.id
+    id_to_key: Dict[str, CatalogKey] = {}
 
-    # Ensure output directory exists
-    out_dir.mkdir(parents=True, exist_ok=True)
+    # Collect output indexes
+    top_items: List[Dict[str, Any]] = []
+    active_manifest_relpaths: List[str] = []
 
-    # Process manifests with deduplication
-    touched: list[Path] = []
-    items_for_index: list[dict[str, Any]] = []
-    seen: set[CatalogItemKey] = set()
+    # Per-group manifest listing
+    group_to_relpaths: Dict[Path, List[str]] = {}
 
     for mp in manifest_paths:
-        src_path = Path(mp)
-        if not src_path.is_absolute():
-            src_path = (harvest_out / src_path).resolve()
-        if not src_path.exists():
-            # mcp_ingest sometimes returns absolute; sometimes relative
-            # best-effort fallback: try joining harvest_out
+        src_path = resolve_manifest_path(harvest_out, mp)
+        if not src_path:
+            print(f"⚠️  Could not resolve manifest path: {mp}")
             continue
 
         manifest = read_json(src_path)
-
         if manifest.get("type") != "mcp_server":
-            # ignore non-mcp_server manifests (if any appear later)
             continue
 
         repo_full, subpath = extract_source_repo_path(manifest)
         transport = extract_transport(manifest)
-        manifest_id = str(manifest.get("id") or "")
+        key = CatalogKey(repo_full=repo_full, subpath=subpath, transport=transport)
 
-        # Deduplicate by key
-        key = CatalogItemKey(repo=repo_full, path=subpath, transport=transport, manifest_id=manifest_id)
-        if key in seen:
-            continue
-        seen.add(key)
+        # Mark active/seen in this run
+        manifest = mark_active_seen(manifest)
 
-        # Build deterministic destination folder
-        dest_folder = build_catalog_folder(out_dir, repo_full, subpath)
-        dest_manifest = dest_folder / "manifest.json"
-        dest_folder.mkdir(parents=True, exist_ok=True)
+        # Validate/track ID collisions
+        mid = str(manifest.get("id") or "").strip()
+        if not mid:
+            # Fail hard: empty ids are too risky for DB alignment
+            raise SystemExit(f"Manifest missing 'id' (repo={repo_full} subpath={subpath})")
 
-        # Write manifest exactly as emitted by mcp_ingest
+        if mid in id_to_key and id_to_key[mid] != key:
+            raise SystemExit(
+                "Manifest id collision detected:\n"
+                f"  id: {mid}\n"
+                f"  key1: {id_to_key[mid]}\n"
+                f"  key2: {key}\n"
+                "This will break DB upserts. Fix upstream ids or implement a deterministic id policy."
+            )
+        id_to_key[mid] = key
+
+        # Write into servers/**
+        group_dir = build_group_dir(servers_dir, repo_full)
+        variant_dir = build_variant_dir(group_dir, repo_full, subpath)
+        variant_dir.mkdir(parents=True, exist_ok=True)
+
+        dest_manifest = variant_dir / "manifest.json"
         write_json(dest_manifest, manifest)
-        touched.append(dest_folder)
 
-        # Write provenance sidecar for DB population later
+        # provenance.json (helpful later for MatrixHub/DB)
         prov = manifest.get("provenance") or {}
         if not prov:
             prov = {
@@ -231,23 +314,82 @@ def main() -> None:
                 "harvested_from": args.source_repo,
                 "harvested_at": now_iso(),
             }
-        write_json(dest_folder / "provenance.json", prov)
+        write_json(variant_dir / "provenance.json", prov)
 
-        # Build index entry
-        items_for_index.append(
+        # Variant-level index.json
+        write_json(variant_dir / "index.json", {"manifests": ["./manifest.json"]})
+
+        # Track relpath for top-level + group-level indexes
+        rel_manifest = str(dest_manifest.relative_to(catalog_root)).replace("\\", "/")
+        rel_variant_manifest = str(dest_manifest.relative_to(group_dir)).replace("\\", "/")
+
+        group_to_relpaths.setdefault(group_dir, []).append(rel_variant_manifest)
+
+        seen_keys.add(key)
+
+        status = (manifest.get("lifecycle") or {}).get("status", "active")
+
+        top_items.append(
             {
                 "type": "mcp_server",
-                "id": manifest_id,
+                "id": mid,
                 "name": manifest.get("name"),
                 "transport": transport,
-                "manifest_path": str(dest_manifest.relative_to(catalog_root)).replace("\\", "/"),
+                "status": status,
+                "manifest_path": rel_manifest,
                 "repo": f"https://github.com/{repo_full}",
                 "subpath": subpath,
             }
         )
 
-    # Build deterministic top-level index (sorted for stability)
-    items_for_index.sort(key=lambda x: (str(x.get("id") or ""), str(x.get("manifest_path") or "")))
+        # Active-only manifests list for ingestion
+        if status == "active":
+            active_manifest_relpaths.append(rel_manifest)
+
+    # Deprecate anything not seen in this run
+    deprecated_added = 0
+    for key, mf_path in existing_by_key.items():
+        if key in seen_keys:
+            continue
+        try:
+            m = read_json(mf_path)
+        except Exception:
+            continue
+        if m.get("type") != "mcp_server":
+            continue
+
+        m = mark_deprecated(m, reason=f"Not found in latest harvest from {args.source_repo}")
+        write_json(mf_path, m)
+        deprecated_added += 1
+
+        repo_full, subpath = extract_source_repo_path(m)
+        transport = extract_transport(m)
+        mid = str(m.get("id") or "").strip()
+
+        rel_manifest = str(mf_path.relative_to(catalog_root)).replace("\\", "/")
+
+        top_items.append(
+            {
+                "type": "mcp_server",
+                "id": mid,
+                "name": m.get("name"),
+                "transport": transport,
+                "status": "deprecated",
+                "manifest_path": rel_manifest,
+                "repo": f"https://github.com/{repo_full}",
+                "subpath": subpath,
+            }
+        )
+
+    # Write group-level index.json files (active + deprecated paths are okay here,
+    # but we keep it simple and list everything present under the group)
+    for group_dir, relpaths in group_to_relpaths.items():
+        relpaths_sorted = sorted(set(relpaths))
+        write_json(group_dir / "index.json", {"manifests": relpaths_sorted})
+
+    # Deterministic sort
+    top_items.sort(key=lambda x: (str(x.get("id") or ""), str(x.get("manifest_path") or "")))
+    active_manifest_relpaths = sorted(set(active_manifest_relpaths))
 
     top_index = {
         "generated_at": now_iso(),
@@ -256,14 +398,20 @@ def main() -> None:
             "root_repo": args.source_repo,
         },
         "counts": {
-            "mcp_servers": len(items_for_index),
+            "total_items": len(top_items),
+            "active_manifests": len(active_manifest_relpaths),
+            "deprecated_added_this_run": deprecated_added,
         },
-        "items": items_for_index,
+        # full audit trail:
+        "items": top_items,
+        # ingestion contract (ACTIVE ONLY, RELATIVE PATHS):
+        "manifests": active_manifest_relpaths,
     }
 
     write_json(index_file, top_index)
-    print(f"✓ Synced {len(items_for_index)} mcp_server manifests into {out_dir}")
-    print(f"✓ Updated {index_file}")
+    print(f"✓ Wrote top-level index: {index_file}")
+    print(f"✓ Active manifests: {len(active_manifest_relpaths)}")
+    print(f"✓ Deprecated newly marked: {deprecated_added}")
 
 
 if __name__ == "__main__":
