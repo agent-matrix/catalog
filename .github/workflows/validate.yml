@@ -1,0 +1,35 @@
+name: Validate Catalog
+
+on:
+  pull_request:
+    paths:
+      - "agents/**"
+      - "tools/**"
+      - "mcp-servers/**"
+      - "index.json"
+      - "schema/**"
+      - "scripts/**"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install validators
+        run: |
+          python -m pip install --upgrade pip
+          pip install jsonschema ruff
+
+      - name: Validate structure
+        run: python scripts/validate_catalog_structure.py
+
+      - name: Validate schemas
+        run: python scripts/validate_catalog_schemas.py
+
+      - name: Lint scripts
+        run: ruff check scripts

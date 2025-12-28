@@ -1,0 +1,78 @@
+name: Sync MCP Servers (Daily)
+
+on:
+  schedule:
+    - cron: "15 2 * * *"   # 02:15 UTC daily
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: sync-mcp-servers
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout catalog
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install catalog tooling
+        run: |
+          python -m pip install --upgrade pip
+          pip install jsonschema ruff
+
+      - name: Checkout mcp_ingest
+        uses: actions/checkout@v4
+        with:
+          repository: agent-matrix/mcp_ingest
+          path: ./.tmp/mcp_ingest
+
+      - name: Install mcp_ingest
+        run: |
+          pip install -e ./.tmp/mcp_ingest
+
+      - name: Harvest + sync into catalog
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python scripts/sync_mcp_servers.py \
+            --source-repo "https://github.com/modelcontextprotocol/servers" \
+            --catalog-root "." \
+            --out-dir "mcp-servers" \
+            --index-file "index.json"
+
+      - name: Validate structure + schemas
+        run: |
+          python scripts/validate_catalog_structure.py
+          python scripts/validate_catalog_schemas.py
+
+      - name: Lint scripts
+        run: ruff check scripts
+
+      - name: Create PR if changes
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "chore(sync): update MCP servers catalog"
+          title: "chore(sync): update MCP servers catalog"
+          body: |
+            Automated daily sync from modelcontextprotocol/servers using mcp_ingest.
+            - Harvested base repo + README-linked repos
+            - Generated deterministic folder mapping
+            - Rebuilt index.json deterministically
+            - Validated schemas
+          branch: bot/sync-mcp-servers
+          delete-branch: true
+          labels: |
+            automated
+            sync
