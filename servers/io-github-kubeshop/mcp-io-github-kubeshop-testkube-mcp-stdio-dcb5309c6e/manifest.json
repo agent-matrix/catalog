@@ -1,0 +1,99 @@
+{
+  "description": "MCP server for Testkube - Manage test workflows, executions, and artifacts via AI assistants",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:51+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-kubeshop-testkube-mcp.stdio.dcb5309c6e",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/kubeshop/testkube",
+    "homepage": "https://github.com/kubeshop/testkube",
+    "repository": "https://github.com/kubeshop/testkube"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.kubeshop/testkube-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Testkube access token for authentication",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "TK_ACCESS_TOKEN"
+        },
+        {
+          "description": "Testkube organization ID",
+          "format": "string",
+          "isRequired": true,
+          "name": "TK_ORG_ID"
+        },
+        {
+          "description": "Testkube environment ID",
+          "format": "string",
+          "isRequired": true,
+          "name": "TK_ENV_ID"
+        },
+        {
+          "description": "Testkube Control Plane URL (default: https://api.testkube.io)",
+          "format": "string",
+          "name": "TK_CONTROL_PLANE_URL"
+        },
+        {
+          "description": "Testkube Dashboard URL",
+          "format": "string",
+          "name": "TK_DASHBOARD_URL"
+        },
+        {
+          "description": "Enable debug mode (default: false)",
+          "format": "string",
+          "name": "TK_DEBUG"
+        },
+        {
+          "description": "MCP transport type: stdio or shttp (default: stdio)",
+          "format": "string",
+          "name": "TK_MCP_TRANSPORT"
+        },
+        {
+          "description": "SHTTP host when using shttp transport",
+          "format": "string",
+          "name": "TK_MCP_SHTTP_HOST"
+        },
+        {
+          "description": "SHTTP port when using shttp transport",
+          "format": "string",
+          "name": "TK_MCP_SHTTP_PORT"
+        }
+      ],
+      "identifier": "docker.io/kubeshop/mcp-server:2.4.3",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "dcb5309c6e",
+    "published_at": "2025-11-27T11:08:00.697709Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.kubeshop/testkube-mcp",
+    "server_version": "2.4.3",
+    "source": "mcp-registry",
+    "updated_at": "2025-11-27T11:08:00.697709Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "2.4.3"
+}

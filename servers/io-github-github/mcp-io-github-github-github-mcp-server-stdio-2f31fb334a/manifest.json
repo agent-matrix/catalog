@@ -1,0 +1,92 @@
+{
+  "description": "Connect AI assistants to GitHub - manage repos, issues, PRs, and workflows through natural language.",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:45+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-github-github-mcp-server.stdio.2f31fb334a",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/github/github-mcp-server",
+    "homepage": "https://github.com/github/github-mcp-server",
+    "repository": "https://github.com/github/github-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.github/github-mcp-server",
+  "packages": [
+    {
+      "identifier": "ghcr.io/github/github-mcp-server:0.20.2",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "The runtime command to execute",
+          "isRequired": true,
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "description": "Run container in interactive mode",
+          "format": "boolean",
+          "isRequired": true,
+          "name": "-i",
+          "type": "named",
+          "value": "true"
+        },
+        {
+          "description": "Automatically remove the container when it exits",
+          "format": "boolean",
+          "name": "--rm",
+          "type": "named",
+          "value": "true"
+        },
+        {
+          "description": "Set an environment variable in the runtime",
+          "isRequired": true,
+          "name": "-e",
+          "type": "named",
+          "value": "GITHUB_PERSONAL_ACCESS_TOKEN={token}",
+          "variables": {
+            "token": {
+              "format": "string",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        },
+        {
+          "description": "The container image to run",
+          "isRequired": true,
+          "type": "positional",
+          "value": "ghcr.io/github/github-mcp-server",
+          "valueHint": "image_name"
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "2f31fb334a",
+    "published_at": "2025-11-10T09:36:19.127074Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.github/github-mcp-server",
+    "server_version": "0.20.2",
+    "source": "mcp-registry",
+    "updated_at": "2025-11-10T09:36:19.127074Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.20.2"
+}

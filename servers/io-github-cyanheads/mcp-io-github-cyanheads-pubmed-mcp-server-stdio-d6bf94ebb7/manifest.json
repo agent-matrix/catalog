@@ -1,0 +1,101 @@
+{
+  "description": "Comprehensive PubMed MCP Server to search, retrieve, and analyze biomedical literature from NCBI.",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cyanheads-pubmed-mcp-server.stdio.d6bf94ebb7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cyanheads/pubmed-mcp-server",
+    "homepage": "https://github.com/cyanheads/pubmed-mcp-server",
+    "repository": "https://github.com/cyanheads/pubmed-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "bun",
+          "@cyanheads/pubmed-mcp-server==1.4.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cyanheads/pubmed-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "localhost",
+          "description": "The host for the HTTP server.",
+          "format": "string",
+          "name": "MCP_HTTP_HOST"
+        },
+        {
+          "default": "3017",
+          "description": "The port for the HTTP server.",
+          "format": "string",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "default": "/mcp",
+          "description": "The endpoint path for MCP requests.",
+          "format": "string",
+          "name": "MCP_HTTP_ENDPOINT_PATH"
+        },
+        {
+          "default": "none",
+          "description": "Authentication mode: 'none', 'jwt', or 'oauth'.",
+          "format": "string",
+          "name": "MCP_AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Sets the minimum log level (e.g., 'debug', 'info', 'warn').",
+          "format": "string",
+          "name": "MCP_LOG_LEVEL"
+        },
+        {
+          "description": "Your NCBI API key for higher rate limits.",
+          "format": "string",
+          "name": "NCBI_API_KEY"
+        }
+      ],
+      "identifier": "@cyanheads/pubmed-mcp-server",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "start:http"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "bun",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3017/mcp"
+      },
+      "version": "1.4.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d6bf94ebb7",
+    "published_at": "2025-10-02T23:33:18.616247Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cyanheads/pubmed-mcp-server",
+    "server_version": "1.4.5",
+    "source": "mcp-registry",
+    "updated_at": "2025-10-02T23:33:18.616247Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.4.5"
+}

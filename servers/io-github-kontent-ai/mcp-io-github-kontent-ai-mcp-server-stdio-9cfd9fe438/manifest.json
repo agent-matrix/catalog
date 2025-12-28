@@ -1,0 +1,74 @@
+{
+  "description": "Connect to Kontent.ai to manage content, types, taxonomies, and workflows via natural language",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:51+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-kontent-ai-mcp-server.stdio.9cfd9fe438",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/kontent-ai/mcp-server",
+    "homepage": "https://github.com/kontent-ai/mcp-server",
+    "repository": "https://github.com/kontent-ai/mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.kontent-ai/mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Kontent.ai Management API key",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "KONTENT_API_KEY"
+        },
+        {
+          "description": "Kontent.ai environment ID",
+          "isRequired": true,
+          "name": "KONTENT_ENVIRONMENT_ID"
+        },
+        {
+          "description": "Server port for HTTP transport (shttp mode only)",
+          "name": "PORT"
+        }
+      ],
+      "identifier": "@kontent-ai/mcp-server",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "shttp"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3001/mcp"
+      },
+      "version": "0.22.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9cfd9fe438",
+    "published_at": "2025-12-08T15:46:43.34477Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.kontent-ai/mcp-server",
+    "server_version": "0.22.1",
+    "source": "mcp-registry",
+    "updated_at": "2025-12-08T15:46:43.34477Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.22.1"
+}

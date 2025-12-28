@@ -1,0 +1,77 @@
+{
+  "description": "An MCP server for Apache Airflow ",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-abhishekbhakat-airflow-mcp-server.stdio.0b19787d49",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/abhishekbhakat/airflow-mcp-server",
+    "homepage": "https://github.com/abhishekbhakat/airflow-mcp-server",
+    "repository": "https://github.com/abhishekbhakat/airflow-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.abhishekbhakat/airflow-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "The base URL for the Airflow API (e.g., http://localhost:8080)",
+          "format": "string",
+          "isRequired": true,
+          "name": "AIRFLOW_BASE_URL"
+        },
+        {
+          "description": "The JWT authentication token for Airflow API access",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AUTH_TOKEN"
+        }
+      ],
+      "identifier": "airflow-mcp-server",
+      "packageArguments": [
+        {
+          "description": "Use only read-only tools for safe operations",
+          "name": "--safe",
+          "type": "named"
+        },
+        {
+          "description": "Use static tools instead of hierarchical discovery",
+          "name": "--static-tools",
+          "type": "named"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.9.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0b19787d49",
+    "published_at": "2025-10-09T22:19:57.025824Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.abhishekbhakat/airflow-mcp-server",
+    "server_version": "0.9.0",
+    "source": "mcp-registry",
+    "updated_at": "2025-10-09T22:19:57.025824Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.9.0"
+}

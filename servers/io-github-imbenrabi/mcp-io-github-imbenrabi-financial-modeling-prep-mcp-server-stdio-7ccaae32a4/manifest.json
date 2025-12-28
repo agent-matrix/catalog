@@ -1,0 +1,103 @@
+{
+  "description": "MCP server for Financial Modeling Prep API with 250+ financial data tools",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:48+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-imbenrabi-financial-modeling-prep-mcp-server.stdio.7ccaae32a4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/imbenrabi/Financial-Modeling-Prep-MCP-Server",
+    "homepage": "https://github.com/imbenrabi/Financial-Modeling-Prep-MCP-Server",
+    "repository": "https://github.com/imbenrabi/Financial-Modeling-Prep-MCP-Server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "financial-modeling-prep-mcp-server==2.5.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.imbenrabi/financial-modeling-prep-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Financial Modeling Prep API access token",
+          "format": "string",
+          "isSecret": true,
+          "name": "FMP_ACCESS_TOKEN"
+        },
+        {
+          "description": "Port number for HTTP server mode",
+          "format": "number",
+          "name": "PORT"
+        },
+        {
+          "description": "Enable dynamic tool discovery mode",
+          "format": "boolean",
+          "name": "DYNAMIC_TOOL_DISCOVERY"
+        },
+        {
+          "description": "Comma-separated list of tool sets to load",
+          "format": "string",
+          "name": "FMP_TOOL_SETS"
+        }
+      ],
+      "identifier": "financial-modeling-prep-mcp-server",
+      "packageArguments": [
+        {
+          "description": "Financial Modeling Prep API access token",
+          "format": "string",
+          "name": "--fmp-token",
+          "type": "named"
+        },
+        {
+          "description": "Port number for HTTP server mode",
+          "format": "number",
+          "name": "--port",
+          "type": "named"
+        },
+        {
+          "description": "Enable dynamic tool discovery mode",
+          "format": "boolean",
+          "name": "--dynamic-tool-discovery",
+          "type": "named"
+        },
+        {
+          "description": "Comma-separated list of tool sets to load",
+          "format": "string",
+          "name": "--fmp-tool-sets",
+          "type": "named"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "streamable-http",
+        "url": "https://financial-modeling-prep-mcp-server-production.up.railway.app/mcp"
+      },
+      "version": "2.5.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7ccaae32a4",
+    "published_at": "2025-12-06T13:18:36.03235Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.imbenrabi/financial-modeling-prep-mcp-server",
+    "server_version": "2.5.3",
+    "source": "mcp-registry",
+    "updated_at": "2025-12-06T13:18:36.03235Z"
+  },
+  "title": "Financial Modeling Prep MCP Server",
+  "type": "mcp_server",
+  "version": "2.5.3"
+}

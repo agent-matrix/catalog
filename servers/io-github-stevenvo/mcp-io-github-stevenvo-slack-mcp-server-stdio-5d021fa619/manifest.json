@@ -1,0 +1,70 @@
+{
+  "description": "Read Slack conversations, threads, user info, and search messages from your MCP client.",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:39:01+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-stevenvo-slack-mcp-server.stdio.5d021fa619",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/stevenvo/slack-mcp-server",
+    "homepage": "https://github.com/stevenvo/slack-mcp-server",
+    "repository": "https://github.com/stevenvo/slack-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.stevenvo/slack-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Slack User OAuth Token (starts with xoxp-). Get from https://api.slack.com/apps",
+          "format": "string",
+          "isSecret": true,
+          "name": "SLACK_USER_TOKEN"
+        },
+        {
+          "description": "Slack Bot User OAuth Token (starts with xoxb-). Alternative to user token.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SLACK_BOT_TOKEN"
+        },
+        {
+          "description": "Your Slack workspace URL (e.g., https://your-company.slack.com). Required for generating message links.",
+          "format": "string",
+          "isRequired": true,
+          "name": "SLACK_WORKSPACE_URL"
+        }
+      ],
+      "identifier": "slack-mcp-server-v2",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5d021fa619",
+    "published_at": "2025-11-07T00:44:35.804181Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.stevenvo/slack-mcp-server",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2025-11-07T00:44:35.804181Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

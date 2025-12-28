@@ -1,0 +1,107 @@
+{
+  "description": "Enables natural language schema queries \u2014 explore tables, keys, procedures, and get SQL help fast",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:59+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-schemacrawler-schemacrawler-ai.stdio.51d52ccce6",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/schemacrawler/SchemaCrawler-AI",
+    "homepage": "https://github.com/schemacrawler/SchemaCrawler-AI",
+    "repository": "https://github.com/schemacrawler/SchemaCrawler-AI"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.schemacrawler/schemacrawler-ai",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "MCP Server transport type - valid values are 'http' or 'stdio', defaulting to 'stdio'.",
+          "format": "string",
+          "name": "SCHCRWLR_MCP_SERVER_TRANSPORT"
+        },
+        {
+          "description": "Database user name. Can be optional depending on the database connection type.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SCHCRWLR_DATABASE_USER"
+        },
+        {
+          "description": "Database user password. Can be optional depending on the database connection type.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SCHCRWLR_DATABASE_PASSWORD"
+        },
+        {
+          "description": "JDBC URL for database connection. If this is provided, the server, host, port and database are not used.",
+          "format": "string",
+          "name": "SCHCRWLR_JDBC_URL"
+        },
+        {
+          "description": "SchemaCrawler database plugin, for example, 'sqlserver' or 'sqlite'. Used only if the JDBC URL is not provided.",
+          "format": "string",
+          "name": "SCHCRWLR_SERVER"
+        },
+        {
+          "description": "Database host. Defaults to localhost. Used only if the JDBC URL is not provided.",
+          "format": "string",
+          "name": "SCHCRWLR_HOST"
+        },
+        {
+          "description": "Database port. Defaults to the default port for the server type. Used only if the JDBC URL is not provided.",
+          "format": "string",
+          "name": "SCHCRWLR_PORT"
+        },
+        {
+          "description": "Database to connect to (optional). Used only if the JDBC URL is not provided.",
+          "format": "string",
+          "name": "SCHCRWLR_DATABASE"
+        },
+        {
+          "description": "How much database metadata to retrieve. Values are 'minimum', 'standard', 'detailed' or 'maximum'.",
+          "format": "string",
+          "name": "SCHCRWLR_INFO_LEVEL"
+        },
+        {
+          "description": "Logging verbosity level. Values are 'SEVERE', 'WARNING', 'INFO', 'CONFIG', or 'FINE'.",
+          "format": "string",
+          "name": "SCHCRWLR_LOG_LEVEL"
+        },
+        {
+          "description": "MCP Server tools to exclude, as a comma-separated list.",
+          "format": "string",
+          "name": "SCHCRWLR_EXCLUDE_TOOLS"
+        }
+      ],
+      "identifier": "docker.io/schemacrawler/schemacrawler-ai:v17.1.7-1",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "51d52ccce6",
+    "published_at": "2025-12-01T23:39:36.939066Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.schemacrawler/schemacrawler-ai",
+    "server_version": "v17.1.7-1",
+    "source": "mcp-registry",
+    "updated_at": "2025-12-01T23:39:36.939066Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "v17.1.7-1"
+}

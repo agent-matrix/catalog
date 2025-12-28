@@ -1,0 +1,94 @@
+{
+  "description": "MCP server for Microsoft SQL Server - schema discovery, profiling, and safe data operations",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:27+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ConnorBritain-mssql.stdio.12c8e958a9",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/ConnorBritain/mssql-mcp-server",
+    "homepage": "https://github.com/ConnorBritain/mssql-mcp-server",
+    "repository": "https://github.com/ConnorBritain/mssql-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ConnorBritain/mssql",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "SQL Server hostname or IP address",
+          "format": "string",
+          "isRequired": true,
+          "name": "SERVER_NAME"
+        },
+        {
+          "description": "Target database name",
+          "format": "string",
+          "isRequired": true,
+          "name": "DATABASE_NAME"
+        },
+        {
+          "description": "Authentication mode: sql, windows, or aad",
+          "format": "string",
+          "name": "SQL_AUTH_MODE"
+        },
+        {
+          "description": "Username for SQL or Windows auth",
+          "format": "string",
+          "name": "SQL_USERNAME"
+        },
+        {
+          "description": "Password for SQL or Windows auth",
+          "format": "string",
+          "isSecret": true,
+          "name": "SQL_PASSWORD"
+        },
+        {
+          "description": "SQL Server port (default: 1433)",
+          "format": "string",
+          "name": "SQL_PORT"
+        },
+        {
+          "description": "Set true for self-signed certs",
+          "format": "string",
+          "name": "TRUST_SERVER_CERTIFICATE"
+        },
+        {
+          "description": "Set true to disable write operations",
+          "format": "string",
+          "name": "READONLY"
+        }
+      ],
+      "identifier": "@connorbritain/mssql-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "12c8e958a9",
+    "published_at": "2025-12-03T20:39:13.464159Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ConnorBritain/mssql",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2025-12-03T20:39:13.464159Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

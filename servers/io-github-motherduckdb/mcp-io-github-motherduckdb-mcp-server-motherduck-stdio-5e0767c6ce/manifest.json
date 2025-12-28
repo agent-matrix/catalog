@@ -1,0 +1,159 @@
+{
+  "description": "Fast analytics and data processing with DuckDB and MotherDuck",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:53+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-motherduckdb-mcp-server-motherduck.stdio.5e0767c6ce",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/motherduckdb/mcp-server-motherduck",
+    "homepage": "https://github.com/motherduckdb/mcp-server-motherduck",
+    "repository": "https://github.com/motherduckdb/mcp-server-motherduck"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.motherduckdb/mcp-server-motherduck",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Access token to use for MotherDuck database connections",
+          "isSecret": true,
+          "name": "motherduck_token"
+        },
+        {
+          "description": "Home directory for DuckDB (used as default if --home-dir not specified)",
+          "name": "HOME"
+        },
+        {
+          "description": "AWS access key for S3 database connections",
+          "isSecret": true,
+          "name": "AWS_ACCESS_KEY_ID"
+        },
+        {
+          "description": "AWS secret access key for S3 database connections",
+          "isSecret": true,
+          "name": "AWS_SECRET_ACCESS_KEY"
+        },
+        {
+          "description": "AWS session token for temporary credentials (IAM roles, AWS SSO, EC2 instance profiles)",
+          "isSecret": true,
+          "name": "AWS_SESSION_TOKEN"
+        },
+        {
+          "description": "AWS region for S3 database connections",
+          "name": "AWS_DEFAULT_REGION"
+        }
+      ],
+      "identifier": "mcp-server-motherduck",
+      "packageArguments": [
+        {
+          "choices": [
+            "stdio",
+            "sse",
+            "stream"
+          ],
+          "default": "stdio",
+          "description": "Transport type for MCP server",
+          "name": "--transport",
+          "type": "named"
+        },
+        {
+          "default": "8000",
+          "description": "Port to listen on for sse and stream transport mode",
+          "format": "number",
+          "name": "--port",
+          "type": "named"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "Host to bind the MCP server for sse and stream transport mode",
+          "name": "--host",
+          "type": "named"
+        },
+        {
+          "default": "md:",
+          "description": "Path to local DuckDB database file or MotherDuck database",
+          "name": "--db-path",
+          "type": "named"
+        },
+        {
+          "description": "Access token to use for MotherDuck database connections",
+          "isSecret": true,
+          "name": "--motherduck-token",
+          "type": "named"
+        },
+        {
+          "description": "Flag for connecting to DuckDB or MotherDuck in read-only mode",
+          "name": "--read-only",
+          "type": "named"
+        },
+        {
+          "description": "Home directory for DuckDB",
+          "name": "--home-dir",
+          "type": "named"
+        },
+        {
+          "description": "Flag for connecting to MotherDuck in SaaS mode (disables filesystem and write permissions for local DuckDB)",
+          "name": "--saas-mode",
+          "type": "named"
+        },
+        {
+          "description": "Enable JSON responses for HTTP stream (only supported for stream transport)",
+          "name": "--json-response",
+          "type": "named"
+        },
+        {
+          "default": "1024",
+          "description": "Maximum number of rows to return from queries",
+          "format": "number",
+          "name": "--max-rows",
+          "type": "named"
+        },
+        {
+          "default": "50000",
+          "description": "Maximum number of characters in query results",
+          "format": "number",
+          "name": "--max-chars",
+          "type": "named"
+        },
+        {
+          "default": "-1",
+          "description": "Query execution timeout in seconds. Set to -1 to disable timeout",
+          "format": "number",
+          "name": "--query-timeout",
+          "type": "named"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.8.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5e0767c6ce",
+    "published_at": "2025-11-11T03:01:45.572967Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.motherduckdb/mcp-server-motherduck",
+    "server_version": "0.8.0",
+    "source": "mcp-registry",
+    "updated_at": "2025-11-11T03:01:45.572967Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.8.0"
+}

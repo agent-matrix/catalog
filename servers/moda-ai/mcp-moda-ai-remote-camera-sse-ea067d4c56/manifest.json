@@ -1,0 +1,46 @@
+{
+  "description": "Capture photos remotely from mobile devices via S3-backed upload URLs",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:39:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.moda-ai-remote-camera.sse.ea067d4c56",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://www.ai.moda/mcp-servers/remote-camera/mcp"
+    }
+  },
+  "name": "moda.ai/remote-camera",
+  "provenance": {
+    "identity_key": "ea067d4c56",
+    "published_at": "2025-10-27T19:16:27.548449Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "moda.ai/remote-camera",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2025-10-27T19:16:27.548449Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "S3 credentials token in format: Bearer <base64-encoded-json>. The JSON should contain: {s3Url, accessKeyId, secretAccessKey, region}. Visit https://www.ai.moda/mcp-servers/remote-camera/ to set up your S3 auth token.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "placeholder": "Bearer eyJzM1VybCI6Imh0dHBzOi8vczMu..."
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://www.ai.moda/mcp-servers/remote-camera/mcp"
+    }
+  ],
+  "title": "Remote Camera",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

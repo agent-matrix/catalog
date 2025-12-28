@@ -1,0 +1,83 @@
+{
+  "description": "Official Arm MCP server for code migration, optimization, and Arm architecture guidance",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:36+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-arm-arm-mcp.stdio.3122ab2a6d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/arm/mcp",
+    "homepage": "https://github.com/arm/mcp",
+    "repository": "https://github.com/arm/mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Mount a local directory into the container for the MCP server to access",
+            "isRequired": true,
+            "name": "-v",
+            "type": "named",
+            "value": "{workspace_path}:/workspace",
+            "variables": {
+              "workspace_path": {
+                "description": "Local directory to make accessible to the MCP server (e.g., your project root)",
+                "format": "filepath",
+                "isRequired": true,
+                "placeholder": "/path/to/your/project"
+              }
+            }
+          },
+          "docker.io/armlimited/arm-mcp:1.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.arm/arm-mcp",
+  "packages": [
+    {
+      "identifier": "docker.io/armlimited/arm-mcp:1.0.1",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "Mount a local directory into the container for the MCP server to access",
+          "isRequired": true,
+          "name": "-v",
+          "type": "named",
+          "value": "{workspace_path}:/workspace",
+          "variables": {
+            "workspace_path": {
+              "description": "Local directory to make accessible to the MCP server (e.g., your project root)",
+              "format": "filepath",
+              "isRequired": true,
+              "placeholder": "/path/to/your/project"
+            }
+          }
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "3122ab2a6d",
+    "published_at": "2025-12-11T22:58:00.039957Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.arm/arm-mcp",
+    "server_version": "1.0.2",
+    "source": "mcp-registry",
+    "updated_at": "2025-12-11T22:58:00.039957Z"
+  },
+  "title": "Arm MCP Server",
+  "type": "mcp_server",
+  "version": "1.0.2"
+}

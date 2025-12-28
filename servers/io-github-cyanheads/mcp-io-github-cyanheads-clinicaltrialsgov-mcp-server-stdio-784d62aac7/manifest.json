@@ -1,0 +1,102 @@
+{
+  "description": "Provides rich tools to search, retrieve, and analyze data from ClinicalTrials.gov API v2.",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cyanheads-clinicaltrialsgov-mcp-server.stdio.784d62aac7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cyanheads/clinicaltrialsgov-mcp-server",
+    "homepage": "https://github.com/cyanheads/clinicaltrialsgov-mcp-server",
+    "repository": "https://github.com/cyanheads/clinicaltrialsgov-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "bun",
+          "clinicaltrialsgov-mcp-server==1.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cyanheads/clinicaltrialsgov-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "127.0.0.1",
+          "description": "The hostname for the HTTP server.",
+          "format": "string",
+          "name": "MCP_HTTP_HOST"
+        },
+        {
+          "default": "3017",
+          "description": "The port to run the HTTP server on.",
+          "format": "string",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "default": "/mcp",
+          "description": "The endpoint path for the MCP server.",
+          "format": "string",
+          "name": "MCP_HTTP_ENDPOINT_PATH"
+        },
+        {
+          "default": "none",
+          "description": "Authentication mode to use: 'none', 'jwt', or 'oauth'.",
+          "format": "string",
+          "name": "MCP_AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Sets the minimum log level for output (e.g., 'debug', 'info', 'warn', 'error').",
+          "format": "string",
+          "name": "MCP_LOG_LEVEL"
+        },
+        {
+          "default": "in-memory",
+          "description": "Storage provider type: 'in-memory', 'filesystem', 'supabase', 'cloudflare-r2', or 'cloudflare-kv'.",
+          "format": "string",
+          "name": "STORAGE_PROVIDER_TYPE"
+        }
+      ],
+      "identifier": "clinicaltrialsgov-mcp-server",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "start:http"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "bun",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3000/mcp"
+      },
+      "version": "1.4.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "784d62aac7",
+    "published_at": "2025-10-02T09:55:55.48594Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cyanheads/clinicaltrialsgov-mcp-server",
+    "server_version": "1.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2025-10-02T09:55:55.48594Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.4.0"
+}

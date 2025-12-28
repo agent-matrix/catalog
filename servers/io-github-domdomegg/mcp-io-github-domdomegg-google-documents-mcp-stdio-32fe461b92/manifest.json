@@ -1,0 +1,72 @@
+{
+  "description": "Allow AI systems to read and edit Google Docs.",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-domdomegg-google-documents-mcp.stdio.32fe461b92",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/domdomegg/google-documents-mcp.git",
+    "homepage": "https://github.com/domdomegg/google-documents-mcp.git",
+    "repository": "https://github.com/domdomegg/google-documents-mcp.git"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "google-documents-mcp==1.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.domdomegg/google-documents-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Transport type.",
+          "isRequired": true,
+          "name": "MCP_TRANSPORT",
+          "value": "http"
+        },
+        {
+          "description": "Google OAuth client ID.",
+          "isRequired": true,
+          "name": "GOOGLE_CLIENT_ID"
+        },
+        {
+          "description": "Google OAuth client secret.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GOOGLE_CLIENT_SECRET"
+        }
+      ],
+      "identifier": "google-documents-mcp",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3000/mcp"
+      },
+      "version": "1.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "32fe461b92",
+    "published_at": "2025-12-28T06:25:45.280924Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.domdomegg/google-documents-mcp",
+    "server_version": "1.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2025-12-28T06:25:45.280924Z"
+  },
+  "title": "Google Docs",
+  "type": "mcp_server",
+  "version": "1.1.1"
+}

@@ -1,0 +1,202 @@
+{
+  "description": "An i18n github action for language translate",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-SamYuan1990-i18n-agent-action.stdio.0e16c62499",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Port mapping from host to container",
+            "name": "-p",
+            "type": "named",
+            "value": "8080:8080"
+          },
+          {
+            "description": "API key for the i18n service",
+            "name": "-e",
+            "type": "named",
+            "value": "api_key={api_key}",
+            "variables": {
+              "api_key": {
+                "description": "Your API key for the translation service",
+                "format": "string",
+                "isRequired": true,
+                "isSecret": true
+              }
+            }
+          },
+          {
+            "description": "Volume mount for model files",
+            "name": "-v",
+            "type": "named",
+            "value": "{models_path}:/app/models",
+            "variables": {
+              "models_path": {
+                "default": "/path/to/your/models",
+                "description": "Path to your models directory on the host",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          {
+            "description": "Encoder model file path",
+            "name": "-e",
+            "type": "named",
+            "value": "encoder={encoder_file}",
+            "variables": {
+              "encoder_file": {
+                "default": "/app/models/your-encoder.onnx",
+                "description": "Encoder model file name",
+                "format": "string",
+                "isRequired": true
+              }
+            }
+          },
+          {
+            "description": "Decoder model file path",
+            "name": "-e",
+            "type": "named",
+            "value": "decoder={decoder_file}",
+            "variables": {
+              "decoder_file": {
+                "default": "/app/models/your-decoder.onnx",
+                "description": "Decoder model file name",
+                "format": "string",
+                "isRequired": true
+              }
+            }
+          },
+          {
+            "description": "Tokens model file path",
+            "name": "-e",
+            "type": "named",
+            "value": "tokens={tokens_file}",
+            "variables": {
+              "tokens_file": {
+                "default": "/app/models/your-tokens.onnx",
+                "description": "Tokens model file name",
+                "format": "string",
+                "isRequired": true
+              }
+            }
+          },
+          "ghcr.io/SamYuan1990/i18n-agent-action:mcp"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.SamYuan1990/i18n-agent-action",
+  "packages": [
+    {
+      "identifier": "ghcr.io/SamYuan1990/i18n-agent-action:mcp",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "Port mapping from host to container",
+          "name": "-p",
+          "type": "named",
+          "value": "8080:8080"
+        },
+        {
+          "description": "API key for the i18n service",
+          "name": "-e",
+          "type": "named",
+          "value": "api_key={api_key}",
+          "variables": {
+            "api_key": {
+              "description": "Your API key for the translation service",
+              "format": "string",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        },
+        {
+          "description": "Volume mount for model files",
+          "name": "-v",
+          "type": "named",
+          "value": "{models_path}:/app/models",
+          "variables": {
+            "models_path": {
+              "default": "/path/to/your/models",
+              "description": "Path to your models directory on the host",
+              "format": "filepath",
+              "isRequired": true
+            }
+          }
+        },
+        {
+          "description": "Encoder model file path",
+          "name": "-e",
+          "type": "named",
+          "value": "encoder={encoder_file}",
+          "variables": {
+            "encoder_file": {
+              "default": "/app/models/your-encoder.onnx",
+              "description": "Encoder model file name",
+              "format": "string",
+              "isRequired": true
+            }
+          }
+        },
+        {
+          "description": "Decoder model file path",
+          "name": "-e",
+          "type": "named",
+          "value": "decoder={decoder_file}",
+          "variables": {
+            "decoder_file": {
+              "default": "/app/models/your-decoder.onnx",
+              "description": "Decoder model file name",
+              "format": "string",
+              "isRequired": true
+            }
+          }
+        },
+        {
+          "description": "Tokens model file path",
+          "name": "-e",
+          "type": "named",
+          "value": "tokens={tokens_file}",
+          "variables": {
+            "tokens_file": {
+              "default": "/app/models/your-tokens.onnx",
+              "description": "Tokens model file name",
+              "format": "string",
+              "isRequired": true
+            }
+          }
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "sse",
+        "url": "https://example.com:8080/sse"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "0e16c62499",
+    "published_at": "2025-09-24T12:17:46.198378Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.SamYuan1990/i18n-agent-action",
+    "server_version": "mcp",
+    "source": "mcp-registry",
+    "updated_at": "2025-09-24T12:17:46.198378Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "mcp"
+}

@@ -1,0 +1,165 @@
+{
+  "description": "Couchbase Model Context Protocol Server to interact with Couchbase clusters",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:27+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Couchbase-Ecosystem-mcp-server-couchbase.stdio.02a9d473aa",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/Couchbase-Ecosystem/mcp-server-couchbase",
+    "homepage": "https://github.com/Couchbase-Ecosystem/mcp-server-couchbase",
+    "repository": "https://github.com/Couchbase-Ecosystem/mcp-server-couchbase"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Couchbase-Ecosystem/mcp-server-couchbase",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Couchbase connection string. Required for connecting to the cluster.",
+          "format": "string",
+          "name": "CB_CONNECTION_STRING"
+        },
+        {
+          "description": "Couchbase database username. Required for basic authentication.",
+          "format": "string",
+          "name": "CB_USERNAME"
+        },
+        {
+          "description": "Couchbase database password. Required for basic authentication.",
+          "format": "string",
+          "isSecret": true,
+          "name": "CB_PASSWORD"
+        },
+        {
+          "description": "Couchbase CA certificate path. Required for TLS authentication in non Capella clusters.",
+          "format": "string",
+          "name": "CB_CA_CERT_PATH"
+        },
+        {
+          "description": "Couchbase client certificate path. Required for mTLS authentication.",
+          "format": "string",
+          "name": "CB_CLIENT_CERT_PATH"
+        },
+        {
+          "description": "Couchbase client key path. Required for mTLS authentication.",
+          "format": "string",
+          "name": "CB_CLIENT_KEY_PATH"
+        },
+        {
+          "description": "Couchbase read only query mode. Set to true to allow only read-only queries. Set to false to allow data modification queries.",
+          "format": "boolean",
+          "name": "CB_MCP_READ_ONLY_QUERY_MODE"
+        },
+        {
+          "description": "Transport mode for the server (stdio, http or sse). Default is stdio",
+          "format": "string",
+          "name": "CB_MCP_TRANSPORT"
+        },
+        {
+          "description": "Host to run the MCP server on (default: 127.0.0.1). Used only for HTTP and SSE transport modes.",
+          "format": "string",
+          "name": "CB_MCP_HOST"
+        },
+        {
+          "description": "Port to run the MCP server on (default: 8000). Used only for HTTP and SSE transport modes.",
+          "format": "number",
+          "name": "CB_MCP_PORT"
+        }
+      ],
+      "identifier": "couchbase-mcp-server",
+      "packageArguments": [
+        {
+          "description": "Couchbase connection string. Required for connecting to the cluster.",
+          "format": "string",
+          "name": "--connection-string",
+          "type": "named"
+        },
+        {
+          "description": "Couchbase database username. Required for basic authentication.",
+          "format": "string",
+          "name": "--username",
+          "type": "named"
+        },
+        {
+          "description": "Couchbase database password. Required for basic authentication.",
+          "format": "string",
+          "isSecret": true,
+          "name": "--password",
+          "type": "named"
+        },
+        {
+          "description": "Couchbase CA certificate path. Required for TLS authentication in non Capella clusters.",
+          "format": "string",
+          "name": "--ca-cert-path",
+          "type": "named"
+        },
+        {
+          "description": "Couchbase client certificate path. Required for mTLS authentication.",
+          "format": "string",
+          "name": "--client-cert-path",
+          "type": "named"
+        },
+        {
+          "description": "Couchbase client key path. Required for mTLS authentication.",
+          "format": "string",
+          "name": "--client-key-path",
+          "type": "named"
+        },
+        {
+          "description": "Couchbase read only query mode. Set to true to allow only read-only queries. Set to false to allow data modification queries.",
+          "format": "boolean",
+          "name": "--read-only-query-mode",
+          "type": "named"
+        },
+        {
+          "description": "Transport mode for the server (stdio, http or sse). Default is stdio",
+          "format": "string",
+          "name": "--transport",
+          "type": "named"
+        },
+        {
+          "description": "Host to run the MCP server on (default: 127.0.0.1). Used only for HTTP and SSE transport modes.",
+          "format": "string",
+          "name": "--host",
+          "type": "named"
+        },
+        {
+          "description": "Port to run the MCP server on (default: 8000). Used only for HTTP and SSE transport modes.",
+          "format": "number",
+          "name": "--port",
+          "type": "named"
+        }
+      ],
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.2rc4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "02a9d473aa",
+    "published_at": "2025-11-12T16:05:11.25459Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Couchbase-Ecosystem/mcp-server-couchbase",
+    "server_version": "0.5.2rc4",
+    "source": "mcp-registry",
+    "updated_at": "2025-11-12T16:05:11.25459Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.5.2rc4"
+}

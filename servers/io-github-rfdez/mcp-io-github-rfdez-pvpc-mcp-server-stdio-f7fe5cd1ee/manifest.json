@@ -1,0 +1,76 @@
+{
+  "description": "Fetch the Voluntary Price for the Small Consumer (PVPC) published daily by Red El\u00e9ctrica.",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:57+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-rfdez-pvpc-mcp-server.stdio.f7fe5cd1ee",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/rfdez/pvpc-mcp-server",
+    "homepage": "https://github.com/rfdez/pvpc-mcp-server",
+    "repository": "https://github.com/rfdez/pvpc-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@rfdez/pvpc-mcp-server==3.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.rfdez/pvpc-mcp-server",
+  "packages": [
+    {
+      "identifier": "@rfdez/pvpc-mcp-server",
+      "packageArguments": [
+        {
+          "description": "Use HTTP transport type for MCP server",
+          "name": "--transport",
+          "type": "named",
+          "value": "http"
+        },
+        {
+          "default": "8080",
+          "description": "Port for HTTP transport",
+          "name": "--port",
+          "type": "named"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "headers": [
+          {
+            "description": "ESIOS API key for authentication",
+            "isRequired": true,
+            "isSecret": true,
+            "name": "X-API-Key"
+          }
+        ],
+        "type": "streamable-http",
+        "url": "http://127.0.0.1:8080/mcp"
+      },
+      "version": "3.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f7fe5cd1ee",
+    "published_at": "2025-09-10T16:28:04.867936Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.rfdez/pvpc-mcp-server",
+    "server_version": "3.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2025-09-10T16:53:23.925846Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "3.2.2"
+}

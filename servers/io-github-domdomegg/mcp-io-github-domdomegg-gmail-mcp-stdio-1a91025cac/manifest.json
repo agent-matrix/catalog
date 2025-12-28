@@ -1,0 +1,72 @@
+{
+  "description": "Allow AI systems to read, send, archive, and manage emails via Gmail.",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-domdomegg-gmail-mcp.stdio.1a91025cac",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/domdomegg/gmail-mcp.git",
+    "homepage": "https://github.com/domdomegg/gmail-mcp.git",
+    "repository": "https://github.com/domdomegg/gmail-mcp.git"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "gmail-mcp==1.0.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.domdomegg/gmail-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Transport type.",
+          "isRequired": true,
+          "name": "MCP_TRANSPORT",
+          "value": "http"
+        },
+        {
+          "description": "Google OAuth client ID.",
+          "isRequired": true,
+          "name": "GOOGLE_CLIENT_ID"
+        },
+        {
+          "description": "Google OAuth client secret.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GOOGLE_CLIENT_SECRET"
+        }
+      ],
+      "identifier": "gmail-mcp",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3000/mcp"
+      },
+      "version": "1.0.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1a91025cac",
+    "published_at": "2025-12-10T15:20:10.47685Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.domdomegg/gmail-mcp",
+    "server_version": "1.0.3",
+    "source": "mcp-registry",
+    "updated_at": "2025-12-10T15:20:10.47685Z"
+  },
+  "title": "Gmail",
+  "type": "mcp_server",
+  "version": "1.0.3"
+}

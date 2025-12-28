@@ -1,0 +1,88 @@
+{
+  "description": "MCP server providing Prometheus metrics access and PromQL query execution for AI assistants",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-pab1it0-prometheus-mcp-server.stdio.5a432b7dee",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/pab1it0/prometheus-mcp-server",
+    "homepage": "https://github.com/pab1it0/prometheus-mcp-server",
+    "repository": "https://github.com/pab1it0/prometheus-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.pab1it0/prometheus-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Prometheus server URL (e.g., http://localhost:9090)",
+          "format": "string",
+          "isRequired": true,
+          "name": "PROMETHEUS_URL"
+        },
+        {
+          "description": "Set to False to disable SSL verification",
+          "format": "boolean",
+          "name": "PROMETHEUS_URL_SSL_VERIFY"
+        },
+        {
+          "description": "Set to True to disable Prometheus UI links in query results (saves context tokens in MCP clients)",
+          "format": "boolean",
+          "name": "PROMETHEUS_DISABLE_LINKS"
+        },
+        {
+          "description": "Username for Prometheus basic authentication",
+          "format": "string",
+          "name": "PROMETHEUS_USERNAME"
+        },
+        {
+          "description": "Password for Prometheus basic authentication",
+          "format": "string",
+          "isSecret": true,
+          "name": "PROMETHEUS_PASSWORD"
+        },
+        {
+          "description": "Bearer token for Prometheus authentication",
+          "format": "string",
+          "isSecret": true,
+          "name": "PROMETHEUS_TOKEN"
+        },
+        {
+          "description": "Organization ID for multi-tenant Prometheus setups",
+          "format": "string",
+          "name": "ORG_ID"
+        }
+      ],
+      "identifier": "ghcr.io/pab1it0/prometheus-mcp-server:1.4.4",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "5a432b7dee",
+    "published_at": "2025-10-28T21:16:10.944717Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.pab1it0/prometheus-mcp-server",
+    "server_version": "1.4.4",
+    "source": "mcp-registry",
+    "updated_at": "2025-10-28T21:16:10.944717Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.4.4"
+}

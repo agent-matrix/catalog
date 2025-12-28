@@ -1,0 +1,119 @@
+{
+  "description": "MCP server for browser use access",
+  "harvest": {
+    "last_seen_at": "2025-12-28T19:38:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-bytedance-mcp-server-browser.stdio.97f25c6d62",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/bytedance/UI-TARS-desktop",
+    "homepage": "https://github.com/bytedance/UI-TARS-desktop",
+    "repository": "https://github.com/bytedance/UI-TARS-desktop"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@agent-infra/mcp-server-browser==latest"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.bytedance/mcp-server-browser",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "DISPLAY environment variable for browser rendering",
+          "format": "string",
+          "name": "DISPLAY"
+        }
+      ],
+      "identifier": "@agent-infra/mcp-server-browser",
+      "packageArguments": [
+        {
+          "default": "8089",
+          "description": "Server port number",
+          "format": "number",
+          "isRequired": true,
+          "name": "port",
+          "type": "named"
+        },
+        {
+          "description": "browser or chrome channel to use, possible values: chrome, edge, firefox.",
+          "format": "string",
+          "name": "browser",
+          "type": "named"
+        },
+        {
+          "description": "Chrome DevTools Protocol endpoint URL",
+          "format": "string",
+          "name": "cdp-endpoint",
+          "type": "named"
+        },
+        {
+          "description": "WebSocket endpoint to connect to, for example",
+          "format": "string",
+          "name": "ws-endpoint",
+          "type": "named"
+        },
+        {
+          "description": "Path to the browser executable",
+          "format": "string",
+          "name": "executable-path",
+          "type": "named"
+        },
+        {
+          "description": "Path to the output directory",
+          "format": "string",
+          "name": "output-dir",
+          "type": "named"
+        },
+        {
+          "description": "Comma-separated list of patterns to bypass the proxy",
+          "format": "string",
+          "name": "proxy-bypass",
+          "type": "named"
+        },
+        {
+          "description": "Proxy server address",
+          "format": "string",
+          "name": "proxy-server",
+          "type": "named"
+        },
+        {
+          "description": "Run server that uses screenshots (Aria snapshots are used by default)",
+          "format": "boolean",
+          "name": "vision",
+          "type": "named"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://127.0.0.1:{port}/mcp"
+      },
+      "version": "latest"
+    }
+  ],
+  "provenance": {
+    "identity_key": "97f25c6d62",
+    "published_at": "2025-09-09T06:16:24.728253Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.bytedance/mcp-server-browser",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2025-09-09T06:16:24.728253Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.0"
+}
