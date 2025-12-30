@@ -1,0 +1,114 @@
+{
+  "description": "MCP server for creative PDF generation with full emoji, Unicode, and offline support",
+  "harvest": {
+    "last_seen_at": "2025-12-30T03:44:58+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mcp-z-mcp-pdf.stdio.416dc3baf5",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "name": "-y",
+            "type": "named"
+          },
+          "@mcp-z/mcp-pdf==2.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mcp-z/mcp-pdf",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "~/.mcp-z/mcp-pdf/files",
+          "description": "Directory for storing generated PDF files",
+          "name": "STORAGE_DIR",
+          "placeholder": "~/.mcp-pdf",
+          "value": "~/.mcp-z/mcp-pdf/files"
+        },
+        {
+          "description": "HTTP server port (overrides --port)",
+          "name": "PORT",
+          "placeholder": "3000"
+        },
+        {
+          "description": "Base URL for file serving (optional, defaults to http://localhost:{PORT})",
+          "name": "BASE_URL",
+          "placeholder": "http://localhost:{PORT}"
+        },
+        {
+          "choices": [
+            "debug",
+            "info",
+            "warn",
+            "error"
+          ],
+          "default": "info",
+          "description": "Logging level",
+          "name": "LOG_LEVEL",
+          "placeholder": "info",
+          "value": "info"
+        }
+      ],
+      "identifier": "@mcp-z/mcp-pdf",
+      "packageArguments": [
+        {
+          "description": "HTTP server port",
+          "name": "--port",
+          "type": "named",
+          "value": "9001"
+        },
+        {
+          "description": "Override directory for storing generated PDF files",
+          "name": "--storage-dir",
+          "type": "named"
+        },
+        {
+          "description": "Override base URL for file serving",
+          "name": "--base-url",
+          "type": "named"
+        },
+        {
+          "description": "Override logging level",
+          "name": "--log-level",
+          "type": "named"
+        }
+      ],
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "name": "-y",
+          "type": "named"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:{PORT}/mcp"
+      },
+      "version": "2.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "416dc3baf5",
+    "published_at": "2025-12-29T06:44:42.91348Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mcp-z/mcp-pdf",
+    "server_version": "2.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2025-12-29T06:44:42.91348Z"
+  },
+  "title": "PDF Generator",
+  "type": "mcp_server",
+  "version": "2.0.0"
+}

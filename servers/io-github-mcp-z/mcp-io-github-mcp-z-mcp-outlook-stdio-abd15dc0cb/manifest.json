@@ -1,0 +1,223 @@
+{
+  "description": "Outlook integration with OAuth, message search, batch operations, and calendar management",
+  "harvest": {
+    "last_seen_at": "2025-12-30T03:44:58+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mcp-z-mcp-outlook.stdio.abd15dc0cb",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "name": "-y",
+            "type": "named"
+          },
+          "@mcp-z/mcp-outlook==1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mcp-z/mcp-outlook",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Microsoft OAuth client ID (required for OAuth authentication modes)",
+          "isRequired": true,
+          "name": "MS_CLIENT_ID",
+          "placeholder": "12345678-abcd-1234-abcd-123456789abc"
+        },
+        {
+          "description": "Microsoft tenant ID (required for OAuth authentication)",
+          "isRequired": true,
+          "name": "MS_TENANT_ID",
+          "placeholder": "common"
+        },
+        {
+          "description": "Microsoft OAuth client secret (optional for public clients)",
+          "isSecret": true,
+          "name": "MS_CLIENT_SECRET",
+          "placeholder": "abc~123DEF.456ghi-789JKL_012mno"
+        },
+        {
+          "choices": [
+            "loopback-oauth",
+            "device-code",
+            "dcr"
+          ],
+          "description": "Authentication mode",
+          "name": "AUTH_MODE",
+          "placeholder": "loopback-oauth",
+          "value": "loopback-oauth"
+        },
+        {
+          "default": "false",
+          "description": "Disable browser auto-open, return auth URL instead (true/false)",
+          "name": "HEADLESS",
+          "placeholder": "false"
+        },
+        {
+          "description": "OAuth redirect URI (optional, default: ephemeral loopback)",
+          "name": "REDIRECT_URI",
+          "placeholder": "http://localhost:{PORT}/oauth/callback"
+        },
+        {
+          "choices": [
+            "self-hosted",
+            "external"
+          ],
+          "default": "self-hosted",
+          "description": "Dynamic Client Registration mode",
+          "name": "DCR_MODE",
+          "placeholder": "self-hosted"
+        },
+        {
+          "description": "External verification endpoint URL (required for external DCR mode)",
+          "name": "DCR_VERIFY_URL",
+          "placeholder": "https://example.com/verify"
+        },
+        {
+          "default": "file://~/.mcp-z/mcp-outlook/dcr.json",
+          "description": "DCR client storage URI (for self-hosted DCR mode)",
+          "name": "DCR_STORE_URI",
+          "placeholder": "file://~/.mcp-z/mcp-outlook/dcr.json"
+        },
+        {
+          "description": "Directory for storing CSV export files",
+          "name": "STORAGE_DIR",
+          "placeholder": "~/.mcp-z/mcp-outlook/files",
+          "value": "~/.mcp-z/mcp-outlook/files"
+        },
+        {
+          "description": "HTTP server port (overrides --port)",
+          "name": "PORT",
+          "placeholder": "3000"
+        },
+        {
+          "description": "Base URL for HTTP file serving (defaults to http://localhost:{PORT})",
+          "name": "BASE_URL",
+          "placeholder": "http://localhost:{PORT}"
+        },
+        {
+          "choices": [
+            "debug",
+            "info",
+            "warn",
+            "error"
+          ],
+          "description": "Logging level",
+          "name": "LOG_LEVEL",
+          "placeholder": "info",
+          "value": "info"
+        }
+      ],
+      "identifier": "@mcp-z/mcp-outlook",
+      "packageArguments": [
+        {
+          "description": "HTTP server port",
+          "name": "--port",
+          "type": "named",
+          "value": "9003"
+        },
+        {
+          "choices": [
+            "loopback-oauth",
+            "device-code",
+            "dcr"
+          ],
+          "description": "Authentication mode",
+          "name": "--auth",
+          "type": "named"
+        },
+        {
+          "description": "Microsoft tenant ID (overrides MS_TENANT_ID env var)",
+          "name": "--tenant-id",
+          "type": "named"
+        },
+        {
+          "description": "Disable browser auto-open, return auth URL instead",
+          "name": "--headless",
+          "type": "named"
+        },
+        {
+          "description": "OAuth redirect URI (default: ephemeral loopback)",
+          "name": "--redirect-uri",
+          "type": "named"
+        },
+        {
+          "choices": [
+            "self-hosted",
+            "external"
+          ],
+          "description": "DCR mode",
+          "name": "--dcr-mode",
+          "type": "named"
+        },
+        {
+          "description": "External verification endpoint URL (required for external DCR mode)",
+          "name": "--dcr-verify-url",
+          "type": "named"
+        },
+        {
+          "description": "DCR client storage URI (for self-hosted DCR mode)",
+          "name": "--dcr-store-uri",
+          "type": "named"
+        },
+        {
+          "description": "Override directory for storing CSV export files",
+          "name": "--storage-dir",
+          "type": "named"
+        },
+        {
+          "description": "Override base URL for HTTP file serving",
+          "name": "--base-url",
+          "type": "named"
+        },
+        {
+          "choices": [
+            "debug",
+            "info",
+            "warn",
+            "error"
+          ],
+          "description": "Override logging level",
+          "name": "--log-level",
+          "type": "named"
+        }
+      ],
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "name": "-y",
+          "type": "named"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:{PORT}/mcp"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "abd15dc0cb",
+    "published_at": "2025-12-29T08:30:21.210175Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mcp-z/mcp-outlook",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2025-12-29T08:30:21.210175Z"
+  },
+  "title": "Outlook",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}
