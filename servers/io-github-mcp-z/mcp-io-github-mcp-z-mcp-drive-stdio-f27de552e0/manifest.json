@@ -1,0 +1,222 @@
+{
+  "description": "Google Drive integration with file operations, folder navigation, search, and sharing",
+  "harvest": {
+    "last_seen_at": "2025-12-30T03:44:58+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mcp-z-mcp-drive.stdio.f27de552e0",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "name": "-y",
+            "type": "named"
+          },
+          "@mcp-z/mcp-drive==1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mcp-z/mcp-drive",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Google OAuth client ID (required for OAuth authentication modes)",
+          "isRequired": true,
+          "name": "GOOGLE_CLIENT_ID",
+          "placeholder": "123456789-abcdefghijk.apps.googleusercontent.com"
+        },
+        {
+          "description": "Google OAuth client secret (optional for public clients)",
+          "isSecret": true,
+          "name": "GOOGLE_CLIENT_SECRET",
+          "placeholder": "GOCSPX-abcdefghijklmnop"
+        },
+        {
+          "description": "Path to service account JSON key file (required for service-account auth mode)",
+          "name": "GOOGLE_SERVICE_ACCOUNT_KEY_FILE",
+          "placeholder": "/path/to/service-account-key.json"
+        },
+        {
+          "choices": [
+            "loopback-oauth",
+            "service-account",
+            "dcr"
+          ],
+          "description": "Authentication mode",
+          "name": "AUTH_MODE",
+          "placeholder": "loopback-oauth",
+          "value": "loopback-oauth"
+        },
+        {
+          "default": "false",
+          "description": "Disable browser auto-open, return auth URL instead (true/false)",
+          "name": "HEADLESS",
+          "placeholder": "false"
+        },
+        {
+          "description": "OAuth redirect URI (optional, default: ephemeral loopback)",
+          "name": "REDIRECT_URI",
+          "placeholder": "http://localhost:{PORT}/oauth/callback"
+        },
+        {
+          "choices": [
+            "self-hosted",
+            "external"
+          ],
+          "default": "self-hosted",
+          "description": "Dynamic Client Registration mode",
+          "name": "DCR_MODE",
+          "placeholder": "self-hosted"
+        },
+        {
+          "description": "External verification endpoint URL (required for external DCR mode)",
+          "name": "DCR_VERIFY_URL",
+          "placeholder": "https://example.com/verify"
+        },
+        {
+          "default": "file://~/.mcp-z/mcp-drive/dcr.json",
+          "description": "DCR client storage URI (for self-hosted DCR mode)",
+          "name": "DCR_STORE_URI",
+          "placeholder": "file://~/.mcp-z/mcp-drive/dcr.json"
+        },
+        {
+          "description": "Directory for storing exported files",
+          "name": "STORAGE_DIR",
+          "placeholder": "~/.mcp-z/mcp-drive/files",
+          "value": "~/.mcp-z/mcp-drive/files"
+        },
+        {
+          "description": "HTTP server port (overrides --port)",
+          "name": "PORT",
+          "placeholder": "3000"
+        },
+        {
+          "description": "Base URL for HTTP file serving (defaults to http://localhost:{PORT})",
+          "name": "BASE_URL",
+          "placeholder": "http://localhost:{PORT}"
+        },
+        {
+          "choices": [
+            "debug",
+            "info",
+            "warn",
+            "error"
+          ],
+          "description": "Logging level",
+          "name": "LOG_LEVEL",
+          "placeholder": "info",
+          "value": "info"
+        }
+      ],
+      "identifier": "@mcp-z/mcp-drive",
+      "packageArguments": [
+        {
+          "description": "HTTP server port",
+          "name": "--port",
+          "type": "named",
+          "value": "9005"
+        },
+        {
+          "choices": [
+            "loopback-oauth",
+            "service-account",
+            "dcr"
+          ],
+          "description": "Authentication mode",
+          "name": "--auth",
+          "type": "named"
+        },
+        {
+          "description": "Disable browser auto-open, return auth URL instead",
+          "name": "--headless",
+          "type": "named"
+        },
+        {
+          "description": "OAuth redirect URI (default: ephemeral loopback)",
+          "name": "--redirect-uri",
+          "type": "named"
+        },
+        {
+          "description": "Path to service account JSON key file (overrides GOOGLE_SERVICE_ACCOUNT_KEY_FILE env var)",
+          "name": "--service-account-key-file",
+          "type": "named"
+        },
+        {
+          "choices": [
+            "self-hosted",
+            "external"
+          ],
+          "description": "DCR mode",
+          "name": "--dcr-mode",
+          "type": "named"
+        },
+        {
+          "description": "External verification endpoint URL (required for external DCR mode)",
+          "name": "--dcr-verify-url",
+          "type": "named"
+        },
+        {
+          "description": "DCR client storage URI (for self-hosted DCR mode)",
+          "name": "--dcr-store-uri",
+          "type": "named"
+        },
+        {
+          "description": "Override directory for storing exported files",
+          "name": "--storage-dir",
+          "type": "named"
+        },
+        {
+          "description": "Override base URL for HTTP file serving",
+          "name": "--base-url",
+          "type": "named"
+        },
+        {
+          "choices": [
+            "debug",
+            "info",
+            "warn",
+            "error"
+          ],
+          "description": "Override logging level",
+          "name": "--log-level",
+          "type": "named"
+        }
+      ],
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "name": "-y",
+          "type": "named"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:{PORT}/mcp"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f27de552e0",
+    "published_at": "2025-12-29T08:28:40.506179Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mcp-z/mcp-drive",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2025-12-29T08:28:40.506179Z"
+  },
+  "title": "Google Drive",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}
