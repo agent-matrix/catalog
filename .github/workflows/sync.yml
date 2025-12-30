@@ -2,9 +2,15 @@ name: Sync Catalog from Registry
 
 on:
   schedule:
-    - cron: "15 2 * * *" # 02:15 UTC daily
+    # Run once a week on Monday at 02:15 UTC
+    - cron: "15 2 * * 1"
   workflow_dispatch:
     inputs:
+      force_pull_request:
+        description: "Force a Pull Request instead of direct push"
+        required: false
+        type: boolean
+        default: false
       registry_base_url:
         description: "MCP Registry API base URL"
         required: false
@@ -36,14 +42,13 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      # Prefer a PAT if you added it; otherwise fall back to the built-in token.
-      # IMPORTANT: If your repo/org disallows PR creation by GITHUB_TOKEN, you MUST set CATALOG_BOT_TOKEN.
       EFFECTIVE_TOKEN: ${{ secrets.CATALOG_BOT_TOKEN || github.token }}
-
       REGISTRY_BASE_URL: ${{ inputs.registry_base_url || 'https://registry.modelcontextprotocol.io' }}
       GITHUB_SOURCE_REPO: ${{ inputs.github_source_repo || 'https://github.com/modelcontextprotocol/servers' }}
       LIMIT_SERVERS: ${{ inputs.limit_servers || '0' }}
       ENABLE_GITHUB_ENRICHMENT: ${{ inputs.enable_github_enrichment || false }}
+      # Default to false for scheduled runs, use input for manual runs
+      FORCE_PR: ${{ inputs.force_pull_request || false }}
 
     steps:
       - name: Checkout catalog
@@ -83,11 +88,12 @@ jobs:
         shell: bash
         run: |
           cd mcp_ingest_tool
+          # Install as standard package (not editable) to allow folder deletion
           pip install ".[dev,harvester]"
           cd ..
-
           python -c "import mcp_ingest; print('✓ mcp_ingest installed successfully')"
-
+          
+          # Remove tool folder to keep repo clean
           rm -rf mcp_ingest_tool
 
       - name: Harvest from MCP Registry
@@ -125,7 +131,7 @@ jobs:
             -y
           echo "✅ GitHub enrichment complete"
 
-      - name: Validate catalog index (basic)
+      - name: Validate catalog index
         shell: bash
         run: |
           if [ -f index.json ]; then
@@ -158,8 +164,23 @@ jobs:
             echo "deprecated=0" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Push changes and create PR
-        if: steps.changes.outputs.has_changes == 'true'
+      # OPTION 1: Direct Push (Default)
+      # Runs if changes exist AND "Force Pull Request" is FALSE
+      - name: Commit and Push (Direct)
+        if: steps.changes.outputs.has_changes == 'true' && env.FORCE_PR != 'true'
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          
+          git add -A
+          git commit -m "chore(sync): automated weekly update of MCP servers catalog"
+          git push
+
+      # OPTION 2: Create Pull Request (Manual Option)
+      # Runs if changes exist AND "Force Pull Request" is TRUE
+      - name: Create Pull Request (Manual Mode)
+        if: steps.changes.outputs.has_changes == 'true' && env.FORCE_PR == 'true'
         shell: bash
         env:
           GH_TOKEN: ${{ env.EFFECTIVE_TOKEN }}
@@ -167,19 +188,18 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          BRANCH="bot/sync-mcp-registry-$(date +%s)"
+          BRANCH="manual/sync-mcp-registry-$(date +%s)"
           git checkout -b "$BRANCH"
-
+          
           git add -A
-          git commit -m "chore(sync): update MCP servers catalog"
-
+          git commit -m "chore(sync): manual update of MCP servers catalog"
+          
           git push origin "$BRANCH"
 
           cat > /tmp/pr_body.md <<EOF
-          ## Automated Catalog Sync
-
-          Updates from MCP Registry (${REGISTRY_BASE_URL}).
-
+          ## Manual Catalog Sync
+          Triggered manually by user.
+          
           ### Stats
           - Total: ${{ steps.stats.outputs.total }}
           - Active: ${{ steps.stats.outputs.active }}
@@ -189,5 +209,5 @@ jobs:
           gh pr create \
             --base main \
             --head "$BRANCH" \
-            --title "chore(sync): automated catalog sync" \
+            --title "chore(sync): manual catalog sync" \
             --body-file /tmp/pr_body.md
