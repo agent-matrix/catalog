@@ -1,0 +1,61 @@
+{
+  "description": "MCP server for secure database access (PostgreSQL, MySQL, SQLite)",
+  "harvest": {
+    "last_seen_at": "2026-01-05T04:03:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-pilat-mcp-datalink.stdio.e6f13044e5",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/pilat/mcp-datalink",
+    "homepage": "https://github.com/pilat/mcp-datalink",
+    "repository": "https://github.com/pilat/mcp-datalink"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.pilat/mcp-datalink",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Database connection URL. Pattern: DATALINK_<NAME>_URL where <NAME> identifies the database. Supports postgresql://, mysql://, or file path for SQLite.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DATALINK_ANALYTICS_URL"
+        },
+        {
+          "description": "Set to 'true' for read-only access. Pattern: DATALINK_<NAME>_READONLY",
+          "name": "DATALINK_ANALYTICS_READONLY"
+        }
+      ],
+      "identifier": "@pilat/mcp-datalink",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.2.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e6f13044e5",
+    "published_at": "2026-01-04T18:09:13.857862Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.pilat/mcp-datalink",
+    "server_version": "1.2.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-01-04T18:09:13.857862Z"
+  },
+  "title": "DataLink",
+  "type": "mcp_server",
+  "version": "1.2.4"
+}
