@@ -1,0 +1,89 @@
+{
+  "description": "MCP server for delegating tasks to specialized AI assistants in Cursor, Claude, and Gemini",
+  "harvest": {
+    "last_seen_at": "2026-01-12T03:57:50+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-shinpr-sub-agents-mcp.stdio.bf3d31f3b5",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/shinpr/sub-agents-mcp",
+    "homepage": "https://github.com/shinpr/sub-agents-mcp",
+    "repository": "https://github.com/shinpr/sub-agents-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.shinpr/sub-agents-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Absolute path to the directory containing agent definition files (.md or .txt)",
+          "format": "string",
+          "isRequired": true,
+          "name": "AGENTS_DIR"
+        },
+        {
+          "description": "Type of AI CLI to use: 'cursor', 'claude', or 'gemini'",
+          "format": "string",
+          "isRequired": true,
+          "name": "AGENT_TYPE"
+        },
+        {
+          "description": "Maximum execution time for agents in milliseconds (default: 300000, max: 600000)",
+          "format": "string",
+          "name": "EXECUTION_TIMEOUT_MS"
+        },
+        {
+          "description": "Enable session management to maintain execution history across agent calls (default: false)",
+          "format": "string",
+          "name": "SESSION_ENABLED"
+        },
+        {
+          "description": "Directory path for storing session files (default: .mcp-sessions in current working directory)",
+          "format": "string",
+          "name": "SESSION_DIR"
+        },
+        {
+          "description": "Number of days to retain session history before automatic cleanup (default: 7)",
+          "format": "string",
+          "name": "SESSION_RETENTION_DAYS"
+        },
+        {
+          "description": "Path to CLI settings file/directory. Claude: --settings arg, Cursor: CURSOR_CONFIG_DIR, Codex: CODEX_HOME. Gemini not supported.",
+          "format": "string",
+          "name": "AGENTS_SETTINGS_PATH"
+        }
+      ],
+      "identifier": "sub-agents-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "bf3d31f3b5",
+    "published_at": "2026-01-08T02:10:58.404904Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.shinpr/sub-agents-mcp",
+    "server_version": "0.5.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-01-08T02:10:58.404904Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.5.1"
+}

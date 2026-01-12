@@ -1,0 +1,91 @@
+{
+  "description": "An MCP server that provides access to common Cisco Modeling Labs (CML) operations.",
+  "harvest": {
+    "last_seen_at": "2026-01-12T03:57:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-xorrkaz-cml-mcp.stdio.3a13265612",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/xorrkaz/cml-mcp",
+    "homepage": "https://github.com/xorrkaz/cml-mcp",
+    "repository": "https://github.com/xorrkaz/cml-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "cml-mcp==0.21.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.xorrkaz/cml-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "URL for the CML Server",
+          "format": "string",
+          "isRequired": true,
+          "name": "CML_URL"
+        },
+        {
+          "description": "Username for CML authentication",
+          "format": "string",
+          "isRequired": true,
+          "name": "CML_USERNAME"
+        },
+        {
+          "description": "Password for CML authentication",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CML_PASSWORD"
+        },
+        {
+          "description": "Username for authentication to devices running in CML",
+          "format": "string",
+          "name": "PYATS_USERNAME"
+        },
+        {
+          "description": "Password for authentication to devices running in CML",
+          "format": "string",
+          "isSecret": true,
+          "name": "PYATS_PASSWORD"
+        },
+        {
+          "description": "Enable password for authentication to devices running in CML",
+          "format": "string",
+          "isSecret": true,
+          "name": "PYATS_AUTH_PASS"
+        }
+      ],
+      "identifier": "cml-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.21.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "3a13265612",
+    "published_at": "2026-01-10T20:59:06.751724Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.xorrkaz/cml-mcp",
+    "server_version": "0.21.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-01-10T20:59:06.751724Z"
+  },
+  "title": "Cisco Modeling Labs (CML)",
+  "type": "mcp_server",
+  "version": "0.21.2"
+}

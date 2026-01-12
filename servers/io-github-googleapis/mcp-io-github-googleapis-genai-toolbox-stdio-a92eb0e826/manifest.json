@@ -1,0 +1,97 @@
+{
+  "description": "MCP Toolbox for Databases enables your agent to connect to your database.",
+  "harvest": {
+    "last_seen_at": "2026-01-12T03:57:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-googleapis-genai-toolbox.stdio.a92eb0e826",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/googleapis/genai-toolbox",
+    "homepage": "https://github.com/googleapis/genai-toolbox",
+    "repository": "https://github.com/googleapis/genai-toolbox"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.googleapis/genai-toolbox",
+  "packages": [
+    {
+      "identifier": "us-central1-docker.pkg.dev/database-toolbox/toolbox/toolbox:0.25.0",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "default": "tools.yaml",
+          "description": "File path specifying the tool configuration.",
+          "name": "--tools-file",
+          "type": "named"
+        },
+        {
+          "description": "Address of the interface the server will listen on.",
+          "name": "--address",
+          "type": "named",
+          "value": "{host}",
+          "valueHint": "host",
+          "variables": {
+            "host": {
+              "default": "127.0.0.1",
+              "description": "ip address",
+              "isRequired": true
+            }
+          }
+        },
+        {
+          "description": "Port the server will listen on.",
+          "name": "--port",
+          "type": "named",
+          "value": "{port}",
+          "valueHint": "port",
+          "variables": {
+            "port": {
+              "default": "5000",
+              "description": "port",
+              "isRequired": true
+            }
+          }
+        },
+        {
+          "choices": [
+            "debug",
+            "info",
+            "warn",
+            "error"
+          ],
+          "default": "info",
+          "description": "Specify the minimum level logged.",
+          "name": "--log-level",
+          "type": "named"
+        }
+      ],
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://{host}:{port}/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "a92eb0e826",
+    "published_at": "2026-01-08T23:16:04.638795Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.googleapis/genai-toolbox",
+    "server_version": "0.25.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-01-08T23:16:04.638795Z"
+  },
+  "title": "MCP Toolbox",
+  "type": "mcp_server",
+  "version": "0.25.0"
+}

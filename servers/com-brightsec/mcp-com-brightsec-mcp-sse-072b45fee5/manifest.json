@@ -1,0 +1,53 @@
+{
+  "description": "Enables AI agents to access Bright Security tools for app discovery and security testing.",
+  "harvest": {
+    "last_seen_at": "2026-01-12T03:56:57+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-brightsec-mcp.sse.072b45fee5",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://{instance}.brightsec.com/mcp"
+    }
+  },
+  "name": "com.brightsec/mcp",
+  "provenance": {
+    "identity_key": "072b45fee5",
+    "published_at": "2026-01-06T14:23:23.608647Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.brightsec/mcp",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-01-06T14:23:23.608647Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Bright Security API key for authentication.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "placeholder": "Api-Key YOUR_API_KEY"
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://{instance}.brightsec.com/mcp",
+      "variables": {
+        "instance": {
+          "default": "app",
+          "description": "Your instance name (e.g., your company name).",
+          "isRequired": true
+        }
+      }
+    }
+  ],
+  "title": "Bright Security",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}
