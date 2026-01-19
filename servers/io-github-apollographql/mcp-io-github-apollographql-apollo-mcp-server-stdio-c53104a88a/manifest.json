@@ -1,0 +1,89 @@
+{
+  "description": "MCP server that exposes GraphQL operations as tools for AI models.",
+  "harvest": {
+    "last_seen_at": "2026-01-19T03:58:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-apollographql-apollo-mcp-server.stdio.c53104a88a",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/apollographql/apollo-mcp-server",
+    "homepage": "https://github.com/apollographql/apollo-mcp-server",
+    "repository": "https://github.com/apollographql/apollo-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.apollographql/apollo-mcp-server",
+  "packages": [
+    {
+      "identifier": "ghcr.io/apollographql/apollo-mcp-server:v1.4.0",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "/config.yaml"
+        }
+      ],
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "Mount your config file into the container",
+          "isRequired": true,
+          "name": "--mount",
+          "type": "named",
+          "value": "type=bind,src={config_path},dst=/config.yaml,readonly",
+          "variables": {
+            "config_path": {
+              "description": "Path to your Apollo MCP Server configuration file on the host",
+              "format": "filepath",
+              "isRequired": true
+            }
+          }
+        },
+        {
+          "description": "Mount your project data directory into the container (for local schema and operations)",
+          "name": "--mount",
+          "type": "named",
+          "value": "type=bind,src={data_path},dst=/data",
+          "variables": {
+            "data_path": {
+              "description": "Path to your project directory containing schema and operation files",
+              "format": "filepath",
+              "isRequired": true
+            }
+          }
+        },
+        {
+          "description": "Expose the HTTP Streamable transport port",
+          "name": "-p",
+          "type": "named",
+          "value": "8000:8000"
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "c53104a88a",
+    "published_at": "2026-01-14T20:54:51.881184Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.apollographql/apollo-mcp-server",
+    "server_version": "1.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-01-14T20:54:51.881184Z"
+  },
+  "title": "Apollo MCP Server",
+  "type": "mcp_server",
+  "version": "1.4.0"
+}

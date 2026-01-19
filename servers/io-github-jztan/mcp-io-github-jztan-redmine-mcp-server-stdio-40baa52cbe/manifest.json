@@ -1,0 +1,123 @@
+{
+  "description": "Production-ready MCP server for Redmine with security, pagination, and enterprise features",
+  "harvest": {
+    "last_seen_at": "2026-01-19T03:58:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-jztan-redmine-mcp-server.stdio.40baa52cbe",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/jztan/redmine-mcp-server",
+    "homepage": "https://github.com/jztan/redmine-mcp-server",
+    "repository": "https://github.com/jztan/redmine-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.jztan/redmine-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "URL of your Redmine server (e.g., https://your-redmine-server.com)",
+          "format": "string",
+          "isRequired": true,
+          "name": "REDMINE_URL"
+        },
+        {
+          "description": "Redmine username for authentication (alternative to API key)",
+          "format": "string",
+          "name": "REDMINE_USERNAME"
+        },
+        {
+          "description": "Redmine password for authentication (alternative to API key)",
+          "format": "string",
+          "isSecret": true,
+          "name": "REDMINE_PASSWORD"
+        },
+        {
+          "description": "Redmine API key for authentication (alternative to username/password)",
+          "format": "string",
+          "isSecret": true,
+          "name": "REDMINE_API_KEY"
+        },
+        {
+          "default": "0.0.0.0",
+          "description": "Host address for the MCP server (default: 0.0.0.0)",
+          "format": "string",
+          "name": "SERVER_HOST"
+        },
+        {
+          "default": "8000",
+          "description": "Port for the MCP server (default: 8000)",
+          "format": "number",
+          "name": "SERVER_PORT"
+        },
+        {
+          "default": "localhost",
+          "description": "Public hostname for file download URLs (default: localhost)",
+          "format": "string",
+          "name": "PUBLIC_HOST"
+        },
+        {
+          "default": "8000",
+          "description": "Public port for file download URLs (default: 8000)",
+          "format": "number",
+          "name": "PUBLIC_PORT"
+        },
+        {
+          "default": "./attachments",
+          "description": "Directory for storing downloaded attachments (default: ./attachments)",
+          "format": "string",
+          "name": "ATTACHMENTS_DIR"
+        },
+        {
+          "default": "true",
+          "description": "Enable automatic cleanup of expired files (default: true)",
+          "format": "boolean",
+          "name": "AUTO_CLEANUP_ENABLED"
+        },
+        {
+          "default": "10",
+          "description": "Interval between cleanup runs in minutes (default: 10)",
+          "format": "number",
+          "name": "CLEANUP_INTERVAL_MINUTES"
+        },
+        {
+          "default": "60",
+          "description": "Default expiry time for attachments in minutes (default: 60)",
+          "format": "number",
+          "name": "ATTACHMENT_EXPIRES_MINUTES"
+        }
+      ],
+      "identifier": "redmine-mcp-server",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.10.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "40baa52cbe",
+    "published_at": "2026-01-18T08:13:34.54596Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.jztan/redmine-mcp-server",
+    "server_version": "0.10.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-01-18T08:13:34.54596Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.10.0"
+}

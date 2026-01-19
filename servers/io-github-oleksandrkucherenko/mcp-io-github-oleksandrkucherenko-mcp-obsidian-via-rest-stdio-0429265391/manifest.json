@@ -1,0 +1,91 @@
+{
+  "description": "Access Obsidian vaults via Local REST API - read, search, and interact with notes",
+  "harvest": {
+    "last_seen_at": "2026-01-19T03:58:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-OleksandrKucherenko-mcp-obsidian-via-rest.stdio.0429265391",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/OleksandrKucherenko/mcp-obsidian-via-rest",
+    "homepage": "https://github.com/OleksandrKucherenko/mcp-obsidian-via-rest",
+    "repository": "https://github.com/OleksandrKucherenko/mcp-obsidian-via-rest"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@oleksandrkucherenko/mcp-obsidian==1.3.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.OleksandrKucherenko/mcp-obsidian-via-rest",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Obsidian Local REST API key",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "API_KEY"
+        },
+        {
+          "description": "JSON array or semicolon-separated list of Obsidian REST API URLs for failover",
+          "format": "string",
+          "isRequired": true,
+          "name": "API_URLS"
+        },
+        {
+          "default": "stdio,http",
+          "description": "Enabled transports (default: stdio,http)",
+          "format": "string",
+          "name": "MCP_TRANSPORTS"
+        },
+        {
+          "default": "3000",
+          "description": "HTTP transport bind port (default: 3000)",
+          "format": "number",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "description": "HTTP transport bind host (default: 0.0.0.0)",
+          "format": "string",
+          "name": "MCP_HTTP_HOST"
+        },
+        {
+          "description": "Bearer token for HTTP transport authentication",
+          "format": "string",
+          "isSecret": true,
+          "name": "MCP_HTTP_TOKEN"
+        }
+      ],
+      "identifier": "@oleksandrkucherenko/mcp-obsidian",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:{MCP_HTTP_PORT}/mcp"
+      },
+      "version": "1.3.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0429265391",
+    "published_at": "2026-01-18T16:43:25.343862Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.OleksandrKucherenko/mcp-obsidian-via-rest",
+    "server_version": "1.3.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-01-18T16:43:25.343862Z"
+  },
+  "title": "Obsidian Vault MCP Server",
+  "type": "mcp_server",
+  "version": "1.3.3"
+}

@@ -1,0 +1,93 @@
+{
+  "description": "MCP server for Dynatrace Managed to access logs, events, and metrics.",
+  "harvest": {
+    "last_seen_at": "2026-01-19T03:58:32+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-dynatrace-oss-dynatrace-managed-mcp.stdio.62f6cd7b9e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/dynatrace-oss/dynatrace-managed-mcp",
+    "homepage": "https://github.com/dynatrace-oss/dynatrace-managed-mcp",
+    "repository": "https://github.com/dynatrace-oss/dynatrace-managed-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@dynatrace-oss/dynatrace-managed-mcp-server==0.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.dynatrace-oss/dynatrace-managed-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "id of the managed environment, used for constructing URL for API and dashboards (e.g. of the form `01234567-89ab-cdef-abcd-ef0123456789`)",
+          "format": "string",
+          "isRequired": true,
+          "name": "DT_MANAGED_ENVIRONMENT"
+        },
+        {
+          "description": "base url for Dynatrace Managed API, to which the environment id will be appended (e.g. `https://abc123.dynatrace-managed.com:9999`)",
+          "format": "string",
+          "isRequired": true,
+          "name": "DT_API_ENDPOINT_URL"
+        },
+        {
+          "description": "base url for Dynatrace Managed dashboard, to which the environment id will be appended (e.g. `https://dmz123.dynatrace-managed.com`)",
+          "format": "string",
+          "name": "DT_DYNATRACE_URL"
+        },
+        {
+          "description": "API Token with required scopes (e.g. 'dt0s16.SAMPLE.abcd1234')",
+          "format": "string",
+          "isRequired": true,
+          "name": "DT_MANAGED_API_TOKEN"
+        },
+        {
+          "description": "Logging level (e.g. debug, info, warning, error)",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        },
+        {
+          "description": "HTTP Proxy to use",
+          "format": "string",
+          "name": "HTTP_PROXY"
+        },
+        {
+          "description": "Disable telemetry",
+          "format": "boolean",
+          "name": "DT_MCP_DISABLE_TELEMETRY"
+        }
+      ],
+      "identifier": "@dynatrace-oss/dynatrace-managed-mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "62f6cd7b9e",
+    "published_at": "2026-01-15T17:20:40.762479Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.dynatrace-oss/dynatrace-managed-mcp",
+    "server_version": "0.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-01-15T17:20:40.762479Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.4.0"
+}

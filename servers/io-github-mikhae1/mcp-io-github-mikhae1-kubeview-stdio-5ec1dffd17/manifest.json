@@ -1,0 +1,106 @@
+{
+  "description": "Read-only Model Context Protocol MCP server enabling code-driven AI analysis of Kubernetes clusters.",
+  "harvest": {
+    "last_seen_at": "2026-01-19T03:58:45+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mikhae1-kubeview.stdio.5ec1dffd17",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/mikhae1/kubeview-mcp",
+    "homepage": "https://github.com/mikhae1/kubeview-mcp",
+    "repository": "https://github.com/mikhae1/kubeview-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mikhae1/kubeview",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to kubeconfig file; defaults to ~/.kube/config if unset.",
+          "format": "filepath",
+          "name": "KUBECONFIG"
+        },
+        {
+          "description": "Server mode: 'all' (default), 'code', or 'tools'. Controls which features are enabled.",
+          "format": "string",
+          "name": "MCP_MODE"
+        },
+        {
+          "description": "Logging level: 'error', 'warn', 'info' (default), or 'debug'.",
+          "format": "string",
+          "name": "MCP_LOG_LEVEL"
+        },
+        {
+          "description": "Kubernetes context name to use. If unset, uses the current context from kubeconfig.",
+          "format": "string",
+          "name": "MCP_KUBE_CONTEXT"
+        },
+        {
+          "description": "Skip TLS certificate verification for Kubernetes API (use 'true' or '1'). Not recommended for production.",
+          "format": "string",
+          "name": "MCP_K8S_SKIP_TLS_VERIFY"
+        },
+        {
+          "description": "Enable global sensitive data masking. Set to 'true' or '1' to mask sensitive values in responses.",
+          "format": "string",
+          "name": "MCP_HIDE_SENSITIVE"
+        },
+        {
+          "description": "Default timeout in milliseconds for operations. If unset, uses plugin-specific defaults.",
+          "format": "string",
+          "name": "MCP_TIMEOUT"
+        },
+        {
+          "description": "Disable Kubernetes plugin. Set to 'true' or '1' to disable.",
+          "format": "string",
+          "name": "MCP_DISABLE_KUBERNETES_PLUGIN"
+        },
+        {
+          "description": "Disable Helm plugin. Set to 'true' or '1' to disable.",
+          "format": "string",
+          "name": "MCP_DISABLE_HELM_PLUGIN"
+        },
+        {
+          "description": "Disable Argo Workflows plugin. Set to 'true' or '1' to disable.",
+          "format": "string",
+          "name": "MCP_DISABLE_ARGO_PLUGIN"
+        },
+        {
+          "description": "Disable Argo CD plugin. Set to 'true' or '1' to disable.",
+          "format": "string",
+          "name": "MCP_DISABLE_ARGOCD_PLUGIN"
+        }
+      ],
+      "identifier": "kubeview-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.5.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5ec1dffd17",
+    "published_at": "2026-01-14T17:51:21.134474Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mikhae1/kubeview",
+    "server_version": "1.5.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-01-14T17:51:21.134474Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.5.1"
+}
