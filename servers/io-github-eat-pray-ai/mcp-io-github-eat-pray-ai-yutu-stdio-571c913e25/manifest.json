@@ -1,0 +1,157 @@
+{
+  "description": "A fully functional MCP server and CLI for YouTube",
+  "harvest": {
+    "last_seen_at": "2026-01-26T04:04:23+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-eat-pray-ai-yutu.stdio.571c913e25",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/eat-pray-ai/yutu",
+    "homepage": "https://github.com/eat-pray-ai/yutu",
+    "repository": "https://github.com/eat-pray-ai/yutu"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "UID and GID in the container to match host user",
+            "name": "--user",
+            "type": "named",
+            "value": "{user}:{group}",
+            "variables": {
+              "group": {
+                "description": "The current user's primary group, output of `id -g`"
+              },
+              "user": {
+                "description": "The current user, output of `id -u`"
+              }
+            }
+          },
+          {
+            "description": "Mount host directory containing credentials and token",
+            "name": "--mount",
+            "type": "named",
+            "value": "type=bind,source={hostPath},target=/app",
+            "variables": {
+              "hostPath": {
+                "description": "The directory containing `client_secret.json` and `youtube.token.json`"
+              }
+            }
+          },
+          {
+            "description": "Publish MCP server port",
+            "isRequired": true,
+            "name": "-p",
+            "type": "named",
+            "value": "8216:8216"
+          },
+          "ghcr.io/eat-pray-ai/yutu:v0.10.5-dev"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.eat-pray-ai/yutu",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "GCP project credential for yutu, base64 encoded JSON or path to JSON file",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "YUTU_CREDENTIAL"
+        },
+        {
+          "description": "YouTube authentication token, base64 encoded JSON or path to JSON file",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "YUTU_CACHE_TOKEN"
+        },
+        {
+          "choices": [
+            "DEBUG",
+            "INFO",
+            "WARNING",
+            "ERROR"
+          ],
+          "default": "INFO",
+          "description": "Log level",
+          "format": "string",
+          "name": "YUTU_LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/eat-pray-ai/yutu:v0.10.5-dev",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        },
+        {
+          "name": "--mode",
+          "type": "named",
+          "value": "http"
+        }
+      ],
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "UID and GID in the container to match host user",
+          "name": "--user",
+          "type": "named",
+          "value": "{user}:{group}",
+          "variables": {
+            "group": {
+              "description": "The current user's primary group, output of `id -g`"
+            },
+            "user": {
+              "description": "The current user, output of `id -u`"
+            }
+          }
+        },
+        {
+          "description": "Mount host directory containing credentials and token",
+          "name": "--mount",
+          "type": "named",
+          "value": "type=bind,source={hostPath},target=/app",
+          "variables": {
+            "hostPath": {
+              "description": "The directory containing `client_secret.json` and `youtube.token.json`"
+            }
+          }
+        },
+        {
+          "description": "Publish MCP server port",
+          "isRequired": true,
+          "name": "-p",
+          "type": "named",
+          "value": "8216:8216"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:8216/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "571c913e25",
+    "published_at": "2026-01-21T15:46:44.747916Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.eat-pray-ai/yutu",
+    "server_version": "v0.10.5-dev",
+    "source": "mcp-registry",
+    "updated_at": "2026-01-21T15:46:44.747916Z"
+  },
+  "title": "yutu",
+  "type": "mcp_server",
+  "version": "v0.10.5-dev"
+}

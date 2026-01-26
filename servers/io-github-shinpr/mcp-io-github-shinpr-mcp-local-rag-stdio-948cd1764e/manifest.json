@@ -1,0 +1,87 @@
+{
+  "description": "Easy-to-setup local RAG server with minimal configuration",
+  "harvest": {
+    "last_seen_at": "2026-01-26T04:04:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-shinpr-mcp-local-rag.stdio.948cd1764e",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/shinpr/mcp-local-rag",
+    "homepage": "https://github.com/shinpr/mcp-local-rag",
+    "repository": "https://github.com/shinpr/mcp-local-rag"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.shinpr/mcp-local-rag",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base directory for document storage (defaults to current working directory)",
+          "format": "string",
+          "name": "BASE_DIR"
+        },
+        {
+          "description": "Path to LanceDB database directory (defaults to ./lancedb/)",
+          "format": "string",
+          "name": "DB_PATH"
+        },
+        {
+          "description": "Directory where Transformers.js models are cached (defaults to ./models/)",
+          "format": "string",
+          "name": "CACHE_DIR"
+        },
+        {
+          "description": "Embedding model name (defaults to Xenova/all-MiniLM-L6-v2)",
+          "format": "string",
+          "name": "MODEL_NAME"
+        },
+        {
+          "description": "Maximum file size in bytes (defaults to 104857600 / 100MB)",
+          "format": "string",
+          "name": "MAX_FILE_SIZE"
+        },
+        {
+          "description": "Maximum distance threshold for filtering search results. Results with distance greater than this value will be excluded. Lower values mean stricter filtering (e.g., 0.5 for high relevance only)",
+          "format": "string",
+          "name": "RAG_MAX_DISTANCE"
+        },
+        {
+          "description": "Grouping mode for quality filtering. 'similar' returns only the most similar group (stops at first distance jump). 'related' includes related groups (stops at second distance jump). Unset means no grouping filter",
+          "format": "string",
+          "name": "RAG_GROUPING"
+        }
+      ],
+      "identifier": "mcp-local-rag",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "948cd1764e",
+    "published_at": "2026-01-24T04:58:03.491079Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.shinpr/mcp-local-rag",
+    "server_version": "0.5.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-01-24T04:58:03.491079Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.5.4"
+}

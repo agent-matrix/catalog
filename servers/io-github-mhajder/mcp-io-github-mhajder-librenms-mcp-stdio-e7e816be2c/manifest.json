@@ -1,0 +1,81 @@
+{
+  "description": "MCP server for LibreNMS network monitoring - query devices, ports, alerts, and manage infrastructure",
+  "harvest": {
+    "last_seen_at": "2026-01-26T04:04:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mhajder-librenms-mcp.stdio.e7e816be2c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mhajder/librenms-mcp",
+    "homepage": "https://github.com/mhajder/librenms-mcp",
+    "repository": "https://github.com/mhajder/librenms-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "librenms-mcp==1.5.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mhajder/librenms-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "LibreNMS instance URL (e.g., https://librenms.example.com)",
+          "isRequired": true,
+          "name": "LIBRENMS_URL"
+        },
+        {
+          "description": "LibreNMS API token with appropriate permissions",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "LIBRENMS_TOKEN"
+        },
+        {
+          "default": "false",
+          "description": "Enable read-only mode to restrict write operations",
+          "name": "LIBRENMS_READ_ONLY"
+        },
+        {
+          "default": "8000",
+          "description": "Port for HTTP server (default: 8000)",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "description": "MCP transport type (http for HTTP, stdio for stdio)",
+          "name": "MCP_TRANSPORT",
+          "value": "http"
+        }
+      ],
+      "identifier": "librenms-mcp",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:{MCP_HTTP_PORT}/mcp"
+      },
+      "version": "1.5.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e7e816be2c",
+    "published_at": "2026-01-25T19:55:13.445874Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mhajder/librenms-mcp",
+    "server_version": "1.5.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-01-25T19:55:13.445874Z"
+  },
+  "title": "LibreNMS MCP",
+  "type": "mcp_server",
+  "version": "1.5.0"
+}

@@ -1,0 +1,128 @@
+{
+  "description": "MCP server for Zabbix monitoring and automation",
+  "harvest": {
+    "last_seen_at": "2026-01-26T04:04:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mhajder-zabbix-mcp.stdio.32c8002b5d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mhajder/zabbix-mcp",
+    "homepage": "https://github.com/mhajder/zabbix-mcp",
+    "repository": "https://github.com/mhajder/zabbix-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "zabbix-mcp==0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mhajder/zabbix-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Zabbix API URL (e.g., https://zabbix.example.com/api_jsonrpc.php)",
+          "isRequired": true,
+          "name": "ZABBIX_URL"
+        },
+        {
+          "description": "Zabbix API token (preferred for Zabbix 5.4+)",
+          "isSecret": true,
+          "name": "ZABBIX_TOKEN"
+        },
+        {
+          "description": "Zabbix username (alternative to token)",
+          "name": "ZABBIX_USER"
+        },
+        {
+          "description": "Zabbix password (alternative to token)",
+          "isSecret": true,
+          "name": "ZABBIX_PASSWORD"
+        },
+        {
+          "default": "true",
+          "description": "Verify SSL certificates (true/false)",
+          "name": "ZABBIX_VERIFY_SSL"
+        },
+        {
+          "default": "30",
+          "description": "Request timeout in seconds",
+          "name": "ZABBIX_TIMEOUT"
+        },
+        {
+          "default": "false",
+          "description": "Skip Zabbix API version compatibility check",
+          "name": "ZABBIX_SKIP_VERSION_CHECK"
+        },
+        {
+          "default": "false",
+          "description": "Enable read-only mode to restrict write operations",
+          "name": "READ_ONLY_MODE"
+        },
+        {
+          "description": "Comma-separated list of tags to disable tools for",
+          "name": "DISABLED_TAGS"
+        },
+        {
+          "default": "INFO",
+          "description": "Logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)",
+          "name": "LOG_LEVEL"
+        },
+        {
+          "default": "false",
+          "description": "Enable rate limiting",
+          "name": "RATE_LIMIT_ENABLED"
+        },
+        {
+          "default": "60",
+          "description": "Maximum requests per rate limit window",
+          "name": "RATE_LIMIT_MAX_REQUESTS"
+        },
+        {
+          "default": "1",
+          "description": "Rate limit window in minutes",
+          "name": "RATE_LIMIT_WINDOW_MINUTES"
+        },
+        {
+          "default": "8000",
+          "description": "Port for HTTP server (default: 8000)",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "description": "MCP transport type (http for HTTP, stdio for stdio)",
+          "name": "MCP_TRANSPORT",
+          "value": "http"
+        }
+      ],
+      "identifier": "zabbix-mcp",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:{MCP_HTTP_PORT}/mcp"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "32c8002b5d",
+    "published_at": "2026-01-25T22:56:55.410106Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mhajder/zabbix-mcp",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-01-25T22:56:55.410106Z"
+  },
+  "title": "Zabbix MCP",
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

@@ -1,0 +1,116 @@
+{
+  "description": "Elasticsearch MCP Server with multi-version support (ES 5.x-9.x) for security analysis and threats.",
+  "harvest": {
+    "last_seen_at": "2026-01-26T04:04:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-TocharianOU-elasticsearch.stdio.5c4a15afeb",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/TocharianOU/elasticsearch-mcp",
+    "homepage": "https://github.com/TocharianOU/elasticsearch-mcp",
+    "repository": "https://github.com/TocharianOU/elasticsearch-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.TocharianOU/elasticsearch",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "choices": [
+            "stdio",
+            "http"
+          ],
+          "default": "http",
+          "description": "Transport mode selection",
+          "format": "string",
+          "isRequired": true,
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "3000",
+          "description": "HTTP server port (when using HTTP transport)",
+          "format": "number",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "default": "localhost",
+          "description": "HTTP server host (when using HTTP transport)",
+          "format": "string",
+          "name": "MCP_HTTP_HOST"
+        },
+        {
+          "description": "Your Elasticsearch instance URL (e.g., https://localhost:9200)",
+          "format": "string",
+          "isRequired": true,
+          "name": "ES_URL"
+        },
+        {
+          "description": "Elasticsearch API key for authentication",
+          "format": "string",
+          "isSecret": true,
+          "name": "ES_API_KEY"
+        },
+        {
+          "description": "Elasticsearch username for basic authentication",
+          "format": "string",
+          "name": "ES_USERNAME"
+        },
+        {
+          "description": "Elasticsearch password for basic authentication",
+          "format": "string",
+          "isSecret": true,
+          "name": "ES_PASSWORD"
+        },
+        {
+          "description": "Path to custom CA certificate for Elasticsearch SSL/TLS",
+          "format": "filepath",
+          "name": "ES_CA_CERT"
+        },
+        {
+          "default": "1",
+          "description": "Set to '0' to disable SSL certificate validation (development only)",
+          "format": "string",
+          "name": "NODE_TLS_REJECT_UNAUTHORIZED"
+        },
+        {
+          "default": "20000",
+          "description": "Maximum tokens per API call",
+          "format": "number",
+          "name": "MAX_TOKEN_CALL"
+        }
+      ],
+      "identifier": "@tocharianou/elasticsearch-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:{MCP_HTTP_PORT}/mcp"
+      },
+      "version": "0.6.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5c4a15afeb",
+    "published_at": "2026-01-23T04:26:01.21854Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.TocharianOU/elasticsearch",
+    "server_version": "0.6.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-01-23T04:26:01.21854Z"
+  },
+  "title": "Elasticsearch",
+  "type": "mcp_server",
+  "version": "0.6.4"
+}

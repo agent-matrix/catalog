@@ -1,0 +1,108 @@
+{
+  "description": "MCP server providing Prometheus metrics access and PromQL query execution for AI assistants",
+  "harvest": {
+    "last_seen_at": "2026-01-26T04:04:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-pab1it0-prometheus-mcp-server.stdio.94a0b9f5c0",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/pab1it0/prometheus-mcp-server",
+    "homepage": "https://github.com/pab1it0/prometheus-mcp-server",
+    "repository": "https://github.com/pab1it0/prometheus-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.pab1it0/prometheus-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Prometheus server URL (e.g., http://localhost:9090)",
+          "format": "string",
+          "isRequired": true,
+          "name": "PROMETHEUS_URL"
+        },
+        {
+          "description": "Set to False to disable SSL verification",
+          "format": "boolean",
+          "name": "PROMETHEUS_URL_SSL_VERIFY"
+        },
+        {
+          "description": "Set to True to disable Prometheus UI links in query results (saves context tokens in MCP clients)",
+          "format": "boolean",
+          "name": "PROMETHEUS_DISABLE_LINKS"
+        },
+        {
+          "description": "Username for Prometheus basic authentication",
+          "format": "string",
+          "name": "PROMETHEUS_USERNAME"
+        },
+        {
+          "description": "Password for Prometheus basic authentication",
+          "format": "string",
+          "isSecret": true,
+          "name": "PROMETHEUS_PASSWORD"
+        },
+        {
+          "description": "Bearer token for Prometheus authentication",
+          "format": "string",
+          "isSecret": true,
+          "name": "PROMETHEUS_TOKEN"
+        },
+        {
+          "description": "Organization ID for multi-tenant Prometheus setups",
+          "format": "string",
+          "name": "ORG_ID"
+        },
+        {
+          "description": "MCP server transport type (stdio, http, or sse)",
+          "format": "string",
+          "name": "PROMETHEUS_MCP_SERVER_TRANSPORT"
+        },
+        {
+          "description": "Host address for HTTP/SSE transport (default: 127.0.0.1)",
+          "format": "string",
+          "name": "PROMETHEUS_MCP_BIND_HOST"
+        },
+        {
+          "description": "Port number for HTTP/SSE transport (default: 8080)",
+          "format": "number",
+          "name": "PROMETHEUS_MCP_BIND_PORT"
+        },
+        {
+          "description": "Custom headers as JSON string to include in Prometheus requests",
+          "format": "string",
+          "name": "PROMETHEUS_CUSTOM_HEADERS"
+        }
+      ],
+      "identifier": "ghcr.io/pab1it0/prometheus-mcp-server:1.5.3",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "94a0b9f5c0",
+    "published_at": "2026-01-21T22:20:10.356939Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.pab1it0/prometheus-mcp-server",
+    "server_version": "1.5.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-01-21T22:20:10.356939Z"
+  },
+  "title": "Prometheus MCP Server",
+  "type": "mcp_server",
+  "version": "1.5.3"
+}

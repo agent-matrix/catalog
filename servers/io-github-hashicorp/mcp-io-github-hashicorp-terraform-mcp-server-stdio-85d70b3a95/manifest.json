@@ -1,0 +1,183 @@
+{
+  "description": "Generate more accurate Terraform and automate workflows for HCP Terraform and Terraform Enterprise",
+  "harvest": {
+    "last_seen_at": "2026-01-26T04:04:26+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-hashicorp-terraform-mcp-server.stdio.85d70b3a95",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/hashicorp/terraform-mcp-server",
+    "homepage": "https://github.com/hashicorp/terraform-mcp-server",
+    "repository": "https://github.com/hashicorp/terraform-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "type": "positional",
+            "value": "run"
+          },
+          {
+            "name": "--rm",
+            "type": "named"
+          },
+          {
+            "name": "-i",
+            "type": "named"
+          },
+          {
+            "description": "Set an environment variable in the runtime",
+            "isRepeated": true,
+            "name": "-e",
+            "type": "named"
+          },
+          {
+            "description": "Environment variable name",
+            "type": "positional",
+            "value": "TFE_ADDRESS",
+            "valueHint": "env_var_name"
+          },
+          {
+            "description": "Set an environment variable in the runtime",
+            "isRepeated": true,
+            "name": "-e",
+            "type": "named"
+          },
+          {
+            "description": "Environment variable name",
+            "type": "positional",
+            "value": "TFE_TOKEN",
+            "valueHint": "env_var_name"
+          },
+          {
+            "description": "Set an environment variable in the runtime",
+            "isRepeated": true,
+            "name": "-e",
+            "type": "named"
+          },
+          {
+            "description": "Environment variable name",
+            "type": "positional",
+            "value": "ENABLE_TF_OPERATIONS",
+            "valueHint": "env_var_name"
+          },
+          {
+            "description": "The container image to run",
+            "type": "positional",
+            "value": "hashicorp/terraform-mcp-server:0.4.0",
+            "valueHint": "image_name"
+          },
+          "docker.io/hashicorp/terraform-mcp-server:0.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.hashicorp/terraform-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://app.terraform.io",
+          "description": "HCP Terraform or Terraform Enterprise base URL.",
+          "name": "TFE_ADDRESS"
+        },
+        {
+          "description": "HCP Terraform or Terraform Enterprise API token used to authenticate requests.",
+          "isSecret": true,
+          "name": "TFE_TOKEN"
+        },
+        {
+          "choices": [
+            "true",
+            "false"
+          ],
+          "default": "false",
+          "description": "Set to true to enable tools that execute Terraform operations requiring explicit approval.",
+          "format": "boolean",
+          "name": "ENABLE_TF_OPERATIONS"
+        }
+      ],
+      "identifier": "docker.io/hashicorp/terraform-mcp-server:0.4.0",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "name": "--rm",
+          "type": "named"
+        },
+        {
+          "name": "-i",
+          "type": "named"
+        },
+        {
+          "description": "Set an environment variable in the runtime",
+          "isRepeated": true,
+          "name": "-e",
+          "type": "named"
+        },
+        {
+          "description": "Environment variable name",
+          "type": "positional",
+          "value": "TFE_ADDRESS",
+          "valueHint": "env_var_name"
+        },
+        {
+          "description": "Set an environment variable in the runtime",
+          "isRepeated": true,
+          "name": "-e",
+          "type": "named"
+        },
+        {
+          "description": "Environment variable name",
+          "type": "positional",
+          "value": "TFE_TOKEN",
+          "valueHint": "env_var_name"
+        },
+        {
+          "description": "Set an environment variable in the runtime",
+          "isRepeated": true,
+          "name": "-e",
+          "type": "named"
+        },
+        {
+          "description": "Environment variable name",
+          "type": "positional",
+          "value": "ENABLE_TF_OPERATIONS",
+          "valueHint": "env_var_name"
+        },
+        {
+          "description": "The container image to run",
+          "type": "positional",
+          "value": "hashicorp/terraform-mcp-server:0.4.0",
+          "valueHint": "image_name"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "85d70b3a95",
+    "published_at": "2026-01-22T22:52:01.812766Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.hashicorp/terraform-mcp-server",
+    "server_version": "0.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-01-22T22:52:01.812766Z"
+  },
+  "title": "Terraform",
+  "type": "mcp_server",
+  "version": "0.4.0"
+}

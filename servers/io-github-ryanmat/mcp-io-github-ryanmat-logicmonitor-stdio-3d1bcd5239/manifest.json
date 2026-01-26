@@ -1,0 +1,80 @@
+{
+  "description": "LogicMonitor API integration with 152 tools for alerts, devices, dashboards, and more.",
+  "harvest": {
+    "last_seen_at": "2026-01-26T04:04:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ryanmat-logicmonitor.stdio.3d1bcd5239",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/ryanmat/mcp-server-logicmonitor",
+    "homepage": "https://github.com/ryanmat/mcp-server-logicmonitor",
+    "repository": "https://github.com/ryanmat/mcp-server-logicmonitor"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ryanmat/logicmonitor",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "LogicMonitor portal hostname (e.g., company.logicmonitor.com)",
+          "format": "string",
+          "isRequired": true,
+          "name": "LM_PORTAL"
+        },
+        {
+          "description": "LogicMonitor API Bearer token",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "LM_BEARER_TOKEN"
+        },
+        {
+          "description": "Enable write operations (create, update, delete)",
+          "format": "string",
+          "name": "LM_ENABLE_WRITE_OPERATIONS"
+        },
+        {
+          "description": "LMv1 API access ID (required for log/metric ingestion)",
+          "format": "string",
+          "name": "LM_ACCESS_ID"
+        },
+        {
+          "description": "LMv1 API access key (required for log/metric ingestion)",
+          "format": "string",
+          "isSecret": true,
+          "name": "LM_ACCESS_KEY"
+        }
+      ],
+      "identifier": "lm-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "3d1bcd5239",
+    "published_at": "2026-01-24T03:58:41.181764Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ryanmat/logicmonitor",
+    "server_version": "1.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-01-24T03:58:41.181764Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.1.0"
+}

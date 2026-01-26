@@ -1,0 +1,108 @@
+{
+  "description": "MCP server for read-only Linux system administration, diagnostics, and troubleshooting",
+  "harvest": {
+    "last_seen_at": "2026-01-26T04:04:34+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-rhel-lightspeed-linux-mcp-server.stdio.9c240a6a66",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/rhel-lightspeed/linux-mcp-server",
+    "homepage": "https://github.com/rhel-lightspeed/linux-mcp-server",
+    "repository": "https://github.com/rhel-lightspeed/linux-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.rhel-lightspeed/linux-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Default username for SSH connections",
+          "format": "string",
+          "isRequired": true,
+          "name": "LINUX_MCP_USER"
+        },
+        {
+          "description": "Path to SSH private key",
+          "format": "string",
+          "name": "LINUX_MCP_SSH_KEY_PATH"
+        },
+        {
+          "description": "Passphrase for encrypted SSH key",
+          "format": "string",
+          "isSecret": true,
+          "name": "LINUX_MCP_KEY_PASSPHRASE"
+        },
+        {
+          "description": "Auto-discover keys in `~/.ssh`",
+          "format": "string",
+          "name": "LINUX_MCP_SEARCH_FOR_SSH_KEY"
+        },
+        {
+          "description": "SSH command timeout in seconds (default: 30)",
+          "format": "string",
+          "name": "LINUX_MCP_COMMAND_TIMEOUT"
+        },
+        {
+          "description": "Verify remote host identity via known_hosts",
+          "format": "string",
+          "name": "LINUX_MCP_VERIFY_HOST_KEYS"
+        },
+        {
+          "description": "Custom path to known_hosts file",
+          "format": "string",
+          "name": "LINUX_MCP_KNOWN_HOSTS_PATH"
+        },
+        {
+          "description": "Comma-separated allowlist of log files",
+          "format": "string",
+          "name": "LINUX_MCP_ALLOWED_LOG_PATHS"
+        },
+        {
+          "description": "Server log directory",
+          "format": "string",
+          "name": "LINUX_MCP_LOG_DIR"
+        },
+        {
+          "description": "Path to SSH private key",
+          "format": "string",
+          "name": "LINUX_MCP_LOG_LEVEL"
+        },
+        {
+          "description": "Days to keep log files",
+          "format": "string",
+          "name": "LINUX_MCP_LOG_RETENTION_DAYS"
+        }
+      ],
+      "identifier": "linux-mcp-server",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9c240a6a66",
+    "published_at": "2026-01-19T17:58:34.709225Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.rhel-lightspeed/linux-mcp-server",
+    "server_version": "1.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-01-19T17:58:34.709225Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.2.1"
+}
