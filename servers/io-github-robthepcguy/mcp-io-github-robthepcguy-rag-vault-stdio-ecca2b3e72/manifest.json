@@ -1,0 +1,81 @@
+{
+  "description": "Local RAG MCP server with hybrid search, PDF/DOCX support, and zero-config setup",
+  "harvest": {
+    "last_seen_at": "2026-02-02T04:32:25+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-RobThePCGuy-rag-vault.stdio.ecca2b3e72",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/RobThePCGuy/rag-vault",
+    "homepage": "https://github.com/RobThePCGuy/rag-vault",
+    "repository": "https://github.com/RobThePCGuy/rag-vault"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.RobThePCGuy/rag-vault",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base directory for document storage (defaults to current working directory)",
+          "format": "string",
+          "name": "BASE_DIR"
+        },
+        {
+          "description": "Path to LanceDB database directory (defaults to ./lancedb/)",
+          "format": "string",
+          "name": "DB_PATH"
+        },
+        {
+          "description": "Directory where Transformers.js models are cached (defaults to ./models/)",
+          "format": "string",
+          "name": "CACHE_DIR"
+        },
+        {
+          "description": "Embedding model name (defaults to Xenova/all-MiniLM-L6-v2)",
+          "format": "string",
+          "name": "MODEL_NAME"
+        },
+        {
+          "description": "Keyword boost strength for hybrid search. 0.0 = semantic only, 1.0 = keyword only. Default 0.6",
+          "format": "string",
+          "name": "RAG_HYBRID_WEIGHT"
+        },
+        {
+          "description": "Grouping mode: 'similar' (top group only) or 'related' (top 2 groups)",
+          "format": "string",
+          "name": "RAG_GROUPING"
+        }
+      ],
+      "identifier": "@robthepcguy/rag-vault",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ecca2b3e72",
+    "published_at": "2026-01-28T01:27:08.985378Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.RobThePCGuy/rag-vault",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-01-28T01:27:08.985378Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

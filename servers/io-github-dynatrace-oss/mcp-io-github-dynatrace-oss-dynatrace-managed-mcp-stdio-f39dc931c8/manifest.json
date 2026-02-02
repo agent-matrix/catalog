@@ -1,0 +1,71 @@
+{
+  "description": "MCP server for Dynatrace Managed to access logs, events, and metrics.",
+  "harvest": {
+    "last_seen_at": "2026-02-02T04:32:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-dynatrace-oss-dynatrace-managed-mcp.stdio.f39dc931c8",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/dynatrace-oss/dynatrace-managed-mcp",
+    "homepage": "https://github.com/dynatrace-oss/dynatrace-managed-mcp",
+    "repository": "https://github.com/dynatrace-oss/dynatrace-managed-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@dynatrace-oss/dynatrace-managed-mcp-server==0.5.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.dynatrace-oss/dynatrace-managed-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "An escaped JSON array that defines the Dynatrace Managed environment(s) to connect to. See README file for contents of this.",
+          "format": "string",
+          "isRequired": true,
+          "name": "DT_ENVIRONMENT_CONFIGS"
+        },
+        {
+          "description": "Logging level (e.g. debug, info, warning, error)",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        },
+        {
+          "description": "Disable telemetry",
+          "format": "boolean",
+          "name": "DT_MCP_DISABLE_TELEMETRY"
+        }
+      ],
+      "identifier": "@dynatrace-oss/dynatrace-managed-mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f39dc931c8",
+    "published_at": "2026-01-27T15:02:59.712167Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.dynatrace-oss/dynatrace-managed-mcp",
+    "server_version": "0.5.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-01-27T15:02:59.712167Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.5.3"
+}

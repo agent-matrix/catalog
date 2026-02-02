@@ -1,0 +1,112 @@
+{
+  "description": "MCP server for interacting with the Supabase platform",
+  "harvest": {
+    "last_seen_at": "2026-02-02T04:32:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-supabase-mcp.stdio.315c3bfec0",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/supabase-community/supabase-mcp",
+    "homepage": "https://github.com/supabase-community/supabase-mcp",
+    "repository": "https://github.com/supabase-community/supabase-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "description": "Supabase project reference ID",
+            "format": "string",
+            "name": "--project-ref",
+            "type": "named"
+          },
+          {
+            "description": "Enable read-only mode",
+            "format": "boolean",
+            "name": "--read-only",
+            "type": "named"
+          },
+          {
+            "description": "Comma-separated list of features to enable",
+            "format": "string",
+            "name": "--features",
+            "type": "named"
+          },
+          {
+            "description": "Custom API URL",
+            "format": "string",
+            "name": "--api-url",
+            "type": "named"
+          },
+          "@supabase/mcp-server-supabase==0.6.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.supabase/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Personal access token for Supabase API",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SUPABASE_ACCESS_TOKEN"
+        }
+      ],
+      "identifier": "@supabase/mcp-server-supabase",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "description": "Supabase project reference ID",
+          "format": "string",
+          "name": "--project-ref",
+          "type": "named"
+        },
+        {
+          "description": "Enable read-only mode",
+          "format": "boolean",
+          "name": "--read-only",
+          "type": "named"
+        },
+        {
+          "description": "Comma-separated list of features to enable",
+          "format": "string",
+          "name": "--features",
+          "type": "named"
+        },
+        {
+          "description": "Custom API URL",
+          "format": "string",
+          "name": "--api-url",
+          "type": "named"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.6.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "315c3bfec0",
+    "published_at": "2026-01-27T02:51:36.935148Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.supabase/mcp",
+    "server_version": "0.6.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-01-27T02:51:36.935148Z"
+  },
+  "title": "Supabase",
+  "type": "mcp_server",
+  "version": "0.6.2"
+}

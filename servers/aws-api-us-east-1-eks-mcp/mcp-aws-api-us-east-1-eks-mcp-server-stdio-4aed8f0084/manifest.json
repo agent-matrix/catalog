@@ -1,0 +1,79 @@
+{
+  "description": "AI-powered Amazon EKS cluster management and troubleshooting",
+  "harvest": {
+    "last_seen_at": "2026-02-02T04:32:09+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.aws-api-us-east-1-eks-mcp-server.stdio.4aed8f0084",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-proxy-for-aws==1.1.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "aws.api.us-east-1.eks-mcp/server",
+  "packages": [
+    {
+      "identifier": "mcp-proxy-for-aws",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "https://eks-mcp.{region}.api.aws/mcp",
+          "variables": {
+            "region": {
+              "default": "us-east-1",
+              "description": "AWS region for EKS MCP service",
+              "isRequired": true
+            }
+          }
+        },
+        {
+          "default": "default",
+          "description": "AWS CLI profile to use for credentials",
+          "name": "--profile",
+          "type": "named"
+        },
+        {
+          "name": "--region",
+          "type": "named",
+          "value": "{region}",
+          "variables": {
+            "region": {
+              "default": "us-east-1",
+              "description": "AWS region"
+            }
+          }
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4aed8f0084",
+    "published_at": "2026-01-29T16:45:51.075699Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "aws.api.us-east-1.eks-mcp/server",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-01-29T16:45:51.075699Z"
+  },
+  "title": "Amazon EKS MCP Server",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

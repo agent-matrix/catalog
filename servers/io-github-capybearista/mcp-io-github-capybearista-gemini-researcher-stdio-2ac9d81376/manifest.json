@@ -1,0 +1,92 @@
+{
+  "description": "Stateless MCP server that proxies research queries to Gemini CLI, reducing agent context/model usage",
+  "harvest": {
+    "last_seen_at": "2026-02-02T04:32:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-capyBearista-gemini-researcher.stdio.2ac9d81376",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/capyBearista/gemini-researcher",
+    "homepage": "https://github.com/capyBearista/gemini-researcher",
+    "repository": "https://github.com/capyBearista/gemini-researcher"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.capyBearista/gemini-researcher",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Gemini API key (optional if you already authenticated Gemini CLI via \"gemini\" login)",
+          "format": "string",
+          "isSecret": true,
+          "name": "GEMINI_API_KEY"
+        },
+        {
+          "description": "Override the project root directory used for path validation (defaults to current working directory)",
+          "format": "string",
+          "name": "PROJECT_ROOT"
+        },
+        {
+          "description": "Chunk size threshold (KB) for large responses (default: 10)",
+          "format": "string",
+          "name": "RESPONSE_CHUNK_SIZE_KB"
+        },
+        {
+          "description": "Chunk cache TTL in milliseconds (default: 3600000 / 1 hour)",
+          "format": "string",
+          "name": "CACHE_TTL_MS"
+        },
+        {
+          "description": "Enable debug logging (set to \"true\" or \"1\")",
+          "format": "string",
+          "name": "DEBUG"
+        },
+        {
+          "description": "Vertex AI / Google auth: path to a service account JSON credentials file",
+          "format": "string",
+          "name": "GOOGLE_APPLICATION_CREDENTIALS"
+        },
+        {
+          "description": "Vertex AI / Google auth: GCP project ID (used by some auth configurations)",
+          "format": "string",
+          "name": "GOOGLE_CLOUD_PROJECT"
+        },
+        {
+          "description": "Vertex AI / Google auth: Vertex AI project identifier (used by some auth configurations)",
+          "format": "string",
+          "name": "VERTEX_AI_PROJECT"
+        }
+      ],
+      "identifier": "gemini-researcher",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "2ac9d81376",
+    "published_at": "2026-01-26T08:42:27.90453Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.capyBearista/gemini-researcher",
+    "server_version": "1.0.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-01-26T08:42:27.90453Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.2"
+}

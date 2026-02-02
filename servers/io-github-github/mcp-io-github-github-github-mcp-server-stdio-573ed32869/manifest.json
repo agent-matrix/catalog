@@ -1,0 +1,64 @@
+{
+  "description": "Connect AI assistants to GitHub - manage repos, issues, PRs, and workflows through natural language.",
+  "harvest": {
+    "last_seen_at": "2026-02-02T04:32:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-github-github-mcp-server.stdio.573ed32869",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/github/github-mcp-server",
+    "homepage": "https://github.com/github/github-mcp-server",
+    "repository": "https://github.com/github/github-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.github/github-mcp-server",
+  "packages": [
+    {
+      "identifier": "ghcr.io/github/github-mcp-server:0.30.2",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "Set an environment variable in the runtime",
+          "isRequired": true,
+          "name": "-e",
+          "type": "named",
+          "value": "GITHUB_PERSONAL_ACCESS_TOKEN={token}",
+          "variables": {
+            "token": {
+              "format": "string",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "573ed32869",
+    "published_at": "2026-01-27T11:26:23.439465Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.github/github-mcp-server",
+    "server_version": "0.30.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-01-27T11:26:23.439465Z"
+  },
+  "title": "GitHub",
+  "type": "mcp_server",
+  "version": "0.30.2"
+}

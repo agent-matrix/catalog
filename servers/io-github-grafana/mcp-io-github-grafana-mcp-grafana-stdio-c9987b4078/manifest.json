@@ -1,0 +1,78 @@
+{
+  "description": "An MCP server giving access to Grafana dashboards, data and more.",
+  "harvest": {
+    "last_seen_at": "2026-02-02T04:32:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-grafana-mcp-grafana.stdio.c9987b4078",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/grafana/mcp-grafana",
+    "homepage": "https://github.com/grafana/mcp-grafana",
+    "repository": "https://github.com/grafana/mcp-grafana"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.grafana/mcp-grafana",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "URL to your Grafana instance",
+          "format": "string",
+          "isRequired": true,
+          "name": "GRAFANA_URL"
+        },
+        {
+          "description": "Service account token used to authenticate with your Grafana instance",
+          "format": "string",
+          "isSecret": true,
+          "name": "GRAFANA_SERVICE_ACCOUNT_TOKEN"
+        },
+        {
+          "description": "Username to authenticate with your Grafana instance",
+          "format": "string",
+          "name": "GRAFANA_USERNAME"
+        },
+        {
+          "description": "Password to authenticate with your Grafana instance",
+          "format": "string",
+          "isSecret": true,
+          "name": "GRAFANA_PASSWORD"
+        },
+        {
+          "description": "Organization ID for multi-org support. Can also be set via X-Grafana-Org-Id header in SSE/streamable HTTP transports.",
+          "format": "string",
+          "name": "GRAFANA_ORG_ID"
+        }
+      ],
+      "identifier": "docker.io/grafana/mcp-grafana:0.9.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "c9987b4078",
+    "published_at": "2026-01-28T14:25:27.190453Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.grafana/mcp-grafana",
+    "server_version": "v0.9.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-01-28T14:25:27.190453Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "v0.9.0"
+}
