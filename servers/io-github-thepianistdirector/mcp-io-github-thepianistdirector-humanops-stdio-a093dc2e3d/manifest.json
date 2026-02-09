@@ -1,0 +1,72 @@
+{
+  "description": "MCP server for AI agents to dispatch real-world tasks to verified human operators",
+  "harvest": {
+    "last_seen_at": "2026-02-09T04:35:34+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-thepianistdirector-humanops.stdio.a093dc2e3d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ThePianistDirector/real-auto-code",
+    "homepage": "https://github.com/ThePianistDirector/real-auto-code",
+    "repository": "https://github.com/ThePianistDirector/real-auto-code"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@humanops/mcp-server==0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.thepianistdirector/humanops",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your HumanOps API key for authenticating agent requests",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "HUMANOPS_API_KEY"
+        },
+        {
+          "default": "https://api.humanops.io",
+          "description": "HumanOps API base URL",
+          "name": "HUMANOPS_API_URL"
+        },
+        {
+          "default": "false",
+          "description": "Enable sandbox mode for testing (set to 'true')",
+          "format": "boolean",
+          "name": "HUMANOPS_SANDBOX"
+        }
+      ],
+      "identifier": "@humanops/mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a093dc2e3d",
+    "published_at": "2026-02-07T03:00:30.254377Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.thepianistdirector/humanops",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-02-07T03:00:30.254377Z"
+  },
+  "title": "HumanOps",
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

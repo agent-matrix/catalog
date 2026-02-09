@@ -1,0 +1,93 @@
+{
+  "description": "Kibana MCP Server with dynamic API discovery and comprehensive Elastic Stack integration",
+  "harvest": {
+    "last_seen_at": "2026-02-09T04:35:14+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-TocharianOU-kibana.stdio.2bb16384ce",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/TocharianOU/mcp-server-kibana",
+    "homepage": "https://github.com/TocharianOU/mcp-server-kibana",
+    "repository": "https://github.com/TocharianOU/mcp-server-kibana"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.TocharianOU/kibana",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "choices": [
+            "stdio",
+            "http"
+          ],
+          "default": "http",
+          "description": "Transport mode selection",
+          "format": "string",
+          "isRequired": true,
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "3000",
+          "description": "HTTP server port",
+          "format": "number",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "description": "Your Kibana instance URL",
+          "format": "string",
+          "isRequired": true,
+          "name": "KIBANA_URL"
+        },
+        {
+          "description": "Kibana API key for authentication",
+          "format": "string",
+          "isSecret": true,
+          "name": "KIBANA_API_KEY"
+        },
+        {
+          "description": "Kibana username",
+          "format": "string",
+          "name": "KIBANA_USERNAME"
+        },
+        {
+          "description": "Kibana password",
+          "format": "string",
+          "isSecret": true,
+          "name": "KIBANA_PASSWORD"
+        }
+      ],
+      "identifier": "@tocharianou/mcp-server-kibana",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:{MCP_HTTP_PORT}/mcp"
+      },
+      "version": "0.7.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "2bb16384ce",
+    "published_at": "2026-02-03T11:33:27.045794Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.TocharianOU/kibana",
+    "server_version": "0.7.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-02-03T11:33:27.045794Z"
+  },
+  "title": "Kibana",
+  "type": "mcp_server",
+  "version": "0.7.3"
+}

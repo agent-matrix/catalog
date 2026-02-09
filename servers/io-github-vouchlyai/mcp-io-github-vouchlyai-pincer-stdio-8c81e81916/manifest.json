@@ -1,0 +1,73 @@
+{
+  "description": "Secure grip for your agent's secrets - security-hardened MCP gateway with proxy token architecture",
+  "harvest": {
+    "last_seen_at": "2026-02-09T04:35:14+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-VouchlyAI-pincer.stdio.8c81e81916",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/VouchlyAI/Pincer-MCP",
+    "homepage": "https://github.com/VouchlyAI/Pincer-MCP",
+    "repository": "https://github.com/VouchlyAI/Pincer-MCP"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.VouchlyAI/pincer",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Proxy token for agent authentication (generated via 'pincer agent add')",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PINCER_PROXY_TOKEN"
+        },
+        {
+          "description": "Optional: Base URL for OpenWebUI instance",
+          "format": "string",
+          "name": "OPENWEBUI_URL"
+        },
+        {
+          "description": "Optional: Base URL for OpenAI-compatible instance",
+          "format": "string",
+          "name": "OPENAI_COMPATIBLE_URL"
+        },
+        {
+          "description": "Optional: Custom path for audit logs (default: ~/.pincer/audit.jsonl)",
+          "format": "string",
+          "name": "AUDIT_LOG_PATH"
+        }
+      ],
+      "identifier": "pincer-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8c81e81916",
+    "published_at": "2026-02-05T10:44:49.608951Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.VouchlyAI/pincer",
+    "server_version": "0.1.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-02-05T10:44:49.608951Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.5"
+}

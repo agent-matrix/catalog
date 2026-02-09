@@ -1,0 +1,175 @@
+{
+  "description": "SQL analytics and data engineering for AI Assistants and IDEs",
+  "harvest": {
+    "last_seen_at": "2026-02-09T04:35:28+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-motherduckdb-mcp-server-motherduck.stdio.7bcfbb2b87",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/motherduckdb/mcp-server-motherduck",
+    "homepage": "https://github.com/motherduckdb/mcp-server-motherduck",
+    "repository": "https://github.com/motherduckdb/mcp-server-motherduck"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.motherduckdb/mcp-server-motherduck",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Access token for MotherDuck connections (alternative to --motherduck-token)",
+          "isSecret": true,
+          "name": "motherduck_token"
+        },
+        {
+          "description": "Access token for MotherDuck connections (alternative to --motherduck-token)",
+          "isSecret": true,
+          "name": "MOTHERDUCK_TOKEN"
+        },
+        {
+          "description": "Used by DuckDB for extensions and config. Override with --home-dir if not set.",
+          "name": "HOME"
+        },
+        {
+          "description": "AWS access key for S3 database connections",
+          "isSecret": true,
+          "name": "AWS_ACCESS_KEY_ID"
+        },
+        {
+          "description": "AWS secret access key for S3 database connections",
+          "isSecret": true,
+          "name": "AWS_SECRET_ACCESS_KEY"
+        },
+        {
+          "description": "AWS session token for temporary credentials",
+          "isSecret": true,
+          "name": "AWS_SESSION_TOKEN"
+        },
+        {
+          "description": "AWS region for S3 database connections",
+          "name": "AWS_DEFAULT_REGION"
+        }
+      ],
+      "identifier": "mcp-server-motherduck",
+      "packageArguments": [
+        {
+          "choices": [
+            "stdio",
+            "http",
+            "sse",
+            "stream"
+          ],
+          "default": "stdio",
+          "description": "Transport type for MCP server. Use 'http' for HTTP Streamable transport.",
+          "name": "--transport",
+          "type": "named"
+        },
+        {
+          "default": "8000",
+          "description": "Port to listen on for HTTP transport",
+          "format": "number",
+          "name": "--port",
+          "type": "named"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "Host to bind the MCP server",
+          "name": "--host",
+          "type": "named"
+        },
+        {
+          "default": ":memory:",
+          "description": "Database path: ':memory:' for in-memory, 'md:' for MotherDuck, or file/S3 path",
+          "name": "--db-path",
+          "type": "named"
+        },
+        {
+          "description": "Access token for MotherDuck connections",
+          "isSecret": true,
+          "name": "--motherduck-token",
+          "type": "named"
+        },
+        {
+          "description": "Enable write access (server runs in read-only mode by default)",
+          "name": "--read-write",
+          "type": "named"
+        },
+        {
+          "description": "Enable the switch_database_connection tool to change databases at runtime",
+          "name": "--allow-switch-databases",
+          "type": "named"
+        },
+        {
+          "description": "Enable SaaS mode for MotherDuck (disables local filesystem access)",
+          "name": "--motherduck-saas-mode",
+          "type": "named"
+        },
+        {
+          "description": "SQL file path or SQL string to execute on startup",
+          "name": "--init-sql",
+          "type": "named"
+        },
+        {
+          "description": "Home directory for DuckDB",
+          "name": "--home-dir",
+          "type": "named"
+        },
+        {
+          "default": "1024",
+          "description": "Maximum number of rows to return from queries",
+          "format": "number",
+          "name": "--max-rows",
+          "type": "named"
+        },
+        {
+          "default": "50000",
+          "description": "Maximum number of characters in query results",
+          "format": "number",
+          "name": "--max-chars",
+          "type": "named"
+        },
+        {
+          "default": "-1",
+          "description": "Query execution timeout in seconds (-1 to disable)",
+          "format": "number",
+          "name": "--query-timeout",
+          "type": "named"
+        },
+        {
+          "description": "Use temporary connections for read-only local DuckDB files (default: true)",
+          "name": "--ephemeral-connections",
+          "type": "named"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7bcfbb2b87",
+    "published_at": "2026-02-02T17:14:47.537983Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.motherduckdb/mcp-server-motherduck",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-02-02T17:14:47.537983Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

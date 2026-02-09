@@ -1,0 +1,79 @@
+{
+  "description": "An MCP server that provides tools for managing and monitoring your Fleet Device Management instance.",
+  "harvest": {
+    "last_seen_at": "2026-02-09T04:35:13+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-SimplyMinimal-fleet-mcp.stdio.78d65d671e",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/SimplyMinimal/fleet-mcp",
+    "homepage": "https://github.com/SimplyMinimal/fleet-mcp",
+    "repository": "https://github.com/SimplyMinimal/fleet-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.SimplyMinimal/fleet-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your Fleet server URL (e.g., https://your-fleet-instance.com)",
+          "format": "string",
+          "isRequired": true,
+          "name": "FLEET_SERVER_URL"
+        },
+        {
+          "description": "Your Fleet API token. Get this from Fleet UI: My account > Get API token",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "FLEET_API_TOKEN"
+        },
+        {
+          "description": "Enable read-only mode",
+          "format": "string",
+          "name": "FLEET_READONLY"
+        },
+        {
+          "description": "Allow SELECT queries in read-only mode. This allows you to run live queries.",
+          "format": "string",
+          "name": "FLEET_ALLOW_SELECT_QUERIES"
+        },
+        {
+          "description": "Verify SSL certificates when connecting to your Fleet instance.",
+          "format": "string",
+          "name": "FLEET_VERIFY_SSL"
+        }
+      ],
+      "identifier": "fleet-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "78d65d671e",
+    "published_at": "2026-02-07T06:49:10.166982Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.SimplyMinimal/fleet-mcp",
+    "server_version": "1.1.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-02-07T06:49:10.166982Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.1.3"
+}
