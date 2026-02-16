@@ -1,0 +1,93 @@
+{
+  "description": "AI agent Lightning payments: pay invoices, L402 auto-pay, wallet balance, payment history",
+  "harvest": {
+    "last_seen_at": "2026-02-16T04:35:18+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-refined-element-lightning-enable-mcp.stdio.65d5e03705",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/refined-element/lightning-enable-mcp",
+    "homepage": "https://github.com/refined-element/lightning-enable-mcp",
+    "repository": "https://github.com/refined-element/lightning-enable-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "dnx",
+          "LightningEnable.Mcp==1.6.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.refined-element/lightning-enable-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Strike API key for Lightning payments (recommended wallet)",
+          "isSecret": true,
+          "name": "STRIKE_API_KEY"
+        },
+        {
+          "description": "Nostr Wallet Connect URI (for NWC wallets like CoinOS, CLINK)",
+          "isSecret": true,
+          "name": "NWC_CONNECTION_STRING"
+        },
+        {
+          "description": "LND REST API host (e.g., localhost:8080)",
+          "name": "LND_REST_HOST"
+        },
+        {
+          "description": "LND admin macaroon in hex format",
+          "isSecret": true,
+          "name": "LND_MACAROON_HEX"
+        },
+        {
+          "description": "OpenNode API key (direct payments only, no L402 support)",
+          "isSecret": true,
+          "name": "OPENNODE_API_KEY"
+        },
+        {
+          "default": "production",
+          "description": "OpenNode environment: production or dev (testnet)",
+          "name": "OPENNODE_ENVIRONMENT"
+        },
+        {
+          "default": "1000",
+          "description": "Maximum satoshis allowed per single payment request",
+          "name": "L402_MAX_SATS_PER_REQUEST"
+        },
+        {
+          "default": "10000",
+          "description": "Maximum total satoshis allowed per session",
+          "name": "L402_MAX_SATS_PER_SESSION"
+        }
+      ],
+      "identifier": "LightningEnable.Mcp",
+      "registryType": "nuget",
+      "runtimeHint": "dnx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.6.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "65d5e03705",
+    "published_at": "2026-02-11T22:41:34.964771Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.refined-element/lightning-enable-mcp",
+    "server_version": "1.6.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-02-11T22:41:34.964771Z"
+  },
+  "title": "Lightning Enable MCP Server",
+  "type": "mcp_server",
+  "version": "1.6.2"
+}

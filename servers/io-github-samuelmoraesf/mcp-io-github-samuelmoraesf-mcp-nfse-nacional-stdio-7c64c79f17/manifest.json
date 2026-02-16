@@ -1,0 +1,117 @@
+{
+  "description": "MCP Server para consulta de NFSe no portal nacional (nfse.gov.br)",
+  "harvest": {
+    "last_seen_at": "2026-02-16T04:34:26+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-SamuelMoraesF-mcp-nfse-nacional.stdio.7c64c79f17",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/SamuelMoraesF/mcp-nfse-nacional",
+    "homepage": "https://github.com/SamuelMoraesF/mcp-nfse-nacional",
+    "repository": "https://github.com/SamuelMoraesF/mcp-nfse-nacional"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Mapeia a porta do container para o host",
+            "name": "-p",
+            "type": "named",
+            "value": "{MCP_PORT}:{MCP_PORT}"
+          },
+          {
+            "description": "Monta o certificado digital no container",
+            "name": "-v",
+            "type": "named",
+            "value": "{CERT_FILE}:/app/certificado.pfx:ro"
+          },
+          {
+            "description": "Monta o diret\u00f3rio de armazenamento no container",
+            "name": "-v",
+            "type": "named",
+            "value": "{STORAGE_PATH}:/app/storage"
+          },
+          "docker.io/samuelmoraesf/mcp-nfse-nacional:1.0.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.SamuelMoraesF/mcp-nfse-nacional",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Senha do certificado digital (e-CNPJ/e-CPF) em formato PFX",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CERT_PASSWORD"
+        },
+        {
+          "description": "Caminho para o arquivo do certificado digital (.pfx)",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "CERT_FILE"
+        },
+        {
+          "default": "3000",
+          "description": "Porta do servidor HTTP",
+          "format": "number",
+          "name": "MCP_PORT"
+        },
+        {
+          "default": "./storage",
+          "description": "Diret\u00f3rio onde os XMLs e PDFs baixados ser\u00e3o armazenados",
+          "format": "filepath",
+          "name": "STORAGE_PATH"
+        }
+      ],
+      "identifier": "docker.io/samuelmoraesf/mcp-nfse-nacional:1.0.3",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "Mapeia a porta do container para o host",
+          "name": "-p",
+          "type": "named",
+          "value": "{MCP_PORT}:{MCP_PORT}"
+        },
+        {
+          "description": "Monta o certificado digital no container",
+          "name": "-v",
+          "type": "named",
+          "value": "{CERT_FILE}:/app/certificado.pfx:ro"
+        },
+        {
+          "description": "Monta o diret\u00f3rio de armazenamento no container",
+          "name": "-v",
+          "type": "named",
+          "value": "{STORAGE_PATH}:/app/storage"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:{MCP_PORT}/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "7c64c79f17",
+    "published_at": "2026-02-12T03:06:33.237733Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.SamuelMoraesF/mcp-nfse-nacional",
+    "server_version": "1.0.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-02-12T03:06:33.237733Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.3"
+}

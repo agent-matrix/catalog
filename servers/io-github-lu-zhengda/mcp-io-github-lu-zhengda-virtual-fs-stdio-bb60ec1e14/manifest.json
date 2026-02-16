@@ -1,0 +1,70 @@
+{
+  "description": "PostgreSQL-backed virtual filesystem for agents: session isolation, shared stores, POSIX ops, RLS.",
+  "harvest": {
+    "last_seen_at": "2026-02-16T04:35:06+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-lu-zhengda-virtual-fs.stdio.bb60ec1e14",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/lu-zhengda/mcp-virtual-fs",
+    "homepage": "https://github.com/lu-zhengda/mcp-virtual-fs",
+    "repository": "https://github.com/lu-zhengda/mcp-virtual-fs"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.lu-zhengda/virtual-fs",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "PostgreSQL connection string (e.g. postgresql://user:pass@host:5432/dbname)",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DATABASE_URL"
+        },
+        {
+          "description": "Auto-create database tables on startup (set to 'true' for first run)",
+          "name": "VFS_AUTO_INIT"
+        },
+        {
+          "description": "Deterministic session ID for resumable sessions across restarts",
+          "name": "VFS_SESSION_ID"
+        },
+        {
+          "description": "Enable PostgreSQL Row Level Security for database-enforced session isolation",
+          "name": "VFS_ENABLE_RLS"
+        }
+      ],
+      "identifier": "mcp-virtual-fs",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "bb60ec1e14",
+    "published_at": "2026-02-11T02:32:32.702021Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.lu-zhengda/virtual-fs",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-02-11T02:32:32.702021Z"
+  },
+  "title": "Virtual Filesystem",
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

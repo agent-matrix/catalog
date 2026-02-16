@@ -1,0 +1,67 @@
+{
+  "description": "The Teamwork.com official MCP server helps teams efficiently manage client projects with AI.",
+  "harvest": {
+    "last_seen_at": "2026-02-16T04:34:09+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-teamwork-mcp.stdio.3cb9b437d2",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/teamwork/mcp",
+    "homepage": "https://github.com/teamwork/mcp",
+    "repository": "https://github.com/teamwork/mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.teamwork/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API key generated from the Teamwork.com OAuth2 process: https://apidocs.teamwork.com/guides/teamwork/app-login-flow",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "TW_MCP_BEARER_TOKEN"
+        },
+        {
+          "description": "Choose log output format between 'text' or 'json'. Default is 'text'.",
+          "format": "string",
+          "name": "TW_MCP_LOG_FORMAT"
+        },
+        {
+          "description": "Choose log level between 'debug', 'info', 'warn' or 'error'. Default is 'info'.",
+          "format": "string",
+          "name": "TW_MCP_LOG_LEVEL"
+        }
+      ],
+      "identifier": "docker.io/teamwork/mcp:v1.9.3",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "3cb9b437d2",
+    "published_at": "2026-02-13T14:33:31.492023Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.teamwork/mcp",
+    "server_version": "1.9.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-02-13T14:33:31.492023Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.9.3"
+}

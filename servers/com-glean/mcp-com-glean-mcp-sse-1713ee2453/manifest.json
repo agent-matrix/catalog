@@ -1,0 +1,52 @@
+{
+  "description": "Remote MCP Server that securely connects Glean Enterprise Knowledge with your IDE, LLM, or agents.",
+  "harvest": {
+    "last_seen_at": "2026-02-16T04:34:02+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-glean-mcp.sse.1713ee2453",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/gleanwork/remote-mcp-server",
+    "homepage": "https://github.com/gleanwork/remote-mcp-server",
+    "repository": "https://github.com/gleanwork/remote-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://{baseUrl}/mcp/{server-name}"
+    }
+  },
+  "name": "com.glean/mcp",
+  "provenance": {
+    "identity_key": "1713ee2453",
+    "published_at": "2026-02-13T18:06:13.299358Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.glean/mcp",
+    "server_version": "1.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-02-13T18:06:13.299358Z"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://{baseUrl}/mcp/{server-name}",
+      "variables": {
+        "baseUrl": {
+          "description": "Your Glean backend domain. For most deployments this follows the pattern '{instance}-be.glean.com' (e.g., 'acme-be.glean.com'). If your organization uses a custom domain, enter that domain instead. Contact your Glean admin if unsure.",
+          "isRequired": true,
+          "placeholder": "acme-be.glean.com"
+        },
+        "server-name": {
+          "description": "The MCP server name",
+          "isRequired": true
+        }
+      }
+    }
+  ],
+  "title": "Glean Remote MCP Server",
+  "type": "mcp_server",
+  "version": "1.2.0"
+}

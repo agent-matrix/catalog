@@ -1,0 +1,73 @@
+{
+  "description": "PostgreSQL-backed virtual filesystem for AI agents with persistent, session-isolated storage.",
+  "harvest": {
+    "last_seen_at": "2026-02-16T04:35:06+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-lu-zhengda-virtual-fs.stdio.39bb09d56d",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/lu-zhengda/mcp-virtual-fs",
+    "homepage": "https://github.com/lu-zhengda/mcp-virtual-fs",
+    "repository": "https://github.com/lu-zhengda/mcp-virtual-fs"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.lu-zhengda/virtual-fs",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "PostgreSQL connection string (e.g. postgresql://user:pass@host:5432/dbname)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DATABASE_URL"
+        },
+        {
+          "description": "Auto-create database tables on startup (set to 'true' for first run)",
+          "format": "string",
+          "name": "VFS_AUTO_INIT"
+        },
+        {
+          "description": "Deterministic session ID for resumable sessions across restarts",
+          "format": "string",
+          "name": "VFS_SESSION_ID"
+        },
+        {
+          "description": "Enable PostgreSQL Row Level Security for database-enforced session isolation",
+          "format": "string",
+          "name": "VFS_ENABLE_RLS"
+        }
+      ],
+      "identifier": "mcp-virtual-fs",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "39bb09d56d",
+    "published_at": "2026-02-09T18:00:58.350227Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.lu-zhengda/virtual-fs",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-02-09T18:00:58.350227Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

@@ -1,0 +1,84 @@
+{
+  "description": "MCP bridge for inter-session communication between Claude Code instances",
+  "harvest": {
+    "last_seen_at": "2026-02-16T04:34:49+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-eaisdevelopment-cc-bridge-mcp-server.stdio.d4e2374329",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/eaisdevelopment/cc-bridge-mcp-server",
+    "homepage": "https://github.com/eaisdevelopment/cc-bridge-mcp-server",
+    "repository": "https://github.com/eaisdevelopment/cc-bridge-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@essentialai/cc-bridge-mcp-server==0.2.7"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.eaisdevelopment/cc-bridge-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "~/cloud_code_bridge",
+          "description": "Directory for state file and logs",
+          "name": "CC_BRIDGE_STATE_PATH"
+        },
+        {
+          "default": "120000",
+          "description": "CLI subprocess timeout in milliseconds",
+          "name": "CC_BRIDGE_TIMEOUT_MS"
+        },
+        {
+          "default": "0",
+          "description": "Max characters in CLI message (0 = unlimited)",
+          "name": "CC_BRIDGE_CHAR_LIMIT"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "name": "CC_BRIDGE_LOG_LEVEL"
+        },
+        {
+          "default": "claude",
+          "description": "Path to the claude CLI executable",
+          "name": "CC_BRIDGE_CLAUDE_PATH"
+        },
+        {
+          "default": "1800000",
+          "description": "Time in ms before a peer is flagged as stale (0 = disabled)",
+          "name": "CC_BRIDGE_STALE_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "@essentialai/cc-bridge-mcp-server",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.7"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d4e2374329",
+    "published_at": "2026-02-11T12:12:17.351291Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.eaisdevelopment/cc-bridge-mcp-server",
+    "server_version": "0.2.7",
+    "source": "mcp-registry",
+    "updated_at": "2026-02-11T12:12:17.351291Z"
+  },
+  "title": "Claude Code Bridge from Essential AI Solutions (essentialai.uk)",
+  "type": "mcp_server",
+  "version": "0.2.7"
+}

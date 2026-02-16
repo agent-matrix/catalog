@@ -1,0 +1,88 @@
+{
+  "description": "Protect your AI agents and IDEs from malicious open-source packages.",
+  "harvest": {
+    "last_seen_at": "2026-02-16T04:35:24+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-safedep-vet-mcp.stdio.35c85cf26f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/safedep/vet",
+    "homepage": "https://github.com/safedep/vet",
+    "repository": "https://github.com/safedep/vet"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "name": "--rm",
+            "type": "named"
+          },
+          {
+            "name": "-i",
+            "type": "named"
+          },
+          "ghcr.io/safedep/vet:v1.13.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.safedep/vet-mcp",
+  "packages": [
+    {
+      "identifier": "ghcr.io/safedep/vet:v1.13.1",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "-s"
+        },
+        {
+          "name": "-l",
+          "type": "named",
+          "value": "/tmp/vet-mcp.log"
+        },
+        {
+          "type": "positional",
+          "value": "server"
+        },
+        {
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "name": "--rm",
+          "type": "named"
+        },
+        {
+          "name": "-i",
+          "type": "named"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "35c85cf26f",
+    "published_at": "2026-02-10T07:50:41.254168Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.safedep/vet-mcp",
+    "server_version": "1.13.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-02-10T07:50:41.254168Z"
+  },
+  "title": "SafeDep Vet MCP",
+  "type": "mcp_server",
+  "version": "1.13.1"
+}

@@ -1,0 +1,119 @@
+{
+  "description": "MCP server for RabbitMQ and Kafka message inspection with JSON Schema validation",
+  "harvest": {
+    "last_seen_at": "2026-02-16T04:34:21+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-LarsCowe-queue-pilot.stdio.a868e50916",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/LarsCowe/queue-pilot",
+    "homepage": "https://github.com/LarsCowe/queue-pilot",
+    "repository": "https://github.com/LarsCowe/queue-pilot"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "queue-pilot==0.5.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.LarsCowe/queue-pilot",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "http://localhost:15672",
+          "description": "RabbitMQ Management API URL",
+          "format": "string",
+          "name": "RABBITMQ_URL"
+        },
+        {
+          "default": "guest",
+          "description": "RabbitMQ username",
+          "format": "string",
+          "isSecret": true,
+          "name": "RABBITMQ_USER"
+        },
+        {
+          "default": "guest",
+          "description": "RabbitMQ password",
+          "format": "string",
+          "isSecret": true,
+          "name": "RABBITMQ_PASS"
+        },
+        {
+          "default": "localhost:9092",
+          "description": "Comma-separated Kafka broker addresses",
+          "format": "string",
+          "name": "KAFKA_BROKERS"
+        },
+        {
+          "default": "queue-pilot",
+          "description": "Kafka client ID",
+          "format": "string",
+          "name": "KAFKA_CLIENT_ID"
+        },
+        {
+          "description": "SASL mechanism: plain, scram-sha-256, scram-sha-512",
+          "format": "string",
+          "name": "KAFKA_SASL_MECHANISM"
+        },
+        {
+          "description": "SASL username",
+          "format": "string",
+          "isSecret": true,
+          "name": "KAFKA_SASL_USERNAME"
+        },
+        {
+          "description": "SASL password",
+          "format": "string",
+          "isSecret": true,
+          "name": "KAFKA_SASL_PASSWORD"
+        }
+      ],
+      "identifier": "queue-pilot",
+      "packageArguments": [
+        {
+          "description": "Path to directory containing JSON Schema files",
+          "isRequired": true,
+          "name": "--schemas",
+          "type": "named",
+          "valueHint": "filepath"
+        },
+        {
+          "description": "Broker type: rabbitmq or kafka (default: rabbitmq)",
+          "name": "--broker",
+          "type": "named",
+          "valueHint": "string"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a868e50916",
+    "published_at": "2026-02-14T12:22:43.352667Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.LarsCowe/queue-pilot",
+    "server_version": "0.5.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-02-14T12:22:43.352667Z"
+  },
+  "title": "Queue Pilot",
+  "type": "mcp_server",
+  "version": "0.5.1"
+}

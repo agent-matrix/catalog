@@ -1,0 +1,79 @@
+{
+  "description": "AI-powered Amazon ECS workload management",
+  "harvest": {
+    "last_seen_at": "2026-02-16T04:33:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.aws-api-us-east-1-ecs-mcp-server.stdio.db18cb6e28",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-proxy-for-aws==1.1.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "aws.api.us-east-1.ecs-mcp/server",
+  "packages": [
+    {
+      "identifier": "mcp-proxy-for-aws",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "https://ecs-mcp.{region}.api.aws/mcp",
+          "variables": {
+            "region": {
+              "default": "us-east-1",
+              "description": "AWS region for ECS MCP service",
+              "isRequired": true
+            }
+          }
+        },
+        {
+          "default": "default",
+          "description": "AWS CLI profile to use for credentials",
+          "name": "--profile",
+          "type": "named"
+        },
+        {
+          "name": "--region",
+          "type": "named",
+          "value": "{region}",
+          "variables": {
+            "region": {
+              "default": "us-east-1",
+              "description": "AWS region"
+            }
+          }
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "db18cb6e28",
+    "published_at": "2026-02-09T23:18:00.777188Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "aws.api.us-east-1.ecs-mcp/server",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-02-09T23:18:00.777188Z"
+  },
+  "title": "Amazon ECS MCP Server",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

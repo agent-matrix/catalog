@@ -1,0 +1,95 @@
+{
+  "description": "LogicMonitor API integration with 167 tools for alerts, devices, dashboards, and more.",
+  "harvest": {
+    "last_seen_at": "2026-02-16T04:35:24+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ryanmat-logicmonitor.stdio.b9c1ae8d55",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/ryanmat/mcp-server-logicmonitor",
+    "homepage": "https://github.com/ryanmat/mcp-server-logicmonitor",
+    "repository": "https://github.com/ryanmat/mcp-server-logicmonitor"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ryanmat/logicmonitor",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "LogicMonitor portal hostname (e.g., company.logicmonitor.com)",
+          "format": "string",
+          "isRequired": true,
+          "name": "LM_PORTAL"
+        },
+        {
+          "description": "LogicMonitor API Bearer token",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "LM_BEARER_TOKEN"
+        },
+        {
+          "description": "Enable write operations (create, update, delete)",
+          "format": "string",
+          "name": "LM_ENABLE_WRITE_OPERATIONS"
+        },
+        {
+          "description": "LMv1 API access ID (required for log/metric ingestion)",
+          "format": "string",
+          "name": "LM_ACCESS_ID"
+        },
+        {
+          "description": "LMv1 API access key (required for log/metric ingestion)",
+          "format": "string",
+          "isSecret": true,
+          "name": "LM_ACCESS_KEY"
+        },
+        {
+          "description": "Comma-separated tool names or glob patterns to enable (e.g., get_*,create_device)",
+          "format": "string",
+          "name": "LM_ENABLED_TOOLS"
+        },
+        {
+          "description": "Comma-separated tool names or glob patterns to disable (e.g., delete_*)",
+          "format": "string",
+          "name": "LM_DISABLED_TOOLS"
+        },
+        {
+          "description": "Logging level for API request debugging (debug, info, warning, error)",
+          "format": "string",
+          "name": "LM_LOG_LEVEL"
+        }
+      ],
+      "identifier": "lm-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.5.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b9c1ae8d55",
+    "published_at": "2026-02-14T20:31:02.975405Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ryanmat/logicmonitor",
+    "server_version": "1.5.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-02-14T20:31:02.975405Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.5.1"
+}
