@@ -1,0 +1,93 @@
+{
+  "description": "11 deterministic calendar tools \u2014 temporal context, scheduling, availability, and booking",
+  "harvest": {
+    "last_seen_at": "2026-02-23T04:33:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-billylui-temporal-cortex-mcp.stdio.3c83e129ae",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/billylui/temporal-cortex-mcp",
+    "homepage": "https://github.com/billylui/temporal-cortex-mcp",
+    "repository": "https://github.com/billylui/temporal-cortex-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.billylui/temporal-cortex-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Google OAuth Client ID from Google Cloud Console",
+          "isRequired": true,
+          "name": "GOOGLE_CLIENT_ID"
+        },
+        {
+          "description": "Google OAuth Client Secret",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GOOGLE_CLIENT_SECRET"
+        },
+        {
+          "description": "IANA timezone override (e.g., America/New_York). Overrides stored config and OS detection.",
+          "name": "TIMEZONE"
+        },
+        {
+          "description": "UUID for tenant isolation (auto-generated if not set)",
+          "name": "TENANT_ID"
+        },
+        {
+          "default": "30",
+          "description": "Lock time-to-live in seconds for booking safety",
+          "name": "LOCK_TTL_SECS"
+        },
+        {
+          "default": "8085",
+          "description": "Port for the local OAuth callback server",
+          "name": "OAUTH_REDIRECT_PORT"
+        },
+        {
+          "description": "Port for HTTP transport. When set, enables streamable HTTP mode instead of stdio.",
+          "name": "HTTP_PORT"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "Bind address for HTTP transport (default: 127.0.0.1)",
+          "name": "HTTP_HOST"
+        },
+        {
+          "description": "Comma-separated allowed Origin headers for HTTP mode. Cross-origin requests rejected if unset.",
+          "name": "ALLOWED_ORIGINS"
+        }
+      ],
+      "identifier": "@temporal-cortex/cortex-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "3c83e129ae",
+    "published_at": "2026-02-20T08:25:08.093118Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.billylui/temporal-cortex-mcp",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-02-20T08:25:08.093118Z"
+  },
+  "title": "Temporal Cortex Calendar MCP",
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

@@ -1,0 +1,78 @@
+{
+  "description": "Manage RosettaHUB student AWS accounts \u2014 budgets, AWS CLI, access control.",
+  "harvest": {
+    "last_seen_at": "2026-02-23T04:33:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-danielcregg-rosettahub-mcp-server.stdio.e36742ea40",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/danielcregg/rosettahub-mcp-server",
+    "homepage": "https://github.com/danielcregg/rosettahub-mcp-server",
+    "repository": "https://github.com/danielcregg/rosettahub-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "rosettahub-mcp-server==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.danielcregg/rosettahub-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "RosettaHUB API key",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "RH_API_KEY"
+        },
+        {
+          "description": "RosettaHUB organization name",
+          "format": "string",
+          "isRequired": true,
+          "name": "RH_ORG"
+        },
+        {
+          "default": "eu-west-1",
+          "description": "Default AWS region for commands",
+          "format": "string",
+          "name": "RH_AWS_REGION"
+        },
+        {
+          "description": "Override WSDL endpoint URL",
+          "format": "string",
+          "name": "RH_WSDL_URL"
+        }
+      ],
+      "identifier": "rosettahub-mcp-server",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e36742ea40",
+    "published_at": "2026-02-19T23:11:08.690632Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.danielcregg/rosettahub-mcp-server",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-02-19T23:11:08.690632Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

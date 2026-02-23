@@ -1,0 +1,80 @@
+{
+  "description": "MCP server for Microsoft SharePoint \u2014 manage folders, documents, and metadata.",
+  "harvest": {
+    "last_seen_at": "2026-02-23T04:33:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ravikant1918-sharepoint-mcp.stdio.bc6cf35563",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ravikant1918/sharepoint-mcp",
+    "homepage": "https://github.com/ravikant1918/sharepoint-mcp",
+    "repository": "https://github.com/ravikant1918/sharepoint-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "sharepoint-mcp==1.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ravikant1918/sharepoint-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Azure AD application (client) ID",
+          "isRequired": true,
+          "name": "SHP_ID_APP"
+        },
+        {
+          "description": "Azure AD client secret",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SHP_ID_APP_SECRET"
+        },
+        {
+          "description": "Microsoft Entra (Azure AD) tenant ID",
+          "isRequired": true,
+          "name": "SHP_TENANT_ID"
+        },
+        {
+          "description": "SharePoint site URL (e.g. https://tenant.sharepoint.com/sites/MySite)",
+          "isRequired": true,
+          "name": "SHP_SITE_URL"
+        },
+        {
+          "default": "Shared Documents/mcp_server",
+          "description": "SharePoint document library path",
+          "name": "SHP_DOC_LIBRARY"
+        }
+      ],
+      "identifier": "sharepoint-mcp",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "bc6cf35563",
+    "published_at": "2026-02-21T19:09:25.175699Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ravikant1918/sharepoint-mcp",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-02-21T19:09:25.175699Z"
+  },
+  "title": "SharePoint MCP Server",
+  "type": "mcp_server",
+  "version": "1.0.1"
+}
