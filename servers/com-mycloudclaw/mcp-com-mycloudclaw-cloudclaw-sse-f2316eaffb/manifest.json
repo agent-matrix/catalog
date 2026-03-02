@@ -1,0 +1,55 @@
+{
+  "description": "AI agent hosting platform: 37+ connectors, 181 tools, BYOK vault, marketplace.",
+  "harvest": {
+    "last_seen_at": "2026-03-02T04:22:36+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-mycloudclaw-cloudclaw.sse.f2316eaffb",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mkc909/cloudclaw-core",
+    "homepage": "https://github.com/mkc909/cloudclaw-core",
+    "repository": "https://github.com/mkc909/cloudclaw-core"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://mycloudclaw.com/api/agents/{agent_id}/mcp"
+    }
+  },
+  "name": "com.mycloudclaw/cloudclaw",
+  "provenance": {
+    "identity_key": "f2316eaffb",
+    "published_at": "2026-03-01T15:35:37.555975Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.mycloudclaw/cloudclaw",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-03-01T15:35:37.555975Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "CloudClaw API key as Bearer token (e.g. Bearer cc_xxxx)",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization"
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://mycloudclaw.com/api/agents/{agent_id}/mcp",
+      "variables": {
+        "agent_id": {
+          "description": "Your CloudClaw agent ID. Get yours at https://mycloudclaw.com",
+          "isRequired": true
+        }
+      }
+    }
+  ],
+  "title": "CloudClaw",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

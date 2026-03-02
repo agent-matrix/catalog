@@ -1,0 +1,72 @@
+{
+  "description": "Aggregates tools from multiple MCP servers with unified BM25/regex search and deferred loading.",
+  "harvest": {
+    "last_seen_at": "2026-03-02T04:23:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-rupinder2-mcp-orchestrator.stdio.d126860929",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/rupinder2/mcp-orchestrator",
+    "homepage": "https://github.com/rupinder2/mcp-orchestrator",
+    "repository": "https://github.com/rupinder2/mcp-orchestrator"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.rupinder2/mcp-orchestrator",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Port for the HTTP transport server (default: 8080).",
+          "format": "string",
+          "name": "ORCHESTRATOR_PORT"
+        },
+        {
+          "description": "Storage backend for tool cache. Use 'memory' for development or 'redis' for production.",
+          "format": "string",
+          "name": "STORAGE_BACKEND"
+        },
+        {
+          "description": "Redis connection URL. Required only when STORAGE_BACKEND=redis.",
+          "format": "string",
+          "name": "REDIS_URL"
+        },
+        {
+          "description": "Path to the server_config.json file listing downstream MCP servers.",
+          "format": "string",
+          "name": "SERVER_CONFIG_PATH"
+        }
+      ],
+      "identifier": "mcp-orchestrator",
+      "registryType": "pypi",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:{ORCHESTRATOR_PORT}/mcp"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d126860929",
+    "published_at": "2026-02-26T01:49:55.15161Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.rupinder2/mcp-orchestrator",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-02-26T01:49:55.15161Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

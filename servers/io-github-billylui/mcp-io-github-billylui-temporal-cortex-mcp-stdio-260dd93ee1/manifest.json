@@ -1,0 +1,117 @@
+{
+  "description": "11 deterministic calendar tools \u2014 temporal context, scheduling, availability, and booking",
+  "harvest": {
+    "last_seen_at": "2026-03-02T04:22:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-billylui-temporal-cortex-mcp.stdio.260dd93ee1",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/billylui/temporal-cortex-mcp",
+    "homepage": "https://github.com/billylui/temporal-cortex-mcp",
+    "repository": "https://github.com/billylui/temporal-cortex-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.billylui/temporal-cortex-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Google OAuth Client ID (required for Google Calendar)",
+          "name": "GOOGLE_CLIENT_ID"
+        },
+        {
+          "description": "Google OAuth Client Secret (required if using Google Calendar)",
+          "isSecret": true,
+          "name": "GOOGLE_CLIENT_SECRET"
+        },
+        {
+          "description": "Path to Google OAuth JSON credentials file (alternative to CLIENT_ID + SECRET)",
+          "name": "GOOGLE_OAUTH_CREDENTIALS"
+        },
+        {
+          "description": "Azure AD app ID (required for Outlook Calendar)",
+          "name": "MICROSOFT_CLIENT_ID"
+        },
+        {
+          "description": "Azure AD client secret (required for Outlook Calendar)",
+          "isSecret": true,
+          "name": "MICROSOFT_CLIENT_SECRET"
+        },
+        {
+          "description": "IANA timezone override (e.g., America/New_York). Overrides stored config and OS detection.",
+          "name": "TIMEZONE"
+        },
+        {
+          "default": "monday",
+          "description": "Week start day: 'monday' (default, ISO 8601) or 'sunday'. Overrides stored config.",
+          "name": "WEEK_START"
+        },
+        {
+          "description": "UUID for tenant isolation (auto-generated if not set)",
+          "name": "TENANT_ID"
+        },
+        {
+          "default": "30",
+          "description": "Lock time-to-live in seconds for booking safety",
+          "name": "LOCK_TTL_SECS"
+        },
+        {
+          "default": "8085",
+          "description": "Port for the local OAuth callback server",
+          "name": "OAUTH_REDIRECT_PORT"
+        },
+        {
+          "description": "Port for HTTP transport. When set, enables streamable HTTP mode instead of stdio.",
+          "name": "HTTP_PORT"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "Bind address for HTTP transport (default: 127.0.0.1)",
+          "name": "HTTP_HOST"
+        },
+        {
+          "description": "Comma-separated allowed Origin headers for HTTP mode. Cross-origin requests rejected if unset.",
+          "name": "ALLOWED_ORIGINS"
+        },
+        {
+          "description": "Override telemetry consent: 'off' to disable, 'on' to enable anonymous usage analytics.",
+          "name": "TEMPORAL_CORTEX_TELEMETRY"
+        },
+        {
+          "description": "Comma-separated Redis URLs. When set, activates Platform Mode with distributed locking.",
+          "name": "REDIS_URLS"
+        }
+      ],
+      "identifier": "@temporal-cortex/cortex-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "260dd93ee1",
+    "published_at": "2026-02-23T07:31:27.864261Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.billylui/temporal-cortex-mcp",
+    "server_version": "0.3.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-02-23T07:31:27.864261Z"
+  },
+  "title": "Temporal Cortex Calendar MCP",
+  "type": "mcp_server",
+  "version": "0.3.6"
+}

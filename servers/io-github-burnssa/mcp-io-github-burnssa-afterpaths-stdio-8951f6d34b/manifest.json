@@ -1,0 +1,85 @@
+{
+  "description": "Session memory for AI coding agents. Search past sessions, extract rules, and track what works.",
+  "harvest": {
+    "last_seen_at": "2026-03-02T04:22:56+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-burnssa-afterpaths.stdio.8951f6d34b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/burnssa/afterpaths.git",
+    "homepage": "https://github.com/burnssa/afterpaths.git",
+    "repository": "https://github.com/burnssa/afterpaths.git"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "Install afterpaths with MCP extras",
+            "name": "--from",
+            "type": "named",
+            "value": "afterpaths[mcp]"
+          },
+          "afterpaths==0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.burnssa/afterpaths",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Anthropic API key for session summarization and rule extraction. Not required for search, list, show, or rules tools.",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        },
+        {
+          "description": "OpenAI API key (alternative to Anthropic) for summarization.",
+          "isSecret": true,
+          "name": "OPENAI_API_KEY"
+        }
+      ],
+      "identifier": "afterpaths",
+      "packageArguments": [
+        {
+          "description": "Run the MCP server entry point",
+          "type": "positional",
+          "value": "afterpaths-mcp"
+        }
+      ],
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "Install afterpaths with MCP extras",
+          "name": "--from",
+          "type": "named",
+          "value": "afterpaths[mcp]"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8951f6d34b",
+    "published_at": "2026-02-25T04:26:27.533736Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.burnssa/afterpaths",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-02-25T04:26:27.533736Z"
+  },
+  "title": "Afterpaths",
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

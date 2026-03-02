@@ -1,0 +1,83 @@
+{
+  "description": "TradeRouter.ai MCP Server \u2014 Solana swap & limit order engine.",
+  "harvest": {
+    "last_seen_at": "2026-03-02T04:23:18+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-re-bruce-wayne-trade-router-mcp.stdio.1a3b464059",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/re-bruce-wayne/trade-router-mcp",
+    "homepage": "https://github.com/re-bruce-wayne/trade-router-mcp",
+    "repository": "https://github.com/re-bruce-wayne/trade-router-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.re-bruce-wayne/trade-router-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Solana wallet private key in base58 format. Required for auto-signing transactions and WebSocket authentication.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "TRADEROUTER_PRIVATE_KEY"
+        },
+        {
+          "description": "Solana RPC endpoint URL. Defaults to https://api.mainnet-beta.solana.com if not set.",
+          "format": "string",
+          "name": "SOLANA_RPC_URL"
+        },
+        {
+          "description": "TradeRouter server public key (base58) used to verify server signatures. Defaults to the hardcoded trust anchor.",
+          "format": "string",
+          "name": "TRADEROUTER_SERVER_PUBKEY"
+        },
+        {
+          "description": "Optional next/rotated TradeRouter server public key (base58) for key rotation support.",
+          "format": "string",
+          "name": "TRADEROUTER_SERVER_PUBKEY_NEXT"
+        },
+        {
+          "description": "Whether to require server signature verification on filled orders. Defaults to true.",
+          "format": "string",
+          "name": "TRADEROUTER_REQUIRE_SERVER_SIGNATURE"
+        },
+        {
+          "description": "Whether to require server signature verification on order creation. Defaults to true.",
+          "format": "string",
+          "name": "TRADEROUTER_REQUIRE_ORDER_CREATED_SIGNATURE"
+        }
+      ],
+      "identifier": "@re-bruce-wayne/trade-router-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1a3b464059",
+    "published_at": "2026-03-01T08:47:21.481671Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.re-bruce-wayne/trade-router-mcp",
+    "server_version": "1.0.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-03-01T08:47:21.481671Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.3"
+}

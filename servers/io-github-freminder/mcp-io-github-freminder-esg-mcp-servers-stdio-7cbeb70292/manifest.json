@@ -1,0 +1,80 @@
+{
+  "description": "31 MCP tools for ESG data extraction, PDF processing, vector search, and EU regulation analysis.",
+  "harvest": {
+    "last_seen_at": "2026-03-02T04:23:03+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-freminder-esg-mcp-servers.stdio.7cbeb70292",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/freminder/esg-mcp-servers",
+    "homepage": "https://github.com/freminder/esg-mcp-servers",
+    "repository": "https://github.com/freminder/esg-mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.freminder/esg-mcp-servers",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Anthropic API key \u2014 required for RAG queries and LLM-based metric extraction",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        },
+        {
+          "description": "PostgreSQL connection string with pgvector extension (e.g. postgresql://esg:esg@localhost/esg_platform)",
+          "format": "string",
+          "isRequired": true,
+          "name": "POSTGRES_DSN"
+        },
+        {
+          "description": "MongoDB connection string for PDF binary storage via GridFS (e.g. mongodb://localhost:27017)",
+          "format": "string",
+          "isRequired": true,
+          "name": "MONGODB_URI"
+        },
+        {
+          "description": "Sentence-transformer model name for embedding generation (default: Snowflake/snowflake-arctic-embed-l-v2.0)",
+          "format": "string",
+          "name": "EMBEDDING_MODEL"
+        },
+        {
+          "description": "Embedding vector dimension size (default: 1024)",
+          "format": "string",
+          "name": "EMBEDDING_DIMENSIONS"
+        }
+      ],
+      "identifier": "esg-mcp-servers",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7cbeb70292",
+    "published_at": "2026-02-28T09:59:45.171386Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.freminder/esg-mcp-servers",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-02-28T09:59:45.171386Z"
+  },
+  "title": "ESG MCP Servers",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

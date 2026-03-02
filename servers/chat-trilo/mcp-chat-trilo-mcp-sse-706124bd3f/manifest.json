@@ -1,0 +1,57 @@
+{
+  "description": "Connect AI tools to Trilo workspaces \u2014 manage tasks, messages, pages, calendars, meetings, and more.",
+  "harvest": {
+    "last_seen_at": "2026-03-02T04:22:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.chat-trilo-mcp.sse.706124bd3f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/TriloHQ/trilo",
+    "homepage": "https://github.com/TriloHQ/trilo",
+    "repository": "https://github.com/TriloHQ/trilo"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://api.trilo.chat/mcp"
+    }
+  },
+  "name": "chat.trilo/mcp",
+  "provenance": {
+    "identity_key": "706124bd3f",
+    "published_at": "2026-03-01T11:00:35.306415Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "chat.trilo/mcp",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-03-01T11:00:35.306415Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Bearer token for authentication. Generate a Personal Access Token (PAT) from Trilo Settings > API Tokens.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {TRILO_PAT}",
+          "variables": {
+            "TRILO_PAT": {
+              "description": "Your Trilo Personal Access Token (starts with trilo_pat_)",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://api.trilo.chat/mcp"
+    }
+  ],
+  "title": "Trilo",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

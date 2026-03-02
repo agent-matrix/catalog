@@ -1,0 +1,64 @@
+{
+  "description": "Connect AI assistants to GitHub - manage repos, issues, PRs, workflows, and git operations.",
+  "harvest": {
+    "last_seen_at": "2026-03-02T04:22:51+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-aifity-omnigit-mcp.stdio.e4279703f0",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/aifity/omnigit-mcp",
+    "homepage": "https://github.com/aifity/omnigit-mcp",
+    "repository": "https://github.com/aifity/omnigit-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.aifity/omnigit-mcp",
+  "packages": [
+    {
+      "identifier": "ghcr.io/aifity/omnigit-mcp:0.2.0",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "Set an environment variable in the runtime",
+          "isRequired": true,
+          "name": "-e",
+          "type": "named",
+          "value": "GITHUB_PERSONAL_ACCESS_TOKEN={token}",
+          "variables": {
+            "token": {
+              "format": "string",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "e4279703f0",
+    "published_at": "2026-02-26T07:52:08.060065Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.aifity/omnigit-mcp",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-02-26T07:52:08.060065Z"
+  },
+  "title": "GitHub",
+  "type": "mcp_server",
+  "version": "0.2.0"
+}
