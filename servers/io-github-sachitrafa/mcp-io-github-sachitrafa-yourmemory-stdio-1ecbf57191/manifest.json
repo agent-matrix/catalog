@@ -1,0 +1,66 @@
+{
+  "description": "Ebbinghaus-based persistent memory for Claude. Memories decay with time, strengthen on recall.",
+  "harvest": {
+    "last_seen_at": "2026-03-09T04:27:52+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sachitrafa-yourmemory.stdio.1ecbf57191",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/sachitrafa/yourmemory",
+    "homepage": "https://github.com/sachitrafa/yourmemory",
+    "repository": "https://github.com/sachitrafa/yourmemory"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sachitrafa/yourmemory",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "PostgreSQL connection string with pgvector. Example: postgresql://localhost:5432/yourmemory",
+          "format": "string",
+          "isRequired": true,
+          "name": "DATABASE_URL"
+        },
+        {
+          "description": "Ollama server URL for local embeddings (nomic-embed-text) and classification (llama3.2:3b). Default: http://localhost:11434",
+          "format": "string",
+          "name": "OLLAMA_URL"
+        },
+        {
+          "description": "Ollama model used for fact/assumption classification. Default: llama3.2:3b",
+          "format": "string",
+          "name": "EXTRACT_MODEL"
+        }
+      ],
+      "identifier": "ghcr.io/sachitrafa/yourmemory:1.0.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "1ecbf57191",
+    "published_at": "2026-03-02T10:53:29.351429Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sachitrafa/yourmemory",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-03-02T10:53:29.351429Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

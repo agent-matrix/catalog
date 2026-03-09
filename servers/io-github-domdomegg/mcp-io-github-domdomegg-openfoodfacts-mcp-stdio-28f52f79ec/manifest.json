@@ -1,0 +1,79 @@
+{
+  "description": "Search and contribute to the Open Food Facts database.",
+  "harvest": {
+    "last_seen_at": "2026-03-09T04:27:07+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-domdomegg-openfoodfacts-mcp.stdio.28f52f79ec",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/domdomegg/openfoodfacts-mcp.git",
+    "homepage": "https://github.com/domdomegg/openfoodfacts-mcp.git",
+    "repository": "https://github.com/domdomegg/openfoodfacts-mcp.git"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "openfoodfacts-mcp==2.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.domdomegg/openfoodfacts-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Transport type.",
+          "isRequired": true,
+          "name": "MCP_TRANSPORT",
+          "value": "http"
+        },
+        {
+          "description": "User-Agent string in format 'AppName/Version (email)'. Required by the Open Food Facts API.",
+          "isRequired": true,
+          "name": "OFF_USER_AGENT"
+        },
+        {
+          "description": "Open Food Facts user ID (optional, needed for write operations).",
+          "name": "OFF_USER_ID"
+        },
+        {
+          "description": "Open Food Facts password (optional, needed for write operations).",
+          "isSecret": true,
+          "name": "OFF_PASSWORD"
+        },
+        {
+          "description": "Country subdomain (default: 'world').",
+          "name": "OFF_COUNTRY"
+        }
+      ],
+      "identifier": "openfoodfacts-mcp",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3000/mcp"
+      },
+      "version": "2.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "28f52f79ec",
+    "published_at": "2026-03-08T03:21:16.743009Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.domdomegg/openfoodfacts-mcp",
+    "server_version": "2.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-03-08T03:21:16.743009Z"
+  },
+  "title": "Open Food Facts",
+  "type": "mcp_server",
+  "version": "2.0.0"
+}

@@ -1,0 +1,77 @@
+{
+  "description": "Post-transaction outcome verification. LLM-as-judge for agent service quality.",
+  "harvest": {
+    "last_seen_at": "2026-03-09T04:27:34+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-meltingpixelsai-harvey-verify.stdio.6684fce650",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/meltingpixelsai/harvey-verify",
+    "homepage": "https://github.com/meltingpixelsai/harvey-verify",
+    "repository": "https://github.com/meltingpixelsai/harvey-verify"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.meltingpixelsai/harvey-verify",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "xAI Grok API key for LLM-as-judge verification",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "XAI_API_KEY"
+        },
+        {
+          "description": "Supabase URL for quality database",
+          "format": "string",
+          "isRequired": true,
+          "name": "SUPABASE_URL"
+        },
+        {
+          "description": "Supabase service role key",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SUPABASE_SERVICE_ROLE_KEY"
+        },
+        {
+          "description": "Solana wallet address for receiving USDC payments",
+          "format": "string",
+          "name": "PAYMENT_WALLET"
+        }
+      ],
+      "identifier": "@meltingpixels/harvey-verify",
+      "registryType": "npm",
+      "transport": {
+        "type": "streamable-http",
+        "url": "https://verify.rugslayer.com/mcp"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6684fce650",
+    "published_at": "2026-03-04T13:12:39.092678Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.meltingpixelsai/harvey-verify",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-03-04T13:12:39.092678Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

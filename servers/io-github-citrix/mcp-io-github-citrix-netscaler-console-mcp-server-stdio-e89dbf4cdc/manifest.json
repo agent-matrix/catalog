@@ -1,0 +1,85 @@
+{
+  "description": "MCP server providing AI assistants the ability to interact with NetScaler environments.",
+  "harvest": {
+    "last_seen_at": "2026-03-09T04:26:59+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-citrix-netscaler-console-mcp-server.stdio.e89dbf4cdc",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.citrix/netscaler-console-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Citrix Cloud ID",
+          "format": "string",
+          "isRequired": true,
+          "name": "CC_ID"
+        },
+        {
+          "description": "NetScaler Console Client ID",
+          "format": "string",
+          "isRequired": true,
+          "name": "CLIENT_ID"
+        },
+        {
+          "description": "OAuth Issuer URL",
+          "format": "string",
+          "isRequired": true,
+          "name": "MCP_NS_OAUTH_ISSUER"
+        },
+        {
+          "description": "JWKS endpoint URL for JWT token verification",
+          "format": "string",
+          "isRequired": true,
+          "name": "MCP_NS_JWKS_URI"
+        },
+        {
+          "description": "Server certificate",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SSL_CERT_PATH"
+        },
+        {
+          "description": "Server key",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SSL_KEY_PATH"
+        }
+      ],
+      "identifier": "ghcr.io/sivakumarpcitrix/netscaler/netscaler-console-mcp-server:1.0.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:10000/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "e89dbf4cdc",
+    "published_at": "2026-03-06T12:59:58.350109Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.citrix/netscaler-console-mcp-server",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-03-06T12:59:58.350109Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

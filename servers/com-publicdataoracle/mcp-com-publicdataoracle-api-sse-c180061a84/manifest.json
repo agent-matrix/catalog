@@ -1,0 +1,53 @@
+{
+  "description": "Public data API with ML enrichment \u2014 SEC EDGAR, FRED, NOAA, EPA, USGS. 404 endpoints.",
+  "harvest": {
+    "last_seen_at": "2026-03-09T04:26:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-publicdataoracle-api.sse.c180061a84",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Mljessop/SensorAnalytics",
+    "homepage": "https://github.com/Mljessop/SensorAnalytics",
+    "repository": "https://github.com/Mljessop/SensorAnalytics"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://www.publicdataoracle.com/api/v1/data/query"
+    }
+  },
+  "name": "com.publicdataoracle/api",
+  "provenance": {
+    "identity_key": "c180061a84",
+    "published_at": "2026-03-04T23:09:15.662081Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.publicdataoracle/api",
+    "server_version": "2.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-03-04T23:09:15.662081Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "API key for authentication. Register free at POST /api/v1/auth/register with {email, name}",
+          "name": "X-API-Key",
+          "value": "{api_key}"
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://www.publicdataoracle.com/api/v1/data/query",
+      "variables": {
+        "api_key": {
+          "description": "Your PublicData Oracle API key. Get one free at https://www.publicdataoracle.com/api/v1/auth/register"
+        }
+      }
+    }
+  ],
+  "title": "PublicData Oracle",
+  "type": "mcp_server",
+  "version": "2.1.0"
+}

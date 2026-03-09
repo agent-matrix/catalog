@@ -1,0 +1,96 @@
+{
+  "description": "Let AI agents interact with debug probes \u2014 connect, flash, read/write memory, and reset.",
+  "harvest": {
+    "last_seen_at": "2026-03-09T04:27:11+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-es617-dbgprobe-mcp-server.stdio.91d6b412ca",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/es617/dbgprobe-mcp-server.git",
+    "homepage": "https://github.com/es617/dbgprobe-mcp-server.git",
+    "repository": "https://github.com/es617/dbgprobe-mcp-server.git"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.es617/dbgprobe-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Debug probe backend to use (default: jlink). Future: openocd, pyocd.",
+          "format": "string",
+          "name": "DBGPROBE_BACKEND"
+        },
+        {
+          "description": "Log level: DEBUG, INFO, WARNING (default), ERROR.",
+          "format": "string",
+          "name": "DBGPROBE_MCP_LOG_LEVEL"
+        },
+        {
+          "description": "Explicit path to JLinkExe (or JLink.exe on Windows). Auto-detected if not set.",
+          "format": "string",
+          "name": "DBGPROBE_JLINK_PATH"
+        },
+        {
+          "description": "Explicit path to JLinkGDBServerCLExe. Auto-detected if not set.",
+          "format": "string",
+          "name": "DBGPROBE_JLINK_GDBSERVER_PATH"
+        },
+        {
+          "description": "Default target device string (e.g. nRF52840_xxAA). Can be overridden per-session.",
+          "format": "string",
+          "name": "DBGPROBE_JLINK_DEVICE"
+        },
+        {
+          "description": "Debug interface: SWD (default) or JTAG.",
+          "format": "string",
+          "name": "DBGPROBE_INTERFACE"
+        },
+        {
+          "description": "Interface speed in kHz (default: 4000).",
+          "format": "string",
+          "name": "DBGPROBE_SPEED_KHZ"
+        },
+        {
+          "description": "Plugin policy: 'all' or comma-separated plugin names. Unset = disabled.",
+          "format": "string",
+          "name": "DBGPROBE_MCP_PLUGINS"
+        },
+        {
+          "description": "Tool name separator character (default '.'). Set to '_' for clients that reject dots (e.g. Cursor).",
+          "format": "string",
+          "name": "DBGPROBE_MCP_TOOL_SEPARATOR"
+        }
+      ],
+      "identifier": "dbgprobe-mcp-server",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "91d6b412ca",
+    "published_at": "2026-03-06T23:06:46.963744Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.es617/dbgprobe-mcp-server",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-03-06T23:06:46.963744Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}
