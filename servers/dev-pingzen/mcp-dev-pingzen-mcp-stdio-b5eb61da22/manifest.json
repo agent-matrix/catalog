@@ -1,0 +1,68 @@
+{
+  "description": "Monitor websites, APIs and services with 44 tools across 22 protocols",
+  "harvest": {
+    "last_seen_at": "2026-03-16T04:48:17+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.dev-pingzen-mcp.stdio.b5eb61da22",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://gitlab.com/dobryj/recorder2025",
+    "homepage": "https://gitlab.com/dobryj/recorder2025",
+    "repository": "https://gitlab.com/dobryj/recorder2025"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "docker.io/ilyakong/pingzen-mcp:0.9.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "dev.pingzen/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API key (pz_...) or JWT token from PingZen (omit for test mode)",
+          "isSecret": true,
+          "name": "MCP_API_TOKEN"
+        },
+        {
+          "description": "PostgreSQL connection string",
+          "isSecret": true,
+          "name": "DATABASE_URL"
+        },
+        {
+          "description": "JWT signing secret",
+          "isSecret": true,
+          "name": "SECRET_KEY"
+        }
+      ],
+      "identifier": "docker.io/ilyakong/pingzen-mcp:0.9.3",
+      "registryType": "oci",
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "b5eb61da22",
+    "published_at": "2026-03-10T23:02:08.088586Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "dev.pingzen/mcp",
+    "server_version": "0.9.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-03-10T23:02:08.088586Z"
+  },
+  "title": "PingZen Uptime Monitoring",
+  "type": "mcp_server",
+  "version": "0.9.3"
+}

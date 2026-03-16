@@ -1,0 +1,96 @@
+{
+  "description": "AI-powered threat hunting and incident response MCP server for Elasticsearch/OpenSearch",
+  "harvest": {
+    "last_seen_at": "2026-03-16T04:50:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-thomasxm-crowdsentinel-mcp-server.stdio.0ef90f3001",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/thomasxm/CrowdSentinels-AI-MCP",
+    "homepage": "https://github.com/thomasxm/CrowdSentinels-AI-MCP",
+    "repository": "https://github.com/thomasxm/CrowdSentinels-AI-MCP"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.thomasxm/crowdsentinel-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://localhost:9200",
+          "description": "Comma-separated Elasticsearch hosts. Supports HTTP/HTTPS, local/remote/cloud (e.g., http://localhost:9200, https://es.prod.example.com:9200)",
+          "format": "string",
+          "name": "ELASTICSEARCH_HOSTS"
+        },
+        {
+          "description": "Elastic Cloud deployment ID (alternative to ELASTICSEARCH_HOSTS for cloud deployments)",
+          "format": "string",
+          "name": "ELASTICSEARCH_CLOUD_ID"
+        },
+        {
+          "description": "API key for authentication (recommended for production and Elastic Cloud)",
+          "format": "string",
+          "isSecret": true,
+          "name": "ELASTICSEARCH_API_KEY"
+        },
+        {
+          "description": "Username for basic authentication (alternative to API key)",
+          "format": "string",
+          "name": "ELASTICSEARCH_USERNAME"
+        },
+        {
+          "description": "Password for basic authentication (used with ELASTICSEARCH_USERNAME)",
+          "format": "string",
+          "isSecret": true,
+          "name": "ELASTICSEARCH_PASSWORD"
+        },
+        {
+          "description": "Bearer/service token for authentication (alternative to API key)",
+          "format": "string",
+          "isSecret": true,
+          "name": "ELASTICSEARCH_BEARER_TOKEN"
+        },
+        {
+          "default": "false",
+          "description": "TLS certificate verification: true (verify CA \u2014 production), false (skip \u2014 dev/test), or /path/to/ca.crt (custom CA)",
+          "format": "string",
+          "name": "VERIFY_CERTS"
+        },
+        {
+          "description": "Request timeout in seconds (e.g., 60 or 10.5)",
+          "format": "string",
+          "name": "REQUEST_TIMEOUT"
+        }
+      ],
+      "identifier": "crowdsentinel-mcp-server",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.9"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0ef90f3001",
+    "published_at": "2026-03-15T14:58:06.290905Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.thomasxm/crowdsentinel-mcp-server",
+    "server_version": "0.3.9",
+    "source": "mcp-registry",
+    "updated_at": "2026-03-15T14:58:06.290905Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.9"
+}

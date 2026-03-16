@@ -1,0 +1,83 @@
+{
+  "description": "Multi-source entity enrichment: company data, contacts, email verification, and phone validation",
+  "harvest": {
+    "last_seen_at": "2026-03-16T04:48:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-IntelagentStudios-mcp-enrichment.stdio.ea37b7ba36",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/IntelagentStudios/Intelagent-MCPs",
+    "homepage": "https://github.com/IntelagentStudios/Intelagent-MCPs",
+    "repository": "https://github.com/IntelagentStudios/Intelagent-MCPs"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@intelagent/mcp-enrichment==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.IntelagentStudios/mcp-enrichment",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Clearbit API key for company and contact enrichment",
+          "isSecret": true,
+          "name": "CLEARBIT_API_KEY"
+        },
+        {
+          "description": "Hunter.io API key for email discovery and verification",
+          "isSecret": true,
+          "name": "HUNTER_API_KEY"
+        },
+        {
+          "description": "Apollo.io API key for contact and company data",
+          "isSecret": true,
+          "name": "APOLLO_API_KEY"
+        },
+        {
+          "description": "Twilio Account SID for phone validation",
+          "isSecret": true,
+          "name": "TWILIO_ACCOUNT_SID"
+        },
+        {
+          "description": "Twilio Auth Token for phone validation",
+          "isSecret": true,
+          "name": "TWILIO_AUTH_TOKEN"
+        },
+        {
+          "description": "Cache TTL in seconds for enrichment results (default: 86400)",
+          "name": "ENRICHMENT_CACHE_TTL"
+        }
+      ],
+      "identifier": "@intelagent/mcp-enrichment",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ea37b7ba36",
+    "published_at": "2026-03-15T16:57:08.745675Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.IntelagentStudios/mcp-enrichment",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-03-15T16:57:08.745675Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}
