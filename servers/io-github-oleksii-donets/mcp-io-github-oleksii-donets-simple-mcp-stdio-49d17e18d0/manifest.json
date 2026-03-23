@@ -1,0 +1,72 @@
+{
+  "description": "A Test MCP server that provides tools, promts and resources",
+  "harvest": {
+    "last_seen_at": "2026-03-23T04:39:18+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-oleksii-donets-simple_mcp.stdio.49d17e18d0",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/oleksii-donets/simple_mcp",
+    "homepage": "https://github.com/oleksii-donets/simple_mcp",
+    "repository": "https://github.com/oleksii-donets/simple_mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.oleksii-donets/simple_mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "choices": [
+            "HTTP"
+          ],
+          "description": "Transport type",
+          "format": "string",
+          "isRequired": true,
+          "name": "APP_TRANSPORT"
+        },
+        {
+          "default": "0.0.0.0",
+          "description": "Server host",
+          "format": "string",
+          "name": "APP_HOST"
+        },
+        {
+          "default": "8000",
+          "description": "Server port",
+          "format": "string",
+          "name": "APP_PORT"
+        }
+      ],
+      "identifier": "docker.io/d0nets/simple-mcp:0.0.4",
+      "registryType": "oci",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://{APP_HOST}:{APP_PORT}/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "49d17e18d0",
+    "published_at": "2026-03-18T08:24:26.95045Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.oleksii-donets/simple_mcp",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-03-18T08:24:26.95045Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

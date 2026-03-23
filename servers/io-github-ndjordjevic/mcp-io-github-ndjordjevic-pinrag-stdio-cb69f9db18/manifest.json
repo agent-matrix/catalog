@@ -1,0 +1,68 @@
+{
+  "description": "RAG MCP: PDFs, repos, YouTube, Discord, plain text. Index and query with citations (stdio).",
+  "harvest": {
+    "last_seen_at": "2026-03-23T04:39:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ndjordjevic-pinrag.stdio.cb69f9db18",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/ndjordjevic/pinrag",
+    "homepage": "https://github.com/ndjordjevic/pinrag",
+    "repository": "https://github.com/ndjordjevic/pinrag"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ndjordjevic/pinrag",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Anthropic API key when using Claude as the LLM (default provider).",
+          "format": "string",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        },
+        {
+          "description": "OpenAI API key (LLM and/or embeddings when using OpenAI). Often set together with or instead of ANTHROPIC_API_KEY.",
+          "format": "string",
+          "isSecret": true,
+          "name": "OPENAI_API_KEY"
+        },
+        {
+          "description": "Absolute path to the Chroma vector store directory (recommended so indexes are not tied to the server process cwd).",
+          "format": "string",
+          "name": "PINRAG_PERSIST_DIR"
+        }
+      ],
+      "identifier": "pinrag",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.9.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "cb69f9db18",
+    "published_at": "2026-03-21T19:42:01.524538Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ndjordjevic/pinrag",
+    "server_version": "0.9.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-03-21T19:42:01.524538Z"
+  },
+  "title": "PinRAG",
+  "type": "mcp_server",
+  "version": "0.9.4"
+}

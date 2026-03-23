@@ -1,0 +1,102 @@
+{
+  "description": "A Model Context Protocol (MCP) server for Kubernetes and OpenShift",
+  "harvest": {
+    "last_seen_at": "2026-03-23T04:38:24+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-containers-kubernetes-mcp-server.stdio.758abb9d4a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/containers/kubernetes-mcp-server",
+    "homepage": "https://github.com/containers/kubernetes-mcp-server",
+    "repository": "https://github.com/containers/kubernetes-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Volume mount for kubeconfig access (host_path:container_path)",
+            "format": "string",
+            "isRequired": true,
+            "name": "-v",
+            "placeholder": "~/.kube/config:/kubeconfig:ro",
+            "type": "named"
+          },
+          {
+            "default": "KUBECONFIG=/kubeconfig",
+            "description": "Environment variable to set the kubeconfig path inside the container",
+            "format": "string",
+            "isRequired": true,
+            "name": "-e",
+            "type": "named"
+          },
+          {
+            "default": "8080:8080",
+            "description": "Port mapping for MCP server HTTP endpoint (host_port:container_port)",
+            "format": "string",
+            "isRequired": true,
+            "name": "-p",
+            "type": "named"
+          },
+          "ghcr.io/containers/kubernetes-mcp-server:v0.0.59"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.containers/kubernetes-mcp-server",
+  "packages": [
+    {
+      "identifier": "ghcr.io/containers/kubernetes-mcp-server:v0.0.59",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "Volume mount for kubeconfig access (host_path:container_path)",
+          "format": "string",
+          "isRequired": true,
+          "name": "-v",
+          "placeholder": "~/.kube/config:/kubeconfig:ro",
+          "type": "named"
+        },
+        {
+          "default": "KUBECONFIG=/kubeconfig",
+          "description": "Environment variable to set the kubeconfig path inside the container",
+          "format": "string",
+          "isRequired": true,
+          "name": "-e",
+          "type": "named"
+        },
+        {
+          "default": "8080:8080",
+          "description": "Port mapping for MCP server HTTP endpoint (host_port:container_port)",
+          "format": "string",
+          "isRequired": true,
+          "name": "-p",
+          "type": "named"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:8080/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "758abb9d4a",
+    "published_at": "2026-03-18T14:48:43.941333Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.containers/kubernetes-mcp-server",
+    "server_version": "0.0.59",
+    "source": "mcp-registry",
+    "updated_at": "2026-03-20T06:57:42.179101Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.0.59"
+}

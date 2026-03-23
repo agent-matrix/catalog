@@ -1,0 +1,80 @@
+{
+  "description": "MCP Server for Agent Reputation & Trust Scoring",
+  "harvest": {
+    "last_seen_at": "2026-03-23T04:39:23+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-raditotev-agent-trust.stdio.0a59a7f1e2",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/raditotev/agent-trust",
+    "homepage": "https://github.com/raditotev/agent-trust",
+    "repository": "https://github.com/raditotev/agent-trust"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.raditotev/agent-trust",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "PostgreSQL asyncpg connection string",
+          "format": "string",
+          "isRequired": true,
+          "name": "DATABASE_URL"
+        },
+        {
+          "description": "Redis connection string",
+          "format": "string",
+          "isRequired": true,
+          "name": "REDIS_URL"
+        },
+        {
+          "description": "Path to Ed25519 private key PEM file",
+          "format": "string",
+          "isRequired": true,
+          "name": "SIGNING_KEY_PATH"
+        },
+        {
+          "description": "Authentication provider: agentauth | standalone | both (default: both)",
+          "format": "string",
+          "name": "AUTH_PROVIDER"
+        },
+        {
+          "description": "Access token for AgentAuth MCP tool calls",
+          "format": "string",
+          "isSecret": true,
+          "name": "AGENTAUTH_ACCESS_TOKEN"
+        }
+      ],
+      "identifier": "agent-trust-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0a59a7f1e2",
+    "published_at": "2026-03-22T16:24:32.321575Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.raditotev/agent-trust",
+    "server_version": "0.1.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-03-22T16:24:32.321575Z"
+  },
+  "title": "AgentTrust",
+  "type": "mcp_server",
+  "version": "0.1.5"
+}

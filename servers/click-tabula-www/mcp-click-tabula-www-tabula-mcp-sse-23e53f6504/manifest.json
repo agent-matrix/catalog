@@ -1,0 +1,60 @@
+{
+  "description": "Bar-first MCP server for Tabula chart authoring, PNG rendering, and editor handoff.",
+  "harvest": {
+    "last_seen_at": "2026-03-23T04:37:11+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.click-tabula-www-tabula-mcp.sse.23e53f6504",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://www.tabula.click/api/mcp/stream"
+    }
+  },
+  "name": "click.tabula.www/tabula-mcp",
+  "provenance": {
+    "identity_key": "23e53f6504",
+    "published_at": "2026-03-18T23:54:51.599594Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "click.tabula.www/tabula-mcp",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-03-18T23:54:51.599594Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Optional Bearer token for authenticated Tabula users. Recommended source: https://www.tabula.click/docs/tabula-mcp/connect",
+          "isSecret": true,
+          "name": "Authorization",
+          "placeholder": "Bearer <tabula-mcp-token>"
+        },
+        {
+          "description": "Optional guest session identifier to preserve guest quota state across remote requests.",
+          "name": "X-Tabula-Guest-Session",
+          "placeholder": "mcp-guest-session-id"
+        },
+        {
+          "choices": [
+            "true",
+            "approved",
+            "confirmed"
+          ],
+          "description": "Optional explicit approval signal for mutating tools when approval enforcement is enabled.",
+          "name": "X-Tabula-Approval",
+          "placeholder": "approved"
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://www.tabula.click/api/mcp/stream"
+    }
+  ],
+  "title": "Tabula MCP",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}
