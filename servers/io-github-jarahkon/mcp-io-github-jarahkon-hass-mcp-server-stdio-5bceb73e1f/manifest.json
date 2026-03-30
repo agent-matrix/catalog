@@ -1,0 +1,83 @@
+{
+  "description": "MCP server for full Home Assistant control \u2014 dashboards, files, automations, add-ons, and more",
+  "harvest": {
+    "last_seen_at": "2026-03-30T04:55:11+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-jarahkon-hass-mcp-server.stdio.5bceb73e1f",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/jarahkon/hass-mcp-server",
+    "homepage": "https://github.com/jarahkon/hass-mcp-server",
+    "repository": "https://github.com/jarahkon/hass-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.jarahkon/hass-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Home Assistant base URL (e.g. http://homeassistant.local:8123)",
+          "isRequired": true,
+          "name": "HA_URL"
+        },
+        {
+          "description": "Home Assistant long-lived access token",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "HA_TOKEN"
+        },
+        {
+          "description": "SSH hostname for file management (optional)",
+          "name": "HA_SSH_HOST"
+        },
+        {
+          "description": "SSH port (default: 22)",
+          "name": "HA_SSH_PORT"
+        },
+        {
+          "description": "SSH username (must be root)",
+          "name": "HA_SSH_USER"
+        },
+        {
+          "description": "Path to SSH private key",
+          "name": "HA_SSH_KEY_PATH"
+        },
+        {
+          "description": "SSH password (alternative to key)",
+          "isSecret": true,
+          "name": "HA_SSH_PASSWORD"
+        }
+      ],
+      "identifier": "@jarahkon/hass-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5bceb73e1f",
+    "published_at": "2026-03-25T15:07:12.687008Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.jarahkon/hass-mcp-server",
+    "server_version": "1.0.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-03-25T15:07:12.687008Z"
+  },
+  "title": "Home Assistant MCP Server",
+  "type": "mcp_server",
+  "version": "1.0.5"
+}

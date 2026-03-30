@@ -1,0 +1,109 @@
+{
+  "description": "MCP server for managing Coalesce Transform workspaces, nodes, pipelines, and runs.",
+  "harvest": {
+    "last_seen_at": "2026-03-30T04:55:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-jessemarshall-coalesce-transform.stdio.8250d7e75b",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/jessemarshall/coalesce-transform-mcp",
+    "homepage": "https://github.com/jessemarshall/coalesce-transform-mcp",
+    "repository": "https://github.com/jessemarshall/coalesce-transform-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.jessemarshall/coalesce-transform",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Bearer token from the Coalesce Deploy tab.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "COALESCE_ACCESS_TOKEN"
+        },
+        {
+          "description": "Region-specific base URL. Defaults to https://app.coalescesoftware.io (US).",
+          "format": "string",
+          "name": "COALESCE_BASE_URL"
+        },
+        {
+          "description": "Fallback org ID for cancel-run.",
+          "format": "string",
+          "name": "COALESCE_ORG_ID"
+        },
+        {
+          "description": "Local repo root for repo-backed tools and pipeline planning.",
+          "format": "string",
+          "name": "COALESCE_REPO_PATH"
+        },
+        {
+          "description": "JSON size threshold before auto-caching to disk. Defaults to 32768.",
+          "format": "string",
+          "name": "COALESCE_MCP_AUTO_CACHE_MAX_BYTES"
+        },
+        {
+          "description": "Max outbound API request body size. Defaults to 524288.",
+          "format": "string",
+          "name": "COALESCE_MCP_MAX_REQUEST_BODY_BYTES"
+        },
+        {
+          "description": "Snowflake account username (required for run tools)",
+          "format": "string",
+          "name": "SNOWFLAKE_USERNAME"
+        },
+        {
+          "description": "Path to PEM-encoded private key (required for run tools)",
+          "format": "string",
+          "name": "SNOWFLAKE_KEY_PAIR_KEY"
+        },
+        {
+          "description": "Passphrase for encrypted keys",
+          "format": "string",
+          "isSecret": true,
+          "name": "SNOWFLAKE_KEY_PAIR_PASS"
+        },
+        {
+          "description": "Snowflake compute warehouse (required for run tools)",
+          "format": "string",
+          "name": "SNOWFLAKE_WAREHOUSE"
+        },
+        {
+          "description": "Snowflake user role (required for run tools)",
+          "format": "string",
+          "name": "SNOWFLAKE_ROLE"
+        }
+      ],
+      "identifier": "coalesce-transform-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8250d7e75b",
+    "published_at": "2026-03-28T00:45:02.428305Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.jessemarshall/coalesce-transform",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-03-28T00:45:02.428305Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

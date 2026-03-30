@@ -1,0 +1,89 @@
+{
+  "description": "MCP server for managing Coalesce Transform workspaces, nodes, pipelines, and runs.",
+  "harvest": {
+    "last_seen_at": "2026-03-30T04:55:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-jessemarshall-coalesce-transform.stdio.9b5df6a953",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/jessemarshall/coalesce-transform-mcp",
+    "homepage": "https://github.com/jessemarshall/coalesce-transform-mcp",
+    "repository": "https://github.com/jessemarshall/coalesce-transform-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.jessemarshall/coalesce-transform",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Bearer token from Coalesce Deploy tab",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "COALESCE_ACCESS_TOKEN"
+        },
+        {
+          "description": "Region-specific Coalesce base URL. Defaults to US (https://app.coalescesoftware.io)",
+          "format": "string",
+          "name": "COALESCE_BASE_URL"
+        },
+        {
+          "description": "Snowflake account username (required for run tools)",
+          "format": "string",
+          "name": "SNOWFLAKE_USERNAME"
+        },
+        {
+          "description": "Path to PEM-encoded Snowflake private key (required for run tools)",
+          "format": "string",
+          "name": "SNOWFLAKE_KEY_PAIR_KEY"
+        },
+        {
+          "description": "Password for encrypted Snowflake private key",
+          "format": "string",
+          "isSecret": true,
+          "name": "SNOWFLAKE_KEY_PAIR_PASS"
+        },
+        {
+          "description": "Snowflake compute warehouse (required for run tools)",
+          "format": "string",
+          "name": "SNOWFLAKE_WAREHOUSE"
+        },
+        {
+          "description": "Snowflake user role (required for run tools)",
+          "format": "string",
+          "name": "SNOWFLAKE_ROLE"
+        }
+      ],
+      "identifier": "coalesce-transform-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9b5df6a953",
+    "published_at": "2026-03-26T12:28:01.240647Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.jessemarshall/coalesce-transform",
+    "server_version": "0.1.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-03-26T12:28:01.240647Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.4"
+}

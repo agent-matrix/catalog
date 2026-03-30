@@ -1,0 +1,124 @@
+{
+  "description": "Database MCP server for MySQL, PostgreSQL, MongoDB, and SQLite with SSH tunneling support.",
+  "harvest": {
+    "last_seen_at": "2026-03-30T04:56:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-stucchi-db.stdio.7bcb3c23da",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/stucchi/db-mcp-server",
+    "homepage": "https://github.com/stucchi/db-mcp-server",
+    "repository": "https://github.com/stucchi/db-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.stucchi/db",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "choices": [
+            "mysql",
+            "postgresql",
+            "mongodb",
+            "sqlite"
+          ],
+          "description": "Database type",
+          "isRequired": true,
+          "name": "DB_TYPE"
+        },
+        {
+          "description": "Database name",
+          "isRequired": true,
+          "name": "DB_DATABASE"
+        },
+        {
+          "choices": [
+            "read-only",
+            "read-write"
+          ],
+          "default": "read-only",
+          "description": "Access mode",
+          "name": "DB_MODE"
+        },
+        {
+          "default": "localhost",
+          "description": "Database host (MySQL/PostgreSQL)",
+          "name": "DB_HOST"
+        },
+        {
+          "description": "Database port (MySQL: 3306, PostgreSQL: 5432)",
+          "format": "number",
+          "name": "DB_PORT"
+        },
+        {
+          "description": "Database user (MySQL default: root, PostgreSQL default: postgres)",
+          "name": "DB_USER"
+        },
+        {
+          "description": "Database password (MySQL/PostgreSQL, optional)",
+          "isSecret": true,
+          "name": "DB_PASSWORD"
+        },
+        {
+          "description": "MongoDB connection URL (required for MongoDB, e.g. mongodb://...)",
+          "isSecret": true,
+          "name": "DB_URL"
+        },
+        {
+          "description": "SSH bastion host for tunneling (MySQL/PostgreSQL only)",
+          "name": "SSH_HOST"
+        },
+        {
+          "default": "22",
+          "description": "SSH port",
+          "format": "number",
+          "name": "SSH_PORT"
+        },
+        {
+          "description": "SSH username (default: current OS user)",
+          "name": "SSH_USER"
+        },
+        {
+          "description": "Path to SSH private key (e.g. ~/.ssh/id_rsa)",
+          "format": "filepath",
+          "name": "SSH_KEY"
+        },
+        {
+          "description": "SSH password (if no key provided)",
+          "isSecret": true,
+          "name": "SSH_PASSWORD"
+        }
+      ],
+      "identifier": "db-mcp-server",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7bcb3c23da",
+    "published_at": "2026-03-24T19:04:31.115174Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.stucchi/db",
+    "server_version": "1.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-03-24T19:04:31.115174Z"
+  },
+  "title": "DB MCP Server",
+  "type": "mcp_server",
+  "version": "1.2.1"
+}

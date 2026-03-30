@@ -1,0 +1,58 @@
+{
+  "description": "Hosted MCP server for finding authoritative primary data sources and official portals.",
+  "harvest": {
+    "last_seen_at": "2026-03-30T04:54:14+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Vist233-firstdata.sse.89cb6d99a5",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/MLT-OSS/FirstData",
+    "homepage": "https://github.com/MLT-OSS/FirstData",
+    "repository": "https://github.com/MLT-OSS/FirstData"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://firstdata.deepminer.com.cn/mcp"
+    }
+  },
+  "name": "io.github.Vist233/firstdata",
+  "provenance": {
+    "identity_key": "89cb6d99a5",
+    "published_at": "2026-03-25T09:09:36.616502Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Vist233/firstdata",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-03-25T09:09:36.616502Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Bearer token using FIRSTDATA_API_KEY. Apply for human or agent access at https://firstdata.deepminer.com.cn/#apply",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {FIRSTDATA_API_KEY}",
+          "variables": {
+            "FIRSTDATA_API_KEY": {
+              "description": "FirstData API key required to access the hosted MCP server. Apply at https://firstdata.deepminer.com.cn/#apply",
+              "format": "string",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://firstdata.deepminer.com.cn/mcp"
+    }
+  ],
+  "title": "FirstData",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

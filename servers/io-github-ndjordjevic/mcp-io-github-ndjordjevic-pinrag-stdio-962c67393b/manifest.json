@@ -1,0 +1,95 @@
+{
+  "description": "MCP RAG: index PDFs, repos, YouTube, Discord, text; optional YouTube vision; query with citations.",
+  "harvest": {
+    "last_seen_at": "2026-03-30T04:55:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ndjordjevic-pinrag.stdio.962c67393b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ndjordjevic/pinrag",
+    "homepage": "https://github.com/ndjordjevic/pinrag",
+    "repository": "https://github.com/ndjordjevic/pinrag"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "type": "positional",
+            "value": "--refresh"
+          },
+          {
+            "type": "positional",
+            "value": "pinrag"
+          },
+          "pinrag==0.9.24"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ndjordjevic/pinrag",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "OpenAI API key \u2014 required for default embeddings and default LLM (OpenAI).",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OPENAI_API_KEY"
+        },
+        {
+          "description": "Absolute path to the Chroma vector store directory (recommended so indexes are not tied to the server process cwd).",
+          "format": "string",
+          "name": "PINRAG_PERSIST_DIR"
+        },
+        {
+          "description": "Anthropic API key \u2014 required when PINRAG_LLM_PROVIDER=anthropic, for vision enrichment when PINRAG_VISION_PROVIDER=anthropic, or for evaluators using Anthropic.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        },
+        {
+          "description": "Set true to enable optional YouTube on-screen enrichment (requires pinrag[vision], ffmpeg, and vision API usage). See project README.",
+          "format": "string",
+          "name": "PINRAG_YT_VISION_ENABLED"
+        }
+      ],
+      "identifier": "pinrag",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "--refresh"
+        },
+        {
+          "type": "positional",
+          "value": "pinrag"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.9.24"
+    }
+  ],
+  "provenance": {
+    "identity_key": "962c67393b",
+    "published_at": "2026-03-28T09:23:05.220903Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ndjordjevic/pinrag",
+    "server_version": "0.9.24",
+    "source": "mcp-registry",
+    "updated_at": "2026-03-28T09:23:05.220903Z"
+  },
+  "title": "PinRAG",
+  "type": "mcp_server",
+  "version": "0.9.24"
+}

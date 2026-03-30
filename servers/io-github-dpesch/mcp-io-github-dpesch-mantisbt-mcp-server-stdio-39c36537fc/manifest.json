@@ -1,0 +1,141 @@
+{
+  "description": "MantisBT MCP server \u2013 manage issues, notes, files, tags, and relationships. With semantic search.",
+  "harvest": {
+    "last_seen_at": "2026-03-30T04:54:49+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-dpesch-mantisbt-mcp-server.stdio.39c36537fc",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@dpesch/mantisbt-mcp-server==1.7.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.dpesch/mantisbt-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the MantisBT REST API, e.g. https://your-mantis.example.com/api/rest",
+          "format": "string",
+          "isRequired": true,
+          "name": "MANTIS_BASE_URL",
+          "placeholder": "https://your-mantis.example.com/api/rest"
+        },
+        {
+          "description": "MantisBT API key (Profile \u2192 API Tokens in MantisBT)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "MANTIS_API_KEY"
+        },
+        {
+          "description": "Directory for the metadata cache. Defaults to ~/.cache/mantisbt-mcp",
+          "format": "filepath",
+          "name": "MANTIS_CACHE_DIR"
+        },
+        {
+          "default": "3600",
+          "description": "Metadata cache TTL in seconds. Default: 3600 (1 hour)",
+          "format": "number",
+          "name": "MANTIS_CACHE_TTL"
+        },
+        {
+          "choices": [
+            "stdio",
+            "http"
+          ],
+          "default": "stdio",
+          "description": "Transport mode. 'stdio' for local use (default), 'http' for remote/team deployments",
+          "format": "string",
+          "name": "TRANSPORT"
+        },
+        {
+          "default": "3000",
+          "description": "HTTP port when TRANSPORT=http. Default: 3000",
+          "format": "number",
+          "name": "PORT"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "Bind address when TRANSPORT=http. Default: 127.0.0.1 (local only). Use 0.0.0.0 for Docker/remote.",
+          "format": "string",
+          "name": "MCP_HTTP_HOST"
+        },
+        {
+          "description": "Optional Bearer token to protect the /mcp endpoint when TRANSPORT=http",
+          "format": "string",
+          "isSecret": true,
+          "name": "MCP_HTTP_TOKEN"
+        },
+        {
+          "default": "false",
+          "description": "Enable offline semantic search (requires ~80 MB model download on first use)",
+          "format": "boolean",
+          "name": "MANTIS_SEARCH_ENABLED"
+        },
+        {
+          "choices": [
+            "vectra",
+            "sqlite-vec"
+          ],
+          "default": "vectra",
+          "description": "Vector store backend for semantic search. 'vectra' (default, pure JS) or 'sqlite-vec' (faster for >10k issues)",
+          "format": "string",
+          "name": "MANTIS_SEARCH_BACKEND"
+        },
+        {
+          "description": "Directory for the semantic search index. Defaults to ~/.cache/mantisbt-mcp/search",
+          "format": "filepath",
+          "name": "MANTIS_SEARCH_DIR"
+        },
+        {
+          "default": "Xenova/paraphrase-multilingual-MiniLM-L12-v2",
+          "description": "Hugging Face model for embeddings. Default: Xenova/paraphrase-multilingual-MiniLM-L12-v2",
+          "format": "string",
+          "name": "MANTIS_SEARCH_MODEL"
+        },
+        {
+          "default": "1",
+          "description": "ONNX inference threads for the embedding model. Default: 1",
+          "format": "number",
+          "name": "MANTIS_SEARCH_THREADS"
+        },
+        {
+          "description": "If set, restricts file uploads to this directory (path traversal protection)",
+          "format": "filepath",
+          "name": "MANTIS_UPLOAD_DIR"
+        }
+      ],
+      "identifier": "@dpesch/mantisbt-mcp-server",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.7.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "39c36537fc",
+    "published_at": "2026-03-26T19:42:37.804847Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.dpesch/mantisbt-mcp-server",
+    "server_version": "1.7.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-03-26T19:42:37.804847Z"
+  },
+  "title": "MantisBT MCP Server",
+  "type": "mcp_server",
+  "version": "1.7.0"
+}

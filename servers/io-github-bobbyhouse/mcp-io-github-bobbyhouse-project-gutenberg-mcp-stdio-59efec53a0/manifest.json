@@ -1,0 +1,97 @@
+{
+  "description": "Read Project Gutenberg books via MCP. Search, fetch metadata, and retrieve text in passages.",
+  "harvest": {
+    "last_seen_at": "2026-03-30T04:54:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-bobbyhouse-project-gutenberg-mcp.stdio.59efec53a0",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/bobbyhouse/project-gutenberg-mcp",
+    "homepage": "https://github.com/bobbyhouse/project-gutenberg-mcp",
+    "repository": "https://github.com/bobbyhouse/project-gutenberg-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "type": "positional",
+            "value": "run"
+          },
+          {
+            "name": "-i",
+            "type": "named"
+          },
+          {
+            "name": "--rm",
+            "type": "named"
+          },
+          "roberthouse224/project-gutenberg-mcp:1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.bobbyhouse/project-gutenberg-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Comma-separated list of tools to expose. Available: search_books, get_book_metadata, fetch_book_text, list_passages, get_passage",
+          "isRequired": true,
+          "name": "GUTENBERG_TOOLS",
+          "placeholder": "get_book_metadata,list_passages,get_passage"
+        },
+        {
+          "description": "Project Gutenberg book ID to use as the default for all tools. Find IDs via search_books or at gutenberg.org. Example: 2680 for Meditations by Marcus Aurelius.",
+          "format": "number",
+          "name": "GUTENBERG_BOOK_ID",
+          "placeholder": "2680"
+        },
+        {
+          "default": "4096",
+          "description": "Size in bytes of each passage returned by get_passage.",
+          "format": "number",
+          "name": "GUTENBERG_CHUNK_SIZE"
+        }
+      ],
+      "identifier": "roberthouse224/project-gutenberg-mcp:1.0.0",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "name": "-i",
+          "type": "named"
+        },
+        {
+          "name": "--rm",
+          "type": "named"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "59efec53a0",
+    "published_at": "2026-03-25T03:15:27.306466Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.bobbyhouse/project-gutenberg-mcp",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-03-25T03:15:27.306466Z"
+  },
+  "title": "Project Gutenberg MCP",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

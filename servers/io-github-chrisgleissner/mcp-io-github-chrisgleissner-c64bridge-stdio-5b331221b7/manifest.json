@@ -1,0 +1,121 @@
+{
+  "description": "MCP server for Commodore 64 Ultimate hardware and VICE emulator control.",
+  "harvest": {
+    "last_seen_at": "2026-03-30T04:54:35+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-chrisgleissner-c64bridge.stdio.5b331221b7",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/chrisgleissner/c64bridge",
+    "homepage": "https://github.com/chrisgleissner/c64bridge",
+    "repository": "https://github.com/chrisgleissner/c64bridge"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.chrisgleissner/c64bridge",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "choices": [
+            "debug",
+            "info",
+            "warn",
+            "error"
+          ],
+          "default": "info",
+          "description": "Logger verbosity.",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        },
+        {
+          "default": "~/.c64bridge.json",
+          "description": "Path to the C64 Bridge configuration file.",
+          "format": "filepath",
+          "name": "C64BRIDGE_CONFIG"
+        },
+        {
+          "choices": [
+            "c64u",
+            "vice"
+          ],
+          "default": "c64u",
+          "description": "Active backend.",
+          "format": "string",
+          "name": "C64_MODE"
+        },
+        {
+          "default": "c64u",
+          "description": "Ultimate 64 host name or IP address.",
+          "format": "string",
+          "name": "C64U_HOST"
+        },
+        {
+          "default": "80",
+          "description": "Ultimate 64 REST port.",
+          "format": "number",
+          "name": "C64U_PORT"
+        },
+        {
+          "description": "Ultimate 64 network password sent as X-Password.",
+          "format": "string",
+          "isSecret": true,
+          "name": "C64U_PASSWORD"
+        },
+        {
+          "default": "x64sc",
+          "description": "VICE emulator binary to launch.",
+          "format": "string",
+          "name": "VICE_BINARY"
+        },
+        {
+          "default": "true",
+          "description": "Launch VICE with a visible window when possible.",
+          "format": "boolean",
+          "name": "VICE_VISIBLE"
+        },
+        {
+          "default": "false",
+          "description": "Enable VICE warp mode.",
+          "format": "boolean",
+          "name": "VICE_WARP"
+        },
+        {
+          "description": "GitHub token for optional RAG discovery against GitHub.",
+          "format": "string",
+          "isSecret": true,
+          "name": "GITHUB_TOKEN"
+        }
+      ],
+      "identifier": "c64bridge",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.8.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5b331221b7",
+    "published_at": "2026-03-27T13:29:58.833961Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.chrisgleissner/c64bridge",
+    "server_version": "0.8.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-03-27T13:29:58.833961Z"
+  },
+  "title": "C64 Bridge",
+  "type": "mcp_server",
+  "version": "0.8.1"
+}

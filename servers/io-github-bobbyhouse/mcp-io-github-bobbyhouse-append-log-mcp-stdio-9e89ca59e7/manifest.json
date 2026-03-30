@@ -1,0 +1,102 @@
+{
+  "description": "A generic append-only log MCP server. Persist timestamped JSON entries and query them by recency.",
+  "harvest": {
+    "last_seen_at": "2026-03-30T04:54:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-bobbyhouse-append-log-mcp.stdio.9e89ca59e7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "type": "positional",
+            "value": "run"
+          },
+          {
+            "name": "-i",
+            "type": "named"
+          },
+          {
+            "name": "--rm",
+            "type": "named"
+          },
+          {
+            "name": "-v",
+            "type": "named"
+          },
+          {
+            "type": "positional",
+            "value": "append-log-data:/data"
+          },
+          "roberthouse224/append-log-mcp:1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.bobbyhouse/append-log-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "/data/log.jsonl",
+          "description": "Path to the JSONL log file inside the container. Defaults to append-log.jsonl in the current working directory.",
+          "name": "APPEND_LOG_FILE"
+        },
+        {
+          "description": "Comma-separated list of tools to expose. Available: append, query",
+          "isRequired": true,
+          "name": "APPEND_LOG_TOOLS",
+          "placeholder": "append,query"
+        }
+      ],
+      "identifier": "roberthouse224/append-log-mcp:1.0.0",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "name": "-i",
+          "type": "named"
+        },
+        {
+          "name": "--rm",
+          "type": "named"
+        },
+        {
+          "name": "-v",
+          "type": "named"
+        },
+        {
+          "type": "positional",
+          "value": "append-log-data:/data"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "9e89ca59e7",
+    "published_at": "2026-03-26T00:07:38.674089Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.bobbyhouse/append-log-mcp",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-03-26T00:07:38.674089Z"
+  },
+  "title": "Append Log MCP",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

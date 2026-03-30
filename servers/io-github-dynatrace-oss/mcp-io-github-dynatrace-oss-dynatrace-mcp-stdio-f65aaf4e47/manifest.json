@@ -1,0 +1,81 @@
+{
+  "description": "Access Dynatrace observability data: logs, metrics, problems, vulnerabilities via DQL and Davis AI",
+  "harvest": {
+    "last_seen_at": "2026-03-30T04:54:51+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-dynatrace-oss-Dynatrace-mcp.stdio.f65aaf4e47",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/dynatrace-oss/Dynatrace-mcp",
+    "homepage": "https://github.com/dynatrace-oss/Dynatrace-mcp",
+    "repository": "https://github.com/dynatrace-oss/Dynatrace-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@dynatrace-oss/dynatrace-mcp-server==1.7.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.dynatrace-oss/Dynatrace-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "The URL of your Dynatrace environment (e.g. 'https://abc12345.apps.dynatrace.com'). Do not use Dynatrace classic URLs.",
+          "format": "string",
+          "isRequired": true,
+          "name": "DT_ENVIRONMENT"
+        },
+        {
+          "description": "[OPTIONAL] Dynatrace Platform Token for authentication. Alternative to OAuth authentication.",
+          "format": "string",
+          "name": "DT_PLATFORM_TOKEN"
+        },
+        {
+          "description": "[OPTIONAL] OAuth Client ID for advanced authentication scenarios. Use with OAUTH_CLIENT_SECRET.",
+          "format": "string",
+          "name": "OAUTH_CLIENT_ID"
+        },
+        {
+          "description": "[OPTIONAL] OAuth Client Secret for advanced authentication scenarios. Use with OAUTH_CLIENT_ID.",
+          "format": "string",
+          "name": "OAUTH_CLIENT_SECRET"
+        },
+        {
+          "description": "[OPTIONAL] Budget limit in GB for Grail query bytes scanned per session. Default: 1000. Set to -1 to disable budget tracking.",
+          "format": "number",
+          "name": "DT_GRAIL_QUERY_BUDGET_GB"
+        }
+      ],
+      "identifier": "@dynatrace-oss/dynatrace-mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.7.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f65aaf4e47",
+    "published_at": "2026-03-23T14:56:06.383248Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.dynatrace-oss/Dynatrace-mcp",
+    "server_version": "1.7.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-03-23T14:56:06.383248Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.7.3"
+}

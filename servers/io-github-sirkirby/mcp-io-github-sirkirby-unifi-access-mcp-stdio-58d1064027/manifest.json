@@ -1,0 +1,83 @@
+{
+  "description": "Manage UniFi Access doors, credentials, policies, visitors, and events via MCP.",
+  "harvest": {
+    "last_seen_at": "2026-03-30T04:56:08+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sirkirby-unifi-access-mcp.stdio.58d1064027",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/sirkirby/unifi-mcp",
+    "homepage": "https://github.com/sirkirby/unifi-mcp",
+    "repository": "https://github.com/sirkirby/unifi-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sirkirby/unifi-access-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Controller IP/hostname",
+          "isRequired": true,
+          "name": "UNIFI_HOST"
+        },
+        {
+          "description": "Admin username",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "UNIFI_USERNAME"
+        },
+        {
+          "description": "Admin password",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "UNIFI_PASSWORD"
+        },
+        {
+          "description": "API key (optional, experimental)",
+          "isSecret": true,
+          "name": "UNIFI_API_KEY"
+        },
+        {
+          "default": "443",
+          "description": "Controller HTTPS port",
+          "name": "UNIFI_PORT"
+        },
+        {
+          "default": "false",
+          "description": "SSL certificate verification",
+          "name": "UNIFI_VERIFY_SSL"
+        }
+      ],
+      "identifier": "unifi-access-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "58d1064027",
+    "published_at": "2026-03-24T20:12:17.780972Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sirkirby/unifi-access-mcp",
+    "server_version": "0.1.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-03-24T20:12:17.780972Z"
+  },
+  "title": "UniFi Access MCP",
+  "type": "mcp_server",
+  "version": "0.1.6"
+}

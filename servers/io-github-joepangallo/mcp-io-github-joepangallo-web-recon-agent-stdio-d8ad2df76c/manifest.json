@@ -1,0 +1,77 @@
+{
+  "description": "Owned-target web security assessment MCP server for authenticated, high-friction apps.",
+  "harvest": {
+    "last_seen_at": "2026-03-30T04:55:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-joepangallo-web-recon-agent.stdio.d8ad2df76c",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/joepangallo/web-recon-agent",
+    "homepage": "https://github.com/joepangallo/web-recon-agent",
+    "repository": "https://github.com/joepangallo/web-recon-agent"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.joepangallo/web-recon-agent",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Comma-separated hostnames allowed for scanning. Required.",
+          "format": "string",
+          "isRequired": true,
+          "name": "MCP_TARGET_ALLOWLIST"
+        },
+        {
+          "description": "Comma-separated hostnames you explicitly own to unlock active and owned-aggressive scan modes.",
+          "format": "string",
+          "name": "MCP_OWNED_TARGETS"
+        },
+        {
+          "description": "Optional path for persisted job metadata. Defaults to mcp-jobs.json in the current working directory.",
+          "format": "string",
+          "name": "MCP_JOB_STORE_PATH"
+        },
+        {
+          "description": "Optional maximum number of concurrent scan jobs. Defaults to 2.",
+          "format": "number",
+          "name": "MCP_MAX_CONCURRENT"
+        },
+        {
+          "description": "Optional path to a JSON config file that overrides allowlist and concurrency settings.",
+          "format": "string",
+          "name": "MCP_CONFIG_PATH"
+        }
+      ],
+      "identifier": "mcp-web-recon-agent",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.8.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d8ad2df76c",
+    "published_at": "2026-03-25T14:39:47.797999Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.joepangallo/web-recon-agent",
+    "server_version": "0.8.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-03-25T14:39:47.797999Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.8.1"
+}
