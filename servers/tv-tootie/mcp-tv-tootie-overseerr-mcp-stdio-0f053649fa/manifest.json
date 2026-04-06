@@ -1,0 +1,66 @@
+{
+  "description": "MCP server for Overseerr media requests and discovery.",
+  "harvest": {
+    "last_seen_at": "2026-04-06T04:56:09+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.tv-tootie-overseerr-mcp.stdio.0f053649fa",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jmagar/overseerr-mcp",
+    "homepage": "https://github.com/jmagar/overseerr-mcp",
+    "repository": "https://github.com/jmagar/overseerr-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "overseerr-mcp==1.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "tv.tootie/overseerr-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of your Overseerr instance, e.g. https://overseerr.example.com.",
+          "isRequired": true,
+          "name": "OVERSEERR_URL"
+        },
+        {
+          "description": "Overseerr API key (Settings > General > API Key).",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OVERSEERR_API_KEY"
+        }
+      ],
+      "identifier": "overseerr-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0f053649fa",
+    "published_at": "2026-04-04T11:10:18.131869Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "tv.tootie/overseerr-mcp",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-04T11:10:18.131869Z"
+  },
+  "title": "Overseerr MCP",
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

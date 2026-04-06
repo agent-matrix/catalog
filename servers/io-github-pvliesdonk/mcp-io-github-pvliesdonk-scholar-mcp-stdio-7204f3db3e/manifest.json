@@ -1,0 +1,88 @@
+{
+  "description": "Academic literature search, citation graphs, and PDF conversion via Semantic Scholar.",
+  "harvest": {
+    "last_seen_at": "2026-04-06T04:55:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-pvliesdonk-scholar-mcp.stdio.7204f3db3e",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/pvliesdonk/scholar-mcp",
+    "homepage": "https://github.com/pvliesdonk/scholar-mcp",
+    "repository": "https://github.com/pvliesdonk/scholar-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.pvliesdonk/scholar-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "true",
+          "description": "Set to 'false' to enable write tools (default: true)",
+          "name": "SCHOLAR_MCP_READ_ONLY"
+        },
+        {
+          "description": "Static bearer token for authentication (optional)",
+          "name": "SCHOLAR_MCP_BEARER_TOKEN"
+        },
+        {
+          "description": "Public base URL of this server, required for OIDC (e.g. https://mcp.example.com)",
+          "name": "SCHOLAR_MCP_BASE_URL"
+        },
+        {
+          "description": "OIDC discovery endpoint URL (e.g. https://auth.example.com/.well-known/openid-configuration)",
+          "name": "SCHOLAR_MCP_OIDC_CONFIG_URL"
+        },
+        {
+          "description": "OIDC client ID",
+          "name": "SCHOLAR_MCP_OIDC_CLIENT_ID"
+        },
+        {
+          "description": "OIDC client secret",
+          "name": "SCHOLAR_MCP_OIDC_CLIENT_SECRET"
+        },
+        {
+          "description": "JWT signing key \u2014 required on Linux/Docker to survive restarts (generate with: openssl rand -hex 32)",
+          "name": "SCHOLAR_MCP_OIDC_JWT_SIGNING_KEY"
+        }
+      ],
+      "identifier": "ghcr.io/pvliesdonk/scholar-mcp:v1.4.0",
+      "packageArguments": [
+        {
+          "default": "8000",
+          "description": "Port for the HTTP transport",
+          "name": "--port",
+          "type": "named"
+        }
+      ],
+      "registryType": "oci",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:{--port}/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "7204f3db3e",
+    "published_at": "2026-04-05T14:03:28.844351Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.pvliesdonk/scholar-mcp",
+    "server_version": "1.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-05T14:03:28.844351Z"
+  },
+  "title": "Scholar MCP Server",
+  "type": "mcp_server",
+  "version": "1.4.0"
+}

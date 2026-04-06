@@ -1,0 +1,119 @@
+{
+  "description": "Magic: The Gathering card search, combo lookup, draft analytics, and Commander tools.",
+  "harvest": {
+    "last_seen_at": "2026-04-06T04:54:35+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-j4th-mtg-mcp-server.stdio.0b2840e833",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/j4th/mtg-mcp-server",
+    "homepage": "https://github.com/j4th/mtg-mcp-server",
+    "repository": "https://github.com/j4th/mtg-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mtg-mcp-server==3.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.j4th/mtg-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "stdio",
+          "description": "Server transport \u2014 'stdio' (default) or 'http'",
+          "name": "MTG_MCP_TRANSPORT"
+        },
+        {
+          "default": "8000",
+          "description": "HTTP port when transport is 'http'",
+          "name": "MTG_MCP_HTTP_PORT"
+        },
+        {
+          "default": "INFO",
+          "description": "Logging level \u2014 DEBUG, INFO, WARNING, or ERROR",
+          "name": "MTG_MCP_LOG_LEVEL"
+        },
+        {
+          "default": "true",
+          "description": "Enable 17Lands draft analytics backend",
+          "name": "MTG_MCP_ENABLE_17LANDS"
+        },
+        {
+          "default": "true",
+          "description": "Enable EDHREC commander metagame backend (uses undocumented endpoints)",
+          "name": "MTG_MCP_ENABLE_EDHREC"
+        },
+        {
+          "default": "true",
+          "description": "Enable Scryfall Oracle Cards bulk data for rate-limit-free lookups (~30 MB download)",
+          "name": "MTG_MCP_ENABLE_BULK_DATA"
+        },
+        {
+          "default": "100",
+          "description": "Minimum delay between Scryfall API calls in milliseconds",
+          "name": "MTG_MCP_SCRYFALL_RATE_LIMIT_MS"
+        },
+        {
+          "default": "12",
+          "description": "Hours between Scryfall bulk data refreshes",
+          "name": "MTG_MCP_BULK_DATA_REFRESH_HOURS"
+        },
+        {
+          "default": "true",
+          "description": "Enable Comprehensive Rules engine for rules lookup and keyword tools",
+          "name": "MTG_MCP_ENABLE_RULES"
+        },
+        {
+          "default": "false",
+          "description": "Disable in-memory TTL caching (useful for testing)",
+          "name": "MTG_MCP_DISABLE_CACHE"
+        },
+        {
+          "default": "true",
+          "description": "Enable Moxfield deck search and import backend (reverse-engineered API)",
+          "name": "MTG_MCP_ENABLE_MOXFIELD"
+        },
+        {
+          "default": "true",
+          "description": "Enable Spicerack tournament results backend",
+          "name": "MTG_MCP_ENABLE_SPICERACK"
+        },
+        {
+          "default": "true",
+          "description": "Enable MTGGoldfish metagame data backend (HTML scraping)",
+          "name": "MTG_MCP_ENABLE_MTGGOLDFISH"
+        }
+      ],
+      "identifier": "mtg-mcp-server",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "3.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0b2840e833",
+    "published_at": "2026-04-04T05:28:24.496267Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.j4th/mtg-mcp-server",
+    "server_version": "3.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-04T05:28:24.496267Z"
+  },
+  "title": "MTG MCP Server",
+  "type": "mcp_server",
+  "version": "3.0.0"
+}

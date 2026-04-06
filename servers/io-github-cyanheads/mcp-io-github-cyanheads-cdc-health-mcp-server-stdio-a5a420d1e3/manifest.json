@@ -1,0 +1,101 @@
+{
+  "description": "MCP server for discovering and querying CDC public health datasets via the Socrata SODA API.",
+  "harvest": {
+    "last_seen_at": "2026-04-06T04:54:02+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cyanheads-cdc-health-mcp-server.stdio.a5a420d1e3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cyanheads/cdc-health-mcp-server",
+    "homepage": "https://github.com/cyanheads/cdc-health-mcp-server",
+    "repository": "https://github.com/cyanheads/cdc-health-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "node",
+          "@cyanheads/cdc-health-mcp-server==0.4.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cyanheads/cdc-health-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Socrata app token for higher rate limits.",
+          "format": "string",
+          "name": "CDC_APP_TOKEN"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "The hostname for the HTTP server.",
+          "format": "string",
+          "name": "MCP_HTTP_HOST"
+        },
+        {
+          "default": "3010",
+          "description": "The port to run the HTTP server on.",
+          "format": "string",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "default": "/mcp",
+          "description": "The endpoint path for the MCP server.",
+          "format": "string",
+          "name": "MCP_HTTP_ENDPOINT_PATH"
+        },
+        {
+          "default": "none",
+          "description": "Authentication mode to use: 'none', 'jwt', or 'oauth'.",
+          "format": "string",
+          "name": "MCP_AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Sets the minimum log level for output (e.g., 'debug', 'info', 'warn').",
+          "format": "string",
+          "name": "MCP_LOG_LEVEL"
+        }
+      ],
+      "identifier": "@cyanheads/cdc-health-mcp-server",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "start:http"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "node",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3010/mcp"
+      },
+      "version": "0.4.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a5a420d1e3",
+    "published_at": "2026-04-04T15:56:54.112232Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cyanheads/cdc-health-mcp-server",
+    "server_version": "0.4.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-04T15:56:54.112232Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.4.3"
+}

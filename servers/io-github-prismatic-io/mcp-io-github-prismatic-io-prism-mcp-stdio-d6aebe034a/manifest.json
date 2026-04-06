@@ -1,0 +1,83 @@
+{
+  "description": "MCP server that wraps Prismatic's Prism CLI tool",
+  "harvest": {
+    "last_seen_at": "2026-04-06T04:55:19+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-prismatic-io-prism-mcp.stdio.d6aebe034a",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/prismatic-io/prism-mcp",
+    "homepage": "https://github.com/prismatic-io/prism-mcp",
+    "repository": "https://github.com/prismatic-io/prism-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.prismatic-io/prism-mcp",
+  "packages": [
+    {
+      "identifier": "@prismatic-io/prism-mcp",
+      "packageArguments": [
+        {
+          "description": "Path to the working directory for the MCP server",
+          "format": "filepath",
+          "isRequired": true,
+          "type": "positional",
+          "value": "{workingDirectory}",
+          "valueHint": "workingDirectory",
+          "variables": {
+            "workingDirectory": {
+              "description": "Path to the working directory for the MCP server",
+              "format": "filepath",
+              "isRequired": true,
+              "placeholder": "/path/to/code"
+            }
+          }
+        },
+        {
+          "description": "Limit tools to a specific domain. Pass 'integration' or 'component' to restrict available tools.",
+          "type": "positional",
+          "value": "{toolFilter}",
+          "valueHint": "toolFilter",
+          "variables": {
+            "toolFilter": {
+              "choices": [
+                "integration",
+                "component"
+              ],
+              "description": "Limit tools to a specific domain",
+              "placeholder": "integration"
+            }
+          }
+        }
+      ],
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.4.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d6aebe034a",
+    "published_at": "2026-03-31T00:59:32.622662Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.prismatic-io/prism-mcp",
+    "server_version": "1.4.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-03-31T00:59:32.622662Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.4.2"
+}

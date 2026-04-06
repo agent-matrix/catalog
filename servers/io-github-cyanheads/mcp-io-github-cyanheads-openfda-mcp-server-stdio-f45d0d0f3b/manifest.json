@@ -1,0 +1,98 @@
+{
+  "description": "Query FDA data on drugs, food, devices, and recalls via openFDA. STDIO or Streamable HTTP.",
+  "harvest": {
+    "last_seen_at": "2026-04-06T04:54:05+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cyanheads-openfda-mcp-server.stdio.f45d0d0f3b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cyanheads/openfda-mcp-server",
+    "homepage": "https://github.com/cyanheads/openfda-mcp-server",
+    "repository": "https://github.com/cyanheads/openfda-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "bun",
+          "@cyanheads/openfda-mcp-server==0.1.7"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cyanheads/openfda-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Free API key from open.fda.gov \u2014 increases daily limit from 1K to 120K requests.",
+          "format": "string",
+          "name": "OPENFDA_API_KEY"
+        },
+        {
+          "default": "http",
+          "description": "Must be set to 'http' for streamable HTTP transport.",
+          "format": "string",
+          "isRequired": true,
+          "name": "MCP_TRANSPORT_TYPE"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "The hostname for the HTTP server.",
+          "format": "string",
+          "name": "MCP_HTTP_HOST"
+        },
+        {
+          "default": "3010",
+          "description": "The port to run the HTTP server on.",
+          "format": "string",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "default": "/mcp",
+          "description": "The endpoint path for the MCP server.",
+          "format": "string",
+          "name": "MCP_HTTP_ENDPOINT_PATH"
+        },
+        {
+          "default": "none",
+          "description": "Authentication mode to use: 'none', 'jwt', or 'oauth'.",
+          "format": "string",
+          "name": "MCP_AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Sets the minimum log level for output (e.g., 'debug', 'info', 'warn').",
+          "format": "string",
+          "name": "MCP_LOG_LEVEL"
+        }
+      ],
+      "identifier": "@cyanheads/openfda-mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "bun",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3010/mcp"
+      },
+      "version": "0.1.7"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f45d0d0f3b",
+    "published_at": "2026-04-04T14:31:52.487742Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cyanheads/openfda-mcp-server",
+    "server_version": "0.1.7",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-04T14:31:52.487742Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.7"
+}

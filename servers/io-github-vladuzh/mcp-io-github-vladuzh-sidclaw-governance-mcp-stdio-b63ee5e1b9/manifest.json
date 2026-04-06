@@ -1,0 +1,81 @@
+{
+  "description": "Governance proxy for MCP servers \u2014 policy evaluation, human approval, audit trails.",
+  "harvest": {
+    "last_seen_at": "2026-04-06T04:53:35+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-VladUZH-sidclaw-governance-mcp.stdio.b63ee5e1b9",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/sidclawhq/platform",
+    "homepage": "https://github.com/sidclawhq/platform",
+    "repository": "https://github.com/sidclawhq/platform"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.VladUZH/sidclaw-governance-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "SidClaw API key for policy evaluation and audit logging",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SIDCLAW_API_KEY"
+        },
+        {
+          "description": "Agent identity for policy matching and audit trails",
+          "format": "string",
+          "isRequired": true,
+          "name": "SIDCLAW_AGENT_ID"
+        },
+        {
+          "description": "Command for the upstream MCP server (e.g., npx)",
+          "format": "string",
+          "isRequired": true,
+          "name": "SIDCLAW_UPSTREAM_CMD"
+        },
+        {
+          "description": "Comma-separated args for the upstream MCP server",
+          "format": "string",
+          "isRequired": true,
+          "name": "SIDCLAW_UPSTREAM_ARGS"
+        },
+        {
+          "description": "Approval mode: error (default, returns immediately) or block (waits for approval)",
+          "format": "string",
+          "name": "SIDCLAW_APPROVAL_MODE"
+        }
+      ],
+      "identifier": "@sidclaw/sdk",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.7"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b63ee5e1b9",
+    "published_at": "2026-04-02T11:59:27.34905Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.VladUZH/sidclaw-governance-mcp",
+    "server_version": "0.1.7",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-02T11:59:27.34905Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.7"
+}

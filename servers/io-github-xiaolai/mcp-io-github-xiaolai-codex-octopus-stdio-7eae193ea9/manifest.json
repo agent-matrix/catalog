@@ -1,0 +1,87 @@
+{
+  "description": "Spawn multiple specialized Codex agents as MCP servers, each independently configured.",
+  "harvest": {
+    "last_seen_at": "2026-04-06T04:55:58+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-xiaolai-codex-octopus.stdio.7eae193ea9",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/xiaolai/codex-octopus",
+    "homepage": "https://github.com/xiaolai/codex-octopus",
+    "repository": "https://github.com/xiaolai/codex-octopus"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.xiaolai/codex-octopus",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "OpenAI API key (leave unset to inherit from parent process)",
+          "format": "string",
+          "isSecret": true,
+          "name": "CODEX_API_KEY"
+        },
+        {
+          "description": "Tool name prefix (default: codex)",
+          "format": "string",
+          "name": "CODEX_TOOL_NAME"
+        },
+        {
+          "description": "Model: gpt-5-codex, o3, codex-1, or full ID",
+          "format": "string",
+          "name": "CODEX_MODEL"
+        },
+        {
+          "description": "Sandbox: read-only, workspace-write, danger-full-access",
+          "format": "string",
+          "name": "CODEX_SANDBOX_MODE"
+        },
+        {
+          "description": "Approval: never, on-failure, on-request, untrusted",
+          "format": "string",
+          "name": "CODEX_APPROVAL_POLICY"
+        },
+        {
+          "description": "Additional instructions appended to the default",
+          "format": "string",
+          "name": "CODEX_APPEND_INSTRUCTIONS"
+        },
+        {
+          "description": "Set to true to expose only the factory wizard tool",
+          "format": "string",
+          "name": "CODEX_FACTORY_ONLY"
+        }
+      ],
+      "identifier": "codex-octopus",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7eae193ea9",
+    "published_at": "2026-04-02T06:45:52.52628Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.xiaolai/codex-octopus",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-02T06:45:52.52628Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

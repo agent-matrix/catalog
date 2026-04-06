@@ -1,0 +1,74 @@
+{
+  "description": "MCP server for self-hosted Gotify push notifications and message management.",
+  "harvest": {
+    "last_seen_at": "2026-04-06T04:56:09+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.tv-tootie-gotify-mcp.stdio.41ff400232",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jmagar/gotify-mcp",
+    "homepage": "https://github.com/jmagar/gotify-mcp",
+    "repository": "https://github.com/jmagar/gotify-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "gotify-mcp==0.3.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "tv.tootie/gotify-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of your Gotify server, e.g. https://gotify.example.com. No trailing slash.",
+          "isRequired": true,
+          "name": "GOTIFY_URL"
+        },
+        {
+          "description": "Gotify application token for sending messages (Settings > Apps > Create Application).",
+          "isSecret": true,
+          "name": "GOTIFY_APP_TOKEN"
+        },
+        {
+          "description": "Gotify client token for management operations (Settings > Clients).",
+          "isSecret": true,
+          "name": "GOTIFY_CLIENT_TOKEN"
+        },
+        {
+          "description": "Set to 'stdio' when running as a local subprocess. Default is 'http' for container deployments.",
+          "name": "GOTIFY_MCP_TRANSPORT"
+        }
+      ],
+      "identifier": "gotify-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "41ff400232",
+    "published_at": "2026-04-04T06:32:24.944401Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "tv.tootie/gotify-mcp",
+    "server_version": "0.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-04T06:32:24.944401Z"
+  },
+  "title": "Gotify MCP",
+  "type": "mcp_server",
+  "version": "0.3.1"
+}
