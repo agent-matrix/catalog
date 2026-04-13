@@ -1,0 +1,70 @@
+{
+  "description": "Deterministic Office parser: track changes, comments, merged cells. Unstructured.io alternative.",
+  "harvest": {
+    "last_seen_at": "2026-04-13T05:27:52+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sunholo-data-parse.stdio.d0e36b800d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sunholo-data/ailang-parse",
+    "homepage": "https://github.com/sunholo-data/ailang-parse",
+    "repository": "https://github.com/sunholo-data/ailang-parse"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "ailang-parse==0.4.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sunholo-data/parse",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "AILANG Parse API key (dp_...). Optional \u2014 the bridge auto-loads keys saved at ~/.config/ailang-parse/credentials.json. Get one from https://www.sunholo.com/ailang-parse/",
+          "isSecret": true,
+          "name": "DOCPARSE_API_KEY"
+        },
+        {
+          "description": "Override the hosted MCP endpoint. Defaults to https://docparse.ailang.sunholo.com/mcp/",
+          "name": "AILANG_PARSE_MCP_URL"
+        }
+      ],
+      "identifier": "ailang-parse",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp",
+          "valueHint": "subcommand"
+        }
+      ],
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d0e36b800d",
+    "published_at": "2026-04-08T10:26:29.047981Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sunholo-data/parse",
+    "server_version": "0.4.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-08T10:26:29.047981Z"
+  },
+  "title": "AILANG Parse",
+  "type": "mcp_server",
+  "version": "0.4.2"
+}

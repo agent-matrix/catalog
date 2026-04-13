@@ -1,0 +1,85 @@
+{
+  "description": "Azure + GCP cost management: spending, forecasts, anomalies, budgets, idle resources, and tags.",
+  "harvest": {
+    "last_seen_at": "2026-04-13T05:24:45+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-alexpota-cloudscope.stdio.5aa818f614",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/alexpota/cloudscope-mcp",
+    "homepage": "https://github.com/alexpota/cloudscope-mcp",
+    "repository": "https://github.com/alexpota/cloudscope-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.alexpota/cloudscope",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Azure subscription ID to query for cost data. Optional; auto-detected from az login session if not set.",
+          "name": "AZURE_SUBSCRIPTION_ID"
+        },
+        {
+          "description": "Azure tenant ID for service principal authentication. Optional; falls back to DefaultAzureCredential (e.g. az login) if unset.",
+          "name": "AZURE_TENANT_ID"
+        },
+        {
+          "description": "Service principal client ID. Optional; required only when using ClientSecretCredential.",
+          "name": "AZURE_CLIENT_ID"
+        },
+        {
+          "description": "Service principal client secret. Optional; required only when using ClientSecretCredential.",
+          "isSecret": true,
+          "name": "AZURE_CLIENT_SECRET"
+        },
+        {
+          "description": "GCP project ID. Recommended to set explicitly in the MCP client env block \u2014 may not be inherited from gcloud shell configuration.",
+          "name": "GOOGLE_CLOUD_PROJECT"
+        },
+        {
+          "description": "Fully-qualified BigQuery billing export table (project.dataset.table_name). Required for GCP cost queries.",
+          "name": "GCP_BILLING_TABLE"
+        },
+        {
+          "description": "GCP billing account ID (format: XXXXXX-XXXXXX-XXXXXX). Optional; needed only for budget monitoring.",
+          "name": "GCP_BILLING_ACCOUNT_ID"
+        },
+        {
+          "description": "Path to GCP service account JSON key file. Optional; falls back to Application Default Credentials (gcloud auth).",
+          "name": "GOOGLE_APPLICATION_CREDENTIALS"
+        }
+      ],
+      "identifier": "cloudscope-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5aa818f614",
+    "published_at": "2026-04-12T15:20:13.013359Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.alexpota/cloudscope",
+    "server_version": "0.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-12T15:20:13.013359Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.1"
+}

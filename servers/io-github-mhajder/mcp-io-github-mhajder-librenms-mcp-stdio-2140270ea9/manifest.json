@@ -1,0 +1,135 @@
+{
+  "description": "MCP server for LibreNMS network monitoring - query devices, ports, alerts, and manage infrastructure",
+  "harvest": {
+    "last_seen_at": "2026-04-13T05:26:45+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mhajder-librenms-mcp.stdio.2140270ea9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mhajder/librenms-mcp",
+    "homepage": "https://github.com/mhajder/librenms-mcp",
+    "repository": "https://github.com/mhajder/librenms-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "librenms-mcp==1.8.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mhajder/librenms-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "LibreNMS instance URL (e.g., https://librenms.example.com)",
+          "isRequired": true,
+          "name": "LIBRENMS_URL"
+        },
+        {
+          "description": "LibreNMS API token with appropriate permissions",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "LIBRENMS_TOKEN"
+        },
+        {
+          "default": "true",
+          "description": "Verify TLS certificates for LibreNMS requests (true/false)",
+          "name": "LIBRENMS_VERIFY_SSL"
+        },
+        {
+          "default": "30",
+          "description": "HTTP timeout for LibreNMS API requests in seconds",
+          "name": "LIBRENMS_TIMEOUT"
+        },
+        {
+          "default": "false",
+          "description": "Enable read-only mode to block write operations",
+          "name": "READ_ONLY_MODE"
+        },
+        {
+          "description": "Comma-separated tool tags to disable (e.g., alerts,bills)",
+          "name": "DISABLED_TAGS"
+        },
+        {
+          "default": "INFO",
+          "description": "Logging level (DEBUG, INFO, WARNING, ERROR)",
+          "name": "LOG_LEVEL"
+        },
+        {
+          "default": "false",
+          "description": "Enable per-client rate limiting (true/false)",
+          "name": "RATE_LIMIT_ENABLED"
+        },
+        {
+          "default": "100",
+          "description": "Maximum requests allowed per rate-limit window",
+          "name": "RATE_LIMIT_MAX_REQUESTS"
+        },
+        {
+          "default": "1",
+          "description": "Rate-limit window duration in minutes",
+          "name": "RATE_LIMIT_WINDOW_MINUTES"
+        },
+        {
+          "default": "false",
+          "description": "Enable FastMCP tool search transform",
+          "name": "TOOL_SEARCH_ENABLED"
+        },
+        {
+          "default": "bm25",
+          "description": "Tool search strategy: 'bm25' (natural language) or 'regex' (pattern match)",
+          "name": "TOOL_SEARCH_STRATEGY"
+        },
+        {
+          "default": "5",
+          "description": "Maximum number of tools returned by search_tools",
+          "name": "TOOL_SEARCH_MAX_RESULTS"
+        },
+        {
+          "default": "8000",
+          "description": "Port for HTTP server (default: 8000)",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "description": "Optional bearer token for HTTP transport authentication",
+          "isSecret": true,
+          "name": "MCP_HTTP_BEARER_TOKEN"
+        },
+        {
+          "description": "MCP transport type (http for HTTP, stdio for stdio)",
+          "name": "MCP_TRANSPORT",
+          "value": "http"
+        }
+      ],
+      "identifier": "librenms-mcp",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:{MCP_HTTP_PORT}/mcp"
+      },
+      "version": "1.8.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "2140270ea9",
+    "published_at": "2026-04-09T18:01:49.574562Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mhajder/librenms-mcp",
+    "server_version": "1.8.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-09T18:01:49.574562Z"
+  },
+  "title": "LibreNMS MCP",
+  "type": "mcp_server",
+  "version": "1.8.0"
+}

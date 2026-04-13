@@ -1,0 +1,130 @@
+{
+  "description": "MCP server for Ghostfolio portfolio management and financial data access",
+  "harvest": {
+    "last_seen_at": "2026-04-13T05:26:45+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mhajder-ghostfolio-mcp.stdio.25879e9ab6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mhajder/ghostfolio-mcp",
+    "homepage": "https://github.com/mhajder/ghostfolio-mcp",
+    "repository": "https://github.com/mhajder/ghostfolio-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "ghostfolio-mcp==1.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mhajder/ghostfolio-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Ghostfolio base URL (e.g., https://domain.tld:3333)",
+          "isRequired": true,
+          "name": "GHOSTFOLIO_URL"
+        },
+        {
+          "description": "Ghostfolio API token for authentication",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GHOSTFOLIO_TOKEN"
+        },
+        {
+          "default": "true",
+          "description": "Verify SSL certificates (true/false)",
+          "name": "GHOSTFOLIO_VERIFY_SSL"
+        },
+        {
+          "default": "30",
+          "description": "Request timeout in seconds",
+          "name": "GHOSTFOLIO_TIMEOUT"
+        },
+        {
+          "default": "false",
+          "description": "Enable read-only mode to restrict write operations",
+          "name": "READ_ONLY_MODE"
+        },
+        {
+          "description": "Comma-separated list of tags to disable tools for",
+          "name": "GHOSTFOLIO_DISABLED_TAGS"
+        },
+        {
+          "default": "INFO",
+          "description": "Logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)",
+          "name": "LOG_LEVEL"
+        },
+        {
+          "default": "false",
+          "description": "Enable rate limiting",
+          "name": "RATE_LIMIT_ENABLED"
+        },
+        {
+          "default": "60",
+          "description": "Maximum requests per rate limit window",
+          "name": "RATE_LIMIT_MAX_REQUESTS"
+        },
+        {
+          "default": "1",
+          "description": "Rate limit window in minutes",
+          "name": "RATE_LIMIT_WINDOW_MINUTES"
+        },
+        {
+          "default": "false",
+          "description": "Enable FastMCP tool search transform",
+          "name": "TOOL_SEARCH_ENABLED"
+        },
+        {
+          "default": "bm25",
+          "description": "Tool search strategy (bm25 or regex)",
+          "name": "TOOL_SEARCH_STRATEGY"
+        },
+        {
+          "default": "5",
+          "description": "Maximum tool search results returned by search_tools",
+          "name": "TOOL_SEARCH_MAX_RESULTS"
+        },
+        {
+          "default": "8000",
+          "description": "Port for HTTP server (default: 8000)",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "description": "MCP transport type (http for HTTP, stdio for stdio)",
+          "name": "MCP_TRANSPORT",
+          "value": "http"
+        }
+      ],
+      "identifier": "ghostfolio-mcp",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:{MCP_HTTP_PORT}/mcp"
+      },
+      "version": "1.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "25879e9ab6",
+    "published_at": "2026-04-09T20:20:12.211746Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mhajder/ghostfolio-mcp",
+    "server_version": "1.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-09T20:20:12.211746Z"
+  },
+  "title": "Ghostfolio MCP",
+  "type": "mcp_server",
+  "version": "1.2.0"
+}

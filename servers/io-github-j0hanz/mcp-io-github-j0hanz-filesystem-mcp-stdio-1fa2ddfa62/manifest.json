@@ -1,0 +1,75 @@
+{
+  "description": "Secure filesystem MCP server for reading, writing, searching, diffing, and patching files.",
+  "harvest": {
+    "last_seen_at": "2026-04-13T05:26:08+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-j0hanz-filesystem-mcp.stdio.1fa2ddfa62",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/j0hanz/filesystem-mcp",
+    "homepage": "https://github.com/j0hanz/filesystem-mcp",
+    "repository": "https://github.com/j0hanz/filesystem-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@j0hanz/filesystem-mcp==1.18.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.j0hanz/filesystem-mcp",
+  "packages": [
+    {
+      "identifier": "@j0hanz/filesystem-mcp",
+      "packageArguments": [
+        {
+          "description": "Optional root directory path the MCP server is allowed to access. If omitted, roots can be provided by the MCP Roots protocol or --allow-cwd.",
+          "format": "filepath",
+          "isRepeated": true,
+          "type": "positional",
+          "valueHint": "directory"
+        },
+        {
+          "default": "false",
+          "description": "Allow the current working directory as an additional root.",
+          "format": "boolean",
+          "name": "--allow-cwd",
+          "type": "named"
+        },
+        {
+          "description": "Enable HTTP transport on the given port (Node Streamable HTTP).",
+          "format": "number",
+          "name": "--port",
+          "type": "named"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.18.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1fa2ddfa62",
+    "published_at": "2026-04-11T14:32:11.035951Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.j0hanz/filesystem-mcp",
+    "server_version": "1.18.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-11T14:32:11.035951Z"
+  },
+  "title": "Filesystem MCP",
+  "type": "mcp_server",
+  "version": "1.18.0"
+}

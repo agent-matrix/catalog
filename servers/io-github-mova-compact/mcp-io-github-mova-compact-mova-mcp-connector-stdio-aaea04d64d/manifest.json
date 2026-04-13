@@ -1,0 +1,128 @@
+{
+  "description": "Thin MOVA MCP proxy for bindings, transport resolution, and upstream tools/call execution.",
+  "harvest": {
+    "last_seen_at": "2026-04-13T05:26:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mova-compact-mova-mcp-connector.stdio.aaea04d64d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mova-compact/mova-mcp-connector",
+    "homepage": "https://github.com/mova-compact/mova-mcp-connector",
+    "repository": "https://github.com/mova-compact/mova-mcp-connector"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "type": "positional",
+            "value": "run"
+          },
+          {
+            "type": "positional",
+            "value": "-i"
+          },
+          {
+            "type": "positional",
+            "value": "--rm"
+          },
+          {
+            "type": "positional",
+            "value": "-p"
+          },
+          {
+            "type": "positional",
+            "value": "8098:8098"
+          },
+          "ghcr.io/mova-compact/mova-mcp-connector:0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mova-compact/mova-mcp-connector",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of MOVA State API / mcp_door",
+          "format": "string",
+          "isRequired": true,
+          "name": "MOVA_PLATFORM_URL"
+        },
+        {
+          "description": "Read token for platform connector and binding resolution",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "MOVA_ADMIN_READ_TOKEN"
+        },
+        {
+          "description": "Gateway key identifier for signed mcp_door requests",
+          "format": "string",
+          "isRequired": true,
+          "name": "MCP_DOOR_GATEWAY_KEY_ID"
+        },
+        {
+          "description": "Gateway signing secret for mcp_door requests",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "MCP_DOOR_GATEWAY_SHARED_SECRET"
+        },
+        {
+          "description": "Actor id used for signed gateway requests",
+          "format": "string",
+          "isRequired": true,
+          "name": "MCP_DOOR_ACTOR_ID"
+        }
+      ],
+      "identifier": "ghcr.io/mova-compact/mova-mcp-connector:0.1.0",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "-i"
+        },
+        {
+          "type": "positional",
+          "value": "--rm"
+        },
+        {
+          "type": "positional",
+          "value": "-p"
+        },
+        {
+          "type": "positional",
+          "value": "8098:8098"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://127.0.0.1:8098/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "aaea04d64d",
+    "published_at": "2026-04-09T14:43:31.134629Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mova-compact/mova-mcp-connector",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-09T14:43:31.134629Z"
+  },
+  "title": "MOVA MCP Connector",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

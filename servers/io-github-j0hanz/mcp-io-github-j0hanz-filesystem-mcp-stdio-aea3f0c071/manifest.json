@@ -1,0 +1,95 @@
+{
+  "description": "Filesystem MCP server enabling LLMs to read, write, search, diff, patch, and manage local files.",
+  "harvest": {
+    "last_seen_at": "2026-04-13T05:26:08+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-j0hanz-filesystem-mcp.stdio.aea3f0c071",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/j0hanz/filesystem-mcp",
+    "homepage": "https://github.com/j0hanz/filesystem-mcp",
+    "repository": "https://github.com/j0hanz/filesystem-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Keep stdin open for stdio transport.",
+            "name": "-i",
+            "type": "named"
+          },
+          {
+            "description": "Remove container after exit.",
+            "name": "--rm",
+            "type": "named"
+          },
+          "ghcr.io/j0hanz/filesystem-mcp:1.16.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.j0hanz/filesystem-mcp",
+  "packages": [
+    {
+      "identifier": "ghcr.io/j0hanz/filesystem-mcp:1.16.0",
+      "packageArguments": [
+        {
+          "description": "Root directory path inside the container the server is allowed to access.",
+          "format": "filepath",
+          "isRepeated": true,
+          "type": "positional",
+          "valueHint": "directory"
+        },
+        {
+          "default": "false",
+          "description": "Allow the container working directory as an additional root.",
+          "format": "boolean",
+          "name": "--allow-cwd",
+          "type": "named"
+        },
+        {
+          "description": "Enable HTTP transport on the given port (MCP Streamable HTTP with SSE).",
+          "format": "number",
+          "name": "--port",
+          "type": "named"
+        }
+      ],
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "Keep stdin open for stdio transport.",
+          "name": "-i",
+          "type": "named"
+        },
+        {
+          "description": "Remove container after exit.",
+          "name": "--rm",
+          "type": "named"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "aea3f0c071",
+    "published_at": "2026-04-10T05:27:28.776382Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.j0hanz/filesystem-mcp",
+    "server_version": "1.16.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-10T05:27:28.776382Z"
+  },
+  "title": "Filesystem MCP",
+  "type": "mcp_server",
+  "version": "1.16.0"
+}

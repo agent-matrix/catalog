@@ -1,0 +1,105 @@
+{
+  "description": "Database MCP server for MySQL, MariaDB, PostgreSQL & SQLite",
+  "harvest": {
+    "last_seen_at": "2026-04-13T05:22:34+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-haymon-database.stdio.15bb2527fa",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/haymon-ai/database",
+    "homepage": "https://github.com/haymon-ai/database",
+    "repository": "https://github.com/haymon-ai/database"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/haymon-ai/database:0.6.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.haymon/database",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "127.0.0.1",
+          "description": "HTTP bind host",
+          "name": "HTTP_HOST"
+        },
+        {
+          "default": "9001",
+          "description": "HTTP bind port",
+          "format": "number",
+          "name": "HTTP_PORT"
+        },
+        {
+          "description": "Allowed CORS origins (comma-separated)",
+          "name": "HTTP_ALLOWED_ORIGINS"
+        },
+        {
+          "description": "Allowed host names (comma-separated)",
+          "name": "HTTP_ALLOWED_HOSTS"
+        }
+      ],
+      "identifier": "ghcr.io/haymon-ai/database:0.6.2",
+      "packageArguments": [
+        {
+          "description": "Start in HTTP transport mode",
+          "isRequired": true,
+          "type": "positional",
+          "value": "http"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "HTTP bind host",
+          "name": "--host",
+          "type": "named"
+        },
+        {
+          "default": "9001",
+          "description": "HTTP bind port",
+          "name": "--port",
+          "type": "named"
+        },
+        {
+          "description": "Allowed CORS origins (comma-separated)",
+          "isRepeated": true,
+          "name": "--allowed-origins",
+          "type": "named"
+        },
+        {
+          "description": "Allowed host names (comma-separated)",
+          "isRepeated": true,
+          "name": "--allowed-hosts",
+          "type": "named"
+        }
+      ],
+      "registryType": "oci",
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://{--host}:{--port}/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "15bb2527fa",
+    "published_at": "2026-04-12T19:21:01.151866Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.haymon/database",
+    "server_version": "0.6.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-12T19:21:01.151866Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.6.2"
+}

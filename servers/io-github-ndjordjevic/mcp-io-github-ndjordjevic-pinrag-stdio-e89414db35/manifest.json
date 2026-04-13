@@ -1,0 +1,84 @@
+{
+  "description": "MCP RAG: index PDFs, repos, YouTube, Discord, text; optional YouTube vision; query with citations.",
+  "harvest": {
+    "last_seen_at": "2026-04-13T05:27:01+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ndjordjevic-pinrag.stdio.e89414db35",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ndjordjevic/pinrag",
+    "homepage": "https://github.com/ndjordjevic/pinrag",
+    "repository": "https://github.com/ndjordjevic/pinrag"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "type": "positional",
+            "value": "--refresh"
+          },
+          {
+            "type": "positional",
+            "value": "pinrag"
+          },
+          "pinrag==0.9.27"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ndjordjevic/pinrag",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "OpenRouter API key \u2014 required for the default chat LLM (PINRAG_LLM_PROVIDER defaults to openrouter). Get a key at openrouter.ai.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OPENROUTER_API_KEY"
+        },
+        {
+          "description": "Absolute path to the Chroma vector store directory (recommended so indexes are not tied to the server process cwd).",
+          "format": "string",
+          "name": "PINRAG_PERSIST_DIR"
+        }
+      ],
+      "identifier": "pinrag",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "--refresh"
+        },
+        {
+          "type": "positional",
+          "value": "pinrag"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.9.27"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e89414db35",
+    "published_at": "2026-04-09T11:16:32.307132Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ndjordjevic/pinrag",
+    "server_version": "0.9.27",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-09T11:16:32.307132Z"
+  },
+  "title": "PinRAG",
+  "type": "mcp_server",
+  "version": "0.9.27"
+}

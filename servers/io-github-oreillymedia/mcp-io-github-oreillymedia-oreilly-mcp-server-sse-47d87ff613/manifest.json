@@ -1,0 +1,51 @@
+{
+  "description": "Search O'Reilly for tech books, courses, events, and more. Requires subscription and access token.",
+  "harvest": {
+    "last_seen_at": "2026-04-13T05:27:08+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-oreillymedia-oreilly-mcp-server.sse.47d87ff613",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://api.oreilly.com/api/content-discovery/v1/mcp/"
+    }
+  },
+  "name": "io.github.oreillymedia/oreilly-mcp-server",
+  "provenance": {
+    "identity_key": "47d87ff613",
+    "published_at": "2026-04-09T19:19:59.999607Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.oreillymedia/oreilly-mcp-server",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-09T19:19:59.999607Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Bearer token for O'Reilly Learning authentication",
+          "name": "Authorization",
+          "value": "Bearer {mcp_access_token}",
+          "variables": {
+            "mcp_access_token": {
+              "description": "Your O'Reilly access token. See https://learning.oreilly.com/apidocs/mcp/content/#section/Authentication for details on generating a token.",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://api.oreilly.com/api/content-discovery/v1/mcp/"
+    }
+  ],
+  "title": "O'Reilly Media MCP Server",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

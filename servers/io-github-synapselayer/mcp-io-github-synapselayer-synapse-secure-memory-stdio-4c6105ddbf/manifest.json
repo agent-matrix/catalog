@@ -1,0 +1,74 @@
+{
+  "description": "Zero-Knowledge Context\u2122 & Neural Handover\u2122 for AI Agents. The Trust Layer for AI Memory.",
+  "harvest": {
+    "last_seen_at": "2026-04-13T05:24:27+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-SynapseLayer-synapse-secure-memory.stdio.4c6105ddbf",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/SynapseLayer/synapse-layer",
+    "homepage": "https://github.com/SynapseLayer/synapse-layer",
+    "repository": "https://github.com/SynapseLayer/synapse-layer"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "synapse-layer==1.0.7"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.SynapseLayer/synapse-secure-memory",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "default-agent",
+          "description": "Identifier for the agent using the memory layer (e.g., claude-desktop, my-agent).",
+          "name": "SYNAPSE_AGENT_ID"
+        },
+        {
+          "default": "0.5",
+          "description": "Differential privacy epsilon parameter. Lower values = stronger privacy. Range: 0.1\u20132.0.",
+          "name": "SYNAPSE_PRIVACY_EPSILON"
+        },
+        {
+          "description": "AES-256-GCM encryption key for at-rest memory encryption. Auto-generated if not provided.",
+          "isSecret": true,
+          "name": "SYNAPSE_ENCRYPTION_KEY"
+        },
+        {
+          "default": "INFO",
+          "description": "Logging verbosity: DEBUG, INFO, WARNING, ERROR. Default: INFO.",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "synapse-layer",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.7"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4c6105ddbf",
+    "published_at": "2026-04-08T18:42:52.289669Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.SynapseLayer/synapse-secure-memory",
+    "server_version": "1.0.7",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-08T18:42:52.289669Z"
+  },
+  "title": "Synapse Layer \u2014 Zero-Knowledge Memory",
+  "type": "mcp_server",
+  "version": "1.0.7"
+}

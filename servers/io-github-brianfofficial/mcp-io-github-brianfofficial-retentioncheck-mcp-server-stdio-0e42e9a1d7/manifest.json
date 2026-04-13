@@ -1,0 +1,66 @@
+{
+  "description": "Pull churn from Stripe or pasted feedback. AI-ranked drivers with severity + actionable fixes.",
+  "harvest": {
+    "last_seen_at": "2026-04-13T05:25:02+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-brianfofficial-retentioncheck-mcp-server.stdio.0e42e9a1d7",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/brianfofficial/retentioncheck-v2",
+    "homepage": "https://github.com/brianfofficial/retentioncheck-v2",
+    "repository": "https://github.com/brianfofficial/retentioncheck-v2"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.brianfofficial/retentioncheck-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Anthropic API key for running churn analysis (required for analyze_churn and analyze_stripe_churn; get_example_analysis works without it).",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        },
+        {
+          "description": "Stripe API key for analyze_stripe_churn. Use a RESTRICTED (read-only) key with these permissions: Subscriptions Read, Customers Read, Prices Read. Create one at https://dashboard.stripe.com/apikeys/create. Optional \u2014 only required for the analyze_stripe_churn tool.",
+          "isSecret": true,
+          "name": "STRIPE_SECRET_KEY"
+        },
+        {
+          "description": "Set to 0 to opt out of anonymous usage telemetry. Telemetry tracks tool invocations and aggregate counts \u2014 never the feedback text, financial values, or any PII.",
+          "name": "RETENTIONCHECK_TELEMETRY"
+        }
+      ],
+      "identifier": "@retentioncheck/mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0e42e9a1d7",
+    "published_at": "2026-04-08T21:38:30.19715Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.brianfofficial/retentioncheck-mcp-server",
+    "server_version": "0.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-08T21:38:30.19715Z"
+  },
+  "title": "RetentionCheck",
+  "type": "mcp_server",
+  "version": "0.3.1"
+}

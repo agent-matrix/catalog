@@ -1,0 +1,74 @@
+{
+  "description": "Persistent zero-knowledge memory for AI agents. AES-256-GCM encryption, PII redaction.",
+  "harvest": {
+    "last_seen_at": "2026-04-13T05:24:27+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-SynapseLayer-synapse-layer.stdio.733283d296",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/SynapseLayer/synapse-layer",
+    "homepage": "https://github.com/SynapseLayer/synapse-layer",
+    "repository": "https://github.com/SynapseLayer/synapse-layer"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "synapse-layer==1.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.SynapseLayer/synapse-layer",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "default-agent",
+          "description": "Identifier for the agent using the memory layer.",
+          "name": "SYNAPSE_AGENT_ID"
+        },
+        {
+          "default": "0.5",
+          "description": "Differential privacy epsilon parameter. Lower = stronger privacy. Range: 0.1\u20132.0.",
+          "name": "SYNAPSE_PRIVACY_EPSILON"
+        },
+        {
+          "description": "AES-256-GCM encryption key for at-rest memory encryption. Auto-generated if not provided.",
+          "isSecret": true,
+          "name": "SYNAPSE_ENCRYPTION_KEY"
+        },
+        {
+          "default": "INFO",
+          "description": "Logging verbosity: DEBUG, INFO, WARNING, ERROR.",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "synapse-layer",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "733283d296",
+    "published_at": "2026-04-10T23:56:43.514174Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.SynapseLayer/synapse-layer",
+    "server_version": "1.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-10T23:56:43.514174Z"
+  },
+  "title": "Synapse Layer \u2014 Continuous Consciousness Infrastructure",
+  "type": "mcp_server",
+  "version": "1.1.1"
+}

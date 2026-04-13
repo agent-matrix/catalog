@@ -1,0 +1,96 @@
+{
+  "description": "MCP server that scans your repo's dependencies for security vulnerabilities based on published CVEs.",
+  "harvest": {
+    "last_seen_at": "2026-04-13T05:27:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-shane-js-ghostfree.stdio.32e01af119",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/shane-js/ghostfree",
+    "homepage": "https://github.com/shane-js/ghostfree",
+    "repository": "https://github.com/shane-js/ghostfree"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y"
+          },
+          "ghostfree==0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.shane-js/ghostfree",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Override the directory where GhostFree stores its data files (accepted-risks.yml, config.yml). Defaults to .ghostfree/ in the scanned repository root.",
+          "format": "filepath",
+          "name": "GHOSTFREE_DIR"
+        },
+        {
+          "choices": [
+            "CRITICAL",
+            "HIGH",
+            "MEDIUM",
+            "LOW"
+          ],
+          "default": "MEDIUM",
+          "description": "Minimum CVE severity level to surface. One of: CRITICAL, HIGH, MEDIUM (default), LOW.",
+          "format": "string",
+          "name": "GHOSTFREE_MIN_SEVERITY"
+        },
+        {
+          "description": "Optional NVD API key for higher rate limits when enriching CVE details. Free to request at https://nvd.nist.gov/developers/request-an-api-key.",
+          "format": "string",
+          "isSecret": true,
+          "name": "NVD_API_KEY"
+        }
+      ],
+      "identifier": "ghostfree",
+      "packageArguments": [
+        {
+          "description": "Absolute path to the repository to scan for vulnerable dependencies.",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "--repo-path",
+          "type": "named"
+        }
+      ],
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "32e01af119",
+    "published_at": "2026-04-07T01:48:43.139412Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.shane-js/ghostfree",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-07T01:48:43.139412Z"
+  },
+  "title": "GhostFree",
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

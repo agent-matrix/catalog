@@ -1,0 +1,161 @@
+{
+  "description": "Manage Zscaler Zero Trust Exchange via 280+ tools \u2014 ZPA, ZIA, ZDX, ZCC, EASM, and more.",
+  "harvest": {
+    "last_seen_at": "2026-04-13T05:28:21+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-zscaler-zscaler-mcp-server.stdio.c6614654d3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/zscaler/zscaler-mcp-server",
+    "homepage": "https://github.com/zscaler/zscaler-mcp-server",
+    "repository": "https://github.com/zscaler/zscaler-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Zscaler OneAPI Client ID from ZIdentity console.",
+            "isRequired": true,
+            "name": "-e",
+            "type": "named",
+            "value": "ZSCALER_CLIENT_ID={client_id}",
+            "variables": {
+              "client_id": {
+                "format": "string",
+                "isRequired": true,
+                "isSecret": true
+              }
+            }
+          },
+          {
+            "description": "Zscaler OneAPI Client Secret from ZIdentity console.",
+            "isRequired": true,
+            "name": "-e",
+            "type": "named",
+            "value": "ZSCALER_CLIENT_SECRET={client_secret}",
+            "variables": {
+              "client_secret": {
+                "format": "string",
+                "isRequired": true,
+                "isSecret": true
+              }
+            }
+          },
+          {
+            "description": "Zscaler Customer ID from ZIdentity console.",
+            "isRequired": true,
+            "name": "-e",
+            "type": "named",
+            "value": "ZSCALER_CUSTOMER_ID={customer_id}",
+            "variables": {
+              "customer_id": {
+                "format": "string",
+                "isRequired": true
+              }
+            }
+          },
+          {
+            "description": "Zscaler vanity domain (e.g. mycompany.zscloud.net).",
+            "isRequired": true,
+            "name": "-e",
+            "type": "named",
+            "value": "ZSCALER_VANITY_DOMAIN={vanity_domain}",
+            "variables": {
+              "vanity_domain": {
+                "format": "string",
+                "isRequired": true
+              }
+            }
+          },
+          "docker.io/zscaler/zscaler-mcp-server:latest"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.zscaler/zscaler-mcp-server",
+  "packages": [
+    {
+      "identifier": "docker.io/zscaler/zscaler-mcp-server:latest",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "Zscaler OneAPI Client ID from ZIdentity console.",
+          "isRequired": true,
+          "name": "-e",
+          "type": "named",
+          "value": "ZSCALER_CLIENT_ID={client_id}",
+          "variables": {
+            "client_id": {
+              "format": "string",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        },
+        {
+          "description": "Zscaler OneAPI Client Secret from ZIdentity console.",
+          "isRequired": true,
+          "name": "-e",
+          "type": "named",
+          "value": "ZSCALER_CLIENT_SECRET={client_secret}",
+          "variables": {
+            "client_secret": {
+              "format": "string",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        },
+        {
+          "description": "Zscaler Customer ID from ZIdentity console.",
+          "isRequired": true,
+          "name": "-e",
+          "type": "named",
+          "value": "ZSCALER_CUSTOMER_ID={customer_id}",
+          "variables": {
+            "customer_id": {
+              "format": "string",
+              "isRequired": true
+            }
+          }
+        },
+        {
+          "description": "Zscaler vanity domain (e.g. mycompany.zscloud.net).",
+          "isRequired": true,
+          "name": "-e",
+          "type": "named",
+          "value": "ZSCALER_VANITY_DOMAIN={vanity_domain}",
+          "variables": {
+            "vanity_domain": {
+              "format": "string",
+              "isRequired": true
+            }
+          }
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "c6614654d3",
+    "published_at": "2026-04-10T20:43:51.311677Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.zscaler/zscaler-mcp-server",
+    "server_version": "0.10.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-10T20:43:51.311677Z"
+  },
+  "title": "Zscaler Zero Trust Exchange",
+  "type": "mcp_server",
+  "version": "0.10.0"
+}
