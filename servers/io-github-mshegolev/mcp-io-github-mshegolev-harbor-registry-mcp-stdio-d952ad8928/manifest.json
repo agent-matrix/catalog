@@ -1,0 +1,76 @@
+{
+  "description": "Harbor Registry MCP \u2014 projects, repos, artifacts, storage reports, cleanup (with dry-run).",
+  "harvest": {
+    "last_seen_at": "2026-04-20T05:25:06+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mshegolev-harbor-registry-mcp.stdio.d952ad8928",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/mshegolev/harbor-registry-mcp",
+    "homepage": "https://github.com/mshegolev/harbor-registry-mcp",
+    "repository": "https://github.com/mshegolev/harbor-registry-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mshegolev/harbor-registry-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Harbor URL (e.g. https://harbor.example.com)",
+          "format": "string",
+          "isRequired": true,
+          "name": "HARBOR_URL"
+        },
+        {
+          "description": "Harbor username (robot account recommended for automation)",
+          "format": "string",
+          "isRequired": true,
+          "name": "HARBOR_USERNAME"
+        },
+        {
+          "description": "Harbor password or robot account token",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "HARBOR_PASSWORD"
+        },
+        {
+          "default": "true",
+          "description": "Verify SSL certificates (true/false). Set to 'false' for self-signed certs.",
+          "format": "string",
+          "name": "HARBOR_SSL_VERIFY"
+        }
+      ],
+      "identifier": "harbor-registry-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d952ad8928",
+    "published_at": "2026-04-18T03:37:29.280424Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mshegolev/harbor-registry-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-18T03:37:29.280424Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

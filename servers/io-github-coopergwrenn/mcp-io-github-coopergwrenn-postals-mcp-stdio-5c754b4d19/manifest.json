@@ -1,0 +1,114 @@
+{
+  "description": "Send physical handwritten postcards from any AI agent. Real pen & ink, USPS, $4.99/card.",
+  "harvest": {
+    "last_seen_at": "2026-04-20T05:23:40+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-coopergwrenn-postals-mcp.stdio.5c754b4d19",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/coopergwrenn/postals-mcp",
+    "homepage": "https://github.com/coopergwrenn/postals-mcp",
+    "repository": "https://github.com/coopergwrenn/postals-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.coopergwrenn/postals-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your Handwrytten API key (v1.0) or Postals API key (v1.1+).",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "POSTALS_API_KEY"
+        },
+        {
+          "description": "Default sender full name for return address.",
+          "format": "string",
+          "name": "POSTALS_SENDER_NAME"
+        },
+        {
+          "description": "Default sender street address.",
+          "format": "string",
+          "name": "POSTALS_SENDER_ADDRESS"
+        },
+        {
+          "description": "Default sender city.",
+          "format": "string",
+          "name": "POSTALS_SENDER_CITY"
+        },
+        {
+          "description": "Default sender 2-letter US state code.",
+          "format": "string",
+          "name": "POSTALS_SENDER_STATE"
+        },
+        {
+          "description": "Default sender 5-digit ZIP (or 5+4 format).",
+          "format": "string",
+          "name": "POSTALS_SENDER_ZIP"
+        },
+        {
+          "description": "Default card front image URL (HTTPS, PNG or JPEG, landscape 7x5 preferred).",
+          "format": "string",
+          "name": "POSTALS_DEFAULT_CARD_IMAGE"
+        },
+        {
+          "description": "Default handwriting font. Default: Joyful Jennifer.",
+          "format": "string",
+          "name": "POSTALS_HANDWRITING_STYLE"
+        },
+        {
+          "description": "Max cards per day (safety net). Default: 50.",
+          "format": "string",
+          "name": "POSTALS_DAILY_LIMIT"
+        },
+        {
+          "description": "Set to 'true' for test mode (validates inputs, no cards actually sent).",
+          "format": "string",
+          "name": "POSTALS_TEST_MODE"
+        },
+        {
+          "description": "Optional. Enables AI message generation via Cloudflare Workers AI.",
+          "format": "string",
+          "name": "CLOUDFLARE_ACCOUNT_ID"
+        },
+        {
+          "description": "Optional. Required together with CLOUDFLARE_ACCOUNT_ID for AI message generation.",
+          "format": "string",
+          "isSecret": true,
+          "name": "CLOUDFLARE_API_TOKEN"
+        }
+      ],
+      "identifier": "postals-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5c754b4d19",
+    "published_at": "2026-04-15T22:55:02.852483Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.coopergwrenn/postals-mcp",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-15T22:55:02.852483Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

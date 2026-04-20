@@ -1,0 +1,63 @@
+{
+  "description": "MCP server for the German Marktstammdatenregister (MaStR) energy market register",
+  "harvest": {
+    "last_seen_at": "2026-04-20T05:23:04+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-UliRCS-mastr-mcp-server.stdio.e81b6934a7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/UliRCS/mastr-mcp-server",
+    "homepage": "https://github.com/UliRCS/mastr-mcp-server",
+    "repository": "https://github.com/UliRCS/mastr-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "python",
+          "mastr-mcp-server==1.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.UliRCS/mastr-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "MaStR Marktakteur number (SOM/SEM...) for SOAP API access. Without credentials, only 7 public tools are available.",
+          "name": "MASTR_USER"
+        },
+        {
+          "description": "MaStR web service token (~540 chars) for SOAP API access. Enables 14 additional SOAP tools.",
+          "isSecret": true,
+          "name": "MASTR_TOKEN"
+        }
+      ],
+      "identifier": "mastr-mcp-server",
+      "registryType": "pypi",
+      "runtimeHint": "python",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e81b6934a7",
+    "published_at": "2026-04-15T08:05:31.38102Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.UliRCS/mastr-mcp-server",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-15T08:05:31.38102Z"
+  },
+  "title": "MaStR MCP Server",
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

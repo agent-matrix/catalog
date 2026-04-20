@@ -1,0 +1,84 @@
+{
+  "description": "Open-source MCP server for PrismHR. PEO workflow tools + Microsoft 365 connectors.",
+  "harvest": {
+    "last_seen_at": "2026-04-20T05:25:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nikulk2992-jpg-prismhr-mcp.stdio.58e094d12f",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/nikulk2992-jpg/prismhr-mcp",
+    "homepage": "https://github.com/nikulk2992-jpg/prismhr-mcp",
+    "repository": "https://github.com/nikulk2992-jpg/prismhr-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nikulk2992-jpg/prismhr-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "uat",
+          "description": "Target environment. 'uat' (default) or 'prod' (requires PRISMHR_MCP_ALLOW_PROD=true).",
+          "name": "PRISMHR_MCP_ENVIRONMENT"
+        },
+        {
+          "description": "PrismHR PEO identifier (e.g. '624*D' for Simploy UAT).",
+          "isRequired": true,
+          "name": "PRISMHR_MCP_PEO_ID"
+        },
+        {
+          "description": "PrismHR API username. Alternatively use 1Password via PRISMHR_MCP_ONEPASSWORD_VAULT + PRISMHR_MCP_ONEPASSWORD_ITEM_PRISMHR.",
+          "name": "PRISMHR_MCP_USERNAME"
+        },
+        {
+          "description": "PrismHR API password. Alternatively use 1Password.",
+          "isSecret": true,
+          "name": "PRISMHR_MCP_PASSWORD"
+        },
+        {
+          "description": "1Password vault name (requires op CLI signed in). Overridden by direct USERNAME/PASSWORD.",
+          "name": "PRISMHR_MCP_ONEPASSWORD_VAULT"
+        },
+        {
+          "description": "1Password item name containing PrismHR credentials.",
+          "name": "PRISMHR_MCP_ONEPASSWORD_ITEM_PRISMHR"
+        },
+        {
+          "default": "false",
+          "description": "Must be 'true' to allow PRISMHR_MCP_ENVIRONMENT=prod. Safety default keeps first-run posture on UAT.",
+          "name": "PRISMHR_MCP_ALLOW_PROD"
+        }
+      ],
+      "identifier": "prismhr-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0.dev6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "58e094d12f",
+    "published_at": "2026-04-19T13:47:57.078436Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nikulk2992-jpg/prismhr-mcp",
+    "server_version": "0.1.0.dev6",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-19T13:47:57.078436Z"
+  },
+  "title": "PrismHR MCP",
+  "type": "mcp_server",
+  "version": "0.1.0.dev6"
+}

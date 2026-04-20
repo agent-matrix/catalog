@@ -1,0 +1,82 @@
+{
+  "description": "Zero-knowledge persistent memory for Claude \u2014 encrypted, semantic search, EU hosted.",
+  "harvest": {
+    "last_seen_at": "2026-04-20T05:25:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-pquattro-memoraeu-mcp.stdio.69191bab6a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/pquattro/memoraeu-memoraeu-mcp.git",
+    "homepage": "https://github.com/pquattro/memoraeu-memoraeu-mcp.git",
+    "repository": "https://github.com/pquattro/memoraeu-memoraeu-mcp.git"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "memoraeu-mcp==0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.pquattro/memoraeu-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "MemoraEU API endpoint (default: https://api.memoraeu.isquarecube.fr)",
+          "name": "MEMORAEU_API_URL"
+        },
+        {
+          "description": "Your MemoraEU API key (starts with meu-sk-). Create one at app.memoraeu.isquarecube.fr.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "MEMORAEU_API_KEY"
+        },
+        {
+          "description": "Your encryption secret (never sent to the server). Found in Settings on app.memoraeu.isquarecube.fr.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "MEMORAEU_SECRET"
+        },
+        {
+          "description": "Your encryption salt. Found in Settings on app.memoraeu.isquarecube.fr.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "MEMORAEU_SALT"
+        },
+        {
+          "description": "Mistral API key for semantic embeddings. Get one at console.mistral.ai.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "MISTRAL_API_KEY"
+        }
+      ],
+      "identifier": "memoraeu-mcp",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "69191bab6a",
+    "published_at": "2026-04-19T12:35:47.566328Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.pquattro/memoraeu-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-19T12:35:47.566328Z"
+  },
+  "title": "MemoraEU",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

@@ -1,0 +1,67 @@
+{
+  "description": "Philippine government data (PHIVOLCS, PAGASA, PhilGEPS, PSA, AQICN) as 12 MCP tools.",
+  "harvest": {
+    "last_seen_at": "2026-04-20T05:26:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-xmpuspus-ph-civic-data-mcp.stdio.c115131cc2",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/xmpuspus/ph-civic-data-mcp",
+    "homepage": "https://github.com/xmpuspus/ph-civic-data-mcp",
+    "repository": "https://github.com/xmpuspus/ph-civic-data-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "ph-civic-data-mcp==0.1.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.xmpuspus/ph-civic-data-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Free AQICN token from https://aqicn.org/data-platform/token/. Required for the get_air_quality tool.",
+          "format": "string",
+          "isSecret": true,
+          "name": "AQICN_TOKEN"
+        },
+        {
+          "description": "Optional PAGASA TenDay API token. Without it, get_weather_forecast automatically falls back to Open-Meteo.",
+          "format": "string",
+          "isSecret": true,
+          "name": "PAGASA_API_TOKEN"
+        }
+      ],
+      "identifier": "ph-civic-data-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c115131cc2",
+    "published_at": "2026-04-19T01:29:58.122037Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.xmpuspus/ph-civic-data-mcp",
+    "server_version": "0.1.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-19T01:29:58.122037Z"
+  },
+  "title": "PH Civic Data",
+  "type": "mcp_server",
+  "version": "0.1.4"
+}

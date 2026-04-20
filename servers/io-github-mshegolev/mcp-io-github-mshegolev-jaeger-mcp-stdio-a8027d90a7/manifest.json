@@ -1,0 +1,80 @@
+{
+  "description": "Jaeger MCP \u2014 search traces, inspect spans, map service dependencies (read-only).",
+  "harvest": {
+    "last_seen_at": "2026-04-20T05:25:06+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mshegolev-jaeger-mcp.stdio.a8027d90a7",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/mshegolev/jaeger-mcp",
+    "homepage": "https://github.com/mshegolev/jaeger-mcp",
+    "repository": "https://github.com/mshegolev/jaeger-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mshegolev/jaeger-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Jaeger query service URL, e.g. https://jaeger.example.com",
+          "format": "string",
+          "isRequired": true,
+          "name": "JAEGER_URL"
+        },
+        {
+          "description": "Bearer token for authentication. Takes priority over Basic auth.",
+          "format": "string",
+          "isSecret": true,
+          "name": "JAEGER_TOKEN"
+        },
+        {
+          "description": "HTTP Basic auth username. Used only when JAEGER_TOKEN is not set.",
+          "format": "string",
+          "name": "JAEGER_USERNAME"
+        },
+        {
+          "description": "HTTP Basic auth password.",
+          "format": "string",
+          "isSecret": true,
+          "name": "JAEGER_PASSWORD"
+        },
+        {
+          "default": "true",
+          "description": "Verify SSL certificates (true/false). Set to 'false' for self-signed certs.",
+          "format": "string",
+          "name": "JAEGER_SSL_VERIFY"
+        }
+      ],
+      "identifier": "jaeger-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a8027d90a7",
+    "published_at": "2026-04-18T07:28:26.27034Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mshegolev/jaeger-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-18T07:28:26.27034Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

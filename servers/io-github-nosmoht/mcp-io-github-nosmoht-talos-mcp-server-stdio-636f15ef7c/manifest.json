@@ -1,0 +1,106 @@
+{
+  "description": "MCP server for Talos Linux \u2014 resources, services, logs, health, config, lifecycle via gRPC.",
+  "harvest": {
+    "last_seen_at": "2026-04-20T05:22:51+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Nosmoht-talos-mcp-server.stdio.636f15ef7c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Nosmoht/talos-mcp-server",
+    "homepage": "https://github.com/Nosmoht/talos-mcp-server",
+    "repository": "https://github.com/Nosmoht/talos-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "talos-mcp==2.3.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Nosmoht/talos-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to talosconfig file (default: ~/.talos/config)",
+          "name": "TALOSCONFIG"
+        },
+        {
+          "description": "Context name override (default: active context from config)",
+          "name": "TALOS_CONTEXT"
+        },
+        {
+          "description": "Comma-separated endpoint overrides",
+          "name": "TALOS_ENDPOINTS"
+        },
+        {
+          "description": "Set to \"true\" to disable all mutating tools (default: false)",
+          "name": "TALOS_MCP_READ_ONLY"
+        },
+        {
+          "description": "If set (e.g. \":8080\"), serve Streamable HTTP instead of stdio",
+          "name": "TALOS_MCP_HTTP_ADDR"
+        },
+        {
+          "description": "Required bearer token when HTTP mode is active (TALOS_MCP_HTTP_ADDR is set)",
+          "name": "TALOS_MCP_AUTH_TOKEN"
+        },
+        {
+          "description": "Comma-separated IPs, hostnames, and CIDR ranges permitted as tool targets. Unset or empty allows all nodes.",
+          "name": "TALOS_MCP_ALLOWED_NODES"
+        },
+        {
+          "description": "Comma-separated path prefixes permitted for talos_read_file and talos_list_files (e.g. /etc,/proc). Unset or empty allows all paths.",
+          "name": "TALOS_MCP_ALLOWED_PATHS"
+        },
+        {
+          "description": "Set to \"true\" to bypass upgrade path validation (default: false)",
+          "name": "TALOS_MCP_SKIP_VERSION_CHECK"
+        },
+        {
+          "description": "HTTP mode: token-bucket refill rate in requests/second (float, default: 10)",
+          "name": "TALOS_MCP_RATE_LIMIT"
+        },
+        {
+          "description": "HTTP mode: token-bucket burst capacity (int, default: 20)",
+          "name": "TALOS_MCP_RATE_BURST"
+        },
+        {
+          "description": "HTTP mode: max POST request body size in bytes (int, default: 4194304 = 4 MiB)",
+          "name": "TALOS_MCP_MAX_BODY_SIZE"
+        },
+        {
+          "description": "HTTP mode: max concurrent POST handlers; returns 503 on overload (int, default: 20)",
+          "name": "TALOS_MCP_MAX_CONCURRENT"
+        }
+      ],
+      "identifier": "talos-mcp",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.3.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "636f15ef7c",
+    "published_at": "2026-04-16T11:42:31.304773Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Nosmoht/talos-mcp-server",
+    "server_version": "2.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-16T11:42:31.304773Z"
+  },
+  "title": "Talos Linux MCP Server",
+  "type": "mcp_server",
+  "version": "2.3.1"
+}

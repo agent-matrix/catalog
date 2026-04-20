@@ -1,0 +1,71 @@
+{
+  "description": "Temporary email for AI agents: create inboxes, wait for emails, extract OTPs, verify signups.",
+  "harvest": {
+    "last_seen_at": "2026-04-20T05:24:08+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-francofuji-uncorreotemporal-mcp-server.stdio.bc74ebd41d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/francofuji/uncorreotemporal-mcp-server",
+    "homepage": "https://github.com/francofuji/uncorreotemporal-mcp-server",
+    "repository": "https://github.com/francofuji/uncorreotemporal-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "uncorreotemporal-mcp==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.francofuji/uncorreotemporal-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your UnCorreoTemporal API key (get one at https://uncorreotemporal.com). Format: uct_...",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "UCT_API_KEY"
+        },
+        {
+          "description": "API base URL. Defaults to https://uncorreotemporal.com",
+          "format": "string",
+          "name": "UCT_API_BASE"
+        },
+        {
+          "description": "Transport mode: stdio (default), streamable-http, or sse",
+          "format": "string",
+          "name": "UCT_MCP_TRANSPORT"
+        }
+      ],
+      "identifier": "uncorreotemporal-mcp",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "bc74ebd41d",
+    "published_at": "2026-04-19T00:22:01.748025Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.francofuji/uncorreotemporal-mcp-server",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-19T00:22:01.748025Z"
+  },
+  "title": "UnCorreoTemporal",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

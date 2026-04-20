@@ -1,0 +1,84 @@
+{
+  "description": "Create payment orders, checkout, subscriptions & UPI via PineLabs Plural PG gateway",
+  "harvest": {
+    "last_seen_at": "2026-04-20T05:25:21+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-plural-pinelabs-pinelabs-online-mcp.stdio.d02468c8a1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/plural-pinelabs/pinelabs-online-mcp",
+    "homepage": "https://github.com/plural-pinelabs/pinelabs-online-mcp",
+    "repository": "https://github.com/plural-pinelabs/pinelabs-online-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "name": "-i",
+            "type": "named"
+          },
+          "pinelabs/mcp:latest"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.plural-pinelabs/pinelabs-online-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Pine Labs Client ID from your merchant dashboard",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PINELABS_CLIENT_ID"
+        },
+        {
+          "description": "Pine Labs Client Secret from your merchant dashboard",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PINELABS_CLIENT_SECRET"
+        },
+        {
+          "choices": [
+            "uat",
+            "prod"
+          ],
+          "default": "uat",
+          "description": "Target environment for API calls",
+          "name": "PINELABS_ENV"
+        }
+      ],
+      "identifier": "pinelabs/mcp:latest",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "name": "-i",
+          "type": "named"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "d02468c8a1",
+    "published_at": "2026-04-18T07:31:54.385957Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.plural-pinelabs/pinelabs-online-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-18T07:31:54.385957Z"
+  },
+  "title": "PineLabs Plural PG \u2014 Payment Gateway MCP Server",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

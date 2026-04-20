@@ -1,0 +1,87 @@
+{
+  "description": "Portable agent memory anchored on Solana. Local SQLite + vector recall, open export.",
+  "harvest": {
+    "last_seen_at": "2026-04-20T05:25:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sebbsssss-clude.stdio.aec1fb41b6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sebbsssss/cludebot",
+    "homepage": "https://github.com/sebbsssss/cludebot",
+    "repository": "https://github.com/sebbsssss/cludebot"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "mcp-serve"
+          },
+          "@clude/sdk==3.0.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sebbsssss/clude",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Clude API key from https://clude.io/register",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CORTEX_API_KEY"
+        },
+        {
+          "default": "https://clude.io",
+          "description": "Clude host URL (defaults to https://clude.io)",
+          "format": "string",
+          "name": "CORTEX_HOST_URL"
+        },
+        {
+          "description": "Solana wallet public key used to sign and anchor memories (optional but recommended)",
+          "format": "string",
+          "name": "CLUDE_WALLET"
+        },
+        {
+          "description": "Human-readable name for this agent instance",
+          "format": "string",
+          "name": "CLUDE_AGENT_NAME"
+        }
+      ],
+      "identifier": "@clude/sdk",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "mcp-serve"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "3.0.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "aec1fb41b6",
+    "published_at": "2026-04-20T00:01:23.955153Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sebbsssss/clude",
+    "server_version": "3.0.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-20T00:01:23.955153Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "3.0.2"
+}

@@ -1,0 +1,85 @@
+{
+  "description": "Kibana/Elasticsearch MCP \u2014 log search, aggregations, index discovery, dashboards.",
+  "harvest": {
+    "last_seen_at": "2026-04-20T05:25:06+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mshegolev-kibana-mcp.stdio.9fcb4548fc",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/mshegolev/kibana-mcp",
+    "homepage": "https://github.com/mshegolev/kibana-mcp",
+    "repository": "https://github.com/mshegolev/kibana-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mshegolev/kibana-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Kibana base URL (e.g. https://kibana.example.com)",
+          "format": "string",
+          "isRequired": true,
+          "name": "KIBANA_URL"
+        },
+        {
+          "description": "Direct Elasticsearch URL. If unset, ES requests route through the Kibana Console proxy.",
+          "format": "string",
+          "name": "ELASTICSEARCH_URL"
+        },
+        {
+          "description": "Elasticsearch API key (ApiKey base64(id:api_key) format). Takes priority over Basic auth.",
+          "format": "string",
+          "isSecret": true,
+          "name": "KIBANA_API_KEY"
+        },
+        {
+          "description": "HTTP Basic auth username. Used only when KIBANA_API_KEY is not set.",
+          "format": "string",
+          "name": "KIBANA_USERNAME"
+        },
+        {
+          "description": "HTTP Basic auth password.",
+          "format": "string",
+          "isSecret": true,
+          "name": "KIBANA_PASSWORD"
+        },
+        {
+          "default": "true",
+          "description": "Verify SSL certificates (true/false). Set to 'false' for self-signed certs.",
+          "format": "string",
+          "name": "KIBANA_SSL_VERIFY"
+        }
+      ],
+      "identifier": "kibana-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9fcb4548fc",
+    "published_at": "2026-04-18T07:28:31.859506Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mshegolev/kibana-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-18T07:28:31.859506Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

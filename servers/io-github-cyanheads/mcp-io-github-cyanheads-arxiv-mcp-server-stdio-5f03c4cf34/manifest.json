@@ -1,0 +1,120 @@
+{
+  "description": "Search arXiv, fetch paper metadata, and read full-text content. STDIO & Streamable HTTP.",
+  "harvest": {
+    "last_seen_at": "2026-04-20T05:23:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cyanheads-arxiv-mcp-server.stdio.5f03c4cf34",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cyanheads/arxiv-mcp-server",
+    "homepage": "https://github.com/cyanheads/arxiv-mcp-server",
+    "repository": "https://github.com/cyanheads/arxiv-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "bun",
+          "@cyanheads/arxiv-mcp-server==0.1.8"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cyanheads/arxiv-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://export.arxiv.org/api",
+          "description": "arXiv API base URL.",
+          "format": "string",
+          "name": "ARXIV_API_BASE_URL"
+        },
+        {
+          "default": "3000",
+          "description": "Minimum delay between arXiv API requests (ms).",
+          "format": "string",
+          "name": "ARXIV_REQUEST_DELAY_MS"
+        },
+        {
+          "default": "30000",
+          "description": "Timeout for HTML content fetches (ms).",
+          "format": "string",
+          "name": "ARXIV_CONTENT_TIMEOUT_MS"
+        },
+        {
+          "default": "15000",
+          "description": "Timeout for API search/metadata requests (ms).",
+          "format": "string",
+          "name": "ARXIV_API_TIMEOUT_MS"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "The hostname for the HTTP server.",
+          "format": "string",
+          "name": "MCP_HTTP_HOST"
+        },
+        {
+          "default": "3010",
+          "description": "The port to run the HTTP server on.",
+          "format": "string",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "default": "/mcp",
+          "description": "The endpoint path for the MCP server.",
+          "format": "string",
+          "name": "MCP_HTTP_ENDPOINT_PATH"
+        },
+        {
+          "default": "none",
+          "description": "Authentication mode to use: 'none', 'jwt', or 'oauth'.",
+          "format": "string",
+          "name": "MCP_AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Sets the minimum log level for output (e.g., 'debug', 'info', 'warn').",
+          "format": "string",
+          "name": "MCP_LOG_LEVEL"
+        }
+      ],
+      "identifier": "@cyanheads/arxiv-mcp-server",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "start:http"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "bun",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3010/mcp"
+      },
+      "version": "0.1.8"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5f03c4cf34",
+    "published_at": "2026-04-19T22:10:40.482606Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cyanheads/arxiv-mcp-server",
+    "server_version": "0.1.8",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-19T22:10:40.482606Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.8"
+}

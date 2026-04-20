@@ -1,0 +1,82 @@
+{
+  "description": "Read-only MCP server for OpenEMIS v5 \u2014 645 resources, 24 playbooks, natural-language queries",
+  "harvest": {
+    "last_seen_at": "2026-04-20T05:25:58+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-tixuz-openemis.stdio.7b2241e13b",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/tixuz/openemis-mcp",
+    "homepage": "https://github.com/tixuz/openemis-mcp",
+    "repository": "https://github.com/tixuz/openemis-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.tixuz/openemis",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of your OpenEMIS instance (e.g., https://demo.openemis.org/core)",
+          "format": "string",
+          "isRequired": true,
+          "name": "OPENEMIS_BASE_URL"
+        },
+        {
+          "description": "OpenEMIS login username",
+          "format": "string",
+          "isRequired": true,
+          "name": "OPENEMIS_USERNAME"
+        },
+        {
+          "description": "OpenEMIS login password",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OPENEMIS_PASSWORD"
+        },
+        {
+          "description": "OpenEMIS API key (issued by the OpenEMIS admin)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OPENEMIS_API_KEY"
+        },
+        {
+          "description": "Request timeout in milliseconds (default 30000)",
+          "format": "string",
+          "name": "OPENEMIS_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "openemis-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7b2241e13b",
+    "published_at": "2026-04-19T22:56:37.430228Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.tixuz/openemis",
+    "server_version": "0.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-19T22:56:37.430228Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.1"
+}

@@ -1,0 +1,72 @@
+{
+  "description": "AIN stability & bias engine \u2014 neutrality index for finance, gaming, AI, crypto (63 tools).",
+  "harvest": {
+    "last_seen_at": "2026-04-20T05:23:36+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cicicalex-engine.stdio.bd13975668",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/cicicalex/engine-mcp",
+    "homepage": "https://github.com/cicicalex/engine-mcp",
+    "repository": "https://github.com/cicicalex/engine-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cicicalex/engine",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "User API key from zeropointlogic.io/dashboard/api-keys. Format: zpl_u_ + 48 hex chars. Service keys (zpl_s_) are rejected since v3.5.0.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ZPL_API_KEY"
+        },
+        {
+          "default": "pure",
+          "description": "pure (default) hides AIN score from the AI on text-evaluation tools to prevent observer effect. coach exposes the score.",
+          "name": "ZPL_MODE"
+        },
+        {
+          "default": "https://engine.zeropointlogic.io",
+          "description": "Engine base URL. Defaults to https://engine.zeropointlogic.io.",
+          "name": "ZPL_ENGINE_URL"
+        },
+        {
+          "description": "Only required for the 8 AI-eval tools (zpl_consistency_test, zpl_sycophancy_score, etc). Session capped at 100 Claude calls per process.",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        }
+      ],
+      "identifier": "zpl-engine-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "3.6.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "bd13975668",
+    "published_at": "2026-04-17T20:51:00.521959Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cicicalex/engine",
+    "server_version": "3.6.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-17T20:51:00.521959Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "3.6.1"
+}

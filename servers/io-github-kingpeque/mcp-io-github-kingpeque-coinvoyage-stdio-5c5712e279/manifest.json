@@ -1,0 +1,68 @@
+{
+  "description": "CoinVoyage MCP \u2014 create crypto PayOrders, webhooks, swaps across Bitcoin/Solana/EVM chains.",
+  "harvest": {
+    "last_seen_at": "2026-04-20T05:22:44+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-KingPeque-coinvoyage.stdio.5c5712e279",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/KingPeque/coinvoyage-paykit",
+    "homepage": "https://github.com/KingPeque/coinvoyage-paykit",
+    "repository": "https://github.com/KingPeque/coinvoyage-paykit"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.KingPeque/coinvoyage",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your CoinVoyage public API key. Get one at https://dashboard.coinvoyage.io (Developers section).",
+          "format": "string",
+          "isRequired": true,
+          "name": "COINVOYAGE_API_KEY"
+        },
+        {
+          "description": "Server-side API secret. Required for SALE/REFUND PayOrders, fee claims, and webhook management. Leave unset if you only need DEPOSIT (merchant invoice) flows.",
+          "format": "string",
+          "isSecret": true,
+          "name": "COINVOYAGE_API_SECRET"
+        },
+        {
+          "description": "Override the API base URL. Defaults to https://api.coinvoyage.io.",
+          "format": "string",
+          "name": "COINVOYAGE_API_BASE_URL"
+        }
+      ],
+      "identifier": "@kingpeque/coinvoyage-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5c5712e279",
+    "published_at": "2026-04-17T07:45:38.455297Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.KingPeque/coinvoyage",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-17T07:45:38.455297Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

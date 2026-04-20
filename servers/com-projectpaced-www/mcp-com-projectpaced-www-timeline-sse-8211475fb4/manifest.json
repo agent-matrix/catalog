@@ -1,0 +1,57 @@
+{
+  "description": "Generate and manage AI-powered project timelines and Gantt charts from plain-text descriptions.",
+  "harvest": {
+    "last_seen_at": "2026-04-20T05:21:57+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-projectpaced-www-timeline.sse.8211475fb4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/suleman-k/Project-Paced-v2",
+    "homepage": "https://github.com/suleman-k/Project-Paced-v2",
+    "repository": "https://github.com/suleman-k/Project-Paced-v2"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://mcp.projectpaced.com/mcp"
+    }
+  },
+  "name": "com.projectpaced.www/timeline",
+  "provenance": {
+    "identity_key": "8211475fb4",
+    "published_at": "2026-04-15T16:56:14.163684Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.projectpaced.www/timeline",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-15T16:56:14.163684Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "API key from Profile \u2192 API Access at app.projectpaced.com. Format: Bearer pp_<key>",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {api_key}",
+          "variables": {
+            "api_key": {
+              "description": "Your Project Paced API key (starts with pp_). Generate one at app.projectpaced.com under Profile \u2192 API Access.",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://mcp.projectpaced.com/mcp"
+    }
+  ],
+  "title": "Project Paced",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

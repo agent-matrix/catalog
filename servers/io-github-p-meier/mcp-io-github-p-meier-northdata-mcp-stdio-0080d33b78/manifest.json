@@ -1,0 +1,77 @@
+{
+  "description": "NorthData API for German company, owner, and financial data \u2014 with a built-in credit guard.",
+  "harvest": {
+    "last_seen_at": "2026-04-20T05:25:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-p-meier-northdata-mcp.stdio.0080d33b78",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/p-meier/northdata-connectors",
+    "homepage": "https://github.com/p-meier/northdata-connectors",
+    "repository": "https://github.com/p-meier/northdata-connectors"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "northdata-mcp==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.p-meier/northdata-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your NorthData API key. Obtain one at https://www.northdata.com",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "NORTHDATA_API_KEY"
+        },
+        {
+          "description": "Power-search 'limit' above this requires approve_high_cost=true. Default: 25.",
+          "format": "number",
+          "name": "NORTHDATA_APPROVAL_THRESHOLD"
+        },
+        {
+          "description": "Hard ceiling for power-search 'limit'. Default: 100. Flag-immune.",
+          "format": "number",
+          "name": "NORTHDATA_ABSOLUTE_MAX"
+        },
+        {
+          "description": "Path to the local credit log file. Default: ~/.northdata/credits.jsonl",
+          "format": "string",
+          "name": "NORTHDATA_CREDIT_LOG"
+        }
+      ],
+      "identifier": "northdata-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0080d33b78",
+    "published_at": "2026-04-18T12:22:08.053227Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.p-meier/northdata-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-18T12:22:08.053227Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

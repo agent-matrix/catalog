@@ -1,0 +1,84 @@
+{
+  "description": "Xenarch \u2014 x402 MCP server for AI agent payments. Non-custodial, USDC on Base L2.",
+  "harvest": {
+    "last_seen_at": "2026-04-20T05:26:11+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-xenarch-ai-xenarch-mcp.stdio.bc0b547f6a",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/xenarch-ai/xenarch-mcp",
+    "homepage": "https://github.com/xenarch-ai/xenarch-mcp",
+    "repository": "https://github.com/xenarch-ai/xenarch-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.xenarch-ai/xenarch-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Wallet private key (hex, 0x-prefixed). Auto-generates on first run if omitted.",
+          "format": "string",
+          "isSecret": true,
+          "name": "XENARCH_PRIVATE_KEY"
+        },
+        {
+          "description": "Base RPC endpoint URL",
+          "format": "string",
+          "name": "XENARCH_RPC_URL"
+        },
+        {
+          "description": "Network for payments (base or base-sepolia)",
+          "format": "string",
+          "name": "XENARCH_NETWORK"
+        },
+        {
+          "description": "Max USD to auto-approve without prompting",
+          "format": "string",
+          "name": "XENARCH_AUTO_APPROVE_MAX"
+        },
+        {
+          "description": "Port for HTTP server (default: 3000)",
+          "format": "string",
+          "name": "PORT"
+        },
+        {
+          "description": "Set to 'http' to enable HTTP transport",
+          "format": "string",
+          "isRequired": true,
+          "name": "TRANSPORT"
+        }
+      ],
+      "identifier": "@xenarch/agent-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "streamable-http",
+        "url": "https://mcp.xenarch.dev/mcp"
+      },
+      "version": "0.1.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "bc0b547f6a",
+    "published_at": "2026-04-16T03:38:40.189654Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.xenarch-ai/xenarch-mcp",
+    "server_version": "0.1.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-16T03:38:40.189654Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.5"
+}

@@ -1,0 +1,70 @@
+{
+  "description": "MCP server for structured methods extraction + reproducibility heuristics on academic papers.",
+  "harvest": {
+    "last_seen_at": "2026-04-20T05:22:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-FlynnLachendro-methods-mcp.stdio.b2e959f788",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/FlynnLachendro/methods-mcp",
+    "homepage": "https://github.com/FlynnLachendro/methods-mcp",
+    "repository": "https://github.com/FlynnLachendro/methods-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "methods-mcp==0.1.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.FlynnLachendro/methods-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Required for LLM-driven extraction tools (extract_methods, summarize_paper, methods_repro_review).",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        },
+        {
+          "description": "Optional. Raises the GitHub REST API rate limit used by reproducibility assessment.",
+          "isSecret": true,
+          "name": "GITHUB_TOKEN"
+        },
+        {
+          "description": "Override the default Claude model (default: claude-sonnet-4-6).",
+          "name": "METHODS_MCP_MODEL"
+        }
+      ],
+      "identifier": "methods-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b2e959f788",
+    "published_at": "2026-04-15T22:46:49.198496Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.FlynnLachendro/methods-mcp",
+    "server_version": "0.1.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-15T22:46:49.198496Z"
+  },
+  "title": "methods-mcp",
+  "type": "mcp_server",
+  "version": "0.1.6"
+}

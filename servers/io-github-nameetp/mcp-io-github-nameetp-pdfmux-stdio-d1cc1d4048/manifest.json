@@ -1,0 +1,72 @@
+{
+  "description": "PDF-to-Markdown router. Per-page backend selection + confidence scoring for RAG ingestion.",
+  "harvest": {
+    "last_seen_at": "2026-04-20T05:22:50+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-NameetP-pdfmux.stdio.d1cc1d4048",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/NameetP/pdfmux",
+    "homepage": "https://github.com/NameetP/pdfmux",
+    "repository": "https://github.com/NameetP/pdfmux"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "pdfmux",
+          {
+            "isRequired": true,
+            "type": "positional",
+            "value": "serve"
+          },
+          "pdfmux==1.5.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.NameetP/pdfmux",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional Google AI API key. Enables the paid Gemini Flash fallback for pages where all local backends report low confidence. pdfmux runs 100% locally without this.",
+          "format": "string",
+          "isSecret": true,
+          "name": "GEMINI_API_KEY"
+        }
+      ],
+      "identifier": "pdfmux",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "isRequired": true,
+          "type": "positional",
+          "value": "serve"
+        }
+      ],
+      "runtimeHint": "pdfmux",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.5.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d1cc1d4048",
+    "published_at": "2026-04-16T19:40:49.470351Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.NameetP/pdfmux",
+    "server_version": "1.5.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-16T19:40:49.470351Z"
+  },
+  "title": "pdfmux",
+  "type": "mcp_server",
+  "version": "1.5.1"
+}

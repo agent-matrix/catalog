@@ -1,0 +1,79 @@
+{
+  "description": "Dokploy MCP server: manage apps, Docker Compose, databases, domains, backups, and servers.",
+  "harvest": {
+    "last_seen_at": "2026-04-20T05:24:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-jordanburke-dokploy-mcp-server.stdio.61cdc7460f",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/sapientsai/dokploy-mcp-server",
+    "homepage": "https://github.com/sapientsai/dokploy-mcp-server",
+    "repository": "https://github.com/sapientsai/dokploy-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.jordanburke/dokploy-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Dokploy instance URL (e.g., https://dokploy.example.com)",
+          "format": "string",
+          "isRequired": true,
+          "name": "DOKPLOY_URL"
+        },
+        {
+          "description": "Dokploy API key (generate in Settings > API Keys)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DOKPLOY_API_KEY"
+        },
+        {
+          "description": "Transport: 'stdio' (default) or 'httpStream' for remote/Docker deployments",
+          "format": "string",
+          "name": "TRANSPORT_TYPE"
+        },
+        {
+          "description": "HTTP port for httpStream transport (default 3000)",
+          "format": "string",
+          "name": "PORT"
+        },
+        {
+          "description": "HTTP host for httpStream transport (default 0.0.0.0)",
+          "format": "string",
+          "name": "HOST"
+        }
+      ],
+      "identifier": "dokploy-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.6.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "61cdc7460f",
+    "published_at": "2026-04-19T21:35:31.34343Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.jordanburke/dokploy-mcp-server",
+    "server_version": "1.6.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-19T21:35:31.34343Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.6.2"
+}

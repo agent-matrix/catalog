@@ -1,0 +1,88 @@
+{
+  "description": "Runtime security for AI agent commerce. CLI + MCP server blocks hallucinated purchases.",
+  "harvest": {
+    "last_seen_at": "2026-04-20T05:22:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-100xPercent-pop-pay.stdio.790d7c17c6",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/100xPercent/pop-pay",
+    "homepage": "https://github.com/100xPercent/pop-pay",
+    "repository": "https://github.com/100xPercent/pop-pay"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.100xPercent/pop-pay",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "http://localhost:9222",
+          "description": "Chrome DevTools Protocol endpoint for credential injection (default: http://localhost:9222)",
+          "format": "string",
+          "name": "POP_CDP_URL"
+        },
+        {
+          "default": "[\"aws\",\"cloudflare\"]",
+          "description": "JSON array of allowed vendor categories (e.g. '[\"aws\",\"cloudflare\"]')",
+          "format": "string",
+          "name": "POP_ALLOWED_CATEGORIES"
+        },
+        {
+          "default": "100.0",
+          "description": "Per-transaction spending limit in USD",
+          "format": "string",
+          "name": "POP_MAX_PER_TX"
+        },
+        {
+          "default": "500.0",
+          "description": "Daily spending limit in USD",
+          "format": "string",
+          "name": "POP_MAX_DAILY"
+        },
+        {
+          "default": "keyword",
+          "description": "Guardrail engine: 'keyword' (offline, default) or 'llm' (requires API key)",
+          "format": "string",
+          "name": "POP_GUARDRAIL_ENGINE"
+        }
+      ],
+      "identifier": "pop-pay",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "isRequired": true,
+          "type": "positional",
+          "value": "launch-mcp"
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "790d7c17c6",
+    "published_at": "2026-04-13T20:16:42.562623Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.100xPercent/pop-pay",
+    "server_version": "0.5.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-13T20:16:42.562623Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.5.5"
+}

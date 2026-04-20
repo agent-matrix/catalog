@@ -1,0 +1,159 @@
+{
+  "description": "MCP server giving AI agents eyes and hands inside Android devices via ADB",
+  "harvest": {
+    "last_seen_at": "2026-04-20T05:22:51+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Neverlow512-agent-droid-bridge.stdio.01546c23e3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Neverlow512/agent-droid-bridge",
+    "homepage": "https://github.com/Neverlow512/agent-droid-bridge",
+    "repository": "https://github.com/Neverlow512/agent-droid-bridge"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "agent-droid-bridge==0.6.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Neverlow512/agent-droid-bridge",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "choices": [
+            "unrestricted",
+            "restricted"
+          ],
+          "default": "unrestricted",
+          "description": "Security mode. 'unrestricted' allows all shell commands with an optional denylist. 'restricted' allows only commands in ADB_SHELL_ALLOWLIST.",
+          "name": "ADB_EXECUTION_MODE"
+        },
+        {
+          "default": "true",
+          "description": "Set to 'false' to block all adb shell commands regardless of execution mode.",
+          "format": "boolean",
+          "name": "ADB_ALLOW_SHELL"
+        },
+        {
+          "default": "adb",
+          "description": "Path to the ADB binary. Use a full path if adb is not on your system PATH.",
+          "name": "ADB_PATH",
+          "placeholder": "/usr/bin/adb or C:\\platform-tools\\adb.exe"
+        },
+        {
+          "description": "Comma-separated list of extra tool packs to load. Set to 'app_manager' to enable 9 additional app management tools.",
+          "name": "ADB_EXTRA_TOOL_PACKS",
+          "placeholder": "app_manager"
+        },
+        {
+          "description": "Comma-separated list of tool names to hide from the agent at startup.",
+          "name": "ADB_DENIED_TOOLS",
+          "placeholder": "execute_adb_command,get_ui_hierarchy"
+        },
+        {
+          "description": "Comma-separated list of shell commands permitted in restricted mode. Empty blocks all shell commands.",
+          "name": "ADB_SHELL_ALLOWLIST",
+          "placeholder": "dumpsys,pm,am"
+        },
+        {
+          "description": "Comma-separated list of shell commands blocked in unrestricted mode.",
+          "name": "ADB_SHELL_DENYLIST",
+          "placeholder": "rm,reboot,su"
+        },
+        {
+          "default": "false",
+          "description": "Set to 'true' to enable session logging. Requires MCP_LOG_DIR.",
+          "format": "boolean",
+          "name": "MCP_LOG_ENABLED"
+        },
+        {
+          "description": "Absolute path to the directory where session logs are written. Required when MCP_LOG_ENABLED is true.",
+          "format": "filepath",
+          "name": "MCP_LOG_DIR",
+          "placeholder": "/home/user/logs/agent-droid-bridge"
+        },
+        {
+          "choices": [
+            "DEBUG",
+            "INFO",
+            "WARNING",
+            "ERROR",
+            "CRITICAL"
+          ],
+          "default": "INFO",
+          "description": "Server process log level.",
+          "name": "ADB_LOG_LEVEL"
+        },
+        {
+          "default": "30",
+          "description": "Maximum seconds to wait for any ADB command.",
+          "format": "number",
+          "name": "ADB_COMMAND_TIMEOUT"
+        },
+        {
+          "default": "60",
+          "description": "Maximum seconds to wait for a screenshot capture.",
+          "format": "number",
+          "name": "ADB_SCREENSHOT_TIMEOUT"
+        },
+        {
+          "default": "10",
+          "description": "Default timeout in seconds for detect_ui_change.",
+          "format": "number",
+          "name": "ADB_UI_CHANGE_TIMEOUT"
+        },
+        {
+          "default": "0.5",
+          "description": "How often in seconds detect_ui_change polls the UI hierarchy.",
+          "format": "number",
+          "name": "ADB_UI_CHANGE_POLL_INTERVAL"
+        },
+        {
+          "default": "10",
+          "description": "Maximum seconds to wait for aapt dump badging, used by the app_manager pack.",
+          "format": "number",
+          "name": "ADB_AAPT_TIMEOUT"
+        },
+        {
+          "choices": [
+            "env",
+            "yaml"
+          ],
+          "default": "env",
+          "description": "Set to 'yaml' to load configuration from adb_config.yaml instead of environment variables.",
+          "name": "ADB_CONFIG_SOURCE"
+        }
+      ],
+      "identifier": "agent-droid-bridge",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.6.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "01546c23e3",
+    "published_at": "2026-04-15T20:05:19.844775Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Neverlow512/agent-droid-bridge",
+    "server_version": "0.6.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-15T20:05:19.844775Z"
+  },
+  "title": "Agent Droid Bridge",
+  "type": "mcp_server",
+  "version": "0.6.1"
+}
