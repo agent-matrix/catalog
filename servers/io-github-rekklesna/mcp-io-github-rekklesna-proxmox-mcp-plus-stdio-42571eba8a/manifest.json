@@ -1,0 +1,110 @@
+{
+  "description": "Proxmox VE MCP server for VMs, LXCs, snapshots, backups, storage, and cluster operations.",
+  "harvest": {
+    "last_seen_at": "2026-04-27T05:34:34+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-RekklesNA-proxmox-mcp-plus.stdio.42571eba8a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/RekklesNA/ProxmoxMCP-Plus",
+    "homepage": "https://github.com/RekklesNA/ProxmoxMCP-Plus",
+    "repository": "https://github.com/RekklesNA/ProxmoxMCP-Plus"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "proxmox-mcp-plus==0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.RekklesNA/proxmox-mcp-plus",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional path to a JSON config file. If set, file config is used before environment variable fallback.",
+          "format": "filepath",
+          "name": "PROXMOX_MCP_CONFIG"
+        },
+        {
+          "description": "Hostname or IP address of the Proxmox VE API endpoint.",
+          "format": "string",
+          "isRequired": true,
+          "name": "PROXMOX_HOST"
+        },
+        {
+          "description": "Proxmox username with realm, for example root@pam.",
+          "format": "string",
+          "isRequired": true,
+          "name": "PROXMOX_USER"
+        },
+        {
+          "description": "Name of the Proxmox API token.",
+          "format": "string",
+          "isRequired": true,
+          "name": "PROXMOX_TOKEN_NAME"
+        },
+        {
+          "description": "Secret value of the Proxmox API token.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PROXMOX_TOKEN_VALUE"
+        },
+        {
+          "description": "Proxmox API port. Defaults to 8006.",
+          "format": "string",
+          "name": "PROXMOX_PORT"
+        },
+        {
+          "description": "Set to true to verify TLS certificates, or false for self-signed lab environments.",
+          "format": "string",
+          "name": "PROXMOX_VERIFY_SSL"
+        },
+        {
+          "description": "Set to true when using verify_ssl=false in a self-signed lab environment.",
+          "format": "string",
+          "name": "PROXMOX_DEV_MODE"
+        },
+        {
+          "description": "Proxmox service type. Defaults to PVE.",
+          "format": "string",
+          "name": "PROXMOX_SERVICE"
+        },
+        {
+          "description": "Server log verbosity. Defaults to INFO.",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "proxmox-mcp-plus",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "42571eba8a",
+    "published_at": "2026-04-24T11:59:22.691921Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.RekklesNA/proxmox-mcp-plus",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-24T11:59:22.691921Z"
+  },
+  "title": "ProxmoxMCP-Plus",
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

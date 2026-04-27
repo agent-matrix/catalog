@@ -1,0 +1,85 @@
+{
+  "description": "MCP server for YouTube creator-ops with a ComfyUI bridge for AI thumbnail generation.",
+  "harvest": {
+    "last_seen_at": "2026-04-27T05:36:45+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-miller-joe-youtube-mcp.stdio.16673c5805",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/miller-joe/youtube-mcp",
+    "homepage": "https://github.com/miller-joe/youtube-mcp",
+    "repository": "https://github.com/miller-joe/youtube-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.miller-joe/youtube-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Google OAuth 2.0 Client ID (from Google Cloud Console, Desktop app type). See README for setup.",
+          "format": "string",
+          "isRequired": true,
+          "name": "YOUTUBE_CLIENT_ID"
+        },
+        {
+          "description": "Google OAuth 2.0 Client Secret. Pair with YOUTUBE_CLIENT_ID.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "YOUTUBE_CLIENT_SECRET"
+        },
+        {
+          "description": "Alternative to CLIENT_ID/CLIENT_SECRET: path to the JSON credentials file downloaded from Google Cloud.",
+          "format": "string",
+          "name": "YOUTUBE_CLIENT_SECRET_FILE"
+        },
+        {
+          "description": "Refresh token storage path. Default: ~/.config/youtube-mcp/token.json",
+          "format": "string",
+          "name": "YOUTUBE_TOKEN_FILE"
+        },
+        {
+          "description": "ComfyUI HTTP URL for the generate_and_set_thumbnail bridge tool. When unset, that tool is disabled.",
+          "format": "string",
+          "name": "COMFYUI_URL"
+        },
+        {
+          "description": "Default ComfyUI checkpoint filename for bridge tool (default: sd_xl_base_1.0.safetensors)",
+          "format": "string",
+          "name": "COMFYUI_DEFAULT_CKPT"
+        }
+      ],
+      "identifier": "@miller-joe/youtube-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:9120/mcp"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "16673c5805",
+    "published_at": "2026-04-20T08:27:51.477068Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.miller-joe/youtube-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-20T08:27:51.477068Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

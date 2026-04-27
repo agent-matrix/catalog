@@ -1,0 +1,85 @@
+{
+  "description": "Read-only WHOOP v2 data for MCP clients, with local SQLite cache and CSV/JSONL/Parquet exports.",
+  "harvest": {
+    "last_seen_at": "2026-04-27T05:33:59+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-AshwanthramKL-whoop-mcp.stdio.06a8ce7c78",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/AshwanthramKL/whoop-mcp",
+    "homepage": "https://github.com/AshwanthramKL/whoop-mcp",
+    "repository": "https://github.com/AshwanthramKL/whoop-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "whoop-mcp==0.8.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.AshwanthramKL/whoop-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Client ID from your WHOOP developer app (https://developer-dashboard.whoop.com/apps/create).",
+          "isRequired": true,
+          "name": "WHOOP_CLIENT_ID"
+        },
+        {
+          "description": "Client secret from your WHOOP developer app. Used for OAuth token refresh.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "WHOOP_CLIENT_SECRET"
+        },
+        {
+          "default": "http://localhost:8000/callback",
+          "description": "OAuth redirect URI. Defaults to http://localhost:8000/callback \u2014 only change if you registered a different URI.",
+          "name": "WHOOP_REDIRECT_URI"
+        },
+        {
+          "default": "INFO",
+          "description": "Log level (DEBUG / INFO / WARNING / ERROR). Default INFO.",
+          "name": "WHOOP_LOG_LEVEL"
+        },
+        {
+          "description": "Path to the rotating log file. Set to empty string to disable file logging. Default ~/.whoop-mcp-server/logs/whoop-mcp.log.",
+          "name": "WHOOP_LOG_FILE"
+        },
+        {
+          "default": "true",
+          "description": "Structured JSON logs (true) vs human-readable (false). Default true.",
+          "name": "WHOOP_LOG_JSON"
+        }
+      ],
+      "identifier": "whoop-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.8.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "06a8ce7c78",
+    "published_at": "2026-04-21T23:31:23.831999Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.AshwanthramKL/whoop-mcp",
+    "server_version": "0.8.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-21T23:31:23.831999Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.8.3"
+}

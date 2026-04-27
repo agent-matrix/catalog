@@ -1,0 +1,79 @@
+{
+  "description": "MCP server for querying Factry Historian.",
+  "harvest": {
+    "last_seen_at": "2026-04-27T05:33:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.cloud-factry-portal-historian-mcp-server.stdio.0fe9e626e4",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "cloud.factry.portal/historian-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "JWT token used to authenticate against Factry Historian API",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "FACTRY_HISTORIAN_API_TOKEN"
+        },
+        {
+          "description": "Base URL to the Factry Historian API",
+          "format": "string",
+          "isRequired": true,
+          "name": "FACTRY_HISTORIAN_API_URL",
+          "placeholder": "https://historian.example.com/api"
+        },
+        {
+          "description": "Organization UUID used for historian queries",
+          "format": "string",
+          "isRequired": true,
+          "name": "FACTRY_HISTORIAN_ORGANIZATION_UUID",
+          "placeholder": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+        },
+        {
+          "description": "Optional Grafana base URL for generated explore links",
+          "format": "string",
+          "name": "GRAFANA_URL",
+          "placeholder": "https://your-grafana.example.com"
+        },
+        {
+          "description": "Optional Grafana API key",
+          "format": "string",
+          "isSecret": true,
+          "name": "GRAFANA_API_KEY"
+        }
+      ],
+      "identifier": "docker.io/factry/mcp-server:0.0.3",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "0fe9e626e4",
+    "published_at": "2026-04-22T09:44:42.852684Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "cloud.factry.portal/historian-mcp-server",
+    "server_version": "0.0.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-22T09:44:42.852684Z"
+  },
+  "title": "Factry Historian MCP",
+  "type": "mcp_server",
+  "version": "0.0.3"
+}

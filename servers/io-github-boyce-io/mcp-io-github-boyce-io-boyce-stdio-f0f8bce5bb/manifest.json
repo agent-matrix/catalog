@@ -1,0 +1,64 @@
+{
+  "description": "Deterministic SQL compiler for AI agents. Your agent stops guessing SQL.",
+  "harvest": {
+    "last_seen_at": "2026-04-27T05:35:07+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-boyce-io-boyce.stdio.f0f8bce5bb",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/boyce-io/boyce",
+    "homepage": "https://github.com/boyce-io/boyce",
+    "repository": "https://github.com/boyce-io/boyce"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.boyce-io/boyce",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "PostgreSQL or Redshift connection string. Optional \u2014 tools work without live DB; required for live profiling and EXPLAIN pre-flight.",
+          "name": "BOYCE_DB_URL"
+        },
+        {
+          "description": "LLM provider for the NL\u2192StructuredFilter planner (anthropic, openai). MCP hosts using their own model should not set this \u2014 the host's model does the reasoning and Boyce receives a pre-built StructuredFilter.",
+          "name": "BOYCE_PROVIDER"
+        },
+        {
+          "description": "Required only when BOYCE_PROVIDER=anthropic and the host does not supply its own model. MCP hosts (Claude Desktop, Cursor, Claude Code, Codex, Cline, Windsurf, JetBrains) do not need this.",
+          "name": "ANTHROPIC_API_KEY"
+        }
+      ],
+      "identifier": "boyce",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f0f8bce5bb",
+    "published_at": "2026-04-22T19:41:33.981079Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.boyce-io/boyce",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-22T19:41:33.981079Z"
+  },
+  "title": "Boyce",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

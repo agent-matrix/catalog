@@ -1,0 +1,81 @@
+{
+  "description": "Local-first MCP server for Claude/Codex project wiki and graph workflows",
+  "harvest": {
+    "last_seen_at": "2026-04-27T05:37:36+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-seojeom-seojeom-mcp.stdio.bd3728dc9f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/seojeom/seojeom-mcp",
+    "homepage": "https://github.com/seojeom/seojeom-mcp",
+    "repository": "https://github.com/seojeom/seojeom-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@seojeom/mcp-server==0.2.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.seojeom/seojeom-mcp",
+  "packages": [
+    {
+      "identifier": "@seojeom/mcp-server",
+      "packageArguments": [
+        {
+          "description": "Absolute path to the user's project directory (contains wiki/ and .seojeom/).",
+          "isRequired": true,
+          "name": "--project-root",
+          "type": "named",
+          "valueHint": "path"
+        },
+        {
+          "description": "Stable project identifier used in graph/wiki file paths.",
+          "isRequired": true,
+          "name": "--project-id",
+          "type": "named",
+          "valueHint": "string"
+        },
+        {
+          "default": "local-snapshot",
+          "description": "Graph authority mode. Use local-snapshot for fully local operation.",
+          "name": "--graph-authority",
+          "type": "named"
+        },
+        {
+          "default": "prompt",
+          "description": "How mutations are approved. 'prompt' asks the user; 'always' auto-approves.",
+          "name": "--approval-mode",
+          "type": "named"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "bd3728dc9f",
+    "published_at": "2026-04-23T06:54:27.687205Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.seojeom/seojeom-mcp",
+    "server_version": "0.2.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-23T06:54:27.687205Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.3"
+}

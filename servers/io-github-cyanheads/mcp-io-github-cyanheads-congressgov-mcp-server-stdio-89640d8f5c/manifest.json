@@ -1,0 +1,102 @@
+{
+  "description": "Access U.S. congressional data - bills, votes, members, committees - via MCP.",
+  "harvest": {
+    "last_seen_at": "2026-04-27T05:35:23+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cyanheads-congressgov-mcp-server.stdio.89640d8f5c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cyanheads/congressgov-mcp-server",
+    "homepage": "https://github.com/cyanheads/congressgov-mcp-server",
+    "repository": "https://github.com/cyanheads/congressgov-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "bun",
+          "@cyanheads/congressgov-mcp-server==0.3.13"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cyanheads/congressgov-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API key from api.data.gov for the Congress.gov API.",
+          "format": "string",
+          "isRequired": true,
+          "name": "CONGRESS_API_KEY"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "The hostname for the HTTP server.",
+          "format": "string",
+          "name": "MCP_HTTP_HOST"
+        },
+        {
+          "default": "3010",
+          "description": "The port to run the HTTP server on.",
+          "format": "string",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "default": "/mcp",
+          "description": "The endpoint path for the MCP server.",
+          "format": "string",
+          "name": "MCP_HTTP_ENDPOINT_PATH"
+        },
+        {
+          "default": "none",
+          "description": "Authentication mode to use: 'none', 'jwt', or 'oauth'.",
+          "format": "string",
+          "name": "MCP_AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Sets the minimum log level for output (e.g., 'debug', 'info', 'warn').",
+          "format": "string",
+          "name": "MCP_LOG_LEVEL"
+        }
+      ],
+      "identifier": "@cyanheads/congressgov-mcp-server",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "start:http"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "bun",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3010/mcp"
+      },
+      "version": "0.3.13"
+    }
+  ],
+  "provenance": {
+    "identity_key": "89640d8f5c",
+    "published_at": "2026-04-21T02:46:49.866401Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cyanheads/congressgov-mcp-server",
+    "server_version": "0.3.13",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-21T02:46:49.866401Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.13"
+}

@@ -1,0 +1,88 @@
+{
+  "description": "IBM Maximo MCP server: assets, work orders, inventory, purchasing, labor, OSLC tools.",
+  "harvest": {
+    "last_seen_at": "2026-04-27T05:34:26+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-MaxisTechnology-Dev-maximo-mcp.stdio.78aee70325",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/MaxisTechnology-Dev/Maximo-MCP",
+    "homepage": "https://github.com/MaxisTechnology-Dev/Maximo-MCP",
+    "repository": "https://github.com/MaxisTechnology-Dev/Maximo-MCP"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "maximo-enterprise-mcp==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.MaxisTechnology-Dev/maximo-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Maximo OSLC base URL (e.g. https://maximo.example.com/maximo/oslc)",
+          "isRequired": true,
+          "name": "MAXIMO_URL"
+        },
+        {
+          "description": "Maximo host base URL (e.g. https://maximo.example.com)",
+          "isRequired": true,
+          "name": "MAXIMO_HOST"
+        },
+        {
+          "description": "Authentication mode: basic | apikey | oauth",
+          "isRequired": true,
+          "name": "AUTH_MODE"
+        },
+        {
+          "description": "Maximo username (when AUTH_MODE=basic)",
+          "name": "MAXIMO_USERNAME"
+        },
+        {
+          "description": "Maximo password (when AUTH_MODE=basic)",
+          "isSecret": true,
+          "name": "MAXIMO_PASSWORD"
+        },
+        {
+          "description": "Maximo API key (when AUTH_MODE=apikey)",
+          "isSecret": true,
+          "name": "MAXIMO_API_KEY"
+        },
+        {
+          "description": "RBAC role for the session: readonly | technician | supervisor | manager | admin",
+          "name": "CURRENT_USER_ROLE"
+        }
+      ],
+      "identifier": "maximo-enterprise-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "78aee70325",
+    "published_at": "2026-04-24T11:08:32.345082Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.MaxisTechnology-Dev/maximo-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-24T11:08:32.345082Z"
+  },
+  "title": "Maximo Enterprise MCP",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

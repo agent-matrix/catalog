@@ -1,0 +1,156 @@
+{
+  "description": "MCP server for AI image generation via OpenAI, Stable Diffusion (SD WebUI), or placeholders.",
+  "harvest": {
+    "last_seen_at": "2026-04-27T05:37:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-pvliesdonk-image-generation-mcp.stdio.d50ccb0ae5",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/pvliesdonk/image-generation-mcp",
+    "homepage": "https://github.com/pvliesdonk/image-generation-mcp",
+    "repository": "https://github.com/pvliesdonk/image-generation-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "image-generation-mcp==1.8.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.pvliesdonk/image-generation-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "true",
+          "description": "When true, write-tagged tools (generate_image) are hidden. Set to false to enable image generation.",
+          "format": "boolean",
+          "name": "IMAGE_GENERATION_MCP_READ_ONLY"
+        },
+        {
+          "description": "Directory for saved generated images. Created automatically on first use.",
+          "format": "filepath",
+          "name": "IMAGE_GENERATION_MCP_SCRATCH_DIR"
+        },
+        {
+          "default": "auto",
+          "description": "Default provider selection: auto (keyword-based), openai, sd_webui, or placeholder. Deprecated alias 'a1111' is also accepted.",
+          "name": "IMAGE_GENERATION_MCP_DEFAULT_PROVIDER"
+        },
+        {
+          "description": "OpenAI API key. Enables the OpenAI provider (gpt-image-1, dall-e-3) when set.",
+          "isSecret": true,
+          "name": "IMAGE_GENERATION_MCP_OPENAI_API_KEY"
+        },
+        {
+          "description": "SD WebUI base URL (e.g. http://localhost:7860). Enables the SD WebUI provider when set.",
+          "name": "IMAGE_GENERATION_MCP_SD_WEBUI_HOST"
+        },
+        {
+          "description": "SD WebUI checkpoint name for model-aware preset detection (SD 1.5 vs SDXL vs Lightning vs Flux).",
+          "name": "IMAGE_GENERATION_MCP_SD_WEBUI_MODEL"
+        },
+        {
+          "description": "Deprecated \u2014 use SD_WEBUI_HOST instead. Accepted as fallback.",
+          "name": "IMAGE_GENERATION_MCP_A1111_HOST"
+        },
+        {
+          "description": "Deprecated \u2014 use SD_WEBUI_MODEL instead. Accepted as fallback.",
+          "name": "IMAGE_GENERATION_MCP_A1111_MODEL"
+        },
+        {
+          "choices": [
+            "DEBUG",
+            "INFO",
+            "WARNING",
+            "ERROR"
+          ],
+          "default": "INFO",
+          "description": "Log level for FastMCP internals; app loggers default to INFO, -v overrides both to DEBUG.",
+          "name": "FASTMCP_LOG_LEVEL"
+        },
+        {
+          "default": "image-generation-mcp",
+          "description": "Server name shown to MCP clients in the initialization response.",
+          "name": "IMAGE_GENERATION_MCP_SERVER_NAME"
+        },
+        {
+          "description": "System-level instructions injected into LLM context.",
+          "name": "IMAGE_GENERATION_MCP_INSTRUCTIONS"
+        },
+        {
+          "description": "Static bearer token for HTTP authentication.",
+          "isSecret": true,
+          "name": "IMAGE_GENERATION_MCP_BEARER_TOKEN"
+        },
+        {
+          "description": "OIDC auth mode: 'remote' (JWKS validation) or 'oidc-proxy' (OAuth proxy). Auto-detected if not set.",
+          "name": "IMAGE_GENERATION_MCP_AUTH_MODE"
+        },
+        {
+          "description": "Public base URL for OIDC redirects (e.g. https://mcp.example.com). Required for OIDC.",
+          "name": "IMAGE_GENERATION_MCP_BASE_URL"
+        },
+        {
+          "description": "OIDC discovery endpoint URL. Required for OIDC.",
+          "name": "IMAGE_GENERATION_MCP_OIDC_CONFIG_URL"
+        },
+        {
+          "description": "OIDC client ID. Required for OIDC.",
+          "name": "IMAGE_GENERATION_MCP_OIDC_CLIENT_ID"
+        },
+        {
+          "description": "OIDC client secret. Required for OIDC.",
+          "isSecret": true,
+          "name": "IMAGE_GENERATION_MCP_OIDC_CLIENT_SECRET"
+        },
+        {
+          "description": "Signing key for OIDC session JWTs (critical on Linux/Docker).",
+          "isSecret": true,
+          "name": "IMAGE_GENERATION_MCP_OIDC_JWT_SIGNING_KEY"
+        },
+        {
+          "description": "Expected JWT audience claim. Leave unset if your provider does not set one.",
+          "name": "IMAGE_GENERATION_MCP_OIDC_AUDIENCE"
+        },
+        {
+          "description": "Comma-separated required OIDC scopes (default: openid for oidc-proxy mode, none for remote mode).",
+          "name": "IMAGE_GENERATION_MCP_OIDC_REQUIRED_SCOPES"
+        },
+        {
+          "default": "false",
+          "description": "Verify access token JWT instead of id_token.",
+          "format": "boolean",
+          "name": "IMAGE_GENERATION_MCP_OIDC_VERIFY_ACCESS_TOKEN"
+        }
+      ],
+      "identifier": "image-generation-mcp",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.8.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d50ccb0ae5",
+    "published_at": "2026-04-21T14:18:53.707263Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.pvliesdonk/image-generation-mcp",
+    "server_version": "1.8.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-21T14:18:53.707263Z"
+  },
+  "title": "Image Generation MCP Server",
+  "type": "mcp_server",
+  "version": "1.8.0"
+}

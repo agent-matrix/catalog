@@ -1,0 +1,147 @@
+{
+  "description": "Obsidian MCP server: semantic search, knowledge graph, and vault editing. No plugin required.",
+  "harvest": {
+    "last_seen_at": "2026-04-27T05:37:47+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sweir1-obsidian-brain.stdio.ed87249586",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sweir1/obsidian-brain",
+    "homepage": "https://github.com/sweir1/obsidian-brain",
+    "repository": "https://github.com/sweir1/obsidian-brain"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y"
+          },
+          "obsidian-brain==1.6.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sweir1/obsidian-brain",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Absolute path to your Obsidian vault (or any folder of .md files).",
+          "format": "string",
+          "isRequired": true,
+          "name": "VAULT_PATH"
+        },
+        {
+          "description": "Where to store the SQLite index + embedding cache. Defaults to $XDG_DATA_HOME/obsidian-brain or ~/.local/share/obsidian-brain.",
+          "format": "string",
+          "name": "DATA_DIR"
+        },
+        {
+          "choices": [
+            "english",
+            "fastest",
+            "balanced",
+            "multilingual"
+          ],
+          "default": "english",
+          "description": "Preset name: english (default, bge-small-en-v1.5), fastest, balanced, multilingual. Ignored when EMBEDDING_MODEL is set.",
+          "format": "string",
+          "name": "EMBEDDING_PRESET"
+        },
+        {
+          "description": "Power-user override: any transformers.js checkpoint or Ollama model id. Takes precedence over EMBEDDING_PRESET. Switching auto-reindexes.",
+          "format": "string",
+          "name": "EMBEDDING_MODEL"
+        },
+        {
+          "choices": [
+            "transformers",
+            "ollama"
+          ],
+          "default": "transformers",
+          "description": "Embedding backend. 'transformers' (local, default) or 'ollama' (requires a running Ollama server).",
+          "format": "string",
+          "name": "EMBEDDING_PROVIDER"
+        },
+        {
+          "default": "http://localhost:11434",
+          "description": "Base URL of a local Ollama server. Only used when EMBEDDING_PROVIDER=ollama.",
+          "format": "string",
+          "name": "OLLAMA_BASE_URL"
+        },
+        {
+          "description": "Override the embedding dimensionality when EMBEDDING_PROVIDER=ollama. If unset, the server probes the model on startup.",
+          "format": "number",
+          "name": "OLLAMA_EMBEDDING_DIM"
+        },
+        {
+          "description": "Set to '1' to disable the live chokidar file watcher. Useful on SMB/NFS vaults where FSEvents/inotify don't fire reliably \u2014 fall back to running `obsidian-brain index` on a schedule (launchd/systemd).",
+          "format": "string",
+          "name": "OBSIDIAN_BRAIN_NO_WATCH"
+        },
+        {
+          "description": "Set to '1' to disable the startup catchup reindex that picks up edits made while the server was down.",
+          "format": "string",
+          "name": "OBSIDIAN_BRAIN_NO_CATCHUP"
+        },
+        {
+          "default": "3000",
+          "description": "Per-file reindex debounce for the live watcher, in milliseconds.",
+          "format": "number",
+          "name": "OBSIDIAN_BRAIN_WATCH_DEBOUNCE_MS"
+        },
+        {
+          "default": "60000",
+          "description": "Graph-wide community-detection (Louvain) debounce for the live watcher, in milliseconds. Louvain is the only expensive op \u2014 batching it prevents per-edit CPU spikes.",
+          "format": "number",
+          "name": "OBSIDIAN_BRAIN_COMMUNITY_DEBOUNCE_MS"
+        },
+        {
+          "default": "30000",
+          "description": "Per-tool-call timeout in milliseconds. Tools exceeding this return an MCP error instead of hanging.",
+          "format": "number",
+          "name": "OBSIDIAN_BRAIN_TOOL_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "obsidian-brain",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "server"
+        }
+      ],
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.6.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ed87249586",
+    "published_at": "2026-04-23T13:33:04.774084Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sweir1/obsidian-brain",
+    "server_version": "1.6.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-23T13:33:04.774084Z"
+  },
+  "title": "Obsidian Brain",
+  "type": "mcp_server",
+  "version": "1.6.2"
+}

@@ -1,0 +1,172 @@
+{
+  "description": "Obsidian MCP server: semantic search, knowledge graph, and vault editing. No plugin required.",
+  "harvest": {
+    "last_seen_at": "2026-04-27T05:37:48+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sweir1-obsidian-brain.stdio.db9cc710ce",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sweir1/obsidian-brain",
+    "homepage": "https://github.com/sweir1/obsidian-brain",
+    "repository": "https://github.com/sweir1/obsidian-brain"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y"
+          },
+          "obsidian-brain==1.7.16"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sweir1/obsidian-brain",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Absolute path to your Obsidian vault (or any folder of .md files).",
+          "format": "string",
+          "isRequired": true,
+          "name": "VAULT_PATH"
+        },
+        {
+          "description": "Where to store the SQLite index + embedding cache. Defaults to $XDG_DATA_HOME/obsidian-brain or ~/.local/share/obsidian-brain.",
+          "format": "string",
+          "name": "DATA_DIR"
+        },
+        {
+          "choices": [
+            "english",
+            "english-fast",
+            "english-quality",
+            "multilingual",
+            "multilingual-quality",
+            "multilingual-ollama"
+          ],
+          "default": "english",
+          "description": "Preset name: english (default, bge-small-en-v1.5), english-fast, english-quality, multilingual, multilingual-quality, multilingual-ollama. Ignored when EMBEDDING_MODEL is set.",
+          "format": "string",
+          "name": "EMBEDDING_PRESET"
+        },
+        {
+          "description": "Power-user override: any transformers.js checkpoint or Ollama model id. Takes precedence over EMBEDDING_PRESET. Switching auto-reindexes.",
+          "format": "string",
+          "name": "EMBEDDING_MODEL"
+        },
+        {
+          "choices": [
+            "transformers",
+            "ollama"
+          ],
+          "default": "transformers",
+          "description": "Embedding backend. 'transformers' (local, default) or 'ollama' (requires a running Ollama server).",
+          "format": "string",
+          "name": "EMBEDDING_PROVIDER"
+        },
+        {
+          "default": "http://localhost:11434",
+          "description": "Base URL of a local Ollama server. Only used when EMBEDDING_PROVIDER=ollama.",
+          "format": "string",
+          "name": "OLLAMA_BASE_URL"
+        },
+        {
+          "description": "Override the embedding dimensionality when EMBEDDING_PROVIDER=ollama. If unset, the server probes the model on startup.",
+          "format": "number",
+          "name": "OLLAMA_EMBEDDING_DIM"
+        },
+        {
+          "description": "Override Ollama's num_ctx for embed requests. Default 8192. Ollama's own default is 2048 which silently truncates long chunks for models trained on larger contexts (nomic-embed-text at 8192, bge-m3 at 8192, qwen3-embedding:0.6b at 32 768). See https://github.com/ollama/ollama/issues/7008.",
+          "name": "OLLAMA_NUM_CTX"
+        },
+        {
+          "description": "Set to '1' to disable the live chokidar file watcher. Useful on SMB/NFS vaults where FSEvents/inotify don't fire reliably \u2014 fall back to running `obsidian-brain index` on a schedule (launchd/systemd).",
+          "format": "string",
+          "name": "OBSIDIAN_BRAIN_NO_WATCH"
+        },
+        {
+          "description": "Set to '1' to disable the startup catchup reindex that picks up edits made while the server was down.",
+          "format": "string",
+          "name": "OBSIDIAN_BRAIN_NO_CATCHUP"
+        },
+        {
+          "default": "3000",
+          "description": "Per-file reindex debounce for the live watcher, in milliseconds.",
+          "format": "number",
+          "name": "OBSIDIAN_BRAIN_WATCH_DEBOUNCE_MS"
+        },
+        {
+          "default": "60000",
+          "description": "Graph-wide community-detection (Louvain) debounce for the live watcher, in milliseconds. Louvain is the only expensive op \u2014 batching it prevents per-edit CPU spikes.",
+          "format": "number",
+          "name": "OBSIDIAN_BRAIN_COMMUNITY_DEBOUNCE_MS"
+        },
+        {
+          "default": "30000",
+          "description": "Per-tool-call timeout in milliseconds. Tools exceeding this return an MCP error instead of hanging.",
+          "format": "number",
+          "name": "OBSIDIAN_BRAIN_TOOL_TIMEOUT_MS"
+        },
+        {
+          "description": "Override the adaptive chunk-size budget (in tokens). When set, this beats the capacity probed from the model's tokenizer or Ollama /api/show. Use for debugging or for models with stale tokenizer configs.",
+          "format": "number",
+          "name": "OBSIDIAN_BRAIN_MAX_CHUNK_TOKENS"
+        },
+        {
+          "description": "Override the per-user config directory where obsidian-brain stores model overrides (`model-overrides.json`) and the user-fetched seed (`seed-models.json`). Default is `$XDG_CONFIG_HOME/obsidian-brain` on macOS/Linux (or `~/.config/obsidian-brain`) and `%APPDATA%/obsidian-brain` on Windows. Both files survive `npm update obsidian-brain` because they live outside the package.",
+          "format": "filepath",
+          "name": "OBSIDIAN_BRAIN_CONFIG_DIR"
+        },
+        {
+          "choices": [
+            "",
+            "1"
+          ],
+          "description": "Set to \"1\" to print a verbose synchronous startup trace to stderr \u2014 every preflight, createContext, server.connect, and shutdown step is logged with a monotonic timestamp. The LAST line before any silent failure tells you exactly which step the server reached. No-op when unset (no overhead). Use to diagnose silent-crash failure modes.",
+          "format": "string",
+          "name": "OBSIDIAN_BRAIN_DEBUG"
+        }
+      ],
+      "identifier": "obsidian-brain",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "server"
+        }
+      ],
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.7.16"
+    }
+  ],
+  "provenance": {
+    "identity_key": "db9cc710ce",
+    "published_at": "2026-04-26T16:53:25.368858Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sweir1/obsidian-brain",
+    "server_version": "1.7.16",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-26T16:53:25.368858Z"
+  },
+  "title": "Obsidian Brain",
+  "type": "mcp_server",
+  "version": "1.7.16"
+}

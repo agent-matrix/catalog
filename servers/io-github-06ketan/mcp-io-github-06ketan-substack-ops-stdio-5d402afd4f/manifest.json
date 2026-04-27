@@ -1,0 +1,86 @@
+{
+  "description": "Substack CLI + 26-tool MCP server. Your IDE drafts replies via propose_reply. No API keys.",
+  "harvest": {
+    "last_seen_at": "2026-04-27T05:33:48+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-06ketan-substack-ops.stdio.5d402afd4f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/06ketan/substack-ops",
+    "homepage": "https://github.com/06ketan/substack-ops",
+    "repository": "https://github.com/06ketan/substack-ops"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "substack-ops==0.3.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.06ketan/substack-ops",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your Substack publication URL (e.g. https://you.substack.com/). Optional if set in ~/.cursor/mcp.json's mcpServers.substack-api.env.",
+          "name": "SUBSTACK_PUBLICATION_URL"
+        },
+        {
+          "description": "Your Substack numeric user id. Optional if set in ~/.cursor/mcp.json.",
+          "name": "SUBSTACK_USER_ID"
+        },
+        {
+          "description": "Your Substack session cookie value (the s%3A... string). Required for authenticated calls. Easier path: run `substack-ops auth login --browser chrome` and the cookie is auto-grabbed.",
+          "isSecret": true,
+          "name": "SUBSTACK_SESSION_TOKEN"
+        },
+        {
+          "description": "Override path to the mcp.json file the auth layer reads. Defaults to ~/.cursor/mcp.json.",
+          "name": "SUBSTACK_OPS_MCP_PATH"
+        },
+        {
+          "description": "Optional: override the host CLI used by the unattended daemon path (default: auto-detect claude / cursor-agent / codex on PATH). Use {prompt} placeholder if your CLI takes the prompt as an arg.",
+          "name": "SUBSTACK_OPS_LLM_CMD"
+        }
+      ],
+      "identifier": "substack-ops",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        },
+        {
+          "type": "positional",
+          "value": "serve"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5d402afd4f",
+    "published_at": "2026-04-21T12:33:40.632015Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.06ketan/substack-ops",
+    "server_version": "0.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-21T12:33:40.632015Z"
+  },
+  "title": "substack-ops",
+  "type": "mcp_server",
+  "version": "0.3.1"
+}

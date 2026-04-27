@@ -1,0 +1,66 @@
+{
+  "description": "AI Agent-Native Data Platform \u2014 ingest, validate, transform, and query data.",
+  "harvest": {
+    "last_seen_at": "2026-04-27T05:35:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-datris-datris.stdio.5a94c005a4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/datris/datris-platform-oss",
+    "homepage": "https://github.com/datris/datris-platform-oss",
+    "repository": "https://github.com/datris/datris-platform-oss"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "docker.io/datrisai/datris-mcp-server:1.6.12"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.datris/datris",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "URL of the Datris pipeline server",
+          "format": "string",
+          "isRequired": true,
+          "name": "PIPELINE_URL"
+        },
+        {
+          "description": "API key for the Datris pipeline server (if key validation is enabled)",
+          "format": "string",
+          "isSecret": true,
+          "name": "PIPELINE_API_KEY"
+        }
+      ],
+      "identifier": "docker.io/datrisai/datris-mcp-server:1.6.12",
+      "registryType": "oci",
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3000/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "5a94c005a4",
+    "published_at": "2026-04-24T11:38:42.950156Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.datris/datris",
+    "server_version": "1.6.12",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-24T11:38:42.950156Z"
+  },
+  "title": "Datris",
+  "type": "mcp_server",
+  "version": "1.6.12"
+}

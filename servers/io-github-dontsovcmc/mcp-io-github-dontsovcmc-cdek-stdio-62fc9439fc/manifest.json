@@ -1,0 +1,88 @@
+{
+  "description": "MCP server for CDEK delivery service API \u2014 create orders, track shipments, search delivery points",
+  "harvest": {
+    "last_seen_at": "2026-04-27T05:35:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-dontsovcmc-cdek.stdio.62fc9439fc",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/dontsovcmc/mcp-server-cdek",
+    "homepage": "https://github.com/dontsovcmc/mcp-server-cdek",
+    "repository": "https://github.com/dontsovcmc/mcp-server-cdek"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-server-cdek==0.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.dontsovcmc/cdek",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CDEK_CLIENT"
+        },
+        {
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CDEK_SECRET"
+        },
+        {
+          "description": "Sender company name (can also be set via config_set tool)",
+          "name": "CDEK_SENDER_COMPANY"
+        },
+        {
+          "description": "Sender short name (can also be set via config_set tool)",
+          "name": "CDEK_SENDER_NAME"
+        },
+        {
+          "description": "Sender full name (can also be set via config_set tool)",
+          "name": "CDEK_SENDER_FULL_NAME"
+        },
+        {
+          "description": "Sender email (can also be set via config_set tool)",
+          "name": "CDEK_SENDER_EMAIL"
+        },
+        {
+          "description": "Sender phone (can also be set via config_set tool)",
+          "name": "CDEK_SENDER_PHONE"
+        },
+        {
+          "description": "My PVZ code for returns (can also be set via config_set tool)",
+          "name": "CDEK_MY_PVZ"
+        }
+      ],
+      "identifier": "mcp-server-cdek",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "62fc9439fc",
+    "published_at": "2026-04-24T12:34:17.915472Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.dontsovcmc/cdek",
+    "server_version": "0.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-24T12:34:17.915472Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.4.0"
+}

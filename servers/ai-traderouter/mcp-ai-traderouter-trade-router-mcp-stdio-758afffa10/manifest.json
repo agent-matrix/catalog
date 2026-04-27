@@ -1,0 +1,81 @@
+{
+  "description": "Non-custodial Solana swap & limit order engine for AI agents.",
+  "harvest": {
+    "last_seen_at": "2026-04-27T05:33:13+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-traderouter-trade-router-mcp.stdio.758afffa10",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/TradeRouter/trade-router-mcp",
+    "homepage": "https://github.com/TradeRouter/trade-router-mcp",
+    "repository": "https://github.com/TradeRouter/trade-router-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.traderouter/trade-router-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Solana base58-encoded private key. Local signing only, never transmitted. See SECURITY.md.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "TRADEROUTER_PRIVATE_KEY"
+        },
+        {
+          "description": "Optional RPC endpoint override (default https://api.mainnet-beta.solana.com).",
+          "name": "SOLANA_RPC_URL"
+        },
+        {
+          "description": "Optional override for the server public key used to verify order_filled ed25519 signatures.",
+          "name": "TRADEROUTER_SERVER_PUBKEY"
+        },
+        {
+          "description": "Optional second server public key accepted during key rotation.",
+          "name": "TRADEROUTER_SERVER_PUBKEY_NEXT"
+        },
+        {
+          "description": "Default 'true'. Verify server signatures on order_filled / twap_execution.",
+          "name": "TRADEROUTER_REQUIRE_SERVER_SIGNATURE"
+        },
+        {
+          "description": "Default 'true'. Verify server signatures on order_created.",
+          "name": "TRADEROUTER_REQUIRE_ORDER_CREATED_SIGNATURE"
+        },
+        {
+          "description": "Default 'false'. When 'true', write-action tools (submit_signed_swap, auto_swap, place_*_order, cancel_order, extend_order) short-circuit and return { dry_run: true, ... } instead of calling the API. Read-only tools execute normally.",
+          "name": "TRADEROUTER_DRY_RUN"
+        }
+      ],
+      "identifier": "@traderouter/trade-router-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.11"
+    }
+  ],
+  "provenance": {
+    "identity_key": "758afffa10",
+    "published_at": "2026-04-25T13:49:38.429006Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.traderouter/trade-router-mcp",
+    "server_version": "1.0.11",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-25T13:49:38.429006Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.11"
+}

@@ -1,0 +1,63 @@
+{
+  "description": "Pre-flight oracle for x402 \u2014 detect decoys, zombies, and price traps before agents pay.",
+  "harvest": {
+    "last_seen_at": "2026-04-27T05:37:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sF1nX-x402station.stdio.9a605c1e96",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/sF1nX/x402station",
+    "homepage": "https://github.com/sF1nX/x402station",
+    "repository": "https://github.com/sF1nX/x402station"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sF1nX/x402station",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "0x-prefixed 64-hex-char private key. Account must hold Base Sepolia USDC (or Base mainnet after switch). Required for any tool call.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AGENT_PRIVATE_KEY"
+        },
+        {
+          "description": "Optional override. Only https://x402station.io or http(s)://localhost are accepted to prevent payload hijacking; any other value makes the adapter refuse to start.",
+          "format": "string",
+          "name": "X402STATION_BASE_URL"
+        }
+      ],
+      "identifier": "x402station-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9a605c1e96",
+    "published_at": "2026-04-25T05:52:15.084499Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sF1nX/x402station",
+    "server_version": "1.0.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-25T05:52:15.084499Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.2"
+}

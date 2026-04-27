@@ -1,0 +1,71 @@
+{
+  "description": "MCP server for Tebra/Kareo practice management \u2014 patients, billing, scheduling, FHIR (45 tools)",
+  "harvest": {
+    "last_seen_at": "2026-04-27T05:33:26+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-jamesrosingmd-tebra.stdio.2979d3c32f",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/jamesrosing/tebra-mcp-server",
+    "homepage": "https://github.com/jamesrosing/tebra-mcp-server",
+    "repository": "https://github.com/jamesrosing/tebra-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.jamesrosingmd/tebra",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Tebra SOAP API username",
+          "format": "string",
+          "isRequired": true,
+          "name": "TEBRA_SOAP_USER"
+        },
+        {
+          "description": "Tebra SOAP API password",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "TEBRA_SOAP_PASSWORD"
+        },
+        {
+          "description": "Tebra customer key (per-practice identifier)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "TEBRA_CUSTOMER_KEY"
+        }
+      ],
+      "identifier": "tebra-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "2979d3c32f",
+    "published_at": "2026-04-26T07:18:12.17775Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.jamesrosingmd/tebra",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-26T07:18:12.17775Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

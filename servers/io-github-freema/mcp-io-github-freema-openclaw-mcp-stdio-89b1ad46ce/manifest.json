@@ -1,0 +1,74 @@
+{
+  "description": "MCP server bridging Claude.ai/Desktop with self-hosted OpenClaw via OAuth 2.1.",
+  "harvest": {
+    "last_seen_at": "2026-04-27T05:35:51+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-freema-openclaw-mcp.stdio.89b1ad46ce",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/freema/openclaw-mcp",
+    "homepage": "https://github.com/freema/openclaw-mcp",
+    "repository": "https://github.com/freema/openclaw-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.freema/openclaw-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "http://127.0.0.1:18789",
+          "description": "URL of your OpenClaw gateway",
+          "isRequired": true,
+          "name": "OPENCLAW_URL"
+        },
+        {
+          "description": "Bearer token for OpenClaw gateway authentication",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OPENCLAW_GATEWAY_TOKEN"
+        },
+        {
+          "default": "openclaw",
+          "description": "Model name for chat completions (e.g. 'openclaw' or 'openclaw/<agentId>')",
+          "name": "OPENCLAW_MODEL"
+        },
+        {
+          "default": "120000",
+          "description": "Request timeout in milliseconds",
+          "name": "OPENCLAW_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "openclaw-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.4.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "89b1ad46ce",
+    "published_at": "2026-04-25T20:53:13.9124Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.freema/openclaw-mcp",
+    "server_version": "1.4.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-25T20:53:13.9124Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.4.1"
+}

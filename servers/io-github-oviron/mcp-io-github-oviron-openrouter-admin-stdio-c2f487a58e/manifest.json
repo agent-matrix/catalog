@@ -1,0 +1,61 @@
+{
+  "description": "MCP server for OpenRouter management API: credits, key CRUD, activity drill-down, dashboard.",
+  "harvest": {
+    "last_seen_at": "2026-04-27T05:37:06+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-oviron-openrouter-admin.stdio.c2f487a58e",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/oviron/openrouter-admin-mcp",
+    "homepage": "https://github.com/oviron/openrouter-admin-mcp",
+    "repository": "https://github.com/oviron/openrouter-admin-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.oviron/openrouter-admin",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "OpenRouter Provisioning API key \u2014 create at https://openrouter.ai/settings/provisioning. Distinct from inference keys: it can manage your account but cannot make completion calls.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OPENROUTER_PROVISIONING_KEY"
+        },
+        {
+          "description": "Set to '1' to enable destructive write tools (or_key_create, or_key_update, or_key_delete). Disabled by default \u2014 read-only tools (or_overview, or_credits, or_keys_list, or_key_get, or_activity, or_current_key) are always available.",
+          "name": "OPENROUTER_ADMIN_ALLOW_WRITE"
+        }
+      ],
+      "identifier": "openrouter-admin-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.7.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c2f487a58e",
+    "published_at": "2026-04-25T20:13:07.476312Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.oviron/openrouter-admin",
+    "server_version": "0.7.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-25T20:13:07.476312Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.7.1"
+}

@@ -1,0 +1,97 @@
+{
+  "description": "MCP server wrapping Gemini CLI: query, review, search, structured output, and diff assessment.",
+  "harvest": {
+    "last_seen_at": "2026-04-27T05:36:00+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-hampsterx-gemini-mcp-bridge.stdio.c1203ef79e",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/hampsterx/gemini-mcp-bridge",
+    "homepage": "https://github.com/hampsterx/gemini-mcp-bridge",
+    "repository": "https://github.com/hampsterx/gemini-mcp-bridge"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.hampsterx/gemini-mcp-bridge",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "gemini",
+          "description": "Path to the gemini CLI binary. Defaults to 'gemini' on PATH.",
+          "format": "string",
+          "name": "GEMINI_CLI_PATH"
+        },
+        {
+          "description": "Default Gemini model for query/review/search.",
+          "format": "string",
+          "name": "GEMINI_DEFAULT_MODEL"
+        },
+        {
+          "description": "Model to use when the primary model hits a quota or availability error.",
+          "format": "string",
+          "name": "GEMINI_FALLBACK_MODEL"
+        },
+        {
+          "default": "3",
+          "description": "Maximum concurrent Gemini CLI subprocesses (default 3).",
+          "format": "number",
+          "name": "GEMINI_MAX_CONCURRENT"
+        },
+        {
+          "default": "5000",
+          "description": "Minimum milliseconds between consecutive CLI spawns, used to avoid rate-limit bursts.",
+          "format": "number",
+          "name": "GEMINI_MIN_INVOCATION_GAP_MS"
+        },
+        {
+          "default": "200",
+          "description": "Upper bound of random jitter added to each CLI spawn to spread load.",
+          "format": "number",
+          "name": "GEMINI_SPAWN_JITTER_MAX_MS"
+        },
+        {
+          "description": "API key for Gemini. Alternative to GOOGLE_API_KEY or OAuth login.",
+          "format": "string",
+          "isSecret": true,
+          "name": "GEMINI_API_KEY"
+        },
+        {
+          "description": "Google API key for Gemini. Alternative to GEMINI_API_KEY or OAuth login.",
+          "format": "string",
+          "isSecret": true,
+          "name": "GOOGLE_API_KEY"
+        }
+      ],
+      "identifier": "gemini-mcp-bridge",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.6.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c1203ef79e",
+    "published_at": "2026-04-21T01:16:07.513787Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.hampsterx/gemini-mcp-bridge",
+    "server_version": "0.6.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-21T01:16:07.513787Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.6.0"
+}

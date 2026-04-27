@@ -1,0 +1,125 @@
+{
+  "description": "Mailchimp via MCP: draft, test, and send campaigns; manage audiences and subscribers; pull reports.",
+  "harvest": {
+    "last_seen_at": "2026-04-27T05:35:25+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cyanheads-mailchimp-mcp-server.stdio.37c92111fd",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cyanheads/mailchimp-mcp-server",
+    "homepage": "https://github.com/cyanheads/mailchimp-mcp-server",
+    "repository": "https://github.com/cyanheads/mailchimp-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "bun",
+          "@cyanheads/mailchimp-mcp-server==0.3.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cyanheads/mailchimp-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Mailchimp Marketing API key, including the '-dc' data-center suffix (e.g. 'abc...-us22'). Generate at Mailchimp \u2192 Account \u2192 Extras \u2192 API keys.",
+          "format": "string",
+          "isRequired": true,
+          "name": "MAILCHIMP_API_KEY"
+        },
+        {
+          "description": "Override the API base URL (for mock servers or testing). Defaults to 'https://{dc}.api.mailchimp.com/3.0' derived from the API key suffix.",
+          "format": "string",
+          "name": "MAILCHIMP_BASE_URL"
+        },
+        {
+          "default": "60000",
+          "description": "Per-request timeout in milliseconds.",
+          "format": "string",
+          "name": "MAILCHIMP_TIMEOUT_MS"
+        },
+        {
+          "default": "3",
+          "description": "Max retry attempts for transient upstream failures (0-10).",
+          "format": "string",
+          "name": "MAILCHIMP_MAX_RETRIES"
+        },
+        {
+          "default": "4",
+          "description": "Max in-flight upstream requests per workflow tool (1-10).",
+          "format": "string",
+          "name": "MAILCHIMP_CONCURRENCY_LIMIT"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "The hostname for the HTTP server.",
+          "format": "string",
+          "name": "MCP_HTTP_HOST"
+        },
+        {
+          "default": "3010",
+          "description": "The port to run the HTTP server on.",
+          "format": "string",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "default": "/mcp",
+          "description": "The endpoint path for the MCP server.",
+          "format": "string",
+          "name": "MCP_HTTP_ENDPOINT_PATH"
+        },
+        {
+          "default": "none",
+          "description": "Authentication mode to use: 'none', 'jwt', or 'oauth'.",
+          "format": "string",
+          "name": "MCP_AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Sets the minimum log level for output (e.g., 'debug', 'info', 'warn').",
+          "format": "string",
+          "name": "MCP_LOG_LEVEL"
+        }
+      ],
+      "identifier": "@cyanheads/mailchimp-mcp-server",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "start:http"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "bun",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3010/mcp"
+      },
+      "version": "0.3.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "37c92111fd",
+    "published_at": "2026-04-25T02:19:01.356358Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cyanheads/mailchimp-mcp-server",
+    "server_version": "0.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-25T02:19:01.356358Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.1"
+}

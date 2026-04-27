@@ -1,0 +1,74 @@
+{
+  "description": "Bounded working memory for coding agents \u2014 typed nodes, current-vs-stale state, MCP-mountable.",
+  "harvest": {
+    "last_seen_at": "2026-04-27T05:37:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-razroo-state-trace.stdio.629fc9cc32",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/razroo/state-trace",
+    "homepage": "https://github.com/razroo/state-trace",
+    "repository": "https://github.com/razroo/state-trace"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.razroo/state-trace",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the SQLite or JSON file backing the working-memory graph. .db/.sqlite/.sqlite3 = SQLite (recommended); other = JSON. Defaults to ~/.state-trace/memory.db.",
+          "format": "string",
+          "name": "STATE_TRACE_STORAGE_PATH"
+        },
+        {
+          "description": "Namespace to scope reads and writes (e.g. the repo slug). Nodes without a namespace remain visible to all namespaces.",
+          "format": "string",
+          "name": "STATE_TRACE_NAMESPACE"
+        },
+        {
+          "description": "Working-memory budget in capacity units. Default 256.",
+          "format": "number",
+          "name": "STATE_TRACE_CAPACITY_LIMIT"
+        }
+      ],
+      "identifier": "state-trace",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "Install with the [mcp] extra to pull the mcp SDK alongside state-trace.",
+          "name": "extras",
+          "type": "named",
+          "value": "[mcp]"
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "629fc9cc32",
+    "published_at": "2026-04-25T03:41:12.034773Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.razroo/state-trace",
+    "server_version": "0.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-25T03:41:12.034773Z"
+  },
+  "title": "state-trace",
+  "type": "mcp_server",
+  "version": "0.3.1"
+}

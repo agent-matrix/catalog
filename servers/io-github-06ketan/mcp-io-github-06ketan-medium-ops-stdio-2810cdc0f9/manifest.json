@@ -1,0 +1,101 @@
+{
+  "description": "Medium CLI + 23-tool MCP server. Your IDE drafts replies. No API keys.",
+  "harvest": {
+    "last_seen_at": "2026-04-27T05:33:48+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-06ketan-medium-ops.stdio.2810cdc0f9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/06ketan/medium-ops",
+    "homepage": "https://github.com/06ketan/medium-ops",
+    "repository": "https://github.com/06ketan/medium-ops"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "medium-ops==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.06ketan/medium-ops",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Legacy Medium Integration Token (api.medium.com/v1/*). Optional. Generate at medium.com/me/settings \u2192 'Integration tokens' (note: Medium stopped issuing new tokens in 2023).",
+          "isSecret": true,
+          "name": "MEDIUM_INTEGRATION_TOKEN"
+        },
+        {
+          "description": "Medium 'sid' cookie value from medium.com (Application \u2192 Cookies). Used for authenticated reads + dashboard GraphQL.",
+          "isSecret": true,
+          "name": "MEDIUM_SID"
+        },
+        {
+          "description": "Medium 'uid' cookie value. Required alongside sid for some authenticated endpoints.",
+          "name": "MEDIUM_UID"
+        },
+        {
+          "description": "Medium 'xsrf' cookie value. Required for any dashboard write (post_response, publish_post, delete_post, draft updates).",
+          "isSecret": true,
+          "name": "MEDIUM_XSRF"
+        },
+        {
+          "description": "Cloudflare 'cf_clearance' cookie. Only required when Cloudflare challenges your IP for dashboard write calls.",
+          "isSecret": true,
+          "name": "MEDIUM_CF_CLEARANCE"
+        },
+        {
+          "description": "Your Medium handle (without the @). Required for the public RSS read path so the client knows whose feed to fetch.",
+          "name": "MEDIUM_USERNAME"
+        },
+        {
+          "description": "Override path to the mcp.json file the auth layer reads. Defaults to ~/.cursor/mcp.json.",
+          "name": "MEDIUM_OPS_MCP_PATH"
+        },
+        {
+          "description": "Optional: override the host CLI used by the unattended daemon path (default: auto-detect claude / cursor-agent / codex on PATH). Use {prompt} placeholder if your CLI takes the prompt as an arg.",
+          "name": "MEDIUM_OPS_LLM_CMD"
+        }
+      ],
+      "identifier": "medium-ops",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        },
+        {
+          "type": "positional",
+          "value": "serve"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "2810cdc0f9",
+    "published_at": "2026-04-21T18:34:02.556235Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.06ketan/medium-ops",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-21T18:34:02.556235Z"
+  },
+  "title": "medium-ops",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

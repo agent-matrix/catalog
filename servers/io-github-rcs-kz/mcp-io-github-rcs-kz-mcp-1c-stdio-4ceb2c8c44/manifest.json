@@ -1,0 +1,76 @@
+{
+  "description": "MCP server for 1C:Enterprise \u2014 read+write CRM/ERP through Claude/Cursor/Cline.",
+  "harvest": {
+    "last_seen_at": "2026-04-27T05:34:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-RCS-kz-mcp-1c.stdio.4ceb2c8c44",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/rcs-kz/mcp-1c",
+    "homepage": "https://github.com/rcs-kz/mcp-1c",
+    "repository": "https://github.com/rcs-kz/mcp-1c"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "node>=16, python>=3.8",
+          "@rcs-kz/mcp-1c==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.RCS-kz/mcp-1c",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "URL of the 1C HTTP service (with MCPService extension installed)",
+          "isRequired": true,
+          "name": "MCP_1C_BASE"
+        },
+        {
+          "description": "1C user with API access",
+          "isRequired": true,
+          "name": "MCP_1C_USER"
+        },
+        {
+          "description": "Password for the 1C user",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "MCP_1C_PASSWORD"
+        },
+        {
+          "description": "RCS license token (Solo free, Pro 9900 KZT/mo, Team 39900 KZT/mo)",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "RCS_LICENSE_KEY"
+        }
+      ],
+      "identifier": "@rcs-kz/mcp-1c",
+      "registryType": "npm",
+      "runtimeHint": "node>=16, python>=3.8",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4ceb2c8c44",
+    "published_at": "2026-04-26T20:15:03.355635Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.RCS-kz/mcp-1c",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-26T20:15:03.355635Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

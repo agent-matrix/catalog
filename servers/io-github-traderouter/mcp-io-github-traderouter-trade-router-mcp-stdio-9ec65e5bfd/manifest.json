@@ -1,0 +1,77 @@
+{
+  "description": "Non-custodial Solana swap & limit order engine for AI agents.",
+  "harvest": {
+    "last_seen_at": "2026-04-27T05:34:40+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-TradeRouter-trade-router-mcp.stdio.9ec65e5bfd",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/TradeRouter/trade-router-mcp",
+    "homepage": "https://github.com/TradeRouter/trade-router-mcp",
+    "repository": "https://github.com/TradeRouter/trade-router-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.TradeRouter/trade-router-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Solana base58-encoded private key. Local signing only, never transmitted. See SECURITY.md.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "TRADEROUTER_PRIVATE_KEY"
+        },
+        {
+          "description": "Optional RPC endpoint override (default https://api.mainnet-beta.solana.com).",
+          "name": "SOLANA_RPC_URL"
+        },
+        {
+          "description": "Optional override for the server public key used to verify order_filled ed25519 signatures.",
+          "name": "TRADEROUTER_SERVER_PUBKEY"
+        },
+        {
+          "description": "Optional second server public key accepted during key rotation.",
+          "name": "TRADEROUTER_SERVER_PUBKEY_NEXT"
+        },
+        {
+          "description": "Default 'true'. Verify server signatures on order_filled / twap_execution.",
+          "name": "TRADEROUTER_REQUIRE_SERVER_SIGNATURE"
+        },
+        {
+          "description": "Default 'true'. Verify server signatures on order_created.",
+          "name": "TRADEROUTER_REQUIRE_ORDER_CREATED_SIGNATURE"
+        }
+      ],
+      "identifier": "@traderouter/trade-router-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.8"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9ec65e5bfd",
+    "published_at": "2026-04-24T20:07:44.739853Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.TradeRouter/trade-router-mcp",
+    "server_version": "1.0.8",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-24T20:07:44.739853Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.8"
+}

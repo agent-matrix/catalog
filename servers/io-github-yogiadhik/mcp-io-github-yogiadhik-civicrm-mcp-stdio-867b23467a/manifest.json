@@ -1,0 +1,94 @@
+{
+  "description": "Model Context Protocol server for CiviCRM \u2014 AuthX-first, schema-introspected, write-gated.",
+  "harvest": {
+    "last_seen_at": "2026-04-27T05:34:45+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-YogiAdhik-civicrm-mcp.stdio.867b23467a",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/YogiAdhik/civicrm-mcp",
+    "homepage": "https://github.com/YogiAdhik/civicrm-mcp",
+    "repository": "https://github.com/YogiAdhik/civicrm-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.YogiAdhik/civicrm-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the CiviCRM install, e.g. https://crm.example.org. No trailing slash.",
+          "format": "string",
+          "isRequired": true,
+          "name": "CIVICRM_BASE_URL"
+        },
+        {
+          "description": "API key of the contact the server authenticates as. Keep it on a dedicated 'MCP Bot' contact with minimum permissions.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CIVICRM_API_KEY"
+        },
+        {
+          "default": "drupal",
+          "description": "CMS host: drupal, wordpress, standalone, or backdrop.",
+          "format": "string",
+          "name": "CIVICRM_CMS"
+        },
+        {
+          "description": "Optional \u2014 only needed if the site enables the AuthX site-key guard.",
+          "format": "string",
+          "isSecret": true,
+          "name": "CIVICRM_SITE_KEY"
+        },
+        {
+          "default": "authx",
+          "description": "authx (default, recommended) or legacy for pre-5.36 installs.",
+          "format": "string",
+          "name": "CIVICRM_AUTH_MODE"
+        },
+        {
+          "default": "false",
+          "description": "Set to 'true' to enable create / update / save / submit actions. Off by default.",
+          "format": "string",
+          "name": "CIVICRM_ALLOW_WRITES"
+        },
+        {
+          "default": "false",
+          "description": "Set to 'true' to enable delete / replace actions. Off by default.",
+          "format": "string",
+          "name": "CIVICRM_ALLOW_DELETES"
+        }
+      ],
+      "identifier": "civicrm-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "867b23467a",
+    "published_at": "2026-04-24T18:29:48.530193Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.YogiAdhik/civicrm-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-24T18:29:48.530193Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

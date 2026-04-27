@@ -1,0 +1,79 @@
+{
+  "description": "Optical operations platform for AI datacenters \u2014 telemetry, Digital Twin, ML RUL, NCCL correlation",
+  "harvest": {
+    "last_seen_at": "2026-04-27T05:36:32+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-liveplex-cpu-fiber.stdio.fcd16663bb",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/liveplex-cpu/hikari",
+    "homepage": "https://github.com/liveplex-cpu/hikari",
+    "repository": "https://github.com/liveplex-cpu/hikari"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "python",
+          "fiber-mcp==1.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.liveplex-cpu/fiber",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://api.fiber.ac",
+          "description": "Base URL of the FIBER deployment (e.g., https://api.fiber.ac or http://localhost:8000 for self-hosted).",
+          "format": "string",
+          "name": "FIBER_API_URL"
+        },
+        {
+          "description": "Bearer token for the FIBER API. Role determines which tools work: viewer (24 read tools), operator (+write), admin (all).",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "FIBER_API_KEY"
+        },
+        {
+          "default": "0",
+          "description": "Set to 1 to expose write tools: demo trigger, NCCL ingest, RMA create. Defaults to read-only for safety.",
+          "format": "string",
+          "name": "FIBER_ENABLE_WRITE"
+        },
+        {
+          "default": "30",
+          "description": "Per-request HTTP timeout in seconds. Increase if running Digital Twin Monte Carlo with iterations>1000.",
+          "format": "number",
+          "name": "FIBER_HTTP_TIMEOUT"
+        }
+      ],
+      "identifier": "fiber-mcp",
+      "registryType": "pypi",
+      "runtimeHint": "python",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "fcd16663bb",
+    "published_at": "2026-04-20T16:16:52.885948Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.liveplex-cpu/fiber",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-20T16:16:52.885948Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

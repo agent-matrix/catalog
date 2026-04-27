@@ -1,0 +1,78 @@
+{
+  "description": "Wraps Codex CLI as MCP tools: query, review, search, assess, structured, sessions.",
+  "harvest": {
+    "last_seen_at": "2026-04-27T05:35:59+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-hampsterx-codex-mcp-bridge.stdio.512073a831",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/hampsterx/codex-mcp-bridge",
+    "homepage": "https://github.com/hampsterx/codex-mcp-bridge",
+    "repository": "https://github.com/hampsterx/codex-mcp-bridge"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.hampsterx/codex-mcp-bridge",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "codex",
+          "description": "Path to the codex CLI binary. Defaults to 'codex' on PATH.",
+          "format": "string",
+          "name": "CODEX_CLI_PATH"
+        },
+        {
+          "description": "Default Codex model for query/review/search.",
+          "format": "string",
+          "name": "CODEX_DEFAULT_MODEL"
+        },
+        {
+          "description": "Model to use when the primary model hits a quota error.",
+          "format": "string",
+          "name": "CODEX_FALLBACK_MODEL"
+        },
+        {
+          "default": "3",
+          "description": "Maximum concurrent Codex CLI subprocesses (default 3).",
+          "format": "number",
+          "name": "CODEX_MAX_CONCURRENT"
+        },
+        {
+          "description": "Controls which MCP servers from ~/.codex/config.toml stay enabled inside the Codex subprocess. Empty/unset disables all non-required servers; 'inherit' passes config through; comma-separated names (e.g. 'serena,github') enables those; values starting with '{' or '[' are raw TOML.",
+          "format": "string",
+          "name": "CODEX_MCP_SERVERS"
+        }
+      ],
+      "identifier": "codex-mcp-bridge",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "512073a831",
+    "published_at": "2026-04-20T21:15:56.086673Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.hampsterx/codex-mcp-bridge",
+    "server_version": "0.5.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-20T21:15:56.086673Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.5.1"
+}

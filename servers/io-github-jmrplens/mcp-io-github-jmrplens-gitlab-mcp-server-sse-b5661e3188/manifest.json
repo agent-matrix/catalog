@@ -1,0 +1,66 @@
+{
+  "description": "MCP server exposing 1000 GitLab REST API and GraphQL operations as tools for AI assistants.",
+  "harvest": {
+    "last_seen_at": "2026-04-27T05:36:14+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-jmrplens-gitlab-mcp-server.sse.b5661e3188",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jmrplens/gitlab-mcp-server",
+    "homepage": "https://github.com/jmrplens/gitlab-mcp-server",
+    "repository": "https://github.com/jmrplens/gitlab-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://{host}:{port}/"
+    }
+  },
+  "name": "io.github.jmrplens/gitlab-mcp-server",
+  "provenance": {
+    "identity_key": "b5661e3188",
+    "published_at": "2026-04-27T00:16:52.535309Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.jmrplens/gitlab-mcp-server",
+    "server_version": "1.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-27T00:16:52.535309Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "GitLab Personal Access Token (glpat-...). Alternatively, send Authorization: Bearer <token>.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PRIVATE-TOKEN",
+          "placeholder": "glpat-xxxxxxxxxxxxxxxxxxxx"
+        },
+        {
+          "description": "Target GitLab instance URL. Omit if the server was started with --gitlab-url.",
+          "name": "GITLAB-URL",
+          "placeholder": "https://gitlab.example.com"
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://{host}:{port}/",
+      "variables": {
+        "host": {
+          "description": "Hostname of the self-hosted GitLab MCP Server HTTP instance",
+          "placeholder": "localhost"
+        },
+        "port": {
+          "default": "8080",
+          "description": "Port of the self-hosted GitLab MCP Server HTTP instance",
+          "placeholder": "8080"
+        }
+      }
+    }
+  ],
+  "title": "GitLab MCP Server",
+  "type": "mcp_server",
+  "version": "1.3.0"
+}

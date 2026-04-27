@@ -1,0 +1,67 @@
+{
+  "description": "Autonomous Kubernetes RCA agent with OPA Gatekeeper sandbox and MCP diagnostics for Claude/Cursor.",
+  "harvest": {
+    "last_seen_at": "2026-04-27T05:34:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-JDoornink-k8gents.stdio.69d64a0b7d",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/JDoornink/K8gentS",
+    "homepage": "https://github.com/JDoornink/K8gentS",
+    "repository": "https://github.com/JDoornink/K8gentS"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.JDoornink/k8gents",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Google Gemini API key for LLM-powered root cause analysis",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AI_API_KEY"
+        },
+        {
+          "description": "Gemini model to use (default: gemini-2.5-pro)",
+          "format": "string",
+          "name": "AI_MODEL"
+        },
+        {
+          "description": "Path to kubeconfig file. Omit to use in-cluster config or ~/.kube/config automatically.",
+          "format": "string",
+          "name": "KUBECONFIG"
+        }
+      ],
+      "identifier": "docker.io/jdoornink/k8gents:0.1.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "69d64a0b7d",
+    "published_at": "2026-04-26T01:03:02.922589Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.JDoornink/k8gents",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-26T01:03:02.922589Z"
+  },
+  "title": "K8gentS \u2014 Kubernetes RCA MCP Server",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

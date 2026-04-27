@@ -1,0 +1,91 @@
+{
+  "description": "Local research agent that verifies its own answers. Runs on Gemma 3 4B + Ollama, $0/query.",
+  "harvest": {
+    "last_seen_at": "2026-04-27T05:34:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-TheAiSingularity-agentic-research.stdio.35f42f3641",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/TheAiSingularity/agentic-research-engine-oss",
+    "homepage": "https://github.com/TheAiSingularity/agentic-research-engine-oss",
+    "repository": "https://github.com/TheAiSingularity/agentic-research-engine-oss"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "agentic-research-mcp",
+          "agentic-research-engine==0.1.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.TheAiSingularity/agentic-research",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Any OpenAI-compatible endpoint. Default: OpenAI cloud. Use http://localhost:11434/v1 for Ollama.",
+          "name": "OPENAI_BASE_URL"
+        },
+        {
+          "description": "API key for the endpoint above. Use 'ollama' as a sentinel value when running locally against Ollama.",
+          "isSecret": true,
+          "name": "OPENAI_API_KEY"
+        },
+        {
+          "description": "Model identifier used for the synthesize node. Defaults to 'gpt-5-mini'; set to 'gemma3:4b' for Mac-local Ollama.",
+          "name": "MODEL_SYNTHESIZER"
+        },
+        {
+          "description": "Model for the plan / classify / critic / compress / verify nodes. Defaults to 'gpt-5-nano'.",
+          "name": "MODEL_PLANNER"
+        },
+        {
+          "description": "Embedding model identifier (for retrieval + memory). Default 'text-embedding-3-small'; use 'nomic-embed-text' on Ollama.",
+          "name": "EMBED_MODEL"
+        },
+        {
+          "description": "Base URL of the SearXNG meta-search instance. Default http://localhost:8888.",
+          "name": "SEARXNG_URL"
+        },
+        {
+          "description": "Path to an index directory built via scripts/index_corpus.py. When set, local corpus hits augment web search.",
+          "name": "LOCAL_CORPUS_PATH"
+        },
+        {
+          "description": "Set to '1' to enable the BAAI/bge-reranker-v2-m3 cross-encoder rerank stage. First run downloads ~560MB.",
+          "name": "ENABLE_RERANK"
+        },
+        {
+          "description": "Set to '0' to skip the trafilatura full-page fetch stage. Default '1'.",
+          "name": "ENABLE_FETCH"
+        }
+      ],
+      "identifier": "agentic-research-engine",
+      "registryType": "pypi",
+      "runtimeHint": "agentic-research-mcp",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "35f42f3641",
+    "published_at": "2026-04-20T21:47:07.536306Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.TheAiSingularity/agentic-research",
+    "server_version": "0.1.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-20T21:47:07.536306Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.3"
+}

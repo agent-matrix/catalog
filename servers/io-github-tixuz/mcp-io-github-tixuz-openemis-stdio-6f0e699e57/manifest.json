@@ -1,0 +1,92 @@
+{
+  "description": "Read-only MCP server for OpenEMIS v5 \u2014 645 resources, 24 playbooks, natural-language queries",
+  "harvest": {
+    "last_seen_at": "2026-04-27T05:37:54+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-tixuz-openemis.stdio.6f0e699e57",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/tixuz/openemis-mcp",
+    "homepage": "https://github.com/tixuz/openemis-mcp",
+    "repository": "https://github.com/tixuz/openemis-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.tixuz/openemis",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of your OpenEMIS instance (e.g., https://demo.openemis.org/core)",
+          "format": "string",
+          "isRequired": true,
+          "name": "OPENEMIS_BASE_URL"
+        },
+        {
+          "description": "OpenEMIS login username",
+          "format": "string",
+          "isRequired": true,
+          "name": "OPENEMIS_USERNAME"
+        },
+        {
+          "description": "OpenEMIS login password",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OPENEMIS_PASSWORD"
+        },
+        {
+          "description": "OpenEMIS API key (issued by the OpenEMIS admin)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OPENEMIS_API_KEY"
+        },
+        {
+          "description": "Request timeout in milliseconds (default 30000)",
+          "format": "string",
+          "name": "OPENEMIS_TIMEOUT_MS"
+        },
+        {
+          "description": "Set to 1 to log every tool call and result as JSONL. OFF by default. Results contain tenant PII \u2014 enable only on instances you own.",
+          "format": "string",
+          "name": "OPENEMIS_LOG_VERBOSE"
+        },
+        {
+          "description": "Path to write verbose JSONL log. If empty and OPENEMIS_LOG_VERBOSE=1, logs go to stderr.",
+          "format": "string",
+          "name": "OPENEMIS_LOG_FILE"
+        }
+      ],
+      "identifier": "openemis-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6f0e699e57",
+    "published_at": "2026-04-20T15:53:02.939701Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.tixuz/openemis",
+    "server_version": "0.3.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-20T15:53:02.939701Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.2"
+}

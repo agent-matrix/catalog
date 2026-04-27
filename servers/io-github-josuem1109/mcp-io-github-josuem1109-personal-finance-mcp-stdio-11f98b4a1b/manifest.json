@@ -1,0 +1,81 @@
+{
+  "description": "Self-hosted, read-only MCP server that connects your banks and investments via Plaid.",
+  "harvest": {
+    "last_seen_at": "2026-04-27T05:34:17+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-JosueM1109-personal-finance-mcp.stdio.11f98b4a1b",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/JosueM1109/personal-finance-mcp",
+    "homepage": "https://github.com/JosueM1109/personal-finance-mcp",
+    "repository": "https://github.com/JosueM1109/personal-finance-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.JosueM1109/personal-finance-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your Plaid client_id from the Plaid dashboard (Team Settings -> API).",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PLAID_CLIENT_ID"
+        },
+        {
+          "description": "Your Plaid secret for the target environment (production or sandbox).",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PLAID_SECRET"
+        },
+        {
+          "choices": [
+            "production",
+            "sandbox"
+          ],
+          "default": "production",
+          "description": "Plaid environment: production or sandbox.",
+          "format": "string",
+          "name": "PLAID_ENV"
+        },
+        {
+          "default": "8000",
+          "description": "Port the MCP HTTP server listens on inside the container.",
+          "format": "string",
+          "name": "PORT"
+        }
+      ],
+      "identifier": "ghcr.io/josuem1109/personal-finance-mcp:1.0.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:{PORT}/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "11f98b4a1b",
+    "published_at": "2026-04-20T20:27:05.043651Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.JosueM1109/personal-finance-mcp",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-20T20:27:05.043651Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

@@ -1,0 +1,67 @@
+{
+  "description": "MCP server for ComfyUI: text-to-image, variations, img2img refine, upscale, image proxy.",
+  "harvest": {
+    "last_seen_at": "2026-04-27T05:36:45+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-miller-joe-comfyui-mcp.stdio.65d2221d25",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/miller-joe/comfyui-mcp",
+    "homepage": "https://github.com/miller-joe/comfyui-mcp",
+    "repository": "https://github.com/miller-joe/comfyui-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.miller-joe/comfyui-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "ComfyUI HTTP URL used internally by this server. Default: http://127.0.0.1:8188",
+          "format": "string",
+          "name": "COMFYUI_URL"
+        },
+        {
+          "description": "Externally-reachable ComfyUI URL used in image URLs returned to clients. Set when the internal URL isn't reachable from MCP clients (common with Docker networks).",
+          "format": "string",
+          "name": "COMFYUI_PUBLIC_URL"
+        },
+        {
+          "description": "Default checkpoint filename. Default: sd_xl_base_1.0.safetensors",
+          "format": "string",
+          "name": "COMFYUI_DEFAULT_CKPT"
+        }
+      ],
+      "identifier": "@miller-joe/comfyui-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:9100/mcp"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "65d2221d25",
+    "published_at": "2026-04-20T08:27:50.677523Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.miller-joe/comfyui-mcp",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-20T08:27:50.677523Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

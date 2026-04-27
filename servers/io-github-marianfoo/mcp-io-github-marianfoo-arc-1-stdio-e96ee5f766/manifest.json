@@ -1,0 +1,91 @@
+{
+  "description": "MCP server for SAP ABAP systems",
+  "harvest": {
+    "last_seen_at": "2026-04-27T05:36:35+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-marianfoo-arc-1.stdio.e96ee5f766",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/marianfoo/arc-1.git",
+    "homepage": "https://github.com/marianfoo/arc-1.git",
+    "repository": "https://github.com/marianfoo/arc-1.git"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "arc-1==0.6.10"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.marianfoo/arc-1",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "SAP system URL (e.g., http://host:50000)",
+          "isRequired": true,
+          "name": "SAP_URL"
+        },
+        {
+          "description": "SAP username",
+          "isRequired": true,
+          "name": "SAP_USER"
+        },
+        {
+          "description": "SAP password",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SAP_PASSWORD"
+        },
+        {
+          "default": "100",
+          "description": "SAP client number",
+          "name": "SAP_CLIENT"
+        },
+        {
+          "default": "EN",
+          "description": "SAP logon language",
+          "name": "SAP_LANGUAGE"
+        },
+        {
+          "default": "false",
+          "description": "Skip TLS certificate verification",
+          "name": "SAP_INSECURE"
+        },
+        {
+          "default": "true",
+          "description": "Block all write operations (safe default)",
+          "name": "SAP_READ_ONLY"
+        }
+      ],
+      "identifier": "arc-1",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.6.10"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e96ee5f766",
+    "published_at": "2026-04-20T19:46:00.287435Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.marianfoo/arc-1",
+    "server_version": "0.6.10",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-20T19:46:00.287435Z"
+  },
+  "title": "ARC-1",
+  "type": "mcp_server",
+  "version": "0.6.10"
+}
