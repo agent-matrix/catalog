@@ -1,0 +1,83 @@
+{
+  "description": "Schedule Docker builds via Windows Task Scheduler \u2014 survives VS Code terminal timeouts",
+  "harvest": {
+    "last_seen_at": "2026-05-04T05:47:06+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-artemdruzhininad-star-docker-wts-build.stdio.93fb796efb",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.artemdruzhininad-star/docker-wts-build",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to project directory containing docker-compose.yml",
+          "format": "string",
+          "isRequired": true,
+          "name": "DWTB_PROJECT_DIR"
+        },
+        {
+          "description": "Docker Compose file name (default: docker-compose.yml)",
+          "format": "string",
+          "name": "DWTB_COMPOSE_FILE"
+        },
+        {
+          "description": "Semicolon-separated list of custom service names",
+          "format": "string",
+          "name": "DWTB_CUSTOM_SERVICES"
+        },
+        {
+          "description": "Directory for build logs (default: {project_dir}/builds/logs)",
+          "format": "string",
+          "name": "DWTB_LOGS_DIR"
+        },
+        {
+          "description": "Task name prefix for Windows Task Scheduler (default: DockerBuild)",
+          "format": "string",
+          "name": "DWTB_TASK_PREFIX"
+        },
+        {
+          "description": "Task timeout in milliseconds (default: 28800000 = 8 hours)",
+          "format": "string",
+          "name": "DWTB_TASK_TIMEOUT_MS"
+        },
+        {
+          "description": "Maximum age in days for cleanup (default: 30)",
+          "format": "string",
+          "name": "DWTB_MAX_TASK_AGE_DAYS"
+        }
+      ],
+      "identifier": "docker-wts-build",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "93fb796efb",
+    "published_at": "2026-04-27T21:34:53.210083Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.artemdruzhininad-star/docker-wts-build",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-27T21:34:53.210083Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

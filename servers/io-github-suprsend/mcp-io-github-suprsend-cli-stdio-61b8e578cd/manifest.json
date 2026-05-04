@@ -1,0 +1,80 @@
+{
+  "description": "Manage SuprSend entities \u2014 workflows, templates, users, objects, tenants \u2014 from your AI assistant.",
+  "harvest": {
+    "last_seen_at": "2026-05-04T05:51:07+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-suprsend-cli.stdio.61b8e578cd",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/suprsend/cli",
+    "homepage": "https://github.com/suprsend/cli",
+    "repository": "https://github.com/suprsend/cli"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.suprsend/cli",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "SuprSend service token. Create one in the SuprSend dashboard under Developers \u2192 API Keys.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SUPRSEND_SERVICE_TOKEN"
+        },
+        {
+          "description": "Base API URL. Only set for BYOC / self-hosted SuprSend instances.",
+          "format": "string",
+          "name": "SUPRSEND_BASE_URL"
+        },
+        {
+          "description": "Management API URL. Only set for BYOC / self-hosted SuprSend instances.",
+          "format": "string",
+          "name": "SUPRSEND_MGMNT_URL"
+        }
+      ],
+      "identifier": "suprsend",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "start-mcp-server",
+          "valueHint": "subcommand"
+        },
+        {
+          "name": "--workflows",
+          "type": "named",
+          "value": "all"
+        }
+      ],
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.24"
+    }
+  ],
+  "provenance": {
+    "identity_key": "61b8e578cd",
+    "published_at": "2026-04-29T12:01:05.646512Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.suprsend/cli",
+    "server_version": "0.2.24",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-29T12:01:05.646512Z"
+  },
+  "title": "SuprSend",
+  "type": "mcp_server",
+  "version": "0.2.24"
+}

@@ -1,0 +1,75 @@
+{
+  "description": "Local MCP voice coach with English pronunciation, grammar, and fluency feedback.",
+  "harvest": {
+    "last_seen_at": "2026-05-04T05:45:59+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-JuhongPark-pronunciation.stdio.a043a8445b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/JuhongPark/mcp-server-pronunciation",
+    "homepage": "https://github.com/JuhongPark/mcp-server-pronunciation",
+    "repository": "https://github.com/JuhongPark/mcp-server-pronunciation"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-server-pronunciation==0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.JuhongPark/pronunciation",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "faster-whisper model size. Default: base.en. Options: tiny.en, base.en, small.en, medium.en, large-v3, large-v3-turbo.",
+          "name": "MCP_PRONUNCIATION_MODEL"
+        },
+        {
+          "description": "Override Hugging Face Hub cache directory where Whisper weights are stored.",
+          "name": "HF_HUB_CACHE"
+        },
+        {
+          "description": "Set to 0, false, no, or off to disable background Whisper model preload during registry inspection or Docker smoke tests.",
+          "name": "MCP_PRONUNCIATION_PRELOAD"
+        },
+        {
+          "description": "Temporary WAV retention policy. Use session to delete recordings when the server exits, or keep for manual inspection.",
+          "name": "MCP_PRONUNCIATION_AUDIO_RETENTION"
+        },
+        {
+          "description": "Override PyTorch cache directory for optional wav2vec2 forced-alignment weights.",
+          "name": "TORCH_HOME"
+        }
+      ],
+      "identifier": "mcp-server-pronunciation",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a043a8445b",
+    "published_at": "2026-05-03T03:26:31.66641Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.JuhongPark/pronunciation",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-03T03:26:31.66641Z"
+  },
+  "title": "Pronunciation & Voice Coach",
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

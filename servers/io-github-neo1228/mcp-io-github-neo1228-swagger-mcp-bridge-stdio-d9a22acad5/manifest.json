@@ -1,0 +1,86 @@
+{
+  "description": "Spring Boot example that exposes SpringDoc OpenAPI operations as safe MCP tools.",
+  "harvest": {
+    "last_seen_at": "2026-05-04T05:46:17+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Neo1228-swagger-mcp-bridge.stdio.d9a22acad5",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Neo1228/spring-boot-starter-swagger-mcp",
+    "homepage": "https://github.com/Neo1228/spring-boot-starter-swagger-mcp",
+    "repository": "https://github.com/Neo1228/spring-boot-starter-swagger-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "type": "positional",
+            "value": "run"
+          },
+          {
+            "type": "positional",
+            "value": "--rm"
+          },
+          {
+            "type": "positional",
+            "value": "-p"
+          },
+          {
+            "type": "positional",
+            "value": "8080:8080"
+          },
+          "ghcr.io/neo1228/swagger-mcp-bridge-example:0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Neo1228/swagger-mcp-bridge",
+  "packages": [
+    {
+      "identifier": "ghcr.io/neo1228/swagger-mcp-bridge-example:0.1.0",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "--rm"
+        },
+        {
+          "type": "positional",
+          "value": "-p"
+        },
+        {
+          "type": "positional",
+          "value": "8080:8080"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:8080/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "d9a22acad5",
+    "published_at": "2026-05-03T05:02:42.715267Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Neo1228/swagger-mcp-bridge",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-03T05:02:42.715267Z"
+  },
+  "title": "Swagger MCP Bridge",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

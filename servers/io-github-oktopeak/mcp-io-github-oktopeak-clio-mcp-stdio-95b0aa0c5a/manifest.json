@@ -1,0 +1,96 @@
+{
+  "description": "Connect Claude to Clio with 15 tools for matters, contacts, tasks, billing, and more.",
+  "harvest": {
+    "last_seen_at": "2026-05-04T05:50:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-oktopeak-clio-mcp.stdio.95b0aa0c5a",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/oktopeak/clio-mcp",
+    "homepage": "https://github.com/oktopeak/clio-mcp",
+    "repository": "https://github.com/oktopeak/clio-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.oktopeak/clio-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Client ID from your Clio developer application (Settings \u2192 Developer Applications)",
+          "format": "string",
+          "isRequired": true,
+          "name": "CLIO_CLIENT_ID"
+        },
+        {
+          "description": "Client Secret from your Clio developer application",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CLIO_CLIENT_SECRET"
+        },
+        {
+          "description": "64-character hex key for encrypting stored OAuth tokens (generate with: node -e \"console.log(require('crypto').randomBytes(32).toString('hex'))\")",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ENCRYPTION_KEY"
+        },
+        {
+          "description": "Local port for the OAuth callback listener (default: 5678). Change if 5678 is in use.",
+          "format": "string",
+          "name": "CLIO_REDIRECT_PORT"
+        },
+        {
+          "description": "Clio region: 'us' (default) or 'eu'. Controls API and auth base URLs.",
+          "format": "string",
+          "name": "CLIO_REGION"
+        },
+        {
+          "description": "Override the Clio API base URL (e.g. https://eu.app.clio.com/api/v4). Use instead of CLIO_REGION for fine-grained control.",
+          "format": "string",
+          "name": "CLIO_API_BASE"
+        },
+        {
+          "description": "Override the OAuth authorization endpoint (e.g. https://eu.app.clio.com/oauth/authorize).",
+          "format": "string",
+          "name": "CLIO_AUTH_URL"
+        },
+        {
+          "description": "Override the OAuth token endpoint (e.g. https://eu.app.clio.com/oauth/token).",
+          "format": "string",
+          "name": "CLIO_TOKEN_URL"
+        }
+      ],
+      "identifier": "@oktopeak/clio-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "95b0aa0c5a",
+    "published_at": "2026-04-27T18:32:40.363153Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.oktopeak/clio-mcp",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-27T18:32:40.363153Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

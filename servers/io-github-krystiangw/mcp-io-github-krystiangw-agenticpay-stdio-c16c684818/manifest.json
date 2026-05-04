@@ -1,0 +1,72 @@
+{
+  "description": "x402 USDC paywall bridge for MCP \u2014 pay per tool call on Solana.",
+  "harvest": {
+    "last_seen_at": "2026-05-04T05:49:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-krystiangw-agenticpay.stdio.c16c684818",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/krystiangw/agenticpay",
+    "homepage": "https://github.com/krystiangw/agenticpay",
+    "repository": "https://github.com/krystiangw/agenticpay"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.krystiangw/agenticpay",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Solana keypair as 64-byte JSON array (the format `solana-keygen new` writes). The bridge signs each x402 payment with this keypair.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AGENTICPAY_BRIDGE_KEYPAIR"
+        },
+        {
+          "description": "JSON array of paid tool definitions. Each entry: { name, description, url, inputSchema, headers? }",
+          "isRequired": true,
+          "name": "AGENTICPAY_BRIDGE_TOOLS"
+        },
+        {
+          "default": "solana:EtWTRABZaYq6iMfeYKouRu166VU2xqa1",
+          "description": "CAIP-2 network identifier. Devnet: solana:EtWTRABZaYq6iMfeYKouRu166VU2xqa1",
+          "name": "AGENTICPAY_BRIDGE_NETWORK"
+        },
+        {
+          "default": "https://api.devnet.solana.com",
+          "description": "Solana JSON-RPC URL",
+          "name": "AGENTICPAY_BRIDGE_RPC"
+        }
+      ],
+      "identifier": "@agenticpay/mcp-bridge",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.0.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c16c684818",
+    "published_at": "2026-05-01T11:35:38.098822Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.krystiangw/agenticpay",
+    "server_version": "0.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-01T11:35:38.098822Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.0.1"
+}

@@ -1,0 +1,86 @@
+{
+  "description": "MIT-licensed pip-installable MCP for Google Merchant Center on Merchant API v1 (126 tools).",
+  "harvest": {
+    "last_seen_at": "2026-05-04T05:49:19+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-kiwoongeom-gmc-mcp.stdio.fa2086aed1",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/kiwoongeom/gmc-mcp",
+    "homepage": "https://github.com/kiwoongeom/gmc-mcp",
+    "repository": "https://github.com/kiwoongeom/gmc-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.kiwoongeom/gmc-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your 10-digit Google Merchant Center account ID (top-right of merchants.google.com).",
+          "format": "string",
+          "isRequired": true,
+          "name": "GMC_ACCOUNT_ID"
+        },
+        {
+          "description": "Absolute path to a Google Cloud service-account JSON key file. The service account must be added as Admin in Merchant Center.",
+          "format": "filepath",
+          "isSecret": true,
+          "name": "GMC_SERVICE_ACCOUNT_KEY"
+        },
+        {
+          "description": "Absolute path to an OAuth user-token JSON file produced by `gmc-mcp auth-init`. Use this OR GMC_SERVICE_ACCOUNT_KEY.",
+          "format": "filepath",
+          "isSecret": true,
+          "name": "GMC_OAUTH_TOKEN"
+        },
+        {
+          "description": "Optional sub-account ID when operating an MCA (Multi-Client Account).",
+          "format": "string",
+          "name": "GMC_SUBACCOUNT_ID"
+        },
+        {
+          "default": "false",
+          "description": "When 'true', writes are logged to the audit log only (no actual API calls).",
+          "format": "string",
+          "name": "GMC_DRY_RUN"
+        },
+        {
+          "default": "INFO",
+          "description": "Log verbosity: DEBUG / INFO / WARNING / ERROR.",
+          "format": "string",
+          "name": "GMC_LOG_LEVEL"
+        }
+      ],
+      "identifier": "gmc-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "fa2086aed1",
+    "published_at": "2026-05-02T20:52:53.294637Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.kiwoongeom/gmc-mcp",
+    "server_version": "0.2.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-02T20:52:53.294637Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.5"
+}

@@ -1,0 +1,63 @@
+{
+  "description": "100+ pre-built SaaS integrations for builder apps. Multi-tenant, scoped per end_user.",
+  "harvest": {
+    "last_seen_at": "2026-05-04T05:47:57+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-danielsalles-connector-platform.sse.624939834d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/danielsalles/connector-platform-plugin",
+    "homepage": "https://github.com/danielsalles/connector-platform-plugin",
+    "repository": "https://github.com/danielsalles/connector-platform-plugin"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://connector-mcp.plataform-connect.workers.dev/mcp/{builder_id}/self"
+    }
+  },
+  "name": "io.github.danielsalles/connector-platform",
+  "provenance": {
+    "identity_key": "624939834d",
+    "published_at": "2026-05-02T01:49:15.964256Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.danielsalles/connector-platform",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-02T01:49:15.964256Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Connector Platform builder PAT (cpt_*)",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {token}"
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://connector-mcp.plataform-connect.workers.dev/mcp/{builder_id}/self",
+      "variables": {
+        "builder_id": {
+          "description": "Your builder UUID \u2014 printed when the platform admin creates your builder, also visible at /v1/me",
+          "format": "string",
+          "isRequired": true
+        },
+        "token": {
+          "description": "Your builder PAT (starts with cpt_)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true
+        }
+      }
+    }
+  ],
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

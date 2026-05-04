@@ -1,0 +1,79 @@
+{
+  "description": "Proton Mail MCP via Bridge (IMAP/SMTP) \u00b7 13 tools \u00b7 dual transport stdio + HTTP.",
+  "harvest": {
+    "last_seen_at": "2026-05-04T05:45:26+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Alexendros-proton-mail-mcp.stdio.1d5b60e0ac",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/Alexendros/proton-mail-mcp",
+    "homepage": "https://github.com/Alexendros/proton-mail-mcp",
+    "repository": "https://github.com/Alexendros/proton-mail-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Alexendros/proton-mail-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Hostname or IP of the Proton Mail Bridge (default: 127.0.0.1 for local, or container hostname in compose).",
+          "format": "string",
+          "name": "PROTON_BRIDGE_HOST"
+        },
+        {
+          "description": "IMAP port exposed by Proton Mail Bridge (default: 1143).",
+          "format": "string",
+          "name": "PROTON_IMAP_PORT"
+        },
+        {
+          "description": "SMTP port exposed by Proton Mail Bridge (default: 1025).",
+          "format": "string",
+          "name": "PROTON_SMTP_PORT"
+        },
+        {
+          "description": "Bridge username (your Proton Mail address).",
+          "format": "string",
+          "isRequired": true,
+          "name": "PROTON_USERNAME"
+        },
+        {
+          "description": "Bridge-generated app password (NOT your Proton account password).",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PROTON_PASSWORD"
+        }
+      ],
+      "identifier": "@alexendros/proton-mail-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1d5b60e0ac",
+    "published_at": "2026-05-02T01:26:35.965192Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Alexendros/proton-mail-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-02T01:26:35.965192Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

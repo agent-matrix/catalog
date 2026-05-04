@@ -1,0 +1,86 @@
+{
+  "description": "MCP server for Kaseya BMS PSA \u2014 tickets, accounts, time entries, contracts.",
+  "harvest": {
+    "last_seen_at": "2026-05-04T05:51:36+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wyre-technology-kaseya-bms-mcp.stdio.35a076e42b",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/wyre-technology/kaseya-bms-mcp",
+    "homepage": "https://github.com/wyre-technology/kaseya-bms-mcp",
+    "repository": "https://github.com/wyre-technology/kaseya-bms-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wyre-technology/kaseya-bms-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Tenant subdomain (e.g. 'yourcompany' for yourcompany.bms.kaseya.com)",
+          "format": "string",
+          "isRequired": true,
+          "name": "KASEYA_BMS_TENANT_SUBDOMAIN"
+        },
+        {
+          "description": "BMS API token (omit if using Kaseya One token)",
+          "format": "string",
+          "isSecret": true,
+          "name": "KASEYA_BMS_API_TOKEN"
+        },
+        {
+          "description": "Kaseya One SSO token (alternative to API token)",
+          "format": "string",
+          "isSecret": true,
+          "name": "KASEYA_BMS_K1_TOKEN"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode for the server. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-technology/kaseya-bms-mcp:v1.0.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "35a076e42b",
+    "published_at": "2026-05-01T19:43:23.683052Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wyre-technology/kaseya-bms-mcp",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-01T19:43:23.683052Z"
+  },
+  "title": "Kaseya BMS",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

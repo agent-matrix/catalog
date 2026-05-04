@@ -1,0 +1,208 @@
+{
+  "description": "A Snowflake MCP server \u2014 SQL queries, schema exploration, and data insights for AI assistants",
+  "harvest": {
+    "last_seen_at": "2026-05-04T05:50:08+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nsphung-mcp-snowflake-server.stdio.7a4b9727e7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nsphung/mcp-snowflake-server",
+    "homepage": "https://github.com/nsphung/mcp-snowflake-server",
+    "repository": "https://github.com/nsphung/mcp-snowflake-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-snowflake-server-nsp==0.7.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nsphung/mcp-snowflake-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Snowflake account identifier",
+          "format": "string",
+          "name": "SNOWFLAKE_ACCOUNT"
+        },
+        {
+          "description": "Snowflake username",
+          "format": "string",
+          "name": "SNOWFLAKE_USER"
+        },
+        {
+          "description": "Password (not required for key-pair / SSO)",
+          "format": "string",
+          "isSecret": true,
+          "name": "SNOWFLAKE_PASSWORD"
+        },
+        {
+          "description": "Virtual warehouse to use",
+          "format": "string",
+          "name": "SNOWFLAKE_WAREHOUSE"
+        },
+        {
+          "description": "Default database",
+          "format": "string",
+          "name": "SNOWFLAKE_DATABASE"
+        },
+        {
+          "description": "Default schema",
+          "format": "string",
+          "name": "SNOWFLAKE_SCHEMA"
+        },
+        {
+          "description": "Role to assume",
+          "format": "string",
+          "name": "SNOWFLAKE_ROLE"
+        },
+        {
+          "description": "Authentication type (e.g. snowflake, externalbrowser)",
+          "format": "string",
+          "name": "SNOWFLAKE_AUTHENTICATOR"
+        },
+        {
+          "description": "Absolute path to .p8 private key file",
+          "format": "string",
+          "name": "SNOWFLAKE_PRIVATE_KEY_FILE"
+        },
+        {
+          "description": "Passphrase for encrypted private key",
+          "format": "string",
+          "isSecret": true,
+          "name": "SNOWFLAKE_PRIVATE_KEY_FILE_PWD"
+        }
+      ],
+      "identifier": "mcp-snowflake-server-nsp",
+      "packageArguments": [
+        {
+          "description": "Snowflake account identifier",
+          "name": "--account",
+          "type": "named"
+        },
+        {
+          "description": "Snowflake username",
+          "name": "--user",
+          "type": "named"
+        },
+        {
+          "description": "Password (not required for key-pair / SSO)",
+          "name": "--password",
+          "type": "named"
+        },
+        {
+          "description": "Virtual warehouse to use",
+          "name": "--warehouse",
+          "type": "named"
+        },
+        {
+          "description": "Default database",
+          "name": "--database",
+          "type": "named"
+        },
+        {
+          "description": "Default schema",
+          "name": "--schema",
+          "type": "named"
+        },
+        {
+          "description": "Role to assume",
+          "name": "--role",
+          "type": "named"
+        },
+        {
+          "default": "snowflake",
+          "description": "Authentication type (e.g. snowflake, externalbrowser)",
+          "name": "--authenticator",
+          "type": "named"
+        },
+        {
+          "description": "Absolute path to .p8 private key file",
+          "name": "--private_key_file",
+          "type": "named"
+        },
+        {
+          "description": "Passphrase for encrypted private key",
+          "name": "--private_key_file_pwd",
+          "type": "named"
+        },
+        {
+          "description": "Path to TOML connections file",
+          "name": "--connections-file",
+          "type": "named"
+        },
+        {
+          "description": "Connection profile name in TOML file (required with --connections-file)",
+          "name": "--connection-name",
+          "type": "named"
+        },
+        {
+          "description": "Enable write_query and create_table tools",
+          "name": "--allow_write",
+          "type": "named"
+        },
+        {
+          "description": "Pre-load table schema as context://table/* resources (disables list_tables / describe_table)",
+          "name": "--prefetch",
+          "type": "named"
+        },
+        {
+          "description": "Space-separated list of tool names to disable",
+          "name": "--exclude_tools",
+          "type": "named"
+        },
+        {
+          "description": "Omit embedded JSON resources from responses (reduces context window usage)",
+          "name": "--exclude-json-results",
+          "type": "named"
+        },
+        {
+          "description": "Directory for log file output",
+          "name": "--log_dir",
+          "type": "named"
+        },
+        {
+          "choices": [
+            "DEBUG",
+            "INFO",
+            "WARNING",
+            "ERROR",
+            "CRITICAL"
+          ],
+          "default": "INFO",
+          "description": "Log verbosity: DEBUG, INFO, WARNING, ERROR, CRITICAL",
+          "name": "--log_level",
+          "type": "named"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.7.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7a4b9727e7",
+    "published_at": "2026-04-28T08:50:44.617513Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nsphung/mcp-snowflake-server",
+    "server_version": "0.7.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-28T08:50:44.617513Z"
+  },
+  "title": "Snowflake MCP Server",
+  "type": "mcp_server",
+  "version": "0.7.0"
+}

@@ -1,0 +1,85 @@
+{
+  "description": "MCP server enabling AI clients to interact with any MediaWiki wiki through standard tools",
+  "harvest": {
+    "last_seen_at": "2026-05-04T05:46:23+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ProfessionalWiki-mediawiki-mcp-server.stdio.589bd47547",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ProfessionalWiki/MediaWiki-MCP-Server",
+    "homepage": "https://github.com/ProfessionalWiki/MediaWiki-MCP-Server",
+    "repository": "https://github.com/ProfessionalWiki/MediaWiki-MCP-Server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@professional-wiki/mediawiki-mcp-server==0.8.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ProfessionalWiki/mediawiki-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "config.json",
+          "description": "Path to your configuration file",
+          "format": "filepath",
+          "name": "CONFIG"
+        },
+        {
+          "description": "Set to 'true' to allow HTTP startup when config.json has static credentials. Otherwise the server refuses to start, preventing silent shared-identity fallback for unauthenticated requests.",
+          "name": "MCP_ALLOW_STATIC_FALLBACK"
+        },
+        {
+          "default": "50000",
+          "description": "Byte cap for content bodies (wikitext, rendered HTML, diffs) returned by get-page, get-pages, parse-wikitext, and compare-pages. Oversized bodies are truncated with a trailing marker.",
+          "format": "number",
+          "name": "MCP_CONTENT_MAX_BYTES"
+        },
+        {
+          "choices": [
+            "stdio",
+            "http"
+          ],
+          "default": "stdio",
+          "description": "Type of MCP server transport",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "3000",
+          "description": "Port used for StreamableHTTP transport",
+          "format": "number",
+          "name": "PORT"
+        }
+      ],
+      "identifier": "@professional-wiki/mediawiki-mcp-server",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.8.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "589bd47547",
+    "published_at": "2026-04-28T20:12:25.058914Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ProfessionalWiki/mediawiki-mcp-server",
+    "server_version": "0.8.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-28T20:12:25.058914Z"
+  },
+  "title": "MediaWiki MCP Server",
+  "type": "mcp_server",
+  "version": "0.8.0"
+}

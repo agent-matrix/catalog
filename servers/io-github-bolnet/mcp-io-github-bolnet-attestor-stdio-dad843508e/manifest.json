@@ -1,0 +1,83 @@
+{
+  "description": "Self-hosted memory for agent teams. Bi-temporal replay, deterministic retrieval, audit log.",
+  "harvest": {
+    "last_seen_at": "2026-05-04T05:47:18+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-bolnet-attestor.stdio.dad843508e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/bolnet/attestor",
+    "homepage": "https://github.com/bolnet/attestor",
+    "repository": "https://github.com/bolnet/attestor"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "python",
+          "attestor==4.0.0a3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.bolnet/attestor",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Directory containing attestor's config.toml. Defaults to ~/.attestor.",
+          "format": "string",
+          "name": "ATTESTOR_PATH"
+        },
+        {
+          "description": "Set to 1 to skip the local Ollama embedder probe (e.g., on hosts without Ollama). Defaults to unset (Ollama is the default embedder).",
+          "format": "string",
+          "name": "ATTESTOR_DISABLE_LOCAL_EMBED"
+        },
+        {
+          "description": "OpenAI API key (used for the OpenAI text-embedding-3-large fallback embedder when Ollama is unavailable).",
+          "format": "string",
+          "isSecret": true,
+          "name": "OPENAI_API_KEY"
+        },
+        {
+          "description": "OpenRouter API key (used for the federated LLM extraction / consolidation paths and for the LongMemEval benchmark runner).",
+          "format": "string",
+          "isSecret": true,
+          "name": "OPENROUTER_API_KEY"
+        }
+      ],
+      "identifier": "attestor",
+      "packageArguments": [
+        {
+          "description": "MCP stdio server subcommand.",
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryType": "pypi",
+      "runtimeHint": "python",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "4.0.0a3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "dad843508e",
+    "published_at": "2026-04-27T21:43:37.65513Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.bolnet/attestor",
+    "server_version": "4.0.0a3",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-27T21:43:37.65513Z"
+  },
+  "title": "Attestor",
+  "type": "mcp_server",
+  "version": "4.0.0a3"
+}

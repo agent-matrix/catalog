@@ -1,0 +1,77 @@
+{
+  "description": "Let AI agents pay-per-call for any HTTP API via x402 on Base mainnet. One tool: pay_and_call.",
+  "harvest": {
+    "last_seen_at": "2026-05-04T05:45:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-AsaiShota-mcp-server.stdio.dedab10de8",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/AsaiShota/x402-market",
+    "homepage": "https://github.com/AsaiShota/x402-market",
+    "repository": "https://github.com/AsaiShota/x402-market"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.AsaiShota/mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://x402-market-api.lien-studio-akiyama.workers.dev",
+          "description": "Marketplace API base URL.",
+          "name": "MARKET_API_URL"
+        },
+        {
+          "description": "Funded buyer wallet private key (0x-prefixed). Required for pay_and_call; read-only tools work without it.",
+          "isSecret": true,
+          "name": "MCP_BUYER_PRIVATE_KEY"
+        },
+        {
+          "default": "https://mainnet.base.org",
+          "description": "Base RPC endpoint. Defaults to Base mainnet public RPC; Alchemy/QuickNode recommended for higher rate limits.",
+          "name": "BASE_RPC_URL"
+        },
+        {
+          "default": "8453",
+          "description": "8453 = Base mainnet (default, matches live listings). 84532 = Base Sepolia testnet.",
+          "format": "number",
+          "name": "BASE_CHAIN_ID"
+        },
+        {
+          "default": "1.0",
+          "description": "Hard cap on per-call cost (USDC). Refuses to pay above this.",
+          "name": "MCP_MAX_PRICE"
+        }
+      ],
+      "identifier": "@x402-market/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0-alpha.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "dedab10de8",
+    "published_at": "2026-05-02T00:48:46.344618Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.AsaiShota/mcp-server",
+    "server_version": "0.1.0-alpha.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-02T00:48:46.344618Z"
+  },
+  "title": "x402-market",
+  "type": "mcp_server",
+  "version": "0.1.0-alpha.3"
+}

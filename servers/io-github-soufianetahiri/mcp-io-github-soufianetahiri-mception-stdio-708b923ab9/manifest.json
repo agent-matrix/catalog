@@ -1,0 +1,70 @@
+{
+  "description": "Audits other MCP servers for security risks. Returns safe / caution / unsafe / inconclusive.",
+  "harvest": {
+    "last_seen_at": "2026-05-04T05:51:00+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-soufianetahiri-mception.stdio.708b923ab9",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.soufianetahiri/mception",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Where audit reports and rug-pull baselines live. Defaults to ~/.mception.",
+          "format": "string",
+          "name": "MCEPTION_DATA_DIR"
+        },
+        {
+          "default": "0",
+          "description": "Set to 1 to block outbound HTTP (OSV, registry signals, phantom-repo probes).",
+          "format": "string",
+          "name": "MCEPTION_OFFLINE"
+        },
+        {
+          "default": "60",
+          "description": "Per-target timeout in seconds for the fetcher + engine pipeline.",
+          "format": "string",
+          "name": "MCEPTION_INTROSPECT_TIMEOUT"
+        },
+        {
+          "default": "0",
+          "description": "Set to 1 to enable advisory LLM-assisted classification via MCP sampling. No API key needed.",
+          "format": "string",
+          "name": "MCEPTION_ENABLE_LLM_JUDGE"
+        }
+      ],
+      "identifier": "mception",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "708b923ab9",
+    "published_at": "2026-04-27T13:07:19.622233Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.soufianetahiri/mception",
+    "server_version": "0.5.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-27T13:07:19.622233Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.5.2"
+}

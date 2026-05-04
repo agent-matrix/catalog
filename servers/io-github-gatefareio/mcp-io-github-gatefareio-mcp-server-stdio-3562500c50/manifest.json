@@ -1,0 +1,75 @@
+{
+  "description": "Marketplace of paid HTTP APIs. USDC micropayments via x402 on Base. Non-custodial.",
+  "harvest": {
+    "last_seen_at": "2026-05-04T05:48:28+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-gatefareio-mcp-server.stdio.3562500c50",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/gatefareio/mcp-server",
+    "homepage": "https://github.com/gatefareio/mcp-server",
+    "repository": "https://github.com/gatefareio/mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.gatefareio/mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "EVM private key (32 bytes hex). Required for buyer tools (call_api, get_wallet_balance, estimate_cost). Stays on the user's machine.",
+          "isSecret": true,
+          "name": "WALLET_PRIVATE_KEY"
+        },
+        {
+          "description": "Optional runtime spend cap in USD; call_api throws BUDGET_EXHAUSTED when reached.",
+          "name": "WALLET_BUDGET_USD"
+        },
+        {
+          "default": "eip155:8453",
+          "description": "Network identifier. Defaults to eip155:8453 (Base mainnet). Use eip155:84532 for Sepolia testnet.",
+          "name": "WALLET_NETWORK"
+        },
+        {
+          "description": "Personal access token (gfpat_...) from gatefare.io/dashboard/tokens. Required for publisher tools (register_api, list_my_apis, update_api, get_revenue, distribute).",
+          "isSecret": true,
+          "name": "GATEFARE_PAT"
+        },
+        {
+          "default": "https://gatefare.io",
+          "description": "Override the Gatefare base URL (defaults to https://gatefare.io). Useful for self-hosted deployments.",
+          "name": "GATEFARE_BASE_URL"
+        }
+      ],
+      "identifier": "@gatefare/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "3562500c50",
+    "published_at": "2026-04-29T16:57:26.421995Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.gatefareio/mcp-server",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-04-29T16:57:26.421995Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

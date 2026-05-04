@@ -1,0 +1,89 @@
+{
+  "description": "Generate Tableau .twb/.twbx workbooks: 47 tools for charts, dashboards, rules, CSV pipelines.",
+  "harvest": {
+    "last_seen_at": "2026-05-04T05:51:06+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-subhatta123-twilize.stdio.58526757a6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/subhatta123/twilize",
+    "homepage": "https://github.com/subhatta123/twilize",
+    "repository": "https://github.com/subhatta123/twilize"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "Install twilize with the optional `pipeline` extra (CSV->Hyper) so csv_to_dashboard works out of the box.",
+            "isRequired": true,
+            "type": "positional",
+            "value": "twilize[pipeline]"
+          },
+          "twilize==0.34.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.subhatta123/twilize",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "1",
+          "description": "Force unbuffered stdout so MCP stdio framing is never delayed by Python buffering.",
+          "name": "PYTHONUNBUFFERED"
+        },
+        {
+          "default": "utf-8",
+          "description": "Force UTF-8 stdio so non-ASCII content in workbooks survives the round trip.",
+          "name": "PYTHONIOENCODING"
+        },
+        {
+          "default": "info",
+          "description": "Server log level. One of: debug, info, warning, error, critical.",
+          "name": "MCP_LOG_LEVEL"
+        },
+        {
+          "description": "Optional. Enables AI-assisted chart suggestions and reference-image styling.",
+          "isSecret": true,
+          "name": "OPENAI_API_KEY"
+        }
+      ],
+      "identifier": "twilize",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "Install twilize with the optional `pipeline` extra (CSV->Hyper) so csv_to_dashboard works out of the box.",
+          "isRequired": true,
+          "type": "positional",
+          "value": "twilize[pipeline]"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.34.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "58526757a6",
+    "published_at": "2026-05-02T17:24:17.719296Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.subhatta123/twilize",
+    "server_version": "0.34.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-02T17:24:17.719296Z"
+  },
+  "title": "Twilize",
+  "type": "mcp_server",
+  "version": "0.34.0"
+}

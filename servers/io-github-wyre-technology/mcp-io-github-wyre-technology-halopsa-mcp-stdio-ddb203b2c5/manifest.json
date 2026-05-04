@@ -1,0 +1,91 @@
+{
+  "description": "MCP server for HaloPSA \u2014 clients, tickets, and PSA workflows via the HaloPSA REST API.",
+  "harvest": {
+    "last_seen_at": "2026-05-04T05:51:36+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wyre-technology-halopsa-mcp.stdio.ddb203b2c5",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/wyre-technology/halopsa-mcp",
+    "homepage": "https://github.com/wyre-technology/halopsa-mcp",
+    "repository": "https://github.com/wyre-technology/halopsa-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wyre-technology/halopsa-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "HaloPSA OAuth client ID",
+          "format": "string",
+          "isRequired": true,
+          "name": "HALOPSA_CLIENT_ID"
+        },
+        {
+          "description": "HaloPSA OAuth client secret",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "HALOPSA_CLIENT_SECRET"
+        },
+        {
+          "description": "HaloPSA tenant identifier (subdomain). Provide this or HALOPSA_BASE_URL.",
+          "format": "string",
+          "name": "HALOPSA_TENANT"
+        },
+        {
+          "description": "HaloPSA base URL (e.g. https://your-instance.halopsa.com). Provide this or HALOPSA_TENANT.",
+          "format": "string",
+          "name": "HALOPSA_BASE_URL"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode for the server. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-technology/halopsa-mcp:v1.4.1",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "ddb203b2c5",
+    "published_at": "2026-05-04T02:28:26.672902Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wyre-technology/halopsa-mcp",
+    "server_version": "1.4.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-04T02:28:26.672902Z"
+  },
+  "title": "HaloPSA",
+  "type": "mcp_server",
+  "version": "1.4.1"
+}

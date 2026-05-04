@@ -1,0 +1,76 @@
+{
+  "description": "MCP server for Agon Gateway x402, Helius Wallet, and Tokens API market data.",
+  "harvest": {
+    "last_seen_at": "2026-05-04T05:45:25+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Agonx402-agon-gateway.stdio.030fe0fb34",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint or identifier)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/Agonx402/agon-gateway-agentic",
+    "homepage": "https://github.com/Agonx402/agon-gateway-agentic",
+    "repository": "https://github.com/Agonx402/agon-gateway-agentic"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Agonx402/agon-gateway",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional Agon Gateway base URL. Defaults to https://gateway.agonx402.com.",
+          "format": "string",
+          "name": "AGON_GATEWAY_BASE_URL"
+        },
+        {
+          "description": "Executed only by agon_gateway_auth_call after an HTTP 402: spawns once with the normalized auth-request JSON on stdin (same shape as agon_gateway_prepare_auth). Stdout must be JSON auth output (headers map, or SIWX address+signature). On Windows, npx/npm run under cmd.exe; treat AGON_SIGNER_COMMAND as untrusted if an attacker controls it.",
+          "format": "string",
+          "name": "AGON_SIGNER_COMMAND"
+        },
+        {
+          "description": "Optional Agon wallet profile hint passed to signer hooks.",
+          "format": "string",
+          "name": "AGON_WALLET_PROFILE"
+        },
+        {
+          "description": "Optional x402 maximum USD amount per request.",
+          "format": "string",
+          "name": "AGON_PAYMENT_MAX_AMOUNT_USD"
+        },
+        {
+          "description": "Optional x402 daily authorized spend limit in USD.",
+          "format": "string",
+          "name": "AGON_PAYMENT_DAILY_LIMIT_USD"
+        }
+      ],
+      "identifier": "@agonx402/gateway-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "030fe0fb34",
+    "published_at": "2026-05-02T16:05:35.863191Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Agonx402/agon-gateway",
+    "server_version": "0.4.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-02T16:05:35.863191Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.4.2"
+}
