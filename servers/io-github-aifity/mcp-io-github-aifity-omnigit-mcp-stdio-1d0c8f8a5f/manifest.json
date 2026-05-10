@@ -1,13 +1,12 @@
 {
   "description": "Connect AI assistants to GitHub - manage repos, issues, PRs, workflows, and git operations.",
   "harvest": {
-    "last_seen_at": "2026-05-04T05:46:50+00:00",
+    "last_seen_at": "2026-05-10T18:29:39+00:00",
     "seen_in_latest_run": true
   },
   "id": "mcp.io-github-aifity-omnigit-mcp.stdio.1d0c8f8a5f",
   "lifecycle": {
-    "reason": "Missing required package metadata (runtimeHint or identifier)",
-    "status": "disabled"
+    "status": "active"
   },
   "links": {
     "documentation": "https://github.com/aifity/omnigit-mcp",
@@ -17,7 +16,24 @@
   "mcp_registration": {
     "server": {
       "exec": {
-        "cmd": [],
+        "cmd": [
+          "docker",
+          {
+            "description": "Set an environment variable in the runtime",
+            "isRequired": true,
+            "name": "-e",
+            "type": "named",
+            "value": "GITHUB_PERSONAL_ACCESS_TOKEN={token}",
+            "variables": {
+              "token": {
+                "format": "string",
+                "isRequired": true,
+                "isSecret": true
+              }
+            }
+          },
+          "ghcr.io/aifity/omnigit-mcp:0.1.2"
+        ],
         "env": {}
       },
       "transport": "STDIO"

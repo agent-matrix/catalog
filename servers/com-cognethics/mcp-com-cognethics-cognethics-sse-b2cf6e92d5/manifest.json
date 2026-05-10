@@ -1,0 +1,50 @@
+{
+  "description": "Multi-tenant business platform \u2014 6,000+ RBAC-gated MCP tools across finance, ops, docs, agents.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:20:48+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-cognethics-cognethics.sse.b2cf6e92d5",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://{tenant}.cognethics.com/api/mcp/mcp"
+    }
+  },
+  "name": "com.cognethics/cognethics",
+  "provenance": {
+    "identity_key": "b2cf6e92d5",
+    "published_at": "2026-05-05T21:48:49.096894Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.cognethics/cognethics",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-05T21:48:49.096894Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "OAuth 2.1 bearer token. Most clients negotiate this automatically via Dynamic Client Registration; the well-known metadata at /.well-known/oauth-authorization-server drives discovery.",
+          "isSecret": true,
+          "name": "Authorization"
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://{tenant}.cognethics.com/api/mcp/mcp",
+      "variables": {
+        "tenant": {
+          "description": "Your Cognethics tenant subdomain (e.g. 'gtm'). Issued at account provisioning; contact noreply@cognethics.com for onboarding.",
+          "isRequired": true
+        }
+      }
+    }
+  ],
+  "title": "Cognethics",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

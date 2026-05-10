@@ -1,0 +1,104 @@
+{
+  "description": "dbt MCP \u2014 manifest/run_results/sources/catalog parsing + DQ result tables (BigQuery/Postgres)",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:30:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-us-all-dbt.stdio.4958c23ee0",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/us-all/dbt-mcp-server",
+    "homepage": "https://github.com/us-all/dbt-mcp-server",
+    "repository": "https://github.com/us-all/dbt-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@us-all/dbt-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.us-all/dbt",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to dbt project root (where dbt_project.yml lives).",
+          "isRequired": true,
+          "name": "DBT_PROJECT_DIR"
+        },
+        {
+          "description": "dbt target dir for manifest.json/run_results.json (default: $DBT_PROJECT_DIR/target).",
+          "name": "DBT_TARGET_DIR"
+        },
+        {
+          "description": "Optional dir for archived run_results.json history (glob-scanned).",
+          "name": "DBT_RUN_HISTORY_DIR"
+        },
+        {
+          "description": "DQ result table backend: 'bigquery' (default) or 'postgres'.",
+          "name": "DQ_BACKEND"
+        },
+        {
+          "description": "Fully qualified DQ checks table, e.g. 'project.data_ops.quality_checks'.",
+          "name": "DQ_RESULTS_TABLE"
+        },
+        {
+          "description": "Fully qualified DQ score-daily table, e.g. 'project.data_ops.quality_score_daily'.",
+          "name": "DQ_SCORE_TABLE"
+        },
+        {
+          "description": "Service account key path for BigQuery (ADC fallback supported).",
+          "name": "GOOGLE_APPLICATION_CREDENTIALS"
+        },
+        {
+          "description": "Explicit BigQuery project ID for DQ queries.",
+          "name": "BQ_PROJECT_ID"
+        },
+        {
+          "description": "Postgres connection string when DQ_BACKEND=postgres.",
+          "isSecret": true,
+          "name": "PG_CONNECTION_STRING"
+        },
+        {
+          "default": "false",
+          "description": "Reserved for future write tools. Default read-only.",
+          "name": "DBT_ALLOW_WRITE"
+        },
+        {
+          "description": "Comma-separated category allowlist (dbt,quality,meta).",
+          "name": "DBT_TOOLS"
+        },
+        {
+          "description": "Comma-separated category disablelist.",
+          "name": "DBT_DISABLE"
+        }
+      ],
+      "identifier": "@us-all/dbt-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4958c23ee0",
+    "published_at": "2026-05-07T02:06:14.887962Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.us-all/dbt",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-07T02:06:14.887962Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

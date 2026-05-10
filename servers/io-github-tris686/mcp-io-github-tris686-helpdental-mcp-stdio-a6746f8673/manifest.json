@@ -1,0 +1,74 @@
+{
+  "description": "Search 10,000+ UK dental practices, compare treatment prices, and find emergency dentists.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:30:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-tris686-helpdental-mcp.stdio.a6746f8673",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/tris686/helpdental",
+    "homepage": "https://github.com/tris686/helpdental",
+    "repository": "https://github.com/tris686/helpdental"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "helpdental-mcp@1.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.tris686/helpdental-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "HelpDental Supabase project URL",
+          "isRequired": true,
+          "name": "SUPABASE_URL"
+        },
+        {
+          "description": "HelpDental Supabase anonymous key",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SUPABASE_ANON_KEY"
+        },
+        {
+          "description": "Optional. Enables the booking tools (book_appointment, confirm_booking_otp, get_booking_status). Without this, only the read-only search tools are exposed.",
+          "isSecret": true,
+          "name": "MCP_BOOKING_API_KEY"
+        },
+        {
+          "description": "Optional. Override the HelpDental API host (defaults to https://helpdental.ai). Useful for staging.",
+          "name": "HELPDENTAL_API_BASE"
+        }
+      ],
+      "identifier": "helpdental-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a6746f8673",
+    "published_at": "2026-05-04T08:12:58.12403Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.tris686/helpdental-mcp",
+    "server_version": "1.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-04T08:12:58.12403Z"
+  },
+  "title": "HelpDental",
+  "type": "mcp_server",
+  "version": "1.1.0"
+}

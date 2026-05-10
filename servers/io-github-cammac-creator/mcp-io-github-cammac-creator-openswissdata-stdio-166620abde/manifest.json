@@ -1,0 +1,71 @@
+{
+  "description": "Swiss federal open data via MCP: TARES tariffs, FINMA registry, NOGA codes (9 tools).",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:29:57+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cammac-creator-openswissdata.stdio.166620abde",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cammac-creator/openswissdata",
+    "homepage": "https://github.com/cammac-creator/openswissdata",
+    "repository": "https://github.com/cammac-creator/openswissdata"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@openswissdata/mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cammac-creator/openswissdata",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional Bearer token for higher quotas / Pro tools. Anonymous tier works without it (~100 req/day/IP).",
+          "format": "string",
+          "isSecret": true,
+          "name": "OPENSWISSDATA_API_KEY"
+        },
+        {
+          "default": "https://mcp.openswissdata.com",
+          "description": "Override the remote MCP endpoint (default: https://mcp.openswissdata.com). Useful for staging or self-hosting.",
+          "format": "string",
+          "name": "OPENSWISSDATA_BASE_URL"
+        },
+        {
+          "default": "30000",
+          "description": "Per-request timeout in milliseconds.",
+          "format": "string",
+          "name": "OPENSWISSDATA_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "@openswissdata/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "166620abde",
+    "published_at": "2026-05-06T18:53:45.404009Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cammac-creator/openswissdata",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-06T18:53:45.404009Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

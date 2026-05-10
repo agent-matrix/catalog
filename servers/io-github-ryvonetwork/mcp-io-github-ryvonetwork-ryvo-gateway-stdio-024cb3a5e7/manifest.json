@@ -1,0 +1,78 @@
+{
+  "description": "MCP server for Ryvo Gateway x402, Helius Wallet, and Tokens API market data.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:29:28+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Ryvonetwork-ryvo-gateway.stdio.024cb3a5e7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Ryvonetwork/ryvo-gateway-agentic",
+    "homepage": "https://github.com/Ryvonetwork/ryvo-gateway-agentic",
+    "repository": "https://github.com/Ryvonetwork/ryvo-gateway-agentic"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@ryvonetwork/gateway-mcp@0.4.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Ryvonetwork/ryvo-gateway",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional Ryvo Gateway base URL. Defaults to https://gateway.ryvo.network.",
+          "format": "string",
+          "name": "RYVO_GATEWAY_BASE_URL"
+        },
+        {
+          "description": "Executed only by ryvo_gateway_auth_call after an HTTP 402: spawns once with the normalized auth-request JSON on stdin (same shape as ryvo_gateway_prepare_auth). Stdout must be JSON auth output (headers map, or SIWX address+signature). On Windows, npx/npm run under cmd.exe; treat RYVO_SIGNER_COMMAND as untrusted if an attacker controls it.",
+          "format": "string",
+          "name": "RYVO_SIGNER_COMMAND"
+        },
+        {
+          "description": "Optional Ryvo wallet profile hint passed to signer hooks.",
+          "format": "string",
+          "name": "RYVO_WALLET_PROFILE"
+        },
+        {
+          "description": "Optional x402 maximum USD amount per request.",
+          "format": "string",
+          "name": "RYVO_PAYMENT_MAX_AMOUNT_USD"
+        },
+        {
+          "description": "Optional x402 daily authorized spend limit in USD.",
+          "format": "string",
+          "name": "RYVO_PAYMENT_DAILY_LIMIT_USD"
+        }
+      ],
+      "identifier": "@ryvonetwork/gateway-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "024cb3a5e7",
+    "published_at": "2026-05-08T03:36:02.923314Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Ryvonetwork/ryvo-gateway",
+    "server_version": "0.4.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-08T03:36:02.923314Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.4.2"
+}

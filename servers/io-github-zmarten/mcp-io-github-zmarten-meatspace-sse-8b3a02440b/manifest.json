@@ -1,0 +1,56 @@
+{
+  "description": "Human-in-the-loop for AI agents. Submit choices, get a human decision.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:30:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-zmarten-meatspace.sse.8b3a02440b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/zmarten/meatspace",
+    "homepage": "https://github.com/zmarten/meatspace",
+    "repository": "https://github.com/zmarten/meatspace"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://meatspace.run/api/mcp"
+    }
+  },
+  "name": "io.github.zmarten/meatspace",
+  "provenance": {
+    "identity_key": "8b3a02440b",
+    "published_at": "2026-05-07T02:27:35.361172Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.zmarten/meatspace",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-07T02:27:35.361172Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Bearer token for the ask_human tool. Optional \u2014 get_service_status and provision_api_key require no auth, so a fresh client can connect without credentials and call provision_api_key to mint a token instantly.",
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {api_key}",
+          "variables": {
+            "api_key": {
+              "description": "Your MeatSpace API key. Mint one with provision_api_key (no auth, rate-limited to 5 keys per email) or via POST https://meatspace.run/api/keys.",
+              "format": "string",
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://meatspace.run/api/mcp"
+    }
+  ],
+  "title": "MeatSpace",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

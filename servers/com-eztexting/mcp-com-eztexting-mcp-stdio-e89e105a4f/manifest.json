@@ -1,0 +1,64 @@
+{
+  "description": "Official EZTexting MCP server: SMS/MMS messaging, contacts, workflows, reports.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:21:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-eztexting-mcp.stdio.e89e105a4f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://gitlab.com/eztexting/mcp-server",
+    "homepage": "https://gitlab.com/eztexting/mcp-server",
+    "repository": "https://gitlab.com/eztexting/mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "description": "Optional: connect to a single sub-server only (messaging | contacts | workflows | admin). Default: unified endpoint with all tools.",
+            "name": "--server",
+            "type": "named"
+          },
+          "@eztexting/mcp-server@1.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.eztexting/mcp",
+  "packages": [
+    {
+      "identifier": "@eztexting/mcp-server",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "description": "Optional: connect to a single sub-server only (messaging | contacts | workflows | admin). Default: unified endpoint with all tools.",
+          "name": "--server",
+          "type": "named"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e89e105a4f",
+    "published_at": "2026-05-05T16:29:22.642654Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.eztexting/mcp",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-05T16:29:22.642654Z"
+  },
+  "title": "EZTexting MCP",
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

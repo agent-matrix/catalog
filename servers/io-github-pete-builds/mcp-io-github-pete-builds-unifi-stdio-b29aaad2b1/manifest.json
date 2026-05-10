@@ -1,0 +1,91 @@
+{
+  "description": "Self-hosted UniFi gateway management: VLANs, WLANs, firewall, clients, DHCP, observability.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:30:29+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-pete-builds-unifi.stdio.b29aaad2b1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/pete-builds/mcp-unifi",
+    "homepage": "https://github.com/pete-builds/mcp-unifi",
+    "repository": "https://github.com/pete-builds/mcp-unifi"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/pete-builds/mcp-unifi:0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.pete-builds/unifi",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "choices": [
+            "true",
+            "false"
+          ],
+          "default": "true",
+          "description": "When true, the server returns realistic mock data and requires no UniFi hardware. Defaults to true so the image is functional out of the box.",
+          "format": "string",
+          "name": "STUB_MODE"
+        },
+        {
+          "description": "IP address or hostname of the UniFi OS gateway (UCG-Fiber, UDM Pro, etc). Required when STUB_MODE=false.",
+          "format": "string",
+          "name": "UNIFI_HOST"
+        },
+        {
+          "description": "Local API key generated under Settings -> Control Plane -> Integrations on the gateway. Required when STUB_MODE=false.",
+          "format": "string",
+          "isSecret": true,
+          "name": "UNIFI_API_KEY"
+        },
+        {
+          "default": "default",
+          "description": "UniFi controller site name. Defaults to 'default'.",
+          "format": "string",
+          "name": "UNIFI_SITE"
+        },
+        {
+          "choices": [
+            "true",
+            "false"
+          ],
+          "default": "false",
+          "description": "Whether to verify the gateway's TLS certificate. Defaults to false because most home gateways use a self-signed cert.",
+          "format": "string",
+          "name": "UNIFI_VERIFY_SSL"
+        }
+      ],
+      "identifier": "ghcr.io/pete-builds/mcp-unifi:0.3.0",
+      "registryType": "oci",
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3714/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "b29aaad2b1",
+    "published_at": "2026-05-09T22:33:40.530643Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.pete-builds/unifi",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-09T22:33:40.530643Z"
+  },
+  "title": "UniFi Gateway",
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

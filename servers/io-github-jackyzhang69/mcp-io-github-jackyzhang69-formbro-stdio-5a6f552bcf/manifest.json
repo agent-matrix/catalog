@@ -1,0 +1,75 @@
+{
+  "description": "MCP server for FormBro Canadian immigration application automation.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:30:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-jackyzhang69-formbro.stdio.5a6f552bcf",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jackyzhang69/formbro",
+    "homepage": "https://github.com/jackyzhang69/formbro",
+    "repository": "https://github.com/jackyzhang69/formbro"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "formbro-mcp-server@1.0.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.jackyzhang69/formbro",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://backend.formbro.ca",
+          "description": "FormBro backend API URL.",
+          "isRequired": true,
+          "name": "FORMBRO_API_URL"
+        },
+        {
+          "description": "FormBro API token from Settings > API Tokens.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "FORMBRO_API_TOKEN"
+        }
+      ],
+      "identifier": "formbro-mcp-server",
+      "packageArguments": [
+        {
+          "description": "Enabled FormBro toolsets. The public beta default is read-oriented.",
+          "name": "--toolsets",
+          "type": "named",
+          "value": "system,read,validate"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5a6f552bcf",
+    "published_at": "2026-05-07T02:49:55.595494Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.jackyzhang69/formbro",
+    "server_version": "1.0.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-07T02:49:55.595494Z"
+  },
+  "title": "FormBro",
+  "type": "mcp_server",
+  "version": "1.0.3"
+}

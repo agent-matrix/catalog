@@ -1,0 +1,76 @@
+{
+  "description": "UniFi semantic-analysis MCP \u2014 fleet health, anomaly detection, cross-site analytics",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:30:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-us-all-unifi.stdio.98c6647211",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/us-all/unifi-mcp-server",
+    "homepage": "https://github.com/us-all/unifi-mcp-server",
+    "repository": "https://github.com/us-all/unifi-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@us-all/unifi-mcp@1.12.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.us-all/unifi",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "UniFi Site Manager API key (https://unifi.ui.com).",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "UNIFI_API_KEY"
+        },
+        {
+          "default": "https://api.ui.com",
+          "description": "UniFi Site Manager API base URL (default: https://api.ui.com).",
+          "name": "UNIFI_API_URL"
+        },
+        {
+          "description": "Optional label identifying which user/account owns the API key \u2014 surfaced in audit logs.",
+          "name": "UNIFI_API_KEY_OWNER"
+        },
+        {
+          "description": "Comma-separated category allowlist. Default: all categories enabled.",
+          "name": "UNIFI_TOOLS"
+        },
+        {
+          "description": "Comma-separated category disablelist.",
+          "name": "UNIFI_DISABLE"
+        }
+      ],
+      "identifier": "@us-all/unifi-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.12.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "98c6647211",
+    "published_at": "2026-05-06T14:02:24.798808Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.us-all/unifi",
+    "server_version": "1.12.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-06T14:02:24.798808Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.12.0"
+}

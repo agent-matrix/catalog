@@ -1,13 +1,12 @@
 {
   "description": "Connect AI assistants to GitHub - manage repos, issues, PRs, and workflows through natural language.",
   "harvest": {
-    "last_seen_at": "2026-05-04T05:48:33+00:00",
+    "last_seen_at": "2026-05-10T18:30:10+00:00",
     "seen_in_latest_run": true
   },
   "id": "mcp.io-github-github-github-mcp-server.stdio.0ed40d790b",
   "lifecycle": {
-    "reason": "Missing required package metadata (runtimeHint or identifier)",
-    "status": "disabled"
+    "status": "active"
   },
   "links": {
     "documentation": "https://github.com/github/github-mcp-server",
@@ -17,7 +16,42 @@
   "mcp_registration": {
     "server": {
       "exec": {
-        "cmd": [],
+        "cmd": [
+          "docker",
+          {
+            "description": "The runtime command to execute",
+            "type": "positional",
+            "value": "run"
+          },
+          {
+            "description": "Run container in interactive mode",
+            "name": "-i",
+            "type": "named"
+          },
+          {
+            "description": "Automatically remove the container when it exits",
+            "name": "--rm",
+            "type": "named"
+          },
+          {
+            "description": "Set an environment variable in the runtime",
+            "name": "-e",
+            "type": "named"
+          },
+          {
+            "description": "Environment variable name",
+            "type": "positional",
+            "value": "GITHUB_PERSONAL_ACCESS_TOKEN",
+            "valueHint": "env_var_name"
+          },
+          {
+            "description": "The container image to run",
+            "type": "positional",
+            "value": "ghcr.io/github/github-mcp-server",
+            "valueHint": "image_name"
+          },
+          "ghcr.io/github/github-mcp-server:0.19.1"
+        ],
         "env": {}
       },
       "transport": "STDIO"

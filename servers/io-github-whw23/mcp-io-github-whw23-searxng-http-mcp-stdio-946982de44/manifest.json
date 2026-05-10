@@ -1,0 +1,128 @@
+{
+  "description": "Self-contained SearXNG metasearch MCP server. One Docker image, 200+ engines, privacy-first.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:30:40+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-whw23-searxng-http-mcp.stdio.946982de44",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/whw23/searxng_http_mcp",
+    "homepage": "https://github.com/whw23/searxng_http_mcp",
+    "repository": "https://github.com/whw23/searxng_http_mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "type": "positional",
+            "value": "run"
+          },
+          {
+            "name": "-d",
+            "type": "named"
+          },
+          {
+            "name": "--name",
+            "type": "named",
+            "value": "searxng-mcp"
+          },
+          {
+            "name": "--restart",
+            "type": "named",
+            "value": "unless-stopped"
+          },
+          {
+            "name": "-p",
+            "type": "named",
+            "value": "8888:8888"
+          },
+          {
+            "name": "--memory",
+            "type": "named",
+            "value": "512m"
+          },
+          {
+            "name": "--cpus",
+            "type": "named",
+            "value": "1"
+          },
+          "ghcr.io/whw23/searxng-http-mcp"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.whw23/searxng-http-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API key for authentication. Leave empty for no auth.",
+          "format": "string",
+          "isSecret": true,
+          "name": "API_KEY"
+        }
+      ],
+      "identifier": "ghcr.io/whw23/searxng-http-mcp",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "name": "-d",
+          "type": "named"
+        },
+        {
+          "name": "--name",
+          "type": "named",
+          "value": "searxng-mcp"
+        },
+        {
+          "name": "--restart",
+          "type": "named",
+          "value": "unless-stopped"
+        },
+        {
+          "name": "-p",
+          "type": "named",
+          "value": "8888:8888"
+        },
+        {
+          "name": "--memory",
+          "type": "named",
+          "value": "512m"
+        },
+        {
+          "name": "--cpus",
+          "type": "named",
+          "value": "1"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://127.0.0.1:8888/mcp/"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "946982de44",
+    "published_at": "2026-05-08T16:18:21.528088Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.whw23/searxng-http-mcp",
+    "server_version": "2026.5.8-d8ab61a9e-edebcd1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-08T16:18:21.528088Z"
+  },
+  "title": "SearXNG HTTP MCP",
+  "type": "mcp_server",
+  "version": "2026.5.8-d8ab61a9e-edebcd1"
+}

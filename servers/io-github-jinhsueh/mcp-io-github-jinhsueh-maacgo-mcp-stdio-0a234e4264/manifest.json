@@ -1,0 +1,65 @@
+{
+  "description": "Taiwan SMS MCP server. Send from Claude / Cursor / Windsurf, NCC-compliant, NT$50 free trial.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:30:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-jinhsueh-maacgo-mcp.stdio.0a234e4264",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jinhsueh/cresclab-sms-self-serve",
+    "homepage": "https://github.com/jinhsueh/cresclab-sms-self-serve",
+    "repository": "https://github.com/jinhsueh/cresclab-sms-self-serve"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@maacgo/mcp@0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.jinhsueh/maacgo-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "MAAC Go API key from https://sms.cresclab.com/app.html#transactional. Use sk_test_... while developing, sk_live_... for real sends.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "MAACGO_API_KEY"
+        },
+        {
+          "description": "Override the REST base URL (default https://sms.cresclab.com/api). Only set this for staging or self-host deployments.",
+          "format": "string",
+          "name": "MAACGO_BASE_URL"
+        }
+      ],
+      "identifier": "@maacgo/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0a234e4264",
+    "published_at": "2026-05-07T06:51:45.851374Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.jinhsueh/maacgo-mcp",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-07T06:51:45.851374Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

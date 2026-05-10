@@ -1,13 +1,12 @@
 {
   "description": "A MCP server that gives AI agents access to SignNow eSignature workflows over STDIO.",
   "harvest": {
-    "last_seen_at": "2026-05-04T05:50:57+00:00",
+    "last_seen_at": "2026-05-10T18:30:34+00:00",
     "seen_in_latest_run": true
   },
   "id": "mcp.io-github-signnow-sn-mcp-server.stdio.6c2b0a96e7",
   "lifecycle": {
-    "reason": "Missing required package metadata (runtimeHint or identifier)",
-    "status": "disabled"
+    "status": "active"
   },
   "links": {
     "documentation": "https://github.com/signnow/sn-mcp-server",
@@ -17,7 +16,10 @@
   "mcp_registration": {
     "server": {
       "exec": {
-        "cmd": [],
+        "cmd": [
+          "uvx",
+          "signnow-mcp-server==0.3.1"
+        ],
         "env": {}
       },
       "transport": "STDIO"

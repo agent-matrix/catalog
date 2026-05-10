@@ -1,0 +1,62 @@
+{
+  "description": "Self-hosted agent continuity server with bounded, recoverable memory and restart orientation.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:30:36+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-stef-k-cognirelay.stdio.eb06120d59",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "cognirelay==1.4.14"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.stef-k/cognirelay",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to a durable writable CogniRelay repository root for runtime state.",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "COGNIRELAY_REPO_ROOT"
+        }
+      ],
+      "identifier": "cognirelay",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "serve"
+        }
+      ],
+      "registryType": "pypi",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://127.0.0.1:8080/v1/mcp"
+      },
+      "version": "1.4.14"
+    }
+  ],
+  "provenance": {
+    "identity_key": "eb06120d59",
+    "published_at": "2026-05-08T15:24:37.266821Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.stef-k/cognirelay",
+    "server_version": "1.4.14",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-08T15:24:37.266821Z"
+  },
+  "title": "CogniRelay",
+  "type": "mcp_server",
+  "version": "1.4.14"
+}

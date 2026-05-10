@@ -1,0 +1,84 @@
+{
+  "description": "Use your own Word templates to convert Markdown \u2192 DOCX/PDF/HTML from any MCP-compatible AI.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:29:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-MDMagic-MCP-mdmagic-mcp-server.stdio.c626dc0547",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/MDMagic-MCP/mdmagic-mcp-server",
+    "homepage": "https://github.com/MDMagic-MCP/mdmagic-mcp-server",
+    "repository": "https://github.com/MDMagic-MCP/mdmagic-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@mdmagic/mcp-server@1.7.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.MDMagic-MCP/mdmagic-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your personal MDMagic API key (format: mdmagic-XXXXXXXXXXXXXXXX). Get yours at https://mdmagic.ai/account \u2014 the 'Connect to AI Assistants via MCP' card on your account page generates the key and pre-fills a copy-pasteable config block.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "MDMAGIC_API_KEY"
+        },
+        {
+          "default": "https://api.mdmagic.ai",
+          "description": "Override the MDMagic API base URL. Defaults to https://api.mdmagic.ai. Only set this if you're running MDMagic against a local dev backend.",
+          "name": "MDMAGIC_BASE_URL"
+        },
+        {
+          "default": "30000",
+          "description": "Request timeout in milliseconds. Increase for very large documents on slow connections. Default: 30000 (30s).",
+          "name": "REQUEST_TIMEOUT"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode: 'stdio' (default, for local clients like Claude Desktop) or 'http' (for self-hosted Streamable HTTP).",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "3001",
+          "description": "Port for HTTP transport mode. Default: 3001. Only used when MCP_TRANSPORT=http.",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "Bind address for HTTP transport mode. Default: 127.0.0.1. Only used when MCP_TRANSPORT=http.",
+          "name": "MCP_HTTP_HOST"
+        }
+      ],
+      "identifier": "@mdmagic/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.7.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c626dc0547",
+    "published_at": "2026-05-09T22:20:16.05307Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.MDMagic-MCP/mdmagic-mcp-server",
+    "server_version": "1.7.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-09T22:20:16.05307Z"
+  },
+  "title": "MDMagic \u2014 Markdown to professional documents",
+  "type": "mcp_server",
+  "version": "1.7.5"
+}

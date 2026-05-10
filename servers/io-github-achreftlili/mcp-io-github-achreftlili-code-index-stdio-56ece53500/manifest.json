@@ -1,0 +1,84 @@
+{
+  "description": "SQLite-backed hybrid (vector + FTS) code search index for Claude Code over MCP.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:29:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-achreftlili-code-index.stdio.56ece53500",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/achreftlili/code-index",
+    "homepage": "https://github.com/achreftlili/code-index",
+    "repository": "https://github.com/achreftlili/code-index"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-code-index==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.achreftlili/code-index",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Voyage embeddings API key. Required when CODE_INDEX_EMBEDDER is unset or set to 'voyage' (the default backend).",
+          "format": "string",
+          "isSecret": true,
+          "name": "VOYAGE_API_KEY"
+        },
+        {
+          "description": "Embedder backend: 'voyage' (default) or 'ollama'. Set to 'ollama' to use a local Ollama server instead of Voyage.",
+          "format": "string",
+          "name": "CODE_INDEX_EMBEDDER"
+        },
+        {
+          "description": "Embedding model name. Defaults to 'voyage-code-3' for Voyage. Must match the embedder's available models.",
+          "format": "string",
+          "name": "CODE_INDEX_EMBED_MODEL"
+        },
+        {
+          "description": "Embedding dimension. Defaults to 1024 (matches voyage-code-3). Must match the model's output dim.",
+          "format": "string",
+          "name": "CODE_INDEX_EMBED_DIM"
+        },
+        {
+          "description": "Path to the SQLite index database. Defaults to .claude/index.db relative to the working directory.",
+          "format": "string",
+          "name": "CODE_INDEX_DB"
+        },
+        {
+          "description": "Ollama server URL when CODE_INDEX_EMBEDDER=ollama. Defaults to http://localhost:11434.",
+          "format": "string",
+          "name": "OLLAMA_URL"
+        }
+      ],
+      "identifier": "mcp-code-index",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "56ece53500",
+    "published_at": "2026-05-09T00:30:49.851295Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.achreftlili/code-index",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-09T00:30:49.851295Z"
+  },
+  "title": "Code Index",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

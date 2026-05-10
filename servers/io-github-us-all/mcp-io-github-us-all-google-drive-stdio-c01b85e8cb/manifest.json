@@ -1,0 +1,97 @@
+{
+  "description": "Google Drive + Workspace MCP \u2014 Docs, Sheets, Slides, Shared Drives, Labels, Approvals, DWD",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:30:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-us-all-google-drive.stdio.c01b85e8cb",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/us-all/google-drive-mcp-server",
+    "homepage": "https://github.com/us-all/google-drive-mcp-server",
+    "repository": "https://github.com/us-all/google-drive-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@us-all/google-drive-mcp@1.14.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.us-all/google-drive",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "OAuth client ID. Required for OAuth refresh-token auth method.",
+          "isSecret": true,
+          "name": "GOOGLE_CLIENT_ID"
+        },
+        {
+          "description": "OAuth client secret. Required for OAuth refresh-token auth method.",
+          "isSecret": true,
+          "name": "GOOGLE_CLIENT_SECRET"
+        },
+        {
+          "description": "OAuth refresh token. Required for OAuth refresh-token auth method.",
+          "isSecret": true,
+          "name": "GOOGLE_REFRESH_TOKEN"
+        },
+        {
+          "description": "Path to service account JSON key. Required for SA + DWD auth method (alternative to OAuth).",
+          "name": "GOOGLE_APPLICATION_CREDENTIALS"
+        },
+        {
+          "description": "Alias for GOOGLE_APPLICATION_CREDENTIALS.",
+          "name": "GOOGLE_SERVICE_ACCOUNT_KEY_PATH"
+        },
+        {
+          "description": "Workspace user email to impersonate (DWD). Required when using service account auth.",
+          "name": "GOOGLE_IMPERSONATE_USER"
+        },
+        {
+          "description": "Comma-separated OAuth scopes. Default scopes cover Drive + Docs + Sheets + Slides read/write.",
+          "name": "GOOGLE_DRIVE_SCOPES"
+        },
+        {
+          "default": "false",
+          "description": "Set to 'true' to enable write tools. Default read-only.",
+          "name": "GOOGLE_DRIVE_ALLOW_WRITE"
+        },
+        {
+          "description": "Comma-separated category allowlist. Default: all categories enabled.",
+          "name": "GD_TOOLS"
+        },
+        {
+          "description": "Comma-separated category disablelist.",
+          "name": "GD_DISABLE"
+        }
+      ],
+      "identifier": "@us-all/google-drive-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.14.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c01b85e8cb",
+    "published_at": "2026-05-06T11:01:20.187137Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.us-all/google-drive",
+    "server_version": "1.14.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-06T11:01:20.187137Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.14.1"
+}

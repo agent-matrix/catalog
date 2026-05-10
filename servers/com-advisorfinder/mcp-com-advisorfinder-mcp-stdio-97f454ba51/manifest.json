@@ -1,13 +1,12 @@
 {
   "description": "Search SEC-registered financial advisors \u2014 profiles, disclosures, risk scores, and credentials.",
   "harvest": {
-    "last_seen_at": "2026-05-04T05:44:22+00:00",
+    "last_seen_at": "2026-05-10T18:19:10+00:00",
     "seen_in_latest_run": true
   },
   "id": "mcp.com-advisorfinder-mcp.stdio.97f454ba51",
   "lifecycle": {
-    "reason": "Missing required package metadata (runtimeHint or identifier)",
-    "status": "disabled"
+    "status": "active"
   },
   "links": {
     "documentation": "https://github.com/drew-keever/advisorfinder-mcp",
@@ -17,7 +16,10 @@
   "mcp_registration": {
     "server": {
       "exec": {
-        "cmd": [],
+        "cmd": [
+          "uvx",
+          "advisorfinder-mcp==1.1.4"
+        ],
         "env": {}
       },
       "transport": "STDIO"

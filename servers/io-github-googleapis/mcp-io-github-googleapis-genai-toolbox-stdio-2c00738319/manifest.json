@@ -1,13 +1,12 @@
 {
   "description": "MCP Toolbox for Databases enables your agent to connect to your database.",
   "harvest": {
-    "last_seen_at": "2026-05-04T05:48:36+00:00",
+    "last_seen_at": "2026-05-10T18:30:10+00:00",
     "seen_in_latest_run": true
   },
   "id": "mcp.io-github-googleapis-genai-toolbox.stdio.2c00738319",
   "lifecycle": {
-    "reason": "Missing required package metadata (runtimeHint or identifier)",
-    "status": "disabled"
+    "status": "active"
   },
   "links": {
     "documentation": "https://github.com/googleapis/genai-toolbox",
@@ -17,7 +16,132 @@
   "mcp_registration": {
     "server": {
       "exec": {
-        "cmd": [],
+        "cmd": [
+          "docker",
+          {
+            "default": "tools.yaml",
+            "description": "File path specifying the tool configuration.",
+            "name": "--tools-file",
+            "type": "named"
+          },
+          {
+            "description": "Multiple file paths specifying tool configurations. Files will be merged. Cannot be used with \u2013-tools-file or \u2013-tools-folder.",
+            "name": "--tools-files",
+            "type": "named"
+          },
+          {
+            "description": "Directory path containing YAML tool configuration files. All .yaml and .yml files in the directory will be loaded and merged. Cannot be used with \u2013-tools-file or \u2013-tools-files.",
+            "name": "--tools-folder",
+            "type": "named"
+          },
+          {
+            "description": "Address of the interface the server will listen on.",
+            "name": "--address",
+            "type": "named",
+            "value": "{host}",
+            "valueHint": "host",
+            "variables": {
+              "host": {
+                "default": "127.0.0.1",
+                "description": "ip address",
+                "isRequired": true
+              }
+            }
+          },
+          {
+            "description": "Port the server will listen on.",
+            "name": "--port",
+            "type": "named",
+            "value": "{port}",
+            "valueHint": "port",
+            "variables": {
+              "port": {
+                "default": "5000",
+                "description": "port",
+                "isRequired": true
+              }
+            }
+          },
+          {
+            "choices": [
+              "debug",
+              "info",
+              "warn",
+              "error"
+            ],
+            "default": "info",
+            "description": "Specify the minimum level logged.",
+            "name": "--log-level",
+            "type": "named"
+          },
+          {
+            "choices": [
+              "standard",
+              "json"
+            ],
+            "default": "standard",
+            "description": "Specify logging format to use.",
+            "name": "--logging-format",
+            "type": "named"
+          },
+          {
+            "description": "Disables dynamic reloading of tools file.",
+            "format": "boolean",
+            "name": "--disable-reload",
+            "type": "named"
+          },
+          {
+            "description": "Use a prebuilt tool configuration by source type.",
+            "name": "--prebuilt",
+            "type": "named"
+          },
+          {
+            "description": "Listens via MCP STDIO instead of acting as a remote HTTP server.",
+            "format": "boolean",
+            "name": "--stdio",
+            "type": "named"
+          },
+          {
+            "description": "Enable exporting directly to Google Cloud Monitoring.",
+            "format": "boolean",
+            "name": "--telemetry-gcp",
+            "type": "named"
+          },
+          {
+            "description": "Enable exporting using OpenTelemetry Protocol (OTLP) to the specified endpoint (e.g. 'http://127.0.0.1:4318').",
+            "name": "--telemetry-otlp",
+            "type": "named"
+          },
+          {
+            "default": "toolbox",
+            "description": "Sets the value of the service.name resource attribute for telemetry data.",
+            "name": "--telemetry-service-name",
+            "type": "named"
+          },
+          {
+            "description": "Launches the Toolbox UI web server.",
+            "format": "boolean",
+            "name": "--ui",
+            "type": "named"
+          },
+          {
+            "default": "*",
+            "description": "Specifies a list of origins permitted to access this server.",
+            "name": "--allowed-origins",
+            "type": "named"
+          },
+          {
+            "description": "Show help for toolbox",
+            "name": "--help",
+            "type": "named"
+          },
+          {
+            "description": "Show version for toolbox",
+            "name": "--version",
+            "type": "named"
+          },
+          "us-central1-docker.pkg.dev/database-toolbox/toolbox/toolbox:0.27.0"
+        ],
         "env": {}
       },
       "transport": "STDIO"

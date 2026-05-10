@@ -1,13 +1,12 @@
 {
   "description": "Security middleware for MCP. Blocks prompt injection, PII leakage, and resource exhaustion.",
   "harvest": {
-    "last_seen_at": "2026-05-04T05:51:24+00:00",
+    "last_seen_at": "2026-05-10T18:30:40+00:00",
     "seen_in_latest_run": true
   },
   "id": "mcp.io-github-vaquarkhan-mcp-bastion.stdio.b1c8eced8c",
   "lifecycle": {
-    "reason": "Missing required package metadata (runtimeHint or identifier)",
-    "status": "disabled"
+    "status": "active"
   },
   "links": {
     "documentation": "https://github.com/vaquarkhan/MCP-Bastion",
@@ -17,7 +16,10 @@
   "mcp_registration": {
     "server": {
       "exec": {
-        "cmd": [],
+        "cmd": [
+          "uvx",
+          "mcp-bastion-python==1.0.7"
+        ],
         "env": {}
       },
       "transport": "STDIO"

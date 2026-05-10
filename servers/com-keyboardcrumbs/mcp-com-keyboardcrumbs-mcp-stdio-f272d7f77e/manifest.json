@@ -1,13 +1,12 @@
 {
   "description": "Live threat intel for Claude \u2014 CVE, KEV predictions, IP lookup, malware hashes. Free, no API key.",
   "harvest": {
-    "last_seen_at": "2026-05-04T05:44:39+00:00",
+    "last_seen_at": "2026-05-10T18:21:52+00:00",
     "seen_in_latest_run": true
   },
   "id": "mcp.com-keyboardcrumbs-mcp.stdio.f272d7f77e",
   "lifecycle": {
-    "reason": "Missing required package metadata (runtimeHint or identifier)",
-    "status": "disabled"
+    "status": "active"
   },
   "links": {
     "documentation": "https://github.com/kbcrumbs/mcp",
@@ -17,7 +16,14 @@
   "mcp_registration": {
     "server": {
       "exec": {
-        "cmd": [],
+        "cmd": [
+          "uvx",
+          {
+            "type": "literal",
+            "value": "keyboardcrumbs-mcp"
+          },
+          "keyboardcrumbs-mcp==1.0.1"
+        ],
         "env": {}
       },
       "transport": "STDIO"

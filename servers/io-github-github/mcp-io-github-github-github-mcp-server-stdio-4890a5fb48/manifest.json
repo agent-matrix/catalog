@@ -1,13 +1,12 @@
 {
   "description": "Connect AI assistants to GitHub - manage repos, issues, PRs, and workflows through natural language.",
   "harvest": {
-    "last_seen_at": "2026-05-04T05:48:34+00:00",
+    "last_seen_at": "2026-05-10T18:30:10+00:00",
     "seen_in_latest_run": true
   },
   "id": "mcp.io-github-github-github-mcp-server.stdio.4890a5fb48",
   "lifecycle": {
-    "reason": "Missing required package metadata (runtimeHint or identifier)",
-    "status": "disabled"
+    "status": "active"
   },
   "links": {
     "documentation": "https://github.com/github/github-mcp-server",
@@ -17,7 +16,24 @@
   "mcp_registration": {
     "server": {
       "exec": {
-        "cmd": [],
+        "cmd": [
+          "docker",
+          {
+            "description": "Set an environment variable in the runtime",
+            "isRequired": true,
+            "name": "-e",
+            "type": "named",
+            "value": "GITHUB_PERSONAL_ACCESS_TOKEN={token}",
+            "variables": {
+              "token": {
+                "format": "string",
+                "isRequired": true,
+                "isSecret": true
+              }
+            }
+          },
+          "ghcr.io/github/github-mcp-server:1.0.0"
+        ],
         "env": {}
       },
       "transport": "STDIO"

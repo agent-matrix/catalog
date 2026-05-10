@@ -1,0 +1,74 @@
+{
+  "description": "Manage restaurant bookings via Claude \u2014 read covers, find guests, move tables, send wedding quotes.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:30:27+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nicklasmenschel-gerezi-mcp.stdio.aed50cb59d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nicklasmenschel/booking2",
+    "homepage": "https://github.com/nicklasmenschel/booking2",
+    "repository": "https://github.com/nicklasmenschel/booking2"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@gerezi/mcp@0.1.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nicklasmenschel/gerezi-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your Gerezi API key (tbl_live_*). Get one from https://www.gerezi.com/settings/api-keys",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GEREZI_API_KEY"
+        },
+        {
+          "default": "https://www.gerezi.com",
+          "description": "Gerezi API base URL. Defaults to https://www.gerezi.com \u2014 only override for self-hosted Gerezi installs.",
+          "name": "GEREZI_API_URL"
+        },
+        {
+          "description": "Optional restaurant slug for logging context. The API key already scopes the request to your restaurant.",
+          "name": "GEREZI_RESTAURANT_SLUG"
+        },
+        {
+          "default": "1",
+          "description": "Which tool surface to expose. \"1\" = read-only (5 tools). \"2\" = read+write (15 tools, includes booking creation, cancellation, quotes). Defaults to \"1\".",
+          "name": "GEREZI_MCP_PHASE"
+        }
+      ],
+      "identifier": "@gerezi/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "aed50cb59d",
+    "published_at": "2026-05-06T13:23:13.174487Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nicklasmenschel/gerezi-mcp",
+    "server_version": "0.1.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-06T13:23:13.174487Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.3"
+}

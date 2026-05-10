@@ -1,0 +1,71 @@
+{
+  "description": "Official MCP server for Automox. Manage devices, patches, and policies in natural language.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:19:43+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-automox-automox-mcp.stdio.aa39a5ae0c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/AutomoxCommunity/automox-mcp",
+    "homepage": "https://github.com/AutomoxCommunity/automox-mcp",
+    "repository": "https://github.com/AutomoxCommunity/automox-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "automox-mcp==1.0.21"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.automox/automox-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your Automox API key",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AUTOMOX_API_KEY"
+        },
+        {
+          "description": "Account UUID from Automox Settings > Secrets & Keys",
+          "format": "string",
+          "isRequired": true,
+          "name": "AUTOMOX_ACCOUNT_UUID"
+        },
+        {
+          "description": "Numeric Automox organization ID. Recommended \u2014 required by most tools, optional for tools that don't need org context.",
+          "format": "string",
+          "name": "AUTOMOX_ORG_ID"
+        }
+      ],
+      "identifier": "automox-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.21"
+    }
+  ],
+  "provenance": {
+    "identity_key": "aa39a5ae0c",
+    "published_at": "2026-05-07T21:19:49.802766Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.automox/automox-mcp",
+    "server_version": "1.0.21",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-07T21:19:49.802766Z"
+  },
+  "title": "Automox MCP Server",
+  "type": "mcp_server",
+  "version": "1.0.21"
+}

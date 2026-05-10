@@ -1,13 +1,12 @@
 {
   "description": "A community-driven Microsoft Dynamics 365 Finance & Operations MCP server",
   "harvest": {
-    "last_seen_at": "2026-05-04T05:49:30+00:00",
+    "last_seen_at": "2026-05-10T18:30:22+00:00",
     "seen_in_latest_run": true
   },
   "id": "mcp.io-github-mafzaal-d365fo-client.stdio.00aa170e5e",
   "lifecycle": {
-    "reason": "Missing required package metadata (runtimeHint or identifier)",
-    "status": "disabled"
+    "status": "active"
   },
   "links": {
     "documentation": "https://github.com/mafzaal/d365fo-client",
@@ -17,7 +16,16 @@
   "mcp_registration": {
     "server": {
       "exec": {
-        "cmd": [],
+        "cmd": [
+          "docker",
+          {
+            "description": "Volume to mount",
+            "name": "-v",
+            "type": "named",
+            "value": "d365fo-mcp:/home/mcp_user/"
+          },
+          "ghcr.io/mafzaal/d365fo-client:0.3.6"
+        ],
         "env": {}
       },
       "transport": "STDIO"

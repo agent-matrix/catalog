@@ -1,0 +1,81 @@
+{
+  "description": "Your clipboard, but Claude can read it. Type-classified, secret-encrypted. macOS + Linux.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:30:02+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-d-khomenko-clipboard-history-mcp.stdio.d054bd71e9",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/d-khomenko/clipboard-history-mcp",
+    "homepage": "https://github.com/d-khomenko/clipboard-history-mcp",
+    "repository": "https://github.com/d-khomenko/clipboard-history-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.d-khomenko/clipboard-history-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Auto-mirror non-secret clips to this Obsidian vault directory. Sidecar `.md` per clip + bullet in `daily/YYYY-MM-DD.md`. Secrets are never mirrored.",
+          "format": "filepath",
+          "name": "CLIPBOARD_VAULT_PATH"
+        },
+        {
+          "description": "Set to '1' to capture the active window title alongside each clip (needs Accessibility permission on macOS, X11 only on Linux).",
+          "format": "string",
+          "name": "CLIPBOARD_CAPTURE_WINDOW_TITLE"
+        },
+        {
+          "description": "Comma-separated app display names to skip (e.g. '1Password,Bitwarden,KeePassXC').",
+          "format": "string",
+          "name": "CLIPBOARD_IGNORE_APPS"
+        },
+        {
+          "description": "Set to '1' for paranoid mode \u2014 secrets are detected and metadata-logged but ciphertext is never stored.",
+          "format": "string",
+          "name": "CLIPBOARD_NEVER_STORE_SECRETS"
+        },
+        {
+          "description": "Maximum number of clips kept in the ring buffer. Defaults to 1000.",
+          "format": "string",
+          "name": "CLIPBOARD_HISTORY_MAX"
+        },
+        {
+          "description": "Watcher poll interval in milliseconds. Defaults to 1500.",
+          "format": "string",
+          "name": "CLIPBOARD_POLL_MS"
+        }
+      ],
+      "fileSha256": "974740ff73ff2dcf94d67304dccf666aee4d8f780a176f8802d2238aac309b65",
+      "identifier": "https://github.com/d-khomenko/clipboard-history-mcp/releases/download/v0.5.0-alpha.0/clipboard-history-mcp.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "d054bd71e9",
+    "published_at": "2026-05-06T06:57:01.353254Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.d-khomenko/clipboard-history-mcp",
+    "server_version": "0.5.0-alpha.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-06T06:57:01.353254Z"
+  },
+  "title": "Clipboard History MCP",
+  "type": "mcp_server",
+  "version": "0.5.0-alpha.0"
+}

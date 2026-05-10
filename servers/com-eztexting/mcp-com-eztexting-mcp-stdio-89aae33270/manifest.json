@@ -1,0 +1,88 @@
+{
+  "description": "Official EZTexting MCP server: SMS/MMS messaging, contacts, workflows, reports.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:21:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-eztexting-mcp.stdio.89aae33270",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/eztexting/mcp-server",
+    "homepage": "https://github.com/eztexting/mcp-server",
+    "repository": "https://github.com/eztexting/mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y",
+            "valueHint": "yes-flag"
+          },
+          {
+            "choices": [
+              "messaging",
+              "contacts",
+              "workflows",
+              "admin"
+            ],
+            "description": "Optional: connect to a single sub-server only. Default: unified endpoint with all tools.",
+            "format": "string",
+            "name": "--server",
+            "type": "named"
+          },
+          "@eztexting/mcp-server@1.0.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.eztexting/mcp",
+  "packages": [
+    {
+      "identifier": "@eztexting/mcp-server",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y",
+          "valueHint": "yes-flag"
+        },
+        {
+          "choices": [
+            "messaging",
+            "contacts",
+            "workflows",
+            "admin"
+          ],
+          "description": "Optional: connect to a single sub-server only. Default: unified endpoint with all tools.",
+          "format": "string",
+          "name": "--server",
+          "type": "named"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "89aae33270",
+    "published_at": "2026-05-07T16:06:11.577075Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.eztexting/mcp",
+    "server_version": "1.0.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-07T16:06:11.577075Z"
+  },
+  "title": "EZTexting MCP",
+  "type": "mcp_server",
+  "version": "1.0.4"
+}

@@ -1,0 +1,94 @@
+{
+  "description": "Android/KMM MCP server: logcat, ADB device control, Compose previews, network, Maestro flows.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:29:36+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Yercko-devilge.stdio.e6fb962cdf",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Yercko/devilge",
+    "homepage": "https://github.com/Yercko/devilge",
+    "repository": "https://github.com/Yercko/devilge"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "devilge@0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Yercko/devilge",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Absolute path to the Android/KMM project root that devilge inspects (Gradle modules, source files, build outputs).",
+          "format": "string",
+          "isRequired": true,
+          "name": "DEVILGE_ANDROID_PROJECT_ROOT"
+        },
+        {
+          "description": "Directory where devilge writes screenshots and UI dumps. Defaults to <projectRoot>/.devilge-outputs/.",
+          "format": "string",
+          "name": "DEVILGE_OUTPUTS_ROOT"
+        },
+        {
+          "description": "Default ADB serial used when a tool does not specify one. Useful when several devices/emulators are attached.",
+          "format": "string",
+          "name": "DEVILGE_DEFAULT_DEVICE_SERIAL"
+        },
+        {
+          "description": "Directory containing Maestro YAML flows. Defaults to <projectRoot>/devilge-flows/.",
+          "format": "string",
+          "name": "DEVILGE_FLOWS_ROOT"
+        },
+        {
+          "description": "Absolute path to the Maestro binary. If unset, devilge resolves it from PATH; if absent, Maestro tools degrade gracefully.",
+          "format": "string",
+          "name": "DEVILGE_MAESTRO_BIN_PATH"
+        },
+        {
+          "description": "Set to 'true' to allow Maestro flows containing 'runScript:' blocks. Default is false; flows with scripts are rejected.",
+          "format": "string",
+          "name": "DEVILGE_ALLOW_FLOW_SCRIPTS"
+        },
+        {
+          "description": "Comma-separated logcat tags scanned for HTTP traffic. Defaults to 'HttpClient,OkHttp' (covers Ktor + OkHttp/Retrofit).",
+          "format": "string",
+          "name": "DEVILGE_HTTP_LOG_TAGS"
+        },
+        {
+          "description": "HTTP log parser to use: 'auto' (default), 'ktor', or 'okhttp'.",
+          "format": "string",
+          "name": "DEVILGE_HTTP_LOG_FORMAT"
+        }
+      ],
+      "identifier": "devilge",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e6fb962cdf",
+    "published_at": "2026-05-09T08:57:08.440475Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Yercko/devilge",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-09T08:57:08.440475Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

@@ -1,0 +1,103 @@
+{
+  "description": "Secure MCP server for YouTube intelligence \u2014 18 tools, OAuth2, OWASP Top 10 controls.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:30:03+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-dewtech-technologies-tubemind-secure-mcp.stdio.dd84e1511c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/dewtech-technologies/tubemind-secure-mcp",
+    "homepage": "https://github.com/dewtech-technologies/tubemind-secure-mcp",
+    "repository": "https://github.com/dewtech-technologies/tubemind-secure-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "tubemind-secure-mcp@0.1.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.dewtech-technologies/tubemind-secure-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Google OAuth2 Client ID for YouTube Data API v3 + Analytics API",
+          "format": "string",
+          "isRequired": true,
+          "name": "YOUTUBE_CLIENT_ID"
+        },
+        {
+          "description": "Google OAuth2 Client Secret",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "YOUTUBE_CLIENT_SECRET"
+        },
+        {
+          "default": "http://localhost:4000/oauth/callback",
+          "description": "OAuth2 redirect URI (must match Google Cloud Console)",
+          "format": "string",
+          "name": "YOUTUBE_REDIRECT_URI"
+        },
+        {
+          "description": "64-char hex key for AES-256-GCM token encryption at rest. Generate with: openssl rand -hex 32",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "TOKEN_ENCRYPTION_KEY"
+        },
+        {
+          "default": "60",
+          "description": "Max tool invocations per minute",
+          "format": "string",
+          "name": "RATE_LIMIT_PER_MINUTE"
+        },
+        {
+          "default": "10000",
+          "description": "HTTP request timeout (ms)",
+          "format": "string",
+          "name": "REQUEST_TIMEOUT_MS"
+        },
+        {
+          "default": "./logs/audit.log",
+          "description": "Path to the audit log file",
+          "format": "string",
+          "name": "AUDIT_LOG_PATH"
+        },
+        {
+          "default": "production",
+          "description": "production | development",
+          "format": "string",
+          "name": "NODE_ENV"
+        }
+      ],
+      "identifier": "tubemind-secure-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "dd84e1511c",
+    "published_at": "2026-05-07T21:36:41.84838Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.dewtech-technologies/tubemind-secure-mcp",
+    "server_version": "0.1.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-07T21:36:41.84838Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.3"
+}

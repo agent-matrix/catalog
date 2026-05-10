@@ -1,0 +1,83 @@
+{
+  "description": "Build and update a visual operating cockpit for AI-native solo founders.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:30:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-living-hi-one-person-company-os.stdio.33ef232e61",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/living-hi/one-person-company-os",
+    "homepage": "https://github.com/living-hi/one-person-company-os",
+    "repository": "https://github.com/living-hi/one-person-company-os"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Mount a founder-approved workspace into the container.",
+            "name": "--mount",
+            "type": "named",
+            "value": "type=bind,src={workspace_path},dst=/workspace",
+            "variables": {
+              "workspace_path": {
+                "description": "Founder-approved local workspace path.",
+                "format": "filepath"
+              }
+            }
+          },
+          "ghcr.io/living-hi/one-person-company-os-mcp:1.0.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.living-hi/one-person-company-os",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "1",
+          "description": "Keep stdio MCP responses unbuffered.",
+          "name": "PYTHONUNBUFFERED"
+        }
+      ],
+      "identifier": "ghcr.io/living-hi/one-person-company-os-mcp:1.0.3",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "Mount a founder-approved workspace into the container.",
+          "name": "--mount",
+          "type": "named",
+          "value": "type=bind,src={workspace_path},dst=/workspace",
+          "variables": {
+            "workspace_path": {
+              "description": "Founder-approved local workspace path.",
+              "format": "filepath"
+            }
+          }
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "33ef232e61",
+    "published_at": "2026-05-06T02:52:00.570212Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.living-hi/one-person-company-os",
+    "server_version": "1.0.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-06T02:52:00.570212Z"
+  },
+  "title": "One Person Company OS",
+  "type": "mcp_server",
+  "version": "1.0.3"
+}

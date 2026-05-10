@@ -1,13 +1,12 @@
 {
   "description": "Jaeger MCP \u2014 search traces, inspect spans, map service dependencies (read-only).",
   "harvest": {
-    "last_seen_at": "2026-05-04T05:49:55+00:00",
+    "last_seen_at": "2026-05-10T18:30:25+00:00",
     "seen_in_latest_run": true
   },
   "id": "mcp.io-github-mshegolev-jaeger-mcp.stdio.a8027d90a7",
   "lifecycle": {
-    "reason": "Missing required package metadata (runtimeHint or identifier)",
-    "status": "disabled"
+    "status": "active"
   },
   "links": {
     "documentation": "https://github.com/mshegolev/jaeger-mcp",
@@ -17,7 +16,10 @@
   "mcp_registration": {
     "server": {
       "exec": {
-        "cmd": [],
+        "cmd": [
+          "uvx",
+          "jaeger-mcp==0.1.1"
+        ],
         "env": {}
       },
       "transport": "STDIO"

@@ -1,13 +1,12 @@
 {
   "description": "An API-complete MCP server to manage Prometheus-compatible backends via comprehensive tools.",
   "harvest": {
-    "last_seen_at": "2026-05-04T05:51:18+00:00",
+    "last_seen_at": "2026-05-10T18:30:39+00:00",
     "seen_in_latest_run": true
   },
   "id": "mcp.io-github-tjhop-prometheus-mcp-server.stdio.7891925248",
   "lifecycle": {
-    "reason": "Missing required package metadata (runtimeHint or identifier)",
-    "status": "disabled"
+    "status": "active"
   },
   "links": {
     "documentation": "https://github.com/tjhop/prometheus-mcp-server",
@@ -17,7 +16,31 @@
   "mcp_registration": {
     "server": {
       "exec": {
-        "cmd": [],
+        "cmd": [
+          "docker",
+          {
+            "description": "The runtime command to execute",
+            "type": "positional",
+            "value": "run"
+          },
+          {
+            "description": "Run container in interactive mode",
+            "name": "-i",
+            "type": "named"
+          },
+          {
+            "description": "Automatically remove the container when it exits",
+            "name": "--rm",
+            "type": "named"
+          },
+          {
+            "description": "The container image to run",
+            "type": "positional",
+            "value": "ghcr.io/tjhop/prometheus-mcp-server",
+            "valueHint": "image_name"
+          },
+          "ghcr.io/tjhop/prometheus-mcp-server:v0.7.1"
+        ],
         "env": {}
       },
       "transport": "STDIO"

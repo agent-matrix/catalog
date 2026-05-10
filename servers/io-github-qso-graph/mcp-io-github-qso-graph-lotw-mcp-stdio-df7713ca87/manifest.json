@@ -1,13 +1,12 @@
 {
   "description": "ARRL Logbook of The World MCP server. QSO query, QSL status, DXCC credit tracking.",
   "harvest": {
-    "last_seen_at": "2026-05-04T05:50:28+00:00",
+    "last_seen_at": "2026-05-10T18:30:30+00:00",
     "seen_in_latest_run": true
   },
   "id": "mcp.io-github-qso-graph-lotw-mcp.stdio.df7713ca87",
   "lifecycle": {
-    "reason": "Missing required package metadata (runtimeHint or identifier)",
-    "status": "disabled"
+    "status": "active"
   },
   "links": {
     "documentation": "https://github.com/qso-graph/lotw-mcp",
@@ -17,7 +16,10 @@
   "mcp_registration": {
     "server": {
       "exec": {
-        "cmd": [],
+        "cmd": [
+          "uvx",
+          "lotw-mcp==0.2.0"
+        ],
         "env": {}
       },
       "transport": "STDIO"

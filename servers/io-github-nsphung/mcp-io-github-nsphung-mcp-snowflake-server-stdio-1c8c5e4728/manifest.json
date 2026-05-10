@@ -1,0 +1,250 @@
+{
+  "description": "A Snowflake MCP server \u2014 SQL queries, schema exploration, and data insights for AI assistants",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:30:27+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nsphung-mcp-snowflake-server.stdio.1c8c5e4728",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nsphung/mcp-snowflake-server",
+    "homepage": "https://github.com/nsphung/mcp-snowflake-server",
+    "repository": "https://github.com/nsphung/mcp-snowflake-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "type": "positional",
+            "value": "--rm"
+          },
+          {
+            "type": "positional",
+            "value": "-i"
+          },
+          "docker.io/nsphung/mcp-snowflake-server-nsp:0.10.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nsphung/mcp-snowflake-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Snowflake account identifier",
+          "format": "string",
+          "name": "SNOWFLAKE_ACCOUNT"
+        },
+        {
+          "description": "Snowflake username",
+          "format": "string",
+          "name": "SNOWFLAKE_USER"
+        },
+        {
+          "description": "Password (not required for key-pair / SSO)",
+          "format": "string",
+          "isSecret": true,
+          "name": "SNOWFLAKE_PASSWORD"
+        },
+        {
+          "description": "Virtual warehouse to use",
+          "format": "string",
+          "name": "SNOWFLAKE_WAREHOUSE"
+        },
+        {
+          "description": "Default database",
+          "format": "string",
+          "name": "SNOWFLAKE_DATABASE"
+        },
+        {
+          "description": "Default schema",
+          "format": "string",
+          "name": "SNOWFLAKE_SCHEMA"
+        },
+        {
+          "description": "Role to assume",
+          "format": "string",
+          "name": "SNOWFLAKE_ROLE"
+        },
+        {
+          "description": "Authentication method. Defaults to 'snowflake' if not set. Valid values: snowflake, externalbrowser, snowflake_jwt, oauth, oauth_client_credentials",
+          "format": "string",
+          "name": "SNOWFLAKE_AUTHENTICATOR"
+        },
+        {
+          "description": "Absolute path to .p8 private key file",
+          "format": "string",
+          "name": "SNOWFLAKE_PRIVATE_KEY_FILE"
+        },
+        {
+          "description": "Passphrase for encrypted private key",
+          "format": "string",
+          "isSecret": true,
+          "name": "SNOWFLAKE_PRIVATE_KEY_FILE_PWD"
+        },
+        {
+          "description": "OAuth 2.0 client ID (required for oauth_client_credentials authenticator)",
+          "format": "string",
+          "name": "SNOWFLAKE_OAUTH_CLIENT_ID"
+        },
+        {
+          "description": "OAuth 2.0 client secret (required for oauth_client_credentials authenticator)",
+          "format": "string",
+          "isSecret": true,
+          "name": "SNOWFLAKE_OAUTH_CLIENT_SECRET"
+        },
+        {
+          "description": "OAuth 2.0 token endpoint URL (required for oauth_client_credentials authenticator)",
+          "format": "string",
+          "name": "SNOWFLAKE_OAUTH_TOKEN_REQUEST_URL"
+        },
+        {
+          "description": "OAuth 2.0 scope (optional, e.g. session:role:MY_ROLE)",
+          "format": "string",
+          "name": "SNOWFLAKE_OAUTH_SCOPE"
+        },
+        {
+          "description": "Pre-fetched OAuth bearer token (required for oauth authenticator)",
+          "format": "string",
+          "isSecret": true,
+          "name": "SNOWFLAKE_TOKEN"
+        }
+      ],
+      "identifier": "docker.io/nsphung/mcp-snowflake-server-nsp:0.10.0",
+      "packageArguments": [
+        {
+          "description": "Snowflake account identifier",
+          "name": "--account",
+          "type": "named"
+        },
+        {
+          "description": "Snowflake username",
+          "name": "--user",
+          "type": "named"
+        },
+        {
+          "description": "Password (not required for key-pair / SSO)",
+          "name": "--password",
+          "type": "named"
+        },
+        {
+          "description": "Virtual warehouse to use",
+          "name": "--warehouse",
+          "type": "named"
+        },
+        {
+          "description": "Default database",
+          "name": "--database",
+          "type": "named"
+        },
+        {
+          "description": "Default schema",
+          "name": "--schema",
+          "type": "named"
+        },
+        {
+          "description": "Role to assume",
+          "name": "--role",
+          "type": "named"
+        },
+        {
+          "description": "Authentication method. Defaults to 'snowflake' if not set. Valid values: snowflake, externalbrowser, snowflake_jwt, oauth, oauth_client_credentials",
+          "name": "--authenticator",
+          "type": "named"
+        },
+        {
+          "description": "Absolute path to .p8 private key file",
+          "name": "--private_key_file",
+          "type": "named"
+        },
+        {
+          "description": "Passphrase for encrypted private key",
+          "name": "--private_key_file_pwd",
+          "type": "named"
+        },
+        {
+          "description": "Path to TOML connections file",
+          "name": "--connections-file",
+          "type": "named"
+        },
+        {
+          "description": "Connection profile name in TOML file (required with --connections-file)",
+          "name": "--connection-name",
+          "type": "named"
+        },
+        {
+          "description": "Enable write_query and create_table tools",
+          "name": "--allow_write",
+          "type": "named"
+        },
+        {
+          "description": "Pre-load table schema as context://table/* resources (disables list_tables / describe_table)",
+          "name": "--prefetch",
+          "type": "named"
+        },
+        {
+          "description": "Space-separated list of tool names to disable",
+          "name": "--exclude_tools",
+          "type": "named"
+        },
+        {
+          "description": "Omit embedded JSON resources from responses (reduces context window usage)",
+          "name": "--exclude-json-results",
+          "type": "named"
+        },
+        {
+          "description": "Directory for log file output",
+          "name": "--log_dir",
+          "type": "named"
+        },
+        {
+          "choices": [
+            "DEBUG",
+            "INFO",
+            "WARNING",
+            "ERROR",
+            "CRITICAL"
+          ],
+          "default": "INFO",
+          "description": "Log verbosity: DEBUG, INFO, WARNING, ERROR, CRITICAL",
+          "name": "--log_level",
+          "type": "named"
+        }
+      ],
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "--rm"
+        },
+        {
+          "type": "positional",
+          "value": "-i"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "1c8c5e4728",
+    "published_at": "2026-05-06T07:38:12.977395Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nsphung/mcp-snowflake-server",
+    "server_version": "0.10.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-06T07:38:12.977395Z"
+  },
+  "title": "Snowflake MCP Server",
+  "type": "mcp_server",
+  "version": "0.10.0"
+}

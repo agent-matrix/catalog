@@ -1,0 +1,81 @@
+{
+  "description": "Turn an IDF domain into an MCP server with invariants and role scopes in every tool description.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:30:13+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-intent-driven-software-idf-mcp.stdio.f854b4f2e3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/intent-driven-software/idf-mcp",
+    "homepage": "https://github.com/intent-driven-software/idf-mcp",
+    "repository": "https://github.com/intent-driven-software/idf-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@intent-driven/mcp-server@1.0.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.intent-driven-software/idf-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the IDF host runtime (e.g. http://localhost:3001).",
+          "format": "string",
+          "isRequired": true,
+          "name": "IDF_SERVER"
+        },
+        {
+          "description": "IDF domain to expose as MCP tools (e.g. invest, booking, planning).",
+          "format": "string",
+          "isRequired": true,
+          "name": "IDF_DOMAIN"
+        },
+        {
+          "description": "Set to 0 if the host runtime already bootstrapped the domain; 1 (default) to bootstrap from IDF_ONTOLOGY_PATH on first connection.",
+          "format": "string",
+          "name": "IDF_BOOTSTRAP"
+        },
+        {
+          "description": "Filesystem path to the domain ontology module (only used when IDF_BOOTSTRAP=1).",
+          "format": "string",
+          "name": "IDF_ONTOLOGY_PATH"
+        },
+        {
+          "description": "Optional bearer token forwarded to the host runtime as the agent's role credential.",
+          "format": "string",
+          "isSecret": true,
+          "name": "IDF_AUTH_TOKEN"
+        }
+      ],
+      "identifier": "@intent-driven/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f854b4f2e3",
+    "published_at": "2026-05-06T14:54:00.068039Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.intent-driven-software/idf-mcp",
+    "server_version": "1.0.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-06T14:54:00.068039Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.2"
+}

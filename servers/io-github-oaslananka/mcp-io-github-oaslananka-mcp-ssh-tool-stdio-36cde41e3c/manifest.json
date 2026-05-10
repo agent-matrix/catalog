@@ -1,0 +1,90 @@
+{
+  "description": "Secure MCP SSH automation server with policy controls, resources, prompts, stdio, and HTTP.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:30:27+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-oaslananka-mcp-ssh-tool.stdio.36cde41e3c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/oaslananka-lab/mcp-ssh-tool",
+    "homepage": "https://github.com/oaslananka-lab/mcp-ssh-tool",
+    "repository": "https://github.com/oaslananka-lab/mcp-ssh-tool"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-ssh-tool@2.2.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.oaslananka/mcp-ssh-tool",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Comma-separated allowed browser origins for Streamable HTTP clients. Keep this restricted when not using loopback.",
+          "name": "SSH_MCP_HTTP_ALLOWED_ORIGINS"
+        },
+        {
+          "description": "Path to a bearer token file. Required for non-loopback HTTP bindings.",
+          "isSecret": true,
+          "name": "SSH_MCP_HTTP_BEARER_TOKEN_FILE"
+        },
+        {
+          "description": "Stable HTTPS public /mcp URL. Required for non-loopback HTTP bindings.",
+          "name": "SSH_MCP_HTTP_PUBLIC_URL"
+        },
+        {
+          "description": "Set to true only behind a trusted reverse proxy that controls forwarded headers.",
+          "name": "SSH_MCP_HTTP_TRUST_PROXY"
+        }
+      ],
+      "identifier": "mcp-ssh-tool",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "--transport=http"
+        },
+        {
+          "name": "--host",
+          "type": "named",
+          "value": "127.0.0.1"
+        },
+        {
+          "default": "3000",
+          "name": "--port",
+          "type": "named",
+          "valueHint": "port"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://127.0.0.1:{--port}/mcp"
+      },
+      "version": "2.2.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "36cde41e3c",
+    "published_at": "2026-05-10T00:15:19.579448Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.oaslananka/mcp-ssh-tool",
+    "server_version": "2.2.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-10T00:15:19.579448Z"
+  },
+  "title": "SSH MCP Tool",
+  "type": "mcp_server",
+  "version": "2.2.6"
+}

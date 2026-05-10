@@ -1,13 +1,12 @@
 {
   "description": "Access Japanese financial disclosures (EDINET). Search companies, retrieve BS/PL/CF statements.",
   "harvest": {
-    "last_seen_at": "2026-05-04T05:46:54+00:00",
+    "last_seen_at": "2026-05-10T18:29:40+00:00",
     "seen_in_latest_run": true
   },
   "id": "mcp.io-github-ajtgjmdjp-edinet-mcp.stdio.575bde1ffa",
   "lifecycle": {
-    "reason": "Missing required package metadata (runtimeHint or identifier)",
-    "status": "disabled"
+    "status": "active"
   },
   "links": {
     "documentation": "https://github.com/ajtgjmdjp/edinet-mcp",
@@ -17,7 +16,10 @@
   "mcp_registration": {
     "server": {
       "exec": {
-        "cmd": [],
+        "cmd": [
+          "uvx",
+          "edinet-mcp==0.4.1"
+        ],
         "env": {}
       },
       "transport": "STDIO"

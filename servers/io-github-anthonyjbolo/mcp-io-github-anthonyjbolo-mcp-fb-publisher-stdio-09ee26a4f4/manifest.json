@@ -1,0 +1,78 @@
+{
+  "description": "Safe Facebook Pages publishing with brand-voice, image-required & anti-duplication checks.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:29:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-anthonyjbolo-mcp-fb-publisher.stdio.09ee26a4f4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/anthonyjbolo/mcp-fb-publisher",
+    "homepage": "https://github.com/anthonyjbolo/mcp-fb-publisher",
+    "repository": "https://github.com/anthonyjbolo/mcp-fb-publisher"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-fb-publisher==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.anthonyjbolo/mcp-fb-publisher",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Long-lived Meta Graph API user or page token. Required for publishing.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "META_USER_TOKEN"
+        },
+        {
+          "description": "Absolute path to your config.yaml (per-page brand voices, banned topics, image policy).",
+          "name": "MCP_FB_PUBLISHER_CONFIG"
+        },
+        {
+          "description": "Inline JSON config (alternative to file path, useful for serverless deploys).",
+          "name": "MCP_FB_PUBLISHER_CONFIG_JSON"
+        },
+        {
+          "description": "OpenAI API key for image generation via gpt-image-1 (optional).",
+          "isSecret": true,
+          "name": "OPENAI_API_KEY"
+        },
+        {
+          "description": "fal.ai API key for image generation via Flux Pro (optional).",
+          "isSecret": true,
+          "name": "FAL_KEY"
+        }
+      ],
+      "identifier": "mcp-fb-publisher",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "09ee26a4f4",
+    "published_at": "2026-05-09T00:21:22.773351Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.anthonyjbolo/mcp-fb-publisher",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-09T00:21:22.773351Z"
+  },
+  "title": "Facebook Publisher",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

@@ -1,0 +1,82 @@
+{
+  "description": "MCP server for Agent Resources: Trust Cards, signed telemetry, ERC-8004 identity, x402.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:30:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sznt2010-agentresources-mcp.stdio.1c1a5482e7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sznt2010/agentresources-mcp",
+    "homepage": "https://github.com/sznt2010/agentresources-mcp",
+    "repository": "https://github.com/sznt2010/agentresources-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y"
+          },
+          {
+            "type": "positional",
+            "value": "@agentresources/mcp"
+          },
+          "@agentresources/mcp@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sznt2010/agentresources-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Override AR gateway base URL. Defaults to https://api.agentresources.xyz",
+          "name": "AR_API_BASE"
+        },
+        {
+          "description": "secp256k1 private key (hex) used to sign telemetry envelopes and authenticate via wallet-session login. Required for write-side tools (telemetry, memory, signing-keys). Optional for read-side tools (trust_card_lookup).",
+          "isSecret": true,
+          "name": "AR_AGENT_PRIVATE_KEY"
+        }
+      ],
+      "identifier": "@agentresources/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y"
+        },
+        {
+          "type": "positional",
+          "value": "@agentresources/mcp"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1c1a5482e7",
+    "published_at": "2026-05-04T20:35:51.034582Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sznt2010/agentresources-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-04T20:35:51.034582Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

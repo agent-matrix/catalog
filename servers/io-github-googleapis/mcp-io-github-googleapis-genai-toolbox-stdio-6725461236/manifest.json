@@ -1,13 +1,12 @@
 {
   "description": "MCP Toolbox for Databases enables your agent to connect to your database.",
   "harvest": {
-    "last_seen_at": "2026-05-04T05:48:36+00:00",
+    "last_seen_at": "2026-05-10T18:30:10+00:00",
     "seen_in_latest_run": true
   },
   "id": "mcp.io-github-googleapis-genai-toolbox.stdio.6725461236",
   "lifecycle": {
-    "reason": "Missing required package metadata (runtimeHint or identifier)",
-    "status": "disabled"
+    "status": "active"
   },
   "links": {
     "documentation": "https://github.com/googleapis/genai-toolbox",
@@ -17,7 +16,56 @@
   "mcp_registration": {
     "server": {
       "exec": {
-        "cmd": [],
+        "cmd": [
+          "docker",
+          {
+            "default": "tools.yaml",
+            "description": "File path specifying the tool configuration.",
+            "name": "--tools-file",
+            "type": "named"
+          },
+          {
+            "description": "Address of the interface the server will listen on.",
+            "name": "--address",
+            "type": "named",
+            "value": "{host}",
+            "valueHint": "host",
+            "variables": {
+              "host": {
+                "default": "127.0.0.1",
+                "description": "ip address",
+                "isRequired": true
+              }
+            }
+          },
+          {
+            "description": "Port the server will listen on.",
+            "name": "--port",
+            "type": "named",
+            "value": "{port}",
+            "valueHint": "port",
+            "variables": {
+              "port": {
+                "default": "5000",
+                "description": "port",
+                "isRequired": true
+              }
+            }
+          },
+          {
+            "choices": [
+              "debug",
+              "info",
+              "warn",
+              "error"
+            ],
+            "default": "info",
+            "description": "Specify the minimum level logged.",
+            "name": "--log-level",
+            "type": "named"
+          },
+          "us-central1-docker.pkg.dev/database-toolbox/toolbox-dev/toolbox:registry-updates"
+        ],
         "env": {}
       },
       "transport": "STDIO"

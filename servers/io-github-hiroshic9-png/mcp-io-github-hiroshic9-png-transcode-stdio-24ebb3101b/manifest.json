@@ -1,0 +1,66 @@
+{
+  "description": "Japan market intelligence \u2014 22 MCP tools, 10 government/exchange data sources",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:30:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-hiroshic9-png-transcode.stdio.24ebb3101b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/hiroshic9-png/japan-intelligence-api",
+    "homepage": "https://github.com/hiroshic9-png/japan-intelligence-api",
+    "repository": "https://github.com/hiroshic9-png/japan-intelligence-api"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "transcode-mcp-server@1.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.hiroshic9-png/transcode",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API endpoint URL for the TRANSCODE backend (e.g. https://japan-intelligence-api.onrender.com)",
+          "format": "string",
+          "isRequired": true,
+          "name": "JAPAN_INTELLIGENCE_API_URL"
+        },
+        {
+          "description": "API key for authentication. Request at https://transcode.sh",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "JI_API_KEY"
+        }
+      ],
+      "identifier": "transcode-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "24ebb3101b",
+    "published_at": "2026-05-04T23:10:17.049499Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.hiroshic9-png/transcode",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-04T23:10:17.049499Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

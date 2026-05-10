@@ -1,0 +1,71 @@
+{
+  "description": "Real email and SMS for AI agents \u2014 send mail, receive verification codes, drive a real inbox.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:29:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-agenticmail-mcp.stdio.0eb6346b95",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/agenticmail/agenticmail",
+    "homepage": "https://github.com/agenticmail/agenticmail",
+    "repository": "https://github.com/agenticmail/agenticmail"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@agenticmail/mcp@0.5.59"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.agenticmail/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Per-agent API key issued when you create the agent. Scopes every tool call to that agent's mailbox and outbound. Either AGENTICMAIL_API_KEY or AGENTICMAIL_MASTER_KEY must be set.",
+          "format": "string",
+          "isSecret": true,
+          "name": "AGENTICMAIL_API_KEY"
+        },
+        {
+          "description": "Master key for admin operations (creating agents, listing all accounts, deleting agents). Set this when the MCP client needs admin tools; otherwise prefer the per-agent AGENTICMAIL_API_KEY.",
+          "format": "string",
+          "isSecret": true,
+          "name": "AGENTICMAIL_MASTER_KEY"
+        },
+        {
+          "default": "http://127.0.0.1:3100",
+          "description": "Base URL of the AgenticMail HTTP API. Defaults to http://127.0.0.1:3100 (the port the local CLI binds). Override when the API runs on a different host or port.",
+          "format": "string",
+          "name": "AGENTICMAIL_API_URL"
+        }
+      ],
+      "identifier": "@agenticmail/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.59"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0eb6346b95",
+    "published_at": "2026-05-08T05:32:55.975478Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.agenticmail/mcp",
+    "server_version": "0.5.59",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-08T05:32:55.975478Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.5.59"
+}

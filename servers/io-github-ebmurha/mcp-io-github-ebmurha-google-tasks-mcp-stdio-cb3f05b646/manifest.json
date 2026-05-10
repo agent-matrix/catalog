@@ -1,0 +1,83 @@
+{
+  "description": "A private, context-efficient MCP server for Google Tasks.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:30:06+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ebmurha-google-tasks-mcp.stdio.cb3f05b646",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ebmurha/google-tasks-mcp",
+    "homepage": "https://github.com/ebmurha/google-tasks-mcp",
+    "repository": "https://github.com/ebmurha/google-tasks-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "google-tasks-mcp==0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ebmurha/google-tasks-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Google OAuth client ID from the user's Google Cloud project.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GOOGLE_CLIENT_ID"
+        },
+        {
+          "description": "Google OAuth client secret from the user's Google Cloud project.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GOOGLE_CLIENT_SECRET"
+        },
+        {
+          "description": "OAuth callback URL for the user's local or hosted server.",
+          "format": "string",
+          "isRequired": true,
+          "name": "GOOGLE_REDIRECT_URI"
+        },
+        {
+          "description": "Persistent SQLite database path for tokens and cache.",
+          "format": "string",
+          "name": "DB_PATH"
+        },
+        {
+          "description": "Optional default tasklist title or ID.",
+          "format": "string",
+          "name": "DEFAULT_TASKLIST"
+        }
+      ],
+      "identifier": "google-tasks-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "cb3f05b646",
+    "published_at": "2026-05-07T14:59:39.592379Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ebmurha/google-tasks-mcp",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-07T14:59:39.592379Z"
+  },
+  "title": "Google Tasks MCP Server",
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

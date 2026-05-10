@@ -1,0 +1,54 @@
+{
+  "description": "Search peer-reviewed papers and research methodology guidance from your AI agent.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:22:53+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-luneresearch-lune.sse.a605bd14fa",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://mcp.luneresearch.com/mcp"
+    }
+  },
+  "name": "com.luneresearch/lune",
+  "provenance": {
+    "identity_key": "a605bd14fa",
+    "published_at": "2026-05-10T15:46:23.808337Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.luneresearch/lune",
+    "server_version": "1.2.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-10T15:46:23.808337Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Bearer token. Use a Lune PAT or an OAuth access token from https://luneresearch.com/dashboard/credentials.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {api_key}",
+          "variables": {
+            "api_key": {
+              "description": "Lune personal access token (lune_...).",
+              "format": "string",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://mcp.luneresearch.com/mcp"
+    }
+  ],
+  "title": "Lune Research",
+  "type": "mcp_server",
+  "version": "1.2.3"
+}

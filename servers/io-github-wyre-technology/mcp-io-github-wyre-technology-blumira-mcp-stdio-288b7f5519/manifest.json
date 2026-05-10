@@ -1,0 +1,77 @@
+{
+  "description": "MCP server for Blumira SIEM \u2014 query findings, evidence, and detection data via the Blumira API.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:30:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wyre-technology-blumira-mcp.stdio.288b7f5519",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wyre-technology/blumira-mcp",
+    "homepage": "https://github.com/wyre-technology/blumira-mcp",
+    "repository": "https://github.com/wyre-technology/blumira-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-technology/blumira-mcp:v1.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wyre-technology/blumira-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Blumira API JWT token used to authenticate requests",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "BLUMIRA_JWT_TOKEN"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode for the server. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-technology/blumira-mcp:v1.2.2",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "288b7f5519",
+    "published_at": "2026-05-07T18:05:35.377189Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wyre-technology/blumira-mcp",
+    "server_version": "1.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-07T18:05:35.377189Z"
+  },
+  "title": "Blumira",
+  "type": "mcp_server",
+  "version": "1.2.2"
+}

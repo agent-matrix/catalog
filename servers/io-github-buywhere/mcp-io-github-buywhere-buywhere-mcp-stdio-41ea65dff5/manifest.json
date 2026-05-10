@@ -1,13 +1,12 @@
 {
-  "description": "BuyWhere MCP server \u2014 product catalog for Claude Desktop, Cursor, and MCP agents.",
+  "description": "BuyWhere MCP \u2014 cross-border product search & price comparison. Singapore, SEA, US markets.",
   "harvest": {
-    "last_seen_at": "2026-05-04T05:45:35+00:00",
+    "last_seen_at": "2026-05-10T18:28:15+00:00",
     "seen_in_latest_run": true
   },
   "id": "mcp.io-github-BuyWhere-buywhere-mcp.stdio.41ea65dff5",
   "lifecycle": {
-    "reason": "Missing required package metadata (runtimeHint or identifier)",
-    "status": "disabled"
+    "status": "active"
   },
   "links": {
     "documentation": "https://github.com/BuyWhere/buywhere-mcp",
@@ -17,7 +16,10 @@
   "mcp_registration": {
     "server": {
       "exec": {
-        "cmd": [],
+        "cmd": [
+          "npx",
+          "@buywhere/mcp-server@0.3.4"
+        ],
         "env": {}
       },
       "transport": "STDIO"
@@ -28,7 +30,7 @@
     {
       "environmentVariables": [
         {
-          "description": "BuyWhere API key used for authenticated product catalog requests.",
+          "description": "BuyWhere API key for authenticated product catalog requests.",
           "format": "string",
           "isRequired": true,
           "isSecret": true,
@@ -50,14 +52,14 @@
   ],
   "provenance": {
     "identity_key": "41ea65dff5",
-    "published_at": "2026-05-03T22:45:35.668584Z",
+    "published_at": "2026-05-05T19:00:49.3969Z",
     "registry_base_url": "https://registry.modelcontextprotocol.io",
     "server_name": "io.github.BuyWhere/buywhere-mcp",
-    "server_version": "1.0.1",
+    "server_version": "1.0.3",
     "source": "mcp-registry",
-    "updated_at": "2026-05-03T22:45:35.668584Z"
+    "updated_at": "2026-05-05T19:00:49.3969Z"
   },
   "title": "BuyWhere MCP",
   "type": "mcp_server",
-  "version": "1.0.1"
+  "version": "1.0.3"
 }

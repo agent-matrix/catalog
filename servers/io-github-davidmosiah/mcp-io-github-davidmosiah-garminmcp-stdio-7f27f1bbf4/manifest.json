@@ -1,0 +1,78 @@
+{
+  "description": "Privacy-first MCP server for Garmin Connect health, sleep, recovery and activities.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:30:02+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-davidmosiah-garminmcp.stdio.7f27f1bbf4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/davidmosiah/garminmcp",
+    "homepage": "https://github.com/davidmosiah/garminmcp",
+    "repository": "https://github.com/davidmosiah/garminmcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "garmin-mcp-unofficial@0.1.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.davidmosiah/garminmcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional local path for Garmin Connect tokens. Defaults to ~/.garmin-mcp/garmin_tokens.json. Create it with garmin-mcp-server auth --install-helper.",
+          "format": "string",
+          "name": "GARMIN_TOKEN_PATH"
+        },
+        {
+          "description": "Optional payload mode: summary, structured, or raw. Defaults to structured. raw means full supported Garmin Connect payloads, not unrestricted raw sensor telemetry.",
+          "format": "string",
+          "name": "GARMIN_PRIVACY_MODE"
+        },
+        {
+          "description": "Optional SQLite cache toggle. Set to true or sqlite to enable.",
+          "format": "string",
+          "name": "GARMIN_CACHE"
+        },
+        {
+          "description": "Optional local SQLite cache path. Defaults to ~/.garmin-mcp/cache.sqlite.",
+          "format": "string",
+          "name": "GARMIN_CACHE_PATH"
+        },
+        {
+          "description": "Optional Garmin domain override. Use garmin.cn only for China accounts; default is garmin.com.",
+          "format": "string",
+          "name": "GARMIN_DOMAIN"
+        }
+      ],
+      "identifier": "garmin-mcp-unofficial",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7f27f1bbf4",
+    "published_at": "2026-05-04T14:07:22.452782Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.davidmosiah/garminmcp",
+    "server_version": "0.1.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-04T14:07:22.452782Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.3"
+}

@@ -1,0 +1,65 @@
+{
+  "description": "Cheaper LLM inference, USDC agent payments via x402, agent identity / reputation lookup.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:30:28+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-pathcourse-health-mcp-server.stdio.7098ed3cbb",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/pathcourse-health/pch-mcp-server",
+    "homepage": "https://github.com/pathcourse-health/pch-mcp-server",
+    "repository": "https://github.com/pathcourse-health/pch-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "pch-mcp-server==1.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.pathcourse-health/mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your PCH API key (format: pch_prod_b_...). Optional \u2014 many tools work without it. Mint one via the pch_provision tool by sending 5 USDC on Base.",
+          "format": "string",
+          "isSecret": true,
+          "name": "PCH_API_KEY"
+        },
+        {
+          "default": "https://gateway.pathcoursehealth.com",
+          "description": "Override the PCH gateway URL. Defaults to https://gateway.pathcoursehealth.com (production mainnet).",
+          "format": "string",
+          "name": "PCH_GATEWAY_URL"
+        }
+      ],
+      "identifier": "pch-mcp-server",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7098ed3cbb",
+    "published_at": "2026-05-10T18:28:49.443569Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.pathcourse-health/mcp-server",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-10T18:28:49.443569Z"
+  },
+  "title": "PathCourse Health (PCH)",
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

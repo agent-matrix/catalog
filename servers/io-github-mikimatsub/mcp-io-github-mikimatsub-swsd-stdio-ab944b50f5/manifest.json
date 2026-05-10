@@ -1,0 +1,78 @@
+{
+  "description": "MCP server for SolarWinds Service Desk: tickets, knowledge base, and the service catalog.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:30:24+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mikimatsub-swsd.stdio.ab944b50f5",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mikimatsub/MCP-SWSD",
+    "homepage": "https://github.com/mikimatsub/MCP-SWSD",
+    "repository": "https://github.com/mikimatsub/MCP-SWSD"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "swsd-mcp@2.0.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mikimatsub/swsd",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "SolarWinds Service Desk admin token (JWT). Generate in the SWSD UI: Setup -> Users & Groups -> Users -> [your user] -> Actions -> Generate JSON Web Token. Service Desk administrator rights required.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SWSD_TOKEN"
+        },
+        {
+          "default": "https://api.samanage.com",
+          "description": "SWSD API base URL. US tenants: https://api.samanage.com (default). EU tenants: https://apieu.samanage.com.",
+          "format": "string",
+          "name": "SWSD_BASE_URL"
+        },
+        {
+          "choices": [
+            "triage",
+            "agent",
+            "knowledge",
+            "full"
+          ],
+          "default": "agent",
+          "description": "Tool registration profile: 'triage' (12 read-heavy tools), 'agent' (27 default), 'knowledge' (15 KB-author), 'full' (29 every tool).",
+          "format": "string",
+          "name": "SWSD_PROFILE"
+        }
+      ],
+      "identifier": "swsd-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.0.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ab944b50f5",
+    "published_at": "2026-05-08T00:46:13.048315Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mikimatsub/swsd",
+    "server_version": "2.0.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-08T00:46:13.048315Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "2.0.2"
+}

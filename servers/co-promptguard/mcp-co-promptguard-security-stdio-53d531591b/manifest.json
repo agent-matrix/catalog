@@ -1,13 +1,12 @@
 {
   "description": "Scan prompts for injection attacks, redact PII, and audit LLM SDK usage from any MCP client",
   "harvest": {
-    "last_seen_at": "2026-05-04T05:44:22+00:00",
+    "last_seen_at": "2026-05-10T18:19:10+00:00",
     "seen_in_latest_run": true
   },
   "id": "mcp.co-promptguard-security.stdio.53d531591b",
   "lifecycle": {
-    "reason": "Missing required package metadata (runtimeHint or identifier)",
-    "status": "disabled"
+    "status": "active"
   },
   "links": {
     "documentation": "https://github.com/acebot712/promptguard",
@@ -17,7 +16,10 @@
   "mcp_registration": {
     "server": {
       "exec": {
-        "cmd": [],
+        "cmd": [
+          "docker",
+          "docker.io/abhijoysarkar/promptguard-mcp-server:1.0.0"
+        ],
         "env": {}
       },
       "transport": "STDIO"

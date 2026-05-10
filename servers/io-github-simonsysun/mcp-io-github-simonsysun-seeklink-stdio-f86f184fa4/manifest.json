@@ -1,0 +1,87 @@
+{
+  "description": "Local read-only semantic search for Markdown vaults through MCP.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:30:34+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-simonsysun-seeklink.stdio.f86f184fa4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/simonsysun/seeklink",
+    "homepage": "https://github.com/simonsysun/seeklink",
+    "repository": "https://github.com/simonsysun/seeklink"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "name": "--from",
+            "type": "named",
+            "value": "seeklink[mcp]==0.7.0"
+          },
+          {
+            "type": "positional",
+            "value": "seeklink"
+          },
+          "seeklink==0.7.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.simonsysun/seeklink",
+  "packages": [
+    {
+      "identifier": "seeklink",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        },
+        {
+          "description": "Absolute path to the Markdown vault to search.",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "--vault",
+          "placeholder": "/absolute/path/to/markdown-vault",
+          "type": "named"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "name": "--from",
+          "type": "named",
+          "value": "seeklink[mcp]==0.7.0"
+        },
+        {
+          "type": "positional",
+          "value": "seeklink"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.7.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f86f184fa4",
+    "published_at": "2026-05-07T23:01:47.782456Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.simonsysun/seeklink",
+    "server_version": "0.7.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-07T23:01:47.782456Z"
+  },
+  "title": "SeekLink",
+  "type": "mcp_server",
+  "version": "0.7.0"
+}

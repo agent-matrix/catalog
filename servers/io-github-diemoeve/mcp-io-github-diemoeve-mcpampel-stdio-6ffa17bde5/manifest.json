@@ -1,13 +1,12 @@
 {
   "description": "Scan installed MCP servers for security vulnerabilities with 16 detection engines.",
   "harvest": {
-    "last_seen_at": "2026-05-04T05:48:05+00:00",
+    "last_seen_at": "2026-05-10T18:30:03+00:00",
     "seen_in_latest_run": true
   },
   "id": "mcp.io-github-diemoeve-mcpampel.stdio.6ffa17bde5",
   "lifecycle": {
-    "reason": "Missing required package metadata (runtimeHint or identifier)",
-    "status": "disabled"
+    "status": "active"
   },
   "links": {
     "documentation": "https://github.com/MCPAmpel/mcpampel",
@@ -17,7 +16,10 @@
   "mcp_registration": {
     "server": {
       "exec": {
-        "cmd": [],
+        "cmd": [
+          "uvx",
+          "mcpampel==0.2.2"
+        ],
         "env": {}
       },
       "transport": "STDIO"

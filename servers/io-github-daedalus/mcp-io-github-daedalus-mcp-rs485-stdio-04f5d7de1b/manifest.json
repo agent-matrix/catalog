@@ -1,13 +1,12 @@
 {
   "description": "MCP server that exposes RS485 bus connectivity for reading and writing serial data",
   "harvest": {
-    "last_seen_at": "2026-05-04T05:47:55+00:00",
+    "last_seen_at": "2026-05-10T18:30:02+00:00",
     "seen_in_latest_run": true
   },
   "id": "mcp.io-github-daedalus-mcp-rs485.stdio.04f5d7de1b",
   "lifecycle": {
-    "reason": "Missing required package metadata (runtimeHint or identifier)",
-    "status": "disabled"
+    "status": "active"
   },
   "links": {
     "documentation": "https://github.com/daedalus/mcp-rs485",
@@ -17,7 +16,10 @@
   "mcp_registration": {
     "server": {
       "exec": {
-        "cmd": [],
+        "cmd": [
+          "uvx",
+          "mcp-rs485==0.1.0"
+        ],
         "env": {}
       },
       "transport": "STDIO"

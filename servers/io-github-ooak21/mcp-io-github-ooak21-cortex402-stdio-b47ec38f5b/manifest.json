@@ -1,0 +1,70 @@
+{
+  "description": "Pay-per-call x402 data products on Base mainnet \u2014 sanctions, aviation weather, US property.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:29:24+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Ooak21-cortex402.stdio.b47ec38f5b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Ooak21/cortex402",
+    "homepage": "https://github.com/Ooak21/cortex402",
+    "repository": "https://github.com/Ooak21/cortex402"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "cortex402-mcp@0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Ooak21/cortex402",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Private key (hex, 0x-prefixed) for an EVM wallet on Base mainnet holding USDC. Used to sign EIP-3009 transferWithAuthorization for each call. Easiest funding: Coinbase Wallet \u2192 Buy \u2192 USDC on Base network \u2192 debit card (~$5 covers ~50 calls).",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CORTEX402_WALLET_PRIVATE_KEY"
+        },
+        {
+          "description": "Override the API base URL. Defaults to https://cortex402.vercel.app \u2014 only set this for staging or local development.",
+          "format": "string",
+          "name": "CORTEX402_BASE_URL"
+        },
+        {
+          "description": "Per-call payment ceiling in USDC. Defaults to 5.00 (covers sanctions $0.50, aviation $0.10, property $2.00 with headroom). Raise if calling other x402 endpoints through this server.",
+          "format": "string",
+          "name": "CORTEX402_MAX_PAYMENT_USDC"
+        }
+      ],
+      "identifier": "cortex402-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b47ec38f5b",
+    "published_at": "2026-05-05T03:23:06.123445Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Ooak21/cortex402",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-05T03:23:06.123445Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

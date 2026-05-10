@@ -1,0 +1,103 @@
+{
+  "description": "MCP server for ConnectWise Manage PSA \u2014 companies, tickets, projects, time entries, and more.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:30:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wyre-technology-connectwise-manage-mcp.stdio.d0ab34c0c1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wyre-technology/connectwise-manage-mcp",
+    "homepage": "https://github.com/wyre-technology/connectwise-manage-mcp",
+    "repository": "https://github.com/wyre-technology/connectwise-manage-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-technology/connectwise-manage-mcp:v1.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wyre-technology/connectwise-manage-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "ConnectWise company identifier (the short name used to log in)",
+          "format": "string",
+          "isRequired": true,
+          "name": "CW_MANAGE_COMPANY_ID"
+        },
+        {
+          "description": "ConnectWise API member public key (Members > API Members)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CW_MANAGE_PUBLIC_KEY"
+        },
+        {
+          "description": "ConnectWise API member private key",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CW_MANAGE_PRIVATE_KEY"
+        },
+        {
+          "description": "Client ID from the ConnectWise Developer Portal (developer.connectwise.com)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CW_MANAGE_CLIENT_ID"
+        },
+        {
+          "default": "https://api-na.myconnectwise.net",
+          "description": "ConnectWise API base URL \u2014 region-specific (api-na/eu/au.myconnectwise.net) or self-hosted",
+          "format": "string",
+          "name": "CW_MANAGE_URL"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode for the server. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-technology/connectwise-manage-mcp:v1.4.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "d0ab34c0c1",
+    "published_at": "2026-05-05T14:42:16.84284Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wyre-technology/connectwise-manage-mcp",
+    "server_version": "1.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-05T14:42:16.84284Z"
+  },
+  "title": "ConnectWise Manage",
+  "type": "mcp_server",
+  "version": "1.4.0"
+}

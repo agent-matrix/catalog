@@ -1,13 +1,12 @@
 {
   "description": "Run visual regression tests, review diffs, and manage baselines on a Lastest instance.",
   "harvest": {
-    "last_seen_at": "2026-05-04T05:49:24+00:00",
+    "last_seen_at": "2026-05-10T18:30:21+00:00",
     "seen_in_latest_run": true
   },
   "id": "mcp.io-github-las-team-lastest.stdio.5d03bc5e99",
   "lifecycle": {
-    "reason": "Missing required package metadata (runtimeHint or identifier)",
-    "status": "disabled"
+    "status": "active"
   },
   "links": {
     "documentation": "https://github.com/las-team/lastest",
@@ -17,7 +16,25 @@
   "mcp_registration": {
     "server": {
       "exec": {
-        "cmd": [],
+        "cmd": [
+          "npx",
+          {
+            "description": "URL of your Lastest instance (e.g. https://lastest.example.com)",
+            "format": "string",
+            "isRequired": true,
+            "name": "--url",
+            "type": "named"
+          },
+          {
+            "description": "API key from Settings \u2192 Runners & API Access",
+            "format": "string",
+            "isRequired": true,
+            "isSecret": true,
+            "name": "--api-key",
+            "type": "named"
+          },
+          "@lastest/mcp-server@0.2.2"
+        ],
         "env": {}
       },
       "transport": "STDIO"

@@ -1,0 +1,76 @@
+{
+  "description": "MCP server for the Spanish AEMPS CIMA pharmaceutical registry (20,000+ authorised medicines).",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:30:32+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-romanpert-mcp-aemps.stdio.4f38ca51ac",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/romanpert/mcp-aemps",
+    "homepage": "https://github.com/romanpert/mcp-aemps",
+    "repository": "https://github.com/romanpert/mcp-aemps"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-aemps==0.4.12"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.romanpert/mcp-aemps",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "8765",
+          "description": "TCP port for the HTTP server (used in transport URL template)",
+          "name": "PORT"
+        },
+        {
+          "default": "INFO",
+          "description": "Logging level (DEBUG, INFO, WARNING, ERROR)",
+          "name": "LOG_LEVEL"
+        },
+        {
+          "description": "Optional Redis URL for distributed cache and rate limiting (in-memory used if absent)",
+          "name": "REDIS_URL"
+        }
+      ],
+      "identifier": "mcp-aemps",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "up"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:{PORT}/mcp"
+      },
+      "version": "0.4.12"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4f38ca51ac",
+    "published_at": "2026-05-07T19:40:37.615769Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.romanpert/mcp-aemps",
+    "server_version": "0.4.12",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-07T19:40:37.615769Z"
+  },
+  "title": "MCP AEMPS \u2014 CIMA",
+  "type": "mcp_server",
+  "version": "0.4.12"
+}

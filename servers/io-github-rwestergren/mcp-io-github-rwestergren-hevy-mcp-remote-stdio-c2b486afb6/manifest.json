@@ -1,0 +1,82 @@
+{
+  "description": "Hosted/gateway-ready Hevy fitness MCP: workouts, routines, templates.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:30:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-rwestergren-hevy-mcp-remote.stdio.c2b486afb6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/rwestergren/hevy-mcp",
+    "homepage": "https://github.com/rwestergren/hevy-mcp",
+    "repository": "https://github.com/rwestergren/hevy-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "name": "-p",
+            "type": "named",
+            "value": "8080:8080"
+          },
+          {
+            "name": "-e",
+            "type": "named",
+            "value": "HEVY_API_KEY={HEVY_API_KEY}"
+          },
+          "ghcr.io/rwestergren/hevy-mcp:0.1.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.rwestergren/hevy-mcp-remote",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Hevy API key (requires Hevy PRO). Get one in the Hevy app under Settings -> Developer.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "HEVY_API_KEY"
+        }
+      ],
+      "identifier": "ghcr.io/rwestergren/hevy-mcp:0.1.6",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "name": "-p",
+          "type": "named",
+          "value": "8080:8080"
+        },
+        {
+          "name": "-e",
+          "type": "named",
+          "value": "HEVY_API_KEY={HEVY_API_KEY}"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:8080/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "c2b486afb6",
+    "published_at": "2026-05-05T12:47:08.89222Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.rwestergren/hevy-mcp-remote",
+    "server_version": "0.1.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-05T12:47:08.89222Z"
+  },
+  "title": "Hevy MCP (Remote)",
+  "type": "mcp_server",
+  "version": "0.1.6"
+}

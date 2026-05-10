@@ -1,0 +1,53 @@
+{
+  "description": "Govern proposed Action Cards with Decision Receipts before developer-owned execution.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:22:53+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-neurarelay-relay-mcp.sse.ab33e27109",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://www.neurarelay.com/mcp"
+    }
+  },
+  "name": "com.neurarelay/relay-mcp",
+  "provenance": {
+    "identity_key": "ab33e27109",
+    "published_at": "2026-05-08T21:21:16.913769Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.neurarelay/relay-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-08T21:21:16.913769Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Bearer token from Relay Workspace sandbox or controlled production/private access.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {NEURA_RELAY_MCP_TOKEN}",
+          "variables": {
+            "NEURA_RELAY_MCP_TOKEN": {
+              "description": "Relay sandbox bearer token, or controlled production/private bearer token after trust review.",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://www.neurarelay.com/mcp"
+    }
+  ],
+  "title": "Neura Relay MCP",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

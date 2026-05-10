@@ -1,0 +1,62 @@
+{
+  "description": "Code-pinned team memory for AI coding agents \u2014 typed artifacts, MCP-native, self-host.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:30:40+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-var-gg-pindoc.stdio.4b176b4535",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/var-gg/pindoc",
+    "homepage": "https://github.com/var-gg/pindoc",
+    "repository": "https://github.com/var-gg/pindoc"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/var-gg/pindoc:0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.var-gg/pindoc",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Postgres connection string. Use the bundled docker compose stack for the recommended pgvector setup.",
+          "isRequired": true,
+          "name": "PINDOC_DATABASE_URL"
+        },
+        {
+          "description": "Daemon bind address. Loopback (127.0.0.1:5830) by default; set a non-loopback value only behind an IdP or trusted proxy.",
+          "name": "PINDOC_BIND_ADDR"
+        }
+      ],
+      "identifier": "ghcr.io/var-gg/pindoc:0.2.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://127.0.0.1:5830/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "4b176b4535",
+    "published_at": "2026-05-05T07:34:33.212323Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.var-gg/pindoc",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-05T07:34:33.212323Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

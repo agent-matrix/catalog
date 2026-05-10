@@ -1,0 +1,87 @@
+{
+  "description": "Argentine business automation: Mercado Pago, AFIP/ARCA, WhatsApp, banking, shipping (7 packages).",
+  "harvest": {
+    "last_seen_at": "2026-05-10T18:29:44+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ar-agents-mcp.stdio.8667925268",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ar-agents/ar-agents",
+    "homepage": "https://github.com/ar-agents/ar-agents",
+    "repository": "https://github.com/ar-agents/ar-agents"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@ar-agents/mcp@0.4.11"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ar-agents/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Mercado Pago access token (TEST- prefix for sandbox, APP_USR- for production). Enables MP tools.",
+          "format": "string",
+          "isSecret": true,
+          "name": "MP_ACCESS_TOKEN"
+        },
+        {
+          "description": "AFIP/ARCA X.509 certificate (PEM string) for WSAA authentication. Enables CUIT padron + factura electronica tools.",
+          "format": "string",
+          "isSecret": true,
+          "name": "AFIP_CERT_PEM"
+        },
+        {
+          "description": "AFIP/ARCA private key (PEM string) for WSAA authentication. Required if AFIP_CERT_PEM is set.",
+          "format": "string",
+          "isSecret": true,
+          "name": "AFIP_KEY_PEM"
+        },
+        {
+          "description": "Issuer CUIT (Argentine tax ID) registered with the AFIP cert. Format: 20-XXXXXXXX-X.",
+          "format": "string",
+          "name": "AFIP_CUIT"
+        },
+        {
+          "description": "Meta WhatsApp Business Cloud API token. Enables WhatsApp tools.",
+          "format": "string",
+          "isSecret": true,
+          "name": "WHATSAPP_ACCESS_TOKEN"
+        },
+        {
+          "description": "Meta WhatsApp Business phone-number ID. Required if WHATSAPP_ACCESS_TOKEN is set.",
+          "format": "string",
+          "name": "WHATSAPP_PHONE_NUMBER_ID"
+        }
+      ],
+      "identifier": "@ar-agents/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.11"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8667925268",
+    "published_at": "2026-05-08T13:03:21.337744Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ar-agents/mcp",
+    "server_version": "0.4.11",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-08T13:03:21.337744Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.4.11"
+}
