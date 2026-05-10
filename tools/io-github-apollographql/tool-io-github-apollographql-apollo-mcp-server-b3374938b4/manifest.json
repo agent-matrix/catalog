@@ -1,0 +1,108 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/apollographql/apollo-mcp-server:v1.13.0"
+      }
+    }
+  ],
+  "description": "MCP server that exposes GraphQL operations as tools for AI models.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T20:18:11+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/apollographql/apollo-mcp-server",
+  "id": "tool.io-github-apollographql-apollo-mcp-server.b3374938b4",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/apollographql/apollo-mcp-server",
+    "homepage": "https://github.com/apollographql/apollo-mcp-server",
+    "repository": "https://github.com/apollographql/apollo-mcp-server"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "MCP server that exposes GraphQL operations as tools for AI models.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.apollographql/apollo-mcp-server",
+      "request_type": "POST",
+      "url": "https://github.com/apollographql/apollo-mcp-server"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Mount your config file into the container",
+            "isRequired": true,
+            "name": "--mount",
+            "type": "named",
+            "value": "type=bind,src={config_path},dst=/config.yaml,readonly",
+            "variables": {
+              "config_path": {
+                "description": "Path to your Apollo MCP Server configuration file on the host",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          {
+            "description": "Mount your project data directory into the container (for local schema and operations)",
+            "name": "--mount",
+            "type": "named",
+            "value": "type=bind,src={data_path},dst=/data",
+            "variables": {
+              "data_path": {
+                "description": "Path to your project directory containing schema and operation files",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          {
+            "description": "Expose the HTTP Streamable transport port",
+            "name": "-p",
+            "type": "named",
+            "value": "8000:8000"
+          },
+          "ghcr.io/apollographql/apollo-mcp-server:v1.13.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.apollographql/apollo-mcp-server",
+  "provenance": {
+    "identity_key": "62f030a4f5",
+    "promoted_from": "mcp.io-github-apollographql-apollo-mcp-server.stdio.62f030a4f5",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.apollographql/apollo-mcp-server",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-apollographql-apollo-mcp-server.stdio.62f030a4f5",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/apollographql/apollo-mcp-server",
+  "summary": "MCP server that exposes GraphQL operations as tools for AI models.",
+  "tags": [
+    "apollo",
+    "exposes",
+    "graphql",
+    "models",
+    "operations",
+    "tools"
+  ],
+  "title": "Apollo MCP Server",
+  "type": "tool",
+  "version": "1.13.0"
+}

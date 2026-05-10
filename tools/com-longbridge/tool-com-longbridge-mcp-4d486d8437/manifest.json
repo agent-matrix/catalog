@@ -1,0 +1,87 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/longbridge/longbridge-mcp:0.1.9"
+      }
+    }
+  ],
+  "description": "US/HK markets \u2014 110 tools: real-time quotes, options, orders, fundamentals, alerts, DCA & portfolio",
+  "harvest": {
+    "last_seen_at": "2026-05-10T20:18:02+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/longbridge/longbridge-mcp",
+  "id": "tool.com-longbridge-mcp.4d486d8437",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/longbridge/longbridge-mcp",
+    "homepage": "https://github.com/longbridge/longbridge-mcp",
+    "repository": "https://github.com/longbridge/longbridge-mcp"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "US/HK markets \u2014 110 tools: real-time quotes, options, orders, fundamentals, alerts, DCA & portfolio",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "com.longbridge/mcp",
+      "request_type": "POST",
+      "url": "https://github.com/longbridge/longbridge-mcp"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "default": "0.0.0.0:8000",
+            "description": "HTTP bind address inside the container.",
+            "name": "--bind",
+            "type": "named"
+          },
+          {
+            "default": "http://localhost:8000",
+            "description": "Externally reachable URL of the server. Required for public deployments; returned via OAuth protected resource metadata.",
+            "name": "--base-url",
+            "type": "named"
+          },
+          "ghcr.io/longbridge/longbridge-mcp:0.1.9"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.longbridge/mcp",
+  "provenance": {
+    "identity_key": "47760afbb2",
+    "promoted_from": "mcp.com-longbridge-mcp.stdio.47760afbb2",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.longbridge/mcp",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.com-longbridge-mcp.stdio.47760afbb2",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/longbridge/longbridge-mcp",
+  "summary": "US/HK markets \u2014 110 tools: real-time quotes, options, orders, fundamentals, alerts, DCA & portfolio",
+  "tags": [
+    "markets",
+    "options",
+    "quotes",
+    "real",
+    "time",
+    "tools"
+  ],
+  "title": "Mcp",
+  "type": "tool",
+  "version": "0.1.9"
+}

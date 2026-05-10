@@ -1,0 +1,86 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/scriptsmith/platter:2.0.2-rc7"
+      }
+    }
+  ],
+  "description": "MCP server exposing Read, Write, Edit, Bash, Glob, Grep, and JS tools over stdio.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T20:18:09+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/ScriptSmith/platter",
+  "id": "tool.io-github-scriptsmith-platter.c8ce75f0a6",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ScriptSmith/platter",
+    "homepage": "https://github.com/ScriptSmith/platter",
+    "repository": "https://github.com/ScriptSmith/platter"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "MCP server exposing Read, Write, Edit, Bash, Glob, Grep, and JS tools over stdio.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.ScriptSmith/platter",
+      "request_type": "POST",
+      "url": "https://github.com/ScriptSmith/platter"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "name": "-p",
+            "type": "named",
+            "value": "3100:3100"
+          },
+          {
+            "name": "-e",
+            "type": "named",
+            "value": "MCP_DANGEROUSLY_ALLOW_INSECURE_ISSUER_URL=true"
+          },
+          "ghcr.io/scriptsmith/platter:2.0.2-rc7"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ScriptSmith/platter",
+  "provenance": {
+    "identity_key": "75c9cea637",
+    "promoted_from": "mcp.io-github-ScriptSmith-platter.stdio.75c9cea637",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ScriptSmith/platter",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-ScriptSmith-platter.stdio.75c9cea637",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/ScriptSmith/platter",
+  "summary": "MCP server exposing Read, Write, Edit, Bash, Glob, Grep, and JS tools over stdio.",
+  "tags": [
+    "bash",
+    "edit",
+    "exposing",
+    "glob",
+    "platter",
+    "read",
+    "write"
+  ],
+  "title": "Platter",
+  "type": "tool",
+  "version": "2.0.2-rc7"
+}

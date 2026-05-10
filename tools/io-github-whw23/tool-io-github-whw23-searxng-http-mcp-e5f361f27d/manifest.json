@@ -1,0 +1,110 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/whw23/searxng-http-mcp"
+      }
+    }
+  ],
+  "description": "Self-contained SearXNG metasearch MCP server. One Docker image, 200+ engines, privacy-first.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T20:18:28+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/whw23/searxng_http_mcp",
+  "id": "tool.io-github-whw23-searxng-http-mcp.e5f361f27d",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/whw23/searxng_http_mcp",
+    "homepage": "https://github.com/whw23/searxng_http_mcp",
+    "repository": "https://github.com/whw23/searxng_http_mcp"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Self-contained SearXNG metasearch MCP server. One Docker image, 200+ engines, privacy-first.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.whw23/searxng-http-mcp",
+      "request_type": "POST",
+      "url": "https://github.com/whw23/searxng_http_mcp"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "type": "positional",
+            "value": "run"
+          },
+          {
+            "name": "-d",
+            "type": "named"
+          },
+          {
+            "name": "--name",
+            "type": "named",
+            "value": "searxng-mcp"
+          },
+          {
+            "name": "--restart",
+            "type": "named",
+            "value": "unless-stopped"
+          },
+          {
+            "name": "-p",
+            "type": "named",
+            "value": "8888:8888"
+          },
+          {
+            "name": "--memory",
+            "type": "named",
+            "value": "512m"
+          },
+          {
+            "name": "--cpus",
+            "type": "named",
+            "value": "1"
+          },
+          "ghcr.io/whw23/searxng-http-mcp"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.whw23/searxng-http-mcp",
+  "provenance": {
+    "identity_key": "946982de44",
+    "promoted_from": "mcp.io-github-whw23-searxng-http-mcp.stdio.946982de44",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.whw23/searxng-http-mcp",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-whw23-searxng-http-mcp.stdio.946982de44",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/whw23/searxng_http_mcp",
+  "summary": "Self-contained SearXNG metasearch MCP server. One Docker image, 200+ engines, privacy-first.",
+  "tags": [
+    "contained",
+    "docker",
+    "engines",
+    "http",
+    "image",
+    "metasearch",
+    "searxng",
+    "self"
+  ],
+  "title": "SearXNG HTTP MCP",
+  "type": "tool",
+  "version": "0.0.0"
+}

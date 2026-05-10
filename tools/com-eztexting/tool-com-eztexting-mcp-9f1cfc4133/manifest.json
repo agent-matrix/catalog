@@ -1,0 +1,93 @@
+{
+  "artifacts": [
+    {
+      "kind": "other",
+      "spec": {
+        "package": "@eztexting/mcp-server",
+        "registry": "npm",
+        "version": "1.0.3"
+      }
+    }
+  ],
+  "description": "Official EZTexting MCP server: SMS/MMS messaging, contacts, workflows, reports.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T20:18:01+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://gitlab.com/eztexting/mcp-server",
+  "id": "tool.com-eztexting-mcp.9f1cfc4133",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://gitlab.com/eztexting/mcp-server",
+    "homepage": "https://gitlab.com/eztexting/mcp-server",
+    "repository": "https://gitlab.com/eztexting/mcp-server"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Official EZTexting MCP server: SMS/MMS messaging, contacts, workflows, reports.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "com.eztexting/mcp",
+      "request_type": "POST",
+      "url": "https://gitlab.com/eztexting/mcp-server"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y",
+            "valueHint": "yes-flag"
+          },
+          {
+            "choices": [
+              "messaging",
+              "contacts",
+              "workflows",
+              "admin"
+            ],
+            "description": "Optional: connect to a single sub-server only. Default: unified endpoint with all tools.",
+            "format": "string",
+            "name": "--server",
+            "type": "named"
+          },
+          "@eztexting/mcp-server@1.0.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.eztexting/mcp",
+  "provenance": {
+    "identity_key": "fe0bccb117",
+    "promoted_from": "mcp.com-eztexting-mcp.stdio.fe0bccb117",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.eztexting/mcp",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.com-eztexting-mcp.stdio.fe0bccb117",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://gitlab.com/eztexting/mcp-server",
+  "summary": "Official EZTexting MCP server: SMS/MMS messaging, contacts, workflows, reports.",
+  "tags": [
+    "contacts",
+    "eztexting",
+    "messaging",
+    "reports",
+    "workflows"
+  ],
+  "title": "EZTexting MCP",
+  "type": "tool",
+  "version": "1.0.3"
+}

@@ -1,0 +1,86 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "devsaurus/chromadb-remote-mcp:latest"
+      }
+    }
+  ],
+  "description": "Remote ChromaDB vector database MCP server with streamable HTTP transport",
+  "harvest": {
+    "last_seen_at": "2026-05-10T20:18:21+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/meloncafe/chromadb-remote-mcp",
+  "id": "tool.io-github-meloncafe-chromadb-remote-mcp.4a424018c8",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/meloncafe/chromadb-remote-mcp",
+    "homepage": "https://github.com/meloncafe/chromadb-remote-mcp",
+    "repository": "https://github.com/meloncafe/chromadb-remote-mcp"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Remote ChromaDB vector database MCP server with streamable HTTP transport",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.meloncafe/chromadb-remote-mcp",
+      "request_type": "POST",
+      "url": "https://github.com/meloncafe/chromadb-remote-mcp"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "name": "-p",
+            "type": "named",
+            "value": "8080:8080"
+          },
+          {
+            "name": "-e",
+            "type": "named",
+            "value": "MCP_AUTH_TOKEN={MCP_AUTH_TOKEN}"
+          },
+          "devsaurus/chromadb-remote-mcp:latest"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.meloncafe/chromadb-remote-mcp",
+  "provenance": {
+    "identity_key": "091bb0f16a",
+    "promoted_from": "mcp.io-github-meloncafe-chromadb-remote-mcp.stdio.091bb0f16a",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.meloncafe/chromadb-remote-mcp",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-meloncafe-chromadb-remote-mcp.stdio.091bb0f16a",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/meloncafe/chromadb-remote-mcp",
+  "summary": "Remote ChromaDB vector database MCP server with streamable HTTP transport",
+  "tags": [
+    "chromadb",
+    "database",
+    "http",
+    "remote",
+    "streamable",
+    "transport",
+    "vector"
+  ],
+  "title": "ChromaDB Remote MCP Server",
+  "type": "tool",
+  "version": "1.0.2"
+}

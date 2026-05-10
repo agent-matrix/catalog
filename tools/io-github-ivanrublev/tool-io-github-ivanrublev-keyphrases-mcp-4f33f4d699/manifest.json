@@ -1,0 +1,87 @@
+{
+  "artifacts": [
+    {
+      "kind": "pypi",
+      "spec": {
+        "package": "keyphrases-mcp",
+        "version": "0.0.4"
+      }
+    }
+  ],
+  "description": "An MCP server to extract keyphrases from a text with the BERT model",
+  "harvest": {
+    "last_seen_at": "2026-05-10T20:18:07+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/IvanRublev/keyphrases-mcp",
+  "id": "tool.io-github-ivanrublev-keyphrases-mcp.4f33f4d699",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/IvanRublev/keyphrases-mcp",
+    "homepage": "https://github.com/IvanRublev/keyphrases-mcp",
+    "repository": "https://github.com/IvanRublev/keyphrases-mcp"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "An MCP server to extract keyphrases from a text with the BERT model",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.IvanRublev/keyphrases-mcp",
+      "request_type": "POST",
+      "url": "https://github.com/IvanRublev/keyphrases-mcp"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "type": "positional",
+            "value": "keyphrases-mcp-server"
+          },
+          {
+            "description": "Directory containing documents to process",
+            "format": "filepath",
+            "isRequired": true,
+            "name": "--allowed-dir",
+            "type": "named",
+            "valueHint": "documents_directory"
+          },
+          "keyphrases-mcp==0.0.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.IvanRublev/keyphrases-mcp",
+  "provenance": {
+    "identity_key": "3edb8aa2f6",
+    "promoted_from": "mcp.io-github-IvanRublev-keyphrases-mcp.stdio.3edb8aa2f6",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.IvanRublev/keyphrases-mcp",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-IvanRublev-keyphrases-mcp.stdio.3edb8aa2f6",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/IvanRublev/keyphrases-mcp",
+  "summary": "An MCP server to extract keyphrases from a text with the BERT model",
+  "tags": [
+    "bert",
+    "extract",
+    "keyphrases",
+    "model",
+    "text"
+  ],
+  "title": "Keyphrases Mcp",
+  "type": "tool",
+  "version": "0.0.4"
+}

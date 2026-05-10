@@ -1,0 +1,105 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/eat-pray-ai/yutu:v0.10.6-dev"
+      }
+    }
+  ],
+  "description": "A fully functional MCP server and CLI for YouTube",
+  "harvest": {
+    "last_seen_at": "2026-05-10T20:18:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/eat-pray-ai/yutu",
+  "id": "tool.io-github-eat-pray-ai-yutu.1f6b45aa57",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/eat-pray-ai/yutu",
+    "homepage": "https://github.com/eat-pray-ai/yutu",
+    "repository": "https://github.com/eat-pray-ai/yutu"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "A fully functional MCP server and CLI for YouTube",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.eat-pray-ai/yutu",
+      "request_type": "POST",
+      "url": "https://github.com/eat-pray-ai/yutu"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "UID and GID in the container to match host user",
+            "name": "--user",
+            "type": "named",
+            "value": "{user}:{group}",
+            "variables": {
+              "group": {
+                "description": "The current user's primary group, output of `id -g`"
+              },
+              "user": {
+                "description": "The current user, output of `id -u`"
+              }
+            }
+          },
+          {
+            "description": "Mount host directory containing credentials and token",
+            "name": "--mount",
+            "type": "named",
+            "value": "type=bind,source={hostPath},target=/app",
+            "variables": {
+              "hostPath": {
+                "description": "The directory containing `client_secret.json` and `youtube.token.json`"
+              }
+            }
+          },
+          {
+            "description": "Publish MCP server port",
+            "isRequired": true,
+            "name": "-p",
+            "type": "named",
+            "value": "8216:8216"
+          },
+          "ghcr.io/eat-pray-ai/yutu:v0.10.6-dev"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.eat-pray-ai/yutu",
+  "provenance": {
+    "identity_key": "13d5feb9f0",
+    "promoted_from": "mcp.io-github-eat-pray-ai-yutu.stdio.13d5feb9f0",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.eat-pray-ai/yutu",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-eat-pray-ai-yutu.stdio.13d5feb9f0",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/eat-pray-ai/yutu",
+  "summary": "A fully functional MCP server and CLI for YouTube",
+  "tags": [
+    "fully",
+    "functional",
+    "youtube",
+    "yutu"
+  ],
+  "title": "yutu",
+  "type": "tool",
+  "version": "0.0.0"
+}

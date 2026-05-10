@@ -1,0 +1,143 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/SamYuan1990/i18n-agent-action:mcp"
+      }
+    }
+  ],
+  "description": "An i18n github action for language translate",
+  "harvest": {
+    "last_seen_at": "2026-05-10T20:18:09+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "tool.io-github-samyuan1990-i18n-agent-action.3b8e881750",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "tool": {
+      "description": "An i18n github action for language translate",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.SamYuan1990/i18n-agent-action",
+      "request_type": "POST",
+      "url": "mcp+stdio://oci/ghcr.io/SamYuan1990/i18n-agent-action:mcp"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Port mapping from host to container",
+            "name": "-p",
+            "type": "named",
+            "value": "8080:8080"
+          },
+          {
+            "description": "API key for the i18n service",
+            "name": "-e",
+            "type": "named",
+            "value": "api_key={api_key}",
+            "variables": {
+              "api_key": {
+                "description": "Your API key for the translation service",
+                "format": "string",
+                "isRequired": true,
+                "isSecret": true
+              }
+            }
+          },
+          {
+            "description": "Volume mount for model files",
+            "name": "-v",
+            "type": "named",
+            "value": "{models_path}:/app/models",
+            "variables": {
+              "models_path": {
+                "default": "/path/to/your/models",
+                "description": "Path to your models directory on the host",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          {
+            "description": "Encoder model file path",
+            "name": "-e",
+            "type": "named",
+            "value": "encoder={encoder_file}",
+            "variables": {
+              "encoder_file": {
+                "default": "/app/models/your-encoder.onnx",
+                "description": "Encoder model file name",
+                "format": "string",
+                "isRequired": true
+              }
+            }
+          },
+          {
+            "description": "Decoder model file path",
+            "name": "-e",
+            "type": "named",
+            "value": "decoder={decoder_file}",
+            "variables": {
+              "decoder_file": {
+                "default": "/app/models/your-decoder.onnx",
+                "description": "Decoder model file name",
+                "format": "string",
+                "isRequired": true
+              }
+            }
+          },
+          {
+            "description": "Tokens model file path",
+            "name": "-e",
+            "type": "named",
+            "value": "tokens={tokens_file}",
+            "variables": {
+              "tokens_file": {
+                "default": "/app/models/your-tokens.onnx",
+                "description": "Tokens model file name",
+                "format": "string",
+                "isRequired": true
+              }
+            }
+          },
+          "ghcr.io/SamYuan1990/i18n-agent-action:mcp"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.SamYuan1990/i18n-agent-action",
+  "provenance": {
+    "identity_key": "0e16c62499",
+    "promoted_from": "mcp.io-github-SamYuan1990-i18n-agent-action.stdio.0e16c62499",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.SamYuan1990/i18n-agent-action",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-SamYuan1990-i18n-agent-action.stdio.0e16c62499",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "summary": "An i18n github action for language translate",
+  "tags": [
+    "action",
+    "i18n",
+    "language",
+    "translate"
+  ],
+  "title": "I18n Agent Action",
+  "type": "tool",
+  "version": "0.0.0"
+}

@@ -1,0 +1,82 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "docker.io/mcp/ros2:latest"
+      }
+    }
+  ],
+  "description": "View ROS 2 nodes and topics, and call services and actions via MCP",
+  "harvest": {
+    "last_seen_at": "2026-05-10T20:18:28+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/wise-vision/mcp_server_ros_2",
+  "id": "tool.io-github-wise-vision-mcp-server-ros-2.9e4217c9d5",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wise-vision/mcp_server_ros_2",
+    "homepage": "https://github.com/wise-vision/mcp_server_ros_2",
+    "repository": "https://github.com/wise-vision/mcp_server_ros_2"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "View ROS 2 nodes and topics, and call services and actions via MCP",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.wise-vision/mcp_server_ros_2",
+      "request_type": "POST",
+      "url": "https://github.com/wise-vision/mcp_server_ros_2"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Mount custom messages directory",
+            "name": "-v",
+            "type": "named",
+            "value": "~/mcp_custom_messages:/app/custom_msgs"
+          },
+          "docker.io/mcp/ros2:latest"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wise-vision/mcp_server_ros_2",
+  "provenance": {
+    "identity_key": "a2f9d1e2ba",
+    "promoted_from": "mcp.io-github-wise-vision-mcp_server_ros_2.stdio.a2f9d1e2ba",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wise-vision/mcp_server_ros_2",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-wise-vision-mcp_server_ros_2.stdio.a2f9d1e2ba",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/wise-vision/mcp_server_ros_2",
+  "summary": "View ROS 2 nodes and topics, and call services and actions via MCP",
+  "tags": [
+    "actions",
+    "call",
+    "nodes",
+    "ros",
+    "services",
+    "topics",
+    "view"
+  ],
+  "title": "Mcp Server Ros 2",
+  "type": "tool",
+  "version": "1.0.0"
+}

@@ -1,0 +1,100 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "docker.io/dtkmn/mcp-zap-server:v0.8.0"
+      }
+    }
+  ],
+  "description": "Safe, self-hosted OWASP ZAP operator for guided AI security scans and reports.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T20:18:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/dtkmn/mcp-zap-server",
+  "id": "tool.io-github-dtkmn-mcp-zap-server.ba5c4c6488",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/dtkmn/mcp-zap-server",
+    "homepage": "https://github.com/dtkmn/mcp-zap-server",
+    "repository": "https://github.com/dtkmn/mcp-zap-server"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Safe, self-hosted OWASP ZAP operator for guided AI security scans and reports.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.dtkmn/mcp-zap-server",
+      "request_type": "POST",
+      "url": "https://github.com/dtkmn/mcp-zap-server"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Docker network containing the separately running OWASP ZAP daemon.",
+            "name": "--network",
+            "type": "named",
+            "value": "mcp-zap-network"
+          },
+          {
+            "description": "Run with the standard zaproxy/zap-stable UID/GID so shared report workspace files remain writable by both containers.",
+            "name": "--user",
+            "type": "named",
+            "value": "1000:1000"
+          },
+          {
+            "description": "Expose the streamable HTTP MCP endpoint on localhost.",
+            "name": "-p",
+            "type": "named",
+            "value": "127.0.0.1:7456:7456"
+          },
+          {
+            "description": "Named report workspace volume. The external OWASP ZAP container must mount the same volume at /zap/wrk.",
+            "name": "-v",
+            "type": "named",
+            "value": "mcp-zap-wrk:/zap/wrk"
+          },
+          "docker.io/dtkmn/mcp-zap-server:v0.8.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.dtkmn/mcp-zap-server",
+  "provenance": {
+    "identity_key": "83e80d22fb",
+    "promoted_from": "mcp.io-github-dtkmn-mcp-zap-server.stdio.83e80d22fb",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.dtkmn/mcp-zap-server",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-dtkmn-mcp-zap-server.stdio.83e80d22fb",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/dtkmn/mcp-zap-server",
+  "summary": "Safe, self-hosted OWASP ZAP operator for guided AI security scans and reports.",
+  "tags": [
+    "guided",
+    "hosted",
+    "operator",
+    "owasp",
+    "safe",
+    "self",
+    "zap"
+  ],
+  "title": "MCP ZAP Server",
+  "type": "tool",
+  "version": "0.8.0"
+}

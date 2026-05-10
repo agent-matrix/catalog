@@ -1,0 +1,106 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/buildkite/buildkite-mcp-server:0.7.0"
+      }
+    }
+  ],
+  "description": "MCP server exposing Buildkite API data (pipelines, builds, jobs, tests) to AI tooling and editors.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T20:18:13+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/buildkite/buildkite-mcp-server",
+  "id": "tool.io-github-buildkite-buildkite-mcp-server.5a0b6100bb",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/buildkite/buildkite-mcp-server",
+    "homepage": "https://github.com/buildkite/buildkite-mcp-server",
+    "repository": "https://github.com/buildkite/buildkite-mcp-server"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "MCP server exposing Buildkite API data (pipelines, builds, jobs, tests) to AI tooling and editors.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.buildkite/buildkite-mcp-server",
+      "request_type": "POST",
+      "url": "https://github.com/buildkite/buildkite-mcp-server"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "The runtime command to execute",
+            "type": "positional",
+            "value": "run"
+          },
+          {
+            "description": "Run container in interactive mode",
+            "name": "-i",
+            "type": "named"
+          },
+          {
+            "description": "Automatically remove the container when it exits",
+            "name": "--rm",
+            "type": "named"
+          },
+          {
+            "description": "Set an environment variable in the runtime",
+            "name": "-e",
+            "type": "named"
+          },
+          {
+            "description": "Environment variable name",
+            "type": "positional",
+            "value": "BUILDKITE_API_TOKEN"
+          },
+          {
+            "description": "The container image to run",
+            "type": "positional",
+            "value": "ghcr.io/buildkite/buildkite-mcp-server:0.7.0"
+          },
+          "ghcr.io/buildkite/buildkite-mcp-server:0.7.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.buildkite/buildkite-mcp-server",
+  "provenance": {
+    "identity_key": "330494ecf2",
+    "promoted_from": "mcp.io-github-buildkite-buildkite-mcp-server.stdio.330494ecf2",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.buildkite/buildkite-mcp-server",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-buildkite-buildkite-mcp-server.stdio.330494ecf2",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/buildkite/buildkite-mcp-server",
+  "summary": "MCP server exposing Buildkite API data (pipelines, builds, jobs, tests) to AI tooling and editors.",
+  "tags": [
+    "buildkite",
+    "builds",
+    "data",
+    "exposing",
+    "jobs",
+    "pipelines",
+    "tests"
+  ],
+  "title": "Buildkite Mcp Server",
+  "type": "tool",
+  "version": "0.7.0"
+}

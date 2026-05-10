@@ -1,0 +1,130 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "docker.io/zscaler/zscaler-mcp-server:latest"
+      }
+    }
+  ],
+  "description": "Manage Zscaler Zero Trust Exchange via 280+ tools \u2014 ZPA, ZIA, ZDX, ZCC, EASM, and more.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T20:18:29+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/zscaler/zscaler-mcp-server",
+  "id": "tool.io-github-zscaler-zscaler-mcp-server.a1ee05d681",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/zscaler/zscaler-mcp-server",
+    "homepage": "https://github.com/zscaler/zscaler-mcp-server",
+    "repository": "https://github.com/zscaler/zscaler-mcp-server"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Manage Zscaler Zero Trust Exchange via 280+ tools \u2014 ZPA, ZIA, ZDX, ZCC, EASM, and more.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.zscaler/zscaler-mcp-server",
+      "request_type": "POST",
+      "url": "https://github.com/zscaler/zscaler-mcp-server"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Zscaler OneAPI Client ID from ZIdentity console.",
+            "isRequired": true,
+            "name": "-e",
+            "type": "named",
+            "value": "ZSCALER_CLIENT_ID={client_id}",
+            "variables": {
+              "client_id": {
+                "format": "string",
+                "isRequired": true,
+                "isSecret": true
+              }
+            }
+          },
+          {
+            "description": "Zscaler OneAPI Client Secret from ZIdentity console.",
+            "isRequired": true,
+            "name": "-e",
+            "type": "named",
+            "value": "ZSCALER_CLIENT_SECRET={client_secret}",
+            "variables": {
+              "client_secret": {
+                "format": "string",
+                "isRequired": true,
+                "isSecret": true
+              }
+            }
+          },
+          {
+            "description": "Zscaler Customer ID from ZIdentity console.",
+            "isRequired": true,
+            "name": "-e",
+            "type": "named",
+            "value": "ZSCALER_CUSTOMER_ID={customer_id}",
+            "variables": {
+              "customer_id": {
+                "format": "string",
+                "isRequired": true
+              }
+            }
+          },
+          {
+            "description": "Zscaler vanity domain (e.g. mycompany.zscloud.net).",
+            "isRequired": true,
+            "name": "-e",
+            "type": "named",
+            "value": "ZSCALER_VANITY_DOMAIN={vanity_domain}",
+            "variables": {
+              "vanity_domain": {
+                "format": "string",
+                "isRequired": true
+              }
+            }
+          },
+          "docker.io/zscaler/zscaler-mcp-server:latest"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.zscaler/zscaler-mcp-server",
+  "provenance": {
+    "identity_key": "c6614654d3",
+    "promoted_from": "mcp.io-github-zscaler-zscaler-mcp-server.stdio.c6614654d3",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.zscaler/zscaler-mcp-server",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-zscaler-zscaler-mcp-server.stdio.c6614654d3",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/zscaler/zscaler-mcp-server",
+  "summary": "Manage Zscaler Zero Trust Exchange via 280+ tools \u2014 ZPA, ZIA, ZDX, ZCC, EASM, and more.",
+  "tags": [
+    "easm",
+    "exchange",
+    "manage",
+    "tools",
+    "trust",
+    "zero",
+    "zscaler"
+  ],
+  "title": "Zscaler Zero Trust Exchange",
+  "type": "tool",
+  "version": "0.10.0"
+}

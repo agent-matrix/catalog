@@ -1,0 +1,79 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/mhajder/zabbix-mcp:0.2.0"
+      }
+    }
+  ],
+  "description": "MCP server for Zabbix monitoring and automation",
+  "harvest": {
+    "last_seen_at": "2026-05-10T20:18:21+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/mhajder/zabbix-mcp",
+  "id": "tool.io-github-mhajder-zabbix-mcp.ba5969143e",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mhajder/zabbix-mcp",
+    "homepage": "https://github.com/mhajder/zabbix-mcp",
+    "repository": "https://github.com/mhajder/zabbix-mcp"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "MCP server for Zabbix monitoring and automation",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.mhajder/zabbix-mcp",
+      "request_type": "POST",
+      "url": "https://github.com/mhajder/zabbix-mcp"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Port mapping for HTTP transport",
+            "isRequired": true,
+            "name": "-p",
+            "type": "named",
+            "value": "{MCP_HTTP_PORT}:8000"
+          },
+          "ghcr.io/mhajder/zabbix-mcp:0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mhajder/zabbix-mcp",
+  "provenance": {
+    "identity_key": "ce1446092e",
+    "promoted_from": "mcp.io-github-mhajder-zabbix-mcp.stdio.ce1446092e",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mhajder/zabbix-mcp",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-mhajder-zabbix-mcp.stdio.ce1446092e",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/mhajder/zabbix-mcp",
+  "summary": "MCP server for Zabbix monitoring and automation",
+  "tags": [
+    "automation",
+    "monitoring",
+    "zabbix"
+  ],
+  "title": "Zabbix MCP",
+  "type": "tool",
+  "version": "0.2.0"
+}

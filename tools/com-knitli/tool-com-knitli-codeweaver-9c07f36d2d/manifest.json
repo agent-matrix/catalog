@@ -1,0 +1,123 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "docker.io/knitli/codeweaver:0.1.0-alpha.3"
+      }
+    }
+  ],
+  "description": "Semantic code search built for AI agents. Hybrid, AST-aware, context for 166 languages.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T20:18:02+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/knitli/codeweaver",
+  "id": "tool.com-knitli-codeweaver.9c07f36d2d",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/knitli/codeweaver",
+    "homepage": "https://github.com/knitli/codeweaver",
+    "repository": "https://github.com/knitli/codeweaver"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Semantic code search built for AI agents. Hybrid, AST-aware, context for 166 languages.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "com.knitli/codeweaver",
+      "request_type": "POST",
+      "url": "https://github.com/knitli/codeweaver"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Automatically remove container when it exits",
+            "name": "--rm",
+            "type": "named"
+          },
+          {
+            "description": "Mount workspace directory as read-only",
+            "name": "-v",
+            "type": "named",
+            "value": "{workspace}:/workspace:ro",
+            "variables": {
+              "workspace": {
+                "description": "Path to your codebase to index and search",
+                "isRequired": true
+              }
+            }
+          },
+          {
+            "description": "Set repository path inside container",
+            "name": "-e",
+            "type": "named",
+            "value": "CODEWEAVER_PROJECT_PATH=/workspace"
+          },
+          {
+            "description": "Port mapping for MCP server",
+            "name": "-p",
+            "type": "named",
+            "value": "{host_port}:9328",
+            "variables": {
+              "host_port": {
+                "default": "9328",
+                "description": "Host port to expose MCP server"
+              }
+            }
+          },
+          {
+            "description": "Docker network for Qdrant connectivity",
+            "name": "--network",
+            "type": "named",
+            "value": "{network}",
+            "variables": {
+              "network": {
+                "default": "bridge",
+                "description": "Docker network name (use 'host' for local Qdrant or custom network)"
+              }
+            }
+          },
+          "docker.io/knitli/codeweaver:0.1.0-alpha.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.knitli/codeweaver",
+  "provenance": {
+    "identity_key": "105cd456d8",
+    "promoted_from": "mcp.com-knitli-codeweaver.stdio.105cd456d8",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.knitli/codeweaver",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.com-knitli-codeweaver.stdio.105cd456d8",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/knitli/codeweaver",
+  "summary": "Semantic code search built for AI agents. Hybrid, AST-aware, context for 166 languages.",
+  "tags": [
+    "agents",
+    "built",
+    "code",
+    "codeweaver",
+    "hybrid",
+    "search",
+    "semantic"
+  ],
+  "title": "Codeweaver",
+  "type": "tool",
+  "version": "0.1.0-alpha.3"
+}

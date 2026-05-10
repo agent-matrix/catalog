@@ -1,0 +1,92 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "docker.io/samuelmoraesf/mcp-nfse-nacional:1.0.3"
+      }
+    }
+  ],
+  "description": "MCP Server para consulta de NFSe no portal nacional (nfse.gov.br)",
+  "harvest": {
+    "last_seen_at": "2026-05-10T20:18:09+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/SamuelMoraesF/mcp-nfse-nacional",
+  "id": "tool.io-github-samuelmoraesf-mcp-nfse-nacional.d4dd8127a1",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/SamuelMoraesF/mcp-nfse-nacional",
+    "homepage": "https://github.com/SamuelMoraesF/mcp-nfse-nacional",
+    "repository": "https://github.com/SamuelMoraesF/mcp-nfse-nacional"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "MCP Server para consulta de NFSe no portal nacional (nfse.gov.br)",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.SamuelMoraesF/mcp-nfse-nacional",
+      "request_type": "POST",
+      "url": "https://github.com/SamuelMoraesF/mcp-nfse-nacional"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Mapeia a porta do container para o host",
+            "name": "-p",
+            "type": "named",
+            "value": "{MCP_PORT}:{MCP_PORT}"
+          },
+          {
+            "description": "Monta o certificado digital no container",
+            "name": "-v",
+            "type": "named",
+            "value": "{CERT_FILE}:/app/certificado.pfx:ro"
+          },
+          {
+            "description": "Monta o diret\u00f3rio de armazenamento no container",
+            "name": "-v",
+            "type": "named",
+            "value": "{STORAGE_PATH}:/app/storage"
+          },
+          "docker.io/samuelmoraesf/mcp-nfse-nacional:1.0.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.SamuelMoraesF/mcp-nfse-nacional",
+  "provenance": {
+    "identity_key": "7c64c79f17",
+    "promoted_from": "mcp.io-github-SamuelMoraesF-mcp-nfse-nacional.stdio.7c64c79f17",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.SamuelMoraesF/mcp-nfse-nacional",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-SamuelMoraesF-mcp-nfse-nacional.stdio.7c64c79f17",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/SamuelMoraesF/mcp-nfse-nacional",
+  "summary": "MCP Server para consulta de NFSe no portal nacional (nfse.gov.br)",
+  "tags": [
+    "consulta",
+    "nacional",
+    "nfse",
+    "para",
+    "portal"
+  ],
+  "title": "Mcp Nfse Nacional",
+  "type": "tool",
+  "version": "1.0.3"
+}

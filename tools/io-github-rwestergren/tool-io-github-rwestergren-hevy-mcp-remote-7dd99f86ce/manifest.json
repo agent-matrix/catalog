@@ -1,0 +1,87 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/rwestergren/hevy-mcp:0.1.6"
+      }
+    }
+  ],
+  "description": "Hosted/gateway-ready Hevy fitness MCP: workouts, routines, templates.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T20:18:25+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/rwestergren/hevy-mcp",
+  "id": "tool.io-github-rwestergren-hevy-mcp-remote.7dd99f86ce",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/rwestergren/hevy-mcp",
+    "homepage": "https://github.com/rwestergren/hevy-mcp",
+    "repository": "https://github.com/rwestergren/hevy-mcp"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Hosted/gateway-ready Hevy fitness MCP: workouts, routines, templates.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.rwestergren/hevy-mcp-remote",
+      "request_type": "POST",
+      "url": "https://github.com/rwestergren/hevy-mcp"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "name": "-p",
+            "type": "named",
+            "value": "8080:8080"
+          },
+          {
+            "name": "-e",
+            "type": "named",
+            "value": "HEVY_API_KEY={HEVY_API_KEY}"
+          },
+          "ghcr.io/rwestergren/hevy-mcp:0.1.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.rwestergren/hevy-mcp-remote",
+  "provenance": {
+    "identity_key": "c2b486afb6",
+    "promoted_from": "mcp.io-github-rwestergren-hevy-mcp-remote.stdio.c2b486afb6",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.rwestergren/hevy-mcp-remote",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-rwestergren-hevy-mcp-remote.stdio.c2b486afb6",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/rwestergren/hevy-mcp",
+  "summary": "Hosted/gateway-ready Hevy fitness MCP: workouts, routines, templates.",
+  "tags": [
+    "fitness",
+    "gateway",
+    "hevy",
+    "hosted",
+    "ready",
+    "remote",
+    "routines",
+    "workouts"
+  ],
+  "title": "Hevy MCP (Remote)",
+  "type": "tool",
+  "version": "0.1.6"
+}

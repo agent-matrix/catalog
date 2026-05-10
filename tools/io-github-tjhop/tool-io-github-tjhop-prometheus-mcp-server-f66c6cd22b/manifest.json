@@ -1,0 +1,108 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/tjhop/prometheus-mcp-server:0.13.0"
+      }
+    }
+  ],
+  "description": "An API-complete MCP server to manage Prometheus-compatible backends via comprehensive tools.",
+  "harvest": {
+    "last_seen_at": "2026-05-10T20:18:27+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/tjhop/prometheus-mcp-server",
+  "id": "tool.io-github-tjhop-prometheus-mcp-server.f66c6cd22b",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/tjhop/prometheus-mcp-server",
+    "homepage": "https://github.com/tjhop/prometheus-mcp-server",
+    "repository": "https://github.com/tjhop/prometheus-mcp-server"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "An API-complete MCP server to manage Prometheus-compatible backends via comprehensive tools.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.tjhop/prometheus-mcp-server",
+      "request_type": "POST",
+      "url": "https://github.com/tjhop/prometheus-mcp-server"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "The runtime command to execute",
+            "type": "positional",
+            "value": "run"
+          },
+          {
+            "description": "Run container in interactive mode",
+            "name": "-i",
+            "type": "named"
+          },
+          {
+            "description": "Automatically remove the container when it exits",
+            "name": "--rm",
+            "type": "named"
+          },
+          {
+            "description": "Set an environment variable in the runtime",
+            "name": "-e",
+            "type": "named"
+          },
+          {
+            "description": "Environment variable name",
+            "type": "positional",
+            "value": "PROMETHEUS_MCP_SERVER_PROMETHEUS_URL",
+            "valueHint": "env_var_name"
+          },
+          {
+            "description": "The container image to run",
+            "type": "positional",
+            "value": "ghcr.io/tjhop/prometheus-mcp-server",
+            "valueHint": "image_name"
+          },
+          "ghcr.io/tjhop/prometheus-mcp-server:0.13.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.tjhop/prometheus-mcp-server",
+  "provenance": {
+    "identity_key": "17b015beec",
+    "promoted_from": "mcp.io-github-tjhop-prometheus-mcp-server.stdio.17b015beec",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.tjhop/prometheus-mcp-server",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-tjhop-prometheus-mcp-server.stdio.17b015beec",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/tjhop/prometheus-mcp-server",
+  "summary": "An API-complete MCP server to manage Prometheus-compatible backends via comprehensive tools.",
+  "tags": [
+    "backends",
+    "compatible",
+    "complete",
+    "comprehensive",
+    "manage",
+    "prometheus",
+    "tools"
+  ],
+  "title": "Prometheus Mcp Server",
+  "type": "tool",
+  "version": "0.13.0"
+}
