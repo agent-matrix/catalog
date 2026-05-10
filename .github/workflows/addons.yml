@@ -1,0 +1,252 @@
+name: Sync from IBM mcp-context-forge
+
+# Adds MCP servers published by IBM in their open-source mcp-context-forge
+# project to the agent-matrix catalog. Two upstream artefacts are ingested:
+#
+#   1. mcp-catalog.yml          — IBM's curated list of remote MCP endpoints
+#                                 (Microsoft Graph, Stripe, GitHub, Linear,
+#                                 Asana, Atlassian, etc.). Production-grade.
+#   2. mcp-servers/{python,go,rust}/<name>/
+#                               — IBM-authored reference servers, locally
+#                                 installable (STDIO transport).
+#
+# Production-safety rules (all enforced below):
+#   • Always opens a PR — never direct-pushes to main, even on schedule.
+#   • Only writes manifests it owns: existing files whose `_source` is NOT
+#     "mcp-context-forge" are read-only for this workflow. Registry-sourced
+#     entries (7466) are inviolable.
+#   • Pruning of removed-from-upstream IBM entries is OPT-IN via input.
+#   • Shrink-guard refuses the PR if total active drops > shrink_threshold_pct.
+#   • Validation rejects an empty merge result (likely upstream outage).
+#   • A shared concurrency group with sync.yml prevents racing index writes.
+
+on:
+  schedule:
+    # Tuesday 03:00 UTC — off-cycle from the registry sync (Mon 02:15).
+    - cron: "0 3 * * 2"
+  workflow_dispatch:
+    inputs:
+      source_repo:
+        description: "Upstream repo (owner/name) to ingest"
+        required: false
+        default: "IBM/mcp-context-forge"
+      source_ref:
+        description: "Git ref (branch/tag/sha) to read from"
+        required: false
+        default: "main"
+      prune_removed:
+        description: "Delete IBM-sourced entries that no longer appear upstream"
+        required: false
+        type: boolean
+        default: false
+      shrink_threshold_pct:
+        description: "Refuse PR if active count drops below this percentage of the previous run (0 disables)"
+        required: false
+        default: "50"
+      dry_run:
+        description: "Skip commit/PR; emit diff summary only"
+        required: false
+        type: boolean
+        default: false
+
+# Share the index-write lock with sync.yml so the two workflows queue
+# rather than race when both happen to land on the same hour.
+concurrency:
+  group: catalog-index-write
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    env:
+      EFFECTIVE_TOKEN: ${{ secrets.CATALOG_BOT_TOKEN || github.token }}
+      SOURCE_REPO: ${{ inputs.source_repo || 'IBM/mcp-context-forge' }}
+      SOURCE_REF:  ${{ inputs.source_ref  || 'main' }}
+      PRUNE_REMOVED: ${{ inputs.prune_removed || false }}
+      SHRINK_THRESHOLD_PCT: ${{ inputs.shrink_threshold_pct || '50' }}
+      DRY_RUN: ${{ inputs.dry_run || false }}
+
+    steps:
+      - name: Checkout catalog
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ env.EFFECTIVE_TOKEN }}
+
+      - name: Snapshot previous index for shrink-guard and PR diff
+        shell: bash
+        run: |
+          if [ -f index.json ]; then
+            cp index.json /tmp/prev_index.json
+            echo "snapshot_active=$(jq -r '.counts.active_manifests // 0' /tmp/prev_index.json)" >> "$GITHUB_ENV"
+          else
+            echo "snapshot_active=0" >> "$GITHUB_ENV"
+          fi
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install parser dependencies
+        shell: bash
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyyaml httpx
+
+      - name: Sync from mcp-context-forge
+        id: sync
+        shell: bash
+        env:
+          GITHUB_TOKEN: ${{ env.EFFECTIVE_TOKEN }}
+        run: |
+          python scripts/sync_from_context_forge.py \
+            --repo  "${SOURCE_REPO}" \
+            --ref   "${SOURCE_REF}" \
+            ${PRUNE_REMOVED:+--prune-removed} \
+            --report /tmp/sync_report.json
+          jq -r '.summary | to_entries[] | "\(.key)=\(.value)"' /tmp/sync_report.json >> "$GITHUB_OUTPUT"
+
+      - name: Validate index.json
+        shell: bash
+        run: |
+          [ -f index.json ] || { echo "::error::index.json missing after merge"; exit 1; }
+          python <<'PY'
+          import json, sys
+          idx = json.load(open("index.json"))
+          assert "manifests" in idx and isinstance(idx["manifests"], list), "manifests array missing"
+          assert "items"     in idx and isinstance(idx["items"], list),     "items array missing"
+          counts = idx.get("counts") or {}
+          active = int(counts.get("active_manifests", 0))
+          total  = int(counts.get("total_items", 0))
+          if active == 0:
+              print("::error::Merge produced 0 active manifests — refusing to push")
+              sys.exit(1)
+          if active != len(idx["manifests"]):
+              print(f"::warning::counts.active_manifests ({active}) != len(manifests) ({len(idx['manifests'])})")
+          print(f"index OK — active={active}, total={total}, manifests_paths={len(idx['manifests'])}, items={len(idx['items'])}")
+          PY
+
+      - name: Shrink-guard
+        shell: bash
+        run: |
+          NEW_ACTIVE=$(jq -r '.counts.active_manifests // 0' index.json)
+          OLD_ACTIVE="${snapshot_active:-0}"
+          THRESHOLD_PCT="${SHRINK_THRESHOLD_PCT:-50}"
+
+          if [ "${THRESHOLD_PCT}" = "0" ]; then
+            echo "shrink-guard disabled"
+            exit 0
+          fi
+          if [ "${OLD_ACTIVE}" -lt 100 ]; then
+            echo "previous active=${OLD_ACTIVE} < 100 — bootstrap, skipping shrink-guard"
+            exit 0
+          fi
+          MIN_ALLOWED=$(( OLD_ACTIVE * THRESHOLD_PCT / 100 ))
+          if [ "${NEW_ACTIVE}" -lt "${MIN_ALLOWED}" ]; then
+            echo "::error::Active count dropped from ${OLD_ACTIVE} → ${NEW_ACTIVE} (< ${THRESHOLD_PCT}% threshold). Refusing to PR."
+            echo "::error::If this is intentional, re-run with shrink_threshold_pct=0."
+            exit 1
+          fi
+          echo "shrink-guard OK: ${OLD_ACTIVE} → ${NEW_ACTIVE} active"
+
+      - name: Check for changes
+        id: changes
+        shell: bash
+        run: |
+          if [[ -n $(git status --porcelain) ]]; then
+            echo "has_changes=true"  >> "$GITHUB_OUTPUT"
+          else
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Dry-run summary (skips commit/PR)
+        if: env.DRY_RUN == 'true'
+        shell: bash
+        run: |
+          {
+            echo "## Dry run — no commit"
+            echo ""
+            echo "| metric | value |"
+            echo "|---|---|"
+            jq -r '.summary | to_entries[] | "| \(.key) | \(.value) |"' /tmp/sync_report.json
+            echo ""
+            echo "### Files changed"
+            git status --short | head -50
+          } >> "$GITHUB_STEP_SUMMARY"
+          # Discard local changes so the dry-run leaves nothing behind.
+          git checkout -- .
+          git clean -fd
+
+      - name: Open Pull Request
+        if: env.DRY_RUN != 'true' && steps.changes.outputs.has_changes == 'true'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ env.EFFECTIVE_TOKEN }}
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          BRANCH="sync/context-forge-$(date -u +%Y%m%d-%H%M%S)"
+          git checkout -b "$BRANCH"
+          git add -A
+          git commit -m "chore(sync): catalog update from IBM/mcp-context-forge"
+          git push origin "$BRANCH"
+
+          NEW_ACTIVE=$(jq -r '.counts.active_manifests // 0' index.json)
+          OLD_ACTIVE="${snapshot_active:-0}"
+          DELTA=$(( NEW_ACTIVE - OLD_ACTIVE ))
+
+          ADDED=$(jq -r '.summary.added // 0'   /tmp/sync_report.json)
+          UPDATED=$(jq -r '.summary.updated // 0' /tmp/sync_report.json)
+          REMOVED=$(jq -r '.summary.removed // 0' /tmp/sync_report.json)
+          SKIPS=$(jq -r '.summary.skipped_collisions // 0' /tmp/sync_report.json)
+
+          cat > /tmp/pr_body.md <<EOF
+          ## Sync from IBM/mcp-context-forge
+
+          | metric | before | after |
+          |---|---|---|
+          | active_manifests | ${OLD_ACTIVE} | ${NEW_ACTIVE} (Δ ${DELTA}) |
+
+          | per-source action | count |
+          |---|---|
+          | added             | ${ADDED}   |
+          | updated           | ${UPDATED} |
+          | removed (pruned)  | ${REMOVED} |
+          | skipped (collision with non-IBM source) | ${SKIPS} |
+
+          Source: \`${SOURCE_REPO}@${SOURCE_REF}\`
+          Trigger: \`${{ github.event_name }}\`
+          Pruning: \`${PRUNE_REMOVED}\`
+
+          Registry-sourced entries are NOT modified by this workflow.
+          See \`scripts/sync_from_context_forge.py\` for the merge logic.
+          EOF
+
+          gh pr create \
+            --base main \
+            --head "$BRANCH" \
+            --title "chore(sync): IBM/mcp-context-forge catalog update (+${DELTA} active)" \
+            --body-file /tmp/pr_body.md
+
+      - name: Failure summary
+        if: failure()
+        shell: bash
+        run: |
+          {
+            echo "### ❌ context-forge sync failed"
+            echo ""
+            echo "Source: \`${SOURCE_REPO}@${SOURCE_REF}\`"
+            echo "Trigger: \`${{ github.event_name }}\`"
+            echo ""
+            echo "Common causes:"
+            echo "- Upstream \`mcp-catalog.yml\` schema change → check parser logs"
+            echo "- GitHub API rate limit on Trees fetch → re-run later or pass a higher-quota token via CATALOG_BOT_TOKEN"
+            echo "- Shrink-guard tripped — check 'Shrink-guard' step"
+          } >> "$GITHUB_STEP_SUMMARY"
