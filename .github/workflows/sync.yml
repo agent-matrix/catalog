@@ -32,6 +32,16 @@ on:
         description: "Refuse to push if active count drops below this percentage of the previous run (0 = disabled)"
         required: false
         default: "50"
+      promote_tools:
+        description: "Auto-promote each MCP server into a sibling tool entry"
+        required: false
+        type: boolean
+        default: true
+      promote_agents:
+        description: "Auto-promote agent-signaling MCP servers into sibling agent entries"
+        required: false
+        type: boolean
+        default: true
 
 concurrency:
   group: sync-catalog-from-registry
@@ -54,6 +64,11 @@ jobs:
       # Default to PR mode for scheduled runs (safer); manual runs can flip via input.
       FORCE_PR: ${{ inputs.force_pull_request || (github.event_name == 'schedule') }}
       SHRINK_THRESHOLD_PCT: ${{ inputs.shrink_threshold_pct || '50' }}
+      # Promotion is on by default so the Tools and Agents tabs on
+      # matrixhub.io stay populated. Operators can disable per run via
+      # workflow_dispatch inputs above.
+      PROMOTE_TOOLS: ${{ inputs.promote_tools == false && 'false' || 'true' }}
+      PROMOTE_AGENTS: ${{ inputs.promote_agents == false && 'false' || 'true' }}
 
     steps:
       - name: Checkout catalog
@@ -113,6 +128,7 @@ jobs:
         run: |
           echo "🔄 Harvesting from MCP Registry API..."
           echo "Registry: ${REGISTRY_BASE_URL}"
+          echo "Promote tools: ${PROMOTE_TOOLS} | Promote agents: ${PROMOTE_AGENTS}"
 
           # BUGFIX: previously this step had an unconditional `--limit 10`
           # that capped every scheduled run to 10 servers and would have
@@ -124,10 +140,19 @@ jobs:
             LIMIT_ARG="--top ${LIMIT_SERVERS}"
           fi
 
+          PROMOTE_ARGS=""
+          if [ "${PROMOTE_TOOLS}" = "false" ]; then
+            PROMOTE_ARGS="${PROMOTE_ARGS} --no-promote-tools"
+          fi
+          if [ "${PROMOTE_AGENTS}" = "false" ]; then
+            PROMOTE_ARGS="${PROMOTE_ARGS} --no-promote-agents"
+          fi
+
           mcp-ingest harvest-registry \
             --registry-base "${REGISTRY_BASE_URL}" \
             --out . \
-            ${LIMIT_ARG}
+            ${LIMIT_ARG} \
+            ${PROMOTE_ARGS}
 
           echo "✅ Registry harvest complete"
 
@@ -161,11 +186,24 @@ jobs:
           counts = idx.get("counts", {})
           active = int(counts.get("active_manifests", 0))
           total  = int(counts.get("total_items", 0))
+          by_type = counts.get("by_type", {}) or {}
+          mcp_n  = int(by_type.get("mcp_server", 0))
+          tool_n = int(by_type.get("tool", 0))
+          agt_n  = int(by_type.get("agent", 0))
           print(f"✅ Index valid — active={active}, total={total}")
-          # Refuse a zero-active sync; that's almost always a registry outage.
+          print(f"   per-type:  mcp_server={mcp_n}  tool={tool_n}  agent={agt_n}")
           if active == 0:
               print("::error::Harvest produced 0 active manifests — refusing to push.")
               sys.exit(1)
+          # Promotion sanity: if mcp servers exist but tools is zero, the
+          # promotion pipeline regressed. Don't push a catalog that would
+          # leave the MatrixHub Tools tab empty.
+          if mcp_n > 0 and tool_n == 0:
+              print(
+                  "::warning::Promotion produced 0 tool entries despite "
+                  f"{mcp_n} mcp_servers. Tools tab on matrixhub.io will be "
+                  "empty. Check that mcp_ingest is at a recent enough version."
+              )
           PY
 
       - name: Get catalog stats
@@ -173,13 +211,19 @@ jobs:
         shell: bash
         run: |
           if [ -f index.json ]; then
-            echo "total=$(jq -r '.counts.total_items // 0' index.json)"           >> "$GITHUB_OUTPUT"
-            echo "active=$(jq -r '.counts.active_manifests // 0' index.json)"    >> "$GITHUB_OUTPUT"
-            echo "deprecated=$(jq -r '.counts.deprecated // 0' index.json)"      >> "$GITHUB_OUTPUT"
+            echo "total=$(jq -r '.counts.total_items // 0' index.json)"            >> "$GITHUB_OUTPUT"
+            echo "active=$(jq -r '.counts.active_manifests // 0' index.json)"     >> "$GITHUB_OUTPUT"
+            echo "deprecated=$(jq -r '.counts.deprecated // 0' index.json)"       >> "$GITHUB_OUTPUT"
+            echo "mcp=$(jq -r '.counts.by_type.mcp_server // 0' index.json)"      >> "$GITHUB_OUTPUT"
+            echo "tools=$(jq -r '.counts.by_type.tool // 0' index.json)"          >> "$GITHUB_OUTPUT"
+            echo "agents=$(jq -r '.counts.by_type.agent // 0' index.json)"        >> "$GITHUB_OUTPUT"
           else
             echo "total=0"      >> "$GITHUB_OUTPUT"
             echo "active=0"     >> "$GITHUB_OUTPUT"
             echo "deprecated=0" >> "$GITHUB_OUTPUT"
+            echo "mcp=0"        >> "$GITHUB_OUTPUT"
+            echo "tools=0"      >> "$GITHUB_OUTPUT"
+            echo "agents=0"     >> "$GITHUB_OUTPUT"
           fi
 
       - name: Shrink-guard (refuse a sudden catalog collapse)
@@ -232,7 +276,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "chore(sync): automated update of MCP servers catalog (active=${{ steps.stats.outputs.active }}, total=${{ steps.stats.outputs.total }})"
+          git commit -m "chore(sync): catalog update (active=${{ steps.stats.outputs.active }} mcp=${{ steps.stats.outputs.mcp }} tools=${{ steps.stats.outputs.tools }} agents=${{ steps.stats.outputs.agents }})"
           git push
 
       # OPTION 2: Create Pull Request — DEFAULT for scheduled runs.
@@ -253,8 +297,12 @@ jobs:
           git push origin "$BRANCH"
 
           PREV_ACTIVE="(none)"
+          PREV_MCP="-"; PREV_TOOLS="-"; PREV_AGENTS="-"
           if [ -f /tmp/prev_index.json ]; then
             PREV_ACTIVE=$(jq -r '.counts.active_manifests // 0' /tmp/prev_index.json)
+            PREV_MCP=$(jq -r '.counts.by_type.mcp_server // 0' /tmp/prev_index.json)
+            PREV_TOOLS=$(jq -r '.counts.by_type.tool // 0' /tmp/prev_index.json)
+            PREV_AGENTS=$(jq -r '.counts.by_type.agent // 0' /tmp/prev_index.json)
           fi
           cat > /tmp/pr_body.md <<EOF
           ## Automated Catalog Sync
@@ -264,9 +312,16 @@ jobs:
           | active_manifests | ${PREV_ACTIVE} | ${{ steps.stats.outputs.active }} |
           | total_items      | -              | ${{ steps.stats.outputs.total }}  |
           | deprecated       | -              | ${{ steps.stats.outputs.deprecated }} |
+          | **mcp_server**   | ${PREV_MCP}    | ${{ steps.stats.outputs.mcp }}    |
+          | **tool**         | ${PREV_TOOLS}  | ${{ steps.stats.outputs.tools }}  |
+          | **agent**        | ${PREV_AGENTS} | ${{ steps.stats.outputs.agents }} |
 
           Triggered by: \`${{ github.event_name }}\`
           Registry: \`${{ env.REGISTRY_BASE_URL }}\`
+          Promotion: tools=\`${PROMOTE_TOOLS}\` agents=\`${PROMOTE_AGENTS}\`
+
+          The \`tool\` and \`agent\` rows above feed the matrixhub.io
+          homepage tabs. If either drops to 0, investigate before merging.
 
           Auto-merge once CI is green and no reviewer flags an unexpected drop.
           EOF
@@ -274,7 +329,7 @@ jobs:
           gh pr create \
             --base main \
             --head "$BRANCH" \
-            --title "chore(sync): catalog update (active=${{ steps.stats.outputs.active }})" \
+            --title "chore(sync): catalog update (mcp=${{ steps.stats.outputs.mcp }} tools=${{ steps.stats.outputs.tools }} agents=${{ steps.stats.outputs.agents }})" \
             --body-file /tmp/pr_body.md
 
       # Surface failure clearly in the Actions UI for scheduled runs.
