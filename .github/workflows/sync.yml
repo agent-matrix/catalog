@@ -28,6 +28,10 @@ on:
         description: "Limit number of servers (0 = unlimited, for testing)"
         required: false
         default: "0"
+      shrink_threshold_pct:
+        description: "Refuse to push if active count drops below this percentage of the previous run (0 = disabled)"
+        required: false
+        default: "50"
 
 concurrency:
   group: sync-catalog-from-registry
@@ -47,8 +51,9 @@ jobs:
       GITHUB_SOURCE_REPO: ${{ inputs.github_source_repo || 'https://github.com/modelcontextprotocol/servers' }}
       LIMIT_SERVERS: ${{ inputs.limit_servers || '0' }}
       ENABLE_GITHUB_ENRICHMENT: ${{ inputs.enable_github_enrichment || false }}
-      # Default to false for scheduled runs, use input for manual runs
-      FORCE_PR: ${{ inputs.force_pull_request || false }}
+      # Default to PR mode for scheduled runs (safer); manual runs can flip via input.
+      FORCE_PR: ${{ inputs.force_pull_request || (github.event_name == 'schedule') }}
+      SHRINK_THRESHOLD_PCT: ${{ inputs.shrink_threshold_pct || '50' }}
 
     steps:
       - name: Checkout catalog
@@ -56,6 +61,16 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ env.EFFECTIVE_TOKEN }}
+
+      - name: Snapshot previous index for shrink-guard
+        shell: bash
+        run: |
+          if [ -f index.json ]; then
+            cp index.json /tmp/prev_index.json
+            echo "Snapshotted previous index ($(jq -r '.counts.active_manifests // 0' /tmp/prev_index.json) active items)."
+          else
+            echo "No prior index.json — first sync, shrink-guard disabled for this run."
+          fi
 
       - name: Checkout mcp_ingest tool
         uses: actions/checkout@v4
@@ -78,22 +93,17 @@ jobs:
             ${{ runner.os }}-pip-sync-catalog-
             ${{ runner.os }}-pip-
 
-      - name: Install dependencies
-        shell: bash
-        run: |
-          python -m pip install --upgrade pip
-          pip install jsonschema httpx
-
       - name: Install mcp_ingest from source
         shell: bash
         run: |
+          python -m pip install --upgrade pip
           cd mcp_ingest_tool
-          # Install as standard package (not editable) to allow folder deletion
-          pip install ".[dev,harvester]"
+          # Install with the harvester extras only (skip [dev]); jsonschema/httpx
+          # come in transitively, no need to pre-install them.
+          pip install ".[harvester]"
           cd ..
           python -c "import mcp_ingest; print('✓ mcp_ingest installed successfully')"
-          
-          # Remove tool folder to keep repo clean
+          # Remove tool folder so it isn't accidentally committed.
           rm -rf mcp_ingest_tool
 
       - name: Harvest from MCP Registry
@@ -104,6 +114,11 @@ jobs:
           echo "🔄 Harvesting from MCP Registry API..."
           echo "Registry: ${REGISTRY_BASE_URL}"
 
+          # BUGFIX: previously this step had an unconditional `--limit 10`
+          # that capped every scheduled run to 10 servers and would have
+          # shrunk the live catalog from ~7466 to 10 on the next Monday.
+          # The conditional `--top N` from inputs.limit_servers is the
+          # ONLY limit honoured now.
           LIMIT_ARG=""
           if [ "${LIMIT_SERVERS}" != "0" ] && [ -n "${LIMIT_SERVERS}" ]; then
             LIMIT_ARG="--top ${LIMIT_SERVERS}"
@@ -112,8 +127,7 @@ jobs:
           mcp-ingest harvest-registry \
             --registry-base "${REGISTRY_BASE_URL}" \
             --out . \
-            ${LIMIT_ARG} \
-            --limit 10
+            ${LIMIT_ARG}
 
           echo "✅ Registry harvest complete"
 
@@ -130,15 +144,75 @@ jobs:
             --base-only \
             -y
           echo "✅ GitHub enrichment complete"
+          # NOTE: today's enrichment output is not merged into index.json.
+          # If/when we wire it in, remove this comment and document the merge step.
 
       - name: Validate catalog index
         shell: bash
         run: |
-          if [ -f index.json ]; then
-            python -c 'import json; idx=json.load(open("index.json")); assert ("manifests" in idx or "items" in idx); print("✅ Index valid")'
-          else
-            echo "⚠️ index.json not found; skipping"
+          if [ ! -f index.json ]; then
+            echo "::error::index.json missing after harvest — refusing to continue."
+            exit 1
           fi
+          python <<'PY'
+          import json, sys
+          idx = json.load(open("index.json"))
+          assert "manifests" in idx or "items" in idx, "index.json has neither 'manifests' nor 'items'"
+          counts = idx.get("counts", {})
+          active = int(counts.get("active_manifests", 0))
+          total  = int(counts.get("total_items", 0))
+          print(f"✅ Index valid — active={active}, total={total}")
+          # Refuse a zero-active sync; that's almost always a registry outage.
+          if active == 0:
+              print("::error::Harvest produced 0 active manifests — refusing to push.")
+              sys.exit(1)
+          PY
+
+      - name: Get catalog stats
+        id: stats
+        shell: bash
+        run: |
+          if [ -f index.json ]; then
+            echo "total=$(jq -r '.counts.total_items // 0' index.json)"           >> "$GITHUB_OUTPUT"
+            echo "active=$(jq -r '.counts.active_manifests // 0' index.json)"    >> "$GITHUB_OUTPUT"
+            echo "deprecated=$(jq -r '.counts.deprecated // 0' index.json)"      >> "$GITHUB_OUTPUT"
+          else
+            echo "total=0"      >> "$GITHUB_OUTPUT"
+            echo "active=0"     >> "$GITHUB_OUTPUT"
+            echo "deprecated=0" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Shrink-guard (refuse a sudden catalog collapse)
+        shell: bash
+        run: |
+          NEW_ACTIVE="${{ steps.stats.outputs.active }}"
+          THRESHOLD_PCT="${SHRINK_THRESHOLD_PCT:-50}"
+
+          if [ "${THRESHOLD_PCT}" = "0" ]; then
+            echo "Shrink-guard disabled (shrink_threshold_pct=0)."
+            exit 0
+          fi
+          if [ ! -f /tmp/prev_index.json ]; then
+            echo "No previous index — shrink-guard skipped on first sync."
+            exit 0
+          fi
+
+          OLD_ACTIVE=$(jq -r '.counts.active_manifests // 0' /tmp/prev_index.json)
+
+          # Only enforce the guard when the previous count was non-trivial
+          # (>= 100). Below that we're still bootstrapping.
+          if [ "${OLD_ACTIVE}" -lt 100 ]; then
+            echo "Previous active=${OLD_ACTIVE} < 100; bootstrap mode, shrink-guard skipped."
+            exit 0
+          fi
+
+          MIN_ALLOWED=$(( OLD_ACTIVE * THRESHOLD_PCT / 100 ))
+          if [ "${NEW_ACTIVE}" -lt "${MIN_ALLOWED}" ]; then
+            echo "::error::Catalog shrank from ${OLD_ACTIVE} → ${NEW_ACTIVE} active items (< ${THRESHOLD_PCT}% threshold). Refusing to push."
+            echo "::error::If this drop is intentional, re-run with shrink_threshold_pct=0."
+            exit 1
+          fi
+          echo "OK: ${OLD_ACTIVE} → ${NEW_ACTIVE} active items (>= ${THRESHOLD_PCT}% retained)."
 
       - name: Check for changes
         id: changes
@@ -150,36 +224,19 @@ jobs:
             echo "has_changes=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Get catalog stats
-        id: stats
-        shell: bash
-        run: |
-          if command -v jq >/dev/null 2>&1 && [ -f index.json ]; then
-            echo "total=$(jq -r '.counts.total_items // 0' index.json)" >> "$GITHUB_OUTPUT"
-            echo "active=$(jq -r '.counts.active_manifests // 0' index.json)" >> "$GITHUB_OUTPUT"
-            echo "deprecated=$(jq -r '.counts.deprecated // 0' index.json)" >> "$GITHUB_OUTPUT"
-          else
-            echo "total=0" >> "$GITHUB_OUTPUT"
-            echo "active=0" >> "$GITHUB_OUTPUT"
-            echo "deprecated=0" >> "$GITHUB_OUTPUT"
-          fi
-
-      # OPTION 1: Direct Push (Default)
-      # Runs if changes exist AND "Force Pull Request" is FALSE
+      # OPTION 1: Direct Push — only when explicitly chosen via manual dispatch.
       - name: Commit and Push (Direct)
         if: steps.changes.outputs.has_changes == 'true' && env.FORCE_PR != 'true'
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          
           git add -A
-          git commit -m "chore(sync): automated weekly update of MCP servers catalog"
+          git commit -m "chore(sync): automated update of MCP servers catalog (active=${{ steps.stats.outputs.active }}, total=${{ steps.stats.outputs.total }})"
           git push
 
-      # OPTION 2: Create Pull Request (Manual Option)
-      # Runs if changes exist AND "Force Pull Request" is TRUE
-      - name: Create Pull Request (Manual Mode)
+      # OPTION 2: Create Pull Request — DEFAULT for scheduled runs.
+      - name: Create Pull Request
         if: steps.changes.outputs.has_changes == 'true' && env.FORCE_PR == 'true'
         shell: bash
         env:
@@ -188,26 +245,51 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          BRANCH="manual/sync-mcp-registry-$(date +%s)"
+          BRANCH="sync/registry-$(date -u +%Y%m%d-%H%M%S)"
           git checkout -b "$BRANCH"
-          
+
           git add -A
-          git commit -m "chore(sync): manual update of MCP servers catalog"
-          
+          git commit -m "chore(sync): catalog update from MCP Registry"
           git push origin "$BRANCH"
 
+          PREV_ACTIVE="(none)"
+          if [ -f /tmp/prev_index.json ]; then
+            PREV_ACTIVE=$(jq -r '.counts.active_manifests // 0' /tmp/prev_index.json)
+          fi
           cat > /tmp/pr_body.md <<EOF
-          ## Manual Catalog Sync
-          Triggered manually by user.
-          
-          ### Stats
-          - Total: ${{ steps.stats.outputs.total }}
-          - Active: ${{ steps.stats.outputs.active }}
-          - Deprecated: ${{ steps.stats.outputs.deprecated }}
+          ## Automated Catalog Sync
+
+          | metric | before | after |
+          |---|---|---|
+          | active_manifests | ${PREV_ACTIVE} | ${{ steps.stats.outputs.active }} |
+          | total_items      | -              | ${{ steps.stats.outputs.total }}  |
+          | deprecated       | -              | ${{ steps.stats.outputs.deprecated }} |
+
+          Triggered by: \`${{ github.event_name }}\`
+          Registry: \`${{ env.REGISTRY_BASE_URL }}\`
+
+          Auto-merge once CI is green and no reviewer flags an unexpected drop.
           EOF
 
           gh pr create \
             --base main \
             --head "$BRANCH" \
-            --title "chore(sync): manual catalog sync" \
+            --title "chore(sync): catalog update (active=${{ steps.stats.outputs.active }})" \
             --body-file /tmp/pr_body.md
+
+      # Surface failure clearly in the Actions UI for scheduled runs.
+      - name: Failure summary
+        if: failure()
+        shell: bash
+        run: |
+          {
+            echo "### ❌ Catalog sync failed"
+            echo ""
+            echo "Registry: \`${REGISTRY_BASE_URL}\`"
+            echo "Trigger : \`${{ github.event_name }}\`"
+            echo ""
+            echo "Common causes:"
+            echo "- Registry API outage or schema change"
+            echo "- Shrink-guard tripped (active count dropped > ${SHRINK_THRESHOLD_PCT:-50}%)"
+            echo "- mcp_ingest install failed (check the Install step logs)"
+          } >> "$GITHUB_STEP_SUMMARY"
