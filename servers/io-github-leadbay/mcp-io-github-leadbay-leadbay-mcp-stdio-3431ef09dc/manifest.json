@@ -1,0 +1,100 @@
+{
+  "description": "AI lead discovery, qualification, and outreach prep on your Leadbay account.",
+  "harvest": {
+    "last_seen_at": "2026-05-18T06:32:49+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-leadbay-leadbay-mcp.stdio.3431ef09dc",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/leadbay/leadclaw",
+    "homepage": "https://github.com/leadbay/leadclaw",
+    "repository": "https://github.com/leadbay/leadclaw"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y"
+          },
+          {
+            "type": "positional",
+            "value": "@leadbay/mcp@0.6"
+          },
+          "@leadbay/mcp@0.6.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.leadbay/leadbay-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Bearer token; mint with `npx -y @leadbay/mcp@0.6 login --email <you> --region <us|fr>`.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "LEADBAY_TOKEN"
+        },
+        {
+          "choices": [
+            "us",
+            "fr"
+          ],
+          "default": "fr",
+          "description": "us or fr - Leadbay backend that owns your account.",
+          "format": "string",
+          "isRequired": true,
+          "name": "LEADBAY_REGION"
+        },
+        {
+          "default": "1",
+          "description": "Set to 0 to hide composite write tools (default: 1, ON).",
+          "name": "LEADBAY_MCP_WRITE"
+        },
+        {
+          "default": "0",
+          "description": "Set to 1 to expose granular API tools.",
+          "name": "LEADBAY_MCP_ADVANCED"
+        }
+      ],
+      "identifier": "@leadbay/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y"
+        },
+        {
+          "type": "positional",
+          "value": "@leadbay/mcp@0.6"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.6.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "3431ef09dc",
+    "published_at": "2026-05-12T16:16:08.135076Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.leadbay/leadbay-mcp",
+    "server_version": "0.6.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-12T16:16:08.135076Z"
+  },
+  "title": "Leadbay",
+  "type": "mcp_server",
+  "version": "0.6.3"
+}

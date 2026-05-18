@@ -1,0 +1,65 @@
+{
+  "description": "Credential vault for AI agents \u2014 Fernet-encrypted keys, per-agent budgets, audit logs.",
+  "harvest": {
+    "last_seen_at": "2026-05-18T06:32:44+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-bch1212-agentvault.stdio.d89f214eaf",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/bch1212/agentvault",
+    "homepage": "https://github.com/bch1212/agentvault",
+    "repository": "https://github.com/bch1212/agentvault"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "agentvault-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.bch1212/agentvault",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://agentvault-api-production.up.railway.app",
+          "description": "Base URL of your AgentVault deployment",
+          "isRequired": true,
+          "name": "AGENTVAULT_API_URL"
+        },
+        {
+          "description": "Your avk_ agent API key",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AGENTVAULT_AGENT_KEY"
+        }
+      ],
+      "identifier": "agentvault-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d89f214eaf",
+    "published_at": "2026-05-13T13:27:30.963172Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.bch1212/agentvault",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-13T13:27:30.963172Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

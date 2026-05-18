@@ -1,0 +1,65 @@
+{
+  "description": "stdio MCP proxy for MorningForm \u2014 bridges Claude Code to MorningForm HTTPS MCP server.",
+  "harvest": {
+    "last_seen_at": "2026-05-18T06:32:45+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-contactxyz-admin-morningform.stdio.4e127ad7d9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/contactxyz-admin/morning-form",
+    "homepage": "https://github.com/contactxyz-admin/morning-form",
+    "repository": "https://github.com/contactxyz-admin/morning-form"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@morningform/mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.contactxyz-admin/morningform",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Bearer token issued from https://morning-form.vercel.app/settings/integrations/claude",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "MORNINGFORM_TOKEN"
+        },
+        {
+          "description": "Server endpoint override. Defaults to the production MorningForm host. Only override for local dev \u2014 controls where your bearer token is sent.",
+          "format": "string",
+          "name": "MORNINGFORM_URL"
+        }
+      ],
+      "identifier": "@morningform/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4e127ad7d9",
+    "published_at": "2026-05-14T18:07:52.98626Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.contactxyz-admin/morningform",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-14T18:07:52.98626Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

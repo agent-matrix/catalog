@@ -1,0 +1,78 @@
+{
+  "description": "Agent-first MCP server for WeChat Mini Program debugging & automation via WeChat DevTools.",
+  "harvest": {
+    "last_seen_at": "2026-05-18T06:32:40+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Chaixueyuan-weapp-agent-mcp.stdio.eccf96445c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Chaixueyuan/weapp-agent-mcp",
+    "homepage": "https://github.com/Chaixueyuan/weapp-agent-mcp",
+    "repository": "https://github.com/Chaixueyuan/weapp-agent-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@chaixueyuan/weapp-agent-mcp@0.4.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Chaixueyuan/weapp-agent-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Automation WebSocket endpoint of an already-running WeChat DevTools instance (e.g. ws://localhost:9420). Recommended for the 'connect' flow \u2014 open DevTools manually, enable automation in Settings \u2192 Security \u2192 Service Port, then point the server here.",
+          "format": "string",
+          "name": "WEAPP_WS_ENDPOINT"
+        },
+        {
+          "description": "Force 'launch' or 'connect' mode. Defaults to 'launch' unless WEAPP_WS_ENDPOINT is set.",
+          "format": "string",
+          "name": "WEAPP_AUTOMATOR_MODE"
+        },
+        {
+          "description": "Path to the Mini Program project directory. Required when using 'launch' mode (the MCP server starts DevTools itself).",
+          "format": "string",
+          "name": "WEAPP_PROJECT_PATH"
+        },
+        {
+          "description": "Optional override for the WeChat DevTools CLI binary path (e.g. /Applications/wechatwebdevtools.app/Contents/MacOS/cli on macOS).",
+          "format": "string",
+          "name": "WECHAT_DEVTOOLS_CLI_PATH"
+        },
+        {
+          "description": "Automation websocket port passed to 'cli auto --auto-port' in launch mode (default 9420).",
+          "format": "string",
+          "name": "WEAPP_DEVTOOLS_PORT"
+        }
+      ],
+      "identifier": "@chaixueyuan/weapp-agent-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "eccf96445c",
+    "published_at": "2026-05-14T07:27:21.728326Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Chaixueyuan/weapp-agent-mcp",
+    "server_version": "0.4.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-14T07:27:21.728326Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.4.3"
+}

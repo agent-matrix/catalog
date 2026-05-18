@@ -1,0 +1,82 @@
+{
+  "description": "MCP server for Domotz network monitoring \u2014 agents, devices, alerts, and network discovery.",
+  "harvest": {
+    "last_seen_at": "2026-05-18T06:32:54+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wyre-technology-domotz-mcp.stdio.02a465176d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wyre-technology/domotz-mcp",
+    "homepage": "https://github.com/wyre-technology/domotz-mcp",
+    "repository": "https://github.com/wyre-technology/domotz-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-technology/domotz-mcp:v1.1.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wyre-technology/domotz-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Domotz Public API key (generated in the Domotz portal)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DOMOTZ_API_KEY"
+        },
+        {
+          "description": "Domotz Public API base URL for the regional endpoint (e.g. https://api-us-east-1-cell-1.domotz.com/public-api/v1)",
+          "format": "string",
+          "name": "DOMOTZ_API_URL"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode for the server. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-technology/domotz-mcp:v1.1.4",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "02a465176d",
+    "published_at": "2026-05-13T20:05:25.478918Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wyre-technology/domotz-mcp",
+    "server_version": "1.1.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-13T20:05:25.478918Z"
+  },
+  "title": "Domotz",
+  "type": "mcp_server",
+  "version": "1.1.4"
+}

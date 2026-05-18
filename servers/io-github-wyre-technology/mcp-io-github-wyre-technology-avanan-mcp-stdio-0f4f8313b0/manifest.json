@@ -1,0 +1,88 @@
+{
+  "description": "MCP server for Check Point Harmony Email & Collaboration (Avanan) email security.",
+  "harvest": {
+    "last_seen_at": "2026-05-18T06:32:54+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wyre-technology-avanan-mcp.stdio.0f4f8313b0",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wyre-technology/avanan-mcp",
+    "homepage": "https://github.com/wyre-technology/avanan-mcp",
+    "repository": "https://github.com/wyre-technology/avanan-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-technology/avanan-mcp:v2.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wyre-technology/avanan-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Avanan / Harmony Email API client ID",
+          "format": "string",
+          "isRequired": true,
+          "name": "AVANAN_CLIENT_ID"
+        },
+        {
+          "description": "Avanan / Harmony Email API client secret",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AVANAN_CLIENT_SECRET"
+        },
+        {
+          "description": "Avanan API base URL \u2014 defaults to the standard Harmony Email endpoint if omitted",
+          "format": "string",
+          "name": "AVANAN_API_URL"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode for the server. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-technology/avanan-mcp:v2.1.1",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "0f4f8313b0",
+    "published_at": "2026-05-14T01:46:52.757998Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wyre-technology/avanan-mcp",
+    "server_version": "2.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-14T01:46:52.757998Z"
+  },
+  "title": "Avanan",
+  "type": "mcp_server",
+  "version": "2.1.1"
+}

@@ -1,0 +1,119 @@
+{
+  "description": "Shared SSH PTY runtime for MCP clients with viewer, input lock, async tracking, and policy rules.",
+  "harvest": {
+    "last_seen_at": "2026-05-18T06:32:43+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Zw-awa-ssh-session-mcp.stdio.19da39dac8",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Zw-awa/ssh-session-mcp",
+    "homepage": "https://github.com/Zw-awa/ssh-session-mcp",
+    "repository": "https://github.com/Zw-awa/ssh-session-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "ssh-session-mcp@2.7.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Zw-awa/ssh-session-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional explicit path to ssh-session-mcp.config.json when the config is not in the current working directory.",
+          "format": "string",
+          "name": "SSH_MCP_CONFIG"
+        },
+        {
+          "description": "Optional runtime instance id used to isolate state across multiple MCP clients or agents.",
+          "format": "string",
+          "name": "SSH_MCP_INSTANCE"
+        },
+        {
+          "description": "Viewer HTTP port. Use auto to allocate a free local port, or 0 to disable the browser viewer.",
+          "format": "string",
+          "name": "VIEWER_PORT"
+        },
+        {
+          "description": "Optional viewer bind host. Defaults to 127.0.0.1 for local-only browser access.",
+          "format": "string",
+          "name": "VIEWER_HOST"
+        },
+        {
+          "description": "Set to true or 1 to automatically open the browser terminal when a session is created.",
+          "format": "string",
+          "name": "AUTO_OPEN_TERMINAL"
+        },
+        {
+          "description": "Operation mode. safe blocks risky or unsuitable terminal actions by default, while full allows broader execution.",
+          "format": "string",
+          "name": "SSH_MCP_MODE"
+        },
+        {
+          "description": "Set to true or 1 to run a local shell instead of opening a real SSH connection. Useful for demos and offline testing.",
+          "format": "string",
+          "name": "SSH_MCP_LOCAL"
+        },
+        {
+          "description": "Set to true or 1 to expose browser-side debug controls intended for demos and local troubleshooting.",
+          "format": "string",
+          "name": "SSH_MCP_DEBUG"
+        },
+        {
+          "description": "Legacy single-target SSH host when not using ssh-session-mcp.config.json device profiles.",
+          "format": "string",
+          "name": "SSH_HOST"
+        },
+        {
+          "description": "Legacy single-target SSH port when not using ssh-session-mcp.config.json device profiles.",
+          "format": "string",
+          "name": "SSH_PORT"
+        },
+        {
+          "description": "Legacy single-target SSH username when not using ssh-session-mcp.config.json device profiles.",
+          "format": "string",
+          "name": "SSH_USER"
+        },
+        {
+          "description": "Optional legacy password-based SSH authentication value.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SSH_PASSWORD"
+        },
+        {
+          "description": "Optional path to a local SSH private key file for legacy single-target mode.",
+          "format": "string",
+          "name": "SSH_KEY"
+        }
+      ],
+      "identifier": "ssh-session-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.7.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "19da39dac8",
+    "published_at": "2026-05-15T18:35:30.611557Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Zw-awa/ssh-session-mcp",
+    "server_version": "2.7.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-15T18:35:30.611557Z"
+  },
+  "title": "SSH Session MCP",
+  "type": "mcp_server",
+  "version": "2.7.1"
+}

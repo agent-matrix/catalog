@@ -1,0 +1,88 @@
+{
+  "description": "Q402 \u2014 gasless USDC, USDT, and RLUSD payments across 7 EVM chains, callable from any MCP client.",
+  "harvest": {
+    "last_seen_at": "2026-05-18T06:32:44+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-bitgett-q402-mcp.stdio.7ef743605b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/bitgett/q402-mcp",
+    "homepage": "https://github.com/bitgett/q402-mcp",
+    "repository": "https://github.com/bitgett/q402-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@quackai/q402-mcp@0.3.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.bitgett/q402-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Q402 API key from https://q402.quackai.ai/dashboard. q402_test_* keys keep the server in sandbox mode; q402_live_* keys are required for real on-chain transactions.",
+          "format": "string",
+          "isSecret": true,
+          "name": "Q402_API_KEY"
+        },
+        {
+          "description": "Hex-encoded EVM private key used to sign payment authorizations. Required only for real on-chain payments (live mode).",
+          "format": "string",
+          "isSecret": true,
+          "name": "Q402_PRIVATE_KEY"
+        },
+        {
+          "default": "0",
+          "description": "Set to '1' to allow real on-chain transactions. Any other value (or unset) keeps the server in sandbox mode regardless of API key tier.",
+          "format": "string",
+          "name": "Q402_ENABLE_REAL_PAYMENTS"
+        },
+        {
+          "default": "5",
+          "description": "Per-call USD-equivalent cap. Any q402_pay request with amount above this is rejected before signing.",
+          "format": "string",
+          "name": "Q402_MAX_AMOUNT_PER_CALL"
+        },
+        {
+          "description": "Optional comma-separated lowercase EVM addresses. When set, q402_pay rejects any recipient not on this allowlist.",
+          "format": "string",
+          "name": "Q402_ALLOWED_RECIPIENTS"
+        },
+        {
+          "default": "https://q402.quackai.ai/api",
+          "description": "Override for the Q402 relay endpoint. Defaults to https://q402.quackai.ai/api when unset; useful for self-hosted Q402 deployments.",
+          "format": "string",
+          "name": "Q402_RELAY_BASE_URL"
+        }
+      ],
+      "identifier": "@quackai/q402-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7ef743605b",
+    "published_at": "2026-05-12T09:57:45.640568Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.bitgett/q402-mcp",
+    "server_version": "0.3.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-12T09:57:45.640568Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.3"
+}

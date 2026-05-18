@@ -1,0 +1,65 @@
+{
+  "description": "Polymarket prediction markets \u2014 buy/sell positions in USDC. LemonCake pay-per-call billing.",
+  "harvest": {
+    "last_seen_at": "2026-05-18T06:32:47+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-evidai-polymarket-guard.stdio.75ddddc9c9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/evidai/agent-payment-mcp",
+    "homepage": "https://github.com/evidai/agent-payment-mcp",
+    "repository": "https://github.com/evidai/agent-payment-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "polymarket-guard-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.evidai/polymarket-guard",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Polygon wallet private key for trading. Leave unset for read-only mode.",
+          "format": "string",
+          "isSecret": true,
+          "name": "POLYMARKET_PRIVATE_KEY"
+        },
+        {
+          "description": "LemonCake Buyer JWT for pay-per-call billing.",
+          "format": "string",
+          "isSecret": true,
+          "name": "LEMON_CAKE_BUYER_JWT"
+        }
+      ],
+      "identifier": "polymarket-guard-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "75ddddc9c9",
+    "published_at": "2026-05-16T15:41:22.813822Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.evidai/polymarket-guard",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-16T15:41:22.813822Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

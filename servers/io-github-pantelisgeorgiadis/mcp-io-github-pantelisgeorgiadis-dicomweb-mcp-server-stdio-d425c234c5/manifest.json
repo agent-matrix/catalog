@@ -1,0 +1,103 @@
+{
+  "description": "MCP server exposing a DICOMweb DICOM archive to AI assistants via QIDO-RS and WADO-RS.",
+  "harvest": {
+    "last_seen_at": "2026-05-18T06:32:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-PantelisGeorgiadis-dicomweb-mcp-server.stdio.d425c234c5",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/PantelisGeorgiadis/dicomweb-mcp-server",
+    "homepage": "https://github.com/PantelisGeorgiadis/dicomweb-mcp-server",
+    "repository": "https://github.com/PantelisGeorgiadis/dicomweb-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y"
+          },
+          "dicomweb-mcp-server@0.0.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.PantelisGeorgiadis/dicomweb-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the DICOMweb server (used for both QIDO-RS and WADO-RS requests).",
+          "format": "string",
+          "isRequired": true,
+          "name": "DICOMWEB_HOST",
+          "placeholder": "https://your-dicomweb-server/dicomweb"
+        },
+        {
+          "choices": [
+            "basic",
+            "bearer"
+          ],
+          "description": "Authentication type: 'basic' or 'bearer'. Omit for unauthenticated access.",
+          "format": "string",
+          "name": "DICOMWEB_AUTH"
+        },
+        {
+          "description": "Username for Basic authentication. Required when DICOMWEB_AUTH=basic.",
+          "format": "string",
+          "name": "DICOMWEB_USER"
+        },
+        {
+          "description": "Password for Basic authentication. Required when DICOMWEB_AUTH=basic.",
+          "format": "string",
+          "isSecret": true,
+          "name": "DICOMWEB_PASS"
+        },
+        {
+          "description": "Bearer token for authentication. Required when DICOMWEB_AUTH=bearer.",
+          "format": "string",
+          "isSecret": true,
+          "name": "DICOMWEB_TOKEN"
+        },
+        {
+          "description": "Fetch request timeout in milliseconds. Omit to disable timeout.",
+          "format": "number",
+          "name": "DICOMWEB_TIMEOUT",
+          "placeholder": "30000"
+        }
+      ],
+      "identifier": "dicomweb-mcp-server",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.0.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d425c234c5",
+    "published_at": "2026-05-16T18:04:19.852262Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.PantelisGeorgiadis/dicomweb-mcp-server",
+    "server_version": "0.0.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-16T18:04:19.852262Z"
+  },
+  "title": "DICOMweb MCP Server",
+  "type": "mcp_server",
+  "version": "0.0.4"
+}

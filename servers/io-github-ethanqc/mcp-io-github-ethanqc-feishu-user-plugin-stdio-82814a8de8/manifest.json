@@ -1,0 +1,77 @@
+{
+  "description": "Feishu/Lark MCP server + CLI tool. 85 tools, 3 auth layers. Send as user via cookie+protobuf.",
+  "harvest": {
+    "last_seen_at": "2026-05-18T06:32:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-EthanQC-feishu-user-plugin.stdio.82814a8de8",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/EthanQC/feishu-user-plugin",
+    "homepage": "https://github.com/EthanQC/feishu-user-plugin",
+    "repository": "https://github.com/EthanQC/feishu-user-plugin"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "feishu-user-plugin@1.3.13"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.EthanQC/feishu-user-plugin",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Feishu web session cookie. Required for user-identity messaging tools (send_to_user, send_as_user, etc).",
+          "isSecret": true,
+          "name": "LARK_COOKIE"
+        },
+        {
+          "description": "Feishu Open Platform self-built app App ID (cli_xxxxxxxxxxxx). Required for Official API tools (docs, bitable, wiki, drive, calendar, tasks, OKR, group messaging).",
+          "name": "LARK_APP_ID"
+        },
+        {
+          "description": "Feishu Open Platform self-built app App Secret. Used together with LARK_APP_ID.",
+          "isSecret": true,
+          "name": "LARK_APP_SECRET"
+        },
+        {
+          "description": "User OAuth UAT for P2P chat reading and as user-owner on resource creation. Obtained via 'npx feishu-user-plugin oauth'.",
+          "isSecret": true,
+          "name": "LARK_USER_ACCESS_TOKEN"
+        },
+        {
+          "description": "Refresh token for UAT auto-renewal.",
+          "isSecret": true,
+          "name": "LARK_USER_REFRESH_TOKEN"
+        }
+      ],
+      "identifier": "feishu-user-plugin",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.3.13"
+    }
+  ],
+  "provenance": {
+    "identity_key": "82814a8de8",
+    "published_at": "2026-05-16T07:12:30.44047Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.EthanQC/feishu-user-plugin",
+    "server_version": "1.3.13",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-16T07:12:30.44047Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.3.13"
+}

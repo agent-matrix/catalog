@@ -1,0 +1,119 @@
+{
+  "description": "Safe-by-default UniFi MCP: Network + Protect, multi-site, dry-run, audit log.",
+  "harvest": {
+    "last_seen_at": "2026-05-18T06:32:51+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-pete-builds-unifi.stdio.612b8e169b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/pete-builds/mcp-unifi",
+    "homepage": "https://github.com/pete-builds/mcp-unifi",
+    "repository": "https://github.com/pete-builds/mcp-unifi"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/pete-builds/mcp-unifi:0.5.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.pete-builds/unifi",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "choices": [
+            "true",
+            "false"
+          ],
+          "default": "true",
+          "description": "When true, the server returns realistic mock data and requires no UniFi hardware. Defaults to true so the image is functional out of the box.",
+          "format": "string",
+          "name": "STUB_MODE"
+        },
+        {
+          "description": "IP address or hostname of the UniFi OS gateway (UCG-Fiber, UDM Pro, etc). Required when STUB_MODE=false and MCP_UNIFI_CONTROLLERS_FILE is unset.",
+          "format": "string",
+          "name": "UNIFI_HOST"
+        },
+        {
+          "description": "Local API key generated under Settings -> Control Plane -> Integrations on the gateway. Required when STUB_MODE=false and MCP_UNIFI_CONTROLLERS_FILE is unset.",
+          "format": "string",
+          "isSecret": true,
+          "name": "UNIFI_API_KEY"
+        },
+        {
+          "default": "default",
+          "description": "UniFi controller site name. Defaults to 'default'.",
+          "format": "string",
+          "name": "UNIFI_SITE"
+        },
+        {
+          "choices": [
+            "true",
+            "false"
+          ],
+          "default": "false",
+          "description": "Whether to verify the gateway's TLS certificate. Defaults to false because most home gateways use a self-signed cert.",
+          "format": "string",
+          "name": "UNIFI_VERIFY_SSL"
+        },
+        {
+          "description": "Path to a YAML file describing multiple named controllers for multi-site management. When set, the legacy UNIFI_HOST / UNIFI_API_KEY env vars are ignored. Each entry needs name, host, api_key, and optionally port, site, verify_ssl.",
+          "format": "string",
+          "name": "MCP_UNIFI_CONTROLLERS_FILE"
+        },
+        {
+          "default": "network",
+          "description": "Comma-separated list of modules to load. Known values: 'network', 'protect'. Defaults to 'network'. Set to 'network,protect' to enable UniFi Protect tools alongside Network tools.",
+          "format": "string",
+          "name": "MCP_UNIFI_MODULES_ENABLED"
+        },
+        {
+          "choices": [
+            "file",
+            "stdout",
+            "syslog"
+          ],
+          "default": "file",
+          "description": "Audit log sink. One of 'file' (default), 'stdout', or 'syslog'. Every tool call is recorded to a JSONL stream with secrets scrubbed.",
+          "format": "string",
+          "name": "MCP_UNIFI_AUDIT_SINK"
+        },
+        {
+          "default": "audit.jsonl",
+          "description": "Path for the audit log file when MCP_UNIFI_AUDIT_SINK=file. Defaults to audit.jsonl in the process CWD.",
+          "format": "string",
+          "name": "MCP_UNIFI_AUDIT_PATH"
+        }
+      ],
+      "identifier": "ghcr.io/pete-builds/mcp-unifi:0.5.1",
+      "registryType": "oci",
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3714/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "612b8e169b",
+    "published_at": "2026-05-15T16:28:04.167978Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.pete-builds/unifi",
+    "server_version": "0.5.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-15T16:28:04.167978Z"
+  },
+  "title": "UniFi Gateway",
+  "type": "mcp_server",
+  "version": "0.5.1"
+}

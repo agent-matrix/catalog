@@ -1,0 +1,68 @@
+{
+  "description": "MCP server for DEVONthink 4 \u2014 outcome-oriented tools, preview-then-apply, audit + undo.",
+  "harvest": {
+    "last_seen_at": "2026-05-18T06:32:48+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-istefox-dt-mcp.stdio.5a3f0faf4c",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/istefox/istefox-dt-mcp",
+    "homepage": "https://github.com/istefox/istefox-dt-mcp",
+    "repository": "https://github.com/istefox/istefox-dt-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.istefox/dt-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Set to '1' to skip recursive record_count when listing databases. Useful for databases with tens of thousands of records where the first call would otherwise take several seconds.",
+          "name": "ISTEFOX_FAST_LIST_DATABASES"
+        },
+        {
+          "description": "Override TTL in seconds for preview_token returned by file_document/bulk_apply dry_run (default 300, range 1-3600).",
+          "name": "ISTEFOX_PREVIEW_TTL_S"
+        },
+        {
+          "description": "Set to '1' to enable embedded ChromaDB vector retrieval for ask_database and search (mode=hybrid). EXPERIMENTAL in 0.1.0; embedding model not yet benchmarked cross-corpus (see ADR-008).",
+          "name": "ISTEFOX_RAG_ENABLED"
+        },
+        {
+          "description": "sentence-transformers model name used by the RAG provider. Default paraphrase-multilingual-MiniLM-L12-v2 (~120MB). Override examples: BAAI/bge-m3 (~2.2GB).",
+          "name": "ISTEFOX_RAG_MODEL"
+        }
+      ],
+      "fileSha256": "2914354d5568ea89c501f3987a34d6b64b4b1f82a39477733132d14932dc4d70",
+      "identifier": "https://github.com/istefox/istefox-dt-mcp/releases/download/v0.5.1/istefox-dt-mcp-0.5.1.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5a3f0faf4c",
+    "published_at": "2026-05-17T18:42:33.740576Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.istefox/dt-mcp",
+    "server_version": "0.5.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-17T18:42:33.740576Z"
+  },
+  "title": "DEVONthink MCP (istefox)",
+  "type": "mcp_server",
+  "version": "0.5.1"
+}

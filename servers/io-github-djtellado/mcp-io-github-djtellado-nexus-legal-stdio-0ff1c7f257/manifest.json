@@ -1,0 +1,72 @@
+{
+  "description": "Multi-jurisdictional legal analysis (ISO 31000) for Spanish, LatAm and EU law \u2014 11 tools.",
+  "harvest": {
+    "last_seen_at": "2026-05-18T06:32:46+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-djtellado-nexus-legal.stdio.0ff1c7f257",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/djtellado/nexus-legal-mcp",
+    "homepage": "https://github.com/djtellado/nexus-legal-mcp",
+    "repository": "https://github.com/djtellado/nexus-legal-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@nexus-legal/mcp@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.djtellado/nexus-legal",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Personal API key (format `nlk_*`) with `mcp` scope. Generate one at https://nexusquantum.legal/developers (select 'Servidor MCP' when creating the key).",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "NEXUS_API_KEY"
+        },
+        {
+          "default": "https://nexusquantum.legal",
+          "description": "Override base URL of the Nexus backend. Defaults to https://nexusquantum.legal. Change only for self-hosted or staging environments.",
+          "format": "string",
+          "name": "NEXUS_BASE_URL"
+        },
+        {
+          "default": "180000",
+          "description": "HTTP timeout in milliseconds for long-running analyses. Default 180000 (3 minutes).",
+          "format": "string",
+          "name": "NEXUS_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "@nexus-legal/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0ff1c7f257",
+    "published_at": "2026-05-17T07:24:14.814563Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.djtellado/nexus-legal",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-17T07:24:14.814563Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

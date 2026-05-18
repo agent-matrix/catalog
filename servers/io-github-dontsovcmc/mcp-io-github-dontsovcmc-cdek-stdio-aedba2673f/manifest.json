@@ -1,0 +1,96 @@
+{
+  "description": "MCP server for CDEK delivery service API \u2014 create orders, track shipments, search delivery points",
+  "harvest": {
+    "last_seen_at": "2026-05-18T06:32:46+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-dontsovcmc-cdek.stdio.aedba2673f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/dontsovcmc/mcp-server-cdek",
+    "homepage": "https://github.com/dontsovcmc/mcp-server-cdek",
+    "repository": "https://github.com/dontsovcmc/mcp-server-cdek"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-server-cdek==0.6.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.dontsovcmc/cdek",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CDEK_CLIENT"
+        },
+        {
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CDEK_SECRET"
+        },
+        {
+          "description": "Sender company name (can also be set via config_set tool)",
+          "name": "CDEK_SENDER_COMPANY"
+        },
+        {
+          "description": "Sender short name (can also be set via config_set tool)",
+          "name": "CDEK_SENDER_NAME"
+        },
+        {
+          "description": "Sender full name (can also be set via config_set tool)",
+          "name": "CDEK_SENDER_FULL_NAME"
+        },
+        {
+          "description": "Sender email (can also be set via config_set tool)",
+          "name": "CDEK_SENDER_EMAIL"
+        },
+        {
+          "description": "Sender phone (can also be set via config_set tool)",
+          "name": "CDEK_SENDER_PHONE"
+        },
+        {
+          "description": "My PVZ code for returns (can also be set via config_set tool)",
+          "name": "CDEK_MY_PVZ"
+        },
+        {
+          "description": "HTTP request timeout in seconds (default 30)",
+          "name": "CDEK_TIMEOUT"
+        },
+        {
+          "description": "File download timeout in seconds (default 60)",
+          "name": "CDEK_FILE_TIMEOUT"
+        }
+      ],
+      "identifier": "mcp-server-cdek",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.6.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "aedba2673f",
+    "published_at": "2026-05-11T19:50:02.88283Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.dontsovcmc/cdek",
+    "server_version": "0.6.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-11T19:50:02.88283Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.6.0"
+}

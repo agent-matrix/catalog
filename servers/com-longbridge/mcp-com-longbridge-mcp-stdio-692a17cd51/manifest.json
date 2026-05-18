@@ -1,0 +1,102 @@
+{
+  "description": "US/HK markets \u2014 127 tools: quotes, options, orders, fundamentals, IPO, alerts, DCA & portfolio",
+  "harvest": {
+    "last_seen_at": "2026-05-18T06:32:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-longbridge-mcp.stdio.692a17cd51",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/longbridge/longbridge-mcp",
+    "homepage": "https://github.com/longbridge/longbridge-mcp",
+    "repository": "https://github.com/longbridge/longbridge-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "default": "0.0.0.0:8000",
+            "description": "HTTP bind address inside the container.",
+            "name": "--bind",
+            "type": "named"
+          },
+          {
+            "default": "http://localhost:8000",
+            "description": "Externally reachable URL of the server. Required for public deployments; returned via OAuth protected resource metadata.",
+            "name": "--base-url",
+            "type": "named"
+          },
+          "ghcr.io/longbridge/longbridge-mcp:0.2.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.longbridge/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://openapi.longbridge.com",
+          "description": "Longbridge OpenAPI base URL. Used for OAuth metadata discovery.",
+          "name": "LONGBRIDGE_HTTP_URL"
+        },
+        {
+          "default": "wss://openapi-quote.longbridge.com/v2",
+          "description": "Quote WebSocket endpoint used by the embedded Longbridge SDK.",
+          "name": "LONGBRIDGE_QUOTE_WS_URL"
+        },
+        {
+          "default": "wss://openapi-trade.longbridge.com/v2",
+          "description": "Trade WebSocket endpoint used by the embedded Longbridge SDK.",
+          "name": "LONGBRIDGE_TRADE_WS_URL"
+        }
+      ],
+      "identifier": "ghcr.io/longbridge/longbridge-mcp:0.2.3",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "default": "0.0.0.0:8000",
+          "description": "HTTP bind address inside the container.",
+          "name": "--bind",
+          "type": "named"
+        },
+        {
+          "default": "http://localhost:8000",
+          "description": "Externally reachable URL of the server. Required for public deployments; returned via OAuth protected resource metadata.",
+          "name": "--base-url",
+          "type": "named"
+        }
+      ],
+      "transport": {
+        "headers": [
+          {
+            "description": "Longbridge OAuth 2.1 bearer token in the form `Bearer <access_token>`.",
+            "isRequired": true,
+            "isSecret": true,
+            "name": "Authorization"
+          }
+        ],
+        "type": "streamable-http",
+        "url": "http://localhost:8000/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "692a17cd51",
+    "published_at": "2026-05-12T08:57:32.576561Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.longbridge/mcp",
+    "server_version": "0.2.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-12T08:57:32.576561Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.3"
+}

@@ -1,0 +1,78 @@
+{
+  "description": "Payment layer for AI agents. One MCP, five protocols, thousands of paid APIs your agent can call.",
+  "harvest": {
+    "last_seen_at": "2026-05-18T06:32:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-MPP32-mpp32-mcp-server.stdio.719abe227e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/MPP32/MPP32",
+    "homepage": "https://github.com/MPP32/MPP32",
+    "repository": "https://github.com/MPP32/MPP32"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mpp32-mcp-server@1.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.MPP32/mpp32-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Session key from https://mpp32.org/agent-console. Unlocks the full federated catalog and attributes every call to your dashboard. Optional in legacy mode where only native services are reachable.",
+          "format": "string",
+          "isSecret": true,
+          "name": "MPP32_AGENT_KEY"
+        },
+        {
+          "description": "Solana private key used to sign x402 USDC payments locally. Only needed when calling paid services that prefer x402. Stays on your machine, never sent to MPP32 servers.",
+          "format": "string",
+          "isSecret": true,
+          "name": "MPP32_SOLANA_PRIVATE_KEY"
+        },
+        {
+          "description": "Ethereum L2 private key used to sign Tempo pathUSD payments locally. Optional fallback for paid services when x402 is not available. Stays on your machine, never sent to MPP32 servers.",
+          "format": "string",
+          "isSecret": true,
+          "name": "MPP32_PRIVATE_KEY"
+        },
+        {
+          "default": "https://mpp32.org",
+          "description": "Override the API base URL for custom deployments. Defaults to https://mpp32.org.",
+          "format": "string",
+          "name": "MPP32_API_URL"
+        }
+      ],
+      "identifier": "mpp32-mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "719abe227e",
+    "published_at": "2026-05-10T22:37:10.625604Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.MPP32/mpp32-mcp-server",
+    "server_version": "1.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-10T22:37:10.625604Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.1.2"
+}

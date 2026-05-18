@@ -1,0 +1,82 @@
+{
+  "description": "MCP server for GMO Coin FX trading, positions, executions, klines, and account balances.",
+  "harvest": {
+    "last_seen_at": "2026-05-18T06:32:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-RikitoNoto-gmocoin-fx-mcp.stdio.9a568bccdd",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/RikitoNoto/gmocoin-fx-mcp",
+    "homepage": "https://github.com/RikitoNoto/gmocoin-fx-mcp",
+    "repository": "https://github.com/RikitoNoto/gmocoin-fx-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/rikitonoto/gmocoin-fx-mcp:1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.RikitoNoto/gmocoin-fx-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "GMO Coin FX API key.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GMO_API_KEY"
+        },
+        {
+          "description": "GMO Coin FX secret key.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GMO_SECRET_KEY"
+        },
+        {
+          "description": "Optional maximum order size accepted by order-entry tools.",
+          "format": "number",
+          "name": "ORDER_SIZE_LIMIT"
+        },
+        {
+          "description": "Optional comma-separated list of symbols accepted by order tools.",
+          "format": "string",
+          "name": "ORDER_SYMBOL_LIMITS"
+        },
+        {
+          "description": "Optional ASCII alphanumeric prefix for generated and filtered client order IDs.",
+          "format": "string",
+          "name": "ORDER_CLIENT_ORDER_ID_PREFIX"
+        }
+      ],
+      "identifier": "ghcr.io/rikitonoto/gmocoin-fx-mcp:1.0.0",
+      "registryType": "oci",
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "9a568bccdd",
+    "published_at": "2026-05-16T06:26:28.003129Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.RikitoNoto/gmocoin-fx-mcp",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-16T06:26:28.003129Z"
+  },
+  "title": "GMO Coin FX MCP Server",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

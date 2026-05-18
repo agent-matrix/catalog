@@ -1,0 +1,75 @@
+{
+  "description": "Read and write a self-hosted TriliumNext knowledge base over its ETAPI.",
+  "harvest": {
+    "last_seen_at": "2026-05-18T06:32:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-OVDEN13-trilium-mcp.stdio.61772f4abb",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/OVDEN13/trilium-mcp",
+    "homepage": "https://github.com/OVDEN13/trilium-mcp",
+    "repository": "https://github.com/OVDEN13/trilium-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/ovden13/trilium-mcp:0.1.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.OVDEN13/trilium-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the Trilium ETAPI. Comma-separated for failover: fast LAN first, public fallback (e.g. http://192.168.0.10:8092,https://memo.example.com).",
+          "format": "string",
+          "isRequired": true,
+          "name": "TRILIUM_URL"
+        },
+        {
+          "description": "ETAPI token created in Trilium under Options -> ETAPI",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "TRILIUM_TOKEN"
+        },
+        {
+          "description": "Per-request HTTP timeout in seconds (default 30)",
+          "format": "string",
+          "name": "TRILIUM_HTTP_TIMEOUT_SECONDS"
+        },
+        {
+          "description": "Tool-call log level on stderr: off / info (default) / debug",
+          "format": "string",
+          "name": "TRILIUM_MCP_LOG"
+        }
+      ],
+      "identifier": "ghcr.io/ovden13/trilium-mcp:0.1.4",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "61772f4abb",
+    "published_at": "2026-05-11T21:40:47.12559Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.OVDEN13/trilium-mcp",
+    "server_version": "0.1.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-11T21:40:47.12559Z"
+  },
+  "title": "TriliumNext (trilium-mcp)",
+  "type": "mcp_server",
+  "version": "0.1.4"
+}

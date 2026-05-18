@@ -1,0 +1,64 @@
+{
+  "description": "Buy tokenized US stocks (xStocks) on Solana via Jupiter DEX in USDC. Daily cap. Dry-run default.",
+  "harvest": {
+    "last_seen_at": "2026-05-18T06:32:47+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-evidai-xstocks.stdio.dae56be0c4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/evidai/agent-payment-mcp",
+    "homepage": "https://github.com/evidai/agent-payment-mcp",
+    "repository": "https://github.com/evidai/agent-payment-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "xstocks-mcp@0.1.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.evidai/xstocks",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base58 Solana wallet private key (Phantom export). Leave unset for dry-run mode.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SOLANA_WALLET_PRIVATE_KEY"
+        },
+        {
+          "description": "Set to 'yes-i-understand' to enable real swaps. Dry-run by default.",
+          "format": "string",
+          "name": "XSTOCKS_ALLOW_LIVE"
+        }
+      ],
+      "identifier": "xstocks-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "dae56be0c4",
+    "published_at": "2026-05-16T15:40:06.962655Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.evidai/xstocks",
+    "server_version": "0.1.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-16T15:40:06.962655Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.4"
+}

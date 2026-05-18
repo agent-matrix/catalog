@@ -1,0 +1,142 @@
+{
+  "description": "MCP server for Obsidian vaults \u2014 read, write, search, and edit notes via the Local REST API plugin.",
+  "harvest": {
+    "last_seen_at": "2026-05-18T06:32:46+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cyanheads-obsidian-mcp-server.stdio.d18f89d2c5",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cyanheads/obsidian-mcp-server",
+    "homepage": "https://github.com/cyanheads/obsidian-mcp-server",
+    "repository": "https://github.com/cyanheads/obsidian-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "node",
+          "obsidian-mcp-server@3.1.11"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cyanheads/obsidian-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Bearer token for the Obsidian Local REST API plugin (Settings \u2192 Community Plugins \u2192 Local REST API).",
+          "format": "string",
+          "isRequired": true,
+          "name": "OBSIDIAN_API_KEY"
+        },
+        {
+          "default": "http://127.0.0.1:27123",
+          "description": "Base URL of the Obsidian Local REST API. Default: http://127.0.0.1:27123 (enable \"Non-encrypted (HTTP) Server\" in plugin settings). Use https://127.0.0.1:27124 for the always-on HTTPS port (self-signed cert; pair with OBSIDIAN_VERIFY_SSL=false).",
+          "format": "string",
+          "name": "OBSIDIAN_BASE_URL"
+        },
+        {
+          "default": "false",
+          "description": "Whether to verify the TLS certificate on the Obsidian endpoint. Default false because the plugin uses a self-signed cert.",
+          "format": "string",
+          "name": "OBSIDIAN_VERIFY_SSL"
+        },
+        {
+          "default": "30000",
+          "description": "Per-request timeout in milliseconds.",
+          "format": "string",
+          "name": "OBSIDIAN_REQUEST_TIMEOUT_MS"
+        },
+        {
+          "default": "false",
+          "description": "Opt-in flag for the command-palette pair (obsidian_list_commands + obsidian_execute_command). Off by default \u2014 Obsidian commands are opaque and can be destructive.",
+          "format": "string",
+          "name": "OBSIDIAN_ENABLE_COMMANDS"
+        },
+        {
+          "description": "Optional comma-separated vault-relative folder allowlist for reads. Prefix-based with implicit recursion; case-insensitive; trailing slashes normalized. Unset = full vault. Write paths are implicitly readable. Example: 'public/,projects/'.",
+          "format": "string",
+          "name": "OBSIDIAN_READ_PATHS"
+        },
+        {
+          "description": "Optional comma-separated vault-relative folder allowlist for writes. Same syntax as OBSIDIAN_READ_PATHS. Unset = full vault. Example: 'projects/,scratch/'.",
+          "format": "string",
+          "name": "OBSIDIAN_WRITE_PATHS"
+        },
+        {
+          "default": "false",
+          "description": "Global read-only kill switch. When true, every write is denied regardless of OBSIDIAN_WRITE_PATHS, and the command-palette pair is suppressed (commands can mutate). Useful for shared or public-facing deployments.",
+          "format": "string",
+          "name": "OBSIDIAN_READ_ONLY"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "The hostname for the HTTP server.",
+          "format": "string",
+          "name": "MCP_HTTP_HOST"
+        },
+        {
+          "default": "3010",
+          "description": "The port to run the HTTP server on.",
+          "format": "string",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "default": "/mcp",
+          "description": "The endpoint path for the MCP server.",
+          "format": "string",
+          "name": "MCP_HTTP_ENDPOINT_PATH"
+        },
+        {
+          "default": "none",
+          "description": "Authentication mode to use: 'none', 'jwt', or 'oauth'.",
+          "format": "string",
+          "name": "MCP_AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Sets the minimum log level for output (e.g., 'debug', 'info', 'warn').",
+          "format": "string",
+          "name": "MCP_LOG_LEVEL"
+        }
+      ],
+      "identifier": "obsidian-mcp-server",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "start:http"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "node",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3010/mcp"
+      },
+      "version": "3.1.11"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d18f89d2c5",
+    "published_at": "2026-05-16T17:49:12.736384Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cyanheads/obsidian-mcp-server",
+    "server_version": "3.1.11",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-16T17:49:12.736384Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "3.1.11"
+}
