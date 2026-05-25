@@ -1,0 +1,75 @@
+{
+  "description": "Google Trends MCP with proxy rotation, auto-retry on Google blocks, residential-proxy setup.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:43+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-den-indance-google-trends-mcp.stdio.2f6a301fb8",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/den-indance/google-trends-mcp",
+    "homepage": "https://github.com/den-indance/google-trends-mcp",
+    "repository": "https://github.com/den-indance/google-trends-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@den.dance/google-trends-mcp@1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.den-indance/google-trends-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Single rotating proxy endpoint (e.g. http://user:pass@gate.smartproxy.com:7000). Provider handles IP rotation.",
+          "format": "string",
+          "isSecret": true,
+          "name": "PROXY_URL"
+        },
+        {
+          "description": "Comma-separated proxy list (http://user:pass@host:port,...). Validated on startup, bad ones auto-dropped.",
+          "format": "string",
+          "isSecret": true,
+          "name": "PROXY_LIST"
+        },
+        {
+          "description": "Path to a file with one proxy URL per line (# comments allowed). Validated on startup, re-read on proxy_refresh.",
+          "format": "string",
+          "name": "PROXY_LIST_FILE"
+        },
+        {
+          "description": "Set to false to disable proxy logic and use direct requests. Default: enabled.",
+          "format": "string",
+          "name": "PROXIES_ENABLED"
+        }
+      ],
+      "identifier": "@den.dance/google-trends-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "2f6a301fb8",
+    "published_at": "2026-05-21T03:38:11.852558Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.den-indance/google-trends-mcp",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-21T03:38:11.852558Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

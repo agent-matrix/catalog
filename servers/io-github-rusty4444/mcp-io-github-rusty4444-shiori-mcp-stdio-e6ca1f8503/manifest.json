@@ -1,0 +1,75 @@
+{
+  "description": "MCP server for Shiori bookmark management and tag workflows.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:50+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-rusty4444-shiori-mcp.stdio.e6ca1f8503",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/rusty4444/shiori-mcp",
+    "homepage": "https://github.com/rusty4444/shiori-mcp",
+    "repository": "https://github.com/rusty4444/shiori-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "shiori-mcp==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.rusty4444/shiori-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the Shiori instance, e.g. https://shiori.example.com",
+          "isRequired": true,
+          "name": "SHIORI_BASE_URL",
+          "placeholder": "https://shiori.example.com"
+        },
+        {
+          "description": "Existing Shiori session id; skips login if provided",
+          "isSecret": true,
+          "name": "SHIORI_SESSION_ID"
+        },
+        {
+          "description": "Shiori username; required unless SHIORI_SESSION_ID is set",
+          "name": "SHIORI_USERNAME"
+        },
+        {
+          "description": "Shiori password; required unless SHIORI_SESSION_ID is set",
+          "isSecret": true,
+          "name": "SHIORI_PASSWORD"
+        }
+      ],
+      "identifier": "shiori-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e6ca1f8503",
+    "published_at": "2026-05-18T03:32:30.599682Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.rusty4444/shiori-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-18T03:32:30.599682Z"
+  },
+  "title": "Shiori MCP",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

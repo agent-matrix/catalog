@@ -1,0 +1,80 @@
+{
+  "description": "MCP server for the Ethora chat & messaging platform: chat ops, AI agents, RAG, automation.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:43+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-dappros-ethora-mcp-server.stdio.54311ee746",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/dappros/ethora-mcp-server",
+    "homepage": "https://github.com/dappros/ethora-mcp-server",
+    "repository": "https://github.com/dappros/ethora-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@ethora/mcp-server@26.5.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.dappros/ethora-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Full Ethora API URL. Defaults to https://api.chat.ethora.com/v1 if neither ETHORA_API_URL nor ETHORA_BASE_URL is set.",
+          "format": "string",
+          "name": "ETHORA_API_URL"
+        },
+        {
+          "description": "Base host URL (e.g. https://api.chat.ethora.com). The server appends /v1 automatically. Use ETHORA_API_URL instead if you need a non-/v1 path.",
+          "format": "string",
+          "name": "ETHORA_BASE_URL"
+        },
+        {
+          "description": "App JWT used for the user-auth bootstrap flow (login/register). Usually starts with 'JWT '. Optional; can also be set at runtime via the ethora-configure tool.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ETHORA_APP_JWT"
+        },
+        {
+          "description": "B2B server token used for tenant-actor x-custom-token auth (JWT with type=server). Required for B2B / app provisioning flows. Optional; can also be set at runtime.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ETHORA_B2B_TOKEN"
+        },
+        {
+          "description": "Set to 'true' to expose destructive tools (app deletion, wallet transfers, bulk delete). Disabled by default.",
+          "format": "string",
+          "name": "ETHORA_MCP_ENABLE_DANGEROUS_TOOLS"
+        }
+      ],
+      "identifier": "@ethora/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "26.5.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "54311ee746",
+    "published_at": "2026-05-14T14:10:19.69583Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.dappros/ethora-mcp-server",
+    "server_version": "26.5.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-14T14:10:19.69583Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "26.5.3"
+}

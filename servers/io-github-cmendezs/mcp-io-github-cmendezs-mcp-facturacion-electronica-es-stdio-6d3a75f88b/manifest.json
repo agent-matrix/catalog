@@ -1,0 +1,109 @@
+{
+  "description": "Spanish e-invoicing MCP server: VERI*FACTU, Facturae/FACe, SII, TicketBAI, Crea y Crece B2B.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cmendezs-mcp-facturacion-electronica-es.stdio.6d3a75f88b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cmendezs/mcp-facturacion-electronica-es",
+    "homepage": "https://github.com/cmendezs/mcp-facturacion-electronica-es",
+    "repository": "https://github.com/cmendezs/mcp-facturacion-electronica-es"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-facturacion-electronica-es==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cmendezs/mcp-facturacion-electronica-es",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Target environment for AEAT endpoints: 'sandbox' or 'production'.",
+          "format": "string",
+          "isRequired": true,
+          "name": "AEAT_ENV"
+        },
+        {
+          "description": "Filesystem path to the FNMT-RCM PKCS#12 certificate (.p12 / .pfx) used for MTLS submission to AEAT (VERI*FACTU and SII).",
+          "format": "string",
+          "name": "AEAT_CERTIFICATE_PATH"
+        },
+        {
+          "description": "Passphrase for the PKCS#12 certificate at AEAT_CERTIFICATE_PATH.",
+          "format": "string",
+          "name": "AEAT_CERTIFICATE_PASSWORD"
+        },
+        {
+          "description": "Taxpayer NIF used as the default submitter identity for AEAT submissions.",
+          "format": "string",
+          "name": "AEAT_NIF"
+        },
+        {
+          "description": "Target environment for FACe API: 'sandbox' or 'production'.",
+          "format": "string",
+          "name": "FACE_ENV"
+        },
+        {
+          "description": "OAuth2 client ID for FACe B2B REST API v2.",
+          "format": "string",
+          "name": "FACE_CLIENT_ID"
+        },
+        {
+          "description": "OAuth2 client secret for FACe B2B REST API v2.",
+          "format": "string",
+          "name": "FACE_CLIENT_SECRET"
+        },
+        {
+          "description": "Target environment for TicketBAI provincial endpoints: 'sandbox' or 'production'.",
+          "format": "string",
+          "name": "TICKETBAI_ENV"
+        },
+        {
+          "description": "Filesystem path to the PKCS#12 certificate used to sign TicketBAI XML records.",
+          "format": "string",
+          "name": "TICKETBAI_CERTIFICATE_PATH"
+        },
+        {
+          "description": "Passphrase for the PKCS#12 certificate at TICKETBAI_CERTIFICATE_PATH.",
+          "format": "string",
+          "name": "TICKETBAI_CERTIFICATE_PASSWORD"
+        },
+        {
+          "description": "Logging level inherited from mcp-einvoicing-core: DEBUG, INFO (default), WARNING, or ERROR.",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "mcp-facturacion-electronica-es",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6d3a75f88b",
+    "published_at": "2026-05-13T13:07:22.924444Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cmendezs/mcp-facturacion-electronica-es",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-13T13:07:22.924444Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

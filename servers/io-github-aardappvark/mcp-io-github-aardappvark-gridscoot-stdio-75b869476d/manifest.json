@@ -1,0 +1,65 @@
+{
+  "description": "AU price comparison via MCP \u2014 search, compare, track. 6 tools; anonymous demo (30/day/IP).",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:40+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-aardappvark-gridscoot.stdio.75b869476d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/aardappvark/gridscoot",
+    "homepage": "https://github.com/aardappvark/gridscoot",
+    "repository": "https://github.com/aardappvark/gridscoot"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@gridscoot/mcp@0.2.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.aardappvark/gridscoot",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Bearer token from https://gridscoot.vercel.app/account/keys. Omit to run in anonymous demo mode (30 requests/day per IP, read tools only).",
+          "isSecret": true,
+          "name": "GRIDSCOOT_API_KEY"
+        },
+        {
+          "default": "false",
+          "description": "Set to \"true\" or \"1\" to make the write tool (track_price) return a {dryRun:true, would_call:...} envelope instead of executing. Read tools are unaffected.",
+          "name": "GRIDSCOOT_MCP_DRY_RUN"
+        }
+      ],
+      "identifier": "@gridscoot/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "75b869476d",
+    "published_at": "2026-05-23T12:21:09.193455Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.aardappvark/gridscoot",
+    "server_version": "0.2.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-23T12:21:09.193455Z"
+  },
+  "title": "Gridscoot",
+  "type": "mcp_server",
+  "version": "0.2.3"
+}

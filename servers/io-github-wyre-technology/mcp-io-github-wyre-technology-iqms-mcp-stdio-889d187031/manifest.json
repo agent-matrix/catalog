@@ -1,0 +1,89 @@
+{
+  "description": "MCP server for IQMS (DELMIAworks) ERP \u2014 manufacturing, inventory, production, and quality.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:52+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wyre-technology-iqms-mcp.stdio.889d187031",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wyre-technology/iqms-mcp",
+    "homepage": "https://github.com/wyre-technology/iqms-mcp",
+    "repository": "https://github.com/wyre-technology/iqms-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-technology/iqms-mcp:v1.2.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wyre-technology/iqms-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Oracle connection string for the IQMS database (e.g. host:port/service)",
+          "format": "string",
+          "isRequired": true,
+          "name": "IQMS_ORACLE_CONNECT_STRING"
+        },
+        {
+          "description": "IQMS Oracle DB username",
+          "format": "string",
+          "isRequired": true,
+          "name": "IQMS_ORACLE_USER"
+        },
+        {
+          "description": "IQMS Oracle DB password",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "IQMS_ORACLE_PASSWORD"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode for the server. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-technology/iqms-mcp:v1.2.5",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "889d187031",
+    "published_at": "2026-05-22T16:47:28.459458Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wyre-technology/iqms-mcp",
+    "server_version": "1.2.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-22T16:47:28.459458Z"
+  },
+  "title": "IQMS / DELMIA Apriso",
+  "type": "mcp_server",
+  "version": "1.2.5"
+}

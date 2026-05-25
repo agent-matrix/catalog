@@ -1,0 +1,84 @@
+{
+  "description": "Runway ML MCP server: AI video, image, audio, voice generation, and task management",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:48+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mindstone-mcp-server-runway.stdio.58042ab6a7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mindstone/mcp-servers",
+    "homepage": "https://github.com/mindstone/mcp-servers",
+    "repository": "https://github.com/mindstone/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@mindstone/mcp-server-runway@0.3.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mindstone/mcp-server-runway",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Runway API key (from dev.runwayml.com)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "RUNWAYML_API_SECRET"
+        },
+        {
+          "default": "60000",
+          "description": "Outbound HTTP request timeout in milliseconds (max 1800000)",
+          "format": "number",
+          "name": "RUNWAY_REQUEST_TIMEOUT_MS"
+        },
+        {
+          "default": "600000",
+          "description": "Signed-URL upload timeout for large local files in milliseconds",
+          "format": "number",
+          "name": "RUNWAY_UPLOAD_TIMEOUT_MS"
+        },
+        {
+          "description": "Sandbox root for local-file inputs to upload tools. Defaults to os.tmpdir().",
+          "format": "filepath",
+          "name": "RUNWAY_ALLOWED_ROOT"
+        },
+        {
+          "description": "Sandbox root for downloaded outputs. Defaults to ~/Downloads/runway-mcp.",
+          "format": "filepath",
+          "name": "RUNWAY_DOWNLOAD_ROOT"
+        }
+      ],
+      "identifier": "@mindstone/mcp-server-runway",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "58042ab6a7",
+    "published_at": "2026-05-21T11:27:38.292438Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mindstone/mcp-server-runway",
+    "server_version": "0.3.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-21T11:27:38.292438Z"
+  },
+  "title": "Runway ML",
+  "type": "mcp_server",
+  "version": "0.3.2"
+}

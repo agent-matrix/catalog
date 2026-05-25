@@ -1,0 +1,113 @@
+{
+  "description": "Agent-safe Excel workbook analysis, editing, recalc, and verification tools.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-PSU3D0-spreadsheet-mcp.stdio.f6f5cbed66",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/PSU3D0/spreadsheet-mcp",
+    "homepage": "https://github.com/PSU3D0/spreadsheet-mcp",
+    "repository": "https://github.com/PSU3D0/spreadsheet-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "type": "positional",
+            "value": "-i"
+          },
+          {
+            "type": "positional",
+            "value": "--rm"
+          },
+          {
+            "type": "positional",
+            "value": "-v"
+          },
+          {
+            "type": "positional",
+            "value": "{workbook_dir}:/data",
+            "variables": {
+              "workbook_dir": {
+                "description": "Host directory containing Excel workbooks to expose to spreadsheet-mcp",
+                "format": "filepath",
+                "isRequired": true,
+                "placeholder": "/path/to/workbooks"
+              }
+            }
+          },
+          "ghcr.io/psu3d0/spreadsheet-mcp:full-full"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.PSU3D0/spreadsheet-mcp",
+  "packages": [
+    {
+      "identifier": "ghcr.io/psu3d0/spreadsheet-mcp:full-full",
+      "packageArguments": [
+        {
+          "name": "--workspace-root",
+          "type": "named",
+          "value": "/data"
+        },
+        {
+          "name": "--transport",
+          "type": "named",
+          "value": "stdio"
+        }
+      ],
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-i"
+        },
+        {
+          "type": "positional",
+          "value": "--rm"
+        },
+        {
+          "type": "positional",
+          "value": "-v"
+        },
+        {
+          "type": "positional",
+          "value": "{workbook_dir}:/data",
+          "variables": {
+            "workbook_dir": {
+              "description": "Host directory containing Excel workbooks to expose to spreadsheet-mcp",
+              "format": "filepath",
+              "isRequired": true,
+              "placeholder": "/path/to/workbooks"
+            }
+          }
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "f6f5cbed66",
+    "published_at": "2026-05-13T05:50:58.442322Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.PSU3D0/spreadsheet-mcp",
+    "server_version": "0.10.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-13T05:50:58.442322Z"
+  },
+  "title": "spreadsheet-kit MCP",
+  "type": "mcp_server",
+  "version": "0.10.1"
+}

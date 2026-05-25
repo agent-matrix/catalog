@@ -1,0 +1,105 @@
+{
+  "description": "Local-first MCP sidecar for Markdown artifacts, review cards, and supervised knowledge growth.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Semiotronika-LINZA-MCP.stdio.b07e48b1c4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Semiotronika/LINZA-MCP",
+    "homepage": "https://github.com/Semiotronika/LINZA-MCP",
+    "repository": "https://github.com/Semiotronika/LINZA-MCP"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "linza-mcp==0.1.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Semiotronika/LINZA-MCP",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Absolute path to the Markdown workspace or vault LINZA may index.",
+          "format": "string",
+          "isRequired": true,
+          "name": "LINZA_VAULT"
+        },
+        {
+          "description": "Embedding provider. Allowed values: lmstudio, openai, ollama. Default: lmstudio.",
+          "format": "string",
+          "name": "LINZA_EMBED_PROVIDER"
+        },
+        {
+          "description": "Embedding API base URL when LINZA_EMBED_PROVIDER is lmstudio, openai, or ollama.",
+          "format": "string",
+          "name": "LINZA_EMBED_URL"
+        },
+        {
+          "description": "Embedding model name.",
+          "format": "string",
+          "name": "LINZA_EMBED_MODEL"
+        },
+        {
+          "description": "Optional embedding API key.",
+          "format": "string",
+          "isSecret": true,
+          "name": "LINZA_EMBED_KEY"
+        },
+        {
+          "description": "Semantic bridge threshold as a floating-point string. Default: 0.55.",
+          "format": "string",
+          "name": "LINZA_BRIDGE_THRESHOLD"
+        },
+        {
+          "description": "Maximum note pairs for semantic bridge rebuilds. Default: 1000000. Use 0 to disable the guard.",
+          "format": "string",
+          "name": "LINZA_MAX_BRIDGE_PAIRS"
+        },
+        {
+          "description": "Default search profile name. Defaults to general.",
+          "format": "string",
+          "name": "LINZA_DEFAULT_PROFILE"
+        },
+        {
+          "description": "Tool surface. Allowed values: default, advanced. Default: default.",
+          "format": "string",
+          "name": "LINZA_TOOL_SURFACE"
+        },
+        {
+          "description": "Human-facing guide language. Allowed values: auto, en, ru. Default: auto.",
+          "format": "string",
+          "name": "LINZA_LANGUAGE"
+        }
+      ],
+      "identifier": "linza-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b07e48b1c4",
+    "published_at": "2026-05-19T20:20:19.115535Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Semiotronika/LINZA-MCP",
+    "server_version": "0.1.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-19T20:20:19.115535Z"
+  },
+  "title": "LINZA",
+  "type": "mcp_server",
+  "version": "0.1.3"
+}

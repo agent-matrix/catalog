@@ -1,0 +1,79 @@
+{
+  "description": "Operate local-ydb deployments through local or SSH-backed MCP tools.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-astandrik-local-ydb-mcp.stdio.249c50b76d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/astandrik/local-ydb-toolkit",
+    "homepage": "https://github.com/astandrik/local-ydb-toolkit",
+    "repository": "https://github.com/astandrik/local-ydb-toolkit"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "name": "-y",
+            "type": "named"
+          },
+          {
+            "name": "--prefer-online",
+            "type": "named"
+          },
+          "@astandrik/local-ydb-mcp@0.9.7"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.astandrik/local-ydb-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional path to a local-ydb-toolkit config JSON file.",
+          "format": "filepath",
+          "name": "LOCAL_YDB_TOOLKIT_CONFIG",
+          "placeholder": "/path/to/local-ydb.config.json"
+        }
+      ],
+      "identifier": "@astandrik/local-ydb-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "name": "-y",
+          "type": "named"
+        },
+        {
+          "name": "--prefer-online",
+          "type": "named"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.9.7"
+    }
+  ],
+  "provenance": {
+    "identity_key": "249c50b76d",
+    "published_at": "2026-05-19T22:16:31.849858Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.astandrik/local-ydb-mcp",
+    "server_version": "0.9.7",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-19T22:16:31.849858Z"
+  },
+  "title": "Local YDB MCP",
+  "type": "mcp_server",
+  "version": "0.9.7"
+}

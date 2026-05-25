@@ -1,0 +1,87 @@
+{
+  "description": "Workday HCM MCP server for Model Context Protocol hosts \u2014 workers, profiles, organizations",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:48+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mindstone-mcp-server-workday.stdio.7cddc47507",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mindstone/mcp-servers",
+    "homepage": "https://github.com/mindstone/mcp-servers",
+    "repository": "https://github.com/mindstone/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@mindstone/mcp-server-workday@0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mindstone/mcp-server-workday",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Workday API host (e.g. wd5-impl-services1.workday.com)",
+          "format": "string",
+          "isRequired": true,
+          "name": "WORKDAY_HOST"
+        },
+        {
+          "description": "Workday tenant ID",
+          "format": "string",
+          "isRequired": true,
+          "name": "WORKDAY_TENANT"
+        },
+        {
+          "description": "Workday OAuth 2.0 client ID",
+          "format": "string",
+          "isRequired": true,
+          "name": "WORKDAY_CLIENT_ID"
+        },
+        {
+          "description": "Workday OAuth 2.0 client secret",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "WORKDAY_CLIENT_SECRET"
+        },
+        {
+          "description": "Workday OAuth 2.0 refresh token",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "WORKDAY_REFRESH_TOKEN"
+        }
+      ],
+      "identifier": "@mindstone/mcp-server-workday",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7cddc47507",
+    "published_at": "2026-05-21T11:27:55.84418Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mindstone/mcp-server-workday",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-21T11:27:55.84418Z"
+  },
+  "title": "Workday",
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

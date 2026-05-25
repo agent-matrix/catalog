@@ -1,0 +1,97 @@
+{
+  "description": "Angel One SmartAPI MCP for orders, portfolio, market data, GTT rules, charges, and margin.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ameernoufil-angel-one.stdio.c522f20d09",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ameernoufil/angel-one-mcp",
+    "homepage": "https://github.com/ameernoufil/angel-one-mcp",
+    "repository": "https://github.com/ameernoufil/angel-one-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "angel-one-mcp@1.0.9"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ameernoufil/angel-one",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Angel One SmartAPI app key",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ANGEL_API_KEY"
+        },
+        {
+          "description": "Angel One client code",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ANGEL_CLIENT_ID"
+        },
+        {
+          "description": "Angel One password or MPIN",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ANGEL_PASSWORD"
+        },
+        {
+          "description": "Base32 TOTP secret used to generate login OTPs",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ANGEL_TOTP_SECRET"
+        },
+        {
+          "default": "25",
+          "description": "Soft max order quantity",
+          "name": "SOFT_MAX_ORDER_QTY"
+        },
+        {
+          "default": "100",
+          "description": "Hard max order quantity",
+          "name": "HARD_MAX_ORDER_QTY"
+        },
+        {
+          "default": "10000",
+          "description": "Soft max order value in INR",
+          "name": "SOFT_MAX_ORDER_VALUE"
+        },
+        {
+          "default": "100000",
+          "description": "Hard max order value in INR",
+          "name": "HARD_MAX_ORDER_VALUE"
+        }
+      ],
+      "identifier": "angel-one-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.9"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c522f20d09",
+    "published_at": "2026-05-22T16:53:28.682858Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ameernoufil/angel-one",
+    "server_version": "1.0.9",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-22T16:53:28.682858Z"
+  },
+  "title": "Angel One",
+  "type": "mcp_server",
+  "version": "1.0.9"
+}

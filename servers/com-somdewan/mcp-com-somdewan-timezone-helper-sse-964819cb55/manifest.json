@@ -1,0 +1,59 @@
+{
+  "description": "MCP server for TimezoneDB.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:35+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-somdewan-timezone-helper.sse.964819cb55",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://tz-{region}.somdewan.com/mcp"
+    }
+  },
+  "name": "com.somdewan/timezone-helper",
+  "provenance": {
+    "identity_key": "964819cb55",
+    "published_at": "2026-05-19T06:23:18.573794Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.somdewan/timezone-helper",
+    "server_version": "4.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-19T06:23:18.573794Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Your TimezoneDB API key (free at https://timezonedb.com/register).",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "X-TimezoneDB-Key"
+        },
+        {
+          "description": "Optional override of the default https://api.timezonedb.com host (e.g. for a self-hosted mirror).",
+          "name": "X-Backend-URL"
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://tz-{region}.somdewan.com/mcp",
+      "variables": {
+        "region": {
+          "choices": [
+            "us",
+            "eu"
+          ],
+          "description": "Choose the regional endpoint to connect to. EU users typically prefer `eu` to keep request data within the EU; US users prefer `us` for lower latency.",
+          "isRequired": true
+        }
+      }
+    }
+  ],
+  "title": "Timezone Helper",
+  "type": "mcp_server",
+  "version": "4.0.0"
+}

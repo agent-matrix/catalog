@@ -1,0 +1,108 @@
+{
+  "description": "Search LOC digital collections, Chronicling America newspapers (full OCR), and LC Subject Headings.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:43+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cyanheads-libofcongress-mcp-server.stdio.6799cee63d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cyanheads/libofcongress-mcp-server",
+    "homepage": "https://github.com/cyanheads/libofcongress-mcp-server",
+    "repository": "https://github.com/cyanheads/libofcongress-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "bun",
+          "libofcongress-mcp-server@0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cyanheads/libofcongress-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "libofcongress-mcp-server/0.2.0",
+          "description": "User-Agent header sent with LOC API requests. LOC recommends a descriptive value for polite access.",
+          "format": "string",
+          "name": "LOC_USER_AGENT"
+        },
+        {
+          "default": "3100",
+          "description": "Delay in milliseconds between LOC API requests to stay under the 20 req/min rate limit.",
+          "format": "string",
+          "name": "LOC_REQUEST_DELAY_MS"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "The hostname for the HTTP server.",
+          "format": "string",
+          "name": "MCP_HTTP_HOST"
+        },
+        {
+          "default": "3010",
+          "description": "The port to run the HTTP server on.",
+          "format": "string",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "default": "/mcp",
+          "description": "The endpoint path for the MCP server.",
+          "format": "string",
+          "name": "MCP_HTTP_ENDPOINT_PATH"
+        },
+        {
+          "default": "none",
+          "description": "Authentication mode to use: 'none', 'jwt', or 'oauth'.",
+          "format": "string",
+          "name": "MCP_AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Sets the minimum log level for output (e.g., 'debug', 'info', 'warn').",
+          "format": "string",
+          "name": "MCP_LOG_LEVEL"
+        }
+      ],
+      "identifier": "libofcongress-mcp-server",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "start:http"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "bun",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3010/mcp"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6799cee63d",
+    "published_at": "2026-05-24T23:04:40.427573Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cyanheads/libofcongress-mcp-server",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-24T23:04:40.427573Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

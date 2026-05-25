@@ -1,0 +1,84 @@
+{
+  "description": "German federal & state legal texts (BGB, DSGVO, \u2026) with canonical IDs and cite-grade provenance.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:47+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-klein-business-legal-text-mcp-de.stdio.6429b75b74",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/klein-business/legal-text-mcp-de",
+    "homepage": "https://github.com/klein-business/legal-text-mcp-de",
+    "repository": "https://github.com/klein-business/legal-text-mcp-de"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "type": "positional",
+            "value": "serve",
+            "valueHint": "subcommand"
+          },
+          "legal-text-mcp-de==2.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.klein-business/legal-text-mcp-de",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to a normalised corpus directory or a corpus archive (legal-texts-de-*.tar.zst). Defaults to the bundled fixture; production deployments should mount /data/corpus/latest.tar.zst.",
+          "format": "filepath",
+          "name": "DATASET_PATH"
+        },
+        {
+          "default": "false",
+          "description": "Set to 'true' to refuse to start if the dataset cannot be loaded (recommended for hosted deployments).",
+          "format": "string",
+          "name": "STRICT_DATASET"
+        },
+        {
+          "description": "Optional. Required only for the smart `research_topic` tool which uses LLM-assisted synthesis. Without it, the tool degrades gracefully to a ranked-search fallback.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        }
+      ],
+      "identifier": "legal-text-mcp-de",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "serve",
+          "valueHint": "subcommand"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6429b75b74",
+    "published_at": "2026-05-18T13:31:37.692382Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.klein-business/legal-text-mcp-de",
+    "server_version": "2.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-18T13:31:37.692382Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "2.1.2"
+}

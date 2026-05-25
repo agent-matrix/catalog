@@ -1,0 +1,70 @@
+{
+  "description": "Azure FinOps MCP: cost, budgets, forecasting and optimization for Claude, VS Code and Cursor.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:50+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-raviteja-pegata-azure-finops-mcp.stdio.d6e65b0542",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/raviteja-pegata/Azure-FinOps-MCP-Server",
+    "homepage": "https://github.com/raviteja-pegata/Azure-FinOps-MCP-Server",
+    "repository": "https://github.com/raviteja-pegata/Azure-FinOps-MCP-Server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "azure-finops-mcp==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.raviteja-pegata/azure-finops-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Comma-separated list of Azure subscription IDs this server may query",
+          "format": "string",
+          "isRequired": true,
+          "name": "AZURE_ALLOWED_SUBSCRIPTIONS"
+        },
+        {
+          "description": "Default subscription ID used when none is specified in a query (must be in AZURE_ALLOWED_SUBSCRIPTIONS)",
+          "format": "string",
+          "isRequired": true,
+          "name": "AZURE_DEFAULT_SUBSCRIPTION"
+        },
+        {
+          "description": "TTL for cost query cache in seconds (default: 900)",
+          "format": "string",
+          "name": "FINOPS_CACHE_TTL_SECONDS"
+        }
+      ],
+      "identifier": "azure-finops-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d6e65b0542",
+    "published_at": "2026-05-24T16:37:25.721257Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.raviteja-pegata/azure-finops-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-24T16:37:25.721257Z"
+  },
+  "title": "Azure FinOps MCP Server",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

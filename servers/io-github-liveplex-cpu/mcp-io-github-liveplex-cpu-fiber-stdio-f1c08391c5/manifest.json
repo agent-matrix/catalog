@@ -1,0 +1,84 @@
+{
+  "description": "Optical ops MCP for AI DCs \u2014 gNMI, ML RUL, Digital Twin, NCCL, SPARQL semantic",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:47+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-liveplex-cpu-fiber.stdio.f1c08391c5",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/liveplex-cpu/hikari",
+    "homepage": "https://github.com/liveplex-cpu/hikari",
+    "repository": "https://github.com/liveplex-cpu/hikari"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "python",
+          "fiber-mcp==1.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.liveplex-cpu/fiber",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://api.fiber.ac",
+          "description": "Base URL of the FIBER deployment (e.g., https://api.fiber.ac or http://localhost:8000 for self-hosted).",
+          "format": "string",
+          "name": "FIBER_API_URL"
+        },
+        {
+          "description": "Bearer token for the FIBER API. Role determines which tools work: viewer (24 read tools), operator (+write), admin (all).",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "FIBER_API_KEY"
+        },
+        {
+          "default": "0",
+          "description": "Set to 1 to expose write tools: demo trigger, NCCL ingest, RMA create. Defaults to read-only for safety.",
+          "format": "string",
+          "name": "FIBER_ENABLE_WRITE"
+        },
+        {
+          "description": "(v1.0.2) Optional CSV of tool names. When set, only these tools are exposed \u2014 letting operators scope autonomous agents to a minimum surface (e.g. 'fiber_health,fiber_cluster_overview,fiber_list_alerts'). Empty = all tools exposed (default).",
+          "format": "string",
+          "name": "FIBER_MCP_TOOLS_ALLOWLIST"
+        },
+        {
+          "default": "30",
+          "description": "Per-request HTTP timeout in seconds. Increase if running Digital Twin Monte Carlo with iterations>1000.",
+          "format": "number",
+          "name": "FIBER_HTTP_TIMEOUT"
+        }
+      ],
+      "identifier": "fiber-mcp",
+      "registryType": "pypi",
+      "runtimeHint": "python",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f1c08391c5",
+    "published_at": "2026-05-13T11:51:16.533035Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.liveplex-cpu/fiber",
+    "server_version": "1.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-13T11:51:16.533035Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.1.0"
+}

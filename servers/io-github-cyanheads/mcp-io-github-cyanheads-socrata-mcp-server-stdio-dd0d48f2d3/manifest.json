@@ -1,0 +1,107 @@
+{
+  "description": "Search and query government open-data portals via the Socrata SODA 2.1 and Discovery APIs.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:43+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cyanheads-socrata-mcp-server.stdio.dd0d48f2d3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cyanheads/socrata-mcp-server",
+    "homepage": "https://github.com/cyanheads/socrata-mcp-server",
+    "repository": "https://github.com/cyanheads/socrata-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "bun",
+          "@cyanheads/socrata-mcp-server@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cyanheads/socrata-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Socrata app token (X-App-Token header). Without a token, requests share a throttled pool per source IP. Free to register at any Socrata portal.",
+          "format": "string",
+          "name": "SOCRATA_APP_TOKEN"
+        },
+        {
+          "default": "data.seattle.gov",
+          "description": "Default portal domain when domain is omitted from tool calls (e.g. data.seattle.gov, data.cityofnewyork.us).",
+          "format": "string",
+          "name": "SOCRATA_DEFAULT_DOMAIN"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "The hostname for the HTTP server.",
+          "format": "string",
+          "name": "MCP_HTTP_HOST"
+        },
+        {
+          "default": "3010",
+          "description": "The port to run the HTTP server on.",
+          "format": "string",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "default": "/mcp",
+          "description": "The endpoint path for the MCP server.",
+          "format": "string",
+          "name": "MCP_HTTP_ENDPOINT_PATH"
+        },
+        {
+          "default": "none",
+          "description": "Authentication mode to use: 'none', 'jwt', or 'oauth'.",
+          "format": "string",
+          "name": "MCP_AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Sets the minimum log level for output (e.g., 'debug', 'info', 'warn').",
+          "format": "string",
+          "name": "MCP_LOG_LEVEL"
+        }
+      ],
+      "identifier": "@cyanheads/socrata-mcp-server",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "start:http"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "bun",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3010/mcp"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "dd0d48f2d3",
+    "published_at": "2026-05-23T20:03:18.40567Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cyanheads/socrata-mcp-server",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-23T20:03:18.40567Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

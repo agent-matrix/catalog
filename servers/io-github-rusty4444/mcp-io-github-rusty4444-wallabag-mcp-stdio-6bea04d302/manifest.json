@@ -1,0 +1,84 @@
+{
+  "description": "MCP server for wallabag read-it-later entries, tags, and annotations.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:50+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-rusty4444-wallabag-mcp.stdio.6bea04d302",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/rusty4444/wallabag-mcp",
+    "homepage": "https://github.com/rusty4444/wallabag-mcp",
+    "repository": "https://github.com/rusty4444/wallabag-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "wallabag-mcp==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.rusty4444/wallabag-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the wallabag instance, e.g. https://wallabag.example.com",
+          "isRequired": true,
+          "name": "WALLABAG_BASE_URL",
+          "placeholder": "https://wallabag.example.com"
+        },
+        {
+          "description": "Existing OAuth access token; skips password grant if provided",
+          "isSecret": true,
+          "name": "WALLABAG_ACCESS_TOKEN"
+        },
+        {
+          "description": "OAuth client id; required unless WALLABAG_ACCESS_TOKEN is set",
+          "name": "WALLABAG_CLIENT_ID"
+        },
+        {
+          "description": "OAuth client secret; required unless WALLABAG_ACCESS_TOKEN is set",
+          "isSecret": true,
+          "name": "WALLABAG_CLIENT_SECRET"
+        },
+        {
+          "description": "wallabag username; required unless WALLABAG_ACCESS_TOKEN is set",
+          "name": "WALLABAG_USERNAME"
+        },
+        {
+          "description": "wallabag password; required unless WALLABAG_ACCESS_TOKEN is set",
+          "isSecret": true,
+          "name": "WALLABAG_PASSWORD"
+        }
+      ],
+      "identifier": "wallabag-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6bea04d302",
+    "published_at": "2026-05-18T03:32:31.309882Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.rusty4444/wallabag-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-18T03:32:31.309882Z"
+  },
+  "title": "wallabag MCP",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

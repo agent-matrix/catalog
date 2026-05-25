@@ -1,0 +1,83 @@
+{
+  "description": "SQLite-backed hybrid (vector + FTS) code search index for Claude Code over MCP.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:40+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-achreftlili-code-index.stdio.24136772f6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/achreftlili/code-index",
+    "homepage": "https://github.com/achreftlili/code-index",
+    "repository": "https://github.com/achreftlili/code-index"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-code-index==0.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.achreftlili/code-index",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Embedder backend. Only 'jina' (local jina-embeddings-v2-base-code via sentence-transformers) is supported; the variable exists for future expansion.",
+          "format": "string",
+          "name": "CODE_INDEX_EMBEDDER"
+        },
+        {
+          "description": "HuggingFace model id. Defaults to 'jinaai/jina-embeddings-v2-base-code'. Override only if you know the model is dim-compatible.",
+          "format": "string",
+          "name": "CODE_INDEX_EMBED_MODEL"
+        },
+        {
+          "description": "Embedding dimension. Defaults to 768 (matches jina-embeddings-v2-base-code). Must match the model's output dim.",
+          "format": "string",
+          "name": "CODE_INDEX_EMBED_DIM"
+        },
+        {
+          "description": "Path to the SQLite index database. Defaults to .claude/index.db relative to the working directory.",
+          "format": "string",
+          "name": "CODE_INDEX_DB"
+        },
+        {
+          "description": "Encode batch size (default 32). Lower (e.g. 8 or 4) to reduce peak memory if the GPU OOMs on large files.",
+          "format": "string",
+          "name": "CODE_INDEX_EMBED_BATCH"
+        },
+        {
+          "description": "Torch device override: 'cpu', 'mps', or 'cuda'. Unset = auto-detect. Set 'cpu' to avoid Apple-Silicon MPS out-of-memory errors.",
+          "format": "string",
+          "name": "CODE_INDEX_EMBED_DEVICE"
+        }
+      ],
+      "identifier": "mcp-code-index",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "24136772f6",
+    "published_at": "2026-05-11T23:51:46.954162Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.achreftlili/code-index",
+    "server_version": "0.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-11T23:51:46.954162Z"
+  },
+  "title": "Code Index",
+  "type": "mcp_server",
+  "version": "0.4.0"
+}

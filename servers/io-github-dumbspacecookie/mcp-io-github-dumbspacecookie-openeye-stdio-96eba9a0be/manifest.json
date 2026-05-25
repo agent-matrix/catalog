@@ -1,0 +1,80 @@
+{
+  "description": "Procedure verification for AR/XR with memory, visual sessions, and DPO trajectory export.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:44+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-dumbspacecookie-openeye.stdio.96eba9a0be",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/dumbspacecookie/openeye",
+    "homepage": "https://github.com/dumbspacecookie/openeye",
+    "repository": "https://github.com/dumbspacecookie/openeye"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "python3",
+          {
+            "type": "positional",
+            "value": "sidecar/mcp_server.py"
+          },
+          "@dumbspacecookie/openeye@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.dumbspacecookie/openeye",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Anthropic API key for the agent. Required because the default OpenEye agent uses Claude. Swap providers via src/models.ts if you want OPENAI/GROQ/GEMINI/etc.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        },
+        {
+          "default": "false",
+          "description": "Set true to opt in to sharing trajectory data with Context's training pipeline. Default off. Loud opt-in by design \u2014 read docs/context-data.md before flipping.",
+          "name": "OPENEYE_CONTEXT_OPTIN"
+        },
+        {
+          "description": "Context API key. Only needed if OPENEYE_CONTEXT_OPTIN is true.",
+          "isSecret": true,
+          "name": "OPENEYE_CONTEXT_API_KEY"
+        }
+      ],
+      "identifier": "@dumbspacecookie/openeye",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "sidecar/mcp_server.py"
+        }
+      ],
+      "runtimeHint": "python3",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "96eba9a0be",
+    "published_at": "2026-05-19T21:49:04.564166Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.dumbspacecookie/openeye",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-19T21:49:04.564166Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

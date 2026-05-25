@@ -1,0 +1,68 @@
+{
+  "description": "Dokploy MCP server for Codex, Cursor, and Claude with compact stdio and hosted HTTP modes",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:52+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-vcode-sh-dokploy-mcp.sse.e358066271",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/vcode-sh/dokploy-mcp",
+    "homepage": "https://github.com/vcode-sh/dokploy-mcp",
+    "repository": "https://github.com/vcode-sh/dokploy-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://{remoteHost}{mcpPath}"
+    }
+  },
+  "name": "io.github.vcode-sh/dokploy-mcp",
+  "provenance": {
+    "identity_key": "e358066271",
+    "published_at": "2026-05-15T00:05:50.561473Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.vcode-sh/dokploy-mcp",
+    "server_version": "3.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-15T00:05:50.561473Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Dokploy panel URL for this request. Accepts the panel URL, /api, or /api/trpc and is normalized automatically.",
+          "isRequired": true,
+          "name": "X-Dokploy-Url",
+          "placeholder": "https://panel.example.com"
+        },
+        {
+          "description": "Dokploy API key from Settings > Profile > API/CLI.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "X-Dokploy-Api-Key",
+          "placeholder": "dokp_..."
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://{remoteHost}{mcpPath}",
+      "variables": {
+        "mcpPath": {
+          "default": "/mcp",
+          "description": "MCP HTTP path exposed by the hosted server.",
+          "placeholder": "/mcp"
+        },
+        "remoteHost": {
+          "description": "Hostname of your hosted dokploy-mcp server without the https:// prefix.",
+          "isRequired": true,
+          "placeholder": "mcp.example.com"
+        }
+      }
+    }
+  ],
+  "title": "Dokploy MCP",
+  "type": "mcp_server",
+  "version": "3.1.2"
+}

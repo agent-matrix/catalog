@@ -1,0 +1,64 @@
+{
+  "description": "Official MCP server: EU VAT validation via VIES, plus offline rates and format checks.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:52+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-vatnode-vatnode-mcp.stdio.959707d409",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/vatnode/vatnode-mcp",
+    "homepage": "https://github.com/vatnode/vatnode-mcp",
+    "repository": "https://github.com/vatnode/vatnode-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "vatnode-mcp@0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.vatnode/vatnode-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "vatnode API key (free tier available at https://vatnode.dev). Required only for the validate_vat_number tool \u2014 the four other tools (rates, format checks, country list) work offline without a key.",
+          "isSecret": true,
+          "name": "VATNODE_API_KEY"
+        },
+        {
+          "default": "https://api.vatnode.dev",
+          "description": "Override the vatnode API base URL (for self-hosting or staging environments). Defaults to https://api.vatnode.dev.",
+          "name": "VATNODE_API_URL"
+        }
+      ],
+      "identifier": "vatnode-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "959707d409",
+    "published_at": "2026-05-20T18:44:41.76809Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.vatnode/vatnode-mcp",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-20T18:44:41.76809Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

@@ -1,0 +1,90 @@
+{
+  "description": "Microsoft 365 administration via Graph API application permissions (read-only by default).",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:49+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-okapi-ca-ms-365-admin.stdio.923e0a659b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/okapi-ca/ms-365-admin-mcp-server",
+    "homepage": "https://github.com/okapi-ca/ms-365-admin-mcp-server",
+    "repository": "https://github.com/okapi-ca/ms-365-admin-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@okapi-ca/ms-365-admin-mcp-server@0.6.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.okapi-ca/ms-365-admin",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Azure AD tenant ID (specific GUID, not 'common').",
+          "isRequired": true,
+          "name": "MS365_ADMIN_MCP_TENANT_ID"
+        },
+        {
+          "description": "App registration client ID with the required application permissions.",
+          "isRequired": true,
+          "name": "MS365_ADMIN_MCP_CLIENT_ID"
+        },
+        {
+          "description": "App registration client secret. Prefer Azure Key Vault via MS365_ADMIN_MCP_KEYVAULT_URL for production.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "MS365_ADMIN_MCP_CLIENT_SECRET"
+        },
+        {
+          "description": "Optional Azure Key Vault URL. When set, secrets are pulled from the vault and override the env-var values above.",
+          "name": "MS365_ADMIN_MCP_KEYVAULT_URL"
+        },
+        {
+          "description": "Cloud environment: 'global' (default) or 'china' (21Vianet).",
+          "name": "MS365_ADMIN_MCP_CLOUD_TYPE"
+        },
+        {
+          "description": "Cap on the $top query parameter to limit result size.",
+          "name": "MS365_ADMIN_MCP_MAX_TOP"
+        },
+        {
+          "description": "Set to 'true' or '1' to force read-only mode (default behavior; mutations require --allow-writes).",
+          "name": "READ_ONLY"
+        },
+        {
+          "description": "Regex to filter the catalog of available tools.",
+          "name": "ENABLED_TOOLS"
+        }
+      ],
+      "identifier": "@okapi-ca/ms-365-admin-mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.6.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "923e0a659b",
+    "published_at": "2026-05-21T17:43:06.345122Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.okapi-ca/ms-365-admin",
+    "server_version": "0.6.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-21T17:43:06.345122Z"
+  },
+  "title": "Microsoft 365 Admin",
+  "type": "mcp_server",
+  "version": "0.6.3"
+}

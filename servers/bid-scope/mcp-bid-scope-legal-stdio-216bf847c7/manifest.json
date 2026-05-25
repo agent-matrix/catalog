@@ -1,0 +1,68 @@
+{
+  "description": "Dispatch litigation work to legal-services vendors from any MCP-compatible AI workflow.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.bid-scope-legal.stdio.216bf847c7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/scope-bid/scope-mcp",
+    "homepage": "https://github.com/scope-bid/scope-mcp",
+    "repository": "https://github.com/scope-bid/scope-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@scope-bid/scope-mcp@1.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "bid.scope/legal",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://scope.bid",
+          "description": "Base URL of the Scope API. Defaults to the hosted instance.",
+          "name": "SCOPE_API_BASE"
+        },
+        {
+          "description": "Bearer token from scope.bid/settings/api-tokens. Required for write tools.",
+          "isSecret": true,
+          "name": "SCOPE_API_TOKEN"
+        },
+        {
+          "description": "Pin reads/writes to a specific buyer organization.",
+          "name": "SCOPE_ORG_SLUG"
+        }
+      ],
+      "identifier": "@scope-bid/scope-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "216bf847c7",
+    "published_at": "2026-05-21T21:15:18.045851Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "bid.scope/legal",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-21T21:15:18.045851Z"
+  },
+  "title": "Scope (Legal)",
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

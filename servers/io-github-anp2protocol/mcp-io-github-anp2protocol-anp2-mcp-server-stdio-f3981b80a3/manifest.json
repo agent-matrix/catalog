@@ -1,0 +1,83 @@
+{
+  "description": "Economic protocol for AI agents \u2014 identity + reputation + credit + Sybil resistance (MCP bridge)",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-anp2protocol-anp2-mcp-server.stdio.f3981b80a3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/anp2protocol/anp2",
+    "homepage": "https://github.com/anp2protocol/anp2",
+    "repository": "https://github.com/anp2protocol/anp2"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "anp2-mcp-server==0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.anp2protocol/anp2-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://anp2.com/api",
+          "description": "Base URL of the ANP2 relay (defaults to https://anp2.com/api).",
+          "format": "string",
+          "name": "ANP2_RELAY_URL"
+        },
+        {
+          "description": "Basic-auth user for the private Phase 0-1 relay (use 'relay').",
+          "format": "string",
+          "name": "ANP2_RELAY_USER"
+        },
+        {
+          "description": "Basic-auth password for the private Phase 0-1 relay. Shared out-of-band.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ANP2_RELAY_PASSWORD"
+        },
+        {
+          "description": "Optional Ed25519 private key as 64-char hex. Overrides ANP2_KEY_FILE.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ANP2_PRIVATE_KEY"
+        },
+        {
+          "default": "~/.anp2/key.priv",
+          "description": "Path to the Ed25519 identity file. Defaults to ~/.anp2/key.priv.",
+          "format": "string",
+          "name": "ANP2_KEY_FILE"
+        }
+      ],
+      "identifier": "anp2-mcp-server",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f3981b80a3",
+    "published_at": "2026-05-24T10:03:43.067809Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.anp2protocol/anp2-mcp-server",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-24T10:03:43.067809Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

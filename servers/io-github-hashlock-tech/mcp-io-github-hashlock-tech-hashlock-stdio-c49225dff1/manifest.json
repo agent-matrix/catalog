@@ -1,0 +1,80 @@
+{
+  "description": "Sealed-bid OTC trading with HTLC atomic settlement. ETH, BTC, SUI. Built for AI agents.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Hashlock-Tech-hashlock.stdio.c49225dff1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Hashlock-Tech/hashlock-mcp",
+    "homepage": "https://github.com/Hashlock-Tech/hashlock-mcp",
+    "repository": "https://github.com/Hashlock-Tech/hashlock-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "description": "Auto-confirm npx install prompt",
+            "isRequired": true,
+            "type": "positional",
+            "value": "-y"
+          },
+          "@hashlock-tech/mcp@0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Hashlock-Tech/hashlock",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "SIWE JWT from hashlock.markets/sign/login",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "HASHLOCK_ACCESS_TOKEN"
+        },
+        {
+          "default": "https://hashlock.markets/api/graphql",
+          "description": "GraphQL endpoint override",
+          "name": "HASHLOCK_ENDPOINT"
+        }
+      ],
+      "identifier": "@hashlock-tech/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "description": "Auto-confirm npx install prompt",
+          "isRequired": true,
+          "type": "positional",
+          "value": "-y"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c49225dff1",
+    "published_at": "2026-05-12T16:40:10.133111Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Hashlock-Tech/hashlock",
+    "server_version": "1.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-12T16:40:10.133111Z"
+  },
+  "title": "Hashlock Markets",
+  "type": "mcp_server",
+  "version": "1.2.0"
+}

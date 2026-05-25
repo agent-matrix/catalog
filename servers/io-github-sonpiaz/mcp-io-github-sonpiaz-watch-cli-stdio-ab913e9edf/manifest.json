@@ -1,0 +1,70 @@
+{
+  "description": "Hand any social video to your AI agent \u2014 frames + transcript bundled. MCP server for watch-cli.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:51+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sonpiaz-watch-cli.stdio.ab913e9edf",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sonpiaz/watch-cli",
+    "homepage": "https://github.com/sonpiaz/watch-cli",
+    "repository": "https://github.com/sonpiaz/watch-cli"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@sonpiaz/watch-cli-mcp@0.3.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sonpiaz/watch-cli",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Kyma API key (default backend). Get one at https://kymaapi.com \u2014 first $0.50 free, then pay-per-use (~$0.05 per 1-hour video). Optional if WATCH_AUDIO_MODE=local (whisper.cpp) or GROQ_API_KEY is set instead.",
+          "format": "string",
+          "isSecret": true,
+          "name": "KYMA_API_KEY"
+        },
+        {
+          "description": "Groq API key for direct BYOK transcription (alternative to Kyma). Set this instead of KYMA_API_KEY if you prefer direct provider.",
+          "format": "string",
+          "isSecret": true,
+          "name": "GROQ_API_KEY"
+        },
+        {
+          "description": "Backend routing override. Values: kyma (default), byok (use GROQ_API_KEY), local (whisper.cpp on $PATH, fully offline).",
+          "format": "string",
+          "name": "WATCH_AUDIO_MODE"
+        }
+      ],
+      "identifier": "@sonpiaz/watch-cli-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ab913e9edf",
+    "published_at": "2026-05-20T00:52:58.896572Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sonpiaz/watch-cli",
+    "server_version": "0.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-20T00:52:58.896572Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.1"
+}

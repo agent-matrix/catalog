@@ -1,0 +1,71 @@
+{
+  "description": "Buy a global eSIM through chat. 192 countries, per-MB USDT/USDC billing, no signup needed.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:50+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-roamzy-io-mcp-server.stdio.99442e48d0",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/roamzy-io/mcp-server",
+    "homepage": "https://github.com/roamzy-io/mcp-server",
+    "repository": "https://github.com/roamzy-io/mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@roamzy/mcp-server@1.5.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.roamzy-io/mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional. Bearer token from /dashboard/settings if you want to bind agent activity to a pre-existing Roamzy account. Leave unset for anonymous-flow (default).",
+          "format": "string",
+          "isSecret": true,
+          "name": "ROAMZY_API_TOKEN"
+        },
+        {
+          "default": "false",
+          "description": "Optional. Set to \"true\" when using a non-anonymous token to also expose purchase tools (roamzy_create_order). Anonymous-mode has purchase tools enabled by default.",
+          "format": "string",
+          "name": "ROAMZY_ENABLE_PURCHASE"
+        },
+        {
+          "default": "https://roamzy.io/api/v1",
+          "description": "Optional. Override the API base URL for staging or self-hosted deployments. Defaults to https://roamzy.io/api/v1.",
+          "format": "string",
+          "name": "ROAMZY_API_BASE"
+        }
+      ],
+      "identifier": "@roamzy/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.5.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "99442e48d0",
+    "published_at": "2026-05-22T08:33:23.370011Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.roamzy-io/mcp-server",
+    "server_version": "1.5.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-22T08:33:23.370011Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.5.3"
+}

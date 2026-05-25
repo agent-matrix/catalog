@@ -1,0 +1,77 @@
+{
+  "description": "Open-source memory for AI agents. Conflict-flagging recall, scope-bag dispersion, local SQLite.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:45+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-imashishkh21-atlaso.stdio.bbf1cdbe97",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/imashishkh21/atlaso",
+    "homepage": "https://github.com/imashishkh21/atlaso",
+    "repository": "https://github.com/imashishkh21/atlaso"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "name": "--with",
+            "type": "named",
+            "value": "fastmcp"
+          },
+          "atlaso==0.1.0a6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.imashishkh21/atlaso",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional absolute path to the .atlaso/ store. If unset, atlaso walks up from the current working directory looking for an existing .atlaso/ or a project marker (pyproject.toml, package.json, .git, Cargo.toml, go.mod) and creates the store there. Falls back to the cwd as a last resort. Never falls back to $HOME.",
+          "format": "filepath",
+          "name": "ATLASO_PATH"
+        }
+      ],
+      "identifier": "atlaso",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "name": "--with",
+          "type": "named",
+          "value": "fastmcp"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0a6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "bbf1cdbe97",
+    "published_at": "2026-05-12T23:10:29.144962Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.imashishkh21/atlaso",
+    "server_version": "0.1.0a6",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-12T23:10:29.144962Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0a6"
+}

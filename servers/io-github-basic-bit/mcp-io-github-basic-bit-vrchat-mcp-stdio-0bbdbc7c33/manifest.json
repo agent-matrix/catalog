@@ -1,0 +1,97 @@
+{
+  "description": "MCP server for VRChat friends, worlds, groups, events, notifications, and VRCX history.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-BASIC-BIT-vrchat-mcp.stdio.0bbdbc7c33",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/BASIC-BIT/vrchat-mcp",
+    "homepage": "https://github.com/BASIC-BIT/vrchat-mcp",
+    "repository": "https://github.com/BASIC-BIT/vrchat-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@basicbit/vrchat-mcp@0.1.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.BASIC-BIT/vrchat-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to a JSON config file for settings not supplied through environment variables.",
+          "format": "filepath",
+          "name": "VRCHAT_MCP_CONFIG_FILE"
+        },
+        {
+          "description": "Descriptive User-Agent for VRChat API requests.",
+          "format": "string",
+          "name": "VRCHAT_MCP_USER_AGENT"
+        },
+        {
+          "choices": [
+            "debug",
+            "info",
+            "warn",
+            "error"
+          ],
+          "default": "info",
+          "description": "Log level for stderr diagnostics.",
+          "format": "string",
+          "name": "VRCHAT_MCP_LOG_LEVEL"
+        },
+        {
+          "choices": [
+            "memory",
+            "file",
+            "keychain"
+          ],
+          "default": "keychain",
+          "description": "Cookie storage backend for VRChat authentication. The keychain mode falls back to file storage if the OS keychain is unavailable.",
+          "format": "string",
+          "name": "VRCHAT_MCP_COOKIE_STORE"
+        },
+        {
+          "description": "Cookie file path used when VRCHAT_MCP_COOKIE_STORE is file.",
+          "format": "filepath",
+          "name": "VRCHAT_MCP_COOKIE_FILE"
+        },
+        {
+          "default": "true",
+          "description": "Allow non-GET VRChat API write operations. Set to false for read-only mode.",
+          "format": "boolean",
+          "name": "VRCHAT_MCP_ALLOW_WRITES"
+        }
+      ],
+      "identifier": "@basicbit/vrchat-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0bbdbc7c33",
+    "published_at": "2026-05-19T08:27:09.50454Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.BASIC-BIT/vrchat-mcp",
+    "server_version": "0.1.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-19T08:27:09.50454Z"
+  },
+  "title": "VRChat MCP",
+  "type": "mcp_server",
+  "version": "0.1.4"
+}

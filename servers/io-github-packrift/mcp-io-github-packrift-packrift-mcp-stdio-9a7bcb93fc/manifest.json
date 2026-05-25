@@ -1,0 +1,78 @@
+{
+  "description": "Exact-spec Packrift packaging search with live price, stock, shipping, cart handoff, and no-match.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Packrift-packrift-mcp.stdio.9a7bcb93fc",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Packrift/packrift-mcp",
+    "homepage": "https://github.com/Packrift/packrift-mcp",
+    "repository": "https://github.com/Packrift/packrift-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/packrift/packrift-mcp:latest"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Packrift/packrift-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Packrift Shopify Admin API token.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SHOPIFY_PACKRIFT_TOKEN"
+        },
+        {
+          "default": "packrift.myshopify.com",
+          "description": "Packrift Shopify store domain.",
+          "format": "string",
+          "name": "SHOPIFY_STORE_DOMAIN"
+        },
+        {
+          "default": "packrift.com",
+          "description": "Packrift storefront domain.",
+          "format": "string",
+          "name": "STOREFRONT_DOMAIN"
+        },
+        {
+          "default": "8787",
+          "description": "HTTP port exposed by the Packrift MCP container.",
+          "format": "number",
+          "name": "PORT"
+        }
+      ],
+      "identifier": "ghcr.io/packrift/packrift-mcp:latest",
+      "registryType": "oci",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:8787/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "9a7bcb93fc",
+    "published_at": "2026-05-18T17:09:06.646556Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Packrift/packrift-mcp",
+    "server_version": "0.2.9",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-18T17:09:06.646556Z"
+  },
+  "title": "Packrift MCP",
+  "type": "mcp_server",
+  "version": "0.2.9"
+}

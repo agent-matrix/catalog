@@ -1,0 +1,74 @@
+{
+  "description": "Discover and transact on the AntSeed P2P AI network from any MCP-compatible agent.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Augustas11-antfeed-mcp.stdio.d8a1905b98",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Augustas11/antseed-explorer",
+    "homepage": "https://github.com/Augustas11/antseed-explorer",
+    "repository": "https://github.com/Augustas11/antseed-explorer"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@antfeed/mcp@0.2.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Augustas11/antfeed-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://antfeed.org",
+          "description": "Base URL for the AntFeed Explorer REST API.",
+          "name": "ANTFEED_EXPLORER_URL"
+        },
+        {
+          "default": "http://localhost:8377",
+          "description": "Local AntSeed buyer RPC URL. Required only for the transactional `create_session` tool; omit for read-only use.",
+          "name": "ANTSEED_BUYER_URL"
+        },
+        {
+          "default": "10",
+          "description": "Defense-in-depth ceiling on `create_session` deposits, in USDC. Hard-capped at 10000.",
+          "name": "ANTSEED_MAX_DEPOSIT_USDC"
+        },
+        {
+          "default": "0",
+          "description": "Set to 1 to require the local buyer to identify itself via /health. Recommended on shared dev boxes.",
+          "name": "ANTSEED_BUYER_STRICT"
+        }
+      ],
+      "identifier": "@antfeed/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d8a1905b98",
+    "published_at": "2026-05-17T02:47:21.264288Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Augustas11/antfeed-mcp",
+    "server_version": "0.2.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-17T02:47:21.264288Z"
+  },
+  "title": "AntFeed",
+  "type": "mcp_server",
+  "version": "0.2.3"
+}

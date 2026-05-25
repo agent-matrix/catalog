@@ -1,0 +1,85 @@
+{
+  "description": "MCP server for Google Calendar integration with service account support and domain-wide delegation.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:35+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-pulsemcp-google-calendar.stdio.375f58256f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/pulsemcp/mcp-servers",
+    "homepage": "https://github.com/pulsemcp/mcp-servers",
+    "repository": "https://github.com/pulsemcp/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y"
+          },
+          "google-calendar-workspace-mcp-server@0.0.11"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.pulsemcp/google-calendar",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Service account email address from Google Cloud Console.",
+          "isRequired": true,
+          "name": "GCAL_SERVICE_ACCOUNT_CLIENT_EMAIL"
+        },
+        {
+          "description": "Service account private key in PEM format from Google Cloud Console.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GCAL_SERVICE_ACCOUNT_PRIVATE_KEY"
+        },
+        {
+          "description": "Email address of the user whose calendar to access via domain-wide delegation.",
+          "isRequired": true,
+          "name": "GCAL_IMPERSONATE_EMAIL"
+        },
+        {
+          "description": "Comma-separated list of tool groups to enable (readonly or readwrite).",
+          "name": "ENABLED_TOOLGROUPS"
+        }
+      ],
+      "identifier": "google-calendar-workspace-mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.0.11"
+    }
+  ],
+  "provenance": {
+    "identity_key": "375f58256f",
+    "published_at": "2026-05-18T13:28:56.170424Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.pulsemcp/google-calendar",
+    "server_version": "0.0.11",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-18T13:28:56.170424Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.0.11"
+}

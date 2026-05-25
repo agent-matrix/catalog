@@ -1,0 +1,71 @@
+{
+  "description": "Customer-hosted read-only MCP server for Jobber ops reports, OAuth setup, and GraphQL validation.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:49+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-opsconduit-jobber-mcp.stdio.173726f257",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/opsconduit/jobber-mcp",
+    "homepage": "https://github.com/opsconduit/jobber-mcp",
+    "repository": "https://github.com/opsconduit/jobber-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@opsconduit/jobber-mcp@0.1.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.opsconduit/jobber-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Jobber developer app client id for customer-owned OAuth setup.",
+          "format": "string",
+          "isRequired": true,
+          "name": "JOBBER_CLIENT_ID"
+        },
+        {
+          "description": "Jobber developer app client secret. Keep local; do not email or publish.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "JOBBER_CLIENT_SECRET"
+        },
+        {
+          "description": "OAuth redirect URI, usually http://localhost:3333/oauth/callback for local setup.",
+          "format": "string",
+          "name": "JOBBER_REDIRECT_URI"
+        }
+      ],
+      "identifier": "@opsconduit/jobber-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "173726f257",
+    "published_at": "2026-05-18T16:59:07.604267Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.opsconduit/jobber-mcp",
+    "server_version": "0.1.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-18T16:59:07.604267Z"
+  },
+  "title": "OpsConduit Jobber MCP",
+  "type": "mcp_server",
+  "version": "0.1.3"
+}

@@ -1,0 +1,84 @@
+{
+  "description": "Microsoft 365 SharePoint via Graph: sites, libraries, pages, lists, search, file/list mutations.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:48+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mindstone-mcp-server-microsoft-sharepoint.stdio.0874853f36",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mindstone/mcp-servers",
+    "homepage": "https://github.com/mindstone/mcp-servers",
+    "repository": "https://github.com/mindstone/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@mindstone/mcp-server-microsoft-sharepoint@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mindstone/mcp-server-microsoft-sharepoint",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Microsoft Entra (Azure AD) application client ID",
+          "format": "string",
+          "isRequired": true,
+          "name": "MS_CLIENT_ID"
+        },
+        {
+          "description": "Path to the per-user Microsoft config directory (credentials/, accounts.json)",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "MS_CONFIG_DIR"
+        },
+        {
+          "description": "Account email when running in multi-account per-instance mode (falls back to the first account in accounts.json)",
+          "format": "string",
+          "name": "MS_ACCOUNT_EMAIL"
+        },
+        {
+          "default": "Microsoft365SharePoint",
+          "description": "Logical package ID surfaced in error responses",
+          "format": "string",
+          "name": "MS_MCP_PACKAGE_ID"
+        },
+        {
+          "default": "60000",
+          "description": "Override the upstream Microsoft Graph request timeout in milliseconds (max 300000 = 5 min)",
+          "format": "number",
+          "name": "MICROSOFT_REQUEST_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "@mindstone/mcp-server-microsoft-sharepoint",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0874853f36",
+    "published_at": "2026-05-21T11:27:00.359842Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mindstone/mcp-server-microsoft-sharepoint",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-21T11:27:00.359842Z"
+  },
+  "title": "Microsoft 365 SharePoint",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

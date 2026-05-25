@@ -1,0 +1,84 @@
+{
+  "description": "Personal RAG over your GitHub history (commits, code, reviews), served to Claude Code over MCP.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ChristopherDavenport-github-twin.stdio.e234b30fe9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ChristopherDavenport/github-twin",
+    "homepage": "https://github.com/ChristopherDavenport/github-twin",
+    "repository": "https://github.com/ChristopherDavenport/github-twin"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "type": "positional",
+            "value": "serve"
+          },
+          "github-twin==0.0.10"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ChristopherDavenport/github-twin",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "GitHub personal access token. Optional: github-twin can also pick the token up from `gh auth token` or from its own OAuth device-flow login (`gt auth login`).",
+          "isSecret": true,
+          "name": "GITHUB_TOKEN"
+        },
+        {
+          "description": "Optional. Enables the Claude backend for `gt summarize`, `gt distill`, and `gt eval`. Defaults to local Ollama when unset.",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        },
+        {
+          "description": "Optional. Enables the Gemini backend for embedding and the LLM seam. Vertex AI ADC via `GT_GEMINI_PROJECT` is also supported.",
+          "isSecret": true,
+          "name": "GEMINI_API_KEY"
+        },
+        {
+          "description": "Optional. Override the on-disk data directory holding the SQLite index, embeddings, and cached GitHub responses. Defaults to `$XDG_DATA_HOME/github-twin`.",
+          "name": "GT_PATHS__DATA_DIR"
+        }
+      ],
+      "identifier": "github-twin",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "serve"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.0.10"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e234b30fe9",
+    "published_at": "2026-05-18T18:25:58.709836Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ChristopherDavenport/github-twin",
+    "server_version": "0.0.10",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-18T18:25:58.709836Z"
+  },
+  "title": "github-twin",
+  "type": "mcp_server",
+  "version": "0.0.10"
+}

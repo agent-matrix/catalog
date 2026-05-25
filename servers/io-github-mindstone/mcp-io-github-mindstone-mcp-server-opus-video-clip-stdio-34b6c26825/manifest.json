@@ -1,0 +1,80 @@
+{
+  "description": "OpusClip MCP server \u2014 clip long-form videos, manage projects, collections, censor jobs, posts",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:48+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mindstone-mcp-server-opus-video-clip.stdio.34b6c26825",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mindstone/mcp-servers",
+    "homepage": "https://github.com/mindstone/mcp-servers",
+    "repository": "https://github.com/mindstone/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@mindstone/mcp-server-opus-video-clip@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mindstone/mcp-server-opus-video-clip",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "OpusClip API key (from https://app.opus.pro/settings/integration-tokens)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OPUS_API_KEY"
+        },
+        {
+          "default": "120000",
+          "description": "Outbound HTTP request timeout in milliseconds for general Opus API calls (max 1800000)",
+          "format": "number",
+          "name": "OPUS_API_TIMEOUT_MS"
+        },
+        {
+          "default": "600000",
+          "description": "Per-chunk HTTP request timeout in milliseconds for the GCS resumable upload step (max 1800000)",
+          "format": "number",
+          "name": "OPUS_UPLOAD_TIMEOUT_MS"
+        },
+        {
+          "default": "30000",
+          "description": "HTTP request timeout in milliseconds for the optional host-app bridge (max 1800000)",
+          "format": "number",
+          "name": "OPUS_BRIDGE_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "@mindstone/mcp-server-opus-video-clip",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "34b6c26825",
+    "published_at": "2026-05-21T11:27:20.81387Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mindstone/mcp-server-opus-video-clip",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-21T11:27:20.81387Z"
+  },
+  "title": "OpusClip",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

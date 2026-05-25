@@ -1,0 +1,87 @@
+{
+  "description": "MCP server for OpenEMIS v5 \u2014 read + write tools and ChatGPT OpenAPI adapter",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:51+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-tixuz-openemis-pro.stdio.a0486e571c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/tixuz/openemis-mcp-pro",
+    "homepage": "https://github.com/tixuz/openemis-mcp-pro",
+    "repository": "https://github.com/tixuz/openemis-mcp-pro"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "openemis-mcp-pro@1.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.tixuz/openemis-pro",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of your OpenEMIS instance (e.g., https://demo.openemis.org/core)",
+          "format": "string",
+          "isRequired": true,
+          "name": "OPENEMIS_BASE_URL"
+        },
+        {
+          "description": "OpenEMIS API key (issued by the OpenEMIS admin). Required for every upstream login.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OPENEMIS_API_KEY"
+        },
+        {
+          "description": "OpenEMIS login username. Optional \u2014 if unset, server fails closed and requires openemis_login at runtime.",
+          "format": "string",
+          "name": "OPENEMIS_USERNAME"
+        },
+        {
+          "description": "OpenEMIS login password. Pairs with OPENEMIS_USERNAME for env-default auth.",
+          "format": "string",
+          "isSecret": true,
+          "name": "OPENEMIS_PASSWORD"
+        },
+        {
+          "description": "Request timeout in milliseconds (default 30000)",
+          "format": "string",
+          "name": "OPENEMIS_TIMEOUT_MS"
+        },
+        {
+          "description": "Set to 1 to enable native IN-operator batch GETs once your OpenEMIS Core has POCOR-9660 deployed.",
+          "format": "string",
+          "name": "OPENEMIS_CORE_IN_OPERATOR"
+        }
+      ],
+      "identifier": "openemis-mcp-pro",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a0486e571c",
+    "published_at": "2026-05-14T20:45:56.923033Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.tixuz/openemis-pro",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-14T20:45:56.923033Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

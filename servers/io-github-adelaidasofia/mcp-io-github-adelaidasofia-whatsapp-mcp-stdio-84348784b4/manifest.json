@@ -1,0 +1,108 @@
+{
+  "description": "WhatsApp MCP. SQLCipher-encrypted, scrubber-CI-gated, draft-and-confirm sends, voice transcription.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:40+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-adelaidasofia-whatsapp-mcp.stdio.84348784b4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/adelaidasofia/whatsapp-mcp",
+    "homepage": "https://github.com/adelaidasofia/whatsapp-mcp",
+    "repository": "https://github.com/adelaidasofia/whatsapp-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "adelaidasofia-whatsapp-mcp==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.adelaidasofia/whatsapp-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "127.0.0.1",
+          "description": "Hostname for the Go bridge REST API.",
+          "format": "string",
+          "name": "WHATSAPP_BRIDGE_HOST"
+        },
+        {
+          "default": "8080",
+          "description": "Port for the Go bridge REST API.",
+          "format": "string",
+          "name": "WHATSAPP_BRIDGE_PORT"
+        },
+        {
+          "description": "Absolute path to a vault CRM folder for auto-injection (e.g., Obsidian 'CRM/'). When unset, CRM injection is disabled.",
+          "format": "string",
+          "name": "WHATSAPP_VAULT_CRM_PATH"
+        },
+        {
+          "default": "local-cpp",
+          "description": "Voice-note transcription backend. 'local-cpp' (default, private) or 'openai-api' (opt-in).",
+          "format": "string",
+          "name": "WHATSAPP_WHISPER_BACKEND"
+        },
+        {
+          "description": "OpenAI API key. Required only when WHATSAPP_WHISPER_BACKEND=openai-api.",
+          "format": "string",
+          "isSecret": true,
+          "name": "WHATSAPP_WHISPER_API_KEY"
+        },
+        {
+          "default": "large-v3",
+          "description": "whisper.cpp model name. Only used when backend is local-cpp.",
+          "format": "string",
+          "name": "WHATSAPP_WHISPER_MODEL"
+        },
+        {
+          "default": "true",
+          "description": "Strip known prompt-injection patterns from incoming messages before the LLM sees them.",
+          "format": "string",
+          "name": "WHATSAPP_SCRUB_PROMPT_INJECTION"
+        },
+        {
+          "default": "true",
+          "description": "Log every tool call to audit.log.",
+          "format": "string",
+          "name": "WHATSAPP_AUDIT_LOG"
+        },
+        {
+          "default": "true",
+          "description": "Enable SQLCipher DB encryption with the key sourced from macOS Keychain.",
+          "format": "string",
+          "name": "WHATSAPP_ENCRYPT_DB"
+        }
+      ],
+      "identifier": "adelaidasofia-whatsapp-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "84348784b4",
+    "published_at": "2026-05-20T02:16:46.081761Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.adelaidasofia/whatsapp-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-20T02:16:46.081761Z"
+  },
+  "title": "WhatsApp MCP",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

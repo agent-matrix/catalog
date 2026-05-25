@@ -1,0 +1,56 @@
+{
+  "description": "Authenticated email gateway for AI agents \u2014 per-agent inboxes, HITL approval, SPF/DKIM verified.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Mnexa-AI-mcp-server.sse.f9551480ac",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Mnexa-AI/e2a",
+    "homepage": "https://github.com/Mnexa-AI/e2a",
+    "repository": "https://github.com/Mnexa-AI/e2a"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://mcp.e2a.dev/mcp"
+    }
+  },
+  "name": "io.github.Mnexa-AI/mcp-server",
+  "provenance": {
+    "identity_key": "f9551480ac",
+    "published_at": "2026-05-22T01:56:35.813147Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Mnexa-AI/mcp-server",
+    "server_version": "0.3.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-22T01:56:35.813147Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Bearer token: accepts an e2a API key (e2a_\u2026) or OAuth 2.1 access token (ate2a_\u2026)",
+          "isRequired": true,
+          "name": "Authorization",
+          "value": "Bearer {e2a_api_key}",
+          "variables": {
+            "e2a_api_key": {
+              "description": "Your e2a API key from https://e2a.dev",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://mcp.e2a.dev/mcp"
+    }
+  ],
+  "title": "e2a \u2014 email for AI agents",
+  "type": "mcp_server",
+  "version": "0.3.2"
+}

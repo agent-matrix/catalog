@@ -1,0 +1,72 @@
+{
+  "description": "Zendesk MCP server for Model Context Protocol hosts",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:48+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mindstone-mcp-server-zendesk.stdio.6266cb37c1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mindstone/mcp-servers",
+    "homepage": "https://github.com/mindstone/mcp-servers",
+    "repository": "https://github.com/mindstone/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@mindstone/mcp-server-zendesk@0.3.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mindstone/mcp-server-zendesk",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "~/.mcp/zendesk",
+          "description": "Path to the config directory containing accounts.json and credentials/",
+          "format": "filepath",
+          "name": "ZENDESK_CONFIG_PATH"
+        },
+        {
+          "description": "Optional OAuth client ID for legacy token refresh flows",
+          "format": "string",
+          "name": "ZENDESK_CLIENT_ID"
+        },
+        {
+          "description": "Optional OAuth client secret for legacy token refresh flows",
+          "format": "string",
+          "isSecret": true,
+          "name": "ZENDESK_CLIENT_SECRET"
+        }
+      ],
+      "identifier": "@mindstone/mcp-server-zendesk",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6266cb37c1",
+    "published_at": "2026-05-21T11:27:58.794389Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mindstone/mcp-server-zendesk",
+    "server_version": "0.3.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-21T11:27:58.794389Z"
+  },
+  "title": "Zendesk",
+  "type": "mcp_server",
+  "version": "0.3.2"
+}

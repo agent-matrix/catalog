@@ -1,0 +1,100 @@
+{
+  "description": "MCP server for remote filesystem operations on cloud storage (Google Cloud Storage).",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:35+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-pulsemcp-remote-filesystem.stdio.e040c5b08b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/pulsemcp/mcp-servers",
+    "homepage": "https://github.com/pulsemcp/mcp-servers",
+    "repository": "https://github.com/pulsemcp/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y"
+          },
+          "remote-filesystem-mcp-server@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.pulsemcp/remote-filesystem",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Google Cloud Storage bucket name.",
+          "isRequired": true,
+          "name": "GCS_BUCKET"
+        },
+        {
+          "description": "Google Cloud project ID.",
+          "name": "GCS_PROJECT_ID"
+        },
+        {
+          "description": "Service account email for inline credentials.",
+          "name": "GCS_CLIENT_EMAIL"
+        },
+        {
+          "description": "Service account private key for inline credentials.",
+          "isSecret": true,
+          "name": "GCS_PRIVATE_KEY"
+        },
+        {
+          "description": "Path to Google Cloud service account key file.",
+          "name": "GOOGLE_APPLICATION_CREDENTIALS"
+        },
+        {
+          "description": "Root path prefix to restrict access within bucket.",
+          "name": "GCS_ROOT_PATH"
+        },
+        {
+          "default": "false",
+          "description": "Make uploaded files publicly accessible.",
+          "name": "GCS_MAKE_PUBLIC"
+        },
+        {
+          "description": "Comma-separated tool groups: readonly or readwrite.",
+          "name": "ENABLED_TOOLGROUPS"
+        }
+      ],
+      "identifier": "remote-filesystem-mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e040c5b08b",
+    "published_at": "2026-05-18T13:28:59.991989Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.pulsemcp/remote-filesystem",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-18T13:28:59.991989Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

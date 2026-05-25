@@ -1,0 +1,66 @@
+{
+  "description": "Syslog receiver and MCP server for homelab log intelligence.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:53+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.tv-tootie-syslog-mcp.stdio.80eb868a9c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jmagar/syslog-mcp",
+    "homepage": "https://github.com/jmagar/syslog-mcp",
+    "repository": "https://github.com/jmagar/syslog-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/jmagar/syslog-mcp:0.27.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "tv.tootie/syslog-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Hostname or IP of the syslog listener.",
+          "isRequired": true,
+          "name": "SYSLOG_HOST"
+        },
+        {
+          "description": "Bearer token for MCP endpoint authentication.",
+          "isSecret": true,
+          "name": "SYSLOG_MCP_TOKEN"
+        },
+        {
+          "description": "Syslog listener port (UDP + TCP). Default: 1514.",
+          "name": "SYSLOG_PORT"
+        }
+      ],
+      "identifier": "ghcr.io/jmagar/syslog-mcp:0.27.2",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "80eb868a9c",
+    "published_at": "2026-05-21T06:29:21.831562Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "tv.tootie/syslog-mcp",
+    "server_version": "0.27.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-21T06:29:21.831562Z"
+  },
+  "title": "Syslog MCP",
+  "type": "mcp_server",
+  "version": "0.27.2"
+}

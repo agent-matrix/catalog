@@ -1,0 +1,98 @@
+{
+  "description": "MCP server for interacting with 1Password via the CLI to read and manage credentials.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:35+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-pulsemcp-onepassword.stdio.040ca5313d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/pulsemcp/mcp-servers",
+    "homepage": "https://github.com/pulsemcp/mcp-servers",
+    "repository": "https://github.com/pulsemcp/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y"
+          },
+          "onepassword-mcp-server@0.5.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.pulsemcp/onepassword",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Service account token for authentication with 1Password CLI.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OP_SERVICE_ACCOUNT_TOKEN"
+        },
+        {
+          "description": "Comma-separated tool groups to enable (readonly, write).",
+          "name": "ENABLED_TOOLGROUPS"
+        },
+        {
+          "default": "false",
+          "description": "Skip credential validation on server startup.",
+          "name": "SKIP_HEALTH_CHECKS"
+        },
+        {
+          "description": "Bypass all credential approval prompts (exposes all secrets).",
+          "name": "DANGEROUSLY_SKIP_ELICITATIONS"
+        },
+        {
+          "default": "true",
+          "description": "Prompt for approval before revealing credentials.",
+          "name": "OP_ELICITATION_READ"
+        },
+        {
+          "default": "false",
+          "description": "Prompt for approval before creating or sharing items.",
+          "name": "OP_ELICITATION_WRITE"
+        },
+        {
+          "description": "Comma-separated item titles or IDs that bypass read elicitation.",
+          "name": "OP_WHITELISTED_ITEMS"
+        }
+      ],
+      "identifier": "onepassword-mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "040ca5313d",
+    "published_at": "2026-05-18T13:28:58.195269Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.pulsemcp/onepassword",
+    "server_version": "0.5.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-18T13:28:58.195269Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.5.3"
+}

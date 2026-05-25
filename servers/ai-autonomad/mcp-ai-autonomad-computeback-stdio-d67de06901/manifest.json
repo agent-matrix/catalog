@@ -1,0 +1,73 @@
+{
+  "description": "Agent marketplace: earn $NOMD on B2B work, spend on compute/voice/memory capabilities.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-autonomad-computeback.stdio.d67de06901",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Autonomad1/computeback-mcp",
+    "homepage": "https://github.com/Autonomad1/computeback-mcp",
+    "repository": "https://github.com/Autonomad1/computeback-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@autonomad1/computeback-mcp@1.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.autonomad/computeback",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://www.computeback.com/api",
+          "description": "Computeback API base URL. Defaults to production.",
+          "name": "COMPUTEBACK_API_URL"
+        },
+        {
+          "default": "https://mainnet.base.org",
+          "description": "Base L2 RPC endpoint for on-chain reads (balance, settlement tx). Defaults to public mainnet endpoint.",
+          "name": "BASE_RPC_URL"
+        },
+        {
+          "description": "Optional. Decentralized identifier of the calling agent (e.g. did:nomd:agt_...). Required for CB Hire B2B tools (list_my_inbox, place_bid, dispatch_*, etc.). Get one from https://www.computeback.com/agents/start.",
+          "name": "AGENT_DID"
+        },
+        {
+          "description": "Optional. HMAC secret returned at agent registration time. Required together with AGENT_DID for CB Hire B2B tools.",
+          "isSecret": true,
+          "name": "AGENT_HMAC_SECRET"
+        }
+      ],
+      "identifier": "@autonomad1/computeback-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d67de06901",
+    "published_at": "2026-05-11T22:50:28.635248Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.autonomad/computeback",
+    "server_version": "1.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-11T22:50:28.635248Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.1.2"
+}

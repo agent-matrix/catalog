@@ -1,0 +1,97 @@
+{
+  "description": "Slack MCP server: channels, messages, threads, reactions, users, files, and scheduled messages",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:48+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mindstone-mcp-server-slack.stdio.dd44efe011",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mindstone/mcp-servers",
+    "homepage": "https://github.com/mindstone/mcp-servers",
+    "repository": "https://github.com/mindstone/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@mindstone/mcp-server-slack@0.1.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mindstone/mcp-server-slack",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the host-managed Slack config directory",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "SLACK_CONFIG_PATH"
+        },
+        {
+          "description": "Slack workspace team ID (one process per workspace)",
+          "format": "string",
+          "isRequired": true,
+          "name": "SLACK_TEAM_ID"
+        },
+        {
+          "description": "Slack OAuth Connected App client ID",
+          "format": "string",
+          "isRequired": true,
+          "name": "SLACK_CLIENT_ID"
+        },
+        {
+          "description": "Slack OAuth Connected App client secret",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SLACK_CLIENT_SECRET"
+        },
+        {
+          "description": "Set to 1 to disable token refresh on this surface (cloud surface)",
+          "format": "string",
+          "name": "SLACK_DISABLE_REFRESH"
+        },
+        {
+          "default": "60000",
+          "description": "Override the upstream timeout (max 300000ms = 5 min)",
+          "format": "number",
+          "name": "SLACK_REQUEST_TIMEOUT_MS"
+        },
+        {
+          "default": "10",
+          "description": "WebClient retries on transient failures (0-20). Lower this on cloud to avoid stacking long retry budgets into multi-minute hangs.",
+          "format": "number",
+          "name": "SLACK_MAX_RETRIES"
+        }
+      ],
+      "identifier": "@mindstone/mcp-server-slack",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "dd44efe011",
+    "published_at": "2026-05-21T11:27:46.973124Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mindstone/mcp-server-slack",
+    "server_version": "0.1.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-21T11:27:46.973124Z"
+  },
+  "title": "Slack",
+  "type": "mcp_server",
+  "version": "0.1.3"
+}

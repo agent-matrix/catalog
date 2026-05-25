@@ -1,0 +1,118 @@
+{
+  "description": "Email IMAP/SMTP MCP server: iCloud, Gmail, Yahoo, Outlook, and custom IMAP providers",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:48+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mindstone-mcp-server-email-imap.stdio.1b3ed3110b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mindstone/mcp-servers",
+    "homepage": "https://github.com/mindstone/mcp-servers",
+    "repository": "https://github.com/mindstone/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@mindstone/mcp-server-email-imap@0.2.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mindstone/mcp-server-email-imap",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Email address",
+          "format": "string",
+          "isRequired": true,
+          "name": "EMAIL_IMAP_EMAIL"
+        },
+        {
+          "description": "App-specific password",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "EMAIL_IMAP_PASSWORD"
+        },
+        {
+          "description": "Provider \u2014 icloud, gmail, yahoo, outlook, or custom (auto-detected from email domain if unset)",
+          "format": "string",
+          "name": "EMAIL_IMAP_PROVIDER"
+        },
+        {
+          "description": "Custom IMAP host (for provider=custom)",
+          "format": "string",
+          "name": "EMAIL_IMAP_IMAP_HOST"
+        },
+        {
+          "description": "Custom SMTP host (for provider=custom)",
+          "format": "string",
+          "name": "EMAIL_IMAP_SMTP_HOST"
+        },
+        {
+          "default": "993",
+          "description": "Custom IMAP port",
+          "format": "number",
+          "name": "EMAIL_IMAP_IMAP_PORT"
+        },
+        {
+          "default": "587",
+          "description": "Custom SMTP port",
+          "format": "number",
+          "name": "EMAIL_IMAP_SMTP_PORT"
+        },
+        {
+          "description": "Set to 1 to opt into cleartext IMAP/SMTP (strongly discouraged)",
+          "format": "string",
+          "name": "EMAIL_IMAP_ALLOW_PLAINTEXT"
+        },
+        {
+          "default": "25",
+          "description": "Safety cap: maximum combined To+CC+BCC recipients per email_send call. Defaults to 25; raising bypasses spam-prevention guardrails against prompt-injection-driven mass sends.",
+          "format": "number",
+          "name": "EMAIL_IMAP_MAX_RECIPIENTS"
+        },
+        {
+          "default": "50",
+          "description": "Safety cap: maximum email_send calls per rolling window. Defaults to 50; protects against runaway sends when injection content escapes the LLM's intent.",
+          "format": "number",
+          "name": "EMAIL_IMAP_RATE_LIMIT_PER_HOUR"
+        },
+        {
+          "default": "3600000",
+          "description": "Sliding-window length for the rate limit (ms)",
+          "format": "number",
+          "name": "EMAIL_IMAP_RATE_LIMIT_WINDOW_MS"
+        }
+      ],
+      "identifier": "@mindstone/mcp-server-email-imap",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1b3ed3110b",
+    "published_at": "2026-05-21T11:26:29.806123Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mindstone/mcp-server-email-imap",
+    "server_version": "0.2.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-21T11:26:29.806123Z"
+  },
+  "title": "Email (IMAP/SMTP)",
+  "type": "mcp_server",
+  "version": "0.2.3"
+}

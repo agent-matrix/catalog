@@ -1,0 +1,60 @@
+{
+  "description": "Read-only Base mainnet reader. Verifies x402 payment settlements + AFTA federation status.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-tensorfeed-x402-base-mcp.stdio.14a34a8da0",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/RipperMercs/tensorfeed-x402-base-mcp",
+    "homepage": "https://github.com/RipperMercs/tensorfeed-x402-base-mcp",
+    "repository": "https://github.com/RipperMercs/tensorfeed-x402-base-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@tensorfeed/x402-base-mcp@0.1.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.tensorfeed/x402-base-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional Base mainnet RPC endpoint (Alchemy, Infura, etc) for higher rate limits. Must match the allowlist in src/rpc/allowlist.ts; non-allowlisted URLs fall back to public Base RPC with a stderr warning. Defaults to https://mainnet.base.org if unset.",
+          "isSecret": true,
+          "name": "TENSORFEED_RPC_URL"
+        }
+      ],
+      "identifier": "@tensorfeed/x402-base-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "14a34a8da0",
+    "published_at": "2026-05-12T03:56:24.094963Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.tensorfeed/x402-base-mcp",
+    "server_version": "0.1.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-12T03:56:24.094963Z"
+  },
+  "title": "TensorFeed x402 Base Reader",
+  "type": "mcp_server",
+  "version": "0.1.3"
+}

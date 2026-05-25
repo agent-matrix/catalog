@@ -1,0 +1,65 @@
+{
+  "description": "Drive a Krystal Voice Caller tenant from Claude, Cursor, or any MCP-aware agent.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-KrystalUnity-kvc-mcp.stdio.164efa0031",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/KrystalUnity/kvc-mcp",
+    "homepage": "https://github.com/KrystalUnity/kvc-mcp",
+    "repository": "https://github.com/KrystalUnity/kvc-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "kvc-mcp==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.KrystalUnity/kvc-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Bearer token starting with kvc_token_. Generate at https://krystalunity.com/voice/krystal-caller/dashboard/api-tokens",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "KVC_API_TOKEN"
+        },
+        {
+          "default": "https://krystalunity.com/api/admin/kvc",
+          "description": "API base URL (default https://krystalunity.com/api/admin/kvc).",
+          "name": "KVC_BASE_URL"
+        }
+      ],
+      "identifier": "kvc-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "164efa0031",
+    "published_at": "2026-05-22T20:22:00.649456Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.KrystalUnity/kvc-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-22T20:22:00.649456Z"
+  },
+  "title": "Krystal Voice Caller",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

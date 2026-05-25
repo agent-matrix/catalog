@@ -1,0 +1,136 @@
+{
+  "description": "Browser automation using Playwright with optional stealth mode to bypass anti-bot protection.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:35+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-pulsemcp-playwright-stealth.stdio.96f241808d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/pulsemcp/mcp-servers",
+    "homepage": "https://github.com/pulsemcp/mcp-servers",
+    "repository": "https://github.com/pulsemcp/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y"
+          },
+          "playwright-stealth-mcp-server@0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.pulsemcp/playwright-stealth",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "false",
+          "description": "Enable stealth mode with anti-detection measures.",
+          "name": "STEALTH_MODE"
+        },
+        {
+          "description": "Custom User-Agent string for stealth mode.",
+          "name": "STEALTH_USER_AGENT"
+        },
+        {
+          "default": "true",
+          "description": "Mask Linux in User-Agent as Windows to avoid fingerprint mismatch.",
+          "name": "STEALTH_MASK_LINUX"
+        },
+        {
+          "default": "en-US,en",
+          "description": "Custom locale for Accept-Language header in stealth mode.",
+          "name": "STEALTH_LOCALE"
+        },
+        {
+          "default": "true",
+          "description": "Run browser in headless mode.",
+          "name": "HEADLESS"
+        },
+        {
+          "default": "30000",
+          "description": "Default timeout for Playwright actions in milliseconds.",
+          "name": "TIMEOUT"
+        },
+        {
+          "default": "60000",
+          "description": "Default timeout for page navigation in milliseconds.",
+          "name": "NAVIGATION_TIMEOUT"
+        },
+        {
+          "default": "/tmp/playwright-screenshots",
+          "description": "Directory for storing screenshots.",
+          "name": "SCREENSHOT_STORAGE_PATH"
+        },
+        {
+          "default": "/tmp/playwright-videos",
+          "description": "Directory for storing video recordings.",
+          "name": "VIDEO_STORAGE_PATH"
+        },
+        {
+          "description": "Proxy server URL for connections.",
+          "name": "PROXY_URL"
+        },
+        {
+          "description": "Proxy authentication username.",
+          "isSecret": true,
+          "name": "PROXY_USERNAME"
+        },
+        {
+          "description": "Proxy authentication password.",
+          "isSecret": true,
+          "name": "PROXY_PASSWORD"
+        },
+        {
+          "description": "Comma-separated list of hosts to bypass proxy.",
+          "name": "PROXY_BYPASS"
+        },
+        {
+          "description": "Comma-separated list of browser permissions to grant.",
+          "name": "BROWSER_PERMISSIONS"
+        },
+        {
+          "default": "true",
+          "description": "Ignore HTTPS certificate errors.",
+          "name": "IGNORE_HTTPS_ERRORS"
+        }
+      ],
+      "identifier": "playwright-stealth-mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "96f241808d",
+    "published_at": "2026-05-18T13:28:58.5438Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.pulsemcp/playwright-stealth",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-18T13:28:58.5438Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

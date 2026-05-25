@@ -1,0 +1,79 @@
+{
+  "description": "Nano Banana MCP server \u2014 Google Gemini image generation and editing via Model Context Protocol",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:48+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mindstone-mcp-server-nano-banana.stdio.06ac11705c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mindstone/mcp-servers",
+    "homepage": "https://github.com/mindstone/mcp-servers",
+    "repository": "https://github.com/mindstone/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@mindstone/mcp-server-nano-banana@0.3.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mindstone/mcp-server-nano-banana",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Google Gemini API key",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GEMINI_API_KEY"
+        },
+        {
+          "description": "Workspace directory for saving generated images",
+          "format": "filepath",
+          "name": "MCP_WORKSPACE_PATH"
+        },
+        {
+          "default": "180000",
+          "description": "Outbound Gemini request timeout in milliseconds",
+          "format": "number",
+          "name": "NANO_BANANA_GEMINI_TIMEOUT_MS"
+        },
+        {
+          "default": "30000",
+          "description": "Host-bridge request timeout in milliseconds",
+          "format": "number",
+          "name": "NANO_BANANA_BRIDGE_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "@mindstone/mcp-server-nano-banana",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "06ac11705c",
+    "published_at": "2026-05-21T11:27:09.316077Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mindstone/mcp-server-nano-banana",
+    "server_version": "0.3.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-21T11:27:09.316077Z"
+  },
+  "title": "Nano Banana",
+  "type": "mcp_server",
+  "version": "0.3.2"
+}

@@ -1,0 +1,82 @@
+{
+  "description": "Pseudonymizes PII before your LLM and returns a cryptographically signed receipt per response.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Declade-lucairn-mcp-server.stdio.a0e6cd27a1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Declade/lucairn-sdks",
+    "homepage": "https://github.com/Declade/lucairn-sdks",
+    "repository": "https://github.com/Declade/lucairn-sdks"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@lucairn/mcp-server@1.2.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Declade/lucairn-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Lucairn gateway API key (lcr_live_*). Issued at https://lucairn.eu/account/keys. Free tier requires BYOK upstream LLM keys (ANTHROPIC_API_KEY or OPENAI_API_KEY).",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "LUCAIRN_API_KEY"
+        },
+        {
+          "description": "Upstream Anthropic API key. Used when the requested model is claude-* / anthropic-*. Required if you call Claude models on the free tier (BYOK).",
+          "format": "string",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        },
+        {
+          "description": "Upstream OpenAI API key. Used when the requested model routes to OpenAI. Required if you call OpenAI models on the free tier (BYOK).",
+          "format": "string",
+          "isSecret": true,
+          "name": "OPENAI_API_KEY"
+        },
+        {
+          "description": "Override the gateway URL. Defaults to https://gateway.lucairn.eu (production). Set this to point at a self-hosted Lucairn deployment.",
+          "format": "string",
+          "name": "LUCAIRN_BASE_URL"
+        },
+        {
+          "description": "Transport mode for the MCP server. One of 'direct-http' (default; v1.1+ behavior) or 'stdio-bridge' (v1.2+ opt-in).",
+          "format": "string",
+          "name": "LUCAIRN_TRANSPORT"
+        }
+      ],
+      "identifier": "@lucairn/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.2.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a0e6cd27a1",
+    "published_at": "2026-05-11T21:03:13.33982Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Declade/lucairn-mcp-server",
+    "server_version": "1.2.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-11T21:03:13.33982Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.2.4"
+}

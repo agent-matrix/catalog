@@ -1,0 +1,68 @@
+{
+  "description": "Auditable strategic-risk memos for AI agents: sanctions, regulatory, geopolitics, trade.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:52+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-vassiliylakhonin-agenda-intelligence-md.stdio.4c258cfbcf",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/vassiliylakhonin/agenda-intelligence-md",
+    "homepage": "https://github.com/vassiliylakhonin/agenda-intelligence-md",
+    "repository": "https://github.com/vassiliylakhonin/agenda-intelligence-md"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "agenda-intelligence-md==0.8.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.vassiliylakhonin/agenda-intelligence-md",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional. When set together with the [llm] extra (pip install 'agenda-intelligence-md[llm]'), the `analyze` tool calls the Anthropic API directly and returns a schema-validated memo. Without this key, `analyze` returns the assembled system_prompt for the host model to complete.",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        },
+        {
+          "description": "Optional. Anthropic model identifier used when ANTHROPIC_API_KEY is set. Defaults to a current Claude model.",
+          "name": "AGENDA_INTELLIGENCE_MODEL"
+        },
+        {
+          "description": "Optional. Max tokens for the Anthropic call from `analyze`. Defaults to 4096.",
+          "name": "AGENDA_INTELLIGENCE_MAX_TOKENS"
+        }
+      ],
+      "identifier": "agenda-intelligence-md",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.8.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4c258cfbcf",
+    "published_at": "2026-05-20T09:38:45.663726Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.vassiliylakhonin/agenda-intelligence-md",
+    "server_version": "0.8.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-20T09:38:45.663726Z"
+  },
+  "title": "Agenda Intelligence",
+  "type": "mcp_server",
+  "version": "0.8.2"
+}

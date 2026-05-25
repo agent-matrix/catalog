@@ -1,0 +1,83 @@
+{
+  "description": "MCP server for SpamTitan email security \u2014 quarantine, allow/block lists, and policy management.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:52+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wyre-technology-spamtitan-mcp.stdio.57eba0cef3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wyre-technology/spamtitan-mcp",
+    "homepage": "https://github.com/wyre-technology/spamtitan-mcp",
+    "repository": "https://github.com/wyre-technology/spamtitan-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-technology/spamtitan-mcp:v1.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wyre-technology/spamtitan-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "SpamTitan API base URL (e.g. https://spamtitan.example.com/api)",
+          "format": "string",
+          "isRequired": true,
+          "name": "SPAMTITAN_API_URL"
+        },
+        {
+          "description": "SpamTitan API key for authentication",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SPAMTITAN_API_KEY"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode for the server. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-technology/spamtitan-mcp:v1.2.2",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "57eba0cef3",
+    "published_at": "2026-05-18T22:23:01.344558Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wyre-technology/spamtitan-mcp",
+    "server_version": "1.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-18T22:23:01.344558Z"
+  },
+  "title": "SpamTitan",
+  "type": "mcp_server",
+  "version": "1.2.2"
+}

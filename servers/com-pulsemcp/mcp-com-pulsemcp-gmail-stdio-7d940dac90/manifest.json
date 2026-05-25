@@ -1,0 +1,97 @@
+{
+  "description": "MCP server for Gmail with OAuth2 (personal) and service account (Workspace) support.",
+  "harvest": {
+    "last_seen_at": "2026-05-25T06:45:35+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-pulsemcp-gmail.stdio.7d940dac90",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/pulsemcp/mcp-servers",
+    "homepage": "https://github.com/pulsemcp/mcp-servers",
+    "repository": "https://github.com/pulsemcp/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y"
+          },
+          "gmail-workspace-mcp-server@0.4.10"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.pulsemcp/gmail",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "OAuth2 client ID from Google Cloud Console (for personal Gmail accounts).",
+          "isSecret": true,
+          "name": "GMAIL_OAUTH_CLIENT_ID"
+        },
+        {
+          "description": "OAuth2 client secret from Google Cloud Console.",
+          "isSecret": true,
+          "name": "GMAIL_OAUTH_CLIENT_SECRET"
+        },
+        {
+          "description": "Refresh token from the OAuth2 setup script.",
+          "isSecret": true,
+          "name": "GMAIL_OAUTH_REFRESH_TOKEN"
+        },
+        {
+          "description": "Service account email address (for Google Workspace).",
+          "name": "GMAIL_SERVICE_ACCOUNT_CLIENT_EMAIL"
+        },
+        {
+          "description": "Service account private key in PEM format (for Google Workspace).",
+          "isSecret": true,
+          "name": "GMAIL_SERVICE_ACCOUNT_PRIVATE_KEY"
+        },
+        {
+          "description": "Email address to impersonate (required for service account mode).",
+          "name": "GMAIL_IMPERSONATE_EMAIL"
+        },
+        {
+          "description": "Comma-separated list of tool groups to enable (readonly, readwrite, readwrite_external).",
+          "name": "GMAIL_ENABLED_TOOLGROUPS"
+        }
+      ],
+      "identifier": "gmail-workspace-mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.10"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7d940dac90",
+    "published_at": "2026-05-18T13:28:55.171339Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.pulsemcp/gmail",
+    "server_version": "0.4.10",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-18T13:28:55.171339Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.4.10"
+}
