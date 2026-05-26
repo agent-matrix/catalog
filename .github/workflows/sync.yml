@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       force_pull_request:
-        description: "Force a Pull Request instead of direct push"
+        description: "Force a Pull Request instead of direct push (default: direct-push when healthy)"
         required: false
         type: boolean
         default: false
@@ -43,7 +43,7 @@ on:
         type: boolean
         default: true
       auto_merge:
-        description: "Automatically merge the resulting PR if promotion is healthy (tools>0 AND agents>0)"
+        description: "Automatically merge the resulting PR if direct-push falls back to PR mode"
         required: false
         type: boolean
         default: true
@@ -61,23 +61,23 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
+      # Use CATALOG_BOT_TOKEN if set (admin PAT that can bypass branch
+      # protection on main); otherwise GITHUB_TOKEN.
       EFFECTIVE_TOKEN: ${{ secrets.CATALOG_BOT_TOKEN || github.token }}
       REGISTRY_BASE_URL: ${{ inputs.registry_base_url || 'https://registry.modelcontextprotocol.io' }}
       GITHUB_SOURCE_REPO: ${{ inputs.github_source_repo || 'https://github.com/modelcontextprotocol/servers' }}
       LIMIT_SERVERS: ${{ inputs.limit_servers || '0' }}
       ENABLE_GITHUB_ENRICHMENT: ${{ inputs.enable_github_enrichment || false }}
-      # Default to PR mode for scheduled runs (safer); manual runs can flip via input.
-      FORCE_PR: ${{ inputs.force_pull_request || (github.event_name == 'schedule') }}
       SHRINK_THRESHOLD_PCT: ${{ inputs.shrink_threshold_pct || '50' }}
-      # BUGFIX: previous expression compared inputs.promote_tools to boolean
-      # `false`. On scheduled runs the input is null, and `null == false`
-      # evaluates to true in GitHub Actions expression syntax, so scheduled
-      # runs disabled promotion -- the OPPOSITE of the intended default.
-      # Comparing to the literal STRING 'false' fixes it for both
-      # scheduled (null) and manual-dispatch (true/false boolean) triggers.
+      # Promotion defaults. BUGFIX: previous expression compared
+      # inputs.promote_tools to boolean false. On scheduled runs the input
+      # is null, and null == false is true in GitHub Actions expressions,
+      # so scheduled runs disabled promotion (opposite of intent).
+      # Comparing to the literal STRING 'false' fixes both cases.
       PROMOTE_TOOLS:  ${{ inputs.promote_tools  == 'false' && 'false' || 'true' }}
       PROMOTE_AGENTS: ${{ inputs.promote_agents == 'false' && 'false' || 'true' }}
       AUTO_MERGE:     ${{ inputs.auto_merge     == 'false' && 'false' || 'true' }}
+      FORCE_PR:       ${{ inputs.force_pull_request == 'true' && 'true' || 'false' }}
 
     steps:
       - name: Checkout catalog
@@ -198,7 +198,7 @@ jobs:
               print(
                   "::warning::Promotion produced 0 tool entries despite "
                   f"{mcp_n} mcp_servers. Tools tab on matrixhub.io will be "
-                  "empty. Check that mcp_ingest is at a recent enough version."
+                  "empty. PR will be opened for human review."
               )
           PY
 
@@ -262,35 +262,71 @@ jobs:
             echo "has_changes=false" >> "$GITHUB_OUTPUT"
           fi
 
-      # OPTION 1: Direct Push — only when explicitly chosen via manual dispatch.
-      - name: Commit and Push (Direct)
-        if: steps.changes.outputs.has_changes == 'true' && env.FORCE_PR != 'true'
-        shell: bash
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A
-          git commit -m "chore(sync): catalog update (active=${{ steps.stats.outputs.active }} mcp=${{ steps.stats.outputs.mcp }} tools=${{ steps.stats.outputs.tools }} agents=${{ steps.stats.outputs.agents }})"
-          git push
-
-      # OPTION 2: Create Pull Request — DEFAULT for scheduled runs.
-      - name: Create Pull Request
-        if: steps.changes.outputs.has_changes == 'true' && env.FORCE_PR == 'true'
-        id: createpr
+      # ----------------------------------------------------------------------
+      # SHIP STEP — the entire commit/push/PR/merge decision tree in one place.
+      #
+      # The workflow has ALREADY validated:
+      #   • index.json structure
+      #   • shrink-guard (>= threshold retained)
+      # By this step we just need to act on the result. Decision tree:
+      #
+      #   has_changes == false               -> noop
+      #   tools == 0 OR agents == 0          -> open PR, label, comment (review)
+      #   force_pull_request == true         -> open PR, no auto-merge
+      #   auto_merge == false                -> open PR, no auto-merge
+      #   else (default for healthy runs)    -> direct push to main
+      #     if direct push is blocked        -> fall back: open PR, try auto-
+      #                                         merge, then immediate squash
+      #
+      # The default "direct push to main" path delivers full automation with
+      # zero operator intervention. The fallback PR path covers cases where
+      # main has branch protection that even CATALOG_BOT_TOKEN can't bypass.
+      # ----------------------------------------------------------------------
+      - name: Ship catalog update (direct push or PR + auto-merge)
+        if: steps.changes.outputs.has_changes == 'true'
+        id: ship
         shell: bash
         env:
           GH_TOKEN: ${{ env.EFFECTIVE_TOKEN }}
+          TOOLS:  ${{ steps.stats.outputs.tools }}
+          AGENTS: ${{ steps.stats.outputs.agents }}
+          MCP:    ${{ steps.stats.outputs.mcp }}
+          ACTIVE: ${{ steps.stats.outputs.active }}
+          TOTAL:  ${{ steps.stats.outputs.total }}
+          DEPRECATED: ${{ steps.stats.outputs.deprecated }}
+          EVENT:  ${{ github.event_name }}
         run: |
+          set -e
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          BRANCH="sync/registry-$(date -u +%Y%m%d-%H%M%S)"
-          git checkout -b "$BRANCH"
-
+          # Stage + commit on a detached working copy of the source branch.
           git add -A
-          git commit -m "chore(sync): catalog update from MCP Registry"
-          git push origin "$BRANCH"
+          COMMIT_MSG="chore(sync): catalog update (active=${ACTIVE} mcp=${MCP} tools=${TOOLS} agents=${AGENTS})"
+          git commit -m "${COMMIT_MSG}"
 
+          # ---- Decide mode ----
+          HEALTHY="true"
+          if [ "${TOOLS}" = "0" ] || [ "${AGENTS}" = "0" ]; then
+            HEALTHY="false"
+          fi
+
+          if [ "${HEALTHY}" != "true" ]; then
+            MODE="pr-review"
+            REASON="tools=${TOOLS} or agents=${AGENTS} — unhealthy, needs human review"
+          elif [ "${FORCE_PR}" = "true" ]; then
+            MODE="pr-explicit"
+            REASON="operator set force_pull_request=true"
+          elif [ "${AUTO_MERGE}" != "true" ]; then
+            MODE="pr-no-automerge"
+            REASON="operator set auto_merge=false"
+          else
+            MODE="direct"
+            REASON="healthy promotion + auto_merge — full automation"
+          fi
+          echo "Strategy: ${MODE} (${REASON})"
+
+          # ---- Build PR body once (used by all PR paths) ----
           PREV_ACTIVE="(none)"
           PREV_MCP="-"; PREV_TOOLS="-"; PREV_AGENTS="-"
           if [ -f /tmp/prev_index.json ]; then
@@ -304,88 +340,127 @@ jobs:
 
           | metric | before | after |
           |---|---|---|
-          | active_manifests | ${PREV_ACTIVE} | ${{ steps.stats.outputs.active }} |
-          | total_items      | -              | ${{ steps.stats.outputs.total }}  |
-          | deprecated       | -              | ${{ steps.stats.outputs.deprecated }} |
-          | **mcp_server**   | ${PREV_MCP}    | ${{ steps.stats.outputs.mcp }}    |
-          | **tool**         | ${PREV_TOOLS}  | ${{ steps.stats.outputs.tools }}  |
-          | **agent**        | ${PREV_AGENTS} | ${{ steps.stats.outputs.agents }} |
+          | active_manifests | ${PREV_ACTIVE} | ${ACTIVE} |
+          | total_items      | -              | ${TOTAL}  |
+          | deprecated       | -              | ${DEPRECATED} |
+          | **mcp_server**   | ${PREV_MCP}    | ${MCP}    |
+          | **tool**         | ${PREV_TOOLS}  | ${TOOLS}  |
+          | **agent**        | ${PREV_AGENTS} | ${AGENTS} |
 
-          Triggered by: \`${{ github.event_name }}\`
-          Registry: \`${{ env.REGISTRY_BASE_URL }}\`
+          Triggered by: \`${EVENT}\`
+          Registry: \`${REGISTRY_BASE_URL}\`
           Promotion: tools=\`${PROMOTE_TOOLS}\` agents=\`${PROMOTE_AGENTS}\`
-
-          The \`tool\` and \`agent\` rows above feed the matrixhub.io
-          homepage tabs. If either drops to 0, this PR will NOT be
-          merged automatically and must be reviewed by a human.
+          Strategy: \`${MODE}\` — ${REASON}
           EOF
 
-          PR_URL=$(gh pr create \
-            --base main \
-            --head "$BRANCH" \
-            --title "chore(sync): catalog update (mcp=${{ steps.stats.outputs.mcp }} tools=${{ steps.stats.outputs.tools }} agents=${{ steps.stats.outputs.agents }})" \
-            --body-file /tmp/pr_body.md)
-          echo "pr_url=${PR_URL}" >> "$GITHUB_OUTPUT"
+          # ---- Helper: open a PR from current HEAD ----
+          open_pr() {
+            local title="$1"
+            local extra_body="$2"
+            local branch="sync/registry-$(date -u +%Y%m%d-%H%M%S)"
+            git checkout -b "$branch"
+            git push origin "$branch"
+            if [ -n "$extra_body" ]; then
+              echo "" >> /tmp/pr_body.md
+              echo "$extra_body" >> /tmp/pr_body.md
+            fi
+            gh pr create \
+              --base main \
+              --head "$branch" \
+              --title "$title" \
+              --body-file /tmp/pr_body.md
+          }
 
-      # OPTION 2b: Merge the PR automatically when promotion is healthy.
-      #
-      # The workflow has ALREADY validated everything that matters at this
-      # point: index.json structure (Validate step), no shrink (Shrink-guard
-      # step), and tools>0 AND agents>0 (this step's `if:`). So an immediate
-      # squash merge is safe.
-      #
-      # Strategy: try `--auto` first (waits for any branch-protection checks).
-      # If the repository setting "Allow auto-merge" is OFF, the GraphQL
-      # call fails -- catch that and fall back to an immediate squash merge.
-      # Neither path requires manual operator action.
-      - name: Merge PR (only if tools>0 AND agents>0)
-        if: |
-          steps.changes.outputs.has_changes == 'true'
-          && env.FORCE_PR == 'true'
-          && env.AUTO_MERGE == 'true'
-          && steps.stats.outputs.tools  != '0'
-          && steps.stats.outputs.agents != '0'
-          && steps.createpr.outputs.pr_url != ''
+          # ---- Helper: try to auto-merge a PR with fallback to immediate ----
+          try_merge() {
+            local pr_url="$1"
+            echo "Attempting auto-merge on ${pr_url}"
+            set +e
+            gh pr merge --auto --squash --delete-branch "${pr_url}" 2>/tmp/merge_err.log
+            local rc=$?
+            set -e
+            if [ $rc -eq 0 ]; then
+              echo "✅ Auto-merge armed — will merge once any checks pass."
+              return 0
+            fi
+            cat /tmp/merge_err.log
+            echo "⚠️ Auto-merge unavailable. Trying immediate squash merge."
+            set +e
+            gh pr merge --squash --delete-branch "${pr_url}" 2>/tmp/merge_err.log
+            local rc2=$?
+            set -e
+            if [ $rc2 -eq 0 ]; then
+              echo "✅ Immediate squash merge succeeded."
+              return 0
+            fi
+            echo "⚠️ Both merge attempts failed:"
+            cat /tmp/merge_err.log
+            echo "   PR is left open at ${pr_url} for a human to merge."
+            return 1
+          }
+
+          # ---- Execute chosen mode ----
+          case "${MODE}" in
+            direct)
+              echo "Pushing directly to main…"
+              set +e
+              git push origin HEAD:main 2>/tmp/push_err.log
+              PUSH_RC=$?
+              set -e
+              if [ $PUSH_RC -eq 0 ]; then
+                echo "✅ Direct push to main succeeded — fully automated."
+                echo "mode=direct" >> "$GITHUB_OUTPUT"
+                exit 0
+              fi
+              echo "::warning::Direct push to main was blocked. Reason:"
+              cat /tmp/push_err.log
+              echo "::warning::Falling back to PR + auto-merge."
+              PR_URL=$(open_pr \
+                "chore(sync): catalog update (mcp=${MCP} tools=${TOOLS} agents=${AGENTS})" \
+                "_Direct push to main was blocked; falling back to PR with auto-merge._")
+              echo "pr_url=${PR_URL}" >> "$GITHUB_OUTPUT"
+              echo "mode=pr-fallback" >> "$GITHUB_OUTPUT"
+              try_merge "${PR_URL}" || true
+              ;;
+            pr-explicit|pr-no-automerge)
+              PR_URL=$(open_pr \
+                "chore(sync): catalog update (mcp=${MCP} tools=${TOOLS} agents=${AGENTS})" \
+                "")
+              echo "pr_url=${PR_URL}" >> "$GITHUB_OUTPUT"
+              echo "mode=${MODE}" >> "$GITHUB_OUTPUT"
+              if [ "${MODE}" = "pr-explicit" ] && [ "${AUTO_MERGE}" = "true" ]; then
+                try_merge "${PR_URL}" || true
+              fi
+              ;;
+            pr-review)
+              PR_URL=$(open_pr \
+                "chore(sync): catalog update (mcp=${MCP} tools=${TOOLS} agents=${AGENTS}) — NEEDS REVIEW" \
+                $'\n⚠️ **Promotion produced empty buckets.** This PR is left open for human review. Merging it would empty the Tools and/or Agents tabs on matrixhub.io. Close it and re-run the workflow with promotion enabled.')
+              echo "pr_url=${PR_URL}" >> "$GITHUB_OUTPUT"
+              echo "mode=pr-review" >> "$GITHUB_OUTPUT"
+              gh pr edit "${PR_URL}" --add-label "needs-review,promotion-empty" || true
+              gh pr comment "${PR_URL}" --body "⚠️ Auto-merge skipped — promotion produced tools=${TOOLS} and agents=${AGENTS}. Human review required." || true
+              ;;
+          esac
+
+      - name: Summary
+        if: always() && steps.changes.outputs.has_changes == 'true'
         shell: bash
-        env:
-          GH_TOKEN: ${{ env.EFFECTIVE_TOKEN }}
-          PR_URL: ${{ steps.createpr.outputs.pr_url }}
         run: |
-          set +e
-          echo "Attempting auto-merge on ${PR_URL}"
-          AUTO_OUT=$(gh pr merge --auto --squash "${PR_URL}" 2>&1)
-          AUTO_RC=$?
-          set -e
-
-          if [ "${AUTO_RC}" -eq 0 ]; then
-            echo "✅ Auto-merge enabled — PR will merge once branch protections clear."
-            exit 0
-          fi
-
-          echo "${AUTO_OUT}"
-          echo "⚠️ Auto-merge unavailable (likely 'Allow auto-merge' is OFF in repo settings)."
-          echo "   Falling back to immediate squash merge — the workflow has already validated:"
-          echo "     • index.json structure"
-          echo "     • shrink-guard (>=${SHRINK_THRESHOLD_PCT}% retained)"
-          echo "     • tools=${{ steps.stats.outputs.tools }} > 0"
-          echo "     • agents=${{ steps.stats.outputs.agents }} > 0"
-
-          gh pr merge --squash --delete-branch "${PR_URL}"
-          echo "✅ PR merged via immediate squash."
-
-      - name: Flag PR for human review (tools=0 or agents=0)
-        if: |
-          steps.changes.outputs.has_changes == 'true'
-          && env.FORCE_PR == 'true'
-          && (steps.stats.outputs.tools == '0' || steps.stats.outputs.agents == '0')
-          && steps.createpr.outputs.pr_url != ''
-        shell: bash
-        env:
-          GH_TOKEN: ${{ env.EFFECTIVE_TOKEN }}
-        run: |
-          echo "::warning::tools=${{ steps.stats.outputs.tools }} agents=${{ steps.stats.outputs.agents }} — PR left open for human review"
-          gh pr edit "${{ steps.createpr.outputs.pr_url }}" --add-label "needs-review,promotion-empty" || true
-          gh pr comment "${{ steps.createpr.outputs.pr_url }}" --body $'⚠️ **Auto-merge skipped** — promotion produced `tools=${{ steps.stats.outputs.tools }}` and `agents=${{ steps.stats.outputs.agents }}`.\n\nMerging this PR would empty the Tools and/or Agents tabs on matrixhub.io. A human must review and either merge intentionally or close this PR and re-run the workflow with promotion enabled.' || true
+          {
+            echo "### Catalog sync result"
+            echo ""
+            echo "| field | value |"
+            echo "|---|---|"
+            echo "| mode | \`${{ steps.ship.outputs.mode || 'unknown' }}\` |"
+            echo "| mcp_server | ${{ steps.stats.outputs.mcp }} |"
+            echo "| tool | ${{ steps.stats.outputs.tools }} |"
+            echo "| agent | ${{ steps.stats.outputs.agents }} |"
+            echo "| active | ${{ steps.stats.outputs.active }} |"
+            if [ -n "${{ steps.ship.outputs.pr_url }}" ]; then
+              echo "| pr | ${{ steps.ship.outputs.pr_url }} |"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Failure summary
         if: failure()
@@ -401,4 +476,5 @@ jobs:
             echo "- Registry API outage or schema change"
             echo "- Shrink-guard tripped (active count dropped > ${SHRINK_THRESHOLD_PCT:-50}%)"
             echo "- mcp_ingest install failed (check the Install step logs)"
+            echo "- Branch protection on main + no CATALOG_BOT_TOKEN with bypass perms (Ship step)"
           } >> "$GITHUB_STEP_SUMMARY"
