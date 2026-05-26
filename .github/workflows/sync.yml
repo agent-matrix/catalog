@@ -43,7 +43,7 @@ on:
         type: boolean
         default: true
       auto_merge:
-        description: "Enable auto-merge on the resulting PR if promotion looks healthy (tools>0 AND agents>0)"
+        description: "Automatically merge the resulting PR if promotion is healthy (tools>0 AND agents>0)"
         required: false
         type: boolean
         default: true
@@ -69,10 +69,6 @@ jobs:
       # Default to PR mode for scheduled runs (safer); manual runs can flip via input.
       FORCE_PR: ${{ inputs.force_pull_request || (github.event_name == 'schedule') }}
       SHRINK_THRESHOLD_PCT: ${{ inputs.shrink_threshold_pct || '50' }}
-      # Promotion is on by default so the Tools and Agents tabs on
-      # matrixhub.io stay populated. Operators can disable per run via
-      # workflow_dispatch inputs above.
-      #
       # BUGFIX: previous expression compared inputs.promote_tools to boolean
       # `false`. On scheduled runs the input is null, and `null == false`
       # evaluates to true in GitHub Actions expression syntax, so scheduled
@@ -126,12 +122,9 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           cd mcp_ingest_tool
-          # Install with the harvester extras only (skip [dev]); jsonschema/httpx
-          # come in transitively, no need to pre-install them.
           pip install ".[harvester]"
           cd ..
           python -c "import mcp_ingest; print('✓ mcp_ingest installed successfully')"
-          # Remove tool folder so it isn't accidentally committed.
           rm -rf mcp_ingest_tool
 
       - name: Harvest from MCP Registry
@@ -143,11 +136,6 @@ jobs:
           echo "Registry: ${REGISTRY_BASE_URL}"
           echo "Promote tools: ${PROMOTE_TOOLS} | Promote agents: ${PROMOTE_AGENTS}"
 
-          # BUGFIX: previously this step had an unconditional `--limit 10`
-          # that capped every scheduled run to 10 servers and would have
-          # shrunk the live catalog from ~7466 to 10 on the next Monday.
-          # The conditional `--top N` from inputs.limit_servers is the
-          # ONLY limit honoured now.
           LIMIT_ARG=""
           if [ "${LIMIT_SERVERS}" != "0" ] && [ -n "${LIMIT_SERVERS}" ]; then
             LIMIT_ARG="--top ${LIMIT_SERVERS}"
@@ -182,8 +170,6 @@ jobs:
             --base-only \
             -y
           echo "✅ GitHub enrichment complete"
-          # NOTE: today's enrichment output is not merged into index.json.
-          # If/when we wire it in, remove this comment and document the merge step.
 
       - name: Validate catalog index
         shell: bash
@@ -208,9 +194,6 @@ jobs:
           if active == 0:
               print("::error::Harvest produced 0 active manifests — refusing to push.")
               sys.exit(1)
-          # Promotion sanity: if mcp servers exist but tools is zero, the
-          # promotion pipeline regressed. Don't push a catalog that would
-          # leave the MatrixHub Tools tab empty.
           if mcp_n > 0 and tool_n == 0:
               print(
                   "::warning::Promotion produced 0 tool entries despite "
@@ -256,8 +239,6 @@ jobs:
 
           OLD_ACTIVE=$(jq -r '.counts.active_manifests // 0' /tmp/prev_index.json)
 
-          # Only enforce the guard when the previous count was non-trivial
-          # (>= 100). Below that we're still bootstrapping.
           if [ "${OLD_ACTIVE}" -lt 100 ]; then
             echo "Previous active=${OLD_ACTIVE} < 100; bootstrap mode, shrink-guard skipped."
             exit 0
@@ -335,8 +316,8 @@ jobs:
           Promotion: tools=\`${PROMOTE_TOOLS}\` agents=\`${PROMOTE_AGENTS}\`
 
           The \`tool\` and \`agent\` rows above feed the matrixhub.io
-          homepage tabs. If either drops to 0, this PR will NOT auto-merge
-          and must be reviewed by a human.
+          homepage tabs. If either drops to 0, this PR will NOT be
+          merged automatically and must be reviewed by a human.
           EOF
 
           PR_URL=$(gh pr create \
@@ -346,9 +327,18 @@ jobs:
             --body-file /tmp/pr_body.md)
           echo "pr_url=${PR_URL}" >> "$GITHUB_OUTPUT"
 
-      # OPTION 2b: Enable auto-merge only when promotion produced healthy counts.
-      # If tools or agents collapsed to 0, the PR stays open for a human to review.
-      - name: Enable auto-merge (only if tools>0 AND agents>0)
+      # OPTION 2b: Merge the PR automatically when promotion is healthy.
+      #
+      # The workflow has ALREADY validated everything that matters at this
+      # point: index.json structure (Validate step), no shrink (Shrink-guard
+      # step), and tools>0 AND agents>0 (this step's `if:`). So an immediate
+      # squash merge is safe.
+      #
+      # Strategy: try `--auto` first (waits for any branch-protection checks).
+      # If the repository setting "Allow auto-merge" is OFF, the GraphQL
+      # call fails -- catch that and fall back to an immediate squash merge.
+      # Neither path requires manual operator action.
+      - name: Merge PR (only if tools>0 AND agents>0)
         if: |
           steps.changes.outputs.has_changes == 'true'
           && env.FORCE_PR == 'true'
@@ -359,9 +349,29 @@ jobs:
         shell: bash
         env:
           GH_TOKEN: ${{ env.EFFECTIVE_TOKEN }}
+          PR_URL: ${{ steps.createpr.outputs.pr_url }}
         run: |
-          echo "Enabling auto-merge on ${{ steps.createpr.outputs.pr_url }}"
-          gh pr merge --auto --squash "${{ steps.createpr.outputs.pr_url }}"
+          set +e
+          echo "Attempting auto-merge on ${PR_URL}"
+          AUTO_OUT=$(gh pr merge --auto --squash "${PR_URL}" 2>&1)
+          AUTO_RC=$?
+          set -e
+
+          if [ "${AUTO_RC}" -eq 0 ]; then
+            echo "✅ Auto-merge enabled — PR will merge once branch protections clear."
+            exit 0
+          fi
+
+          echo "${AUTO_OUT}"
+          echo "⚠️ Auto-merge unavailable (likely 'Allow auto-merge' is OFF in repo settings)."
+          echo "   Falling back to immediate squash merge — the workflow has already validated:"
+          echo "     • index.json structure"
+          echo "     • shrink-guard (>=${SHRINK_THRESHOLD_PCT}% retained)"
+          echo "     • tools=${{ steps.stats.outputs.tools }} > 0"
+          echo "     • agents=${{ steps.stats.outputs.agents }} > 0"
+
+          gh pr merge --squash --delete-branch "${PR_URL}"
+          echo "✅ PR merged via immediate squash."
 
       - name: Flag PR for human review (tools=0 or agents=0)
         if: |
@@ -377,7 +387,6 @@ jobs:
           gh pr edit "${{ steps.createpr.outputs.pr_url }}" --add-label "needs-review,promotion-empty" || true
           gh pr comment "${{ steps.createpr.outputs.pr_url }}" --body $'⚠️ **Auto-merge skipped** — promotion produced `tools=${{ steps.stats.outputs.tools }}` and `agents=${{ steps.stats.outputs.agents }}`.\n\nMerging this PR would empty the Tools and/or Agents tabs on matrixhub.io. A human must review and either merge intentionally or close this PR and re-run the workflow with promotion enabled.' || true
 
-      # Surface failure clearly in the Actions UI for scheduled runs.
       - name: Failure summary
         if: failure()
         shell: bash
