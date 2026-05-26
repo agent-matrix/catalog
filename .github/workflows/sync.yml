@@ -42,6 +42,11 @@ on:
         required: false
         type: boolean
         default: true
+      auto_merge:
+        description: "Enable auto-merge on the resulting PR if promotion looks healthy (tools>0 AND agents>0)"
+        required: false
+        type: boolean
+        default: true
 
 concurrency:
   group: sync-catalog-from-registry
@@ -67,8 +72,16 @@ jobs:
       # Promotion is on by default so the Tools and Agents tabs on
       # matrixhub.io stay populated. Operators can disable per run via
       # workflow_dispatch inputs above.
-      PROMOTE_TOOLS: ${{ inputs.promote_tools == false && 'false' || 'true' }}
-      PROMOTE_AGENTS: ${{ inputs.promote_agents == false && 'false' || 'true' }}
+      #
+      # BUGFIX: previous expression compared inputs.promote_tools to boolean
+      # `false`. On scheduled runs the input is null, and `null == false`
+      # evaluates to true in GitHub Actions expression syntax, so scheduled
+      # runs disabled promotion -- the OPPOSITE of the intended default.
+      # Comparing to the literal STRING 'false' fixes it for both
+      # scheduled (null) and manual-dispatch (true/false boolean) triggers.
+      PROMOTE_TOOLS:  ${{ inputs.promote_tools  == 'false' && 'false' || 'true' }}
+      PROMOTE_AGENTS: ${{ inputs.promote_agents == 'false' && 'false' || 'true' }}
+      AUTO_MERGE:     ${{ inputs.auto_merge     == 'false' && 'false' || 'true' }}
 
     steps:
       - name: Checkout catalog
@@ -282,6 +295,7 @@ jobs:
       # OPTION 2: Create Pull Request — DEFAULT for scheduled runs.
       - name: Create Pull Request
         if: steps.changes.outputs.has_changes == 'true' && env.FORCE_PR == 'true'
+        id: createpr
         shell: bash
         env:
           GH_TOKEN: ${{ env.EFFECTIVE_TOKEN }}
@@ -321,16 +335,47 @@ jobs:
           Promotion: tools=\`${PROMOTE_TOOLS}\` agents=\`${PROMOTE_AGENTS}\`
 
           The \`tool\` and \`agent\` rows above feed the matrixhub.io
-          homepage tabs. If either drops to 0, investigate before merging.
-
-          Auto-merge once CI is green and no reviewer flags an unexpected drop.
+          homepage tabs. If either drops to 0, this PR will NOT auto-merge
+          and must be reviewed by a human.
           EOF
 
-          gh pr create \
+          PR_URL=$(gh pr create \
             --base main \
             --head "$BRANCH" \
             --title "chore(sync): catalog update (mcp=${{ steps.stats.outputs.mcp }} tools=${{ steps.stats.outputs.tools }} agents=${{ steps.stats.outputs.agents }})" \
-            --body-file /tmp/pr_body.md
+            --body-file /tmp/pr_body.md)
+          echo "pr_url=${PR_URL}" >> "$GITHUB_OUTPUT"
+
+      # OPTION 2b: Enable auto-merge only when promotion produced healthy counts.
+      # If tools or agents collapsed to 0, the PR stays open for a human to review.
+      - name: Enable auto-merge (only if tools>0 AND agents>0)
+        if: |
+          steps.changes.outputs.has_changes == 'true'
+          && env.FORCE_PR == 'true'
+          && env.AUTO_MERGE == 'true'
+          && steps.stats.outputs.tools  != '0'
+          && steps.stats.outputs.agents != '0'
+          && steps.createpr.outputs.pr_url != ''
+        shell: bash
+        env:
+          GH_TOKEN: ${{ env.EFFECTIVE_TOKEN }}
+        run: |
+          echo "Enabling auto-merge on ${{ steps.createpr.outputs.pr_url }}"
+          gh pr merge --auto --squash "${{ steps.createpr.outputs.pr_url }}"
+
+      - name: Flag PR for human review (tools=0 or agents=0)
+        if: |
+          steps.changes.outputs.has_changes == 'true'
+          && env.FORCE_PR == 'true'
+          && (steps.stats.outputs.tools == '0' || steps.stats.outputs.agents == '0')
+          && steps.createpr.outputs.pr_url != ''
+        shell: bash
+        env:
+          GH_TOKEN: ${{ env.EFFECTIVE_TOKEN }}
+        run: |
+          echo "::warning::tools=${{ steps.stats.outputs.tools }} agents=${{ steps.stats.outputs.agents }} — PR left open for human review"
+          gh pr edit "${{ steps.createpr.outputs.pr_url }}" --add-label "needs-review,promotion-empty" || true
+          gh pr comment "${{ steps.createpr.outputs.pr_url }}" --body $'⚠️ **Auto-merge skipped** — promotion produced `tools=${{ steps.stats.outputs.tools }}` and `agents=${{ steps.stats.outputs.agents }}`.\n\nMerging this PR would empty the Tools and/or Agents tabs on matrixhub.io. A human must review and either merge intentionally or close this PR and re-run the workflow with promotion enabled.' || true
 
       # Surface failure clearly in the Actions UI for scheduled runs.
       - name: Failure summary
