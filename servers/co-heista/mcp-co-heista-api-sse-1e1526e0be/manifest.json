@@ -1,0 +1,55 @@
+{
+  "description": "Decode video ads, load brand intelligence, generate ad scripts.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:39:50+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.co-heista-api.sse.1e1526e0be",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Heista-co/heista-mcp",
+    "homepage": "https://github.com/Heista-co/heista-mcp",
+    "repository": "https://github.com/Heista-co/heista-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://www.heista.co/api/mcp/mcp"
+    }
+  },
+  "name": "co.heista/api",
+  "provenance": {
+    "identity_key": "1e1526e0be",
+    "published_at": "2026-05-11T04:18:46.865402Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "co.heista/api",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-11T04:18:46.865402Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {API_KEY}"
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://www.heista.co/api/mcp/mcp",
+      "variables": {
+        "API_KEY": {
+          "description": "Optional Heista API key (hst_live_* or hst_test_*). Leave blank to use OAuth 2.1 \u2014 the server returns RFC 9728 metadata pointing to the authorization server.",
+          "format": "string",
+          "isSecret": true
+        }
+      }
+    }
+  ],
+  "title": "Heista",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

@@ -1,0 +1,75 @@
+{
+  "description": "MCP server for Slack \u2014 read/write messages, manage threads, and react to messages.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:39:53+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-pulsemcp-slack.stdio.dbaed39730",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/pulsemcp/mcp-servers",
+    "homepage": "https://github.com/pulsemcp/mcp-servers",
+    "repository": "https://github.com/pulsemcp/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y"
+          },
+          "slack-workspace-mcp-server@0.0.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.pulsemcp/slack",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Slack Bot User OAuth Token starting with xoxb-.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SLACK_BOT_TOKEN"
+        },
+        {
+          "description": "Comma-separated list of tool groups to enable (readonly, write).",
+          "name": "ENABLED_TOOLGROUPS"
+        }
+      ],
+      "identifier": "slack-workspace-mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.0.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "dbaed39730",
+    "published_at": "2026-05-18T13:29:00.977824Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.pulsemcp/slack",
+    "server_version": "0.0.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-18T13:29:00.977824Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.0.6"
+}

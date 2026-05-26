@@ -1,0 +1,78 @@
+{
+  "description": "Runtime constitutional verification for AI answers \u2014 claim reasoning, ECS, red team, audits.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:00+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-TheBarmaEffect-glassbox-framework.stdio.07c9523c7e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/TheBarmaEffect/glassbox",
+    "homepage": "https://github.com/TheBarmaEffect/glassbox",
+    "repository": "https://github.com/TheBarmaEffect/glassbox"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@glassbox-framework/mcp@1.0.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.TheBarmaEffect/glassbox-framework",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your Anthropic API key (sk-ant-...). Required for the claim extractor, red team, constitution engines, and ECS coherence checks. One v1 tool (generate_trust_card) works without an API key \u2014 it's pure assembly + deterministic audit hashing.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        },
+        {
+          "default": "claude-sonnet-4-6",
+          "description": "Override the Claude model used by the verification engines. Defaults to claude-sonnet-4-6.",
+          "format": "string",
+          "name": "GLASSBOX_MODEL"
+        },
+        {
+          "default": "2048",
+          "description": "Per-engine-call max-tokens cap. Defaults to 2048; raise for verifying long-form content.",
+          "format": "string",
+          "name": "GLASSBOX_MAX_TOKENS"
+        },
+        {
+          "default": "arithmetic",
+          "description": "ECS aggregation mode: arithmetic (weighted mean, default) or geometric (stricter \u2014 any zero dimension collapses the total).",
+          "format": "string",
+          "name": "GLASSBOX_ECS_MODE"
+        }
+      ],
+      "identifier": "@glassbox-framework/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "07c9523c7e",
+    "published_at": "2026-05-25T07:33:36.953422Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.TheBarmaEffect/glassbox-framework",
+    "server_version": "1.0.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-25T07:33:36.953422Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.3"
+}

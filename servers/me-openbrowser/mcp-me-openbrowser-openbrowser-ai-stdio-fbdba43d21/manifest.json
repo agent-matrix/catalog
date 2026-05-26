@@ -1,0 +1,94 @@
+{
+  "description": "AI browser automation. Write async Python to navigate, click, type, and extract data.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:21+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.me-openbrowser-openbrowser-ai.stdio.fbdba43d21",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/billy-enrizky/openbrowser-ai.git",
+    "homepage": "https://github.com/billy-enrizky/openbrowser-ai.git",
+    "repository": "https://github.com/billy-enrizky/openbrowser-ai.git"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "openbrowser-ai==0.1.42"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "me.openbrowser/openbrowser-ai",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "true",
+          "description": "Run browser in headless mode (true/false)",
+          "name": "OPENBROWSER_HEADLESS"
+        },
+        {
+          "description": "Comma-separated list of allowed domains (empty for no restrictions)",
+          "name": "OPENBROWSER_ALLOWED_DOMAINS"
+        },
+        {
+          "default": "~/.config/openbrowser/profiles/default",
+          "description": "Chrome profile directory for persistent browser sessions",
+          "name": "OPENBROWSER_USER_DATA_DIR"
+        },
+        {
+          "default": "~/.config/openbrowser/profiles/default/storage_state.json",
+          "description": "JSON file used to save and restore cookies plus localStorage between MCP restarts",
+          "name": "OPENBROWSER_STORAGE_STATE"
+        },
+        {
+          "default": "false",
+          "description": "Use minimal tool description (~500 tokens instead of ~1,430)",
+          "name": "OPENBROWSER_COMPACT_DESCRIPTION"
+        },
+        {
+          "default": "10000",
+          "description": "Maximum output characters per code execution (default: 10000)",
+          "name": "OPENBROWSER_MAX_OUTPUT"
+        },
+        {
+          "default": "true",
+          "description": "Enable anonymized usage telemetry (true/false)",
+          "name": "ANONYMIZED_TELEMETRY"
+        }
+      ],
+      "identifier": "openbrowser-ai",
+      "packageArguments": [
+        {
+          "name": "--mcp",
+          "type": "named"
+        }
+      ],
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.42"
+    }
+  ],
+  "provenance": {
+    "identity_key": "fbdba43d21",
+    "published_at": "2026-05-21T01:18:21.13458Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "me.openbrowser/openbrowser-ai",
+    "server_version": "0.1.42",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-21T01:18:21.13458Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.42"
+}

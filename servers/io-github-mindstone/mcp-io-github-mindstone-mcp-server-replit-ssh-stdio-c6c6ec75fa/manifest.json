@@ -1,0 +1,71 @@
+{
+  "description": "Read, write, list, and check files on Replit projects over SSH/SFTP, plus SSH key setup.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mindstone-mcp-server-replit-ssh.stdio.c6c6ec75fa",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mindstone/mcp-servers",
+    "homepage": "https://github.com/mindstone/mcp-servers",
+    "repository": "https://github.com/mindstone/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@mindstone/mcp-server-replit-ssh@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mindstone/mcp-server-replit-ssh",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "60000",
+          "description": "Optional per-request timeout in milliseconds (default 60000, max 600000).",
+          "format": "number",
+          "name": "REPLIT_SSH_REQUEST_TIMEOUT_MS"
+        },
+        {
+          "description": "Set to 1 to require pre-populated known-hosts entries. When unset (default), unknown hosts are recorded on first contact (OpenSSH `accept-new` behaviour); a fingerprint mismatch always fails closed.",
+          "format": "string",
+          "name": "MCP_REPLIT_SSH_STRICT_HOST_KEY"
+        },
+        {
+          "description": "Explicit path to the connector's SSH known-hosts file. Defaults to $MCP_WORKSPACE_PATH/.replit-ssh-known-hosts, then $HOME/.replit-mcp/known_hosts.",
+          "format": "filepath",
+          "name": "MCP_REPLIT_SSH_KNOWN_HOSTS_PATH"
+        }
+      ],
+      "identifier": "@mindstone/mcp-server-replit-ssh",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c6c6ec75fa",
+    "published_at": "2026-05-21T11:27:32.438113Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mindstone/mcp-server-replit-ssh",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-21T11:27:32.438113Z"
+  },
+  "title": "Replit SSH",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

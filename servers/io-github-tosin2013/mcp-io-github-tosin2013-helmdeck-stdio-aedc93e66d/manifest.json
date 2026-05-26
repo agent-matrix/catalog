@@ -1,0 +1,65 @@
+{
+  "description": "Self-hosted MCP server: sandboxed browser, desktop, vision, code-edit packs for any agent.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:18+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-tosin2013-helmdeck.stdio.aedc93e66d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/tosin2013/helmdeck",
+    "homepage": "https://github.com/tosin2013/helmdeck",
+    "repository": "https://github.com/tosin2013/helmdeck"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/tosin2013/helmdeck-mcp:0.13.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.tosin2013/helmdeck",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of your helmdeck control plane reachable from the container network (e.g. http://host.docker.internal:3000)",
+          "format": "string",
+          "isRequired": true,
+          "name": "HELMDECK_URL"
+        },
+        {
+          "description": "JWT bearer token minted from your helmdeck control plane",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "HELMDECK_TOKEN"
+        }
+      ],
+      "identifier": "ghcr.io/tosin2013/helmdeck-mcp:0.13.2",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "aedc93e66d",
+    "published_at": "2026-05-23T13:59:40.141289Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.tosin2013/helmdeck",
+    "server_version": "0.13.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-23T13:59:40.141289Z"
+  },
+  "title": "Helmdeck",
+  "type": "mcp_server",
+  "version": "0.13.2"
+}

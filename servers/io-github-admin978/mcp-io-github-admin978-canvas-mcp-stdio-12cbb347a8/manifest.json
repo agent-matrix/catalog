@@ -1,0 +1,66 @@
+{
+  "description": "Local-first MCP server for Canvas LMS. Stdio transport, no third-party broker.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:00+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-admin978-canvas-mcp.stdio.12cbb347a8",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/admin978/canvas-mcp",
+    "homepage": "https://github.com/admin978/canvas-mcp",
+    "repository": "https://github.com/admin978/canvas-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "canvas-local-mcp==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.admin978/canvas-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Canvas institution root URL (no /api/v1 suffix), e.g. https://your-institution.instructure.com",
+          "format": "string",
+          "isRequired": true,
+          "name": "CANVAS_BASE_URL"
+        },
+        {
+          "description": "Canvas personal access token (Account -> Settings -> Approved Integrations -> New Access Token)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CANVAS_TOKEN"
+        }
+      ],
+      "identifier": "canvas-local-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "12cbb347a8",
+    "published_at": "2026-05-12T08:55:44.557669Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.admin978/canvas-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-12T08:55:44.557669Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

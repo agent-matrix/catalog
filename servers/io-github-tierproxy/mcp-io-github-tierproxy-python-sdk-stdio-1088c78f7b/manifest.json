@@ -1,0 +1,81 @@
+{
+  "description": "Multi-provider proxy infrastructure for AI/ML. Geo, sessions, cost-aware routing, usage tools.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:18+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-tierproxy-python-sdk.stdio.1088c78f7b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/tierproxy/python-sdk",
+    "homepage": "https://github.com/tierproxy/python-sdk",
+    "repository": "https://github.com/tierproxy/python-sdk"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "pipx",
+          {
+            "isRequired": true,
+            "name": "--spec",
+            "type": "named",
+            "value": "tierproxy[mcp]"
+          },
+          "tierproxy==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.tierproxy/python-sdk",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "tierproxy API key (tp_live_... or tp_test_...). Sign up at https://tierproxy.com.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GWPROXY_API_KEY"
+        }
+      ],
+      "identifier": "tierproxy",
+      "packageArguments": [
+        {
+          "isRequired": true,
+          "type": "positional",
+          "value": "gwproxy-mcp"
+        }
+      ],
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "isRequired": true,
+          "name": "--spec",
+          "type": "named",
+          "value": "tierproxy[mcp]"
+        }
+      ],
+      "runtimeHint": "pipx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1088c78f7b",
+    "published_at": "2026-05-17T20:01:44.021249Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.tierproxy/python-sdk",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-17T20:01:44.021249Z"
+  },
+  "title": "tierproxy",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

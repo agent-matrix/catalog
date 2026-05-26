@@ -1,0 +1,61 @@
+{
+  "description": "MCP server for DealSurface.com sales intelligence platform.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:39:51+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-dealsurface-dealsurface.stdio.f83b2ddef5",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@dealsurface/mcp-server@0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.dealsurface/dealsurface",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "DealSurface API key. Requires 'read' scope for read tools and 'outreach' scope for lead and outreach tools.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DEALSURFACE_API_KEY"
+        },
+        {
+          "description": "Optional override for the DealSurface API base URL. Defaults to https://dealsurface.com.",
+          "format": "string",
+          "name": "DEALSURFACE_API_URL"
+        }
+      ],
+      "identifier": "@dealsurface/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f83b2ddef5",
+    "published_at": "2026-05-21T20:18:35.134183Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.dealsurface/dealsurface",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-21T20:18:35.134183Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

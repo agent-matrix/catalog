@@ -1,0 +1,68 @@
+{
+  "description": "MCP server for Argo RPG Platform \u2014 connects AI assistants to campaign data via OAuth2",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:39:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Argo-RPG-Platform-argo-mcp.stdio.a94a9309c4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Argo-RPG-Platform/MCP",
+    "homepage": "https://github.com/Argo-RPG-Platform/MCP",
+    "repository": "https://github.com/Argo-RPG-Platform/MCP"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "argo-mcp@1.0.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Argo-RPG-Platform/argo-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Argo OAuth2 access token from the consent flow at https://app.argo.games/oauth2/mcp-connect",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OAUTH_TOKEN"
+        },
+        {
+          "description": "Argo OAuth2 refresh token. Enables automatic renewal of the access token when it expires (~1 hour).",
+          "isSecret": true,
+          "name": "REFRESH_TOKEN"
+        },
+        {
+          "description": "Override the Argo WebAPI base URL. Defaults to https://api.argo.games.",
+          "name": "ARGO_API_BASE"
+        }
+      ],
+      "identifier": "argo-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a94a9309c4",
+    "published_at": "2026-05-14T10:01:21.269731Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Argo-RPG-Platform/argo-mcp",
+    "server_version": "1.0.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-14T10:01:21.269731Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.2"
+}

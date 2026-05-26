@@ -1,0 +1,193 @@
+{
+  "description": "Manage GitLab projects, issues, merge requests, pipelines, repositories, and admin workflows.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:09+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-jmrplens-gitlab-mcp-server.stdio.6d98dba23e",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/jmrplens/gitlab-mcp-server",
+    "homepage": "https://github.com/jmrplens/gitlab-mcp-server",
+    "repository": "https://github.com/jmrplens/gitlab-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.jmrplens/gitlab-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://gitlab.com",
+          "description": "GitLab instance URL (default: https://gitlab.com; set for self-managed instances)",
+          "name": "GITLAB_URL",
+          "placeholder": "https://gitlab.com"
+        },
+        {
+          "description": "GitLab Personal Access Token (glpat-...)",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GITLAB_TOKEN",
+          "placeholder": "glpat-xxxxxxxxxxxxxxxxxxxx"
+        },
+        {
+          "default": "false",
+          "description": "Skip TLS certificate verification for self-signed certs (default: false)",
+          "format": "boolean",
+          "name": "GITLAB_SKIP_TLS_VERIFY"
+        },
+        {
+          "choices": [
+            "meta",
+            "individual",
+            "dynamic"
+          ],
+          "default": "dynamic",
+          "description": "Tool catalog selector: dynamic, meta, or individual (default: dynamic)",
+          "name": "TOOL_SURFACE"
+        },
+        {
+          "choices": [
+            "full",
+            "minimal"
+          ],
+          "default": "full",
+          "description": "Resource and prompt catalog selector: full or minimal (default: full)",
+          "name": "CAPABILITY_SURFACE"
+        },
+        {
+          "choices": [
+            "opaque",
+            "compact",
+            "full"
+          ],
+          "default": "opaque",
+          "description": "Meta-tool input schema detail: opaque, compact, or full (default: opaque)",
+          "name": "META_PARAM_SCHEMA"
+        },
+        {
+          "default": "false",
+          "description": "Enable GitLab Premium/Ultimate tools; GitLab.com Enterprise/Premium also exposes Orbit Knowledge Graph tools (default: false)",
+          "format": "boolean",
+          "name": "GITLAB_ENTERPRISE"
+        },
+        {
+          "default": "false",
+          "description": "Read-only mode: disables all mutating tools (default: false)",
+          "format": "boolean",
+          "name": "GITLAB_READ_ONLY"
+        },
+        {
+          "default": "false",
+          "description": "Safe mode: intercepts mutating tools and returns a JSON preview instead of executing (default: false)",
+          "format": "boolean",
+          "name": "GITLAB_SAFE_MODE"
+        },
+        {
+          "default": "true",
+          "description": "Append EmbeddedResource content blocks (clickable links to MCP resources) to get_* tool results (default: true)",
+          "format": "boolean",
+          "name": "EMBEDDED_RESOURCES"
+        },
+        {
+          "description": "Comma-separated tool names to exclude from registration (e.g. gitlab_admin,gitlab_runner)",
+          "name": "EXCLUDE_TOOLS",
+          "placeholder": "gitlab_admin,gitlab_runner"
+        },
+        {
+          "default": "false",
+          "description": "Skip Personal Access Token scope detection and register all tools regardless of token permissions (default: false)",
+          "format": "boolean",
+          "name": "GITLAB_IGNORE_SCOPES"
+        },
+        {
+          "default": "2147483648",
+          "description": "Maximum attachment upload size in bytes or human-readable (e.g. 2GB). Default: 2147483648 (2 GB)",
+          "name": "UPLOAD_MAX_FILE_SIZE"
+        },
+        {
+          "description": "Extra OS path-list-separated directories allowed for local GitLab import archives",
+          "name": "GITLAB_MCP_ALLOWED_IMPORT_DIRS",
+          "placeholder": "/path/to/exports:/another/path/to/exports"
+        },
+        {
+          "default": "0",
+          "description": "Per-server tools/call rate limit in requests per second; 0 disables it (default: 0)",
+          "format": "number",
+          "name": "RATE_LIMIT_RPS"
+        },
+        {
+          "default": "40",
+          "description": "Token-bucket burst size when RATE_LIMIT_RPS is greater than 0 (default: 40)",
+          "format": "number",
+          "name": "RATE_LIMIT_BURST"
+        },
+        {
+          "choices": [
+            "debug",
+            "info",
+            "warn",
+            "error"
+          ],
+          "default": "info",
+          "description": "Logging verbosity (default: info)",
+          "name": "LOG_LEVEL"
+        },
+        {
+          "choices": [
+            "true",
+            "check",
+            "false"
+          ],
+          "default": "true",
+          "description": "Auto-update mode: true (auto-apply), check (log-only), false (disabled). Default: true",
+          "name": "AUTO_UPDATE"
+        },
+        {
+          "default": "jmrplens/gitlab-mcp-server",
+          "description": "GitHub repository slug for release assets (default: jmrplens/gitlab-mcp-server)",
+          "name": "AUTO_UPDATE_REPO"
+        },
+        {
+          "default": "1h",
+          "description": "Periodic update check interval in HTTP mode (default: 1h)",
+          "name": "AUTO_UPDATE_INTERVAL"
+        },
+        {
+          "default": "60s",
+          "description": "Pre-start download timeout, range 5s-10m (default: 60s)",
+          "name": "AUTO_UPDATE_TIMEOUT"
+        }
+      ],
+      "fileSha256": "14501d50711cd983d1dd6870f8b7b5a8d4cf85b56f977894cf0b4b951424cc77",
+      "identifier": "https://github.com/jmrplens/gitlab-mcp-server/releases/download/v2.0.2/gitlab-mcp-server-linux-arm64",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.0.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6d98dba23e",
+    "published_at": "2026-05-19T14:59:47.956074Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.jmrplens/gitlab-mcp-server",
+    "server_version": "2.0.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-19T14:59:47.956074Z"
+  },
+  "title": "GitLab MCP Server",
+  "type": "mcp_server",
+  "version": "2.0.2"
+}

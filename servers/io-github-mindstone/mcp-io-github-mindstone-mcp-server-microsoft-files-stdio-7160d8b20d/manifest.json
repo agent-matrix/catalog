@@ -1,0 +1,84 @@
+{
+  "description": "Microsoft 365 OneDrive files via Graph: list, search, get, upload, download, share, read text.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mindstone-mcp-server-microsoft-files.stdio.7160d8b20d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mindstone/mcp-servers",
+    "homepage": "https://github.com/mindstone/mcp-servers",
+    "repository": "https://github.com/mindstone/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@mindstone/mcp-server-microsoft-files@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mindstone/mcp-server-microsoft-files",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Microsoft Entra (Azure AD) application client ID",
+          "format": "string",
+          "isRequired": true,
+          "name": "MS_CLIENT_ID"
+        },
+        {
+          "description": "Path to the per-user Microsoft config directory (credentials/, accounts.json)",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "MS_CONFIG_DIR"
+        },
+        {
+          "description": "Account email when running in multi-account per-instance mode (falls back to the first account in accounts.json)",
+          "format": "string",
+          "name": "MS_ACCOUNT_EMAIL"
+        },
+        {
+          "default": "Microsoft365Files",
+          "description": "Logical package ID surfaced in error responses",
+          "format": "string",
+          "name": "MS_MCP_PACKAGE_ID"
+        },
+        {
+          "default": "60000",
+          "description": "Override the upstream Microsoft Graph request timeout in milliseconds (max 300000 = 5 min)",
+          "format": "number",
+          "name": "MICROSOFT_REQUEST_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "@mindstone/mcp-server-microsoft-files",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7160d8b20d",
+    "published_at": "2026-05-21T11:26:54.524907Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mindstone/mcp-server-microsoft-files",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-21T11:26:54.524907Z"
+  },
+  "title": "Microsoft 365 Files",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

@@ -1,0 +1,91 @@
+{
+  "description": "AI assistant with RAG, web search, filesystem and memory. MCP sub-agent for Claude Code.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:03+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-brunosrz-vectora.stdio.9e40cc807d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/brunosrz/vectora",
+    "homepage": "https://github.com/brunosrz/vectora",
+    "repository": "https://github.com/brunosrz/vectora"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "vectora-agent==0.1.0rc3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.brunosrz/vectora",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Google Gemini API key (recommended free-tier LLM provider)",
+          "format": "string",
+          "isSecret": true,
+          "name": "GOOGLE_API_KEY"
+        },
+        {
+          "description": "Cohere API key \u2014 required for RAG embeddings and reranking",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "COHERE_API_KEY"
+        },
+        {
+          "description": "Tavily API key \u2014 required for web search and URL extraction",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "TAVILY_API_KEY"
+        },
+        {
+          "description": "OpenAI API key (optional \u2014 alternative LLM provider)",
+          "format": "string",
+          "isSecret": true,
+          "name": "OPENAI_API_KEY"
+        },
+        {
+          "description": "Anthropic API key (optional \u2014 alternative LLM provider)",
+          "format": "string",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        },
+        {
+          "description": "LangSmith API key (optional \u2014 tracing and observability)",
+          "format": "string",
+          "isSecret": true,
+          "name": "LANGSMITH_API_KEY"
+        }
+      ],
+      "identifier": "vectora-agent",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0rc3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9e40cc807d",
+    "published_at": "2026-05-22T02:06:01.970697Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.brunosrz/vectora",
+    "server_version": "0.1.0rc3",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-22T02:06:01.970697Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0rc3"
+}

@@ -1,0 +1,83 @@
+{
+  "description": "MCP server for Datto SaaS Protection \u2014 M365/GWS backups, restores, seats.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wyre-technology-datto-saas-protection-mcp.stdio.81a006e230",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wyre-technology/datto-saas-protection-mcp",
+    "homepage": "https://github.com/wyre-technology/datto-saas-protection-mcp",
+    "repository": "https://github.com/wyre-technology/datto-saas-protection-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-technology/datto-saas-protection-mcp:v2.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wyre-technology/datto-saas-protection-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Datto SaaS Protection (Backupify) API key",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DATTO_SAAS_API_KEY"
+        },
+        {
+          "default": "us",
+          "description": "Region: 'us' (default) or 'eu'",
+          "format": "string",
+          "name": "DATTO_SAAS_REGION"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode for the server. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-technology/datto-saas-protection-mcp:v2.0.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "81a006e230",
+    "published_at": "2026-05-15T02:03:25.650924Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wyre-technology/datto-saas-protection-mcp",
+    "server_version": "2.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-15T02:03:25.650924Z"
+  },
+  "title": "Datto SaaS Protection",
+  "type": "mcp_server",
+  "version": "2.0.0"
+}

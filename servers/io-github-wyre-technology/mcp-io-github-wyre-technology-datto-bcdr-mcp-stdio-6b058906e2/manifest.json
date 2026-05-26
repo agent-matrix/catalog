@@ -1,0 +1,90 @@
+{
+  "description": "MCP server for Datto BCDR \u2014 appliances, agents, recovery points, screenshots, alerts.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wyre-technology-datto-bcdr-mcp.stdio.6b058906e2",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wyre-technology/datto-bcdr-mcp",
+    "homepage": "https://github.com/wyre-technology/datto-bcdr-mcp",
+    "repository": "https://github.com/wyre-technology/datto-bcdr-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-technology/datto-bcdr-mcp:v1.0.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wyre-technology/datto-bcdr-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Datto BCDR partner portal public API key",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DATTO_BCDR_PUBLIC_KEY"
+        },
+        {
+          "description": "Datto BCDR partner portal private API key",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DATTO_BCDR_PRIVATE_KEY"
+        },
+        {
+          "default": "us",
+          "description": "Region: 'us' (default) or 'eu'",
+          "format": "string",
+          "name": "DATTO_BCDR_REGION"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode for the server. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-technology/datto-bcdr-mcp:v1.0.2",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "6b058906e2",
+    "published_at": "2026-05-21T20:15:50.610223Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wyre-technology/datto-bcdr-mcp",
+    "server_version": "1.0.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-21T20:15:50.610223Z"
+  },
+  "title": "Datto BCDR",
+  "type": "mcp_server",
+  "version": "1.0.2"
+}

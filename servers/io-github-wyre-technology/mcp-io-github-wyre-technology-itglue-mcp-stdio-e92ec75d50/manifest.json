@@ -1,0 +1,88 @@
+{
+  "description": "MCP server for IT Glue \u2014 organizations, configurations, passwords, flexible assets, and documents.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wyre-technology-itglue-mcp.stdio.e92ec75d50",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wyre-technology/itglue-mcp",
+    "homepage": "https://github.com/wyre-technology/itglue-mcp",
+    "repository": "https://github.com/wyre-technology/itglue-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-technology/itglue-mcp:v1.9.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wyre-technology/itglue-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "IT Glue API key (format: ITG.xxx)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ITGLUE_API_KEY"
+        },
+        {
+          "default": "us",
+          "description": "IT Glue API region: 'us', 'eu', or 'au'",
+          "format": "string",
+          "name": "ITGLUE_REGION"
+        },
+        {
+          "description": "Override IT Glue API base URL \u2014 auto-derived from region if omitted",
+          "format": "string",
+          "name": "ITGLUE_BASE_URL"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode for the server. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-technology/itglue-mcp:v1.9.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "e92ec75d50",
+    "published_at": "2026-05-13T18:11:53.876843Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wyre-technology/itglue-mcp",
+    "server_version": "1.9.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-13T18:11:53.876843Z"
+  },
+  "title": "IT Glue",
+  "type": "mcp_server",
+  "version": "1.9.0"
+}

@@ -1,0 +1,80 @@
+{
+  "description": "Gamma AI presentation generation MCP server for Model Context Protocol hosts",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mindstone-mcp-server-gamma.stdio.b22a50f9fd",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mindstone/mcp-servers",
+    "homepage": "https://github.com/mindstone/mcp-servers",
+    "repository": "https://github.com/mindstone/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@mindstone/mcp-server-gamma@0.3.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mindstone/mcp-server-gamma",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Gamma API key (create at https://gamma.app/settings/api-keys)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GAMMA_API_KEY"
+        },
+        {
+          "default": "5000",
+          "description": "Export poll interval in milliseconds",
+          "format": "number",
+          "name": "GAMMA_EXPORT_POLL_INTERVAL_MS"
+        },
+        {
+          "default": "12",
+          "description": "Maximum export poll attempts",
+          "format": "number",
+          "name": "GAMMA_EXPORT_POLL_MAX_ATTEMPTS"
+        },
+        {
+          "default": "60000",
+          "description": "Outbound HTTP request timeout in milliseconds (max 1800000)",
+          "format": "number",
+          "name": "GAMMA_REQUEST_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "@mindstone/mcp-server-gamma",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b22a50f9fd",
+    "published_at": "2026-05-21T08:45:56.170007Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mindstone/mcp-server-gamma",
+    "server_version": "0.3.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-21T08:45:56.170007Z"
+  },
+  "title": "Gamma",
+  "type": "mcp_server",
+  "version": "0.3.2"
+}

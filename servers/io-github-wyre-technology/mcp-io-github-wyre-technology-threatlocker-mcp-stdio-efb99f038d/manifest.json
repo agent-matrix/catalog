@@ -1,0 +1,83 @@
+{
+  "description": "MCP server for ThreatLocker \u2014 zero-trust endpoint protection, allowlisting, and policies.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wyre-technology-threatlocker-mcp.stdio.efb99f038d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wyre-technology/threatlocker-mcp",
+    "homepage": "https://github.com/wyre-technology/threatlocker-mcp",
+    "repository": "https://github.com/wyre-technology/threatlocker-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-technology/threatlocker-mcp:v1.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wyre-technology/threatlocker-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "ThreatLocker API key",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "THREATLOCKER_API_KEY"
+        },
+        {
+          "description": "ThreatLocker organization ID",
+          "format": "string",
+          "isRequired": true,
+          "name": "THREATLOCKER_ORGANIZATION_ID"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode for the server. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-technology/threatlocker-mcp:v1.2.1",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "efb99f038d",
+    "published_at": "2026-05-22T14:56:30.462317Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wyre-technology/threatlocker-mcp",
+    "server_version": "1.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-22T14:56:30.462317Z"
+  },
+  "title": "ThreatLocker",
+  "type": "mcp_server",
+  "version": "1.2.1"
+}

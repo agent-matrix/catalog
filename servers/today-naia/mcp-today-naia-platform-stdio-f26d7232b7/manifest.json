@@ -1,0 +1,65 @@
+{
+  "description": "Autopilot MCP server for GEO analyses, reports, content, audits, memories and agents.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:21+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.today-naia-platform.stdio.f26d7232b7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/arielvdl/naia-mcp-server",
+    "homepage": "https://github.com/arielvdl/naia-mcp-server",
+    "repository": "https://github.com/arielvdl/naia-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "naia-mcp-server@1.0.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "today.naia/platform",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "naia API key generated in Dashboard > Settings > API",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "NAIA_API_KEY"
+        },
+        {
+          "description": "Optional override for the naia MCP endpoint. Defaults to https://naia.today/api/v1/mcp.",
+          "format": "string",
+          "name": "NAIA_MCP_URL"
+        }
+      ],
+      "identifier": "naia-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f26d7232b7",
+    "published_at": "2026-05-23T03:29:44.991942Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "today.naia/platform",
+    "server_version": "1.0.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-23T03:29:44.991942Z"
+  },
+  "title": "naia GEO Autopilot",
+  "type": "mcp_server",
+  "version": "1.0.3"
+}

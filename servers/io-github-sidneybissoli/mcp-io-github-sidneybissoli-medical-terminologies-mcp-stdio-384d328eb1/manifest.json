@@ -1,0 +1,101 @@
+{
+  "description": "Unified access to global medical terminologies: ICD-11, SNOMED CT, LOINC, RxNorm, MeSH, ATC, CID-10",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:39:59+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-SidneyBissoli-medical-terminologies-mcp.stdio.384d328eb1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/SidneyBissoli/medical-terminologies-mcp",
+    "homepage": "https://github.com/SidneyBissoli/medical-terminologies-mcp",
+    "repository": "https://github.com/SidneyBissoli/medical-terminologies-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "medical-terminologies-mcp@1.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.SidneyBissoli/medical-terminologies-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "WHO ICD-11 API Client ID. Required only for ICD-11 tools.",
+          "name": "WHO_CLIENT_ID"
+        },
+        {
+          "description": "WHO ICD-11 API Client Secret. Required only for ICD-11 tools.",
+          "isSecret": true,
+          "name": "WHO_CLIENT_SECRET"
+        },
+        {
+          "description": "ICD-11 release to query (e.g. 2024-01, 2025-01). Optional; defaults to 2024-01.",
+          "name": "WHO_ICD11_RELEASE_ID"
+        },
+        {
+          "description": "Set to 'true' to register the 6 SNOMED-dependent tools. Requires SNOMED_BASE_URL.",
+          "name": "ENABLE_SNOMED_TOOLS"
+        },
+        {
+          "description": "Base URL of a self-hosted Snowstorm instance. Required only when ENABLE_SNOMED_TOOLS is true.",
+          "name": "SNOMED_BASE_URL"
+        },
+        {
+          "description": "Accept-Language tag(s) for SNOMED responses (e.g. pt, pt-BR, es). Optional; defaults to 'en'.",
+          "name": "SNOMED_LANGUAGE"
+        },
+        {
+          "description": "pino log level. Optional; defaults to 'info'.",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "medical-terminologies-mcp",
+      "packageArguments": [
+        {
+          "name": "--http",
+          "type": "named"
+        },
+        {
+          "description": "TCP port to listen on. Update the transport URL above if you change this.",
+          "name": "--port",
+          "type": "named",
+          "value": "3000"
+        },
+        {
+          "description": "Bind address. Defaults to 127.0.0.1 in CLI; 0.0.0.0 here so containers can route in.",
+          "name": "--host",
+          "type": "named",
+          "value": "0.0.0.0"
+        }
+      ],
+      "registryType": "npm",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3000/mcp"
+      },
+      "version": "1.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "384d328eb1",
+    "published_at": "2026-05-12T01:02:46.721947Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.SidneyBissoli/medical-terminologies-mcp",
+    "server_version": "1.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-12T01:02:46.721947Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.4.0"
+}

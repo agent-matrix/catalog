@@ -1,0 +1,72 @@
+{
+  "description": "Allow AI systems to read, write, and query spreadsheet data via Google Sheets.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:06+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-domdomegg-google-sheets-mcp.stdio.908d842f42",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/domdomegg/google-sheets-mcp.git",
+    "homepage": "https://github.com/domdomegg/google-sheets-mcp.git",
+    "repository": "https://github.com/domdomegg/google-sheets-mcp.git"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "google-sheets-mcp@1.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.domdomegg/google-sheets-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Transport type.",
+          "isRequired": true,
+          "name": "MCP_TRANSPORT",
+          "value": "http"
+        },
+        {
+          "description": "Google OAuth client ID.",
+          "isRequired": true,
+          "name": "GOOGLE_CLIENT_ID"
+        },
+        {
+          "description": "Google OAuth client secret.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GOOGLE_CLIENT_SECRET"
+        }
+      ],
+      "identifier": "google-sheets-mcp",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3000/mcp"
+      },
+      "version": "1.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "908d842f42",
+    "published_at": "2026-05-25T18:27:45.96649Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.domdomegg/google-sheets-mcp",
+    "server_version": "1.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-25T18:27:45.96649Z"
+  },
+  "title": "Google Sheets",
+  "type": "mcp_server",
+  "version": "1.2.1"
+}

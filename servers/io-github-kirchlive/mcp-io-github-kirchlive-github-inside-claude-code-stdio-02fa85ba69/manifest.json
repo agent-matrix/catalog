@@ -1,0 +1,76 @@
+{
+  "description": "Normalized GitHub-CLI bridge for Claude Code \u2014 89 ops, 6 families incl. federation sources",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:39:58+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Kirchlive-github-inside-claude-code.stdio.02fa85ba69",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Kirchlive/github-inside-claude-code",
+    "homepage": "https://github.com/Kirchlive/github-inside-claude-code",
+    "repository": "https://github.com/Kirchlive/github-inside-claude-code"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "type": "positional",
+            "value": "gh-tool-use-mcp"
+          },
+          "github-inside-claude-code==0.9.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Kirchlive/github-inside-claude-code",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API key for the Tavily federation source (gh_research_tavily_search / gh_research_tavily_research). Required only if those research ops are invoked.",
+          "format": "string",
+          "isSecret": true,
+          "name": "TAVILY_API_KEY"
+        },
+        {
+          "description": "API key for the Brave Search federation source (gh_research_brave_search). Required only if that research op is invoked.",
+          "format": "string",
+          "isSecret": true,
+          "name": "BRAVE_API_KEY"
+        }
+      ],
+      "identifier": "github-inside-claude-code",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "gh-tool-use-mcp"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.9.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "02fa85ba69",
+    "published_at": "2026-05-18T10:12:08.567261Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Kirchlive/github-inside-claude-code",
+    "server_version": "0.9.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-18T10:12:08.567261Z"
+  },
+  "title": "GitHub Inside Claude Code",
+  "type": "mcp_server",
+  "version": "0.9.6"
+}

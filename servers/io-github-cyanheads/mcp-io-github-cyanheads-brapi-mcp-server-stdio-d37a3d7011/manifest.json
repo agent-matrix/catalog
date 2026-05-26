@@ -1,0 +1,107 @@
+{
+  "description": "Collaborative BrAPI v2.1 MCP workspace \u2014 studies, germplasm, genotypes across Breedbase, T3, more.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:04+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cyanheads-brapi-mcp-server.stdio.d37a3d7011",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cyanheads/brapi-mcp-server",
+    "homepage": "https://github.com/cyanheads/brapi-mcp-server",
+    "repository": "https://github.com/cyanheads/brapi-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "bun",
+          "@cyanheads/brapi-mcp-server@0.6.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cyanheads/brapi-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Default BrAPI v2 base URL. Optional \u2014 connections can be opened at runtime via the brapi_connect tool instead.",
+          "format": "string",
+          "name": "BRAPI_DEFAULT_BASE_URL"
+        },
+        {
+          "default": "false",
+          "description": "Opt-in flag for the write surface (brapi_submit_observations). Off by default \u2014 the tool is omitted from tools/list unless the operator opts in.",
+          "format": "string",
+          "name": "BRAPI_ENABLE_WRITES"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "The hostname for the HTTP server.",
+          "format": "string",
+          "name": "MCP_HTTP_HOST"
+        },
+        {
+          "default": "3010",
+          "description": "The port to run the HTTP server on.",
+          "format": "string",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "default": "/mcp",
+          "description": "The endpoint path for the MCP server.",
+          "format": "string",
+          "name": "MCP_HTTP_ENDPOINT_PATH"
+        },
+        {
+          "default": "none",
+          "description": "Authentication mode to use: 'none', 'jwt', or 'oauth'.",
+          "format": "string",
+          "name": "MCP_AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Sets the minimum log level for output (e.g., 'debug', 'info', 'warn').",
+          "format": "string",
+          "name": "MCP_LOG_LEVEL"
+        }
+      ],
+      "identifier": "@cyanheads/brapi-mcp-server",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "start:http"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "bun",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3010/mcp"
+      },
+      "version": "0.6.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d37a3d7011",
+    "published_at": "2026-05-23T12:27:31.779766Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cyanheads/brapi-mcp-server",
+    "server_version": "0.6.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-23T12:27:31.779766Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.6.2"
+}

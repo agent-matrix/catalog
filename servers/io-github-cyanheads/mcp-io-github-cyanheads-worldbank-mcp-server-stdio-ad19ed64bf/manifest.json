@@ -1,0 +1,108 @@
+{
+  "description": "World Bank Open Data API \u2014 29,500+ development indicators for 200+ countries across 60+ years.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:05+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cyanheads-worldbank-mcp-server.stdio.ad19ed64bf",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cyanheads/worldbank-mcp-server",
+    "homepage": "https://github.com/cyanheads/worldbank-mcp-server",
+    "repository": "https://github.com/cyanheads/worldbank-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "node",
+          "@cyanheads/worldbank-mcp-server@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cyanheads/worldbank-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "127.0.0.1",
+          "description": "The hostname for the HTTP server.",
+          "format": "string",
+          "name": "MCP_HTTP_HOST"
+        },
+        {
+          "default": "3010",
+          "description": "The port to run the HTTP server on.",
+          "format": "string",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "default": "/mcp",
+          "description": "The endpoint path for the MCP server.",
+          "format": "string",
+          "name": "MCP_HTTP_ENDPOINT_PATH"
+        },
+        {
+          "default": "none",
+          "description": "Authentication mode: 'none', 'jwt', or 'oauth'.",
+          "format": "string",
+          "name": "MCP_AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Minimum log level for output: 'debug', 'info', 'notice', 'warning', 'error'.",
+          "format": "string",
+          "name": "MCP_LOG_LEVEL"
+        },
+        {
+          "default": "https://api.worldbank.org/v2",
+          "description": "World Bank API base URL override.",
+          "format": "string",
+          "name": "WORLDBANK_API_BASE_URL"
+        },
+        {
+          "default": "50",
+          "description": "Default page size for list, search, and data operations.",
+          "format": "string",
+          "name": "WORLDBANK_DEFAULT_PER_PAGE"
+        }
+      ],
+      "identifier": "@cyanheads/worldbank-mcp-server",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "start:http"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "node",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3010/mcp"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ad19ed64bf",
+    "published_at": "2026-05-24T02:37:19.031594Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cyanheads/worldbank-mcp-server",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-24T02:37:19.031594Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

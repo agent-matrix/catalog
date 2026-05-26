@@ -1,0 +1,66 @@
+{
+  "description": "Query Swedish public data: companies, SCB statistics, weather, transport, and more.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:19+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-vinvuk-apiverket-mcp.stdio.10c44097c7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/vinvuk/apiverket-mcp",
+    "homepage": "https://github.com/vinvuk/apiverket-mcp",
+    "repository": "https://github.com/vinvuk/apiverket-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "apiverket-mcp-server@1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.vinvuk/apiverket-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://apiverket.se",
+          "description": "Apiverket API base URL",
+          "format": "string",
+          "name": "GOVDATA_API_URL"
+        },
+        {
+          "default": "sk_test_demo",
+          "description": "Apiverket API key. Use sk_test_demo for sandbox data or create a key at https://apiverket.se/login.",
+          "format": "string",
+          "isSecret": true,
+          "name": "GOVDATA_API_KEY"
+        }
+      ],
+      "identifier": "apiverket-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "10c44097c7",
+    "published_at": "2026-05-22T05:08:52.355723Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.vinvuk/apiverket-mcp",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-22T05:08:52.355723Z"
+  },
+  "title": "Apiverket",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

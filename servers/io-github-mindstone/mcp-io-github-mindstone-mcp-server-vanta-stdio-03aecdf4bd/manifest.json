@@ -1,0 +1,80 @@
+{
+  "description": "Vanta compliance MCP server: vulnerabilities, tests, controls, evidence, people, vendors, docs",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mindstone-mcp-server-vanta.stdio.03aecdf4bd",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mindstone/mcp-servers",
+    "homepage": "https://github.com/mindstone/mcp-servers",
+    "repository": "https://github.com/mindstone/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@mindstone/mcp-server-vanta@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mindstone/mcp-server-vanta",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Vanta OAuth Client ID",
+          "format": "string",
+          "isRequired": true,
+          "name": "VANTA_CLIENT_ID"
+        },
+        {
+          "description": "Vanta OAuth Client Secret",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "VANTA_CLIENT_SECRET"
+        },
+        {
+          "default": "us",
+          "description": "Vanta API region: us (default), eu, or aus",
+          "format": "string",
+          "name": "VANTA_REGION"
+        },
+        {
+          "default": "60000",
+          "description": "Per-request timeout in milliseconds (default 60000)",
+          "format": "number",
+          "name": "VANTA_REQUEST_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "@mindstone/mcp-server-vanta",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "03aecdf4bd",
+    "published_at": "2026-05-21T11:27:52.868711Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mindstone/mcp-server-vanta",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-21T11:27:52.868711Z"
+  },
+  "title": "Vanta",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

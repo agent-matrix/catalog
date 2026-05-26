@@ -1,0 +1,86 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "docker.io/pouyahasanamreji/continuum:0.3.0"
+      }
+    }
+  ],
+  "description": "Shared memory + orchestration for your coding agents. Local-first MCP, vector RAG.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/pouyahasanamreji/continuum",
+  "id": "tool.io-github-pouyahasanamreji-continuum.a9e7dcc056",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/pouyahasanamreji/continuum",
+    "homepage": "https://github.com/pouyahasanamreji/continuum",
+    "repository": "https://github.com/pouyahasanamreji/continuum"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Shared memory + orchestration for your coding agents. Local-first MCP, vector RAG.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.pouyahasanamreji/continuum",
+      "request_type": "POST",
+      "url": "https://github.com/pouyahasanamreji/continuum"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "name": "-p",
+            "type": "named",
+            "value": "7776:7776"
+          },
+          {
+            "name": "-v",
+            "type": "named",
+            "value": "continuum-data:/data"
+          },
+          "docker.io/pouyahasanamreji/continuum:0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.pouyahasanamreji/continuum",
+  "provenance": {
+    "identity_key": "ab9e168e03",
+    "promoted_from": "mcp.io-github-pouyahasanamreji-continuum.stdio.ab9e168e03",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.pouyahasanamreji/continuum",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-pouyahasanamreji-continuum.stdio.ab9e168e03",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/pouyahasanamreji/continuum",
+  "summary": "Shared memory + orchestration for your coding agents. Local-first MCP, vector RAG.",
+  "tags": [
+    "agents",
+    "coding",
+    "continuum",
+    "local",
+    "memory",
+    "orchestration",
+    "shared"
+  ],
+  "title": "Continuum",
+  "type": "tool",
+  "version": "0.3.0"
+}

@@ -1,0 +1,101 @@
+{
+  "description": "Search and retrieve bioRxiv and medRxiv preprints \u2014 by DOI, date interval, or keyword \u2014 via MCP.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:04+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cyanheads-biorxiv-mcp-server.stdio.40e3be2719",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cyanheads/biorxiv-mcp-server",
+    "homepage": "https://github.com/cyanheads/biorxiv-mcp-server",
+    "repository": "https://github.com/cyanheads/biorxiv-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "bun",
+          "@cyanheads/biorxiv-mcp-server@0.1.8"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cyanheads/biorxiv-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Contact email for User-Agent header \u2014 optional, for polite API access.",
+          "format": "string",
+          "name": "BIORXIV_MAILTO"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "The hostname for the HTTP server.",
+          "format": "string",
+          "name": "MCP_HTTP_HOST"
+        },
+        {
+          "default": "3010",
+          "description": "The port to run the HTTP server on.",
+          "format": "string",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "default": "/mcp",
+          "description": "The endpoint path for the MCP server.",
+          "format": "string",
+          "name": "MCP_HTTP_ENDPOINT_PATH"
+        },
+        {
+          "default": "none",
+          "description": "Authentication mode to use: 'none', 'jwt', or 'oauth'.",
+          "format": "string",
+          "name": "MCP_AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Sets the minimum log level for output (e.g., 'debug', 'info', 'warn').",
+          "format": "string",
+          "name": "MCP_LOG_LEVEL"
+        }
+      ],
+      "identifier": "@cyanheads/biorxiv-mcp-server",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "start:http"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "bun",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3010/mcp"
+      },
+      "version": "0.1.8"
+    }
+  ],
+  "provenance": {
+    "identity_key": "40e3be2719",
+    "published_at": "2026-05-24T22:17:30.16418Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cyanheads/biorxiv-mcp-server",
+    "server_version": "0.1.8",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-24T22:17:30.16418Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.8"
+}

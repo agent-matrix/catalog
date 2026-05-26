@@ -1,0 +1,74 @@
+{
+  "description": "TalentLMS MCP server: users, courses, groups, branches, reporting, and assessments",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mindstone-mcp-server-talentlms.stdio.5432a74bb1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mindstone/mcp-servers",
+    "homepage": "https://github.com/mindstone/mcp-servers",
+    "repository": "https://github.com/mindstone/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@mindstone/mcp-server-talentlms@0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mindstone/mcp-server-talentlms",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "TalentLMS API key",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "TALENTLMS_API_KEY"
+        },
+        {
+          "description": "TalentLMS subdomain (e.g. acme for acme.talentlms.com)",
+          "format": "string",
+          "isRequired": true,
+          "name": "TALENTLMS_DOMAIN"
+        },
+        {
+          "default": "30000",
+          "description": "Request timeout in milliseconds",
+          "format": "number",
+          "name": "TALENTLMS_REQUEST_TIMEOUT"
+        }
+      ],
+      "identifier": "@mindstone/mcp-server-talentlms",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5432a74bb1",
+    "published_at": "2026-05-21T11:27:49.856568Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mindstone/mcp-server-talentlms",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-21T11:27:49.856568Z"
+  },
+  "title": "TalentLMS",
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

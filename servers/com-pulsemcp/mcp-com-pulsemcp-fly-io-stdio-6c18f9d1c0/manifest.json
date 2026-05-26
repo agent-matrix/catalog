@@ -1,0 +1,89 @@
+{
+  "description": "MCP server for managing Fly.io machines, apps, logs, and Docker images.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:39:53+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-pulsemcp-fly-io.stdio.6c18f9d1c0",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/pulsemcp/mcp-servers",
+    "homepage": "https://github.com/pulsemcp/mcp-servers",
+    "repository": "https://github.com/pulsemcp/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y"
+          },
+          "fly-io-mcp-server@0.1.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.pulsemcp/fly-io",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API token for Fly.io authentication.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "FLY_IO_API_TOKEN"
+        },
+        {
+          "description": "Scope server to a single app (disables app management tools).",
+          "name": "FLY_IO_APP_NAME"
+        },
+        {
+          "description": "Comma-separated tool groups to enable (readonly, write, admin, apps, machines, logs, ssh, images, registry).",
+          "name": "ENABLED_TOOLGROUPS"
+        },
+        {
+          "default": "false",
+          "description": "Skip API validation at startup.",
+          "name": "SKIP_HEALTH_CHECKS"
+        },
+        {
+          "default": "false",
+          "description": "Disable Docker-based registry tools.",
+          "name": "DISABLE_DOCKER_CLI_TOOLS"
+        }
+      ],
+      "identifier": "fly-io-mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6c18f9d1c0",
+    "published_at": "2026-05-18T13:28:54.497606Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.pulsemcp/fly-io",
+    "server_version": "0.1.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-18T13:28:54.497606Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.6"
+}

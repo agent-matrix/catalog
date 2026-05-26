@@ -1,0 +1,102 @@
+{
+  "description": "MCP server for QuickBooks Online \u2014 accounts, customers, invoices, bills, and reports.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wyre-technology-qbo-mcp.stdio.68a4a628d0",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wyre-technology/qbo-mcp",
+    "homepage": "https://github.com/wyre-technology/qbo-mcp",
+    "repository": "https://github.com/wyre-technology/qbo-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-technology/qbo-mcp:v1.4.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wyre-technology/qbo-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "QuickBooks Online OAuth2 client ID from the Intuit developer app",
+          "format": "string",
+          "isRequired": true,
+          "name": "QBO_CLIENT_ID"
+        },
+        {
+          "description": "QuickBooks Online OAuth2 client secret",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "QBO_CLIENT_SECRET"
+        },
+        {
+          "description": "OAuth2 refresh token for the connected QuickBooks company",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "QBO_REFRESH_TOKEN"
+        },
+        {
+          "description": "QuickBooks Online company (realm) ID",
+          "format": "string",
+          "isRequired": true,
+          "name": "QBO_REALM_ID"
+        },
+        {
+          "default": "production",
+          "description": "QuickBooks API environment: 'sandbox' or 'production'",
+          "format": "string",
+          "name": "QBO_ENVIRONMENT"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode for the server. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-technology/qbo-mcp:v1.4.4",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "68a4a628d0",
+    "published_at": "2026-05-22T15:15:06.063011Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wyre-technology/qbo-mcp",
+    "server_version": "1.4.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-22T15:15:06.063011Z"
+  },
+  "title": "QuickBooks Online",
+  "type": "mcp_server",
+  "version": "1.4.4"
+}

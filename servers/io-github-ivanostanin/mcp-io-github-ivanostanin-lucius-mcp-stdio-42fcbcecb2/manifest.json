@@ -1,0 +1,71 @@
+{
+  "description": "MCP server for managing Allure TestOps tests, launches, plans, defects, and metadata.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:09+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ivanostanin-lucius-mcp.stdio.42fcbcecb2",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ivanostanin/lucius-mcp",
+    "homepage": "https://github.com/ivanostanin/lucius-mcp",
+    "repository": "https://github.com/ivanostanin/lucius-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/ivanostanin/lucius-mcp:0.9.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ivanostanin/lucius-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Allure TestOps base URL, for example https://example.testops.cloud.",
+          "format": "string",
+          "isRequired": true,
+          "name": "ALLURE_ENDPOINT"
+        },
+        {
+          "description": "Default Allure TestOps project ID.",
+          "format": "number",
+          "isRequired": true,
+          "name": "ALLURE_PROJECT_ID"
+        },
+        {
+          "description": "Allure TestOps API token.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ALLURE_API_TOKEN"
+        }
+      ],
+      "identifier": "ghcr.io/ivanostanin/lucius-mcp:0.9.1",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "42fcbcecb2",
+    "published_at": "2026-05-19T14:26:40.502298Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ivanostanin/lucius-mcp",
+    "server_version": "0.9.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-19T14:26:40.502298Z"
+  },
+  "title": "Lucius MCP",
+  "type": "mcp_server",
+  "version": "0.9.1"
+}

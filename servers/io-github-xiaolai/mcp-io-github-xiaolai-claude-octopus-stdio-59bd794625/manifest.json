@@ -1,0 +1,89 @@
+{
+  "description": "Spawn multiple specialized Claude Code agents as MCP servers, each independently configured.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-xiaolai-claude-octopus.stdio.59bd794625",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/xiaolai/claude-octopus",
+    "homepage": "https://github.com/xiaolai/claude-octopus",
+    "repository": "https://github.com/xiaolai/claude-octopus"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "claude-octopus@1.1.10"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.xiaolai/claude-octopus",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Anthropic API key (leave unset to inherit from parent process)",
+          "format": "string",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        },
+        {
+          "description": "Tool name prefix (default: claude_code)",
+          "format": "string",
+          "name": "CLAUDE_TOOL_NAME"
+        },
+        {
+          "description": "Model: sonnet, opus, haiku, or full ID",
+          "format": "string",
+          "name": "CLAUDE_MODEL"
+        },
+        {
+          "description": "Permission mode: default, acceptEdits, bypassPermissions, plan",
+          "format": "string",
+          "name": "CLAUDE_PERMISSION_MODE"
+        },
+        {
+          "description": "Comma-separated list of available tools (e.g. Read,Grep,Glob for read-only)",
+          "format": "string",
+          "name": "CLAUDE_ALLOWED_TOOLS"
+        },
+        {
+          "description": "Additional system prompt appended to the default",
+          "format": "string",
+          "name": "CLAUDE_APPEND_PROMPT"
+        },
+        {
+          "description": "Set to true to expose only the factory wizard tool",
+          "format": "string",
+          "name": "CLAUDE_FACTORY_ONLY"
+        }
+      ],
+      "identifier": "claude-octopus",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.10"
+    }
+  ],
+  "provenance": {
+    "identity_key": "59bd794625",
+    "published_at": "2026-05-20T03:50:42.99827Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.xiaolai/claude-octopus",
+    "server_version": "1.1.10",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-20T03:50:42.99827Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.1.10"
+}

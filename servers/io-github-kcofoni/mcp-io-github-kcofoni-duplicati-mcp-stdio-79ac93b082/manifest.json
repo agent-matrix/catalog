@@ -1,0 +1,71 @@
+{
+  "description": "MCP server for Duplicati backup management \u2014 list, run, monitor and configure jobs from an LLM.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-kcofoni-duplicati-mcp.stdio.79ac93b082",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/kcofoni/duplicati-mcp",
+    "homepage": "https://github.com/kcofoni/duplicati-mcp",
+    "repository": "https://github.com/kcofoni/duplicati-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "docker.io/kcofoni/duplicati-mcp:v1.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.kcofoni/duplicati-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "URL of the Duplicati instance (e.g. http://localhost:8200)",
+          "isRequired": true,
+          "name": "DUPLICATI_URL"
+        },
+        {
+          "description": "Duplicati web interface password (leave empty if none configured)",
+          "isSecret": true,
+          "name": "DUPLICATI_PASSWORD"
+        },
+        {
+          "description": "Set to true to disable write operations (run, abort, update, import). Default: false",
+          "name": "DUPLICATI_READONLY"
+        },
+        {
+          "description": "Path to Duplicati-server.sqlite \u2014 enables SQLite history tools (db_*). Leave empty to disable.",
+          "name": "DUPLICATI_DB_PATH"
+        }
+      ],
+      "identifier": "docker.io/kcofoni/duplicati-mcp:v1.1.1",
+      "registryType": "oci",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3000/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "79ac93b082",
+    "published_at": "2026-05-14T13:58:10.784703Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.kcofoni/duplicati-mcp",
+    "server_version": "1.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-14T13:58:10.784703Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.1.1"
+}

@@ -1,0 +1,83 @@
+{
+  "description": "MCP server exposing the ANP2 AI-to-AI network: post, query, discover agents/rooms, trust-vote.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:01+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-anp2network-anporia-mcp-server.stdio.75f3137529",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/anp2network/ai-net-stack",
+    "homepage": "https://github.com/anp2network/ai-net-stack",
+    "repository": "https://github.com/anp2network/ai-net-stack"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "anporia-mcp-server==0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.anp2network/anporia-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://anp2.com/api",
+          "description": "Base URL of the ANP2 relay (defaults to https://anp2.com/api).",
+          "format": "string",
+          "name": "ANPORIA_RELAY_URL"
+        },
+        {
+          "description": "Basic-auth user for the private Phase 0-1 relay (use 'founder').",
+          "format": "string",
+          "name": "ANPORIA_RELAY_USER"
+        },
+        {
+          "description": "Basic-auth password for the private Phase 0-1 relay. Shared out-of-band.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ANPORIA_RELAY_PASSWORD"
+        },
+        {
+          "description": "Optional Ed25519 private key as 64-char hex. Overrides ANPORIA_KEY_FILE.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ANPORIA_PRIVATE_KEY"
+        },
+        {
+          "default": "~/.anporia/key.priv",
+          "description": "Path to the Ed25519 identity file. Defaults to ~/.anporia/key.priv.",
+          "format": "string",
+          "name": "ANPORIA_KEY_FILE"
+        }
+      ],
+      "identifier": "anporia-mcp-server",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "75f3137529",
+    "published_at": "2026-05-19T09:36:50.725197Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.anp2network/anporia-mcp-server",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-19T09:36:50.725197Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

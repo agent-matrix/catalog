@@ -1,0 +1,66 @@
+{
+  "description": "Amazon review intelligence via Shulex OpenAPI. 10 marketplaces, verified-purchase & Vine signals.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mguozhen-voc-amazon-reviews-mcp.stdio.96df54f3ca",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mguozhen/voc-amazon-reviews",
+    "homepage": "https://github.com/mguozhen/voc-amazon-reviews",
+    "repository": "https://github.com/mguozhen/voc-amazon-reviews"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "voc-amazon-reviews-mcp==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mguozhen/voc-amazon-reviews-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Shulex VOC OpenAPI key. Get a free one (100 calls/month, no credit card) at https://apps.voc.ai/openapi",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "VOC_API_KEY"
+        },
+        {
+          "description": "Anthropic API key. Only needed if you use extract_listing_improvements (which uses Claude Opus 4.7 for structured listing rewrites).",
+          "format": "string",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        }
+      ],
+      "identifier": "voc-amazon-reviews-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "96df54f3ca",
+    "published_at": "2026-05-20T01:58:28.11448Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mguozhen/voc-amazon-reviews-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-20T01:58:28.11448Z"
+  },
+  "title": "VOC Amazon Reviews",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

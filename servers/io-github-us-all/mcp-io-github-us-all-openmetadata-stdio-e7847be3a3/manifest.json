@@ -1,0 +1,77 @@
+{
+  "description": "OpenMetadata MCP \u2014 metadata, lineage, search, data quality, OM 1.12+ Data Contracts",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:19+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-us-all-openmetadata.stdio.e7847be3a3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/us-all/openmetadata-mcp-server",
+    "homepage": "https://github.com/us-all/openmetadata-mcp-server",
+    "repository": "https://github.com/us-all/openmetadata-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@us-all/openmetadata-mcp@1.16.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.us-all/openmetadata",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "OpenMetadata server URL (e.g. https://om.example.com).",
+          "isRequired": true,
+          "name": "OPENMETADATA_HOST"
+        },
+        {
+          "description": "OpenMetadata bot/JWT token.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OPENMETADATA_TOKEN"
+        },
+        {
+          "default": "false",
+          "description": "Set to 'true' to enable write/destructive tools. Default read-only.",
+          "name": "OPENMETADATA_ALLOW_WRITE"
+        },
+        {
+          "description": "Comma-separated category allowlist. Default: all categories enabled.",
+          "name": "OM_TOOLS"
+        },
+        {
+          "description": "Comma-separated category disablelist.",
+          "name": "OM_DISABLE"
+        }
+      ],
+      "identifier": "@us-all/openmetadata-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.16.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e7847be3a3",
+    "published_at": "2026-05-21T05:47:42.790028Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.us-all/openmetadata",
+    "server_version": "1.16.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-21T05:47:42.790028Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.16.4"
+}

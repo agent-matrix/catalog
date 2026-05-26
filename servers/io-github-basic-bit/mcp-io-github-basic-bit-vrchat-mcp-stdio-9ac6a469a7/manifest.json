@@ -1,0 +1,207 @@
+{
+  "description": "MCP server for VRChat friends, worlds, groups, events, notifications, and VRCX history.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:39:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-BASIC-BIT-vrchat-mcp.stdio.9ac6a469a7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/BASIC-BIT/vrchat-mcp",
+    "homepage": "https://github.com/BASIC-BIT/vrchat-mcp",
+    "repository": "https://github.com/BASIC-BIT/vrchat-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@basicbit/vrchat-mcp@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.BASIC-BIT/vrchat-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to a JSON config file for settings not supplied through environment variables.",
+          "format": "filepath",
+          "name": "VRCHAT_MCP_CONFIG_FILE"
+        },
+        {
+          "description": "VRChat API base URL override.",
+          "format": "string",
+          "name": "VRCHAT_MCP_API_BASE"
+        },
+        {
+          "description": "Descriptive User-Agent for VRChat API requests.",
+          "format": "string",
+          "name": "VRCHAT_MCP_USER_AGENT"
+        },
+        {
+          "description": "OpenAPI spec URL or file path override.",
+          "format": "string",
+          "name": "VRCHAT_MCP_SPEC_URL"
+        },
+        {
+          "choices": [
+            "debug",
+            "info",
+            "warn",
+            "error"
+          ],
+          "default": "info",
+          "description": "Log level for stderr diagnostics.",
+          "format": "string",
+          "name": "VRCHAT_MCP_LOG_LEVEL"
+        },
+        {
+          "choices": [
+            "memory",
+            "file",
+            "keychain"
+          ],
+          "default": "memory",
+          "description": "Cookie storage backend for VRChat authentication.",
+          "format": "string",
+          "name": "VRCHAT_MCP_COOKIE_STORE"
+        },
+        {
+          "description": "Cookie file path used when VRCHAT_MCP_COOKIE_STORE is file.",
+          "format": "filepath",
+          "name": "VRCHAT_MCP_COOKIE_FILE"
+        },
+        {
+          "default": "false",
+          "description": "Enable non-GET VRChat API write operations.",
+          "format": "boolean",
+          "name": "VRCHAT_MCP_ALLOW_WRITES"
+        },
+        {
+          "description": "Comma-separated group IDs permitted for group write actions.",
+          "format": "string",
+          "name": "VRCHAT_MCP_GROUP_ALLOWLIST"
+        },
+        {
+          "default": "true",
+          "description": "Enable in-memory caching for high-volume reads.",
+          "format": "boolean",
+          "name": "VRCHAT_MCP_CACHE_ENABLED"
+        },
+        {
+          "default": "120",
+          "description": "Fresh cache TTL in seconds for friends data.",
+          "format": "number",
+          "name": "VRCHAT_MCP_CACHE_TTL_FRIENDS"
+        },
+        {
+          "default": "600",
+          "description": "Stale cache TTL in seconds for friends data.",
+          "format": "number",
+          "name": "VRCHAT_MCP_CACHE_STALE_TTL_FRIENDS"
+        },
+        {
+          "default": "300",
+          "description": "Fresh cache TTL in seconds for user group data.",
+          "format": "number",
+          "name": "VRCHAT_MCP_CACHE_TTL_USER_GROUPS"
+        },
+        {
+          "default": "1800",
+          "description": "Stale cache TTL in seconds for user group data.",
+          "format": "number",
+          "name": "VRCHAT_MCP_CACHE_STALE_TTL_USER_GROUPS"
+        },
+        {
+          "default": "300",
+          "description": "Fresh cache TTL in seconds for group data.",
+          "format": "number",
+          "name": "VRCHAT_MCP_CACHE_TTL_GROUPS"
+        },
+        {
+          "default": "1800",
+          "description": "Stale cache TTL in seconds for group data.",
+          "format": "number",
+          "name": "VRCHAT_MCP_CACHE_STALE_TTL_GROUPS"
+        },
+        {
+          "default": "30",
+          "description": "Fresh cache TTL in seconds for notification data.",
+          "format": "number",
+          "name": "VRCHAT_MCP_CACHE_TTL_NOTIFICATIONS"
+        },
+        {
+          "default": "300",
+          "description": "Stale cache TTL in seconds for notification data.",
+          "format": "number",
+          "name": "VRCHAT_MCP_CACHE_STALE_TTL_NOTIFICATIONS"
+        },
+        {
+          "default": "true",
+          "description": "Enable the VRChat realtime pipeline websocket after login.",
+          "format": "boolean",
+          "name": "VRCHAT_MCP_PIPELINE_ENABLED"
+        },
+        {
+          "description": "VRChat realtime pipeline websocket URL override.",
+          "format": "string",
+          "name": "VRCHAT_MCP_PIPELINE_URL"
+        },
+        {
+          "default": "5000",
+          "description": "Realtime pipeline reconnect delay in milliseconds.",
+          "format": "number",
+          "name": "VRCHAT_MCP_PIPELINE_RECONNECT_MS"
+        },
+        {
+          "default": "200",
+          "description": "Maximum in-memory friend change events retained.",
+          "format": "number",
+          "name": "VRCHAT_MCP_PIPELINE_CHANGE_BUFFER"
+        },
+        {
+          "default": "false",
+          "description": "Enable the low-level raw VRChat API call tool.",
+          "format": "boolean",
+          "name": "VRCHAT_MCP_ENABLE_RAW_CALL"
+        },
+        {
+          "default": "false",
+          "description": "Disable generated read tools from the VRChat OpenAPI spec.",
+          "format": "boolean",
+          "name": "VRCHAT_MCP_DISABLE_GENERATED_READ_TOOLS"
+        },
+        {
+          "default": "false",
+          "description": "Disable generated write tools from the VRChat OpenAPI spec.",
+          "format": "boolean",
+          "name": "VRCHAT_MCP_DISABLE_GENERATED_WRITE_TOOLS"
+        }
+      ],
+      "identifier": "@basicbit/vrchat-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9ac6a469a7",
+    "published_at": "2026-05-17T22:20:33.75775Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.BASIC-BIT/vrchat-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-17T22:20:33.75775Z"
+  },
+  "title": "VRChat MCP",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

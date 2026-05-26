@@ -1,0 +1,95 @@
+{
+  "description": "Shared memory + orchestration for your coding agents. Local-first MCP, vector RAG.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-pouyahasanamreji-continuum.stdio.ab9e168e03",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/pouyahasanamreji/continuum",
+    "homepage": "https://github.com/pouyahasanamreji/continuum",
+    "repository": "https://github.com/pouyahasanamreji/continuum"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "name": "-p",
+            "type": "named",
+            "value": "7776:7776"
+          },
+          {
+            "name": "-v",
+            "type": "named",
+            "value": "continuum-data:/data"
+          },
+          "docker.io/pouyahasanamreji/continuum:0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.pouyahasanamreji/continuum",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "/data/orchestrator.db",
+          "description": "SQLite path inside container",
+          "name": "ORCHESTRATOR_DB_PATH"
+        },
+        {
+          "description": "Optional HTTP embedder (Ollama/TEI/OpenAI-compatible). Unset = in-process embedder.",
+          "name": "EMBEDDER_URL"
+        },
+        {
+          "default": "Snowflake/snowflake-arctic-embed-m-v1.5",
+          "description": "Embedding model id",
+          "name": "EMBEDDER_MODEL"
+        },
+        {
+          "default": "768",
+          "description": "Embedding vector dimension",
+          "name": "EMBEDDER_DIM"
+        }
+      ],
+      "identifier": "docker.io/pouyahasanamreji/continuum:0.3.0",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "name": "-p",
+          "type": "named",
+          "value": "7776:7776"
+        },
+        {
+          "name": "-v",
+          "type": "named",
+          "value": "continuum-data:/data"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:7776/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "ab9e168e03",
+    "published_at": "2026-05-13T10:30:55.771428Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.pouyahasanamreji/continuum",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-13T10:30:55.771428Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

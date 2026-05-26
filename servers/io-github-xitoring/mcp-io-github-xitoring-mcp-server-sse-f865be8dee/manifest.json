@@ -1,0 +1,59 @@
+{
+  "description": "Connect AI assistants to Xitoring monitoring: servers, uptime, incidents, metrics, SSL, and alerts.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-xitoring-mcp-server.sse.f865be8dee",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/xitoring/mcp-server",
+    "homepage": "https://github.com/xitoring/mcp-server",
+    "repository": "https://github.com/xitoring/mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://app.xitoring.com/mcp"
+    }
+  },
+  "name": "io.github.xitoring/mcp-server",
+  "provenance": {
+    "identity_key": "f865be8dee",
+    "published_at": "2026-05-16T19:14:34.39643Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.xitoring/mcp-server",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-16T19:14:34.39643Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Bearer token for the Xitoring API. Generate at Dashboard > Account > API Access.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {api_key}",
+          "variables": {
+            "api_key": {
+              "description": "Your Xitoring API key",
+              "format": "string",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://app.xitoring.com/mcp"
+    }
+  ],
+  "title": "Xitoring",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

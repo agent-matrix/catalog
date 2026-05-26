@@ -1,0 +1,79 @@
+{
+  "description": "Build, solve, and analyze RASON optimization, simulation, data science, and decision models",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:39:57+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-FrontlineSystems-rason-mcp-server.stdio.5c0ade0d8d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@frontlinesystems/rason-mcp-server@2026.5.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.FrontlineSystems/rason-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "RASON API bearer token. Required for model management, solving, and diagnostics. Obtain at https://rason.com/.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "RASON_BEARER_TOKEN"
+        },
+        {
+          "default": "https://rason.net",
+          "description": "Base URL of the RASON REST API. /api is appended automatically.",
+          "name": "RASON_SERVER_URL"
+        },
+        {
+          "default": "25",
+          "description": "Maximum array/dataFrame rows before solver results are summarized.",
+          "format": "number",
+          "name": "RASON_RESULT_ARRAY_LIMIT"
+        },
+        {
+          "default": "50000",
+          "description": "Maximum solve-result size (in characters) before truncation.",
+          "format": "number",
+          "name": "RASON_RESULT_SIZE_LIMIT"
+        },
+        {
+          "default": "300000",
+          "description": "HTTP request timeout in milliseconds.",
+          "format": "number",
+          "name": "RASON_REQUEST_TIMEOUT"
+        }
+      ],
+      "identifier": "@frontlinesystems/rason-mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2026.5.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5c0ade0d8d",
+    "published_at": "2026-05-26T02:08:43.499979Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.FrontlineSystems/rason-mcp-server",
+    "server_version": "2026.5.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-26T02:08:43.499979Z"
+  },
+  "title": "RASON",
+  "type": "mcp_server",
+  "version": "2026.5.4"
+}

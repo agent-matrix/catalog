@@ -1,0 +1,81 @@
+{
+  "description": "Alephant MCP server for AI cost control, BYO-key routing, 50+ providers, and 320+ models.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:39:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-AlephantAI-alephant-mcp.stdio.e47f856db9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/AlephantAI/alephant-mcp",
+    "homepage": "https://github.com/AlephantAI/alephant-mcp",
+    "repository": "https://github.com/AlephantAI/alephant-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@alephantai/mcp@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.AlephantAI/alephant-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Alephant SaaS API base URL, for example https://api.alephant.ai.",
+          "format": "string",
+          "isRequired": true,
+          "name": "ALEPHANT_API_BASE_URL"
+        },
+        {
+          "description": "Virtual Key for read-only, cockpit-scoped VK mode. Use this mode for developer-level cost and usage visibility.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ALEPHANT_VIRTUAL_KEY"
+        },
+        {
+          "description": "Personal Access Token for Manager mode. When set, Manager mode takes precedence over ALEPHANT_VIRTUAL_KEY.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ALEPHANT_PAT"
+        },
+        {
+          "description": "Workspace UUID required with ALEPHANT_PAT for Manager mode.",
+          "format": "string",
+          "name": "ALEPHANT_WORKSPACE_ID"
+        },
+        {
+          "description": "Optional local HTTP tool-call limit per minute. Defaults to 60; set 0 to disable local throttling.",
+          "format": "string",
+          "name": "ALEPHANT_RATE_LIMIT_RPM"
+        }
+      ],
+      "identifier": "@alephantai/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e47f856db9",
+    "published_at": "2026-05-16T04:17:46.866688Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.AlephantAI/alephant-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-16T04:17:46.866688Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

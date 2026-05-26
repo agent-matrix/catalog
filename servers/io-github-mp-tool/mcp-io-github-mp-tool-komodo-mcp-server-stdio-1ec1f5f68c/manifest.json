@@ -1,0 +1,79 @@
+{
+  "description": "MCP server for Komodo - manage Docker containers, servers, stacks, and deployments via AI",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:39:58+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-MP-Tool-komodo-mcp-server.stdio.1ec1f5f68c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/MP-Tool/komodo-mcp-server",
+    "homepage": "https://github.com/MP-Tool/komodo-mcp-server",
+    "repository": "https://github.com/MP-Tool/komodo-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/mp-tool/komodo-mcp-server:1.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.MP-Tool/komodo-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Komodo Core API URL",
+          "isRequired": true,
+          "name": "KOMODO_URL",
+          "placeholder": "https://komodo.example.com"
+        },
+        {
+          "description": "API key for key-based authentication (recommended)",
+          "isSecret": true,
+          "name": "KOMODO_API_KEY"
+        },
+        {
+          "description": "API secret for key-based authentication (recommended)",
+          "isSecret": true,
+          "name": "KOMODO_API_SECRET"
+        },
+        {
+          "description": "Username for login authentication (alternative to API key)",
+          "isSecret": true,
+          "name": "KOMODO_USERNAME"
+        },
+        {
+          "description": "Password for login authentication (alternative to API key)",
+          "isSecret": true,
+          "name": "KOMODO_PASSWORD"
+        }
+      ],
+      "identifier": "ghcr.io/mp-tool/komodo-mcp-server:1.4.0",
+      "registryType": "oci",
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "1ec1f5f68c",
+    "published_at": "2026-05-15T23:53:06.477512Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.MP-Tool/komodo-mcp-server",
+    "server_version": "1.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-15T23:53:06.477512Z"
+  },
+  "title": "Komodo MCP Server",
+  "type": "mcp_server",
+  "version": "1.4.0"
+}

@@ -1,0 +1,45 @@
+{
+  "description": "MCP server for trivia: 1.4M+ questions (EN+PL), 24 categories, 12 tools + 4 prompts, OAuth 2.1.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:39:53+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-runriva-quizbase-mcp.sse.ea5992c2d0",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://quizbase.runriva.com/mcp"
+    }
+  },
+  "name": "com.runriva.quizbase/mcp",
+  "provenance": {
+    "identity_key": "ea5992c2d0",
+    "published_at": "2026-05-24T08:46:35.149123Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.runriva.quizbase/mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-24T08:46:35.149123Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Bearer <key>. Two auth modes supported. (1) API key \u2014 qb_pk_<random> (publishable, CORS-safe for browser/edge) or qb_sk_<random> (secret, server-only). Free tier 500 req/day; mint a key at https://quizbase.runriva.com/dashboard/keys. (2) OAuth 2.1 with Dynamic Client Registration (RFC 7591). Discovery: https://quizbase.runriva.com/.well-known/oauth-authorization-server. Use OAuth for end-user consent flows (Claude.ai Custom Connector default).",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization"
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://quizbase.runriva.com/mcp"
+    }
+  ],
+  "title": "QuizBase",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

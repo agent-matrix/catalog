@@ -1,0 +1,65 @@
+{
+  "description": "Query your MCPSpend usage: cost today, top tools, recent sessions, budget projections.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:01+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-andreisirbu91-lab-mcpspend.stdio.ab6935b69c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/andreisirbu91-lab/MCPSpend",
+    "homepage": "https://github.com/andreisirbu91-lab/MCPSpend",
+    "repository": "https://github.com/andreisirbu91-lab/MCPSpend"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@mcpspend/mcp-server@0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.andreisirbu91-lab/mcpspend",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your MCPSpend API key. Create one at https://mcpspend.com/dashboard/keys. Starts with mcps_live_ or mcps_test_. Optional \u2014 the server boots and lists tools without it; only tool calls require auth.",
+          "format": "string",
+          "isSecret": true,
+          "name": "MCPSPEND_API_KEY"
+        },
+        {
+          "default": "https://api.mcpspend.com",
+          "description": "Optional. Override the MCPSpend API endpoint. Defaults to https://api.mcpspend.com. Use only if you self-host MCPSpend.",
+          "format": "string",
+          "name": "MCPSPEND_ENDPOINT"
+        }
+      ],
+      "identifier": "@mcpspend/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ab6935b69c",
+    "published_at": "2026-05-25T18:33:56.889019Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.andreisirbu91-lab/mcpspend",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-25T18:33:56.889019Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

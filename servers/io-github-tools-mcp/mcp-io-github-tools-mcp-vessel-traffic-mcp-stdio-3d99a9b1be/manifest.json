@@ -1,0 +1,63 @@
+{
+  "description": "Read-only MCP server for vessel AIS, ship tracking, schedules, and BYOK maritime providers.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:18+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-tools-mcp-vessel-traffic-mcp.stdio.3d99a9b1be",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/tools-mcp/vessel-traffic-mcp",
+    "homepage": "https://github.com/tools-mcp/vessel-traffic-mcp",
+    "repository": "https://github.com/tools-mcp/vessel-traffic-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@tools-mcp/vessel-traffic-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.tools-mcp/vessel-traffic-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Run the package as a local stdio MCP server.",
+          "name": "VESSEL_MCP_TRANSPORT",
+          "value": "stdio"
+        },
+        {
+          "default": "myshiptracking,tradlinx",
+          "description": "Optional comma-separated public providers to enable at runtime.",
+          "name": "VESSEL_MCP_ENABLE_PUBLIC_PROVIDERS"
+        }
+      ],
+      "identifier": "@tools-mcp/vessel-traffic-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "3d99a9b1be",
+    "published_at": "2026-05-20T00:48:33.261894Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.tools-mcp/vessel-traffic-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-20T00:48:33.261894Z"
+  },
+  "title": "Vessel Traffic MCP",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

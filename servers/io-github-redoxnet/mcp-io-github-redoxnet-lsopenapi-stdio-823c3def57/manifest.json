@@ -1,0 +1,91 @@
+{
+  "description": "LS Securities OpenAPI MCP server: Korean stock data, charts, screeners, and a local portfolio.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-redoxnet-lsopenapi.stdio.823c3def57",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/redoxnet/mcp-lsopenapi",
+    "homepage": "https://github.com/redoxnet/mcp-lsopenapi",
+    "repository": "https://github.com/redoxnet/mcp-lsopenapi"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "dnx",
+          "RedoxNet.Mcp.LsOpenApi==1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.redoxnet/lsopenapi",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "name": "LS_APPKEY",
+          "value": "{ls_appkey}",
+          "variables": {
+            "ls_appkey": {
+              "description": "LS Securities OpenAPI AppKey",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        },
+        {
+          "name": "LS_APPSECRETKEY",
+          "value": "{ls_appsecretkey}",
+          "variables": {
+            "ls_appsecretkey": {
+              "description": "LS Securities OpenAPI AppSecretKey",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        },
+        {
+          "name": "LS_MARKET",
+          "value": "{ls_market}",
+          "variables": {
+            "ls_market": {
+              "choices": [
+                "real",
+                "virtual"
+              ],
+              "default": "real",
+              "description": "LS OpenAPI environment: real or virtual"
+            }
+          }
+        }
+      ],
+      "identifier": "RedoxNet.Mcp.LsOpenApi",
+      "registryBaseUrl": "https://api.nuget.org/v3/index.json",
+      "registryType": "nuget",
+      "runtimeHint": "dnx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "823c3def57",
+    "published_at": "2026-05-21T04:43:21.984566Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.redoxnet/lsopenapi",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-21T04:43:21.984566Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

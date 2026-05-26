@@ -1,0 +1,85 @@
+{
+  "description": "Korean public data API gateway for discovering and calling data.go.kr APIs from MCP clients.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:07+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-fieldcure-publicdata-kr.stdio.43a6cd3f69",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/fieldcure/fieldcure-mcp-publicdata",
+    "homepage": "https://github.com/fieldcure/fieldcure-mcp-publicdata",
+    "repository": "https://github.com/fieldcure/fieldcure-mcp-publicdata"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "dnx",
+          "FieldCure.Mcp.PublicData.Kr==1.0.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.fieldcure/publicdata-kr",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "name": "DATA_GO_KR_API_KEY",
+          "value": "{data_go_kr_api_key}",
+          "variables": {
+            "data_go_kr_api_key": {
+              "description": "data.go.kr API key",
+              "isSecret": true
+            }
+          }
+        },
+        {
+          "name": "PUBLICDATA_TIMEOUT_SECONDS",
+          "value": "{publicdata_timeout_seconds}",
+          "variables": {
+            "publicdata_timeout_seconds": {
+              "default": "30",
+              "description": "Per-request timeout in seconds"
+            }
+          }
+        },
+        {
+          "name": "PUBLICDATA_MAX_RESPONSE_LENGTH",
+          "value": "{publicdata_max_response_length}",
+          "variables": {
+            "publicdata_max_response_length": {
+              "default": "50000",
+              "description": "Maximum response body length in characters"
+            }
+          }
+        }
+      ],
+      "identifier": "FieldCure.Mcp.PublicData.Kr",
+      "registryBaseUrl": "https://api.nuget.org/v3/index.json",
+      "registryType": "nuget",
+      "runtimeHint": "dnx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "43a6cd3f69",
+    "published_at": "2026-05-25T09:20:53.154708Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.fieldcure/publicdata-kr",
+    "server_version": "1.0.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-25T09:20:53.154708Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.3"
+}

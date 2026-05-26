@@ -1,0 +1,75 @@
+{
+  "description": "Kling AI video generation MCP server for Model Context Protocol hosts",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mindstone-mcp-server-kling.stdio.8cc08f065f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mindstone/mcp-servers",
+    "homepage": "https://github.com/mindstone/mcp-servers",
+    "repository": "https://github.com/mindstone/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@mindstone/mcp-server-kling@0.3.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mindstone/mcp-server-kling",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Kling API access key",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "KLING_ACCESS_KEY"
+        },
+        {
+          "description": "Kling API secret key",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "KLING_SECRET_KEY"
+        },
+        {
+          "default": "60000",
+          "description": "Outbound HTTP request timeout in milliseconds (max 1800000)",
+          "format": "number",
+          "name": "KLING_REQUEST_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "@mindstone/mcp-server-kling",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8cc08f065f",
+    "published_at": "2026-05-21T11:26:48.729742Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mindstone/mcp-server-kling",
+    "server_version": "0.3.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-21T11:26:48.729742Z"
+  },
+  "title": "Kling",
+  "type": "mcp_server",
+  "version": "0.3.2"
+}

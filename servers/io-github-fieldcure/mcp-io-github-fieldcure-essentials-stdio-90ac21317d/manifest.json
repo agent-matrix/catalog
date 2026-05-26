@@ -1,0 +1,149 @@
+{
+  "description": "Essential MCP server: HTTP, web search, downloads, Wolfram|Alpha, shell, JS, file I/O, memory.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:07+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-fieldcure-essentials.stdio.90ac21317d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/fieldcure/fieldcure-mcp-essentials",
+    "homepage": "https://github.com/fieldcure/fieldcure-mcp-essentials",
+    "repository": "https://github.com/fieldcure/fieldcure-mcp-essentials"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "dnx",
+          "FieldCure.Mcp.Essentials==2.6.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.fieldcure/essentials",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "name": "ESSENTIALS_SEARCH_ENGINE",
+          "value": "{essentials_search_engine}",
+          "variables": {
+            "essentials_search_engine": {
+              "choices": [
+                "bing",
+                "duckduckgo",
+                "serper",
+                "tavily",
+                "serpapi"
+              ],
+              "default": "bing",
+              "description": "Initial search engine"
+            }
+          }
+        },
+        {
+          "name": "ESSENTIALS_SEARCH_API_KEY",
+          "value": "{essentials_search_api_key}",
+          "variables": {
+            "essentials_search_api_key": {
+              "description": "API key for the engine selected by ESSENTIALS_SEARCH_ENGINE",
+              "isSecret": true
+            }
+          }
+        },
+        {
+          "name": "SERPER_API_KEY",
+          "value": "{serper_api_key}",
+          "variables": {
+            "serper_api_key": {
+              "description": "Serper API key for web search",
+              "isSecret": true
+            }
+          }
+        },
+        {
+          "name": "SERPAPI_API_KEY",
+          "value": "{serpapi_api_key}",
+          "variables": {
+            "serpapi_api_key": {
+              "description": "SerpApi API key for web search",
+              "isSecret": true
+            }
+          }
+        },
+        {
+          "name": "TAVILY_API_KEY",
+          "value": "{tavily_api_key}",
+          "variables": {
+            "tavily_api_key": {
+              "description": "Tavily API key for web search",
+              "isSecret": true
+            }
+          }
+        },
+        {
+          "name": "WOLFRAM_APPID",
+          "value": "{wolfram_appid}",
+          "variables": {
+            "wolfram_appid": {
+              "description": "Wolfram|Alpha AppID",
+              "isSecret": true
+            }
+          }
+        },
+        {
+          "name": "ESSENTIALS_MEMORY_PATH",
+          "value": "{essentials_memory_path}",
+          "variables": {
+            "essentials_memory_path": {
+              "description": "SQLite memory database path"
+            }
+          }
+        },
+        {
+          "name": "ESSENTIALS_DOWNLOAD_DIRECTORY",
+          "value": "{essentials_download_directory}",
+          "variables": {
+            "essentials_download_directory": {
+              "description": "Default directory for downloaded files"
+            }
+          }
+        },
+        {
+          "name": "ESSENTIALS_SETTINGS_PATH",
+          "value": "{essentials_settings_path}",
+          "variables": {
+            "essentials_settings_path": {
+              "description": "Settings file path"
+            }
+          }
+        }
+      ],
+      "identifier": "FieldCure.Mcp.Essentials",
+      "registryBaseUrl": "https://api.nuget.org/v3/index.json",
+      "registryType": "nuget",
+      "runtimeHint": "dnx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.6.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "90ac21317d",
+    "published_at": "2026-05-25T09:34:02.543854Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.fieldcure/essentials",
+    "server_version": "2.6.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-25T09:34:02.543854Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "2.6.1"
+}

@@ -1,0 +1,101 @@
+{
+  "description": "Salesforce CRM MCP server: accounts, contacts, opportunities, leads, tasks, and custom objects",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mindstone-mcp-server-salesforce.stdio.e9599ac639",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mindstone/mcp-servers",
+    "homepage": "https://github.com/mindstone/mcp-servers",
+    "repository": "https://github.com/mindstone/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@mindstone/mcp-server-salesforce@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mindstone/mcp-server-salesforce",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Salesforce Connected App client ID (recommended path)",
+          "format": "string",
+          "isRequired": true,
+          "name": "SALESFORCE_CLIENT_ID"
+        },
+        {
+          "description": "Salesforce Connected App client secret (recommended path)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SALESFORCE_CLIENT_SECRET"
+        },
+        {
+          "description": "Set to true for sandbox environments",
+          "format": "string",
+          "name": "SALESFORCE_SANDBOX"
+        },
+        {
+          "description": "Static access token (alternative to OAuth)",
+          "format": "string",
+          "isSecret": true,
+          "name": "SALESFORCE_ACCESS_TOKEN"
+        },
+        {
+          "description": "Salesforce instance URL (required for manual token mode)",
+          "format": "string",
+          "name": "SALESFORCE_INSTANCE_URL"
+        },
+        {
+          "default": "~/.mcp/salesforce",
+          "description": "Custom config directory",
+          "format": "filepath",
+          "name": "SALESFORCE_CONFIG_DIR"
+        },
+        {
+          "default": "0",
+          "description": "OAuth callback port (0 = OS-assigned)",
+          "format": "number",
+          "name": "SALESFORCE_OAUTH_PORT"
+        },
+        {
+          "description": "Space-separated OAuth scopes",
+          "format": "string",
+          "name": "SALESFORCE_OAUTH_SCOPES"
+        }
+      ],
+      "identifier": "@mindstone/mcp-server-salesforce",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e9599ac639",
+    "published_at": "2026-05-21T11:27:41.129735Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mindstone/mcp-server-salesforce",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-21T11:27:41.129735Z"
+  },
+  "title": "Salesforce",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

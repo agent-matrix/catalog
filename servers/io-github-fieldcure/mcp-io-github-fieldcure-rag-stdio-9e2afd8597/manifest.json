@@ -1,0 +1,105 @@
+{
+  "description": "MCP RAG server with hybrid search, multi-KB support, and AI-powered chunk contextualization.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:07+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-fieldcure-rag.stdio.9e2afd8597",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/fieldcure/fieldcure-mcp-rag",
+    "homepage": "https://github.com/fieldcure/fieldcure-mcp-rag",
+    "repository": "https://github.com/fieldcure/fieldcure-mcp-rag"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "dnx",
+          "FieldCure.Mcp.Rag==2.5.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.fieldcure/rag",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "name": "OPENAI_API_KEY",
+          "value": "{openai_api_key}",
+          "variables": {
+            "openai_api_key": {
+              "description": "OpenAI API key for embeddings or contextualization",
+              "isSecret": true
+            }
+          }
+        },
+        {
+          "name": "ANTHROPIC_API_KEY",
+          "value": "{anthropic_api_key}",
+          "variables": {
+            "anthropic_api_key": {
+              "description": "Anthropic API key for contextualization",
+              "isSecret": true
+            }
+          }
+        },
+        {
+          "name": "GEMINI_API_KEY",
+          "value": "{gemini_api_key}",
+          "variables": {
+            "gemini_api_key": {
+              "description": "Gemini API key for embeddings or contextualization",
+              "isSecret": true
+            }
+          }
+        },
+        {
+          "name": "VOYAGE_API_KEY",
+          "value": "{voyage_api_key}",
+          "variables": {
+            "voyage_api_key": {
+              "description": "Voyage API key for configured providers",
+              "isSecret": true
+            }
+          }
+        },
+        {
+          "name": "GROQ_API_KEY",
+          "value": "{groq_api_key}",
+          "variables": {
+            "groq_api_key": {
+              "description": "Groq API key for configured providers",
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "identifier": "FieldCure.Mcp.Rag",
+      "registryBaseUrl": "https://api.nuget.org/v3/index.json",
+      "registryType": "nuget",
+      "runtimeHint": "dnx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.5.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9e2afd8597",
+    "published_at": "2026-05-25T09:26:38.625457Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.fieldcure/rag",
+    "server_version": "2.5.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-25T09:26:38.625457Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "2.5.1"
+}

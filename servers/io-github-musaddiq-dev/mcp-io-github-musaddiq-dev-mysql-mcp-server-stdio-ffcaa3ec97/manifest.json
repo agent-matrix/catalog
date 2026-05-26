@@ -1,0 +1,95 @@
+{
+  "description": "Python MCP server for MySQL database inspection and querying",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:13+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-musaddiq-dev-mysql-mcp-server.stdio.ffcaa3ec97",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/musaddiq-dev/mysql-mcp-server",
+    "homepage": "https://github.com/musaddiq-dev/mysql-mcp-server",
+    "repository": "https://github.com/musaddiq-dev/mysql-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mdev-mysql-mcp-server==0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.musaddiq-dev/mysql-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "localhost",
+          "description": "MySQL host",
+          "name": "MYSQL_HOST"
+        },
+        {
+          "default": "3306",
+          "description": "MySQL port",
+          "name": "MYSQL_PORT"
+        },
+        {
+          "default": "root",
+          "description": "MySQL username",
+          "name": "MYSQL_USER"
+        },
+        {
+          "description": "MySQL password",
+          "isSecret": true,
+          "name": "MYSQL_PASSWORD"
+        },
+        {
+          "description": "MySQL database name",
+          "isRequired": true,
+          "name": "MYSQL_DATABASE"
+        },
+        {
+          "default": "5",
+          "description": "MySQL connection pool size",
+          "name": "MYSQL_POOL_SIZE"
+        },
+        {
+          "default": "INFO",
+          "description": "Python logging level",
+          "name": "LOG_LEVEL"
+        },
+        {
+          "default": "1000",
+          "description": "Maximum rows returned by read queries",
+          "name": "MYSQL_READ_QUERY_LIMIT"
+        }
+      ],
+      "identifier": "mdev-mysql-mcp-server",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ffcaa3ec97",
+    "published_at": "2026-05-23T06:27:46.849325Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.musaddiq-dev/mysql-mcp-server",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-23T06:27:46.849325Z"
+  },
+  "title": "MySQL MCP Server",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

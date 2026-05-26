@@ -1,0 +1,49 @@
+{
+  "description": "Identity, secrets, and passwordless SSH provisioning for AI agents \u2014 Keycloak, vault, MCP tools.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:21+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.sh-xorfox-drawbridge-server.sse.3ad1daf838",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/xorfox/drawbridge",
+    "homepage": "https://github.com/xorfox/drawbridge",
+    "repository": "https://github.com/xorfox/drawbridge"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://api.drawbridge.xorfox.sh/mcp/sse"
+    }
+  },
+  "name": "sh.xorfox.drawbridge/server",
+  "provenance": {
+    "identity_key": "3ad1daf838",
+    "published_at": "2026-05-24T04:42:23.634765Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "sh.xorfox.drawbridge/server",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-24T04:42:23.634765Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Bearer <access_token>. To mint a token without a human in the loop: (1) POST {\"agentName\":\"<name>\",\"agentEmail\":\"<principal-email>\"} to https://api.drawbridge.xorfox.sh/drawbridge/mcp/register \u2014 returns clientId, clientSecret, tokenEndpoint. (2) POST grant_type=client_credentials with those credentials to the token endpoint. The resulting access_token is scoped mcp:tools and audience-bound to /mcp; default TTL is 5 minutes, so refresh on the boundary.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization"
+        }
+      ],
+      "type": "sse",
+      "url": "https://api.drawbridge.xorfox.sh/mcp/sse"
+    }
+  ],
+  "title": "Drawbridge",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

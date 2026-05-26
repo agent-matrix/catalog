@@ -1,0 +1,84 @@
+{
+  "description": "Charter-bound defensive security copilot: secrets, obfuscation, deps, Dockerfile, IaC scans.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:19+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-verrysimatupang99-aegis.stdio.b62c3ad02c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/verrysimatupang99/aegis",
+    "homepage": "https://github.com/verrysimatupang99/aegis",
+    "repository": "https://github.com/verrysimatupang99/aegis"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "python",
+          {
+            "isRequired": true,
+            "name": "--from",
+            "type": "named",
+            "value": "aegis-sec"
+          },
+          "aegis-sec==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.verrysimatupang99/aegis",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Project root containing data/mythos.yaml. Defaults to current working directory.",
+          "name": "AEGIS_HOME"
+        },
+        {
+          "description": "Optional. Only needed if you call the `aegis advise` cloud LLM path.",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        }
+      ],
+      "identifier": "aegis-sec",
+      "packageArguments": [
+        {
+          "isRequired": true,
+          "type": "positional",
+          "value": "aegis-mcp"
+        }
+      ],
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "isRequired": true,
+          "name": "--from",
+          "type": "named",
+          "value": "aegis-sec"
+        }
+      ],
+      "runtimeHint": "python",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b62c3ad02c",
+    "published_at": "2026-05-23T19:09:25.316928Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.verrysimatupang99/aegis",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-23T19:09:25.316928Z"
+  },
+  "title": "Aegis",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

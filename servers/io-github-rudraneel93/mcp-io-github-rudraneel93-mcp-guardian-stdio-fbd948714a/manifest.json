@@ -1,0 +1,70 @@
+{
+  "description": "Security, cost, and health governance proxy for MCP infrastructure",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-rudraneel93-mcp-guardian.stdio.fbd948714a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/rudraneel93/mcp-guardian",
+    "homepage": "https://github.com/rudraneel93/mcp-guardian",
+    "repository": "https://github.com/rudraneel93/mcp-guardian"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@mcp-guardian/server@2.3.21"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.rudraneel93/mcp-guardian",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "~/.mcp-guardian/history.db",
+          "description": "Path to SQLite history database",
+          "format": "string",
+          "name": "MCP_GUARDIAN_DB_PATH"
+        },
+        {
+          "description": "Slack or Discord webhook for critical alerts",
+          "format": "string",
+          "isSecret": true,
+          "name": "ALERT_WEBHOOK_URL"
+        },
+        {
+          "description": "Expose Prometheus metrics",
+          "format": "string",
+          "name": "METRICS_ENABLED"
+        }
+      ],
+      "identifier": "@mcp-guardian/server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.3.21"
+    }
+  ],
+  "provenance": {
+    "identity_key": "fbd948714a",
+    "published_at": "2026-05-14T07:08:33.1644Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.rudraneel93/mcp-guardian",
+    "server_version": "2.3.21",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-14T07:08:33.1644Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "2.3.21"
+}

@@ -1,0 +1,87 @@
+{
+  "description": "Python MCP server for PostgreSQL database inspection and querying",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:13+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-musaddiq-dev-postgresql-mcp-server.stdio.32b2777f15",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/musaddiq-dev/postgresql-mcp-server",
+    "homepage": "https://github.com/musaddiq-dev/postgresql-mcp-server",
+    "repository": "https://github.com/musaddiq-dev/postgresql-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mdev-postgresql-mcp-server==0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.musaddiq-dev/postgresql-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "localhost",
+          "description": "PostgreSQL host",
+          "isRequired": true,
+          "name": "POSTGRES_HOST"
+        },
+        {
+          "default": "5432",
+          "description": "PostgreSQL port",
+          "isRequired": true,
+          "name": "POSTGRES_PORT"
+        },
+        {
+          "description": "PostgreSQL username",
+          "isRequired": true,
+          "name": "POSTGRES_USER"
+        },
+        {
+          "description": "PostgreSQL password",
+          "isSecret": true,
+          "name": "POSTGRES_PASSWORD"
+        },
+        {
+          "description": "PostgreSQL database name",
+          "isRequired": true,
+          "name": "POSTGRES_DB"
+        },
+        {
+          "default": "1000",
+          "description": "Maximum rows returned by read queries",
+          "name": "POSTGRES_READ_QUERY_LIMIT"
+        }
+      ],
+      "identifier": "mdev-postgresql-mcp-server",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "32b2777f15",
+    "published_at": "2026-05-23T06:27:48.66197Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.musaddiq-dev/postgresql-mcp-server",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-23T06:27:48.66197Z"
+  },
+  "title": "PostgreSQL MCP Server",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

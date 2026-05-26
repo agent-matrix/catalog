@@ -1,0 +1,87 @@
+{
+  "description": "MCP server for Good Eggs grocery shopping automation using Playwright.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:39:53+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-pulsemcp-good-eggs.stdio.2441fc4b95",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/pulsemcp/mcp-servers",
+    "homepage": "https://github.com/pulsemcp/mcp-servers",
+    "repository": "https://github.com/pulsemcp/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y"
+          },
+          "good-eggs-mcp-server@0.1.9"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.pulsemcp/good-eggs",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your Good Eggs account email address.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GOOD_EGGS_USERNAME"
+        },
+        {
+          "description": "Your Good Eggs account password.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GOOD_EGGS_PASSWORD"
+        },
+        {
+          "default": "true",
+          "description": "Run browser in headless mode (true/false).",
+          "name": "HEADLESS"
+        },
+        {
+          "default": "30000",
+          "description": "Browser operation timeout in milliseconds.",
+          "name": "TIMEOUT"
+        }
+      ],
+      "identifier": "good-eggs-mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.9"
+    }
+  ],
+  "provenance": {
+    "identity_key": "2441fc4b95",
+    "published_at": "2026-05-18T13:28:55.535788Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.pulsemcp/good-eggs",
+    "server_version": "0.1.9",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-18T13:28:55.535788Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.9"
+}

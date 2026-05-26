@@ -1,0 +1,72 @@
+{
+  "description": "MCP server for iFlow Search web search, image search, and URL fetch tools.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-zhengyanglsun-iflow-search.stdio.6ecb600fc9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/zhengyanglsun/iflow-search-js",
+    "homepage": "https://github.com/zhengyanglsun/iflow-search-js",
+    "repository": "https://github.com/zhengyanglsun/iflow-search-js"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@iflow-ai/search-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.zhengyanglsun/iflow-search",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Bearer token for the iFlow Search API. Obtain one at https://platform.iflow.cn.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "IFLOW_API_KEY"
+        },
+        {
+          "description": "Optional MCP client slug forwarded to iFlow as the IFlow-MCP-Client header. Matches /^[a-z0-9._-]{1,64}$/.",
+          "name": "IFLOW_MCP_CLIENT"
+        },
+        {
+          "description": "Optional MCP client version forwarded to iFlow as the IFlow-MCP-Client-Version header. Only honored when IFLOW_MCP_CLIENT is also set.",
+          "name": "IFLOW_MCP_CLIENT_VERSION"
+        },
+        {
+          "description": "Optional override for the iFlow Search API base URL. Defaults to https://platform.iflow.cn.",
+          "name": "IFLOW_BASE_URL"
+        }
+      ],
+      "identifier": "@iflow-ai/search-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6ecb600fc9",
+    "published_at": "2026-05-26T06:49:19.969697Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.zhengyanglsun/iflow-search",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-26T06:49:19.969697Z"
+  },
+  "title": "iFlow Search",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

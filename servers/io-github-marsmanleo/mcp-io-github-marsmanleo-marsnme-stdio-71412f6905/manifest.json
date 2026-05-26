@@ -1,0 +1,82 @@
+{
+  "description": "Agent-agnostic memory backend that preserves continuity between humans and AI over time.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:39:58+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Marsmanleo-marsnme.stdio.71412f6905",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Marsmanleo/MarsNMe",
+    "homepage": "https://github.com/Marsmanleo/MarsNMe",
+    "repository": "https://github.com/Marsmanleo/MarsNMe"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@marsnme/mcp-gateway@0.1.8"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Marsmanleo/marsnme",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Profile ID used to separate memory data (for example: profile-a).",
+          "isRequired": true,
+          "name": "MCP_PROFILE"
+        },
+        {
+          "description": "Supabase REST API project URL.",
+          "isRequired": true,
+          "name": "SUPABASE_BASE_URL"
+        },
+        {
+          "description": "Supabase service role key.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SUPABASE_SERVICE_ROLE_KEY"
+        },
+        {
+          "description": "Jina AI API key for embedding-based tools.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "JINA_API_KEY"
+        },
+        {
+          "description": "Local HTTP port for the MCP endpoint. If omitted, defaults by MCP_PROFILE (coco=18790, toto=18791, others deterministic in 20000-29999).",
+          "name": "PORT"
+        }
+      ],
+      "identifier": "@marsnme/mcp-gateway",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://127.0.0.1:18790/mcp"
+      },
+      "version": "0.1.8"
+    }
+  ],
+  "provenance": {
+    "identity_key": "71412f6905",
+    "published_at": "2026-05-22T12:12:24.8059Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Marsmanleo/marsnme",
+    "server_version": "0.1.8",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-22T12:12:24.8059Z"
+  },
+  "title": "MarsNMe",
+  "type": "mcp_server",
+  "version": "0.1.8"
+}

@@ -1,0 +1,76 @@
+{
+  "description": "Give your AI agent the ability to respond with live, interactive apps that evolve.",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:39:50+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-dynsoft-sac.stdio.06d441197f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Software-As-Content/software-as-content-sdk",
+    "homepage": "https://github.com/Software-As-Content/software-as-content-sdk",
+    "repository": "https://github.com/Software-As-Content/software-as-content-sdk"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "sac-sdk==0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.dynsoft/sac",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API key for the LLM provider (OpenRouter, Anthropic, OpenAI, etc.)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SAC_API_KEY"
+        },
+        {
+          "description": "Custom API endpoint for OpenAI-compatible providers",
+          "format": "string",
+          "name": "SAC_API_BASE"
+        },
+        {
+          "description": "Override the default generation model",
+          "format": "string",
+          "name": "SAC_MODEL"
+        },
+        {
+          "description": "Tavily API key for web search in generated apps",
+          "format": "string",
+          "isSecret": true,
+          "name": "SAC_SEARCH_API_KEY"
+        }
+      ],
+      "identifier": "sac-sdk",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "06d441197f",
+    "published_at": "2026-05-24T02:09:53.574937Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.dynsoft/sac",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-24T02:09:53.574937Z"
+  },
+  "title": "SaC \u2014 Software as Content",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

@@ -1,0 +1,94 @@
+{
+  "description": "MCP server for CIPP \u2014 M365 multi-tenant management for MSPs (users, tenants, policies).",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:40:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wyre-technology-cipp-mcp.stdio.feba6c229e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wyre-technology/cipp-mcp",
+    "homepage": "https://github.com/wyre-technology/cipp-mcp",
+    "repository": "https://github.com/wyre-technology/cipp-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-technology/cipp-mcp:v1.2.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wyre-technology/cipp-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of your CIPP API instance (e.g. https://cipp-api.example.com)",
+          "format": "string",
+          "isRequired": true,
+          "name": "CIPP_API_URL"
+        },
+        {
+          "description": "Entra ID application (client) ID used to authenticate to CIPP",
+          "format": "string",
+          "isRequired": true,
+          "name": "CIPP_CLIENT_ID"
+        },
+        {
+          "description": "Entra ID client secret for the CIPP application",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CIPP_CLIENT_SECRET"
+        },
+        {
+          "description": "Entra ID tenant ID hosting the CIPP application registration",
+          "format": "string",
+          "name": "CIPP_TENANT_ID"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode for the server. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-technology/cipp-mcp:v1.2.4",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "feba6c229e",
+    "published_at": "2026-05-19T19:24:05.952991Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wyre-technology/cipp-mcp",
+    "server_version": "1.2.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-19T19:24:05.952991Z"
+  },
+  "title": "CIPP",
+  "type": "mcp_server",
+  "version": "1.2.4"
+}

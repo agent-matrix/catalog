@@ -1,0 +1,98 @@
+{
+  "description": "Semantic knowledge engine for Obsidian with auto-classification and DAG hierarchy",
+  "harvest": {
+    "last_seen_at": "2026-05-26T15:39:59+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Semiotronika-NOUZ-MCP.stdio.453778aa57",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Semiotronika/NOUZ-MCP",
+    "homepage": "https://github.com/Semiotronika/NOUZ-MCP",
+    "repository": "https://github.com/Semiotronika/NOUZ-MCP"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "nouz-mcp==3.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Semiotronika/NOUZ-MCP",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "./obsidian",
+          "description": "Path to Obsidian vault",
+          "format": "string",
+          "name": "OBSIDIAN_ROOT"
+        },
+        {
+          "description": "Absolute path to config.yaml; if omitted, server looks in current working directory",
+          "format": "string",
+          "name": "NOUZ_CONFIG"
+        },
+        {
+          "default": "obsidian_kb.db",
+          "description": "SQLite cache filename inside OBSIDIAN_ROOT",
+          "format": "string",
+          "name": "NOUZ_DATABASE_NAME"
+        },
+        {
+          "description": "Full SQLite cache path; takes precedence over NOUZ_DATABASE_NAME",
+          "format": "string",
+          "name": "NOUZ_DATABASE_PATH"
+        },
+        {
+          "default": "true",
+          "description": "Enable embedding-based features",
+          "format": "string",
+          "name": "EMBED_ENABLED"
+        },
+        {
+          "default": "openai",
+          "description": "Embedding provider: openai-compatible endpoint or ollama",
+          "format": "string",
+          "name": "EMBED_PROVIDER"
+        },
+        {
+          "description": "Embedding model name",
+          "format": "string",
+          "name": "EMBED_MODEL"
+        },
+        {
+          "default": "http://127.0.0.1:1234/v1",
+          "description": "Embedding API endpoint",
+          "format": "string",
+          "name": "EMBED_API_URL"
+        }
+      ],
+      "identifier": "nouz-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "3.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "453778aa57",
+    "published_at": "2026-05-13T05:15:44.84948Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Semiotronika/NOUZ-MCP",
+    "server_version": "3.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-13T05:15:44.84948Z"
+  },
+  "title": "Nouz",
+  "type": "mcp_server",
+  "version": "3.1.0"
+}
