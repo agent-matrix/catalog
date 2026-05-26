@@ -61,23 +61,17 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      # Use CATALOG_BOT_TOKEN if set (admin PAT that can bypass branch
-      # protection on main); otherwise GITHUB_TOKEN.
       EFFECTIVE_TOKEN: ${{ secrets.CATALOG_BOT_TOKEN || github.token }}
       REGISTRY_BASE_URL: ${{ inputs.registry_base_url || 'https://registry.modelcontextprotocol.io' }}
       GITHUB_SOURCE_REPO: ${{ inputs.github_source_repo || 'https://github.com/modelcontextprotocol/servers' }}
       LIMIT_SERVERS: ${{ inputs.limit_servers || '0' }}
       ENABLE_GITHUB_ENRICHMENT: ${{ inputs.enable_github_enrichment || false }}
       SHRINK_THRESHOLD_PCT: ${{ inputs.shrink_threshold_pct || '50' }}
-      # Promotion defaults. BUGFIX: previous expression compared
-      # inputs.promote_tools to boolean false. On scheduled runs the input
-      # is null, and null == false is true in GitHub Actions expressions,
-      # so scheduled runs disabled promotion (opposite of intent).
-      # Comparing to the literal STRING 'false' fixes both cases.
       PROMOTE_TOOLS:  ${{ inputs.promote_tools  == 'false' && 'false' || 'true' }}
       PROMOTE_AGENTS: ${{ inputs.promote_agents == 'false' && 'false' || 'true' }}
       AUTO_MERGE:     ${{ inputs.auto_merge     == 'false' && 'false' || 'true' }}
       FORCE_PR:       ${{ inputs.force_pull_request == 'true' && 'true' || 'false' }}
+      HUB_API:        https://api.matrixhub.io
 
     steps:
       - name: Checkout catalog
@@ -227,7 +221,6 @@ jobs:
         run: |
           NEW_ACTIVE="${{ steps.stats.outputs.active }}"
           THRESHOLD_PCT="${SHRINK_THRESHOLD_PCT:-50}"
-
           if [ "${THRESHOLD_PCT}" = "0" ]; then
             echo "Shrink-guard disabled (shrink_threshold_pct=0)."
             exit 0
@@ -236,14 +229,11 @@ jobs:
             echo "No previous index — shrink-guard skipped on first sync."
             exit 0
           fi
-
           OLD_ACTIVE=$(jq -r '.counts.active_manifests // 0' /tmp/prev_index.json)
-
           if [ "${OLD_ACTIVE}" -lt 100 ]; then
             echo "Previous active=${OLD_ACTIVE} < 100; bootstrap mode, shrink-guard skipped."
             exit 0
           fi
-
           MIN_ALLOWED=$(( OLD_ACTIVE * THRESHOLD_PCT / 100 ))
           if [ "${NEW_ACTIVE}" -lt "${MIN_ALLOWED}" ]; then
             echo "::error::Catalog shrank from ${OLD_ACTIVE} → ${NEW_ACTIVE} active items (< ${THRESHOLD_PCT}% threshold). Refusing to push."
@@ -262,26 +252,6 @@ jobs:
             echo "has_changes=false" >> "$GITHUB_OUTPUT"
           fi
 
-      # ----------------------------------------------------------------------
-      # SHIP STEP — the entire commit/push/PR/merge decision tree in one place.
-      #
-      # The workflow has ALREADY validated:
-      #   • index.json structure
-      #   • shrink-guard (>= threshold retained)
-      # By this step we just need to act on the result. Decision tree:
-      #
-      #   has_changes == false               -> noop
-      #   tools == 0 OR agents == 0          -> open PR, label, comment (review)
-      #   force_pull_request == true         -> open PR, no auto-merge
-      #   auto_merge == false                -> open PR, no auto-merge
-      #   else (default for healthy runs)    -> direct push to main
-      #     if direct push is blocked        -> fall back: open PR, try auto-
-      #                                         merge, then immediate squash
-      #
-      # The default "direct push to main" path delivers full automation with
-      # zero operator intervention. The fallback PR path covers cases where
-      # main has branch protection that even CATALOG_BOT_TOKEN can't bypass.
-      # ----------------------------------------------------------------------
       - name: Ship catalog update (direct push or PR + auto-merge)
         if: steps.changes.outputs.has_changes == 'true'
         id: ship
@@ -299,34 +269,26 @@ jobs:
           set -e
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          # Stage + commit on a detached working copy of the source branch.
           git add -A
           COMMIT_MSG="chore(sync): catalog update (active=${ACTIVE} mcp=${MCP} tools=${TOOLS} agents=${AGENTS})"
           git commit -m "${COMMIT_MSG}"
 
-          # ---- Decide mode ----
           HEALTHY="true"
           if [ "${TOOLS}" = "0" ] || [ "${AGENTS}" = "0" ]; then
             HEALTHY="false"
           fi
 
           if [ "${HEALTHY}" != "true" ]; then
-            MODE="pr-review"
-            REASON="tools=${TOOLS} or agents=${AGENTS} — unhealthy, needs human review"
+            MODE="pr-review"; REASON="tools=${TOOLS} or agents=${AGENTS} — unhealthy, needs human review"
           elif [ "${FORCE_PR}" = "true" ]; then
-            MODE="pr-explicit"
-            REASON="operator set force_pull_request=true"
+            MODE="pr-explicit"; REASON="operator set force_pull_request=true"
           elif [ "${AUTO_MERGE}" != "true" ]; then
-            MODE="pr-no-automerge"
-            REASON="operator set auto_merge=false"
+            MODE="pr-no-automerge"; REASON="operator set auto_merge=false"
           else
-            MODE="direct"
-            REASON="healthy promotion + auto_merge — full automation"
+            MODE="direct"; REASON="healthy promotion + auto_merge — full automation"
           fi
           echo "Strategy: ${MODE} (${REASON})"
 
-          # ---- Build PR body once (used by all PR paths) ----
           PREV_ACTIVE="(none)"
           PREV_MCP="-"; PREV_TOOLS="-"; PREV_AGENTS="-"
           if [ -f /tmp/prev_index.json ]; then
@@ -353,10 +315,8 @@ jobs:
           Strategy: \`${MODE}\` — ${REASON}
           EOF
 
-          # ---- Helper: open a PR from current HEAD ----
           open_pr() {
-            local title="$1"
-            local extra_body="$2"
+            local title="$1"; local extra_body="$2"
             local branch="sync/registry-$(date -u +%Y%m%d-%H%M%S)"
             git checkout -b "$branch"
             git push origin "$branch"
@@ -364,68 +324,48 @@ jobs:
               echo "" >> /tmp/pr_body.md
               echo "$extra_body" >> /tmp/pr_body.md
             fi
-            gh pr create \
-              --base main \
-              --head "$branch" \
-              --title "$title" \
-              --body-file /tmp/pr_body.md
+            gh pr create --base main --head "$branch" --title "$title" --body-file /tmp/pr_body.md
           }
 
-          # ---- Helper: try to auto-merge a PR with fallback to immediate ----
           try_merge() {
             local pr_url="$1"
             echo "Attempting auto-merge on ${pr_url}"
             set +e
             gh pr merge --auto --squash --delete-branch "${pr_url}" 2>/tmp/merge_err.log
-            local rc=$?
-            set -e
-            if [ $rc -eq 0 ]; then
-              echo "✅ Auto-merge armed — will merge once any checks pass."
-              return 0
-            fi
+            local rc=$?; set -e
+            if [ $rc -eq 0 ]; then echo "✅ Auto-merge armed"; return 0; fi
             cat /tmp/merge_err.log
             echo "⚠️ Auto-merge unavailable. Trying immediate squash merge."
             set +e
             gh pr merge --squash --delete-branch "${pr_url}" 2>/tmp/merge_err.log
-            local rc2=$?
-            set -e
-            if [ $rc2 -eq 0 ]; then
-              echo "✅ Immediate squash merge succeeded."
-              return 0
-            fi
-            echo "⚠️ Both merge attempts failed:"
-            cat /tmp/merge_err.log
-            echo "   PR is left open at ${pr_url} for a human to merge."
+            local rc2=$?; set -e
+            if [ $rc2 -eq 0 ]; then echo "✅ Immediate squash merge succeeded."; return 0; fi
+            echo "⚠️ Both merge attempts failed:"; cat /tmp/merge_err.log
+            echo "   PR left open at ${pr_url}"
             return 1
           }
 
-          # ---- Execute chosen mode ----
           case "${MODE}" in
             direct)
               echo "Pushing directly to main…"
               set +e
               git push origin HEAD:main 2>/tmp/push_err.log
-              PUSH_RC=$?
-              set -e
+              PUSH_RC=$?; set -e
               if [ $PUSH_RC -eq 0 ]; then
                 echo "✅ Direct push to main succeeded — fully automated."
                 echo "mode=direct" >> "$GITHUB_OUTPUT"
                 exit 0
               fi
-              echo "::warning::Direct push to main was blocked. Reason:"
+              echo "::warning::Direct push to main was blocked."
               cat /tmp/push_err.log
               echo "::warning::Falling back to PR + auto-merge."
-              PR_URL=$(open_pr \
-                "chore(sync): catalog update (mcp=${MCP} tools=${TOOLS} agents=${AGENTS})" \
-                "_Direct push to main was blocked; falling back to PR with auto-merge._")
+              PR_URL=$(open_pr "chore(sync): catalog update (mcp=${MCP} tools=${TOOLS} agents=${AGENTS})" "_Direct push blocked; falling back to PR with auto-merge._")
               echo "pr_url=${PR_URL}" >> "$GITHUB_OUTPUT"
               echo "mode=pr-fallback" >> "$GITHUB_OUTPUT"
               try_merge "${PR_URL}" || true
               ;;
             pr-explicit|pr-no-automerge)
-              PR_URL=$(open_pr \
-                "chore(sync): catalog update (mcp=${MCP} tools=${TOOLS} agents=${AGENTS})" \
-                "")
+              PR_URL=$(open_pr "chore(sync): catalog update (mcp=${MCP} tools=${TOOLS} agents=${AGENTS})" "")
               echo "pr_url=${PR_URL}" >> "$GITHUB_OUTPUT"
               echo "mode=${MODE}" >> "$GITHUB_OUTPUT"
               if [ "${MODE}" = "pr-explicit" ] && [ "${AUTO_MERGE}" = "true" ]; then
@@ -433,15 +373,86 @@ jobs:
               fi
               ;;
             pr-review)
-              PR_URL=$(open_pr \
-                "chore(sync): catalog update (mcp=${MCP} tools=${TOOLS} agents=${AGENTS}) — NEEDS REVIEW" \
-                $'\n⚠️ **Promotion produced empty buckets.** This PR is left open for human review. Merging it would empty the Tools and/or Agents tabs on matrixhub.io. Close it and re-run the workflow with promotion enabled.')
+              PR_URL=$(open_pr "chore(sync): catalog update (mcp=${MCP} tools=${TOOLS} agents=${AGENTS}) — NEEDS REVIEW" $'\n⚠️ **Promotion produced empty buckets.** This PR is left open for human review. Merging it would empty the Tools and/or Agents tabs on matrixhub.io.')
               echo "pr_url=${PR_URL}" >> "$GITHUB_OUTPUT"
               echo "mode=pr-review" >> "$GITHUB_OUTPUT"
               gh pr edit "${PR_URL}" --add-label "needs-review,promotion-empty" || true
               gh pr comment "${PR_URL}" --body "⚠️ Auto-merge skipped — promotion produced tools=${TOOLS} and agents=${AGENTS}. Human review required." || true
               ;;
           esac
+
+      # ----------------------------------------------------------------------
+      # NOTIFY MATRIX-HUB — close the automation chain to the live DB.
+      #
+      # The catalog has just been updated on main. matrix-hub serves
+      # api.matrixhub.io and reads catalog/main/index.json on its own
+      # schedule, but we don't want to wait for that.
+      #
+      # Two notifications:
+      #   1. POST /remotes/sync on api.matrixhub.io — unauthenticated,
+      #      kicks the Hub's runtime ingest path. Updates Aiven via the
+      #      Hub's own machinery within minutes.
+      #   2. repository_dispatch event to agent-matrix/matrixhub-db with
+      #      event_type=catalog-updated — fires aiven-populate.yml which
+      #      runs the standalone populator script (separate path, belt
+      #      and suspenders). Requires CATALOG_BOT_TOKEN with repo scope
+      #      on matrixhub-db. If the secret isn't present, this step
+      #      logs a warning and continues — it's optional.
+      # ----------------------------------------------------------------------
+      - name: Notify matrix-hub to re-ingest catalog
+        if: |
+          steps.changes.outputs.has_changes == 'true'
+          && (steps.ship.outputs.mode == 'direct' || steps.ship.outputs.mode == 'pr-fallback' || steps.ship.outputs.mode == 'pr-explicit')
+        shell: bash
+        env:
+          GH_TOKEN: ${{ env.EFFECTIVE_TOKEN }}
+          MCP:    ${{ steps.stats.outputs.mcp }}
+          TOOLS:  ${{ steps.stats.outputs.tools }}
+          AGENTS: ${{ steps.stats.outputs.agents }}
+          ACTIVE: ${{ steps.stats.outputs.active }}
+        run: |
+          # 1) Trigger Hub's runtime ingest (no auth required).
+          echo "→ POST ${HUB_API}/remotes/sync"
+          set +e
+          RESP=$(curl -fsSL --max-time 30 -X POST "${HUB_API}/remotes/sync" 2>&1)
+          RC=$?
+          set -e
+          if [ $RC -eq 0 ]; then
+            JOB_ID=$(echo "$RESP" | python3 -c "import json,sys; print(json.load(sys.stdin).get('job_id',''))" 2>/dev/null || true)
+            if [ -n "$JOB_ID" ]; then
+              echo "✅ Hub re-ingest job: $JOB_ID"
+              echo "   Status: ${HUB_API}/remotes/sync/$JOB_ID"
+            else
+              echo "✅ Hub responded: $RESP"
+            fi
+          else
+            echo "::warning::Hub ping failed (rc=$RC): $RESP"
+            echo "::warning::Aiven will still update via the weekly aiven-populate.yml schedule."
+          fi
+
+          # 2) Fire repository_dispatch to matrixhub-db so aiven-populate.yml
+          #    runs the standalone populator. Optional path; needs a PAT that
+          #    has write access to matrixhub-db (CATALOG_BOT_TOKEN typically).
+          if [ -z "${EFFECTIVE_TOKEN}" ] || [ "${EFFECTIVE_TOKEN}" = "${{ github.token }}" ]; then
+            echo "::notice::Skipping repository_dispatch — default GITHUB_TOKEN can't fire dispatches to other repos. Set CATALOG_BOT_TOKEN secret to enable."
+          else
+            echo "→ POST repository_dispatch catalog-updated → agent-matrix/matrixhub-db"
+            set +e
+            gh api -X POST /repos/agent-matrix/matrixhub-db/dispatches \
+              -f event_type=catalog-updated \
+              -F "client_payload[mcp]=${MCP}" \
+              -F "client_payload[tools]=${TOOLS}" \
+              -F "client_payload[agents]=${AGENTS}" \
+              -F "client_payload[active]=${ACTIVE}" 2>/tmp/dispatch.log
+            RC=$?
+            set -e
+            if [ $RC -eq 0 ]; then
+              echo "✅ repository_dispatch sent."
+            else
+              echo "::warning::repository_dispatch failed:"
+              cat /tmp/dispatch.log
+            fi
+          fi
 
       - name: Summary
         if: always() && steps.changes.outputs.has_changes == 'true'
@@ -474,7 +485,7 @@ jobs:
             echo ""
             echo "Common causes:"
             echo "- Registry API outage or schema change"
-            echo "- Shrink-guard tripped (active count dropped > ${SHRINK_THRESHOLD_PCT:-50}%)"
-            echo "- mcp_ingest install failed (check the Install step logs)"
-            echo "- Branch protection on main + no CATALOG_BOT_TOKEN with bypass perms (Ship step)"
+            echo "- Shrink-guard tripped"
+            echo "- mcp_ingest install failed"
+            echo "- Branch protection on main + no CATALOG_BOT_TOKEN with bypass perms"
           } >> "$GITHUB_STEP_SUMMARY"
