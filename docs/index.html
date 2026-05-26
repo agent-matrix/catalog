@@ -1,0 +1,607 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>MatrixHub Catalog — Live Dashboard</title>
+<meta name="description" content="Live dashboard for the MatrixHub open catalog — counts of indexed MCP servers, agents, and tools, recent additions, and top-quality picks." />
+<meta name="theme-color" content="#0b0d10" />
+<meta property="og:title" content="MatrixHub Catalog — Live Dashboard" />
+<meta property="og:description" content="Live counts of MCP servers, agents, and tools indexed by MatrixHub." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2300e887'/%3E%3C/svg%3E" />
+<style>
+  :root {
+    --bg: #0b0d10;
+    --surface: #101317;
+    --surface-2: #161a20;
+    --fg: #edf2f7;
+    --muted: #9aa0a6;
+    --border: #2d3748;
+    --border-soft: #1f2937;
+    --accent: #00e887;
+    --accent-2: #00d67a;
+    --accent-soft: rgba(0, 232, 135, 0.12);
+    --accent-text: #041a10;
+    --shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+    --shadow-soft: 0 1px 3px rgba(0, 0, 0, 0.2);
+    --radius-lg: 18px;
+    --radius-md: 12px;
+    --radius-sm: 8px;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, monospace;
+  }
+  html[data-theme="light"] {
+    color-scheme: light;
+    --bg: #f7f9fb;
+    --surface: #ffffff;
+    --surface-2: #f3f5f8;
+    --fg: #0d1220;
+    --muted: #465167;
+    --border: #d6dae0;
+    --border-soft: #e6e9ee;
+    --accent: #00b86d;
+    --accent-2: #00a35f;
+    --accent-soft: rgba(0, 184, 109, 0.10);
+    --accent-text: #ffffff;
+    --shadow: 0 4px 24px rgba(13, 18, 32, 0.06);
+    --shadow-soft: 0 1px 2px rgba(13, 18, 32, 0.04);
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: var(--font-sans);
+    background: var(--bg);
+    color: var(--fg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    line-height: 1.5;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: var(--accent); }
+  code { font-family: var(--font-mono); font-size: 0.9em; }
+
+  /* Layout shell */
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 28px 20px 80px; }
+  .topbar {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 0 28px;
+    border-bottom: 1px solid var(--border-soft);
+    margin-bottom: 28px;
+  }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; }
+  .brand-mark {
+    width: 24px; height: 24px; border-radius: 6px;
+    background: var(--accent);
+    display: inline-block;
+  }
+  .brand-accent { color: var(--accent); }
+  .topbar-right { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 6px;
+    border: 1px solid var(--border); border-radius: 999px;
+    padding: 5px 11px; font-size: 12px; color: var(--muted);
+    background: var(--surface);
+  }
+  .pill .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 0 var(--accent-soft);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(0, 232, 135, 0.45); }
+    70%  { box-shadow: 0 0 0 10px rgba(0, 232, 135, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 232, 135, 0); }
+  }
+  .icon-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 36px; height: 36px;
+    border: 1px solid var(--border); border-radius: 10px;
+    background: var(--surface); color: var(--fg); cursor: pointer;
+    transition: border-color .15s, color .15s, background .15s;
+  }
+  .icon-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .icon-btn svg { width: 16px; height: 16px; }
+
+  /* Hero */
+  .hero { position: relative; overflow: hidden; border-radius: 24px; border: 1px solid var(--border); margin-bottom: 28px; }
+  .hero-bg {
+    position: absolute; inset: 0; opacity: 0.6; z-index: 0;
+    background:
+      radial-gradient(60% 80% at 10% 0%, rgba(0, 232, 135, 0.18) 0%, transparent 60%),
+      radial-gradient(50% 70% at 100% 100%, rgba(56, 189, 248, 0.14) 0%, transparent 70%);
+  }
+  .hero-inner {
+    position: relative; z-index: 1;
+    padding: 44px 32px 40px;
+    background: rgba(16, 19, 23, 0.30); /* soft tint over bg */
+    backdrop-filter: blur(2px);
+  }
+  html[data-theme="light"] .hero-inner { background: rgba(255, 255, 255, 0.4); }
+  .hero h1 {
+    font-size: clamp(28px, 4vw, 44px);
+    line-height: 1.1; margin: 14px 0 10px; font-weight: 800; letter-spacing: -0.02em;
+  }
+  .hero p { color: var(--muted); max-width: 640px; font-size: 16px; margin: 0 0 18px; }
+  .hero-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px; padding: 4px 10px;
+    border: 1px solid var(--border); border-radius: 999px;
+    background: var(--surface);
+    color: var(--muted);
+  }
+  .chip strong { color: var(--fg); }
+
+  /* Metric cards */
+  .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 32px; }
+  .metric {
+    position: relative; overflow: hidden;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 22px 22px 18px;
+    box-shadow: var(--shadow-soft);
+    transition: border-color .15s, transform .15s;
+  }
+  .metric:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .metric-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--muted); margin: 0 0 8px;
+  }
+  .metric-value {
+    font-size: clamp(28px, 4.5vw, 42px); font-weight: 800; letter-spacing: -0.025em;
+    line-height: 1.05; margin: 0;
+    font-variant-numeric: tabular-nums;
+  }
+  .metric-icon {
+    position: absolute; top: 18px; right: 18px;
+    width: 36px; height: 36px; border-radius: 10px;
+    background: var(--accent-soft); color: var(--accent);
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+  .metric-icon svg { width: 18px; height: 18px; }
+  .metric-sub { font-size: 12px; color: var(--muted); margin: 6px 0 0; }
+  .metric-loading { color: var(--muted); }
+
+  /* Distribution bar */
+  .panel {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    margin-bottom: 28px;
+  }
+  .panel-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 18px; gap: 10px; flex-wrap: wrap; }
+  .panel-title { font-size: 16px; font-weight: 700; margin: 0; }
+  .panel-sub { font-size: 12px; color: var(--muted); }
+  .bar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+  .bar-row:last-child { margin-bottom: 0; }
+  .bar-label { width: 130px; flex-shrink: 0; font-size: 13px; font-weight: 600; }
+  .bar-track { flex: 1; background: var(--surface-2); height: 24px; border-radius: 8px; overflow: hidden; position: relative; }
+  .bar-fill {
+    height: 100%; width: 0;
+    background: linear-gradient(90deg, var(--accent) 0%, var(--accent-2) 100%);
+    border-radius: 8px;
+    transition: width 1s ease-out;
+  }
+  .bar-count { width: 100px; flex-shrink: 0; text-align: right; font-variant-numeric: tabular-nums; font-size: 13px; color: var(--muted); }
+  .bar-count strong { color: var(--fg); font-weight: 700; }
+
+  /* Two-column grid for tables */
+  .grid-2 { display: grid; grid-template-columns: 1fr; gap: 20px; }
+  @media (min-width: 960px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
+
+  /* Tables */
+  .table-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+  .table-card .panel-head { padding: 18px 20px 14px; border-bottom: 1px solid var(--border-soft); margin-bottom: 0; }
+  .table-card ul { margin: 0; padding: 0; list-style: none; }
+  .table-card li { padding: 12px 20px; border-bottom: 1px solid var(--border-soft); display: flex; align-items: center; gap: 12px; min-height: 56px; }
+  .table-card li:last-child { border-bottom: 0; }
+  .table-card li:hover { background: var(--surface-2); }
+  .avatar {
+    width: 32px; height: 32px; border-radius: 8px;
+    background: var(--accent-soft); color: var(--accent);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 11px;
+    flex-shrink: 0;
+  }
+  .row-main { flex: 1; min-width: 0; }
+  .row-name { font-weight: 600; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .row-name a:hover { color: var(--accent); }
+  .row-sub { color: var(--muted); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .row-meta { font-size: 11px; color: var(--muted); white-space: nowrap; flex-shrink: 0; text-align: right; }
+  .badge {
+    display: inline-block; padding: 2px 8px; border-radius: 6px;
+    font-size: 10px; font-weight: 700; letter-spacing: 0.04em;
+    background: var(--accent-soft); color: var(--accent);
+    text-transform: uppercase;
+  }
+  .table-empty { padding: 32px 20px; text-align: center; color: var(--muted); font-size: 14px; }
+  .skeleton { height: 12px; border-radius: 4px; background: var(--surface-2); animation: shimmer 1.6s infinite; }
+  .skeleton.w-60 { width: 60%; }
+  .skeleton.w-40 { width: 40%; margin-top: 6px; }
+  @keyframes shimmer { 0%, 100% { opacity: 0.7; } 50% { opacity: 0.4; } }
+
+  /* Footer */
+  footer {
+    margin-top: 56px; padding-top: 28px;
+    border-top: 1px solid var(--border-soft);
+    color: var(--muted); font-size: 13px;
+    display: flex; flex-wrap: wrap; gap: 18px; justify-content: space-between; align-items: center;
+  }
+  footer a:hover { color: var(--accent); }
+  footer .links { display: flex; flex-wrap: wrap; gap: 18px; }
+
+  /* Error banner */
+  .error-banner {
+    display: none;
+    background: rgba(239, 68, 68, 0.08);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #fca5a5;
+    padding: 12px 16px;
+    border-radius: var(--radius-md);
+    margin-bottom: 24px;
+    font-size: 14px;
+  }
+  html[data-theme="light"] .error-banner { color: #b91c1c; }
+  .error-banner.show { display: block; }
+
+  /* Misc */
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- Topbar -->
+    <div class="topbar">
+      <a class="brand" href="https://matrixhub.io" rel="noopener">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Matrix<span class="brand-accent">Hub</span> Catalog</span>
+      </a>
+      <div class="topbar-right">
+        <span class="pill" id="livePill">
+          <span class="dot" aria-hidden="true"></span>
+          <span id="lastUpdated">Loading…</span>
+        </span>
+        <button class="icon-btn" id="refreshBtn" aria-label="Refresh now" title="Refresh now">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+          </svg>
+        </button>
+        <button class="icon-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme">
+          <svg id="themeIconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
+        <a class="icon-btn" href="https://github.com/agent-matrix/catalog" target="_blank" rel="noopener" aria-label="View on GitHub" title="View on GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.2-.8.1-.8.1-.8 1.3.1 2 1.3 2 1.3 1.1 2 3 1.4 3.7 1.1.1-.8.4-1.4.8-1.7-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.7-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.3v3.4c0 .3.2.7.8.6A12 12 0 0 0 12 0z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-bg"></div>
+      <div class="hero-inner">
+        <span class="chip"><span class="brand-mark" style="width:8px;height:8px;border-radius:50%"></span>Live dashboard</span>
+        <h1 id="hero-title">The open MCP catalog, by the numbers.</h1>
+        <p>Real-time counts of every MCP server, agent, and tool indexed by MatrixHub. Pulls live from <code>api.matrixhub.io</code>, refreshes every 60 seconds.</p>
+        <div class="hero-chips">
+          <span class="chip">Catalog repo: <strong>agent-matrix/catalog</strong></span>
+          <span class="chip">License: <strong>Apache-2.0</strong></span>
+          <span class="chip">Bot-validated</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="error-banner" id="errorBanner" role="alert">
+      <strong>Live data unavailable.</strong> Showing last-known values. Check <a href="https://www.matrixhub.io/status" target="_blank" rel="noopener">status</a>.
+    </div>
+
+    <!-- Metric cards -->
+    <section class="metrics" aria-label="Catalog metrics">
+      <article class="metric">
+        <div class="metric-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><line x1="7" y1="7" x2="7.01" y2="7"/><line x1="7" y1="17" x2="7.01" y2="17"/>
+          </svg>
+        </div>
+        <p class="metric-label">MCP Servers</p>
+        <p class="metric-value metric-loading" id="countMcp">—</p>
+        <p class="metric-sub">Hosted &amp; STDIO transports</p>
+      </article>
+
+      <article class="metric">
+        <div class="metric-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="8" width="16" height="12" rx="3"/><circle cx="9" cy="13" r="1"/><circle cx="15" cy="13" r="1"/><path d="M12 4v4M8 21v-1M16 21v-1"/>
+          </svg>
+        </div>
+        <p class="metric-label">Agents</p>
+        <p class="metric-value metric-loading" id="countAgent">—</p>
+        <p class="metric-sub">Autonomous workflows</p>
+      </article>
+
+      <article class="metric">
+        <div class="metric-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14.7 6.3a4 4 0 0 1 0 5.6l-7.4 7.4a4 4 0 1 1-5.6-5.6l9.5-9.5a3 3 0 1 1 4.2 4.2L7 17.6"/>
+          </svg>
+        </div>
+        <p class="metric-label">Tools</p>
+        <p class="metric-value metric-loading" id="countTool">—</p>
+        <p class="metric-sub">Reusable utilities</p>
+      </article>
+
+      <article class="metric" style="border-color: var(--accent);">
+        <div class="metric-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+        </div>
+        <p class="metric-label">Total entries</p>
+        <p class="metric-value metric-loading" id="countTotal">—</p>
+        <p class="metric-sub">Across all types</p>
+      </article>
+    </section>
+
+    <!-- Distribution -->
+    <section class="panel" aria-labelledby="dist-title">
+      <div class="panel-head">
+        <h2 class="panel-title" id="dist-title">Type distribution</h2>
+        <span class="panel-sub">Share of catalog by entry type</span>
+      </div>
+      <div id="distRows">
+        <div class="bar-row">
+          <span class="bar-label">MCP Servers</span>
+          <div class="bar-track"><div class="bar-fill" id="barMcp"></div></div>
+          <span class="bar-count" id="barCountMcp">—</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Agents</span>
+          <div class="bar-track"><div class="bar-fill" id="barAgent"></div></div>
+          <span class="bar-count" id="barCountAgent">—</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Tools</span>
+          <div class="bar-track"><div class="bar-fill" id="barTool"></div></div>
+          <span class="bar-count" id="barCountTool">—</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent + Top -->
+    <section class="grid-2" aria-label="Detailed lists">
+      <div class="table-card">
+        <div class="panel-head">
+          <h2 class="panel-title">Recently added</h2>
+          <span class="panel-sub">Last 10 updates</span>
+        </div>
+        <ul id="recentList">
+          <li><div class="avatar">—</div><div class="row-main"><div class="skeleton w-60"></div><div class="skeleton w-40"></div></div></li>
+          <li><div class="avatar">—</div><div class="row-main"><div class="skeleton w-60"></div><div class="skeleton w-40"></div></div></li>
+          <li><div class="avatar">—</div><div class="row-main"><div class="skeleton w-60"></div><div class="skeleton w-40"></div></div></li>
+          <li><div class="avatar">—</div><div class="row-main"><div class="skeleton w-60"></div><div class="skeleton w-40"></div></div></li>
+          <li><div class="avatar">—</div><div class="row-main"><div class="skeleton w-60"></div><div class="skeleton w-40"></div></div></li>
+        </ul>
+      </div>
+
+      <div class="table-card">
+        <div class="panel-head">
+          <h2 class="panel-title">Top picks</h2>
+          <span class="panel-sub">Ranked by quality score</span>
+        </div>
+        <ul id="topList">
+          <li><div class="avatar">—</div><div class="row-main"><div class="skeleton w-60"></div><div class="skeleton w-40"></div></div></li>
+          <li><div class="avatar">—</div><div class="row-main"><div class="skeleton w-60"></div><div class="skeleton w-40"></div></div></li>
+          <li><div class="avatar">—</div><div class="row-main"><div class="skeleton w-60"></div><div class="skeleton w-40"></div></div></li>
+          <li><div class="avatar">—</div><div class="row-main"><div class="skeleton w-60"></div><div class="skeleton w-40"></div></div></li>
+          <li><div class="avatar">—</div><div class="row-main"><div class="skeleton w-60"></div><div class="skeleton w-40"></div></div></li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <span>© <span id="year"></span> MatrixHub — open catalog, Apache-2.0.</span>
+      <span class="links">
+        <a href="https://www.matrixhub.io" rel="noopener">matrixhub.io</a>
+        <a href="https://github.com/agent-matrix/catalog" target="_blank" rel="noopener">catalog</a>
+        <a href="https://github.com/agent-matrix/matrix-hub" target="_blank" rel="noopener">matrix-hub</a>
+        <a href="https://www.matrixhub.io/publish" target="_blank" rel="noopener">Publish</a>
+        <a href="https://www.matrixhub.io/docs" target="_blank" rel="noopener">Docs</a>
+      </span>
+    </footer>
+  </div>
+
+<script>
+(() => {
+  const API = "https://api.matrixhub.io/catalog";
+  const HUB_BASE = "https://www.matrixhub.io";
+  const REFRESH_MS = 60_000;
+
+  // ----- Theme -----
+  const themeBtn = document.getElementById("themeBtn");
+  const root = document.documentElement;
+  const savedTheme = localStorage.getItem("mh-theme");
+  const sysDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  root.setAttribute("data-theme", savedTheme || (sysDark ? "dark" : "light"));
+  themeBtn.addEventListener("click", () => {
+    const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    localStorage.setItem("mh-theme", next);
+  });
+
+  // ----- Year -----
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // ----- Helpers -----
+  const fmt = (n) => {
+    if (n == null || Number.isNaN(n)) return "—";
+    return new Intl.NumberFormat("en-US").format(n);
+  };
+
+  const animateNumber = (el, to, duration = 1200) => {
+    el.classList.remove("metric-loading");
+    const start = performance.now();
+    const from = 0;
+    function step(t) {
+      const elapsed = t - start;
+      const p = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      const v = Math.round(from + (to - from) * eased);
+      el.textContent = fmt(v);
+      if (p < 1) requestAnimationFrame(step);
+      else el.textContent = fmt(to);
+    }
+    requestAnimationFrame(step);
+  };
+
+  const relativeTime = (iso) => {
+    if (!iso) return "";
+    const then = new Date(iso).getTime();
+    if (!Number.isFinite(then)) return "";
+    const diff = Math.max(0, Date.now() - then);
+    const m = Math.floor(diff / 60_000);
+    if (m < 1) return "just now";
+    if (m < 60) return `${m}m ago`;
+    const h = Math.floor(m / 60);
+    if (h < 24) return `${h}h ago`;
+    const d = Math.floor(h / 24);
+    if (d < 30) return `${d}d ago`;
+    const mo = Math.floor(d / 30);
+    if (mo < 12) return `${mo}mo ago`;
+    return `${Math.floor(mo / 12)}y ago`;
+  };
+
+  // Strip catalog prefixes for a cleaner display slug:
+  //   io.github.foo/bar  -> bar
+  //   mcp.host.foo.bar   -> bar
+  //   <type>:slug@ver    -> slug
+  const cleanSlug = (s) => {
+    if (!s) return "";
+    let out = String(s);
+    out = out.replace(/^(mcp_server|agent|tool):/, "");
+    out = out.replace(/@[^@]+$/, "");
+    out = out.replace(/^io\.github\.[^/]+\//, "");
+    out = out.replace(/^io\.[^.]+\.[^/]+\//, "");
+    out = out.replace(/^mcp\.[^.]+\.[^.]+\./, "");
+    return out;
+  };
+
+  const initials = (text) => {
+    const slug = cleanSlug(text);
+    const parts = slug.split(/[-_./]+/).filter(Boolean);
+    if (parts.length >= 2) return (parts[0][0] + parts[1][0]).toUpperCase();
+    if (parts[0]) return parts[0].slice(0, 2).toUpperCase();
+    return "—";
+  };
+
+  // ----- API fetch -----
+  let lastSnapshot = null;
+  async function fetchType(type) {
+    const url = `${API}?type=${encodeURIComponent(type)}&limit=1`;
+    const r = await fetch(url, { cache: "no-store" });
+    if (!r.ok) throw new Error(`${type} HTTP ${r.status}`);
+    const d = await r.json();
+    return Number(d.total || 0);
+  }
+  async function fetchList(type, sort, limit = 10) {
+    const url = `${API}?type=${encodeURIComponent(type)}&limit=${limit}&sort=${encodeURIComponent(sort)}`;
+    const r = await fetch(url, { cache: "no-store" });
+    if (!r.ok) throw new Error(`${type}/${sort} HTTP ${r.status}`);
+    const d = await r.json();
+    return Array.isArray(d.items) ? d.items : [];
+  }
+
+  // ----- Render -----
+  function renderList(elId, items, metaFn) {
+    const ul = document.getElementById(elId);
+    if (!items || items.length === 0) {
+      ul.innerHTML = `<li class="table-empty">No entries yet.</li>`;
+      return;
+    }
+    ul.innerHTML = items.map(it => {
+      const slug = cleanSlug(it.id || it.name || "");
+      const name = it.name || slug || "Untitled";
+      const summary = (it.summary || "").trim() || "No summary provided.";
+      const detailUrl = `${HUB_BASE}/entity/${encodeURIComponent(it.id)}`;
+      return `
+        <li>
+          <div class="avatar">${initials(it.id || name)}</div>
+          <div class="row-main">
+            <div class="row-name"><a href="${detailUrl}" target="_blank" rel="noopener">${escapeHtml(name)}</a></div>
+            <div class="row-sub">${escapeHtml(summary)}</div>
+          </div>
+          <div class="row-meta">${metaFn(it)}</div>
+        </li>`;
+    }).join("");
+  }
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, (c) => ({
+      "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
+    })[c]);
+  }
+
+  function renderDistribution(mcp, agent, tool) {
+    const total = Math.max(1, mcp + agent + tool);
+    document.getElementById("barMcp").style.width = `${(mcp / total) * 100}%`;
+    document.getElementById("barAgent").style.width = `${(agent / total) * 100}%`;
+    document.getElementById("barTool").style.width = `${(tool / total) * 100}%`;
+    const pct = (n) => total > 0 ? `${((n / total) * 100).toFixed(1)}%` : "0%";
+    document.getElementById("barCountMcp").innerHTML   = `<strong>${fmt(mcp)}</strong> &middot; ${pct(mcp)}`;
+    document.getElementById("barCountAgent").innerHTML = `<strong>${fmt(agent)}</strong> &middot; ${pct(agent)}`;
+    document.getElementById("barCountTool").innerHTML  = `<strong>${fmt(tool)}</strong> &middot; ${pct(tool)}`;
+  }
+
+  function setLastUpdated() {
+    const now = new Date();
+    const time = now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+    document.getElementById("lastUpdated").textContent = `Updated ${time}`;
+  }
+
+  function showError(show) {
+    document.getElementById("errorBanner").classList.toggle("show", !!show);
+  }
+
+  async function load() {
+    try {
+      const [mcp, agent, tool, recent, top] = await Promise.all([
+        fetchType("mcp_server"),
+        fetchType("agent").catch(() => 0),
+        fetchType("tool").catch(() => 0),
+        fetchList("mcp_server", "updated_at", 10),
+        fetchList("mcp_server", "quality", 10),
+      ]);
+
+      showError(false);
+
+      animateNumber(document.getElementById("countMcp"),   mcp);
+      animateNumber(document.getElementById("countAgent"), agent);
+      animateNumber(document.getElementById("countTool"),  tool);
+      animateNumber(document.getElementById("countTotal"), mcp + agent + tool);
+
+      renderDistribution(mcp, agent, tool);
+
+      renderList("recentList", recent, (it) => relativeTime(it.updated_at));
+      renderList("topList", top, (it) => {
+        const q = typeof it.quality_score === "number" ? it.quality_score.toFixed(2) : "—";
+        return `<span class="badge">Q ${q}</span>`;
+      });
+
+      setLastUpdated();
+      lastSnapshot = { mcp, agent, tool };
+    } catch (e) {
+      console.error("Catalog dashboard fetch failed:", e);
+      showError(true);
+      if (lastSnapshot) setLastUpdated();
+    }
+  }
+
+  document.getElementById("refreshBtn").addEventListener("click", load);
+  load();
+  setInterval(load, REFRESH_MS);
+})();
+</script>
+</body>
+</html>
