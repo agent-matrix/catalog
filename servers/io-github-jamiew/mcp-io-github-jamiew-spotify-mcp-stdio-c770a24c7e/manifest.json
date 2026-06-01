@@ -1,0 +1,73 @@
+{
+  "description": "MCP server connecting LLMs to Spotify, with smart-batching and large-playlist tools",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-jamiew-spotify-mcp.stdio.c770a24c7e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jamiew/spotify-mcp",
+    "homepage": "https://github.com/jamiew/spotify-mcp",
+    "repository": "https://github.com/jamiew/spotify-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "spotify-mcp-jamiew==0.3.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.jamiew/spotify-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Spotify app Client ID from developer.spotify.com",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SPOTIFY_CLIENT_ID"
+        },
+        {
+          "description": "Spotify app Client Secret from developer.spotify.com",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SPOTIFY_CLIENT_SECRET"
+        },
+        {
+          "default": "http://127.0.0.1:8888",
+          "description": "OAuth redirect URI registered in your Spotify app",
+          "isRequired": true,
+          "name": "SPOTIFY_REDIRECT_URI"
+        }
+      ],
+      "identifier": "spotify-mcp-jamiew",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c770a24c7e",
+    "published_at": "2026-05-29T04:58:10.476399Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.jamiew/spotify-mcp",
+    "server_version": "0.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-29T04:58:10.476399Z"
+  },
+  "title": "Spotify",
+  "type": "mcp_server",
+  "version": "0.3.1"
+}

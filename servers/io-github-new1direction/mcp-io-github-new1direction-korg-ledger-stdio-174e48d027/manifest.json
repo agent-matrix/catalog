@@ -1,0 +1,75 @@
+{
+  "description": "Verifiable cognition: prove a session ledger is tamper-evident; audit & import any agent's logs.",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:25+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-New1Direction-korg-ledger.stdio.174e48d027",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/New1Direction/korgex",
+    "homepage": "https://github.com/New1Direction/korgex",
+    "repository": "https://github.com/New1Direction/korgex"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "the korgex subcommand that runs the MCP server",
+            "isRequired": true,
+            "type": "positional",
+            "value": "mcp-server"
+          },
+          "korgex==0.6.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.New1Direction/korg-ledger",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the JSONL ledger journal (defaults to .korg/journal.jsonl).",
+          "name": "KORG_JOURNAL_PATH"
+        },
+        {
+          "description": "Optional HMAC key \u2014 makes the chain tamper-PROOF, not just tamper-evident.",
+          "name": "KORG_LEDGER_HMAC_KEY"
+        }
+      ],
+      "identifier": "korgex",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "the korgex subcommand that runs the MCP server",
+          "isRequired": true,
+          "type": "positional",
+          "value": "mcp-server"
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.6.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "174e48d027",
+    "published_at": "2026-05-29T23:42:15.409984Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.New1Direction/korg-ledger",
+    "server_version": "0.6.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-29T23:42:15.409984Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.6.3"
+}

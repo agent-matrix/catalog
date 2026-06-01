@@ -1,0 +1,89 @@
+{
+  "description": "Primary-source lithium & battery-metals mining data (AISC, reserves, filings) via x402.",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ciinkwia-lithium-vault-mcp.stdio.31a7f413d8",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ciinkwia/lithium-vault-mcp",
+    "homepage": "https://github.com/ciinkwia/lithium-vault-mcp",
+    "repository": "https://github.com/ciinkwia/lithium-vault-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "lithium-vault-mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ciinkwia/lithium-vault-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Coinbase CDP API key ID for the wallet that pays the per-call USDC fee",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CDP_API_KEY_ID"
+        },
+        {
+          "description": "Coinbase CDP API key secret",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CDP_API_KEY_SECRET"
+        },
+        {
+          "description": "Coinbase CDP wallet secret",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CDP_WALLET_SECRET"
+        },
+        {
+          "description": "Named CDP account to pay from (default: lithium-vault-mcp)",
+          "format": "string",
+          "name": "CDP_ACCOUNT_NAME"
+        },
+        {
+          "description": "Override the vault endpoint base URL (default: https://clink-lithium-vault.fly.dev)",
+          "format": "string",
+          "name": "VAULT_BASE_URL"
+        },
+        {
+          "description": "Max USD price per call the server will pay before refusing (default: 0.25)",
+          "format": "string",
+          "name": "X402_MAX_PRICE"
+        }
+      ],
+      "identifier": "lithium-vault-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "31a7f413d8",
+    "published_at": "2026-05-31T18:15:44.955811Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ciinkwia/lithium-vault-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-31T18:15:44.955811Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

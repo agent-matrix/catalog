@@ -1,0 +1,89 @@
+{
+  "description": "MLflow MCP \u2014 experiments, runs, registered models, versions, traces, assessments (MLflow 3)",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:47+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-us-all-mlflow.stdio.d01c88c39b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/us-all/mlflow-mcp-server",
+    "homepage": "https://github.com/us-all/mlflow-mcp-server",
+    "repository": "https://github.com/us-all/mlflow-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@us-all/mlflow-mcp@1.12.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.us-all/mlflow",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "MLflow tracking server URI (e.g. http://localhost:5050, https://mlflow.example.com).",
+          "isRequired": true,
+          "name": "MLFLOW_TRACKING_URI"
+        },
+        {
+          "description": "Bearer token for authenticated MLflow servers (e.g. Databricks).",
+          "isSecret": true,
+          "name": "MLFLOW_TRACKING_TOKEN"
+        },
+        {
+          "description": "Basic-auth username (alternative to token).",
+          "name": "MLFLOW_TRACKING_USERNAME"
+        },
+        {
+          "description": "Basic-auth password (alternative to token).",
+          "isSecret": true,
+          "name": "MLFLOW_TRACKING_PASSWORD"
+        },
+        {
+          "description": "Default experiment ID for run-creation tools.",
+          "name": "MLFLOW_EXPERIMENT_ID"
+        },
+        {
+          "description": "Comma-separated category allowlist. Default: all categories enabled.",
+          "name": "MLFLOW_TOOLS"
+        },
+        {
+          "description": "Comma-separated category disablelist.",
+          "name": "MLFLOW_DISABLE"
+        },
+        {
+          "default": "false",
+          "description": "Set to 'true' to enable write/destructive tools. Default read-only.",
+          "name": "MLFLOW_ALLOW_WRITE"
+        }
+      ],
+      "identifier": "@us-all/mlflow-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.12.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d01c88c39b",
+    "published_at": "2026-05-30T11:12:15.038819Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.us-all/mlflow",
+    "server_version": "1.12.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-30T11:12:15.038819Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.12.4"
+}

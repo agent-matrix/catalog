@@ -1,0 +1,87 @@
+{
+  "description": "Playwright MCP bridge that runs upstream browser tools with the CloakBrowser Chromium binary.",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:46+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-swimmwatch-cloakbrowser-mcp.stdio.f84562b512",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/swimmwatch/cloakbrowser-mcp",
+    "homepage": "https://github.com/swimmwatch/cloakbrowser-mcp",
+    "repository": "https://github.com/swimmwatch/cloakbrowser-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/swimmwatch/cloakbrowser-mcp:1.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.swimmwatch/cloakbrowser-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "cloak",
+          "description": "Bridge browser engine: cloak or playwright.",
+          "format": "string",
+          "name": "PLAYWRIGHT_MCP_BROWSER_ENGINE"
+        },
+        {
+          "default": "true",
+          "description": "Run the browser in headless mode.",
+          "format": "boolean",
+          "name": "PLAYWRIGHT_MCP_HEADLESS"
+        },
+        {
+          "default": "/data",
+          "description": "Directory inside the container where upstream Playwright MCP writes artifacts.",
+          "format": "filepath",
+          "name": "PLAYWRIGHT_MCP_OUTPUT_DIR"
+        },
+        {
+          "default": "stdout",
+          "description": "Return snapshots, console logs, and network logs through stdout or files.",
+          "format": "string",
+          "name": "PLAYWRIGHT_MCP_OUTPUT_MODE"
+        },
+        {
+          "default": "true",
+          "description": "Patch upstream console message collection for CloakBrowser compatibility.",
+          "format": "boolean",
+          "name": "CLOAK_PLAYWRIGHT_MCP_CONSOLE_FALLBACK"
+        },
+        {
+          "description": "Comma-separated or JSON array of extra Chromium launch arguments.",
+          "format": "string",
+          "name": "CLOAK_PLAYWRIGHT_MCP_EXTRA_ARGS"
+        }
+      ],
+      "identifier": "ghcr.io/swimmwatch/cloakbrowser-mcp:1.2.2",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "f84562b512",
+    "published_at": "2026-05-27T17:23:42.110059Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.swimmwatch/cloakbrowser-mcp",
+    "server_version": "1.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-27T17:23:42.110059Z"
+  },
+  "title": "CloakBrowser MCP",
+  "type": "mcp_server",
+  "version": "1.2.2"
+}

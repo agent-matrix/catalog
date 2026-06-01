@@ -1,0 +1,55 @@
+{
+  "description": "Zero-storage MCP privacy proxy \u2014 PII tokenized before AI inference. ML-DSA-65 signed, Base-anchored.",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:19+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-stratalize-stealth.sse.07d45c36e7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Stratalize/Stratalize",
+    "homepage": "https://github.com/Stratalize/Stratalize",
+    "repository": "https://github.com/Stratalize/Stratalize"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://www.stratalize.com/api/stealth/{server_name}"
+    }
+  },
+  "name": "com.stratalize/stealth",
+  "provenance": {
+    "identity_key": "07d45c36e7",
+    "published_at": "2026-06-01T01:37:54.532863Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.stratalize/stealth",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-01T01:37:54.532863Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Bearer <API key> from app.stratalize.com/settings/api",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization"
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://www.stratalize.com/api/stealth/{server_name}",
+      "variables": {
+        "server_name": {
+          "description": "Upstream MCP server to proxy through Stealth (e.g. 'my-crm-server')",
+          "isRequired": true
+        }
+      }
+    }
+  ],
+  "title": "Stratalize Stealth",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

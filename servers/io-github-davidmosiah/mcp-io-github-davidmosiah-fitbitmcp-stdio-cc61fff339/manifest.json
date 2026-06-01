@@ -1,0 +1,94 @@
+{
+  "description": "Privacy-first, unofficial Fitbit MCP server for AI health, sleep, activity and heart-rate agents.",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:34+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-davidmosiah-fitbitmcp.stdio.cc61fff339",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/davidmosiah/fitbit-mcp",
+    "homepage": "https://github.com/davidmosiah/fitbit-mcp",
+    "repository": "https://github.com/davidmosiah/fitbit-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "fitbit-mcp-unofficial@0.4.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.davidmosiah/fitbitmcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Fitbit OAuth client ID. Optional when configured with fitbit-mcp-server setup.",
+          "format": "string",
+          "name": "FITBIT_CLIENT_ID"
+        },
+        {
+          "description": "Fitbit OAuth client secret. Prefer fitbit-mcp-server setup so this secret is stored in ~/.fitbit-mcp/config.json instead of MCP client config.",
+          "format": "string",
+          "isSecret": true,
+          "name": "FITBIT_CLIENT_SECRET"
+        },
+        {
+          "description": "Redirect URI configured in the Fitbit Developer Dashboard. Optional when configured with fitbit-mcp-server setup.",
+          "format": "string",
+          "name": "FITBIT_REDIRECT_URI"
+        },
+        {
+          "description": "Optional local path for OAuth tokens. Defaults to ~/.fitbit-mcp/tokens.json.",
+          "format": "string",
+          "name": "FITBIT_TOKEN_PATH"
+        },
+        {
+          "description": "Optional payload mode: summary, structured, or raw. Defaults to structured. raw means full Fitbit API payloads, not continuous 24/7 raw sensor telemetry.",
+          "format": "string",
+          "name": "FITBIT_PRIVACY_MODE"
+        },
+        {
+          "description": "Optional SQLite cache toggle. Set to true or sqlite to enable.",
+          "format": "string",
+          "name": "FITBIT_CACHE"
+        },
+        {
+          "description": "Optional local SQLite cache path. Defaults to ~/.fitbit-mcp/cache.sqlite.",
+          "format": "string",
+          "name": "FITBIT_CACHE_PATH"
+        },
+        {
+          "description": "Set to true to bypass the in-memory HTTP response cache (60s TTL for GET only). POST/PUT/DELETE and 4xx/5xx responses are never cached regardless.",
+          "format": "string",
+          "name": "FITBIT_NO_CACHE"
+        }
+      ],
+      "identifier": "fitbit-mcp-unofficial",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "cc61fff339",
+    "published_at": "2026-05-29T18:25:54.438003Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.davidmosiah/fitbitmcp",
+    "server_version": "0.4.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-29T18:25:54.438003Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.4.5"
+}

@@ -1,0 +1,104 @@
+{
+  "description": "Gradle-accurate JVM classpath; fetch Java source, signatures, and class structure for agents.",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:26+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Sintexer-jvmsrc.stdio.d3547c7779",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Sintexer/jvm-source-lens",
+    "homepage": "https://github.com/Sintexer/jvm-source-lens",
+    "repository": "https://github.com/Sintexer/jvm-source-lens"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "description": "Install the package via npx without a confirmation prompt.",
+            "name": "-y",
+            "type": "named"
+          },
+          "jvmsrc@1.10.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Sintexer/jvmsrc",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional comma-separated absolute paths; only these project roots are allowed.",
+          "format": "string",
+          "name": "JVMSRC_ALLOWED_ROOTS"
+        },
+        {
+          "description": "Optional absolute path for resolution and decompile caches (default: OS cache dir).",
+          "format": "string",
+          "name": "JVMSRC_CACHE_ROOT"
+        },
+        {
+          "description": "Optional absolute path for failure diagnostic logs.",
+          "format": "string",
+          "name": "JVMSRC_LOG_DIR"
+        },
+        {
+          "description": "Max characters returned for full-file source (default 524288).",
+          "format": "string",
+          "name": "JVMSRC_MAX_SOURCE_OUTPUT_CHARS"
+        },
+        {
+          "description": "Gradle resolution subprocess timeout in milliseconds.",
+          "format": "string",
+          "name": "JVMSRC_GRADLE_TIMEOUT_MS"
+        },
+        {
+          "description": "Optional path to a custom CFR JAR for decompilation.",
+          "format": "filepath",
+          "name": "JVMSRC_CFR_PATH"
+        }
+      ],
+      "identifier": "jvmsrc",
+      "packageArguments": [
+        {
+          "description": "Run the bundled MCP server (stdio transport).",
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "description": "Install the package via npx without a confirmation prompt.",
+          "name": "-y",
+          "type": "named"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.10.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d3547c7779",
+    "published_at": "2026-05-29T17:37:05.52704Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Sintexer/jvmsrc",
+    "server_version": "1.10.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-29T17:37:05.52704Z"
+  },
+  "title": "JVM Source Lens",
+  "type": "mcp_server",
+  "version": "1.10.0"
+}

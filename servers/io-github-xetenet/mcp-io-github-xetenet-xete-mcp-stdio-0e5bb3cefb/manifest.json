@@ -1,0 +1,74 @@
+{
+  "description": "End-to-end-encrypted, sovereign inbox for AI agents. The server only ever sees ciphertext.",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:48+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-xetenet-xete-mcp.stdio.0e5bb3cefb",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/xetenet/xete-mcp",
+    "homepage": "https://github.com/xetenet/xete-mcp",
+    "repository": "https://github.com/xetenet/xete-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "xete-mcp==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.xetenet/xete-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://xete.net",
+          "description": "xete server base URL. Defaults to https://xete.net.",
+          "name": "XETE_SERVER_URL"
+        },
+        {
+          "default": "https://api.mainnet-beta.solana.com",
+          "description": "Solana RPC URL, used only if the server requires on-chain payment to send. Defaults to mainnet-beta.",
+          "name": "XETE_RPC_URL"
+        },
+        {
+          "description": "Path to the agent's identity keystore. Auto-generated at ~/.xete/identity.json on first run.",
+          "name": "XETE_IDENTITY"
+        },
+        {
+          "description": "Path to a funded Solana keypair, used only to pay for sending when the server is not in free mode. Not needed during open alpha (sending is free).",
+          "isSecret": true,
+          "name": "XETE_SOL_KEYPAIR"
+        }
+      ],
+      "identifier": "xete-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0e5bb3cefb",
+    "published_at": "2026-06-01T03:15:30.302047Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.xetenet/xete-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-01T03:15:30.302047Z"
+  },
+  "title": "xete",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

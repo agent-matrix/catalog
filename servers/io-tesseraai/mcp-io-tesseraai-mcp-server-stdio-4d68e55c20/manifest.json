@@ -1,0 +1,65 @@
+{
+  "description": "MCP server for Tessera's LLM cost-optimization layer: anchored spend, drift, recommendations.",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:49+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-tesseraai-mcp-server.stdio.4d68e55c20",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/tessera-llm/mcp-server",
+    "homepage": "https://github.com/tessera-llm/mcp-server",
+    "repository": "https://github.com/tessera-llm/mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@tessera-llm/mcp-server@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.tesseraai/mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API key in tk_* format. Get one free at https://tesseraai.io/dev.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "TESSERA_API_KEY"
+        },
+        {
+          "default": "https://ledger.tesseraai.io",
+          "description": "Override only for staging or local-dev testing.",
+          "name": "TESSERA_UPSTREAM_API_BASE_URL"
+        }
+      ],
+      "identifier": "@tessera-llm/mcp-server",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4d68e55c20",
+    "published_at": "2026-05-27T13:08:25.126872Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.tesseraai/mcp-server",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-27T13:08:25.126872Z"
+  },
+  "title": "Tessera MCP Server",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

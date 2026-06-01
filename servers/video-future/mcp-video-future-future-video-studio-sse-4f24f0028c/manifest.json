@@ -1,7 +1,7 @@
 {
   "description": "Create and manage cinematic AI video renders through the Future Video Studio Agent API.",
   "harvest": {
-    "last_seen_at": "2026-05-26T16:26:40+00:00",
+    "last_seen_at": "2026-06-01T07:21:50+00:00",
     "seen_in_latest_run": true
   },
   "id": "mcp.video-future-future-video-studio.sse.4f24f0028c",
@@ -22,12 +22,12 @@
   "name": "video.future/future-video-studio",
   "provenance": {
     "identity_key": "4f24f0028c",
-    "published_at": "2026-05-07T15:14:54.545668Z",
+    "published_at": "2026-05-27T00:16:36.592536Z",
     "registry_base_url": "https://registry.modelcontextprotocol.io",
     "server_name": "video.future/future-video-studio",
-    "server_version": "0.1.2",
+    "server_version": "0.1.5",
     "source": "mcp-registry",
-    "updated_at": "2026-05-07T15:14:54.545668Z"
+    "updated_at": "2026-05-27T00:16:36.592536Z"
   },
   "remotes": [
     {
@@ -36,6 +36,27 @@
           "description": "Optional Future Video Studio Agent API key from Settings > Agent API Access. Omit for Link paid quote mode.",
           "isSecret": true,
           "name": "X-FVS-Agent-Key"
+        },
+        {
+          "description": "Optional billing mode: account-wallet, marketplace-linked-account, or pay-per-render.",
+          "name": "X-FVS-Billing-Mode"
+        },
+        {
+          "description": "Optional linked marketplace account identifier for enterprise procurement flows.",
+          "name": "X-FVS-Marketplace-Account"
+        },
+        {
+          "description": "Optional marketplace entitlement identifier paired with X-FVS-Marketplace-Account.",
+          "name": "X-FVS-Marketplace-Entitlement"
+        },
+        {
+          "description": "Optional Unix timestamp used in marketplace signature verification.",
+          "name": "X-FVS-Marketplace-Timestamp"
+        },
+        {
+          "description": "Optional HMAC-SHA256 signature from the marketplace account-linking gateway.",
+          "isSecret": true,
+          "name": "X-FVS-Marketplace-Signature"
         }
       ],
       "type": "streamable-http",
@@ -44,5 +65,5 @@
   ],
   "title": "Future Video Studio",
   "type": "mcp_server",
-  "version": "0.1.2"
+  "version": "0.1.5"
 }

@@ -1,0 +1,83 @@
+{
+  "description": "Full read + write access to your Whoop fitness data via the private iOS API. 48 tools.",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-briangaoo-whoop-mcp.stdio.e11f935432",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/briangaoo/whoop-mcp",
+    "homepage": "https://github.com/briangaoo/whoop-mcp",
+    "repository": "https://github.com/briangaoo/whoop-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@briangaoo/whoop-mcp@1.2.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.briangaoo/whoop-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Whoop Cognito access token. Obtain via `whoop-mcp auth` from the repo, which prompts for your Whoop email + password + SMS MFA code, then writes both tokens to a local .env. Auto-refreshes every ~24h.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "WHOOP_IOS_BEARER_TOKEN"
+        },
+        {
+          "description": "Whoop Cognito refresh token (~30 day lifetime). Obtained alongside the bearer token from `whoop-mcp auth`. When this expires, run `whoop-mcp auth` to get a fresh pair.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "WHOOP_COGNITO_REFRESH_TOKEN"
+        },
+        {
+          "description": "Your Whoop account email. Used only by `whoop-mcp auth` \u2014 the running server reads tokens, not credentials.",
+          "format": "string",
+          "isRequired": true,
+          "name": "WHOOP_EMAIL"
+        },
+        {
+          "description": "Your numeric Whoop user ID. Optional \u2014 used by whoop_profile and whoop_leaderboard. Avoids one redundant bootstrap call per session if set.",
+          "format": "string",
+          "name": "WHOOP_USER_ID"
+        },
+        {
+          "description": "IANA timezone (e.g., America/Los_Angeles) for response timestamps. Optional \u2014 if unset, the server auto-detects from your Whoop profile's timezone_offset field (refreshed hourly).",
+          "format": "string",
+          "name": "WHOOP_TIMEZONE"
+        }
+      ],
+      "identifier": "@briangaoo/whoop-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.2.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e11f935432",
+    "published_at": "2026-06-01T06:51:49.612085Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.briangaoo/whoop-mcp",
+    "server_version": "1.2.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-01T06:51:49.612085Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.2.3"
+}

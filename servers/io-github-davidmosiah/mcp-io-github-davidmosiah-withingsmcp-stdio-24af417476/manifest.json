@@ -1,0 +1,94 @@
+{
+  "description": "Privacy-first, unofficial Withings MCP server for AI health, sleep, activity and heart-rate agents.",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:34+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-davidmosiah-withingsmcp.stdio.24af417476",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/davidmosiah/withings-mcp",
+    "homepage": "https://github.com/davidmosiah/withings-mcp",
+    "repository": "https://github.com/davidmosiah/withings-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "withings-mcp-unofficial@0.4.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.davidmosiah/withingsmcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Withings OAuth client ID. Optional when configured with withings-mcp-server setup.",
+          "format": "string",
+          "name": "WITHINGS_CLIENT_ID"
+        },
+        {
+          "description": "Withings OAuth client secret. Prefer withings-mcp-server setup so this secret is stored in ~/.withings-mcp/config.json instead of MCP client config.",
+          "format": "string",
+          "isSecret": true,
+          "name": "WITHINGS_CLIENT_SECRET"
+        },
+        {
+          "description": "Redirect URI configured in the Withings Developer Dashboard. Optional when configured with withings-mcp-server setup.",
+          "format": "string",
+          "name": "WITHINGS_REDIRECT_URI"
+        },
+        {
+          "description": "Optional local path for OAuth tokens. Defaults to ~/.withings-mcp/tokens.json.",
+          "format": "string",
+          "name": "WITHINGS_TOKEN_PATH"
+        },
+        {
+          "description": "Optional payload mode: summary, structured, or raw. Defaults to structured. raw means full Withings API payloads, not continuous 24/7 raw sensor telemetry.",
+          "format": "string",
+          "name": "WITHINGS_PRIVACY_MODE"
+        },
+        {
+          "description": "Optional SQLite cache toggle. Set to true or sqlite to enable.",
+          "format": "string",
+          "name": "WITHINGS_CACHE"
+        },
+        {
+          "description": "Optional local SQLite cache path. Defaults to ~/.withings-mcp/cache.sqlite.",
+          "format": "string",
+          "name": "WITHINGS_CACHE_PATH"
+        },
+        {
+          "description": "Set to true to bypass the in-memory HTTP response cache (60s TTL for GET only). POST/PUT/DELETE and 4xx/5xx responses are never cached regardless. Note: Withings's wbsapi.withings.net is POST-only today, so this is currently a no-op.",
+          "format": "string",
+          "name": "WITHINGS_NO_CACHE"
+        }
+      ],
+      "identifier": "withings-mcp-unofficial",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "24af417476",
+    "published_at": "2026-05-29T18:25:02.810896Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.davidmosiah/withingsmcp",
+    "server_version": "0.4.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-29T18:25:02.810896Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.4.6"
+}

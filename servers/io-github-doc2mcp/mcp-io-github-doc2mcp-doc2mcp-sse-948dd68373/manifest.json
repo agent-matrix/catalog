@@ -1,0 +1,55 @@
+{
+  "description": "Remote MCP server that turns docs, GitHub repos, and OpenAPI specs into AI-ready tools.",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:34+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-doc2mcp-doc2mcp.sse.948dd68373",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/doc2mcp/doc2mcp",
+    "homepage": "https://github.com/doc2mcp/doc2mcp",
+    "repository": "https://github.com/doc2mcp/doc2mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://doc2mcp.site/api/mcp/{project_id}/mcp"
+    }
+  },
+  "name": "io.github.doc2mcp/doc2mcp",
+  "provenance": {
+    "identity_key": "948dd68373",
+    "published_at": "2026-05-31T23:14:23.116535Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.doc2mcp/doc2mcp",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-31T23:14:23.116535Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Bearer <your project MCP token>. Generate one under the Connect tab of your project. Treat the token like a password.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization"
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://doc2mcp.site/api/mcp/{project_id}/mcp",
+      "variables": {
+        "project_id": {
+          "description": "Your doc2mcp project ID. Find it under Dashboard \u2192 your project \u2192 Connect tab.",
+          "isRequired": true
+        }
+      }
+    }
+  ],
+  "title": "doc2mcp",
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

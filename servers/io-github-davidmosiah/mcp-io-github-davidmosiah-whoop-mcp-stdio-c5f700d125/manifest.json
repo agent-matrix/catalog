@@ -1,0 +1,94 @@
+{
+  "description": "Privacy-first, unofficial WHOOP MCP server for AI health, sleep, recovery, and performance agents.",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:34+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-davidmosiah-whoop-mcp.stdio.c5f700d125",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/davidmosiah/whoop-mcp",
+    "homepage": "https://github.com/davidmosiah/whoop-mcp",
+    "repository": "https://github.com/davidmosiah/whoop-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "whoop-mcp-unofficial@0.4.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.davidmosiah/whoop-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "WHOOP OAuth client ID. Optional when configured with whoop-mcp-server setup.",
+          "format": "string",
+          "name": "WHOOP_CLIENT_ID"
+        },
+        {
+          "description": "WHOOP OAuth client secret. Prefer whoop-mcp-server setup so this secret is stored in ~/.whoop-mcp/config.json instead of MCP client config.",
+          "format": "string",
+          "isSecret": true,
+          "name": "WHOOP_CLIENT_SECRET"
+        },
+        {
+          "description": "Redirect URI configured in the WHOOP Developer Dashboard. Optional when configured with whoop-mcp-server setup.",
+          "format": "string",
+          "name": "WHOOP_REDIRECT_URI"
+        },
+        {
+          "description": "Optional local path for OAuth tokens. Defaults to ~/.whoop-mcp/tokens.json.",
+          "format": "string",
+          "name": "WHOOP_TOKEN_PATH"
+        },
+        {
+          "description": "Optional payload mode: summary, structured, or raw. Defaults to structured. raw means full WHOOP API payloads, not raw device sensor streams.",
+          "format": "string",
+          "name": "WHOOP_PRIVACY_MODE"
+        },
+        {
+          "description": "Optional SQLite cache toggle. Set to true or sqlite to enable.",
+          "format": "string",
+          "name": "WHOOP_CACHE"
+        },
+        {
+          "description": "Optional local SQLite cache path. Defaults to ~/.whoop-mcp/cache.sqlite.",
+          "format": "string",
+          "name": "WHOOP_CACHE_PATH"
+        },
+        {
+          "description": "Set to true to bypass the in-memory HTTP response cache (60s TTL for GET only). POST/PUT/DELETE and 4xx/5xx responses are never cached regardless.",
+          "format": "string",
+          "name": "WHOOP_NO_CACHE"
+        }
+      ],
+      "identifier": "whoop-mcp-unofficial",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c5f700d125",
+    "published_at": "2026-05-29T18:51:28.606584Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.davidmosiah/whoop-mcp",
+    "server_version": "0.4.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-29T18:51:28.606584Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.4.5"
+}

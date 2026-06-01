@@ -1,0 +1,94 @@
+{
+  "description": "Privacy-first MCP server for Strava activities, streams, routes and training.",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:34+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-davidmosiah-strava-mcp.stdio.e7ada6bfc3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/davidmosiah/strava-mcp",
+    "homepage": "https://github.com/davidmosiah/strava-mcp",
+    "repository": "https://github.com/davidmosiah/strava-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "strava-mcp-unofficial@0.4.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.davidmosiah/strava-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Strava OAuth client ID. Optional when configured with strava-mcp-server setup.",
+          "format": "string",
+          "name": "STRAVA_CLIENT_ID"
+        },
+        {
+          "description": "Strava OAuth client secret. Prefer strava-mcp-server setup so this secret is stored in ~/.strava-mcp/config.json instead of MCP client config.",
+          "format": "string",
+          "isSecret": true,
+          "name": "STRAVA_CLIENT_SECRET"
+        },
+        {
+          "description": "Redirect URI configured in the Strava Developer Dashboard. Optional when configured with strava-mcp-server setup.",
+          "format": "string",
+          "name": "STRAVA_REDIRECT_URI"
+        },
+        {
+          "description": "Optional local path for OAuth tokens. Defaults to ~/.strava-mcp/tokens.json.",
+          "format": "string",
+          "name": "STRAVA_TOKEN_PATH"
+        },
+        {
+          "description": "Optional payload mode: summary, structured, or raw. Defaults to structured. raw means full Strava API payloads, not continuous 24/7 raw sensor telemetry.",
+          "format": "string",
+          "name": "STRAVA_PRIVACY_MODE"
+        },
+        {
+          "description": "Optional SQLite cache toggle. Set to true or sqlite to enable.",
+          "format": "string",
+          "name": "STRAVA_CACHE"
+        },
+        {
+          "description": "Optional local SQLite cache path. Defaults to ~/.strava-mcp/cache.sqlite.",
+          "format": "string",
+          "name": "STRAVA_CACHE_PATH"
+        },
+        {
+          "description": "Set to true to bypass the in-memory HTTP response cache (60s TTL for GET only). POST/PUT/DELETE and 4xx/5xx responses are never cached regardless.",
+          "format": "string",
+          "name": "STRAVA_NO_CACHE"
+        }
+      ],
+      "identifier": "strava-mcp-unofficial",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e7ada6bfc3",
+    "published_at": "2026-05-29T18:52:22.24013Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.davidmosiah/strava-mcp",
+    "server_version": "0.4.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-29T18:52:22.24013Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.4.6"
+}

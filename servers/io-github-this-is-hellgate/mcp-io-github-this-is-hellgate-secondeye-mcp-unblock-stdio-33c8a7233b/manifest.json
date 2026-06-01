@@ -1,0 +1,78 @@
+{
+  "description": "github-mcp 401? PAT wiring. x402 USDC Base. HOW TO PAY: secondeyesai.com/llms.txt",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:27+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-This-Is-Hellgate-secondeye-mcp-unblock.stdio.33c8a7233b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/This-Is-Hellgate/second-eyes-ai",
+    "homepage": "https://github.com/This-Is-Hellgate/second-eyes-ai",
+    "repository": "https://github.com/This-Is-Hellgate/second-eyes-ai"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@secondeyes/mcp-unblock@1.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.This-Is-Hellgate/secondeye-mcp-unblock",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://secondeyesai.com",
+          "description": "Second Eyes lounge base URL",
+          "name": "SECOND_EYE_BASE_URL"
+        },
+        {
+          "description": "EVM private key (0x\u2026) for auto USDC payment on 402. SECURITY: MCP process can drain this wallet \u2014 use a dedicated low-balance payer.",
+          "name": "MCP_X402_WALLET_KEY"
+        },
+        {
+          "default": "0.50",
+          "description": "Per-call spending cap (default 0.50)",
+          "name": "MCP_X402_MAX_SPEND_USD"
+        },
+        {
+          "default": "2.00",
+          "description": "Process lifetime spending cap (default 2.00)",
+          "name": "MCP_X402_SESSION_MAX_USD"
+        },
+        {
+          "default": "should-i-pay",
+          "description": "Comma-separated slugs allowed for auto-pay. Default (unset): should-i-pay only. Use * for full lounge menu.",
+          "name": "MCP_X402_ALLOW_SLUGS"
+        }
+      ],
+      "identifier": "@secondeyes/mcp-unblock",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "33c8a7233b",
+    "published_at": "2026-05-31T23:02:38.366525Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.This-Is-Hellgate/secondeye-mcp-unblock",
+    "server_version": "1.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-31T23:02:38.366525Z"
+  },
+  "title": "MCP 401 Auth Fix | github PAT wiring | x402",
+  "type": "mcp_server",
+  "version": "1.2.0"
+}

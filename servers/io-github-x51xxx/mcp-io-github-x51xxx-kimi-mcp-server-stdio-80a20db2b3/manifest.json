@@ -1,0 +1,76 @@
+{
+  "description": "MCP server bridging AI assistants to Moonshot AI Kimi Code CLI for code analysis and review",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:48+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-x51xxx-kimi-mcp-server.stdio.80a20db2b3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/x51xxx/kimi-mcp-server",
+    "homepage": "https://github.com/x51xxx/kimi-mcp-server",
+    "repository": "https://github.com/x51xxx/kimi-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@trishchuk/kimi-mcp-server@0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.x51xxx/kimi-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Override working directory for all tool calls",
+          "format": "string",
+          "name": "KIMI_MCP_CWD"
+        },
+        {
+          "default": "86400000",
+          "description": "Session time-to-live in milliseconds (default: 86400000 = 24h)",
+          "format": "string",
+          "name": "KIMI_SESSION_TTL_MS"
+        },
+        {
+          "default": "50",
+          "description": "Maximum concurrent sessions (default: 50)",
+          "format": "string",
+          "name": "KIMI_MAX_SESSIONS"
+        },
+        {
+          "description": "Forwarded to Kimi CLI for unattended auth. Leave unset to use OAuth (run `kimi /login` once).",
+          "format": "string",
+          "isSecret": true,
+          "name": "MOONSHOT_API_KEY"
+        }
+      ],
+      "identifier": "@trishchuk/kimi-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "80a20db2b3",
+    "published_at": "2026-05-27T08:25:29.176277Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.x51xxx/kimi-mcp-server",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-27T08:25:29.176277Z"
+  },
+  "title": "Kimi MCP Server",
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

@@ -1,0 +1,85 @@
+{
+  "description": "Vaara governance as standalone MCP server. Risk scoring, intercept, hash-chained audit.",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:47+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-vaaraio-vaara-server.stdio.bfc53ca36d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/vaaraio/vaara",
+    "homepage": "https://github.com/vaaraio/vaara",
+    "repository": "https://github.com/vaaraio/vaara"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "PyPI package providing the vaara-mcp-server entry point",
+            "name": "--from",
+            "type": "named",
+            "value": "vaara"
+          },
+          {
+            "type": "positional",
+            "value": "vaara-mcp-server"
+          },
+          "vaara==0.41.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.vaaraio/vaara-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the SQLite audit DB. Defaults to vaara_audit.db in the working directory.",
+          "name": "VAARA_DB"
+        },
+        {
+          "description": "Optional shared secret. When set, every tool call must include _api_key in its arguments. Leave unset for single-tenant stdio deployments where process isolation is enough.",
+          "name": "VAARA_API_KEY"
+        }
+      ],
+      "identifier": "vaara",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "PyPI package providing the vaara-mcp-server entry point",
+          "name": "--from",
+          "type": "named",
+          "value": "vaara"
+        },
+        {
+          "type": "positional",
+          "value": "vaara-mcp-server"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.41.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "bfc53ca36d",
+    "published_at": "2026-05-28T18:58:35.295056Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.vaaraio/vaara-server",
+    "server_version": "0.41.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-28T18:58:35.295056Z"
+  },
+  "title": "Vaara MCP Server",
+  "type": "mcp_server",
+  "version": "0.41.0"
+}
