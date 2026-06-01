@@ -1,0 +1,60 @@
+{
+  "description": "Zero-config data-quality monitoring: profile a warehouse, detect anomalies, gate CI.",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:44+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-rbmuller-scherlok.stdio.1d16e772c0",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/rbmuller/scherlok",
+    "homepage": "https://github.com/rbmuller/scherlok",
+    "repository": "https://github.com/rbmuller/scherlok"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "scherlok==0.7.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.rbmuller/scherlok",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Warehouse connection string (postgresql://, bigquery://, snowflake://, mysql://, duckdb:///path). Resolved server-side; never passed by the model.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SCHERLOK_CONNECTION"
+        }
+      ],
+      "identifier": "scherlok",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.7.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1d16e772c0",
+    "published_at": "2026-05-28T13:54:27.673322Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.rbmuller/scherlok",
+    "server_version": "0.7.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-28T13:54:27.673322Z"
+  },
+  "title": "Scherlok",
+  "type": "mcp_server",
+  "version": "0.7.0"
+}

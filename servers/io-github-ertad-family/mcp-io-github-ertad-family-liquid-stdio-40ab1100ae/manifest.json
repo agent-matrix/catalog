@@ -1,0 +1,78 @@
+{
+  "description": "Connect your AI agent to anything \u2014 APIs, databases, and agents; read and write, auto-discovered.",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:35+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ertad-family-liquid.stdio.40ab1100ae",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ertad-family/liquid",
+    "homepage": "https://github.com/ertad-family/liquid",
+    "repository": "https://github.com/ertad-family/liquid"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "liquid-mcp==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ertad-family/liquid",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "OpenAI (or compatible) API key for discovery",
+          "isSecret": true,
+          "name": "OPENAI_API_KEY"
+        },
+        {
+          "description": "OpenAI-compatible base URL, e.g. local Ollama/vLLM",
+          "name": "OPENAI_BASE_URL"
+        },
+        {
+          "description": "Google Gemini API key (alternative)",
+          "isSecret": true,
+          "name": "GEMINI_API_KEY"
+        },
+        {
+          "description": "Anthropic API key (alternative)",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        },
+        {
+          "description": "Set to 1 to expose the liquid_execute write tool (database insert/update/delete). Off by default \u2014 read-only.",
+          "name": "LIQUID_ALLOW_WRITES"
+        }
+      ],
+      "identifier": "liquid-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "40ab1100ae",
+    "published_at": "2026-05-28T21:41:53.671168Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ertad-family/liquid",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-28T21:41:53.671168Z"
+  },
+  "title": "Liquid",
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

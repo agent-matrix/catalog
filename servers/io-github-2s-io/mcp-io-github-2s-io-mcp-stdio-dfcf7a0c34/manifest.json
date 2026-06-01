@@ -1,0 +1,67 @@
+{
+  "description": "MCP server for 2s.io \u2014 40+ pay-per-call tools settled in USDC on Base via x402.",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:21+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-2s-io-mcp.stdio.dfcf7a0c34",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/2s-io/sdk",
+    "homepage": "https://github.com/2s-io/sdk",
+    "repository": "https://github.com/2s-io/sdk"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@2sio/mcp@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.2s-io/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Hex-encoded EVM private key (0x-prefixed) used by the SDK to sign x402 EIP-3009 payment authorizations. Mutually exclusive with TWOSIO_API_KEY \u2014 provide one or the other. Funds USDC on Base.",
+          "format": "string",
+          "isSecret": true,
+          "name": "EVM_PRIVATE_KEY"
+        },
+        {
+          "description": "Bearer API key for pre-funded 2s.io account auth. Mutually exclusive with EVM_PRIVATE_KEY \u2014 use this if you want account-based debits instead of per-call x402 settlement.",
+          "format": "string",
+          "isSecret": true,
+          "name": "TWOSIO_API_KEY"
+        }
+      ],
+      "identifier": "@2sio/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "dfcf7a0c34",
+    "published_at": "2026-05-30T18:15:55.321778Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.2s-io/mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-30T18:15:55.321778Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

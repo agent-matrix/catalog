@@ -1,0 +1,82 @@
+{
+  "description": "Airflow MCP \u2014 list DAGs/runs/task instances, tail logs, trigger and clear (write-gated)",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:47+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-us-all-airflow.stdio.543aa05f8f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/us-all/airflow-mcp-server",
+    "homepage": "https://github.com/us-all/airflow-mcp-server",
+    "repository": "https://github.com/us-all/airflow-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@us-all/airflow-mcp@1.0.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.us-all/airflow",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Airflow host base, e.g. 'http://airflow.example.com:8080'. Server prepends /api/v2 internally; trailing /api/v1 or /api/v2 is stripped if supplied.",
+          "isRequired": true,
+          "name": "AIRFLOW_API_URL"
+        },
+        {
+          "description": "Airflow username (used to mint a JWT via SimpleAuthManager /auth/token).",
+          "isRequired": true,
+          "name": "AIRFLOW_USERNAME"
+        },
+        {
+          "description": "Airflow password (used to mint a JWT via SimpleAuthManager /auth/token).",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AIRFLOW_PASSWORD"
+        },
+        {
+          "default": "false",
+          "description": "Set to 'true' to enable trigger-dag and clear-task tools. Default read-only.",
+          "name": "AIRFLOW_ALLOW_WRITE"
+        },
+        {
+          "description": "Comma-separated category allowlist (airflow,meta).",
+          "name": "AIRFLOW_TOOLS"
+        },
+        {
+          "description": "Comma-separated category disablelist.",
+          "name": "AIRFLOW_DISABLE"
+        }
+      ],
+      "identifier": "@us-all/airflow-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "543aa05f8f",
+    "published_at": "2026-05-27T22:10:16.635118Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.us-all/airflow",
+    "server_version": "1.0.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-27T22:10:16.635118Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.4"
+}

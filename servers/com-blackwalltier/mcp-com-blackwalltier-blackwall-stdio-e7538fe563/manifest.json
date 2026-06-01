@@ -1,0 +1,64 @@
+{
+  "description": "Pre-action risk gate: AI agents call before any irreversible action (money, SQL, delete).",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:17+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-blackwalltier-blackwall.stdio.e7538fe563",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/bluetieroperations-create/blackwall-mcp",
+    "homepage": "https://github.com/bluetieroperations-create/blackwall-mcp",
+    "repository": "https://github.com/bluetieroperations-create/blackwall-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "blackwall-mcp@1.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.blackwalltier/blackwall",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your BLACK_WALL API key (bw_live_\u2026) from https://blackwalltier.com/dashboard/keys",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "BLACKWALL_API_KEY"
+        },
+        {
+          "description": "observe (log only, never block) or enforce (default).",
+          "name": "BLACKWALL_MODE"
+        }
+      ],
+      "identifier": "blackwall-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e7538fe563",
+    "published_at": "2026-05-30T00:30:57.156997Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.blackwalltier/blackwall",
+    "server_version": "1.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-30T00:30:57.156997Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.1.1"
+}

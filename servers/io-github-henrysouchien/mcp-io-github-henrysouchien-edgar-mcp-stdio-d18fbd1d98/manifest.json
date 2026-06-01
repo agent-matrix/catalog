@@ -1,0 +1,70 @@
+{
+  "description": "MCP stdio server for source-backed SEC EDGAR financial data from the hosted EdgarParser API.",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:36+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-henrysouchien-edgar-mcp.stdio.d18fbd1d98",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/henrysouchien/edgar-mcp",
+    "homepage": "https://github.com/henrysouchien/edgar-mcp",
+    "repository": "https://github.com/henrysouchien/edgar-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "edgar-mcp==1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.henrysouchien/edgar-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API key for the hosted EdgarParser API.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "EDGAR_API_KEY"
+        },
+        {
+          "description": "Optional API base URL override. Defaults to https://www.edgarparser.com.",
+          "format": "string",
+          "name": "EDGAR_API_URL"
+        },
+        {
+          "description": "Optional directory for output=\"file\" responses.",
+          "format": "string",
+          "name": "EDGAR_MCP_OUTPUT_DIR"
+        }
+      ],
+      "identifier": "edgar-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d18fbd1d98",
+    "published_at": "2026-05-26T16:48:28.190881Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.henrysouchien/edgar-mcp",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-26T16:48:28.190881Z"
+  },
+  "title": "EdgarParser MCP",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

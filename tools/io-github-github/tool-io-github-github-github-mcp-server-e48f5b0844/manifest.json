@@ -1,0 +1,89 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/github/github-mcp-server:1.1.1"
+      }
+    }
+  ],
+  "description": "Connect AI assistants to GitHub - manage repos, issues, PRs, and workflows through natural language.",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:36+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/github/github-mcp-server",
+  "id": "tool.io-github-github-github-mcp-server.e48f5b0844",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/github/github-mcp-server",
+    "homepage": "https://github.com/github/github-mcp-server",
+    "repository": "https://github.com/github/github-mcp-server"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Connect AI assistants to GitHub - manage repos, issues, PRs, and workflows through natural language.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.github/github-mcp-server",
+      "request_type": "POST",
+      "url": "https://github.com/github/github-mcp-server"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Set an environment variable in the runtime",
+            "isRequired": true,
+            "name": "-e",
+            "type": "named",
+            "value": "GITHUB_PERSONAL_ACCESS_TOKEN={token}",
+            "variables": {
+              "token": {
+                "format": "string",
+                "isRequired": true,
+                "isSecret": true
+              }
+            }
+          },
+          "ghcr.io/github/github-mcp-server:1.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.github/github-mcp-server",
+  "provenance": {
+    "identity_key": "0ae20a72fb",
+    "promoted_from": "mcp.io-github-github-github-mcp-server.stdio.0ae20a72fb",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.github/github-mcp-server",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-github-github-mcp-server.stdio.0ae20a72fb",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/github/github-mcp-server",
+  "summary": "Connect AI assistants to GitHub - manage repos, issues, PRs, and workflows through natural language.",
+  "tags": [
+    "assistants",
+    "connect",
+    "issues",
+    "manage",
+    "repos",
+    "workflows"
+  ],
+  "title": "GitHub",
+  "type": "tool",
+  "version": "1.1.1"
+}

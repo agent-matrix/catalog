@@ -1,0 +1,86 @@
+{
+  "description": "MCP server for DefectDojo: 24 tools with RBAC, HMAC audit chain, and SIEM forwarding",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-inspicere-mcp-defectdojo.stdio.c5ace3e1bb",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/inspicere/mcp-defectdojo",
+    "homepage": "https://github.com/inspicere/mcp-defectdojo",
+    "repository": "https://github.com/inspicere/mcp-defectdojo"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-defectdojo==3.3.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.inspicere/mcp-defectdojo",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the DefectDojo instance (must use https:// unless ALLOW_INSECURE_HTTP=true)",
+          "isRequired": true,
+          "name": "DEFECTDOJO_URL"
+        },
+        {
+          "description": "API key for DefectDojo (generate at DefectDojo > API v2 > Your API Key). Use DEFECTDOJO_READ_API_KEY + DEFECTDOJO_WRITE_API_KEY for least-privilege dual-key mode.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DEFECTDOJO_API_KEY"
+        },
+        {
+          "description": "Optional read-only API key (used for GET requests in dual-key mode)",
+          "isSecret": true,
+          "name": "DEFECTDOJO_READ_API_KEY"
+        },
+        {
+          "description": "Optional write API key (used for POST/PATCH in dual-key mode)",
+          "isSecret": true,
+          "name": "DEFECTDOJO_WRITE_API_KEY"
+        },
+        {
+          "description": "Bearer token granting admin-role access (legacy single-token mode \u2014 prefer MCP_ROLE_<NAME>=<token>:<role> for RBAC)",
+          "isSecret": true,
+          "name": "MCP_AUTH_TOKEN"
+        },
+        {
+          "description": "HMAC key for audit log integrity chain. Required for cross-restart log verification on network transports. Generate with: python3 -c 'import secrets; print(secrets.token_hex(32))'",
+          "isSecret": true,
+          "name": "AUDIT_HMAC_KEY"
+        }
+      ],
+      "identifier": "mcp-defectdojo",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "3.3.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c5ace3e1bb",
+    "published_at": "2026-05-28T01:33:22.467486Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.inspicere/mcp-defectdojo",
+    "server_version": "3.3.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-28T01:33:22.467486Z"
+  },
+  "title": "DefectDojo",
+  "type": "mcp_server",
+  "version": "3.3.2"
+}

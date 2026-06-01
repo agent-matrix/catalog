@@ -1,0 +1,113 @@
+{
+  "description": "Store, query, and create YAML workflow playbooks for LLM agents.",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cyanheads-workflows-mcp-server.stdio.74cc42176f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cyanheads/workflows-mcp-server",
+    "homepage": "https://github.com/cyanheads/workflows-mcp-server",
+    "repository": "https://github.com/cyanheads/workflows-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "bun",
+          "@cyanheads/workflows-mcp-server@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cyanheads/workflows-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "./workflows-yaml",
+          "description": "Absolute or relative path to the workflows root directory.",
+          "format": "string",
+          "name": "WORKFLOWS_DIR"
+        },
+        {
+          "description": "Path to the global instructions markdown file. Derives from WORKFLOWS_DIR when not set.",
+          "format": "string",
+          "name": "GLOBAL_INSTRUCTIONS_PATH"
+        },
+        {
+          "default": "500",
+          "description": "Milliseconds to debounce filesystem change events before rebuilding the index.",
+          "format": "string",
+          "name": "WATCHER_DEBOUNCE_MS"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "The hostname for the HTTP server.",
+          "format": "string",
+          "name": "MCP_HTTP_HOST"
+        },
+        {
+          "default": "3010",
+          "description": "The port to run the HTTP server on.",
+          "format": "string",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "default": "/mcp",
+          "description": "The endpoint path for the MCP server.",
+          "format": "string",
+          "name": "MCP_HTTP_ENDPOINT_PATH"
+        },
+        {
+          "default": "none",
+          "description": "Authentication mode to use: 'none', 'jwt', or 'oauth'.",
+          "format": "string",
+          "name": "MCP_AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Sets the minimum log level for output (e.g., 'debug', 'info', 'warn').",
+          "format": "string",
+          "name": "MCP_LOG_LEVEL"
+        }
+      ],
+      "identifier": "@cyanheads/workflows-mcp-server",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "start:http"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "bun",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3010/mcp"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "74cc42176f",
+    "published_at": "2026-05-28T10:05:46.060596Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cyanheads/workflows-mcp-server",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-28T10:05:46.060596Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

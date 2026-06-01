@@ -1,0 +1,68 @@
+{
+  "description": "OneHome (CoreLogic) real-estate access for Claude \u2014 search, property details, photos, saved homes",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-chrischall-onehome-mcp.stdio.6808476fde",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/chrischall/onehome-mcp",
+    "homepage": "https://github.com/chrischall/onehome-mcp",
+    "repository": "https://github.com/chrischall/onehome-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "onehome-mcp@0.10.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.chrischall/onehome-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Bearer token for services.onehome.com. Paste the raw JWT (Authorization header value, minus the 'Bearer ' prefix) from your signed-in portal.onehome.com session.",
+          "format": "string",
+          "name": "ONEHOME_TOKEN"
+        },
+        {
+          "description": "Magic-link URL with ?token=... from your real-estate agent. The MCP extracts the token query param and uses it directly as the bearer.",
+          "format": "string",
+          "name": "ONEHOME_MAGIC_LINK"
+        },
+        {
+          "description": "Override the fetchproxy WebSocket port (default 37149). Only used when ONEHOME_TOKEN / ONEHOME_MAGIC_LINK are unset and the MCP boots in capture-from-tab mode.",
+          "format": "string",
+          "name": "ONEHOME_WS_PORT"
+        }
+      ],
+      "identifier": "onehome-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.10.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6808476fde",
+    "published_at": "2026-05-28T16:45:27.717867Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.chrischall/onehome-mcp",
+    "server_version": "0.10.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-28T16:45:27.717867Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.10.0"
+}

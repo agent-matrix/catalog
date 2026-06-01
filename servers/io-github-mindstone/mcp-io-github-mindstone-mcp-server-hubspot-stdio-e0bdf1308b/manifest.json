@@ -1,0 +1,117 @@
+{
+  "description": "HubSpot CRM: contacts, deals, tickets, line items, properties, marketing, files, workflows, threads",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:40+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mindstone-mcp-server-hubspot.stdio.e0bdf1308b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mindstone/mcp-servers",
+    "homepage": "https://github.com/mindstone/mcp-servers",
+    "repository": "https://github.com/mindstone/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@mindstone/mcp-server-hubspot@0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mindstone/mcp-server-hubspot",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Directory containing accounts.json and credentials/*.token.json",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "HUBSPOT_CONFIG_DIR"
+        },
+        {
+          "description": "Account selector \u2014 one MCP process per HubSpot account",
+          "format": "string",
+          "isRequired": true,
+          "name": "HUBSPOT_ACCOUNT_EMAIL"
+        },
+        {
+          "description": "Workspace root for local file tools (required only when invoking upload/attach tools)",
+          "format": "filepath",
+          "name": "MCP_WORKSPACE_PATH"
+        },
+        {
+          "description": "HubSpot OAuth client ID",
+          "format": "string",
+          "isRequired": true,
+          "name": "HUBSPOT_CLIENT_ID"
+        },
+        {
+          "description": "HubSpot OAuth client secret",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "HUBSPOT_CLIENT_SECRET"
+        },
+        {
+          "default": "HubSpot MCP",
+          "description": "Source attribution label applied to new records",
+          "format": "string",
+          "name": "HUBSPOT_SOURCE_LABEL"
+        },
+        {
+          "description": "Set to 1 to disable token refresh on this surface (use on cloud so desktop remains the sole refresh authority)",
+          "format": "string",
+          "name": "HUBSPOT_DISABLE_REFRESH"
+        },
+        {
+          "description": "Set to 1 to allow refresh on the cloud surface even when HUBSPOT_DISABLE_REFRESH=1 (escape hatch)",
+          "format": "string",
+          "name": "HUBSPOT_ALLOW_CLOUD_REFRESH"
+        },
+        {
+          "default": "60000",
+          "description": "Outbound HTTP request timeout in milliseconds (max 300000 = 5 min)",
+          "format": "number",
+          "name": "HUBSPOT_REQUEST_TIMEOUT_MS"
+        },
+        {
+          "description": "OAuth scope tier \u2014 'readonly' or 'full'. Overrides the per-account stored tier",
+          "format": "string",
+          "name": "HUBSPOT_SCOPE_TIER"
+        },
+        {
+          "description": "Stale-lock detection threshold for the credential refresh mutex (advanced)",
+          "format": "number",
+          "name": "HUBSPOT_REFRESH_LOCK_STALE_MS"
+        }
+      ],
+      "identifier": "@mindstone/mcp-server-hubspot",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e0bdf1308b",
+    "published_at": "2026-05-29T14:56:14.392219Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mindstone/mcp-server-hubspot",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-29T14:56:14.392219Z"
+  },
+  "title": "HubSpot",
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

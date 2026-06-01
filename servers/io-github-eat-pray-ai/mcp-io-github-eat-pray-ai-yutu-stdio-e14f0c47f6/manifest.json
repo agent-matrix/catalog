@@ -1,0 +1,98 @@
+{
+  "description": "The AI-powered toolkit that grows your YouTube channel on autopilot",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:35+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-eat-pray-ai-yutu.stdio.e14f0c47f6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/eat-pray-ai/yutu",
+    "homepage": "https://github.com/eat-pray-ai/yutu",
+    "repository": "https://github.com/eat-pray-ai/yutu"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@eat-pray-ai/yutu@0.10.9-dev1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.eat-pray-ai/yutu",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "GCP project credential for yutu, base64 encoded JSON or path to JSON file",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "YUTU_CREDENTIAL"
+        },
+        {
+          "description": "YouTube authentication token, base64 encoded JSON or path to JSON file",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "YUTU_CACHE_TOKEN"
+        },
+        {
+          "choices": [
+            "DEBUG",
+            "INFO",
+            "WARNING",
+            "ERROR"
+          ],
+          "default": "INFO",
+          "description": "Log level",
+          "format": "string",
+          "name": "YUTU_LOG_LEVEL"
+        }
+      ],
+      "identifier": "@eat-pray-ai/yutu",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        },
+        {
+          "name": "--mode",
+          "type": "named",
+          "value": "http"
+        },
+        {
+          "default": "8216",
+          "description": "Port to listen on for HTTP mode",
+          "name": "--port",
+          "type": "named"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:{--port}/mcp"
+      },
+      "version": "0.10.9-dev1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e14f0c47f6",
+    "published_at": "2026-05-28T14:32:18.281858Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.eat-pray-ai/yutu",
+    "server_version": "0.10.9-dev1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-28T14:32:18.281858Z"
+  },
+  "title": "yutu",
+  "type": "mcp_server",
+  "version": "0.10.9-dev1"
+}

@@ -1,0 +1,131 @@
+{
+  "description": "Unofficial Proton Mail MCP \u2014 send, read, search & organize email over SMTP and IMAP",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:45+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sethbang-proton-mail-mcp.stdio.3f399a6744",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sethbang/proton-mail-mcp",
+    "homepage": "https://github.com/sethbang/proton-mail-mcp",
+    "repository": "https://github.com/sethbang/proton-mail-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "proton-mail-mcp@1.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sethbang/proton-mail-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your Proton Mail email address",
+          "isRequired": true,
+          "name": "PROTONMAIL_USERNAME"
+        },
+        {
+          "description": "Your Proton Mail SMTP password (not your login password; generate one in Proton settings)",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PROTONMAIL_PASSWORD"
+        },
+        {
+          "default": "smtp.protonmail.ch",
+          "description": "SMTP host",
+          "name": "PROTONMAIL_HOST"
+        },
+        {
+          "default": "587",
+          "description": "SMTP port",
+          "format": "number",
+          "name": "PROTONMAIL_PORT"
+        },
+        {
+          "default": "false",
+          "description": "Use TLS for SMTP (true for port 465)",
+          "name": "PROTONMAIL_SECURE"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "Proton Mail Bridge IMAP host (required for read/search tools)",
+          "name": "IMAP_HOST"
+        },
+        {
+          "default": "1143",
+          "description": "Proton Mail Bridge IMAP port",
+          "format": "number",
+          "name": "IMAP_PORT"
+        },
+        {
+          "default": "false",
+          "description": "Use TLS for IMAP",
+          "name": "IMAP_SECURE"
+        },
+        {
+          "description": "Proton Mail Bridge username (falls back to PROTONMAIL_USERNAME)",
+          "name": "IMAP_USERNAME"
+        },
+        {
+          "description": "Proton Mail Bridge password (falls back to PROTONMAIL_PASSWORD)",
+          "isSecret": true,
+          "name": "IMAP_PASSWORD"
+        },
+        {
+          "default": "false",
+          "description": "Disable all mutating tools (send, move, delete, flags, labels, bulk ops, folder/label management)",
+          "name": "READONLY"
+        },
+        {
+          "default": "false",
+          "description": "Refuse live sends to any recipient other than PROTONMAIL_USERNAME (for throwaway/QA accounts)",
+          "name": "RESTRICT_OUTBOUND_TO_SELF"
+        },
+        {
+          "description": "Allowlist directory enabling download_attachment.saveTo; when unset, attachments return as inline base64",
+          "name": "ALLOW_FILE_DOWNLOAD_DIR"
+        },
+        {
+          "default": "false",
+          "description": "Register the empty_folder tool (not recommended)",
+          "name": "ALLOW_EMPTY_FOLDER"
+        },
+        {
+          "default": "false",
+          "description": "Enable verbose logging to stderr",
+          "name": "DEBUG"
+        }
+      ],
+      "identifier": "proton-mail-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "3f399a6744",
+    "published_at": "2026-05-30T09:41:41.122518Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sethbang/proton-mail-mcp",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-30T09:41:41.122518Z"
+  },
+  "title": "Proton Mail (unofficial)",
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

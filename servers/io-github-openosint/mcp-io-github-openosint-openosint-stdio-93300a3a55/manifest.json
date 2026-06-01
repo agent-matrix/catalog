@@ -1,0 +1,84 @@
+{
+  "description": "AI-powered OSINT agent & MCP server. 16 tools: email, breach, IP, WHOIS, DNS, Shodan, GitHub & more.",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:26+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-OpenOSINT-openosint.stdio.93300a3a55",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/OpenOSINT/OpenOSINT",
+    "homepage": "https://github.com/OpenOSINT/OpenOSINT",
+    "repository": "https://github.com/OpenOSINT/OpenOSINT"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "openosint==2.16.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.OpenOSINT/openosint",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Anthropic API key \u2014 required for the AI agent REPL",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        },
+        {
+          "description": "HaveIBeenPwned API key for breach detection (search_breach tool)",
+          "format": "string",
+          "isSecret": true,
+          "name": "HIBP_API_KEY"
+        },
+        {
+          "description": "ipinfo.io token for higher IP lookup rate limits (search_ip tool)",
+          "format": "string",
+          "isSecret": true,
+          "name": "IPINFO_TOKEN"
+        },
+        {
+          "description": "IP2Location API key for enhanced IP intelligence (search_ip2location tool)",
+          "format": "string",
+          "isSecret": true,
+          "name": "IP2LOCATION_API_KEY"
+        },
+        {
+          "description": "AbuseIPDB API key for IP abuse reputation checks (search_abuseipdb tool)",
+          "format": "string",
+          "isSecret": true,
+          "name": "ABUSEIPDB_API_KEY"
+        }
+      ],
+      "identifier": "openosint",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.16.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "93300a3a55",
+    "published_at": "2026-05-26T19:11:07.041374Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.OpenOSINT/openosint",
+    "server_version": "2.16.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-26T19:11:07.041374Z"
+  },
+  "title": "OpenOSINT",
+  "type": "mcp_server",
+  "version": "2.16.2"
+}

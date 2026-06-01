@@ -1,0 +1,85 @@
+{
+  "description": "MCP server for Kalshi prediction markets: native RSA-PSS auth, rate limiting, demo/prod safety.",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cejor6-kalshi-mcp-server.stdio.d6197bedb2",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cejor6/kalshi-mcp-server",
+    "homepage": "https://github.com/cejor6/kalshi-mcp-server",
+    "repository": "https://github.com/cejor6/kalshi-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "kalshi-mcp-server==0.1.8"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cejor6/kalshi-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Kalshi API key ID from https://kalshi.com/account/profile",
+          "format": "string",
+          "isRequired": true,
+          "name": "KALSHI_API_KEY_ID"
+        },
+        {
+          "description": "Filesystem path to the RSA private key PEM. Set this or KALSHI_PRIVATE_KEY_PEM.",
+          "format": "string",
+          "name": "KALSHI_PRIVATE_KEY_PATH"
+        },
+        {
+          "description": "Inline PEM contents, for hosted deploys without filesystem access.",
+          "format": "string",
+          "isSecret": true,
+          "name": "KALSHI_PRIVATE_KEY_PEM"
+        },
+        {
+          "description": "demo or prod. Defaults to demo for safety.",
+          "format": "string",
+          "name": "KALSHI_ENV"
+        },
+        {
+          "description": "Must be 1 for the server to start with KALSHI_ENV=prod. Defaults to 0.",
+          "format": "string",
+          "name": "KALSHI_ALLOW_PROD"
+        },
+        {
+          "description": "Must be 1 for order-placement tools to operate. Read-only by default (0).",
+          "format": "string",
+          "name": "KALSHI_TRADING_ENABLED"
+        }
+      ],
+      "identifier": "kalshi-mcp-server",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.8"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d6197bedb2",
+    "published_at": "2026-05-31T19:06:33.817211Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cejor6/kalshi-mcp-server",
+    "server_version": "0.1.8",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-31T19:06:33.817211Z"
+  },
+  "title": "Kalshi Prediction Markets",
+  "type": "mcp_server",
+  "version": "0.1.8"
+}

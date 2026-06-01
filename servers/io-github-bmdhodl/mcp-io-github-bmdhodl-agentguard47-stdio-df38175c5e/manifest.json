@@ -1,0 +1,65 @@
+{
+  "description": "Read-only MCP server for coding-agent traces, alerts, costs, usage, and budget health.",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-bmdhodl-agentguard47.stdio.df38175c5e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/bmdhodl/agent47",
+    "homepage": "https://github.com/bmdhodl/agent47",
+    "repository": "https://github.com/bmdhodl/agent47"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@agentguard47/mcp-server@0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.bmdhodl/agentguard47",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "AgentGuard read API key for querying traces, alerts, costs, usage, and savings.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AGENTGUARD_API_KEY"
+        },
+        {
+          "description": "Optional AgentGuard API base URL. Defaults to production.",
+          "format": "string",
+          "name": "AGENTGUARD_URL"
+        }
+      ],
+      "identifier": "@agentguard47/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "df38175c5e",
+    "published_at": "2026-05-31T00:08:31.349645Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.bmdhodl/agentguard47",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-31T00:08:31.349645Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

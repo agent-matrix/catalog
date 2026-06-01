@@ -1,0 +1,120 @@
+{
+  "description": "Fleet discovery for the cyanheads MCP ecosystem \u2014 semantic search + install snippets.",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:32+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cyanheads-cyanheads-mcp-server.stdio.c84c647f10",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cyanheads/cyanheads-mcp-server",
+    "homepage": "https://github.com/cyanheads/cyanheads-mcp-server",
+    "repository": "https://github.com/cyanheads/cyanheads-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "node",
+          "@cyanheads/cyanheads-mcp-server@0.1.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cyanheads/cyanheads-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "127.0.0.1",
+          "description": "Hostname for the HTTP server.",
+          "format": "string",
+          "name": "MCP_HTTP_HOST"
+        },
+        {
+          "default": "3010",
+          "description": "Port to run the HTTP server on.",
+          "format": "string",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "default": "/mcp",
+          "description": "Endpoint path for the MCP server.",
+          "format": "string",
+          "name": "MCP_HTTP_ENDPOINT_PATH"
+        },
+        {
+          "default": "none",
+          "description": "Authentication mode: none, jwt, or oauth.",
+          "format": "string",
+          "name": "MCP_AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Minimum log level: debug, info, notice, warning, error.",
+          "format": "string",
+          "name": "MCP_LOG_LEVEL"
+        },
+        {
+          "default": "https://caseyjhand.com/fleet.json",
+          "description": "Remote fleet.json endpoint (schema v2 with baked embeddings).",
+          "format": "string",
+          "name": "CATALOG_URL"
+        },
+        {
+          "default": "3600",
+          "description": "Background poll interval for fleet.json refresh. 0 disables.",
+          "format": "string",
+          "name": "CATALOG_REFRESH_SECONDS"
+        },
+        {
+          "default": "Snowflake/snowflake-arctic-embed-m-v1.5",
+          "description": "Hugging Face model id for query embedding. Must match fleet.json.embeddingModel.",
+          "format": "string",
+          "name": "EMBEDDING_MODEL_ID"
+        },
+        {
+          "default": "0.3",
+          "description": "Cosine similarity cutoff for cyanheads_search results (0-1).",
+          "format": "string",
+          "name": "SIMILARITY_FLOOR"
+        }
+      ],
+      "identifier": "@cyanheads/cyanheads-mcp-server",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "start:http"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "node",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3010/mcp"
+      },
+      "version": "0.1.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c84c647f10",
+    "published_at": "2026-05-28T12:15:48.635443Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cyanheads/cyanheads-mcp-server",
+    "server_version": "0.1.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-28T12:15:48.635443Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.6"
+}

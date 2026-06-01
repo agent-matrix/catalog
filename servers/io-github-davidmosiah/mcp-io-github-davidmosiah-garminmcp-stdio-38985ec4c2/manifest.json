@@ -1,0 +1,83 @@
+{
+  "description": "Privacy-first unofficial Garmin Connect MCP for AI health, sleep, activity & recovery agents.",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:34+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-davidmosiah-garminmcp.stdio.38985ec4c2",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/davidmosiah/garmin-mcp",
+    "homepage": "https://github.com/davidmosiah/garmin-mcp",
+    "repository": "https://github.com/davidmosiah/garmin-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "garmin-mcp-unofficial@0.5.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.davidmosiah/garminmcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional local path for Garmin Connect tokens. Defaults to ~/.garmin-mcp/garmin_tokens.json. Create it with garmin-mcp-server auth (self-contained Node login, no Python).",
+          "format": "string",
+          "name": "GARMIN_TOKEN_PATH"
+        },
+        {
+          "description": "Optional payload mode: summary, structured, or raw. Defaults to structured. raw means full supported Garmin Connect payloads, not unrestricted raw sensor telemetry.",
+          "format": "string",
+          "name": "GARMIN_PRIVACY_MODE"
+        },
+        {
+          "description": "Optional SQLite cache toggle. Set to true or sqlite to enable.",
+          "format": "string",
+          "name": "GARMIN_CACHE"
+        },
+        {
+          "description": "Optional local SQLite cache path. Defaults to ~/.garmin-mcp/cache.sqlite.",
+          "format": "string",
+          "name": "GARMIN_CACHE_PATH"
+        },
+        {
+          "description": "Optional Garmin domain override. Use garmin.cn only for China accounts; default is garmin.com.",
+          "format": "string",
+          "name": "GARMIN_DOMAIN"
+        },
+        {
+          "description": "Set to true to bypass the in-memory HTTP response cache (60s TTL for GET only). POST/PUT/DELETE and 4xx/5xx responses are never cached regardless.",
+          "format": "string",
+          "name": "GARMIN_NO_CACHE"
+        }
+      ],
+      "identifier": "garmin-mcp-unofficial",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "38985ec4c2",
+    "published_at": "2026-05-29T18:58:20.427234Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.davidmosiah/garminmcp",
+    "server_version": "0.5.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-29T18:58:20.427234Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.5.1"
+}

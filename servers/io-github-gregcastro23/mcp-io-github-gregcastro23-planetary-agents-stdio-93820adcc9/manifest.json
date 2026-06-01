@@ -1,0 +1,65 @@
+{
+  "description": "Converse with planetary-agent personas, council feeds & culinary debates from alchm.kitchen",
+  "harvest": {
+    "last_seen_at": "2026-06-01T07:21:36+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-gregcastro23-planetary-agents.stdio.93820adcc9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/gregcastro23/alchm-agents-app",
+    "homepage": "https://github.com/gregcastro23/alchm-agents-app",
+    "repository": "https://github.com/gregcastro23/alchm-agents-app"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "alchm-planetary-agents-mcp==1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.gregcastro23/planetary-agents",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the Planetary Agents FastAPI backend that serves persona chat. Defaults to http://localhost:8000 for local dev; set to https://api.agents.alchm.kitchen to use the hosted service.",
+          "name": "PLANETARY_AGENTS_BACKEND_URL"
+        },
+        {
+          "description": "Base URL of the Planetary Agents frontend, used by get_agent_feed_discussion to read council-feed threads. Defaults to http://localhost:3000; set to https://agents.alchm.kitchen for the hosted feed.",
+          "name": "PLANETARY_AGENTS_FRONTEND_URL"
+        },
+        {
+          "description": "Default model tier for persona responses: free | cheap_fast | primary | reflective. Defaults to free (the hosted backend reserves paid tiers).",
+          "name": "PLANETARY_AGENTS_MCP_MODEL_TIER"
+        }
+      ],
+      "identifier": "alchm-planetary-agents-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "93820adcc9",
+    "published_at": "2026-05-31T03:22:54.039473Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.gregcastro23/planetary-agents",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-05-31T03:22:54.039473Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.0"
+}
