@@ -1,0 +1,83 @@
+{
+  "description": "Totem \u2014 talk to your wearables with AI. Today: full Whoop access (48 tools).",
+  "harvest": {
+    "last_seen_at": "2026-06-08T07:02:09+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-briangaoo-totem.stdio.802b1f3c5f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/briangaoo/totem",
+    "homepage": "https://github.com/briangaoo/totem",
+    "repository": "https://github.com/briangaoo/totem"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@briangaoo/totem@1.4.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.briangaoo/totem",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Whoop Cognito access token. Obtain via `totem auth` from the repo, which prompts for your Whoop email + password + SMS MFA code, then writes both tokens to a local .env. Auto-refreshes every ~24h.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "WHOOP_IOS_BEARER_TOKEN"
+        },
+        {
+          "description": "Whoop Cognito refresh token (~30 day lifetime). Obtained alongside the bearer token from `totem auth`. When this expires, run `totem auth` to get a fresh pair.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "WHOOP_COGNITO_REFRESH_TOKEN"
+        },
+        {
+          "description": "Your Whoop account email. Used only by `totem auth` \u2014 the running server reads tokens, not credentials.",
+          "format": "string",
+          "isRequired": true,
+          "name": "WHOOP_EMAIL"
+        },
+        {
+          "description": "Your numeric Whoop user ID. Optional \u2014 used by whoop_profile and whoop_leaderboard. Avoids one redundant bootstrap call per session if set.",
+          "format": "string",
+          "name": "WHOOP_USER_ID"
+        },
+        {
+          "description": "IANA timezone (e.g., America/Los_Angeles) for response timestamps. Optional \u2014 if unset, the server auto-detects from your Whoop profile's timezone_offset field (refreshed hourly).",
+          "format": "string",
+          "name": "WHOOP_TIMEZONE"
+        }
+      ],
+      "identifier": "@briangaoo/totem",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.4.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "802b1f3c5f",
+    "published_at": "2026-06-07T23:46:04.219379Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.briangaoo/totem",
+    "server_version": "1.4.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-07T23:46:04.219379Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.4.1"
+}

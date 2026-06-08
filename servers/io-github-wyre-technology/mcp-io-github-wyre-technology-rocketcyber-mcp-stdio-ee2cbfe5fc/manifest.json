@@ -1,0 +1,88 @@
+{
+  "description": "MCP server for RocketCyber Managed SOC \u2014 incidents, alerts, agents, and customer telemetry.",
+  "harvest": {
+    "last_seen_at": "2026-06-08T07:02:27+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wyre-technology-rocketcyber-mcp.stdio.ee2cbfe5fc",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wyre-technology/rocketcyber-mcp",
+    "homepage": "https://github.com/wyre-technology/rocketcyber-mcp",
+    "repository": "https://github.com/wyre-technology/rocketcyber-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-technology/rocketcyber-mcp:v1.3.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wyre-technology/rocketcyber-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "RocketCyber API key for authenticating to the Managed SOC API",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ROCKETCYBER_API_KEY"
+        },
+        {
+          "description": "RocketCyber customer (tenant) identifier",
+          "format": "string",
+          "isRequired": true,
+          "name": "ROCKETCYBER_CUSTOMER_ID"
+        },
+        {
+          "description": "RocketCyber API base URL \u2014 override only if using a non-default region",
+          "format": "string",
+          "name": "ROCKETCYBER_API_URL"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode for the server. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-technology/rocketcyber-mcp:v1.3.1",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "ee2cbfe5fc",
+    "published_at": "2026-06-03T14:44:20.324833Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wyre-technology/rocketcyber-mcp",
+    "server_version": "1.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-03T14:44:20.324833Z"
+  },
+  "title": "RocketCyber",
+  "type": "mcp_server",
+  "version": "1.3.1"
+}

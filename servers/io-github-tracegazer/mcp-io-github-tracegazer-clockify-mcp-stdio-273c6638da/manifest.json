@@ -1,0 +1,70 @@
+{
+  "description": "MCP server for the Clockify time-tracking API (projects, time entries, reports, invoices).",
+  "harvest": {
+    "last_seen_at": "2026-06-08T07:02:26+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-tracegazer-clockify-mcp.stdio.273c6638da",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/tracegazer/clockify-mcp",
+    "homepage": "https://github.com/tracegazer/clockify-mcp",
+    "repository": "https://github.com/tracegazer/clockify-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "clockify-mcp==0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.tracegazer/clockify-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Clockify API key (Profile Settings -> API).",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CLOCKIFY_API_KEY"
+        },
+        {
+          "default": "read",
+          "description": "Write access mode: read (default, read-only) | time-tracking (time-entry writes only) | full (all writes)",
+          "name": "CLOCKIFY_ACCESS_MODE"
+        },
+        {
+          "description": "Default workspace id used when a tool call omits workspace_id.",
+          "name": "CLOCKIFY_DEFAULT_WORKSPACE_ID"
+        }
+      ],
+      "identifier": "clockify-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "273c6638da",
+    "published_at": "2026-06-08T03:25:30.876075Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.tracegazer/clockify-mcp",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-08T03:25:30.876075Z"
+  },
+  "title": "Clockify Time Tracking",
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

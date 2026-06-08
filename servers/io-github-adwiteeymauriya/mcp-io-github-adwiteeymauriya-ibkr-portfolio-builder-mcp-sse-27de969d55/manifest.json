@@ -1,0 +1,54 @@
+{
+  "description": "Top-down IBKR research: 468 typed screeners tagged by strategy intent, news, account access.",
+  "harvest": {
+    "last_seen_at": "2026-06-08T07:02:08+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-adwiteeymauriya-ibkr-portfolio-builder-mcp.sse.27de969d55",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/adwiteeymauriya/ibkr-portfolio-builder-mcp",
+    "homepage": "https://github.com/adwiteeymauriya/ibkr-portfolio-builder-mcp",
+    "repository": "https://github.com/adwiteeymauriya/ibkr-portfolio-builder-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://{ibkr_mcp_host}/mcp"
+    }
+  },
+  "name": "io.github.adwiteeymauriya/ibkr-portfolio-builder-mcp",
+  "provenance": {
+    "identity_key": "27de969d55",
+    "published_at": "2026-06-08T04:35:10.479485Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.adwiteeymauriya/ibkr-portfolio-builder-mcp",
+    "server_version": "0.1.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-08T04:35:10.479485Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Optional. Send 'Bearer <STATIC_BEARER_TOKEN>' for the bearer-auth path (skips the OAuth dance). Required if your deployment runs in AUTH_MODE=bearer. Leave blank to use OAuth (Claude.ai will trigger the login flow on connect).",
+          "isSecret": true,
+          "name": "Authorization"
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://{ibkr_mcp_host}/mcp",
+      "variables": {
+        "ibkr_mcp_host": {
+          "description": "Hostname of your self-hosted deployment, e.g. 'ibkr-mcp.example.com'. The server runs as a Docker compose stack; see the repo for setup. Claude.ai requires HTTPS.",
+          "isRequired": true
+        }
+      }
+    }
+  ],
+  "title": "IBKR Portfolio Builder",
+  "type": "mcp_server",
+  "version": "0.1.4"
+}

@@ -1,0 +1,94 @@
+{
+  "description": "PostgreSQL MCP server for schema, query, health, security, and performance analysis.",
+  "harvest": {
+    "last_seen_at": "2026-06-08T07:02:24+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-snss10-dbeast.stdio.2412da5f4f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/snss10/DBeast",
+    "homepage": "https://github.com/snss10/DBeast",
+    "repository": "https://github.com/snss10/DBeast"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/snss10/dbeast:0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.snss10/dbeast",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "PostgreSQL connection URL, for example postgresql://user:password@host:5432/database.",
+          "format": "string",
+          "isSecret": true,
+          "name": "DATABASE_URL"
+        },
+        {
+          "description": "PostgreSQL host when DATABASE_URL is not used.",
+          "format": "string",
+          "name": "DB_HOST"
+        },
+        {
+          "description": "PostgreSQL port when DATABASE_URL is not used.",
+          "format": "string",
+          "name": "DB_PORT"
+        },
+        {
+          "description": "PostgreSQL user when DATABASE_URL is not used.",
+          "format": "string",
+          "name": "DB_USER"
+        },
+        {
+          "description": "PostgreSQL password when DATABASE_URL is not used.",
+          "format": "string",
+          "isSecret": true,
+          "name": "DB_PASSWORD"
+        },
+        {
+          "description": "PostgreSQL database name when DATABASE_URL is not used.",
+          "format": "string",
+          "name": "DB_NAME"
+        },
+        {
+          "description": "AWS Secrets Manager secret containing PostgreSQL credentials.",
+          "format": "string",
+          "name": "AWS_SECRET_NAME"
+        },
+        {
+          "description": "AWS region for Secrets Manager lookup.",
+          "format": "string",
+          "name": "AWS_REGION"
+        }
+      ],
+      "identifier": "ghcr.io/snss10/dbeast:0.2.1",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "2412da5f4f",
+    "published_at": "2026-06-06T20:04:21.868914Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.snss10/dbeast",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-06T20:04:21.868914Z"
+  },
+  "title": "DBeast PostgreSQL MCP",
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

@@ -1,0 +1,90 @@
+{
+  "description": "MCP server for the Revolut Business API: accounts, transactions, payments, FX, and more.",
+  "harvest": {
+    "last_seen_at": "2026-06-08T07:02:17+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-jeff-nasseri-revolut-mcp.stdio.ce161bd0b3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jeff-nasseri/revolut-mcp",
+    "homepage": "https://github.com/jeff-nasseri/revolut-mcp",
+    "repository": "https://github.com/jeff-nasseri/revolut-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@jeff-nasseri/revolut-mcp@0.1.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.jeff-nasseri/revolut-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Client ID from the Revolut Business portal (Settings -> APIs)",
+          "format": "string",
+          "isRequired": true,
+          "name": "REVOLUT_CLIENT_ID"
+        },
+        {
+          "description": "Path to the PEM private key that signs the client-assertion JWT",
+          "format": "string",
+          "name": "REVOLUT_PRIVATE_KEY_PATH"
+        },
+        {
+          "description": "PEM contents of the private key (alternative to REVOLUT_PRIVATE_KEY_PATH)",
+          "format": "string",
+          "isSecret": true,
+          "name": "REVOLUT_PRIVATE_KEY"
+        },
+        {
+          "description": "OAuth redirect URI registered with the certificate (default: https://example.com/)",
+          "format": "string",
+          "name": "REVOLUT_REDIRECT_URI"
+        },
+        {
+          "description": "JWT issuer; defaults to the redirect URI host",
+          "format": "string",
+          "name": "REVOLUT_JWT_ISS"
+        },
+        {
+          "description": "Where OAuth tokens are persisted (default: ./.tokens.json)",
+          "format": "string",
+          "name": "TOKEN_STORE_PATH"
+        },
+        {
+          "description": "Target environment: sandbox (default) or production",
+          "format": "string",
+          "name": "REVOLUT_ENVIRONMENT"
+        }
+      ],
+      "identifier": "@jeff-nasseri/revolut-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ce161bd0b3",
+    "published_at": "2026-06-06T09:16:29.804111Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.jeff-nasseri/revolut-mcp",
+    "server_version": "0.1.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-06T09:16:29.804111Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.5"
+}

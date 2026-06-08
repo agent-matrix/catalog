@@ -1,0 +1,72 @@
+{
+  "description": "MCP server for AI agent read/write access to Obsidian vaults via EVC Team Relay.",
+  "harvest": {
+    "last_seen_at": "2026-06-08T07:02:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-entire-vc-evc-team-relay-mcp.stdio.acbbc2f024",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/entire-vc/evc-team-relay-mcp",
+    "homepage": "https://github.com/entire-vc/evc-team-relay-mcp",
+    "repository": "https://github.com/entire-vc/evc-team-relay-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "evc-team-relay-mcp==1.0.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.entire-vc/evc-team-relay-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "URL of the Team Relay control plane (e.g. https://cp.yourdomain.com)",
+          "format": "string",
+          "isRequired": true,
+          "name": "RELAY_CP_URL"
+        },
+        {
+          "description": "Email address for authenticating with the Team Relay server",
+          "format": "string",
+          "isRequired": true,
+          "name": "RELAY_EMAIL"
+        },
+        {
+          "description": "Password for authenticating with the Team Relay server",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "RELAY_PASSWORD"
+        }
+      ],
+      "identifier": "evc-team-relay-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "acbbc2f024",
+    "published_at": "2026-06-07T22:43:11.887582Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.entire-vc/evc-team-relay-mcp",
+    "server_version": "1.0.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-07T22:43:11.887582Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.3"
+}

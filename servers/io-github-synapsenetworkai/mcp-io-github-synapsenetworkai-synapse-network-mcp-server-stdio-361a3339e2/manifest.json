@@ -1,0 +1,70 @@
+{
+  "description": "Remote MCP for SynapseNetwork agent payments, paid API discovery, and receipts.",
+  "harvest": {
+    "last_seen_at": "2026-06-08T07:02:07+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-SynapseNetworkAI-synapse-network-mcp-server.stdio.361a3339e2",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/SynapseNetworkAI/Synapse-Network-MCP-Server",
+    "homepage": "https://github.com/SynapseNetworkAI/Synapse-Network-MCP-Server",
+    "repository": "https://github.com/SynapseNetworkAI/Synapse-Network-MCP-Server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@synapse-network-ai/mcp-server@0.1.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.SynapseNetworkAI/synapse-network-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "SynapseNetwork Agent Key beginning with agt_. Used as the Gateway X-Credential header.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SYNAPSE_AGENT_KEY"
+        },
+        {
+          "description": "Gateway environment preset: prod or staging. Use prod for production workflows; staging is for preview and E2E validation.",
+          "format": "string",
+          "name": "SYNAPSE_ENV"
+        },
+        {
+          "description": "Optional custom Gateway base URL. Overrides SYNAPSE_ENV.",
+          "format": "string",
+          "name": "SYNAPSE_GATEWAY_URL"
+        }
+      ],
+      "identifier": "@synapse-network-ai/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "361a3339e2",
+    "published_at": "2026-06-08T04:08:23.655211Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.SynapseNetworkAI/synapse-network-mcp-server",
+    "server_version": "0.1.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-08T04:08:23.655211Z"
+  },
+  "title": "SynapseNetwork MCP Server for paid API calls",
+  "type": "mcp_server",
+  "version": "0.1.5"
+}

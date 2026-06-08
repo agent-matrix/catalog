@@ -1,0 +1,70 @@
+{
+  "description": "Search, browse and manage your DesignVault design-asset library from any MCP client.",
+  "harvest": {
+    "last_seen_at": "2026-06-08T07:02:28+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.net-designvault-designvault.stdio.f138f522b6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Pascalxz/designvault",
+    "homepage": "https://github.com/Pascalxz/designvault",
+    "repository": "https://github.com/Pascalxz/designvault"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "designvault-mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "net.designvault/designvault",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Per-organization DesignVault API key (dv_live_\u2026). Generate one under Settings \u2192 API keys.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DESIGNVAULT_API_KEY"
+        },
+        {
+          "description": "Override the API base URL (defaults to https://www.designvault.net). Point at a preview deployment or http://localhost:3000 during development.",
+          "format": "string",
+          "name": "DESIGNVAULT_BASE_URL"
+        },
+        {
+          "description": "Set to 1/true to register the write tools (create, update, delete). Off by default so a shared key cannot mutate data without explicit opt-in.",
+          "format": "string",
+          "name": "DESIGNVAULT_ENABLE_WRITE"
+        }
+      ],
+      "identifier": "designvault-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f138f522b6",
+    "published_at": "2026-06-07T16:37:19.221529Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "net.designvault/designvault",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-07T16:37:19.221529Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

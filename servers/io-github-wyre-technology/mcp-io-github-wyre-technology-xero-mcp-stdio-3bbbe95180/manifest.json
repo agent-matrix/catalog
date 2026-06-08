@@ -1,0 +1,83 @@
+{
+  "description": "MCP server for Xero accounting \u2014 contacts, invoices, payments, accounts, and financial reports.",
+  "harvest": {
+    "last_seen_at": "2026-06-08T07:02:27+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wyre-technology-xero-mcp.stdio.3bbbe95180",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wyre-technology/xero-mcp",
+    "homepage": "https://github.com/wyre-technology/xero-mcp",
+    "repository": "https://github.com/wyre-technology/xero-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-technology/xero-mcp:v1.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wyre-technology/xero-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Xero tenant ID (organisation). Required when AUTH_MODE is 'env'.",
+          "format": "string",
+          "isRequired": true,
+          "name": "XERO_TENANT_ID"
+        },
+        {
+          "description": "Xero OAuth2 access token. Required when AUTH_MODE is 'env'.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "XERO_ACCESS_TOKEN"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode for the server. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-technology/xero-mcp:v1.4.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "3bbbe95180",
+    "published_at": "2026-06-02T20:30:30.994796Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wyre-technology/xero-mcp",
+    "server_version": "1.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-02T20:30:30.994796Z"
+  },
+  "title": "Xero",
+  "type": "mcp_server",
+  "version": "1.4.0"
+}

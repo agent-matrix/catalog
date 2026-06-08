@@ -1,0 +1,72 @@
+{
+  "description": "Session checkpoint & recovery for Claude Code: resume, search, tag, and export recorded sessions.",
+  "harvest": {
+    "last_seen_at": "2026-06-08T07:02:11+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-constripacity-claude-replay.stdio.6c320524da",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/constripacity/Claude-Replay",
+    "homepage": "https://github.com/constripacity/Claude-Replay",
+    "repository": "https://github.com/constripacity/Claude-Replay"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "type": "positional",
+            "value": "mcp",
+            "valueHint": "mcp"
+          },
+          "claude-replay==0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.constripacity/claude-replay",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "SQLite database path (default: ~/.claude-replay/sessions.db). Point HTTP and stdio instances at the same path to share recorded sessions.",
+          "format": "string",
+          "name": "CLAUDE_REPLAY_DB"
+        }
+      ],
+      "identifier": "claude-replay",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "mcp",
+          "valueHint": "mcp"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6c320524da",
+    "published_at": "2026-06-01T16:04:23.695506Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.constripacity/claude-replay",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-01T16:04:23.695506Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

@@ -1,0 +1,55 @@
+{
+  "description": "Hosted codebase intelligence for repos indexed on repowise.dev \u2014 no local indexing needed.",
+  "harvest": {
+    "last_seen_at": "2026-06-08T07:02:00+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.dev-repowise-repowise-hosted.sse.0e59230a3e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://api.repowise.dev/mcp/{owner}/{repo}"
+    }
+  },
+  "name": "dev.repowise/repowise-hosted",
+  "provenance": {
+    "identity_key": "0e59230a3e",
+    "published_at": "2026-06-07T11:11:29.655441Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "dev.repowise/repowise-hosted",
+    "server_version": "0.17.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-07T11:11:29.655441Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Bearer token: 'Bearer rw_live_...' \u2014 create an API key in the repowise.dev dashboard (read scope is sufficient)",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization"
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://api.repowise.dev/mcp/{owner}/{repo}",
+      "variables": {
+        "owner": {
+          "description": "GitHub owner/org of the indexed repository (e.g. 'repowise-dev')",
+          "isRequired": true
+        },
+        "repo": {
+          "description": "Name of the indexed repository (e.g. 'repowise')",
+          "isRequired": true
+        }
+      }
+    }
+  ],
+  "title": "Repowise (Hosted)",
+  "type": "mcp_server",
+  "version": "0.17.1"
+}

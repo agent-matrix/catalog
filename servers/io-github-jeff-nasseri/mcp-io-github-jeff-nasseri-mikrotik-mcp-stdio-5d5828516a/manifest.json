@@ -1,0 +1,80 @@
+{
+  "description": "MCP server for MikroTik routers: firewall, NAT, routing, DHCP, DNS, WireGuard and more via SSH.",
+  "harvest": {
+    "last_seen_at": "2026-06-08T07:02:17+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-jeff-nasseri-mikrotik-mcp.stdio.5d5828516a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jeff-nasseri/mikrotik-mcp",
+    "homepage": "https://github.com/jeff-nasseri/mikrotik-mcp",
+    "repository": "https://github.com/jeff-nasseri/mikrotik-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-server-mikrotik==0.10.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.jeff-nasseri/mikrotik-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "IP address or hostname of the MikroTik router",
+          "format": "string",
+          "isRequired": true,
+          "name": "MIKROTIK_HOST"
+        },
+        {
+          "description": "SSH username for the MikroTik router (default: admin)",
+          "format": "string",
+          "name": "MIKROTIK_USERNAME"
+        },
+        {
+          "description": "SSH password for the MikroTik router",
+          "format": "string",
+          "isSecret": true,
+          "name": "MIKROTIK_PASSWORD"
+        },
+        {
+          "description": "SSH port of the MikroTik router (default: 22)",
+          "format": "string",
+          "name": "MIKROTIK_PORT"
+        },
+        {
+          "description": "Path to SSH private key file for key-based authentication",
+          "format": "string",
+          "name": "MIKROTIK_KEY_FILENAME"
+        }
+      ],
+      "identifier": "mcp-server-mikrotik",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.10.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5d5828516a",
+    "published_at": "2026-06-04T19:56:02.388956Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.jeff-nasseri/mikrotik-mcp",
+    "server_version": "0.10.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-04T19:56:02.388956Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.10.1.0"
+}

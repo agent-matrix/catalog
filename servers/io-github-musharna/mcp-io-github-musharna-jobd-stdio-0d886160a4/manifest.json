@@ -1,0 +1,91 @@
+{
+  "description": "Self-hostable GPU-aware job broker: submit, route by VRAM, babysit jobs across machines via MCP.",
+  "harvest": {
+    "last_seen_at": "2026-06-08T07:02:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-musharna-jobd.stdio.0d886160a4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/musharna/jobd",
+    "homepage": "https://github.com/musharna/jobd",
+    "repository": "https://github.com/musharna/jobd"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "type": "positional",
+            "value": "--from",
+            "valueHint": "from-flag"
+          },
+          {
+            "type": "positional",
+            "value": "jobd[mcp]",
+            "valueHint": "package-with-mcp-extra"
+          },
+          {
+            "type": "positional",
+            "value": "jobd-mcp",
+            "valueHint": "mcp-entry-point"
+          },
+          "jobd==0.5.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.musharna/jobd",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the jobd broker the MCP server talks to. Defaults to http://127.0.0.1:8765.",
+          "name": "JOBD_URL"
+        }
+      ],
+      "identifier": "jobd",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "--from",
+          "valueHint": "from-flag"
+        },
+        {
+          "type": "positional",
+          "value": "jobd[mcp]",
+          "valueHint": "package-with-mcp-extra"
+        },
+        {
+          "type": "positional",
+          "value": "jobd-mcp",
+          "valueHint": "mcp-entry-point"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0d886160a4",
+    "published_at": "2026-06-07T04:41:38.145951Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.musharna/jobd",
+    "server_version": "0.5.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-07T04:41:38.145951Z"
+  },
+  "title": "jobd",
+  "type": "mcp_server",
+  "version": "0.5.3"
+}

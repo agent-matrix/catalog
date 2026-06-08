@@ -1,0 +1,91 @@
+{
+  "description": "Inspect, operate, and author Microsoft Power Automate cloud flows from an agent context.",
+  "harvest": {
+    "last_seen_at": "2026-06-08T07:02:24+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sapientsai-power-automate-mcp-server.stdio.0dc6d4be73",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sapientsai/power-automate-mcp-server",
+    "homepage": "https://github.com/sapientsai/power-automate-mcp-server",
+    "repository": "https://github.com/sapientsai/power-automate-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "power-automate-mcp-server@0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sapientsai/power-automate-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Application (client) ID of your Entra app registration (multi-tenant public client).",
+          "format": "string",
+          "isRequired": true,
+          "name": "AZURE_CLIENT_ID"
+        },
+        {
+          "description": "Tenant GUID. Required for the Flow audience ('common' fails with AADSTS50059).",
+          "format": "string",
+          "isRequired": true,
+          "name": "AZURE_TENANT_ID"
+        },
+        {
+          "description": "Comma-separated OAuth scopes (e.g. .../Flows.Read.All,.../Flows.Manage.All).",
+          "format": "string",
+          "name": "FLOW_SCOPES"
+        },
+        {
+          "description": "interactive (device-code, default) or clientCredentials (app-only).",
+          "format": "string",
+          "name": "AZURE_AUTH_MODE"
+        },
+        {
+          "description": "Client secret \u2014 only for clientCredentials mode.",
+          "format": "string",
+          "isSecret": true,
+          "name": "AZURE_CLIENT_SECRET"
+        },
+        {
+          "description": "Set to 'true' to enable mutating tools (default read-only).",
+          "format": "string",
+          "name": "ENABLE_WRITE_OPS"
+        },
+        {
+          "description": "Environment id used when a tool omits 'environment'.",
+          "format": "string",
+          "name": "DEFAULT_ENVIRONMENT"
+        }
+      ],
+      "identifier": "power-automate-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0dc6d4be73",
+    "published_at": "2026-06-04T01:40:21.87655Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sapientsai/power-automate-mcp-server",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-04T01:40:21.87655Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

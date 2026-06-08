@@ -1,0 +1,96 @@
+{
+  "description": "MCP server for IBM z/OS jobs, datasets, USS, and operational diagnostics via Zowe SDK.",
+  "harvest": {
+    "last_seen_at": "2026-06-08T07:02:05+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-NotHarshhaa-mainframe-mcp-server.stdio.ae04262cf0",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/NotHarshhaa/mainframe-mcp-server",
+    "homepage": "https://github.com/NotHarshhaa/mainframe-mcp-server",
+    "repository": "https://github.com/NotHarshhaa/mainframe-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@notharshhaa/mainframe-mcp-server@1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.NotHarshhaa/mainframe-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "z/OSMF hostname or IP address",
+          "format": "string",
+          "isRequired": true,
+          "name": "ZOSMF_HOST"
+        },
+        {
+          "description": "z/OSMF HTTPS port (default 443)",
+          "format": "number",
+          "name": "ZOSMF_PORT"
+        },
+        {
+          "description": "z/OS user id (required with ZOSMF_PASSWORD unless ZOSMF_TOKEN is set)",
+          "format": "string",
+          "name": "ZOSMF_USER"
+        },
+        {
+          "description": "Password for basic auth (required with ZOSMF_USER unless ZOSMF_TOKEN is set)",
+          "format": "string",
+          "isSecret": true,
+          "name": "ZOSMF_PASSWORD"
+        },
+        {
+          "description": "Auth token (alternative to user/password)",
+          "format": "string",
+          "isSecret": true,
+          "name": "ZOSMF_TOKEN"
+        },
+        {
+          "description": "Token type when using ZOSMF_TOKEN (e.g. LTPA2)",
+          "format": "string",
+          "name": "ZOSMF_TOKEN_TYPE"
+        },
+        {
+          "description": "Verify TLS certificates (true in production)",
+          "format": "boolean",
+          "name": "ZOSMF_REJECT_UNAUTHORIZED"
+        },
+        {
+          "description": "Log level: info, debug, warn, error, etc.",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "@notharshhaa/mainframe-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ae04262cf0",
+    "published_at": "2026-06-02T12:21:38.993309Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.NotHarshhaa/mainframe-mcp-server",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-02T12:21:38.993309Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.0"
+}
