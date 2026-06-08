@@ -1,0 +1,94 @@
+{
+  "description": "Read-only semantic search MCP server for Obsidian vaults using local Ollama embeddings.",
+  "harvest": {
+    "last_seen_at": "2026-06-08T07:02:03+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-DalecB-obsidian-semantic-mcp.stdio.0ebdda234e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/DalecB/obsidian-semantic-mcp",
+    "homepage": "https://github.com/DalecB/obsidian-semantic-mcp",
+    "repository": "https://github.com/DalecB/obsidian-semantic-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@dalecb/obsidian-semantic-mcp@0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.DalecB/obsidian-semantic-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Absolute path to the local Obsidian vault.",
+          "format": "string",
+          "isRequired": true,
+          "name": "OBSIDIAN_VAULT_ROOT"
+        },
+        {
+          "description": "Directory for the external SQLite index, logs, and cache.",
+          "format": "string",
+          "name": "OBSIDIAN_SEMANTIC_MCP_HOME"
+        },
+        {
+          "description": "Ollama embedding model name. Defaults to bge-m3.",
+          "format": "string",
+          "name": "OBSIDIAN_EMBED_MODEL"
+        },
+        {
+          "description": "Ollama API base URL. Defaults to http://localhost:11434.",
+          "format": "string",
+          "name": "OLLAMA_BASE_URL"
+        },
+        {
+          "description": "Set to true to run incremental indexing when the server starts.",
+          "format": "string",
+          "name": "OBSIDIAN_SEMANTIC_STARTUP_INDEX"
+        },
+        {
+          "description": "Set to true to allow include_sensitive tool calls.",
+          "format": "string",
+          "name": "OBSIDIAN_SEMANTIC_ALLOW_SENSITIVE"
+        },
+        {
+          "description": "Comma- or newline-separated folders to always exclude from indexing, search, and read.",
+          "format": "string",
+          "name": "OBSIDIAN_SEMANTIC_EXCLUDE"
+        },
+        {
+          "description": "Comma- or newline-separated folders treated as sensitive (blocked unless unlocked). Defaults to 08_PersonalInfo/.",
+          "format": "string",
+          "name": "OBSIDIAN_SEMANTIC_SENSITIVE_PATHS"
+        }
+      ],
+      "identifier": "@dalecb/obsidian-semantic-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0ebdda234e",
+    "published_at": "2026-06-03T13:17:21.879999Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.DalecB/obsidian-semantic-mcp",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-03T13:17:21.879999Z"
+  },
+  "title": "Obsidian Semantic Search",
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

@@ -1,0 +1,75 @@
+{
+  "description": "HSM-backed vault secrets for AI agents (JIT fetch) plus prompt-injection and threat scanning.",
+  "harvest": {
+    "last_seen_at": "2026-06-08T07:02:01+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-1clawAI-1claw-mcp.stdio.8c9e17f30e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/1clawAI/1claw-mcp",
+    "homepage": "https://github.com/1clawAI/1claw-mcp",
+    "repository": "https://github.com/1clawAI/1claw-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@1claw/mcp@0.32.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.1clawAI/1claw-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Agent API key (ocv_...). Exchanged for a short-lived JWT; auto-discovers agent ID and vault. Recommended for stdio.",
+          "isSecret": true,
+          "name": "ONECLAW_AGENT_API_KEY"
+        },
+        {
+          "description": "Optional agent UUID when pinning identity (usually auto-discovered from the API key).",
+          "name": "ONECLAW_AGENT_ID"
+        },
+        {
+          "description": "Optional vault UUID when the agent can access multiple vaults.",
+          "name": "ONECLAW_VAULT_ID"
+        },
+        {
+          "description": "Vault API base URL (default https://api.1claw.xyz).",
+          "name": "ONECLAW_BASE_URL"
+        },
+        {
+          "description": "Set to true for security-only mode (inspect_content only; no vault credentials).",
+          "name": "ONECLAW_LOCAL_ONLY"
+        }
+      ],
+      "identifier": "@1claw/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.32.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8c9e17f30e",
+    "published_at": "2026-06-05T18:05:59.610649Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.1clawAI/1claw-mcp",
+    "server_version": "0.32.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-05T18:05:59.610649Z"
+  },
+  "title": "1Claw Vault",
+  "type": "mcp_server",
+  "version": "0.32.1"
+}

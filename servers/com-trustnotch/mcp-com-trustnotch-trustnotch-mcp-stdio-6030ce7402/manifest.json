@@ -1,0 +1,67 @@
+{
+  "description": "Tamper-evident audit logs for AI agents: submit, fetch, and verify cryptographic proof bundles.",
+  "harvest": {
+    "last_seen_at": "2026-06-08T07:02:00+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-trustnotch-trustnotch-mcp.stdio.6030ce7402",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "trustnotch-mcp==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.trustnotch/trustnotch-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "TrustNotch API key (tn_live_... or tn_test_...).",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "TRUSTNOTCH_API_KEY"
+        },
+        {
+          "default": "https://api.trustnotch.com",
+          "description": "Base URL of the TrustNotch API.",
+          "name": "TRUSTNOTCH_API_URL"
+        },
+        {
+          "description": "Path to a local public-key file to pin for independent offline verification.",
+          "format": "filepath",
+          "name": "TRUSTNOTCH_PUBKEYS_PATH"
+        }
+      ],
+      "identifier": "trustnotch-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6030ce7402",
+    "published_at": "2026-06-04T19:46:00.439979Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.trustnotch/trustnotch-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-04T19:46:00.439979Z"
+  },
+  "title": "TrustNotch",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

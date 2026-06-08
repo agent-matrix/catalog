@@ -1,0 +1,54 @@
+{
+  "description": "Deterministic industrial replacement engine with official catalogs and expert accuracy checks.",
+  "harvest": {
+    "last_seen_at": "2026-06-08T07:01:59+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-partglyph-mcp-gateway.sse.41508d079c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://app.partglyph.com/api-mcp/mcp"
+    }
+  },
+  "name": "com.partglyph/mcp-gateway",
+  "provenance": {
+    "identity_key": "41508d079c",
+    "published_at": "2026-06-04T14:29:10.307557Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.partglyph/mcp-gateway",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-04T14:29:10.307557Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Set this to Bearer <PARTGLYPH_API_KEY> using your Partglyph MCP Access API key.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {partglyph_api_key}",
+          "variables": {
+            "partglyph_api_key": {
+              "description": "Partglyph MCP Access API key from the Partglyph API Keys page.",
+              "isRequired": true,
+              "isSecret": true,
+              "placeholder": "psk_live_..."
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://app.partglyph.com/api-mcp/mcp"
+    }
+  ],
+  "title": "Partglyph MCP Gateway",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

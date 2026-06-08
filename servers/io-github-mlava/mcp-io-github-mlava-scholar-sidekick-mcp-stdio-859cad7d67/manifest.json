@@ -1,0 +1,65 @@
+{
+  "description": "Resolve DOI/PMID/PMCID/ISBN/arXiv/ISSN/ADS/WHO IRIS to citations, exports, retraction, OA, verify.",
+  "harvest": {
+    "last_seen_at": "2026-06-08T07:02:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mlava-scholar-sidekick-mcp.stdio.859cad7d67",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mlava/scholar-sidekick-mcp",
+    "homepage": "https://github.com/mlava/scholar-sidekick-mcp",
+    "repository": "https://github.com/mlava/scholar-sidekick-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "scholar-sidekick-mcp@0.8.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mlava/scholar-sidekick-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional first-party API key (ssk_) from https://scholar-sidekick.com/account. Raises rate limits and enables the verifier LLM screen; sent as Authorization: Bearer. Works anonymously without any key.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SCHOLAR_API_KEY"
+        },
+        {
+          "description": "Optional RapidAPI key for paid/managed tiers; when set, calls route through the RapidAPI gateway. Get one at https://rapidapi.com/scholar-sidekick-scholar-sidekick-api/api/scholar-sidekick",
+          "format": "string",
+          "isSecret": true,
+          "name": "RAPIDAPI_KEY"
+        }
+      ],
+      "identifier": "scholar-sidekick-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.8.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "859cad7d67",
+    "published_at": "2026-06-03T06:07:01.434455Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mlava/scholar-sidekick-mcp",
+    "server_version": "0.8.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-03T06:07:01.434455Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.8.0"
+}

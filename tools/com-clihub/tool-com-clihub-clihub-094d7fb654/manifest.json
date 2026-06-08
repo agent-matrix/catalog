@@ -1,0 +1,91 @@
+{
+  "artifacts": [
+    {
+      "kind": "other",
+      "spec": {
+        "package": "@clihub/cli",
+        "registry": "npm",
+        "version": "0.1.0-beta.0"
+      }
+    }
+  ],
+  "description": "Convert any CLI binary to an MCP server via `ch mcp wrap`; discover CLI tools & recipes.",
+  "harvest": {
+    "last_seen_at": "2026-06-08T07:01:57+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "tool.com-clihub-clihub.094d7fb654",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "tool": {
+      "description": "Convert any CLI binary to an MCP server via `ch mcp wrap`; discover CLI tools & recipes.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "com.clihub/clihub",
+      "request_type": "POST",
+      "url": "mcp+stdio://npm/@clihub/cli@0.1.0-beta.0"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "mcp"
+          },
+          {
+            "type": "positional",
+            "value": "wrap"
+          },
+          {
+            "description": "CLI tool binary name to wrap as an MCP server (e.g. jq, ffmpeg, gh)",
+            "format": "string",
+            "isRequired": true,
+            "type": "positional",
+            "valueHint": "tool"
+          },
+          {
+            "name": "--stdio",
+            "type": "named"
+          },
+          "@clihub/cli@0.1.0-beta.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.clihub/clihub",
+  "provenance": {
+    "identity_key": "3fc212338c",
+    "promoted_from": "mcp.com-clihub-clihub.stdio.3fc212338c",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.clihub/clihub",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.com-clihub-clihub.stdio.3fc212338c",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "summary": "Convert any CLI binary to an MCP server via `ch mcp wrap`; discover CLI tools & recipes.",
+  "tags": [
+    "binary",
+    "clihub",
+    "convert",
+    "discover",
+    "recipes",
+    "tools",
+    "wrap"
+  ],
+  "title": "Clihub",
+  "type": "tool",
+  "version": "0.1.0-beta.0"
+}

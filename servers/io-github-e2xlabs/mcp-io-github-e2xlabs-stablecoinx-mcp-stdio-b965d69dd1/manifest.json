@@ -1,0 +1,96 @@
+{
+  "description": "Drive a StablecoinX business account \u2014 auth, API keys, sessions, paymaster, and webhooks.",
+  "harvest": {
+    "last_seen_at": "2026-06-08T07:02:14+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-e2xlabs-stablecoinx-mcp.stdio.b965d69dd1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/e2xlabs/stablecoinx-mcp",
+    "homepage": "https://github.com/e2xlabs/stablecoinx-mcp",
+    "repository": "https://github.com/e2xlabs/stablecoinx-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@stablecoinx/mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.e2xlabs/stablecoinx-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://api.harness.stablecoinx.com",
+          "description": "API base URL.",
+          "isRequired": true,
+          "name": "SCX_API_URL"
+        },
+        {
+          "choices": [
+            "84532",
+            "421614",
+            "11155111"
+          ],
+          "default": "84532",
+          "description": "EVM chain ID for the smart account. The StablecoinX harness supports three testnets: 84532 (Base Sepolia, default), 421614 (Arbitrum Sepolia), 11155111 (Ethereum Sepolia).",
+          "isRequired": true,
+          "name": "SCX_CHAIN_ID"
+        },
+        {
+          "default": "830ece55cd210c34f351166a85edbd0f",
+          "description": "Public thirdweb client ID (publishable, not a secret). Must match the harness dashboard client ID.",
+          "isRequired": true,
+          "name": "THIRDWEB_CLIENT_ID"
+        },
+        {
+          "default": "https://business.harness.stablecoinx.com",
+          "description": "Origin header sent on outbound thirdweb calls; must be a domain allowed for THIRDWEB_CLIENT_ID.",
+          "isRequired": true,
+          "name": "THIRDWEB_ORIGIN"
+        },
+        {
+          "description": "Passphrase used to encrypt the local state file (JWT / API key / session key) at rest. Pick any string.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SCX_STATE_PASSPHRASE"
+        }
+      ],
+      "identifier": "@stablecoinx/mcp",
+      "packageArguments": [
+        {
+          "description": "Run setup to install the bundled skill and register this MCP via `claude mcp add` (optional; for MCP clients that provide an `mcp add` CLI).",
+          "type": "positional",
+          "value": "setup"
+        }
+      ],
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b965d69dd1",
+    "published_at": "2026-06-04T09:23:18.572629Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.e2xlabs/stablecoinx-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-04T09:23:18.572629Z"
+  },
+  "title": "StablecoinX",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

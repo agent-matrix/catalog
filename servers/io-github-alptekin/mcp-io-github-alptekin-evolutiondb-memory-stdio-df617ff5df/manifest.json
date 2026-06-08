@@ -1,0 +1,98 @@
+{
+  "description": "Persistent long-term memory for Claude Desktop / Claude Code, backed by EvolutionDB.",
+  "harvest": {
+    "last_seen_at": "2026-06-08T07:02:08+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-alptekin-evolutiondb-memory.stdio.df617ff5df",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/alptekin/evolutiondb",
+    "homepage": "https://github.com/alptekin/evolutiondb",
+    "repository": "https://github.com/alptekin/evolutiondb"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "python3",
+          "mcp-server-evolutiondb==1.9.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.alptekin/evolutiondb-memory",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "127.0.0.1",
+          "description": "Hostname where EvolutionDB is reachable on the PostgreSQL wire (port 5433).",
+          "format": "string",
+          "name": "EVOSQL_HOST"
+        },
+        {
+          "default": "5433",
+          "description": "EvolutionDB's PostgreSQL-protocol port.",
+          "format": "string",
+          "name": "EVOSQL_PORT"
+        },
+        {
+          "default": "admin",
+          "description": "Database user.",
+          "format": "string",
+          "name": "EVOSQL_USER"
+        },
+        {
+          "default": "admin",
+          "description": "Database password.",
+          "format": "string",
+          "isSecret": true,
+          "name": "EVOSQL_PASSWORD"
+        },
+        {
+          "default": "testdb",
+          "description": "Database name to use.",
+          "format": "string",
+          "name": "EVOSQL_DATABASE"
+        },
+        {
+          "default": "default_user",
+          "description": "Sticky namespace identifier for every memory Claude writes through this server. Server-side override \u2014 the LLM cannot fragment your namespace by inventing other IDs.",
+          "format": "string",
+          "isRequired": true,
+          "name": "MCP_USER_ID"
+        },
+        {
+          "default": "claude_desktop",
+          "description": "Prefix for the auto-created MEMORY STORE / ENTITY STORE catalog objects.",
+          "format": "string",
+          "name": "MCP_STORE_PREFIX"
+        }
+      ],
+      "identifier": "mcp-server-evolutiondb",
+      "registryType": "pypi",
+      "runtimeHint": "python3",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.9.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "df617ff5df",
+    "published_at": "2026-06-02T14:59:50.113469Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.alptekin/evolutiondb-memory",
+    "server_version": "1.9.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-02T14:59:50.113469Z"
+  },
+  "title": "EvolutionDB Long-Term Memory",
+  "type": "mcp_server",
+  "version": "1.9.2"
+}

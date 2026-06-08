@@ -1,0 +1,66 @@
+{
+  "description": "MCP server wrapping the Crossref REST API for scholarly metadata.",
+  "harvest": {
+    "last_seen_at": "2026-06-08T07:02:17+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-jtl-neo-crossref-mcp.stdio.9cd3e85358",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jtl-neo/crossref-api-MCP",
+    "homepage": "https://github.com/jtl-neo/crossref-api-MCP",
+    "repository": "https://github.com/jtl-neo/crossref-api-MCP"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "docker.io/heyinnaneo/crossref-mcp:0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.jtl-neo/crossref-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Email for Crossref's polite pool (recommended).",
+          "name": "CROSSREF_MAILTO"
+        },
+        {
+          "description": "Optional Crossref Plus API token.",
+          "isSecret": true,
+          "name": "CROSSREF_PLUS_TOKEN"
+        },
+        {
+          "description": "Optional X-API-Key for HTTP transport.",
+          "isSecret": true,
+          "name": "MCP_API_KEY"
+        }
+      ],
+      "identifier": "docker.io/heyinnaneo/crossref-mcp:0.1.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "9cd3e85358",
+    "published_at": "2026-06-03T09:21:33.807863Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.jtl-neo/crossref-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-03T09:21:33.807863Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

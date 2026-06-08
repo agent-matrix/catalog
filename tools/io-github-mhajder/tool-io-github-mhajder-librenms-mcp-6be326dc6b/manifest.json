@@ -1,0 +1,83 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/mhajder/librenms-mcp:1.10.0"
+      }
+    }
+  ],
+  "description": "MCP server for LibreNMS network monitoring - query devices, ports, alerts, and manage infrastructure",
+  "harvest": {
+    "last_seen_at": "2026-06-08T07:02:19+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/mhajder/librenms-mcp",
+  "id": "tool.io-github-mhajder-librenms-mcp.6be326dc6b",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mhajder/librenms-mcp",
+    "homepage": "https://github.com/mhajder/librenms-mcp",
+    "repository": "https://github.com/mhajder/librenms-mcp"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "MCP server for LibreNMS network monitoring - query devices, ports, alerts, and manage infrastructure",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.mhajder/librenms-mcp",
+      "request_type": "POST",
+      "url": "https://github.com/mhajder/librenms-mcp"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Port mapping for HTTP transport",
+            "isRequired": true,
+            "name": "-p",
+            "type": "named",
+            "value": "{MCP_HTTP_PORT}:{MCP_HTTP_PORT}"
+          },
+          "ghcr.io/mhajder/librenms-mcp:1.10.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mhajder/librenms-mcp",
+  "provenance": {
+    "identity_key": "8cac50ec84",
+    "promoted_from": "mcp.io-github-mhajder-librenms-mcp.stdio.8cac50ec84",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mhajder/librenms-mcp",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-mhajder-librenms-mcp.stdio.8cac50ec84",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/mhajder/librenms-mcp",
+  "summary": "MCP server for LibreNMS network monitoring - query devices, ports, alerts, and manage infrastructure",
+  "tags": [
+    "alerts",
+    "devices",
+    "librenms",
+    "monitoring",
+    "network",
+    "ports",
+    "query"
+  ],
+  "title": "LibreNMS MCP",
+  "type": "tool",
+  "version": "1.10.0"
+}

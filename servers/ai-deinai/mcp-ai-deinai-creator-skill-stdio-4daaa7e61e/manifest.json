@@ -1,0 +1,63 @@
+{
+  "description": "AI influencer search on TikTok, Instagram, YouTube. Deinai MCP token required; credits per result.",
+  "harvest": {
+    "last_seen_at": "2026-06-08T07:01:56+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-deinai-creator-skill.stdio.4daaa7e61e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/deinai/deinai_backend",
+    "homepage": "https://github.com/deinai/deinai_backend",
+    "repository": "https://github.com/deinai/deinai_backend"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "deinai-mcp==1.0.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.deinai/creator-skill",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "MCP JWT from Deinai token API",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DEINAI_MCP_TOKEN"
+        },
+        {
+          "description": "Optional MCP endpoint override (default https://deinai.ai/mcp)",
+          "name": "DEINAI_MCP_URL"
+        }
+      ],
+      "identifier": "deinai-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4daaa7e61e",
+    "published_at": "2026-06-05T10:16:43.633426Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.deinai/creator-skill",
+    "server_version": "1.0.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-05T10:16:43.633426Z"
+  },
+  "title": "Creator SKILL \u2014 Influencer Discovery",
+  "type": "mcp_server",
+  "version": "1.0.2"
+}

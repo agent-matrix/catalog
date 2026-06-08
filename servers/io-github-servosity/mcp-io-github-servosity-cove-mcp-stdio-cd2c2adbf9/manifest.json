@@ -1,0 +1,72 @@
+{
+  "description": "Fleet-wide Cove Data Protection backup health, billing, and storage trends from your terminal.",
+  "harvest": {
+    "last_seen_at": "2026-06-08T07:02:06+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Servosity-cove-mcp.stdio.cd2c2adbf9",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/servosity/msp-skills",
+    "homepage": "https://github.com/servosity/msp-skills",
+    "repository": "https://github.com/servosity/msp-skills"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Servosity/cove-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API-enabled backup.management user (Security Officer service account with the API flag). Exchanged via the Cove JSON-RPC Login method for a cached session visa.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "COVE_USERNAME"
+        },
+        {
+          "description": "Password for COVE_USERNAME. Exchanged once for a cached session visa; never written to disk beyond the local visa cache.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "COVE_PASSWORD"
+        },
+        {
+          "description": "Optional partner name to scope queries to a specific reseller or customer level. Defaults to the partner resolved from the login.",
+          "name": "COVE_PARTNER"
+        },
+        {
+          "description": "Optional override for the Cove JSON-RPC endpoint. Defaults to the standard backup.management API host; set only for a regional or mock endpoint.",
+          "name": "COVE_BASE_URL"
+        }
+      ],
+      "fileSha256": "87a38c65ab440f44ced4bec96f02d2ff8dabf2d2c13cac91ab3e3dcb9baf1820",
+      "identifier": "https://github.com/Servosity/msp-skills/releases/download/cove-v0.1.0/cove-mcp.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "cd2c2adbf9",
+    "published_at": "2026-06-07T15:10:42.343564Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Servosity/cove-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-07T15:10:42.343564Z"
+  },
+  "title": "Cove Data Protection MCP",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

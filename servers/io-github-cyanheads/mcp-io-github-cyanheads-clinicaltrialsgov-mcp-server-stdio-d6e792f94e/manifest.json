@@ -1,0 +1,138 @@
+{
+  "description": "Search ClinicalTrials.gov \u2014 find studies, retrieve results, match patients to eligible trials.",
+  "harvest": {
+    "last_seen_at": "2026-06-08T07:02:11+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cyanheads-clinicaltrialsgov-mcp-server.stdio.d6e792f94e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cyanheads/clinicaltrialsgov-mcp-server",
+    "homepage": "https://github.com/cyanheads/clinicaltrialsgov-mcp-server",
+    "repository": "https://github.com/cyanheads/clinicaltrialsgov-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "bun",
+          "clinicaltrialsgov-mcp-server@2.6.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cyanheads/clinicaltrialsgov-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://clinicaltrials.gov/api/v2",
+          "description": "ClinicalTrials.gov API base URL.",
+          "format": "string",
+          "name": "CT_API_BASE_URL"
+        },
+        {
+          "default": "30000",
+          "description": "Per-request timeout in milliseconds.",
+          "format": "string",
+          "name": "CT_REQUEST_TIMEOUT_MS"
+        },
+        {
+          "default": "200",
+          "description": "Maximum page size cap.",
+          "format": "string",
+          "name": "CT_MAX_PAGE_SIZE"
+        },
+        {
+          "default": "false",
+          "description": "Enable the local SQLite study mirror.",
+          "format": "string",
+          "name": "CT_MIRROR_ENABLED"
+        },
+        {
+          "default": "./clinical-trials-mirror.db",
+          "description": "Filesystem path for the mirror SQLite database.",
+          "format": "string",
+          "name": "CT_MIRROR_PATH"
+        },
+        {
+          "default": "0 3 * * *",
+          "description": "Cron expression for incremental mirror refresh.",
+          "format": "string",
+          "name": "CT_MIRROR_REFRESH_CRON"
+        },
+        {
+          "default": "true",
+          "description": "Fall back to live API when mirror is not yet bootstrapped.",
+          "format": "string",
+          "name": "CT_MIRROR_FALLBACK_LIVE"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "The hostname for the HTTP server.",
+          "format": "string",
+          "name": "MCP_HTTP_HOST"
+        },
+        {
+          "default": "3010",
+          "description": "The port to run the HTTP server on.",
+          "format": "string",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "default": "/mcp",
+          "description": "The endpoint path for the MCP server.",
+          "format": "string",
+          "name": "MCP_HTTP_ENDPOINT_PATH"
+        },
+        {
+          "default": "none",
+          "description": "Authentication mode to use: 'none', 'jwt', or 'oauth'.",
+          "format": "string",
+          "name": "MCP_AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Sets the minimum log level for output (e.g., 'debug', 'info', 'warn').",
+          "format": "string",
+          "name": "MCP_LOG_LEVEL"
+        }
+      ],
+      "identifier": "clinicaltrialsgov-mcp-server",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "start:http"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "bun",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3010/mcp"
+      },
+      "version": "2.6.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d6e792f94e",
+    "published_at": "2026-06-04T09:30:53.031775Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cyanheads/clinicaltrialsgov-mcp-server",
+    "server_version": "2.6.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-04T09:30:53.031775Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "2.6.2"
+}

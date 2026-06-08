@@ -1,0 +1,69 @@
+{
+  "description": "End-to-end encrypted access to a Standard Notes vault (protocol 004, local stdio only).",
+  "harvest": {
+    "last_seen_at": "2026-06-08T07:02:19+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-lozit-mcp-standardnotes.stdio.848f0cbdfa",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/lozit/mcp-standardnotes",
+    "homepage": "https://github.com/lozit/mcp-standardnotes",
+    "repository": "https://github.com/lozit/mcp-standardnotes"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-standardnotes@0.3.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.lozit/mcp-standardnotes",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Standard Notes account email. The password is prompted once via `npx mcp-standardnotes-login` and the session is persisted in the OS keychain.",
+          "isRequired": true,
+          "name": "SN_EMAIL"
+        },
+        {
+          "default": "https://api.standardnotes.com",
+          "description": "Standard Notes sync server URL. Defaults to the official cloud if unset.",
+          "name": "SN_SERVER_URL"
+        },
+        {
+          "description": "Optional SHA-256 TLS certificate fingerprint for pinning a self-hosted server.",
+          "name": "SN_CERT_FINGERPRINT"
+        }
+      ],
+      "identifier": "mcp-standardnotes",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "848f0cbdfa",
+    "published_at": "2026-06-03T21:51:16.466872Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.lozit/mcp-standardnotes",
+    "server_version": "0.3.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-03T21:51:16.466872Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.6"
+}

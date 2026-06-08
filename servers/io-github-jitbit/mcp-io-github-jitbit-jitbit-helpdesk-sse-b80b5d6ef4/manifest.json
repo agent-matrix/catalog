@@ -1,0 +1,55 @@
+{
+  "description": "MCP server for Jitbit Helpdesk: search, list, read, and reply to support tickets from AI assistants.",
+  "harvest": {
+    "last_seen_at": "2026-06-08T07:02:17+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-jitbit-jitbit-helpdesk.sse.b80b5d6ef4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jitbit/jitbit-helpdesk-mcp",
+    "homepage": "https://github.com/jitbit/jitbit-helpdesk-mcp",
+    "repository": "https://github.com/jitbit/jitbit-helpdesk-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://{helpdesk_host}/api/mcp"
+    }
+  },
+  "name": "io.github.jitbit/jitbit-helpdesk",
+  "provenance": {
+    "identity_key": "b80b5d6ef4",
+    "published_at": "2026-06-05T21:27:24.772186Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.jitbit/jitbit-helpdesk",
+    "server_version": "2.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-05T21:27:24.772186Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Bearer API token from your Jitbit user profile, for example Bearer your-api-token",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization"
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://{helpdesk_host}/api/mcp",
+      "variables": {
+        "helpdesk_host": {
+          "description": "Your Jitbit Helpdesk hostname, for example yourcompany.jitbit.com or helpdesk.example.com",
+          "isRequired": true
+        }
+      }
+    }
+  ],
+  "title": "Jitbit Helpdesk",
+  "type": "mcp_server",
+  "version": "2.0.0"
+}

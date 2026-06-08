@@ -1,0 +1,132 @@
+{
+  "description": "Connects AI agents with CrowdStrike Falcon for security analysis and automation.",
+  "harvest": {
+    "last_seen_at": "2026-06-08T07:02:03+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-CrowdStrike-falcon-mcp.stdio.5a6dd34b91",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/CrowdStrike/falcon-mcp",
+    "homepage": "https://github.com/CrowdStrike/falcon-mcp",
+    "repository": "https://github.com/CrowdStrike/falcon-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "falcon-mcp==0.11.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.CrowdStrike/falcon-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "CrowdStrike API client ID",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "FALCON_CLIENT_ID"
+        },
+        {
+          "description": "CrowdStrike API client secret",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "FALCON_CLIENT_SECRET"
+        },
+        {
+          "default": "https://api.crowdstrike.com",
+          "description": "CrowdStrike API region URL",
+          "format": "string",
+          "name": "FALCON_BASE_URL",
+          "placeholder": "https://api.crowdstrike.com"
+        },
+        {
+          "description": "Child CID for Flight Control (MSSP) support",
+          "format": "string",
+          "name": "FALCON_MEMBER_CID"
+        },
+        {
+          "description": "Comma-separated list of modules to enable",
+          "format": "string",
+          "name": "FALCON_MCP_MODULES",
+          "placeholder": "detections,incidents,hosts"
+        },
+        {
+          "choices": [
+            "stdio",
+            "sse",
+            "streamable-http"
+          ],
+          "default": "stdio",
+          "description": "Transport protocol to use",
+          "format": "string",
+          "name": "FALCON_MCP_TRANSPORT"
+        },
+        {
+          "default": "false",
+          "description": "Enable debug logging",
+          "format": "boolean",
+          "name": "FALCON_MCP_DEBUG"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "Host to bind to for HTTP transports",
+          "format": "string",
+          "name": "FALCON_MCP_HOST"
+        },
+        {
+          "default": "8000",
+          "description": "Port to listen on for HTTP transports",
+          "format": "number",
+          "name": "FALCON_MCP_PORT"
+        },
+        {
+          "description": "Additional information to include in the User-Agent comment section",
+          "format": "string",
+          "name": "FALCON_MCP_USER_AGENT_COMMENT"
+        },
+        {
+          "default": "false",
+          "description": "Enable stateless HTTP mode for scalable deployments",
+          "format": "boolean",
+          "name": "FALCON_MCP_STATELESS_HTTP"
+        },
+        {
+          "description": "API key for HTTP transport authentication (x-api-key header)",
+          "format": "string",
+          "isSecret": true,
+          "name": "FALCON_MCP_API_KEY"
+        }
+      ],
+      "identifier": "falcon-mcp",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.11.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5a6dd34b91",
+    "published_at": "2026-06-03T13:18:35.27726Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.CrowdStrike/falcon-mcp",
+    "server_version": "0.11.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-03T13:18:35.27726Z"
+  },
+  "title": "CrowdStrike Falcon MCP Server",
+  "type": "mcp_server",
+  "version": "0.11.0"
+}

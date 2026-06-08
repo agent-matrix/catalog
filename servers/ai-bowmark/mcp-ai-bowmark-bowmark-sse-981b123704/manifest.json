@@ -1,7 +1,7 @@
 {
   "description": "Pre-computed navigation recipes for public websites \u2014 skip explore-and-discover.",
   "harvest": {
-    "last_seen_at": "2026-06-01T07:21:15+00:00",
+    "last_seen_at": "2026-06-08T07:01:56+00:00",
     "seen_in_latest_run": true
   },
   "id": "mcp.ai-bowmark-bowmark.sse.981b123704",
@@ -22,20 +22,33 @@
   "name": "ai.bowmark/bowmark",
   "provenance": {
     "identity_key": "981b123704",
-    "published_at": "2026-06-01T05:12:00.741775Z",
+    "published_at": "2026-06-06T04:32:47.439874Z",
     "registry_base_url": "https://registry.modelcontextprotocol.io",
     "server_name": "ai.bowmark/bowmark",
-    "server_version": "3.17.3",
+    "server_version": "3.22.1",
     "source": "mcp-registry",
-    "updated_at": "2026-06-01T05:12:00.741775Z"
+    "updated_at": "2026-06-06T04:32:47.439874Z"
   },
   "remotes": [
     {
+      "headers": [
+        {
+          "description": "Optional. A free API key raises your daily synthesis limit; omit it to use the anonymous tier. Mint a key from the dashboard at https://bowmark.ai.",
+          "name": "Authorization",
+          "value": "Bearer {api_key}",
+          "variables": {
+            "api_key": {
+              "description": "Your Bowmark API key (https://bowmark.ai dashboard). Leave blank for the free anonymous tier.",
+              "isSecret": true
+            }
+          }
+        }
+      ],
       "type": "streamable-http",
       "url": "https://api.bowmark.ai/mcp?s=r"
     }
   ],
   "title": "Bowmark",
   "type": "mcp_server",
-  "version": "3.17.3"
+  "version": "3.22.1"
 }
