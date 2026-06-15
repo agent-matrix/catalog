@@ -1,0 +1,83 @@
+{
+  "description": "Unified MCP server \u2014 auto-detects Gemini, Codex, Ollama, Antigravity; registers available tools",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:09+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Lykhoyda-ask-llm.stdio.08a8f4450b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Lykhoyda/ask-llm",
+    "homepage": "https://github.com/Lykhoyda/ask-llm",
+    "repository": "https://github.com/Lykhoyda/ask-llm"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "ask-llm-mcp@0.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Lykhoyda/ask-llm",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "http://localhost:11434",
+          "description": "Ollama server address (default: http://localhost:11434)",
+          "format": "string",
+          "name": "OLLAMA_HOST"
+        },
+        {
+          "default": "300000",
+          "description": "Timeout for Antigravity (agy) execution in milliseconds (default: 300000 = 5 minutes)",
+          "format": "string",
+          "name": "ASK_ANTIGRAVITY_TIMEOUT_MS"
+        },
+        {
+          "default": "1",
+          "description": "Set to '0' to drop agy's --sandbox flag if it blocks --add-dir context reads (default: sandbox on)",
+          "format": "string",
+          "name": "ASK_ANTIGRAVITY_SANDBOX"
+        },
+        {
+          "default": "300000",
+          "description": "Timeout for CLI execution in milliseconds (default: 300000 = 5 minutes)",
+          "format": "string",
+          "name": "GMCPT_TIMEOUT_MS"
+        },
+        {
+          "default": "warn",
+          "description": "Log verbosity: debug, info, warn, error (default: warn)",
+          "format": "string",
+          "name": "GMCPT_LOG_LEVEL"
+        }
+      ],
+      "identifier": "ask-llm-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "08a8f4450b",
+    "published_at": "2026-06-14T20:17:32.24753Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Lykhoyda/ask-llm",
+    "server_version": "0.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-14T20:17:32.24753Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.4.0"
+}

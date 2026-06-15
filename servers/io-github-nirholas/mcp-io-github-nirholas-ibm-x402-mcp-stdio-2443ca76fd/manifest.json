@@ -1,0 +1,102 @@
+{
+  "description": "x402 pay-per-use IBM Granite AI: chat, code, embeddings, analysis, forecasting. Pay USDC per call.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nirholas-ibm-x402-mcp.stdio.2443ca76fd",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nirholas/three.ws",
+    "homepage": "https://github.com/nirholas/three.ws",
+    "repository": "https://github.com/nirholas/three.ws"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@three-ws/ibm-x402-mcp@1.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nirholas/ibm-x402-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Solana wallet address that receives USDC payments from tool callers (server operator's receiving wallet). Required to accept x402 payments.",
+          "format": "string",
+          "isRequired": true,
+          "name": "MCP_SVM_PAYMENT_ADDRESS"
+        },
+        {
+          "description": "IBM Cloud API key used by the server to call watsonx.ai on behalf of end users. Create one at https://cloud.ibm.com/iam/apikeys.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "WATSONX_API_KEY"
+        },
+        {
+          "description": "watsonx.ai project id scoping all inference calls. Find it under your project \u2192 Manage \u2192 General \u2192 Project ID. Provide this or WATSONX_SPACE_ID.",
+          "format": "string",
+          "name": "WATSONX_PROJECT_ID"
+        },
+        {
+          "description": "watsonx.ai deployment space id. Alternative to WATSONX_PROJECT_ID.",
+          "format": "string",
+          "name": "WATSONX_SPACE_ID"
+        },
+        {
+          "description": "Regional watsonx.ai inference host. Defaults to https://us-south.ml.cloud.ibm.com. Other regions: eu-de, eu-gb, jp-tok, au-syd, ca-tor.",
+          "format": "string",
+          "name": "WATSONX_URL"
+        },
+        {
+          "description": "Default chat/generation Granite model id. Defaults to ibm/granite-3-8b-instruct.",
+          "format": "string",
+          "name": "WATSONX_MODEL_ID"
+        },
+        {
+          "description": "Default embedding model id. Defaults to ibm/granite-embedding-278m-multilingual.",
+          "format": "string",
+          "name": "WATSONX_EMBED_MODEL_ID"
+        },
+        {
+          "description": "Solana account that sponsors transaction fees for x402 payments. Defaults to the three.ws fee payer.",
+          "format": "string",
+          "name": "X402_FEE_PAYER_SOLANA"
+        },
+        {
+          "description": "x402 facilitator endpoint for payment verification and settlement. Defaults to https://facilitator.payai.network.",
+          "format": "string",
+          "name": "X402_FACILITATOR_URL"
+        }
+      ],
+      "identifier": "@three-ws/ibm-x402-mcp",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "2443ca76fd",
+    "published_at": "2026-06-13T07:57:10.932116Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nirholas/ibm-x402-mcp",
+    "server_version": "1.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-13T07:57:10.932116Z"
+  },
+  "title": "IBM Granite via x402",
+  "type": "mcp_server",
+  "version": "1.1.0"
+}

@@ -1,0 +1,189 @@
+{
+  "artifacts": [
+    {
+      "kind": "other",
+      "spec": {
+        "package": "@nogoo9/no-crd",
+        "registry": "npm",
+        "version": "0.8.0"
+      }
+    }
+  ],
+  "description": "Dynamic pod spawner & proxy for ephemeral AI agent workspaces on Kubernetes without CRDs",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/nogoo9/no-crd",
+  "id": "tool.io-github-nogoo9-no-crd.0c39164359",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nogoo9/no-crd",
+    "homepage": "https://github.com/nogoo9/no-crd",
+    "repository": "https://github.com/nogoo9/no-crd"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Dynamic pod spawner & proxy for ephemeral AI agent workspaces on Kubernetes without CRDs",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.nogoo9/no-crd",
+      "request_type": "POST",
+      "url": "https://github.com/nogoo9/no-crd"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "bunx",
+          {
+            "default": "stdio",
+            "description": "Transport channel for MCP client-server communication: stdio, http, both",
+            "name": "--transport",
+            "type": "named",
+            "valueHint": "stdio|http|both"
+          },
+          {
+            "default": "cluster",
+            "description": "Kubernetes cluster access scope: cluster-wide or namespace-restricted",
+            "name": "--mode",
+            "type": "named",
+            "valueHint": "cluster|namespaced"
+          },
+          {
+            "default": "nogoo9",
+            "description": "Target namespace for workspace pods, services, and local templates",
+            "name": "--namespace",
+            "type": "named",
+            "valueHint": "nogoo9"
+          },
+          {
+            "default": "3000",
+            "description": "HTTP port for SSE transport, routing proxy, and dashboard UI",
+            "name": "--port",
+            "type": "named",
+            "valueHint": "3000"
+          },
+          {
+            "default": "0.0.0.0",
+            "description": "Network interface host address to bind the HTTP server to",
+            "name": "--host",
+            "type": "named",
+            "valueHint": "0.0.0.0"
+          },
+          {
+            "default": "info",
+            "description": "Granularity of output logs: debug, info, warning, error, fatal",
+            "name": "--log-level",
+            "type": "named",
+            "valueHint": "debug|info|warning|error|fatal"
+          },
+          {
+            "description": "Bypass startup diagnostics checking Kubernetes RBAC access permissions",
+            "name": "--disable-permission-checks",
+            "type": "named"
+          },
+          {
+            "default": "*",
+            "description": "Allowed origins for HTTP CORS cross-site requests (default: *)",
+            "name": "--cors-origin",
+            "type": "named",
+            "valueHint": "*"
+          },
+          {
+            "default": "GET, POST, OPTIONS",
+            "description": "Allowed HTTP request methods for CORS configuration",
+            "name": "--cors-methods",
+            "type": "named",
+            "valueHint": "GET, POST, OPTIONS"
+          },
+          {
+            "default": "Content-Type, Authorization",
+            "description": "Allowed HTTP header names for incoming CORS requests",
+            "name": "--cors-headers",
+            "type": "named",
+            "valueHint": "Content-Type, Authorization"
+          },
+          {
+            "description": "Allow credentials (cookies, headers) in cross-origin requests",
+            "name": "--cors-allow-credentials",
+            "type": "named"
+          },
+          {
+            "description": "Mandatory OAuth scope claim value to query or get workspaces",
+            "name": "--auth-required-read-scope",
+            "type": "named",
+            "valueHint": "mcp:read"
+          },
+          {
+            "description": "Mandatory OAuth scope claim value to spawn or stop workspaces",
+            "name": "--auth-required-write-scope",
+            "type": "named",
+            "valueHint": "mcp:write"
+          },
+          {
+            "default": "$.scope",
+            "description": "JSONPath pattern to extract scope permissions from the token payload",
+            "name": "--auth-scope-jsonpath",
+            "type": "named",
+            "valueHint": "$.scope"
+          },
+          {
+            "description": "OAuth role required to view workspaces (e.g. reader)",
+            "name": "--auth-required-read-role",
+            "type": "named",
+            "valueHint": "reader"
+          },
+          {
+            "description": "OAuth role required to spawn or delete workspaces (e.g. writer)",
+            "name": "--auth-required-write-role",
+            "type": "named",
+            "valueHint": "writer"
+          },
+          {
+            "default": "$.realm_access.roles",
+            "description": "JSONPath query to retrieve user roles list from token payload",
+            "name": "--auth-roles-jsonpath",
+            "type": "named",
+            "valueHint": "$.realm_access.roles"
+          },
+          "@nogoo9/no-crd@0.8.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nogoo9/no-crd",
+  "provenance": {
+    "identity_key": "937f86a587",
+    "promoted_from": "mcp.io-github-nogoo9-no-crd.stdio.937f86a587",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nogoo9/no-crd",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-nogoo9-no-crd.stdio.937f86a587",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/nogoo9/no-crd",
+  "summary": "Dynamic pod spawner & proxy for ephemeral AI agent workspaces on Kubernetes without CRDs",
+  "tags": [
+    "crd",
+    "dynamic",
+    "ephemeral",
+    "kubernetes",
+    "proxy",
+    "spawner",
+    "workspaces"
+  ],
+  "title": "No Crd",
+  "type": "tool",
+  "version": "0.8.0"
+}

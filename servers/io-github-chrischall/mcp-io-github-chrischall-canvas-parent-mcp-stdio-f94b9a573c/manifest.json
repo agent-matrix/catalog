@@ -1,0 +1,98 @@
+{
+  "description": "Canvas LMS (Instructure) for Claude \u2014 courses, grades, assignments, planner, files",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:17+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-chrischall-canvas-parent-mcp.stdio.f94b9a573c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/chrischall/canvas-parent-mcp",
+    "homepage": "https://github.com/chrischall/canvas-parent-mcp",
+    "repository": "https://github.com/chrischall/canvas-parent-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "canvas-parent-mcp@1.1.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.chrischall/canvas-parent-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Canvas instance base URL, e.g. https://cms.instructure.com",
+          "format": "string",
+          "isRequired": true,
+          "name": "CANVAS_BASE_URL"
+        },
+        {
+          "description": "Canvas login username/email (recommended) \u2014 pair with CANVAS_PASSWORD for auto-login. No SSO/2FA.",
+          "format": "string",
+          "name": "CANVAS_USERNAME"
+        },
+        {
+          "description": "Canvas password (recommended) \u2014 required iff CANVAS_USERNAME is set",
+          "format": "string",
+          "isSecret": true,
+          "name": "CANVAS_PASSWORD"
+        },
+        {
+          "description": "Canvas personal access token (advanced) \u2014 most schools have disabled token creation",
+          "format": "string",
+          "isSecret": true,
+          "name": "CANVAS_TOKEN"
+        },
+        {
+          "description": "Canvas OAuth client ID (advanced \u2014 for SSO accounts that can't use username/password)",
+          "format": "string",
+          "name": "CANVAS_CLIENT_ID"
+        },
+        {
+          "description": "Canvas OAuth client secret (advanced)",
+          "format": "string",
+          "isSecret": true,
+          "name": "CANVAS_CLIENT_SECRET"
+        },
+        {
+          "description": "Canvas OAuth refresh token (advanced) \u2014 bootstrap via canvas-parent-mcp-qr-login",
+          "format": "string",
+          "isSecret": true,
+          "name": "CANVAS_REFRESH_TOKEN"
+        },
+        {
+          "description": "Friendly name for the Canvas instance (defaults to the host portion of the base URL)",
+          "format": "string",
+          "name": "CANVAS_NAME"
+        }
+      ],
+      "identifier": "canvas-parent-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f94b9a573c",
+    "published_at": "2026-06-13T00:54:29.80573Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.chrischall/canvas-parent-mcp",
+    "server_version": "1.1.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-13T00:54:29.80573Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.1.6"
+}

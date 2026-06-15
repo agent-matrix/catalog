@@ -1,0 +1,77 @@
+{
+  "description": "Read-only MCP server for Kaseya Quote Manager (Datto Commerce): quotes, orders, purchasing.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wyre-technology-kaseya-quote-manager-mcp.stdio.7fc740aa74",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wyre-technology/kaseya-quote-manager-mcp",
+    "homepage": "https://github.com/wyre-technology/kaseya-quote-manager-mcp",
+    "repository": "https://github.com/wyre-technology/kaseya-quote-manager-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-technology/kaseya-quote-manager-mcp:v1.0.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wyre-technology/kaseya-quote-manager-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Kaseya Quote Manager API key (Settings \u2192 API). Sent in the apiKey header.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "KASEYA_QUOTE_MANAGER_API_KEY"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode for the server. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-technology/kaseya-quote-manager-mcp:v1.0.4",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "7fc740aa74",
+    "published_at": "2026-06-12T19:37:48.406548Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wyre-technology/kaseya-quote-manager-mcp",
+    "server_version": "1.0.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-12T19:37:48.406548Z"
+  },
+  "title": "Kaseya Quote Manager",
+  "type": "mcp_server",
+  "version": "1.0.4"
+}

@@ -1,0 +1,76 @@
+{
+  "description": "Zero-knowledge encrypted storage for humans and AI agents. Client-side AES-256-GCM, EU-hosted.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-bitatlas-group-bitatlas.stdio.18d618f8c5",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/bitatlas-group/bitatlas",
+    "homepage": "https://github.com/bitatlas-group/bitatlas",
+    "repository": "https://github.com/bitatlas-group/bitatlas"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@bitatlas/mcp-server@1.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.bitatlas-group/bitatlas",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your BitAtlas API key (starts with ba_). Generate one at https://bitatlas.com/vault/settings",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "BITATLAS_API_KEY"
+        },
+        {
+          "description": "Your hex-encoded 256-bit master key (64 hex chars). Required for file upload and download. Derived from your password client-side \u2014 never sent to BitAtlas servers.",
+          "format": "string",
+          "isSecret": true,
+          "name": "BITATLAS_MASTER_KEY"
+        },
+        {
+          "description": "BitAtlas API base URL (default: https://api.bitatlas.com)",
+          "format": "string",
+          "name": "BITATLAS_API_URL"
+        },
+        {
+          "description": "Web origin used to build share links (default: https://www.bitatlas.com)",
+          "format": "string",
+          "name": "BITATLAS_WEB_URL"
+        }
+      ],
+      "identifier": "@bitatlas/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "18d618f8c5",
+    "published_at": "2026-06-14T18:02:08.990371Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.bitatlas-group/bitatlas",
+    "server_version": "1.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-14T18:02:08.990371Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.1.0"
+}

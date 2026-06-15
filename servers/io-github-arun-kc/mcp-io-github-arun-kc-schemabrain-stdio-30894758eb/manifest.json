@@ -1,0 +1,87 @@
+{
+  "description": "The trust and intelligence layer between AI agents and your database.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:04+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Arun-kc-schemabrain.stdio.30894758eb",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Arun-kc/schemabrain",
+    "homepage": "https://github.com/Arun-kc/schemabrain",
+    "repository": "https://github.com/Arun-kc/schemabrain"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "schemabrain==0.6.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Arun-kc/schemabrain",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Postgres connection URL (postgresql+psycopg://USER:PASSWORD@HOST:PORT/DBNAME). The agent never sees this; the URL stays in the env so credentials never appear in argv or logs.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DATABASE_URL"
+        }
+      ],
+      "identifier": "schemabrain",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "serve",
+          "valueHint": "subcommand"
+        },
+        {
+          "name": "--url-env",
+          "type": "named",
+          "value": "DATABASE_URL"
+        },
+        {
+          "name": "--store-path",
+          "type": "named",
+          "value": "{store_path}",
+          "variables": {
+            "store_path": {
+              "default": "./schemabrain.db",
+              "description": "Absolute path to the schemabrain SQLite store created by `schemabrain index`. Defaults to ./schemabrain.db.",
+              "format": "filepath",
+              "isRequired": true
+            }
+          }
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.6.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "30894758eb",
+    "published_at": "2026-06-13T13:57:25.239819Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Arun-kc/schemabrain",
+    "server_version": "0.6.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-13T13:57:25.239819Z"
+  },
+  "title": "SchemaBrain",
+  "type": "mcp_server",
+  "version": "0.6.0"
+}

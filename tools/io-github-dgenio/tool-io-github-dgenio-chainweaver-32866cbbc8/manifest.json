@@ -1,0 +1,83 @@
+{
+  "artifacts": [
+    {
+      "kind": "pypi",
+      "spec": {
+        "package": "chainweaver",
+        "version": "0.12.1"
+      }
+    }
+  ],
+  "description": "Expose deterministic ChainWeaver flows as MCP tools without LLM calls between steps.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/dgenio/ChainWeaver",
+  "id": "tool.io-github-dgenio-chainweaver.32866cbbc8",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/dgenio/ChainWeaver",
+    "homepage": "https://github.com/dgenio/ChainWeaver",
+    "repository": "https://github.com/dgenio/ChainWeaver"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Expose deterministic ChainWeaver flows as MCP tools without LLM calls between steps.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.dgenio/chainweaver",
+      "request_type": "POST",
+      "url": "https://github.com/dgenio/ChainWeaver"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "Resolve the MCP extra so a fresh client installs the fastmcp/mcp dependencies the serve command needs.",
+            "name": "--from",
+            "type": "named",
+            "value": "chainweaver[mcp]"
+          },
+          "chainweaver==0.12.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.dgenio/chainweaver",
+  "provenance": {
+    "identity_key": "64db73c644",
+    "promoted_from": "mcp.io-github-dgenio-chainweaver.stdio.64db73c644",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.dgenio/chainweaver",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-dgenio-chainweaver.stdio.64db73c644",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/dgenio/ChainWeaver",
+  "summary": "Expose deterministic ChainWeaver flows as MCP tools without LLM calls between steps.",
+  "tags": [
+    "calls",
+    "chainweaver",
+    "deterministic",
+    "expose",
+    "flows",
+    "tools",
+    "without"
+  ],
+  "title": "ChainWeaver",
+  "type": "tool",
+  "version": "0.12.1"
+}

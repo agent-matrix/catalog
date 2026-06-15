@@ -1,0 +1,78 @@
+{
+  "description": "Convert natural language into validated Liquibase XML or SQL changesets. 19 tools, 12 databases.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:29+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-liquibase-changelog-mcp-server.stdio.7de61d3203",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/liquibase/liquibase-mcp-changelog-server",
+    "homepage": "https://github.com/liquibase/liquibase-mcp-changelog-server",
+    "repository": "https://github.com/liquibase/liquibase-mcp-changelog-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/liquibase/liquibase-mcp-changelog-server:1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.liquibase/changelog-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Liquibase Pro license key (required for server operation)",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "LIQUIBASE_LICENSE_KEY"
+        },
+        {
+          "default": "xml",
+          "description": "Output format for generated changesets: xml (default) or formatted-sql",
+          "name": "LIQUIBASE_MCP_OUTPUT_FORMAT"
+        },
+        {
+          "default": "postgresql",
+          "description": "Target database dialect for Formatted SQL output (postgresql, mysql, mariadb, oracle, mssql, h2, db2, sybase, sqlite, hsqldb, derby, firebird)",
+          "name": "LIQUIBASE_MCP_SQL_DATABASE"
+        },
+        {
+          "default": "false",
+          "description": "Skip H2 in-memory database validation of generated changesets",
+          "name": "LIQUIBASE_MCP_DISABLE_VALIDATION"
+        },
+        {
+          "default": "false",
+          "description": "Generate explicit rollback blocks in XML changesets",
+          "name": "LIQUIBASE_MCP_INCLUDE_ROLLBACK"
+        }
+      ],
+      "identifier": "ghcr.io/liquibase/liquibase-mcp-changelog-server:1.0.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "7de61d3203",
+    "published_at": "2026-06-09T04:18:14.220437Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.liquibase/changelog-mcp-server",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-09T04:18:14.220437Z"
+  },
+  "title": "Liquibase Changelog MCP Server",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

@@ -1,0 +1,70 @@
+{
+  "description": "Grantd MCP server: let your AI agent act on a user's behalf across third-party APIs via OAuth.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:36+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-rafavecchi-grantd.stdio.d7223bb416",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/rafavecchi/grantd",
+    "homepage": "https://github.com/rafavecchi/grantd",
+    "repository": "https://github.com/rafavecchi/grantd"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "grantd-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.rafavecchi/grantd",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "A Grantd secret key (sk_...). Treat it like a password.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GRANTD_API_KEY"
+        },
+        {
+          "description": "Base URL of your Grantd broker (default http://localhost:8787).",
+          "format": "string",
+          "name": "GRANTD_BASE_URL"
+        },
+        {
+          "description": "Default end-user id so tools don't need it passed each call.",
+          "format": "string",
+          "name": "GRANTD_END_USER"
+        }
+      ],
+      "identifier": "grantd-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d7223bb416",
+    "published_at": "2026-06-09T22:02:36.019889Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.rafavecchi/grantd",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-09T22:02:36.019889Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

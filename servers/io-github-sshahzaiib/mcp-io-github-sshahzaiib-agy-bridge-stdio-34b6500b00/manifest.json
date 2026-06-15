@@ -1,0 +1,78 @@
+{
+  "description": "Delegate heavy tasks from Claude Code to the Antigravity CLI (Gemini) with quota-aware failover.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sshahzaiib-agy-bridge.stdio.34b6500b00",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sshahzaiib/agy-bridge",
+    "homepage": "https://github.com/sshahzaiib/agy-bridge",
+    "repository": "https://github.com/sshahzaiib/agy-bridge"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "agy-bridge@0.3.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sshahzaiib/agy-bridge",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the agy binary (defaults to `agy` on PATH)",
+          "format": "string",
+          "name": "AGY_PATH"
+        },
+        {
+          "description": "Override the per-tool timeouts, in seconds",
+          "format": "number",
+          "name": "AGY_TIMEOUT"
+        },
+        {
+          "description": "Truncation cap for tool output, in characters (default 50000)",
+          "format": "number",
+          "name": "AGY_MAX_OUTPUT_CHARS"
+        },
+        {
+          "description": "Fallback model when no chain entry is available",
+          "format": "string",
+          "name": "AGY_DEFAULT_MODEL"
+        },
+        {
+          "description": "Set to `strict` to instruct the calling agent not to absorb failed delegations (default `fallback`)",
+          "format": "string",
+          "name": "AGY_ON_FAILURE"
+        }
+      ],
+      "identifier": "agy-bridge",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "34b6500b00",
+    "published_at": "2026-06-12T22:05:03.52736Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sshahzaiib/agy-bridge",
+    "server_version": "0.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-12T22:05:03.52736Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.1"
+}

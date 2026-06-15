@@ -1,0 +1,66 @@
+{
+  "description": "Query Spanlens LLM observability from Cursor, Claude Desktop, or Continue via MCP.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-spanlens-mcp-server.stdio.aadee6726e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/spanlens/Spanlens",
+    "homepage": "https://github.com/spanlens/Spanlens",
+    "repository": "https://github.com/spanlens/Spanlens"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@spanlens/mcp-server@0.1.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.spanlens/mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Spanlens API key. Must be a scope=public key (sl_live_pub_*) issued from the Public Keys card at https://spanlens.io/projects \u2014 the server refuses to start with a full-access sl_live_* key.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SPANLENS_API_KEY"
+        },
+        {
+          "default": "https://server.spanlens.io",
+          "description": "Override the API endpoint for self-hosted Spanlens. Default: https://server.spanlens.io",
+          "format": "string",
+          "name": "SPANLENS_BASE_URL"
+        }
+      ],
+      "identifier": "@spanlens/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "aadee6726e",
+    "published_at": "2026-06-13T05:48:38.886419Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.spanlens/mcp-server",
+    "server_version": "0.1.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-13T05:48:38.886419Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.3"
+}

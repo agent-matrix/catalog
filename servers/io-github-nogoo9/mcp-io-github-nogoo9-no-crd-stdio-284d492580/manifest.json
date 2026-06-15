@@ -1,0 +1,412 @@
+{
+  "description": "Dynamic pod spawner & proxy for ephemeral AI agent workspaces on Kubernetes without CRDs",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nogoo9-no-crd.stdio.284d492580",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nogoo9/no-crd",
+    "homepage": "https://github.com/nogoo9/no-crd",
+    "repository": "https://github.com/nogoo9/no-crd"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "bunx",
+          {
+            "default": "stdio",
+            "description": "Transport channel for MCP client-server communication: stdio, http, both",
+            "name": "--transport",
+            "type": "named",
+            "valueHint": "stdio|http|both"
+          },
+          {
+            "default": "cluster",
+            "description": "Kubernetes cluster access scope: cluster-wide or namespace-restricted",
+            "name": "--mode",
+            "type": "named",
+            "valueHint": "cluster|namespaced"
+          },
+          {
+            "default": "nogoo9",
+            "description": "Target namespace for workspace pods, services, and local templates",
+            "name": "--namespace",
+            "type": "named",
+            "valueHint": "nogoo9"
+          },
+          {
+            "default": "3000",
+            "description": "HTTP port for SSE transport, routing proxy, and dashboard UI",
+            "name": "--port",
+            "type": "named",
+            "valueHint": "3000"
+          },
+          {
+            "default": "0.0.0.0",
+            "description": "Network interface host address to bind the HTTP server to",
+            "name": "--host",
+            "type": "named",
+            "valueHint": "0.0.0.0"
+          },
+          {
+            "default": "info",
+            "description": "Granularity of output logs: debug, info, warning, error, fatal",
+            "name": "--log-level",
+            "type": "named",
+            "valueHint": "debug|info|warning|error|fatal"
+          },
+          {
+            "description": "Bypass startup diagnostics checking Kubernetes RBAC access permissions",
+            "name": "--disable-permission-checks",
+            "type": "named"
+          },
+          {
+            "default": "*",
+            "description": "Allowed origins for HTTP CORS cross-site requests (default: *)",
+            "name": "--cors-origin",
+            "type": "named",
+            "valueHint": "*"
+          },
+          {
+            "default": "GET, POST, OPTIONS",
+            "description": "Allowed HTTP request methods for CORS configuration",
+            "name": "--cors-methods",
+            "type": "named",
+            "valueHint": "GET, POST, OPTIONS"
+          },
+          {
+            "default": "Content-Type, Authorization",
+            "description": "Allowed HTTP header names for incoming CORS requests",
+            "name": "--cors-headers",
+            "type": "named",
+            "valueHint": "Content-Type, Authorization"
+          },
+          {
+            "description": "Allow credentials (cookies, headers) in cross-origin requests",
+            "name": "--cors-allow-credentials",
+            "type": "named"
+          },
+          {
+            "description": "Mandatory OAuth scope claim value to query or get workspaces",
+            "name": "--auth-required-read-scope",
+            "type": "named",
+            "valueHint": "mcp:read"
+          },
+          {
+            "description": "Mandatory OAuth scope claim value to spawn or stop workspaces",
+            "name": "--auth-required-write-scope",
+            "type": "named",
+            "valueHint": "mcp:write"
+          },
+          {
+            "default": "$.scope",
+            "description": "JSONPath pattern to extract scope permissions from the token payload",
+            "name": "--auth-scope-jsonpath",
+            "type": "named",
+            "valueHint": "$.scope"
+          },
+          {
+            "description": "OAuth role required to view workspaces (e.g. reader)",
+            "name": "--auth-required-read-role",
+            "type": "named",
+            "valueHint": "reader"
+          },
+          {
+            "description": "OAuth role required to spawn or delete workspaces (e.g. writer)",
+            "name": "--auth-required-write-role",
+            "type": "named",
+            "valueHint": "writer"
+          },
+          {
+            "default": "$.realm_access.roles",
+            "description": "JSONPath query to retrieve user roles list from token payload",
+            "name": "--auth-roles-jsonpath",
+            "type": "named",
+            "valueHint": "$.realm_access.roles"
+          },
+          "@nogoo9/no-crd@0.9.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nogoo9/no-crd",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the Kubernetes API credentials configuration file",
+          "name": "KUBECONFIG"
+        },
+        {
+          "description": "Hosting URL subpath prefix for gateways and reverse proxies",
+          "name": "BASE_URL"
+        },
+        {
+          "description": "Disable in-memory session tracking for stateless execution",
+          "name": "STATELESS"
+        },
+        {
+          "description": "Local file path containing TLS public certificate (HTTPS)",
+          "name": "TLS_CERT"
+        },
+        {
+          "description": "Local file path containing TLS private key (HTTPS)",
+          "isSecret": true,
+          "name": "TLS_KEY"
+        },
+        {
+          "description": "Local file path containing trusted client Certificate Authority",
+          "name": "TLS_CA"
+        },
+        {
+          "description": "Set to '0' to allow connection to unverified TLS endpoints",
+          "name": "NODE_TLS_REJECT_UNAUTHORIZED"
+        },
+        {
+          "description": "Default container registry for workspace image resolution",
+          "name": "REGISTRY_URL"
+        },
+        {
+          "description": "Local filesystem directory containing custom YAML/JSON templates",
+          "name": "TEMPLATES_DIR"
+        },
+        {
+          "description": "Enable loading of standard pre-configured templates (default: true)",
+          "name": "BUILTIN_TEMPLATES"
+        },
+        {
+          "description": "Enforce JWT verification and user tenant isolation (default: false)",
+          "name": "AUTH_ENABLED"
+        },
+        {
+          "description": "Set to 'false' to skip OIDC cryptographic signature checks",
+          "name": "JWT_VERIFICATION_REQUIRED"
+        },
+        {
+          "description": "HMAC-SHA symmetric secret key to sign/verify JWT tokens",
+          "isSecret": true,
+          "name": "JWT_SECRET"
+        },
+        {
+          "description": "PEM public key to verify asymmetric OIDC signatures",
+          "isSecret": true,
+          "name": "JWT_PUBLIC_KEY"
+        },
+        {
+          "description": "Discovery URI to fetch keys from OIDC provider dynamically",
+          "name": "JWKS_URI"
+        },
+        {
+          "description": "RFC 7662 compliant token introspection validation endpoint",
+          "name": "INTROSPECTION_ENDPOINT"
+        },
+        {
+          "description": "Client identifier for OAuth2 authentication flows",
+          "name": "OAUTH_CLIENT_ID"
+        },
+        {
+          "description": "Client secret credentials used for token introspection",
+          "isSecret": true,
+          "name": "OAUTH_CLIENT_SECRET"
+        },
+        {
+          "description": "Target audience check value for incoming OIDC tokens",
+          "name": "JWT_AUDIENCE"
+        },
+        {
+          "description": "Expected token issuer authority check value (e.g. Keycloak)",
+          "name": "AUTH_ISSUER"
+        },
+        {
+          "description": "JSONPath pattern to extract user identity subject from token",
+          "name": "AUTH_SUB_JSONPATH"
+        },
+        {
+          "description": "Bypass role name that grants admin access (default: nogoo9-admin)",
+          "name": "AUTH_ADMIN_ROLE"
+        },
+        {
+          "description": "Active lifetime in seconds for signed proxy session cookies",
+          "name": "PROXY_SESSION_TTL"
+        },
+        {
+          "description": "Secret key for session cookie signing",
+          "isSecret": true,
+          "name": "PROXY_SESSION_SECRET"
+        },
+        {
+          "description": "Serve the built-in HTML dashboard (default: true)",
+          "name": "UI_ENABLED"
+        },
+        {
+          "description": "Filesystem directory to scan for custom CSS themes",
+          "name": "THEMES_DIR"
+        },
+        {
+          "description": "ConfigMap name storing dynamic CSS theme overrides",
+          "name": "THEMES_CONFIGMAP"
+        },
+        {
+          "description": "Directory containing static documentation web files to serve",
+          "name": "DOCS_DIR"
+        },
+        {
+          "description": "Standard OIDC .well-known configuration discovery endpoint",
+          "name": "OAUTH_DISCOVERY_URL"
+        },
+        {
+          "description": "UI SSO flow login method: 'redirect' or silent 'iframe'",
+          "name": "OAUTH_LOGIN_METHOD"
+        },
+        {
+          "description": "Custom dashboard header title for white-label branding",
+          "name": "UI_TITLE"
+        },
+        {
+          "description": "Custom dashboard subtitle text below the header title",
+          "name": "UI_SUBTITLE"
+        }
+      ],
+      "identifier": "@nogoo9/no-crd",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "default": "stdio",
+          "description": "Transport channel for MCP client-server communication: stdio, http, both",
+          "name": "--transport",
+          "type": "named",
+          "valueHint": "stdio|http|both"
+        },
+        {
+          "default": "cluster",
+          "description": "Kubernetes cluster access scope: cluster-wide or namespace-restricted",
+          "name": "--mode",
+          "type": "named",
+          "valueHint": "cluster|namespaced"
+        },
+        {
+          "default": "nogoo9",
+          "description": "Target namespace for workspace pods, services, and local templates",
+          "name": "--namespace",
+          "type": "named",
+          "valueHint": "nogoo9"
+        },
+        {
+          "default": "3000",
+          "description": "HTTP port for SSE transport, routing proxy, and dashboard UI",
+          "name": "--port",
+          "type": "named",
+          "valueHint": "3000"
+        },
+        {
+          "default": "0.0.0.0",
+          "description": "Network interface host address to bind the HTTP server to",
+          "name": "--host",
+          "type": "named",
+          "valueHint": "0.0.0.0"
+        },
+        {
+          "default": "info",
+          "description": "Granularity of output logs: debug, info, warning, error, fatal",
+          "name": "--log-level",
+          "type": "named",
+          "valueHint": "debug|info|warning|error|fatal"
+        },
+        {
+          "description": "Bypass startup diagnostics checking Kubernetes RBAC access permissions",
+          "name": "--disable-permission-checks",
+          "type": "named"
+        },
+        {
+          "default": "*",
+          "description": "Allowed origins for HTTP CORS cross-site requests (default: *)",
+          "name": "--cors-origin",
+          "type": "named",
+          "valueHint": "*"
+        },
+        {
+          "default": "GET, POST, OPTIONS",
+          "description": "Allowed HTTP request methods for CORS configuration",
+          "name": "--cors-methods",
+          "type": "named",
+          "valueHint": "GET, POST, OPTIONS"
+        },
+        {
+          "default": "Content-Type, Authorization",
+          "description": "Allowed HTTP header names for incoming CORS requests",
+          "name": "--cors-headers",
+          "type": "named",
+          "valueHint": "Content-Type, Authorization"
+        },
+        {
+          "description": "Allow credentials (cookies, headers) in cross-origin requests",
+          "name": "--cors-allow-credentials",
+          "type": "named"
+        },
+        {
+          "description": "Mandatory OAuth scope claim value to query or get workspaces",
+          "name": "--auth-required-read-scope",
+          "type": "named",
+          "valueHint": "mcp:read"
+        },
+        {
+          "description": "Mandatory OAuth scope claim value to spawn or stop workspaces",
+          "name": "--auth-required-write-scope",
+          "type": "named",
+          "valueHint": "mcp:write"
+        },
+        {
+          "default": "$.scope",
+          "description": "JSONPath pattern to extract scope permissions from the token payload",
+          "name": "--auth-scope-jsonpath",
+          "type": "named",
+          "valueHint": "$.scope"
+        },
+        {
+          "description": "OAuth role required to view workspaces (e.g. reader)",
+          "name": "--auth-required-read-role",
+          "type": "named",
+          "valueHint": "reader"
+        },
+        {
+          "description": "OAuth role required to spawn or delete workspaces (e.g. writer)",
+          "name": "--auth-required-write-role",
+          "type": "named",
+          "valueHint": "writer"
+        },
+        {
+          "default": "$.realm_access.roles",
+          "description": "JSONPath query to retrieve user roles list from token payload",
+          "name": "--auth-roles-jsonpath",
+          "type": "named",
+          "valueHint": "$.realm_access.roles"
+        }
+      ],
+      "runtimeHint": "bunx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.9.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "284d492580",
+    "published_at": "2026-06-10T19:46:15.26981Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nogoo9/no-crd",
+    "server_version": "0.9.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-10T19:46:15.26981Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.9.0"
+}

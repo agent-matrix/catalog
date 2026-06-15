@@ -1,0 +1,85 @@
+{
+  "description": "Cryptographic AI governance + audit. 18 tools, 16 frameworks. EU AI Act, NIST, OWASP, CMMC, SR 11-7",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:43+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-tenova-swt3-witness.stdio.6e767b66a2",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/tenova-labs/swt3-ai",
+    "homepage": "https://github.com/tenova-labs/swt3-ai",
+    "repository": "https://github.com/tenova-labs/swt3-ai"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@tenova/swt3-mcp@0.5.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.tenova/swt3-witness",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "SWT3 API key (starts with axm_). Omit for zero-config demo mode.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SWT3_API_KEY"
+        },
+        {
+          "description": "Your tenant identifier",
+          "format": "string",
+          "name": "SWT3_TENANT_ID"
+        },
+        {
+          "description": "Path to swt3.yaml config file for policy-as-code",
+          "format": "string",
+          "name": "SWT3_CONFIG_FILE"
+        },
+        {
+          "description": "Data clearing level: 0=analytics, 1=standard, 2=sensitive, 3=classified",
+          "format": "string",
+          "name": "SWT3_CLEARING_LEVEL"
+        },
+        {
+          "description": "Agent identity for AI-ID.1 witnessing",
+          "format": "string",
+          "name": "SWT3_AGENT_ID"
+        },
+        {
+          "description": "HMAC-SHA256 signing key for non-repudiation",
+          "format": "string",
+          "isSecret": true,
+          "name": "SWT3_SIGNING_KEY"
+        }
+      ],
+      "identifier": "@tenova/swt3-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6e767b66a2",
+    "published_at": "2026-06-09T10:33:54.924515Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.tenova/swt3-witness",
+    "server_version": "0.5.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-09T10:33:54.924515Z"
+  },
+  "title": "SWT3 AI Witness",
+  "type": "mcp_server",
+  "version": "0.5.5"
+}

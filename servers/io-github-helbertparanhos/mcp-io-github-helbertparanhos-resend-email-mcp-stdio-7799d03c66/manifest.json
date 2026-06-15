@@ -1,0 +1,76 @@
+{
+  "description": "Complete Resend email MCP: full API coverage + debug layer (deliverability, DNS, bounces).",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:26+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-helbertparanhos-resend-email-mcp.stdio.7799d03c66",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/helbertparanhos/resend-email-mcp",
+    "homepage": "https://github.com/helbertparanhos/resend-email-mcp",
+    "repository": "https://github.com/helbertparanhos/resend-email-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "resend-email-mcp@1.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.helbertparanhos/resend-email-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Resend API key (https://resend.com/api-keys)",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "RESEND_API_KEY"
+        },
+        {
+          "description": "Default sender address (verified domain), e.g. 'Acme <hello@acme.com>'",
+          "name": "RESEND_FROM"
+        },
+        {
+          "description": "Default Reply-To address",
+          "name": "RESEND_REPLY_TO"
+        },
+        {
+          "description": "Set to 'true' to block every mutating tool",
+          "name": "RESEND_READONLY"
+        },
+        {
+          "description": "Directory that local-file attachments are restricted to (disk reads disabled unless set)",
+          "name": "RESEND_ATTACHMENTS_DIR"
+        }
+      ],
+      "identifier": "resend-email-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7799d03c66",
+    "published_at": "2026-06-09T03:00:55.696918Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.helbertparanhos/resend-email-mcp",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-09T03:00:55.696918Z"
+  },
+  "title": "Resend Email MCP",
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

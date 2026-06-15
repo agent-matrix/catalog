@@ -1,0 +1,86 @@
+{
+  "description": "Dependency-graph MCP server. Tells Claude/Cursor what breaks if you change X. Provenance guards.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:28+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-kimgh06-thask.stdio.af065dcd23",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/kimgh06/Thask",
+    "homepage": "https://github.com/kimgh06/Thask",
+    "repository": "https://github.com/kimgh06/Thask"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "isRequired": true,
+            "type": "positional",
+            "value": "mcp"
+          },
+          {
+            "isRequired": true,
+            "type": "positional",
+            "value": "serve"
+          },
+          "@thask-org/cli@0.5.14"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.kimgh06/thask",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "URL of your Thask server (e.g. https://thask.kimgh06.com or http://localhost:7244). Can also be set via `thask config set url <url>`.",
+          "isRequired": true,
+          "name": "THASK_URL"
+        },
+        {
+          "description": "API key for your Thask account. Generate via `thask login` (browser flow, recommended) or in the web UI settings.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "THASK_TOKEN"
+        }
+      ],
+      "identifier": "@thask-org/cli",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "isRequired": true,
+          "type": "positional",
+          "value": "mcp"
+        },
+        {
+          "isRequired": true,
+          "type": "positional",
+          "value": "serve"
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.14"
+    }
+  ],
+  "provenance": {
+    "identity_key": "af065dcd23",
+    "published_at": "2026-06-13T00:49:44.274981Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.kimgh06/thask",
+    "server_version": "0.5.14",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-13T00:49:44.274981Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.5.14"
+}

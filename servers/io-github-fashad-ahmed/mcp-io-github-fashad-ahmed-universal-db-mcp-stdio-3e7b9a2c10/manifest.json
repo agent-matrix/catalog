@@ -1,0 +1,81 @@
+{
+  "description": "Security-first MCP server for PostgreSQL, SQLite, MySQL, DuckDB with SQL injection prevention.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:07+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Fashad-Ahmed-universal-db-mcp.stdio.3e7b9a2c10",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Fashad-Ahmed/universal-mcp",
+    "homepage": "https://github.com/Fashad-Ahmed/universal-mcp",
+    "repository": "https://github.com/Fashad-Ahmed/universal-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "universal-db-mcp==1.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Fashad-Ahmed/universal-db-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "PostgreSQL connection string (read-only user recommended)",
+          "isSecret": true,
+          "name": "POSTGRES_URI"
+        },
+        {
+          "description": "Path to a SQLite database file",
+          "name": "SQLITE_PATH"
+        },
+        {
+          "description": "MySQL connection string (read-only user recommended)",
+          "isSecret": true,
+          "name": "MYSQL_URI"
+        },
+        {
+          "description": "Path to a DuckDB file, or :memory:",
+          "name": "DUCKDB_PATH"
+        },
+        {
+          "default": "false",
+          "description": "Set to true to allow INSERT/UPDATE/DELETE/DDL (default: false)",
+          "name": "ALLOW_DESTRUCTIVE"
+        },
+        {
+          "default": "1000",
+          "description": "Maximum rows returned per query (default: 1000)",
+          "name": "MAX_RESULT_ROWS"
+        }
+      ],
+      "identifier": "universal-db-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "3e7b9a2c10",
+    "published_at": "2026-06-11T14:22:38.041908Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Fashad-Ahmed/universal-db-mcp",
+    "server_version": "1.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-11T14:22:38.041908Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.1.2"
+}

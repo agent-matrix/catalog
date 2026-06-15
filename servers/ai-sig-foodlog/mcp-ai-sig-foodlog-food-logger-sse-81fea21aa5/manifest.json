@@ -1,0 +1,58 @@
+{
+  "description": "Food logging, nutrition summaries, and meal photo calorie and macro estimates.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:35:56+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-sig-foodlog-food-logger.sse.81fea21aa5",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sigaihealth/foodlogger",
+    "homepage": "https://github.com/sigaihealth/foodlogger",
+    "repository": "https://github.com/sigaihealth/foodlogger"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://foodlog.sig.ai/api/mcp"
+    }
+  },
+  "name": "ai.sig.foodlog/food-logger",
+  "provenance": {
+    "identity_key": "81fea21aa5",
+    "published_at": "2026-06-12T07:20:41.152771Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.sig.foodlog/food-logger",
+    "server_version": "1.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-12T07:20:41.152771Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Bearer token from https://foodlog.sig.ai/account. New users receive 5 trial photo-analysis credits.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {mcp_token}",
+          "variables": {
+            "mcp_token": {
+              "description": "Food Logger MCP token beginning with flm_",
+              "isRequired": true,
+              "isSecret": true,
+              "placeholder": "flm_..."
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://foodlog.sig.ai/api/mcp"
+    }
+  ],
+  "title": "Food Logger MCP",
+  "type": "mcp_server",
+  "version": "1.1.0"
+}

@@ -1,0 +1,114 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "docker.io/castimaging/imaging-mcp-server:3.0.3"
+      }
+    }
+  ],
+  "description": "MCP server exposing CAST Imaging software architecture insights to AI agents",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:05+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "tool.io-github-cast-extend-imaging-mcp-server.6c6b15516e",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "tool": {
+      "description": "MCP server exposing CAST Imaging software architecture insights to AI agents",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.CAST-Extend/imaging-mcp-server",
+      "request_type": "POST",
+      "url": "mcp+stdio://oci/docker.io/castimaging/imaging-mcp-server:3.0.3"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "name": "-p",
+            "type": "named",
+            "value": "{MCP_SERVER_PORT}:8282",
+            "variables": {
+              "MCP_SERVER_PORT": {
+                "default": "8282",
+                "description": "Host port to expose the MCP server on"
+              }
+            }
+          },
+          {
+            "isRequired": true,
+            "name": "-e",
+            "type": "named",
+            "value": "HOST_CONTROL_PANEL={HOST_CONTROL_PANEL}",
+            "variables": {
+              "HOST_CONTROL_PANEL": {
+                "description": "Hostname or IP of your CAST Imaging Control Panel"
+              }
+            }
+          },
+          {
+            "name": "-e",
+            "type": "named",
+            "value": "PORT_CONTROL_PANEL={PORT_CONTROL_PANEL}",
+            "variables": {
+              "PORT_CONTROL_PANEL": {
+                "default": "8098",
+                "description": "Control Panel port"
+              }
+            }
+          },
+          {
+            "isRequired": true,
+            "name": "-e",
+            "type": "named",
+            "value": "SERVICE_HOST={SERVICE_HOST}",
+            "variables": {
+              "SERVICE_HOST": {
+                "description": "Hostname or IP of the machine running the MCP server (used for Eureka registration)"
+              }
+            }
+          },
+          "docker.io/castimaging/imaging-mcp-server:3.0.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.CAST-Extend/imaging-mcp-server",
+  "provenance": {
+    "identity_key": "5b451cbb6f",
+    "promoted_from": "mcp.io-github-CAST-Extend-imaging-mcp-server.stdio.5b451cbb6f",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.CAST-Extend/imaging-mcp-server",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-CAST-Extend-imaging-mcp-server.stdio.5b451cbb6f",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "summary": "MCP server exposing CAST Imaging software architecture insights to AI agents",
+  "tags": [
+    "agents",
+    "architecture",
+    "cast",
+    "exposing",
+    "imaging",
+    "insights",
+    "software"
+  ],
+  "title": "CAST Imaging MCP Server",
+  "type": "tool",
+  "version": "3.0.3"
+}

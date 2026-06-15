@@ -1,0 +1,117 @@
+{
+  "description": "3D AI Agent Avatar \u2014 render any GLB, give it a Solana wallet, a voice, and pump.fun powers.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nirholas-3D-AI-Agent-Avatar.stdio.fd1437728b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nirholas/three.ws",
+    "homepage": "https://github.com/nirholas/three.ws",
+    "repository": "https://github.com/nirholas/three.ws"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@three-ws/avatar-agent@1.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nirholas/3D-AI-Agent-Avatar",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://api.mainnet-beta.solana.com",
+          "description": "Solana mainnet RPC endpoint. Defaults to https://api.mainnet-beta.solana.com \u2014 bring your own (Helius / QuickNode / Triton) for production traffic.",
+          "format": "string",
+          "name": "SOLANA_RPC_URL"
+        },
+        {
+          "description": "Ethereum mainnet RPC for ENS resolution. Optional \u2014 falls back to ethers' default public providers.",
+          "format": "string",
+          "name": "ETH_RPC_URL"
+        },
+        {
+          "description": "Optional Helius API key \u2014 enables exact supply + DAS data in pump_snapshot.",
+          "format": "string",
+          "isSecret": true,
+          "name": "HELIUS_API_KEY"
+        },
+        {
+          "description": "NVIDIA NIM key (nvapi-\u2026) \u2014 leads the speak tool's TTS provider chain with the free Magpie TTS lane.",
+          "format": "string",
+          "isSecret": true,
+          "name": "NVIDIA_API_KEY"
+        },
+        {
+          "description": "OpenAI TTS \u2014 the speak tool's paid backstop when the free NVIDIA lane is unavailable.",
+          "format": "string",
+          "isSecret": true,
+          "name": "OPENAI_API_KEY"
+        },
+        {
+          "description": "Required for the generate_avatar tool (Replicate text/image-to-3D).",
+          "format": "string",
+          "isSecret": true,
+          "name": "REPLICATE_API_TOKEN"
+        },
+        {
+          "description": "Replicate version hash pinned for text-to-3D \u2014 recommended: latest tencent/hunyuan-3d-3.1.",
+          "format": "string",
+          "name": "REPLICATE_TEXT_TO_AVATAR_MODEL"
+        },
+        {
+          "description": "Optional default base58 Solana secret for wallet_send / pump_buy. Per-call secret args override this. Treat like cash.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SOLANA_SECRET_KEY"
+        },
+        {
+          "description": "Optional pump.fun mint address for $three so tools accept target=\"three\" as shorthand.",
+          "format": "string",
+          "name": "THREE_MINT"
+        },
+        {
+          "default": "0.5",
+          "description": "Per-transaction spend cap in SOL for the execution tools (wallet_send, pump_buy, pump_launch, pump_collect_fees).",
+          "format": "number",
+          "name": "MAX_SOL_PER_TX"
+        },
+        {
+          "default": "true",
+          "description": "When on (default), execution tools refuse until re-issued with confirm:true. Set 0/false to disable the gate.",
+          "format": "boolean",
+          "name": "REQUIRE_CONFIRM"
+        }
+      ],
+      "identifier": "@three-ws/avatar-agent",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "fd1437728b",
+    "published_at": "2026-06-13T07:57:11.433875Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nirholas/3D-AI-Agent-Avatar",
+    "server_version": "1.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-13T07:57:11.433875Z"
+  },
+  "title": "3D AI Agent Avatar",
+  "type": "mcp_server",
+  "version": "1.2.0"
+}

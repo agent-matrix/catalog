@@ -1,0 +1,87 @@
+{
+  "description": "46-tool PowerPoint MCP server. Build, edit, and export .pptx files. Windows-first.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:23+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-dosev-ai-mcp-office-powerpoint.stdio.e40ed94aa8",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/dosev-ai/mcp-office",
+    "homepage": "https://github.com/dosev-ai/mcp-office",
+    "repository": "https://github.com/dosev-ai/mcp-office"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "name": "--from",
+            "type": "named",
+            "value": "mcp-office"
+          },
+          {
+            "type": "positional",
+            "value": "pptmcp"
+          },
+          "mcp-office==0.7.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.dosev-ai/mcp-office-powerpoint",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Comma-separated directory roots allowed for file access. Required \u2014 no files are accessible without this.",
+          "isRequired": true,
+          "name": "PPT_ALLOWLIST_ROOTS"
+        },
+        {
+          "description": "Set to 'true' to enable write operations (slide editing and shape creation).",
+          "name": "PPT_ENABLE_WRITE"
+        },
+        {
+          "description": "Set to 'true' to activate COM-backed tools: export_slide, export_deck, run_slide_show, recalculate_charts, export_changed_slides_only. Windows-only \u2014 requires pywin32 and Microsoft PowerPoint.",
+          "name": "PPT_ENABLE_COM"
+        }
+      ],
+      "identifier": "mcp-office",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "name": "--from",
+          "type": "named",
+          "value": "mcp-office"
+        },
+        {
+          "type": "positional",
+          "value": "pptmcp"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.7.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e40ed94aa8",
+    "published_at": "2026-06-15T07:03:39.39241Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.dosev-ai/mcp-office-powerpoint",
+    "server_version": "0.7.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-15T07:03:39.39241Z"
+  },
+  "title": "MCP Office PowerPoint",
+  "type": "mcp_server",
+  "version": "0.7.0"
+}

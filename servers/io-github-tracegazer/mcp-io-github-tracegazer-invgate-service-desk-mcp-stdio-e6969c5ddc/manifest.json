@@ -1,0 +1,68 @@
+{
+  "description": "InvGate Service Desk MCP: 96 tools/11 domains, 3-tier access (none/support/full), OTel.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:40+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-tracegazer-invgate-service-desk-mcp.stdio.e6969c5ddc",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/tracegazer/invgate-service-desk-mcp",
+    "homepage": "https://github.com/tracegazer/invgate-service-desk-mcp",
+    "repository": "https://github.com/tracegazer/invgate-service-desk-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/tracegazer/invgate-service-desk-mcp:0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.tracegazer/invgate-service-desk-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "InvGate SD instance base URL, e.g. https://acme.sd.cloud.invgate.net",
+          "isRequired": true,
+          "name": "INVGATE_BASE_URL"
+        },
+        {
+          "description": "InvGate Service Desk API token",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "INVGATE_API_TOKEN"
+        },
+        {
+          "default": "none",
+          "description": "Write access profile: none (default, read-only) | support | full",
+          "name": "INVGATE_WRITE_PROFILE"
+        }
+      ],
+      "identifier": "ghcr.io/tracegazer/invgate-service-desk-mcp:0.2.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "e6969c5ddc",
+    "published_at": "2026-06-09T16:25:13.156778Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.tracegazer/invgate-service-desk-mcp",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-09T16:25:13.156778Z"
+  },
+  "title": "InvGate Service Desk",
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

@@ -1,0 +1,91 @@
+{
+  "description": "65-tool Excel MCP server. Read, write, format, and export .xlsx files. Windows-first.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:23+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-dosev-ai-mcp-office-excel.stdio.69a334ffb2",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/dosev-ai/mcp-office",
+    "homepage": "https://github.com/dosev-ai/mcp-office",
+    "repository": "https://github.com/dosev-ai/mcp-office"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "name": "--from",
+            "type": "named",
+            "value": "mcp-office"
+          },
+          {
+            "type": "positional",
+            "value": "excelmcp"
+          },
+          "mcp-office==0.7.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.dosev-ai/mcp-office-excel",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Comma-separated directory roots allowed for file access. Required \u2014 no files are accessible without this.",
+          "isRequired": true,
+          "name": "EXCEL_ALLOWLIST_ROOTS"
+        },
+        {
+          "description": "Set to 'true' to enable write operations (cell writes, sheet creation, formatting).",
+          "name": "EXCEL_ENABLE_WRITE"
+        },
+        {
+          "description": "Set to 'true' to activate COM-backed tools: recalculate_workbook, export_as_pdf, hydrate_template, pivot_table, and evaluate_formula(live=True). Windows-only \u2014 requires pywin32 and Microsoft Excel.",
+          "name": "EXCEL_ENABLE_COM"
+        },
+        {
+          "description": "Maximum number of rows/items returned per call. Default: 50.",
+          "name": "EXCEL_MAX_ITEMS"
+        }
+      ],
+      "identifier": "mcp-office",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "name": "--from",
+          "type": "named",
+          "value": "mcp-office"
+        },
+        {
+          "type": "positional",
+          "value": "excelmcp"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.7.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "69a334ffb2",
+    "published_at": "2026-06-15T07:03:22.448603Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.dosev-ai/mcp-office-excel",
+    "server_version": "0.7.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-15T07:03:22.448603Z"
+  },
+  "title": "MCP Office Excel",
+  "type": "mcp_server",
+  "version": "0.7.0"
+}

@@ -1,0 +1,99 @@
+{
+  "description": "Dry-run-first CCXT MCP with market, account, derivatives, and guarded trading tools.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-lucyfox199818-collab-ccxt-mcp.stdio.19ca2df13c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/lucyfox199818-collab/codex-binance-agent",
+    "homepage": "https://github.com/lucyfox199818-collab/codex-binance-agent",
+    "repository": "https://github.com/lucyfox199818-collab/codex-binance-agent"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/lucyfox199818-collab/ccxt-mcp:0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.lucyfox199818-collab/ccxt-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional Binance API key for private account data and explicitly enabled trading.",
+          "isSecret": true,
+          "name": "BINANCE_API_KEY"
+        },
+        {
+          "description": "Optional Binance API secret.",
+          "isSecret": true,
+          "name": "BINANCE_API_SECRET"
+        },
+        {
+          "default": "binance",
+          "description": "CCXT exchange identifier.",
+          "name": "CCXT_EXCHANGE_ID"
+        },
+        {
+          "default": "future",
+          "description": "Default CCXT market type.",
+          "name": "CCXT_DEFAULT_TYPE"
+        },
+        {
+          "choices": [
+            "false",
+            "true"
+          ],
+          "default": "false",
+          "description": "Use the exchange sandbox when supported.",
+          "name": "CCXT_SANDBOX"
+        },
+        {
+          "choices": [
+            "false",
+            "true"
+          ],
+          "default": "false",
+          "description": "Explicit live-trading permission gate. Keep false for read-only and dry-run use.",
+          "name": "CCXT_ENABLE_TRADING"
+        },
+        {
+          "choices": [
+            "true",
+            "false"
+          ],
+          "default": "true",
+          "description": "Return simulated results for mutating tools instead of sending exchange actions.",
+          "name": "CCXT_DRY_RUN"
+        }
+      ],
+      "identifier": "ghcr.io/lucyfox199818-collab/ccxt-mcp:0.1.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "19ca2df13c",
+    "published_at": "2026-06-08T11:45:36.401403Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.lucyfox199818-collab/ccxt-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-08T11:45:36.401403Z"
+  },
+  "title": "Codex CCXT MCP",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

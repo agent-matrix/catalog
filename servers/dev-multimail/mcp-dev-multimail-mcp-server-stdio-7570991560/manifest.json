@@ -1,0 +1,64 @@
+{
+  "description": "Give your agent its own email address with graduated human oversight, from approval to autonomy.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:02+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.dev-multimail-mcp-server.stdio.7570991560",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/multimail-dev/mcp-server",
+    "homepage": "https://github.com/multimail-dev/mcp-server",
+    "repository": "https://github.com/multimail-dev/mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@multimail/mcp-server@0.12.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "dev.multimail/mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your MultiMail API key (starts with mm_live_). Optional \u2014 run without it to create an account first.",
+          "format": "string",
+          "isSecret": true,
+          "name": "MULTIMAIL_API_KEY"
+        },
+        {
+          "description": "Default mailbox ID. If not set, pass mailbox_id to each tool or call list_mailboxes first.",
+          "format": "string",
+          "name": "MULTIMAIL_MAILBOX_ID"
+        }
+      ],
+      "identifier": "@multimail/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.12.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7570991560",
+    "published_at": "2026-06-11T00:57:31.631036Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "dev.multimail/mcp-server",
+    "server_version": "0.12.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-11T00:57:31.631036Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.12.0"
+}

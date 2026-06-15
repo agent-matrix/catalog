@@ -1,0 +1,103 @@
+{
+  "description": "MCP server for executing shell commands on remote hosts via SSH.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:28+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-jordanburke-ssh-client-mcp-server.stdio.ea624f4962",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jordanburke/ssh-client-mcp-server",
+    "homepage": "https://github.com/jordanburke/ssh-client-mcp-server",
+    "repository": "https://github.com/jordanburke/ssh-client-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "ssh-client-mcp-server@1.5.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.jordanburke/ssh-client-mcp-server",
+  "packages": [
+    {
+      "identifier": "ssh-client-mcp-server",
+      "packageArguments": [
+        {
+          "description": "SSH server hostname or IP address",
+          "format": "string",
+          "isRequired": true,
+          "name": "--host",
+          "type": "named"
+        },
+        {
+          "description": "SSH username (defaults to current OS user if omitted)",
+          "format": "string",
+          "name": "--user",
+          "type": "named"
+        },
+        {
+          "description": "SSH port (default: 22)",
+          "format": "number",
+          "name": "--port",
+          "type": "named"
+        },
+        {
+          "description": "SSH password (use either --password or --key)",
+          "format": "string",
+          "isSecret": true,
+          "name": "--password",
+          "type": "named"
+        },
+        {
+          "description": "Path to private SSH key file (use either --password or --key); supports ~ and $VAR expansion",
+          "format": "filepath",
+          "name": "--key",
+          "type": "named"
+        },
+        {
+          "description": "Name of an environment variable containing the private SSH key PEM (e.g. injected by envpkt, Vault, Doppler)",
+          "format": "string",
+          "name": "--key-env",
+          "type": "named"
+        },
+        {
+          "description": "Set to 'true' to authenticate via SSH_AUTH_SOCK (works with system ssh-agent, 1Password, Bitwarden Desktop, KeePassXC)",
+          "format": "string",
+          "name": "--agent",
+          "type": "named"
+        },
+        {
+          "description": "Default tmux session name for the tmux_* tools (default: agent)",
+          "format": "string",
+          "name": "--tmux-session",
+          "type": "named"
+        }
+      ],
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.5.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ea624f4962",
+    "published_at": "2026-06-08T21:36:24.0451Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.jordanburke/ssh-client-mcp-server",
+    "server_version": "1.5.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-08T21:36:24.0451Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.5.0"
+}

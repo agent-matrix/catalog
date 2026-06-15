@@ -1,0 +1,97 @@
+{
+  "description": "Discover and call every paid API on the bolthub marketplace with automatic L402 Lightning payments.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:35:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-bolthub-registry.stdio.34a00f67af",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/signaltech-org/bolthub-sdk",
+    "homepage": "https://github.com/signaltech-org/bolthub-sdk",
+    "repository": "https://github.com/signaltech-org/bolthub-sdk"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@bolthub/mcp-registry@0.1.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.bolthub/registry",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "LND REST API URL (recommended wallet; pair with LND_MACAROON). One wallet config is required.",
+          "name": "LND_REST_HOST",
+          "placeholder": "https://your-lnd-node:8080"
+        },
+        {
+          "description": "Hex-encoded macaroon for LND (use a pay-scoped macaroon in production). Required with LND_REST_HOST.",
+          "isSecret": true,
+          "name": "LND_MACAROON"
+        },
+        {
+          "description": "Nostr Wallet Connect string \u2014 easiest setup, works with CoinOS, Alby Hub, Zeus, and more. Alternative to LND.",
+          "isSecret": true,
+          "name": "NWC_URI"
+        },
+        {
+          "description": "LNbits instance URL (pair with LNBITS_ADMIN_KEY). Alternative wallet.",
+          "name": "LNBITS_URL"
+        },
+        {
+          "description": "Admin API key for LNbits. Required with LNBITS_URL.",
+          "isSecret": true,
+          "name": "LNBITS_ADMIN_KEY"
+        },
+        {
+          "description": "Phoenixd HTTP API URL (pair with PHOENIXD_PASSWORD). Alternative wallet.",
+          "name": "PHOENIXD_URL"
+        },
+        {
+          "description": "HTTP password for Phoenixd. Required with PHOENIXD_URL.",
+          "isSecret": true,
+          "name": "PHOENIXD_PASSWORD"
+        },
+        {
+          "description": "Maximum sats the server may spend per session (process lifetime). Unset = unlimited.",
+          "name": "BUDGET_SATS",
+          "placeholder": "1000"
+        },
+        {
+          "description": "Optional bolthub API token, used only by the deploy_node / node_status Node Launcher tools.",
+          "isSecret": true,
+          "name": "BOLTHUB_AUTH_TOKEN"
+        }
+      ],
+      "identifier": "@bolthub/mcp-registry",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "34a00f67af",
+    "published_at": "2026-06-12T04:34:33.335941Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.bolthub/registry",
+    "server_version": "0.1.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-12T04:34:33.335941Z"
+  },
+  "title": "bolthub Marketplace",
+  "type": "mcp_server",
+  "version": "0.1.6"
+}

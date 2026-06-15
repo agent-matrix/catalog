@@ -1,0 +1,123 @@
+{
+  "description": "Provides programmatic access to Tiger Cloud services, databases, and documentation.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:40+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-timescale-tiger-cli.stdio.b81bebbc66",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/timescale/tiger-cli",
+    "homepage": "https://github.com/timescale/tiger-cli",
+    "repository": "https://github.com/timescale/tiger-cli"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Mount the config directory into the volume",
+            "name": "--mount",
+            "type": "named",
+            "value": "type=bind,src={source_path},dst=/home/tiger/.config/tiger",
+            "variables": {
+              "source_path": {
+                "default": "${HOME}/.config/tiger",
+                "description": "Source path on host",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          {
+            "description": "Mount the .pgpass file into the volume",
+            "name": "--mount",
+            "type": "named",
+            "value": "type=bind,src={source_path},dst=/home/tiger/.pgpass",
+            "variables": {
+              "source_path": {
+                "default": "${HOME}/.pgpass",
+                "description": "Source path on host",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          "ghcr.io/timescale/tiger-cli:0.20.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.timescale/tiger-cli",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Tiger Cloud API public key for authentication",
+          "format": "string",
+          "isRequired": true,
+          "name": "TIGER_PUBLIC_KEY"
+        },
+        {
+          "description": "Tiger Cloud API secret key for authentication",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "TIGER_SECRET_KEY"
+        }
+      ],
+      "identifier": "ghcr.io/timescale/tiger-cli:0.20.5",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "Mount the config directory into the volume",
+          "name": "--mount",
+          "type": "named",
+          "value": "type=bind,src={source_path},dst=/home/tiger/.config/tiger",
+          "variables": {
+            "source_path": {
+              "default": "${HOME}/.config/tiger",
+              "description": "Source path on host",
+              "format": "filepath",
+              "isRequired": true
+            }
+          }
+        },
+        {
+          "description": "Mount the .pgpass file into the volume",
+          "name": "--mount",
+          "type": "named",
+          "value": "type=bind,src={source_path},dst=/home/tiger/.pgpass",
+          "variables": {
+            "source_path": {
+              "default": "${HOME}/.pgpass",
+              "description": "Source path on host",
+              "format": "filepath",
+              "isRequired": true
+            }
+          }
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "b81bebbc66",
+    "published_at": "2026-06-09T10:06:33.061427Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.timescale/tiger-cli",
+    "server_version": "0.20.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-09T10:06:33.061427Z"
+  },
+  "title": "Tiger MCP",
+  "type": "mcp_server",
+  "version": "0.20.5"
+}

@@ -1,0 +1,118 @@
+{
+  "description": "Render and push styled pixel art, text, dashboards, and animations to Divoom Pixoo LED displays.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:21+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cyanheads-pixoo-mcp-server.stdio.579bfaaa04",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cyanheads/pixoo-mcp-server",
+    "homepage": "https://github.com/cyanheads/pixoo-mcp-server",
+    "repository": "https://github.com/cyanheads/pixoo-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "bun",
+          "@cyanheads/pixoo-mcp-server@1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cyanheads/pixoo-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Device IP address on the local network (e.g. 192.168.1.50). Required for device tools; discovery and pure-render (push: false) work without it.",
+          "format": "string",
+          "name": "PIXOO_IP"
+        },
+        {
+          "default": "64",
+          "description": "Display size in pixels: 16, 32, or 64. Must match the physical device.",
+          "format": "string",
+          "name": "PIXOO_SIZE"
+        },
+        {
+          "description": "Directory for auto-saving preview PNG and GIF files. When unset, previews are returned in-response only.",
+          "format": "string",
+          "name": "PIXOO_OUTPUT_DIR"
+        },
+        {
+          "default": "1000",
+          "description": "Minimum interval between device pushes in milliseconds. Prevents device freeze from rapid-fire commands.",
+          "format": "string",
+          "name": "PIXOO_PUSH_MIN_INTERVAL_MS"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "The hostname for the HTTP server.",
+          "format": "string",
+          "name": "MCP_HTTP_HOST"
+        },
+        {
+          "default": "3010",
+          "description": "The port to run the HTTP server on.",
+          "format": "string",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "default": "/mcp",
+          "description": "The endpoint path for the MCP server.",
+          "format": "string",
+          "name": "MCP_HTTP_ENDPOINT_PATH"
+        },
+        {
+          "default": "none",
+          "description": "Authentication mode to use: 'none', 'jwt', or 'oauth'.",
+          "format": "string",
+          "name": "MCP_AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Sets the minimum log level for output (e.g., 'debug', 'info', 'warn').",
+          "format": "string",
+          "name": "MCP_LOG_LEVEL"
+        }
+      ],
+      "identifier": "@cyanheads/pixoo-mcp-server",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "start:http"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "bun",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3010/mcp"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "579bfaaa04",
+    "published_at": "2026-06-12T10:23:40.485229Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cyanheads/pixoo-mcp-server",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-12T10:23:40.485229Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

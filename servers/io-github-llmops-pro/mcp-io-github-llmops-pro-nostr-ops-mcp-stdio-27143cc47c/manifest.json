@@ -1,0 +1,72 @@
+{
+  "description": "Nostr publishing, queries, and DMs for AI agents, with allowlists, rate limits, and an audit log.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:29+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-llmops-pro-nostr-ops-mcp.stdio.27143cc47c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/llmops-pro/nostr-ops-mcp",
+    "homepage": "https://github.com/llmops-pro/nostr-ops-mcp",
+    "repository": "https://github.com/llmops-pro/nostr-ops-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "nostr-ops-mcp@0.2.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.llmops-pro/nostr-ops-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Comma-separated wss:// relay URLs",
+          "isRequired": true,
+          "name": "NOSTR_RELAYS"
+        },
+        {
+          "description": "NIP-46 bunker URI (preferred signer; keeps the nsec off this machine)",
+          "isSecret": true,
+          "name": "NOSTR_NIP46_URI"
+        },
+        {
+          "description": "nsec private key (alternative to NOSTR_NIP46_URI; read-only mode if neither is set)",
+          "isSecret": true,
+          "name": "NOSTR_PRIVATE_KEY"
+        },
+        {
+          "description": "Comma-separated event kinds the server may publish (required when a signer is configured)",
+          "name": "NOSTR_ALLOWED_KINDS"
+        }
+      ],
+      "identifier": "nostr-ops-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "27143cc47c",
+    "published_at": "2026-06-12T10:09:06.294018Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.llmops-pro/nostr-ops-mcp",
+    "server_version": "0.2.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-12T10:09:06.294018Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.3"
+}

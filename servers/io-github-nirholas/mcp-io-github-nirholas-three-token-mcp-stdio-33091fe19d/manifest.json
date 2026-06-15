@@ -1,0 +1,84 @@
+{
+  "description": "Price, hold, and burn $THREE on Solana \u2014 the first MCP server whose actions burn a token.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nirholas-three-token-mcp.stdio.33091fe19d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nirholas/three.ws",
+    "homepage": "https://github.com/nirholas/three.ws",
+    "repository": "https://github.com/nirholas/three.ws"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@three-ws/three-token-mcp@1.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nirholas/three-token-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base58 Solana secret key that signs burns (the wallet that holds the $THREE). Not needed for the read-only tools (three_price, three_balance). Treat like cash.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SOLANA_SECRET_KEY"
+        },
+        {
+          "default": "https://api.mainnet-beta.solana.com",
+          "description": "Solana mainnet RPC endpoint. Defaults to the public cluster \u2014 bring your own (Helius / QuickNode / Triton) for production traffic.",
+          "format": "string",
+          "name": "SOLANA_RPC_URL"
+        },
+        {
+          "default": "https://three.ws",
+          "description": "Base URL of the three.ws token API (serves /api/token/config and /api/token/price). Override only when self-hosting.",
+          "format": "string",
+          "name": "THREE_WS_BASE"
+        },
+        {
+          "default": "100",
+          "description": "Max USD value of $THREE a single three_burn call may destroy.",
+          "format": "number",
+          "name": "MAX_BURN_USD"
+        },
+        {
+          "default": "true",
+          "description": "When on (default), three_burn refuses until re-issued with confirm:true. Set 0/false to disable the gate.",
+          "format": "boolean",
+          "name": "REQUIRE_CONFIRM"
+        }
+      ],
+      "identifier": "@three-ws/three-token-mcp",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "33091fe19d",
+    "published_at": "2026-06-13T07:57:12.251973Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nirholas/three-token-mcp",
+    "server_version": "1.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-13T07:57:12.251973Z"
+  },
+  "title": "$THREE Token",
+  "type": "mcp_server",
+  "version": "1.1.0"
+}
