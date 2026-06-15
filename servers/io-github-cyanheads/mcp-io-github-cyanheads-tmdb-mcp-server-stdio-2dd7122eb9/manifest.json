@@ -1,0 +1,115 @@
+{
+  "description": "Search, detail, and discovery for movies, TV, and people on The Movie Database (TMDB).",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:21+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cyanheads-tmdb-mcp-server.stdio.2dd7122eb9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cyanheads/tmdb-mcp-server",
+    "homepage": "https://github.com/cyanheads/tmdb-mcp-server",
+    "repository": "https://github.com/cyanheads/tmdb-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "node",
+          "@cyanheads/tmdb-mcp-server@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cyanheads/tmdb-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "TMDB v4 API Read Access Token (JWT). Sent as 'Authorization: Bearer'. Create one at https://www.themoviedb.org/settings/api.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "TMDB_API_KEY"
+        },
+        {
+          "default": "en-US",
+          "description": "Default response language as ISO 639-1, optionally with region (e.g. 'en-US'). Per-call language overrides it.",
+          "format": "string",
+          "name": "TMDB_LANGUAGE"
+        },
+        {
+          "default": "US",
+          "description": "Default ISO 3166-1 country hint (e.g. 'US') used in region-aware error messages.",
+          "format": "string",
+          "name": "TMDB_DEFAULT_REGION"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "The hostname for the HTTP server.",
+          "format": "string",
+          "name": "MCP_HTTP_HOST"
+        },
+        {
+          "default": "3010",
+          "description": "The port to run the HTTP server on.",
+          "format": "string",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "default": "/mcp",
+          "description": "The endpoint path for the MCP server.",
+          "format": "string",
+          "name": "MCP_HTTP_ENDPOINT_PATH"
+        },
+        {
+          "default": "none",
+          "description": "Authentication mode to use: 'none', 'jwt', or 'oauth'.",
+          "format": "string",
+          "name": "MCP_AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Sets the minimum log level for output (e.g., 'debug', 'info', 'warn').",
+          "format": "string",
+          "name": "MCP_LOG_LEVEL"
+        }
+      ],
+      "identifier": "@cyanheads/tmdb-mcp-server",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "start:http"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "node",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3010/mcp"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "2dd7122eb9",
+    "published_at": "2026-06-14T10:29:28.064193Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cyanheads/tmdb-mcp-server",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-14T10:29:28.064193Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

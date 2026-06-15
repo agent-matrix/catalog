@@ -1,0 +1,63 @@
+{
+  "description": "Manage your KeepMySubs subscriptions, spend, renewals, and bills from any MCP client.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:35:59+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-keepmysubs-keepmysubs.stdio.50949f3c7e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/golts/SubsTracker",
+    "homepage": "https://github.com/golts/SubsTracker",
+    "repository": "https://github.com/golts/SubsTracker"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@keepmysubs/mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.keepmysubs/keepmysubs",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your KeepMySubs API key. Create one at https://keepmysubs.com/dashboard/settings (Settings \u2192 API keys), or run `kms auth login`.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "KMS_API_KEY"
+        },
+        {
+          "description": "Override the API host (defaults to https://keepmysubs.com). Rarely needed.",
+          "name": "KMS_BASE_URL"
+        }
+      ],
+      "identifier": "@keepmysubs/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "50949f3c7e",
+    "published_at": "2026-06-11T20:57:46.318045Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.keepmysubs/keepmysubs",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-11T20:57:46.318045Z"
+  },
+  "title": "KeepMySubs",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

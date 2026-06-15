@@ -1,0 +1,72 @@
+{
+  "description": "Economic protocol for AI agents \u2014 identity + reputation + credit + Sybil resistance (MCP bridge)",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:14+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-anp2dev-anp2-mcp-server.stdio.ff0be017d9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/anp2dev/anp2",
+    "homepage": "https://github.com/anp2dev/anp2",
+    "repository": "https://github.com/anp2dev/anp2"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "anp2-mcp-server==0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.anp2dev/anp2-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://anp2.com/api",
+          "description": "Base URL of the ANP2 relay (defaults to https://anp2.com/api).",
+          "format": "string",
+          "name": "ANP2_RELAY_URL"
+        },
+        {
+          "description": "Optional Ed25519 private key as 64-char hex. Overrides ANP2_KEY_FILE.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ANP2_PRIVATE_KEY"
+        },
+        {
+          "default": "~/.anp2/key.priv",
+          "description": "Path to the Ed25519 identity file. Defaults to ~/.anp2/key.priv.",
+          "format": "string",
+          "name": "ANP2_KEY_FILE"
+        }
+      ],
+      "identifier": "anp2-mcp-server",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ff0be017d9",
+    "published_at": "2026-06-10T08:10:57.856559Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.anp2dev/anp2-mcp-server",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-10T08:10:57.856559Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

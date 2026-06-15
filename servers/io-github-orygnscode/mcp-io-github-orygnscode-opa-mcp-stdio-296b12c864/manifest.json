@@ -1,0 +1,67 @@
+{
+  "description": "Author, validate, debug, and explain OPA Rego policies through any MCP-compatible client.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-OrygnsCode-opa-mcp.stdio.296b12c864",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/OrygnsCode/opa-mcp-server",
+    "homepage": "https://github.com/OrygnsCode/opa-mcp-server",
+    "repository": "https://github.com/OrygnsCode/opa-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "docker.io/orygn/opa-mcp:0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.OrygnsCode/opa-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "http://host.docker.internal:8181",
+          "description": "Base URL of a running OPA server.",
+          "name": "OPA_URL"
+        },
+        {
+          "description": "Bearer token for OPA authentication.",
+          "isSecret": true,
+          "name": "OPA_TOKEN"
+        },
+        {
+          "description": "GitHub personal access token with the \"gist\" scope. Required only for rego_playground_share.",
+          "isSecret": true,
+          "name": "GITHUB_TOKEN"
+        }
+      ],
+      "identifier": "docker.io/orygn/opa-mcp:0.2.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "296b12c864",
+    "published_at": "2026-06-13T09:59:36.169325Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.OrygnsCode/opa-mcp",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-13T09:59:36.169325Z"
+  },
+  "title": "OPA MCP",
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

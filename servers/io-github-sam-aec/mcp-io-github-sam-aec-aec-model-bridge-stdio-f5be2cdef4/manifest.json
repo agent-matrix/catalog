@@ -1,0 +1,86 @@
+{
+  "description": "Independent MCP integration for Autodesk Revit software through a local bridge.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:11+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Sam-AEC-aec-model-bridge.stdio.f5be2cdef4",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/Sam-AEC/aec-model-bridge",
+    "homepage": "https://github.com/Sam-AEC/aec-model-bridge",
+    "repository": "https://github.com/Sam-AEC/aec-model-bridge"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Sam-AEC/aec-model-bridge",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Workspace root directory for server file operations.",
+          "format": "string",
+          "isRequired": true,
+          "name": "MCP_REVIT_WORKSPACE_DIR"
+        },
+        {
+          "description": "Semicolon-delimited allow-list of directories the server can access.",
+          "format": "string",
+          "isRequired": true,
+          "name": "MCP_REVIT_ALLOWED_DIRECTORIES"
+        },
+        {
+          "default": "bridge",
+          "description": "Server mode: mock or bridge.",
+          "format": "string",
+          "name": "MCP_REVIT_MODE"
+        },
+        {
+          "default": "http://127.0.0.1:3000",
+          "description": "Bridge URL, for example http://127.0.0.1:3000 (required when MCP_REVIT_MODE=bridge).",
+          "format": "string",
+          "name": "MCP_REVIT_BRIDGE_URL"
+        },
+        {
+          "description": "Path to the audit log file.",
+          "format": "string",
+          "name": "MCP_REVIT_AUDIT_LOG"
+        },
+        {
+          "description": "Python log level, for example INFO or DEBUG.",
+          "format": "string",
+          "name": "MCP_REVIT_LOG_LEVEL"
+        }
+      ],
+      "fileSha256": "005c9524735ccb1c5d51432bb0969bbd1ad27c4a3765565be8c80922885854a1",
+      "identifier": "https://github.com/Sam-AEC/aec-model-bridge/releases/download/v1.1.0/aec-model-bridge-1.1.0.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f5be2cdef4",
+    "published_at": "2026-06-11T08:17:37.124108Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Sam-AEC/aec-model-bridge",
+    "server_version": "1.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-11T08:17:37.124108Z"
+  },
+  "title": "AEC Model Bridge",
+  "type": "mcp_server",
+  "version": "1.1.0"
+}

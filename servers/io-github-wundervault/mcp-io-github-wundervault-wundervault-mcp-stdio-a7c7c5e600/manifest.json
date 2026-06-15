@@ -1,0 +1,65 @@
+{
+  "description": "Zero-knowledge secret vault for AI agents: secrets injected into commands, never seen by the model",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wundervault-wundervault-mcp.stdio.a7c7c5e600",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wundervault/wundervault-mcp",
+    "homepage": "https://github.com/wundervault/wundervault-mcp",
+    "repository": "https://github.com/wundervault/wundervault-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@wundervault/mcp-server@1.6.7"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wundervault/wundervault-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Agent name registered with the local wundervault-agent daemon (run onboard.py to register).",
+          "format": "string",
+          "isRequired": true,
+          "name": "WUNDERVAULT_AGENT_NAME"
+        },
+        {
+          "description": "Optional daemon auth token. Defaults to ~/.wundervault/agents/<agentName>.token.",
+          "format": "string",
+          "isSecret": true,
+          "name": "WUNDERVAULT_AGENT_TOKEN"
+        }
+      ],
+      "identifier": "@wundervault/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.6.7"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a7c7c5e600",
+    "published_at": "2026-06-12T21:06:40.692823Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wundervault/wundervault-mcp",
+    "server_version": "1.6.7",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-12T21:06:40.692823Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.6.7"
+}

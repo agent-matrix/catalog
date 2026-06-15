@@ -1,0 +1,85 @@
+{
+  "description": "Self-curating agent memory kept honest by survival-based selection over measured outcomes.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-rogermsc-darwin-memo.stdio.be2eaab973",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/rogermsc/darwin-memo",
+    "homepage": "https://github.com/rogermsc/darwin-memo",
+    "repository": "https://github.com/rogermsc/darwin-memo"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "Install the mcp extra alongside the version-pinned package; with --from, uvx would read the darwin-memo@VERSION spec as a literal executable name and fail",
+            "isRequired": true,
+            "name": "--with",
+            "type": "named",
+            "value": "darwin-memo[mcp]"
+          },
+          "darwin-memo==0.5.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.rogermsc/darwin-memo",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the persistent memory file (default ~/.darwin-memo/memory.json)",
+          "format": "filepath",
+          "name": "DARWIN_MEMO_PATH"
+        }
+      ],
+      "identifier": "darwin-memo",
+      "packageArguments": [
+        {
+          "description": "Subcommand of the darwin-memo console script (the one uvx runs for darwin-memo@VERSION) that serves MCP over stdio",
+          "isRequired": true,
+          "type": "positional",
+          "value": "mcp",
+          "valueHint": "mcp"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "Install the mcp extra alongside the version-pinned package; with --from, uvx would read the darwin-memo@VERSION spec as a literal executable name and fail",
+          "isRequired": true,
+          "name": "--with",
+          "type": "named",
+          "value": "darwin-memo[mcp]"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "be2eaab973",
+    "published_at": "2026-06-13T16:18:53.752391Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.rogermsc/darwin-memo",
+    "server_version": "0.5.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-13T16:18:53.752391Z"
+  },
+  "title": "darwin-memo",
+  "type": "mcp_server",
+  "version": "0.5.1"
+}

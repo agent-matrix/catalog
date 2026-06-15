@@ -1,0 +1,76 @@
+{
+  "description": "Lightning-paywall sidecar: wraps any stdio MCP server, requires paid invoices before tool calls.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:29+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-llmops-pro-paywall-mcp.stdio.0062c640a1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/llmops-pro/paywall-mcp",
+    "homepage": "https://github.com/llmops-pro/paywall-mcp",
+    "repository": "https://github.com/llmops-pro/paywall-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "paywall-mcp@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.llmops-pro/paywall-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Command to spawn the upstream MCP server (e.g. npx)",
+          "isRequired": true,
+          "name": "PAYWALL_UPSTREAM_COMMAND"
+        },
+        {
+          "description": "JSON array of args for the upstream command",
+          "name": "PAYWALL_UPSTREAM_ARGS"
+        },
+        {
+          "description": "NWC connection string of the receiving wallet (receive-only recommended)",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "NWC_CONNECTION_STRING"
+        },
+        {
+          "description": "Default price in sats for tools not in PAYWALL_PRICE_MAP",
+          "name": "PAYWALL_DEFAULT_PRICE_SATS"
+        },
+        {
+          "description": "JSON map of tool name to price in sats",
+          "name": "PAYWALL_PRICE_MAP"
+        }
+      ],
+      "identifier": "paywall-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0062c640a1",
+    "published_at": "2026-06-12T10:09:20.56071Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.llmops-pro/paywall-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-12T10:09:20.56071Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

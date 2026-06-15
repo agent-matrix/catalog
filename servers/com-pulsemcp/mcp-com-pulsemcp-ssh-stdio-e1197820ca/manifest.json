@@ -1,0 +1,117 @@
+{
+  "description": "MCP server for SSH remote server management with SSH agent authentication support.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:00+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-pulsemcp-ssh.stdio.e1197820ca",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/pulsemcp/mcp-servers",
+    "homepage": "https://github.com/pulsemcp/mcp-servers",
+    "repository": "https://github.com/pulsemcp/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y"
+          },
+          "ssh-agent-mcp-server@0.1.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.pulsemcp/ssh",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Hostname or IP address of the SSH server.",
+          "isRequired": true,
+          "name": "SSH_HOST"
+        },
+        {
+          "description": "Username for SSH authentication.",
+          "isRequired": true,
+          "name": "SSH_USERNAME"
+        },
+        {
+          "default": "22",
+          "description": "SSH port number.",
+          "name": "SSH_PORT"
+        },
+        {
+          "description": "Path to SSH agent socket for agent-based authentication.",
+          "name": "SSH_AUTH_SOCK"
+        },
+        {
+          "description": "Path to private key file for direct key authentication.",
+          "name": "SSH_PRIVATE_KEY_PATH"
+        },
+        {
+          "description": "Passphrase for encrypted private key.",
+          "isSecret": true,
+          "name": "SSH_PASSPHRASE"
+        },
+        {
+          "default": "30000",
+          "description": "Connection timeout in milliseconds.",
+          "name": "SSH_TIMEOUT"
+        },
+        {
+          "default": "60000",
+          "description": "Default command activity timeout in milliseconds.",
+          "name": "SSH_COMMAND_TIMEOUT"
+        },
+        {
+          "description": "Comma-separated list of tool groups to enable (readonly, write, admin).",
+          "name": "ENABLED_TOOLGROUPS"
+        },
+        {
+          "default": "false",
+          "description": "Skip SSH connection health check on startup.",
+          "name": "SKIP_HEALTH_CHECKS"
+        },
+        {
+          "default": "10000",
+          "description": "Health check timeout in milliseconds.",
+          "name": "HEALTH_CHECK_TIMEOUT"
+        }
+      ],
+      "identifier": "ssh-agent-mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e1197820ca",
+    "published_at": "2026-06-14T17:29:52.855171Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.pulsemcp/ssh",
+    "server_version": "0.1.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-14T17:29:52.855171Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.5"
+}

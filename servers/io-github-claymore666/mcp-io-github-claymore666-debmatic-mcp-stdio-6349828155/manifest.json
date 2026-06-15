@@ -1,0 +1,97 @@
+{
+  "description": "MCP server for controlling HomeMatic smart home devices via the CCU JSON-RPC API",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:18+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-claymore666-debmatic-mcp.stdio.6349828155",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/claymore666/debmatic-mcp",
+    "homepage": "https://github.com/claymore666/debmatic-mcp",
+    "repository": "https://github.com/claymore666/debmatic-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "debmatic-mcp@1.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.claymore666/debmatic-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Hostname or IP of your HomeMatic CCU (debmatic, CCU3, or RaspberryMatic)",
+          "format": "string",
+          "isRequired": true,
+          "name": "CCU_HOST"
+        },
+        {
+          "description": "CCU admin password (same as the WebUI login)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CCU_PASSWORD"
+        },
+        {
+          "default": "Admin",
+          "description": "CCU username",
+          "format": "string",
+          "name": "CCU_USER"
+        },
+        {
+          "default": "false",
+          "description": "Connect to the CCU via HTTPS (self-signed certificates supported)",
+          "format": "boolean",
+          "name": "CCU_HTTPS"
+        },
+        {
+          "default": "80",
+          "description": "CCU API port (80 for HTTP, 443 for HTTPS)",
+          "format": "number",
+          "name": "CCU_PORT"
+        },
+        {
+          "default": "/data",
+          "description": "Directory for the device type cache and session persistence",
+          "format": "string",
+          "name": "CACHE_DIR"
+        }
+      ],
+      "identifier": "debmatic-mcp",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "--stdio"
+        }
+      ],
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6349828155",
+    "published_at": "2026-06-11T20:33:05.124764Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.claymore666/debmatic-mcp",
+    "server_version": "1.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-11T20:33:05.124764Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.1.1"
+}

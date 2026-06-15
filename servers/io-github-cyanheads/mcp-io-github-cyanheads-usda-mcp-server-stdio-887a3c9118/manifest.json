@@ -1,0 +1,102 @@
+{
+  "description": "Search foods, compare nutrients, and look up the full USDA FoodData Central database.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:21+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cyanheads-usda-mcp-server.stdio.887a3c9118",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cyanheads/usda-mcp-server",
+    "homepage": "https://github.com/cyanheads/usda-mcp-server",
+    "repository": "https://github.com/cyanheads/usda-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "bun",
+          "@cyanheads/usda-mcp-server@0.1.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cyanheads/usda-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "USDA FoodData Central API key from data.gov. Required for all food data requests.",
+          "format": "string",
+          "isRequired": true,
+          "name": "USDA_FDC_API_KEY"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "The hostname for the HTTP server.",
+          "format": "string",
+          "name": "MCP_HTTP_HOST"
+        },
+        {
+          "default": "3010",
+          "description": "The port to run the HTTP server on.",
+          "format": "string",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "default": "/mcp",
+          "description": "The endpoint path for the MCP server.",
+          "format": "string",
+          "name": "MCP_HTTP_ENDPOINT_PATH"
+        },
+        {
+          "default": "none",
+          "description": "Authentication mode to use: 'none', 'jwt', or 'oauth'.",
+          "format": "string",
+          "name": "MCP_AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Sets the minimum log level for output (e.g., 'debug', 'info', 'warn').",
+          "format": "string",
+          "name": "MCP_LOG_LEVEL"
+        }
+      ],
+      "identifier": "@cyanheads/usda-mcp-server",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "start:http"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "bun",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3010/mcp"
+      },
+      "version": "0.1.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "887a3c9118",
+    "published_at": "2026-06-13T04:48:06.318681Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cyanheads/usda-mcp-server",
+    "server_version": "0.1.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-13T04:48:06.318681Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.5"
+}

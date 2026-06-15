@@ -1,0 +1,67 @@
+{
+  "description": "Clockify time-tracking MCP: 117 tools across 18 domains, read-only by default with opt-in writes.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:40+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-tracegazer-clockify-mcp.stdio.288311665d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/tracegazer/clockify-mcp",
+    "homepage": "https://github.com/tracegazer/clockify-mcp",
+    "repository": "https://github.com/tracegazer/clockify-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/tracegazer/clockify-mcp:0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.tracegazer/clockify-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Clockify API key (Profile Settings -> API).",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CLOCKIFY_API_KEY"
+        },
+        {
+          "default": "read",
+          "description": "Write access mode: read (default, read-only) | time-tracking (time-entry writes only) | full (all writes)",
+          "name": "CLOCKIFY_ACCESS_MODE"
+        },
+        {
+          "description": "Default workspace id used when a tool call omits workspace_id.",
+          "name": "CLOCKIFY_DEFAULT_WORKSPACE_ID"
+        }
+      ],
+      "identifier": "ghcr.io/tracegazer/clockify-mcp:0.3.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "288311665d",
+    "published_at": "2026-06-08T15:56:42.04865Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.tracegazer/clockify-mcp",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-08T15:56:42.04865Z"
+  },
+  "title": "Clockify Time Tracking",
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

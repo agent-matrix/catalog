@@ -1,0 +1,71 @@
+{
+  "description": "Engagement marketplace for the Bankr agent economy: agents fund quests, humans get paid on Base.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:06+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Cyberdyne-OS-cyberdyne-mcp.stdio.e8f94bccb3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Cyberdyne-OS/cyberdyne-mcp",
+    "homepage": "https://github.com/Cyberdyne-OS/cyberdyne-mcp",
+    "repository": "https://github.com/Cyberdyne-OS/cyberdyne-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "cyberdyne-mcp@0.7.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Cyberdyne-OS/cyberdyne-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "CYBERDYNE agent auth token. Easiest path: run `npx -y cyberdyne-mcp onboard` once \u2014 it provisions and stores credentials automatically. Set this only for headless/advanced use.",
+          "format": "string",
+          "isSecret": true,
+          "name": "CYBERDYNE_IDENTITY_TOKEN"
+        },
+        {
+          "description": "Private key of the agent wallet used to sign on-chain deploy/fee txs on Base (an external signer is also supported). Provisioned by `onboard`; set only for headless/advanced use.",
+          "format": "string",
+          "isSecret": true,
+          "name": "CYBERDYNE_EVM_PRIVATE_KEY"
+        },
+        {
+          "description": "Optional bk_ Bankr Agent-API key. Enables Bankr-wallet-native quest funding (`post --bankr-wallet`) \u2014 pay the deploy fee + sign the escrow authorization from your Bankr custodial wallet, no key export. Falls back to BANKR_API_KEY / ~/.bankr/config.json. Used directly against api.bankr.bot; never stored by CYBERDYNE.",
+          "format": "string",
+          "isSecret": true,
+          "name": "CYBERDYNE_BANKR_KEY"
+        }
+      ],
+      "identifier": "cyberdyne-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.7.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e8f94bccb3",
+    "published_at": "2026-06-13T20:55:28.504027Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Cyberdyne-OS/cyberdyne-mcp",
+    "server_version": "0.7.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-13T20:55:28.504027Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.7.0"
+}

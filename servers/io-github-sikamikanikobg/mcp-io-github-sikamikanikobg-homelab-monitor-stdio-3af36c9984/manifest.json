@@ -1,0 +1,72 @@
+{
+  "description": "Self-hosted homelab dashboard with a built-in read-only MCP server (hosts, Docker, GPU, services).",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:11+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-SikamikanikoBG-homelab-monitor.stdio.3af36c9984",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/SikamikanikoBG/homelab-monitor",
+    "homepage": "https://github.com/SikamikanikoBG/homelab-monitor",
+    "repository": "https://github.com/SikamikanikoBG/homelab-monitor"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "docker.io/sikamikaniko123/homelab-monitor:0.14.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.SikamikanikoBG/homelab-monitor",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the running HomeLab Monitor dashboard (e.g. http://YOUR-HUB:9800)",
+          "isRequired": true,
+          "name": "HOMELAB_MONITOR_URL"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode: stdio (default for this package entry) or http",
+          "name": "MCP_TRANSPORT"
+        }
+      ],
+      "identifier": "docker.io/sikamikaniko123/homelab-monitor:0.14.2",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "python"
+        },
+        {
+          "type": "positional",
+          "value": "/app/mcp_server.py"
+        }
+      ],
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "3af36c9984",
+    "published_at": "2026-06-09T07:33:33.753776Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.SikamikanikoBG/homelab-monitor",
+    "server_version": "0.14.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-09T07:33:33.753776Z"
+  },
+  "title": "HomeLab Monitor",
+  "type": "mcp_server",
+  "version": "0.14.2"
+}

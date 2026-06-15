@@ -1,0 +1,84 @@
+{
+  "description": "Connect Redash to Claude -- query data, manage dashboards, and run SQL with natural language.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-seob717-redash-mcp.stdio.842023779a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/seob717/redash-mcp",
+    "homepage": "https://github.com/seob717/redash-mcp",
+    "repository": "https://github.com/seob717/redash-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "redash-mcp@3.1.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.seob717/redash-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your Redash instance URL (e.g. https://redash.example.com)",
+          "format": "string",
+          "isRequired": true,
+          "name": "REDASH_URL"
+        },
+        {
+          "description": "Your Redash user API key (found in Settings > Account)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "REDASH_API_KEY"
+        },
+        {
+          "default": "warn",
+          "description": "SQL safety mode: 'strict' blocks risky queries, 'warn' (default) returns warnings, 'off' disables guards (not recommended).",
+          "format": "string",
+          "name": "REDASH_SAFETY_MODE"
+        },
+        {
+          "default": "false",
+          "description": "Set to 'true' to disable the PII column guard. Not recommended.",
+          "format": "string",
+          "name": "REDASH_SAFETY_DISABLE_PII"
+        },
+        {
+          "default": "false",
+          "description": "Set to 'true' to disable the query cost guard. Not recommended.",
+          "format": "string",
+          "name": "REDASH_SAFETY_DISABLE_COST"
+        }
+      ],
+      "identifier": "redash-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "3.1.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "842023779a",
+    "published_at": "2026-06-08T16:51:17.098921Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.seob717/redash-mcp",
+    "server_version": "3.1.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-08T16:51:17.098921Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "3.1.4"
+}

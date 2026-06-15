@@ -1,0 +1,72 @@
+{
+  "description": "Post-quantum CMMC compliance scanner & AI agent attestation. FIPS 140-3, ML-DSA-65, 36K+ mappings.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nouchix-pqc-khepra-mcp.stdio.2dba1cf430",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nouchix/PQC-Khepra-MCP.git",
+    "homepage": "https://github.com/nouchix/PQC-Khepra-MCP.git",
+    "repository": "https://github.com/nouchix/PQC-Khepra-MCP.git"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/nouchix/pqc-khepra-mcp:v1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nouchix/pqc-khepra-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "community",
+          "description": "Deployment mode: community (free) | sovereign (air-gapped) | ironbank (FedRAMP).",
+          "name": "KHEPRA_MODE"
+        },
+        {
+          "description": "License key for AdinKhepra ASAF paid tiers. Leave empty for community mode.",
+          "isSecret": true,
+          "name": "KHEPRA_LICENSE_KEY"
+        },
+        {
+          "description": "Supabase project URL \u2014 required for SouHimBou AI Flight Recorder integration.",
+          "name": "SUPABASE_URL"
+        },
+        {
+          "description": "Supabase anon key for Flight Recorder integration.",
+          "isSecret": true,
+          "name": "SUPABASE_ANON_KEY"
+        }
+      ],
+      "identifier": "ghcr.io/nouchix/pqc-khepra-mcp:v1.0.0",
+      "registryType": "oci",
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "2dba1cf430",
+    "published_at": "2026-06-15T02:43:08.217936Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nouchix/pqc-khepra-mcp",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-15T02:43:08.217936Z"
+  },
+  "title": "PQC-Khepra MCP \u2014 CMMC Autopilot & AI Security Recorder",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

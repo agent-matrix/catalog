@@ -1,0 +1,82 @@
+{
+  "description": "Build, validate, and persist Webcake landing-page source JSON: element schemas plus AI usage hints.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-vuluu2k-webcake-landing-mcp.stdio.ab8b4130cd",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/vuluu2k/webcake-landing-mcp",
+    "homepage": "https://github.com/vuluu2k/webcake-landing-mcp",
+    "repository": "https://github.com/vuluu2k/webcake-landing-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "webcake-landing-mcp@1.0.50"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.vuluu2k/webcake-landing-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Webcake backend JWT; required only for the persistence tools (create/update/list pages).",
+          "isSecret": true,
+          "name": "WEBCAKE_JWT"
+        },
+        {
+          "choices": [
+            "local",
+            "staging",
+            "prod"
+          ],
+          "description": "Webcake environment preset that fills the API/app/builder base URLs.",
+          "name": "WEBCAKE_ENV"
+        },
+        {
+          "description": "Override for the Webcake API base URL (takes precedence over WEBCAKE_ENV).",
+          "name": "WEBCAKE_API_BASE"
+        },
+        {
+          "description": "Default Webcake organization id for the persistence tools.",
+          "name": "WEBCAKE_ORG_ID"
+        },
+        {
+          "description": "Optional Pexels API key for search_images; without one a shared hosted proxy is used.",
+          "isSecret": true,
+          "name": "PEXELS_API_KEY"
+        }
+      ],
+      "identifier": "webcake-landing-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.50"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ab8b4130cd",
+    "published_at": "2026-06-10T07:07:31.913774Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.vuluu2k/webcake-landing-mcp",
+    "server_version": "1.0.50",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-10T07:07:31.913774Z"
+  },
+  "title": "Webcake Landing",
+  "type": "mcp_server",
+  "version": "1.0.50"
+}

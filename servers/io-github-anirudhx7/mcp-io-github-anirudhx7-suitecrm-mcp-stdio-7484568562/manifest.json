@@ -1,0 +1,92 @@
+{
+  "description": "Open-source MCP gateway for SuiteCRM - 24 CRM tools, OAuth2/OIDC auth, multi-entity, observability.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:04+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Anirudhx7-suitecrm-mcp.stdio.7484568562",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Anirudhx7/suitecrm-mcp",
+    "homepage": "https://github.com/Anirudhx7/suitecrm-mcp",
+    "repository": "https://github.com/Anirudhx7/suitecrm-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "suitecrm-mcp-gateway@5.3.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Anirudhx7/suitecrm-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "SuiteCRM v4_1 REST endpoint URL, e.g. https://crm.example.com/service/v4_1/rest.php",
+          "format": "string",
+          "isRequired": true,
+          "name": "SUITECRM_ENDPOINT"
+        },
+        {
+          "description": "Tool name prefix, e.g. suitecrm",
+          "format": "string",
+          "isRequired": true,
+          "name": "SUITECRM_PREFIX"
+        },
+        {
+          "description": "Port the gateway listens on",
+          "format": "number",
+          "isRequired": true,
+          "name": "PORT"
+        },
+        {
+          "description": "OIDC provider domain, e.g. your-tenant.auth0.com",
+          "format": "string",
+          "isRequired": true,
+          "name": "AUTH0_DOMAIN"
+        },
+        {
+          "description": "OAuth2 API audience identifier",
+          "format": "string",
+          "isRequired": true,
+          "name": "AUTH0_AUDIENCE"
+        }
+      ],
+      "identifier": "suitecrm-mcp-gateway",
+      "registryType": "npm",
+      "transport": {
+        "headers": [
+          {
+            "description": "Bearer token - personal API key issued by the gateway after OAuth2/OIDC login",
+            "isRequired": true,
+            "isSecret": true,
+            "name": "Authorization"
+          }
+        ],
+        "type": "sse",
+        "url": "http://127.0.0.1:{PORT}/sse"
+      },
+      "version": "5.3.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7484568562",
+    "published_at": "2026-06-12T19:54:59.487631Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Anirudhx7/suitecrm-mcp",
+    "server_version": "5.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-12T19:54:59.487631Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "5.3.1"
+}

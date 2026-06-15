@@ -1,0 +1,67 @@
+{
+  "description": "Every QuickBooks Online Accounting entity, plus an offline SQLite mirror and AR/AP aging.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:11+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Servosity-quickbooks-mcp.stdio.7f0b2d708b",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/servosity/msp-skills",
+    "homepage": "https://github.com/servosity/msp-skills",
+    "repository": "https://github.com/servosity/msp-skills"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Servosity/quickbooks-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "OAuth 2.0 bearer access token (scope com.intuit.quickbooks.accounting). Mint it from the Intuit OAuth 2.0 Playground or `quickbooks-cli auth refresh`.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "QUICKBOOKS_ACCESS_TOKEN"
+        },
+        {
+          "description": "Your QuickBooks Online company (realm) ID; scopes every request to one company. Required unless you set the full QUICKBOOKS_BASE_URL.",
+          "isRequired": true,
+          "name": "QUICKBOOKS_REALM_ID"
+        },
+        {
+          "description": "Intuit host to target: production (default) or sandbox. Combined with QUICKBOOKS_REALM_ID to build the base URL.",
+          "name": "QUICKBOOKS_ENVIRONMENT"
+        }
+      ],
+      "fileSha256": "a78781a354d050f3f3edc9598717e581fb4682c048938b2c617272f7b2e09e74",
+      "identifier": "https://github.com/Servosity/msp-skills/releases/download/quickbooks-v0.1.1/quickbooks-mcp.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7f0b2d708b",
+    "published_at": "2026-06-13T02:26:29.406839Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Servosity/quickbooks-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-13T02:26:29.406839Z"
+  },
+  "title": "QuickBooks Online MCP",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

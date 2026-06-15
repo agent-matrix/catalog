@@ -1,0 +1,99 @@
+{
+  "description": "Safely schedule Outlook meetings on on-prem Exchange EWS with preview-confirmed writes.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:14+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ap311036-ews-meeting-mcp.stdio.9c56a37645",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ap311036/ews-meeting-mcp",
+    "homepage": "https://github.com/ap311036/ews-meeting-mcp",
+    "repository": "https://github.com/ap311036/ews-meeting-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "ews-meeting-mcp@0.1.17"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ap311036/ews-meeting-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Exchange EWS endpoint, for example https://mail.company.com/EWS/Exchange.asmx",
+          "format": "string",
+          "isRequired": true,
+          "name": "EWS_ENDPOINT"
+        },
+        {
+          "description": "Mailbox email address used as the meeting organizer.",
+          "format": "string",
+          "isRequired": true,
+          "name": "EWS_EMAIL"
+        },
+        {
+          "description": "Exchange login username, often DOMAIN\\username for NTLM.",
+          "format": "string",
+          "isRequired": true,
+          "name": "EWS_USERNAME"
+        },
+        {
+          "description": "Exchange password. Prefer macOS Keychain variables when possible.",
+          "format": "string",
+          "isSecret": true,
+          "name": "EWS_PASSWORD"
+        },
+        {
+          "description": "Optional macOS Keychain service name for reading the password locally.",
+          "format": "string",
+          "name": "EWS_PASSWORD_KEYCHAIN_SERVICE"
+        },
+        {
+          "description": "Optional macOS Keychain account. Defaults to EWS_USERNAME when omitted.",
+          "format": "string",
+          "name": "EWS_PASSWORD_KEYCHAIN_ACCOUNT"
+        },
+        {
+          "default": "NTLM",
+          "description": "Exchange auth type. Usually NTLM for on-prem Exchange.",
+          "format": "string",
+          "name": "EWS_AUTH_TYPE"
+        },
+        {
+          "default": "Asia/Taipei",
+          "description": "IANA timezone for calendar operations.",
+          "format": "string",
+          "name": "EWS_TIMEZONE"
+        }
+      ],
+      "identifier": "ews-meeting-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.17"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9c56a37645",
+    "published_at": "2026-06-10T17:20:11.519612Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ap311036/ews-meeting-mcp",
+    "server_version": "0.1.17",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-10T17:20:11.519612Z"
+  },
+  "title": "EWS Meeting MCP",
+  "type": "mcp_server",
+  "version": "0.1.17"
+}

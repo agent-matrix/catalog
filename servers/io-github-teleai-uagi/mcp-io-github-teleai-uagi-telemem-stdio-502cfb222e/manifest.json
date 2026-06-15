@@ -1,0 +1,68 @@
+{
+  "description": "Long-term and multimodal memory for AI agents - character-aware, mem0-compatible, fully-local option",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-TeleAI-UAGI-telemem.stdio.502cfb222e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/TeleAI-UAGI/telemem",
+    "homepage": "https://github.com/TeleAI-UAGI/telemem",
+    "repository": "https://github.com/TeleAI-UAGI/telemem"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "telemem==1.7.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.TeleAI-UAGI/telemem",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API key for the default OpenAI LLM/embedder (not needed with a local TELEMEM_CONFIG)",
+          "isSecret": true,
+          "name": "OPENAI_API_KEY"
+        },
+        {
+          "description": "Path to a TeleMem YAML/JSON config, e.g. the fully-local Ollama + FAISS setup (config/config.ollama.yaml)",
+          "name": "TELEMEM_CONFIG"
+        },
+        {
+          "description": "Default memory scope when tool calls omit user_id/agent_id/run_id (default: telemem-mcp)",
+          "name": "TELEMEM_DEFAULT_USER_ID"
+        }
+      ],
+      "identifier": "telemem",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.7.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "502cfb222e",
+    "published_at": "2026-06-12T07:01:02.013033Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.TeleAI-UAGI/telemem",
+    "server_version": "1.7.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-12T07:01:02.013033Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.7.1"
+}

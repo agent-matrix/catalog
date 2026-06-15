@@ -1,0 +1,74 @@
+{
+  "description": "MCP server for E.Leclerc Drive \u2014 search products, manage cart, and order groceries from Claude",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-skunkobi-leclerc-drive.stdio.8dea47f781",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/skunkobi/mcp-leclerc-drive",
+    "homepage": "https://github.com/skunkobi/mcp-leclerc-drive",
+    "repository": "https://github.com/skunkobi/mcp-leclerc-drive"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-leclerc-drive@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.skunkobi/leclerc-drive",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Leclerc Drive store id, e.g. 053701 (defaults to 053701).",
+          "format": "string",
+          "name": "LECLERC_STORE_ID"
+        },
+        {
+          "description": "Backend host for your store, e.g. fd9-courses.leclercdrive.fr (the fdN prefix varies by region).",
+          "format": "string",
+          "name": "LECLERC_HOST"
+        },
+        {
+          "description": "Optional raw Cookie header override for headless hosts; by default the session is read from your local Chrome profile.",
+          "format": "string",
+          "isSecret": true,
+          "name": "LECLERC_COOKIE"
+        },
+        {
+          "description": "Chrome profile directory to read the session cookie from (defaults to \"Default\").",
+          "format": "string",
+          "name": "LECLERC_CHROME_PROFILE"
+        }
+      ],
+      "identifier": "mcp-leclerc-drive",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8dea47f781",
+    "published_at": "2026-06-13T10:34:35.109722Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.skunkobi/leclerc-drive",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-13T10:34:35.109722Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

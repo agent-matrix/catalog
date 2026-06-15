@@ -1,0 +1,86 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/hadriangateway/platter:2.0.3"
+      }
+    }
+  ],
+  "description": "MCP server exposing Read, Write, Edit, Bash, Glob, Grep, and JS tools over stdio.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:25+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/hadriangateway/platter",
+  "id": "tool.io-github-hadriangateway-platter.06ba6ad98d",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/hadriangateway/platter",
+    "homepage": "https://github.com/hadriangateway/platter",
+    "repository": "https://github.com/hadriangateway/platter"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "MCP server exposing Read, Write, Edit, Bash, Glob, Grep, and JS tools over stdio.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.hadriangateway/platter",
+      "request_type": "POST",
+      "url": "https://github.com/hadriangateway/platter"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "name": "-p",
+            "type": "named",
+            "value": "3100:3100"
+          },
+          {
+            "name": "-e",
+            "type": "named",
+            "value": "MCP_DANGEROUSLY_ALLOW_INSECURE_ISSUER_URL=true"
+          },
+          "ghcr.io/hadriangateway/platter:2.0.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.hadriangateway/platter",
+  "provenance": {
+    "identity_key": "88ad288f99",
+    "promoted_from": "mcp.io-github-hadriangateway-platter.stdio.88ad288f99",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.hadriangateway/platter",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-hadriangateway-platter.stdio.88ad288f99",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/hadriangateway/platter",
+  "summary": "MCP server exposing Read, Write, Edit, Bash, Glob, Grep, and JS tools over stdio.",
+  "tags": [
+    "bash",
+    "edit",
+    "exposing",
+    "glob",
+    "platter",
+    "read",
+    "write"
+  ],
+  "title": "Platter",
+  "type": "tool",
+  "version": "2.0.3"
+}

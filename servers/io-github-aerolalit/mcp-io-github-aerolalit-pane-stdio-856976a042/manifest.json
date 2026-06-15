@@ -1,0 +1,72 @@
+{
+  "description": "Hand a human a rich interactive UI by URL and get structured data back, from any MCP client.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:13+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-aerolalit-pane.stdio.856976a042",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/aerolalit/paneui",
+    "homepage": "https://github.com/aerolalit/paneui",
+    "repository": "https://github.com/aerolalit/paneui"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@paneui/mcp@0.0.26"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.aerolalit/pane",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Pane agent API key. If unset, the server auto-registers a fresh agent against the relay on first use and saves the key to the shared CLI store (~/.config/pane/config.json).",
+          "isSecret": true,
+          "name": "PANE_API_KEY"
+        },
+        {
+          "description": "Pane relay base URL. Defaults to the hosted relay https://relay.paneui.com; set this to point at a self-hosted relay.",
+          "name": "PANE_URL"
+        },
+        {
+          "description": "Display name for the auto-registered agent on the relay.",
+          "name": "PANE_AGENT_NAME"
+        },
+        {
+          "description": "Registration secret, required only for relays running REGISTRATION_MODE=secret.",
+          "isSecret": true,
+          "name": "PANE_REGISTER_SECRET"
+        }
+      ],
+      "identifier": "@paneui/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.0.26"
+    }
+  ],
+  "provenance": {
+    "identity_key": "856976a042",
+    "published_at": "2026-06-13T14:07:45.630061Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.aerolalit/pane",
+    "server_version": "0.0.26",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-13T14:07:45.630061Z"
+  },
+  "title": "Pane",
+  "type": "mcp_server",
+  "version": "0.0.26"
+}

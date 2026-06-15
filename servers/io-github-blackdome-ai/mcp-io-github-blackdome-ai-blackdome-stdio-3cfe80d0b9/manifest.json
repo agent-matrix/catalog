@@ -1,0 +1,69 @@
+{
+  "description": "Live honeypot threat intel: attacker IPs, IOCs, credentials, payloads, actors.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-blackdome-ai-blackdome.stdio.3cfe80d0b9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/blackdome-ai/blackdome-mcp",
+    "homepage": "https://github.com/blackdome-ai/blackdome-mcp",
+    "repository": "https://github.com/blackdome-ai/blackdome-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "blackdome-mcp==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.blackdome-ai/blackdome",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional Bearer API key. Free public tools work without it; paid tiers (credential intel, payloads, actors, warboard, STIX export) require a key. Get one at https://blackdome.ai/pricing",
+          "isSecret": true,
+          "name": "BLACKDOME_API_KEY"
+        },
+        {
+          "default": "https://api.blackdome.ai",
+          "description": "API base URL (default https://api.blackdome.ai).",
+          "name": "BLACKDOME_BASE_URL"
+        },
+        {
+          "default": "15",
+          "description": "HTTP request timeout in seconds (default 15). Increase for large STIX/CSV exports.",
+          "name": "BLACKDOME_TIMEOUT"
+        }
+      ],
+      "identifier": "blackdome-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "3cfe80d0b9",
+    "published_at": "2026-06-10T14:28:10.487743Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.blackdome-ai/blackdome",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-10T14:28:10.487743Z"
+  },
+  "title": "BlackDome Threat Intel",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

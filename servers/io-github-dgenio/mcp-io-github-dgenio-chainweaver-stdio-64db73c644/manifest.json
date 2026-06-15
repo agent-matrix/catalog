@@ -1,0 +1,87 @@
+{
+  "description": "Expose deterministic ChainWeaver flows as MCP tools without LLM calls between steps.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-dgenio-chainweaver.stdio.64db73c644",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/dgenio/ChainWeaver",
+    "homepage": "https://github.com/dgenio/ChainWeaver",
+    "repository": "https://github.com/dgenio/ChainWeaver"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "Resolve the MCP extra so a fresh client installs the fastmcp/mcp dependencies the serve command needs.",
+            "name": "--from",
+            "type": "named",
+            "value": "chainweaver[mcp]"
+          },
+          "chainweaver==0.12.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.dgenio/chainweaver",
+  "packages": [
+    {
+      "identifier": "chainweaver",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "serve"
+        },
+        {
+          "description": "Path to a .flow.yaml/.flow.json file to expose as MCP tools.",
+          "format": "filepath",
+          "isRequired": true,
+          "type": "positional",
+          "valueHint": "flow_file"
+        },
+        {
+          "description": "Python module path exposing Tool instances at top level. Repeatable.",
+          "isRepeated": true,
+          "name": "--tools",
+          "placeholder": "your_package.tools",
+          "type": "named"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "Resolve the MCP extra so a fresh client installs the fastmcp/mcp dependencies the serve command needs.",
+          "name": "--from",
+          "type": "named",
+          "value": "chainweaver[mcp]"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.12.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "64db73c644",
+    "published_at": "2026-06-08T08:31:56.617793Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.dgenio/chainweaver",
+    "server_version": "0.12.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-08T08:31:56.617793Z"
+  },
+  "title": "ChainWeaver",
+  "type": "mcp_server",
+  "version": "0.12.1"
+}

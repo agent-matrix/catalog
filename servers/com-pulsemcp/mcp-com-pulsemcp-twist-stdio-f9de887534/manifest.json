@@ -1,0 +1,76 @@
+{
+  "description": "MCP server for Twist team messaging \u2014 manage channels, threads, and messages.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:00+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-pulsemcp-twist.stdio.f9de887534",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/pulsemcp/mcp-servers",
+    "homepage": "https://github.com/pulsemcp/mcp-servers",
+    "repository": "https://github.com/pulsemcp/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y"
+          },
+          "twist-mcp-server@0.2.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.pulsemcp/twist",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Twist API bearer token for authentication.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "TWIST_BEARER_TOKEN"
+        },
+        {
+          "description": "Twist workspace ID to operate within.",
+          "isRequired": true,
+          "name": "TWIST_WORKSPACE_ID"
+        }
+      ],
+      "identifier": "twist-mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f9de887534",
+    "published_at": "2026-06-14T17:29:54.503772Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.pulsemcp/twist",
+    "server_version": "0.2.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-14T17:29:54.503772Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.3"
+}

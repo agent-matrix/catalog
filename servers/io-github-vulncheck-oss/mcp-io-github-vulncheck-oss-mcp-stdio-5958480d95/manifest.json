@@ -1,0 +1,80 @@
+{
+  "description": "VulnCheck exploit intelligence \u2014 CVE research, exploit data, advisories, and threat analysis.",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-vulncheck-oss-mcp.stdio.5958480d95",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/vulncheck-oss/mcp",
+    "homepage": "https://github.com/vulncheck-oss/mcp",
+    "repository": "https://github.com/vulncheck-oss/mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "VulnCheck API token for authenticating requests.",
+            "isRequired": true,
+            "name": "-e",
+            "type": "named",
+            "value": "VULNCHECK_API_TOKEN={token}",
+            "variables": {
+              "token": {
+                "format": "string",
+                "isRequired": true,
+                "isSecret": true
+              }
+            }
+          },
+          "ghcr.io/vulncheck-oss/mcp:0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.vulncheck-oss/mcp",
+  "packages": [
+    {
+      "identifier": "ghcr.io/vulncheck-oss/mcp:0.1.0",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "VulnCheck API token for authenticating requests.",
+          "isRequired": true,
+          "name": "-e",
+          "type": "named",
+          "value": "VULNCHECK_API_TOKEN={token}",
+          "variables": {
+            "token": {
+              "format": "string",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "5958480d95",
+    "published_at": "2026-06-11T15:58:35.340215Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.vulncheck-oss/mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-11T15:58:35.340215Z"
+  },
+  "title": "VulnCheck",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

@@ -1,0 +1,96 @@
+{
+  "description": "Smart accounts, x402 payments, on-chain reputation, and service discovery for AI agents",
+  "harvest": {
+    "last_seen_at": "2026-06-15T07:36:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-azeth-protocol-mcp-server.stdio.bb141a6dd8",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/azeth-protocol/mcp-server",
+    "homepage": "https://github.com/azeth-protocol/mcp-server",
+    "repository": "https://github.com/azeth-protocol/mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@azeth/mcp-server@0.2.22"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.azeth-protocol/mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Owner private key (0x-prefixed, 64 hex chars). Auto-generated and saved to ~/.azeth/key if not set.",
+          "format": "string",
+          "isSecret": true,
+          "name": "AZETH_PRIVATE_KEY"
+        },
+        {
+          "description": "Target chain: base, baseSepolia, ethereum, ethereumSepolia (default: baseSepolia)",
+          "format": "string",
+          "name": "AZETH_CHAIN"
+        },
+        {
+          "description": "Guardian co-signing private key for operations exceeding spending limits (optional)",
+          "format": "string",
+          "isSecret": true,
+          "name": "AZETH_GUARDIAN_KEY"
+        },
+        {
+          "description": "Set to 'true' to enable automatic guardian co-signing (requires AZETH_GUARDIAN_KEY)",
+          "format": "string",
+          "name": "AZETH_GUARDIAN_AUTO_SIGN"
+        },
+        {
+          "description": "Custom RPC for Base Sepolia (optional, defaults to public RPC). Per-chain: AZETH_RPC_URL_BASE, AZETH_RPC_URL_ETH_SEPOLIA, AZETH_RPC_URL_ETHEREUM",
+          "format": "string",
+          "name": "AZETH_RPC_URL_BASE_SEPOLIA"
+        },
+        {
+          "description": "Azeth server URL for off-chain operations like reputation queries (optional)",
+          "format": "string",
+          "name": "AZETH_SERVER_URL"
+        },
+        {
+          "description": "Emergency withdrawal destination address (defaults to owner EOA if not set)",
+          "format": "string",
+          "name": "AZETH_EMERGENCY_ADDRESS"
+        },
+        {
+          "description": "XMTP database encryption key for persistent messaging (optional, enables agent-to-agent messaging)",
+          "format": "string",
+          "isSecret": true,
+          "name": "XMTP_ENCRYPTION_KEY"
+        }
+      ],
+      "identifier": "@azeth/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.22"
+    }
+  ],
+  "provenance": {
+    "identity_key": "bb141a6dd8",
+    "published_at": "2026-06-09T19:33:44.343488Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.azeth-protocol/mcp-server",
+    "server_version": "0.2.22",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-09T19:33:44.343488Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.22"
+}
