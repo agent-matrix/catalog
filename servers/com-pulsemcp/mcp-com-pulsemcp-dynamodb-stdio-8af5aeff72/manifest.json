@@ -1,0 +1,105 @@
+{
+  "description": "MCP server for AWS DynamoDB with fine-grained tool control and configurable access levels.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-pulsemcp-dynamodb.stdio.8af5aeff72",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/pulsemcp/mcp-servers",
+    "homepage": "https://github.com/pulsemcp/mcp-servers",
+    "repository": "https://github.com/pulsemcp/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y"
+          },
+          "aws-dynamodb-mcp-server@0.2.7"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.pulsemcp/dynamodb",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "AWS region for DynamoDB (or use AWS_DEFAULT_REGION).",
+          "isRequired": true,
+          "name": "AWS_REGION"
+        },
+        {
+          "description": "AWS access key ID (uses AWS credential chain if not set).",
+          "isSecret": true,
+          "name": "AWS_ACCESS_KEY_ID"
+        },
+        {
+          "description": "AWS secret access key (uses AWS credential chain if not set).",
+          "isSecret": true,
+          "name": "AWS_SECRET_ACCESS_KEY"
+        },
+        {
+          "description": "Custom endpoint for local DynamoDB or LocalStack.",
+          "name": "DYNAMODB_ENDPOINT"
+        },
+        {
+          "description": "Comma-separated tool groups to enable (readonly, readwrite, admin).",
+          "name": "DYNAMODB_ENABLED_TOOL_GROUPS"
+        },
+        {
+          "description": "Comma-separated whitelist of specific tools to enable.",
+          "name": "DYNAMODB_ENABLED_TOOLS"
+        },
+        {
+          "description": "Comma-separated blacklist of specific tools to disable.",
+          "name": "DYNAMODB_DISABLED_TOOLS"
+        },
+        {
+          "description": "Restrict operations to specific tables (comma-separated); all tables accessible if not set.",
+          "name": "DYNAMODB_ALLOWED_TABLES"
+        },
+        {
+          "default": "false",
+          "description": "Skip startup health checks.",
+          "name": "SKIP_HEALTH_CHECKS"
+        }
+      ],
+      "identifier": "aws-dynamodb-mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.7"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8af5aeff72",
+    "published_at": "2026-06-17T03:55:49.744407Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.pulsemcp/dynamodb",
+    "server_version": "0.2.7",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-17T03:55:49.744407Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.7"
+}

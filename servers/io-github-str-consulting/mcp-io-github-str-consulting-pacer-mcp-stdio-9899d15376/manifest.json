@@ -1,0 +1,65 @@
+{
+  "description": "Pacer revenue-management API as MCP tools: portfolios, pacing, market metrics, Guesty, briefs.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-STR-Consulting-pacer-mcp.stdio.9899d15376",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/STR-Consulting/mcp",
+    "homepage": "https://github.com/STR-Consulting/mcp",
+    "repository": "https://github.com/STR-Consulting/mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/str-consulting/pacer-mcp:0.9.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.STR-Consulting/pacer-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://portal.pacerrev.io",
+          "description": "Base URL of the pacer/core app (PAT JSON API). Defaults to production (portal.pacerrev.io).",
+          "format": "string",
+          "name": "PACER_CORE_URL"
+        },
+        {
+          "description": "Personal access token (pat_...) issued via `pacer pat create`. Requires the employee role or higher.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PACER_CORE_TOKEN"
+        }
+      ],
+      "identifier": "ghcr.io/str-consulting/pacer-mcp:0.9.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "9899d15376",
+    "published_at": "2026-06-16T04:41:11.090616Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.STR-Consulting/pacer-mcp",
+    "server_version": "0.9.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-16T04:41:11.090616Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.9.0"
+}

@@ -1,0 +1,74 @@
+{
+  "description": "Pre-flight spend authorization for AI agents. Set a budget, enforce limits, audit every decision.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:48+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-figuard-figuard-mcp.stdio.7ff8f0e405",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/figuard/figuard-core",
+    "homepage": "https://github.com/figuard/figuard-core",
+    "repository": "https://github.com/figuard/figuard-core"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "figuard-mcp@1.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.figuard/figuard-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "FiGuard API key \u2014 set this (with FIGUARD_BASE_URL) to use a self-hosted FiGuard server. Leave unset to run embedded: in-process enforcement against a local SQLite file, no account or server needed.",
+          "format": "string",
+          "isSecret": true,
+          "name": "FIGUARD_API_KEY"
+        },
+        {
+          "description": "Self-hosted FiGuard server URL. Leave unset to run embedded against a local SQLite file.",
+          "format": "string",
+          "name": "FIGUARD_BASE_URL"
+        },
+        {
+          "description": "Path to the embedded SQLite file (default ~/.figuard/figuard.db). Embedded is the default backend \u2014 no server required.",
+          "format": "string",
+          "name": "FIGUARD_DATABASE"
+        },
+        {
+          "description": "Backend mode: embedded | server | sandbox. Defaults to embedded when nothing else is configured.",
+          "format": "string",
+          "name": "FIGUARD_MODE"
+        }
+      ],
+      "identifier": "figuard-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7ff8f0e405",
+    "published_at": "2026-06-17T12:06:49.169959Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.figuard/figuard-mcp",
+    "server_version": "1.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-17T12:06:49.169959Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.2.0"
+}

@@ -1,0 +1,81 @@
+{
+  "description": "MCP server for running Proctor exams against MCP servers with exam execution and result management.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-pulsemcp-proctor.stdio.4bc88cf727",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/pulsemcp/mcp-servers",
+    "homepage": "https://github.com/pulsemcp/mcp-servers",
+    "repository": "https://github.com/pulsemcp/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y"
+          },
+          "proctor-mcp-server@0.1.9"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.pulsemcp/proctor",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API key for PulseMCP Proctor API authentication.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PROCTOR_API_KEY"
+        },
+        {
+          "default": "https://admin.pulsemcp.com",
+          "description": "Base URL for Proctor API.",
+          "name": "PROCTOR_API_URL"
+        },
+        {
+          "default": "exams,machines",
+          "description": "Comma-separated list of enabled tool groups.",
+          "name": "TOOL_GROUPS"
+        }
+      ],
+      "identifier": "proctor-mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.9"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4bc88cf727",
+    "published_at": "2026-06-17T03:55:55.791675Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.pulsemcp/proctor",
+    "server_version": "0.1.9",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-17T03:55:55.791675Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.9"
+}

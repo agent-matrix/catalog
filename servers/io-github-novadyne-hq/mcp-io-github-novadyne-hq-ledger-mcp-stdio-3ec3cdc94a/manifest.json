@@ -1,0 +1,62 @@
+{
+  "description": "Double-entry accounting MCP for AI agents \u2014 paid per call via x402 (USDC on Base). 11 tools.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:59+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-novadyne-hq-ledger-mcp.stdio.3ec3cdc94a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/novadyne-hq/ledger-mcp",
+    "homepage": "https://github.com/novadyne-hq/ledger-mcp",
+    "repository": "https://github.com/novadyne-hq/ledger-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "ledger-mcp==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.novadyne-hq/ledger-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Private key of a funded Base wallet (USDC) used to pay the x402 micropayment on each call. Optional \u2014 health and discovery work without it.",
+          "isSecret": true,
+          "name": "LEDGER_X402_PRIVATE_KEY"
+        },
+        {
+          "description": "Override the Ledger API base URL (default https://ledger-api.novadyne.ai).",
+          "name": "LEDGER_API_URL"
+        }
+      ],
+      "identifier": "ledger-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "3ec3cdc94a",
+    "published_at": "2026-06-19T17:42:38.71628Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.novadyne-hq/ledger-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-19T17:42:38.71628Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

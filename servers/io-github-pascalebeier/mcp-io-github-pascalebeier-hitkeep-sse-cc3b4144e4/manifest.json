@@ -1,0 +1,55 @@
+{
+  "description": "Read-only MCP server for aggregate HitKeep analytics and official documentation.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-PascaleBeier-hitkeep.sse.cc3b4144e4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/pascalebeier/hitkeep",
+    "homepage": "https://github.com/pascalebeier/hitkeep",
+    "repository": "https://github.com/pascalebeier/hitkeep"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://{hitkeep_host}/mcp"
+    }
+  },
+  "name": "io.github.PascaleBeier/hitkeep",
+  "provenance": {
+    "identity_key": "cc3b4144e4",
+    "published_at": "2026-06-18T14:58:24.501494Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.PascaleBeier/hitkeep",
+    "server_version": "2.7.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-18T14:58:24.501494Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Bearer token from a scoped HitKeep personal or team API client.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization"
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://{hitkeep_host}/mcp",
+      "variables": {
+        "hitkeep_host": {
+          "description": "Hostname of your HitKeep leader or proxy, without the scheme, for example analytics.example.com.",
+          "isRequired": true
+        }
+      }
+    }
+  ],
+  "title": "HitKeep",
+  "type": "mcp_server",
+  "version": "2.7.0"
+}

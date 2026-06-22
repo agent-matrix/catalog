@@ -1,0 +1,82 @@
+{
+  "description": "MCP server for Braintree (PayPal) \u2014 global card processing via GraphQL: charge, refund, vault",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-codespar-mcp-braintree.stdio.10dc69f6eb",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/codespar/mcp-dev-latam",
+    "homepage": "https://github.com/codespar/mcp-dev-latam",
+    "repository": "https://github.com/codespar/mcp-dev-latam"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@codespar/mcp-braintree@0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.codespar/mcp-braintree",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Braintree merchant id (from the Control Panel > API).",
+          "format": "string",
+          "isRequired": true,
+          "name": "BRAINTREE_MERCHANT_ID"
+        },
+        {
+          "description": "Braintree public API key \u2014 Basic auth username.",
+          "format": "string",
+          "isRequired": true,
+          "name": "BRAINTREE_PUBLIC_KEY"
+        },
+        {
+          "description": "Braintree private API key \u2014 Basic auth password (secret).",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "BRAINTREE_PRIVATE_KEY"
+        },
+        {
+          "description": "Braintree environment. 'sandbox' (default, https://payments.sandbox.braintree-api.com/graphql) or 'production' (https://payments.braintree-api.com/graphql).",
+          "format": "string",
+          "name": "BRAINTREE_ENV"
+        },
+        {
+          "description": "Braintree-Version header value (YYYY-MM-DD). Defaults to 2019-01-01.",
+          "format": "string",
+          "name": "BRAINTREE_API_VERSION"
+        }
+      ],
+      "identifier": "@codespar/mcp-braintree",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "10dc69f6eb",
+    "published_at": "2026-06-20T19:59:28.340396Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.codespar/mcp-braintree",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-20T19:59:28.340396Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

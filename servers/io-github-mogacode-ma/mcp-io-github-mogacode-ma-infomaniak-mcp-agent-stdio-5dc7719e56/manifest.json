@@ -1,0 +1,78 @@
+{
+  "description": "Unofficial Infomaniak MCP \u2014 hosting, Node.js, mail, DNS, kDrive, SSL, VPS, domains. 81 tools.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:32+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Mogacode-ma-infomaniak-mcp-agent.stdio.5dc7719e56",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Mogacode-ma/infomaniak-mcp-agent",
+    "homepage": "https://github.com/Mogacode-ma/infomaniak-mcp-agent",
+    "repository": "https://github.com/Mogacode-ma/infomaniak-mcp-agent"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "infomaniak-mcp-agent@0.15.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Mogacode-ma/infomaniak-mcp-agent",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Bearer token for api.infomaniak.com. Generate at https://manager.infomaniak.com/v3/api-token",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "INFOMANIAK_API_TOKEN"
+        },
+        {
+          "default": "auto",
+          "description": "Authentication mode for manager.infomaniak.com endpoints. 'auto' (default) reads Chrome cookies on demand. 'manual' uses INFOMANIAK_SASESSION+INFOMANIAK_XSRF_TOKEN. 'disabled' skips manager-private endpoints.",
+          "format": "string",
+          "name": "INFOMANIAK_AUTH_MODE"
+        },
+        {
+          "description": "Manager session cookie (used when INFOMANIAK_AUTH_MODE=manual).",
+          "format": "string",
+          "isSecret": true,
+          "name": "INFOMANIAK_SASESSION"
+        },
+        {
+          "description": "Manager XSRF cookie (used when INFOMANIAK_AUTH_MODE=manual).",
+          "format": "string",
+          "isSecret": true,
+          "name": "INFOMANIAK_XSRF_TOKEN"
+        }
+      ],
+      "identifier": "infomaniak-mcp-agent",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.15.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5dc7719e56",
+    "published_at": "2026-06-15T11:21:31.705865Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Mogacode-ma/infomaniak-mcp-agent",
+    "server_version": "0.15.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-15T11:21:31.705865Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.15.0"
+}

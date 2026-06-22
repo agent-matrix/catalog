@@ -1,0 +1,85 @@
+{
+  "description": "Unofficial community MCP for the Capital.com Open API. Guarded two-phase trades; demo-first.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:34+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-SimonTarara62-capitalcom-mcp-server.stdio.f858061578",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/SimonTarara62/capitalcom-mcp-server",
+    "homepage": "https://github.com/SimonTarara62/capitalcom-mcp-server",
+    "repository": "https://github.com/SimonTarara62/capitalcom-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "capitalcom-mcp==0.3.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.SimonTarara62/capitalcom-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to a .env file holding credentials (alternative to inline secrets).",
+          "name": "CAP_ENV_FILE"
+        },
+        {
+          "description": "Capital.com API key (use a DEMO key first).",
+          "isSecret": true,
+          "name": "CAP_API_KEY"
+        },
+        {
+          "description": "Capital.com account identifier (email).",
+          "isSecret": true,
+          "name": "CAP_IDENTIFIER"
+        },
+        {
+          "description": "Capital.com API password.",
+          "isSecret": true,
+          "name": "CAP_API_PASSWORD"
+        },
+        {
+          "description": "Environment: demo or live (default: demo).",
+          "name": "CAP_ENV"
+        },
+        {
+          "description": "Set true to enable order execution (off by default).",
+          "name": "CAP_ALLOW_TRADING"
+        },
+        {
+          "description": "Comma-separated EPIC allowlist for trading, or ALL.",
+          "name": "CAP_ALLOWED_EPICS"
+        }
+      ],
+      "identifier": "capitalcom-mcp",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f858061578",
+    "published_at": "2026-06-15T17:21:00.522949Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.SimonTarara62/capitalcom-mcp-server",
+    "server_version": "0.3.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-15T17:21:00.522949Z"
+  },
+  "title": "Capital.com MCP Server",
+  "type": "mcp_server",
+  "version": "0.3.4"
+}

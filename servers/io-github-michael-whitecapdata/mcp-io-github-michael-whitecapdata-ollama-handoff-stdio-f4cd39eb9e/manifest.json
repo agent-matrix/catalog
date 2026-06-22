@@ -1,0 +1,78 @@
+{
+  "description": "Offload cheap work from your AI agent to a local Ollama model, at zero cloud cost.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:32+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Michael-WhiteCapData-ollama-handoff.stdio.f4cd39eb9e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Michael-WhiteCapData/ollama-handoff",
+    "homepage": "https://github.com/Michael-WhiteCapData/ollama-handoff",
+    "repository": "https://github.com/Michael-WhiteCapData/ollama-handoff"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "ollama-handoff==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Michael-WhiteCapData/ollama-handoff",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "http://localhost:11434",
+          "description": "Base URL of the Ollama server.",
+          "name": "OLLAMA_URL"
+        },
+        {
+          "default": "qwen2.5-coder:14b",
+          "description": "Default model used for handoffs.",
+          "name": "OLLAMA_DEFAULT_MODEL"
+        },
+        {
+          "default": "32768",
+          "description": "Context window in tokens.",
+          "name": "OLLAMA_NUM_CTX"
+        },
+        {
+          "default": "30m",
+          "description": "How long to keep the model resident in VRAM.",
+          "name": "OLLAMA_KEEP_ALIVE"
+        },
+        {
+          "default": "600",
+          "description": "Per-request timeout in seconds.",
+          "name": "OLLAMA_TIMEOUT_S"
+        }
+      ],
+      "identifier": "ollama-handoff",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f4cd39eb9e",
+    "published_at": "2026-06-21T03:24:51.634224Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Michael-WhiteCapData/ollama-handoff",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-21T03:24:51.634224Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

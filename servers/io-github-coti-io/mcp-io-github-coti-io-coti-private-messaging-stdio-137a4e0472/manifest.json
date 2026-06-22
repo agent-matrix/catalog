@@ -1,0 +1,77 @@
+{
+  "description": "Private encrypted agent messaging, hidden state exchange, delegation, and private inbox workflows.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-coti-io-coti-private-messaging.stdio.137a4e0472",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/coti-io/coti-sdk-private-messaging",
+    "homepage": "https://github.com/coti-io/coti-sdk-private-messaging",
+    "repository": "https://github.com/coti-io/coti-sdk-private-messaging"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@coti-io/coti-sdk-private-messaging@0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.coti-io/coti-private-messaging",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Private key for the agent wallet that sends, reads, and claims private messaging activity.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PRIVATE_KEY"
+        },
+        {
+          "description": "COTI AES key for encrypting and decrypting private message bodies.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AES_KEY"
+        },
+        {
+          "description": "Optional network selector. Defaults to mainnet; use testnet only for intentional testing.",
+          "format": "string",
+          "name": "COTI_NETWORK"
+        },
+        {
+          "description": "Optional attribution reference for starter-grant and private messaging onboarding flows.",
+          "format": "string",
+          "name": "STARTER_GRANT_REF"
+        }
+      ],
+      "identifier": "@coti-io/coti-sdk-private-messaging",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "137a4e0472",
+    "published_at": "2026-06-16T12:47:55.318049Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.coti-io/coti-private-messaging",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-16T12:47:55.318049Z"
+  },
+  "title": "COTI Private Messaging",
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

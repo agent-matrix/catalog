@@ -1,0 +1,65 @@
+{
+  "description": "MCP server for SendGrid \u2014 global transactional + marketing email (Twilio-owned)",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-codespar-mcp-sendgrid.stdio.eed362a2da",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/codespar/mcp-dev-latam",
+    "homepage": "https://github.com/codespar/mcp-dev-latam",
+    "repository": "https://github.com/codespar/mcp-dev-latam"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@codespar/mcp-sendgrid@0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.codespar/mcp-sendgrid",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "SendGrid API key. Used as Bearer token in the Authorization header.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SENDGRID_API_KEY"
+        },
+        {
+          "description": "Optional default From address used by send_mail / send_template when `from.email` is omitted. Must be a Verified Sender or authenticated domain.",
+          "format": "string",
+          "name": "SENDGRID_FROM_EMAIL"
+        }
+      ],
+      "identifier": "@codespar/mcp-sendgrid",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "eed362a2da",
+    "published_at": "2026-06-20T19:57:25.739649Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.codespar/mcp-sendgrid",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-20T19:57:25.739649Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

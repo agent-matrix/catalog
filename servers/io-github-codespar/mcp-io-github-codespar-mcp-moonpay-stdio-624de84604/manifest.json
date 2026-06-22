@@ -1,0 +1,86 @@
+{
+  "description": "MCP server for MoonPay \u2014 fiat-to-crypto on/off-ramp, 100+ assets; Pix for Brazil onramp",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-codespar-mcp-moonpay.stdio.624de84604",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/codespar/mcp-dev-latam",
+    "homepage": "https://github.com/codespar/mcp-dev-latam",
+    "repository": "https://github.com/codespar/mcp-dev-latam"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@codespar/mcp-moonpay@0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.codespar/mcp-moonpay",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "MoonPay REST API key (sandbox or production \u2014 the key selects the environment)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "MOONPAY_API_KEY"
+        },
+        {
+          "description": "MoonPay publishable key used as `apiKey` in signed widget URLs (required for sign_buy_url / sign_sell_url).",
+          "format": "string",
+          "name": "MOONPAY_PUBLISHABLE_KEY"
+        },
+        {
+          "description": "MoonPay secret key used to HMAC-SHA256 sign widget URLs (required for sign_buy_url / sign_sell_url).",
+          "format": "string",
+          "isSecret": true,
+          "name": "MOONPAY_SECRET_KEY"
+        },
+        {
+          "description": "MoonPay API base URL. Defaults to https://api.moonpay.com.",
+          "format": "string",
+          "name": "MOONPAY_BASE_URL"
+        },
+        {
+          "description": "MoonPay buy widget base URL. Defaults to https://buy.moonpay.com.",
+          "format": "string",
+          "name": "MOONPAY_BUY_WIDGET_URL"
+        },
+        {
+          "description": "MoonPay sell widget base URL. Defaults to https://sell.moonpay.com.",
+          "format": "string",
+          "name": "MOONPAY_SELL_WIDGET_URL"
+        }
+      ],
+      "identifier": "@codespar/mcp-moonpay",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "624de84604",
+    "published_at": "2026-06-20T19:57:53.439009Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.codespar/mcp-moonpay",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-20T19:57:53.439009Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

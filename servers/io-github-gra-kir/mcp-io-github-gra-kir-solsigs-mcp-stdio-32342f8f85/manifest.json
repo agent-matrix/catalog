@@ -1,0 +1,72 @@
+{
+  "description": "Complete Solana on-chain DeFi data layer for AI agents - paid per call in USDC via x402.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:49+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-gra-kir-solsigs-mcp.stdio.32342f8f85",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/gra-kir/solsigs-py",
+    "homepage": "https://github.com/gra-kir/solsigs-py",
+    "repository": "https://github.com/gra-kir/solsigs-py"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "solsigs-mcp==0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.gra-kir/solsigs-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base58 Solana private key of the AGENT'S OWN spending wallet (funded with USDC to pay per call). This is the consumer's key, never a SolSigs key.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SOLSIGS_MCP_KEY"
+        },
+        {
+          "description": "Solana RPC endpoint. Defaults to public mainnet.",
+          "name": "SOLANA_RPC_URL"
+        },
+        {
+          "description": "SolSigs API base URL. Defaults to https://solsigs.com.",
+          "name": "SOLSIGS_BASE_URL"
+        },
+        {
+          "description": "Transport mode: stdio or sse. Defaults to stdio.",
+          "name": "MCP_TRANSPORT"
+        }
+      ],
+      "identifier": "solsigs-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "32342f8f85",
+    "published_at": "2026-06-15T11:10:17.809374Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.gra-kir/solsigs-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-15T11:10:17.809374Z"
+  },
+  "title": "SolSigs",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

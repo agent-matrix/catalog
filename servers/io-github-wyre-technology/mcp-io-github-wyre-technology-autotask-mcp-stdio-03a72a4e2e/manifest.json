@@ -1,0 +1,95 @@
+{
+  "description": "MCP server for Kaseya Autotask PSA \u2014 companies, tickets, projects, time entries, and more.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:40:08+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wyre-technology-autotask-mcp.stdio.03a72a4e2e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wyre-technology/autotask-mcp",
+    "homepage": "https://github.com/wyre-technology/autotask-mcp",
+    "repository": "https://github.com/wyre-technology/autotask-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-technology/autotask-mcp:v2.28.8"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wyre-technology/autotask-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Autotask API user resource email (e.g. apiuser@example.com)",
+          "format": "string",
+          "isRequired": true,
+          "name": "AUTOTASK_USERNAME"
+        },
+        {
+          "description": "Autotask API user secret",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AUTOTASK_SECRET"
+        },
+        {
+          "description": "Autotask API integration code (tracking identifier)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AUTOTASK_INTEGRATION_CODE"
+        },
+        {
+          "description": "Autotask API zone URL \u2014 auto-detected per tenant if omitted",
+          "format": "string",
+          "name": "AUTOTASK_API_URL"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode for the server. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-technology/autotask-mcp:v2.28.8",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "03a72a4e2e",
+    "published_at": "2026-06-15T17:31:37.398481Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wyre-technology/autotask-mcp",
+    "server_version": "2.28.8",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-15T17:31:37.398481Z"
+  },
+  "title": "Autotask",
+  "type": "mcp_server",
+  "version": "2.28.8"
+}

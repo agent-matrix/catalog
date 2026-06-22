@@ -1,0 +1,71 @@
+{
+  "description": "MCP server for Rapyd \u2014 global collect + disburse across 100+ countries, cash pickup, wallets",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-codespar-mcp-rapyd.stdio.6287f3ec19",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/codespar/mcp-dev-latam",
+    "homepage": "https://github.com/codespar/mcp-dev-latam",
+    "repository": "https://github.com/codespar/mcp-dev-latam"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@codespar/mcp-rapyd@0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.codespar/mcp-rapyd",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Rapyd access key (sent in the access_key header)",
+          "format": "string",
+          "isRequired": true,
+          "name": "RAPYD_ACCESS_KEY"
+        },
+        {
+          "description": "Rapyd secret key used to sign HMAC-SHA256 requests (never transmitted)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "RAPYD_SECRET_KEY"
+        },
+        {
+          "description": "Rapyd environment: 'sandbox' (https://sandboxapi.rapyd.net) or 'production' (https://api.rapyd.net). Defaults to sandbox.",
+          "format": "string",
+          "name": "RAPYD_ENV"
+        }
+      ],
+      "identifier": "@codespar/mcp-rapyd",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6287f3ec19",
+    "published_at": "2026-06-20T20:00:24.509144Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.codespar/mcp-rapyd",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-20T20:00:24.509144Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

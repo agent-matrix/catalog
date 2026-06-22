@@ -1,0 +1,97 @@
+{
+  "description": "MCP server for Google Docs integration with OAuth2 and service account support.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-pulsemcp-google-docs.stdio.0b0847fa83",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/pulsemcp/mcp-servers",
+    "homepage": "https://github.com/pulsemcp/mcp-servers",
+    "repository": "https://github.com/pulsemcp/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y"
+          },
+          "google-docs-workspace-mcp-server@0.1.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.pulsemcp/google-docs",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "OAuth2 client ID from Google Cloud Console.",
+          "isSecret": true,
+          "name": "GOOGLE_DOCS_OAUTH_CLIENT_ID"
+        },
+        {
+          "description": "OAuth2 client secret from Google Cloud Console.",
+          "isSecret": true,
+          "name": "GOOGLE_DOCS_OAUTH_CLIENT_SECRET"
+        },
+        {
+          "description": "Long-lived refresh token obtained from the oauth-setup command.",
+          "isSecret": true,
+          "name": "GOOGLE_DOCS_OAUTH_REFRESH_TOKEN"
+        },
+        {
+          "description": "Service account email address for domain-wide delegation.",
+          "name": "GOOGLE_DOCS_SERVICE_ACCOUNT_CLIENT_EMAIL"
+        },
+        {
+          "description": "Service account private key in PEM format.",
+          "isSecret": true,
+          "name": "GOOGLE_DOCS_SERVICE_ACCOUNT_PRIVATE_KEY"
+        },
+        {
+          "description": "Email address to impersonate in Google Workspace.",
+          "name": "GOOGLE_DOCS_IMPERSONATE_EMAIL"
+        },
+        {
+          "description": "Comma-separated list of tool groups to enable (readonly, readwrite, readwrite_external).",
+          "name": "GOOGLE_DOCS_ENABLED_TOOLGROUPS"
+        }
+      ],
+      "identifier": "google-docs-workspace-mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0b0847fa83",
+    "published_at": "2026-06-17T03:55:52.497277Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.pulsemcp/google-docs",
+    "server_version": "0.1.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-17T03:55:52.497277Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.4"
+}

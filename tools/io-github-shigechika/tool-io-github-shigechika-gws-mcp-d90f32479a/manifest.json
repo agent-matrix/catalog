@@ -1,0 +1,96 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/shigechika/gws-mcp:0.22.5-mcp.28"
+      }
+    }
+  ],
+  "description": "MCP fork of Google Workspace CLI (Gmail, Drive, Calendar, and more)",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:40:04+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/shigechika/gws-mcp",
+  "id": "tool.io-github-shigechika-gws-mcp.d90f32479a",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/shigechika/gws-mcp",
+    "homepage": "https://github.com/shigechika/gws-mcp",
+    "repository": "https://github.com/shigechika/gws-mcp"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "MCP fork of Google Workspace CLI (Gmail, Drive, Calendar, and more)",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.shigechika/gws-mcp",
+      "request_type": "POST",
+      "url": "https://github.com/shigechika/gws-mcp"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "type": "positional",
+            "value": "run"
+          },
+          {
+            "type": "positional",
+            "value": "-i"
+          },
+          {
+            "type": "positional",
+            "value": "--rm"
+          },
+          {
+            "default": "~/.config/gws:/home/gws/.config/gws",
+            "description": "Mount the gws credentials directory (populated by 'gws auth setup' and 'gws auth login')",
+            "format": "string",
+            "name": "-v",
+            "type": "named",
+            "valueHint": "host-path:container-path"
+          },
+          "ghcr.io/shigechika/gws-mcp:0.22.5-mcp.28"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.shigechika/gws-mcp",
+  "provenance": {
+    "identity_key": "4ed645a86e",
+    "promoted_from": "mcp.io-github-shigechika-gws-mcp.stdio.4ed645a86e",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.shigechika/gws-mcp",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-shigechika-gws-mcp.stdio.4ed645a86e",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/shigechika/gws-mcp",
+  "summary": "MCP fork of Google Workspace CLI (Gmail, Drive, Calendar, and more)",
+  "tags": [
+    "calendar",
+    "drive",
+    "fork",
+    "gmail",
+    "google",
+    "gws",
+    "workspace"
+  ],
+  "title": "MCP fork of Google Workspace CLI",
+  "type": "tool",
+  "version": "0.22.5-mcp.28"
+}

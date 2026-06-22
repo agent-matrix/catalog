@@ -1,0 +1,89 @@
+{
+  "description": "Budget-bound x402 payment wallet for AI agents \u2014 pays HTTP 402 URLs, capped locally. No backend.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:40:01+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-piprail-mcp.stdio.98f008112a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/piprail/piprail",
+    "homepage": "https://github.com/piprail/piprail",
+    "repository": "https://github.com/piprail/piprail"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@piprail/mcp@0.6.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.piprail/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your wallet's private key/seed for the chosen chain. Optional: omit it to run read-only (discover/quote/register/budget/guide); set it to let the agent pay. Stays on your machine; the spend policy caps every payment.",
+          "format": "string",
+          "isSecret": true,
+          "name": "PIPRAIL_PRIVATE_KEY"
+        },
+        {
+          "description": "Chain to pay on (default: base).",
+          "format": "string",
+          "name": "PIPRAIL_CHAIN"
+        },
+        {
+          "description": "Pay across several chains (instead of PIPRAIL_CHAIN): a comma-separated list, e.g. base,polygon,solana. Give each its own PIPRAIL_<CHAIN>_KEY (+ optional PIPRAIL_<CHAIN>_RPC_URL). The agent pays whichever chain a 402 asks for \u2014 the first listed that can settle \u2014 under one shared budget.",
+          "format": "string",
+          "name": "PIPRAIL_CHAINS"
+        },
+        {
+          "description": "Max spend per single payment, in token units (default: 0.10).",
+          "format": "string",
+          "name": "PIPRAIL_MAX_AMOUNT"
+        },
+        {
+          "description": "Lifetime spend cap per token, in token units (default: 10.00).",
+          "format": "string",
+          "name": "PIPRAIL_MAX_TOTAL"
+        },
+        {
+          "description": "Comma-separated allowed token symbols, plus the alias 'native' for the chain's coin (default: USDC).",
+          "format": "string",
+          "name": "PIPRAIL_TOKENS"
+        },
+        {
+          "description": "Comma-separated payment schemes to settle (default: onchain-proof). Add 'exact' (onchain-proof,exact) to also pay standard x402 servers GASLESS on EVM + Solana (method auto-selected).",
+          "format": "string",
+          "name": "PIPRAIL_SCHEMES"
+        }
+      ],
+      "identifier": "@piprail/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.6.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "98f008112a",
+    "published_at": "2026-06-15T10:25:14.574517Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.piprail/mcp",
+    "server_version": "0.6.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-15T10:25:14.574517Z"
+  },
+  "title": "PipRail",
+  "type": "mcp_server",
+  "version": "0.6.1"
+}

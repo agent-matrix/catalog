@@ -1,0 +1,66 @@
+{
+  "description": "Import CSV/XLSX accounting data into QuickBooks Online or Xero via the Synder Importer API.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:23+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-synder-gl-importer-mcp.stdio.2bbf75b9de",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/SynderAccounting/gl-importer-plugin",
+    "homepage": "https://github.com/SynderAccounting/gl-importer-plugin",
+    "repository": "https://github.com/SynderAccounting/gl-importer-plugin"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@cloudbusiness/gl-importer-mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.synder/gl-importer-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Bearer token for the Synder Importer API. Generate at importer.synder.com -> Account -> API Keys.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "IMPORTER_API_TOKEN"
+        },
+        {
+          "default": "https://importer.synder.com/api/v1",
+          "description": "Override API base URL (for staging/test). Defaults to https://importer.synder.com/api/v1.",
+          "format": "string",
+          "name": "IMPORTER_BASE_URL"
+        }
+      ],
+      "identifier": "@cloudbusiness/gl-importer-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "2bbf75b9de",
+    "published_at": "2026-06-20T00:13:50.442855Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.synder/gl-importer-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-20T00:13:50.442855Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

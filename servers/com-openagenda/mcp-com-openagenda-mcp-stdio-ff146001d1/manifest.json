@@ -1,0 +1,76 @@
+{
+  "description": "Search, analyze and manage events on OpenAgenda.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-openagenda-mcp.stdio.ff146001d1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/OpenAgenda/oa-public",
+    "homepage": "https://github.com/OpenAgenda/oa-public",
+    "repository": "https://github.com/OpenAgenda/oa-public"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@openagenda/mcp@1.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.openagenda/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "OpenAgenda API key (the stdio credential \u2014 a least-privilege/read key is advised). The hosted remote uses OAuth instead.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OA_API_KEY"
+        },
+        {
+          "description": "v3 API base URL (defaults to https://api.openagenda.com/v3).",
+          "format": "string",
+          "name": "OA_BASE_URL"
+        },
+        {
+          "description": "Code engine: node (default \u2014 Node's permission sandbox: no filesystem/subprocess; network NOT bounded) or deno (adds a scoped network egress boundary; recommended hardening, needs deno installed).",
+          "format": "string",
+          "name": "OA_EXECUTOR"
+        },
+        {
+          "description": "Disable the Node permission sandbox entirely (bare node, NO boundary at all) \u2014 trusted/dev use only.",
+          "format": "boolean",
+          "name": "OA_LOCAL_NO_SANDBOX"
+        }
+      ],
+      "identifier": "@openagenda/mcp",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ff146001d1",
+    "published_at": "2026-06-18T06:59:15.65193Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.openagenda/mcp",
+    "server_version": "1.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-18T06:59:15.65193Z"
+  },
+  "title": "OpenAgenda",
+  "type": "mcp_server",
+  "version": "1.2.0"
+}

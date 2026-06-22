@@ -1,0 +1,113 @@
+{
+  "description": "Resolve DOIs, search ~155M scholarly works, and fetch references via the Crossref REST API.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cyanheads-crossref-mcp-server.stdio.4886c6474d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cyanheads/crossref-mcp-server",
+    "homepage": "https://github.com/cyanheads/crossref-mcp-server",
+    "repository": "https://github.com/cyanheads/crossref-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "bun",
+          "@cyanheads/crossref-mcp-server@0.1.16"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cyanheads/crossref-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Email for polite-pool User-Agent header \u2014 optional. Without: anonymous pool with stricter rate limits.",
+          "format": "string",
+          "name": "CROSSREF_MAILTO"
+        },
+        {
+          "default": "https://api.crossref.org",
+          "description": "Override the Crossref API base URL. Defaults to https://api.crossref.org.",
+          "format": "string",
+          "name": "CROSSREF_BASE_URL"
+        },
+        {
+          "default": "10000",
+          "description": "Per-request timeout in milliseconds.",
+          "format": "string",
+          "name": "CROSSREF_TIMEOUT_MS"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "The hostname for the HTTP server.",
+          "format": "string",
+          "name": "MCP_HTTP_HOST"
+        },
+        {
+          "default": "3010",
+          "description": "The port to run the HTTP server on.",
+          "format": "string",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "default": "/mcp",
+          "description": "The endpoint path for the MCP server.",
+          "format": "string",
+          "name": "MCP_HTTP_ENDPOINT_PATH"
+        },
+        {
+          "default": "none",
+          "description": "Authentication mode to use: 'none', 'jwt', or 'oauth'.",
+          "format": "string",
+          "name": "MCP_AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Sets the minimum log level for output (e.g., 'debug', 'info', 'warn').",
+          "format": "string",
+          "name": "MCP_LOG_LEVEL"
+        }
+      ],
+      "identifier": "@cyanheads/crossref-mcp-server",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "start:http"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "bun",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3010/mcp"
+      },
+      "version": "0.1.16"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4886c6474d",
+    "published_at": "2026-06-20T11:08:48.518279Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cyanheads/crossref-mcp-server",
+    "server_version": "0.1.16",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-20T11:08:48.518279Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.16"
+}

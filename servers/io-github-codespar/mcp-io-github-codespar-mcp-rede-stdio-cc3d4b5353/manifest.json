@@ -1,0 +1,71 @@
+{
+  "description": "MCP server for Rede \u2014 Ita\u00fa-owned BR acquirer: authorize/capture/refund, zero-auth, card tokens",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-codespar-mcp-rede.stdio.cc3d4b5353",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/codespar/mcp-dev-latam",
+    "homepage": "https://github.com/codespar/mcp-dev-latam",
+    "repository": "https://github.com/codespar/mcp-dev-latam"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@codespar/mcp-rede@0.2.0-alpha.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.codespar/mcp-rede",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Rede merchant filia\u00e7\u00e3o (PV) \u2014 numeric merchant identifier issued with your commercial contract.",
+          "format": "string",
+          "isRequired": true,
+          "name": "REDE_PV"
+        },
+        {
+          "description": "Rede API security token paired with PV. Used in HTTP Basic auth as the password.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "REDE_TOKEN"
+        },
+        {
+          "description": "Environment selector: 'sandbox' (default) or 'production'.",
+          "format": "string",
+          "name": "REDE_ENV"
+        }
+      ],
+      "identifier": "@codespar/mcp-rede",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0-alpha.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "cc3d4b5353",
+    "published_at": "2026-06-20T20:00:26.787022Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.codespar/mcp-rede",
+    "server_version": "0.2.0-alpha.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-20T20:00:26.787022Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.0-alpha.2"
+}

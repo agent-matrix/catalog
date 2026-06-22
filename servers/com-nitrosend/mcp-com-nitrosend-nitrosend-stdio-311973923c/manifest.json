@@ -1,0 +1,78 @@
+{
+  "description": "AI-native email marketing. Campaigns, automations, transactional, contacts, and analytics.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-nitrosend-nitrosend.stdio.311973923c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nitrosend/nitrosend",
+    "homepage": "https://github.com/nitrosend/nitrosend",
+    "repository": "https://github.com/nitrosend/nitrosend"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@nitrosend/mcp@0.7.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.nitrosend/nitrosend",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Nitrosend API key for stdio bridge usage (starts with nskey_live_)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "NITROSEND_API_KEY"
+        },
+        {
+          "description": "Optional OAuth bearer token for the stdio bridge",
+          "format": "string",
+          "isSecret": true,
+          "name": "NITROSEND_BEARER_TOKEN"
+        },
+        {
+          "description": "Optional MCP endpoint override (defaults to https://api.nitrosend.com/mcp)",
+          "format": "string",
+          "name": "NITROSEND_API_URL"
+        },
+        {
+          "description": "Optional fixed-brand override. When set, the bridge sends X-Brand-SID with each MCP request.",
+          "format": "string",
+          "name": "NITROSEND_BRAND_SID"
+        }
+      ],
+      "identifier": "@nitrosend/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.7.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "311973923c",
+    "published_at": "2026-06-18T12:19:46.735854Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.nitrosend/nitrosend",
+    "server_version": "0.7.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-18T12:19:46.735854Z"
+  },
+  "title": "Nitrosend",
+  "type": "mcp_server",
+  "version": "0.7.0"
+}

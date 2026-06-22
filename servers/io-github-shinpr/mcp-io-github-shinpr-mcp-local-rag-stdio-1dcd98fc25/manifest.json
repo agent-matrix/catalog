@@ -1,0 +1,119 @@
+{
+  "description": "Easy-to-setup local RAG server with minimal configuration",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:40:04+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-shinpr-mcp-local-rag.stdio.1dcd98fc25",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/shinpr/mcp-local-rag",
+    "homepage": "https://github.com/shinpr/mcp-local-rag",
+    "repository": "https://github.com/shinpr/mcp-local-rag"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-local-rag@0.15.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.shinpr/mcp-local-rag",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base directory for document storage (defaults to current working directory). Ignored when BASE_DIRS is set.",
+          "format": "string",
+          "name": "BASE_DIR"
+        },
+        {
+          "description": "JSON array of base directories (e.g. '[\"/a\",\"/b\"]'). Takes precedence over BASE_DIR.",
+          "format": "string",
+          "name": "BASE_DIRS"
+        },
+        {
+          "description": "Path to LanceDB database directory (defaults to ./lancedb/)",
+          "format": "string",
+          "name": "DB_PATH"
+        },
+        {
+          "description": "Directory where Transformers.js models are cached (defaults to ./models/)",
+          "format": "string",
+          "name": "CACHE_DIR"
+        },
+        {
+          "description": "Embedding model name (defaults to Xenova/all-MiniLM-L6-v2)",
+          "format": "string",
+          "name": "MODEL_NAME"
+        },
+        {
+          "description": "Maximum file size in bytes (defaults to 104857600 / 100MB)",
+          "format": "string",
+          "name": "MAX_FILE_SIZE"
+        },
+        {
+          "description": "Maximum distance threshold for filtering search results. Results with distance greater than this value will be excluded. Lower values mean stricter filtering (e.g., 0.5 for high relevance only)",
+          "format": "string",
+          "name": "RAG_MAX_DISTANCE"
+        },
+        {
+          "description": "Grouping mode for quality filtering. 'similar' returns only the most similar group (stops at first distance jump). 'related' includes related groups (stops at second distance jump). Unset means no grouping filter",
+          "format": "string",
+          "name": "RAG_GROUPING"
+        },
+        {
+          "description": "Maximum number of files to keep in search results. Results are filtered to include only chunks from the top N best-scoring files. For example, 1 returns only the single best-matching file's chunks. Unset means no file filtering.",
+          "format": "string",
+          "name": "RAG_MAX_FILES"
+        },
+        {
+          "description": "Minimum chunk length in characters (1-10000, defaults to 50). Chunks shorter than this threshold are filtered out during ingestion.",
+          "format": "string",
+          "name": "CHUNK_MIN_LENGTH"
+        },
+        {
+          "description": "Execution device for the embedder (defaults to cpu). Passed straight to ONNX Runtime; see the Transformers.js device source for the supported backend names. If the requested device fails to initialize, the server throws an error.",
+          "format": "string",
+          "name": "RAG_DEVICE"
+        },
+        {
+          "description": "Embedding quantization dtype for the embedder (defaults to fp32). Opt-in and pass-through; accepts any dtype the chosen model provides (fp32, fp16, q8, int8, ...). If the model has no variant for the requested dtype, the server throws an error. Changing this changes the embedding space \u2014 re-ingest existing data.",
+          "format": "string",
+          "name": "RAG_DTYPE"
+        },
+        {
+          "description": "Keyword boost factor for hybrid search (0.0-1.0, defaults to 0.6). 0 means semantic similarity only; higher values increase the keyword-match contribution to the final score.",
+          "format": "string",
+          "name": "RAG_HYBRID_WEIGHT"
+        }
+      ],
+      "identifier": "mcp-local-rag",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.15.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1dcd98fc25",
+    "published_at": "2026-06-15T14:51:53.354435Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.shinpr/mcp-local-rag",
+    "server_version": "0.15.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-15T14:51:53.354435Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.15.2"
+}

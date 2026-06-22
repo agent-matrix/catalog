@@ -1,0 +1,75 @@
+{
+  "description": "Verify what agents actually shipped, arbitrate file collisions, refuse with structured reasons.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-anthony-chaudhary-dos-kernel.stdio.ce9e76ec45",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/anthony-chaudhary/dos-kernel",
+    "homepage": "https://github.com/anthony-chaudhary/dos-kernel",
+    "repository": "https://github.com/anthony-chaudhary/dos-kernel"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "The [mcp] extra carries the MCP server framework; the core install is near-stdlib and does not include it.",
+            "isRequired": true,
+            "name": "--from",
+            "type": "named",
+            "value": "dos-kernel[mcp]==0.28.0"
+          },
+          "dos-kernel==0.28.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.anthony-chaudhary/dos-kernel",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path of the git workspace the server should adjudicate (defaults to its working directory; every tool also takes a per-call `workspace` argument).",
+          "name": "DISPATCH_WORKSPACE"
+        }
+      ],
+      "identifier": "dos-kernel",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "The [mcp] extra carries the MCP server framework; the core install is near-stdlib and does not include it.",
+          "isRequired": true,
+          "name": "--from",
+          "type": "named",
+          "value": "dos-kernel[mcp]==0.28.0"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.28.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ce9e76ec45",
+    "published_at": "2026-06-17T23:26:32.936037Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.anthony-chaudhary/dos-kernel",
+    "server_version": "0.28.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-17T23:26:32.936037Z"
+  },
+  "title": "DOS \u2014 the trust substrate for agent fleets",
+  "type": "mcp_server",
+  "version": "0.28.0"
+}

@@ -1,0 +1,66 @@
+{
+  "description": "MCP server for Coinbase Developer Platform (CDP) \u2014 Trading, Wallets, Payments under one CDP key",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-codespar-mcp-coinbase-cdp.stdio.afed831c35",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/codespar/mcp-dev-latam",
+    "homepage": "https://github.com/codespar/mcp-dev-latam",
+    "repository": "https://github.com/codespar/mcp-dev-latam"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@codespar/mcp-coinbase-cdp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.codespar/mcp-coinbase-cdp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "CDP key id of the form organizations/<org>/apiKeys/<id>. Mint at https://portal.cdp.coinbase.com.",
+          "format": "string",
+          "isRequired": true,
+          "name": "COINBASE_CDP_KEY_NAME"
+        },
+        {
+          "description": "PEM-encoded ECDSA P-256 private key downloaded once at mint time from https://portal.cdp.coinbase.com. Pass the full PEM including BEGIN/END lines.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "COINBASE_CDP_PRIVATE_KEY"
+        }
+      ],
+      "identifier": "@codespar/mcp-coinbase-cdp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "afed831c35",
+    "published_at": "2026-06-20T19:57:43.986371Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.codespar/mcp-coinbase-cdp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-20T19:57:43.986371Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

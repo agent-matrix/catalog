@@ -1,0 +1,70 @@
+{
+  "description": "Zero-auth research MCP server \u2014 web, GitHub, HN, Stack Overflow, OpenAlex, YouTube. No keys needed.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:59+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-olanokhin-openresearch-mcp.stdio.b99d9cc7df",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/olanokhin/openresearch-mcp",
+    "homepage": "https://github.com/olanokhin/openresearch-mcp",
+    "repository": "https://github.com/olanokhin/openresearch-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "openresearch-mcp==0.1.8"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.olanokhin/openresearch-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "GitHub token \u2014 increases rate limit from 60 to 5,000 req/hr",
+          "format": "string",
+          "isSecret": true,
+          "name": "GITHUB_TOKEN"
+        },
+        {
+          "description": "Your email for the OpenAlex polite pool (higher rate limits)",
+          "format": "string",
+          "name": "OPENALEX_EMAIL"
+        },
+        {
+          "description": "Stack Exchange API key for higher daily quota on Stack Overflow searches",
+          "format": "string",
+          "isSecret": true,
+          "name": "STACKEXCHANGE_KEY"
+        }
+      ],
+      "identifier": "openresearch-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.8"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b99d9cc7df",
+    "published_at": "2026-06-21T23:58:32.075527Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.olanokhin/openresearch-mcp",
+    "server_version": "0.1.8",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-21T23:58:32.075527Z"
+  },
+  "title": "OpenResearch MCP",
+  "type": "mcp_server",
+  "version": "0.1.8"
+}

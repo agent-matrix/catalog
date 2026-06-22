@@ -1,0 +1,76 @@
+{
+  "description": "Automated web QA via Chrome DevTools MCP \u2014 JS, a11y, security, visual, env diff, CI reporting.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:51+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ironclawdevs27-argus.stdio.692105d3fd",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ironclawdevs27/Argus",
+    "homepage": "https://github.com/ironclawdevs27/Argus",
+    "repository": "https://github.com/ironclawdevs27/Argus"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "argusqa-os@9.7.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ironclawdevs27/argus",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the dev environment to audit (e.g. http://localhost:3000)",
+          "format": "string",
+          "isRequired": true,
+          "name": "TARGET_DEV_URL"
+        },
+        {
+          "description": "Base URL of the staging environment \u2014 used by argus_compare for dev vs staging diff. Omit to use CSS analysis mode.",
+          "format": "string",
+          "name": "TARGET_STAGING_URL"
+        },
+        {
+          "description": "Slack bot token (xoxb-...) for posting reports. Omit to generate a local report.html instead.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SLACK_BOT_TOKEN"
+        },
+        {
+          "description": "Figma personal access token \u2014 enables argus_design_audit to fetch design specs from a Figma frame and compare them against the live DOM (13 fidelity finding types). Omit to skip design fidelity audits.",
+          "format": "string",
+          "isSecret": true,
+          "name": "FIGMA_API_TOKEN"
+        }
+      ],
+      "identifier": "argusqa-os",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "9.7.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "692105d3fd",
+    "published_at": "2026-06-17T07:01:21.421603Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ironclawdevs27/argus",
+    "server_version": "9.7.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-17T07:01:21.421603Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "9.7.6"
+}

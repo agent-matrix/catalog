@@ -1,0 +1,71 @@
+{
+  "description": "MCP server for Openpay \u2014 BBVA-owned Mexican gateway (cards, SPEI, OXXO, subscriptions, payouts)",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-codespar-mcp-openpay.stdio.daf1dbbf74",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/codespar/mcp-dev-latam",
+    "homepage": "https://github.com/codespar/mcp-dev-latam",
+    "repository": "https://github.com/codespar/mcp-dev-latam"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@codespar/mcp-openpay@0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.codespar/mcp-openpay",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Openpay merchant id (forms part of the API URL path)",
+          "format": "string",
+          "isRequired": true,
+          "name": "OPENPAY_MERCHANT_ID"
+        },
+        {
+          "description": "Openpay private API key (used as HTTP Basic auth username with empty password)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OPENPAY_PRIVATE_KEY"
+        },
+        {
+          "description": "Environment: 'sandbox' (default) or 'production'. Selects between https://sandbox-api.openpay.mx and https://api.openpay.mx.",
+          "format": "string",
+          "name": "OPENPAY_ENV"
+        }
+      ],
+      "identifier": "@codespar/mcp-openpay",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "daf1dbbf74",
+    "published_at": "2026-06-20T20:00:10.347123Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.codespar/mcp-openpay",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-20T20:00:10.347123Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

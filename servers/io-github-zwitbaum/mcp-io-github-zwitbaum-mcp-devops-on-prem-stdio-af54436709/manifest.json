@@ -1,0 +1,79 @@
+{
+  "description": "MCP server for on-prem Azure DevOps: repos, pull requests, work items, and wiki.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:40:09+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-zwitbaum-mcp-devops-on-prem.stdio.af54436709",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/zwitbaum/mcp-devops-on-prem",
+    "homepage": "https://github.com/zwitbaum/mcp-devops-on-prem",
+    "repository": "https://github.com/zwitbaum/mcp-devops-on-prem"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-devops-onpremise==1.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.zwitbaum/mcp-devops-on-prem",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Full Azure DevOps Server project URL, e.g. https://server/org/project",
+          "isRequired": true,
+          "name": "DEVOPS_API_URL"
+        },
+        {
+          "description": "NTLM username, usually DOMAIN\\username",
+          "name": "DEVOPS_USERNAME"
+        },
+        {
+          "description": "NTLM password",
+          "isSecret": true,
+          "name": "DEVOPS_PASSWORD"
+        },
+        {
+          "description": "Personal Access Token for PAT authentication",
+          "isSecret": true,
+          "name": "DEVOPS_PAT"
+        },
+        {
+          "description": "OAuth bearer token for bearer-token authentication",
+          "isSecret": true,
+          "name": "DEVOPS_TOKEN"
+        }
+      ],
+      "identifier": "mcp-devops-onpremise",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "af54436709",
+    "published_at": "2026-06-18T11:06:29.436272Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.zwitbaum/mcp-devops-on-prem",
+    "server_version": "1.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-18T11:06:29.436272Z"
+  },
+  "title": "DevOps On-Premises",
+  "type": "mcp_server",
+  "version": "1.1.1"
+}

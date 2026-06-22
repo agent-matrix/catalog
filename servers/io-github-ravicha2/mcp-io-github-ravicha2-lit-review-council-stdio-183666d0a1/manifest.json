@@ -1,0 +1,100 @@
+{
+  "description": "Multi-agent literature review: research, peer review, and synthesize grounded reports.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Ravicha2-lit-review-council.stdio.183666d0a1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Ravicha2/lit-review-council",
+    "homepage": "https://github.com/Ravicha2/lit-review-council",
+    "repository": "https://github.com/Ravicha2/lit-review-council"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "type": "positional",
+            "value": "lit-review-council",
+            "valueHint": "package"
+          },
+          "lit-review-council==0.1.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Ravicha2/lit-review-council",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "OpenRouter API key for LLM access",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OPENROUTER_API_KEY"
+        },
+        {
+          "description": "GitHub personal access token for practitioner track searches",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GITHUB_TOKEN"
+        },
+        {
+          "description": "Tavily API key for web search",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "TAVILY_API_KEY"
+        },
+        {
+          "description": "OpenAlex API key for academic search",
+          "name": "OPENALEX_API_KEY"
+        },
+        {
+          "description": "Model for engineer agents (default: openrouter/moonshotai/kimi-k2.6)",
+          "name": "ENG_MODEL"
+        },
+        {
+          "description": "Model for research agents (default: openrouter/z-ai/glm-5.1)",
+          "name": "RESEARCH_MODEL"
+        },
+        {
+          "description": "Model for reviewer/synthesis agents (default: openrouter/deepseek/deepseek-v4-pro)",
+          "name": "JUDGE_MODEL"
+        }
+      ],
+      "identifier": "lit-review-council",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "lit-review-council",
+          "valueHint": "package"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "183666d0a1",
+    "published_at": "2026-06-22T03:19:56.268927Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Ravicha2/lit-review-council",
+    "server_version": "0.1.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-22T03:19:56.268927Z"
+  },
+  "title": "Literature Review Council",
+  "type": "mcp_server",
+  "version": "0.1.4"
+}

@@ -1,0 +1,77 @@
+{
+  "description": "MCP server for Pipedrive CRM. 155 tools for deals, persons, organizations, activities, and more.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ckalima-pipedrive-mcp-server.stdio.8387563de4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ckalima/pipedrive-mcp-server",
+    "homepage": "https://github.com/ckalima/pipedrive-mcp-server",
+    "repository": "https://github.com/ckalima/pipedrive-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@ckalima/pipedrive-mcp-server@2.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ckalima/pipedrive-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your 40-character Pipedrive API token (Settings > Personal preferences > API).",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PIPEDRIVE_API_KEY"
+        },
+        {
+          "description": "Server-enforced capability tier: 'read-only' (reads only), 'safe-write' (reads + non-destructive writes; the default), or 'full' (all tools, including destructive). Out-of-mode tools are hidden from tools/list and refused if called directly. A blank value is treated as unset (defaults to safe-write); an unrecognized value falls back to read-only.",
+          "format": "string",
+          "name": "PIPEDRIVE_MODE"
+        },
+        {
+          "description": "Legacy flag, superseded by PIPEDRIVE_MODE. When PIPEDRIVE_MODE is unset, 'true' maps to full; otherwise prefer PIPEDRIVE_MODE=full. Still honored for back-compat.",
+          "format": "string",
+          "name": "PIPEDRIVE_ENABLE_DESTRUCTIVE"
+        },
+        {
+          "description": "Allowlisted directory the server may read product images from when a file_path is passed to the image-upload tools. Filesystem reads are disabled unless this is set, and a file_path must resolve within it.",
+          "format": "string",
+          "name": "PIPEDRIVE_IMAGE_BASE_DIR"
+        }
+      ],
+      "identifier": "@ckalima/pipedrive-mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.4.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8387563de4",
+    "published_at": "2026-06-16T22:22:43.340563Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ckalima/pipedrive-mcp-server",
+    "server_version": "2.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-16T22:22:43.340563Z"
+  },
+  "title": "Pipedrive CRM",
+  "type": "mcp_server",
+  "version": "2.4.0"
+}

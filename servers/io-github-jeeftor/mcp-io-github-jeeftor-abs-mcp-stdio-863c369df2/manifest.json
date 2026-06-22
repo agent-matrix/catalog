@@ -1,0 +1,124 @@
+{
+  "description": "Inspect and safely operate Audiobookshelf libraries over MCP.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:51+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-jeeftor-abs-mcp.stdio.863c369df2",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jeeftor/abs-mcp",
+    "homepage": "https://github.com/jeeftor/abs-mcp",
+    "repository": "https://github.com/jeeftor/abs-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/jeeftor/abs-mcp:0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.jeeftor/abs-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of your Audiobookshelf server.",
+          "format": "string",
+          "isRequired": true,
+          "name": "ABS_BASE_URL",
+          "placeholder": "http://localhost:13378"
+        },
+        {
+          "description": "Audiobookshelf API key or bearer token.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ABS_API_KEY"
+        },
+        {
+          "default": "true",
+          "description": "Set to false to enable scan and cleanup tools.",
+          "format": "boolean",
+          "name": "ABS_READ_ONLY"
+        },
+        {
+          "default": "30s",
+          "description": "Audiobookshelf request timeout as a Go duration or seconds.",
+          "format": "string",
+          "name": "ABS_TIMEOUT"
+        },
+        {
+          "default": "test/abs",
+          "description": "Optional local ABS fixture directory for fixture resources.",
+          "format": "filepath",
+          "name": "ABS_FIXTURE_DIR"
+        },
+        {
+          "description": "Optional JSON file containing extra request headers.",
+          "format": "filepath",
+          "name": "ABS_EXTRA_HEADERS_FILE"
+        },
+        {
+          "description": "Optional PEM CA bundle for private or corporate ABS TLS.",
+          "format": "filepath",
+          "name": "ABS_TLS_CA_CERT_FILE"
+        },
+        {
+          "default": "false",
+          "description": "Temporary TLS verification bypass for local troubleshooting.",
+          "format": "boolean",
+          "name": "ABS_TLS_INSECURE_SKIP_VERIFY"
+        },
+        {
+          "default": "stdio",
+          "description": "MCP transport to run at startup. Use stdio for local launchers or http for Streamable HTTP.",
+          "format": "string",
+          "name": "ABS_TRANSPORT"
+        },
+        {
+          "default": "127.0.0.1:3333",
+          "description": "Bind address used when ABS_TRANSPORT=http.",
+          "format": "string",
+          "name": "ABS_HTTP_ADDR"
+        },
+        {
+          "default": "/mcp",
+          "description": "Streamable HTTP endpoint path used when ABS_TRANSPORT=http.",
+          "format": "string",
+          "name": "ABS_HTTP_PATH"
+        },
+        {
+          "description": "Optional bearer token required from Streamable HTTP MCP clients.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ABS_HTTP_BEARER_TOKEN"
+        }
+      ],
+      "identifier": "ghcr.io/jeeftor/abs-mcp:0.3.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "863c369df2",
+    "published_at": "2026-06-16T19:31:44.792752Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.jeeftor/abs-mcp",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-16T19:31:44.792752Z"
+  },
+  "title": "Audiobookshelf MCP",
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

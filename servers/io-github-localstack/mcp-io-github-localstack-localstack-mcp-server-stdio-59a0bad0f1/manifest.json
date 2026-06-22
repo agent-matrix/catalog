@@ -1,0 +1,117 @@
+{
+  "description": "A LocalStack MCP Server providing essential tools for local cloud development & testing",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-localstack-localstack-mcp-server.stdio.59a0bad0f1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/localstack/localstack-mcp-server",
+    "homepage": "https://github.com/localstack/localstack-mcp-server",
+    "repository": "https://github.com/localstack/localstack-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@localstack/localstack-mcp-server@0.5.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.localstack/localstack-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "LocalStack Auth Token (required for all LocalStack MCP tools)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "LOCALSTACK_AUTH_TOKEN"
+        },
+        {
+          "description": "Source AWS access key used by AWS Replicator to read external AWS resources",
+          "format": "string",
+          "isSecret": true,
+          "name": "AWS_ACCESS_KEY_ID"
+        },
+        {
+          "description": "Source AWS secret access key used by AWS Replicator to read external AWS resources",
+          "format": "string",
+          "isSecret": true,
+          "name": "AWS_SECRET_ACCESS_KEY"
+        },
+        {
+          "description": "Optional source AWS session token used by AWS Replicator for temporary credentials",
+          "format": "string",
+          "isSecret": true,
+          "name": "AWS_SESSION_TOKEN"
+        },
+        {
+          "description": "Source AWS region used by AWS Replicator",
+          "format": "string",
+          "name": "AWS_DEFAULT_REGION"
+        },
+        {
+          "description": "Optional Replicator-specific source AWS access key. Use this instead of AWS_ACCESS_KEY_ID when the Replicator source account should be isolated from generic AWS config.",
+          "format": "string",
+          "isSecret": true,
+          "name": "AWS_REPLICATOR_SOURCE_AWS_ACCESS_KEY_ID"
+        },
+        {
+          "description": "Optional Replicator-specific source AWS secret access key. Use with AWS_REPLICATOR_SOURCE_AWS_ACCESS_KEY_ID.",
+          "format": "string",
+          "isSecret": true,
+          "name": "AWS_REPLICATOR_SOURCE_AWS_SECRET_ACCESS_KEY"
+        },
+        {
+          "description": "Optional Replicator-specific source AWS session token for temporary credentials.",
+          "format": "string",
+          "isSecret": true,
+          "name": "AWS_REPLICATOR_SOURCE_AWS_SESSION_TOKEN"
+        },
+        {
+          "description": "Optional Replicator-specific source AWS region. Use with the AWS_REPLICATOR_SOURCE_* credential group.",
+          "format": "string",
+          "name": "AWS_REPLICATOR_SOURCE_REGION_NAME"
+        },
+        {
+          "description": "Optional Replicator-specific source AWS endpoint URL for advanced source-account scenarios.",
+          "format": "string",
+          "name": "AWS_REPLICATOR_SOURCE_ENDPOINT_URL"
+        },
+        {
+          "description": "Set to 1 in the LocalStack container environment to enable App Inspector by default across restarts. The MCP tool can also toggle App Inspector at runtime.",
+          "format": "string",
+          "name": "APP_INSPECTOR"
+        }
+      ],
+      "identifier": "@localstack/localstack-mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "59a0bad0f1",
+    "published_at": "2026-06-17T20:01:27.772313Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.localstack/localstack-mcp-server",
+    "server_version": "0.5.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-17T20:01:27.772313Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.5.0"
+}

@@ -1,0 +1,107 @@
+{
+  "description": "MCP server for controlling HomeMatic smart home devices via the CCU JSON-RPC API",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-claymore666-ccu-mcp.stdio.996756aff5",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/claymore666/ccu-mcp",
+    "homepage": "https://github.com/claymore666/ccu-mcp",
+    "repository": "https://github.com/claymore666/ccu-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "ccu-mcp@1.5.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.claymore666/ccu-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Hostname or IP of your HomeMatic CCU (debmatic, CCU3, or OpenCCU/RaspberryMatic)",
+          "format": "string",
+          "isRequired": true,
+          "name": "CCU_HOST"
+        },
+        {
+          "description": "CCU admin password (same as the WebUI login)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CCU_PASSWORD"
+        },
+        {
+          "default": "Admin",
+          "description": "CCU username",
+          "format": "string",
+          "name": "CCU_USER"
+        },
+        {
+          "default": "false",
+          "description": "Connect to the CCU via HTTPS (self-signed certificates supported)",
+          "format": "boolean",
+          "name": "CCU_HTTPS"
+        },
+        {
+          "default": "80",
+          "description": "CCU API port (80 for HTTP, 443 for HTTPS)",
+          "format": "number",
+          "name": "CCU_PORT"
+        },
+        {
+          "default": "/data",
+          "description": "Directory for the device type cache and session persistence",
+          "format": "string",
+          "name": "CACHE_DIR"
+        },
+        {
+          "description": "Comma-separated allowlist of browser origins. Unset = no cross-origin browser access (default-deny). An allowlisted origin is reflected exactly in Access-Control-Allow-Origin (never '*'); the list also drives DNS-rebinding origin checks",
+          "format": "string",
+          "name": "MCP_ALLOWED_ORIGINS"
+        },
+        {
+          "description": "Extra Host header values accepted by DNS-rebinding protection (comma-separated host:port); add your hostname when behind a proxy or container DNS name",
+          "format": "string",
+          "name": "MCP_ALLOWED_HOSTS"
+        }
+      ],
+      "identifier": "ccu-mcp",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "--stdio"
+        }
+      ],
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.5.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "996756aff5",
+    "published_at": "2026-06-19T13:37:16.028394Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.claymore666/ccu-mcp",
+    "server_version": "1.5.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-19T13:37:16.028394Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.5.0"
+}

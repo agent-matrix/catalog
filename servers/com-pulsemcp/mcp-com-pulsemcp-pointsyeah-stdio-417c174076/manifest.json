@@ -1,0 +1,74 @@
+{
+  "description": "MCP server for searching award flights and travel deals via PointsYeah.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-pulsemcp-pointsyeah.stdio.417c174076",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/pulsemcp/mcp-servers",
+    "homepage": "https://github.com/pulsemcp/mcp-servers",
+    "repository": "https://github.com/pulsemcp/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y"
+          },
+          "pointsyeah-mcp-server@0.2.9"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.pulsemcp/pointsyeah",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "AWS Cognito refresh token from PointsYeah for authentication.",
+          "isSecret": true,
+          "name": "POINTSYEAH_REFRESH_TOKEN"
+        },
+        {
+          "description": "Comma-separated tool groups to enable.",
+          "name": "ENABLED_TOOLGROUPS"
+        }
+      ],
+      "identifier": "pointsyeah-mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.9"
+    }
+  ],
+  "provenance": {
+    "identity_key": "417c174076",
+    "published_at": "2026-06-17T03:55:55.158044Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.pulsemcp/pointsyeah",
+    "server_version": "0.2.9",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-17T03:55:55.158044Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.9"
+}
