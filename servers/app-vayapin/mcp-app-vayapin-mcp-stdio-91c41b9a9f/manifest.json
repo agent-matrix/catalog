@@ -1,0 +1,71 @@
+{
+  "description": "VayaPin MCP: pin resolution + Google Maps geocoding/places + AfterShip tracking, with BYOK.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:18+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.app-vayapin-mcp.stdio.91c41b9a9f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/martinshein/vayacore",
+    "homepage": "https://github.com/martinshein/vayacore",
+    "repository": "https://github.com/martinshein/vayacore"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@vayacore/mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "app.vayapin/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "VayaPin Personal Access Token, sent as 'Authorization: Bearer'. Generate one on the VayaPin developer portal (POST /api/v1/auth/pat/request).",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "VAYAPIN_PAT"
+        },
+        {
+          "description": "Optional tool-slice name to expose a subset of tools (128-tool client ceiling lift). Unset exposes all tools.",
+          "format": "string",
+          "name": "VAYAPIN_MCP_SLICE"
+        },
+        {
+          "default": "https://api.vayapin.app/api/v1",
+          "description": "Override the VayaPin API base URL for staging or self-host.",
+          "format": "string",
+          "name": "VAYAPIN_MCP_API_URL"
+        }
+      ],
+      "identifier": "@vayacore/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "91c41b9a9f",
+    "published_at": "2026-06-20T01:01:54.738078Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "app.vayapin/mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-20T01:01:54.738078Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

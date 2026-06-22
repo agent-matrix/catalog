@@ -1,0 +1,139 @@
+{
+  "description": "Playwright MCP-compatible browser automation bridge for CloakBrowser Chromium.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:40:05+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-swimmwatch-cloakbrowser-mcp.stdio.b7efbf640f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/swimmwatch/cloakbrowser-mcp",
+    "homepage": "https://github.com/swimmwatch/cloakbrowser-mcp",
+    "repository": "https://github.com/swimmwatch/cloakbrowser-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "cloakbrowser-mcp@1.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.swimmwatch/cloakbrowser-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "127.0.0.1",
+          "description": "Streamable HTTP bind host.",
+          "format": "string",
+          "name": "CLOAK_PLAYWRIGHT_MCP_HTTP_HOST"
+        },
+        {
+          "default": "3000",
+          "description": "Streamable HTTP bind port.",
+          "format": "number",
+          "name": "CLOAK_PLAYWRIGHT_MCP_HTTP_PORT"
+        },
+        {
+          "default": "/mcp",
+          "description": "Streamable HTTP endpoint path.",
+          "format": "string",
+          "name": "CLOAK_PLAYWRIGHT_MCP_HTTP_ENDPOINT"
+        },
+        {
+          "description": "Optional Streamable HTTP Bearer token.",
+          "format": "string",
+          "isSecret": true,
+          "name": "CLOAK_PLAYWRIGHT_MCP_HTTP_AUTH_TOKEN"
+        },
+        {
+          "default": "memory",
+          "description": "Session metadata backend. Only memory is implemented in this release.",
+          "format": "string",
+          "name": "CLOAK_PLAYWRIGHT_MCP_HTTP_SESSION_BACKEND"
+        },
+        {
+          "default": "3600000",
+          "description": "Idle TTL for Streamable HTTP sessions.",
+          "format": "number",
+          "name": "CLOAK_PLAYWRIGHT_MCP_HTTP_SESSION_IDLE_TTL_MS"
+        },
+        {
+          "default": "32",
+          "description": "Maximum active Streamable HTTP sessions in one process.",
+          "format": "number",
+          "name": "CLOAK_PLAYWRIGHT_MCP_HTTP_SESSION_MAX"
+        },
+        {
+          "default": "cloak",
+          "description": "Bridge browser engine: cloak or playwright.",
+          "format": "string",
+          "name": "PLAYWRIGHT_MCP_BROWSER_ENGINE"
+        },
+        {
+          "default": "true",
+          "description": "Run the browser in headless mode.",
+          "format": "boolean",
+          "name": "PLAYWRIGHT_MCP_HEADLESS"
+        },
+        {
+          "default": ".playwright-mcp",
+          "description": "Directory where upstream Playwright MCP writes artifacts.",
+          "format": "filepath",
+          "name": "PLAYWRIGHT_MCP_OUTPUT_DIR"
+        },
+        {
+          "default": "stdout",
+          "description": "Return snapshots, console logs, and network logs through stdout or files.",
+          "format": "string",
+          "name": "PLAYWRIGHT_MCP_OUTPUT_MODE"
+        },
+        {
+          "default": "true",
+          "description": "Patch upstream console message collection for CloakBrowser compatibility.",
+          "format": "boolean",
+          "name": "CLOAK_PLAYWRIGHT_MCP_CONSOLE_FALLBACK"
+        },
+        {
+          "description": "Comma-separated or JSON array of extra Chromium launch arguments.",
+          "format": "string",
+          "name": "CLOAK_PLAYWRIGHT_MCP_EXTRA_ARGS"
+        }
+      ],
+      "identifier": "cloakbrowser-mcp",
+      "packageArguments": [
+        {
+          "name": "--transport",
+          "type": "named",
+          "value": "streamable-http"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://127.0.0.1:3000/mcp"
+      },
+      "version": "1.4.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b7efbf640f",
+    "published_at": "2026-06-20T21:41:56.473442Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.swimmwatch/cloakbrowser-mcp",
+    "server_version": "1.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-20T21:41:56.473442Z"
+  },
+  "title": "CloakBrowser MCP",
+  "type": "mcp_server",
+  "version": "1.4.0"
+}

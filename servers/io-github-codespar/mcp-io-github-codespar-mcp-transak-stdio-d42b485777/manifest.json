@@ -1,0 +1,71 @@
+{
+  "description": "MCP server for Transak \u2014 fiat-to-crypto on/off-ramp across ~170 countries (Partner API)",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-codespar-mcp-transak.stdio.d42b485777",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/codespar/mcp-dev-latam",
+    "homepage": "https://github.com/codespar/mcp-dev-latam",
+    "repository": "https://github.com/codespar/mcp-dev-latam"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@codespar/mcp-transak@0.2.0-alpha.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.codespar/mcp-transak",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Transak partner API key (from partner dashboard). Used as partnerApiKey query param on public quote endpoint and bundled with api-secret to mint the access-token for Partner API calls.",
+          "format": "string",
+          "isRequired": true,
+          "name": "TRANSAK_API_KEY"
+        },
+        {
+          "description": "Transak partner API secret. Sent as the api-secret header to endpoints that require server-to-server authentication (and used to mint access tokens for order endpoints).",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "TRANSAK_API_SECRET"
+        },
+        {
+          "description": "Environment selector: 'staging' (default) targets https://api-stg.transak.com; 'production' targets https://api.transak.com.",
+          "format": "string",
+          "name": "TRANSAK_ENV"
+        }
+      ],
+      "identifier": "@codespar/mcp-transak",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0-alpha.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d42b485777",
+    "published_at": "2026-06-20T19:57:55.734266Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.codespar/mcp-transak",
+    "server_version": "0.2.0-alpha.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-20T19:57:55.734266Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.0-alpha.2"
+}

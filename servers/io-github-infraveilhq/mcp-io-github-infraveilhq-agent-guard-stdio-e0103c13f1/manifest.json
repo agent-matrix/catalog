@@ -1,0 +1,65 @@
+{
+  "description": "Gate an AI agent's destructive actions behind human approval, with a tamper-evident log.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:51+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-infraveilhq-agent-guard.stdio.e0103c13f1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/infraveilhq/infraveil-guard",
+    "homepage": "https://github.com/infraveilhq/infraveil-guard",
+    "repository": "https://github.com/infraveilhq/infraveil-guard"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "infraveil-guard==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.infraveilhq/agent-guard",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Severity at/above which an action is gated: none|low|medium|high|critical (default high).",
+          "name": "INFRAVEIL_GUARD_THRESHOLD"
+        },
+        {
+          "description": "enforce (block dangerous actions pending approval) or audit (log only, never block). Default enforce.",
+          "name": "INFRAVEIL_GUARD_MODE"
+        },
+        {
+          "description": "Directory for the ledger and approval queue (default ~/.infraveil-guard).",
+          "name": "INFRAVEIL_GUARD_HOME"
+        }
+      ],
+      "identifier": "infraveil-guard",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e0103c13f1",
+    "published_at": "2026-06-20T19:22:02.198866Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.infraveilhq/agent-guard",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-20T19:22:02.198866Z"
+  },
+  "title": "Infraveil Agent Guard",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

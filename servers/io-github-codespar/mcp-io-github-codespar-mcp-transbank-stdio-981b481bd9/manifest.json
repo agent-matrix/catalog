@@ -1,0 +1,71 @@
+{
+  "description": "MCP server for Transbank \u2014 Chile dominant card acquirer (Webpay Plus / Mall / OneClick)",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-codespar-mcp-transbank.stdio.981b481bd9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/codespar/mcp-dev-latam",
+    "homepage": "https://github.com/codespar/mcp-dev-latam",
+    "repository": "https://github.com/codespar/mcp-dev-latam"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@codespar/mcp-transbank@0.2.0-alpha.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.codespar/mcp-transbank",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Transbank merchant commerce code (sent as Tbk-Api-Key-Id header)",
+          "format": "string",
+          "isRequired": true,
+          "name": "TRANSBANK_COMMERCE_CODE"
+        },
+        {
+          "description": "Transbank API secret key (sent as Tbk-Api-Key-Secret header)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "TRANSBANK_API_KEY_SECRET"
+        },
+        {
+          "description": "Environment: 'integration' (default, https://webpay3gint.transbank.cl) or 'production' (https://webpay3g.transbank.cl)",
+          "format": "string",
+          "name": "TRANSBANK_ENV"
+        }
+      ],
+      "identifier": "@codespar/mcp-transbank",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0-alpha.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "981b481bd9",
+    "published_at": "2026-06-20T20:00:38.225339Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.codespar/mcp-transbank",
+    "server_version": "0.2.0-alpha.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-20T20:00:38.225339Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.0-alpha.2"
+}

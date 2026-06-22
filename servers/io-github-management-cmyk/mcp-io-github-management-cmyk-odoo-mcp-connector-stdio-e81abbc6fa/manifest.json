@@ -1,0 +1,82 @@
+{
+  "description": "Query, report on, and optionally modify any Odoo ERP from Claude. Read-only by default.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-management-cmyk-odoo-mcp-connector.stdio.e81abbc6fa",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/management-cmyk/odoo-mcp-connector",
+    "homepage": "https://github.com/management-cmyk/odoo-mcp-connector",
+    "repository": "https://github.com/management-cmyk/odoo-mcp-connector"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "odoo-mcp-connector@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.management-cmyk/odoo-mcp-connector",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Odoo base URL, e.g. https://your-company.odoo.com",
+          "isRequired": true,
+          "name": "ODOO_URL"
+        },
+        {
+          "description": "Odoo database name",
+          "isRequired": true,
+          "name": "ODOO_DB"
+        },
+        {
+          "description": "Odoo login (email)",
+          "isRequired": true,
+          "name": "ODOO_USERNAME"
+        },
+        {
+          "description": "Odoo API key (or password)",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ODOO_API_KEY"
+        },
+        {
+          "description": "Set to 'true' to allow create/update/delete. Default false (read-only).",
+          "name": "ODOO_ENABLE_WRITES"
+        },
+        {
+          "description": "Per-request timeout in milliseconds (default 30000).",
+          "name": "ODOO_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "odoo-mcp-connector",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e81abbc6fa",
+    "published_at": "2026-06-15T16:43:07.935219Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.management-cmyk/odoo-mcp-connector",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-15T16:43:07.935219Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

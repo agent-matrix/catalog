@@ -1,0 +1,92 @@
+{
+  "description": "MCP server for Fetch Pet insurance claims management using Playwright automation.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-pulsemcp-fetchpet.stdio.17da37d3d5",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/pulsemcp/mcp-servers",
+    "homepage": "https://github.com/pulsemcp/mcp-servers",
+    "repository": "https://github.com/pulsemcp/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y"
+          },
+          "fetchpet-mcp-server@0.1.8"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.pulsemcp/fetchpet",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your Fetch Pet account email address.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "FETCHPET_USERNAME"
+        },
+        {
+          "description": "Your Fetch Pet account password.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "FETCHPET_PASSWORD"
+        },
+        {
+          "default": "true",
+          "description": "Run browser in headless mode (true/false).",
+          "name": "HEADLESS"
+        },
+        {
+          "default": "30000",
+          "description": "Browser operation timeout in milliseconds.",
+          "name": "TIMEOUT"
+        },
+        {
+          "default": "/tmp/fetchpet-downloads",
+          "description": "Directory to save downloaded documents (EOB, invoices).",
+          "name": "FETCHPET_DOWNLOAD_DIR"
+        }
+      ],
+      "identifier": "fetchpet-mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.8"
+    }
+  ],
+  "provenance": {
+    "identity_key": "17da37d3d5",
+    "published_at": "2026-06-17T03:55:50.081938Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.pulsemcp/fetchpet",
+    "server_version": "0.1.8",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-17T03:55:50.081938Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.8"
+}

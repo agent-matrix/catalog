@@ -1,0 +1,83 @@
+{
+  "description": "Datadog MCP \u2014 165 tools for metrics, monitors, logs, APM, RUM, incidents, CI/CD, fleet",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:40:07+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-us-all-datadog.stdio.def6adf0a6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/us-all/datadog-mcp-server",
+    "homepage": "https://github.com/us-all/datadog-mcp-server",
+    "repository": "https://github.com/us-all/datadog-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@us-all/datadog-mcp@1.20.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.us-all/datadog",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Datadog API key",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DD_API_KEY"
+        },
+        {
+          "description": "Datadog application key",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DD_APP_KEY"
+        },
+        {
+          "default": "datadoghq.com",
+          "description": "Datadog site (datadoghq.com, datadoghq.eu, us3.datadoghq.com, etc.)",
+          "name": "DD_SITE"
+        },
+        {
+          "description": "Comma-separated category allowlist (e.g. metrics,monitors,logs). Default: all categories enabled.",
+          "name": "DD_TOOLS"
+        },
+        {
+          "description": "Comma-separated category disablelist.",
+          "name": "DD_DISABLE"
+        },
+        {
+          "default": "false",
+          "description": "Set to 'true' to enable write/destructive tools. Default read-only.",
+          "name": "DD_ALLOW_WRITE"
+        }
+      ],
+      "identifier": "@us-all/datadog-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.20.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "def6adf0a6",
+    "published_at": "2026-06-16T03:04:24.358954Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.us-all/datadog",
+    "server_version": "1.20.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-16T03:04:24.358954Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.20.3"
+}

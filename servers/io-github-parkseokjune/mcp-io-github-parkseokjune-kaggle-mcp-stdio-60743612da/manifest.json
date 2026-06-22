@@ -1,0 +1,85 @@
+{
+  "description": "Safety-first Kaggle MCP \u2014 confirm-gated destructive ops, submission budget, injection-fenced.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:59+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-parkseokjune-kaggle-mcp.stdio.60743612da",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/parkseokjune/kaggle-mcp",
+    "homepage": "https://github.com/parkseokjune/kaggle-mcp",
+    "repository": "https://github.com/parkseokjune/kaggle-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "safe-kaggle-mcp==0.4.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.parkseokjune/kaggle-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Kaggle account username (legacy scheme; pair with KAGGLE_KEY). Optional \u2014 read-only tools work without credentials.",
+          "format": "string",
+          "name": "KAGGLE_USERNAME"
+        },
+        {
+          "description": "Kaggle API key, the 40-char 'key' from kaggle.json (legacy scheme; pair with KAGGLE_USERNAME).",
+          "format": "string",
+          "isSecret": true,
+          "name": "KAGGLE_KEY"
+        },
+        {
+          "description": "Modern Kaggle KGAT_... token (alternative to KAGGLE_USERNAME/KAGGLE_KEY). Optional.",
+          "format": "string",
+          "isSecret": true,
+          "name": "KAGGLE_API_TOKEN"
+        },
+        {
+          "description": "Set to 1 to expose delete tools. Default 0 (off).",
+          "format": "string",
+          "name": "KAGGLE_MCP_ENABLE_DESTRUCTIVE"
+        },
+        {
+          "description": "Set to 1 to allow making datasets/kernels public. Default 0 (off).",
+          "format": "string",
+          "name": "KAGGLE_MCP_ENABLE_PUBLISH"
+        },
+        {
+          "description": "Daily per-competition submission budget. Default 5.",
+          "format": "string",
+          "name": "KAGGLE_MCP_SUBMISSION_CAP"
+        }
+      ],
+      "identifier": "safe-kaggle-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "60743612da",
+    "published_at": "2026-06-16T12:46:35.259451Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.parkseokjune/kaggle-mcp",
+    "server_version": "0.4.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-16T12:46:35.259451Z"
+  },
+  "title": "Safe Kaggle MCP",
+  "type": "mcp_server",
+  "version": "0.4.1"
+}

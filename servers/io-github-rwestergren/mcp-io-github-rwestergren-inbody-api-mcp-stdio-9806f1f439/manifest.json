@@ -1,0 +1,68 @@
+{
+  "description": "MCP server for InBody body-composition data \u2014 scans, body fat, muscle mass, body water",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:40:03+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-rwestergren-inbody-api-mcp.stdio.9806f1f439",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/rwestergren/inbody-api-mcp",
+    "homepage": "https://github.com/rwestergren/inbody-api-mcp",
+    "repository": "https://github.com/rwestergren/inbody-api-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "inbody-api-mcp==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.rwestergren/inbody-api-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "The phone number used to register your InBody account (digits only, no country code).",
+          "isRequired": true,
+          "name": "INBODY_LOGIN_ID"
+        },
+        {
+          "description": "Your InBody account password",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "INBODY_LOGIN_PW"
+        },
+        {
+          "description": "ISO country code selecting the regional API host (defaults to US).",
+          "name": "INBODY_COUNTRY_CODE"
+        }
+      ],
+      "identifier": "inbody-api-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9806f1f439",
+    "published_at": "2026-06-19T16:34:45.90574Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.rwestergren/inbody-api-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-19T16:34:45.90574Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

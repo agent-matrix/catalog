@@ -1,0 +1,70 @@
+{
+  "description": "Economic-safety tools for trading agents: executable quote + rug/honeypot pretrade check via x402.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-getplexa-mcp.stdio.d0082093e9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/plexa-xyz/mcp",
+    "homepage": "https://github.com/plexa-xyz/mcp",
+    "repository": "https://github.com/plexa-xyz/mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@getplexa/mcp@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.getplexa/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Funded wallet private key \u2014 pays Plexa per call (x402 USDC) and signs locally. Plexa never receives it. Use a dedicated low-balance wallet.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AGENT_WALLET_KEY"
+        },
+        {
+          "description": "Plexa public API base URL (default https://api.getplexa.com).",
+          "format": "string",
+          "name": "PLEXA_BASE_URL"
+        },
+        {
+          "description": "Chain the wallet is funded on / quotes default to: base | polygon | arbitrum (default base).",
+          "format": "string",
+          "name": "CHAIN"
+        }
+      ],
+      "identifier": "@getplexa/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d0082093e9",
+    "published_at": "2026-06-18T10:32:37.583995Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.getplexa/mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-18T10:32:37.583995Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

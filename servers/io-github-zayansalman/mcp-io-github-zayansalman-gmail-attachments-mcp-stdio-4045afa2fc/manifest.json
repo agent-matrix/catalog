@@ -1,0 +1,81 @@
+{
+  "description": "Minimal MCP server for downloading Gmail attachments to disk. Read-only OAuth by default.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:40:09+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-zayansalman-gmail-attachments-mcp.stdio.4045afa2fc",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/zayansalman/gmail-attachments-mcp",
+    "homepage": "https://github.com/zayansalman/gmail-attachments-mcp",
+    "repository": "https://github.com/zayansalman/gmail-attachments-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "gmail-attachments-mcp==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.zayansalman/gmail-attachments-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the Google OAuth client secret JSON. Default: $XDG_CONFIG_HOME/gmail-attachments-mcp/credentials.json.",
+          "format": "filepath",
+          "name": "GMAIL_MCP_CREDENTIALS"
+        },
+        {
+          "description": "Path to the cached Gmail OAuth refresh token. Default: $XDG_CONFIG_HOME/gmail-attachments-mcp/token.json.",
+          "format": "filepath",
+          "isSecret": true,
+          "name": "GMAIL_MCP_TOKEN"
+        },
+        {
+          "description": "Default directory where downloaded attachments are saved when the tool call does not specify dest_dir. Default: ~/Downloads.",
+          "format": "filepath",
+          "name": "GMAIL_MCP_DEFAULT_DEST_DIR"
+        },
+        {
+          "description": "Comma-separated Google OAuth scopes. Default: https://www.googleapis.com/auth/gmail.readonly.",
+          "format": "string",
+          "name": "GMAIL_MCP_SCOPES"
+        }
+      ],
+      "identifier": "gmail-attachments-mcp",
+      "packageArguments": [
+        {
+          "description": "Subcommand that runs the stdio MCP server.",
+          "type": "positional",
+          "value": "serve"
+        }
+      ],
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4045afa2fc",
+    "published_at": "2026-06-22T05:49:07.698165Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.zayansalman/gmail-attachments-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-22T05:49:07.698165Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

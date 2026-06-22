@@ -1,0 +1,89 @@
+{
+  "description": "Long-term memory for AI-coded codebases \u2014 agents log the why behind every change and read it back.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-masondelan-selvedge.stdio.ff7784a700",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/masondelan/selvedge",
+    "homepage": "https://github.com/masondelan/selvedge",
+    "repository": "https://github.com/masondelan/selvedge"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "The MCP server binary (selvedge-server) differs from the package name, so uvx needs --from.",
+            "isRequired": true,
+            "name": "--from",
+            "type": "named",
+            "value": "selvedge"
+          },
+          {
+            "description": "Entry point that starts the MCP server over stdio. Plain `uvx selvedge` would launch the CLI instead.",
+            "isRequired": true,
+            "type": "positional",
+            "value": "selvedge-server",
+            "valueHint": "selvedge-server"
+          },
+          "selvedge==0.3.8"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.masondelan/selvedge",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Override the SQLite path. Defaults to .selvedge/selvedge.db next to the codebase.",
+          "name": "SELVEDGE_DB"
+        }
+      ],
+      "identifier": "selvedge",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "The MCP server binary (selvedge-server) differs from the package name, so uvx needs --from.",
+          "isRequired": true,
+          "name": "--from",
+          "type": "named",
+          "value": "selvedge"
+        },
+        {
+          "description": "Entry point that starts the MCP server over stdio. Plain `uvx selvedge` would launch the CLI instead.",
+          "isRequired": true,
+          "type": "positional",
+          "value": "selvedge-server",
+          "valueHint": "selvedge-server"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.8"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ff7784a700",
+    "published_at": "2026-06-17T03:54:37.92622Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.masondelan/selvedge",
+    "server_version": "0.3.8",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-17T03:54:37.92622Z"
+  },
+  "title": "Selvedge",
+  "type": "mcp_server",
+  "version": "0.3.8"
+}

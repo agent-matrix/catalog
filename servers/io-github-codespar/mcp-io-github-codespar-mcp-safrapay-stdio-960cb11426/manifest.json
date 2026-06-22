@@ -1,0 +1,77 @@
+{
+  "description": "MCP server for Safrapay \u2014 Banco Safra acquirer: credit, Pix, boleto + split, 3DS, chargebacks",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-codespar-mcp-safrapay.stdio.960cb11426",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/codespar/mcp-dev-latam",
+    "homepage": "https://github.com/codespar/mcp-dev-latam",
+    "repository": "https://github.com/codespar/mcp-dev-latam"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@codespar/mcp-safrapay@0.2.0-alpha.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.codespar/mcp-safrapay",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Safrapay merchant CNPJ (sent as merchantCredential header on auth)",
+          "format": "string",
+          "isRequired": true,
+          "name": "SAFRAPAY_CLIENT_ID"
+        },
+        {
+          "description": "Safrapay MerchantToken used to compute the BCRYPT Authorization header on auth",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SAFRAPAY_CLIENT_SECRET"
+        },
+        {
+          "description": "Safrapay merchant id (used in request bodies where applicable)",
+          "format": "string",
+          "isRequired": true,
+          "name": "SAFRAPAY_MERCHANT_ID"
+        },
+        {
+          "description": "Environment: 'sandbox' or 'production'. Defaults to sandbox.",
+          "format": "string",
+          "name": "SAFRAPAY_ENV"
+        }
+      ],
+      "identifier": "@codespar/mcp-safrapay",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0-alpha.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "960cb11426",
+    "published_at": "2026-06-20T20:00:29.07244Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.codespar/mcp-safrapay",
+    "server_version": "0.2.0-alpha.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-20T20:00:29.07244Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.0-alpha.2"
+}

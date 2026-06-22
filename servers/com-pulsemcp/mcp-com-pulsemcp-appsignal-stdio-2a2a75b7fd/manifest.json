@@ -1,0 +1,75 @@
+{
+  "description": "MCP server for AppSignal \u2014 get alert details, search logs, and retrieve logs within time ranges.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-pulsemcp-appsignal.stdio.2a2a75b7fd",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/pulsemcp/mcp-servers",
+    "homepage": "https://github.com/pulsemcp/mcp-servers",
+    "repository": "https://github.com/pulsemcp/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y"
+          },
+          "appsignal-mcp-server@0.5.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.pulsemcp/appsignal",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your AppSignal API key for authentication.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "APPSIGNAL_API_KEY"
+        },
+        {
+          "description": "Your AppSignal application ID (optional; can be selected dynamically).",
+          "name": "APPSIGNAL_APP_ID"
+        }
+      ],
+      "identifier": "appsignal-mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "2a2a75b7fd",
+    "published_at": "2026-06-17T03:55:49.142521Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.pulsemcp/appsignal",
+    "server_version": "0.5.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-17T03:55:49.142521Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.5.4"
+}

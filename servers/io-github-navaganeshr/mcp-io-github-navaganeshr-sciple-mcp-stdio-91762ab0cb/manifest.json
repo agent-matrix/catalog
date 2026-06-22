@@ -1,0 +1,71 @@
+{
+  "description": "MCP server for the Sciple platform \u2014 environments, services, dashboards, runbooks, tickets.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:58+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-navaganeshr-sciple-mcp.stdio.91762ab0cb",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/navaganeshr/sciple-mcp",
+    "homepage": "https://github.com/navaganeshr/sciple-mcp",
+    "repository": "https://github.com/navaganeshr/sciple-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "sciple-mcp==0.6.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.navaganeshr/sciple-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the Sciple platform REST API, including the /api/v1 prefix. Example: http://localhost:8000/api/v1.",
+          "isRequired": true,
+          "name": "SCIPLE_API_URL"
+        },
+        {
+          "description": "Sciple personal access token (sciple_pat_...). Mint one under Profile \u2192 Access tokens in the Sciple dashboard. The token's scopes govern which tools succeed; out-of-scope calls return 403.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SCIPLE_API_TOKEN"
+        },
+        {
+          "description": "Short id of the Sciple tenant the server will act against. Must equal the token's bound tenant; calls against a different tenant return 403.",
+          "isRequired": true,
+          "name": "SCIPLE_TENANT_ID"
+        }
+      ],
+      "identifier": "sciple-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.6.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "91762ab0cb",
+    "published_at": "2026-06-19T18:51:53.687211Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.navaganeshr/sciple-mcp",
+    "server_version": "0.6.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-19T18:51:53.687211Z"
+  },
+  "title": "Sciple Platform",
+  "type": "mcp_server",
+  "version": "0.6.4"
+}

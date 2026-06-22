@@ -1,0 +1,70 @@
+{
+  "description": "Clean, normalized SEC EDGAR / FRED / ETF / index data for AI agents.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-birthday-tools-edgarmcp.stdio.35b4241c00",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/birthday-tools/edgarmcp",
+    "homepage": "https://github.com/birthday-tools/edgarmcp",
+    "repository": "https://github.com/birthday-tools/edgarmcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-edgar==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.birthday-tools/edgarmcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Override the SEC User-Agent contact string",
+          "format": "string",
+          "name": "EDGAR_USER_AGENT"
+        },
+        {
+          "description": "Free FRED API key for get_macro_series and index levels",
+          "format": "string",
+          "isSecret": true,
+          "name": "FRED_API_KEY"
+        },
+        {
+          "description": "Optional OpenFIGI key for a higher CUSIP/ISIN rate limit",
+          "format": "string",
+          "isSecret": true,
+          "name": "OPENFIGI_API_KEY"
+        }
+      ],
+      "identifier": "mcp-edgar",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "35b4241c00",
+    "published_at": "2026-06-21T10:16:40.236484Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.birthday-tools/edgarmcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-21T10:16:40.236484Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

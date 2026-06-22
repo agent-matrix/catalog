@@ -1,0 +1,82 @@
+{
+  "description": "MCP server for NuPay \u2014 Nubank merchant checkout: Pix + wallet one-click for 100M+ BR users",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-codespar-mcp-nupay.stdio.ad8efcfd8c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/codespar/mcp-dev-latam",
+    "homepage": "https://github.com/codespar/mcp-dev-latam",
+    "repository": "https://github.com/codespar/mcp-dev-latam"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@codespar/mcp-nupay@0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.codespar/mcp-nupay",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "NuPay X-Merchant-Key issued to your merchant",
+          "format": "string",
+          "isRequired": true,
+          "name": "NUPAY_MERCHANT_KEY"
+        },
+        {
+          "description": "NuPay X-Merchant-Token issued to your merchant",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "NUPAY_MERCHANT_TOKEN"
+        },
+        {
+          "description": "OAuth2/CIBA client_id for pre-authorized (recurrence) flows. Optional unless using backchannel_start / backchannel_complete.",
+          "format": "string",
+          "name": "NUPAY_CLIENT_ID"
+        },
+        {
+          "description": "OAuth2/CIBA client_secret for pre-authorized flows. Optional unless using backchannel_* tools.",
+          "format": "string",
+          "isSecret": true,
+          "name": "NUPAY_CLIENT_SECRET"
+        },
+        {
+          "description": "sandbox | production. Defaults to sandbox. Drives both checkout API and auth base URLs.",
+          "format": "string",
+          "name": "NUPAY_ENV"
+        }
+      ],
+      "identifier": "@codespar/mcp-nupay",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ad8efcfd8c",
+    "published_at": "2026-06-20T20:00:07.845927Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.codespar/mcp-nupay",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-20T20:00:07.845927Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

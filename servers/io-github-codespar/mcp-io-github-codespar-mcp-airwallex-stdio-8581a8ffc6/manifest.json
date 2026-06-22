@@ -1,0 +1,71 @@
+{
+  "description": "MCP server for Airwallex \u2014 cross-border collection + payouts, global accounts, FX, transfers",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-codespar-mcp-airwallex.stdio.8581a8ffc6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/codespar/mcp-dev-latam",
+    "homepage": "https://github.com/codespar/mcp-dev-latam",
+    "repository": "https://github.com/codespar/mcp-dev-latam"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@codespar/mcp-airwallex@0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.codespar/mcp-airwallex",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Airwallex client id (sent as x-client-id on /authentication/login)",
+          "format": "string",
+          "isRequired": true,
+          "name": "AIRWALLEX_CLIENT_ID"
+        },
+        {
+          "description": "Airwallex API key, secret (sent as x-api-key on /authentication/login)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AIRWALLEX_API_KEY"
+        },
+        {
+          "description": "Airwallex environment. 'demo' (default, https://api-demo.airwallex.com) or 'production' (https://api.airwallex.com).",
+          "format": "string",
+          "name": "AIRWALLEX_ENV"
+        }
+      ],
+      "identifier": "@codespar/mcp-airwallex",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8581a8ffc6",
+    "published_at": "2026-06-20T19:59:21.497033Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.codespar/mcp-airwallex",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-20T19:59:21.497033Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

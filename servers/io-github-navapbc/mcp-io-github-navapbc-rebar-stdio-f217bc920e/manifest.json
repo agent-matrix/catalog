@@ -1,0 +1,67 @@
+{
+  "description": "Event-sourced ticket system with a Jira reconciler, exposed as an MCP server.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:58+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-navapbc-rebar.stdio.f217bc920e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/navapbc/rebar",
+    "homepage": "https://github.com/navapbc/rebar",
+    "repository": "https://github.com/navapbc/rebar"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "nava-rebar==0.5.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.navapbc/rebar",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the repo root that holds the .tickets-tracker store (defaults to the git toplevel of the working dir).",
+          "name": "REBAR_ROOT"
+        },
+        {
+          "description": "Set to 1 to expose only the read tools (no write/mutation tools).",
+          "name": "REBAR_MCP_READONLY"
+        },
+        {
+          "description": "Set to 1 to allow the live (mutating) Jira reconcile mode; otherwise reconcile is dry-run only.",
+          "name": "REBAR_MCP_ALLOW_RECONCILE_LIVE"
+        }
+      ],
+      "identifier": "nava-rebar",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f217bc920e",
+    "published_at": "2026-06-16T10:41:58.095052Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.navapbc/rebar",
+    "server_version": "0.5.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-16T10:41:58.095052Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.5.1"
+}

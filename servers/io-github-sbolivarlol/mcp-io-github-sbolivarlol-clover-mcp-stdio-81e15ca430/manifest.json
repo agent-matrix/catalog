@@ -1,0 +1,94 @@
+{
+  "description": "Clover POS for a single merchant: sales, inventory, orders, customers (reads + safe writes).",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-SBolivarLoL-clover-mcp.stdio.81e15ca430",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/SBolivarLoL/clover-mcp-server",
+    "homepage": "https://github.com/SBolivarLoL/clover-mcp-server",
+    "repository": "https://github.com/SBolivarLoL/clover-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "clover-mcp==0.1.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.SBolivarLoL/clover-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Clover merchant ID",
+          "isRequired": true,
+          "name": "CLOVER_MERCHANT_ID"
+        },
+        {
+          "description": "Clover API access token",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CLOVER_ACCESS_TOKEN"
+        },
+        {
+          "default": "na",
+          "description": "Clover API region: na | eu | la",
+          "name": "CLOVER_REGION"
+        },
+        {
+          "default": "false",
+          "description": "Use the Clover sandbox host when true",
+          "name": "CLOVER_SANDBOX"
+        },
+        {
+          "default": "token",
+          "description": "Auth mode: token | oauth_refresh",
+          "name": "CLOVER_AUTH_MODE"
+        },
+        {
+          "description": "OAuth refresh token (oauth_refresh mode)",
+          "isSecret": true,
+          "name": "CLOVER_REFRESH_TOKEN"
+        },
+        {
+          "description": "OAuth app client ID (oauth_refresh mode)",
+          "name": "CLOVER_OAUTH_CLIENT_ID"
+        },
+        {
+          "description": "OAuth app client secret (oauth_refresh mode)",
+          "isSecret": true,
+          "name": "CLOVER_OAUTH_CLIENT_SECRET"
+        }
+      ],
+      "identifier": "clover-mcp",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "81e15ca430",
+    "published_at": "2026-06-21T19:41:11.520308Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.SBolivarLoL/clover-mcp",
+    "server_version": "0.1.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-21T19:41:11.520308Z"
+  },
+  "title": "Clover POS",
+  "type": "mcp_server",
+  "version": "0.1.4"
+}

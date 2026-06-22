@@ -1,0 +1,74 @@
+{
+  "description": "MCP server for Gainium \u2014 manage trading bots, deals, and balances via AI assistants",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:24+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-gainium-gainium-mcp.stdio.546b066899",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Gainium/gainium-mcp",
+    "homepage": "https://github.com/Gainium/gainium-mcp",
+    "repository": "https://github.com/Gainium/gainium-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "gainium-mcp@3.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.gainium/gainium-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Gainium API key (https://app.gainium.io \u2192 Settings \u2192 API)",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GAINIUM_API_KEY"
+        },
+        {
+          "description": "Gainium API secret (paired with GAINIUM_API_KEY)",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GAINIUM_API_SECRET"
+        },
+        {
+          "default": "false",
+          "description": "Set to \"true\" to restrict the server to paper-trading bots only",
+          "name": "GAINIUM_PAPER_ONLY"
+        },
+        {
+          "description": "Optional: restrict all operations to a single bot ID",
+          "name": "GAINIUM_ALLOWED_BOT_ID"
+        }
+      ],
+      "identifier": "gainium-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "3.3.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "546b066899",
+    "published_at": "2026-06-17T11:02:23.194837Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.gainium/gainium-mcp",
+    "server_version": "3.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-17T11:02:23.194837Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "3.3.0"
+}

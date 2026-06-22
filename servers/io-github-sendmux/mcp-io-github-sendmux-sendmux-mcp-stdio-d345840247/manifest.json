@@ -1,0 +1,83 @@
+{
+  "description": "Email inbox API for AI agents with MCP tools for Mailbox, Management, and Sending APIs.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Sendmux-sendmux-mcp.stdio.d345840247",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Sendmux/sendmux-sdk",
+    "homepage": "https://github.com/Sendmux/sendmux-sdk",
+    "repository": "https://github.com/Sendmux/sendmux-sdk"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "sendmux-mcp==1.1.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Sendmux/sendmux-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Tool surfaces to run locally.",
+          "format": "string",
+          "isRequired": true,
+          "name": "SENDMUX_MCP_SURFACES",
+          "value": "mailbox,management,sending"
+        },
+        {
+          "description": "Mailbox API key for Mailbox API and Sending API tools.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SENDMUX_MAILBOX_API_KEY",
+          "placeholder": "smx_mbx_..."
+        },
+        {
+          "description": "Root API key for Management API tools.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SENDMUX_MANAGEMENT_API_KEY",
+          "placeholder": "smx_root_..."
+        },
+        {
+          "description": "Optional Sending API key when it differs from the Mailbox API key.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SENDMUX_SENDING_API_KEY",
+          "placeholder": "smx_mbx_..."
+        }
+      ],
+      "identifier": "sendmux-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d345840247",
+    "published_at": "2026-06-19T01:54:00.522925Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Sendmux/sendmux-mcp",
+    "server_version": "1.1.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-19T01:54:00.522925Z"
+  },
+  "title": "Sendmux MCP",
+  "type": "mcp_server",
+  "version": "1.1.3"
+}

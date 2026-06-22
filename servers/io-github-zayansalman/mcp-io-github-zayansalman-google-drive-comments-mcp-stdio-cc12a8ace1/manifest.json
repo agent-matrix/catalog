@@ -1,0 +1,76 @@
+{
+  "description": "Minimal MCP server for reading comments on Google Drive files (Docs, Sheets, Slides). Read-only.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:40:09+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-zayansalman-google-drive-comments-mcp.stdio.cc12a8ace1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/zayansalman/google-drive-comments-mcp",
+    "homepage": "https://github.com/zayansalman/google-drive-comments-mcp",
+    "repository": "https://github.com/zayansalman/google-drive-comments-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "google-drive-comments-mcp==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.zayansalman/google-drive-comments-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the Google OAuth client secret JSON. Default: $XDG_CONFIG_HOME/google-drive-comments-mcp/credentials.json.",
+          "format": "filepath",
+          "name": "DRIVE_MCP_CREDENTIALS"
+        },
+        {
+          "description": "Path to the cached Google OAuth refresh token. Default: $XDG_CONFIG_HOME/google-drive-comments-mcp/token.json.",
+          "format": "filepath",
+          "isSecret": true,
+          "name": "DRIVE_MCP_TOKEN"
+        },
+        {
+          "description": "Comma-separated Google OAuth scopes. Default: https://www.googleapis.com/auth/drive.readonly.",
+          "format": "string",
+          "name": "DRIVE_MCP_SCOPES"
+        }
+      ],
+      "identifier": "google-drive-comments-mcp",
+      "packageArguments": [
+        {
+          "description": "Subcommand that runs the stdio MCP server.",
+          "type": "positional",
+          "value": "serve"
+        }
+      ],
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "cc12a8ace1",
+    "published_at": "2026-06-22T05:49:06.826608Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.zayansalman/google-drive-comments-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-22T05:49:06.826608Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

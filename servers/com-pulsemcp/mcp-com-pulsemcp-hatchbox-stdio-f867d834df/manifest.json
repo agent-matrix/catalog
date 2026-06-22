@@ -1,0 +1,110 @@
+{
+  "description": "MCP server for Hatchbox Rails hosting \u2014 env var inspection, deploys, and process monitoring.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-pulsemcp-hatchbox.stdio.f867d834df",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/pulsemcp/mcp-servers",
+    "homepage": "https://github.com/pulsemcp/mcp-servers",
+    "repository": "https://github.com/pulsemcp/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y"
+          },
+          "hatchbox-mcp-server@0.1.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.pulsemcp/hatchbox",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API key for authentication with Hatchbox.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "HATCHBOX_API_KEY"
+        },
+        {
+          "description": "Hatchbox account ID visible in the dashboard URL.",
+          "isRequired": true,
+          "name": "HATCHBOX_ACCOUNT_ID"
+        },
+        {
+          "description": "Hatchbox application ID visible in the dashboard URL.",
+          "isRequired": true,
+          "name": "HATCHBOX_APP_ID"
+        },
+        {
+          "description": "Deployment webhook key for triggering deployments.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "HATCHBOX_DEPLOY_KEY"
+        },
+        {
+          "description": "IP address of Hatchbox server for SSH access to read environment variables.",
+          "name": "WEB_SERVER_IP_ADDRESS"
+        },
+        {
+          "default": "~/.ssh/id_rsa",
+          "description": "Path to SSH private key for server access.",
+          "name": "SSH_KEY_PATH"
+        },
+        {
+          "description": "App name to filter processes if multiple apps run on the same server.",
+          "name": "HATCHBOX_APP_NAME"
+        },
+        {
+          "default": "true",
+          "description": "Set to false to enable write operations for environment variables.",
+          "name": "READONLY"
+        },
+        {
+          "default": "true",
+          "description": "Set to false to disable deployment operations.",
+          "name": "ALLOW_DEPLOYS"
+        }
+      ],
+      "identifier": "hatchbox-mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f867d834df",
+    "published_at": "2026-06-17T03:55:53.290413Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.pulsemcp/hatchbox",
+    "server_version": "0.1.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-17T03:55:53.290413Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.3"
+}

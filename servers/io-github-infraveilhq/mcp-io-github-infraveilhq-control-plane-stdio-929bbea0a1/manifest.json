@@ -1,0 +1,82 @@
+{
+  "description": "Govern your backend control plane from your AI agent - signed, human-approval-gated.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:51+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-infraveilhq-control-plane.stdio.929bbea0a1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/infraveilhq/infraveil-mcp",
+    "homepage": "https://github.com/infraveilhq/infraveil-mcp",
+    "repository": "https://github.com/infraveilhq/infraveil-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "infraveil-mcp==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.infraveilhq/control-plane",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Control-plane base URL, e.g. https://api.infraveil.com",
+          "isRequired": true,
+          "name": "INFRAVEIL_BASE_URL"
+        },
+        {
+          "description": "Your Infraveil client id (same one the agent uses)",
+          "isRequired": true,
+          "name": "INFRAVEIL_CLIENT_ID"
+        },
+        {
+          "description": "The agent id this MCP server speaks for",
+          "isRequired": true,
+          "name": "INFRAVEIL_AGENT_ID"
+        },
+        {
+          "description": "The agent's existing token; used to sign requests. Never minted here.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "INFRAVEIL_AGENT_TOKEN"
+        },
+        {
+          "description": "Alternative to the four vars above: path to your rendered agent source; ids and token are read from it.",
+          "name": "INFRAVEIL_AGENT_FILE"
+        },
+        {
+          "description": "Verify the control plane's response signatures (default on). Set 0 only for debugging.",
+          "name": "INFRAVEIL_VERIFY_RESPONSES"
+        }
+      ],
+      "identifier": "infraveil-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "929bbea0a1",
+    "published_at": "2026-06-19T20:11:12.77829Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.infraveilhq/control-plane",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-19T20:11:12.77829Z"
+  },
+  "title": "Infraveil Control Plane",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

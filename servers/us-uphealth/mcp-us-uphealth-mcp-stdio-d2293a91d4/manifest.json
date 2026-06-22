@@ -1,0 +1,59 @@
+{
+  "description": "No-key federal health fact/list/tip lookup + agent-callable cued-stream tools. Not medical advice.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:40:11+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.us-uphealth-mcp.stdio.d2293a91d4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ericinsf/uphealth",
+    "homepage": "https://github.com/ericinsf/uphealth",
+    "repository": "https://github.com/ericinsf/uphealth"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@uphealth/mcp-server@1.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "us.uphealth/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional. Runs keyless by default \u2014 lookup_health_fact needs no key. Set a free sandbox key (begins up_sandbox_, from https://uphealth.us/signup) to unlock the keyed patient-stream + cue tools.",
+          "isSecret": true,
+          "name": "UPHEALTH_API_KEY"
+        }
+      ],
+      "identifier": "@uphealth/mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d2293a91d4",
+    "published_at": "2026-06-17T07:38:18.766252Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "us.uphealth/mcp",
+    "server_version": "1.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-17T07:38:18.766252Z"
+  },
+  "title": "Uphealth Signal",
+  "type": "mcp_server",
+  "version": "1.1.2"
+}

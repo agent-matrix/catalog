@@ -1,0 +1,94 @@
+{
+  "description": "Generate your daily standup from real GitHub, Jira, Linear, and Slack activity.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:40:03+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sathvic-kollu-standup-mcp.stdio.bc0633d24a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sathvic-kollu/standup-mcp",
+    "homepage": "https://github.com/sathvic-kollu/standup-mcp",
+    "repository": "https://github.com/sathvic-kollu/standup-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "standup-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sathvic-kollu/standup-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "GitHub read-only personal access token. Enables commits, PRs, and reviews. Leave all sources unset to use the built-in demo data.",
+          "isSecret": true,
+          "name": "GITHUB_TOKEN"
+        },
+        {
+          "description": "Your Jira Cloud site, e.g. https://your-company.atlassian.net.",
+          "name": "JIRA_BASE_URL"
+        },
+        {
+          "description": "Atlassian account email the API token belongs to.",
+          "name": "JIRA_EMAIL"
+        },
+        {
+          "description": "Jira API token from id.atlassian.com. Read-only use.",
+          "isSecret": true,
+          "name": "JIRA_API_TOKEN"
+        },
+        {
+          "description": "Linear personal API key (read-only). Enables issue state changes and comments.",
+          "isSecret": true,
+          "name": "LINEAR_API_KEY"
+        },
+        {
+          "description": "Slack token with read scopes. Enables scanning your own messages for blocker language.",
+          "isSecret": true,
+          "name": "SLACK_TOKEN"
+        },
+        {
+          "description": "Optional comma-separated channel ids to scan when message search is unavailable.",
+          "name": "SLACK_CHANNELS"
+        },
+        {
+          "description": "Optional display name for the standup's owner.",
+          "name": "STANDUP_NAME"
+        },
+        {
+          "description": "Set to true to force the demo dataset even when credentials are present.",
+          "name": "STANDUP_DEMO_MODE"
+        }
+      ],
+      "identifier": "standup-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "bc0633d24a",
+    "published_at": "2026-06-17T08:28:31.726516Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sathvic-kollu/standup-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-17T08:28:31.726516Z"
+  },
+  "title": "Standup from your activity",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

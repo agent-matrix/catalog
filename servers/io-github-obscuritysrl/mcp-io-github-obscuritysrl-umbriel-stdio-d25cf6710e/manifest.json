@@ -1,0 +1,100 @@
+{
+  "description": "Playwright for the Windows desktop, from Bun \u2014 drive native GUIs via UI Automation + MCP.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:32+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ObscuritySRL-umbriel.stdio.d25cf6710e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ObscuritySRL/umbriel",
+    "homepage": "https://github.com/ObscuritySRL/umbriel",
+    "repository": "https://github.com/ObscuritySRL/umbriel"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "bunx",
+          "umbriel@1.11.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ObscuritySRL/umbriel",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "safe",
+          "description": "Capability profile: 'readonly' (inspect/read only), 'safe' (read + input + window \u2014 default), or 'full' (also os + fs tools).",
+          "format": "string",
+          "name": "UMBRIEL_PROFILE"
+        },
+        {
+          "description": "Set to '1' to allow the 'os' tools (launch_app/run_program/open_path, kill_process, manage_process, control_service, set_env, registry_get/registry_list/registry_set) AND the 'fs' tools (read_file/write_file/list_dir/stat_path/make_dir/copy_file/move_file/delete_file) regardless of profile.",
+          "format": "string",
+          "name": "UMBRIEL_OS"
+        },
+        {
+          "description": "Comma-separated tool names or categories to additionally allow on top of the profile.",
+          "format": "string",
+          "name": "UMBRIEL_ALLOW"
+        },
+        {
+          "description": "Comma-separated tool names or categories to deny, overriding the profile and UMBRIEL_ALLOW.",
+          "format": "string",
+          "name": "UMBRIEL_DENY"
+        },
+        {
+          "description": "Set to 'never' to forbid the real-cursor fallback entirely (strictly cursor-free). By default clicks/drags are cursor-free but fall back to the real hardware cursor when no cursor-free path exists.",
+          "format": "string",
+          "name": "UMBRIEL_CURSOR"
+        },
+        {
+          "description": "Sandbox root directory that the fs-category file tools (read_file/write_file/list_dir/stat_path/make_dir/copy_file/move_file/delete_file) are confined to when fs tools are enabled; open_path's path argument is honored too.",
+          "format": "string",
+          "name": "UMBRIEL_FS_ROOT"
+        },
+        {
+          "description": "File path to journal every mutating tool call as JSON Lines (tool, category, masked args, ok, observation); secret-bearing args and values are redacted. Unset = no trace.",
+          "format": "string",
+          "name": "UMBRIEL_TRACE"
+        },
+        {
+          "description": "Controls the default-on stderr audit of mutating tool calls. 'off' is the explicit opt-out (reported at startup); 'verbose' also audits reads.",
+          "format": "string",
+          "name": "UMBRIEL_AUDIT"
+        },
+        {
+          "description": "Credential masking (default on). 'off' opts out; a regex value overrides the built-in secret shapes masked in clipboard/env/registry reads and the trace journal.",
+          "format": "string",
+          "name": "UMBRIEL_REDACT"
+        }
+      ],
+      "identifier": "umbriel",
+      "registryType": "npm",
+      "runtimeHint": "bunx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.11.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d25cf6710e",
+    "published_at": "2026-06-21T19:50:16.909354Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ObscuritySRL/umbriel",
+    "server_version": "1.11.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-21T19:50:16.909354Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.11.1"
+}

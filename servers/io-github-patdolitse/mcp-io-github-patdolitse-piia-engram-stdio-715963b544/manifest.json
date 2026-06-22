@@ -1,0 +1,102 @@
+{
+  "description": "Local-first AI identity for MCP coding tools. Lessons, decisions, and context you control.",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Patdolitse-piia-engram.stdio.715963b544",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Patdolitse/piia-engram",
+    "homepage": "https://github.com/Patdolitse/piia-engram",
+    "repository": "https://github.com/Patdolitse/piia-engram"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "Install this exact PyPI package version before running the MCP console script.",
+            "name": "--from",
+            "type": "named",
+            "value": "piia-engram==4.5.1"
+          },
+          {
+            "description": "Console script that starts the MCP server; the package name itself launches setup.",
+            "type": "positional",
+            "value": "piia-engram-mcp"
+          },
+          "piia-engram==4.5.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Patdolitse/piia-engram",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "off",
+          "description": "Skip optional local startup reconciliation during marketplace/client validation; set to background for local cross-tool sync.",
+          "name": "ENGRAM_MCP_STARTUP_SYNC"
+        },
+        {
+          "default": "core",
+          "description": "Expose the context-budget friendly default surface; set to all for the full advanced surface.",
+          "name": "ENGRAM_TOOLS"
+        },
+        {
+          "default": "utf-8",
+          "description": "Force UTF-8 stdio frames on Windows-style consoles.",
+          "name": "PYTHONIOENCODING"
+        }
+      ],
+      "identifier": "piia-engram",
+      "packageArguments": [
+        {
+          "description": "Run the server over standard MCP stdio transport.",
+          "name": "--transport",
+          "type": "named",
+          "value": "stdio"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "Install this exact PyPI package version before running the MCP console script.",
+          "name": "--from",
+          "type": "named",
+          "value": "piia-engram==4.5.1"
+        },
+        {
+          "description": "Console script that starts the MCP server; the package name itself launches setup.",
+          "type": "positional",
+          "value": "piia-engram-mcp"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "4.5.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "715963b544",
+    "published_at": "2026-06-18T13:12:32.026682Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Patdolitse/piia-engram",
+    "server_version": "4.5.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-18T13:12:32.026682Z"
+  },
+  "title": "Piia Engram",
+  "type": "mcp_server",
+  "version": "4.5.1"
+}

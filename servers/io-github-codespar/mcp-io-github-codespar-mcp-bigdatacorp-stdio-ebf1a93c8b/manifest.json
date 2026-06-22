@@ -1,0 +1,72 @@
+{
+  "description": "MCP server for BigDataCorp \u2014 Brazilian data enrichment + KYC (CPF/CNPJ/vehicle/property/antifraud)",
+  "harvest": {
+    "last_seen_at": "2026-06-22T07:39:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-codespar-mcp-bigdatacorp.stdio.ebf1a93c8b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/codespar/mcp-dev-latam",
+    "homepage": "https://github.com/codespar/mcp-dev-latam",
+    "repository": "https://github.com/codespar/mcp-dev-latam"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@codespar/mcp-bigdatacorp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.codespar/mcp-bigdatacorp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "AccessToken header value from the BigDataCorp dashboard",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "BIGDATACORP_ACCESS_TOKEN"
+        },
+        {
+          "description": "TokenId header paired with the access token",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "BIGDATACORP_TOKEN_ID"
+        },
+        {
+          "description": "API base URL \u2014 defaults to BigDataCorp production. Override for sandbox.",
+          "format": "string",
+          "name": "BIGDATACORP_API_BASE"
+        }
+      ],
+      "identifier": "@codespar/mcp-bigdatacorp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ebf1a93c8b",
+    "published_at": "2026-06-20T22:48:13.372986Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.codespar/mcp-bigdatacorp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-20T22:48:13.372986Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}
