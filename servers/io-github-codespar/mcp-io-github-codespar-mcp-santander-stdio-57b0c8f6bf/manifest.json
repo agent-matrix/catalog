@@ -1,0 +1,84 @@
+{
+  "description": "MCP server for Santander Brasil \u2014 Pix, Cobran\u00e7a (boleto), Arrecada\u00e7\u00e3o, Extrato (OAuth2 + mTLS)",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-codespar-mcp-santander.stdio.57b0c8f6bf",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/codespar/mcp-dev-latam",
+    "homepage": "https://github.com/codespar/mcp-dev-latam",
+    "repository": "https://github.com/codespar/mcp-dev-latam"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@codespar/mcp-santander@0.2.0-alpha.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.codespar/mcp-santander",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Santander OAuth client_id issued via the Developer Portal (developer.santander.com.br) after contract onboarding.",
+          "format": "string",
+          "isRequired": true,
+          "name": "SANTANDER_CLIENT_ID"
+        },
+        {
+          "description": "Santander OAuth client_secret.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SANTANDER_CLIENT_SECRET"
+        },
+        {
+          "description": "Absolute path to the mTLS client certificate (.crt or .pem). BACEN mandates mTLS for Pix v2, and Santander's trust-open gateway enforces it across product families.",
+          "format": "string",
+          "isRequired": true,
+          "name": "SANTANDER_CERT_PATH"
+        },
+        {
+          "description": "Absolute path to the mTLS private key (.key or .pem).",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SANTANDER_KEY_PATH"
+        },
+        {
+          "description": "Environment: 'sandbox' or 'production'. Defaults to 'sandbox'.",
+          "format": "string",
+          "name": "SANTANDER_ENV"
+        }
+      ],
+      "identifier": "@codespar/mcp-santander",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0-alpha.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "57b0c8f6bf",
+    "published_at": "2026-06-22T20:00:06.561326Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.codespar/mcp-santander",
+    "server_version": "0.2.0-alpha.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-22T20:00:06.561326Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.0-alpha.3"
+}

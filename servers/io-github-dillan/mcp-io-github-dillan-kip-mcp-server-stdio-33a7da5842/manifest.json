@@ -1,0 +1,95 @@
+{
+  "description": "Reads a boat's Signal K data and helps an AI assistant design and install KIP dashboards.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-dillan-kip-mcp-server.stdio.33a7da5842",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/dillan/kip-mcp-server",
+    "homepage": "https://github.com/dillan/kip-mcp-server",
+    "repository": "https://github.com/dillan/kip-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "kip-mcp-server@1.12.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.dillan/kip-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "localhost",
+          "description": "Signal K server host name or IP.",
+          "format": "string",
+          "name": "SIGNALK_HOST"
+        },
+        {
+          "default": "3000",
+          "description": "Signal K server port.",
+          "format": "number",
+          "name": "SIGNALK_PORT"
+        },
+        {
+          "default": "false",
+          "description": "Set true if Signal K uses https/wss.",
+          "format": "boolean",
+          "name": "SIGNALK_TLS"
+        },
+        {
+          "description": "Signal K token, needed to write dashboards (or use SIGNALK_USER/PASSWORD).",
+          "format": "string",
+          "isSecret": true,
+          "name": "SIGNALK_TOKEN"
+        },
+        {
+          "description": "Signal K username, used with SIGNALK_PASSWORD instead of a token.",
+          "format": "string",
+          "name": "SIGNALK_USER"
+        },
+        {
+          "description": "Signal K password, used with SIGNALK_USER.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SIGNALK_PASSWORD"
+        },
+        {
+          "description": "Override where KIP is served, if it is not the default.",
+          "format": "string",
+          "name": "KIP_URL"
+        }
+      ],
+      "identifier": "kip-mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.12.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "33a7da5842",
+    "published_at": "2026-06-24T11:58:27.224334Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.dillan/kip-mcp-server",
+    "server_version": "1.12.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-24T11:58:27.224334Z"
+  },
+  "title": "KIP MCP Server",
+  "type": "mcp_server",
+  "version": "1.12.0"
+}

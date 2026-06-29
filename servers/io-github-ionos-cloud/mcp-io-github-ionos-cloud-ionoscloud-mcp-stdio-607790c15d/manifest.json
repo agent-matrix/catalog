@@ -1,0 +1,72 @@
+{
+  "description": "Inspect IONOS CLOUD infrastructure via MCP",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:23+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ionos-cloud-ionoscloud-mcp.stdio.607790c15d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ionos-cloud/ionoscloud-mcp",
+    "homepage": "https://github.com/ionos-cloud/ionoscloud-mcp",
+    "repository": "https://github.com/ionos-cloud/ionoscloud-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/ionos-cloud/ionoscloud-mcp:1.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ionos-cloud/ionoscloud-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "IONOS CLOUD API token (required for all products except Object Storage)",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "IONOS_TOKEN"
+        },
+        {
+          "description": "S3 access key for IONOS Object Storage",
+          "isSecret": true,
+          "name": "IONOS_S3_ACCESS_KEY"
+        },
+        {
+          "description": "S3 secret key for IONOS Object Storage",
+          "isSecret": true,
+          "name": "IONOS_S3_SECRET_KEY"
+        },
+        {
+          "description": "Tool registration strategy (the --load-mode flag overrides this). 'eager' (default): register all tools at startup. 'lazy': defer Compute and Object Storage behind 'ionos_load_compute_tools' / 'ionos_load_objectstorage_tools' sentinel tools (requires MCP client support for notifications/tools/list_changed). 'dynamic' (alias 'search'): expose only the ionos_search_tools / ionos_describe_tools / ionos_call_tool meta-tools and browse the full catalog through them \u2014 for clients with hard tool caps and no tool search of their own (Cursor, Windsurf).",
+          "name": "IONOS_MCP_LOAD_MODE"
+        }
+      ],
+      "identifier": "ghcr.io/ionos-cloud/ionoscloud-mcp:1.0.1",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "607790c15d",
+    "published_at": "2026-06-26T10:42:53.117224Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ionos-cloud/ionoscloud-mcp",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-26T10:42:53.117224Z"
+  },
+  "title": "IONOS CLOUD MCP Server",
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

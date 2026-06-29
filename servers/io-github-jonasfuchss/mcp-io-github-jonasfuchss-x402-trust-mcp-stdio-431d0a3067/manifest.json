@@ -1,0 +1,85 @@
+{
+  "description": "Trust & reliability scores for x402 endpoints: free stats + trust preview, paid full scores.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:08+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-JonasFuchss-x402-trust-mcp.stdio.431d0a3067",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/JonasFuchss/x402-trust-mcp",
+    "homepage": "https://github.com/JonasFuchss/x402-trust-mcp",
+    "repository": "https://github.com/JonasFuchss/x402-trust-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "x402-trust-mcp@1.3.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.JonasFuchss/x402-trust-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional Base wallet private key (with or without the 0x prefix). When set, the paid tools auto-pay over x402 up to X402_MAX_USD; otherwise they return a price quote. The free tools need no key.",
+          "isSecret": true,
+          "name": "X402_PRIVATE_KEY"
+        },
+        {
+          "default": "0.05",
+          "description": "Per-call auto-pay ceiling in USD. 0 disables auto-pay.",
+          "name": "X402_MAX_USD"
+        },
+        {
+          "default": "1.00",
+          "description": "Cumulative auto-pay cap per process in USD. 0 = unlimited.",
+          "name": "X402_MAX_TOTAL_USD"
+        },
+        {
+          "default": "1000",
+          "description": "Max paid calls per process. 0 = unlimited.",
+          "name": "X402_MAX_CALLS"
+        },
+        {
+          "default": "https://x402.fuchss.app",
+          "description": "API base URL.",
+          "name": "X402_TRUST_API_BASE"
+        },
+        {
+          "default": "20000",
+          "description": "Request timeout in milliseconds.",
+          "name": "X402_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "x402-trust-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.3.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "431d0a3067",
+    "published_at": "2026-06-24T16:06:53.323226Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.JonasFuchss/x402-trust-mcp",
+    "server_version": "1.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-24T16:06:53.323226Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.3.1"
+}

@@ -1,0 +1,105 @@
+{
+  "description": "Git-versioned markdown memory for AI agents: save, search, compact, lint, and audit.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-phasespace-labs-palinode.stdio.c0491e0a1b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/phasespace-labs/palinode",
+    "homepage": "https://github.com/phasespace-labs/palinode",
+    "repository": "https://github.com/phasespace-labs/palinode"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "palinode==0.8.15"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.phasespace-labs/palinode",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the markdown-memory directory",
+          "isRequired": true,
+          "name": "PALINODE_DIR"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "Bind host for the MCP HTTP server. Defaults to loopback; set to 0.0.0.0 only with intentional network exposure (paired with PALINODE_API_BIND_INTENT=public on the back-end).",
+          "name": "PALINODE_MCP_HTTP_HOST"
+        },
+        {
+          "default": "6341",
+          "description": "Port for the MCP HTTP server",
+          "name": "PALINODE_MCP_HTTP_PORT"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "Host where the back-end palinode-api is reachable",
+          "name": "PALINODE_API_HOST"
+        },
+        {
+          "default": "6340",
+          "description": "Port for palinode-api",
+          "name": "PALINODE_API_PORT"
+        },
+        {
+          "description": "Bearer token enforced by palinode-api. Required when binding non-loopback. Generate with: python -c 'import secrets; print(secrets.token_urlsafe(32))'.",
+          "isSecret": true,
+          "name": "PALINODE_API_TOKEN"
+        },
+        {
+          "description": "Path to a file containing the bearer token (alternative to PALINODE_API_TOKEN)",
+          "isSecret": true,
+          "name": "PALINODE_API_TOKEN_FILE"
+        }
+      ],
+      "identifier": "palinode",
+      "packageArguments": [
+        {
+          "description": "Select the palinode distribution from PyPI",
+          "name": "--from",
+          "type": "named",
+          "value": "palinode"
+        },
+        {
+          "description": "Console script for the long-running streamable-HTTP MCP server",
+          "type": "positional",
+          "value": "palinode-mcp-sse",
+          "valueHint": "streamable-http entry point"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://127.0.0.1:6341/mcp/"
+      },
+      "version": "0.8.15"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c0491e0a1b",
+    "published_at": "2026-06-27T23:20:13.368984Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.phasespace-labs/palinode",
+    "server_version": "0.8.15",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-27T23:20:13.368984Z"
+  },
+  "title": "Palinode",
+  "type": "mcp_server",
+  "version": "0.8.15"
+}

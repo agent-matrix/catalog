@@ -1,0 +1,78 @@
+{
+  "description": "MCP server for Yandex Wordstat API: top & related queries, demand dynamics and regions.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:13+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-askads-mcp-yandex-wordstat.stdio.47db489378",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/askads/mcp-yandex-wordstat",
+    "homepage": "https://github.com/askads/mcp-yandex-wordstat",
+    "repository": "https://github.com/askads/mcp-yandex-wordstat"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-yandex-wordstat@1.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.askads/mcp-yandex-wordstat",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "cloud",
+          "description": "Which Wordstat API to use: \"cloud\" (Yandex Cloud Search API v2, default) or \"oauth\" (api.wordstat.yandex.net).",
+          "name": "WORDSTAT_FLAVOR"
+        },
+        {
+          "description": "Yandex Cloud API key (Search API). Required when WORDSTAT_FLAVOR=cloud. Treat it as a secret.",
+          "isSecret": true,
+          "name": "WORDSTAT_API_KEY"
+        },
+        {
+          "description": "Yandex Cloud folder id, injected into every request. Required when WORDSTAT_FLAVOR=cloud.",
+          "name": "WORDSTAT_FOLDER_ID"
+        },
+        {
+          "description": "Yandex OAuth token for api.wordstat.yandex.net. Required when WORDSTAT_FLAVOR=oauth. Treat it as a secret.",
+          "isSecret": true,
+          "name": "WORDSTAT_TOKEN"
+        },
+        {
+          "default": "ru",
+          "description": "Language for API responses (ru, en, ...).",
+          "name": "WORDSTAT_LANG"
+        }
+      ],
+      "identifier": "mcp-yandex-wordstat",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "47db489378",
+    "published_at": "2026-06-29T05:48:54.45638Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.askads/mcp-yandex-wordstat",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-29T05:48:54.45638Z"
+  },
+  "title": "Yandex Wordstat MCP",
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

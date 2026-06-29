@@ -1,0 +1,65 @@
+{
+  "description": "Self-hosted MCP message bus: agents DM each other, broadcast to channels, and track presence.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:08+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Jemplayer82-mcp-switchboard.stdio.9d3c279e33",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Jemplayer82/mcp-switchboard",
+    "homepage": "https://github.com/Jemplayer82/mcp-switchboard",
+    "repository": "https://github.com/Jemplayer82/mcp-switchboard"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/jemplayer82/mcp-switchboard:latest"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Jemplayer82/mcp-switchboard",
+  "packages": [
+    {
+      "identifier": "ghcr.io/jemplayer82/mcp-switchboard:latest",
+      "registryType": "oci",
+      "transport": {
+        "headers": [
+          {
+            "name": "Authorization",
+            "value": "Bearer {token}",
+            "variables": {
+              "token": {
+                "description": "Switchboard bearer token \u2014 printed in the server's startup logs on first boot, or whatever you set via SWITCHBOARD_MCP_TOKEN.",
+                "format": "string",
+                "isRequired": true,
+                "isSecret": true
+              }
+            }
+          }
+        ],
+        "type": "streamable-http",
+        "url": "http://localhost:3107/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "9d3c279e33",
+    "published_at": "2026-06-23T00:26:31.746604Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Jemplayer82/mcp-switchboard",
+    "server_version": "1.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-23T00:26:31.746604Z"
+  },
+  "title": "Switchboard",
+  "type": "mcp_server",
+  "version": "1.3.0"
+}

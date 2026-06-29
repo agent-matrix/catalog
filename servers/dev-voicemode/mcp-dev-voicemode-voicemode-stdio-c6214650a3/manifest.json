@@ -1,0 +1,90 @@
+{
+  "description": "Natural voice conversations for AI assistants - STT/TTS via MCP",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:03+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.dev-voicemode-voicemode.stdio.c6214650a3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mbailey/voicemode",
+    "homepage": "https://github.com/mbailey/voicemode",
+    "repository": "https://github.com/mbailey/voicemode"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "voice-mode==8.10.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "dev.voicemode/voicemode",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "OpenAI API key for cloud-based STT/TTS (optional - local services can be installed)",
+          "format": "string",
+          "isSecret": true,
+          "name": "OPENAI_API_KEY"
+        },
+        {
+          "description": "Enable debug mode with detailed logging (true/false)",
+          "format": "string",
+          "name": "VOICEMODE_DEBUG"
+        },
+        {
+          "description": "Skip TTS and show text only for faster response (true/false)",
+          "format": "string",
+          "name": "VOICEMODE_SKIP_TTS"
+        },
+        {
+          "description": "Prefer local services over cloud when available (true/false, default: true)",
+          "format": "string",
+          "name": "VOICEMODE_PREFER_LOCAL"
+        },
+        {
+          "description": "Audio format: pcm, mp3, wav, flac, aac, opus (default: pcm)",
+          "format": "string",
+          "name": "VOICEMODE_AUDIO_FORMAT"
+        },
+        {
+          "description": "Whisper model: tiny, base, small, medium, large (default: base)",
+          "format": "string",
+          "name": "VOICEMODE_WHISPER_MODEL"
+        },
+        {
+          "description": "Disable silence detection for continuous recording (true/false)",
+          "format": "string",
+          "name": "VOICEMODE_DISABLE_SILENCE_DETECTION"
+        }
+      ],
+      "identifier": "voice-mode",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "8.10.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c6214650a3",
+    "published_at": "2026-06-25T09:31:52.380384Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "dev.voicemode/voicemode",
+    "server_version": "8.10.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-25T09:31:52.380384Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "8.10.1"
+}

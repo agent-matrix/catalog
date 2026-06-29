@@ -1,0 +1,84 @@
+{
+  "description": "MCP server for BTG Pactual \u2014 Pix, Boleto, Account, Investments (CDB/LCI/LCA/funds), OAuth2 + mTLS",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-codespar-mcp-btg.stdio.4c2d41cf40",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/codespar/mcp-dev-latam",
+    "homepage": "https://github.com/codespar/mcp-dev-latam",
+    "repository": "https://github.com/codespar/mcp-dev-latam"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@codespar/mcp-btg@0.1.0-alpha.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.codespar/mcp-btg",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "BTG OAuth client_id issued via the Developer Portal after contract onboarding.",
+          "format": "string",
+          "isRequired": true,
+          "name": "BTG_CLIENT_ID"
+        },
+        {
+          "description": "BTG OAuth client_secret.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "BTG_CLIENT_SECRET"
+        },
+        {
+          "description": "Absolute path to the mTLS client certificate (.crt or .pem). BACEN mandates mTLS for Pix v2; BTG enforces it across product families.",
+          "format": "string",
+          "isRequired": true,
+          "name": "BTG_CERT_PATH"
+        },
+        {
+          "description": "Absolute path to the mTLS private key (.key or .pem).",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "BTG_KEY_PATH"
+        },
+        {
+          "description": "Environment: 'sandbox' or 'production'. Defaults to 'sandbox'.",
+          "format": "string",
+          "name": "BTG_ENV"
+        }
+      ],
+      "identifier": "@codespar/mcp-btg",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0-alpha.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4c2d41cf40",
+    "published_at": "2026-06-22T19:59:45.368679Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.codespar/mcp-btg",
+    "server_version": "0.1.0-alpha.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-22T19:59:45.368679Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0-alpha.3"
+}

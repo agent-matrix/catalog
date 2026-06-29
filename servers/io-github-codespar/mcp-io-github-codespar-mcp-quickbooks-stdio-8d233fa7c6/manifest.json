@@ -1,0 +1,76 @@
+{
+  "description": "MCP server for QuickBooks Online (Intuit) \u2014 customers, invoices, payments, items, accounts, P&L",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-codespar-mcp-quickbooks.stdio.8d233fa7c6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/codespar/mcp-dev-latam",
+    "homepage": "https://github.com/codespar/mcp-dev-latam",
+    "repository": "https://github.com/codespar/mcp-dev-latam"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@codespar/mcp-quickbooks@0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.codespar/mcp-quickbooks",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "QuickBooks OAuth2 bearer access token. Expires in 1hr \u2014 caller is responsible for refresh via Intuit's OAuth2 auth_code flow.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "QB_ACCESS_TOKEN"
+        },
+        {
+          "description": "QuickBooks company id (realmId). Issued when a user authorizes your app against a specific company.",
+          "format": "string",
+          "isRequired": true,
+          "name": "QB_REALM_ID"
+        },
+        {
+          "description": "QuickBooks environment: 'sandbox' (default) or 'production'. Selects sandbox-quickbooks.api.intuit.com vs quickbooks.api.intuit.com.",
+          "format": "string",
+          "name": "QB_ENV"
+        },
+        {
+          "description": "QuickBooks API minor version. Defaults to 70.",
+          "format": "string",
+          "name": "QB_MINOR_VERSION"
+        }
+      ],
+      "identifier": "@codespar/mcp-quickbooks",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8d233fa7c6",
+    "published_at": "2026-06-22T18:50:17.483469Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.codespar/mcp-quickbooks",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-22T18:50:17.483469Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

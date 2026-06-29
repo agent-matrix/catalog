@@ -1,0 +1,132 @@
+{
+  "description": "Link compounds to protein targets, rank bioactivity, and look up drug mechanisms and indications.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:17+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cyanheads-chembl-mcp-server.stdio.c98dcf6901",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cyanheads/chembl-mcp-server",
+    "homepage": "https://github.com/cyanheads/chembl-mcp-server",
+    "repository": "https://github.com/cyanheads/chembl-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "bun",
+          "@cyanheads/chembl-mcp-server@0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cyanheads/chembl-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "127.0.0.1",
+          "description": "The hostname for the HTTP server.",
+          "format": "string",
+          "name": "MCP_HTTP_HOST"
+        },
+        {
+          "default": "3010",
+          "description": "The port to run the HTTP server on.",
+          "format": "string",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "default": "/mcp",
+          "description": "The endpoint path for the MCP server.",
+          "format": "string",
+          "name": "MCP_HTTP_ENDPOINT_PATH"
+        },
+        {
+          "default": "none",
+          "description": "Authentication mode to use: 'none', 'jwt', or 'oauth'.",
+          "format": "string",
+          "name": "MCP_AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Sets the minimum log level for output (e.g., 'debug', 'info', 'warn').",
+          "format": "string",
+          "name": "MCP_LOG_LEVEL"
+        },
+        {
+          "default": "none",
+          "description": "Set to 'duckdb' to enable the bioactivity DataCanvas spill and the chembl_dataframe_* SQL tools. When 'none', large bioactivity sets inline a preview but never spill.",
+          "format": "string",
+          "name": "CANVAS_PROVIDER_TYPE"
+        },
+        {
+          "default": "https://www.ebi.ac.uk/chembl/api/data",
+          "description": "Base URL for the ChEMBL REST data API. Override for a private mirror or pinned host.",
+          "format": "string",
+          "name": "CHEMBL_API_BASE_URL"
+        },
+        {
+          "default": "30000",
+          "description": "Per-request timeout in milliseconds for upstream ChEMBL fetches.",
+          "format": "string",
+          "name": "CHEMBL_REQUEST_TIMEOUT_MS"
+        },
+        {
+          "default": "1000",
+          "description": "ChEMBL per-page cap when streaming activity pages for the bioactivity spill (max 1000).",
+          "format": "string",
+          "name": "CHEMBL_MAX_PAGE_SIZE"
+        },
+        {
+          "default": "25",
+          "description": "Default result limit applied when callers omit it.",
+          "format": "string",
+          "name": "CHEMBL_DEFAULT_LIMIT"
+        },
+        {
+          "default": "false",
+          "description": "Set to 'true' to register the opt-in chembl_dataframe_drop tool (absent from tools/list when off).",
+          "format": "string",
+          "name": "CHEMBL_DATAFRAME_DROP_ENABLED"
+        }
+      ],
+      "identifier": "@cyanheads/chembl-mcp-server",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "start:http"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "bun",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3010/mcp"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c98dcf6901",
+    "published_at": "2026-06-28T04:41:31.199085Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cyanheads/chembl-mcp-server",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-28T04:41:31.199085Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

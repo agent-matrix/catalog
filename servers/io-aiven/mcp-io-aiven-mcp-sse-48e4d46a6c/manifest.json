@@ -1,0 +1,71 @@
+{
+  "description": "Provision PostgreSQL, manage Apache Kafka, and deploy apps with Aiven - all from your AI assistant.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:03+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-aiven-mcp.sse.48e4d46a6c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/aiven-open/mcp-aiven",
+    "homepage": "https://github.com/aiven-open/mcp-aiven",
+    "repository": "https://github.com/aiven-open/mcp-aiven"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://mcp.aiven.live/mcp?read_only={read_only}&services_scope={services_scope}&allow_secrets={allow_secrets}"
+    }
+  },
+  "name": "io.aiven/mcp",
+  "provenance": {
+    "identity_key": "48e4d46a6c",
+    "published_at": "2026-06-26T09:47:22.392206Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.aiven/mcp",
+    "server_version": "1.13.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-26T09:47:22.392206Z"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.aiven.live/mcp?read_only={read_only}&services_scope={services_scope}&allow_secrets={allow_secrets}",
+      "variables": {
+        "allow_secrets": {
+          "choices": [
+            "true",
+            "false"
+          ],
+          "default": "false",
+          "description": "Allow the connection-info tool to return live credentials instead of [REDACTED]."
+        },
+        "read_only": {
+          "choices": [
+            "true",
+            "false"
+          ],
+          "default": "false",
+          "description": "Expose only read-only tools; all write operations are excluded."
+        },
+        "services_scope": {
+          "choices": [
+            "all",
+            "core",
+            "pg",
+            "kafka",
+            "application",
+            "integrations"
+          ],
+          "default": "all",
+          "description": "Comma-separated scopes to expose, e.g. pg, kafka, or pg,kafka. core (project/service discovery) is always included. all loads every tool and cannot be combined with other scopes."
+        }
+      }
+    }
+  ],
+  "title": "Aiven MCP",
+  "type": "mcp_server",
+  "version": "1.13.0"
+}

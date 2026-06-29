@@ -1,0 +1,84 @@
+{
+  "description": "MCP server for Ita\u00fa Unibanco \u2014 Pix, Cobran\u00e7a (boleto), Arrecada\u00e7\u00e3o, Extrato (OAuth2 + mTLS)",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-codespar-mcp-itau.stdio.f712e0e83d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/codespar/mcp-dev-latam",
+    "homepage": "https://github.com/codespar/mcp-dev-latam",
+    "repository": "https://github.com/codespar/mcp-dev-latam"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@codespar/mcp-itau@0.2.0-alpha.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.codespar/mcp-itau",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Ita\u00fa OAuth client_id issued via the Developer Portal after contract onboarding.",
+          "format": "string",
+          "isRequired": true,
+          "name": "ITAU_CLIENT_ID"
+        },
+        {
+          "description": "Ita\u00fa OAuth client_secret.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ITAU_CLIENT_SECRET"
+        },
+        {
+          "description": "Absolute path to the mTLS client certificate (.crt or .pem). BACEN mandates mTLS for Pix v2.",
+          "format": "string",
+          "isRequired": true,
+          "name": "ITAU_CERT_PATH"
+        },
+        {
+          "description": "Absolute path to the mTLS private key (.key or .pem).",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ITAU_KEY_PATH"
+        },
+        {
+          "description": "Environment: 'sandbox' or 'production'. Defaults to 'sandbox'.",
+          "format": "string",
+          "name": "ITAU_ENV"
+        }
+      ],
+      "identifier": "@codespar/mcp-itau",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0-alpha.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f712e0e83d",
+    "published_at": "2026-06-22T19:59:56.48983Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.codespar/mcp-itau",
+    "server_version": "0.2.0-alpha.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-22T19:59:56.48983Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.0-alpha.3"
+}

@@ -1,0 +1,67 @@
+{
+  "description": "Serves coding agents one canonical doc per query instead of rereading the repo \u2014 ~60% fewer tokens.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:11+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-TsukumoHQ-trovex.stdio.06be6330e6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/TsukumoHQ/trovex",
+    "homepage": "https://github.com/TsukumoHQ/trovex",
+    "repository": "https://github.com/TsukumoHQ/trovex"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "trovex==0.11.8"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.TsukumoHQ/trovex",
+  "packages": [
+    {
+      "identifier": "trovex",
+      "packageArguments": [
+        {
+          "description": "Start the trovex MCP HTTP server (exposes the streamable-http endpoint at /mcp and the local web UI at /).",
+          "type": "positional",
+          "value": "serve"
+        },
+        {
+          "description": "Port for the MCP HTTP server (default 8765). If you change it, update the transport URL to match.",
+          "name": "--port",
+          "type": "named",
+          "value": "8765"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:8765/mcp"
+      },
+      "version": "0.11.8"
+    }
+  ],
+  "provenance": {
+    "identity_key": "06be6330e6",
+    "published_at": "2026-06-27T12:36:46.246423Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.TsukumoHQ/trovex",
+    "server_version": "0.11.8",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-27T12:36:46.246423Z"
+  },
+  "title": "trovex",
+  "type": "mcp_server",
+  "version": "0.11.8"
+}

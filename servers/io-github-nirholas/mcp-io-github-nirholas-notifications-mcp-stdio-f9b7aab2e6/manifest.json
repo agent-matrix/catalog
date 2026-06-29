@@ -1,0 +1,73 @@
+{
+  "description": "Read the inbox, mark items read, manage delivery preferences, and register Web Push devices.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:29+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nirholas-notifications-mcp.stdio.f9b7aab2e6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nirholas/three.ws",
+    "homepage": "https://github.com/nirholas/three.ws",
+    "repository": "https://github.com/nirholas/three.ws"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@three-ws/notifications-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nirholas/notifications-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "A three.ws API key (sk_live_\u2026 / sk_test_\u2026) or OAuth access token for the account whose notifications you want to read and manage, carried as Authorization: Bearer. Required \u2014 every endpoint is account-scoped. Aliases: THREE_WS_TOKEN, THREE_WS_BEARER. Treat like a password.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "THREE_WS_API_KEY"
+        },
+        {
+          "default": "https://three.ws",
+          "description": "Base URL of the three.ws API. Override only when self-hosting or targeting a preview deployment.",
+          "format": "string",
+          "name": "THREE_WS_BASE"
+        },
+        {
+          "default": "20000",
+          "description": "Per-request timeout in milliseconds for the live inbox reads/writes.",
+          "format": "number",
+          "name": "THREE_WS_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "@three-ws/notifications-mcp",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f9b7aab2e6",
+    "published_at": "2026-06-24T06:52:38.763698Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nirholas/notifications-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-24T06:52:38.763698Z"
+  },
+  "title": "three.ws Notifications",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

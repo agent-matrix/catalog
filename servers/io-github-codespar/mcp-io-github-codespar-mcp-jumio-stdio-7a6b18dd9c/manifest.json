@@ -1,0 +1,77 @@
+{
+  "description": "MCP server for Jumio \u2014 global identity verification + KYX: documents, liveness, AML screening",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-codespar-mcp-jumio.stdio.7a6b18dd9c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/codespar/mcp-dev-latam",
+    "homepage": "https://github.com/codespar/mcp-dev-latam",
+    "repository": "https://github.com/codespar/mcp-dev-latam"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@codespar/mcp-jumio@0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.codespar/mcp-jumio",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Jumio API token (sent as the username component of HTTP Basic auth).",
+          "format": "string",
+          "isRequired": true,
+          "name": "JUMIO_API_TOKEN"
+        },
+        {
+          "description": "Jumio API secret (sent as the password component of HTTP Basic auth).",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "JUMIO_API_SECRET"
+        },
+        {
+          "description": "Merchant User-Agent string. Jumio requires a custom User-Agent header identifying the calling application (e.g. 'AcmeCorp KYX/1.0').",
+          "format": "string",
+          "isRequired": true,
+          "name": "JUMIO_USER_AGENT"
+        },
+        {
+          "description": "Region for the API host: 'us' (api.amer-1.jumio.ai), 'eu' (api.emea-1.jumio.ai), 'sg' (api.apac-1.jumio.ai). Defaults to 'us'.",
+          "format": "string",
+          "name": "JUMIO_REGION"
+        }
+      ],
+      "identifier": "@codespar/mcp-jumio",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7a6b18dd9c",
+    "published_at": "2026-06-22T18:50:52.546846Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.codespar/mcp-jumio",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-22T18:50:52.546846Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

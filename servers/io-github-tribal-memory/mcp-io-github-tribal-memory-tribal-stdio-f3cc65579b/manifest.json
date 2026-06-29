@@ -1,0 +1,106 @@
+{
+  "description": "Self-hosted semantic memory over MCP for an engineering team's tacit knowledge. Needs Postgres.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:35+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-tribal-memory-tribal.stdio.f3cc65579b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/tribal-memory/tribal",
+    "homepage": "https://github.com/tribal-memory/tribal",
+    "repository": "https://github.com/tribal-memory/tribal"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "name": "-p",
+            "type": "named",
+            "value": "127.0.0.1:8725:8725"
+          },
+          "ghcr.io/tribal-memory/tribal:0.4.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.tribal-memory/tribal",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Postgres (pgvector) connection string. Tribal is self-hosted; you provide the database. The supported, complete deployment is docker-compose.yml.",
+          "isRequired": true,
+          "name": "TRIBAL_DATABASE__URL"
+        },
+        {
+          "description": "First-run only: the git remote that identifies the project bootstrapped on first start.",
+          "isRequired": true,
+          "name": "TRIBAL_PROJECT_REMOTE"
+        },
+        {
+          "description": "First-run only: the name of the project bootstrapped on first start.",
+          "isRequired": true,
+          "name": "TRIBAL_PROJECT_NAME"
+        },
+        {
+          "default": "http",
+          "description": "Containerised transport: http or sse. The Docker image does not serve stdio; install the binary for stdio.",
+          "name": "TRIBAL_SERVER__TRANSPORT"
+        },
+        {
+          "default": "0.0.0.0:8725",
+          "description": "Address the server binds inside the container. Must be 0.0.0.0 (not the loopback default) for the published port to be reachable.",
+          "name": "TRIBAL_SERVER__BIND_ADDRESS"
+        },
+        {
+          "default": "http://127.0.0.1:8725/mcp",
+          "description": "The URL clients use to reach the server (for example http://127.0.0.1:8725/mcp). Needed for OAuth dynamic client registration once the server binds a routable interface.",
+          "name": "TRIBAL_PUBLIC_MCP_URL"
+        },
+        {
+          "description": "Optional; only if an ingest or retrieval stage is configured to use OpenAI (defaults target a local Ollama).",
+          "isSecret": true,
+          "name": "OPENAI_API_KEY"
+        },
+        {
+          "description": "Optional; only if a stage is configured to use Anthropic.",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        }
+      ],
+      "identifier": "ghcr.io/tribal-memory/tribal:0.4.1",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "name": "-p",
+          "type": "named",
+          "value": "127.0.0.1:8725:8725"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://127.0.0.1:8725/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "f3cc65579b",
+    "published_at": "2026-06-28T21:49:26.748687Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.tribal-memory/tribal",
+    "server_version": "0.4.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-28T21:49:26.748687Z"
+  },
+  "title": "Tribal",
+  "type": "mcp_server",
+  "version": "0.4.1"
+}

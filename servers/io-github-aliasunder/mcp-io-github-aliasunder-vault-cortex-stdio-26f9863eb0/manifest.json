@@ -1,0 +1,185 @@
+{
+  "description": "Standalone MCP server for Obsidian vaults \u2014 plugin-free, 25 tools + 3 prompts, OAuth 2.1.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:13+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-aliasunder-vault-cortex.stdio.26f9863eb0",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/aliasunder/vault-cortex",
+    "homepage": "https://github.com/aliasunder/vault-cortex",
+    "repository": "https://github.com/aliasunder/vault-cortex"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Publish the container's port 8000 on the host.",
+            "name": "-p",
+            "type": "named",
+            "value": "8000:8000"
+          },
+          {
+            "description": "Bind-mount your Obsidian vault into the container at /vault.",
+            "isRequired": true,
+            "name": "-v",
+            "type": "named",
+            "value": "{VAULT_PATH}:/vault:rw",
+            "variables": {
+              "VAULT_PATH": {
+                "description": "Absolute path to your Obsidian vault on the host machine.",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          {
+            "description": "Named volume for persistent state under /data \u2014 search index, OAuth token DB, and any log files. Keeps OAuth sessions alive across container restarts.",
+            "name": "-v",
+            "type": "named",
+            "value": "vault-cortex-data:/data"
+          },
+          "ghcr.io/aliasunder/vault-mcp:0.23.8"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.aliasunder/vault-cortex",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Bearer token for MCP client authentication. Must match the Authorization header sent by clients. Generate with: openssl rand -hex 32",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "MCP_AUTH_TOKEN"
+        },
+        {
+          "default": "http://localhost:8000",
+          "description": "Public URL clients use to reach this server. Used as the OAuth issuer URL in discovery metadata. Override when exposing the server outside localhost or on a non-default port.",
+          "name": "PUBLIC_URL"
+        },
+        {
+          "default": "true",
+          "description": "Enable or disable the structured memory layer. When false, memory tools are hidden, bootstrap is skipped, and server metadata omits memory references.",
+          "name": "MEMORY_ENABLED"
+        },
+        {
+          "default": "About Me",
+          "description": "Vault folder for structured memory files (About Me-style notes). Memory tools are hidden when MEMORY_ENABLED is false, but this value still feeds the defaults for PROTECTED_PATHS and ORPHAN_EXCLUDE_FOLDERS.",
+          "name": "MEMORY_DIR"
+        },
+        {
+          "default": "UTC",
+          "description": "IANA timezone for timestamps and daily note resolution.",
+          "name": "TZ"
+        },
+        {
+          "choices": [
+            "debug",
+            "info",
+            "warn",
+            "error"
+          ],
+          "default": "info",
+          "description": "Logging verbosity.",
+          "name": "LOG_LEVEL"
+        },
+        {
+          "description": "Directory for persistent log files. Unset by default \u2014 logs go to stdout only. Set to /data/logs to also write date-stamped .log files to the persistent volume.",
+          "format": "filepath",
+          "name": "LOG_DIR"
+        },
+        {
+          "default": "30",
+          "description": "Days to retain persistent log files before cleanup.",
+          "format": "number",
+          "name": "LOG_RETENTION_DAYS"
+        },
+        {
+          "description": "Comma-separated vault folder names blocked from vault_delete_note. Default: MEMORY_DIR and \"Daily Notes\".",
+          "name": "PROTECTED_PATHS"
+        },
+        {
+          "description": "Comma-separated vault folder names excluded from vault_find_orphans. Default: \"Daily Notes\", \"Templates\", MEMORY_DIR.",
+          "name": "ORPHAN_EXCLUDE_FOLDERS"
+        },
+        {
+          "default": "https://github.com/aliasunder/vault-cortex",
+          "description": "Override the OAuth service documentation URL exposed via discovery metadata.",
+          "name": "SERVICE_DOCUMENTATION_URL"
+        }
+      ],
+      "identifier": "ghcr.io/aliasunder/vault-mcp:0.23.8",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "Publish the container's port 8000 on the host.",
+          "name": "-p",
+          "type": "named",
+          "value": "8000:8000"
+        },
+        {
+          "description": "Bind-mount your Obsidian vault into the container at /vault.",
+          "isRequired": true,
+          "name": "-v",
+          "type": "named",
+          "value": "{VAULT_PATH}:/vault:rw",
+          "variables": {
+            "VAULT_PATH": {
+              "description": "Absolute path to your Obsidian vault on the host machine.",
+              "format": "filepath",
+              "isRequired": true
+            }
+          }
+        },
+        {
+          "description": "Named volume for persistent state under /data \u2014 search index, OAuth token DB, and any log files. Keeps OAuth sessions alive across container restarts.",
+          "name": "-v",
+          "type": "named",
+          "value": "vault-cortex-data:/data"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "headers": [
+          {
+            "description": "Bearer token used by the MCP client. Must match the MCP_AUTH_TOKEN env var passed to the container.",
+            "isRequired": true,
+            "isSecret": true,
+            "name": "Authorization",
+            "value": "Bearer {MCP_AUTH_TOKEN}",
+            "variables": {
+              "MCP_AUTH_TOKEN": {
+                "description": "Bearer token for MCP client authentication. Generate with: openssl rand -hex 32",
+                "isRequired": true,
+                "isSecret": true
+              }
+            }
+          }
+        ],
+        "type": "streamable-http",
+        "url": "http://localhost:8000/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "26f9863eb0",
+    "published_at": "2026-06-25T19:46:40.174533Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.aliasunder/vault-cortex",
+    "server_version": "0.23.8",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-25T19:46:40.174533Z"
+  },
+  "title": "Vault Cortex",
+  "type": "mcp_server",
+  "version": "0.23.8"
+}

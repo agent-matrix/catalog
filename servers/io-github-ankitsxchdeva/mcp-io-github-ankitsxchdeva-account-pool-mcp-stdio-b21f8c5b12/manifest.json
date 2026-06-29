@@ -1,0 +1,74 @@
+{
+  "description": "Exclusive, crash-safe leases on a pool of test accounts for parallel agent QA runs.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:13+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ankitsxchdeva-account-pool-mcp.stdio.b21f8c5b12",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ankitsxchdeva/account-pool-mcp",
+    "homepage": "https://github.com/ankitsxchdeva/account-pool-mcp",
+    "repository": "https://github.com/ankitsxchdeva/account-pool-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "account-pool-mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ankitsxchdeva/account-pool-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "./accounts.json",
+          "description": "Path to the JSON file defining pools + accounts to load on startup.",
+          "name": "APM_ACCOUNTS_FILE"
+        },
+        {
+          "default": "./account-pool.db",
+          "description": "Path to the SQLite file. Every session that should coordinate must point at the SAME path.",
+          "name": "APM_DB_PATH"
+        },
+        {
+          "default": "1800",
+          "description": "How long a lease lasts before it is reclaimable if a session crashes without releasing.",
+          "name": "APM_DEFAULT_TTL_SECONDS"
+        },
+        {
+          "default": "0",
+          "description": "0 = fail fast when the pool is empty; >0 = wait this many ms for an account to free up.",
+          "name": "APM_LEASE_WAIT_MS"
+        }
+      ],
+      "identifier": "account-pool-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b21f8c5b12",
+    "published_at": "2026-06-28T03:17:16.906997Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ankitsxchdeva/account-pool-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-28T03:17:16.906997Z"
+  },
+  "title": "Account Pool",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

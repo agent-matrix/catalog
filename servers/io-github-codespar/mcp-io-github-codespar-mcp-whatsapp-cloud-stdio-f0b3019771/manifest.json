@@ -1,0 +1,77 @@
+{
+  "description": "MCP server for WhatsApp Cloud API (Meta) \u2014 messages, media, and templates via Graph API",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-codespar-mcp-whatsapp-cloud.stdio.f0b3019771",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/codespar/mcp-dev-latam",
+    "homepage": "https://github.com/codespar/mcp-dev-latam",
+    "repository": "https://github.com/codespar/mcp-dev-latam"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@codespar/mcp-whatsapp-cloud@0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.codespar/mcp-whatsapp-cloud",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Meta system-user access token (permanent). Used as Bearer token for Graph API.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "WHATSAPP_ACCESS_TOKEN"
+        },
+        {
+          "description": "WhatsApp Business phone number ID registered with Meta.",
+          "format": "string",
+          "isRequired": true,
+          "name": "WHATSAPP_PHONE_NUMBER_ID"
+        },
+        {
+          "description": "WhatsApp Business Account (WABA) ID. Used for template management.",
+          "format": "string",
+          "isRequired": true,
+          "name": "WHATSAPP_BUSINESS_ACCOUNT_ID"
+        },
+        {
+          "description": "Graph API version. Defaults to v21.0. Meta bumps quarterly.",
+          "format": "string",
+          "name": "WHATSAPP_GRAPH_VERSION"
+        }
+      ],
+      "identifier": "@codespar/mcp-whatsapp-cloud",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f0b3019771",
+    "published_at": "2026-06-22T18:49:28.505025Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.codespar/mcp-whatsapp-cloud",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-22T18:49:28.505025Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

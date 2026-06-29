@@ -1,0 +1,76 @@
+{
+  "description": "MCP server for Adyen Checkout API v71 \u2014 enterprise payments (iFood, Uber, Spotify in LatAm)",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-codespar-mcp-adyen.stdio.ea359aa9bb",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/codespar/mcp-dev-latam",
+    "homepage": "https://github.com/codespar/mcp-dev-latam",
+    "repository": "https://github.com/codespar/mcp-dev-latam"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@codespar/mcp-adyen@0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.codespar/mcp-adyen",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Adyen API key (generated in Customer Area \u2192 Developers \u2192 API credentials)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ADYEN_API_KEY"
+        },
+        {
+          "description": "Adyen merchant account code (appears in most request bodies)",
+          "format": "string",
+          "isRequired": true,
+          "name": "ADYEN_MERCHANT_ACCOUNT"
+        },
+        {
+          "description": "test | live. Defaults to test.",
+          "format": "string",
+          "name": "ADYEN_ENV"
+        },
+        {
+          "description": "Required when ADYEN_ENV=live. Your merchant-specific prefix, e.g. 1797a841fbb37ca7-AdyenDemo",
+          "format": "string",
+          "name": "ADYEN_LIVE_URL_PREFIX"
+        }
+      ],
+      "identifier": "@codespar/mcp-adyen",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ea359aa9bb",
+    "published_at": "2026-06-22T18:51:17.021675Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.codespar/mcp-adyen",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-22T18:51:17.021675Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

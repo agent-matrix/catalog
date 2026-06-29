@@ -1,0 +1,69 @@
+{
+  "description": "MCP server for Yandex Metrica API: list counters, goals and pull web-analytics statistics.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:13+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-askads-mcp-yandex-metrica.stdio.15c6a080d3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/askads/mcp-yandex-metrica",
+    "homepage": "https://github.com/askads/mcp-yandex-metrica",
+    "repository": "https://github.com/askads/mcp-yandex-metrica"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-yandex-metrica@1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.askads/mcp-yandex-metrica",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Yandex Metrica OAuth token (scope metrika:read) \u2014 read access to analytics data. Treat it as a secret.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "YANDEX_METRIKA_TOKEN"
+        },
+        {
+          "description": "Default Metrica counter id, used when a tool call omits counterId.",
+          "name": "YANDEX_METRIKA_COUNTER_ID"
+        },
+        {
+          "default": "ru",
+          "description": "Language for API responses (ru, en, ...).",
+          "name": "YANDEX_METRIKA_LANG"
+        }
+      ],
+      "identifier": "mcp-yandex-metrica",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "15c6a080d3",
+    "published_at": "2026-06-27T03:23:18.736293Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.askads/mcp-yandex-metrica",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-27T03:23:18.736293Z"
+  },
+  "title": "Yandex Metrica",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

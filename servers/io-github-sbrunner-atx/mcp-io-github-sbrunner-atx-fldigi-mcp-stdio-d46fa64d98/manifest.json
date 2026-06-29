@@ -1,0 +1,82 @@
+{
+  "description": "Control fldigi (amateur-radio digital modes) over XML-RPC: modem, frequency, rig, log, transmit.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:32+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sbrunner-atx-fldigi-mcp.stdio.d46fa64d98",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sbrunner-atx/fldigi-mcp",
+    "homepage": "https://github.com/sbrunner-atx/fldigi-mcp",
+    "repository": "https://github.com/sbrunner-atx/fldigi-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "fldigi-mcp==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sbrunner-atx/fldigi-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Operator callsign. Required to enable transmit; leave blank to stay receive-only.",
+          "format": "string",
+          "name": "FLDIGI_CALLSIGN"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "fldigi XML-RPC host.",
+          "format": "string",
+          "name": "FLDIGI_HOST"
+        },
+        {
+          "default": "7362",
+          "description": "fldigi XML-RPC port.",
+          "format": "string",
+          "name": "FLDIGI_PORT"
+        },
+        {
+          "default": "off",
+          "description": "Enable experimental advisory band guidance (on/off).",
+          "format": "string",
+          "name": "FLDIGI_BAND_GUIDANCE"
+        },
+        {
+          "default": "2",
+          "description": "IARU region for band guidance: 1, 2, or 3.",
+          "format": "string",
+          "name": "FLDIGI_REGION"
+        }
+      ],
+      "identifier": "fldigi-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d46fa64d98",
+    "published_at": "2026-06-23T03:21:11.334453Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sbrunner-atx/fldigi-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-23T03:21:11.334453Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

@@ -1,0 +1,73 @@
+{
+  "description": "Cryptographically verifiable receipts of an agent's delegated work, verified offline.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Sequesign-sequesign.stdio.77b2e4ced7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Sequesign/mcp",
+    "homepage": "https://github.com/Sequesign/mcp",
+    "repository": "https://github.com/Sequesign/mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@sequesign/mcp@0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Sequesign/sequesign",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Transport: 'direct' (default; sign locally, an independent witness co-signs) or 'managed' (route through the Sequesign broker for a registered identity).",
+          "name": "SEQUESIGN_MODE"
+        },
+        {
+          "description": "Sequesign write-class API key (from the dashboard). Required for managed mode; in direct mode it authenticates the hosted witness.",
+          "isSecret": true,
+          "name": "SEQUESIGN_API_KEY"
+        },
+        {
+          "description": "Ed25519 PKCS#8 private-key PEM for the agent. In managed mode, the key registered to your API key. In direct mode, omit to mint an ephemeral key per session.",
+          "isSecret": true,
+          "name": "SEQUESIGN_AGENT_PRIVATE_KEY"
+        },
+        {
+          "description": "Directory where sealed receipt packages are written. Defaults to a temporary directory.",
+          "name": "SEQUESIGN_PACKAGE_DIR"
+        }
+      ],
+      "identifier": "@sequesign/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "77b2e4ced7",
+    "published_at": "2026-06-23T00:07:38.112297Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Sequesign/sequesign",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-23T00:07:38.112297Z"
+  },
+  "title": "Sequesign",
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

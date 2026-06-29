@@ -1,0 +1,86 @@
+{
+  "description": "Bitwarden/Vaultwarden for agents: list tagged items, TOTP codes, one-time Sends, save new secrets.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:04+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-AIWerk-mcp-server-vault.stdio.9b06709271",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/AIWerk/mcp-server-vault",
+    "homepage": "https://github.com/AIWerk/mcp-server-vault",
+    "repository": "https://github.com/AIWerk/mcp-server-vault"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@aiwerk/mcp-server-vault@0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.AIWerk/mcp-server-vault",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Bitwarden region or self-hosted mode (e.g. us, eu, or self-hosted).",
+          "format": "string",
+          "isRequired": true,
+          "name": "VAULT_REGION"
+        },
+        {
+          "description": "Base URL for self-hosted Vaultwarden, scheme+host only (e.g. https://pass.example.com). Omit for Bitwarden cloud.",
+          "format": "string",
+          "name": "VAULT_API_BASE"
+        },
+        {
+          "description": "Bitwarden API client_id (personal API key).",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "VAULT_CLIENT_ID"
+        },
+        {
+          "description": "Bitwarden API client_secret (personal API key).",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "VAULT_CLIENT_SECRET"
+        },
+        {
+          "description": "Vault master password, used to unlock and decrypt items.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "VAULT_MASTER_PASSWORD"
+        }
+      ],
+      "identifier": "@aiwerk/mcp-server-vault",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9b06709271",
+    "published_at": "2026-06-24T00:24:31.489282Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.AIWerk/mcp-server-vault",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-24T00:24:31.489282Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

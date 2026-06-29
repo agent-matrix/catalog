@@ -1,0 +1,72 @@
+{
+  "description": "List LLM providers and run chat completions through the three.ws multi-provider router.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:29+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nirholas-brain-mcp.stdio.14deffe3df",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nirholas/three.ws",
+    "homepage": "https://github.com/nirholas/three.ws",
+    "repository": "https://github.com/nirholas/three.ws"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@three-ws/brain-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nirholas/brain-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://three.ws",
+          "description": "Base URL of the three.ws API that fronts the LLM router (/api/brain/chat). Override only when self-hosting or targeting a preview deployment.",
+          "format": "string",
+          "name": "THREE_WS_BASE"
+        },
+        {
+          "description": "Optional three.ws API key (sk_live_\u2026 / sk_test_\u2026) or OAuth access token, sent as a Bearer token. Required only to use paid first-party flagships (Claude, GPT-4o, o3, Qwen Plus, DeepSeek). Free open-weight tiers (GPT-OSS 120B, NVIDIA NIM models) work with no key. Create one at https://three.ws/account.",
+          "format": "string",
+          "isSecret": true,
+          "name": "THREE_WS_API_KEY"
+        },
+        {
+          "default": "120000",
+          "description": "Per-request timeout in milliseconds. Chat completions stream server-side and are collapsed into a single reply, so this is generous by default to ride out a long flagship answer.",
+          "format": "number",
+          "name": "THREE_WS_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "@three-ws/brain-mcp",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "14deffe3df",
+    "published_at": "2026-06-24T06:52:40.857918Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nirholas/brain-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-24T06:52:40.857918Z"
+  },
+  "title": "three.ws Brain",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

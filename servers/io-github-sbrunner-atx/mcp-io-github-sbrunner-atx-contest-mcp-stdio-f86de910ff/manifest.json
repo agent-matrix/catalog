@@ -1,0 +1,77 @@
+{
+  "description": "Log amateur-radio QSOs to N3FJP logging software over its TCP API.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:32+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sbrunner-atx-contest-mcp.stdio.f86de910ff",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sbrunner-atx/contest-mcp",
+    "homepage": "https://github.com/sbrunner-atx/contest-mcp",
+    "repository": "https://github.com/sbrunner-atx/contest-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "contest-mcp==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sbrunner-atx/contest-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "127.0.0.1",
+          "description": "N3FJP API host.",
+          "format": "string",
+          "name": "N3FJP_HOST"
+        },
+        {
+          "default": "1100",
+          "description": "N3FJP API port (Settings \u2192 Application Program Interface). Default 1100. Not the multi-PC networking port.",
+          "format": "string",
+          "name": "N3FJP_PORT"
+        },
+        {
+          "default": "6",
+          "description": "Seconds to wait for an N3FJP response.",
+          "format": "string",
+          "name": "N3FJP_TIMEOUT"
+        },
+        {
+          "default": "off",
+          "description": "DANGER. When off (default), raw SQL that could delete/overwrite the entire log (DROP/TRUNCATE, unscoped DELETE/UPDATE) is refused. Only enable with a backup and full understanding of the risk.",
+          "format": "string",
+          "name": "N3FJP_ALLOW_DB_WIPE"
+        }
+      ],
+      "identifier": "contest-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f86de910ff",
+    "published_at": "2026-06-24T00:59:51.21667Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sbrunner-atx/contest-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-24T00:59:51.21667Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

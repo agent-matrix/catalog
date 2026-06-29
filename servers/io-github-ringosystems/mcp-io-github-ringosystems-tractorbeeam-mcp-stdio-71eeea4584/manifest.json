@@ -1,0 +1,69 @@
+{
+  "description": "MCP server for Veeam Backup for Microsoft 365: read-only review + gated, audited restore tier.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Ringosystems-tractorbeeam-mcp.stdio.71eeea4584",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Ringosystems/TractorBeeam-MCP",
+    "homepage": "https://github.com/Ringosystems/TractorBeeam-MCP",
+    "repository": "https://github.com/Ringosystems/TractorBeeam-MCP"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/ringosystems/tractorbeeam-mcp:2.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Ringosystems/tractorbeeam-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "IP or hostname of the VB365 (Veeam Backup Server) host",
+          "isRequired": true,
+          "name": "VB365_HOST"
+        },
+        {
+          "description": "VB365 account used to obtain a REST API token (DOMAIN\\\\user, .\\\\localuser, or user@domain)",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "VB365_USERNAME"
+        },
+        {
+          "description": "Password for VB365_USERNAME",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "VB365_PASSWORD"
+        }
+      ],
+      "identifier": "ghcr.io/ringosystems/tractorbeeam-mcp:2.1.2",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "71eeea4584",
+    "published_at": "2026-06-24T01:59:38.5264Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Ringosystems/tractorbeeam-mcp",
+    "server_version": "2.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-24T01:59:38.5264Z"
+  },
+  "title": "TractorBeeam365 MCP",
+  "type": "mcp_server",
+  "version": "2.1.2"
+}

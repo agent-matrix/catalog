@@ -1,0 +1,78 @@
+{
+  "description": "MCP server for dLocal \u2014 LatAm cross-border payments, payouts, refunds across 15+ countries",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-codespar-mcp-dlocal.stdio.db427bf0d4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/codespar/mcp-dev-latam",
+    "homepage": "https://github.com/codespar/mcp-dev-latam",
+    "repository": "https://github.com/codespar/mcp-dev-latam"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@codespar/mcp-dlocal@0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.codespar/mcp-dlocal",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "dLocal API Login (X-Login header)",
+          "format": "string",
+          "isRequired": true,
+          "name": "DLOCAL_LOGIN"
+        },
+        {
+          "description": "dLocal API Trans-Key (X-Trans-Key header)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DLOCAL_TRANS_KEY"
+        },
+        {
+          "description": "dLocal API Secret Key used to sign V2 HMAC-SHA256 requests",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DLOCAL_SECRET_KEY"
+        },
+        {
+          "description": "dLocal API base URL. Defaults to https://api.dlocal.com (prod). Use https://sandbox.dlocal.com for sandbox.",
+          "format": "string",
+          "name": "DLOCAL_BASE_URL"
+        }
+      ],
+      "identifier": "@codespar/mcp-dlocal",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "db427bf0d4",
+    "published_at": "2026-06-22T18:51:39.958498Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.codespar/mcp-dlocal",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-22T18:51:39.958498Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

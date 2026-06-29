@@ -1,0 +1,63 @@
+{
+  "description": "Drop-in spend governance + cross-agent dedup proxy for AI agent fleets, with x402 settlement.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:32+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-rtahabas-gatewards.stdio.0a02f35cb4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/rtahabas/gatewards-sdk",
+    "homepage": "https://github.com/rtahabas/gatewards-sdk",
+    "repository": "https://github.com/rtahabas/gatewards-sdk"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@gatewards/mcp-server@0.2.0-beta.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.rtahabas/gatewards",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Gatewards agent API key (gw_agent_\u2026). Required for authenticated proxy calls; the server starts without it but cannot reach the gateway.",
+          "isSecret": true,
+          "name": "GATEWARDS_API_KEY"
+        },
+        {
+          "description": "Gateway base URL. Defaults to http://localhost:3001; set to https://api.gatewards.com for the hosted gateway.",
+          "name": "GATEWARDS_GATEWAY_URL"
+        }
+      ],
+      "identifier": "@gatewards/mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0-beta.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0a02f35cb4",
+    "published_at": "2026-06-25T12:57:12.643743Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.rtahabas/gatewards",
+    "server_version": "0.2.0-beta.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-25T12:57:12.643743Z"
+  },
+  "title": "Gatewards",
+  "type": "mcp_server",
+  "version": "0.2.0-beta.2"
+}

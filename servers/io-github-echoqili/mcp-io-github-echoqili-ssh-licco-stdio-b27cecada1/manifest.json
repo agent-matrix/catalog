@@ -1,0 +1,75 @@
+{
+  "description": "SSH Model Context Protocol Server - Enable SSH functionality for AI models",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:07+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Echoqili-ssh-licco.stdio.b27cecada1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Echoqili/ssh-licco.git",
+    "homepage": "https://github.com/Echoqili/ssh-licco.git",
+    "repository": "https://github.com/Echoqili/ssh-licco.git"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "python",
+          "ssh-licco==1.9.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Echoqili/ssh-licco",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "SSH server hostname or IP address",
+          "isRequired": true,
+          "name": "SSH_HOST"
+        },
+        {
+          "description": "SSH username for authentication",
+          "isRequired": true,
+          "name": "SSH_USER"
+        },
+        {
+          "description": "SSH password for authentication",
+          "isSecret": true,
+          "name": "SSH_PASSWORD"
+        },
+        {
+          "default": "22",
+          "description": "SSH port number",
+          "name": "SSH_PORT"
+        }
+      ],
+      "identifier": "ssh-licco",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "python",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.9.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b27cecada1",
+    "published_at": "2026-06-28T15:43:22.297486Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Echoqili/ssh-licco",
+    "server_version": "1.9.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-28T15:43:22.297486Z"
+  },
+  "title": "SSH LICCO MCP Server",
+  "type": "mcp_server",
+  "version": "1.9.3"
+}

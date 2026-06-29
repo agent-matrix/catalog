@@ -1,0 +1,108 @@
+{
+  "description": "Configure a Specter game backend from chat: economy, progression, leaderboards, multiplayer.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-dirtcubeinteractive-specter-skills.stdio.575c81b85d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/dirtcubeinteractive/specter-skills",
+    "homepage": "https://github.com/dirtcubeinteractive/specter-skills",
+    "repository": "https://github.com/dirtcubeinteractive/specter-skills"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "name": "-y",
+            "type": "named"
+          },
+          {
+            "name": "-p",
+            "type": "named",
+            "value": "specter-skills"
+          },
+          "specter-skills@0.11.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.dirtcubeinteractive/specter-skills",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Target environment: 'staging' or 'production'",
+          "format": "string",
+          "name": "SPECTER_ENV"
+        },
+        {
+          "description": "Set 'true' to enable the create/mutate tools (gated behind confirmation)",
+          "format": "string",
+          "name": "SPECTER_ALLOW_MUTATIONS"
+        },
+        {
+          "description": "Client api-key. Not needed after browser sign-in (the dev key from login is reused)",
+          "format": "string",
+          "isSecret": true,
+          "name": "SPECTER_API_KEY"
+        },
+        {
+          "description": "Auto-detected from sign-in. Set only to pin one project when your org has several",
+          "format": "string",
+          "name": "SPECTER_PROJECT_ID"
+        },
+        {
+          "description": "Admin token for CI / non-interactive use instead of browser sign-in",
+          "format": "string",
+          "isSecret": true,
+          "name": "SPECTER_ADMIN_TOKEN"
+        }
+      ],
+      "identifier": "specter-skills",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "specter-mcp"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "name": "-y",
+          "type": "named"
+        },
+        {
+          "name": "-p",
+          "type": "named",
+          "value": "specter-skills"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.11.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "575c81b85d",
+    "published_at": "2026-06-26T10:28:27.624429Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.dirtcubeinteractive/specter-skills",
+    "server_version": "0.11.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-26T10:28:27.624429Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.11.1"
+}

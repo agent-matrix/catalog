@@ -1,0 +1,110 @@
+{
+  "description": "Look up company logos and brand data via the logo.dev API.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-pvliesdonk-logodev-mcp.stdio.9654874e14",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/pvliesdonk/logodev-mcp",
+    "homepage": "https://github.com/pvliesdonk/logodev-mcp",
+    "repository": "https://github.com/pvliesdonk/logodev-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "logodev-mcp==1.0.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.pvliesdonk/logodev-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "choices": [
+            "DEBUG",
+            "INFO",
+            "WARNING",
+            "ERROR"
+          ],
+          "default": "INFO",
+          "description": "Log level (DEBUG, INFO, WARNING, ERROR)",
+          "name": "FASTMCP_LOG_LEVEL"
+        },
+        {
+          "default": "logodev-mcp",
+          "description": "MCP server name shown to clients",
+          "name": "LOGODEV_MCP_SERVER_NAME"
+        },
+        {
+          "description": "Bearer token for authentication",
+          "isSecret": true,
+          "name": "LOGODEV_MCP_BEARER_TOKEN"
+        },
+        {
+          "description": "OIDC auth mode: 'remote' (JWKS validation) or 'oidc-proxy' (OAuth proxy). Auto-detected if not set.",
+          "name": "LOGODEV_MCP_AUTH_MODE"
+        },
+        {
+          "description": "Public base URL of this server (required for OIDC)",
+          "name": "LOGODEV_MCP_BASE_URL"
+        },
+        {
+          "description": "OIDC discovery endpoint URL",
+          "name": "LOGODEV_MCP_OIDC_CONFIG_URL"
+        },
+        {
+          "description": "OIDC client ID",
+          "name": "LOGODEV_MCP_OIDC_CLIENT_ID"
+        },
+        {
+          "description": "OIDC client secret",
+          "isSecret": true,
+          "name": "LOGODEV_MCP_OIDC_CLIENT_SECRET"
+        },
+        {
+          "description": "Signing key for OIDC session JWTs (critical on Linux/Docker)",
+          "isSecret": true,
+          "name": "LOGODEV_MCP_OIDC_JWT_SIGNING_KEY"
+        },
+        {
+          "description": "Expected OIDC token audience",
+          "name": "LOGODEV_MCP_OIDC_AUDIENCE"
+        },
+        {
+          "default": "openid",
+          "description": "Space-separated required OIDC scopes",
+          "name": "LOGODEV_MCP_OIDC_REQUIRED_SCOPES"
+        }
+      ],
+      "identifier": "logodev-mcp",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9654874e14",
+    "published_at": "2026-06-27T12:09:52.042916Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.pvliesdonk/logodev-mcp",
+    "server_version": "1.0.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-27T12:09:52.042916Z"
+  },
+  "title": "Logo.dev MCP",
+  "type": "mcp_server",
+  "version": "1.0.2"
+}

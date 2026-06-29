@@ -1,0 +1,70 @@
+{
+  "description": "Offline MCP access to ZIM knowledge archives \u2014 Wikipedia, Wiktionary, Stack Exchange, Kiwix.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cameronrye-openzim-mcp.stdio.23e7a4c94b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cameronrye/openzim-mcp",
+    "homepage": "https://github.com/cameronrye/openzim-mcp",
+    "repository": "https://github.com/cameronrye/openzim-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "openzim-mcp==2.5.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cameronrye/openzim-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "advanced",
+          "description": "Tool surface: 'advanced' (the default here) registers all 8 tools (zim_query, zim_search, zim_get, zim_get_section, zim_browse, zim_metadata, zim_links, zim_health); 'simple' registers only the zim_query natural-language entry point.",
+          "name": "OPENZIM_MCP_TOOL_MODE"
+        }
+      ],
+      "identifier": "openzim-mcp",
+      "packageArguments": [
+        {
+          "description": "Path to a directory containing your .zim archive files. Repeat for multiple directories. Download archives from the Kiwix library (https://library.kiwix.org/).",
+          "format": "filepath",
+          "isRepeated": true,
+          "isRequired": true,
+          "type": "positional",
+          "valueHint": "zim_directory"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.5.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "23e7a4c94b",
+    "published_at": "2026-06-22T15:49:03.715111Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cameronrye/openzim-mcp",
+    "server_version": "2.5.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-22T15:49:03.715111Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "2.5.1"
+}

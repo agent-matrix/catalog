@@ -1,0 +1,73 @@
+{
+  "description": "Set autopilot scopes and a daily SOL spend cap, then propose, execute, and undo agent actions.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:29+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nirholas-autopilot-mcp.stdio.b0e2890555",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nirholas/three.ws",
+    "homepage": "https://github.com/nirholas/three.ws",
+    "repository": "https://github.com/nirholas/three.ws"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@three-ws/autopilot-mcp@0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nirholas/autopilot-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "REQUIRED. The agent owner's three.ws credential \u2014 a three.ws API key (sk_live_\u2026 / sk_test_\u2026) or an OAuth access token. Sent as Authorization: Bearer on every request; every autopilot endpoint is owner-scoped and rejects unauthenticated calls. This credential can move real SOL via execute_proposal \u2014 treat it like a password. THREE_WS_TOKEN / THREE_WS_BEARER are accepted aliases.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "THREE_WS_API_KEY"
+        },
+        {
+          "default": "https://three.ws",
+          "description": "Base URL of the three.ws API that serves the autopilot endpoints. Override only when self-hosting or targeting a preview deployment.",
+          "format": "string",
+          "name": "THREE_WS_BASE"
+        },
+        {
+          "default": "60000",
+          "description": "Per-request timeout in milliseconds. Proposal generation runs a real server-side LLM pass, so the default is generous.",
+          "format": "number",
+          "name": "THREE_WS_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "@three-ws/autopilot-mcp",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b0e2890555",
+    "published_at": "2026-06-24T09:41:18.570013Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nirholas/autopilot-mcp",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-24T09:41:18.570013Z"
+  },
+  "title": "three.ws Autopilot",
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

@@ -1,0 +1,73 @@
+{
+  "description": "Persistent local AI memory. SQLite + FTS5 + vector search, knowledge graph. No cloud, no API keys.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:34+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-studiomeyer-io-local-memory-mcp.stdio.e7ce51a0ae",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/studiomeyer-io/local-memory-mcp",
+    "homepage": "https://github.com/studiomeyer-io/local-memory-mcp",
+    "repository": "https://github.com/studiomeyer-io/local-memory-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@studiomeyer/local-memory-mcp@2.3.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.studiomeyer-io/local-memory-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Custom path for the SQLite database file",
+          "format": "string",
+          "name": "MEMORY_DB_PATH"
+        },
+        {
+          "description": "Disable the local embedding pipeline (forces FTS5-only search). Useful in restricted networks where the model can't be downloaded.",
+          "format": "string",
+          "name": "MEMORY_EMBED_DISABLED"
+        },
+        {
+          "description": "Override the embedding model id (defaults to Xenova/multilingual-e5-small).",
+          "format": "string",
+          "name": "MEMORY_EMBED_MODEL"
+        },
+        {
+          "description": "Override the Transformers.js cache directory (defaults to the OS data dir).",
+          "format": "string",
+          "name": "MEMORY_EMBED_CACHE_DIR"
+        }
+      ],
+      "identifier": "@studiomeyer/local-memory-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.3.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e7ce51a0ae",
+    "published_at": "2026-06-22T22:52:26.346864Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.studiomeyer-io/local-memory-mcp",
+    "server_version": "2.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-22T22:52:26.346864Z"
+  },
+  "title": "Local Memory",
+  "type": "mcp_server",
+  "version": "2.3.1"
+}

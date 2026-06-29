@@ -1,0 +1,64 @@
+{
+  "description": "Blockchain-anchored e-signatures: send envelopes, manage templates, verify anchors on Solana.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-signatrust-mcp-server.stdio.a2cc8f0931",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/SignaTrustDev/signatrust-mcp",
+    "homepage": "https://github.com/SignaTrustDev/signatrust-mcp",
+    "repository": "https://github.com/SignaTrustDev/signatrust-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@signatrust/mcp-server@0.3.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.signatrust/mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "SignaTrust API key (starts with sk_live_). Create one at Settings -> API keys.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SIGNATRUST_API_KEY"
+        },
+        {
+          "description": "Override the API base URL. Defaults to https://app.signatrust.io; set for self-hosted or local development.",
+          "name": "SIGNATRUST_API_URL"
+        }
+      ],
+      "identifier": "@signatrust/mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a2cc8f0931",
+    "published_at": "2026-06-26T14:55:36.916124Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.signatrust/mcp-server",
+    "server_version": "0.3.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-26T14:55:36.916124Z"
+  },
+  "title": "SignaTrust",
+  "type": "mcp_server",
+  "version": "0.3.2"
+}

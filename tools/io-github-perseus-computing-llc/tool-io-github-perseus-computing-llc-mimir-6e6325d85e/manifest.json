@@ -1,0 +1,89 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/perseus-computing-llc/mimir:2.7.0"
+      }
+    }
+  ],
+  "description": "Local-first MCP memory server: SQLite, FTS5 and vector search, AES-256-GCM. 43 tools, no cloud.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:09+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/Perseus-Computing-LLC/mimir",
+  "id": "tool.io-github-perseus-computing-llc-mimir.6e6325d85e",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Perseus-Computing-LLC/mimir",
+    "homepage": "https://github.com/Perseus-Computing-LLC/mimir",
+    "repository": "https://github.com/Perseus-Computing-LLC/mimir"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Local-first MCP memory server: SQLite, FTS5 and vector search, AES-256-GCM. 43 tools, no cloud.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.Perseus-Computing-LLC/mimir",
+      "request_type": "POST",
+      "url": "https://github.com/Perseus-Computing-LLC/mimir"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "name": "-i",
+            "type": "named"
+          },
+          {
+            "name": "--rm",
+            "type": "named"
+          },
+          {
+            "name": "-v",
+            "type": "named",
+            "value": "mimir-data:/data"
+          },
+          "ghcr.io/perseus-computing-llc/mimir:2.7.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Perseus-Computing-LLC/mimir",
+  "provenance": {
+    "identity_key": "166891ea41",
+    "promoted_from": "mcp.io-github-Perseus-Computing-LLC-mimir.stdio.166891ea41",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Perseus-Computing-LLC/mimir",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-Perseus-Computing-LLC-mimir.stdio.166891ea41",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/Perseus-Computing-LLC/mimir",
+  "summary": "Local-first MCP memory server: SQLite, FTS5 and vector search, AES-256-GCM. 43 tools, no cloud.",
+  "tags": [
+    "first",
+    "fts5",
+    "local",
+    "memory",
+    "mimir",
+    "sqlite",
+    "vector"
+  ],
+  "title": "Mimir, persistent memory engine for AI agents",
+  "type": "tool",
+  "version": "2.7.0"
+}

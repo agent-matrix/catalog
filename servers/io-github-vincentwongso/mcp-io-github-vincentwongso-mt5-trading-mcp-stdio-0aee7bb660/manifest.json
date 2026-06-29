@@ -1,0 +1,68 @@
+{
+  "description": "Let an AI agent read and trade a MetaTrader 5 account over MCP, behind a human-approval gate.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:35+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-vincentwongso-mt5-trading-mcp.stdio.0aee7bb660",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/vincentwongso/mt5-trading-mcp",
+    "homepage": "https://github.com/vincentwongso/mt5-trading-mcp",
+    "repository": "https://github.com/vincentwongso/mt5-trading-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mt5-trading-mcp==1.4.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.vincentwongso/mt5-trading-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "MetaTrader 5 account number. Optional: overrides the config file and an already-logged-in terminal.",
+          "name": "MT5_LOGIN"
+        },
+        {
+          "description": "MetaTrader 5 account password. Env-only so it never lands in a config file. Optional when the terminal is already logged in.",
+          "isSecret": true,
+          "name": "MT5_PASSWORD"
+        },
+        {
+          "description": "MetaTrader 5 broker/trade server name. Optional: overrides the config file and an already-logged-in terminal.",
+          "name": "MT5_SERVER"
+        }
+      ],
+      "identifier": "mt5-trading-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.4.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0aee7bb660",
+    "published_at": "2026-06-25T10:36:58.25485Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.vincentwongso/mt5-trading-mcp",
+    "server_version": "1.4.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-25T10:36:58.25485Z"
+  },
+  "title": "MetaTrader 5 MCP Bridge",
+  "type": "mcp_server",
+  "version": "1.4.2"
+}
