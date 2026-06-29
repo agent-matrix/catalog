@@ -1,0 +1,71 @@
+{
+  "description": "An MCP server that enables integration with SonarQube Server or Cloud for code quality and security.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-SonarSource-sonarqube-mcp-server.stdio.3ba2d231ad",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/SonarSource/sonarqube-mcp-server",
+    "homepage": "https://github.com/SonarSource/sonarqube-mcp-server",
+    "repository": "https://github.com/SonarSource/sonarqube-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "docker.io/sonarsource/sonarqube-mcp:latest"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.SonarSource/sonarqube-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your SonarQube USER token",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SONARQUBE_TOKEN"
+        },
+        {
+          "description": "Your SonarQube Cloud organization key (if using SonarQube Cloud)",
+          "format": "string",
+          "isSecret": true,
+          "name": "SONARQUBE_ORG"
+        },
+        {
+          "description": "Your SonarQube Server URL (if using SonarQube Server)",
+          "format": "string",
+          "isSecret": true,
+          "name": "SONARQUBE_URL"
+        }
+      ],
+      "identifier": "docker.io/sonarsource/sonarqube-mcp:latest",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "3ba2d231ad",
+    "published_at": "2026-06-23T12:02:28.189913Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.SonarSource/sonarqube-mcp-server",
+    "server_version": "1.20.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-23T12:02:28.189913Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.20.0"
+}

@@ -1,0 +1,99 @@
+{
+  "description": "Administer Keycloak via its Admin REST API: users, roles, clients, groups, IdP, events.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:28+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mrz1880-mcp-keycloak-admin.stdio.3fe485ef40",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mrz1880/mcp-keycloak-admin",
+    "homepage": "https://github.com/mrz1880/mcp-keycloak-admin",
+    "repository": "https://github.com/mrz1880/mcp-keycloak-admin"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-keycloak-admin@0.2.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mrz1880/mcp-keycloak-admin",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the Keycloak server (no trailing slash).",
+          "isRequired": true,
+          "name": "KEYCLOAK_BASE_URL"
+        },
+        {
+          "description": "Realm the server operates on.",
+          "isRequired": true,
+          "name": "KEYCLOAK_REALM"
+        },
+        {
+          "description": "Authentication mode: service_account or password.",
+          "isRequired": true,
+          "name": "AUTH_MODE"
+        },
+        {
+          "description": "Confidential client id (service_account mode).",
+          "name": "KC_CLIENT_ID"
+        },
+        {
+          "description": "Client secret (service_account mode).",
+          "isSecret": true,
+          "name": "KC_CLIENT_SECRET"
+        },
+        {
+          "description": "Admin username (password mode).",
+          "name": "KC_ADMIN_USERNAME"
+        },
+        {
+          "description": "Admin password (password mode).",
+          "isSecret": true,
+          "name": "KC_ADMIN_PASSWORD"
+        },
+        {
+          "description": "Realm holding the admin user (password mode; default master).",
+          "name": "KC_ADMIN_REALM"
+        },
+        {
+          "description": "When true, write and destructive tools are not registered.",
+          "name": "READ_ONLY"
+        },
+        {
+          "description": "Comma-separated allow-list of realms the server may operate on.",
+          "name": "ALLOWED_REALMS"
+        }
+      ],
+      "identifier": "mcp-keycloak-admin",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "3fe485ef40",
+    "published_at": "2026-06-26T13:29:38.583449Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mrz1880/mcp-keycloak-admin",
+    "server_version": "0.2.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-26T13:29:38.583449Z"
+  },
+  "title": "Keycloak Admin",
+  "type": "mcp_server",
+  "version": "0.2.3"
+}

@@ -1,0 +1,75 @@
+{
+  "description": "11-scanner SAST/DAST MCP server with closed-loop remediation, SBOM/SARIF, and CI integrations",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Skyrxin-sast-mcp-server.stdio.35ee722a70",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Skyrxin/sast-mcp-server",
+    "homepage": "https://github.com/Skyrxin/sast-mcp-server",
+    "repository": "https://github.com/Skyrxin/sast-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "sast-mcp-server==0.8.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Skyrxin/sast-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "300",
+          "description": "Per-scan timeout in seconds (default: 300).",
+          "name": "SAST_MCP_TIMEOUT"
+        },
+        {
+          "default": "INFO",
+          "description": "Logging level: DEBUG, INFO, WARNING, ERROR (default: INFO).",
+          "name": "SAST_MCP_LOG_LEVEL"
+        },
+        {
+          "description": "Optional static API key to require auth (legacy mode; HTTP transports).",
+          "isSecret": true,
+          "name": "SAST_MCP_API_KEY"
+        },
+        {
+          "description": "Optional HMAC secret to require JWT auth with scopes (HTTP transports).",
+          "isSecret": true,
+          "name": "SAST_MCP_JWT_SECRET"
+        }
+      ],
+      "identifier": "sast-mcp-server",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.8.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "35ee722a70",
+    "published_at": "2026-06-24T10:18:21.757323Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Skyrxin/sast-mcp-server",
+    "server_version": "0.8.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-24T10:18:21.757323Z"
+  },
+  "title": "SAST MCP Server",
+  "type": "mcp_server",
+  "version": "0.8.3"
+}

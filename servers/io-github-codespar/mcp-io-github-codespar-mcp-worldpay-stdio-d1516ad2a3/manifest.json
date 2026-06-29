@@ -1,0 +1,82 @@
+{
+  "description": "MCP server for Access Worldpay \u2014 enterprise processor: authorize, capture, refund, tokenize",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-codespar-mcp-worldpay.stdio.d1516ad2a3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/codespar/mcp-dev-latam",
+    "homepage": "https://github.com/codespar/mcp-dev-latam",
+    "repository": "https://github.com/codespar/mcp-dev-latam"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@codespar/mcp-worldpay@0.2.0-alpha.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.codespar/mcp-worldpay",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Access Worldpay API username (Basic Auth)",
+          "format": "string",
+          "isRequired": true,
+          "name": "WORLDPAY_USERNAME"
+        },
+        {
+          "description": "Access Worldpay API password (Basic Auth)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "WORLDPAY_PASSWORD"
+        },
+        {
+          "description": "Merchant entity identifier assigned during onboarding. Injected as merchant.entity into every request body.",
+          "format": "string",
+          "isRequired": true,
+          "name": "WORLDPAY_ENTITY"
+        },
+        {
+          "description": "sandbox | production. Defaults to sandbox. sandbox -> https://try.access.worldpay.com, production -> https://access.worldpay.com.",
+          "format": "string",
+          "name": "WORLDPAY_ENV"
+        },
+        {
+          "description": "Payments API version for the Content-Type/Accept media-type header. Defaults to v7.",
+          "format": "string",
+          "name": "WORLDPAY_API_VERSION"
+        }
+      ],
+      "identifier": "@codespar/mcp-worldpay",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0-alpha.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d1516ad2a3",
+    "published_at": "2026-06-22T18:52:46.941433Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.codespar/mcp-worldpay",
+    "server_version": "0.2.0-alpha.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-22T18:52:46.941433Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.0-alpha.3"
+}

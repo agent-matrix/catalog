@@ -1,0 +1,80 @@
+{
+  "description": "Operate WSJT-X (FT8/FT4/WSPR) from MCP clients over its UDP message protocol.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:32+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sbrunner-atx-wsjtx-mcp.stdio.df2db8c46a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sbrunner-atx/wsjtx-mcp",
+    "homepage": "https://github.com/sbrunner-atx/wsjtx-mcp",
+    "repository": "https://github.com/sbrunner-atx/wsjtx-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "wsjtx-mcp==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sbrunner-atx/wsjtx-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Operator callsign \u2014 the single transmit gate. Blank = receive-only (refuses all transmit-initiating messages).",
+          "format": "string",
+          "name": "WSJTX_CALLSIGN"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "Address to bind/receive WSJT-X UDP broadcasts on. Use 127.0.0.1 (and the udp_relay) for a remote WSJT-X.",
+          "format": "string",
+          "name": "WSJTX_HOST"
+        },
+        {
+          "default": "2237",
+          "description": "WSJT-X Settings \u2192 Reporting \u2192 UDP Server port. Default 2237. Enable 'Accept UDP requests' for control.",
+          "format": "string",
+          "name": "WSJTX_PORT"
+        },
+        {
+          "description": "Optional multicast group to join so multiple UDP consumers can coexist. Blank = unicast.",
+          "format": "string",
+          "name": "WSJTX_MULTICAST"
+        },
+        {
+          "description": "Optional WSJT-X instance Id to target when several broadcast here.",
+          "format": "string",
+          "name": "WSJTX_INSTANCE"
+        }
+      ],
+      "identifier": "wsjtx-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "df2db8c46a",
+    "published_at": "2026-06-27T04:08:54.602295Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sbrunner-atx/wsjtx-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-27T04:08:54.602295Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

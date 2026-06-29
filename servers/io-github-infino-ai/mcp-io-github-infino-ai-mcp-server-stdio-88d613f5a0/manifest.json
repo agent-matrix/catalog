@@ -1,0 +1,79 @@
+{
+  "description": "Keyword, vector, hybrid, and SQL retrieval over data on object storage, for AI agents.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:23+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-infino-ai-mcp-server.stdio.88d613f5a0",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/infino-ai/infino-mcp",
+    "homepage": "https://github.com/infino-ai/infino-mcp",
+    "repository": "https://github.com/infino-ai/infino-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@infino-ai/mcp-server@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.infino-ai/mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Data to serve: a local path or an s3://|gs://|az:// bucket URI.",
+          "format": "string",
+          "isRequired": true,
+          "name": "INFINO_MCP_URI"
+        },
+        {
+          "description": "Set (1/true/yes) to expose add/update/delete tools and allow DDL/DML through SQL. Read-only when unset.",
+          "format": "string",
+          "name": "INFINO_MCP_ENABLE_WRITES"
+        },
+        {
+          "description": "Hugging Face feature-extraction model for local embedding (default Xenova/all-MiniLM-L6-v2, 384-dim).",
+          "format": "string",
+          "name": "INFINO_MCP_EMBED_MODEL"
+        },
+        {
+          "description": "Custom S3 endpoint for non-AWS S3-compatible stores (Cloudflare R2, MinIO, Backblaze B2).",
+          "format": "string",
+          "name": "INFINO_MCP_S3_ENDPOINT"
+        },
+        {
+          "description": "Region sent with a custom S3 endpoint (default 'auto').",
+          "format": "string",
+          "name": "INFINO_MCP_S3_REGION"
+        }
+      ],
+      "identifier": "@infino-ai/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "88d613f5a0",
+    "published_at": "2026-06-22T16:46:58.169815Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.infino-ai/mcp-server",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-22T16:46:58.169815Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

@@ -1,0 +1,66 @@
+{
+  "description": "MCP server for Xero \u2014 global cloud accounting: contacts, invoices, payments, items, reports",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-codespar-mcp-xero.stdio.b6893c7eac",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/codespar/mcp-dev-latam",
+    "homepage": "https://github.com/codespar/mcp-dev-latam",
+    "repository": "https://github.com/codespar/mcp-dev-latam"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@codespar/mcp-xero@0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.codespar/mcp-xero",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Xero OAuth2 access token (Bearer). Obtain via Xero OAuth2 flow; rotate on expiry.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "XERO_ACCESS_TOKEN"
+        },
+        {
+          "description": "Xero tenant/organization id sent in the Xero-tenant-id header on every request.",
+          "format": "string",
+          "isRequired": true,
+          "name": "XERO_TENANT_ID"
+        }
+      ],
+      "identifier": "@codespar/mcp-xero",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b6893c7eac",
+    "published_at": "2026-06-22T18:50:22.245087Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.codespar/mcp-xero",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-22T18:50:22.245087Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

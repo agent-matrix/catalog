@@ -1,0 +1,72 @@
+{
+  "description": "Discover signal feeds ranked by proven edge, rank publishers, and subscribe + track results.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:29+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nirholas-signals-mcp.stdio.69ec376d44",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nirholas/three.ws",
+    "homepage": "https://github.com/nirholas/three.ws",
+    "repository": "https://github.com/nirholas/three.ws"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@three-ws/signals-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nirholas/signals-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://three.ws",
+          "description": "Base URL of the three.ws API that serves the signal-marketplace endpoints. Override only when self-hosting or targeting a preview deployment.",
+          "format": "string",
+          "name": "THREE_WS_BASE"
+        },
+        {
+          "default": "20000",
+          "description": "Per-request timeout in milliseconds for the live marketplace reads and subscription writes.",
+          "format": "number",
+          "name": "THREE_WS_TIMEOUT_MS"
+        },
+        {
+          "description": "three.ws API key (sk_live_\u2026 / sk_test_\u2026) for the account-scoped follower tools (get_subscriptions, subscribe_signal, set_subscription_status). Optional \u2014 the public discovery and leaderboard tools work without it. subscribe_signal in live mode spends real USDC, so treat this key like cash.",
+          "format": "string",
+          "isSecret": true,
+          "name": "THREE_WS_API_KEY"
+        }
+      ],
+      "identifier": "@three-ws/signals-mcp",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "69ec376d44",
+    "published_at": "2026-06-24T06:52:38.083951Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nirholas/signals-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-24T06:52:38.083951Z"
+  },
+  "title": "three.ws Signals",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

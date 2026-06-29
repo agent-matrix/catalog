@@ -1,0 +1,113 @@
+{
+  "description": "Couchbase Model Context Protocol Server to interact with Couchbase clusters",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-couchbase-mcp-server-couchbase.stdio.a77e3bbd86",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/couchbase/mcp-server-couchbase",
+    "homepage": "https://github.com/couchbase/mcp-server-couchbase",
+    "repository": "https://github.com/couchbase/mcp-server-couchbase"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "docker.io/couchbase/mcp-server:1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.couchbase/mcp-server-couchbase",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Couchbase connection string. Required for connecting to the cluster.",
+          "format": "string",
+          "name": "CB_CONNECTION_STRING"
+        },
+        {
+          "description": "Couchbase database username. Required for basic authentication.",
+          "format": "string",
+          "name": "CB_USERNAME"
+        },
+        {
+          "description": "Couchbase database password. Required for basic authentication.",
+          "format": "string",
+          "isSecret": true,
+          "name": "CB_PASSWORD"
+        },
+        {
+          "description": "Couchbase CA certificate path. Required for TLS authentication in non Capella clusters.",
+          "format": "string",
+          "name": "CB_CA_CERT_PATH"
+        },
+        {
+          "description": "Couchbase client certificate path. Required for mTLS authentication.",
+          "format": "string",
+          "name": "CB_CLIENT_CERT_PATH"
+        },
+        {
+          "description": "Couchbase client key path. Required for mTLS authentication.",
+          "format": "string",
+          "name": "CB_CLIENT_KEY_PATH"
+        },
+        {
+          "description": "Couchbase read only mode. Set to true to disable write operations across both KV and query. KV write tools are not loaded and SQL++ queries that modify data are blocked. Set to false to allow data modification queries and tools.",
+          "format": "boolean",
+          "name": "CB_MCP_READ_ONLY_MODE"
+        },
+        {
+          "description": "Transport mode for the server (stdio, http or sse). Default is stdio",
+          "format": "string",
+          "name": "CB_MCP_TRANSPORT"
+        },
+        {
+          "description": "Host to run the MCP server on (default: 127.0.0.1). Used only for HTTP and SSE transport modes.",
+          "format": "string",
+          "name": "CB_MCP_HOST"
+        },
+        {
+          "description": "Port to run the MCP server on (default: 8000). Used only for HTTP and SSE transport modes.",
+          "format": "number",
+          "name": "CB_MCP_PORT"
+        },
+        {
+          "description": "Tools to disable. Accepts comma-separated tool names (e.g., 'tool_1,tool_2') or a file path containing one tool name per line.",
+          "format": "string",
+          "name": "CB_MCP_DISABLED_TOOLS"
+        },
+        {
+          "description": "Comma-separated tool names that require user confirmation before execution. Also accepts a file path containing one tool name per line. Requires the MCP client to support elicitation.",
+          "format": "string",
+          "name": "CB_MCP_CONFIRMATION_REQUIRED_TOOLS"
+        }
+      ],
+      "identifier": "docker.io/couchbase/mcp-server:1.0.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "a77e3bbd86",
+    "published_at": "2026-06-26T13:09:35.48232Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.couchbase/mcp-server-couchbase",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-26T13:09:35.48232Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

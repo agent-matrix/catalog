@@ -1,0 +1,75 @@
+{
+  "description": "A label property graph on SQLite/Postgres with multi-ontology routing and a gated MCP server.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cunicopia-dev-knowledge-graph-rdbms.stdio.7e22df825b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cunicopia-dev/knowledge-graph-rdbms",
+    "homepage": "https://github.com/cunicopia-dev/knowledge-graph-rdbms",
+    "repository": "https://github.com/cunicopia-dev/knowledge-graph-rdbms"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "knowledge-graph-rdbms==0.1.9"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cunicopia-dev/knowledge-graph-rdbms",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Storage root for ontology databases and the event log. Defaults to ~/.kgrdbms.",
+          "format": "string",
+          "name": "KGRDBMS_HOME"
+        },
+        {
+          "description": "Name of the default ontology used when a tool call omits the `ontology` argument. Defaults to \"default\".",
+          "format": "string",
+          "name": "KGRDBMS_DEFAULT_ONTOLOGY"
+        }
+      ],
+      "identifier": "knowledge-graph-rdbms",
+      "packageArguments": [
+        {
+          "name": "--from",
+          "type": "named",
+          "value": "knowledge-graph-rdbms[mcp]"
+        },
+        {
+          "type": "positional",
+          "value": "kgrdbms-mcp"
+        }
+      ],
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.9"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7e22df825b",
+    "published_at": "2026-06-25T12:13:34.228336Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cunicopia-dev/knowledge-graph-rdbms",
+    "server_version": "0.1.9",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-25T12:13:34.228336Z"
+  },
+  "title": "Knowledge Graph RDBMS",
+  "type": "mcp_server",
+  "version": "0.1.9"
+}

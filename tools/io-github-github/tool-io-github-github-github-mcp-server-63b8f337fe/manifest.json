@@ -1,0 +1,99 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/github/github-mcp-server:1.5.0"
+      }
+    }
+  ],
+  "description": "Connect AI assistants to GitHub - manage repos, issues, PRs, and workflows through natural language.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/github/github-mcp-server",
+  "id": "tool.io-github-github-github-mcp-server.63b8f337fe",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/github/github-mcp-server",
+    "homepage": "https://github.com/github/github-mcp-server",
+    "repository": "https://github.com/github/github-mcp-server"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Connect AI assistants to GitHub - manage repos, issues, PRs, and workflows through natural language.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.github/github-mcp-server",
+      "request_type": "POST",
+      "url": "https://github.com/github/github-mcp-server"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Publish the OAuth callback port to loopback so the in-container login callback is reachable",
+            "name": "-p",
+            "type": "named",
+            "value": "127.0.0.1:8085:8085"
+          },
+          {
+            "description": "Fixed OAuth callback port, matching the published port above",
+            "name": "-e",
+            "type": "named",
+            "value": "GITHUB_OAUTH_CALLBACK_PORT=8085"
+          },
+          {
+            "description": "Optional GitHub Personal Access Token. Omit to log in with OAuth on first use.",
+            "name": "-e",
+            "type": "named",
+            "value": "GITHUB_PERSONAL_ACCESS_TOKEN={token}",
+            "variables": {
+              "token": {
+                "format": "string",
+                "isSecret": true
+              }
+            }
+          },
+          "ghcr.io/github/github-mcp-server:1.5.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.github/github-mcp-server",
+  "provenance": {
+    "identity_key": "ea67ec154b",
+    "promoted_from": "mcp.io-github-github-github-mcp-server.stdio.ea67ec154b",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.github/github-mcp-server",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-github-github-mcp-server.stdio.ea67ec154b",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/github/github-mcp-server",
+  "summary": "Connect AI assistants to GitHub - manage repos, issues, PRs, and workflows through natural language.",
+  "tags": [
+    "assistants",
+    "connect",
+    "issues",
+    "manage",
+    "repos",
+    "workflows"
+  ],
+  "title": "GitHub",
+  "type": "tool",
+  "version": "1.5.0"
+}

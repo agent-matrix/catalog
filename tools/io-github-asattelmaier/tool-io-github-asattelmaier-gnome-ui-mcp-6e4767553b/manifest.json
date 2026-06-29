@@ -1,0 +1,160 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/asattelmaier/gnome-ui-mcp:0.5.0"
+      }
+    }
+  ],
+  "description": "GNOME Wayland desktop automation via AT-SPI discovery and Mutter input.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:13+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/asattelmaier/gnome-ui-mcp",
+  "id": "tool.io-github-asattelmaier-gnome-ui-mcp.6e4767553b",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/asattelmaier/gnome-ui-mcp",
+    "homepage": "https://github.com/asattelmaier/gnome-ui-mcp",
+    "repository": "https://github.com/asattelmaier/gnome-ui-mcp"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "GNOME Wayland desktop automation via AT-SPI discovery and Mutter input.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.asattelmaier/gnome-ui-mcp",
+      "request_type": "POST",
+      "url": "https://github.com/asattelmaier/gnome-ui-mcp"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "type": "positional",
+            "value": "run"
+          },
+          {
+            "name": "-i",
+            "type": "named"
+          },
+          {
+            "name": "--rm",
+            "type": "named"
+          },
+          {
+            "name": "--security-opt",
+            "type": "named",
+            "value": "apparmor=unconfined"
+          },
+          {
+            "name": "--network",
+            "type": "named",
+            "value": "host"
+          },
+          {
+            "name": "--user",
+            "type": "named",
+            "value": "{uid}:{gid}",
+            "variables": {
+              "gid": {
+                "default": "1000",
+                "description": "Host group ID used to run the container.",
+                "format": "number",
+                "isRequired": true
+              },
+              "uid": {
+                "default": "1000",
+                "description": "Host user ID used to run the container.",
+                "format": "number",
+                "isRequired": true
+              }
+            }
+          },
+          {
+            "name": "-e",
+            "type": "named",
+            "value": "DBUS_SESSION_BUS_ADDRESS"
+          },
+          {
+            "name": "-e",
+            "type": "named",
+            "value": "XDG_RUNTIME_DIR"
+          },
+          {
+            "name": "-e",
+            "type": "named",
+            "value": "WAYLAND_DISPLAY"
+          },
+          {
+            "name": "-e",
+            "type": "named",
+            "value": "DISPLAY"
+          },
+          {
+            "name": "-e",
+            "type": "named",
+            "value": "XDG_SESSION_TYPE"
+          },
+          {
+            "name": "-v",
+            "type": "named",
+            "value": "{xdg_runtime_dir}:{xdg_runtime_dir}",
+            "variables": {
+              "xdg_runtime_dir": {
+                "description": "Host XDG runtime directory mounted into the container.",
+                "format": "filepath",
+                "isRequired": true,
+                "placeholder": "/run/user/1000"
+              }
+            }
+          },
+          {
+            "name": "-v",
+            "type": "named",
+            "value": "/tmp/.X11-unix:/tmp/.X11-unix:ro"
+          },
+          "ghcr.io/asattelmaier/gnome-ui-mcp:0.5.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.asattelmaier/gnome-ui-mcp",
+  "provenance": {
+    "identity_key": "c35fb2c301",
+    "promoted_from": "mcp.io-github-asattelmaier-gnome-ui-mcp.stdio.c35fb2c301",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.asattelmaier/gnome-ui-mcp",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-asattelmaier-gnome-ui-mcp.stdio.c35fb2c301",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/asattelmaier/gnome-ui-mcp",
+  "summary": "GNOME Wayland desktop automation via AT-SPI discovery and Mutter input.",
+  "tags": [
+    "automation",
+    "desktop",
+    "discovery",
+    "gnome",
+    "input",
+    "mutter",
+    "wayland"
+  ],
+  "title": "GNOME UI MCP",
+  "type": "tool",
+  "version": "0.5.0"
+}

@@ -1,0 +1,84 @@
+{
+  "description": "MCP server for C6 Bank \u2014 Pix (cob/cobv), DICT keys, Boleto, balance, statement (OAuth2 + mTLS)",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-codespar-mcp-c6.stdio.25470d8bf1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/codespar/mcp-dev-latam",
+    "homepage": "https://github.com/codespar/mcp-dev-latam",
+    "repository": "https://github.com/codespar/mcp-dev-latam"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@codespar/mcp-c6@0.1.0-alpha.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.codespar/mcp-c6",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "C6 OAuth client_id issued via the Developer Portal after contract onboarding.",
+          "format": "string",
+          "isRequired": true,
+          "name": "C6_CLIENT_ID"
+        },
+        {
+          "description": "C6 OAuth client_secret.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "C6_CLIENT_SECRET"
+        },
+        {
+          "description": "Absolute path to the mTLS client certificate (.crt or .pem). BACEN mandates mTLS for Pix v2.",
+          "format": "string",
+          "isRequired": true,
+          "name": "C6_CERT_PATH"
+        },
+        {
+          "description": "Absolute path to the mTLS private key (.key or .pem).",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "C6_KEY_PATH"
+        },
+        {
+          "description": "Environment: 'sandbox' or 'production'. Defaults to 'sandbox'.",
+          "format": "string",
+          "name": "C6_ENV"
+        }
+      ],
+      "identifier": "@codespar/mcp-c6",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0-alpha.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "25470d8bf1",
+    "published_at": "2026-06-22T19:59:47.582222Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.codespar/mcp-c6",
+    "server_version": "0.1.0-alpha.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-22T19:59:47.582222Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0-alpha.3"
+}

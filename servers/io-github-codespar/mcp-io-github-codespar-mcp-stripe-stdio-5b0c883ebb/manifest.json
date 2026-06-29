@@ -1,0 +1,65 @@
+{
+  "description": "MCP server for Stripe \u2014 global payments API (PaymentIntents, Checkout, Billing, Refunds)",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-codespar-mcp-stripe.stdio.5b0c883ebb",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/codespar/mcp-dev-latam",
+    "homepage": "https://github.com/codespar/mcp-dev-latam",
+    "repository": "https://github.com/codespar/mcp-dev-latam"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@codespar/mcp-stripe@0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.codespar/mcp-stripe",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Stripe secret key (sk_test_... for test mode, sk_live_... for live mode). The key prefix selects the environment \u2014 no separate base URL.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "STRIPE_SECRET_KEY"
+        },
+        {
+          "description": "Optional Stripe API version to pin via the Stripe-Version header (e.g. '2024-06-20'). When omitted, Stripe uses the account's default version.",
+          "format": "string",
+          "name": "STRIPE_API_VERSION"
+        }
+      ],
+      "identifier": "@codespar/mcp-stripe",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5b0c883ebb",
+    "published_at": "2026-06-22T18:52:33.068289Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.codespar/mcp-stripe",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-22T18:52:33.068289Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

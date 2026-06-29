@@ -1,0 +1,71 @@
+{
+  "description": "MCP server for Coinbase Commerce \u2014 crypto merchant payments (BTC/ETH/USDC); settle crypto or fiat",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-codespar-mcp-coinbase-commerce.stdio.2361ccc59a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/codespar/mcp-dev-latam",
+    "homepage": "https://github.com/codespar/mcp-dev-latam",
+    "repository": "https://github.com/codespar/mcp-dev-latam"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@codespar/mcp-coinbase-commerce@0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.codespar/mcp-coinbase-commerce",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Coinbase Commerce API key. Create one at https://beta.commerce.coinbase.com/settings/security.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "COINBASE_COMMERCE_API_KEY"
+        },
+        {
+          "description": "Coinbase Commerce API version pin (X-CC-Version header). Defaults to 2018-03-22.",
+          "format": "string",
+          "name": "COINBASE_COMMERCE_API_VERSION"
+        },
+        {
+          "description": "Shared secret used to verify X-CC-Webhook-Signature on incoming webhooks. Only required for the verify_webhook_signature tool.",
+          "format": "string",
+          "isSecret": true,
+          "name": "COINBASE_COMMERCE_WEBHOOK_SECRET"
+        }
+      ],
+      "identifier": "@codespar/mcp-coinbase-commerce",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "2361ccc59a",
+    "published_at": "2026-06-22T18:49:42.348923Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.codespar/mcp-coinbase-commerce",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-22T18:49:42.348923Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

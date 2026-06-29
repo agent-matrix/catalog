@@ -1,0 +1,97 @@
+{
+  "description": "MCP server for managing Naver Cloud Platform (Ncloud) infrastructure",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sjk4425-ncloud.stdio.72b6ad1371",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sjk4425/ncloud-mcp-server",
+    "homepage": "https://github.com/sjk4425/ncloud-mcp-server",
+    "repository": "https://github.com/sjk4425/ncloud-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "ncloud-mcp-server@1.8.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sjk4425/ncloud",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Ncloud API Access Key",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "NCLOUD_ACCESS_KEY"
+        },
+        {
+          "description": "Ncloud API Secret Key",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "NCLOUD_SECRET_KEY"
+        },
+        {
+          "description": "Ncloud region code (KR, JPN, SGN, USWN, DEN)",
+          "format": "string",
+          "name": "NCLOUD_REGION"
+        },
+        {
+          "description": "Comma-separated tool groups to load at startup, e.g. 'compute,network,billing' or 'all,-billing'. Unset = all groups. Include the 'dynamic' keyword to start with the core set (common+compute+network+database) AND allow mid-session expansion via the ncloud_enable_tool_group meta tool; without 'dynamic', the listed groups are locked (no runtime expansion). A '-'-excluded group is also refused for dynamic enable. common is always on.",
+          "format": "string",
+          "name": "NCLOUD_TOOL_GROUPS"
+        },
+        {
+          "description": "Set to '1' to strip empty values (null/\"\"/[]/{}) from responses globally.",
+          "format": "string",
+          "name": "NCLOUD_RESPONSE_PRUNE"
+        },
+        {
+          "description": "API request timeout in milliseconds (default 30000). HTTP 429 is always auto-retried up to 2 times; read-only query tools also retry 503/504 and network errors.",
+          "format": "string",
+          "name": "NCLOUD_TIMEOUT_MS"
+        },
+        {
+          "description": "Language for client error messages: 'en' for English, otherwise/unset is Korean (default).",
+          "format": "string",
+          "name": "NCLOUD_LANG"
+        },
+        {
+          "description": "Opt-in response-size guard for read-only tools. When set to a positive byte threshold, large read-only responses are truncated item-by-item to stay under it, adding 'truncated'/'suggestedPageSize' recovery hints. Unset/0 = guard off (response shape unchanged).",
+          "format": "string",
+          "name": "NCLOUD_RESPONSE_MAXBYTES"
+        }
+      ],
+      "identifier": "ncloud-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.8.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "72b6ad1371",
+    "published_at": "2026-06-26T12:46:16.287344Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sjk4425/ncloud",
+    "server_version": "1.8.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-26T12:46:16.287344Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.8.0"
+}

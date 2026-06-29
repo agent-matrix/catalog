@@ -1,0 +1,126 @@
+{
+  "description": "Graph-based memory system for LLMs with knowledge graphs and semantic search.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:08+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Indhar01-memograph.stdio.800bcd33a6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Indhar01/MemoGraph",
+    "homepage": "https://github.com/Indhar01/MemoGraph",
+    "repository": "https://github.com/Indhar01/MemoGraph"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "Install the memograph package and expose its console scripts.",
+            "name": "--from",
+            "type": "named",
+            "value": "memograph"
+          },
+          "memograph==0.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Indhar01/memograph",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to your MemoGraph vault directory (created if missing).",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "MEMOGRAPH_VAULT",
+          "placeholder": "~/my-vault"
+        },
+        {
+          "choices": [
+            "true",
+            "false"
+          ],
+          "default": "false",
+          "description": "Set to 'true' to block destructive MCP tools (delete_memory, update_memory, bulk_create, batch_delete, batch_update). Recommended for shared or untrusted clients.",
+          "format": "boolean",
+          "name": "MEMOGRAPH_READONLY"
+        },
+        {
+          "choices": [
+            "claude",
+            "ollama"
+          ],
+          "description": "Optional LLM provider for query_with_context tool. Only needed if you want AI-generated answers.",
+          "format": "string",
+          "name": "MEMOGRAPH_PROVIDER"
+        },
+        {
+          "description": "Optional LLM model name (e.g. 'claude-sonnet-4-6'). Used together with MEMOGRAPH_PROVIDER.",
+          "format": "string",
+          "name": "MEMOGRAPH_MODEL",
+          "placeholder": "claude-sonnet-4-6"
+        },
+        {
+          "description": "API key for Anthropic Claude. Required when MEMOGRAPH_PROVIDER=claude or when using the [anthropic] extra.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        },
+        {
+          "description": "API key for OpenAI. Required when using the [openai] extra (embeddings or LLM).",
+          "format": "string",
+          "isSecret": true,
+          "name": "OPENAI_API_KEY"
+        },
+        {
+          "default": "http://localhost:11434",
+          "description": "Base URL for a local Ollama server (default http://localhost:11434). Only needed when MEMOGRAPH_PROVIDER=ollama or the [ollama] extra is installed.",
+          "format": "string",
+          "name": "OLLAMA_HOST"
+        }
+      ],
+      "identifier": "memograph",
+      "packageArguments": [
+        {
+          "description": "Console script that starts the MemoGraph MCP server (registered by pyproject.toml [project.scripts]).",
+          "type": "positional",
+          "value": "memograph-mcp",
+          "valueHint": "memograph-mcp"
+        }
+      ],
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "Install the memograph package and expose its console scripts.",
+          "name": "--from",
+          "type": "named",
+          "value": "memograph"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "800bcd33a6",
+    "published_at": "2026-06-25T15:23:19.542995Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Indhar01/memograph",
+    "server_version": "0.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-25T15:23:19.542995Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.4.0"
+}

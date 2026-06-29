@@ -1,0 +1,72 @@
+{
+  "description": "MCP server for PicPay Business \u2014 BR digital wallet (60M+ users): checkout, Pix QR, subscriptions",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-codespar-mcp-picpay.stdio.15e0b81fa5",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/codespar/mcp-dev-latam",
+    "homepage": "https://github.com/codespar/mcp-dev-latam",
+    "repository": "https://github.com/codespar/mcp-dev-latam"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@codespar/mcp-picpay@0.2.0-alpha.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.codespar/mcp-picpay",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "PicPay merchant integration token (sent as x-picpay-token header)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PICPAY_TOKEN"
+        },
+        {
+          "description": "PicPay seller token used to validate webhook callbacks (x-seller-token header)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PICPAY_SELLER_TOKEN"
+        },
+        {
+          "description": "PicPay ecommerce API base URL. Defaults to https://appws.picpay.com/ecommerce/public.",
+          "format": "string",
+          "name": "PICPAY_BASE_URL"
+        }
+      ],
+      "identifier": "@codespar/mcp-picpay",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0-alpha.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "15e0b81fa5",
+    "published_at": "2026-06-22T18:52:18.142201Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.codespar/mcp-picpay",
+    "server_version": "0.2.0-alpha.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-22T18:52:18.142201Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.0-alpha.3"
+}

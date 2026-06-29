@@ -1,0 +1,65 @@
+{
+  "description": "Free & pay-per-call (x402/USDC) risk & momentum scores for nad.fun tokens on Monad.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.net-payflowagent-mcp.stdio.611e062b11",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "payflowagent-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "net.payflowagent/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Private key of a dedicated payer wallet (Base, USDC) used to auto-pay x402 calls. Without it, only the free tool works.",
+          "format": "string",
+          "isSecret": true,
+          "name": "X402_BUYER_PRIVATE_KEY"
+        },
+        {
+          "description": "Base URL of the PayFlowAgent service (default https://payflowagent.net).",
+          "format": "string",
+          "name": "PAYFLOWAGENT_API_BASE"
+        },
+        {
+          "description": "Optional payment RPC endpoint (Base mainnet by default).",
+          "format": "string",
+          "name": "X402_BUYER_RPC"
+        }
+      ],
+      "identifier": "payflowagent-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "611e062b11",
+    "published_at": "2026-06-27T21:36:15.868568Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "net.payflowagent/mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-27T21:36:15.868568Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

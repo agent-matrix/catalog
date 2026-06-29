@@ -1,0 +1,83 @@
+{
+  "description": "MCP server for SQL Server: schema inspection, safe read-only queries, query plan analysis",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:09+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Nithish1206-SqlServerMcp.stdio.94711b42ba",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='nuget' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/Nithish1206/SqlServerMcp.NuGet",
+    "homepage": "https://github.com/Nithish1206/SqlServerMcp.NuGet",
+    "repository": "https://github.com/Nithish1206/SqlServerMcp.NuGet"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Nithish1206/SqlServerMcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "name": "ConnectionStrings__MyDb",
+          "value": "{connection_string}",
+          "variables": {
+            "connection_string": {
+              "description": "SQL Server connection string, e.g. Server=localhost;Database=MyDatabase;Trusted_Connection=True;TrustServerCertificate=True;",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        },
+        {
+          "name": "Query__DefaultTop",
+          "value": "{default_top}",
+          "variables": {
+            "default_top": {
+              "default": "1000",
+              "description": "Default row limit applied to queries"
+            }
+          }
+        },
+        {
+          "name": "Query__MaxTop",
+          "value": "{max_top}",
+          "variables": {
+            "max_top": {
+              "default": "500000",
+              "description": "Maximum allowed row limit"
+            }
+          }
+        }
+      ],
+      "identifier": "SqlServerMcp",
+      "registryBaseUrl": "https://api.nuget.org/v3/index.json",
+      "registryType": "nuget",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "94711b42ba",
+    "published_at": "2026-06-25T12:42:38.12452Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Nithish1206/SqlServerMcp",
+    "server_version": "1.0.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-25T12:42:38.12452Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.6"
+}

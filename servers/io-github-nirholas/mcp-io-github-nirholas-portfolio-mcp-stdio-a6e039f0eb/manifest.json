@@ -1,0 +1,102 @@
+{
+  "description": "An agent's trading state \u2014 portfolio value, PnL, live balances, trade feed, and signed transfers.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:29+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nirholas-portfolio-mcp.stdio.a6e039f0eb",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nirholas/three.ws",
+    "homepage": "https://github.com/nirholas/three.ws",
+    "repository": "https://github.com/nirholas/three.ws"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@three-ws/portfolio-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nirholas/portfolio-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://three.ws",
+          "description": "Base URL of the three.ws API that serves the portfolio + trades endpoints. Override only when self-hosting or targeting a preview deployment.",
+          "format": "string",
+          "name": "THREE_WS_BASE"
+        },
+        {
+          "default": "20000",
+          "description": "Per-request timeout in milliseconds for the live three.ws API reads.",
+          "format": "number",
+          "name": "THREE_WS_TIMEOUT_MS"
+        },
+        {
+          "description": "Your three.ws session token (the value of the `__Host-sid` cookie from a signed-in browser). Required for the account-scoped reads \u2014 get_portfolio_summary, get_portfolio_history, get_portfolio_asset \u2014 which return data for the agents YOU own. The public trade feed and on-chain balance reads do not need it. Treat like a password.",
+          "format": "string",
+          "isSecret": true,
+          "name": "THREE_WS_SESSION"
+        },
+        {
+          "default": "https://api.mainnet-beta.solana.com",
+          "description": "Solana mainnet RPC endpoint used by get_wallet_balances and send_transfer. Defaults to https://api.mainnet-beta.solana.com \u2014 bring your own (Helius / QuickNode / Triton) for production traffic.",
+          "format": "string",
+          "name": "SOLANA_RPC_URL"
+        },
+        {
+          "description": "Base58-encoded Solana secret key for the wallet that send_transfer signs from. REQUIRED for send_transfer (the only write tool); a per-call `secret` arg overrides it. Not needed for any read tool. Treat like cash.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SOLANA_SECRET_KEY"
+        },
+        {
+          "default": "0.5",
+          "description": "Per-transaction spend cap in SOL for native SOL transfers via send_transfer. Bounds the blast radius of a leaked key or an injected argument.",
+          "format": "number",
+          "name": "MAX_SOL_PER_TX"
+        },
+        {
+          "description": "Optional comma-separated base58 pubkeys. When set, send_transfer refuses any recipient not in the list.",
+          "format": "string",
+          "name": "RECIPIENT_ALLOWLIST"
+        },
+        {
+          "default": "true",
+          "description": "When on (default), send_transfer refuses until re-issued with confirm:true. Set 0/false to disable the gate.",
+          "format": "boolean",
+          "name": "REQUIRE_CONFIRM"
+        }
+      ],
+      "identifier": "@three-ws/portfolio-mcp",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a6e039f0eb",
+    "published_at": "2026-06-24T07:19:28.887831Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nirholas/portfolio-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-24T07:19:28.887831Z"
+  },
+  "title": "three.ws Portfolio",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

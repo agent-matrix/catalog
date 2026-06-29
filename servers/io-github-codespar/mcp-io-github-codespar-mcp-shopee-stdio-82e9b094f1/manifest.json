@@ -1,0 +1,84 @@
+{
+  "description": "MCP server for Shopee \u2014 LatAm marketplace Partner API v2 (orders, products, shipping, returns)",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-codespar-mcp-shopee.stdio.82e9b094f1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/codespar/mcp-dev-latam",
+    "homepage": "https://github.com/codespar/mcp-dev-latam",
+    "repository": "https://github.com/codespar/mcp-dev-latam"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@codespar/mcp-shopee@0.2.0-alpha.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.codespar/mcp-shopee",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Shopee Open Platform partner_id (integer) assigned when the app is registered.",
+          "format": "string",
+          "isRequired": true,
+          "name": "SHOPEE_PARTNER_ID"
+        },
+        {
+          "description": "Shopee partner_key used as the secret for HMAC-SHA256 request signing.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SHOPEE_PARTNER_KEY"
+        },
+        {
+          "description": "Merchant access_token obtained via the shop authorization OAuth flow (expires every 4 hours; refresh via refresh_token).",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SHOPEE_ACCESS_TOKEN"
+        },
+        {
+          "description": "Shop identifier (integer) returned after merchant authorization.",
+          "format": "string",
+          "isRequired": true,
+          "name": "SHOPEE_SHOP_ID"
+        },
+        {
+          "description": "Environment: 'sandbox' uses partner.test-stable.shopeemobile.com, 'production' (default) uses partner.shopeemobile.com.",
+          "format": "string",
+          "name": "SHOPEE_ENV"
+        }
+      ],
+      "identifier": "@codespar/mcp-shopee",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0-alpha.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "82e9b094f1",
+    "published_at": "2026-06-22T18:50:05.781051Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.codespar/mcp-shopee",
+    "server_version": "0.2.0-alpha.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-22T18:50:05.781051Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.0-alpha.3"
+}

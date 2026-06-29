@@ -1,0 +1,66 @@
+{
+  "description": "MCP for ARES, the Czech business registry: lookup, due diligence, insolvency, signed provenance",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:27+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-milos106-ares-mcp.stdio.c7e25b5151",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/milos106/ares-mcp",
+    "homepage": "https://github.com/milos106/ares-mcp",
+    "repository": "https://github.com/milos106/ares-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@milos106/ares-mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.milos106/ares-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional Ed25519 private key (base64 PKCS#8 DER) to enable signed provenance envelopes. Omit to run unsigned.",
+          "isSecret": true,
+          "name": "ARES_PROVENANCE_PRIVATE_KEY"
+        },
+        {
+          "description": "Optional key id advertised in signed envelopes and the JWKS. Defaults to a thumbprint of the public key.",
+          "name": "ARES_PROVENANCE_KEY_ID"
+        },
+        {
+          "description": "Optional override of the ARES REST base URL (defaults to the public ares.gov.cz endpoint).",
+          "name": "ARES_BASE_URL"
+        }
+      ],
+      "identifier": "@milos106/ares-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c7e25b5151",
+    "published_at": "2026-06-25T11:22:12.234243Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.milos106/ares-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-25T11:22:12.234243Z"
+  },
+  "title": "ARES (Czech business registry)",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

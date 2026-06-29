@@ -1,7 +1,7 @@
 {
-  "description": "Search O'Reilly for tech books, courses, events, and more. Requires subscription and access token.",
+  "description": "Search O'Reilly for tech books, courses, events, and more. Requires an O'Reilly subscription.",
   "harvest": {
-    "last_seen_at": "2026-06-22T07:39:59+00:00",
+    "last_seen_at": "2026-06-29T07:03:29+00:00",
     "seen_in_latest_run": true
   },
   "id": "mcp.io-github-oreillymedia-oreilly-mcp-server.sse.47d87ff613",
@@ -18,24 +18,23 @@
   "name": "io.github.oreillymedia/oreilly-mcp-server",
   "provenance": {
     "identity_key": "47d87ff613",
-    "published_at": "2026-06-17T17:07:38.697922Z",
+    "published_at": "2026-06-26T15:27:51.401367Z",
     "registry_base_url": "https://registry.modelcontextprotocol.io",
     "server_name": "io.github.oreillymedia/oreilly-mcp-server",
-    "server_version": "1.1.0",
+    "server_version": "1.2.0",
     "source": "mcp-registry",
-    "updated_at": "2026-06-17T17:07:38.697922Z"
+    "updated_at": "2026-06-26T15:27:51.401367Z"
   },
   "remotes": [
     {
       "headers": [
         {
-          "description": "Bearer token for O'Reilly Learning authentication",
+          "description": "Optional. OAuth is the recommended way to authenticate: OAuth-capable clients (e.g. Claude Code, Cursor, VS Code) start the OAuth flow automatically when no token is provided. Alternatively, supply a personal access token here for token-based authentication.",
           "name": "Authorization",
           "value": "Bearer {mcp_access_token}",
           "variables": {
             "mcp_access_token": {
-              "description": "Your O'Reilly access token. See https://learning.oreilly.com/apidocs/mcp/content/#section/Authentication for details on generating a token.",
-              "isRequired": true,
+              "description": "Your O'Reilly personal access token, used only for token-based authentication. Leave unset to authenticate via OAuth. See https://learning.oreilly.com/apidocs/mcp/content/#section/Authentication for details on generating a token.",
               "isSecret": true
             }
           }
@@ -47,5 +46,5 @@
   ],
   "title": "O'Reilly Media MCP Server",
   "type": "mcp_server",
-  "version": "1.1.0"
+  "version": "1.2.0"
 }

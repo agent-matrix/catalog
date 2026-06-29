@@ -1,0 +1,73 @@
+{
+  "description": "Polish e-invoicing MCP: KSeF API v2, FA(3)/FA(2) XML, Peppol BIS 3.0, NIP/REGON validation.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cmendezs-mcp-ksef-pl.stdio.d825a8bba9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cmendezs/mcp-ksef-pl",
+    "homepage": "https://github.com/cmendezs/mcp-ksef-pl",
+    "repository": "https://github.com/cmendezs/mcp-ksef-pl"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-ksef-pl==0.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cmendezs/mcp-ksef-pl",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "KSeF v2 AccessToken obtained via the challenge/redeem auth flow. Required for submit_invoice_to_ksef.",
+          "format": "string",
+          "name": "KSEF_SESSION_TOKEN"
+        },
+        {
+          "description": "NIP (Polish tax identifier, 10 digits) of the entity submitting invoices.",
+          "format": "string",
+          "name": "KSEF_NIP"
+        },
+        {
+          "description": "Target KSeF environment: 'production' or 'test' (default: test).",
+          "format": "string",
+          "name": "KSEF_ENVIRONMENT"
+        },
+        {
+          "description": "HTTP request timeout in seconds (default: 30).",
+          "format": "string",
+          "name": "KSEF_TIMEOUT"
+        }
+      ],
+      "identifier": "mcp-ksef-pl",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d825a8bba9",
+    "published_at": "2026-06-28T15:35:02.987932Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cmendezs/mcp-ksef-pl",
+    "server_version": "0.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-28T15:35:02.987932Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.4.0"
+}

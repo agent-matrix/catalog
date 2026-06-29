@@ -1,0 +1,82 @@
+{
+  "description": "Anchor AI FinOps to real, live cloud pricing \u2014 AWS, GCP & Azure public and enterprise rates.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:36+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-x7even-cloudcostsmcp.stdio.47c3fe2300",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/x7even/cloudcostsmcp",
+    "homepage": "https://github.com/x7even/cloudcostsmcp",
+    "repository": "https://github.com/x7even/cloudcostsmcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "opencloudcosts==1.0.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.x7even/cloudcostsmcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "GCP free API key \u2014 required for GCP pricing, no billing account needed.",
+          "format": "string",
+          "isSecret": true,
+          "name": "OCC_GCP_API_KEY"
+        },
+        {
+          "default": "false",
+          "description": "Set to true to enable effective/discounted AWS pricing via Cost Explorer ($0.01/call).",
+          "format": "string",
+          "name": "OCC_AWS_ENABLE_COST_EXPLORER"
+        },
+        {
+          "description": "AWS credentials \u2014 only needed for effective pricing (RI/Savings Plans). Public pricing works without credentials.",
+          "format": "string",
+          "isSecret": true,
+          "name": "AWS_ACCESS_KEY_ID"
+        },
+        {
+          "description": "AWS secret key \u2014 paired with AWS_ACCESS_KEY_ID for effective pricing.",
+          "format": "string",
+          "isSecret": true,
+          "name": "AWS_SECRET_ACCESS_KEY"
+        },
+        {
+          "description": "GCP billing account ID \u2014 enables effective/contract pricing via Cloud Billing API.",
+          "format": "string",
+          "name": "OCC_GCP_BILLING_ACCOUNT_ID"
+        }
+      ],
+      "identifier": "opencloudcosts",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "47c3fe2300",
+    "published_at": "2026-06-28T16:02:25.809532Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.x7even/cloudcostsmcp",
+    "server_version": "1.0.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-28T16:02:25.809532Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.2"
+}

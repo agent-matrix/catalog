@@ -1,0 +1,84 @@
+{
+  "description": "Self-custodial x402 wallet for AI agents: discover, inspect, and pay any x402 service in USDC.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:29+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nirholas-x402-mcp.stdio.2843a8e397",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nirholas/three.ws",
+    "homepage": "https://github.com/nirholas/three.ws",
+    "repository": "https://github.com/nirholas/three.ws"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@three-ws/x402-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nirholas/x402-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base58 (or JSON byte-array) Solana secret key that signs payments and holds the USDC. Not needed for the read tools (find_services, inspect_endpoint, or x402_wallet with an explicit address). Treat like cash.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SOLANA_SECRET_KEY"
+        },
+        {
+          "default": "https://api.mainnet-beta.solana.com",
+          "description": "Solana mainnet RPC endpoint. Defaults to the public cluster \u2014 bring your own (Helius / QuickNode / Triton) for production traffic.",
+          "format": "string",
+          "name": "SOLANA_RPC_URL"
+        },
+        {
+          "default": "1",
+          "description": "Max USD a single pay_and_call may spend. Bounds a runaway or injected payment.",
+          "format": "number",
+          "name": "MAX_PAY_USD"
+        },
+        {
+          "default": "true",
+          "description": "When on (default), pay_and_call refuses until re-issued with confirm:true. Set 0/false to disable the gate.",
+          "format": "boolean",
+          "name": "REQUIRE_CONFIRM"
+        },
+        {
+          "default": "https://three.ws",
+          "description": "Base URL of the three.ws API that serves /api/bazaar/search for find_services. Override only when self-hosting.",
+          "format": "string",
+          "name": "THREE_WS_BASE"
+        }
+      ],
+      "identifier": "@three-ws/x402-mcp",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "2843a8e397",
+    "published_at": "2026-06-23T15:05:29.238626Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nirholas/x402-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-23T15:05:29.238626Z"
+  },
+  "title": "x402 Wallet",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

@@ -1,0 +1,83 @@
+{
+  "description": "MCP server for structured access to Gramps Web genealogy data",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Scormave-gramps-web-mcp.stdio.3f485d4a47",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Scormave/gramps-web-mcp",
+    "homepage": "https://github.com/Scormave/gramps-web-mcp",
+    "repository": "https://github.com/Scormave/gramps-web-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/scormave/gramps-web-mcp:1.0.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Scormave/gramps-web-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "name": "MCP_TRANSPORT",
+          "value": "stdio"
+        },
+        {
+          "description": "Base URL of your Gramps Web instance",
+          "isRequired": true,
+          "name": "GRAMPS_API_URL"
+        },
+        {
+          "description": "Gramps Web API username",
+          "isRequired": true,
+          "name": "GRAMPS_USERNAME"
+        },
+        {
+          "description": "Gramps Web API password or token",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GRAMPS_PASSWORD"
+        },
+        {
+          "description": "Gramps Web tree UUID",
+          "isRequired": true,
+          "name": "GRAMPS_TREE_ID"
+        },
+        {
+          "default": "false",
+          "description": "Set to true to block create, update, and delete tools",
+          "name": "GRAMPS_READ_ONLY"
+        }
+      ],
+      "identifier": "ghcr.io/scormave/gramps-web-mcp:1.0.2",
+      "registryType": "oci",
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "3f485d4a47",
+    "published_at": "2026-06-26T20:12:07.044638Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Scormave/gramps-web-mcp",
+    "server_version": "1.0.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-26T20:12:07.044638Z"
+  },
+  "title": "Gramps Web MCP",
+  "type": "mcp_server",
+  "version": "1.0.2"
+}

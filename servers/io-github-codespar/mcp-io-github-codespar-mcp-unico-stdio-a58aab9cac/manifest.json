@@ -1,0 +1,81 @@
+{
+  "description": "MCP server for Unico \u2014 Brazilian identity + KYC: CPF/CNPJ, OCR, face match, liveness, PEP/watchlists",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-codespar-mcp-unico.stdio.a58aab9cac",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/codespar/mcp-dev-latam",
+    "homepage": "https://github.com/codespar/mcp-dev-latam",
+    "repository": "https://github.com/codespar/mcp-dev-latam"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@codespar/mcp-unico@0.2.0-alpha.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.codespar/mcp-unico",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Unico OAuth client_id",
+          "format": "string",
+          "isRequired": true,
+          "name": "UNICO_CLIENT_ID"
+        },
+        {
+          "description": "Unico OAuth client_secret",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "UNICO_CLIENT_SECRET"
+        },
+        {
+          "description": "Environment: 'sandbox' or 'production'. Defaults to 'sandbox'.",
+          "format": "string",
+          "name": "UNICO_ENV"
+        },
+        {
+          "description": "Optional override for the IDCloud/IDPay/IDCheck API base URL. Defaults to https://api.unico.co.",
+          "format": "string",
+          "name": "UNICO_BASE_URL"
+        },
+        {
+          "description": "Optional override for the OAuth token endpoint base URL. Defaults to https://auth.unico.co.",
+          "format": "string",
+          "name": "UNICO_AUTH_URL"
+        }
+      ],
+      "identifier": "@codespar/mcp-unico",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0-alpha.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a58aab9cac",
+    "published_at": "2026-06-22T18:51:00.041271Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.codespar/mcp-unico",
+    "server_version": "0.2.0-alpha.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-22T18:51:00.041271Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.0-alpha.3"
+}

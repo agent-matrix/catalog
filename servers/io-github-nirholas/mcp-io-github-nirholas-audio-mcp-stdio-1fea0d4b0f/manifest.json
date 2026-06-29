@@ -1,0 +1,72 @@
+{
+  "description": "Text-to-speech, speech-to-text, audio-to-face lipsync, and motion-capture clips for 3D agents.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:29+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nirholas-audio-mcp.stdio.1fea0d4b0f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nirholas/three.ws",
+    "homepage": "https://github.com/nirholas/three.ws",
+    "repository": "https://github.com/nirholas/three.ws"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@three-ws/audio-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nirholas/audio-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://three.ws",
+          "description": "Base URL of the three.ws API that serves the audio/animation endpoints. Override only when self-hosting or targeting a preview deployment.",
+          "format": "string",
+          "name": "THREE_WS_BASE"
+        },
+        {
+          "description": "Optional three.ws API key (bearer token). Raises the metered TTS/ASR/Audio2Face rate limits and unlocks your own private/unlisted motion-capture clips. Leave unset to use the public surface anonymously.",
+          "format": "string",
+          "isSecret": true,
+          "name": "THREE_WS_API_KEY"
+        },
+        {
+          "default": "60000",
+          "description": "Per-request timeout in milliseconds for the live audio/animation calls (synthesis and recognition are real upstream model calls).",
+          "format": "number",
+          "name": "THREE_WS_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "@three-ws/audio-mcp",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1fea0d4b0f",
+    "published_at": "2026-06-24T06:52:41.273827Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nirholas/audio-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-24T06:52:41.273827Z"
+  },
+  "title": "three.ws Audio",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

@@ -1,0 +1,144 @@
+{
+  "description": "Generate IDs, QR codes, and hashes, encode values, geolocate IPs, plus gated host diagnostics.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:19+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cyanheads-toolkit-mcp-server.stdio.0954c0bdc2",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cyanheads/toolkit-mcp-server",
+    "homepage": "https://github.com/cyanheads/toolkit-mcp-server",
+    "repository": "https://github.com/cyanheads/toolkit-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "bun",
+          "@cyanheads/toolkit-mcp-server@2.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cyanheads/toolkit-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "127.0.0.1",
+          "description": "The hostname for the HTTP server.",
+          "format": "string",
+          "name": "MCP_HTTP_HOST"
+        },
+        {
+          "default": "3010",
+          "description": "The port to run the HTTP server on.",
+          "format": "string",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "default": "/mcp",
+          "description": "The endpoint path for the MCP server.",
+          "format": "string",
+          "name": "MCP_HTTP_ENDPOINT_PATH"
+        },
+        {
+          "default": "none",
+          "description": "Authentication mode to use: 'none', 'jwt', or 'oauth'.",
+          "format": "string",
+          "name": "MCP_AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Sets the minimum log level for output (e.g., 'debug', 'info', 'warn').",
+          "format": "string",
+          "name": "MCP_LOG_LEVEL"
+        },
+        {
+          "default": "false",
+          "description": "Register the gated toolkit_check_network tool. Off by default \u2014 leave off for hosted/shared deployments.",
+          "format": "string",
+          "name": "TOOLKIT_ENABLE_NET_DIAGNOSTICS"
+        },
+        {
+          "default": "false",
+          "description": "Register the gated toolkit_check_system tool. Off by default \u2014 only meaningful on a local deployment.",
+          "format": "string",
+          "name": "TOOLKIT_ENABLE_SYSTEM_INFO"
+        },
+        {
+          "default": "false",
+          "description": "With network diagnostics enabled, permit private/reserved/loopback targets. The second explicit gate; off by default.",
+          "format": "string",
+          "name": "TOOLKIT_ALLOW_PRIVATE_NETWORK"
+        },
+        {
+          "default": "ip-api",
+          "description": "IP-geolocation provider id. Default 'ip-api' is the keyless free tier.",
+          "format": "string",
+          "name": "TOOLKIT_GEO_PROVIDER"
+        },
+        {
+          "description": "API key for the geolocation provider, if it requires one. The default ip-api tier is keyless.",
+          "format": "string",
+          "isSecret": true,
+          "name": "TOOLKIT_GEO_API_KEY"
+        },
+        {
+          "default": "http://ip-api.com",
+          "description": "Base URL for the geolocation provider. Default is the keyless ip-api endpoint.",
+          "format": "string",
+          "name": "TOOLKIT_GEO_BASE_URL"
+        },
+        {
+          "default": "3600",
+          "description": "Geolocation cache TTL in seconds. Geolocation is stable, so repeats are cached.",
+          "format": "string",
+          "name": "TOOLKIT_GEO_CACHE_TTL_SECONDS"
+        },
+        {
+          "default": "45",
+          "description": "Max geolocation requests per minute; excess requests are rejected with a retryable rate-limit error. Default 45 matches the ip-api free tier.",
+          "format": "string",
+          "name": "TOOLKIT_GEO_RATE_LIMIT_PER_MIN"
+        }
+      ],
+      "identifier": "@cyanheads/toolkit-mcp-server",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "start:http"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "bun",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3010/mcp"
+      },
+      "version": "2.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0954c0bdc2",
+    "published_at": "2026-06-28T14:00:49.344868Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cyanheads/toolkit-mcp-server",
+    "server_version": "2.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-28T14:00:49.344868Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "2.0.1"
+}

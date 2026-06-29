@@ -1,0 +1,75 @@
+{
+  "description": "MCP server for natural-language queries against SAP CAP db-layer entities via real CQN/SQL JOINs.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-shahidla-cds-db-nlquery-mcp.stdio.d48ca68c4c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/shahidla/cds-db-nlquery-mcp",
+    "homepage": "https://github.com/shahidla/cds-db-nlquery-mcp",
+    "repository": "https://github.com/shahidla/cds-db-nlquery-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@shahid.la/cds-db-nlquery-mcp@0.7.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.shahidla/cds-db-nlquery-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Anthropic API key (used if ANTHROPIC_API_KEY is set and OPENAI_API_KEY is not)",
+          "format": "string",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        },
+        {
+          "description": "OpenAI (or OpenAI-compatible) API key",
+          "format": "string",
+          "isSecret": true,
+          "name": "OPENAI_API_KEY"
+        },
+        {
+          "description": "Comma-separated entity allowlist, enforced on JOINs too",
+          "format": "string",
+          "name": "MCP_ALLOWED_ENTITIES"
+        },
+        {
+          "description": "Comma-separated column blocklist, stripped before the query is built",
+          "format": "string",
+          "name": "MCP_BLOCKED_COLUMNS"
+        }
+      ],
+      "identifier": "@shahid.la/cds-db-nlquery-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.7.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d48ca68c4c",
+    "published_at": "2026-06-25T01:02:41.355012Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.shahidla/cds-db-nlquery-mcp",
+    "server_version": "0.7.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-25T01:02:41.355012Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.7.3"
+}

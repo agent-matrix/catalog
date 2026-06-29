@@ -1,0 +1,71 @@
+{
+  "description": "AI/ML engineering MCP server for Neo \u2014 submit tasks, track execution, and retrieve outputs.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:09+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-NeoResearchAI-MCPServer.stdio.0ceb92ba12",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/NeoResearchAI/MCPServer",
+    "homepage": "https://github.com/NeoResearchAI/MCPServer",
+    "repository": "https://github.com/NeoResearchAI/MCPServer"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "neo-mcp==0.5.9"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.NeoResearchAI/MCPServer",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your Neo API secret key (starts with sk-v1-). Get one at https://heyneo.com.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "NEO_SECRET_KEY"
+        },
+        {
+          "default": "production",
+          "description": "Neo backend environment: 'production' (default) or 'staging'.",
+          "name": "NEO_ENVIRONMENT"
+        },
+        {
+          "description": "Absolute path to your project/git root where Neo writes files. Required for Postman and recommended for all clients.",
+          "isRequired": true,
+          "name": "NEO_WORKSPACE_DIR"
+        }
+      ],
+      "identifier": "neo-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.9"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0ceb92ba12",
+    "published_at": "2026-06-23T10:23:07.449234Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.NeoResearchAI/MCPServer",
+    "server_version": "0.5.9",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-23T10:23:07.449234Z"
+  },
+  "title": "Neo \u2014 AI/ML Engineering",
+  "type": "mcp_server",
+  "version": "0.5.9"
+}

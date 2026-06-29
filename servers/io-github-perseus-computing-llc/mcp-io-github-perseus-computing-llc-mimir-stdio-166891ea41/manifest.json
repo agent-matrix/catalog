@@ -1,0 +1,93 @@
+{
+  "description": "Local-first MCP memory server: SQLite, FTS5 and vector search, AES-256-GCM. 43 tools, no cloud.",
+  "harvest": {
+    "last_seen_at": "2026-06-29T07:03:09+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Perseus-Computing-LLC-mimir.stdio.166891ea41",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Perseus-Computing-LLC/mimir",
+    "homepage": "https://github.com/Perseus-Computing-LLC/mimir",
+    "repository": "https://github.com/Perseus-Computing-LLC/mimir"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "name": "-i",
+            "type": "named"
+          },
+          {
+            "name": "--rm",
+            "type": "named"
+          },
+          {
+            "name": "-v",
+            "type": "named",
+            "value": "mimir-data:/data"
+          },
+          "ghcr.io/perseus-computing-llc/mimir:2.7.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Perseus-Computing-LLC/mimir",
+  "packages": [
+    {
+      "identifier": "ghcr.io/perseus-computing-llc/mimir:2.7.0",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "serve"
+        },
+        {
+          "type": "positional",
+          "value": "--db"
+        },
+        {
+          "type": "positional",
+          "value": "/data/mimir.db"
+        }
+      ],
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "name": "-i",
+          "type": "named"
+        },
+        {
+          "name": "--rm",
+          "type": "named"
+        },
+        {
+          "name": "-v",
+          "type": "named",
+          "value": "mimir-data:/data"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "166891ea41",
+    "published_at": "2026-06-28T20:05:52.570468Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Perseus-Computing-LLC/mimir",
+    "server_version": "2.7.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-28T20:05:52.570468Z"
+  },
+  "title": "Mimir, persistent memory engine for AI agents",
+  "type": "mcp_server",
+  "version": "2.7.0"
+}
