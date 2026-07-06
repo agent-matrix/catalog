@@ -1,0 +1,77 @@
+{
+  "description": "Workflow diagnostics, capability routing, and x402 settlement for MCP-compatible agents.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:46:58+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-This-Is-Hellgate-secondeye-mcp-unblock.stdio.0d7fdde633",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/This-Is-Hellgate/second-eyes-ai",
+    "homepage": "https://github.com/This-Is-Hellgate/second-eyes-ai",
+    "repository": "https://github.com/This-Is-Hellgate/second-eyes-ai"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@secondeyes/mcp-unblock@1.2.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.This-Is-Hellgate/secondeye-mcp-unblock",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://secondeyesai.com",
+          "description": "Second Eyes service base URL",
+          "name": "SECOND_EYE_BASE_URL"
+        },
+        {
+          "description": "EVM private key (0x\u2026) for auto USDC payment on 402. SECURITY: MCP process can drain this wallet \u2014 use a dedicated low-balance payer.",
+          "name": "MCP_X402_WALLET_KEY"
+        },
+        {
+          "default": "0.50",
+          "description": "Per-call spending cap (default 0.50)",
+          "name": "MCP_X402_MAX_SPEND_USD"
+        },
+        {
+          "default": "2.00",
+          "description": "Process lifetime spending cap (default 2.00)",
+          "name": "MCP_X402_SESSION_MAX_USD"
+        },
+        {
+          "description": "Comma-separated capability slugs allowed for compatibility auto-pay. Default (unset) or * enables every zero-argument capability priced at or below $0.05 USDC. Input-requiring transcription and extraction routes remain excluded unless explicitly selected. Spending caps remain authoritative.",
+          "name": "MCP_X402_ALLOW_SLUGS"
+        }
+      ],
+      "identifier": "@secondeyes/mcp-unblock",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.2.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0d7fdde633",
+    "published_at": "2026-07-02T08:19:05.928763Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.This-Is-Hellgate/secondeye-mcp-unblock",
+    "server_version": "1.2.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-02T08:19:05.928763Z"
+  },
+  "title": "Second Eyes Agent Workflow Services",
+  "type": "mcp_server",
+  "version": "1.2.5"
+}

@@ -1,0 +1,83 @@
+{
+  "description": "Read-only MCP server for licensed Healthpoint HL7 FHIR API access.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-edithatogo-healthpoint-rs.stdio.52cc407924",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/edithatogo/healthpoint-rs",
+    "homepage": "https://github.com/edithatogo/healthpoint-rs",
+    "repository": "https://github.com/edithatogo/healthpoint-rs"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/edithatogo/healthpoint-mcp:0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.edithatogo/healthpoint-rs",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "User-provided licensed Healthpoint API key/token.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "HEALTHPOINT_API_KEY"
+        },
+        {
+          "default": "https://uat.healthpointapi.com/baseR4/",
+          "description": "Healthpoint API base URL.",
+          "format": "string",
+          "name": "HEALTHPOINT_BASE_URL"
+        },
+        {
+          "default": "x-api-key",
+          "description": "bearer | x-api-key | header:<name> | none",
+          "format": "string",
+          "name": "HEALTHPOINT_AUTH_SCHEME"
+        },
+        {
+          "default": "healthpoint-lat-lon",
+          "description": "healthpoint-lat-lon | fhir-near",
+          "format": "string",
+          "name": "HEALTHPOINT_GEO_SEARCH_MODE"
+        },
+        {
+          "default": "30",
+          "description": "HTTP timeout in seconds, clamped to 1..300.",
+          "format": "string",
+          "name": "HEALTHPOINT_TIMEOUT_SECS"
+        }
+      ],
+      "identifier": "ghcr.io/edithatogo/healthpoint-mcp:0.1.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "52cc407924",
+    "published_at": "2026-06-30T01:49:36.233188Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.edithatogo/healthpoint-rs",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-30T01:49:36.233188Z"
+  },
+  "title": "healthpoint-rs",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

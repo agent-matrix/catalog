@@ -1,0 +1,71 @@
+{
+  "description": "MCP server for DashClaw governance \u2014 guard, record, invoke, and discover capabilities.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ucsandman-dashclaw.stdio.d444635402",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ucsandman/DashClaw",
+    "homepage": "https://github.com/ucsandman/DashClaw",
+    "repository": "https://github.com/ucsandman/DashClaw"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@dashclaw/mcp-server@2.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ucsandman/dashclaw",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of your DashClaw instance (e.g. https://your-app.vercel.app)",
+          "format": "string",
+          "isRequired": true,
+          "name": "DASHCLAW_URL"
+        },
+        {
+          "description": "DashClaw workspace API key (oc_live_...)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DASHCLAW_API_KEY"
+        },
+        {
+          "description": "Optional agent identifier used to attribute governed actions",
+          "format": "string",
+          "name": "DASHCLAW_AGENT_ID"
+        }
+      ],
+      "identifier": "@dashclaw/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d444635402",
+    "published_at": "2026-07-03T06:15:11.551764Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ucsandman/dashclaw",
+    "server_version": "2.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-03T06:15:11.551764Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "2.0.1"
+}

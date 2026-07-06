@@ -1,0 +1,69 @@
+{
+  "description": "Generate your brand in-agent, then keep tokens, components, and copy on-brand over MCP.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:46:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-variel-mcp-server.stdio.c58ed5fff8",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jeisenberg/ai-brand-studio",
+    "homepage": "https://github.com/jeisenberg/ai-brand-studio",
+    "repository": "https://github.com/jeisenberg/ai-brand-studio"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@variel/mcp-server@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.variel/mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your Variel project API key (bsk_\u2026) to connect an existing brand. Get it from your Variel dashboard, or run `variel-mcp login` to provision one via browser sign-in (no copy-paste). You can also start keyless and generate a brand with generate_brand_kickoff.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "BRAND_API_KEY"
+        },
+        {
+          "description": "Override the Variel API base URL. Defaults to https://variel.ai. Optional \u2014 for self-hosted or staging.",
+          "name": "VARIEL_API_URL"
+        },
+        {
+          "description": "Anthropic API key. Required only for grade_visual_quality, generate_component, and Tier-2 validate_copy. Optional for all other tools.",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        }
+      ],
+      "identifier": "@variel/mcp-server",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c58ed5fff8",
+    "published_at": "2026-07-01T16:28:24.858408Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.variel/mcp-server",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-01T16:28:24.858408Z"
+  },
+  "title": "Variel MCP Server",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

@@ -1,0 +1,78 @@
+{
+  "description": "Governed x402 payment sessions: pay any endpoint with budget, allowlist & per-tx caps, no key.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:23+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nirholas-agentcore-payments-mcp.stdio.48bd44f38a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nirholas/three.ws",
+    "homepage": "https://github.com/nirholas/three.ws",
+    "repository": "https://github.com/nirholas/three.ws"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@three-ws/agentcore-payments-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nirholas/agentcore-payments-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your three.ws session token (value of the `__Host-sid` cookie from a signed-in browser). Required for account management operations: create_payment_session, list_payment_sessions, check_payment_session, cancel_payment_session.",
+          "format": "string",
+          "isSecret": true,
+          "name": "THREE_WS_SESSION"
+        },
+        {
+          "description": "A payment session bearer token (starts with 'pss_') from create_payment_session. Used by the agent for pay_with_session calls when no inline token is passed. Treat like a spending card \u2014 it authorizes payments up to the session's budget.",
+          "format": "string",
+          "isSecret": true,
+          "name": "PAYMENT_SESSION_TOKEN"
+        },
+        {
+          "default": "https://three.ws",
+          "description": "Base URL of the three.ws API. Override only when self-hosting or targeting a preview deployment.",
+          "format": "string",
+          "name": "THREE_WS_BASE"
+        },
+        {
+          "default": "30000",
+          "description": "Per-request HTTP timeout in milliseconds. x402 payments involve on-chain settlement so this should be generous (default: 30000).",
+          "format": "number",
+          "name": "THREE_WS_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "@three-ws/agentcore-payments-mcp",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "48bd44f38a",
+    "published_at": "2026-07-01T01:03:00.988047Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nirholas/agentcore-payments-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-01T01:03:00.988047Z"
+  },
+  "title": "three.ws Agent Payments",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

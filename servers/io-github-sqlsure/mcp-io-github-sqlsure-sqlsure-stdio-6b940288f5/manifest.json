@@ -1,0 +1,83 @@
+{
+  "description": "Semantic SQL inspector: catches double-counting, wrong joins, PII exposure before execution.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:29+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sqlsure-sqlsure.stdio.6b940288f5",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sqlsure/sqlsure",
+    "homepage": "https://github.com/sqlsure/sqlsure",
+    "repository": "https://github.com/sqlsure/sqlsure"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "python",
+          {
+            "description": "run as module",
+            "type": "positional",
+            "value": "-m"
+          },
+          {
+            "description": "the MCP server module",
+            "type": "positional",
+            "value": "sqlsure.mcp_server"
+          },
+          "sqlsure==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sqlsure/sqlsure",
+  "packages": [
+    {
+      "identifier": "sqlsure",
+      "packageArguments": [
+        {
+          "description": "Path to semantic model JSON (or use --manifest with a dbt manifest.json)",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "--model",
+          "type": "named"
+        }
+      ],
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "run as module",
+          "type": "positional",
+          "value": "-m"
+        },
+        {
+          "description": "the MCP server module",
+          "type": "positional",
+          "value": "sqlsure.mcp_server"
+        }
+      ],
+      "runtimeHint": "python",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6b940288f5",
+    "published_at": "2026-07-03T15:44:28.885435Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sqlsure/sqlsure",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-03T15:44:28.885435Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

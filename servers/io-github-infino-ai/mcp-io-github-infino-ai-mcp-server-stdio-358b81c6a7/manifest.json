@@ -1,0 +1,73 @@
+{
+  "description": "Keyword, vector, hybrid, and SQL retrieval over data on object storage, for AI agents.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-infino-ai-mcp-server.stdio.358b81c6a7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/infino-ai/infino-mcp",
+    "homepage": "https://github.com/infino-ai/infino-mcp",
+    "repository": "https://github.com/infino-ai/infino-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@infino-ai/mcp-server@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.infino-ai/mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Data to serve: a local path or an s3://|az:// bucket URI. Optional \u2014 defaults to a durable per-user directory (~/.infino/mcp) so data persists across restarts, falling back to an ephemeral memory:// catalog only if that directory can't be created.",
+          "format": "string",
+          "name": "INFINO_MCP_URI"
+        },
+        {
+          "description": "Set (1/true/yes) to expose add/update/delete tools and allow DDL/DML through SQL. Read-only when unset.",
+          "format": "string",
+          "name": "INFINO_MCP_ENABLE_WRITES"
+        },
+        {
+          "description": "Hugging Face feature-extraction model for local embedding (default Xenova/all-MiniLM-L6-v2, 384-dim).",
+          "format": "string",
+          "name": "INFINO_MCP_EMBED_MODEL"
+        },
+        {
+          "description": "Set (1/true/yes) to probe the object store at startup, so bad credentials or an unreachable bucket fail then instead of on the first search.",
+          "format": "string",
+          "name": "INFINO_MCP_VALIDATE"
+        }
+      ],
+      "identifier": "@infino-ai/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "358b81c6a7",
+    "published_at": "2026-07-01T11:39:20.621015Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.infino-ai/mcp-server",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-01T11:39:20.621015Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

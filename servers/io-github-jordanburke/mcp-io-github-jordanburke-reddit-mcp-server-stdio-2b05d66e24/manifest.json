@@ -1,0 +1,95 @@
+{
+  "description": "Reddit MCP server with full read/write - posts, comments, search, and content creation.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:17+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-jordanburke-reddit-mcp-server.stdio.2b05d66e24",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jordanburke/reddit-mcp-server",
+    "homepage": "https://github.com/jordanburke/reddit-mcp-server",
+    "repository": "https://github.com/jordanburke/reddit-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "reddit-mcp-server@1.5.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.jordanburke/reddit-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Reddit app client ID (optional - enables higher rate limits)",
+          "format": "string",
+          "name": "REDDIT_CLIENT_ID"
+        },
+        {
+          "description": "Reddit app client secret",
+          "format": "string",
+          "isSecret": true,
+          "name": "REDDIT_CLIENT_SECRET"
+        },
+        {
+          "description": "Reddit username (required for write operations)",
+          "format": "string",
+          "name": "REDDIT_USERNAME"
+        },
+        {
+          "description": "Reddit password (required for write operations)",
+          "format": "string",
+          "isSecret": true,
+          "name": "REDDIT_PASSWORD"
+        },
+        {
+          "description": "Authentication mode: auto, authenticated, or anonymous",
+          "format": "string",
+          "name": "REDDIT_AUTH_MODE"
+        },
+        {
+          "description": "Write safeguards: off, standard (default), or strict",
+          "format": "string",
+          "name": "REDDIT_SAFE_MODE"
+        },
+        {
+          "description": "Bot disclosure footer: auto or off (default)",
+          "format": "string",
+          "name": "REDDIT_BOT_DISCLOSURE"
+        },
+        {
+          "description": "Custom bot footer text (used with REDDIT_BOT_DISCLOSURE=auto)",
+          "format": "string",
+          "name": "REDDIT_BOT_FOOTER"
+        }
+      ],
+      "identifier": "reddit-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.5.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "2b05d66e24",
+    "published_at": "2026-07-01T17:57:10.41086Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.jordanburke/reddit-mcp-server",
+    "server_version": "1.5.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-01T17:57:10.41086Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.5.1"
+}

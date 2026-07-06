@@ -1,0 +1,90 @@
+{
+  "description": "Production-grade MCP server for KiCad EDA\u2014PCB design, DRC, simulation, BOM, DFM, and manufacturing.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:23+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-oaslananka-kicad-mcp-pro.stdio.d27bbb1516",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/oaslananka/kicad-mcp",
+    "homepage": "https://github.com/oaslananka/kicad-mcp",
+    "repository": "https://github.com/oaslananka/kicad-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "type": "positional",
+            "value": "kicad-mcp-pro"
+          },
+          "kicad-mcp-pro==3.15.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.oaslananka/kicad-mcp-pro",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "INFO",
+          "description": "Logging level (DEBUG, INFO, WARNING, ERROR)",
+          "name": "KICAD_MCP_LOG_LEVEL"
+        }
+      ],
+      "identifier": "kicad-mcp-pro",
+      "packageArguments": [
+        {
+          "default": "stdio",
+          "description": "Transport protocol (stdio or streamable-http). Legacy SSE disabled by default.",
+          "name": "--transport",
+          "type": "named"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "Host to bind the HTTP server to",
+          "name": "--host",
+          "type": "named"
+        },
+        {
+          "default": "3334",
+          "description": "Port to bind the HTTP server to",
+          "name": "--port",
+          "type": "named"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "kicad-mcp-pro"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "3.15.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d27bbb1516",
+    "published_at": "2026-06-29T13:23:16.956851Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.oaslananka/kicad-mcp-pro",
+    "server_version": "3.15.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-29T13:23:16.956851Z"
+  },
+  "title": "KiCad MCP Pro",
+  "type": "mcp_server",
+  "version": "3.15.1"
+}

@@ -1,0 +1,59 @@
+{
+  "description": "MCP server for Rachio sprinkler controllers \u2014 schedules, zones, and live watering control",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:28+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-rwestergren-rachio-mcp.stdio.1750e4a574",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/rwestergren/rachio-mcp",
+    "homepage": "https://github.com/rwestergren/rachio-mcp",
+    "repository": "https://github.com/rwestergren/rachio-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "rachio-mcp==0.1.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.rwestergren/rachio-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Long-lived Rachio OAuth access token. Mint one with `rachio-mcp-token` (or `uvx --from rachio-mcp rachio-mcp-token`). The token lasts ~25 years and replaces sending your password to the MCP process.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "RACHIO_ACCESS_TOKEN"
+        }
+      ],
+      "identifier": "rachio-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1750e4a574",
+    "published_at": "2026-06-30T17:23:39.267975Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.rwestergren/rachio-mcp",
+    "server_version": "0.1.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-30T17:23:39.267975Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.3"
+}

@@ -1,0 +1,78 @@
+{
+  "description": "Self-hosted federated MCP gateway: one OAuth 2.1 MCP server in front of N apps, user-level scopes.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wellknownmcp-cortex-gateway.stdio.be0f0466ba",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wellknownmcp/cortex-gateway",
+    "homepage": "https://github.com/wellknownmcp/cortex-gateway",
+    "repository": "https://github.com/wellknownmcp/cortex-gateway"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wellknownmcp/cortex-gateway:v0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wellknownmcp/cortex-gateway",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Canonical MCP resource URI (RFC 9728)",
+          "format": "string",
+          "isRequired": true,
+          "name": "CORTEX_CANONICAL_URI"
+        },
+        {
+          "description": "OAuth 2.1 authorization server URL",
+          "format": "string",
+          "isRequired": true,
+          "name": "OAUTH_ISSUER"
+        },
+        {
+          "description": "Comma-separated federated backend ids",
+          "format": "string",
+          "isRequired": true,
+          "name": "CORTEX_BACKENDS"
+        },
+        {
+          "description": "Static token for backend catalog discovery",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CORTEX_TECHNICAL_TOKEN"
+        }
+      ],
+      "identifier": "ghcr.io/wellknownmcp/cortex-gateway:v0.1.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3213/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "be0f0466ba",
+    "published_at": "2026-07-04T21:58:57.610919Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wellknownmcp/cortex-gateway",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-04T21:58:57.610919Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

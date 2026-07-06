@@ -1,0 +1,83 @@
+{
+  "description": "Read-only MCP server for exposing database schema metadata without row data.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:46:57+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Siddharth-coder13-secure-schema.stdio.eeea9a12b8",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Siddharth-coder13/secure_schema_mcp",
+    "homepage": "https://github.com/Siddharth-coder13/secure_schema_mcp",
+    "repository": "https://github.com/Siddharth-coder13/secure_schema_mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-secure-schema==1.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Siddharth-coder13/secure-schema",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "SQLAlchemy database URL used for schema inspection.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DATABASE_URL"
+        },
+        {
+          "description": "Optional default schema or catalog namespace. In production it is locked and tool arguments cannot override it.",
+          "name": "DATABASE_SCHEMA"
+        },
+        {
+          "description": "Optional comma-separated table/view allowlist. When set, only listed tables and views are visible.",
+          "name": "ALLOWED_TABLES"
+        },
+        {
+          "default": "development",
+          "description": "Set to production to require ALLOWED_TABLES during startup.",
+          "name": "SECURE_SCHEMA_ENV"
+        },
+        {
+          "default": "off",
+          "description": "Set to off to disable FastMCP startup update checks.",
+          "name": "FASTMCP_CHECK_FOR_UPDATES"
+        },
+        {
+          "default": "false",
+          "description": "Set to false to suppress the FastMCP startup banner.",
+          "name": "FASTMCP_SHOW_SERVER_BANNER"
+        }
+      ],
+      "identifier": "mcp-secure-schema",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "eeea9a12b8",
+    "published_at": "2026-07-04T14:26:15.036214Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Siddharth-coder13/secure-schema",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-04T14:26:15.036214Z"
+  },
+  "title": "Secure Schema MCP",
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

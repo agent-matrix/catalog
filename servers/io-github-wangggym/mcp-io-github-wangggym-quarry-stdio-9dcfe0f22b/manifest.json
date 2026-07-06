@@ -1,0 +1,89 @@
+{
+  "description": "Safety-railed database access for agents: Postgres, MySQL, Redis. Read-only by default.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:46:59+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Wangggym-quarry.stdio.9dcfe0f22b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Wangggym/quarry",
+    "homepage": "https://github.com/Wangggym/quarry",
+    "repository": "https://github.com/Wangggym/quarry"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "resolve the qy entry point from the quarry-db package",
+            "name": "--from",
+            "type": "named",
+            "value": "quarry-db"
+          },
+          {
+            "description": "Quarry CLI entry point",
+            "type": "positional",
+            "value": "qy"
+          },
+          "quarry-db==0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Wangggym/quarry",
+  "packages": [
+    {
+      "identifier": "quarry-db",
+      "packageArguments": [
+        {
+          "description": "serve the MCP face over stdio",
+          "type": "positional",
+          "value": "mcp"
+        },
+        {
+          "description": "path to a Quarry workspace directory (connections.toml + queries/)",
+          "format": "filepath",
+          "name": "--workspace",
+          "type": "named"
+        }
+      ],
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "resolve the qy entry point from the quarry-db package",
+          "name": "--from",
+          "type": "named",
+          "value": "quarry-db"
+        },
+        {
+          "description": "Quarry CLI entry point",
+          "type": "positional",
+          "value": "qy"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9dcfe0f22b",
+    "published_at": "2026-07-02T09:16:57.226497Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Wangggym/quarry",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-02T09:16:57.226497Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

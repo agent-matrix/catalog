@@ -1,0 +1,70 @@
+{
+  "description": "Runtime proxy for MCP security, cost governance & audit",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mastyf-ai-mastyf-ai.stdio.4d18eee2db",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mastyf-ai/mastyf.ai",
+    "homepage": "https://github.com/mastyf-ai/mastyf.ai",
+    "repository": "https://github.com/mastyf-ai/mastyf.ai"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@mastyf_ai/server@4.1.12"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mastyf-ai/mastyf.ai",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "~/.mastyf-ai/history.db",
+          "description": "Path to SQLite history database",
+          "format": "string",
+          "name": "MASTYF_AI_DB_PATH"
+        },
+        {
+          "description": "Slack or Discord webhook for critical alerts",
+          "format": "string",
+          "isSecret": true,
+          "name": "ALERT_WEBHOOK_URL"
+        },
+        {
+          "description": "Expose Prometheus metrics",
+          "format": "string",
+          "name": "METRICS_ENABLED"
+        }
+      ],
+      "identifier": "@mastyf_ai/server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "4.1.12"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4d18eee2db",
+    "published_at": "2026-07-04T17:09:00.945868Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mastyf-ai/mastyf.ai",
+    "server_version": "4.1.12",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-04T17:09:00.945868Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "4.1.12"
+}

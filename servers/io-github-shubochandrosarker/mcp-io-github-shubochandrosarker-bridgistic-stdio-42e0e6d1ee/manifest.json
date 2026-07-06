@@ -1,0 +1,84 @@
+{
+  "description": "Connect Claude to WordPress safely: signed requests, scoped keys, approvals, logs, snapshots.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:46:57+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Shubochandrosarker-bridgistic.stdio.42e0e6d1ee",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Shubochandrosarker/bridgistic-claude-marketplace",
+    "homepage": "https://github.com/Shubochandrosarker/bridgistic-claude-marketplace",
+    "repository": "https://github.com/Shubochandrosarker/bridgistic-claude-marketplace"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "bridgistic-mcp-server@1.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Shubochandrosarker/bridgistic",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "WordPress site URL exactly as shown in WP Admin \u2192 Settings \u2192 General, e.g. https://example.com",
+          "format": "string",
+          "isRequired": true,
+          "name": "BRIDGISTIC_SITE_URL"
+        },
+        {
+          "description": "Public key id (wpk_\u2026) from WP Admin \u2192 Bridgistic \u2192 Claude Setup",
+          "format": "string",
+          "isRequired": true,
+          "name": "BRIDGISTIC_KEY_ID"
+        },
+        {
+          "description": "Key secret (wps_\u2026) shown once at key creation",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "BRIDGISTIC_KEY_SECRET"
+        },
+        {
+          "description": "Optional absolute path to a multi-site connections JSON registry (alias \u2192 siteUrl/keyId/secret)",
+          "format": "string",
+          "name": "BRIDGISTIC_CONNECTIONS"
+        },
+        {
+          "default": "info",
+          "description": "error | warn | info | debug (stderr only, never logs secrets)",
+          "format": "string",
+          "name": "BRIDGISTIC_LOG_LEVEL"
+        }
+      ],
+      "identifier": "bridgistic-mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "42e0e6d1ee",
+    "published_at": "2026-07-04T00:34:28.22765Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Shubochandrosarker/bridgistic",
+    "server_version": "1.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-04T00:34:28.22765Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.1.1"
+}

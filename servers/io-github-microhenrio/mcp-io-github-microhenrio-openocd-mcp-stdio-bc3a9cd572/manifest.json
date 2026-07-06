@@ -1,0 +1,63 @@
+{
+  "description": "Debug microcontrollers from Claude via OpenOCD: flash, breakpoints, memory and registers by name.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-microhenrio-openocd-mcp.stdio.bc3a9cd572",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/microhenrio/openocd-mcp",
+    "homepage": "https://github.com/microhenrio/openocd-mcp",
+    "repository": "https://github.com/microhenrio/openocd-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "openocd-mcp==0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.microhenrio/openocd-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the OpenOCD executable. Optional: if unset, the server uses a bundled copy (when present) or 'openocd' on PATH.",
+          "name": "OPENOCD_BIN"
+        },
+        {
+          "description": "Path to a per-project openocd-mcp.json (target_cfg/svd_file/elf_file). Optional: by default the server looks for openocd-mcp.json in the working directory.",
+          "name": "OPENOCD_MCP_CONFIG"
+        }
+      ],
+      "identifier": "openocd-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "bc3a9cd572",
+    "published_at": "2026-06-30T07:45:07.200554Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.microhenrio/openocd-mcp",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-30T07:45:07.200554Z"
+  },
+  "title": "OpenOCD Debugger",
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

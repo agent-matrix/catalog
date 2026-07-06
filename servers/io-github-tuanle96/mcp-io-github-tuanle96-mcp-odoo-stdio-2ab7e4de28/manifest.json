@@ -1,0 +1,74 @@
+{
+  "description": "Odoo MCP server: safe gated writes, access diagnostics, schema discovery, multi-instance routing.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-tuanle96-mcp-odoo.stdio.2ab7e4de28",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/tuanle96/mcp-odoo",
+    "homepage": "https://github.com/tuanle96/mcp-odoo",
+    "repository": "https://github.com/tuanle96/mcp-odoo"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "odoo-mcp==1.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.tuanle96/mcp-odoo",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Odoo server URL, e.g. https://mycompany.odoo.com",
+          "isRequired": true,
+          "name": "ODOO_URL"
+        },
+        {
+          "description": "Odoo database name",
+          "isRequired": true,
+          "name": "ODOO_DB"
+        },
+        {
+          "description": "Odoo login (email)",
+          "isRequired": true,
+          "name": "ODOO_USERNAME"
+        },
+        {
+          "description": "Odoo password or API key",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ODOO_PASSWORD"
+        }
+      ],
+      "identifier": "odoo-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "2ab7e4de28",
+    "published_at": "2026-07-02T16:13:00.116034Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.tuanle96/mcp-odoo",
+    "server_version": "1.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-02T16:13:00.116034Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.1.0"
+}

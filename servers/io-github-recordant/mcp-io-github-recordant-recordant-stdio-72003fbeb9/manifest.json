@@ -1,0 +1,69 @@
+{
+  "description": "Patent-pending diagnostic + decisions-ledger engine with operator briefs and an MCP console.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:26+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-recordant-recordant.stdio.72003fbeb9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/recordant/recordant",
+    "homepage": "https://github.com/recordant/recordant",
+    "repository": "https://github.com/recordant/recordant"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "recordant==0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.recordant/recordant",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your Recordant license key. Auth-by-default -- the console will not start without a valid key. Get one at https://mentorsentinel.ai/markets-ai-governance.html.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "RECORDANT_LICENSE_KEY"
+        }
+      ],
+      "identifier": "recordant",
+      "packageArguments": [
+        {
+          "description": "Path to your recordant.toml config file.",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "--config",
+          "type": "named"
+        }
+      ],
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "72003fbeb9",
+    "published_at": "2026-07-05T16:06:17.3523Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.recordant/recordant",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-05T16:06:17.3523Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

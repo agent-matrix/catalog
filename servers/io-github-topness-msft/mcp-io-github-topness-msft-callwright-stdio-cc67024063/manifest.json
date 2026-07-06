@@ -1,0 +1,72 @@
+{
+  "description": "Self-hosted MCP voice agent that places phone calls on your behalf via Retell.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-topness-msft-callwright.stdio.cc67024063",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/topness-msft/callwright",
+    "homepage": "https://github.com/topness-msft/callwright",
+    "repository": "https://github.com/topness-msft/callwright"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "callwright@1.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.topness-msft/callwright",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your Retell secret API key (stays server-side)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "RETELL_API_KEY"
+        },
+        {
+          "description": "Bearer token clients must send; required when exposed beyond localhost",
+          "format": "string",
+          "isSecret": true,
+          "name": "MCP_AUTH_TOKEN"
+        },
+        {
+          "description": "Port the HTTP MCP server listens on (default 8787)",
+          "format": "string",
+          "name": "PORT"
+        }
+      ],
+      "identifier": "callwright",
+      "registryType": "npm",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:8787/mcp"
+      },
+      "version": "1.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "cc67024063",
+    "published_at": "2026-07-01T22:05:14.189314Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.topness-msft/callwright",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-01T22:05:14.189314Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

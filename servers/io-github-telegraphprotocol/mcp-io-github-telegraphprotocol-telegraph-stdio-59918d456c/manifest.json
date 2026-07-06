@@ -1,0 +1,98 @@
+{
+  "description": "Decentralized AI inference (weather, deepfake detection, LLMs) with x402 USDC micropayments.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-telegraphprotocol-telegraph.stdio.59918d456c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/telegraphprotocol/telegraph-mcp",
+    "homepage": "https://github.com/telegraphprotocol/telegraph-mcp",
+    "repository": "https://github.com/telegraphprotocol/telegraph-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "telegraph-protocol-mcp@1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.telegraphprotocol/telegraph",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Telegraph node public API URL (e.g. http://13.237.89.59:7044)",
+          "format": "string",
+          "isRequired": true,
+          "name": "TELEGRAPH_NODE_URL"
+        },
+        {
+          "description": "Telegraph Engine inference server URL (e.g. http://13.237.89.59:8080)",
+          "format": "string",
+          "isRequired": true,
+          "name": "TELEGRAPH_ENGINE_URL"
+        },
+        {
+          "description": "Telegraph Daemon signal API URL (e.g. http://13.237.89.59:8081)",
+          "format": "string",
+          "isRequired": true,
+          "name": "TELEGRAPH_DAEMON_URL"
+        },
+        {
+          "description": "EVM private key (0x-prefixed hex) of a USDC-funded burner wallet used to sign x402 payments. At least one of TELEGRAPH_EVM_PRIVATE_KEY or TELEGRAPH_SOLANA_PRIVATE_KEY is required.",
+          "format": "string",
+          "isSecret": true,
+          "name": "TELEGRAPH_EVM_PRIVATE_KEY"
+        },
+        {
+          "description": "Solana private key (base58) for SVM x402 payments. Optional alternative to TELEGRAPH_EVM_PRIVATE_KEY.",
+          "format": "string",
+          "isSecret": true,
+          "name": "TELEGRAPH_SOLANA_PRIVATE_KEY"
+        },
+        {
+          "description": "CAIP-2 network identifier for EVM payments. Defaults to eip155:*.",
+          "format": "string",
+          "name": "EVM_NETWORK"
+        },
+        {
+          "description": "CAIP-2 network identifier for Solana payments. Defaults to solana:*.",
+          "format": "string",
+          "name": "SVM_NETWORK"
+        },
+        {
+          "description": "Dynamic miner-tool refresh interval in milliseconds. Defaults to 300000 (5 min). Set to 0 to disable.",
+          "format": "string",
+          "name": "REFRESH_INTERVAL_MS"
+        }
+      ],
+      "identifier": "telegraph-protocol-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "59918d456c",
+    "published_at": "2026-06-30T18:33:14.518781Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.telegraphprotocol/telegraph",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-30T18:33:14.518781Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

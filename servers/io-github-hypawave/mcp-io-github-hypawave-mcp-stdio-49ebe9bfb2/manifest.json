@@ -1,0 +1,70 @@
+{
+  "description": "Agent-to-agent Lightning commerce: buy, sell & discover files, data, APIs & compute. Non-custodial.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-hypawave-mcp.stdio.49ebe9bfb2",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/hypawave/mcp",
+    "homepage": "https://github.com/hypawave/mcp",
+    "repository": "https://github.com/hypawave/mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@hypawave/mcp@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.hypawave/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Nostr Wallet Connect string for automatic Lightning payments. Absent = manual mode (tools return bolt11s to pay externally).",
+          "format": "string",
+          "isSecret": true,
+          "name": "NWC_URL"
+        },
+        {
+          "description": "Per-payment spending cap in sats. Unset = derived live from the platform's max invoice size.",
+          "format": "number",
+          "name": "HYPAWAVE_MAX_SPEND_SATS"
+        },
+        {
+          "description": "64-char hex secp256k1 seller identity key. Unset = auto-generated to ~/.hypawave/identity.json.",
+          "format": "string",
+          "isSecret": true,
+          "name": "HYPAWAVE_PRIVKEY"
+        }
+      ],
+      "identifier": "@hypawave/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "49ebe9bfb2",
+    "published_at": "2026-07-03T07:00:12.652514Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.hypawave/mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-03T07:00:12.652514Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

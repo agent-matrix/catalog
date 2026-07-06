@@ -1,0 +1,80 @@
+{
+  "description": "An AI business analyst for Odoo ERP \u2014 one-call reports with verdicts, over MCP",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:21+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-minhhq-a1-odoo-pulse.stdio.9b8388a5f7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/minhhq-a1/odoo-pulse",
+    "homepage": "https://github.com/minhhq-a1/odoo-pulse",
+    "repository": "https://github.com/minhhq-a1/odoo-pulse"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "odoo-pulse==1.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.minhhq-a1/odoo-pulse",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the Odoo instance, e.g. https://acme.odoo.com",
+          "isRequired": true,
+          "name": "ODOO_URL"
+        },
+        {
+          "description": "Odoo database name",
+          "isRequired": true,
+          "name": "ODOO_DB"
+        },
+        {
+          "description": "Odoo login / email",
+          "isRequired": true,
+          "name": "ODOO_USERNAME"
+        },
+        {
+          "description": "Odoo API key (used as the password)",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ODOO_API_KEY"
+        },
+        {
+          "description": "Block all write methods when true (default true)",
+          "name": "ODOO_READ_ONLY"
+        }
+      ],
+      "identifier": "odoo-pulse",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9b8388a5f7",
+    "published_at": "2026-07-03T10:39:00.818852Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.minhhq-a1/odoo-pulse",
+    "server_version": "1.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-03T10:39:00.818852Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.1.0"
+}

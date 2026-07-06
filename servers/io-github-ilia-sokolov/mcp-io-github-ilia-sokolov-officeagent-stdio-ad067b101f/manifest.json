@@ -1,0 +1,65 @@
+{
+  "description": "Create and edit real Word documents (filesystem or SharePoint): typed change plans, tracked changes",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ilia-sokolov-officeagent.stdio.ad067b101f",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='nuget' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/ilia-sokolov/OfficeAgent.NET",
+    "homepage": "https://github.com/ilia-sokolov/OfficeAgent.NET",
+    "repository": "https://github.com/ilia-sokolov/OfficeAgent.NET"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ilia-sokolov/officeagent",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "documents",
+          "description": "Connection id the agent uses to address documents (any non-empty string). The server requires at least one connection (filesystem or SharePoint) and exits on startup if none is configured",
+          "isRequired": true,
+          "name": "OfficeAgent__FileSystemConnections__0__ConnectionId",
+          "placeholder": "documents"
+        },
+        {
+          "description": "Absolute path to the directory this filesystem connection may read and write .docx files under. To use SharePoint instead of the filesystem, set OfficeAgent__SharePointConnections__0__*",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "OfficeAgent__FileSystemConnections__0__RootPath",
+          "placeholder": "/path/to/documents"
+        }
+      ],
+      "identifier": "OfficeAgent.Mcp",
+      "registryType": "nuget",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ad067b101f",
+    "published_at": "2026-07-05T09:32:35.480232Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ilia-sokolov/officeagent",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-05T09:32:35.480232Z"
+  },
+  "title": "OfficeAgent.NET",
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

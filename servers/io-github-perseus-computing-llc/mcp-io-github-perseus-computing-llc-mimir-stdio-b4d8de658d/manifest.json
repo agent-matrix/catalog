@@ -1,0 +1,93 @@
+{
+  "description": "Local-first MCP memory server: SQLite, FTS5 and vector search, AES-256-GCM. 55 tools, no cloud.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:46:56+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Perseus-Computing-LLC-mimir.stdio.b4d8de658d",
+  "lifecycle": {
+    "status": "deprecated"
+  },
+  "links": {
+    "documentation": "https://github.com/Perseus-Computing-LLC/perseus-vault",
+    "homepage": "https://github.com/Perseus-Computing-LLC/perseus-vault",
+    "repository": "https://github.com/Perseus-Computing-LLC/perseus-vault"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "name": "-i",
+            "type": "named"
+          },
+          {
+            "name": "--rm",
+            "type": "named"
+          },
+          {
+            "name": "-v",
+            "type": "named",
+            "value": "mimir-data:/data"
+          },
+          "ghcr.io/perseus-computing-llc/perseus-vault:2.14.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Perseus-Computing-LLC/mimir",
+  "packages": [
+    {
+      "identifier": "ghcr.io/perseus-computing-llc/perseus-vault:2.14.0",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "serve"
+        },
+        {
+          "type": "positional",
+          "value": "--db"
+        },
+        {
+          "type": "positional",
+          "value": "/data/perseus-vault.db"
+        }
+      ],
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "name": "-i",
+          "type": "named"
+        },
+        {
+          "name": "--rm",
+          "type": "named"
+        },
+        {
+          "name": "-v",
+          "type": "named",
+          "value": "mimir-data:/data"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "b4d8de658d",
+    "published_at": "2026-07-02T17:13:03.568971Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Perseus-Computing-LLC/mimir",
+    "server_version": "2.14.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-04T19:27:24.670001Z"
+  },
+  "title": "Perseus Vault (formerly Mimir/Mneme), persistent memory engine for AI agents",
+  "type": "mcp_server",
+  "version": "2.14.0"
+}

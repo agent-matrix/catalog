@@ -1,0 +1,66 @@
+{
+  "description": "Governed OT data tap: 12 field protocols + cross-protocol RCA brain; audit + MOC gating.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-industrial-aiops-iaiops.stdio.ae2a14d4e2",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/industrial-aiops/industrial-aiops",
+    "homepage": "https://github.com/industrial-aiops/industrial-aiops",
+    "repository": "https://github.com/industrial-aiops/industrial-aiops"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "iaiops==0.9.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.industrial-aiops/iaiops",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Tool-menu selection: comma-separated protocols or a named profile (e.g. 'fab', 'process', 'building', 'opcua,modbus'). Default: all.",
+          "name": "IAIOPS_MCP"
+        },
+        {
+          "description": "Path to the endpoints config YAML (default: ~/.iaiops/config.yaml).",
+          "name": "IAIOPS_CONFIG"
+        },
+        {
+          "description": "Master password unlocking the encrypted secret store (~/.iaiops/secrets.enc).",
+          "isSecret": true,
+          "name": "IAIOPS_MASTER_PASSWORD"
+        }
+      ],
+      "identifier": "iaiops",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.9.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ae2a14d4e2",
+    "published_at": "2026-07-02T15:00:33.300648Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.industrial-aiops/iaiops",
+    "server_version": "0.9.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-02T15:00:33.300648Z"
+  },
+  "title": "Industrial-AIOps",
+  "type": "mcp_server",
+  "version": "0.9.0"
+}

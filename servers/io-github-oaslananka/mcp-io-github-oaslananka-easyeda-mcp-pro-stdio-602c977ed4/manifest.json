@@ -1,0 +1,423 @@
+{
+  "description": "MCP server for EasyEDA Pro: PCB inspection, BOM, exports, and hardware review.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:23+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-oaslananka-easyeda-mcp-pro.stdio.602c977ed4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/oaslananka/easyeda-mcp-pro",
+    "homepage": "https://github.com/oaslananka/easyeda-mcp-pro",
+    "repository": "https://github.com/oaslananka/easyeda-mcp-pro"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "easyeda-mcp-pro@0.19.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.oaslananka/easyeda-mcp-pro",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "development",
+          "description": "Environment mode",
+          "name": "NODE_ENV"
+        },
+        {
+          "default": "info",
+          "description": "Pino log level",
+          "name": "LOG_LEVEL"
+        },
+        {
+          "default": "core",
+          "description": "Active tool profile (core, pro, full, dev, experimental)",
+          "name": "TOOL_PROFILE"
+        },
+        {
+          "default": "2025-11-25",
+          "description": "MCP protocol version string",
+          "name": "MCP_PROTOCOL_VERSION"
+        },
+        {
+          "default": "stdio",
+          "description": "Server transport mode (stdio or http)",
+          "name": "TRANSPORT"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "HTTP bind address",
+          "format": "string",
+          "name": "HTTP_HOST"
+        },
+        {
+          "default": "3000",
+          "description": "HTTP port",
+          "format": "number",
+          "name": "HTTP_PORT"
+        },
+        {
+          "default": "false",
+          "description": "Disable HTTP transport authentication",
+          "format": "boolean",
+          "name": "HTTP_AUTH_DISABLED"
+        },
+        {
+          "default": "100",
+          "description": "Max requests per minute per IP",
+          "format": "number",
+          "name": "HTTP_RATE_LIMIT_MAX"
+        },
+        {
+          "description": "Allowed CORS origin for HTTP transport",
+          "format": "string",
+          "name": "CORS_ORIGIN"
+        },
+        {
+          "description": "Comma-separated list of allowed origins for HTTP transport (use * for wildcard)",
+          "format": "string",
+          "name": "ALLOWED_ORIGINS"
+        },
+        {
+          "default": "false",
+          "description": "Enable experimental MCP tasks",
+          "format": "boolean",
+          "name": "MCP_TASKS_ENABLED"
+        },
+        {
+          "default": "false",
+          "description": "Enable experimental MCP apps",
+          "format": "boolean",
+          "name": "MCP_APPS_ENABLED"
+        },
+        {
+          "default": "false",
+          "description": "Enable experimental MCP v2 features",
+          "format": "boolean",
+          "name": "MCP_V2_EXPERIMENTAL"
+        },
+        {
+          "default": "false",
+          "description": "Enable experimental raw EasyEDA runtime execution gate (dangerous; requires BRIDGE_RAW_EXEC_ENABLED)",
+          "format": "boolean",
+          "name": "MCP_RAW_EXEC_EXPERIMENTAL"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "Bridge WebSocket host for EasyEDA Pro connection",
+          "format": "string",
+          "name": "BRIDGE_HOST"
+        },
+        {
+          "default": "49620",
+          "description": "Bridge primary port",
+          "format": "number",
+          "name": "BRIDGE_PORT"
+        },
+        {
+          "default": "49620-49629",
+          "description": "Port scan specification (comma-separated ports or ranges)",
+          "format": "string",
+          "name": "BRIDGE_PORT_SCAN"
+        },
+        {
+          "default": "15000",
+          "description": "Bridge call timeout in ms",
+          "format": "number",
+          "name": "BRIDGE_TIMEOUT_MS"
+        },
+        {
+          "default": "10000",
+          "description": "Bridge heartbeat interval in ms",
+          "format": "number",
+          "name": "BRIDGE_HEARTBEAT_MS"
+        },
+        {
+          "default": "0",
+          "description": "Max reconnect attempts (0 = infinite)",
+          "format": "number",
+          "name": "BRIDGE_RECONNECT_MAX_ATTEMPTS"
+        },
+        {
+          "default": "30000",
+          "description": "How long to wait for EasyEDA Pro to become available on startup (ms)",
+          "format": "number",
+          "name": "BRIDGE_WAIT_FOR_EDA_MS"
+        },
+        {
+          "default": "1048576",
+          "description": "Max bridge payload size in bytes",
+          "format": "number",
+          "name": "BRIDGE_MAX_PAYLOAD_SIZE"
+        },
+        {
+          "description": "Session token for extension auth",
+          "format": "string",
+          "isSecret": true,
+          "name": "BRIDGE_TOKEN"
+        },
+        {
+          "default": "false",
+          "description": "Enable EasyEDA dev bridge mode",
+          "format": "boolean",
+          "name": "EASYEDA_DEV_BRIDGE"
+        },
+        {
+          "default": "false",
+          "description": "Enable raw method execution on bridge (dangerous)",
+          "format": "boolean",
+          "name": "BRIDGE_RAW_EXEC_ENABLED"
+        },
+        {
+          "default": ".easyeda-mcp-pro",
+          "description": "Data directory for storage",
+          "format": "string",
+          "name": "DATA_DIR"
+        },
+        {
+          "default": ".easyeda-mcp-pro/easyeda-mcp-pro.sqlite",
+          "description": "SQLite database path",
+          "format": "string",
+          "name": "SQLITE_PATH"
+        },
+        {
+          "default": ".easyeda-mcp-pro/artifacts",
+          "description": "Artifact export directory",
+          "format": "string",
+          "name": "ARTIFACT_DIR"
+        },
+        {
+          "default": ".easyeda-mcp-pro/cache",
+          "description": "Cache directory",
+          "format": "string",
+          "name": "CACHE_DIR"
+        },
+        {
+          "default": "none",
+          "description": "AI provider (none, anthropic, openai, openrouter, local)",
+          "name": "AI_PROVIDER"
+        },
+        {
+          "description": "AI model name",
+          "format": "string",
+          "name": "AI_MODEL"
+        },
+        {
+          "description": "AI provider API key",
+          "format": "string",
+          "isSecret": true,
+          "name": "AI_API_KEY"
+        },
+        {
+          "default": "8000",
+          "description": "Max tokens for AI responses",
+          "format": "number",
+          "name": "AI_MAX_TOKENS"
+        },
+        {
+          "default": "60000",
+          "description": "AI request timeout in ms",
+          "format": "number",
+          "name": "AI_TIMEOUT_MS"
+        },
+        {
+          "default": "false",
+          "description": "Allow AI to modify designs",
+          "format": "boolean",
+          "name": "AI_ALLOW_DESIGN_MUTATIONS"
+        },
+        {
+          "default": "disabled",
+          "description": "JLCPCB API mode (disabled, mock, approved_api)",
+          "name": "JLCPCB_MODE"
+        },
+        {
+          "description": "JLCPCB API client ID",
+          "format": "string",
+          "isSecret": true,
+          "name": "JLCPCB_CLIENT_ID"
+        },
+        {
+          "description": "JLCPCB API client secret",
+          "format": "string",
+          "isSecret": true,
+          "name": "JLCPCB_CLIENT_SECRET"
+        },
+        {
+          "default": "https://api.jlcpcb.com",
+          "description": "JLCPCB API base URL",
+          "format": "string",
+          "name": "JLCPCB_API_BASE_URL"
+        },
+        {
+          "default": "false",
+          "description": "Enable JLCPCB ordering",
+          "format": "boolean",
+          "name": "JLCPCB_ENABLE_ORDERING"
+        },
+        {
+          "default": "USD",
+          "description": "JLCPCB default currency (USD, CNY)",
+          "name": "JLCPCB_DEFAULT_CURRENCY"
+        },
+        {
+          "default": "true",
+          "description": "Enable LCSC component search",
+          "format": "boolean",
+          "name": "JLCSEARCH_ENABLED"
+        },
+        {
+          "default": "https://jlcsearch.tscircuit.com",
+          "description": "LCSC search API base URL",
+          "format": "string",
+          "name": "JLCSEARCH_BASE_URL"
+        },
+        {
+          "description": "LCSC API key",
+          "format": "string",
+          "isSecret": true,
+          "name": "LCSC_API_KEY"
+        },
+        {
+          "description": "LCSC API secret",
+          "format": "string",
+          "isSecret": true,
+          "name": "LCSC_API_SECRET"
+        },
+        {
+          "default": "false",
+          "description": "Enable Mouser integration",
+          "format": "boolean",
+          "name": "MOUSER_ENABLED"
+        },
+        {
+          "description": "Mouser API key",
+          "format": "string",
+          "isSecret": true,
+          "name": "MOUSER_API_KEY"
+        },
+        {
+          "default": "https://api.mouser.com",
+          "description": "Mouser API base URL",
+          "format": "string",
+          "name": "MOUSER_API_BASE_URL"
+        },
+        {
+          "default": "false",
+          "description": "Enable DigiKey integration",
+          "format": "boolean",
+          "name": "DIGIKEY_ENABLED"
+        },
+        {
+          "description": "DigiKey OAuth2 client ID",
+          "format": "string",
+          "isSecret": true,
+          "name": "DIGIKEY_CLIENT_ID"
+        },
+        {
+          "description": "DigiKey OAuth2 client secret",
+          "format": "string",
+          "isSecret": true,
+          "name": "DIGIKEY_CLIENT_SECRET"
+        },
+        {
+          "default": "true",
+          "description": "Use DigiKey sandbox environment",
+          "format": "boolean",
+          "name": "DIGIKEY_SANDBOX"
+        },
+        {
+          "default": "en-US",
+          "description": "DigiKey locale",
+          "format": "string",
+          "name": "DIGIKEY_LOCALE"
+        },
+        {
+          "default": "USD",
+          "description": "DigiKey pricing currency",
+          "format": "string",
+          "name": "DIGIKEY_CURRENCY"
+        },
+        {
+          "default": "false",
+          "description": "Enable OAuth for HTTP mode",
+          "format": "boolean",
+          "name": "OAUTH_ENABLED"
+        },
+        {
+          "description": "Expected OAuth token issuer",
+          "format": "string",
+          "name": "OAUTH_ISSUER"
+        },
+        {
+          "default": "easyeda-mcp-pro",
+          "description": "Expected OAuth token audience",
+          "format": "string",
+          "name": "OAUTH_AUDIENCE"
+        },
+        {
+          "description": "JWKS endpoint for token signature validation",
+          "format": "string",
+          "name": "OAUTH_JWKS_URI"
+        },
+        {
+          "default": "easyeda:read",
+          "description": "Required OAuth token scope",
+          "format": "string",
+          "name": "OAUTH_REQUIRED_SCOPES"
+        },
+        {
+          "default": "false",
+          "description": "Enable OpenTelemetry",
+          "format": "boolean",
+          "name": "OTEL_ENABLED"
+        },
+        {
+          "default": "easyeda-mcp-pro",
+          "description": "OpenTelemetry service name",
+          "format": "string",
+          "name": "OTEL_SERVICE_NAME"
+        },
+        {
+          "description": "OpenTelemetry OTLP endpoint",
+          "format": "string",
+          "name": "OTEL_EXPORTER_OTLP_ENDPOINT"
+        },
+        {
+          "default": "1.0",
+          "description": "OpenTelemetry trace sample rate (0.0 to 1.0)",
+          "format": "number",
+          "name": "TRACE_SAMPLE_RATE"
+        }
+      ],
+      "identifier": "easyeda-mcp-pro",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.19.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "602c977ed4",
+    "published_at": "2026-07-04T01:09:05.080398Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.oaslananka/easyeda-mcp-pro",
+    "server_version": "0.19.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-04T01:09:05.080398Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.19.0"
+}

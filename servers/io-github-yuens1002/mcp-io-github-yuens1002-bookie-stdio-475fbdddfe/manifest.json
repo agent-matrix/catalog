@@ -1,0 +1,74 @@
+{
+  "description": "Double-entry bookkeeping MCP server \u2014 import bank CSVs, categorize, reconcile, tax reports.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:34+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-yuens1002-bookie.stdio.475fbdddfe",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/yuens1002/bookie",
+    "homepage": "https://github.com/yuens1002/bookie",
+    "repository": "https://github.com/yuens1002/bookie"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "bookie-mcp@0.8.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.yuens1002/bookie",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Neon pooled Postgres connection string \u2014 the ledger database",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "BOOKIE_DB_URL"
+        },
+        {
+          "description": "Neon direct (non-pooled) Postgres connection string, used for schema push",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "BOOKIE_DB_DIRECT_URL"
+        },
+        {
+          "description": "Static Bearer token for authenticating requests (printed by `npm run setup`)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "BOOKIE_API_KEY"
+        }
+      ],
+      "identifier": "bookie-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.8.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "475fbdddfe",
+    "published_at": "2026-07-03T12:07:21.451214Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.yuens1002/bookie",
+    "server_version": "0.8.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-03T12:07:21.451214Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.8.5"
+}

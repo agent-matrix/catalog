@@ -1,0 +1,95 @@
+{
+  "description": "Local-first TDLib Telegram MCP server with 110 tools, account isolation and production guardrails.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-tolboy-telegram-mcp-tdlib.stdio.516a4a822d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/tolboy/telegram-mcp-tdlib",
+    "homepage": "https://github.com/tolboy/telegram-mcp-tdlib",
+    "repository": "https://github.com/tolboy/telegram-mcp-tdlib"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/tolboy/telegram-mcp-tdlib:1.8.2-stdio"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.tolboy/telegram-mcp-tdlib",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Telegram API ID from my.telegram.org",
+          "format": "string",
+          "isRequired": true,
+          "name": "TDLIB_API_ID"
+        },
+        {
+          "description": "Telegram API hash from my.telegram.org",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "TDLIB_API_HASH"
+        },
+        {
+          "description": "Telegram phone number; omit after preparing a persisted session when using QR authentication",
+          "format": "string",
+          "isSecret": true,
+          "name": "TDLIB_PHONE_NUMBER"
+        },
+        {
+          "description": "One-time Telegram login code for a fresh headless container",
+          "format": "string",
+          "isSecret": true,
+          "name": "TDLIB_AUTH_CODE"
+        },
+        {
+          "description": "Telegram 2FA password when the account requires it",
+          "format": "string",
+          "isSecret": true,
+          "name": "TDLIB_2FA_PASSWORD"
+        },
+        {
+          "default": "true",
+          "description": "Keep true for safe first use",
+          "format": "string",
+          "name": "MCP_READ_ONLY"
+        },
+        {
+          "default": "reader",
+          "description": "Tool surface: reader, inbox, community-admin, research, or all",
+          "format": "string",
+          "name": "MCP_TOOL_PROFILE"
+        }
+      ],
+      "identifier": "ghcr.io/tolboy/telegram-mcp-tdlib:1.8.2-stdio",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "516a4a822d",
+    "published_at": "2026-07-04T21:18:07.66948Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.tolboy/telegram-mcp-tdlib",
+    "server_version": "1.8.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-04T21:18:07.66948Z"
+  },
+  "title": "Telegram MCP Server",
+  "type": "mcp_server",
+  "version": "1.8.2"
+}

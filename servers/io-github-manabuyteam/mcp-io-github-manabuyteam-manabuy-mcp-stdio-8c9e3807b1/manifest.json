@@ -1,0 +1,89 @@
+{
+  "description": "ManaBuy MCP server for product search, order quote, and AI-assisted ordering.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:46:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ManaBuyTeam-manabuy-mcp.stdio.8c9e3807b1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ManaBuyTeam/manabuy-mcp",
+    "homepage": "https://github.com/ManaBuyTeam/manabuy-mcp",
+    "repository": "https://github.com/ManaBuyTeam/manabuy-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@manabuy/mcp-server@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ManaBuyTeam/manabuy-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://manabuy.com/api",
+          "description": "Base URL for the ManaBuy API.",
+          "format": "string",
+          "name": "MANABUY_API_BASE_URL"
+        },
+        {
+          "default": "yz",
+          "description": "ManaBuy environment header.",
+          "format": "string",
+          "name": "MANABUY_ENVIRONMENT"
+        },
+        {
+          "default": "USD",
+          "description": "Currency header used for product and order requests.",
+          "format": "string",
+          "name": "MANABUY_CURRENCY"
+        },
+        {
+          "default": "en",
+          "description": "Language header used by ManaBuy API responses.",
+          "format": "string",
+          "name": "MANABUY_LANG"
+        },
+        {
+          "default": "THIS",
+          "description": "Business channel header and default order channel.",
+          "format": "string",
+          "name": "MANABUY_BIZ_CHANNEL"
+        },
+        {
+          "description": "Optional user-scoped ManaBuy authentication token for order operations. Browser login can also be started with the login_manabuy tool.",
+          "format": "string",
+          "isSecret": true,
+          "name": "MANABUY_AUTH_TOKEN"
+        }
+      ],
+      "identifier": "@manabuy/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8c9e3807b1",
+    "published_at": "2026-07-01T02:59:46.74628Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ManaBuyTeam/manabuy-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-01T02:59:46.74628Z"
+  },
+  "title": "ManaBuy MCP Server",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

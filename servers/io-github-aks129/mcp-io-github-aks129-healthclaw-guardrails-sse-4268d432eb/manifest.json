@@ -1,0 +1,52 @@
+{
+  "description": "Guardrailed FHIR access for AI agents: PHI redaction, audit trail, step-up auth, tenant isolation",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:01+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-aks129-healthclaw-guardrails.sse.4268d432eb",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/aks129/HealthClawGuardrails",
+    "homepage": "https://github.com/aks129/HealthClawGuardrails",
+    "repository": "https://github.com/aks129/HealthClawGuardrails"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://mcp-server-production-5112.up.railway.app/mcp"
+    }
+  },
+  "name": "io.github.aks129/healthclaw-guardrails",
+  "provenance": {
+    "identity_key": "4268d432eb",
+    "published_at": "2026-07-04T19:23:39.832181Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.aks129/healthclaw-guardrails",
+    "server_version": "1.6.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-04T19:23:39.832181Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Tenant identifier \u2014 the public demo tenant 'desktop-demo' works without credentials",
+          "name": "X-Tenant-Id"
+        },
+        {
+          "description": "Tenant-bound HMAC step-up token, required for write-tier tools and non-public tenant reads",
+          "isSecret": true,
+          "name": "X-Step-Up-Token"
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://mcp-server-production-5112.up.railway.app/mcp"
+    }
+  ],
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.6.0"
+}

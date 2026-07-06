@@ -1,0 +1,65 @@
+{
+  "description": "Read-only SQL querying + schema introspection over Postgres & SQLite, with a gated write mode.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:46:47+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Abhishekkumar2021-sql.stdio.e0f235607f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Abhishekkumar2021/mcp-suite",
+    "homepage": "https://github.com/Abhishekkumar2021/mcp-suite",
+    "repository": "https://github.com/Abhishekkumar2021/mcp-suite"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@abhishekmcp/sql@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Abhishekkumar2021/sql",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Connection URL for the 'default' connection (postgres://\u2026 or sqlite:/abs/path). Additional connections use DB_CONN_<name>. Carries credentials \u2014 treated as secret.",
+          "format": "string",
+          "isSecret": true,
+          "name": "DB_CONN_default"
+        },
+        {
+          "description": "Set to 1 or true to enable the write tools (execute, execute_script).",
+          "format": "string",
+          "name": "DB_WRITABLE"
+        }
+      ],
+      "identifier": "@abhishekmcp/sql",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e0f235607f",
+    "published_at": "2026-07-04T17:55:46.937711Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Abhishekkumar2021/sql",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-04T17:55:46.937711Z"
+  },
+  "title": "SQL",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

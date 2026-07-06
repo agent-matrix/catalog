@@ -1,0 +1,65 @@
+{
+  "description": "PayPerByte \u2014 per-byte data for AI agents: x402 USDC on Base, EIP-712-attested. No token.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:46:47+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-0rkz-byte-protocol.stdio.cababed230",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/0rkz/byte-mcp-server",
+    "homepage": "https://github.com/0rkz/byte-mcp-server",
+    "repository": "https://github.com/0rkz/byte-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "byte-mcp-server@0.11.8"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.0rkz/byte-protocol",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Ethereum private key for write/buy tools (subscribe, unsubscribe, publish, buy_data). buy_data spends real Base-mainnet USDC \u2014 use a dedicated wallet. Not required for read-only tools.",
+          "format": "string",
+          "isSecret": true,
+          "name": "PRIVATE_KEY"
+        },
+        {
+          "description": "RPC for the on-chain library + EIP-712 attestation layer (Arbitrum Sepolia, eip155:421614). The x402 buy rail settles USDC on Base mainnet and needs no RPC here. Defaults to Arbitrum Sepolia public RPC.",
+          "format": "string",
+          "name": "RPC_URL"
+        }
+      ],
+      "identifier": "byte-mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.11.8"
+    }
+  ],
+  "provenance": {
+    "identity_key": "cababed230",
+    "published_at": "2026-07-02T22:57:03.518499Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.0rkz/byte-protocol",
+    "server_version": "0.11.8",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-02T22:57:03.518499Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.11.8"
+}
