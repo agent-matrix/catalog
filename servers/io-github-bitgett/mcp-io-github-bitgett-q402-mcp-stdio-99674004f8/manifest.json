@@ -1,0 +1,116 @@
+{
+  "description": "Q402 - gasless payments on 11 EVM chains + CCIP bridge (eth/avax/arbitrum). Sandbox-default.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:03+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-bitgett-q402-mcp.stdio.99674004f8",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/bitgett/q402-mcp",
+    "homepage": "https://github.com/bitgett/q402-mcp",
+    "repository": "https://github.com/bitgett/q402-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@quackai/q402-mcp@0.10.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.bitgett/q402-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Recommended path: skip this UI and run `q402_doctor` after install - it stores secrets in ~/.q402/mcp.env, which the server auto-loads. Fill this field directly ONLY if your MCP client manages secrets for you. Value is a Free Trial API key from https://q402.quackai.ai/event - BNB Chain only, 2,000 sponsored TXs, gas covered by Q402. BNB payments auto-route to this key when set (same rule for q402_pay and q402_batch_pay up to 5 recipients).",
+          "format": "string",
+          "isSecret": true,
+          "name": "Q402_TRIAL_API_KEY"
+        },
+        {
+          "description": "Recommended path: skip this UI and run `q402_doctor` after install - it stores secrets in ~/.q402/mcp.env, which the server auto-loads. Fill this field directly ONLY if your MCP client manages secrets for you. Value is a Paid Multichain API key from https://q402.quackai.ai/payment - full 11-chain support with per-chain Gas Tank. Auto-routed for non-BNB payments and whenever keyScope='multichain' is chosen.",
+          "format": "string",
+          "isSecret": true,
+          "name": "Q402_MULTICHAIN_API_KEY"
+        },
+        {
+          "description": "Mode A - real EOA signing. Hex-encoded EVM private key (0x + 64 hex chars) of YOUR MetaMask wallet, used to sign payment authorizations LOCALLY on your machine. After your first payment that wallet shows as 'Smart account' in MetaMask (EIP-7702 delegation, reversible via q402_clear_delegation). Use a fresh wallet, not your main one. Skip this and pick Mode B (Q402_AGENTIC_PRIVATE_KEY) or Mode C (server-managed Agent Wallet) if you'd rather keep your MetaMask untouched. Recommended path: run q402_doctor after install - it stores secrets in ~/.q402/mcp.env, which the server auto-loads.",
+          "format": "string",
+          "isSecret": true,
+          "name": "Q402_PRIVATE_KEY"
+        },
+        {
+          "description": "Mode B - local Agent Wallet signing. Hex-encoded EVM private key (0x + 64 hex chars) exported from your Agent Wallet at https://q402.quackai.ai/dashboard -> Agent tab -> Export. Signs LOCALLY just like Mode A, but the signer is your dedicated Agent Wallet - your MetaMask EOA is never touched. Pick this for AI-agent automation when you want a dedicated purse with per-tx + daily caps you set on the dashboard.",
+          "format": "string",
+          "isSecret": true,
+          "name": "Q402_AGENTIC_PRIVATE_KEY"
+        },
+        {
+          "default": "1",
+          "description": "Live-mode switch. 0 = sandbox (test mode, no funds move - every q402_pay returns a fake hash). 1 = real on-chain payments. Default 1 since v0.5.11: safe because mode only flips to live when a live API key (q402_live_*) is set AND one of (a) a valid 32-byte private key for local signing modes, OR (b) walletMode=\"agentic-server\" with Q402_MULTICHAIN_API_KEY for the server-managed Agent Wallet path. Without either combination, the server stays in sandbox regardless of this flag.",
+          "format": "string",
+          "name": "Q402_ENABLE_REAL_PAYMENTS"
+        },
+        {
+          "default": "200",
+          "description": "Per-call USD-equivalent cap for USDC/USDT/RLUSD. Any such q402_pay request with amount above this is rejected before signing. Q (QuackAI) is exempt by design (your own token; recipient allowlist + confirmation still apply). Lower this for a tighter agent blast-radius; raise for treasury-grade transfers.",
+          "format": "string",
+          "name": "Q402_MAX_AMOUNT_PER_CALL"
+        },
+        {
+          "description": "Optional comma-separated lowercase EVM addresses. When set, q402_pay rejects any recipient not on this allowlist.",
+          "format": "string",
+          "name": "Q402_ALLOWED_RECIPIENTS"
+        },
+        {
+          "default": "https://q402.quackai.ai/api",
+          "description": "Override for the Q402 relay endpoint. Defaults to https://q402.quackai.ai/api. Set explicitly when running against a self-hosted Q402 deployment or a non-canonical environment.",
+          "format": "string",
+          "name": "Q402_RELAY_BASE_URL"
+        },
+        {
+          "description": "Server-managed Agent Wallet picker (walletMode='agentic-server' only). Lowercased agent wallet address (the hex 0x... shown on the Agent tab of your dashboard) selecting which of your Agent Wallets to spend from when you hold more than one (max 10 per owner). Omit to use the default wallet. Ignored for the local-signing modes that carry their own private key.",
+          "format": "string",
+          "name": "Q402_AGENT_WALLET_ADDRESS"
+        },
+        {
+          "description": "DEPRECATED legacy single-key env from pre-v0.5.0 installs. The server still reads it as a silent fallback so existing setups keep working, but new users should pick a scoped variant instead. Q402_TRIAL_API_KEY (Free Trial, BNB only) and Q402_MULTICHAIN_API_KEY (full 11-chain surface) are designed to coexist - BNB payments auto-route to the trial key, other chains use multichain. Only set Q402_API_KEY if you are migrating an existing pre-v0.5.0 install; do NOT set it alongside the scoped variants on a fresh install.",
+          "format": "string",
+          "isSecret": true,
+          "name": "Q402_API_KEY"
+        },
+        {
+          "description": "DEPRECATED soft-migration alias for Q402_AGENT_WALLET_ADDRESS (one release of overlap from v0.6.0). The server still accepts it but logs a deprecation notice. New installs should set Q402_AGENT_WALLET_ADDRESS directly.",
+          "format": "string",
+          "name": "Q402_WALLET_ID"
+        }
+      ],
+      "identifier": "@quackai/q402-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.10.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "99674004f8",
+    "published_at": "2026-07-02T08:30:40.595141Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.bitgett/q402-mcp",
+    "server_version": "0.10.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-02T08:30:40.595141Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.10.0"
+}

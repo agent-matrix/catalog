@@ -1,0 +1,66 @@
+{
+  "description": "Query SQLite, PostgreSQL, and MySQL in plain language - read-only, with column masking and limits.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ugurcl-dbridge-mcp.stdio.eec3301168",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ugurcl/dbridge-mcp",
+    "homepage": "https://github.com/ugurcl/dbridge-mcp",
+    "repository": "https://github.com/ugurcl/dbridge-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "dbridge-mcp@0.7.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ugurcl/dbridge-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Absolute path to a dbridge.config.json with safety settings (row caps, hidden/masked columns, table allow/block lists)",
+          "format": "string",
+          "name": "DBRIDGE_CONFIG"
+        }
+      ],
+      "identifier": "dbridge-mcp",
+      "packageArguments": [
+        {
+          "description": "Database to expose: a SQLite file path, or a postgresql:// / mysql:// connection string",
+          "isRequired": true,
+          "type": "positional",
+          "valueHint": "connection"
+        }
+      ],
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.7.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "eec3301168",
+    "published_at": "2026-07-02T23:05:13.677509Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ugurcl/dbridge-mcp",
+    "server_version": "0.7.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-02T23:05:13.677509Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.7.1"
+}

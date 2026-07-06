@@ -1,0 +1,72 @@
+{
+  "description": "MCP server for Flow.cl \u2014 Chilean PSP: hosted payment orders, Webpay, refunds, HMAC-signed API",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:06+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-codespar-mcp-flow-cl.stdio.c50fce820a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/codespar/mcp-dev-latam",
+    "homepage": "https://github.com/codespar/mcp-dev-latam",
+    "repository": "https://github.com/codespar/mcp-dev-latam"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@codespar/mcp-flow-cl@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.codespar/mcp-flow-cl",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Flow merchant API key",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "FLOW_API_KEY"
+        },
+        {
+          "description": "Flow secret key used to HMAC-SHA256 sign every request",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "FLOW_SECRET_KEY"
+        },
+        {
+          "description": "Environment: 'sandbox' or 'production'. Defaults to 'sandbox'.",
+          "format": "string",
+          "name": "FLOW_ENV"
+        }
+      ],
+      "identifier": "@codespar/mcp-flow-cl",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c50fce820a",
+    "published_at": "2026-07-04T01:57:28.147982Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.codespar/mcp-flow-cl",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-04T01:57:28.147982Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

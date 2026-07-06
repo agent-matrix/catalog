@@ -1,0 +1,70 @@
+{
+  "description": "Flexible multi-leg, multi-airport flight search - cheapest valid combination across an itinerary.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:19+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-leojg-rihla.stdio.8f40fdc7b9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/leojg/rihla",
+    "homepage": "https://github.com/leojg/rihla",
+    "repository": "https://github.com/leojg/rihla"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "rihla-mcp==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.leojg/rihla",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Travelpayouts Data API token (free) - the primary price source. Without any keys the server runs on offline mock data.",
+          "isSecret": true,
+          "name": "TRAVELPAYOUTS_TOKEN"
+        },
+        {
+          "description": "SerpApi key (optional, 250 free searches/mo) - fills routes Travelpayouts misses with bookable Google Flights fares.",
+          "isSecret": true,
+          "name": "SERPAPI_KEY"
+        },
+        {
+          "default": "local",
+          "description": "Source profile: 'local' (all configured sources), 'hosted' (redistribution-licensed only), or 'mock' (offline).",
+          "name": "RIHLA_PROFILE"
+        }
+      ],
+      "identifier": "rihla-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8f40fdc7b9",
+    "published_at": "2026-07-03T15:25:15.83309Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.leojg/rihla",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-03T15:25:15.83309Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

@@ -1,0 +1,67 @@
+{
+  "description": "Self-hostable team wiki; agents read & write it via MCP; Atlas turns your repo into a cited wiki.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:34+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-zcag-tela.stdio.54d684d409",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/zcag/tela",
+    "homepage": "https://github.com/zcag/tela",
+    "repository": "https://github.com/zcag/tela"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "tela-mcp@0.7.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.zcag/tela",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Origin of the Tela instance the proxy connects to, e.g. https://telawiki.com",
+          "format": "string",
+          "isRequired": true,
+          "name": "TELA_BASE_URL"
+        },
+        {
+          "description": "Personal access token (tela_pat_...), forwarded as Authorization: Bearer. Create one in Settings -> API Keys.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "TELA_API_KEY"
+        }
+      ],
+      "identifier": "tela-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.7.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "54d684d409",
+    "published_at": "2026-06-30T14:54:17.934399Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.zcag/tela",
+    "server_version": "0.7.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-30T14:54:17.934399Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.7.5"
+}

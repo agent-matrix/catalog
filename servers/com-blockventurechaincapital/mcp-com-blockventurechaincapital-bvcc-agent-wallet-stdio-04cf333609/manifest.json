@@ -1,0 +1,79 @@
+{
+  "description": "Non-custodial BVCC Agent Wallet on-chain for AI agents: balances, transfers, approvals, swaps.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:46:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-blockventurechaincapital-bvcc-agent-wallet.stdio.04cf333609",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/blockventurechaincapital-crypto/bvcc-agent-mcp",
+    "homepage": "https://github.com/blockventurechaincapital-crypto/bvcc-agent-mcp",
+    "repository": "https://github.com/blockventurechaincapital-crypto/bvcc-agent-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@bvcc/agent-mcp@0.1.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.blockventurechaincapital/bvcc-agent-wallet",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Agent EOA private key (0x + 64 hex). Used locally to sign only; never transmitted.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AGENT_PRIVATE_KEY"
+        },
+        {
+          "description": "The BVCC Agent Wallet address this agent operates (0x...).",
+          "isRequired": true,
+          "name": "WALLET_ADDRESS"
+        },
+        {
+          "default": "42161",
+          "description": "Default chain id: 42161 Arbitrum, 56 BNB Chain, 1 Ethereum, 8453 Base, 137 Polygon, 421614 Arbitrum Sepolia. Every tool also accepts an optional per-call network.",
+          "isRequired": true,
+          "name": "CHAIN_ID"
+        },
+        {
+          "description": "Optional custom RPC for the default chain (comma-separated list allowed for failover). Public default used otherwise. Per-chain override via RPC_URL_<chainId>.",
+          "name": "RPC_URL"
+        },
+        {
+          "description": "Set to 'true' to expose only read/simulate tools (no fund-moving writes).",
+          "name": "BVCC_MCP_READONLY"
+        }
+      ],
+      "identifier": "@bvcc/agent-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "04cf333609",
+    "published_at": "2026-06-29T19:56:10.555531Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.blockventurechaincapital/bvcc-agent-wallet",
+    "server_version": "0.1.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-29T19:56:10.555531Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.6"
+}

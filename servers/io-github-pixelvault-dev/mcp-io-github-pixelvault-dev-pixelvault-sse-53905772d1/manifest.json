@@ -1,7 +1,7 @@
 {
   "description": "Agent-first image hosting \u2014 upload images and get instant CDN URLs.",
   "harvest": {
-    "last_seen_at": "2026-06-29T07:03:31+00:00",
+    "last_seen_at": "2026-07-06T06:47:25+00:00",
     "seen_in_latest_run": true
   },
   "id": "mcp.io-github-pixelvault-dev-pixelvault.sse.53905772d1",
@@ -18,20 +18,36 @@
   "name": "io.github.pixelvault-dev/pixelvault",
   "provenance": {
     "identity_key": "53905772d1",
-    "published_at": "2026-06-20T10:38:36.449425Z",
+    "published_at": "2026-07-01T15:06:53.033816Z",
     "registry_base_url": "https://registry.modelcontextprotocol.io",
     "server_name": "io.github.pixelvault-dev/pixelvault",
-    "server_version": "0.1.0",
+    "server_version": "0.1.1",
     "source": "mcp-registry",
-    "updated_at": "2026-06-20T10:38:36.449425Z"
+    "updated_at": "2026-07-01T15:06:53.033816Z"
   },
   "remotes": [
     {
+      "headers": [
+        {
+          "description": "PixelVault API key as a Bearer token. Get a free key at https://pixelvault.dev",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {pixelvault_api_key}",
+          "variables": {
+            "pixelvault_api_key": {
+              "description": "Your PixelVault API key (starts with pv_)",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
       "type": "streamable-http",
       "url": "https://mcp.pixelvault.dev/mcp"
     }
   ],
   "title": null,
   "type": "mcp_server",
-  "version": "0.1.0"
+  "version": "0.1.1"
 }

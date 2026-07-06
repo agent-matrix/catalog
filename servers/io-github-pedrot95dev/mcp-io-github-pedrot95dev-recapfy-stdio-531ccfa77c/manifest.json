@@ -1,0 +1,70 @@
+{
+  "description": "Ask anything about a YouTube video (or summarize it). Paid per call in USDC on Solana via x402.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:24+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-pedrot95dev-recapfy.stdio.531ccfa77c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/pedrot95dev/recapfy.mcp",
+    "homepage": "https://github.com/pedrot95dev/recapfy.mcp",
+    "repository": "https://github.com/pedrot95dev/recapfy.mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "recapfy-mcp@0.1.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.pedrot95dev/recapfy",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base58-encoded Solana secret key. Pays per call (dynamic USDC price). Keep it funded; use a dedicated low-balance wallet.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SVM_PRIVATE_KEY"
+        },
+        {
+          "description": "Override the API base URL (defaults to https://api.recapfy.ai). For local dev only.",
+          "format": "string",
+          "name": "RECAPFY_API_BASE_URL"
+        },
+        {
+          "description": "Set to 1 to accept self-signed TLS (localhost dev over https only).",
+          "format": "string",
+          "name": "RECAPFY_ALLOW_INSECURE_TLS"
+        }
+      ],
+      "identifier": "recapfy-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "531ccfa77c",
+    "published_at": "2026-06-29T16:47:34.280464Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.pedrot95dev/recapfy",
+    "server_version": "0.1.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-29T16:47:34.280464Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.6"
+}

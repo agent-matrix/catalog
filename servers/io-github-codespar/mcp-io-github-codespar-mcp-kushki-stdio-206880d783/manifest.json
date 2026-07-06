@@ -1,0 +1,72 @@
+{
+  "description": "MCP server for Kushki \u2014 LATAM PSP: card charges, preauth, PSE/SPEI transfer, cash, subscriptions",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:06+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-codespar-mcp-kushki.stdio.206880d783",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/codespar/mcp-dev-latam",
+    "homepage": "https://github.com/codespar/mcp-dev-latam",
+    "repository": "https://github.com/codespar/mcp-dev-latam"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@codespar/mcp-kushki@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.codespar/mcp-kushki",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Kushki public merchant id (card/transfer tokenization)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "KUSHKI_PUBLIC_MERCHANT_ID"
+        },
+        {
+          "description": "Kushki private merchant id (charges, captures, voids, subscriptions)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "KUSHKI_PRIVATE_MERCHANT_ID"
+        },
+        {
+          "description": "Environment: 'sandbox' (api-uat) or 'production'. Defaults to 'sandbox'.",
+          "format": "string",
+          "name": "KUSHKI_ENV"
+        }
+      ],
+      "identifier": "@codespar/mcp-kushki",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "206880d783",
+    "published_at": "2026-07-04T01:57:41.766437Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.codespar/mcp-kushki",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-04T01:57:41.766437Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

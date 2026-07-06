@@ -1,0 +1,80 @@
+{
+  "description": "Deploy HTML from any AI tool to a versioned, shareable library on wovo.dev; manage pages.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-theshajha-wovo.stdio.5cc29cae1b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/theshajha/wovo-cli",
+    "homepage": "https://github.com/theshajha/wovo-cli",
+    "repository": "https://github.com/theshajha/wovo-cli"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@gowovo/wovo@0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.theshajha/wovo",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Workspace deploy token (wv_\u2026) from wovo.dev settings.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "WOVO_TOKEN"
+        },
+        {
+          "description": "Target workspace slug (optional; the token resolves a default).",
+          "name": "WOVO_WORKSPACE"
+        }
+      ],
+      "identifier": "@gowovo/wovo",
+      "packageArguments": [
+        {
+          "name": "-y",
+          "type": "named"
+        },
+        {
+          "name": "-p",
+          "type": "named",
+          "value": "@gowovo/wovo"
+        },
+        {
+          "type": "positional",
+          "value": "wovo-mcp"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5cc29cae1b",
+    "published_at": "2026-07-01T09:00:56.386447Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.theshajha/wovo",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-01T09:00:56.386447Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

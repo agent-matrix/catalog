@@ -1,0 +1,92 @@
+{
+  "description": "Google Workspace MCP server for Gmail, Calendar, Drive, Docs, Sheets, Slides, Contacts, and more",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:21+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mindstone-mcp-server-google-workspace.stdio.e97d4672aa",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mindstone/mcp-servers",
+    "homepage": "https://github.com/mindstone/mcp-servers",
+    "repository": "https://github.com/mindstone/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@mindstone/mcp-server-google-workspace@0.1.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mindstone/mcp-server-google-workspace",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Google OAuth client ID",
+          "format": "string",
+          "isRequired": true,
+          "name": "GOOGLE_CLIENT_ID"
+        },
+        {
+          "description": "Google OAuth client secret",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GOOGLE_CLIENT_SECRET"
+        },
+        {
+          "description": "Path to accounts.json written by the MCP host",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "ACCOUNTS_PATH"
+        },
+        {
+          "description": "Directory containing per-account Google OAuth token files",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "CREDENTIALS_PATH"
+        },
+        {
+          "default": "false",
+          "description": "Set to true to register Google Tasks and Forms tools",
+          "format": "string",
+          "name": "ENABLE_GOOGLE_TASKS_FORMS"
+        },
+        {
+          "default": "60000",
+          "description": "Outbound Google API request timeout in milliseconds (max 300000 = 5 min)",
+          "format": "number",
+          "name": "GOOGLE_WORKSPACE_REQUEST_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "@mindstone/mcp-server-google-workspace",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e97d4672aa",
+    "published_at": "2026-07-01T09:16:49.273347Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mindstone/mcp-server-google-workspace",
+    "server_version": "0.1.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-01T09:16:49.273347Z"
+  },
+  "title": "Google Workspace",
+  "type": "mcp_server",
+  "version": "0.1.4"
+}

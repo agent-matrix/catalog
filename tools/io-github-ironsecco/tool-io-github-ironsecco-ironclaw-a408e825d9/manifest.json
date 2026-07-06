@@ -1,0 +1,99 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/ironsecco/ironclaw-controlplane:v0.1.217"
+      }
+    }
+  ],
+  "description": "Sandboxed shell exec for MCP clients: run untrusted agent commands in a gVisor container.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:46:53+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/IronSecCo/ironclaw",
+  "id": "tool.io-github-ironsecco-ironclaw.a408e825d9",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/IronSecCo/ironclaw",
+    "homepage": "https://github.com/IronSecCo/ironclaw",
+    "repository": "https://github.com/IronSecCo/ironclaw"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Sandboxed shell exec for MCP clients: run untrusted agent commands in a gVisor container.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.IronSecCo/ironclaw",
+      "request_type": "POST",
+      "url": "https://github.com/IronSecCo/ironclaw"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Remove the container when the MCP session ends (ephemeral by design).",
+            "name": "--rm",
+            "type": "named"
+          },
+          {
+            "description": "Keep stdin open for the MCP stdio transport.",
+            "name": "-i",
+            "type": "named"
+          },
+          {
+            "description": "IronClaw launches each sandbox_exec run as a sibling gVisor container; it needs the host Docker socket to do so. This grants the MCP server control of the host Docker daemon -- review before enabling.",
+            "isRequired": true,
+            "name": "-v",
+            "type": "named",
+            "value": "/var/run/docker.sock:/var/run/docker.sock"
+          },
+          {
+            "description": "Override the control-plane daemon entrypoint to run the bundled ironctl MCP server instead.",
+            "name": "--entrypoint",
+            "type": "named",
+            "value": "ironctl"
+          },
+          "ghcr.io/ironsecco/ironclaw-controlplane:v0.1.217"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.IronSecCo/ironclaw",
+  "provenance": {
+    "identity_key": "4c2b8c9a96",
+    "promoted_from": "mcp.io-github-IronSecCo-ironclaw.stdio.4c2b8c9a96",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.IronSecCo/ironclaw",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-IronSecCo-ironclaw.stdio.4c2b8c9a96",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/IronSecCo/ironclaw",
+  "summary": "Sandboxed shell exec for MCP clients: run untrusted agent commands in a gVisor container.",
+  "tags": [
+    "clients",
+    "commands",
+    "exec",
+    "ironclaw",
+    "sandboxed",
+    "shell",
+    "untrusted"
+  ],
+  "title": "Ironclaw",
+  "type": "tool",
+  "version": "0.1.217"
+}

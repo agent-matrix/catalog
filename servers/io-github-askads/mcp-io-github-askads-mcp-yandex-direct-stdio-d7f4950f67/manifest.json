@@ -1,0 +1,74 @@
+{
+  "description": "MCP server for Yandex Direct API v5: manage PPC campaigns, ads, keywords, and statistics.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:02+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-askads-mcp-yandex-direct.stdio.d7f4950f67",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/askads/mcp-yandex-direct",
+    "homepage": "https://github.com/askads/mcp-yandex-direct",
+    "repository": "https://github.com/askads/mcp-yandex-direct"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-yandex-direct@1.1.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.askads/mcp-yandex-direct",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Yandex Direct OAuth token \u2014 full account access (can spend budget). Treat it as a secret.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "YANDEX_DIRECT_TOKEN"
+        },
+        {
+          "description": "Client login to target a specific account on agency tokens.",
+          "name": "YANDEX_DIRECT_LOGIN"
+        },
+        {
+          "default": "false",
+          "description": "Set to true to call the Yandex Direct sandbox API instead of production.",
+          "name": "YANDEX_DIRECT_SANDBOX"
+        },
+        {
+          "default": "ru",
+          "description": "Language for API responses and error messages (ru, en, ...).",
+          "name": "YANDEX_DIRECT_LANG"
+        }
+      ],
+      "identifier": "mcp-yandex-direct",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d7f4950f67",
+    "published_at": "2026-07-01T19:25:34.302848Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.askads/mcp-yandex-direct",
+    "server_version": "1.1.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-01T19:25:34.302848Z"
+  },
+  "title": "Yandex Direct MCP",
+  "type": "mcp_server",
+  "version": "1.1.5"
+}

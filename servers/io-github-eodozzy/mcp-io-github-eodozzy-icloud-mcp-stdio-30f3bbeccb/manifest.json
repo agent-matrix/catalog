@@ -1,0 +1,110 @@
+{
+  "description": "Read-only-by-default MCP server for iCloud mail, calendar, and contacts (IMAP/CalDAV/CardDAV).",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-eodozzy-icloud-mcp.stdio.30f3bbeccb",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/eodozzy/icloud-mcp",
+    "homepage": "https://github.com/eodozzy/icloud-mcp",
+    "repository": "https://github.com/eodozzy/icloud-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "icloud-mcp==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.eodozzy/icloud-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your Apple ID email (the IMAP/CalDAV username).",
+          "format": "string",
+          "isRequired": true,
+          "name": "ICLOUD_USERNAME"
+        },
+        {
+          "description": "OS-keyring service name to read the app-specific password from. Default: icloud-mcp. Set to reuse an existing entry.",
+          "format": "string",
+          "name": "ICLOUD_KEYRING_SERVICE"
+        },
+        {
+          "description": "App-specific password. Fallback only; preferred storage is the OS keyring. Used only when no keyring entry is found.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ICLOUD_APP_PASSWORD"
+        },
+        {
+          "description": "Enable mutating tools (send/reply/forward mail, create/update/delete event & contact). Off by default; each write still requires interactive confirmation. Accepts 1/true/yes/on.",
+          "format": "string",
+          "name": "ICLOUD_ENABLE_WRITES"
+        },
+        {
+          "description": "IMAP host override. Default: imap.mail.me.com",
+          "format": "string",
+          "name": "ICLOUD_IMAP_HOST"
+        },
+        {
+          "description": "IMAP port override. Default: 993",
+          "format": "number",
+          "name": "ICLOUD_IMAP_PORT"
+        },
+        {
+          "description": "SMTP host override (used only by write/send tools). Default: smtp.mail.me.com",
+          "format": "string",
+          "name": "ICLOUD_SMTP_HOST"
+        },
+        {
+          "description": "SMTP port override. Default: 587",
+          "format": "number",
+          "name": "ICLOUD_SMTP_PORT"
+        },
+        {
+          "description": "CalDAV base URL override. Default: https://caldav.icloud.com/",
+          "format": "string",
+          "name": "ICLOUD_CALDAV_URL"
+        },
+        {
+          "description": "CardDAV base URL override. Default: https://contacts.icloud.com/",
+          "format": "string",
+          "name": "ICLOUD_CARDDAV_URL"
+        },
+        {
+          "description": "IANA timezone for rendering/scoping events. Default: system local time.",
+          "format": "string",
+          "name": "ICLOUD_TZ"
+        }
+      ],
+      "identifier": "icloud-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "30f3bbeccb",
+    "published_at": "2026-06-30T03:15:56.790851Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.eodozzy/icloud-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-30T03:15:56.790851Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

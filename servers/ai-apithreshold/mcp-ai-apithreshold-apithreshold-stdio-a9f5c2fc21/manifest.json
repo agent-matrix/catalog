@@ -1,0 +1,86 @@
+{
+  "description": "Quality scoring and progressive gates for AI-generated API tests. Stripe/Twilio profiles. Free tier.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:46:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-apithreshold-apithreshold.stdio.a9f5c2fc21",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/apithreshold/apithreshold:0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.apithreshold/apithreshold",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "LLM provider to use: openai or anthropic.",
+          "format": "string",
+          "isRequired": true,
+          "name": "APITHRESHOLD_LLM_PROVIDER"
+        },
+        {
+          "description": "Required when APITHRESHOLD_LLM_PROVIDER=openai.",
+          "format": "string",
+          "isSecret": true,
+          "name": "OPENAI_API_KEY"
+        },
+        {
+          "description": "Required when APITHRESHOLD_LLM_PROVIDER=anthropic.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        },
+        {
+          "description": "Optional license JWT. Omit for Free tier.",
+          "format": "string",
+          "isSecret": true,
+          "name": "APITHRESHOLD_LICENSE"
+        }
+      ],
+      "identifier": "ghcr.io/apithreshold/apithreshold:0.1.0",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "serve"
+        },
+        {
+          "type": "positional",
+          "value": "--transport"
+        },
+        {
+          "type": "positional",
+          "value": "stdio"
+        }
+      ],
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "a9f5c2fc21",
+    "published_at": "2026-07-02T22:06:43.451983Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.apithreshold/apithreshold",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-02T22:06:43.451983Z"
+  },
+  "title": "APIThreshold",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

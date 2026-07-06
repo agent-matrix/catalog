@@ -1,0 +1,77 @@
+{
+  "description": "Unofficial read-only MCP server for your local WhatsApp chat history (stays on your machine).",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:46:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-NabheetCloud-wa-chat-reader.stdio.b8889c2f00",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/NabheetCloud/wa-chat-reader",
+    "homepage": "https://github.com/NabheetCloud/wa-chat-reader",
+    "repository": "https://github.com/NabheetCloud/wa-chat-reader"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "wa-chat-reader==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.NabheetCloud/wa-chat-reader",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Semicolon-separated paths to ChatStorage.sqlite. If unset, a platform default is used.",
+          "name": "WHATSAPP_DB_PATHS"
+        },
+        {
+          "description": "Semicolon-separated fallback database paths, tried after the primary paths.",
+          "name": "WHATSAPP_BACKUP_PATHS"
+        },
+        {
+          "default": "30",
+          "description": "Maximum look-back window in days a caller may request.",
+          "name": "WHATSAPP_MAX_DAYS"
+        },
+        {
+          "default": "false",
+          "description": "Set to 'true' for verbose logging to stderr.",
+          "name": "WHATSAPP_DEBUG"
+        },
+        {
+          "description": "Optional path to also write logs to a file.",
+          "name": "WHATSAPP_LOG_FILE"
+        }
+      ],
+      "identifier": "wa-chat-reader",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b8889c2f00",
+    "published_at": "2026-07-05T14:37:08.423267Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.NabheetCloud/wa-chat-reader",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-05T14:37:08.423267Z"
+  },
+  "title": "WhatsApp Chat Reader (Unofficial)",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

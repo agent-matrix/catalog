@@ -1,0 +1,78 @@
+{
+  "description": "Manage Parseur.com mailboxes, parser fields, documents, exports and webhooks.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:24+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-parseur-parseur-py.stdio.2c48192308",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/parseur/parseur-py",
+    "homepage": "https://github.com/parseur/parseur-py",
+    "repository": "https://github.com/parseur/parseur-py"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "Install parseur-py with the MCP server extra.",
+            "name": "--from",
+            "type": "named",
+            "value": "parseur-py[mcp]"
+          },
+          "parseur-py==1.6.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.parseur/parseur-py",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your Parseur API key (from https://app.parseur.com/account/api).",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PARSEUR_API_KEY"
+        },
+        {
+          "description": "Override the Parseur API base URL (defaults to https://api.parseur.com).",
+          "name": "PARSEUR_API_BASE"
+        }
+      ],
+      "identifier": "parseur-py",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "Install parseur-py with the MCP server extra.",
+          "name": "--from",
+          "type": "named",
+          "value": "parseur-py[mcp]"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.6.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "2c48192308",
+    "published_at": "2026-07-01T02:47:24.373461Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.parseur/parseur-py",
+    "server_version": "1.6.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-01T02:47:24.373461Z"
+  },
+  "title": "Parseur",
+  "type": "mcp_server",
+  "version": "1.6.0"
+}

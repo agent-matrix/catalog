@@ -1,0 +1,70 @@
+{
+  "description": "MCP server for Yandex Wordstat API: top & related queries, demand dynamics and regions.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:02+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-askads-mcp-yandex-wordstat.stdio.f0579b8d41",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/askads/mcp-yandex-wordstat",
+    "homepage": "https://github.com/askads/mcp-yandex-wordstat",
+    "repository": "https://github.com/askads/mcp-yandex-wordstat"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-yandex-wordstat@2.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.askads/mcp-yandex-wordstat",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Yandex Cloud API key for the Search API (sent as Api-Key). Treat it as a secret.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "WORDSTAT_API_KEY"
+        },
+        {
+          "description": "Yandex Cloud folder id, injected into every request body.",
+          "isRequired": true,
+          "name": "WORDSTAT_FOLDER_ID"
+        },
+        {
+          "default": "ru",
+          "description": "Language for API responses (ru, en, ...).",
+          "name": "WORDSTAT_LANG"
+        }
+      ],
+      "identifier": "mcp-yandex-wordstat",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f0579b8d41",
+    "published_at": "2026-06-29T09:41:31.899525Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.askads/mcp-yandex-wordstat",
+    "server_version": "2.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-29T09:41:31.899525Z"
+  },
+  "title": "Yandex Wordstat MCP",
+  "type": "mcp_server",
+  "version": "2.0.0"
+}

@@ -1,0 +1,78 @@
+{
+  "description": "Permanent identity + encrypted, quantum-ready memory that outlives the session, for any AI agent.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:32+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-uuaid-mcp.stdio.b6c181c73b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/uuaid/uuaid",
+    "homepage": "https://github.com/uuaid/uuaid",
+    "repository": "https://github.com/uuaid/uuaid"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@uuaid/mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.uuaid/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "UUAID partner API key. Optional at startup \u2014 call the uuaid_signup tool to mint a free-tier key.",
+          "format": "string",
+          "isSecret": true,
+          "name": "UUAID_API_KEY"
+        },
+        {
+          "description": "Client-side memory encryption key (uvk_...). Required for the memory tools; generate with `uuaid vault keygen`.",
+          "format": "string",
+          "isSecret": true,
+          "name": "UUAID_VAULT_KEY"
+        },
+        {
+          "description": "Default agent identity (uuaid:foundation:agent:...) so memory tools bind to it automatically.",
+          "format": "string",
+          "name": "UUAID_AGENT"
+        },
+        {
+          "default": "https://api.uuaid.org",
+          "description": "API base URL. Defaults to https://api.uuaid.org.",
+          "format": "string",
+          "name": "UUAID_BASE_URL"
+        }
+      ],
+      "identifier": "@uuaid/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b6c181c73b",
+    "published_at": "2026-07-04T03:42:59.560906Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.uuaid/mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-04T03:42:59.560906Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

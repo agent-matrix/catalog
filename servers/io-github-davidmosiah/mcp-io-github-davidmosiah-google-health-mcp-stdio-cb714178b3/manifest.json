@@ -1,0 +1,94 @@
+{
+  "description": "Privacy-first unofficial Google Health API v4 MCP server for health, sleep, activity, HR agents",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-davidmosiah-google-health-mcp.stdio.cb714178b3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/davidmosiah/google-health-mcp",
+    "homepage": "https://github.com/davidmosiah/google-health-mcp",
+    "repository": "https://github.com/davidmosiah/google-health-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "google-health-mcp-unofficial@0.5.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.davidmosiah/google-health-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Google Cloud OAuth client ID for Google Health API. Optional when configured with google-health-mcp-server setup.",
+          "format": "string",
+          "name": "GOOGLE_HEALTH_CLIENT_ID"
+        },
+        {
+          "description": "Google Cloud OAuth client secret. Prefer google-health-mcp-server setup so this secret is stored in ~/.google-health-mcp/config.json instead of MCP client config.",
+          "format": "string",
+          "isSecret": true,
+          "name": "GOOGLE_HEALTH_CLIENT_SECRET"
+        },
+        {
+          "description": "Redirect URI configured in the Google Cloud OAuth client. Optional when configured with google-health-mcp-server setup.",
+          "format": "string",
+          "name": "GOOGLE_HEALTH_REDIRECT_URI"
+        },
+        {
+          "description": "Optional local path for OAuth tokens. Defaults to ~/.google-health-mcp/tokens.json.",
+          "format": "string",
+          "name": "GOOGLE_HEALTH_TOKEN_PATH"
+        },
+        {
+          "description": "Optional payload mode: summary, structured, or raw. Defaults to structured. raw means full Google Health API payloads, not continuous 24/7 raw sensor telemetry.",
+          "format": "string",
+          "name": "GOOGLE_HEALTH_PRIVACY_MODE"
+        },
+        {
+          "description": "Optional SQLite cache toggle. Set to true or sqlite to enable.",
+          "format": "string",
+          "name": "GOOGLE_HEALTH_CACHE"
+        },
+        {
+          "description": "Optional local SQLite cache path. Defaults to ~/.google-health-mcp/cache.sqlite.",
+          "format": "string",
+          "name": "GOOGLE_HEALTH_CACHE_PATH"
+        },
+        {
+          "description": "Set to true to bypass the in-memory HTTP response cache (60s TTL for GET only). POST/PUT/DELETE and 4xx/5xx responses are never cached regardless.",
+          "format": "string",
+          "name": "GOOGLE_HEALTH_NO_CACHE"
+        }
+      ],
+      "identifier": "google-health-mcp-unofficial",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "cb714178b3",
+    "published_at": "2026-07-03T11:20:42.922371Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.davidmosiah/google-health-mcp",
+    "server_version": "0.5.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-03T11:20:42.922371Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.5.1"
+}

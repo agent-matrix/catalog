@@ -1,0 +1,108 @@
+{
+  "description": "Playwright MCP-compatible browser automation bridge for CloakBrowser Chromium.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-swimmwatch-cloakbrowser-mcp.stdio.6fa385101e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/swimmwatch/cloakbrowser-mcp",
+    "homepage": "https://github.com/swimmwatch/cloakbrowser-mcp",
+    "repository": "https://github.com/swimmwatch/cloakbrowser-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "docker.io/swimmwatch/cloakbrowser-mcp:1.6.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.swimmwatch/cloakbrowser-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "cloak",
+          "description": "Bridge browser engine: cloak or playwright.",
+          "format": "string",
+          "name": "PLAYWRIGHT_MCP_BROWSER_ENGINE"
+        },
+        {
+          "default": "true",
+          "description": "Run the browser in headless mode.",
+          "format": "boolean",
+          "name": "PLAYWRIGHT_MCP_HEADLESS"
+        },
+        {
+          "default": "/data",
+          "description": "Directory inside the container where upstream Playwright MCP writes artifacts.",
+          "format": "filepath",
+          "name": "PLAYWRIGHT_MCP_OUTPUT_DIR"
+        },
+        {
+          "default": "stdout",
+          "description": "Return snapshots, console logs, and network logs through stdout or files.",
+          "format": "string",
+          "name": "PLAYWRIGHT_MCP_OUTPUT_MODE"
+        },
+        {
+          "description": "Persistent Chromium profile directory inside the container. Use /data/profiles/... with the existing /data volume.",
+          "format": "filepath",
+          "name": "PLAYWRIGHT_MCP_USER_DATA_DIR"
+        },
+        {
+          "description": "JSON object with validated Playwright context options such as viewport, locale, timezoneId, permissions, geolocation, and headers.",
+          "format": "string",
+          "name": "CLOAK_PLAYWRIGHT_MCP_CONTEXT_OPTIONS"
+        },
+        {
+          "description": "JSON array or comma-separated list of Chrome extension directories inside the container. Requires PLAYWRIGHT_MCP_USER_DATA_DIR.",
+          "format": "string",
+          "name": "CLOAK_PLAYWRIGHT_MCP_EXTENSION_PATHS"
+        },
+        {
+          "default": "true",
+          "description": "Patch upstream console message collection for CloakBrowser compatibility.",
+          "format": "boolean",
+          "name": "CLOAK_PLAYWRIGHT_MCP_CONSOLE_FALLBACK"
+        },
+        {
+          "default": "false",
+          "description": "Resolve proxy GeoIP and match CloakBrowser timezone/locale fingerprint flags when PLAYWRIGHT_MCP_PROXY_SERVER is set.",
+          "format": "boolean",
+          "name": "CLOAK_PLAYWRIGHT_MCP_GEOIP_PROXY_MATCH"
+        },
+        {
+          "description": "Comma-separated or JSON array of extra Chromium launch arguments.",
+          "format": "string",
+          "name": "CLOAK_PLAYWRIGHT_MCP_EXTRA_ARGS"
+        }
+      ],
+      "identifier": "docker.io/swimmwatch/cloakbrowser-mcp:1.6.1",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "6fa385101e",
+    "published_at": "2026-07-05T12:55:57.888102Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.swimmwatch/cloakbrowser-mcp",
+    "server_version": "1.6.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-05T12:55:57.888102Z"
+  },
+  "title": "CloakBrowser MCP",
+  "type": "mcp_server",
+  "version": "1.6.1"
+}

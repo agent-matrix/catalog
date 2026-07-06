@@ -1,0 +1,69 @@
+{
+  "description": "MCP server for 1Password service accounts \u2014 tools and resources for vaults and credentials",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:46:51+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-CakeRepository-1password.stdio.17da364236",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/CakeRepository/1Password-MCP.git",
+    "homepage": "https://github.com/CakeRepository/1Password-MCP.git",
+    "repository": "https://github.com/CakeRepository/1Password-MCP.git"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@takescake/1password-mcp@2.5.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.CakeRepository/1password",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "The Service Account Token from 1Password (required unless OP_KEYCHAIN_SERVICE is used on macOS)",
+          "format": "string",
+          "isSecret": true,
+          "name": "OP_SERVICE_ACCOUNT_TOKEN"
+        },
+        {
+          "description": "macOS only: Keychain service name to read the 1Password service account token from when OP_SERVICE_ACCOUNT_TOKEN is not set",
+          "format": "string",
+          "name": "OP_KEYCHAIN_SERVICE"
+        },
+        {
+          "description": "macOS only: Optional Keychain account name to narrow the lookup used with OP_KEYCHAIN_SERVICE",
+          "format": "string",
+          "name": "OP_KEYCHAIN_ACCOUNT"
+        }
+      ],
+      "identifier": "@takescake/1password-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.5.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "17da364236",
+    "published_at": "2026-07-04T15:17:33.13672Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.CakeRepository/1password",
+    "server_version": "2.5.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-04T15:17:33.13672Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "2.5.0"
+}

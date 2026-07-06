@@ -1,0 +1,49 @@
+{
+  "description": "Read-only bank access for your AI agent. Connects Claude, ChatGPT, Cursor, Gemini, Codex.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:35+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.money-bankbridge-server.sse.f07b96a9f9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/bankbridge-money/bankbridge-plugin",
+    "homepage": "https://github.com/bankbridge-money/bankbridge-plugin",
+    "repository": "https://github.com/bankbridge-money/bankbridge-plugin"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://bankbridge.money/api/mcp"
+    }
+  },
+  "name": "money.bankbridge/server",
+  "provenance": {
+    "identity_key": "f07b96a9f9",
+    "published_at": "2026-06-30T23:07:47.410112Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "money.bankbridge/server",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-30T23:07:47.410112Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Bearer token issued at https://bankbridge.money/dashboard/keys (format: bbk_...). OAuth 2.1 with DCR + PKCE also supported.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization"
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://bankbridge.money/api/mcp"
+    }
+  ],
+  "title": "BankBridge",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

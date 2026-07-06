@@ -1,0 +1,74 @@
+{
+  "description": "A secure, local-first MCP server exposing ArcGIS Pro's ArcPy engine over stdio JSON-RPC.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:21+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-muend-arcgis-mcp-bridge.stdio.c44e693dec",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/muend/arcgis-mcp-bridge",
+    "homepage": "https://github.com/muend/arcgis-mcp-bridge",
+    "repository": "https://github.com/muend/arcgis-mcp-bridge"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "arcgis-mcp-bridge==0.6.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.muend/arcgis-mcp-bridge",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the licensed ArcGIS Pro Python interpreter or cloned arcgis-mcp-env interpreter.",
+          "format": "string",
+          "isRequired": true,
+          "name": "ARCPY_PYTHON_PATH"
+        },
+        {
+          "description": "Optional semicolon-separated PathGuard boundary roots for local GIS data.",
+          "format": "string",
+          "name": "ARCGIS_MCP_ALLOWED_ROOTS"
+        },
+        {
+          "description": "Optional default output workspace. If set, it must point to an existing file geodatabase.",
+          "format": "string",
+          "name": "ARCGIS_MCP_SCRATCH_GDB"
+        },
+        {
+          "description": "Optional maximum number of concurrent ArcPy worker subprocesses. Defaults to 2.",
+          "format": "string",
+          "name": "ARCGIS_MCP_MAX_WORKERS"
+        }
+      ],
+      "identifier": "arcgis-mcp-bridge",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.6.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c44e693dec",
+    "published_at": "2026-07-01T13:06:11.57543Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.muend/arcgis-mcp-bridge",
+    "server_version": "0.6.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-01T13:06:11.57543Z"
+  },
+  "title": "ArcGIS MCP Bridge",
+  "type": "mcp_server",
+  "version": "0.6.2"
+}

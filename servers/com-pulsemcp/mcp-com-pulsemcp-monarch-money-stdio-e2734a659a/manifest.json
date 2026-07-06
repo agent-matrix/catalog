@@ -1,0 +1,111 @@
+{
+  "description": "MCP server for Monarch Money \u2014 account, transaction, and budget management.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:46:44+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-pulsemcp-monarch-money.stdio.e2734a659a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/pulsemcp/mcp-servers",
+    "homepage": "https://github.com/pulsemcp/mcp-servers",
+    "repository": "https://github.com/pulsemcp/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y"
+          },
+          "monarch-money-mcp-server@0.0.11"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.pulsemcp/monarch-money",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Pre-obtained session token for authentication (recommended over email/password).",
+          "isSecret": true,
+          "name": "MONARCH_SESSION_TOKEN"
+        },
+        {
+          "description": "Email address for email/password authentication.",
+          "name": "MONARCH_EMAIL"
+        },
+        {
+          "description": "Password for email/password authentication.",
+          "isSecret": true,
+          "name": "MONARCH_PASSWORD"
+        },
+        {
+          "description": "TOTP code if 2FA is enabled on the account.",
+          "isSecret": true,
+          "name": "MONARCH_TOTP"
+        },
+        {
+          "description": "Email OTP code required only on first login from a new install.",
+          "isSecret": true,
+          "name": "MONARCH_EMAIL_OTP"
+        },
+        {
+          "description": "Override passphrase for encrypting the on-disk session file.",
+          "isSecret": true,
+          "name": "MONARCH_SESSION_PASSPHRASE"
+        },
+        {
+          "default": "~/.monarch-money-mcp",
+          "description": "Directory where session.enc file is stored.",
+          "name": "MONARCH_STATE_DIR"
+        },
+        {
+          "description": "Comma-separated list of tool groups to enable (readonly, manage).",
+          "name": "MONARCH_ENABLED_TOOL_GROUPS"
+        },
+        {
+          "description": "Comma-separated whitelist of specific tool names to enable.",
+          "name": "MONARCH_ENABLED_TOOLS"
+        },
+        {
+          "description": "Comma-separated blacklist of specific tool names to disable.",
+          "name": "MONARCH_DISABLED_TOOLS"
+        }
+      ],
+      "identifier": "monarch-money-mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.0.11"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e2734a659a",
+    "published_at": "2026-07-01T17:22:04.700772Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.pulsemcp/monarch-money",
+    "server_version": "0.0.11",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-01T17:22:04.700772Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.0.11"
+}

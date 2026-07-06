@@ -1,0 +1,65 @@
+{
+  "description": "Find, pay for & call APIs in USDC from AI agents - gasless, sub-cent, 0% commission.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-superbigroach-obol.stdio.6d4ec0aedc",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/superbigroach/obol-mcp",
+    "homepage": "https://github.com/superbigroach/obol-mcp",
+    "repository": "https://github.com/superbigroach/obol-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@superbigroach/obol-mcp@0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.superbigroach/obol",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your Obol API key (obl_sk_live_...) from obol-arc.web.app/settings \u2014 identifies your account for listing services and metered calls.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OBOL_API_KEY"
+        },
+        {
+          "description": "32-byte hex Arc wallet private key that signs gasless x402/EIP-3009 payment authorizations. Needed only for paying (pay_and_call); discovery and listing work without it.",
+          "isSecret": true,
+          "name": "OBOL_AGENT_KEY"
+        }
+      ],
+      "identifier": "@superbigroach/obol-mcp",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6d4ec0aedc",
+    "published_at": "2026-06-30T18:13:53.369245Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.superbigroach/obol",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-30T18:13:53.369245Z"
+  },
+  "title": "Obol",
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

@@ -1,0 +1,77 @@
+{
+  "description": "MCP server for Inductive Automation Ignition: tags, alarms, history, and Perspective",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:17+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-jsgorana-ignition-mcp.stdio.49c88f0f07",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jsgorana/ignition-mcp",
+    "homepage": "https://github.com/jsgorana/ignition-mcp",
+    "repository": "https://github.com/jsgorana/ignition-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "ignition-mcp==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.jsgorana/ignition-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Gateway base URL, e.g. http://localhost:8088",
+          "format": "string",
+          "isRequired": true,
+          "name": "IGNITION_URL"
+        },
+        {
+          "description": "Ignition API key in 'name:secret' form",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "IGNITION_API_TOKEN"
+        },
+        {
+          "description": "HMAC secret shared with the mcp-bridge WebDev project; enables live tag/alarm/history/Perspective tools",
+          "format": "string",
+          "isSecret": true,
+          "name": "IGNITION_BRIDGE_SECRET"
+        },
+        {
+          "description": "Set to 'true' to enable mutating tools (each call still requires confirm=true)",
+          "format": "string",
+          "name": "IGNITION_ALLOW_WRITES"
+        }
+      ],
+      "identifier": "ignition-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "49c88f0f07",
+    "published_at": "2026-07-06T04:06:55.761354Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.jsgorana/ignition-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-06T04:06:55.761354Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

@@ -1,0 +1,77 @@
+{
+  "description": "github-mcp 401? PAT wiring. x402 USDC Base. HOW TO PAY: secondeyesai.com/llms.txt",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:46:58+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-This-Is-Hellgate-secondeye-mcp-unblock.stdio.1495490956",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/This-Is-Hellgate/second-eyes-ai",
+    "homepage": "https://github.com/This-Is-Hellgate/second-eyes-ai",
+    "repository": "https://github.com/This-Is-Hellgate/second-eyes-ai"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@secondeyes/mcp-unblock@1.2.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.This-Is-Hellgate/secondeye-mcp-unblock",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://secondeyesai.com",
+          "description": "Second Eyes lounge base URL",
+          "name": "SECOND_EYE_BASE_URL"
+        },
+        {
+          "description": "EVM private key (0x\u2026) for auto USDC payment on 402. SECURITY: MCP process can drain this wallet \u2014 use a dedicated low-balance payer.",
+          "name": "MCP_X402_WALLET_KEY"
+        },
+        {
+          "default": "0.50",
+          "description": "Per-call spending cap (default 0.50)",
+          "name": "MCP_X402_MAX_SPEND_USD"
+        },
+        {
+          "default": "2.00",
+          "description": "Process lifetime spending cap (default 2.00)",
+          "name": "MCP_X402_SESSION_MAX_USD"
+        },
+        {
+          "description": "Comma-separated slugs allowed for auto-pay. Default (unset) or *: every zero-argument launch-priced survival/nano slug (each <= $0.05 USDC) auto-pays. transcribe-extract and doc-extract are excluded by default because they need a caller-supplied input the zero-arg tool cannot pass (call /api/bar/x402/transcribe and /api/bar/x402/extract directly); name them explicitly here to opt in. Set a comma list to RESTRICT. Safety is enforced by the per-call/session caps, not this list.",
+          "name": "MCP_X402_ALLOW_SLUGS"
+        }
+      ],
+      "identifier": "@secondeyes/mcp-unblock",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.2.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1495490956",
+    "published_at": "2026-07-01T00:55:51.135255Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.This-Is-Hellgate/secondeye-mcp-unblock",
+    "server_version": "1.2.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-01T00:55:51.135255Z"
+  },
+  "title": "MCP 401 Auth Fix | github PAT wiring | x402",
+  "type": "mcp_server",
+  "version": "1.2.4"
+}

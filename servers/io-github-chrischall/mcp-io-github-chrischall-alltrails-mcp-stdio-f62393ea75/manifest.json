@@ -1,0 +1,69 @@
+{
+  "description": "Unofficial AllTrails MCP for Claude \u2014 search trails, get details, reviews, photos, saved lists",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:05+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-chrischall-alltrails-mcp.stdio.f62393ea75",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/chrischall/alltrails-mcp",
+    "homepage": "https://github.com/chrischall/alltrails-mcp",
+    "repository": "https://github.com/chrischall/alltrails-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "alltrails-mcp@0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.chrischall/alltrails-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "A Cookie header from a signed-in alltrails.com browser session (must include the datadome cookie). Optional \u2014 if omitted, the server falls back to the fetchproxy browser extension (requires being signed in to alltrails.com).",
+          "format": "string",
+          "isSecret": true,
+          "name": "ALLTRAILS_COOKIE"
+        },
+        {
+          "description": "Optional numeric AllTrails user id for the per-user tools (saved lists, completed trails, feed). If omitted, those tools resolve the signed-in user via /api/alltrails/me.",
+          "format": "string",
+          "name": "ALLTRAILS_USER_ID"
+        },
+        {
+          "description": "Optional override for the embedded x-at-key app key, in case AllTrails rotates it. Normally unnecessary.",
+          "format": "string",
+          "name": "ALLTRAILS_API_KEY"
+        }
+      ],
+      "identifier": "alltrails-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f62393ea75",
+    "published_at": "2026-07-02T21:43:21.59288Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.chrischall/alltrails-mcp",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-02T21:43:21.59288Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

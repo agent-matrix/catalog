@@ -1,0 +1,68 @@
+{
+  "description": "MCP server for Brazilian e-invoicing: NF-e and NFC-e (modelo 55/65), schema 4.00, SEFAZ.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:06+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cmendezs-mcp-nfe-br.stdio.672b7050f2",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cmendezs/mcp-nfe-br",
+    "homepage": "https://github.com/cmendezs/mcp-nfe-br",
+    "repository": "https://github.com/cmendezs/mcp-nfe-br"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-nfe-br==0.6.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cmendezs/mcp-nfe-br",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Set to '1' to disable write-side tools (br__submit_nfe, br__distribute_dfe, br__submit_nfse, br__cancel_nfse). Read-only mode for safe exploration.",
+          "format": "string",
+          "name": "BR_READ_ONLY"
+        },
+        {
+          "description": "Set to '1' to disable the CT-e write-side tool (br__submit_cte). Kept distinct from BR_READ_ONLY so NF-e and CT-e can be gated independently.",
+          "format": "string",
+          "name": "BR_CTE_READ_ONLY"
+        },
+        {
+          "description": "Logging level: DEBUG, INFO (default), WARNING, or ERROR",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "mcp-nfe-br",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.6.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "672b7050f2",
+    "published_at": "2026-07-03T13:34:45.449539Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cmendezs/mcp-nfe-br",
+    "server_version": "0.6.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-03T13:34:45.449539Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.6.2"
+}

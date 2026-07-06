@@ -1,0 +1,90 @@
+{
+  "description": "Find & fetch research datasets across 12 archives, omics registries, and literature sources.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-musharna-data-aggregator-mcp.stdio.db22262fd1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/musharna/data-aggregator-mcp",
+    "homepage": "https://github.com/musharna/data-aggregator-mcp",
+    "repository": "https://github.com/musharna/data-aggregator-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "data-aggregator-mcp==0.41.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.musharna/data-aggregator-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional NCBI E-utilities API key; raises the rate limit 3->10 req/s for omics, literature, and taxonomy lookups.",
+          "isSecret": true,
+          "name": "NCBI_API_KEY"
+        },
+        {
+          "description": "Base URL of an OpenAI-compatible /chat/completions endpoint; enables search(understand=true) and search(multi_query=true).",
+          "name": "LLM_API_BASE"
+        },
+        {
+          "description": "Bearer token for the LLM endpoint (LLM_API_BASE); omit for keyless local servers.",
+          "isSecret": true,
+          "name": "LLM_API_KEY"
+        },
+        {
+          "description": "Model name passed to the LLM endpoint (default: gpt-4o-mini); set to whatever your endpoint serves.",
+          "name": "LLM_MODEL"
+        },
+        {
+          "description": "Base URL of an OpenAI-compatible /embeddings endpoint; enables search(rank=semantic) re-ranking.",
+          "name": "EMBEDDING_API_BASE"
+        },
+        {
+          "description": "Bearer token for the embeddings endpoint (EMBEDDING_API_BASE); omit for keyless local servers.",
+          "isSecret": true,
+          "name": "EMBEDDING_API_KEY"
+        },
+        {
+          "description": "Model name passed to the embeddings endpoint (default: text-embedding-3-small).",
+          "name": "EMBEDDING_MODEL"
+        },
+        {
+          "description": "Email address sent to the Unpaywall API; required to enable the Unpaywall PDF fallback leg of literature full-text retrieval.",
+          "name": "UNPAYWALL_EMAIL"
+        }
+      ],
+      "identifier": "data-aggregator-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.41.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "db22262fd1",
+    "published_at": "2026-07-03T21:39:13.414297Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.musharna/data-aggregator-mcp",
+    "server_version": "0.41.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-03T21:39:13.414297Z"
+  },
+  "title": "Data Aggregator",
+  "type": "mcp_server",
+  "version": "0.41.1"
+}

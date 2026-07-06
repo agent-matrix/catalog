@@ -1,0 +1,90 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/perseus-computing-llc/perseus-vault:2.17.4"
+      }
+    }
+  ],
+  "description": "Local-first MCP memory server: SQLite, FTS5 and vector search, AES-256-GCM. 55 tools, no cloud.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:46:56+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/Perseus-Computing-LLC/perseus-vault",
+  "id": "tool.io-github-perseus-computing-llc-perseus-vault.b867bef333",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Perseus-Computing-LLC/perseus-vault",
+    "homepage": "https://github.com/Perseus-Computing-LLC/perseus-vault",
+    "repository": "https://github.com/Perseus-Computing-LLC/perseus-vault"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Local-first MCP memory server: SQLite, FTS5 and vector search, AES-256-GCM. 55 tools, no cloud.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.Perseus-Computing-LLC/perseus-vault",
+      "request_type": "POST",
+      "url": "https://github.com/Perseus-Computing-LLC/perseus-vault"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "name": "-i",
+            "type": "named"
+          },
+          {
+            "name": "--rm",
+            "type": "named"
+          },
+          {
+            "name": "-v",
+            "type": "named",
+            "value": "mimir-data:/data"
+          },
+          "ghcr.io/perseus-computing-llc/perseus-vault:2.17.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Perseus-Computing-LLC/perseus-vault",
+  "provenance": {
+    "identity_key": "ec8f935df8",
+    "promoted_from": "mcp.io-github-Perseus-Computing-LLC-perseus-vault.stdio.ec8f935df8",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Perseus-Computing-LLC/perseus-vault",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-Perseus-Computing-LLC-perseus-vault.stdio.ec8f935df8",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/Perseus-Computing-LLC/perseus-vault",
+  "summary": "Local-first MCP memory server: SQLite, FTS5 and vector search, AES-256-GCM. 55 tools, no cloud.",
+  "tags": [
+    "first",
+    "fts5",
+    "local",
+    "memory",
+    "perseus",
+    "sqlite",
+    "vault",
+    "vector"
+  ],
+  "title": "Perseus Vault (formerly Mimir/Mneme), persistent memory engine for AI agents",
+  "type": "tool",
+  "version": "2.17.4"
+}

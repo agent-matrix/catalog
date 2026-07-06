@@ -1,0 +1,80 @@
+{
+  "description": "MCP server for VK Ads (VK \u0420\u0435\u043a\u043b\u0430\u043c\u0430) API: manage ad plans, ad groups, banners, and statistics.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:02+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-askads-mcp-vk-ads.stdio.415bc6530d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/askads/mcp-vk-ads",
+    "homepage": "https://github.com/askads/mcp-vk-ads",
+    "repository": "https://github.com/askads/mcp-vk-ads"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-vk-ads@1.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.askads/mcp-vk-ads",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "VK Ads OAuth2 access token (Bearer) \u2014 full account access. Treat it as a secret.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "VK_ADS_TOKEN"
+        },
+        {
+          "default": "ru",
+          "description": "Language for API responses (Accept-Language header), e.g. ru, en.",
+          "name": "VK_ADS_LANG"
+        },
+        {
+          "default": "60000",
+          "description": "Per-request timeout in milliseconds.",
+          "name": "VK_ADS_TIMEOUT_MS"
+        },
+        {
+          "default": "3",
+          "description": "Max retries for transient errors (429 rate limit, 5xx on GET, network errors on GET).",
+          "name": "VK_ADS_MAX_RETRIES"
+        },
+        {
+          "default": "https://ads.vk.com/api",
+          "description": "API root without a version segment. Defaults to https://ads.vk.com/api.",
+          "name": "VK_ADS_API_BASE"
+        }
+      ],
+      "identifier": "mcp-vk-ads",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "415bc6530d",
+    "published_at": "2026-07-02T06:15:57.269113Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.askads/mcp-vk-ads",
+    "server_version": "1.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-02T06:15:57.269113Z"
+  },
+  "title": "VK Ads MCP",
+  "type": "mcp_server",
+  "version": "1.2.0"
+}

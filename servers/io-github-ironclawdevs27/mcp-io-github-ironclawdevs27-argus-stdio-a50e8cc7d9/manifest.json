@@ -1,0 +1,81 @@
+{
+  "description": "Automated web QA via Chrome DevTools MCP \u2014 a11y, security, visual, env diff, CI; Aegis redaction.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ironclawdevs27-argus.stdio.a50e8cc7d9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ironclawdevs27/Argus",
+    "homepage": "https://github.com/ironclawdevs27/Argus",
+    "repository": "https://github.com/ironclawdevs27/Argus"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "argusqa-os@9.9.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ironclawdevs27/argus",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the dev environment to audit (e.g. http://localhost:3000)",
+          "format": "string",
+          "isRequired": true,
+          "name": "TARGET_DEV_URL"
+        },
+        {
+          "description": "Base URL of the staging environment \u2014 used by argus_compare for dev vs staging diff. Omit to use CSS analysis mode.",
+          "format": "string",
+          "name": "TARGET_STAGING_URL"
+        },
+        {
+          "description": "Slack bot token (xoxb-...) for posting reports. Omit to generate a local report.html instead.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SLACK_BOT_TOKEN"
+        },
+        {
+          "description": "Figma personal access token \u2014 enables argus_design_audit to fetch design specs from a Figma frame and compare them against the live DOM (13 fidelity finding types). Omit to skip design fidelity audits.",
+          "format": "string",
+          "isSecret": true,
+          "name": "FIGMA_API_TOKEN"
+        },
+        {
+          "description": "Aegis confidentiality egress boundary. Default ON: every tool response is redacted so secrets, PII, and exploit detail never cross into the calling agent's context (the local on-disk report keeps full fidelity). Set to 0 for byte-identical pre-Aegis output.",
+          "format": "string",
+          "name": "ARGUS_REDACT_SENSITIVE"
+        }
+      ],
+      "identifier": "argusqa-os",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "9.9.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a50e8cc7d9",
+    "published_at": "2026-06-30T21:00:38.13946Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ironclawdevs27/argus",
+    "server_version": "9.9.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-30T21:00:38.13946Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "9.9.0"
+}

@@ -1,0 +1,74 @@
+{
+  "description": "MCP server proxy for SQLBot Text-to-SQL queries and report generation.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wenRou21-sqlbot-mcp-proxy.stdio.f1fc78e551",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wenRou21/sqlbot-mcp-proxy",
+    "homepage": "https://github.com/wenRou21/sqlbot-mcp-proxy",
+    "repository": "https://github.com/wenRou21/sqlbot-mcp-proxy"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wenrou21/sqlbot-mcp-proxy:0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wenRou21/sqlbot-mcp-proxy",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the SQLBot service, for example http://127.0.0.1:8000.",
+          "format": "string",
+          "name": "SQLBOT_MCP_PROXY_BASE_URL"
+        },
+        {
+          "description": "SQLBot API access key. If omitted, the proxy can try FEISHU_ASK_ACCESS_KEY or read from the configured Docker container.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SQLBOT_MCP_PROXY_ACCESS_KEY"
+        },
+        {
+          "description": "SQLBot API secret key. If omitted, the proxy can try FEISHU_ASK_SECRET_KEY or read from the configured Docker container.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SQLBOT_MCP_PROXY_SECRET_KEY"
+        },
+        {
+          "description": "Optional Docker container name used when reading FEISHU_ASK_ACCESS_KEY and FEISHU_ASK_SECRET_KEY from a running SQLBot container.",
+          "format": "string",
+          "name": "SQLBOT_MCP_PROXY_DOCKER_CONTAINER"
+        }
+      ],
+      "identifier": "ghcr.io/wenrou21/sqlbot-mcp-proxy:0.1.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "f1fc78e551",
+    "published_at": "2026-06-29T13:06:32.763877Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wenRou21/sqlbot-mcp-proxy",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-06-29T13:06:32.763877Z"
+  },
+  "title": "SQLBot MCP Proxy",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

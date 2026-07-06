@@ -1,0 +1,76 @@
+{
+  "description": "Sign and verify W3C Verifiable Credentials so AI agents can cryptographically authorize actions.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:32+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-vouch-protocol-vouch-mcp.stdio.910ab2c272",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/vouch-protocol/vouch",
+    "homepage": "https://github.com/vouch-protocol/vouch",
+    "repository": "https://github.com/vouch-protocol/vouch"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "vouch-mcp==2.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.vouch-protocol/vouch-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "The agent's signing key as a JWK JSON string, held only in this server process.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "VOUCH_PRIVATE_KEY"
+        },
+        {
+          "description": "The agent's DID, e.g. did:web:agent.example.com",
+          "isRequired": true,
+          "name": "VOUCH_DID"
+        },
+        {
+          "description": "Transport to serve: 'stdio' (default), 'http' (Streamable HTTP), or 'sse'.",
+          "name": "VOUCH_MCP_TRANSPORT"
+        },
+        {
+          "description": "Bind host when VOUCH_MCP_TRANSPORT=http (default 127.0.0.1).",
+          "name": "VOUCH_MCP_HOST"
+        },
+        {
+          "description": "Bind port when VOUCH_MCP_TRANSPORT=http (default 8080).",
+          "name": "VOUCH_MCP_PORT"
+        }
+      ],
+      "identifier": "vouch-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "910ab2c272",
+    "published_at": "2026-07-05T12:34:31.926556Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.vouch-protocol/vouch-mcp",
+    "server_version": "2.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-05T12:34:31.926556Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "2.0.1"
+}

@@ -1,0 +1,120 @@
+{
+  "description": "MCP server for SAP ABAP ADT: repository analysis and CRUD for RAP and classic ABAP",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:13+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-fr0ster-mcp-abap-adt.stdio.e9946ca505",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/fr0ster/mcp-abap-adt",
+    "homepage": "https://github.com/fr0ster/mcp-abap-adt",
+    "repository": "https://github.com/fr0ster/mcp-abap-adt"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@mcp-abap-adt/core@8.6.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.fr0ster/mcp-abap-adt",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the ABAP system (e.g. https://my-system.example.com or a BTP ABAP service URL). Required to connect; without it the server starts in tool-inspection-only mode.",
+          "format": "string",
+          "isRequired": true,
+          "name": "SAP_URL",
+          "placeholder": "https://your-abap-system.example.com"
+        },
+        {
+          "choices": [
+            "xsuaa",
+            "basic"
+          ],
+          "default": "xsuaa",
+          "description": "Authentication method: 'xsuaa' for JWT/OAuth2 (BTP ABAP Cloud) or 'basic' for username/password (on-prem).",
+          "format": "string",
+          "name": "SAP_AUTH_TYPE"
+        },
+        {
+          "choices": [
+            "cloud",
+            "onprem",
+            "legacy"
+          ],
+          "default": "cloud",
+          "description": "System type, controls which tools are available (e.g. Programs are onprem-only).",
+          "format": "string",
+          "name": "SAP_SYSTEM_TYPE"
+        },
+        {
+          "description": "ABAP client/mandant number (e.g. 100). Optional for BTP ABAP Cloud.",
+          "format": "string",
+          "name": "SAP_CLIENT",
+          "placeholder": "100"
+        },
+        {
+          "description": "JWT bearer token for SAP_AUTH_TYPE=xsuaa. Provide this (or the SAP_UAA_* refresh-token set) for JWT auth.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SAP_JWT_TOKEN"
+        },
+        {
+          "description": "Username for SAP_AUTH_TYPE=basic (on-prem).",
+          "format": "string",
+          "name": "SAP_USERNAME"
+        },
+        {
+          "description": "Password for SAP_AUTH_TYPE=basic (on-prem).",
+          "format": "string",
+          "isSecret": true,
+          "name": "SAP_PASSWORD"
+        },
+        {
+          "default": "en",
+          "description": "Logon language (ISO code, e.g. 'en', 'de').",
+          "format": "string",
+          "name": "SAP_LANGUAGE"
+        },
+        {
+          "description": "System context for on-prem create/update operations (e.g. DEV).",
+          "format": "string",
+          "name": "SAP_MASTER_SYSTEM"
+        },
+        {
+          "description": "Responsible user for on-prem create/update operations.",
+          "format": "string",
+          "name": "SAP_RESPONSIBLE"
+        }
+      ],
+      "identifier": "@mcp-abap-adt/core",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "8.6.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e9946ca505",
+    "published_at": "2026-07-05T14:26:19.474481Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.fr0ster/mcp-abap-adt",
+    "server_version": "8.6.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-05T14:26:19.474481Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "8.6.1"
+}

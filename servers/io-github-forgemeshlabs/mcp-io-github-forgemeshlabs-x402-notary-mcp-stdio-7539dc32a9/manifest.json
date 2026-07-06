@@ -1,0 +1,75 @@
+{
+  "description": "Cryptographic receipts for AI outputs on Base or Solana via x402.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:13+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-forgemeshlabs-x402-notary-mcp.stdio.7539dc32a9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/forgemeshlabs/x402-notary-mcp",
+    "homepage": "https://github.com/forgemeshlabs/x402-notary-mcp",
+    "repository": "https://github.com/forgemeshlabs/x402-notary-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@forgemeshlabs/x402-notary-mcp@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.forgemeshlabs/x402-notary-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Dedicated low-balance Base wallet private key for x402 USDC micropayments. Optional \u2014 verification tools work without it. Never use your primary wallet.",
+          "format": "string",
+          "isSecret": true,
+          "name": "WALLET_PRIVATE_KEY"
+        },
+        {
+          "description": "Payment rail: base or solana. Defaults to base, or solana when NOTARY_BASE_URL contains notary-solana.",
+          "format": "string",
+          "name": "NOTARY_RAIL"
+        },
+        {
+          "description": "Notary API origin. Use https://notary.forgemesh.io for Base or https://notary-solana.forgemesh.io for Solana.",
+          "format": "string",
+          "name": "NOTARY_BASE_URL"
+        },
+        {
+          "description": "Dedicated low-balance Solana keypair for x402 USDC micropayments. Supports JSON byte array, base58, base64, or hex. Optional \u2014 verification tools work without it.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SOLANA_PRIVATE_KEY"
+        }
+      ],
+      "identifier": "@forgemeshlabs/x402-notary-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7539dc32a9",
+    "published_at": "2026-07-04T03:25:31.515282Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.forgemeshlabs/x402-notary-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-04T03:25:31.515282Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

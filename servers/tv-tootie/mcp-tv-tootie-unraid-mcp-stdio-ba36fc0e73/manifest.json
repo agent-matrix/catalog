@@ -1,0 +1,66 @@
+{
+  "description": "MCP server for Unraid API \u2014 provides tools to interact with an Unraid server's GraphQL API.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:36+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.tv-tootie-unraid-mcp.stdio.ba36fc0e73",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jmagar/unraid-mcp",
+    "homepage": "https://github.com/jmagar/unraid-mcp",
+    "repository": "https://github.com/jmagar/unraid-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "unraid-mcp==2.3.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "tv.tootie/unraid-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of your Unraid server, e.g. http://192.168.1.100.",
+          "isRequired": true,
+          "name": "UNRAID_API_URL"
+        },
+        {
+          "description": "Unraid API key for authentication.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "UNRAID_API_KEY"
+        }
+      ],
+      "identifier": "unraid-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.3.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ba36fc0e73",
+    "published_at": "2026-07-02T04:27:13.578385Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "tv.tootie/unraid-mcp",
+    "server_version": "2.3.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-02T04:27:13.578385Z"
+  },
+  "title": "Unraid MCP",
+  "type": "mcp_server",
+  "version": "2.3.2"
+}

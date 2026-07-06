@@ -1,0 +1,71 @@
+{
+  "description": "Local-first crypto perp/spot execution (TWAP/maker) across 11 venues; keys stay on your machine.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:36+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.services-quantech-blockfill.stdio.7e57d9ce1d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://gitlab.com/quantech-services-group/blockfill-agent-execution",
+    "homepage": "https://gitlab.com/quantech-services-group/blockfill-agent-execution",
+    "repository": "https://gitlab.com/quantech-services-group/blockfill-agent-execution"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "name": "--from",
+            "type": "named",
+            "value": "blockfill[mcp]"
+          },
+          "blockfill==1.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "services.quantech/blockfill",
+  "packages": [
+    {
+      "identifier": "blockfill",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "blockfill-mcp",
+          "valueHint": "entry_point"
+        }
+      ],
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "name": "--from",
+          "type": "named",
+          "value": "blockfill[mcp]"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7e57d9ce1d",
+    "published_at": "2026-07-02T04:04:20.327374Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "services.quantech/blockfill",
+    "server_version": "1.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-02T04:04:20.327374Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.2.1"
+}

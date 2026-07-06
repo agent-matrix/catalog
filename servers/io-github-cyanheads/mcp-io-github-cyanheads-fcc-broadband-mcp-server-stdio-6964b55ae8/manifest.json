@@ -1,0 +1,123 @@
+{
+  "description": "FCC broadband availability, coverage analysis, and digital divide data for US geographies.",
+  "harvest": {
+    "last_seen_at": "2026-07-06T06:47:07+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cyanheads-fcc-broadband-mcp-server.stdio.6964b55ae8",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cyanheads/fcc-broadband-mcp-server",
+    "homepage": "https://github.com/cyanheads/fcc-broadband-mcp-server",
+    "repository": "https://github.com/cyanheads/fcc-broadband-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "node",
+          "@cyanheads/fcc-broadband-mcp-server@0.1.11"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cyanheads/fcc-broadband-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "FCC account email for BDC API. Required for fcc_list_downloads and BDC filing periods.",
+          "format": "string",
+          "name": "FCC_BDC_USERNAME"
+        },
+        {
+          "description": "API token hash from broadbandmap.fcc.gov Manage API Access page.",
+          "format": "string",
+          "name": "FCC_BDC_HASH_VALUE"
+        },
+        {
+          "description": "Socrata app token for FCC Open Data. Increases rate limits; not required.",
+          "format": "string",
+          "name": "FCC_OPENDATA_APP_TOKEN"
+        },
+        {
+          "default": "false",
+          "description": "Serve Form 477 queries from a local SQLite mirror when its coverage allows (bootstrap with `bun run mirror:init`). Default: false.",
+          "format": "string",
+          "name": "FCC_MIRROR_ENABLED"
+        },
+        {
+          "default": "data/fcc-mirror",
+          "description": "Directory holding the Form 477 mirror SQLite files.",
+          "format": "string",
+          "name": "FCC_MIRROR_PATH"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "The hostname for the HTTP server.",
+          "format": "string",
+          "name": "MCP_HTTP_HOST"
+        },
+        {
+          "default": "3010",
+          "description": "The port to run the HTTP server on.",
+          "format": "string",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "default": "/mcp",
+          "description": "The endpoint path for the MCP server.",
+          "format": "string",
+          "name": "MCP_HTTP_ENDPOINT_PATH"
+        },
+        {
+          "default": "none",
+          "description": "Authentication mode to use: 'none', 'jwt', or 'oauth'.",
+          "format": "string",
+          "name": "MCP_AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Sets the minimum log level for output (e.g., 'debug', 'info', 'warn').",
+          "format": "string",
+          "name": "MCP_LOG_LEVEL"
+        }
+      ],
+      "identifier": "@cyanheads/fcc-broadband-mcp-server",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "start:http"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "node",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3010/mcp"
+      },
+      "version": "0.1.11"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6964b55ae8",
+    "published_at": "2026-07-02T14:01:11.470733Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cyanheads/fcc-broadband-mcp-server",
+    "server_version": "0.1.11",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-02T14:01:11.470733Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.11"
+}
