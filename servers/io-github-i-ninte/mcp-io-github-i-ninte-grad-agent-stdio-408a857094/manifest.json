@@ -1,0 +1,116 @@
+{
+  "description": "Autonomous MCP agent for grad school applications: prof discovery, cold emails, SOP, tracking.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-i-ninte-grad-agent.stdio.408a857094",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/i-ninte/grad-agent",
+    "homepage": "https://github.com/i-ninte/grad-agent",
+    "repository": "https://github.com/i-ninte/grad-agent"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "isRequired": true,
+            "type": "positional",
+            "value": "server"
+          },
+          "grad-agent==0.1.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.i-ninte/grad-agent",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Anthropic API key used by Claude Haiku for hook synthesis and verification.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        },
+        {
+          "default": "smtp.gmail.com",
+          "description": "SMTP host for the review mailer.",
+          "isRequired": true,
+          "name": "SMTP_SERVER"
+        },
+        {
+          "default": "587",
+          "description": "SMTP port.",
+          "isRequired": true,
+          "name": "SMTP_PORT"
+        },
+        {
+          "description": "SMTP username; used as From address by default.",
+          "isRequired": true,
+          "name": "SMTP_USERNAME"
+        },
+        {
+          "description": "SMTP password. Gmail App Password recommended.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SMTP_PASSWORD"
+        },
+        {
+          "description": "Envelope From address for drafts emailed to the user's review inbox.",
+          "isRequired": true,
+          "name": "SMTP_FROM"
+        },
+        {
+          "description": "Optional. Personal access token used to enumerate the user's public and private GitHub repos during catalog sync.",
+          "isSecret": true,
+          "name": "GITHUB_TOKEN"
+        },
+        {
+          "description": "Optional. HuggingFace token used to enumerate the user's published models and datasets during catalog sync.",
+          "isSecret": true,
+          "name": "HF_TOKEN"
+        },
+        {
+          "default": "~/.grad-agent",
+          "description": "Optional. Override the default ~/.grad-agent/ location for profile, programs, secrets, and data.",
+          "name": "GRAD_AGENT_HOME"
+        }
+      ],
+      "identifier": "grad-agent",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "isRequired": true,
+          "type": "positional",
+          "value": "server"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "408a857094",
+    "published_at": "2026-07-12T18:44:05.437649Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.i-ninte/grad-agent",
+    "server_version": "0.1.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-12T18:44:05.437649Z"
+  },
+  "title": "grad-agent",
+  "type": "mcp_server",
+  "version": "0.1.3"
+}

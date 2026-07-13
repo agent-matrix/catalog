@@ -1,0 +1,89 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/nethinwei/sql-mcp-server:0.1.3-rc.3"
+      }
+    }
+  ],
+  "description": "Controlled SQL access gateway with policy, cost limits, tenant isolation, and safe tools.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:49+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/nethinwei/sql-mcp-server",
+  "id": "tool.io-github-nethinwei-sql-mcp-server.25dd0f25ed",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nethinwei/sql-mcp-server",
+    "homepage": "https://github.com/nethinwei/sql-mcp-server",
+    "repository": "https://github.com/nethinwei/sql-mcp-server"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Controlled SQL access gateway with policy, cost limits, tenant isolation, and safe tools.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.nethinwei/sql-mcp-server",
+      "request_type": "POST",
+      "url": "https://github.com/nethinwei/sql-mcp-server"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "isRequired": true,
+            "name": "--mount",
+            "type": "named",
+            "value": "type=bind,src={config_path},dst=/config/config.yaml,readonly",
+            "variables": {
+              "config_path": {
+                "description": "Absolute path to the SQL MCP Server YAML configuration",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          "ghcr.io/nethinwei/sql-mcp-server:0.1.3-rc.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nethinwei/sql-mcp-server",
+  "provenance": {
+    "identity_key": "c5475ff04b",
+    "promoted_from": "mcp.io-github-nethinwei-sql-mcp-server.stdio.c5475ff04b",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nethinwei/sql-mcp-server",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-nethinwei-sql-mcp-server.stdio.c5475ff04b",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/nethinwei/sql-mcp-server",
+  "summary": "Controlled SQL access gateway with policy, cost limits, tenant isolation, and safe tools.",
+  "tags": [
+    "access",
+    "controlled",
+    "cost",
+    "gateway",
+    "limits",
+    "policy",
+    "sql"
+  ],
+  "title": "SQL MCP Server",
+  "type": "tool",
+  "version": "0.1.3-rc.3"
+}

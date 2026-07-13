@@ -1,0 +1,96 @@
+{
+  "description": "Security-first MySQL MCP server: AST-validated SQL (fail-closed), default-deny whitelist, audit.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:25+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Kurok1-mcp-server-mysql.stdio.9dab666118",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Kurok1/mcp-server-mysql",
+    "homepage": "https://github.com/Kurok1/mcp-server-mysql",
+    "repository": "https://github.com/Kurok1/mcp-server-mysql"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "isRequired": true,
+            "name": "-v",
+            "type": "named",
+            "value": "{config_dir}:/data",
+            "variables": {
+              "config_dir": {
+                "default": "~/.mcp-server-mysql",
+                "description": "Host directory containing config.yaml (see config.example.yaml in the repository)",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          "ghcr.io/kurok1/mcp-server-mysql:1.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Kurok1/mcp-server-mysql",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "MySQL password, referenced from config.yaml as ${MYSQL_MCP_PASSWORD}",
+          "format": "string",
+          "isSecret": true,
+          "name": "MYSQL_MCP_PASSWORD"
+        }
+      ],
+      "identifier": "ghcr.io/kurok1/mcp-server-mysql:1.2.1",
+      "packageArguments": [
+        {
+          "name": "--config",
+          "type": "named",
+          "value": "/data/config.yaml"
+        }
+      ],
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "isRequired": true,
+          "name": "-v",
+          "type": "named",
+          "value": "{config_dir}:/data",
+          "variables": {
+            "config_dir": {
+              "default": "~/.mcp-server-mysql",
+              "description": "Host directory containing config.yaml (see config.example.yaml in the repository)",
+              "format": "filepath",
+              "isRequired": true
+            }
+          }
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "9dab666118",
+    "published_at": "2026-07-10T14:55:06.391453Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Kurok1/mcp-server-mysql",
+    "server_version": "1.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-10T14:55:06.391453Z"
+  },
+  "title": "MySQL (security-first)",
+  "type": "mcp_server",
+  "version": "1.2.1"
+}

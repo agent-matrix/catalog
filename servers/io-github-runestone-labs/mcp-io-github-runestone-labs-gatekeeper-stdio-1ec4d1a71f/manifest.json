@@ -1,0 +1,71 @@
+{
+  "description": "Run MCP tool calls through Runestone Gatekeeper \u2014 policy enforcement, human approval, audit.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:27+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Runestone-Labs-gatekeeper.stdio.1ec4d1a71f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Runestone-Labs/gatekeeper",
+    "homepage": "https://github.com/Runestone-Labs/gatekeeper",
+    "repository": "https://github.com/Runestone-Labs/gatekeeper"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@runestone-labs/gatekeeper-mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Runestone-Labs/gatekeeper",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Policy role this server presents to Gatekeeper for every call. Required.",
+          "isRequired": true,
+          "name": "GATEKEEPER_ROLE"
+        },
+        {
+          "description": "Base URL of the Gatekeeper server. Default http://127.0.0.1:3847.",
+          "name": "GATEKEEPER_URL"
+        },
+        {
+          "description": "Agent name recorded in Gatekeeper audit logs. Default mcp-client.",
+          "name": "GATEKEEPER_AGENT_NAME"
+        },
+        {
+          "description": "Optional run-correlation id so calls count toward one per-run budget.",
+          "name": "GATEKEEPER_RUN_ID"
+        }
+      ],
+      "identifier": "@runestone-labs/gatekeeper-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1ec4d1a71f",
+    "published_at": "2026-07-08T04:03:51.439421Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Runestone-Labs/gatekeeper",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-08T04:03:51.439421Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

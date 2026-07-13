@@ -1,0 +1,88 @@
+{
+  "description": "MCP server for self-hosted Laserfiche repositories \u2014 search and read documents from Claude.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:28+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-SamuelSHernandez-laserfiche-mcp.stdio.df9cd0c8d0",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/SamuelSHernandez/laserfiche-mcp",
+    "homepage": "https://github.com/SamuelSHernandez/laserfiche-mcp",
+    "repository": "https://github.com/SamuelSHernandez/laserfiche-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "laserfiche-mcp==2.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.SamuelSHernandez/laserfiche-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of your Laserfiche Repository API Server, e.g. https://lf.example.com/LFRepositoryAPI",
+          "format": "string",
+          "isRequired": true,
+          "name": "LF_REPO_API_URL"
+        },
+        {
+          "description": "Repository name or ID to operate against.",
+          "format": "string",
+          "isRequired": true,
+          "name": "LF_REPOSITORY_ID"
+        },
+        {
+          "description": "Service-account username with read access to the repository.",
+          "format": "string",
+          "isRequired": true,
+          "name": "LF_USERNAME"
+        },
+        {
+          "description": "Service-account password.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "LF_PASSWORD"
+        },
+        {
+          "description": "Repository API version: v1 (default) or v2.",
+          "format": "string",
+          "name": "LF_API_VERSION"
+        },
+        {
+          "description": "Read-only mode. Defaults to true; set false to register the write tools.",
+          "format": "string",
+          "name": "LF_READ_ONLY"
+        }
+      ],
+      "identifier": "laserfiche-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "df9cd0c8d0",
+    "published_at": "2026-07-09T07:44:34.441879Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.SamuelSHernandez/laserfiche-mcp",
+    "server_version": "2.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-09T07:44:34.441879Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "2.2.0"
+}

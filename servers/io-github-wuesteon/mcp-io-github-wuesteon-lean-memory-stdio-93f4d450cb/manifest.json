@@ -1,0 +1,84 @@
+{
+  "description": "Embedded, local-first agent memory: one SQLite file per namespace, no server, no cloud.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:29+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Wuesteon-lean-memory.stdio.93f4d450cb",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Wuesteon/lean-memory",
+    "homepage": "https://github.com/Wuesteon/lean-memory",
+    "repository": "https://github.com/Wuesteon/lean-memory"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "Install the lean-memory package, then run its lean-memory-mcp console-script entry point (the package name and script name differ, so uvx needs --from).",
+            "isRequired": true,
+            "name": "--from",
+            "type": "named",
+            "value": "lean-memory"
+          },
+          "lean-memory==0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Wuesteon/lean-memory",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "~/.lean_memory",
+          "description": "Directory for per-namespace SQLite memory files. Defaults to ~/.lean_memory when unset.",
+          "name": "LM_DATA_ROOT"
+        }
+      ],
+      "identifier": "lean-memory",
+      "packageArguments": [
+        {
+          "description": "Console script entry point that starts the stdio MCP server.",
+          "isRequired": true,
+          "type": "positional",
+          "value": "lean-memory-mcp"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "Install the lean-memory package, then run its lean-memory-mcp console-script entry point (the package name and script name differ, so uvx needs --from).",
+          "isRequired": true,
+          "name": "--from",
+          "type": "named",
+          "value": "lean-memory"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "93f4d450cb",
+    "published_at": "2026-07-12T03:54:14.554109Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Wuesteon/lean-memory",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-12T03:54:14.554109Z"
+  },
+  "title": "lean-memory",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

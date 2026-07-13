@@ -1,0 +1,109 @@
+{
+  "description": "Search Obsidian vaults with hybrid full-text, fuzzy, semantic, and graph retrieval.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-flowing-abyss-obsidian-hybrid-search.stdio.015ef86af0",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/flowing-abyss/obsidian-hybrid-search",
+    "homepage": "https://github.com/flowing-abyss/obsidian-hybrid-search",
+    "repository": "https://github.com/flowing-abyss/obsidian-hybrid-search"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "obsidian-hybrid-search@0.13.19"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.flowing-abyss/obsidian-hybrid-search",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Absolute path to the Obsidian vault to index and search.",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "OBSIDIAN_VAULT_PATH"
+        },
+        {
+          "description": "Optional prefix for MCP tool names when configuring multiple vaults.",
+          "name": "OBSIDIAN_PREFIX"
+        },
+        {
+          "default": ".obsidian/**,templates/**,*.canvas",
+          "description": "Comma-separated glob patterns to exclude from indexing.",
+          "name": "OBSIDIAN_IGNORE_PATTERNS"
+        },
+        {
+          "default": "true",
+          "description": "Read root and nested .gitignore files when indexing; set to false, 0, or no to disable.",
+          "name": "OBSIDIAN_RESPECT_GITIGNORE"
+        },
+        {
+          "description": "Comma-separated patterns to re-include notes ignored only by .gitignore.",
+          "name": "OBSIDIAN_INCLUDE_PATTERNS"
+        },
+        {
+          "description": "Optional API key for OpenAI-compatible remote embeddings; omit to use local embeddings.",
+          "isSecret": true,
+          "name": "OPENAI_API_KEY"
+        },
+        {
+          "default": "https://api.openai.com/v1",
+          "description": "Optional OpenAI-compatible API base URL for OpenRouter, Ollama, LM Studio, or similar providers.",
+          "name": "OPENAI_BASE_URL"
+        },
+        {
+          "default": "text-embedding-3-small",
+          "description": "Remote embedding model name when using an OpenAI-compatible API.",
+          "name": "OPENAI_EMBEDDING_MODEL"
+        },
+        {
+          "default": "Xenova/multilingual-e5-small",
+          "description": "Local embedding model used when no remote embedding API is configured.",
+          "name": "LOCAL_EMBEDDING_MODEL"
+        },
+        {
+          "default": "onnx-community/bge-reranker-v2-m3-ONNX",
+          "description": "Optional ONNX cross-encoder reranker model used when reranking is requested.",
+          "name": "RERANKER_MODEL"
+        }
+      ],
+      "identifier": "obsidian-hybrid-search",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.13.19"
+    }
+  ],
+  "provenance": {
+    "identity_key": "015ef86af0",
+    "published_at": "2026-07-11T12:00:20.992861Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.flowing-abyss/obsidian-hybrid-search",
+    "server_version": "0.13.19",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-11T12:00:20.992861Z"
+  },
+  "title": "Obsidian Hybrid Search",
+  "type": "mcp_server",
+  "version": "0.13.19"
+}

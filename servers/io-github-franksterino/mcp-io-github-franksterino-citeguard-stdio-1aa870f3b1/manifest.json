@@ -1,0 +1,65 @@
+{
+  "description": "Verify citations in AI text: fetches each cited source, returns verdicts with evidence quotes.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:24+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Franksterino-citeguard.stdio.1aa870f3b1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Franksterino/citeguard",
+    "homepage": "https://github.com/Franksterino/citeguard",
+    "repository": "https://github.com/Franksterino/citeguard"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "citeguard@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Franksterino/citeguard",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "LLM judge preset: qwen | openai | anthropic",
+          "format": "string",
+          "name": "CITEGUARD_JUDGE_PRESET"
+        },
+        {
+          "description": "API key for the judge LLM (required for verify_claims/check_document; check_links works without it)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CITEGUARD_JUDGE_KEY"
+        }
+      ],
+      "identifier": "citeguard",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1aa870f3b1",
+    "published_at": "2026-07-06T18:46:42.156499Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Franksterino/citeguard",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-06T18:46:42.156499Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

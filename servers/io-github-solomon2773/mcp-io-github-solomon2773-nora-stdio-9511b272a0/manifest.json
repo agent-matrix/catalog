@@ -1,0 +1,70 @@
+{
+  "description": "Operate self-hosted OpenClaw and Hermes agent fleets on Docker or Kubernetes from MCP clients.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-solomon2773-nora.stdio.9511b272a0",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/solomon2773/nora",
+    "homepage": "https://github.com/solomon2773/nora",
+    "repository": "https://github.com/solomon2773/nora"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@noraai/mcp-server@0.1.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.solomon2773/nora",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of your Nora backend API (e.g. https://nora.example.com). Falls back to NORA_HOST, then the Nora CLI config at ~/.nora/config.json.",
+          "isRequired": true,
+          "name": "NORA_API_URL"
+        },
+        {
+          "description": "Nora workspace API key (nora_\u2026) used to authenticate against the Nora public REST API. Falls back to NORA_TOKEN, then the Nora CLI config.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "NORA_API_KEY"
+        },
+        {
+          "description": "Set to \"true\" to enable destructive tools (e.g. delete_agent). Disabled by default.",
+          "name": "NORA_MCP_ALLOW_DESTRUCTIVE"
+        }
+      ],
+      "identifier": "@noraai/mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9511b272a0",
+    "published_at": "2026-07-12T14:46:12.435929Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.solomon2773/nora",
+    "server_version": "0.1.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-12T14:46:12.435929Z"
+  },
+  "title": "Nora",
+  "type": "mcp_server",
+  "version": "0.1.4"
+}

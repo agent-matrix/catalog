@@ -1,0 +1,80 @@
+{
+  "description": "Wraps Codex CLI as MCP tools: codex, review, query, search, structured, ping, listSessions.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-hampsterx-codex-mcp-bridge.stdio.d84cef61d0",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/hampsterx/codex-mcp-bridge",
+    "homepage": "https://github.com/hampsterx/codex-mcp-bridge",
+    "repository": "https://github.com/hampsterx/codex-mcp-bridge"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "codex-mcp-bridge@0.8.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.hampsterx/codex-mcp-bridge",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "codex",
+          "description": "Path to the codex CLI binary. Defaults to 'codex' on PATH.",
+          "format": "string",
+          "name": "CODEX_CLI_PATH"
+        },
+        {
+          "description": "Default Codex model for codex/query/search.",
+          "format": "string",
+          "name": "CODEX_DEFAULT_MODEL"
+        },
+        {
+          "description": "Model to use when the primary model hits a quota error.",
+          "format": "string",
+          "name": "CODEX_FALLBACK_MODEL"
+        },
+        {
+          "default": "3",
+          "description": "Maximum concurrent Codex CLI subprocesses (default 3).",
+          "format": "number",
+          "name": "CODEX_MAX_CONCURRENT"
+        },
+        {
+          "description": "Controls which MCP servers from ~/.codex/config.toml stay enabled inside the Codex subprocess. Empty/unset disables all non-required servers; 'inherit' passes config through; comma-separated names (e.g. 'serena,github') enables those; values starting with '{' or '[' are raw TOML.",
+          "format": "string",
+          "name": "CODEX_MCP_SERVERS"
+        }
+      ],
+      "identifier": "codex-mcp-bridge",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.8.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d84cef61d0",
+    "published_at": "2026-07-09T02:04:20.098219Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.hampsterx/codex-mcp-bridge",
+    "server_version": "0.8.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-09T02:04:20.098219Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.8.0"
+}

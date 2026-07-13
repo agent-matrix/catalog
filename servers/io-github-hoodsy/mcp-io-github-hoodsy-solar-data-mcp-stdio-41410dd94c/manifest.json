@@ -1,0 +1,75 @@
+{
+  "description": "US open solar data for agents: PVWatts production, tariffs & ROI, market data, forecasts. 18 tools.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-hoodsy-solar-data-mcp.stdio.41410dd94c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/hoodsy/solar-data-mcp",
+    "homepage": "https://github.com/hoodsy/solar-data-mcp",
+    "repository": "https://github.com/hoodsy/solar-data-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "solar-data-mcp==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.hoodsy/solar-data-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Free key from https://developer.nlr.gov/signup/ \u2014 required for production modeling and irradiance tools",
+          "isSecret": true,
+          "name": "NREL_API_KEY"
+        },
+        {
+          "description": "Free key for URDB utility tariff lookups (economics tools)",
+          "isSecret": true,
+          "name": "OPENEI_API_KEY"
+        },
+        {
+          "description": "Free key for EIA electricity price data (economics tools)",
+          "isSecret": true,
+          "name": "EIA_API_KEY"
+        },
+        {
+          "description": "Optional SunSpec AHJ Registry token for permitting-authority lookups",
+          "isSecret": true,
+          "name": "AHJ_REGISTRY_TOKEN"
+        }
+      ],
+      "identifier": "solar-data-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "41410dd94c",
+    "published_at": "2026-07-06T21:24:26.216301Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.hoodsy/solar-data-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-06T21:24:26.216301Z"
+  },
+  "title": "Solar Data",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

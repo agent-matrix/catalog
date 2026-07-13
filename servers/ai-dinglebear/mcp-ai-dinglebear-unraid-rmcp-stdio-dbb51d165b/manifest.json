@@ -1,0 +1,103 @@
+{
+  "description": "Rust MCP server and CLI for Unraid GraphQL, NAS, Docker, VM, and storage workflows.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-dinglebear-unraid-rmcp.stdio.dbb51d165b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jmagar/unraid-rmcp",
+    "homepage": "https://github.com/jmagar/unraid-rmcp",
+    "repository": "https://github.com/jmagar/unraid-rmcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "unraid-rmcp@0.2.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.dinglebear/unraid-rmcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Full Unraid GraphQL endpoint URL.",
+          "format": "string",
+          "isRequired": true,
+          "name": "UNRAID_API_URL",
+          "placeholder": "https://unraid.example.com/graphql"
+        },
+        {
+          "description": "Unraid API key.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "UNRAID_API_KEY"
+        },
+        {
+          "description": "Optional GitHub release tag override for the downloaded Unraid RMCP binary.",
+          "format": "string",
+          "name": "UNRAID_RMCP_VERSION",
+          "placeholder": "v0.2.2"
+        },
+        {
+          "default": "jmagar/unraid-rmcp",
+          "description": "Optional GitHub owner/repo override for release asset downloads.",
+          "format": "string",
+          "name": "UNRAID_RMCP_REPO",
+          "placeholder": "jmagar/unraid-rmcp"
+        },
+        {
+          "description": "Optional release download base URL override.",
+          "format": "string",
+          "name": "UNRAID_RMCP_RELEASE_BASE_URL"
+        },
+        {
+          "default": "info",
+          "description": "Tracing filter for Unraid RMCP logs.",
+          "format": "string",
+          "name": "RUST_LOG",
+          "placeholder": "info"
+        }
+      ],
+      "identifier": "unraid-rmcp",
+      "packageArguments": [
+        {
+          "description": "Run Unraid RMCP over stdio.",
+          "format": "string",
+          "isRequired": true,
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "dbb51d165b",
+    "published_at": "2026-07-12T12:00:37.970335Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.dinglebear/unraid-rmcp",
+    "server_version": "0.2.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-12T12:00:37.970335Z"
+  },
+  "title": "Unraid RMCP",
+  "type": "mcp_server",
+  "version": "0.2.3"
+}

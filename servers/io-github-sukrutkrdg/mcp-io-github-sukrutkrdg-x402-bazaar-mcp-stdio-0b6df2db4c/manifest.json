@@ -1,0 +1,70 @@
+{
+  "description": "Pay-per-call Base APIs for agents: token risk, prices, gas, wallet intel, AI. USDC via x402.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:56+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sukrutkrdg-x402-bazaar-mcp.stdio.0b6df2db4c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sukrutkrdg/x402-bazaar-mcp",
+    "homepage": "https://github.com/sukrutkrdg/x402-bazaar-mcp",
+    "repository": "https://github.com/sukrutkrdg/x402-bazaar-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "x402-bazaar-mcp@0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sukrutkrdg/x402-bazaar-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Prepaid credit token (ck_\u2026) from the buy-credits service. Sent as the x-credit-token header; each call debits your balance. No wallet or signing needed. Recommended paid mode.",
+          "format": "string",
+          "isSecret": true,
+          "name": "X402_CREDIT_TOKEN"
+        },
+        {
+          "description": "Hex private key of a Base wallet holding USDC. Used locally to sign x402 payments \u2014 never sent anywhere. Use a dedicated low-balance wallet. Optional: without it (and without a credit token) the server runs on the free tier.",
+          "format": "string",
+          "isSecret": true,
+          "name": "AGENT_PRIVATE_KEY"
+        },
+        {
+          "description": "Override the catalog URL (default https://402.com.tr/api/catalog).",
+          "format": "string",
+          "name": "X402_BAZAAR_CATALOG"
+        }
+      ],
+      "identifier": "x402-bazaar-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0b6df2db4c",
+    "published_at": "2026-07-11T21:27:46.998905Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sukrutkrdg/x402-bazaar-mcp",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-11T21:27:46.998905Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

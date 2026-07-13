@@ -1,0 +1,80 @@
+{
+  "description": "Brazilian company, risk & public-tender data (CNPJ, CEIS/CNEP, PNCP) as x402-paid agent tools",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:56+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-thomenz-brdata-mcp.stdio.7dc29f2514",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/thomenz/brdata-mcp",
+    "homepage": "https://github.com/thomenz/brdata-mcp",
+    "repository": "https://github.com/thomenz/brdata-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "brdata-mcp@0.3.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.thomenz/brdata-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "0x private key of a DEDICATED wallet holding USDC on Base (pays per call). Paid tools return 402 without it; the free validate_cnpj tool still works.",
+          "format": "string",
+          "isSecret": true,
+          "name": "EVM_PRIVATE_KEY"
+        },
+        {
+          "description": "base58 or JSON-array secret key of a DEDICATED Solana wallet holding USDC (pays per call). Configure this and/or EVM_PRIVATE_KEY; the x402 layer settles on whichever rail the 402 advertises.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SOLANA_PRIVATE_KEY"
+        },
+        {
+          "description": "Optional Solana RPC override used to build the payment (e.g. a Helius URL).",
+          "format": "string",
+          "name": "SOLANA_RPC_URL"
+        },
+        {
+          "description": "Base URL of a brdata Worker. Defaults to the hosted production API (https://brdata.thomenz.me).",
+          "format": "string",
+          "name": "BRDATA_BASE_URL"
+        },
+        {
+          "description": "'base' (mainnet, default) or 'base-sepolia' (testnet).",
+          "format": "string",
+          "name": "X402_NETWORK"
+        }
+      ],
+      "identifier": "brdata-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7dc29f2514",
+    "published_at": "2026-07-09T15:01:46.799707Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.thomenz/brdata-mcp",
+    "server_version": "0.3.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-09T15:01:46.799707Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.4"
+}

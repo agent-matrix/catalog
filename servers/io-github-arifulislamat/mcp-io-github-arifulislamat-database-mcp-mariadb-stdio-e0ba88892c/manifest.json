@@ -1,0 +1,77 @@
+{
+  "description": "MCP server for MariaDB. Read-only by default, row caps, timeouts, secrets never logged.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-arifulislamat-database-mcp-mariadb.stdio.e0ba88892c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/arifulislamat/database-mcp",
+    "homepage": "https://github.com/arifulislamat/database-mcp",
+    "repository": "https://github.com/arifulislamat/database-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@database-mcp/mariadb@0.4.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.arifulislamat/database-mcp-mariadb",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Database host",
+          "format": "string",
+          "isRequired": true,
+          "name": "MARIADB_HOST"
+        },
+        {
+          "description": "Database user (a read-only user is recommended)",
+          "format": "string",
+          "isRequired": true,
+          "name": "MARIADB_USER"
+        },
+        {
+          "description": "Database password (or use MARIADB_PASSWORD_FILE)",
+          "format": "string",
+          "isSecret": true,
+          "name": "MARIADB_PASSWORD"
+        },
+        {
+          "description": "Database name",
+          "format": "string",
+          "isRequired": true,
+          "name": "MARIADB_DATABASE"
+        }
+      ],
+      "identifier": "@database-mcp/mariadb",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e0ba88892c",
+    "published_at": "2026-07-12T13:15:23.720619Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.arifulislamat/database-mcp-mariadb",
+    "server_version": "0.4.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-12T13:15:23.720619Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.4.1"
+}

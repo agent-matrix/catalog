@@ -1,0 +1,86 @@
+{
+  "description": "ConnectWise PSA (Manage) MCP server \u2014 tickets, time entries, companies, configurations, BYOK",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:54+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-selic-mcp-connectwise-psa.stdio.0b68383907",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/selic/mcp-connectwise-psa",
+    "homepage": "https://github.com/selic/mcp-connectwise-psa",
+    "repository": "https://github.com/selic/mcp-connectwise-psa"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-connectwise-psa@0.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.selic/mcp-connectwise-psa",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "ConnectWise host (e.g. na.myconnectwise.net or an on-prem host; full URLs accepted)",
+          "isRequired": true,
+          "name": "CW_SITE"
+        },
+        {
+          "description": "ConnectWise login company id",
+          "isRequired": true,
+          "name": "CW_COMPANY_ID"
+        },
+        {
+          "description": "Integration clientId from developer.connectwise.com",
+          "isRequired": true,
+          "name": "CW_CLIENT_ID"
+        },
+        {
+          "description": "API member public key",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CW_PUBLIC_KEY"
+        },
+        {
+          "description": "API member private key",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CW_PRIVATE_KEY"
+        },
+        {
+          "description": "Member identifier the API keys belong to \u2014 enables \"my tickets\"/\"my time\" tools",
+          "name": "CW_MEMBER_IDENTIFIER"
+        }
+      ],
+      "identifier": "mcp-connectwise-psa",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0b68383907",
+    "published_at": "2026-07-07T16:00:01.832781Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.selic/mcp-connectwise-psa",
+    "server_version": "0.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-07T16:00:01.832781Z"
+  },
+  "title": "ConnectWise PSA",
+  "type": "mcp_server",
+  "version": "0.4.0"
+}

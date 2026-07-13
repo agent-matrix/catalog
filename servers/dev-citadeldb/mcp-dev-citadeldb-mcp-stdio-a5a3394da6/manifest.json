@@ -1,0 +1,70 @@
+{
+  "description": "Encrypted-first embedded database with vector search and agent memory, exposed as MCP tools",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:19+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.dev-citadeldb-mcp.stdio.a5a3394da6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/yp3y5akh0v/citadel",
+    "homepage": "https://github.com/yp3y5akh0v/citadel",
+    "repository": "https://github.com/yp3y5akh0v/citadel"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "citadeldb-mcp==1.13.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "dev.citadeldb/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Passphrase that derives the AES-256 key encrypting the database region",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CITADEL_KEY"
+        }
+      ],
+      "identifier": "citadeldb-mcp",
+      "packageArguments": [
+        {
+          "description": "Path to the Citadel database/region file",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "--db",
+          "type": "named"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.13.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a5a3394da6",
+    "published_at": "2026-07-09T16:39:31.806136Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "dev.citadeldb/mcp",
+    "server_version": "1.13.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-09T16:39:31.806136Z"
+  },
+  "title": "Citadel",
+  "type": "mcp_server",
+  "version": "1.13.0"
+}

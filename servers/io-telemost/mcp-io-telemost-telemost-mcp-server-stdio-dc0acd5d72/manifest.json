@@ -1,0 +1,75 @@
+{
+  "description": "Telegram channel analytics and statistics for AI agents, pay-per-call in USDC via x402.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:49:00+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-telemost-telemost-mcp-server.stdio.dc0acd5d72",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/slava01011910-ops/telemost-mcp-server",
+    "homepage": "https://github.com/slava01011910-ops/telemost-mcp-server",
+    "repository": "https://github.com/slava01011910-ops/telemost-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "telemost-mcp-server@0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.telemost/telemost-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base (EVM) wallet private key (0x...) that funds x402 payments. One of EVM/SVM required for paid tools.",
+          "isSecret": true,
+          "name": "EVM_PRIVATE_KEY"
+        },
+        {
+          "description": "Solana wallet secret key (base58) that funds x402 payments. One of EVM/SVM required for paid tools.",
+          "isSecret": true,
+          "name": "SVM_PRIVATE_KEY"
+        },
+        {
+          "description": "API base URL. Defaults to https://api.telemost.io.",
+          "name": "TELEMOST_BASE_URL"
+        },
+        {
+          "description": "Per-call price ceiling in USD (default 1). Calls above this are refused before signing.",
+          "name": "MAX_PAYMENT_USDC"
+        },
+        {
+          "description": "Cumulative spend ceiling per process lifetime in USD (default 10).",
+          "name": "SESSION_MAX_USDC"
+        }
+      ],
+      "identifier": "telemost-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "dc0acd5d72",
+    "published_at": "2026-07-12T20:14:17.046307Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.telemost/telemost-mcp-server",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-12T20:14:17.046307Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

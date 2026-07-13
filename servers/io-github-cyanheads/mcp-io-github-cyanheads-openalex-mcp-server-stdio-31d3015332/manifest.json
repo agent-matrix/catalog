@@ -1,0 +1,112 @@
+{
+  "description": "Access the OpenAlex academic research catalog \u2014 270M+ publications.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cyanheads-openalex-mcp-server.stdio.31d3015332",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cyanheads/openalex-mcp-server",
+    "homepage": "https://github.com/cyanheads/openalex-mcp-server",
+    "repository": "https://github.com/cyanheads/openalex-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "node",
+          "@cyanheads/openalex-mcp-server@0.7.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cyanheads/openalex-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "OpenAlex account API key, sent as api_key= - optional (free from https://openalex.org/settings/api). Without it, anonymous rate limits apply.",
+          "format": "string",
+          "name": "OPENALEX_API_KEY"
+        },
+        {
+          "description": "Optional email sent as mailto= to identify yourself to OpenAlex (the polite pool). Separate from the API key.",
+          "format": "string",
+          "name": "OPENALEX_MAILTO"
+        },
+        {
+          "default": "https://api.openalex.org",
+          "description": "OpenAlex API base URL.",
+          "format": "string",
+          "name": "OPENALEX_BASE_URL"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "The hostname for the HTTP server.",
+          "format": "string",
+          "name": "MCP_HTTP_HOST"
+        },
+        {
+          "default": "3010",
+          "description": "The port to run the HTTP server on.",
+          "format": "string",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "default": "/mcp",
+          "description": "The endpoint path for the MCP server.",
+          "format": "string",
+          "name": "MCP_HTTP_ENDPOINT_PATH"
+        },
+        {
+          "default": "none",
+          "description": "Authentication mode to use: 'none', 'jwt', or 'oauth'.",
+          "format": "string",
+          "name": "MCP_AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Sets the minimum log level for output (e.g., 'debug', 'info', 'warn').",
+          "format": "string",
+          "name": "MCP_LOG_LEVEL"
+        }
+      ],
+      "identifier": "@cyanheads/openalex-mcp-server",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "start:http"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "node",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3010/mcp"
+      },
+      "version": "0.7.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "31d3015332",
+    "published_at": "2026-07-10T05:01:07.321804Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cyanheads/openalex-mcp-server",
+    "server_version": "0.7.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-10T05:01:07.321804Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.7.4"
+}

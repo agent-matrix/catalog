@@ -1,0 +1,70 @@
+{
+  "description": "Read-only MCP server: your agent sees all your sibling repos but structurally cannot touch them",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-3xpr1ment-repiscope.stdio.3bfd6a6415",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/3xpr1ment/repiscope",
+    "homepage": "https://github.com/3xpr1ment/repiscope",
+    "repository": "https://github.com/3xpr1ment/repiscope"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "repiscope==0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.3xpr1ment/repiscope",
+  "packages": [
+    {
+      "identifier": "repiscope",
+      "packageArguments": [
+        {
+          "description": "Folder containing your repos (the parent folder, not a repo itself)",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "--root",
+          "type": "named",
+          "valueHint": "~/your/projects/folder"
+        },
+        {
+          "description": "Repo name to hide completely (repeatable)",
+          "format": "string",
+          "isRepeated": true,
+          "name": "--exclude",
+          "type": "named",
+          "valueHint": "repo-name"
+        }
+      ],
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "3bfd6a6415",
+    "published_at": "2026-07-09T05:43:53.485686Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.3xpr1ment/repiscope",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-09T05:43:53.485686Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

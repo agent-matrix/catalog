@@ -1,0 +1,79 @@
+{
+  "description": "Read-only MCP server: query_logs over a structured JSONL incident log (Quellgeist triage).",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:27+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Rajeev-Shyam-quellgeist-logs.stdio.6992296ee2",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Rajeev-Shyam/Quellgeist",
+    "homepage": "https://github.com/Rajeev-Shyam/Quellgeist",
+    "repository": "https://github.com/Rajeev-Shyam/Quellgeist"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "name": "--from",
+            "type": "named",
+            "value": "quellgeist"
+          },
+          {
+            "type": "positional",
+            "value": "quellgeist-logs-mcp"
+          },
+          "quellgeist==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Rajeev-Shyam/quellgeist-logs",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the JSONL incident log to read (default: demo/incident_logs.jsonl, resolved against the working directory).",
+          "name": "QG_LOG_PATH"
+        }
+      ],
+      "identifier": "quellgeist",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "name": "--from",
+          "type": "named",
+          "value": "quellgeist"
+        },
+        {
+          "type": "positional",
+          "value": "quellgeist-logs-mcp"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6992296ee2",
+    "published_at": "2026-07-07T11:38:57.43593Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Rajeev-Shyam/quellgeist-logs",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-07T11:38:57.43593Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

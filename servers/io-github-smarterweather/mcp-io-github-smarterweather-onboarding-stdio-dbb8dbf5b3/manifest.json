@@ -1,0 +1,64 @@
+{
+  "description": "Agent-first onboarding to Smarter Weather: plans, docs, signup, API keys, MCP config, billing.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-smarterweather-onboarding.stdio.dbb8dbf5b3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/smarterweather/developer",
+    "homepage": "https://github.com/smarterweather/developer",
+    "repository": "https://github.com/smarterweather/developer"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@smarterweather/mcp-onboarding@0.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.smarterweather/onboarding",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Set to 'required' to opt into OAuth 2.1 + PKCE sign-in and unlock account-scoped tools (API key minting, usage, billing). Unset, the bridge serves the anonymous discovery tools (get_plans, get_documentation, sign_up) with no credentials at all.",
+          "format": "string",
+          "name": "SMARTERWEATHER_ONBOARDING_AUTH"
+        },
+        {
+          "default": "https://developers.smarterweather.com/mcp",
+          "description": "Override the target MCP endpoint for development or staging. Precedence: positional argument > SMARTERWEATHER_ONBOARDING_MCP_URL > package default.",
+          "format": "string",
+          "name": "SMARTERWEATHER_ONBOARDING_MCP_URL"
+        }
+      ],
+      "identifier": "@smarterweather/mcp-onboarding",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "dbb8dbf5b3",
+    "published_at": "2026-07-09T19:17:08.411889Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.smarterweather/onboarding",
+    "server_version": "0.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-09T19:17:08.411889Z"
+  },
+  "title": "Smarter Weather Developer Onboarding",
+  "type": "mcp_server",
+  "version": "0.0.1"
+}

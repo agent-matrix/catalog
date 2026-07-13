@@ -1,0 +1,119 @@
+{
+  "description": "Circulara Observe MCP plugin - meters your AI agents' token spend and carbon, free tier.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-circulara-plugin.stdio.8409959154",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/CircularRoute/circulara-core",
+    "homepage": "https://github.com/CircularRoute/circulara-core",
+    "repository": "https://github.com/CircularRoute/circulara-core"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y"
+          },
+          {
+            "type": "positional",
+            "value": "-p"
+          },
+          {
+            "type": "positional",
+            "value": "@circulara/plugin"
+          },
+          {
+            "type": "positional",
+            "value": "circulara-mcp"
+          },
+          "@circulara/plugin@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.circulara/plugin",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your Circulara Observe backend URL - copy from the Connect page after signing in at https://plugin.circulara.ai",
+          "format": "string",
+          "isRequired": true,
+          "name": "CIRCULARA_BACKEND_URL"
+        },
+        {
+          "description": "Your workspace ID - from the Connect page",
+          "format": "string",
+          "isRequired": true,
+          "name": "CIRCULARA_TENANT_ID"
+        },
+        {
+          "description": "Your signed workspace token - from the Connect page (keep secret)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CIRCULARA_TOKEN"
+        },
+        {
+          "description": "Your seat ID - from the Connect page",
+          "format": "string",
+          "isRequired": true,
+          "name": "CIRCULARA_SEAT_ID"
+        },
+        {
+          "description": "Your email / identity - from the Connect page",
+          "format": "string",
+          "isRequired": true,
+          "name": "CIRCULARA_USER_ID"
+        }
+      ],
+      "identifier": "@circulara/plugin",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y"
+        },
+        {
+          "type": "positional",
+          "value": "-p"
+        },
+        {
+          "type": "positional",
+          "value": "@circulara/plugin"
+        },
+        {
+          "type": "positional",
+          "value": "circulara-mcp"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8409959154",
+    "published_at": "2026-07-09T11:54:08.843062Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.circulara/plugin",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-09T11:54:08.843062Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

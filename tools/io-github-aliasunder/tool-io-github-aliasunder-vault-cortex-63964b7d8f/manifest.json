@@ -1,0 +1,103 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/aliasunder/vault-cortex:0.28.3"
+      }
+    }
+  ],
+  "description": "Standalone MCP server for Obsidian vaults \u2014 hybrid search, memory, tasks, 27 tools, OAuth 2.1.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/aliasunder/vault-cortex",
+  "id": "tool.io-github-aliasunder-vault-cortex.63964b7d8f",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/aliasunder/vault-cortex",
+    "homepage": "https://github.com/aliasunder/vault-cortex",
+    "repository": "https://github.com/aliasunder/vault-cortex"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Standalone MCP server for Obsidian vaults \u2014 hybrid search, memory, tasks, 27 tools, OAuth 2.1.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.aliasunder/vault-cortex",
+      "request_type": "POST",
+      "url": "https://github.com/aliasunder/vault-cortex"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Publish the container's port 8000 on the host.",
+            "name": "-p",
+            "type": "named",
+            "value": "8000:8000"
+          },
+          {
+            "description": "Bind-mount your Obsidian vault into the container at /vault.",
+            "isRequired": true,
+            "name": "-v",
+            "type": "named",
+            "value": "{VAULT_PATH}:/vault:rw",
+            "variables": {
+              "VAULT_PATH": {
+                "description": "Absolute path to your Obsidian vault on the host machine.",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          {
+            "description": "Named volume for persistent state under /data \u2014 search index, OAuth token DB, and any log files. Keeps OAuth sessions alive across container restarts.",
+            "name": "-v",
+            "type": "named",
+            "value": "vault-cortex-data:/data"
+          },
+          "ghcr.io/aliasunder/vault-cortex:0.28.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.aliasunder/vault-cortex",
+  "provenance": {
+    "identity_key": "a4cc251de4",
+    "promoted_from": "mcp.io-github-aliasunder-vault-cortex.stdio.a4cc251de4",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.aliasunder/vault-cortex",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-aliasunder-vault-cortex.stdio.a4cc251de4",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/aliasunder/vault-cortex",
+  "summary": "Standalone MCP server for Obsidian vaults \u2014 hybrid search, memory, tasks, 27 tools, OAuth 2.1.",
+  "tags": [
+    "cortex",
+    "hybrid",
+    "memory",
+    "obsidian",
+    "search",
+    "standalone",
+    "vault",
+    "vaults"
+  ],
+  "title": "Vault Cortex",
+  "type": "tool",
+  "version": "0.28.3"
+}

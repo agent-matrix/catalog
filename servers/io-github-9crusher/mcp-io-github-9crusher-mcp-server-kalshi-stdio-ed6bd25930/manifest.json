@@ -1,0 +1,73 @@
+{
+  "description": "MCP server for end-to-end trading on Kalshi prediction markets: discover, research, trade.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-9crusher-mcp-server-kalshi.stdio.ed6bd25930",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/9crusher/mcp-server-kalshi",
+    "homepage": "https://github.com/9crusher/mcp-server-kalshi",
+    "repository": "https://github.com/9crusher/mcp-server-kalshi"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-server-kalshi==0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.9crusher/mcp-server-kalshi",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "demo",
+          "description": "demo (sandbox) or prod (real money)",
+          "name": "KALSHI_ENV"
+        },
+        {
+          "description": "Kalshi API key ID; required only for portfolio/order tools",
+          "isSecret": true,
+          "name": "KALSHI_API_KEY"
+        },
+        {
+          "description": "Path to your RSA private key .pem; required for authenticated tools",
+          "name": "KALSHI_PRIVATE_KEY_PATH"
+        },
+        {
+          "description": "Optional explicit REST base override (must include /trade-api/v2)",
+          "name": "BASE_URL"
+        }
+      ],
+      "identifier": "mcp-server-kalshi",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ed6bd25930",
+    "published_at": "2026-07-09T14:07:09.294644Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.9crusher/mcp-server-kalshi",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-09T14:07:09.294644Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

@@ -1,0 +1,82 @@
+{
+  "description": "MCP Server para Salesforce Marketing Cloud: valida queries do Automation Studio antes de rodar.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:25+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Inefavel-sfmc-mcp-server.stdio.34d090fb33",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Inefavel/sfmc-mcp-server",
+    "homepage": "https://github.com/Inefavel/sfmc-mcp-server",
+    "repository": "https://github.com/Inefavel/sfmc-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "sfmc-mcp-server@0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Inefavel/sfmc-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Subdom\u00ednio da inst\u00e2ncia SFMC (a parte antes de .auth.marketingcloudapis.com)",
+          "format": "string",
+          "isRequired": true,
+          "name": "SFMC_SUBDOMAIN"
+        },
+        {
+          "description": "Client ID do Installed Package (API Integration Server-to-Server)",
+          "format": "string",
+          "isRequired": true,
+          "name": "SFMC_CLIENT_ID"
+        },
+        {
+          "description": "Client Secret do Installed Package",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SFMC_CLIENT_SECRET"
+        },
+        {
+          "description": "MID da Business Unit alvo (opcional; usa a BU padr\u00e3o do package se omitido)",
+          "format": "string",
+          "name": "SFMC_ACCOUNT_ID"
+        },
+        {
+          "description": "Modo de opera\u00e7\u00e3o: \"read\" (padr\u00e3o) ou \"write\"",
+          "format": "string",
+          "name": "SFMC_MODE"
+        }
+      ],
+      "identifier": "sfmc-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "34d090fb33",
+    "published_at": "2026-07-12T04:36:54.184686Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Inefavel/sfmc-mcp-server",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-12T04:36:54.184686Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

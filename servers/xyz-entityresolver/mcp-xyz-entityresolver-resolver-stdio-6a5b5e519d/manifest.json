@@ -1,0 +1,61 @@
+{
+  "description": "Resolve ambiguous names/tickers to verified canonical IDs: SEC CIK, GLEIF LEI, Wikidata, CoinGecko.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:49:01+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.xyz-entityresolver-resolver.stdio.6a5b5e519d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "entityresolver-mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "xyz.entityresolver/resolver",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "0x-hex private key of a dedicated low-value wallet holding USDC on Base. Optional \u2014 without it only the free demo_resolve tool is available; with it the paid resolve_entity tool settles $0.005 USDC per call via x402.",
+          "format": "string",
+          "isSecret": true,
+          "name": "BUYER_PRIVATE_KEY"
+        },
+        {
+          "description": "Override the service base URL. Defaults to https://entityresolver.xyz.",
+          "format": "string",
+          "name": "ENTITYRESOLVER_URL"
+        }
+      ],
+      "identifier": "entityresolver-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6a5b5e519d",
+    "published_at": "2026-07-10T19:39:24.881777Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "xyz.entityresolver/resolver",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-10T19:39:24.881777Z"
+  },
+  "title": "Entity-ID Resolver",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

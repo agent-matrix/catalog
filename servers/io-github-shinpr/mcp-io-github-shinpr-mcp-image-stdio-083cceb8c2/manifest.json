@@ -1,0 +1,86 @@
+{
+  "description": "AI image generation and editing with prompt optimization and quality presets",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-shinpr-mcp-image.stdio.083cceb8c2",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/shinpr/mcp-image",
+    "homepage": "https://github.com/shinpr/mcp-image",
+    "repository": "https://github.com/shinpr/mcp-image"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-image@0.11.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.shinpr/mcp-image",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Image provider to use: 'gemini' (default) or 'openai'",
+          "format": "string",
+          "name": "IMAGE_PROVIDER"
+        },
+        {
+          "description": "Google Gemini API key for image generation when IMAGE_PROVIDER=gemini (get from https://aistudio.google.com/apikey)",
+          "format": "string",
+          "isSecret": true,
+          "name": "GEMINI_API_KEY"
+        },
+        {
+          "description": "OpenAI API key for image generation when IMAGE_PROVIDER=openai. Requires OpenAI organization verification to access gpt-image-2 (https://platform.openai.com/settings/organization/general)",
+          "format": "string",
+          "isSecret": true,
+          "name": "OPENAI_API_KEY"
+        },
+        {
+          "description": "Absolute path to directory where generated images will be saved (defaults to ./output)",
+          "format": "string",
+          "name": "IMAGE_OUTPUT_DIR"
+        },
+        {
+          "description": "Default quality preset: 'fast' (Nano Banana 2, default), 'balanced' (Nano Banana 2 + thinking), 'quality' (Nano Banana Pro)",
+          "format": "string",
+          "name": "IMAGE_QUALITY"
+        },
+        {
+          "description": "Set to 'true' to disable automatic prompt optimization and use direct prompts",
+          "format": "boolean",
+          "name": "SKIP_PROMPT_ENHANCEMENT"
+        }
+      ],
+      "identifier": "mcp-image",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.11.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "083cceb8c2",
+    "published_at": "2026-07-11T10:24:08.469206Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.shinpr/mcp-image",
+    "server_version": "0.11.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-11T10:24:08.469206Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.11.3"
+}

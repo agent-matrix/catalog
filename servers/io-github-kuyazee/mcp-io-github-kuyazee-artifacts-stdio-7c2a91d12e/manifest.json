@@ -1,0 +1,65 @@
+{
+  "description": "Self-hosted artifact publishing: POST HTML/JSX/Markdown/zip, get an unguessable URL on your domain",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:45+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-kuyazee-artifacts.stdio.7c2a91d12e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/kuyazee/artifacts",
+    "homepage": "https://github.com/kuyazee/artifacts",
+    "repository": "https://github.com/kuyazee/artifacts"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/kuyazee/artifacts:latest"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.kuyazee/artifacts",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Bearer token required for all writes and the MCP endpoint",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ARTIFACTS_API_KEY"
+        },
+        {
+          "description": "Public origin used in returned artifact URLs (e.g. https://artifacts.example.com)",
+          "format": "string",
+          "name": "BASE_URL"
+        }
+      ],
+      "identifier": "ghcr.io/kuyazee/artifacts:latest",
+      "registryType": "oci",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3000/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "7c2a91d12e",
+    "published_at": "2026-07-08T16:47:36.396737Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.kuyazee/artifacts",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-08T16:47:36.396737Z"
+  },
+  "title": "Artifacts",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

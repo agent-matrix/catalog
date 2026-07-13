@@ -1,0 +1,78 @@
+{
+  "description": "Shopee price monitoring via MCP.requires extension + MCP Key. T-0 price data for SG/MY/TH/VN/ID/PH.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-haidrau-sentinel-mcp-server.stdio.c9adfcfbc3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/haidrau/sentinel-mcp-server",
+    "homepage": "https://github.com/haidrau/sentinel-mcp-server",
+    "repository": "https://github.com/haidrau/sentinel-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/haidrau/sentinel-mcp-server:0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.haidrau/sentinel-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your Sentinel MCP Key. Get it from the browser extension settings page (NOT from the website login). See: https://priceminder.online/docs/quick-start",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SENTINEL_TOKEN"
+        },
+        {
+          "default": "sentinel-mvp-2026",
+          "description": "Internal API key for backend communication",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SENTINEL_API_KEY"
+        }
+      ],
+      "identifier": "ghcr.io/haidrau/sentinel-mcp-server:0.2.0",
+      "registryType": "oci",
+      "transport": {
+        "headers": [
+          {
+            "description": "Internal API key (default: sentinel-mvp-2026)",
+            "name": ""
+          },
+          {
+            "description": "Your Sentinel MCP Key from the browser extension settings page",
+            "name": ""
+          }
+        ],
+        "type": "sse",
+        "url": "https://priceminder.online/mcp_server?key=YOUR_KEY"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "c9adfcfbc3",
+    "published_at": "2026-07-11T08:58:44.931673Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.haidrau/sentinel-mcp-server",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-11T08:58:44.931673Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

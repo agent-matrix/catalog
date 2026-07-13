@@ -1,0 +1,96 @@
+{
+  "description": "Kwork freelance marketplace: browse projects, submit offers, manage orders, message clients",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-simonether-kwork-mcp.stdio.dcef3e6bed",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/simonether/kwork-mcp",
+    "homepage": "https://github.com/simonether/kwork-mcp",
+    "repository": "https://github.com/simonether/kwork-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "kwork-mcp==0.2.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.simonether/kwork-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Kwork login (required unless KWORK_TOKEN is set)",
+          "name": "KWORK_LOGIN"
+        },
+        {
+          "description": "Kwork password (required unless KWORK_TOKEN is set)",
+          "isSecret": true,
+          "name": "KWORK_PASSWORD"
+        },
+        {
+          "description": "Auth token, skips login (alternative to KWORK_LOGIN + KWORK_PASSWORD)",
+          "isSecret": true,
+          "name": "KWORK_TOKEN"
+        },
+        {
+          "description": "Last 4 digits of phone for 2FA",
+          "name": "KWORK_PHONE_LAST"
+        },
+        {
+          "description": "Proxy URL (HTTP / SOCKS4 / SOCKS5)",
+          "name": "KWORK_PROXY_URL"
+        },
+        {
+          "default": "30",
+          "description": "Request timeout in seconds",
+          "name": "KWORK_TIMEOUT"
+        },
+        {
+          "default": "2",
+          "description": "Requests per second limit",
+          "name": "KWORK_RPS_LIMIT"
+        },
+        {
+          "default": "5",
+          "description": "Burst limit for the rate limiter",
+          "name": "KWORK_BURST_LIMIT"
+        },
+        {
+          "default": "~/.kwork_token",
+          "description": "Token persistence path",
+          "name": "KWORK_TOKEN_FILE"
+        }
+      ],
+      "identifier": "kwork-mcp",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "dcef3e6bed",
+    "published_at": "2026-07-09T10:33:44.297114Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.simonether/kwork-mcp",
+    "server_version": "0.2.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-09T10:33:44.297114Z"
+  },
+  "title": "Kwork",
+  "type": "mcp_server",
+  "version": "0.2.3"
+}

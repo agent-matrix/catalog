@@ -1,0 +1,94 @@
+{
+  "description": "Shared versioned state for multi-agent AI workflows",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:40+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-edobusy-agenthold.stdio.0a006129c0",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/edobusy/agenthold",
+    "homepage": "https://github.com/edobusy/agenthold",
+    "repository": "https://github.com/edobusy/agenthold"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "agenthold==0.9.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.edobusy/agenthold",
+  "packages": [
+    {
+      "identifier": "agenthold",
+      "packageArguments": [
+        {
+          "choices": [
+            "standard",
+            "advanced"
+          ],
+          "default": "standard",
+          "description": "Tool set: 'standard' (claim/release/status/wait) or 'advanced' (raw get/set/delete/watch/list/history/clear/export).",
+          "name": "--tools",
+          "type": "named"
+        },
+        {
+          "default": "./agenthold.db",
+          "description": "Path to the SQLite database file.",
+          "format": "filepath",
+          "name": "--db",
+          "type": "named"
+        },
+        {
+          "choices": [
+            "stdio",
+            "http"
+          ],
+          "default": "stdio",
+          "description": "Transport to serve on: 'stdio' (default; one local subprocess per agent) or 'http' (one long-lived server many agents connect to over Streamable HTTP).",
+          "name": "--transport",
+          "type": "named"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "HTTP bind address (default 127.0.0.1). Only used with --transport http.",
+          "name": "--host",
+          "type": "named"
+        },
+        {
+          "default": "8417",
+          "description": "HTTP port (default 8417). Only used with --transport http.",
+          "name": "--port",
+          "type": "named"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.9.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0a006129c0",
+    "published_at": "2026-07-07T05:37:12.013767Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.edobusy/agenthold",
+    "server_version": "0.9.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-07T05:37:12.013767Z"
+  },
+  "title": "agenthold",
+  "type": "mcp_server",
+  "version": "0.9.0"
+}

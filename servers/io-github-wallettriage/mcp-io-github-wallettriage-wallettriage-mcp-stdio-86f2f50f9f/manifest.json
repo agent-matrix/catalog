@@ -1,0 +1,76 @@
+{
+  "description": "Real-time exploit-exposure risk check for EVM wallets, paid per query via x402 (USDC on Base).",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:58+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wallettriage-wallettriage-mcp.stdio.86f2f50f9f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wallettriage/wallettriage-mcp",
+    "homepage": "https://github.com/wallettriage/wallettriage-mcp",
+    "repository": "https://github.com/wallettriage/wallettriage-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "wallettriage-mcp@0.1.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wallettriage/wallettriage-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Private key (0x + 64 hex) of a dedicated low-balance session wallet that signs gasless x402 USDC payments on Base. Never use your main key.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "EVM_PRIVATE_KEY"
+        },
+        {
+          "default": "https://api.wallettriage.com",
+          "description": "WalletTriage API base URL. Defaults to the public production gateway; set to http://localhost:4021 for local development.",
+          "name": "GATEWAY_URL"
+        },
+        {
+          "default": "100000",
+          "description": "Safety cap: refuse any x402 payment requirement above this many atomic USDC units (6 decimals). Default 100000 = US$0.10.",
+          "name": "MAX_PAYMENT_ATOMIC"
+        },
+        {
+          "default": "eth",
+          "description": "Default chain when the caller omits one: eth, base, polygon, arbitrum, optimism, bsc.",
+          "name": "DEFAULT_SCAN_CHAIN"
+        }
+      ],
+      "identifier": "wallettriage-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "86f2f50f9f",
+    "published_at": "2026-07-08T20:18:16.306942Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wallettriage/wallettriage-mcp",
+    "server_version": "0.1.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-08T20:18:16.306942Z"
+  },
+  "title": "WalletTriage",
+  "type": "mcp_server",
+  "version": "0.1.5"
+}

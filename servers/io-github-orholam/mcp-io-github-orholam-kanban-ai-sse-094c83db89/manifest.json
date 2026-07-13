@@ -1,0 +1,61 @@
+{
+  "description": "Remote MCP for Kanban AI boards\u2014manage projects, tasks, and comments from AI tools.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:50+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-orholam-kanban-ai.sse.094c83db89",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/orholam/kanban_ai",
+    "homepage": "https://github.com/orholam/kanban_ai",
+    "repository": "https://github.com/orholam/kanban_ai"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://kanbanai.dev/api/mcp"
+    }
+  },
+  "name": "io.github.orholam/kanban-ai",
+  "provenance": {
+    "identity_key": "094c83db89",
+    "published_at": "2026-07-10T02:24:50.026006Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.orholam/kanban-ai",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-10T02:24:50.026006Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Supabase access token for the signed-in Kanban AI user. Format: Bearer <access_token>. Obtain from the in-app Connect page (/connect) or GET /api/mcp-setup.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "placeholder": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+        },
+        {
+          "description": "Alternative to Authorization when your MCP client cannot send a Bearer header. Same Supabase access token value.",
+          "isSecret": true,
+          "name": "X-Supabase-Access-Token"
+        },
+        {
+          "description": "Shared deployment secret when MCP_API_SECRET is configured on the host (production uses this). Obtain from the in-app Connect page or GET /api/mcp-setup.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "X-MCP-API-Key"
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://kanbanai.dev/api/mcp"
+    }
+  ],
+  "title": "Kanban AI",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

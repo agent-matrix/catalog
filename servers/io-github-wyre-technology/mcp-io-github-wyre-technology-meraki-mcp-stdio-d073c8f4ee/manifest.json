@@ -1,0 +1,93 @@
+{
+  "description": "MCP server for the Cisco Meraki Dashboard: networks, devices, wireless, switch, appliance.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:59+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wyre-technology-meraki-mcp.stdio.d073c8f4ee",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wyre-technology/meraki-mcp",
+    "homepage": "https://github.com/wyre-technology/meraki-mcp",
+    "repository": "https://github.com/wyre-technology/meraki-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-technology/meraki-mcp:v1.0.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wyre-technology/meraki-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Cisco Meraki Dashboard API key",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "MERAKI_API_KEY"
+        },
+        {
+          "description": "Default Meraki organization ID (optional)",
+          "format": "string",
+          "name": "MERAKI_ORG_ID"
+        },
+        {
+          "description": "Override the Meraki API base URL (optional)",
+          "format": "string",
+          "name": "MERAKI_BASE_URL"
+        },
+        {
+          "default": "true",
+          "description": "Safety switch. When true (the default), all write operations are blocked. Set to false to enable writes.",
+          "format": "string",
+          "name": "READ_ONLY_MODE"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode for the server. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-technology/meraki-mcp:v1.0.3",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "d073c8f4ee",
+    "published_at": "2026-07-06T21:19:06.563195Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wyre-technology/meraki-mcp",
+    "server_version": "1.0.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-06T21:19:06.563195Z"
+  },
+  "title": "Cisco Meraki",
+  "type": "mcp_server",
+  "version": "1.0.3"
+}

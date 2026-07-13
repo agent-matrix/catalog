@@ -1,0 +1,83 @@
+{
+  "description": "Bitcoin-anchored, tamper-evident audit log for AI agents \u2014 record, disclose and verify actions.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:19+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.cv-touchstone-touchstone.stdio.51e367e29c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Touchstone-CV/touchstone-mcp",
+    "homepage": "https://github.com/Touchstone-CV/touchstone-mcp",
+    "repository": "https://github.com/Touchstone-CV/touchstone-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@touchstone-cv/mcp@0.3.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "cv.touchstone/touchstone",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Recorder public id (rec_...) to append to.",
+          "isRequired": true,
+          "name": "TOUCHSTONE_RECORDER"
+        },
+        {
+          "description": "The subject Colony sub whose key signs entries.",
+          "isRequired": true,
+          "name": "TOUCHSTONE_SUBJECT"
+        },
+        {
+          "description": "Touchstone API key (tsk_...) for the append/disclose REST calls.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "TOUCHSTONE_API_KEY"
+        },
+        {
+          "description": "Base64 Ed25519 seed. Signs locally \u2014 the key never leaves your machine. Use this or TOUCHSTONE_KEY_FILE.",
+          "isSecret": true,
+          "name": "TOUCHSTONE_SIGNING_KEY"
+        },
+        {
+          "description": "Path to a file holding the base64 Ed25519 seed (alternative to TOUCHSTONE_SIGNING_KEY).",
+          "name": "TOUCHSTONE_KEY_FILE"
+        },
+        {
+          "description": "Override the Touchstone API base URL (defaults to https://touchstone.cv).",
+          "name": "TOUCHSTONE_BASE_URL"
+        }
+      ],
+      "identifier": "@touchstone-cv/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "51e367e29c",
+    "published_at": "2026-07-10T10:58:24.846379Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "cv.touchstone/touchstone",
+    "server_version": "1.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-10T10:58:24.846379Z"
+  },
+  "title": "Touchstone",
+  "type": "mcp_server",
+  "version": "1.1.0"
+}

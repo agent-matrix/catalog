@@ -1,0 +1,81 @@
+{
+  "description": "Dokploy MCP server: manage apps, Docker Compose, databases, domains, backups, and servers.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:54+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sapientsai-dokploy-mcp-server.stdio.981f8b3921",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sapientsai/dokploy-mcp-server",
+    "homepage": "https://github.com/sapientsai/dokploy-mcp-server",
+    "repository": "https://github.com/sapientsai/dokploy-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "dokploy-mcp-server@1.8.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sapientsai/dokploy-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Dokploy instance URL (e.g., https://dokploy.example.com)",
+          "format": "string",
+          "isRequired": true,
+          "name": "DOKPLOY_URL"
+        },
+        {
+          "description": "Dokploy API key (generate in Settings > API Keys)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DOKPLOY_API_KEY"
+        },
+        {
+          "description": "Transport: 'stdio' (default) or 'httpStream' for remote/Docker deployments",
+          "format": "string",
+          "name": "TRANSPORT_TYPE"
+        },
+        {
+          "description": "HTTP port for httpStream transport (default 3000)",
+          "format": "string",
+          "name": "PORT"
+        },
+        {
+          "description": "HTTP host for httpStream transport (default 0.0.0.0)",
+          "format": "string",
+          "name": "HOST"
+        }
+      ],
+      "identifier": "dokploy-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.8.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "981f8b3921",
+    "published_at": "2026-07-11T22:48:49.964622Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sapientsai/dokploy-mcp-server",
+    "server_version": "1.8.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-11T22:48:49.964622Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.8.0"
+}

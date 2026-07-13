@@ -1,0 +1,89 @@
+{
+  "description": "OpenAPI-generated TokenLab MCP server for models, native AI, multimodal media, tasks, and files.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-hedging8563-tokenlab.stdio.df1926fc77",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/hedging8563/tokenlab-mcp-server",
+    "homepage": "https://github.com/hedging8563/tokenlab-mcp-server",
+    "repository": "https://github.com/hedging8563/tokenlab-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@tokenlabai/mcp-server@0.6.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.hedging8563/tokenlab",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional TokenLab API base URL. Defaults to https://api.tokenlab.sh.",
+          "format": "string",
+          "name": "TOKENLAB_API_BASE"
+        },
+        {
+          "description": "Optional TokenLab API key. Required for LLM inference, multimodal generation, async task, embedding, rerank, and translation tools.",
+          "format": "string",
+          "isSecret": true,
+          "name": "TOKENLAB_API_KEY"
+        },
+        {
+          "description": "Optional request timeout in milliseconds. Defaults to 120000.",
+          "format": "number",
+          "name": "TOKENLAB_REQUEST_TIMEOUT_MS"
+        },
+        {
+          "description": "Optional generated tool profile: catalog, core (default), or full.",
+          "format": "string",
+          "name": "TOKENLAB_MCP_TOOL_PROFILE"
+        },
+        {
+          "description": "Optional maximum local upload size per file. Defaults to 104857600 bytes.",
+          "format": "number",
+          "name": "TOKENLAB_MCP_MAX_FILE_BYTES"
+        },
+        {
+          "description": "Optional maximum response size returned inline. Defaults to 2097152 bytes.",
+          "format": "number",
+          "name": "TOKENLAB_MCP_INLINE_BYTES"
+        },
+        {
+          "description": "Optional local directory for response artifacts that are not returned inline.",
+          "format": "string",
+          "name": "TOKENLAB_ARTIFACT_DIR"
+        }
+      ],
+      "identifier": "@tokenlabai/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.6.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "df1926fc77",
+    "published_at": "2026-07-12T10:45:57.268367Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.hedging8563/tokenlab",
+    "server_version": "0.6.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-12T10:45:57.268367Z"
+  },
+  "title": "TokenLab MCP Server",
+  "type": "mcp_server",
+  "version": "0.6.3"
+}

@@ -1,0 +1,80 @@
+{
+  "description": "Non-custodial payment engine for AI agents \u2014 BTC, ETH, USDT, USDC, XRP, XMR, ZEC.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:28+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ShieldCubed-agentic-pay.stdio.87f83b7ac7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ShieldCubed/agentic-pay",
+    "homepage": "https://github.com/ShieldCubed/agentic-pay",
+    "repository": "https://github.com/ShieldCubed/agentic-pay"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@shieldcubed/agentic-pay@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ShieldCubed/agentic-pay",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Identifier for this agent, used to look up its spend-limit policy in config.json.",
+          "format": "string",
+          "name": "AGENTIC_PAY_AGENT_ID"
+        },
+        {
+          "description": "Absolute path to your config.json (spend limits, API keys, static prices). Defaults to config/config.json in the install directory.",
+          "format": "string",
+          "name": "AGENTIC_PAY_CONFIG"
+        },
+        {
+          "description": "WIF-encoded Bitcoin private key for the funding wallet. Only required if using the BTC rail.",
+          "format": "string",
+          "isSecret": true,
+          "name": "BTC_WIF"
+        },
+        {
+          "description": "EVM JSON-RPC endpoint URL. Only required if using the ETH/USDT/USDC rails.",
+          "format": "string",
+          "name": "ETH_RPC_URL"
+        },
+        {
+          "description": "0x-prefixed Ethereum private key for the funding wallet. Only required if using the ETH/USDT/USDC rails.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ETH_PRIVATE_KEY"
+        }
+      ],
+      "identifier": "@shieldcubed/agentic-pay",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "87f83b7ac7",
+    "published_at": "2026-07-12T14:11:49.70086Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ShieldCubed/agentic-pay",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-12T14:11:49.70086Z"
+  },
+  "title": "agentic-pay",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

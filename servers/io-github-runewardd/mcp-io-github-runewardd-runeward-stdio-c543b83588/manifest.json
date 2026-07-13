@@ -1,0 +1,74 @@
+{
+  "description": "Governed execution cells for AI agents: Docker/K8s sandboxes with policy, audit, and approvals.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:27+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Runewardd-runeward.stdio.c543b83588",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Runewardd/runeward",
+    "homepage": "https://github.com/Runewardd/runeward",
+    "repository": "https://github.com/Runewardd/runeward"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Start the runeward MCP server on stdio.",
+            "isRequired": true,
+            "type": "positional",
+            "value": "mcp"
+          },
+          "ghcr.io/runewardd/runeward:v0.1.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Runewardd/runeward",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Directory to resolve profile TOML files from (optional; defaults to the standard search path).",
+          "name": "RUNEWARD_CONFIG_DIR"
+        },
+        {
+          "description": "Directory where the tamper-evident audit ledger is written (optional).",
+          "name": "RUNEWARD_STATE_DIR"
+        }
+      ],
+      "identifier": "ghcr.io/runewardd/runeward:v0.1.4",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "Start the runeward MCP server on stdio.",
+          "isRequired": true,
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "c543b83588",
+    "published_at": "2026-07-08T19:16:29.435761Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Runewardd/runeward",
+    "server_version": "0.1.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-08T19:16:29.435761Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.4"
+}

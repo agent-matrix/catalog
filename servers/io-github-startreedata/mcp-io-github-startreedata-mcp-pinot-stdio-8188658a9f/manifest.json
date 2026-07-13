@@ -1,0 +1,89 @@
+{
+  "description": "Explore and query Apache Pinot clusters through MCP.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-startreedata-mcp-pinot.stdio.8188658a9f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/startreedata/mcp-pinot",
+    "homepage": "https://github.com/startreedata/mcp-pinot",
+    "repository": "https://github.com/startreedata/mcp-pinot"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-pinot-server==3.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.startreedata/mcp-pinot",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "http://localhost:9000",
+          "description": "HTTP(S) endpoint of the Pinot Controller.",
+          "format": "string",
+          "name": "PINOT_CONTROLLER_URL"
+        },
+        {
+          "default": "http://localhost:8000",
+          "description": "HTTP(S) endpoint of the Pinot Broker.",
+          "format": "string",
+          "name": "PINOT_BROKER_URL"
+        },
+        {
+          "description": "Optional Pinot basic-auth username.",
+          "format": "string",
+          "name": "PINOT_USERNAME"
+        },
+        {
+          "description": "Optional Pinot basic-auth password.",
+          "format": "string",
+          "isSecret": true,
+          "name": "PINOT_PASSWORD"
+        },
+        {
+          "description": "Optional Pinot bearer token. Overrides username and password when set.",
+          "format": "string",
+          "isSecret": true,
+          "name": "PINOT_TOKEN"
+        },
+        {
+          "default": "true",
+          "description": "Whether to enable Pinot multi-stage query engine support.",
+          "format": "boolean",
+          "name": "PINOT_USE_MSQE"
+        }
+      ],
+      "identifier": "mcp-pinot-server",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "3.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8188658a9f",
+    "published_at": "2026-07-08T01:14:40.612742Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.startreedata/mcp-pinot",
+    "server_version": "3.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-08T01:14:40.612742Z"
+  },
+  "title": "Apache Pinot MCP Server",
+  "type": "mcp_server",
+  "version": "3.2.0"
+}

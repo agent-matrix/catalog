@@ -1,0 +1,71 @@
+{
+  "description": "The grounded data layer for any LLM: governed SQL, metrics, lineage and catalog over your data.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-matih-mcp.stdio.d61703b427",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/matih-labs/matih-mcp",
+    "homepage": "https://github.com/matih-labs/matih-mcp",
+    "repository": "https://github.com/matih-labs/matih-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "description": "The remote Matih MCP endpoint (or your workspace host https://<slug>.app.matih.ai/api/v1/mcp).",
+            "type": "positional",
+            "value": "https://mcp.matih.ai/api/v1/mcp"
+          },
+          "@matihlabs/mcp@0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.matih/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Matih developer token (mat_agt_\u2026), minted in Settings \u2192 Developer Tokens. Bearer credential, scoped to your connections + tools.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "MATIH_MCP_TOKEN"
+        }
+      ],
+      "identifier": "@matihlabs/mcp",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "description": "The remote Matih MCP endpoint (or your workspace host https://<slug>.app.matih.ai/api/v1/mcp).",
+          "type": "positional",
+          "value": "https://mcp.matih.ai/api/v1/mcp"
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d61703b427",
+    "published_at": "2026-07-06T18:41:28.871763Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.matih/mcp",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-06T18:41:28.871763Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

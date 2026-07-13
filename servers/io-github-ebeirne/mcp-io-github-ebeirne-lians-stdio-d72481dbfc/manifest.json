@@ -1,0 +1,90 @@
+{
+  "description": "Bitemporal memory for AI agents. SEC 17a-4 audit chain, GDPR crypto-shred, information barriers.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:40+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ebeirne-lians.stdio.d72481dbfc",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ebeirne/Lians2",
+    "homepage": "https://github.com/ebeirne/Lians2",
+    "repository": "https://github.com/ebeirne/Lians2"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "name": "--from",
+            "type": "named",
+            "value": "lians-sdk[mcp]"
+          },
+          {
+            "type": "positional",
+            "value": "lians-mcp"
+          },
+          "lians-sdk==0.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ebeirne/lians",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of your Lians server (self-hosted or cloud)",
+          "isRequired": true,
+          "name": "LIANS_URL"
+        },
+        {
+          "description": "API key with read and write scopes",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "LIANS_API_KEY"
+        },
+        {
+          "default": "mcp-agent",
+          "description": "Agent identifier used as the memory namespace",
+          "name": "LIANS_AGENT_ID"
+        }
+      ],
+      "identifier": "lians-sdk",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "name": "--from",
+          "type": "named",
+          "value": "lians-sdk[mcp]"
+        },
+        {
+          "type": "positional",
+          "value": "lians-mcp"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d72481dbfc",
+    "published_at": "2026-07-06T20:38:13.233848Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ebeirne/lians",
+    "server_version": "0.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-06T20:38:13.233848Z"
+  },
+  "title": "Lians \u2014 Financial-Grade Agent Memory",
+  "type": "mcp_server",
+  "version": "0.4.0"
+}

@@ -1,0 +1,54 @@
+{
+  "description": "Streamable-HTTP MCP gateway: web_fetch, web_search, metis_verify (SSRF-hardened).",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-alexar76-aimarket-mcp.sse.71e63d51c0",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/alexar76/aimarket-mcp",
+    "homepage": "https://github.com/alexar76/aimarket-mcp",
+    "repository": "https://github.com/alexar76/aimarket-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://{aimarket_host}/mcp"
+    }
+  },
+  "name": "io.github.alexar76/aimarket-mcp",
+  "provenance": {
+    "identity_key": "71e63d51c0",
+    "published_at": "2026-07-12T07:26:21.533013Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.alexar76/aimarket-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-12T07:26:21.533013Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Bearer token matching AIMARKET_MCP_KEY when auth is enabled",
+          "isSecret": true,
+          "name": "Authorization"
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://{aimarket_host}/mcp",
+      "variables": {
+        "aimarket_host": {
+          "default": "127.0.0.1:9090",
+          "description": "Host[:port] of your aimarket-mcp deployment (no scheme). Default: local Docker."
+        }
+      }
+    }
+  ],
+  "title": "AIMarket MCP Gateway",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

@@ -1,0 +1,64 @@
+{
+  "description": "Drive Instavar Studio video jobs (create, render, approve, publish, metrics) with an API key.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-instavar-mcp-server.stdio.6e2d2441a2",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/instavar/mcp-server",
+    "homepage": "https://github.com/instavar/mcp-server",
+    "repository": "https://github.com/instavar/mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@instavar/mcp-server@0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.instavar/mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Per-user API key from https://instavar.com/studio/settings. Scoped to your org and revocable.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "INSTAVAR_API_KEY"
+        },
+        {
+          "default": "https://instavar.com",
+          "description": "Override the Instavar API host. Defaults to https://instavar.com.",
+          "name": "INSTAVAR_BASE_URL"
+        }
+      ],
+      "identifier": "@instavar/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6e2d2441a2",
+    "published_at": "2026-07-08T10:21:42.811371Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.instavar/mcp-server",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-08T10:21:42.811371Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

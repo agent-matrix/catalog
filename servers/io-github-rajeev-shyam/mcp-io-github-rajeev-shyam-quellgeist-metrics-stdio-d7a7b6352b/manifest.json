@@ -1,0 +1,79 @@
+{
+  "description": "Read-only MCP server: query_metrics over local metric time-series (Quellgeist triage).",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:27+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Rajeev-Shyam-quellgeist-metrics.stdio.d7a7b6352b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Rajeev-Shyam/Quellgeist",
+    "homepage": "https://github.com/Rajeev-Shyam/Quellgeist",
+    "repository": "https://github.com/Rajeev-Shyam/Quellgeist"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "name": "--from",
+            "type": "named",
+            "value": "quellgeist"
+          },
+          {
+            "type": "positional",
+            "value": "quellgeist-metrics-mcp"
+          },
+          "quellgeist==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Rajeev-Shyam/quellgeist-metrics",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the metric series to read (default: demo/metrics.json, resolved against the working directory).",
+          "name": "QG_METRICS_PATH"
+        }
+      ],
+      "identifier": "quellgeist",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "name": "--from",
+          "type": "named",
+          "value": "quellgeist"
+        },
+        {
+          "type": "positional",
+          "value": "quellgeist-metrics-mcp"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d7a7b6352b",
+    "published_at": "2026-07-07T11:38:57.587451Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Rajeev-Shyam/quellgeist-metrics",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-07T11:38:57.587451Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

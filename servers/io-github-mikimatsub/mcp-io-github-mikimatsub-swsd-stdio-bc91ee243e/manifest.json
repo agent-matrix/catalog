@@ -1,0 +1,90 @@
+{
+  "description": "MCP server for SolarWinds Service Desk: tickets, knowledge base, and the service catalog.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:47+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mikimatsub-swsd.stdio.bc91ee243e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mikimatsub/swsd-mcp",
+    "homepage": "https://github.com/mikimatsub/swsd-mcp",
+    "repository": "https://github.com/mikimatsub/swsd-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "swsd-mcp@2.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mikimatsub/swsd",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "SolarWinds Service Desk admin token (JWT). Generate in the SWSD UI: Setup -> Users & Groups -> Users -> [your user] -> Actions -> Generate JSON Web Token. Service Desk administrator rights required.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SWSD_TOKEN"
+        },
+        {
+          "default": "https://api.samanage.com",
+          "description": "SWSD API base URL. US tenants: https://api.samanage.com (default). EU tenants: https://apieu.samanage.com.",
+          "format": "string",
+          "name": "SWSD_BASE_URL"
+        },
+        {
+          "choices": [
+            "triage",
+            "agent",
+            "knowledge",
+            "operations",
+            "full"
+          ],
+          "default": "agent",
+          "description": "Tool registration profile: 'triage' (14 read-heavy tools), 'agent' (37 default), 'knowledge' (15 KB-author), 'operations' (64 ITSM operations tools), 'full' (66 every tool).",
+          "format": "string",
+          "name": "SWSD_PROFILE"
+        },
+        {
+          "choices": [
+            "live",
+            "dry-run",
+            "disabled"
+          ],
+          "default": "live",
+          "description": "Write safety mode: 'live' calls SWSD normally; 'dry-run' returns write payload previews without sending writes; 'disabled' rejects write tools.",
+          "format": "string",
+          "name": "SWSD_WRITE_MODE"
+        }
+      ],
+      "identifier": "swsd-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "bc91ee243e",
+    "published_at": "2026-07-09T14:38:31.184772Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mikimatsub/swsd",
+    "server_version": "2.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-09T14:38:31.184772Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "2.2.0"
+}

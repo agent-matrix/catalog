@@ -1,0 +1,107 @@
+{
+  "description": "Rust MCP server for homelab logs, syslog, Docker logs, FTS search, and AI transcript correlation.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-dinglebear-cortex-rmcp.stdio.c6702604f3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jmagar/cortex",
+    "homepage": "https://github.com/jmagar/cortex",
+    "repository": "https://github.com/jmagar/cortex"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "cortex-rmcp@3.9.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.dinglebear/cortex-rmcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional Cortex home directory containing configuration and local SQLite data.",
+          "format": "string",
+          "name": "CORTEX_HOME",
+          "placeholder": "~/.cortex"
+        },
+        {
+          "description": "Optional bearer token for Cortex MCP HTTP mode; also used by some shared configs.",
+          "format": "string",
+          "isSecret": true,
+          "name": "CORTEX_TOKEN"
+        },
+        {
+          "description": "Bearer token for Cortex REST API routes when running daemon/API mode.",
+          "format": "string",
+          "isSecret": true,
+          "name": "CORTEX_API_TOKEN"
+        },
+        {
+          "description": "Optional GitHub release tag override for the downloaded Cortex binary.",
+          "format": "string",
+          "name": "CORTEX_RMCP_VERSION",
+          "placeholder": "v3.9.0"
+        },
+        {
+          "default": "jmagar/cortex",
+          "description": "Optional GitHub owner/repo override for release asset downloads.",
+          "format": "string",
+          "name": "CORTEX_RMCP_REPO",
+          "placeholder": "jmagar/cortex"
+        },
+        {
+          "description": "Optional release download base URL override.",
+          "format": "string",
+          "name": "CORTEX_RMCP_RELEASE_BASE_URL"
+        },
+        {
+          "default": "info",
+          "description": "Tracing filter for Cortex logs.",
+          "format": "string",
+          "name": "RUST_LOG",
+          "placeholder": "info"
+        }
+      ],
+      "identifier": "cortex-rmcp",
+      "packageArguments": [
+        {
+          "description": "Run Cortex query-only stdio MCP mode.",
+          "format": "string",
+          "isRequired": true,
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "3.9.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c6702604f3",
+    "published_at": "2026-07-12T11:58:28.58298Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.dinglebear/cortex-rmcp",
+    "server_version": "3.9.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-12T11:58:28.58298Z"
+  },
+  "title": "Cortex RMCP",
+  "type": "mcp_server",
+  "version": "3.9.1"
+}

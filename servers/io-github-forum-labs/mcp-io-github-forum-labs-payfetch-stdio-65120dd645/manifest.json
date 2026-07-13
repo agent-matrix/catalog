@@ -1,0 +1,107 @@
+{
+  "description": "x402 paying-fetch client for AI agents. Spending caps, approval, receipts. Non-custodial.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-forum-labs-payfetch.stdio.65120dd645",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/forum-labs/payfetch",
+    "homepage": "https://github.com/forum-labs/payfetch",
+    "repository": "https://github.com/forum-labs/payfetch"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@forum-labs/payfetch@1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.forum-labs/payfetch",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "0x-hex EVM private key for a DEDICATED low-balance wallet. Set exactly ONE signer source.",
+          "format": "string",
+          "isSecret": true,
+          "name": "PAYFETCH_PRIVATE_KEY"
+        },
+        {
+          "description": "Path to a chmod-600 file holding a 0x-hex key (signer alt).",
+          "format": "string",
+          "name": "PAYFETCH_KEY_FILE"
+        },
+        {
+          "description": "Coinbase CDP server-wallet key id (YOUR account).",
+          "format": "string",
+          "isSecret": true,
+          "name": "PAYFETCH_CDP_API_KEY_ID"
+        },
+        {
+          "description": "Coinbase CDP API key secret.",
+          "format": "string",
+          "isSecret": true,
+          "name": "PAYFETCH_CDP_API_KEY_SECRET"
+        },
+        {
+          "description": "Coinbase CDP wallet secret.",
+          "format": "string",
+          "isSecret": true,
+          "name": "PAYFETCH_CDP_WALLET_SECRET"
+        },
+        {
+          "description": "Optional named CDP EVM account.",
+          "format": "string",
+          "name": "PAYFETCH_CDP_ACCOUNT_NAME"
+        },
+        {
+          "description": "Ledger/state/config root. Default ~/.payfetch.",
+          "format": "string",
+          "name": "PAYFETCH_DATA_DIR"
+        },
+        {
+          "description": "Any value -> receipts test:true, Base mainnet refused (Sepolia only).",
+          "format": "string",
+          "name": "PAYFETCH_TEST_MODE"
+        },
+        {
+          "description": "Set to 1 to grant approval authority (never with a queue-capable mode).",
+          "format": "string",
+          "name": "PAYFETCH_APPROVER"
+        },
+        {
+          "description": "Optional via= attribution slug sent on guard calls only.",
+          "format": "string",
+          "name": "PAYFETCH_VIA"
+        }
+      ],
+      "identifier": "@forum-labs/payfetch",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "65120dd645",
+    "published_at": "2026-07-06T18:30:03.440542Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.forum-labs/payfetch",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-06T18:30:03.440542Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.0"
+}
