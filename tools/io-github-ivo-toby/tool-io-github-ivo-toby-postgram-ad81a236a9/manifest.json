@@ -1,0 +1,86 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/ivo-toby/postgram@sha256:29b61fb302bd52862b8eba43305ee2aa4fc072d5f9188652f1fe6324f49d5391"
+      }
+    }
+  ],
+  "description": "Self-hosted memory for AI agents with hybrid search, knowledge graphs, tasks, and document sync.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:43+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/ivo-toby/postgram",
+  "id": "tool.io-github-ivo-toby-postgram.ad81a236a9",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ivo-toby/postgram",
+    "homepage": "https://github.com/ivo-toby/postgram",
+    "repository": "https://github.com/ivo-toby/postgram"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Self-hosted memory for AI agents with hybrid search, knowledge graphs, tasks, and document sync.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.ivo-toby/postgram",
+      "request_type": "POST",
+      "url": "https://github.com/ivo-toby/postgram"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "name": "--publish",
+            "type": "named",
+            "value": "127.0.0.1:3100:3100"
+          },
+          {
+            "name": "--add-host",
+            "type": "named",
+            "value": "host.docker.internal:host-gateway"
+          },
+          "ghcr.io/ivo-toby/postgram@sha256:29b61fb302bd52862b8eba43305ee2aa4fc072d5f9188652f1fe6324f49d5391"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ivo-toby/postgram",
+  "provenance": {
+    "identity_key": "62af7666ec",
+    "promoted_from": "mcp.io-github-ivo-toby-postgram.stdio.62af7666ec",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ivo-toby/postgram",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-ivo-toby-postgram.stdio.62af7666ec",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/ivo-toby/postgram",
+  "summary": "Self-hosted memory for AI agents with hybrid search, knowledge graphs, tasks, and document sync.",
+  "tags": [
+    "agents",
+    "hosted",
+    "hybrid",
+    "memory",
+    "postgram",
+    "search",
+    "self"
+  ],
+  "title": "Postgram",
+  "type": "tool",
+  "version": "0.1.3"
+}

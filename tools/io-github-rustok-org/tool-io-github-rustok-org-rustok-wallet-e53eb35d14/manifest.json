@@ -1,0 +1,127 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/rustok-org/rustok-wallet:v0.4.0"
+      }
+    }
+  ],
+  "description": "Self-custody Ethereum agent wallet (MCP/stdio). Keys stay in a local Docker volume.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:54+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/rustok-org/mcp",
+  "id": "tool.io-github-rustok-org-rustok-wallet.e53eb35d14",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/rustok-org/mcp",
+    "homepage": "https://github.com/rustok-org/mcp",
+    "repository": "https://github.com/rustok-org/mcp"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Self-custody Ethereum agent wallet (MCP/stdio). Keys stay in a local Docker volume.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.rustok-org/rustok-wallet",
+      "request_type": "POST",
+      "url": "https://github.com/rustok-org/mcp"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Keep stdin open \u2014 required for the stdio MCP transport.",
+            "name": "-i",
+            "type": "named"
+          },
+          {
+            "description": "Remove the ephemeral container on exit (keys persist in the volume).",
+            "name": "--rm",
+            "type": "named"
+          },
+          {
+            "description": "PID-1 init: signal forwarding and zombie reaping.",
+            "name": "--init",
+            "type": "named"
+          },
+          {
+            "description": "Mount the local keystore volume (self-custody: keys never leave this volume).",
+            "name": "-v",
+            "type": "named",
+            "value": "rustok-wallet:/data"
+          },
+          {
+            "description": "Keystore password.",
+            "isRequired": true,
+            "name": "-e",
+            "type": "named",
+            "value": "RUSTOK_KEYRING_PASSWORD={password}",
+            "variables": {
+              "password": {
+                "description": "Password that unlocks your local keystore (the one set at create-wallet).",
+                "format": "string",
+                "isRequired": true,
+                "isSecret": true
+              }
+            }
+          },
+          {
+            "description": "Ethereum mainnet RPC URL.",
+            "isRequired": true,
+            "name": "-e",
+            "type": "named",
+            "value": "RUSTOK_RPC_URLS_1={rpc_url}",
+            "variables": {
+              "rpc_url": {
+                "description": "Ethereum mainnet RPC URL (an Alchemy key URL, or a public RPC).",
+                "format": "string",
+                "isRequired": true
+              }
+            }
+          },
+          "ghcr.io/rustok-org/rustok-wallet:v0.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.rustok-org/rustok-wallet",
+  "provenance": {
+    "identity_key": "86fd3cff0d",
+    "promoted_from": "mcp.io-github-rustok-org-rustok-wallet.stdio.86fd3cff0d",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.rustok-org/rustok-wallet",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-rustok-org-rustok-wallet.stdio.86fd3cff0d",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/rustok-org/mcp",
+  "summary": "Self-custody Ethereum agent wallet (MCP/stdio). Keys stay in a local Docker volume.",
+  "tags": [
+    "custody",
+    "ethereum",
+    "keys",
+    "rustok",
+    "self",
+    "stay",
+    "stdio",
+    "wallet"
+  ],
+  "title": "Rustok Wallet",
+  "type": "tool",
+  "version": "0.4.0"
+}

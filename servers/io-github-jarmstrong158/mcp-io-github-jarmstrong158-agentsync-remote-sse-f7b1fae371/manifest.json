@@ -1,0 +1,52 @@
+{
+  "description": "Self-hosted Cloudflare Worker remote transport for agentsync (streamable-HTTP).",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:43+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-jarmstrong158-agentsync-remote.sse.f7b1fae371",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jarmstrong158/agentsync-remote",
+    "homepage": "https://github.com/jarmstrong158/agentsync-remote",
+    "repository": "https://github.com/jarmstrong158/agentsync-remote"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://agentsync-remote.{account}.workers.dev/mcp/{token}"
+    }
+  },
+  "name": "io.github.jarmstrong158/agentsync-remote",
+  "provenance": {
+    "identity_key": "f7b1fae371",
+    "published_at": "2026-07-12T18:09:49.752092Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.jarmstrong158/agentsync-remote",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-12T18:09:49.752092Z"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://agentsync-remote.{account}.workers.dev/mcp/{token}",
+      "variables": {
+        "account": {
+          "description": "Your Cloudflare account subdomain (the 'x' in x.workers.dev); edit the URL if you use a custom domain.",
+          "isRequired": true
+        },
+        "token": {
+          "description": "Your Worker AUTH_TOKEN (set as a Worker secret at deploy time). It is the path credential; keep it private.",
+          "isRequired": true,
+          "isSecret": true
+        }
+      }
+    }
+  ],
+  "title": "agentsync (remote)",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

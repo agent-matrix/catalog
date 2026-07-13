@@ -1,0 +1,108 @@
+{
+  "description": "Safe SQL gateway for AI agents: SELECT-only validation, access policies, masking, audit trail, evals",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:49+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nickklos10-querypilot.stdio.e3f96bff5d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nickklos10/QueryPilot",
+    "homepage": "https://github.com/nickklos10/QueryPilot",
+    "repository": "https://github.com/nickklos10/QueryPilot"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "querypilot==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nickklos10/querypilot",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "SQLAlchemy-style database connection URL, e.g. sqlite:///demo.db or postgresql://user:pass@host:5432/db. Equivalent to --database-url.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "QUERYPILOT_DATABASE_URL"
+        },
+        {
+          "choices": [
+            "sqlite",
+            "postgres",
+            "postgresql"
+          ],
+          "default": "sqlite",
+          "description": "SQL dialect for the connector. Equivalent to --dialect.",
+          "format": "string",
+          "name": "QUERYPILOT_DIALECT"
+        },
+        {
+          "default": "100",
+          "description": "Maximum rows returned per query. Equivalent to --max-rows.",
+          "format": "number",
+          "name": "QUERYPILOT_MAX_ROWS"
+        },
+        {
+          "default": "10",
+          "description": "Query execution timeout in seconds. Equivalent to --timeout-seconds.",
+          "format": "number",
+          "name": "QUERYPILOT_TIMEOUT_SECONDS"
+        },
+        {
+          "description": "JSON-encoded AccessPolicy (blocked_columns, allowed_columns, row_filters, masking_rules) enforced before execution. Equivalent to --access-policy-json.",
+          "format": "string",
+          "name": "QUERYPILOT_ACCESS_POLICY_JSON"
+        },
+        {
+          "choices": [
+            "stdio",
+            "streamable-http",
+            "sse"
+          ],
+          "default": "stdio",
+          "description": "MCP transport used by `querypilot mcp`. Equivalent to --transport. Most MCP clients should leave this at stdio; streamable-http is for clients that speak Streamable HTTP directly.",
+          "format": "string",
+          "name": "QUERYPILOT_MCP_TRANSPORT"
+        }
+      ],
+      "identifier": "querypilot",
+      "packageArguments": [
+        {
+          "description": "Selects the `querypilot mcp` subcommand (as opposed to `serve` or `eval`).",
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e3f96bff5d",
+    "published_at": "2026-07-11T17:57:41.247728Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nickklos10/querypilot",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-11T17:57:41.247728Z"
+  },
+  "title": "QueryPilot",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

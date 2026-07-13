@@ -1,0 +1,60 @@
+{
+  "description": "Local-first MCP bridge for NinjaTrader 8 behind a deterministic guardrail engine.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:17+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-pitbridge-pitbridge.stdio.aa0197d19d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ToolstackVault/pitbridge",
+    "homepage": "https://github.com/ToolstackVault/pitbridge",
+    "repository": "https://github.com/ToolstackVault/pitbridge"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "pitbridge==0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.pitbridge/pitbridge",
+  "packages": [
+    {
+      "identifier": "pitbridge",
+      "packageArguments": [
+        {
+          "description": "Run the PitBridge daemon exposing its agent surface over MCP stdio. Paper mode by default; there is no MCP tool to arm live trading or release the kill switch.",
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "aa0197d19d",
+    "published_at": "2026-07-10T06:42:01.545923Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.pitbridge/pitbridge",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-10T06:42:01.545923Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

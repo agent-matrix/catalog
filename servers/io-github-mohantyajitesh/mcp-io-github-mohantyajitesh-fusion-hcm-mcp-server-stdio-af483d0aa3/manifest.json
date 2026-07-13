@@ -1,0 +1,73 @@
+{
+  "description": "Open-source, write-capable MCP server for Oracle Fusion HCM. Safe by default. Unofficial.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:48+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mohantyajitesh-fusion-hcm-mcp-server.stdio.af483d0aa3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mohantyajitesh/fusion-hcm-mcp-server",
+    "homepage": "https://github.com/mohantyajitesh/fusion-hcm-mcp-server",
+    "repository": "https://github.com/mohantyajitesh/fusion-hcm-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "fusion-hcm-mcp-server==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mohantyajitesh/fusion-hcm-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Oracle Fusion pod base URL, e.g. https://your-pod.fa.us6.oraclecloud.com",
+          "isRequired": true,
+          "name": "HCM_BASE_URL"
+        },
+        {
+          "description": "Fusion integration user (least-privilege, read-only HCM roles recommended)",
+          "isRequired": true,
+          "name": "HCM_USERNAME"
+        },
+        {
+          "description": "Integration user password (basic auth). Alternatively store in the OS credential store under service 'fusion-hcm-mcp-server' and omit this.",
+          "isSecret": true,
+          "name": "HCM_PASSWORD"
+        },
+        {
+          "description": "Optional path to a config.toml for advanced settings (modules, feature flags, OAuth2, limits). Env vars override file values.",
+          "name": "CONFIG_FILE"
+        }
+      ],
+      "identifier": "fusion-hcm-mcp-server",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "af483d0aa3",
+    "published_at": "2026-07-10T00:21:00.560796Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mohantyajitesh/fusion-hcm-mcp-server",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-10T00:21:00.560796Z"
+  },
+  "title": "HCM MCP Server for Oracle Fusion Cloud (unofficial)",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

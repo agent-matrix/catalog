@@ -1,0 +1,92 @@
+{
+  "description": "Provider-neutral OpenDeepThink reasoning server: generate, judge, rank, mutate.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:46+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-linxule-deepthonk.stdio.994ceb1d1a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/linxule/deepthonk",
+    "homepage": "https://github.com/linxule/deepthonk",
+    "repository": "https://github.com/linxule/deepthonk"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "deepthonk@0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.linxule/deepthonk",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API key for the DeepSeek provider. Optional: omit to use MCP sampling or another provider.",
+          "format": "string",
+          "isSecret": true,
+          "name": "DEEPSEEK_API_KEY"
+        },
+        {
+          "description": "API key for the OpenRouter provider. Optional: omit to use MCP sampling or another provider.",
+          "format": "string",
+          "isSecret": true,
+          "name": "OPENROUTER_API_KEY"
+        },
+        {
+          "description": "API key for a custom openai-compatible provider endpoint. Optional.",
+          "format": "string",
+          "isSecret": true,
+          "name": "DEEPTHONK_API_KEY"
+        },
+        {
+          "description": "Path to config.yaml. Defaults to ~/.config/deepthonk/config.yaml.",
+          "format": "filepath",
+          "name": "DEEPTHONK_CONFIG"
+        },
+        {
+          "description": "Directory of custom profile YAML files. Defaults to the config directory's profiles/.",
+          "format": "filepath",
+          "name": "DEEPTHONK_PROFILES_DIR"
+        }
+      ],
+      "identifier": "deepthonk",
+      "packageArguments": [
+        {
+          "description": "The deepthonk bin has no default action; serve-mcp starts the stdio MCP server.",
+          "isRequired": true,
+          "type": "positional",
+          "value": "serve-mcp",
+          "valueHint": "serve-mcp"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "994ceb1d1a",
+    "published_at": "2026-07-10T13:46:29.483611Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.linxule/deepthonk",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-10T13:46:29.483611Z"
+  },
+  "title": "DeepThonk",
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

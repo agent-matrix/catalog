@@ -1,0 +1,53 @@
+{
+  "description": "Agent-run distribution: find private communities, estimate CPA, launch admin-approved campaigns.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:18+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-torchlyhq-torchly.sse.d3b36f2be9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://app.torchlyhq.com/api/mcp"
+    }
+  },
+  "name": "com.torchlyhq/torchly",
+  "provenance": {
+    "identity_key": "d3b36f2be9",
+    "published_at": "2026-07-10T22:37:17.790753Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.torchlyhq/torchly",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-10T22:37:17.790753Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Torchly API key as a bearer token. Create one at https://app.torchlyhq.com/brand/api-keys (shown once, starts with tl_).",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {api_key}",
+          "variables": {
+            "api_key": {
+              "description": "Your Torchly API key (tl_...)",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://app.torchlyhq.com/api/mcp"
+    }
+  ],
+  "title": "Torchly",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

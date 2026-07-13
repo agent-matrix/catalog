@@ -1,0 +1,96 @@
+{
+  "description": "Rust MCP server and CLI for Tailscale devices, users, keys, policies, and auth.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-dinglebear-tailscale-rmcp.stdio.79dad833de",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jmagar/tailscale-rmcp",
+    "homepage": "https://github.com/jmagar/tailscale-rmcp",
+    "repository": "https://github.com/jmagar/tailscale-rmcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "tailscale-rmcp@0.1.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.dinglebear/tailscale-rmcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Tailscale API key.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "TAILSCALE_API_KEY"
+        },
+        {
+          "description": "Optional GitHub release tag override for the downloaded Tailscale RMCP binary.",
+          "format": "string",
+          "name": "TAILSCALE_RMCP_VERSION",
+          "placeholder": "v0.1.2"
+        },
+        {
+          "default": "jmagar/tailscale-rmcp",
+          "description": "Optional GitHub owner/repo override for release asset downloads.",
+          "format": "string",
+          "name": "TAILSCALE_RMCP_REPO",
+          "placeholder": "jmagar/tailscale-rmcp"
+        },
+        {
+          "description": "Optional release download base URL override.",
+          "format": "string",
+          "name": "TAILSCALE_RMCP_RELEASE_BASE_URL"
+        },
+        {
+          "default": "info",
+          "description": "Tracing filter for Tailscale RMCP logs.",
+          "format": "string",
+          "name": "RUST_LOG",
+          "placeholder": "info"
+        }
+      ],
+      "identifier": "tailscale-rmcp",
+      "packageArguments": [
+        {
+          "description": "Run Tailscale RMCP over stdio.",
+          "format": "string",
+          "isRequired": true,
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "79dad833de",
+    "published_at": "2026-07-12T12:00:37.314618Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.dinglebear/tailscale-rmcp",
+    "server_version": "0.1.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-12T12:00:37.314618Z"
+  },
+  "title": "Tailscale RMCP",
+  "type": "mcp_server",
+  "version": "0.1.3"
+}

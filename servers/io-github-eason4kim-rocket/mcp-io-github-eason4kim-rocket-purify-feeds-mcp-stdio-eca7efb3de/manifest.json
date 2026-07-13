@@ -1,0 +1,64 @@
+{
+  "description": "Query CISA KEV / EPSS vulnerability feeds with full per-record provenance and auditable versions",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:40+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-eason4kim-rocket-purify-feeds-mcp.stdio.eca7efb3de",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/eason4kim-rocket/purify-feeds-mcp",
+    "homepage": "https://github.com/eason4kim-rocket/purify-feeds-mcp",
+    "repository": "https://github.com/eason4kim-rocket/purify-feeds-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/eason4kim-rocket/purify-feeds-mcp:1.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.eason4kim-rocket/purify-feeds-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API key for the public feeds gateway (issued manually during the pilot \u2014 open a GitHub issue to request one)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PURIFY_API_KEY"
+        },
+        {
+          "description": "Feeds API base URL (defaults to the public gateway https://feeds.verifly.pro/feeds-api)",
+          "format": "string",
+          "name": "PURIFY_API_URL"
+        }
+      ],
+      "identifier": "ghcr.io/eason4kim-rocket/purify-feeds-mcp:1.0.1",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "eca7efb3de",
+    "published_at": "2026-07-09T09:53:30.625335Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.eason4kim-rocket/purify-feeds-mcp",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-09T09:53:30.625335Z"
+  },
+  "title": "Purify Security Feeds",
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

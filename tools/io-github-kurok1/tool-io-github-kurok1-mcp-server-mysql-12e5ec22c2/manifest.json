@@ -1,0 +1,90 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/kurok1/mcp-server-mysql:1.2.1"
+      }
+    }
+  ],
+  "description": "Security-first MySQL MCP server: AST-validated SQL (fail-closed), default-deny whitelist, audit.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:25+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/Kurok1/mcp-server-mysql",
+  "id": "tool.io-github-kurok1-mcp-server-mysql.12e5ec22c2",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Kurok1/mcp-server-mysql",
+    "homepage": "https://github.com/Kurok1/mcp-server-mysql",
+    "repository": "https://github.com/Kurok1/mcp-server-mysql"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Security-first MySQL MCP server: AST-validated SQL (fail-closed), default-deny whitelist, audit.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.Kurok1/mcp-server-mysql",
+      "request_type": "POST",
+      "url": "https://github.com/Kurok1/mcp-server-mysql"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "isRequired": true,
+            "name": "-v",
+            "type": "named",
+            "value": "{config_dir}:/data",
+            "variables": {
+              "config_dir": {
+                "default": "~/.mcp-server-mysql",
+                "description": "Host directory containing config.yaml (see config.example.yaml in the repository)",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          "ghcr.io/kurok1/mcp-server-mysql:1.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Kurok1/mcp-server-mysql",
+  "provenance": {
+    "identity_key": "9dab666118",
+    "promoted_from": "mcp.io-github-Kurok1-mcp-server-mysql.stdio.9dab666118",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Kurok1/mcp-server-mysql",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-Kurok1-mcp-server-mysql.stdio.9dab666118",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/Kurok1/mcp-server-mysql",
+  "summary": "Security-first MySQL MCP server: AST-validated SQL (fail-closed), default-deny whitelist, audit.",
+  "tags": [
+    "closed",
+    "default",
+    "fail",
+    "first",
+    "mysql",
+    "security",
+    "validated"
+  ],
+  "title": "MySQL (security-first)",
+  "type": "tool",
+  "version": "1.2.1"
+}

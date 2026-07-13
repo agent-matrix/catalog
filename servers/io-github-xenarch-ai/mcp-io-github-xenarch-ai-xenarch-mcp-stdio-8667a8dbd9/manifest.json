@@ -1,0 +1,74 @@
+{
+  "description": "Xenarch \u2014 x402 MCP server for AI agent payments. Non-custodial, USDC on Base L2.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:59+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-xenarch-ai-xenarch-mcp.stdio.8667a8dbd9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/xenarch-ai/xenarch-mcp",
+    "homepage": "https://github.com/xenarch-ai/xenarch-mcp",
+    "repository": "https://github.com/xenarch-ai/xenarch-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@xenarch/agent-mcp@1.3.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.xenarch-ai/xenarch-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Wallet private key (hex, 0x-prefixed). Auto-generates on first run if omitted.",
+          "format": "string",
+          "isSecret": true,
+          "name": "XENARCH_PRIVATE_KEY"
+        },
+        {
+          "description": "Base RPC endpoint URL",
+          "format": "string",
+          "name": "XENARCH_RPC_URL"
+        },
+        {
+          "description": "Network for payments (base or base-sepolia)",
+          "format": "string",
+          "name": "XENARCH_NETWORK"
+        },
+        {
+          "description": "Local per-call payment cap in USDC (default 1.00). The only spending ceiling in standalone mode; set 0 to disable. Connect XENARCH_API_TOKEN for managed per-tx/daily/monthly caps.",
+          "format": "string",
+          "name": "XENARCH_MAX_PAYMENT_USD"
+        }
+      ],
+      "identifier": "@xenarch/agent-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.3.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8667a8dbd9",
+    "published_at": "2026-07-08T03:03:22.361521Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.xenarch-ai/xenarch-mcp",
+    "server_version": "1.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-08T03:03:22.361521Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.3.1"
+}

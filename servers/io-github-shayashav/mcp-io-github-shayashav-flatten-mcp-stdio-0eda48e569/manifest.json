@@ -1,0 +1,80 @@
+{
+  "description": "Cut a Claude Code session's context tokens losslessly \u2014 the reversible alternative to /compact.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-shayaShav-flatten-mcp.stdio.0eda48e569",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/shayaShav/flatten-mcp",
+    "homepage": "https://github.com/shayaShav/flatten-mcp",
+    "repository": "https://github.com/shayaShav/flatten-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "flatten-mcp@2.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.shayaShav/flatten-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional. Set to 1 to count token savings exactly via Anthropic's count_tokens endpoint (requires ANTHROPIC_API_KEY). Off by default: key presence alone never triggers a network call.",
+          "format": "string",
+          "name": "FLATTEN_COUNT_EXACT"
+        },
+        {
+          "description": "Optional. API key for the exact token count; ignored unless FLATTEN_COUNT_EXACT=1.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        },
+        {
+          "description": "Optional. Model id used for the exact token count (default: claude-haiku-4-5-20251001).",
+          "format": "string",
+          "name": "FLATTEN_COUNT_MODEL"
+        },
+        {
+          "description": "Optional. Set to 1 to also register the in-memory flatten_messages/unflatten_messages tools alongside the three disk tools. Off by default to keep the local tool surface lean.",
+          "format": "string",
+          "name": "FLATTEN_INMEMORY_TOOLS"
+        },
+        {
+          "description": "Optional. Claude config dir whose projects/ session store is read (default: ~/.claude). The same variable Claude Code uses for profiles, so an alternate-profile server targets its own sessions automatically; override per call with the claude_dir argument.",
+          "format": "string",
+          "name": "CLAUDE_CONFIG_DIR"
+        }
+      ],
+      "identifier": "flatten-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0eda48e569",
+    "published_at": "2026-07-10T23:48:27.427711Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.shayaShav/flatten-mcp",
+    "server_version": "2.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-10T23:48:27.427711Z"
+  },
+  "title": "flatten-mcp",
+  "type": "mcp_server",
+  "version": "2.2.2"
+}

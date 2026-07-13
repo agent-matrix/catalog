@@ -1,0 +1,102 @@
+{
+  "description": "Controlled SQL access gateway with policy, cost limits, tenant isolation, and safe tools.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:49+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nethinwei-sql-mcp-server.stdio.145815e1a2",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nethinwei/sql-mcp-server",
+    "homepage": "https://github.com/nethinwei/sql-mcp-server",
+    "repository": "https://github.com/nethinwei/sql-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "isRequired": true,
+            "name": "--mount",
+            "type": "named",
+            "value": "type=bind,src={config_path},dst=/config/config.yaml,readonly",
+            "variables": {
+              "config_path": {
+                "description": "Absolute path to the SQL MCP Server YAML configuration",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          "ghcr.io/nethinwei/sql-mcp-server:0.1.8"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nethinwei/sql-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Database DSN referenced by ${DATABASE_DSN} in config.yaml",
+          "isSecret": true,
+          "name": "DATABASE_DSN"
+        }
+      ],
+      "identifier": "ghcr.io/nethinwei/sql-mcp-server:0.1.8",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "serve"
+        },
+        {
+          "name": "--config",
+          "type": "named",
+          "value": "/config/config.yaml"
+        },
+        {
+          "name": "--transport",
+          "type": "named",
+          "value": "stdio"
+        }
+      ],
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "isRequired": true,
+          "name": "--mount",
+          "type": "named",
+          "value": "type=bind,src={config_path},dst=/config/config.yaml,readonly",
+          "variables": {
+            "config_path": {
+              "description": "Absolute path to the SQL MCP Server YAML configuration",
+              "format": "filepath",
+              "isRequired": true
+            }
+          }
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "145815e1a2",
+    "published_at": "2026-07-12T03:38:40.118376Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nethinwei/sql-mcp-server",
+    "server_version": "0.1.8",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-12T03:38:40.118376Z"
+  },
+  "title": "SQL MCP Server",
+  "type": "mcp_server",
+  "version": "0.1.8"
+}

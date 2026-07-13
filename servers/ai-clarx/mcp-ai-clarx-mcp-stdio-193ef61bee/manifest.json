@@ -1,0 +1,65 @@
+{
+  "description": "Score agent manifests, generate CI workflows, and pull Clarx scan findings into your IDE.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-clarx-mcp.stdio.193ef61bee",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Gernika-Labs/clarx-cloud",
+    "homepage": "https://github.com/Gernika-Labs/clarx-cloud",
+    "repository": "https://github.com/Gernika-Labs/clarx-cloud"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@clarxai/mcp@0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.clarx/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional. Enables the BYOK AI tools (suggest_manifest_fix, generate_manifest_draft).",
+          "format": "string",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        },
+        {
+          "description": "Optional. Org-scoped Clarx Cloud API token \u2014 unlocks hosted tools (list_repos, get_scan, list_findings, get_remediation_prompt). Create in org settings.",
+          "format": "string",
+          "isSecret": true,
+          "name": "CLARX_MCP_TOKEN"
+        }
+      ],
+      "identifier": "@clarxai/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "193ef61bee",
+    "published_at": "2026-07-06T21:20:29.845332Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.clarx/mcp",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-06T21:20:29.845332Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

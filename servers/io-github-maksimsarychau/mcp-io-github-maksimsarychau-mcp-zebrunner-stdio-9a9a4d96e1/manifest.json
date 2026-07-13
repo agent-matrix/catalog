@@ -1,0 +1,81 @@
+{
+  "description": "Advanced analytics, reporting, and safe mutations for Zebrunner. 64 tools, 14 resources, 17 prompts.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:46+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-maksimsarychau-mcp-zebrunner.stdio.9a9a4d96e1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/maksimsarychau/mcp-zebrunner",
+    "homepage": "https://github.com/maksimsarychau/mcp-zebrunner",
+    "repository": "https://github.com/maksimsarychau/mcp-zebrunner"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-zebrunner@9.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.maksimsarychau/mcp-zebrunner",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "HTTP server port (required for StreamableHTTP mode)",
+          "format": "string",
+          "isRequired": true,
+          "name": "PORT"
+        },
+        {
+          "description": "Base URL for your Zebrunner instance (e.g., https://your-instance.zebrunner.com)",
+          "format": "string",
+          "isRequired": true,
+          "name": "ZEBRUNNER_URL"
+        },
+        {
+          "description": "Transport mode: stdio, http, or auto (default: auto)",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "description": "Authentication mode: headers, oauth, or both (default: headers)",
+          "format": "string",
+          "name": "MCP_AUTH_MODE"
+        },
+        {
+          "description": "Public URL of this MCP server (for OAuth metadata)",
+          "format": "string",
+          "name": "MCP_SERVER_URL"
+        }
+      ],
+      "identifier": "mcp-zebrunner",
+      "registryType": "npm",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:{PORT}/mcp"
+      },
+      "version": "9.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9a9a4d96e1",
+    "published_at": "2026-07-08T13:19:13.014828Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.maksimsarychau/mcp-zebrunner",
+    "server_version": "9.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-08T13:19:13.014828Z"
+  },
+  "title": "Advanced Zebrunner MCP Server",
+  "type": "mcp_server",
+  "version": "9.2.1"
+}

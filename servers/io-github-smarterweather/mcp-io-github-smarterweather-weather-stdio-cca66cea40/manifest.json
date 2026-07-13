@@ -1,0 +1,65 @@
+{
+  "description": "Smarter Weather MCP: forecasts, alerts, outlooks, observations, AQI, grids, and map imagery.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-smarterweather-weather.stdio.cca66cea40",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/smarterweather/developer",
+    "homepage": "https://github.com/smarterweather/developer",
+    "repository": "https://github.com/smarterweather/developer"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@smarterweather/mcp-weather@0.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.smarterweather/weather",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Smarter Weather API key (sw_live_* or sw_test_*) with the 'mcp' scope. When set, the bridge skips the OAuth flow and forwards the key as 'Authorization: Bearer <key>' on every proxied request. When unset, the bridge runs the full MCP OAuth 2.1 + PKCE client and caches tokens at ~/.mcp-auth/. Mint keys at https://smarterweather.com/developers/api-keys.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SMARTERWEATHER_API_KEY"
+        },
+        {
+          "default": "https://mcp.smarterweather.com/mcp",
+          "description": "Override the target MCP endpoint. Useful for development or staging against a non-production sw-mcp deployment. Precedence: positional argument > SMARTERWEATHER_MCP_URL > package default (https://mcp.smarterweather.com/mcp).",
+          "format": "string",
+          "name": "SMARTERWEATHER_MCP_URL"
+        }
+      ],
+      "identifier": "@smarterweather/mcp-weather",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "cca66cea40",
+    "published_at": "2026-07-09T16:51:10.036939Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.smarterweather/weather",
+    "server_version": "0.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-09T16:51:10.036939Z"
+  },
+  "title": "Smarter Weather",
+  "type": "mcp_server",
+  "version": "0.0.0"
+}

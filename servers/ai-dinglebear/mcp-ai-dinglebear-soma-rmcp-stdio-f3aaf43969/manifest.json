@@ -1,0 +1,106 @@
+{
+  "description": "Drop-in RMCP runtime for provider-backed MCP tools, prompts, resources, and agent capabilities.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-dinglebear-soma-rmcp.stdio.f3aaf43969",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jmagar/soma",
+    "homepage": "https://github.com/jmagar/soma",
+    "repository": "https://github.com/jmagar/soma"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y"
+          },
+          "soma-rmcp@0.4.7"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.dinglebear/soma-rmcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional absolute path to the installed soma binary. When unset, the npm launcher runs soma from PATH.",
+          "format": "filepath",
+          "name": "SOMA_BIN",
+          "placeholder": "/home/me/.local/bin/soma"
+        },
+        {
+          "default": "~/.soma",
+          "description": "Runtime data directory for local stdio/CLI runs.",
+          "format": "filepath",
+          "name": "SOMA_HOME",
+          "placeholder": "~/.soma"
+        },
+        {
+          "default": "providers",
+          "description": "Directory scanned for drop-in provider manifests and modules.",
+          "format": "filepath",
+          "name": "SOMA_PROVIDER_DIR",
+          "placeholder": "providers"
+        },
+        {
+          "description": "Optional deployed platform API or upstream API base URL used by the SomaClient compatibility layer. Leave unset for local provider/runtime mode.",
+          "name": "SOMA_API_URL",
+          "placeholder": "https://api.example.com/v1"
+        },
+        {
+          "description": "Optional bearer token or upstream API key for provider-backed calls that use SomaClient. Keep secret.",
+          "isSecret": true,
+          "name": "SOMA_API_KEY"
+        },
+        {
+          "default": "info",
+          "description": "Rust tracing filter for local CLI and stdio MCP logs.",
+          "name": "RUST_LOG"
+        }
+      ],
+      "identifier": "soma-rmcp",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.7"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f3aaf43969",
+    "published_at": "2026-07-12T12:00:30.442345Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.dinglebear/soma-rmcp",
+    "server_version": "0.4.7",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-12T12:00:30.442345Z"
+  },
+  "title": "Soma",
+  "type": "mcp_server",
+  "version": "0.4.7"
+}

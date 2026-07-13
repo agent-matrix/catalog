@@ -1,0 +1,53 @@
+{
+  "description": "Test-inbox API for email and SMS: create inboxes, long-poll messages, extract OTPs and links.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-mailfixture-mailfixture.sse.b19091ec64",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://mailfixture.com/mcp"
+    }
+  },
+  "name": "com.mailfixture/mailfixture",
+  "provenance": {
+    "identity_key": "b19091ec64",
+    "published_at": "2026-07-11T16:14:10.413446Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.mailfixture/mailfixture",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-11T16:14:10.413446Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "MailFixture API key as a bearer token",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {api_key}",
+          "variables": {
+            "api_key": {
+              "description": "mfx_ API key from the MailFixture dashboard (https://mailfixture.com/app/keys)",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://mailfixture.com/mcp"
+    }
+  ],
+  "title": "MailFixture",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

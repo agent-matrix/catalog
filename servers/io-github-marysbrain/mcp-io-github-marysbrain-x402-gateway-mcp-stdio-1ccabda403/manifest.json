@@ -1,0 +1,76 @@
+{
+  "description": "x402 analytics feed + 20+ pay-per-call agent tools over x402 (data, LLM, risk), no accounts.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:26+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Marysbrain-x402-gateway-mcp.stdio.1ccabda403",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Marysbrain/x402-gateway-mcp",
+    "homepage": "https://github.com/Marysbrain/x402-gateway-mcp",
+    "repository": "https://github.com/Marysbrain/x402-gateway-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "x402-gateway-mcp@0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Marysbrain/x402-gateway-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Buyer wallet key (fund with a few USDC on Base). Optional: free previews work without it.",
+          "format": "string",
+          "isSecret": true,
+          "name": "WALLET_PRIVATE_KEY"
+        },
+        {
+          "description": "Refuse any single call above this price. Default 0.25; set 1.25 to enable the $1 domain dossier.",
+          "format": "number",
+          "name": "MAX_PER_CALL_USD"
+        },
+        {
+          "description": "Total spend cap per session. Default 2.00.",
+          "format": "number",
+          "name": "MAX_SESSION_USD"
+        },
+        {
+          "description": "Gateway base URL override. Default https://gateway.stride20k.com.",
+          "format": "string",
+          "name": "GATEWAY_URL"
+        }
+      ],
+      "identifier": "x402-gateway-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1ccabda403",
+    "published_at": "2026-07-08T22:45:16.178756Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Marysbrain/x402-gateway-mcp",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-08T22:45:16.178756Z"
+  },
+  "title": "Stride20k x402 Data Gateway",
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

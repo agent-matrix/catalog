@@ -1,0 +1,108 @@
+{
+  "description": "Look up US healthcare providers in the NPPES NPI registry and resolve NUCC specialty codes.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cyanheads-npi-providers-mcp-server.stdio.68197fc045",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cyanheads/npi-providers-mcp-server",
+    "homepage": "https://github.com/cyanheads/npi-providers-mcp-server",
+    "repository": "https://github.com/cyanheads/npi-providers-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "bun",
+          "@cyanheads/npi-providers-mcp-server@0.1.7"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cyanheads/npi-providers-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "127.0.0.1",
+          "description": "The hostname for the HTTP server.",
+          "format": "string",
+          "name": "MCP_HTTP_HOST"
+        },
+        {
+          "default": "3010",
+          "description": "The port to run the HTTP server on.",
+          "format": "string",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "default": "/mcp",
+          "description": "The endpoint path for the MCP server.",
+          "format": "string",
+          "name": "MCP_HTTP_ENDPOINT_PATH"
+        },
+        {
+          "default": "none",
+          "description": "Authentication mode to use: 'none', 'jwt', or 'oauth'.",
+          "format": "string",
+          "name": "MCP_AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Sets the minimum log level for output (e.g., 'debug', 'info', 'warn').",
+          "format": "string",
+          "name": "MCP_LOG_LEVEL"
+        },
+        {
+          "default": "https://npiregistry.cms.hhs.gov/api",
+          "description": "NPPES NPI Registry API base URL. Override for a private mirror or testing.",
+          "format": "string",
+          "name": "NPPES_API_BASE_URL"
+        },
+        {
+          "default": "15000",
+          "description": "Per-request HTTP timeout for NPPES calls, in milliseconds.",
+          "format": "string",
+          "name": "NPPES_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "@cyanheads/npi-providers-mcp-server",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "start:http"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "bun",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3010/mcp"
+      },
+      "version": "0.1.7"
+    }
+  ],
+  "provenance": {
+    "identity_key": "68197fc045",
+    "published_at": "2026-07-11T20:18:57.217745Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cyanheads/npi-providers-mcp-server",
+    "server_version": "0.1.7",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-11T20:18:57.217745Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.7"
+}

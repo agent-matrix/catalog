@@ -1,0 +1,82 @@
+{
+  "description": "Durable user/project memory for MCP clients: recall context and remember selected facts.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-hjqcan-goodmemory.stdio.6e713d2c06",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/hjqcan/GoodMemory",
+    "homepage": "https://github.com/hjqcan/GoodMemory",
+    "repository": "https://github.com/hjqcan/GoodMemory"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "goodmemory@0.5.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.hjqcan/goodmemory",
+  "packages": [
+    {
+      "identifier": "goodmemory",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        },
+        {
+          "type": "positional",
+          "value": "serve"
+        },
+        {
+          "description": "Run the standalone read-only MCP server without an installed host.",
+          "name": "--standalone",
+          "type": "named"
+        },
+        {
+          "description": "Stable GoodMemory user id that scopes this client's memory.",
+          "isRequired": true,
+          "name": "--user-id",
+          "type": "named",
+          "value": "{user_id}",
+          "variables": {
+            "user_id": {
+              "description": "Your stable GoodMemory user id.",
+              "format": "string",
+              "isRequired": true
+            }
+          }
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6e713d2c06",
+    "published_at": "2026-07-07T08:11:41.066606Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.hjqcan/goodmemory",
+    "server_version": "0.5.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-07T08:11:41.066606Z"
+  },
+  "title": "GoodMemory",
+  "type": "mcp_server",
+  "version": "0.5.1"
+}

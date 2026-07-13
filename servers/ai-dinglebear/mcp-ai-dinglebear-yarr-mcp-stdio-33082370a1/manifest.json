@@ -1,0 +1,125 @@
+{
+  "description": "Rust MCP and CLI server for Sonarr, Radarr, Prowlarr, Plex, Jellyfin, and download clients.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-dinglebear-yarr-mcp.stdio.33082370a1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jmagar/yarr",
+    "homepage": "https://github.com/jmagar/yarr",
+    "repository": "https://github.com/jmagar/yarr"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "yarr-mcp@1.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.dinglebear/yarr-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional Sonarr base URL.",
+          "format": "string",
+          "name": "YARR_SONARR_URL",
+          "placeholder": "http://sonarr:8989"
+        },
+        {
+          "description": "Optional Sonarr API key.",
+          "format": "string",
+          "isSecret": true,
+          "name": "YARR_SONARR_API_KEY"
+        },
+        {
+          "description": "Optional Radarr base URL.",
+          "format": "string",
+          "name": "YARR_RADARR_URL",
+          "placeholder": "http://radarr:7878"
+        },
+        {
+          "description": "Optional Radarr API key.",
+          "format": "string",
+          "isSecret": true,
+          "name": "YARR_RADARR_API_KEY"
+        },
+        {
+          "description": "Optional Plex base URL.",
+          "format": "string",
+          "name": "YARR_PLEX_URL",
+          "placeholder": "http://plex:32400"
+        },
+        {
+          "description": "Optional Plex token.",
+          "format": "string",
+          "isSecret": true,
+          "name": "YARR_PLEX_TOKEN"
+        },
+        {
+          "description": "Optional GitHub release tag override for the downloaded Yarr binary.",
+          "format": "string",
+          "name": "YARR_VERSION",
+          "placeholder": "v1.1.0"
+        },
+        {
+          "default": "jmagar/yarr",
+          "description": "Optional GitHub owner/repo override for release asset downloads.",
+          "format": "string",
+          "name": "YARR_REPO",
+          "placeholder": "jmagar/yarr"
+        },
+        {
+          "description": "Optional release download base URL override.",
+          "format": "string",
+          "name": "YARR_RELEASE_BASE_URL"
+        },
+        {
+          "default": "info",
+          "description": "Tracing filter for Yarr logs.",
+          "format": "string",
+          "name": "RUST_LOG",
+          "placeholder": "info"
+        }
+      ],
+      "identifier": "yarr-mcp",
+      "packageArguments": [
+        {
+          "description": "Run Yarr MCP over stdio.",
+          "format": "string",
+          "isRequired": true,
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "33082370a1",
+    "published_at": "2026-07-12T12:00:38.673496Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.dinglebear/yarr-mcp",
+    "server_version": "1.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-12T12:00:38.673496Z"
+  },
+  "title": "Yarr MCP",
+  "type": "mcp_server",
+  "version": "1.1.1"
+}

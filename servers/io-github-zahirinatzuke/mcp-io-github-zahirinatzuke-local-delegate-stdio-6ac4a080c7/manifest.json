@@ -1,0 +1,64 @@
+{
+  "description": "Delegate mechanical text tasks to a local OpenAI-compatible LLM to save Claude quota.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ZahiriNatZuke-local-delegate.stdio.6ac4a080c7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ZahiriNatZuke/local-delegate",
+    "homepage": "https://github.com/ZahiriNatZuke/local-delegate",
+    "repository": "https://github.com/ZahiriNatZuke/local-delegate"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "local-delegate-mcp==0.8.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ZahiriNatZuke/local-delegate",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "OpenAI-compatible endpoint (llama-swap, Ollama, LM Studio, vLLM). Default http://127.0.0.1:9292/v1",
+          "format": "string",
+          "name": "LOCAL_DELEGATE_BASE_URL"
+        },
+        {
+          "description": "Bearer token for the endpoint, if it requires one.",
+          "format": "string",
+          "isSecret": true,
+          "name": "LOCAL_DELEGATE_API_KEY"
+        }
+      ],
+      "identifier": "local-delegate-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.8.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6ac4a080c7",
+    "published_at": "2026-07-12T04:33:20.006004Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ZahiriNatZuke/local-delegate",
+    "server_version": "0.8.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-12T04:33:20.006004Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.8.1"
+}

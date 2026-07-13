@@ -1,0 +1,79 @@
+{
+  "description": "Read-only MCP server: get_recent_commits over a local deploy log (Quellgeist triage).",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:27+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Rajeev-Shyam-quellgeist-commits.stdio.696bc16c2d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Rajeev-Shyam/Quellgeist",
+    "homepage": "https://github.com/Rajeev-Shyam/Quellgeist",
+    "repository": "https://github.com/Rajeev-Shyam/Quellgeist"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "name": "--from",
+            "type": "named",
+            "value": "quellgeist"
+          },
+          {
+            "type": "positional",
+            "value": "quellgeist-commits-mcp"
+          },
+          "quellgeist==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Rajeev-Shyam/quellgeist-commits",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the deploy/commit log to read (default: demo/deploy_log.json, resolved against the working directory).",
+          "name": "QG_DEPLOY_LOG"
+        }
+      ],
+      "identifier": "quellgeist",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "name": "--from",
+          "type": "named",
+          "value": "quellgeist"
+        },
+        {
+          "type": "positional",
+          "value": "quellgeist-commits-mcp"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "696bc16c2d",
+    "published_at": "2026-07-07T11:38:57.235342Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Rajeev-Shyam/quellgeist-commits",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-07T11:38:57.235342Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

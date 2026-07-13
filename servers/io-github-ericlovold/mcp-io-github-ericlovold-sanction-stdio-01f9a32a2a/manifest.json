@@ -1,0 +1,70 @@
+{
+  "description": "Authorize an AI agent's spend & credential use before it acts \u2014 budgets, encrypted vault, audit.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:40+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ericlovold-sanction.stdio.01f9a32a2a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ericlovold/sanction",
+    "homepage": "https://github.com/ericlovold/sanction",
+    "repository": "https://github.com/ericlovold/sanction"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "sanction-mcp@0.6.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ericlovold/sanction",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Agent API key (pxy_...). Create one at https://getsanction.com or via POST /api/v1/wallets then POST /api/v1/agents.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SANCTION_API_KEY"
+        },
+        {
+          "description": "Wallet id, used by the sanction_wallet_status tool.",
+          "name": "SANCTION_WALLET_ID"
+        },
+        {
+          "default": "https://getsanction.com/api/v1",
+          "description": "Sanction API base URL.",
+          "name": "SANCTION_API_URL"
+        }
+      ],
+      "identifier": "sanction-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.6.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "01f9a32a2a",
+    "published_at": "2026-07-12T02:06:50.748158Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ericlovold/sanction",
+    "server_version": "0.6.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-12T02:06:50.748158Z"
+  },
+  "title": "Sanction",
+  "type": "mcp_server",
+  "version": "0.6.0"
+}

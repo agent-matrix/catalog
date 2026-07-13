@@ -1,0 +1,63 @@
+{
+  "description": "Credential custody for agents: use secrets blind (ssh/http/smtp/git/db), never in context.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-dustforge-demipass.stdio.a44f327bdd",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/bildow/demipass",
+    "homepage": "https://github.com/bildow/demipass",
+    "repository": "https://github.com/bildow/demipass"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "demipass@2.5.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.dustforge/demipass",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Dustforge JWT bearer token. Self-onboard at https://dustforge.com/.well-known/silicon or mint via the 2FA email flow.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DEMIPASS_TOKEN"
+        },
+        {
+          "description": "API base URL (default https://api.dustforge.com)",
+          "name": "DEMIPASS_URL"
+        }
+      ],
+      "identifier": "demipass",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.5.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a44f327bdd",
+    "published_at": "2026-07-07T06:04:54.268516Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.dustforge/demipass",
+    "server_version": "2.5.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-07T06:04:54.268516Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "2.5.0"
+}

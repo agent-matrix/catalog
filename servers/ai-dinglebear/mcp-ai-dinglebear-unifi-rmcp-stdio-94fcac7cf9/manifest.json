@@ -1,0 +1,103 @@
+{
+  "description": "Rust MCP server and CLI for UniFi Network controller operations.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-dinglebear-unifi-rmcp.stdio.94fcac7cf9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jmagar/unifi-rmcp",
+    "homepage": "https://github.com/jmagar/unifi-rmcp",
+    "repository": "https://github.com/jmagar/unifi-rmcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "unifi-rmcp@0.2.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.dinglebear/unifi-rmcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "UniFi Network controller base URL.",
+          "format": "string",
+          "isRequired": true,
+          "name": "UNIFI_URL",
+          "placeholder": "https://unifi.example.com"
+        },
+        {
+          "description": "UniFi API key.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "UNIFI_API_KEY"
+        },
+        {
+          "description": "Optional GitHub release tag override for the downloaded UniFi RMCP binary.",
+          "format": "string",
+          "name": "UNIFI_RMCP_VERSION",
+          "placeholder": "v0.2.3"
+        },
+        {
+          "default": "jmagar/unifi-rmcp",
+          "description": "Optional GitHub owner/repo override for release asset downloads.",
+          "format": "string",
+          "name": "UNIFI_RMCP_REPO",
+          "placeholder": "jmagar/unifi-rmcp"
+        },
+        {
+          "description": "Optional release download base URL override.",
+          "format": "string",
+          "name": "UNIFI_RMCP_RELEASE_BASE_URL"
+        },
+        {
+          "default": "info",
+          "description": "Tracing filter for UniFi RMCP logs.",
+          "format": "string",
+          "name": "RUST_LOG",
+          "placeholder": "info"
+        }
+      ],
+      "identifier": "unifi-rmcp",
+      "packageArguments": [
+        {
+          "description": "Run UniFi RMCP over stdio.",
+          "format": "string",
+          "isRequired": true,
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "94fcac7cf9",
+    "published_at": "2026-07-12T12:00:37.570413Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.dinglebear/unifi-rmcp",
+    "server_version": "0.2.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-12T12:00:37.570413Z"
+  },
+  "title": "UniFi RMCP",
+  "type": "mcp_server",
+  "version": "0.2.4"
+}

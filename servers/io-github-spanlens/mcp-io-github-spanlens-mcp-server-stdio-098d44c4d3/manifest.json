@@ -1,0 +1,66 @@
+{
+  "description": "Query Spanlens LLM observability from Cursor, Claude Desktop, or Continue via MCP.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-spanlens-mcp-server.stdio.098d44c4d3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/spanlens/Spanlens",
+    "homepage": "https://github.com/spanlens/Spanlens",
+    "repository": "https://github.com/spanlens/Spanlens"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@spanlens/mcp-server@0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.spanlens/mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Spanlens API key. Must be a scope=public key (sl_live_pub_*) issued from the Public Keys card at https://spanlens.io/projects \u2014 the server refuses to start with a full-access sl_live_* key.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SPANLENS_API_KEY"
+        },
+        {
+          "default": "https://api.spanlens.io",
+          "description": "Override the API endpoint for self-hosted Spanlens. Default: https://api.spanlens.io",
+          "format": "string",
+          "name": "SPANLENS_BASE_URL"
+        }
+      ],
+      "identifier": "@spanlens/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "098d44c4d3",
+    "published_at": "2026-07-13T03:52:41.464553Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.spanlens/mcp-server",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-13T03:52:41.464553Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

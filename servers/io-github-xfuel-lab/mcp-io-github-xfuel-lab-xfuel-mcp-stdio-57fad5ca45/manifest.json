@@ -1,0 +1,89 @@
+{
+  "description": "Submit AI inference to XFuel, pay per task (USDC via x402 or TFUEL), fetch/verify ZK proofs.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:29+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-XFuel-Lab-xfuel-mcp.stdio.57fad5ca45",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/XFuel-Lab/xfuel-protocol",
+    "homepage": "https://github.com/XFuel-Lab/xfuel-protocol",
+    "repository": "https://github.com/XFuel-Lab/xfuel-protocol"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "xfuel-mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.XFuel-Lab/xfuel-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://api-testnet.xfuel.app",
+          "description": "XFuel API base URL. Defaults to the hosted testnet demo.",
+          "format": "string",
+          "name": "XFUEL_API_URL"
+        },
+        {
+          "default": "xfuel-demo",
+          "description": "API key sent as X-API-Key. Defaults to the shared public demo key.",
+          "format": "string",
+          "isSecret": true,
+          "name": "XFUEL_API_KEY"
+        },
+        {
+          "description": "Optional bearer token required on the HTTP transport (Authorization: Bearer <token>).",
+          "format": "string",
+          "isSecret": true,
+          "name": "XFUEL_MCP_AUTH_TOKEN"
+        },
+        {
+          "description": "Theta RPC URL enabling verify_proof's optional on-chain nullifier read.",
+          "format": "string",
+          "name": "XFUEL_RPC_URL"
+        },
+        {
+          "description": "ZKVerifierSP1 contract address (paired with XFUEL_RPC_URL).",
+          "format": "string",
+          "name": "ZK_VERIFIER_ADDRESS"
+        },
+        {
+          "description": "Funded payer private key that enables the pay_with_usdc tool. Moves USDC \u2014 keep secret; use a low-balance wallet.",
+          "format": "string",
+          "isSecret": true,
+          "name": "XFUEL_PAYER_PRIVATE_KEY"
+        }
+      ],
+      "identifier": "xfuel-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "57fad5ca45",
+    "published_at": "2026-07-09T08:39:04.072224Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.XFuel-Lab/xfuel-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-09T08:39:04.072224Z"
+  },
+  "title": "XFuel",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

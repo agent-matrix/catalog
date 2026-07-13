@@ -1,0 +1,81 @@
+{
+  "description": "Secretless database and cloud access via Akeyless RTA. Credentials never enter the model.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-akeyless-community-akeyless-rta.stdio.1b39b18ad7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/akeyless-community/devin-akeyless-connector",
+    "homepage": "https://github.com/akeyless-community/devin-akeyless-connector",
+    "repository": "https://github.com/akeyless-community/devin-akeyless-connector"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@akeyless-community/devin-connector@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.akeyless-community/akeyless-rta",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Akeyless Gateway address (e.g. https://gw.example.com:8000/api/v2)",
+          "format": "string",
+          "isRequired": true,
+          "name": "AKEYLESS_GATEWAY_URL"
+        },
+        {
+          "description": "Authentication method: access_key, saml, oidc, universal_identity, jwt, aws_iam, azure_ad, or gcp",
+          "format": "string",
+          "name": "AKEYLESS_ACCESS_TYPE"
+        },
+        {
+          "description": "Akeyless Access ID",
+          "format": "string",
+          "isRequired": true,
+          "name": "AKEYLESS_ACCESS_ID"
+        },
+        {
+          "description": "Akeyless Access Key (for access_key auth)",
+          "format": "string",
+          "isSecret": true,
+          "name": "AKEYLESS_ACCESS_KEY"
+        },
+        {
+          "description": "Agent ID for ARA audit sessions",
+          "format": "string",
+          "name": "AKEYLESS_AGENT_ID"
+        }
+      ],
+      "identifier": "@akeyless-community/devin-connector",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1b39b18ad7",
+    "published_at": "2026-07-09T06:27:43.765042Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.akeyless-community/akeyless-rta",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-09T06:27:43.765042Z"
+  },
+  "title": "Akeyless Agentic Runtime Authority",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

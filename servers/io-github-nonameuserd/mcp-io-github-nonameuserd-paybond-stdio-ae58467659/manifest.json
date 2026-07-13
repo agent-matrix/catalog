@@ -1,0 +1,73 @@
+{
+  "description": "Tenant-bound MCP tools for Paybond agent spend controls, evidence, receipts, and settlement.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:49+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nonameuserd-paybond.stdio.ae58467659",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nonameuserd/paybond-kit",
+    "homepage": "https://github.com/nonameuserd/paybond-kit",
+    "repository": "https://github.com/nonameuserd/paybond-kit"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@paybond/kit@0.12.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nonameuserd/paybond",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Paybond service-account API key for the tenant-bound MCP session.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PAYBOND_API_KEY"
+        },
+        {
+          "default": "https://api.paybond.ai",
+          "description": "Optional Paybond gateway base URL. Defaults to the hosted Paybond API.",
+          "format": "string",
+          "name": "PAYBOND_GATEWAY_URL"
+        },
+        {
+          "default": ".env.local",
+          "description": "Optional local env file path used to load PAYBOND_API_KEY when the host does not set it directly.",
+          "format": "filepath",
+          "name": "PAYBOND_ENV_FILE"
+        }
+      ],
+      "identifier": "@paybond/kit",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.12.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ae58467659",
+    "published_at": "2026-07-13T01:43:31.67774Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nonameuserd/paybond",
+    "server_version": "0.12.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-13T01:43:31.67774Z"
+  },
+  "title": "Paybond MCP Server",
+  "type": "mcp_server",
+  "version": "0.12.6"
+}

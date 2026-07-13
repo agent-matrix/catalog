@@ -1,0 +1,103 @@
+{
+  "description": "Rust MCP server and CLI for Arcane Docker and container management.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-dinglebear-arcane-rmcp.stdio.33a33510b4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jmagar/arcane-rmcp",
+    "homepage": "https://github.com/jmagar/arcane-rmcp",
+    "repository": "https://github.com/jmagar/arcane-rmcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "arcane-rmcp@0.4.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.dinglebear/arcane-rmcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Arcane API base URL.",
+          "format": "string",
+          "isRequired": true,
+          "name": "RARCANE_API_URL",
+          "placeholder": "https://arcane.example.com"
+        },
+        {
+          "description": "Arcane API key or bearer token.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "RARCANE_API_KEY"
+        },
+        {
+          "description": "Optional GitHub release tag override for the downloaded Arcane RMCP binary.",
+          "format": "string",
+          "name": "ARCANE_RMCP_VERSION",
+          "placeholder": "v0.4.1"
+        },
+        {
+          "default": "jmagar/arcane-rmcp",
+          "description": "Optional GitHub owner/repo override for release asset downloads.",
+          "format": "string",
+          "name": "ARCANE_RMCP_REPO",
+          "placeholder": "jmagar/arcane-rmcp"
+        },
+        {
+          "description": "Optional release download base URL override.",
+          "format": "string",
+          "name": "ARCANE_RMCP_RELEASE_BASE_URL"
+        },
+        {
+          "default": "info",
+          "description": "Tracing filter for Arcane RMCP logs.",
+          "format": "string",
+          "name": "RUST_LOG",
+          "placeholder": "info"
+        }
+      ],
+      "identifier": "arcane-rmcp",
+      "packageArguments": [
+        {
+          "description": "Run Arcane RMCP over stdio.",
+          "format": "string",
+          "isRequired": true,
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "33a33510b4",
+    "published_at": "2026-07-12T11:58:28.276344Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.dinglebear/arcane-rmcp",
+    "server_version": "0.4.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-12T11:58:28.276344Z"
+  },
+  "title": "Arcane RMCP",
+  "type": "mcp_server",
+  "version": "0.4.2"
+}

@@ -1,0 +1,86 @@
+{
+  "description": "Infinite Campus (Campus Parent) for Claude \u2014 grades, attendance, assignments, messages",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:34+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-chrischall-infinitecampus-mcp.stdio.2adbdec991",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/chrischall/infinitecampus-mcp",
+    "homepage": "https://github.com/chrischall/infinitecampus-mcp",
+    "repository": "https://github.com/chrischall/infinitecampus-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "infinitecampus-mcp@2.3.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.chrischall/infinitecampus-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Campus Parent portal base URL, e.g. https://campus.district.k12.example.us",
+          "format": "string",
+          "isRequired": true,
+          "name": "IC_BASE_URL"
+        },
+        {
+          "description": "Infinite Campus district app name (appName path segment from the portal URL)",
+          "format": "string",
+          "isRequired": true,
+          "name": "IC_DISTRICT"
+        },
+        {
+          "description": "Campus Parent portal username. Optional: leave unset to use the fetchproxy browser-extension fallback.",
+          "format": "string",
+          "name": "IC_USERNAME"
+        },
+        {
+          "description": "Campus Parent portal password. Required only when IC_USERNAME is set.",
+          "format": "string",
+          "isSecret": true,
+          "name": "IC_PASSWORD"
+        },
+        {
+          "description": "Friendly name for the district (defaults to district appname)",
+          "format": "string",
+          "name": "IC_NAME"
+        },
+        {
+          "description": "Set to 1 to skip the fetchproxy browser-extension fallback (missing creds become a hard error \u2014 useful in headless CI).",
+          "format": "string",
+          "name": "IC_DISABLE_FETCHPROXY"
+        }
+      ],
+      "identifier": "infinitecampus-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.3.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "2adbdec991",
+    "published_at": "2026-07-07T15:09:53.332782Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.chrischall/infinitecampus-mcp",
+    "server_version": "2.3.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-07T15:09:53.332782Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "2.3.6"
+}

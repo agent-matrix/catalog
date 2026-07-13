@@ -1,0 +1,96 @@
+{
+  "description": "Oura Ring MCP server for the Oura API v2: sleep, readiness, activity, heart rate, and more.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:44+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-jordanburke-oura-ring-mcp-server.stdio.a087c34a8e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jordanburke/oura-ring-mcp-server",
+    "homepage": "https://github.com/jordanburke/oura-ring-mcp-server",
+    "repository": "https://github.com/jordanburke/oura-ring-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "oura-ring-mcp-server@0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.jordanburke/oura-ring-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Oura OAuth2 client ID (register an app at https://cloud.ouraring.com/oauth/applications, then run `oura-ring-mcp-server login` once to authorize)",
+          "format": "string",
+          "isRequired": true,
+          "name": "OURA_CLIENT_ID"
+        },
+        {
+          "description": "Oura OAuth2 client secret from the same application",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OURA_CLIENT_SECRET"
+        },
+        {
+          "description": "Use Oura's /sandbox/ demo data instead of real data (true/false, default false)",
+          "format": "string",
+          "name": "OURA_SANDBOX"
+        },
+        {
+          "description": "Transport: 'stdio' (default) or 'httpStream' for remote/Docker deployments",
+          "format": "string",
+          "name": "TRANSPORT_TYPE"
+        },
+        {
+          "description": "HTTP port for httpStream transport (default 3000)",
+          "format": "string",
+          "name": "PORT"
+        },
+        {
+          "description": "HTTP host for httpStream transport (default 0.0.0.0)",
+          "format": "string",
+          "name": "HOST"
+        },
+        {
+          "description": "Write NDJSON telemetry events to this file path (safe under any transport)",
+          "format": "string",
+          "name": "OURA_TELEMETRY_FILE"
+        },
+        {
+          "description": "Console telemetry under httpStream transport: true (default) or false",
+          "format": "string",
+          "name": "OURA_TELEMETRY_CONSOLE"
+        }
+      ],
+      "identifier": "oura-ring-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a087c34a8e",
+    "published_at": "2026-07-13T03:52:31.752535Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.jordanburke/oura-ring-mcp-server",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-13T03:52:31.752535Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

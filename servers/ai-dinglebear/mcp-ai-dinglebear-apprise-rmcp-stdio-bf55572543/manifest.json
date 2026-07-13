@@ -1,0 +1,102 @@
+{
+  "description": "Rust MCP server and CLI for Apprise notification fan-out across dozens of delivery backends.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-dinglebear-apprise-rmcp.stdio.bf55572543",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jmagar/apprise-rmcp",
+    "homepage": "https://github.com/jmagar/apprise-rmcp",
+    "repository": "https://github.com/jmagar/apprise-rmcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "apprise-rmcp@0.1.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.dinglebear/apprise-rmcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "http://localhost:8000",
+          "description": "Apprise API server base URL.",
+          "format": "string",
+          "name": "APPRISE_URL",
+          "placeholder": "http://localhost:8000"
+        },
+        {
+          "description": "Optional bearer token for protected Apprise API servers.",
+          "format": "string",
+          "isSecret": true,
+          "name": "APPRISE_TOKEN"
+        },
+        {
+          "description": "Optional GitHub release tag override for the downloaded Apprise RMCP binary.",
+          "format": "string",
+          "name": "APPRISE_RMCP_VERSION",
+          "placeholder": "v0.1.2"
+        },
+        {
+          "default": "jmagar/apprise-rmcp",
+          "description": "Optional GitHub owner/repo override for release asset downloads.",
+          "format": "string",
+          "name": "APPRISE_RMCP_REPO",
+          "placeholder": "jmagar/apprise-rmcp"
+        },
+        {
+          "description": "Optional release download base URL override.",
+          "format": "string",
+          "name": "APPRISE_RMCP_RELEASE_BASE_URL"
+        },
+        {
+          "default": "info",
+          "description": "Tracing filter for Apprise RMCP logs.",
+          "format": "string",
+          "name": "RUST_LOG",
+          "placeholder": "info"
+        }
+      ],
+      "identifier": "apprise-rmcp",
+      "packageArguments": [
+        {
+          "description": "Run Apprise RMCP over stdio.",
+          "format": "string",
+          "isRequired": true,
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "bf55572543",
+    "published_at": "2026-07-12T11:58:27.866195Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.dinglebear/apprise-rmcp",
+    "server_version": "0.1.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-12T11:58:27.866195Z"
+  },
+  "title": "Apprise RMCP",
+  "type": "mcp_server",
+  "version": "0.1.3"
+}

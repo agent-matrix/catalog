@@ -1,0 +1,78 @@
+{
+  "description": "95 typed Typesense operations for AI agents through an MCP server that is read-only by default.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:57+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-typesensekit-typesensekit.stdio.bb69aeece4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/typesensekit/typesensekit",
+    "homepage": "https://github.com/typesensekit/typesensekit",
+    "repository": "https://github.com/typesensekit/typesensekit"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@typesensekit/mcp@1.4.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.typesensekit/typesensekit",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "URL of the Typesense server, including protocol and port when required.",
+          "format": "string",
+          "isRequired": true,
+          "name": "TYPESENSE_URL",
+          "placeholder": "http://localhost:8108"
+        },
+        {
+          "description": "Typesense API key used to authenticate server operations.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "TYPESENSE_API_KEY"
+        },
+        {
+          "default": "true",
+          "description": "Expose only read operations unless explicitly disabled.",
+          "format": "boolean",
+          "name": "TYPESENSEKIT_READ_ONLY"
+        },
+        {
+          "description": "Optional Typesense connection timeout in seconds.",
+          "format": "number",
+          "name": "TYPESENSE_CONNECTION_TIMEOUT_SECONDS"
+        }
+      ],
+      "identifier": "@typesensekit/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.4.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "bb69aeece4",
+    "published_at": "2026-07-12T21:49:44.200926Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.typesensekit/typesensekit",
+    "server_version": "1.4.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-12T21:49:44.200926Z"
+  },
+  "title": "TypesenseKit",
+  "type": "mcp_server",
+  "version": "1.4.4"
+}

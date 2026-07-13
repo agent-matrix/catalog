@@ -1,0 +1,129 @@
+{
+  "description": "MCP server for EAD Factory: qualified evidence, signature, notifications and chat via AI agents.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-g-digital-by-Garrigues-ead-factory.stdio.92dacc87dc",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/g-digital-by-Garrigues/EAD-Factory-MCP",
+    "homepage": "https://github.com/g-digital-by-Garrigues/EAD-Factory-MCP",
+    "repository": "https://github.com/g-digital-by-Garrigues/EAD-Factory-MCP"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@g-digital/mcp-ead-factory@1.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.g-digital-by-Garrigues/ead-factory",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Set to \"true\" to allow plain http:// fileUrl downloads in evidence_create (default https-only). Private/internal addresses are rejected regardless (resolution-time check; see the documented DNS TOCTOU limitation in the hosted-deployment runbook).",
+          "name": "MCP_ALLOW_INSECURE_FILE_URL"
+        },
+        {
+          "description": "Escape hatch for MCP_HTTP_PUBLIC=true WITHOUT inbound-token introspection: set to \"true\" ONLY when an upstream gateway already verifies Bearer tokens. The server logs a prominent warning and forwards tokens upstream unverified.",
+          "name": "MCP_ALLOW_UNVERIFIED_BEARER"
+        },
+        {
+          "description": "Comma-separated allowed Host headers. Empty = Host validation disabled (default). When set, requests with a Host outside the list are rejected.",
+          "name": "MCP_ALLOWED_HOSTS"
+        },
+        {
+          "description": "Comma-separated allowed browser Origins (DNS-rebinding defense). Empty = reject any request carrying an Origin header; non-browser clients (CLI/SDK) send no Origin and are always allowed. Use '*' to allow all.",
+          "name": "MCP_ALLOWED_ORIGINS"
+        },
+        {
+          "description": "Gateway ROOT URL (e.g. https://api.int.gcloudfactory.com) \u2014 each manager's path prefix is appended automatically; do NOT include a manager path here",
+          "name": "MCP_API_BASE_URL"
+        },
+        {
+          "description": "Full base URL override for the chat manager, used as-is (default: https://api.gcloudfactory.com/chat-bot-manager)",
+          "name": "MCP_API_BASE_URL_CHAT"
+        },
+        {
+          "description": "Full base URL override for the evidence manager, used as-is (default: https://api.gcloudfactory.com/digital-trust)",
+          "name": "MCP_API_BASE_URL_EVIDENCE"
+        },
+        {
+          "description": "Full base URL override for the notification manager, used as-is (default: https://api.gcloudfactory.com/notifications)",
+          "name": "MCP_API_BASE_URL_NOTIFICATION"
+        },
+        {
+          "description": "Full base URL override for the signature manager, used as-is (default: https://api.gcloudfactory.com/signature-manager)",
+          "name": "MCP_API_BASE_URL_SIGNATURE"
+        },
+        {
+          "description": "Interface the HTTP transport binds to. Default 127.0.0.1 (localhost only). Set 0.0.0.0 to expose on all interfaces (containers do this automatically).",
+          "name": "MCP_HTTP_HOST"
+        },
+        {
+          "description": "Maximum accepted POST /mcp request-body size in bytes (default 16777216 = 16 MiB \u2014 sized so base64 file uploads within the documented tool limits fit). Oversized requests get a 413 JSON-RPC error before/while reading \u2014 closes a memory-exhaustion DoS vector in public deployments. Note: base64 file sources are capped by this limit BEFORE MCP_FILE_MAX_BYTES applies.",
+          "name": "MCP_HTTP_MAX_BODY_BYTES"
+        },
+        {
+          "description": "Set to \"true\" for public/multi-tenant deployments. Activates Host validation and refuses to start unless (1) MCP_ALLOWED_ORIGINS or MCP_ALLOWED_HOSTS is set AND (2) inbound Bearer introspection is configured (MCP_SVC_INTROSPECT_URL + MCP_SVC_CLIENT_ID/SECRET) or MCP_ALLOW_UNVERIFIED_BEARER=true is set explicitly (fail-closed).",
+          "name": "MCP_HTTP_PUBLIC"
+        },
+        {
+          "description": "OAuth2 client_credentials client ID",
+          "isRequired": true,
+          "name": "MCP_SVC_CLIENT_ID"
+        },
+        {
+          "description": "OAuth2 client_credentials client secret (See https://digitaltrust.gcloudfactory.com for credential acquisition.)",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "MCP_SVC_CLIENT_SECRET"
+        },
+        {
+          "description": "RFC 7662 token introspection URL for inbound Bearer verification in HTTP mode. Opt-in \u2014 reuses the service-account client id/secret above as the resource-server credentials.",
+          "name": "MCP_SVC_INTROSPECT_URL"
+        },
+        {
+          "description": "Optional OAuth2 scope for the service-account token request",
+          "name": "MCP_SVC_SCOPE"
+        },
+        {
+          "description": "Token endpoint URL for the OAuth2 client_credentials flow",
+          "isRequired": true,
+          "name": "MCP_SVC_TOKEN_URL"
+        },
+        {
+          "description": "HTTP port when running in hosted (HTTP) mode; ignored in stdio mode",
+          "name": "PORT"
+        }
+      ],
+      "identifier": "@g-digital/mcp-ead-factory",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "92dacc87dc",
+    "published_at": "2026-07-08T15:04:25.644523Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.g-digital-by-Garrigues/ead-factory",
+    "server_version": "1.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-08T15:04:25.644523Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.1.0"
+}

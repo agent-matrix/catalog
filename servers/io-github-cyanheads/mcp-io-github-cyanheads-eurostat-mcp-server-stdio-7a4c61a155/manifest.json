@@ -1,0 +1,113 @@
+{
+  "description": "Search and query the Eurostat catalogue \u2014 EU economy, demography, trade, and NUTS regional data.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:36+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cyanheads-eurostat-mcp-server.stdio.7a4c61a155",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cyanheads/eurostat-mcp-server",
+    "homepage": "https://github.com/cyanheads/eurostat-mcp-server",
+    "repository": "https://github.com/cyanheads/eurostat-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "bun",
+          "@cyanheads/eurostat-mcp-server@0.1.14"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cyanheads/eurostat-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "127.0.0.1",
+          "description": "The hostname for the HTTP server.",
+          "format": "string",
+          "name": "MCP_HTTP_HOST"
+        },
+        {
+          "default": "3010",
+          "description": "The port to run the HTTP server on.",
+          "format": "string",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "default": "/mcp",
+          "description": "The endpoint path for the MCP server.",
+          "format": "string",
+          "name": "MCP_HTTP_ENDPOINT_PATH"
+        },
+        {
+          "description": "Public origin override for deployments behind a TLS-terminating reverse proxy (e.g. https://mcp.example.com).",
+          "format": "string",
+          "name": "MCP_PUBLIC_URL"
+        },
+        {
+          "default": "none",
+          "description": "Authentication mode to use: 'none', 'jwt', or 'oauth'.",
+          "format": "string",
+          "name": "MCP_AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Sets the minimum log level for output (e.g., 'debug', 'info', 'warn').",
+          "format": "string",
+          "name": "MCP_LOG_LEVEL"
+        },
+        {
+          "default": "https://ec.europa.eu/eurostat/api/dissemination",
+          "description": "Eurostat API base URL. Override when using a mirror or proxy.",
+          "format": "string",
+          "name": "EUROSTAT_BASE_URL"
+        },
+        {
+          "default": "30000",
+          "description": "HTTP request timeout in milliseconds for Eurostat API calls.",
+          "format": "string",
+          "name": "EUROSTAT_REQUEST_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "@cyanheads/eurostat-mcp-server",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "start:http"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "bun",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3010/mcp"
+      },
+      "version": "0.1.14"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7a4c61a155",
+    "published_at": "2026-07-10T19:37:13.123467Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cyanheads/eurostat-mcp-server",
+    "server_version": "0.1.14",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-10T19:37:13.123467Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.14"
+}

@@ -1,0 +1,100 @@
+{
+  "description": "Connect AI assistants to GitHub - manage repos, issues, PRs, workflows, and git operations.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-aifity-omnigit-mcp.stdio.fafddbf5f6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/aifity/omnigit-mcp",
+    "homepage": "https://github.com/aifity/omnigit-mcp",
+    "repository": "https://github.com/aifity/omnigit-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Publish the OAuth callback port to loopback so the in-container login callback is reachable",
+            "name": "-p",
+            "type": "named",
+            "value": "127.0.0.1:8085:8085"
+          },
+          {
+            "description": "Fixed OAuth callback port, matching the published port above",
+            "name": "-e",
+            "type": "named",
+            "value": "GITHUB_OAUTH_CALLBACK_PORT=8085"
+          },
+          {
+            "description": "Optional GitHub Personal Access Token. Omit to log in with OAuth on first use.",
+            "name": "-e",
+            "type": "named",
+            "value": "GITHUB_PERSONAL_ACCESS_TOKEN={token}",
+            "variables": {
+              "token": {
+                "format": "string",
+                "isSecret": true
+              }
+            }
+          },
+          "ghcr.io/aifity/omnigit-mcp:0.6.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.aifity/omnigit-mcp",
+  "packages": [
+    {
+      "identifier": "ghcr.io/aifity/omnigit-mcp:0.6.0",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "Publish the OAuth callback port to loopback so the in-container login callback is reachable",
+          "name": "-p",
+          "type": "named",
+          "value": "127.0.0.1:8085:8085"
+        },
+        {
+          "description": "Fixed OAuth callback port, matching the published port above",
+          "name": "-e",
+          "type": "named",
+          "value": "GITHUB_OAUTH_CALLBACK_PORT=8085"
+        },
+        {
+          "description": "Optional GitHub Personal Access Token. Omit to log in with OAuth on first use.",
+          "name": "-e",
+          "type": "named",
+          "value": "GITHUB_PERSONAL_ACCESS_TOKEN={token}",
+          "variables": {
+            "token": {
+              "format": "string",
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "fafddbf5f6",
+    "published_at": "2026-07-12T13:09:54.507417Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.aifity/omnigit-mcp",
+    "server_version": "0.6.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-12T13:09:54.507417Z"
+  },
+  "title": "GitHub",
+  "type": "mcp_server",
+  "version": "0.6.0"
+}

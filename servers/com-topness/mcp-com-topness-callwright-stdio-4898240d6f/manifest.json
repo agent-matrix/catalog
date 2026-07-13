@@ -1,0 +1,93 @@
+{
+  "description": "Self-hosted MCP voice agent that places phone calls on your behalf via Retell.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:18+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-topness-callwright.stdio.4898240d6f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/topness/callwright",
+    "homepage": "https://github.com/topness/callwright",
+    "repository": "https://github.com/topness/callwright"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "callwright@1.0.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.topness/callwright",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your Retell secret API key (stays server-side)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "RETELL_API_KEY"
+        },
+        {
+          "description": "Bearer token clients must send; required when exposed beyond localhost",
+          "format": "string",
+          "isSecret": true,
+          "name": "MCP_AUTH_TOKEN"
+        },
+        {
+          "description": "Port the HTTP MCP server listens on (default 8787)",
+          "format": "string",
+          "name": "PORT"
+        },
+        {
+          "description": "Persistent directory for runtime state such as trigger deduplication",
+          "format": "string",
+          "name": "CALLWRIGHT_DATA_DIR"
+        },
+        {
+          "description": "Public Callwright base URL used to configure Retell webhook delivery",
+          "format": "string",
+          "name": "CALLWRIGHT_PUBLIC_URL"
+        },
+        {
+          "description": "Optional complete Claude cloud Routine /fire endpoint URL",
+          "format": "string",
+          "name": "CLAUDE_ROUTINE_URL"
+        },
+        {
+          "description": "Optional dedicated bearer token for the configured Claude Routine trigger",
+          "format": "string",
+          "isSecret": true,
+          "name": "CLAUDE_ROUTINE_TOKEN"
+        }
+      ],
+      "identifier": "callwright",
+      "registryType": "npm",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:8787/mcp"
+      },
+      "version": "1.0.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4898240d6f",
+    "published_at": "2026-07-12T19:10:42.115117Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.topness/callwright",
+    "server_version": "1.0.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-12T19:10:42.115117Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.4"
+}

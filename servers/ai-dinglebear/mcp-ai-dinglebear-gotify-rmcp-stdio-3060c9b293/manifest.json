@@ -1,0 +1,108 @@
+{
+  "description": "Rust MCP server and CLI for Gotify push notifications and message management.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-dinglebear-gotify-rmcp.stdio.3060c9b293",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jmagar/gotify-rmcp",
+    "homepage": "https://github.com/jmagar/gotify-rmcp",
+    "repository": "https://github.com/jmagar/gotify-rmcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "gotify-rmcp@0.1.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.dinglebear/gotify-rmcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Gotify server base URL.",
+          "format": "string",
+          "isRequired": true,
+          "name": "GOTIFY_URL",
+          "placeholder": "https://gotify.example.com"
+        },
+        {
+          "description": "Gotify client token for read and management actions.",
+          "format": "string",
+          "isSecret": true,
+          "name": "GOTIFY_CLIENT_TOKEN"
+        },
+        {
+          "description": "Gotify app token for sending notifications.",
+          "format": "string",
+          "isSecret": true,
+          "name": "GOTIFY_APP_TOKEN"
+        },
+        {
+          "description": "Optional GitHub release tag override for the downloaded Gotify RMCP binary.",
+          "format": "string",
+          "name": "GOTIFY_RMCP_VERSION",
+          "placeholder": "v0.1.2"
+        },
+        {
+          "default": "jmagar/gotify-rmcp",
+          "description": "Optional GitHub owner/repo override for release asset downloads.",
+          "format": "string",
+          "name": "GOTIFY_RMCP_REPO",
+          "placeholder": "jmagar/gotify-rmcp"
+        },
+        {
+          "description": "Optional release download base URL override.",
+          "format": "string",
+          "name": "GOTIFY_RMCP_RELEASE_BASE_URL"
+        },
+        {
+          "default": "info",
+          "description": "Tracing filter for Gotify RMCP logs.",
+          "format": "string",
+          "name": "RUST_LOG",
+          "placeholder": "info"
+        }
+      ],
+      "identifier": "gotify-rmcp",
+      "packageArguments": [
+        {
+          "description": "Run Gotify RMCP over stdio.",
+          "format": "string",
+          "isRequired": true,
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "3060c9b293",
+    "published_at": "2026-07-12T11:58:28.849931Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.dinglebear/gotify-rmcp",
+    "server_version": "0.1.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-12T11:58:28.849931Z"
+  },
+  "title": "Gotify RMCP",
+  "type": "mcp_server",
+  "version": "0.1.3"
+}

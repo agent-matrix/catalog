@@ -1,0 +1,92 @@
+{
+  "description": "Evidence layer for agent commerce: signed receipts, verification, dispute evidence envelopes.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:56+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-tersignhq-evidence.stdio.c5c3143665",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/tersignhq/tersign-js",
+    "homepage": "https://github.com/tersignhq/tersign-js",
+    "repository": "https://github.com/tersignhq/tersign-js"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "tersign@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.tersignhq/evidence",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "0x-prefixed private key the seller signs receipts with",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "TERSIGN_SELLER_KEY"
+        },
+        {
+          "description": "Seller/issuer display name",
+          "format": "string",
+          "name": "TERSIGN_ISSUER_NAME"
+        },
+        {
+          "description": "Seller jurisdiction (e.g. HK)",
+          "format": "string",
+          "name": "TERSIGN_ISSUER_JURISDICTION"
+        },
+        {
+          "description": "Seller tax/business-registration id (optional)",
+          "format": "string",
+          "name": "TERSIGN_ISSUER_TAX_ID"
+        },
+        {
+          "description": "Hosted ledger base URL for counter-signing (optional; SDK works standalone)",
+          "format": "string",
+          "name": "TERSIGN_LEDGER_URL"
+        },
+        {
+          "description": "Ledger seller API key (required only if counter-signing)",
+          "format": "string",
+          "isSecret": true,
+          "name": "TERSIGN_LEDGER_API_KEY"
+        },
+        {
+          "description": "Ledger seller id (required only if counter-signing)",
+          "format": "string",
+          "name": "TERSIGN_LEDGER_SELLER_ID"
+        }
+      ],
+      "identifier": "tersign",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c5c3143665",
+    "published_at": "2026-07-10T20:35:24.416256Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.tersignhq/evidence",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-10T20:35:24.416256Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

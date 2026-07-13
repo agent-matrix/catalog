@@ -1,0 +1,69 @@
+{
+  "description": "Query logs from Graylog: get streams, search messages, aggregate, and get full data.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:44+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-jperelli-graylog-mcp.stdio.3b09ce7eee",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jperelli/graylog-mcp",
+    "homepage": "https://github.com/jperelli/graylog-mcp",
+    "repository": "https://github.com/jperelli/graylog-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@jperelli/graylog-mcp@1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.jperelli/graylog-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the first Graylog instance, e.g. http://graylog.example.com:9000",
+          "isRequired": true,
+          "name": "GRAYLOG_BASE_URL_INSTANCE_1"
+        },
+        {
+          "description": "API token for the first Graylog instance (used as the HTTP Basic username).",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GRAYLOG_API_TOKEN_INSTANCE_1"
+        },
+        {
+          "description": "Optional human-readable label for the first instance (default: instance_1).",
+          "name": "GRAYLOG_LABEL_INSTANCE_1"
+        }
+      ],
+      "identifier": "@jperelli/graylog-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "3b09ce7eee",
+    "published_at": "2026-07-12T00:50:04.38678Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.jperelli/graylog-mcp",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-12T00:50:04.38678Z"
+  },
+  "title": "Graylog MCP Server",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

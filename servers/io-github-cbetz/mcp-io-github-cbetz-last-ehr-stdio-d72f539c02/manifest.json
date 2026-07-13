@@ -1,0 +1,71 @@
+{
+  "description": "Read-only Medplum chart search and patient context for MCP clients.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cbetz-last-ehr.stdio.d72f539c02",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cbetz/last-ehr",
+    "homepage": "https://github.com/cbetz/last-ehr",
+    "repository": "https://github.com/cbetz/last-ehr"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@lastehr/mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cbetz/last-ehr",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "A least-privilege Medplum access token. Set this or the client credentials below.",
+          "isSecret": true,
+          "name": "MEDPLUM_ACCESS_TOKEN"
+        },
+        {
+          "description": "Medplum ClientApplication ID. Set with MEDPLUM_CLIENT_SECRET when not using an access token.",
+          "name": "MEDPLUM_CLIENT_ID"
+        },
+        {
+          "description": "Medplum ClientApplication secret. Set with MEDPLUM_CLIENT_ID when not using an access token.",
+          "isSecret": true,
+          "name": "MEDPLUM_CLIENT_SECRET"
+        },
+        {
+          "description": "Optional base URL for a self-hosted Medplum deployment.",
+          "name": "MEDPLUM_BASE_URL"
+        }
+      ],
+      "identifier": "@lastehr/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d72f539c02",
+    "published_at": "2026-07-11T14:04:17.780475Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cbetz/last-ehr",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-11T14:04:17.780475Z"
+  },
+  "title": "Last EHR \u2014 Medplum",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

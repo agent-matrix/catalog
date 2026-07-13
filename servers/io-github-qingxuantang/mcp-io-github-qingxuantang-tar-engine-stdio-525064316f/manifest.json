@@ -1,0 +1,82 @@
+{
+  "description": "Audit AI skill safety before you ship. Static, semantic, adversarial, supply chain scans.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:52+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-qingxuantang-tar-engine.stdio.525064316f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/qingxuantang/tar-engine",
+    "homepage": "https://github.com/qingxuantang/tar-engine",
+    "repository": "https://github.com/qingxuantang/tar-engine"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "tar-engine==0.3.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.qingxuantang/tar-engine",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Override the audit backend. Default is the hosted playground at https://tarai.dev. Set to http://localhost:8765 (or your own tar-engine deployment) to self-host and keep SKILL.md content on your machine.",
+          "name": "TAR_ENGINE_URL"
+        },
+        {
+          "description": "OpenAI API key that unlocks the semantic LLM and adversarial prompt-fuzz layers. Static and supply-chain layers run without it.",
+          "isSecret": true,
+          "name": "TAR_ENGINE_BYOK_OPENAI_KEY"
+        },
+        {
+          "description": "Anthropic API key alternative to the OpenAI key for the semantic and adversarial layers.",
+          "isSecret": true,
+          "name": "TAR_ENGINE_BYOK_ANTHROPIC_KEY"
+        }
+      ],
+      "identifier": "tar-engine",
+      "packageArguments": [
+        {
+          "description": "Install the tar-engine wheel that provides the tar-engine-mcp executable.",
+          "name": "--from",
+          "type": "positional",
+          "value": "tar-engine"
+        },
+        {
+          "description": "Run the MCP server entry point exposed by the tar-engine wheel.",
+          "name": "tar-engine-mcp",
+          "type": "positional",
+          "value": "tar-engine-mcp"
+        }
+      ],
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "525064316f",
+    "published_at": "2026-07-12T02:38:49.941926Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.qingxuantang/tar-engine",
+    "server_version": "0.3.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-12T02:38:49.941926Z"
+  },
+  "title": "TAR Engine",
+  "type": "mcp_server",
+  "version": "0.3.2"
+}

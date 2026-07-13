@@ -1,0 +1,65 @@
+{
+  "description": "Redacts PII/PHI from text before it reaches an LLM. Fail-closed, self-hosted, no egress.",
+  "harvest": {
+    "last_seen_at": "2026-07-13T05:48:27+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Rinava-umbryn-mcp.stdio.5d39293de9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Rinava/umbryn-mcp",
+    "homepage": "https://github.com/Rinava/umbryn-mcp",
+    "repository": "https://github.com/Rinava/umbryn-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "umbryn-mcp==0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Rinava/umbryn-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Detection engine: auto (default), regex, or presidio",
+          "name": "UMBRYN_ENGINE"
+        },
+        {
+          "description": "Trust threshold (0-1); detections below it fail closed. Default 0.5",
+          "name": "UMBRYN_MIN_CONFIDENCE"
+        },
+        {
+          "description": "Sensitivity floor (0-1); below this a signal is noise. Default 0.35",
+          "name": "UMBRYN_DETECTION_FLOOR"
+        }
+      ],
+      "identifier": "umbryn-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5d39293de9",
+    "published_at": "2026-07-06T21:18:32.037267Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Rinava/umbryn-mcp",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-06T21:18:32.037267Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.0"
+}
