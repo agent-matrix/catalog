@@ -42,6 +42,7 @@ This repo is designed for **high-volume**, **append-only** publishing: add new s
 - Each **`servers/<folder>/index.json`** lists the manifest(s) in that folder, typically:
   ```json
   { "manifests": ["manifest.json"] }
+  ```
 
 ## How the index works
 
@@ -97,8 +98,7 @@ We've created a fully automated, bot-powered submission process that doesn't req
 
 2. **Open a Submission Issue**: Click the link below to open our "Add MCP Server" issue form. It will guide you through providing all the necessary information.
 
-   ➡️ [**Click Here to Add Your MCP Server**](https://www.google.com/search?q=https://github.com/YOUR_USERNAME/YOUR_REPOSITORY/issues/new%3Fassignees%3D%26labels%3Dadd-server%26template%3Dadd_mcp_server.yml%26title%3D%255BServer%255D%253A%2BADD_YOUR_SERVER_NAME_HERE)
-   *(Note: Please replace YOUR_USERNAME/YOUR_REPOSITORY in the link above with the actual path to your repository if you are hosting this project.)*
+   ➡️ [**Click Here to Add Your MCP Server**](https://github.com/agent-matrix/catalog/issues/new?template=add-server.yml)
 
 3. **Submit the Form**: Once you've filled out all the fields, just click "Submit new issue."
 
@@ -149,7 +149,7 @@ mcp-ingest pack ./path/to/server --out ./dist
 
 ## Credits
 
-* **Lead developer:** *Ruslan Magana Vsevolodovna* — [https://ruslanmv.com](https://ruslanmv.com)
+* **Lead developer:** *Ruslan Magana Vsevolodovna* - [https://ruslanmv.com](https://ruslanmv.com)
 * **Model Context Protocol** community for the protocol and reference servers.
 * Maintainers and contributors across the Agent-Matrix ecosystem.
 
@@ -161,5 +161,4 @@ mcp-ingest pack ./path/to/server --out ./dist
 
 This catalog is released under the **Apache License 2.0**.
 See [LICENSE](./LICENSE) for details.
-
 
