@@ -1,0 +1,63 @@
+{
+  "description": "Give your agent a prepaid fiat wallet: pay any API per call in cents, no crypto, spend caps.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:23+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.fr-intrane-peage-mcp.stdio.64a59bc61c",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/javimosch/peage-mcp",
+    "homepage": "https://github.com/javimosch/peage-mcp",
+    "repository": "https://github.com/javimosch/peage-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "fr.intrane/peage-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Rail instance to target (default https://peage.intrane.fr). Point at a self-hosted or staging rail.",
+          "format": "string",
+          "name": "PEAGE_URL"
+        },
+        {
+          "description": "Existing wallet token (pw_...). If unset, peage_setup mints one and stores it at ~/.peage-mcp.json.",
+          "format": "string",
+          "isSecret": true,
+          "name": "PEAGE_WALLET_TOKEN"
+        }
+      ],
+      "fileSha256": "d8fd5075989031c32ba1e5f5f55532334ae4203e4776ee7b5ae7fbf7a95b8c47",
+      "identifier": "https://github.com/javimosch/peage-mcp/releases/download/v0.1.2/peage-mcp.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "64a59bc61c",
+    "published_at": "2026-07-18T14:35:15.387857Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "fr.intrane/peage-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-18T14:35:15.387857Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

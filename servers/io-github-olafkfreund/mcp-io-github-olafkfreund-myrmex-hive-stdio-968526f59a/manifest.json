@@ -1,0 +1,89 @@
+{
+  "description": "Zero-inbound-port MCP gateway for managing distributed edge servers over reverse SSH tunnels",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:59+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-olafkfreund-myrmex-hive.stdio.968526f59a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/olafkfreund/myrmex-hive",
+    "homepage": "https://github.com/olafkfreund/myrmex-hive",
+    "repository": "https://github.com/olafkfreund/myrmex-hive"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Mount the gateway config. The gateway fails closed and will not start without authorized_keys_path and a host key \u2014 see docs/DEPLOYMENT.md.",
+            "isRequired": true,
+            "name": "-v",
+            "type": "named",
+            "value": "{config_dir}:/app/config:ro",
+            "variables": {
+              "config_dir": {
+                "description": "Host directory holding gateway_config.json, the SSH host key, and authorized_keys",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          "ghcr.io/olafkfreund/myrmex-gateway:1.0.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.olafkfreund/myrmex-hive",
+  "packages": [
+    {
+      "identifier": "ghcr.io/olafkfreund/myrmex-gateway:1.0.3",
+      "packageArguments": [
+        {
+          "description": "Path to gateway_config.json inside the container",
+          "name": "-config",
+          "type": "named",
+          "value": "/app/config/gateway_config.json"
+        }
+      ],
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "Mount the gateway config. The gateway fails closed and will not start without authorized_keys_path and a host key \u2014 see docs/DEPLOYMENT.md.",
+          "isRequired": true,
+          "name": "-v",
+          "type": "named",
+          "value": "{config_dir}:/app/config:ro",
+          "variables": {
+            "config_dir": {
+              "description": "Host directory holding gateway_config.json, the SSH host key, and authorized_keys",
+              "format": "filepath",
+              "isRequired": true
+            }
+          }
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "968526f59a",
+    "published_at": "2026-07-15T11:20:59.565668Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.olafkfreund/myrmex-hive",
+    "server_version": "1.0.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-15T11:20:59.565668Z"
+  },
+  "title": "Myrmex Hive",
+  "type": "mcp_server",
+  "version": "1.0.3"
+}

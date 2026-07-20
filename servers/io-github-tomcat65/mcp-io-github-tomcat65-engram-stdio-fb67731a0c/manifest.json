@@ -1,0 +1,70 @@
+{
+  "description": "Coordination bus + shared truth for AI agent fleets \u2014 self-hosted MCP server + stdio bridge.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:50:07+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-tomcat65-engram.stdio.fb67731a0c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/tomcat65/engram",
+    "homepage": "https://github.com/tomcat65/engram",
+    "repository": "https://github.com/tomcat65/engram"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@tomcat65/engram-mcp@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.tomcat65/engram",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Shared API key authenticating the bridge to your self-hosted Engram server (generate with: npx -y @tomcat65/engram-mcp init)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "API_KEY"
+        },
+        {
+          "description": "Engram server host (default 127.0.0.1)",
+          "format": "string",
+          "name": "MCP_HOST"
+        },
+        {
+          "description": "Engram server port (default 6174)",
+          "format": "string",
+          "name": "MCP_PORT"
+        }
+      ],
+      "identifier": "@tomcat65/engram-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "fb67731a0c",
+    "published_at": "2026-07-17T02:44:48.486755Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.tomcat65/engram",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-17T02:44:48.486755Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

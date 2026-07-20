@@ -1,0 +1,78 @@
+{
+  "description": "MCP server for PostgreSQL. Read-only by default, row caps, timeouts, secrets never logged.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-arifulislamat-database-mcp-postgres.stdio.7c46b2c0e1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/arifulislamat/database-mcp",
+    "homepage": "https://github.com/arifulislamat/database-mcp",
+    "repository": "https://github.com/arifulislamat/database-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "database-mcp-postgres==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.arifulislamat/database-mcp-postgres",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Database host",
+          "format": "string",
+          "isRequired": true,
+          "name": "POSTGRES_HOST"
+        },
+        {
+          "description": "Database user (a read-only user is recommended)",
+          "format": "string",
+          "isRequired": true,
+          "name": "POSTGRES_USER"
+        },
+        {
+          "description": "Database password (or use POSTGRES_PASSWORD_FILE)",
+          "format": "string",
+          "isSecret": true,
+          "name": "POSTGRES_PASSWORD"
+        },
+        {
+          "description": "Database name",
+          "format": "string",
+          "isRequired": true,
+          "name": "POSTGRES_DATABASE"
+        }
+      ],
+      "identifier": "database-mcp-postgres",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7c46b2c0e1",
+    "published_at": "2026-07-16T18:45:58.57777Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.arifulislamat/database-mcp-postgres",
+    "server_version": "0.4.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-16T18:45:58.57777Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.4.2"
+}

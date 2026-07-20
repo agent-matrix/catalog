@@ -1,0 +1,64 @@
+{
+  "description": "Resolve a Nigerian NUBAN + bank code to the account name (Paystack, free key). PII never cached.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:26+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Braynexservices-nigeria-bank-resolve.stdio.37a3124d66",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Braynexservices/nigeria-mcp",
+    "homepage": "https://github.com/Braynexservices/nigeria-mcp",
+    "repository": "https://github.com/Braynexservices/nigeria-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@braynexservices/nigeria-mcp-bank-account@0.2.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Braynexservices/nigeria-bank-resolve",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Provider selector \u2014 \"mock\" (default, offline fixtures) or \"paystack\" for live data.",
+          "format": "string",
+          "name": "BANK_PROVIDER"
+        },
+        {
+          "description": "Paystack secret key (free at paystack.com) \u2014 required when BANK_PROVIDER=paystack.",
+          "format": "string",
+          "isSecret": true,
+          "name": "PAYSTACK_SECRET_KEY"
+        }
+      ],
+      "identifier": "@braynexservices/nigeria-mcp-bank-account",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "37a3124d66",
+    "published_at": "2026-07-14T12:58:54.729627Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Braynexservices/nigeria-bank-resolve",
+    "server_version": "0.2.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-14T12:58:54.729627Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.4"
+}

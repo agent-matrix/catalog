@@ -1,0 +1,133 @@
+{
+  "description": "A MCP Server for BMC Helix ITSM API.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:50:03+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-rod-anami-kyndryl-bmc-helix-mcp.stdio.a58334e2d7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/rod-anami-kyndryl/bmc-helix-mcp",
+    "homepage": "https://github.com/rod-anami-kyndryl/bmc-helix-mcp",
+    "repository": "https://github.com/rod-anami-kyndryl/bmc-helix-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "bmc-helix-mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.rod-anami-kyndryl/bmc-helix-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://your-helix-instance.onbmc.com/api/arsys/v1/entry/",
+          "description": "BMC Helix Entry level REST API URL endpoint.",
+          "format": "string",
+          "isRequired": true,
+          "name": "HELIX_API_URL",
+          "placeholder": "https://your-helix-instance.onbmc.com/api/arsys/v1/entry/"
+        },
+        {
+          "default": "https://your-helix-instance.onbmc.com/api/jwt/login",
+          "description": "BMC Helix JWT Login endpoint URL.",
+          "format": "string",
+          "isRequired": true,
+          "name": "HELIX_TOKEN_URL",
+          "placeholder": "https://your-helix-instance.onbmc.com/api/jwt/login"
+        },
+        {
+          "description": "BMC Helix API Username/UserID.",
+          "format": "string",
+          "isRequired": true,
+          "name": "HELIX_USERID",
+          "placeholder": "your_username"
+        },
+        {
+          "description": "BMC Helix API User Password.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "HELIX_PASSWORD",
+          "placeholder": "your_password"
+        },
+        {
+          "default": "./certs/helix-certs.pem",
+          "description": "Path to the retrieved BMC Helix TLS certificate chain.",
+          "format": "filepath",
+          "name": "HELIX_CERT_PATH",
+          "placeholder": "./certs/helix-certs.pem"
+        },
+        {
+          "default": "4044",
+          "description": "The port number on which the MCP Server should run.",
+          "format": "number",
+          "name": "MCP_PORT",
+          "placeholder": "4044"
+        },
+        {
+          "description": "Optional Bearer token to secure the MCP Server communication.",
+          "format": "string",
+          "isSecret": true,
+          "name": "MCP_AUTH_TOKEN",
+          "placeholder": "your_mcp_secret_token"
+        },
+        {
+          "default": "true",
+          "description": "Set to true to run the MCP Server with secure TLS (HTTPS).",
+          "format": "boolean",
+          "name": "MCP_TLS_ENABLED"
+        },
+        {
+          "default": "./certs/mcp-server.key",
+          "description": "Path to the TLS private key file.",
+          "format": "filepath",
+          "name": "MCP_TLS_KEY",
+          "placeholder": "./certs/mcp-server.key"
+        },
+        {
+          "default": "./certs/mcp-server.crt",
+          "description": "Path to the TLS certificate file.",
+          "format": "filepath",
+          "name": "MCP_TLS_CERT",
+          "placeholder": "./certs/mcp-server.crt"
+        },
+        {
+          "default": "./certs/ca.crt",
+          "description": "Path to the TLS Certificate Authority (CA) file.",
+          "format": "filepath",
+          "name": "MCP_TLS_CA",
+          "placeholder": "./certs/ca.crt"
+        }
+      ],
+      "identifier": "bmc-helix-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:{MCP_PORT}/mcp"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a58334e2d7",
+    "published_at": "2026-07-15T18:02:12.650789Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.rod-anami-kyndryl/bmc-helix-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-15T18:02:12.650789Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

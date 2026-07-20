@@ -1,0 +1,102 @@
+{
+  "description": "MCP server for ConnectWise Automate RMM \u2014 computers, clients, alerts, and scripts.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:50:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wyre-technology-connectwise-automate-mcp.stdio.9b7b492608",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wyre-technology/connectwise-automate-mcp",
+    "homepage": "https://github.com/wyre-technology/connectwise-automate-mcp",
+    "repository": "https://github.com/wyre-technology/connectwise-automate-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-technology/connectwise-automate-mcp:v1.7.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wyre-technology/connectwise-automate-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "ConnectWise Automate server URL (e.g. https://your-server.hostedrmm.com)",
+          "format": "string",
+          "isRequired": true,
+          "name": "CW_AUTOMATE_SERVER_URL"
+        },
+        {
+          "description": "ConnectWise Automate integrator client ID",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CW_AUTOMATE_CLIENT_ID"
+        },
+        {
+          "description": "Integrator username or user credential",
+          "format": "string",
+          "isRequired": true,
+          "name": "CW_AUTOMATE_USERNAME"
+        },
+        {
+          "description": "Integrator password or user password",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CW_AUTOMATE_PASSWORD"
+        },
+        {
+          "description": "Two-factor authentication code, if required by the account",
+          "format": "string",
+          "isSecret": true,
+          "name": "CW_AUTOMATE_2FA_CODE"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode for the server. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-technology/connectwise-automate-mcp:v1.7.1",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "9b7b492608",
+    "published_at": "2026-07-18T02:56:16.087593Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wyre-technology/connectwise-automate-mcp",
+    "server_version": "1.7.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-18T02:56:16.087593Z"
+  },
+  "title": "ConnectWise Automate",
+  "type": "mcp_server",
+  "version": "1.7.1"
+}

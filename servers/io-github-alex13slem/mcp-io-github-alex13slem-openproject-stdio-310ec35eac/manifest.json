@@ -1,0 +1,90 @@
+{
+  "description": "Manage OpenProject projects, work packages, files, relations, boards, users, and notifications.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:36+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-alex13slem-openproject.stdio.310ec35eac",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/alex13slem/openproject-codex-plugin",
+    "homepage": "https://github.com/alex13slem/openproject-codex-plugin",
+    "repository": "https://github.com/alex13slem/openproject-codex-plugin"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "openproject-codex-plugin@0.5.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.alex13slem/openproject",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Root URL of the OpenProject instance",
+          "format": "string",
+          "isRequired": true,
+          "name": "OPENPROJECT_URL"
+        },
+        {
+          "description": "OpenProject API token",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OPENPROJECT_API_TOKEN"
+        },
+        {
+          "default": "25",
+          "description": "Default page size from 1 to 100",
+          "format": "string",
+          "name": "OPENPROJECT_PAGE_SIZE"
+        },
+        {
+          "default": "30000",
+          "description": "Request timeout in milliseconds from 1000 to 300000",
+          "format": "string",
+          "name": "OPENPROJECT_TIMEOUT_MS"
+        },
+        {
+          "default": "basic",
+          "description": "API-token authentication mode: basic for broad compatibility or bearer for OpenProject 17.2+",
+          "format": "string",
+          "name": "OPENPROJECT_AUTH_MODE"
+        },
+        {
+          "description": "Platform-separated directories from which attachment files may be read; defaults to the process working directory",
+          "format": "string",
+          "name": "OPENPROJECT_ALLOWED_UPLOAD_DIRS"
+        }
+      ],
+      "identifier": "openproject-codex-plugin",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "310ec35eac",
+    "published_at": "2026-07-14T18:56:45.507136Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.alex13slem/openproject",
+    "server_version": "0.5.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-14T18:56:45.507136Z"
+  },
+  "title": "OpenProject",
+  "type": "mcp_server",
+  "version": "0.5.0"
+}

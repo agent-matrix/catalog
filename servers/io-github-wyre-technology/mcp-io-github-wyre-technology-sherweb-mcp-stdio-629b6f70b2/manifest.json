@@ -1,0 +1,90 @@
+{
+  "description": "MCP server for Sherweb \u2014 billing, subscriptions, customers, and product catalog.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:50:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wyre-technology-sherweb-mcp.stdio.629b6f70b2",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wyre-technology/sherweb-mcp",
+    "homepage": "https://github.com/wyre-technology/sherweb-mcp",
+    "repository": "https://github.com/wyre-technology/sherweb-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-technology/sherweb-mcp:v1.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wyre-technology/sherweb-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Sherweb OAuth client ID",
+          "format": "string",
+          "isRequired": true,
+          "name": "SHERWEB_CLIENT_ID"
+        },
+        {
+          "description": "Sherweb OAuth client secret",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SHERWEB_CLIENT_SECRET"
+        },
+        {
+          "description": "Sherweb API subscription key",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SHERWEB_SUBSCRIPTION_KEY"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode for the server. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-technology/sherweb-mcp:v1.4.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "629b6f70b2",
+    "published_at": "2026-07-17T23:21:20.805254Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wyre-technology/sherweb-mcp",
+    "server_version": "1.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-17T23:21:20.805254Z"
+  },
+  "title": "Sherweb",
+  "type": "mcp_server",
+  "version": "1.4.0"
+}

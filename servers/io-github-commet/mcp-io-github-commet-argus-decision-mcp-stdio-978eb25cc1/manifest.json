@@ -1,0 +1,67 @@
+{
+  "description": "Save a falsifiable prediction, then record what reality did. Reality grades you, not the model.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-commet-argus-decision-mcp.stdio.978eb25cc1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/commet/argus",
+    "homepage": "https://github.com/commet/argus",
+    "repository": "https://github.com/commet/argus"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "argus-decision-mcp@1.4.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.commet/argus-decision-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Directory for the append-only ledger (.argus). Set once and every tool falls back to it. Claude Code expands ${CLAUDE_PROJECT_DIR}; on other hosts use an absolute path.",
+          "format": "filepath",
+          "name": "ARGUS_DIR"
+        },
+        {
+          "description": "Optional Argus account token. Set it and saved predictions sync so Argus can email you at the check-by date. Unset = fully local, no network.",
+          "isSecret": true,
+          "name": "ARGUS_TOKEN"
+        },
+        {
+          "description": "Timezone that decides when a check-by date becomes today (e.g. Asia/Seoul). Unset = your machine's local timezone.",
+          "name": "ARGUS_TZ"
+        }
+      ],
+      "identifier": "argus-decision-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.4.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "978eb25cc1",
+    "published_at": "2026-07-18T20:58:29.663496Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.commet/argus-decision-mcp",
+    "server_version": "1.4.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-18T20:58:29.663496Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.4.2"
+}

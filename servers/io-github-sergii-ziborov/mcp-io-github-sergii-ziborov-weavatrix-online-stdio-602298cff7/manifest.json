@@ -1,0 +1,96 @@
+{
+  "description": "Expanded Weavatrix MCP for Cloud and licensed Enterprise endpoints, built on the MIT offline core.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:50:05+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sergii-ziborov-weavatrix-online.stdio.602298cff7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sergii-ziborov/weavatrix-online",
+    "homepage": "https://github.com/sergii-ziborov/weavatrix-online",
+    "repository": "https://github.com/sergii-ziborov/weavatrix-online"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "weavatrix-online@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sergii-ziborov/weavatrix-online",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Cloud or licensed Enterprise sync endpoint",
+          "format": "string",
+          "isRequired": true,
+          "name": "WEAVATRIX_SYNC_URL"
+        },
+        {
+          "description": "Scoped bearer token for the selected endpoint",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "WEAVATRIX_SYNC_TOKEN"
+        },
+        {
+          "description": "Optional explicit endpoint capability document URL; defaults to /api/v1/capabilities on the sync origin with legacy /api/health fallback",
+          "format": "string",
+          "name": "WEAVATRIX_CAPABILITIES_URL"
+        },
+        {
+          "description": "Optional explicit architecture-contract URL",
+          "format": "string",
+          "name": "WEAVATRIX_ARCHITECTURE_URL"
+        },
+        {
+          "description": "Core semantic precision: lsp (default) or off",
+          "format": "string",
+          "name": "WEAVATRIX_PRECISION"
+        },
+        {
+          "description": "Set to 1 only to authorize requested verified_change package scripts",
+          "format": "string",
+          "name": "WEAVATRIX_ALLOW_TEST_RUNS"
+        }
+      ],
+      "identifier": "weavatrix-online",
+      "packageArguments": [
+        {
+          "description": "Absolute path to the initial local Git repository",
+          "isRequired": true,
+          "type": "positional",
+          "valueHint": "repoRoot"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "602298cff7",
+    "published_at": "2026-07-19T14:51:30.766436Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sergii-ziborov/weavatrix-online",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-19T14:51:30.766436Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

@@ -1,0 +1,69 @@
+{
+  "description": "Native Gmail MCP server: search, labels, archive, trash, attachments, and snooze.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-csitte-mailwarden.stdio.bb65de13a6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/csitte/mailwarden",
+    "homepage": "https://github.com/csitte/mailwarden",
+    "repository": "https://github.com/csitte/mailwarden"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mailwarden@0.1.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.csitte/mailwarden",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Config directory (default ~/.mailwarden), holds credentials.json and token.json",
+          "name": "MAILWARDEN_DIR"
+        },
+        {
+          "description": "Path to the Google OAuth credentials.json (Desktop app client)",
+          "name": "MAILWARDEN_CREDENTIALS"
+        },
+        {
+          "description": "Set to 1 to sweep due snoozes at startup and hourly while running",
+          "name": "MAILWARDEN_AUTO_SWEEP"
+        },
+        {
+          "description": "Restrict download_attachment writes to this directory (recommended for HTTP hosting)",
+          "name": "MAILWARDEN_DOWNLOAD_DIR"
+        }
+      ],
+      "identifier": "mailwarden",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "bb65de13a6",
+    "published_at": "2026-07-20T05:40:11.307013Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.csitte/mailwarden",
+    "server_version": "0.1.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-20T05:40:11.307013Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.5"
+}

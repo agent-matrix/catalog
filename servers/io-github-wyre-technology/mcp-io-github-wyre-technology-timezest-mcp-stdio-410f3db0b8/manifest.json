@@ -1,0 +1,77 @@
+{
+  "description": "MCP server for TimeZest \u2014 appointment scheduling, agents, appointment types, and resources for MSPs.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:50:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wyre-technology-timezest-mcp.stdio.410f3db0b8",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wyre-technology/timezest-mcp",
+    "homepage": "https://github.com/wyre-technology/timezest-mcp",
+    "repository": "https://github.com/wyre-technology/timezest-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-technology/timezest-mcp:v1.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wyre-technology/timezest-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "TimeZest API token (Bearer credential)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "TIMEZEST_API_TOKEN"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode for the server. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-technology/timezest-mcp:v1.2.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "410f3db0b8",
+    "published_at": "2026-07-17T23:19:46.28768Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wyre-technology/timezest-mcp",
+    "server_version": "1.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-17T23:19:46.28768Z"
+  },
+  "title": "TimeZest",
+  "type": "mcp_server",
+  "version": "1.2.0"
+}

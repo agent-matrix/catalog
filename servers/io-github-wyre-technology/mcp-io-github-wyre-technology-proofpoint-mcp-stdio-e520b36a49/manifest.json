@@ -1,0 +1,88 @@
+{
+  "description": "MCP server for Proofpoint TAP \u2014 threat intelligence, forensics, quarantine, and email security.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:50:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wyre-technology-proofpoint-mcp.stdio.e520b36a49",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wyre-technology/proofpoint-mcp",
+    "homepage": "https://github.com/wyre-technology/proofpoint-mcp",
+    "repository": "https://github.com/wyre-technology/proofpoint-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-technology/proofpoint-mcp:v1.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wyre-technology/proofpoint-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Proofpoint TAP service principal (API user identifier)",
+          "format": "string",
+          "isRequired": true,
+          "name": "PROOFPOINT_SERVICE_PRINCIPAL"
+        },
+        {
+          "description": "Proofpoint TAP service secret",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PROOFPOINT_SERVICE_SECRET"
+        },
+        {
+          "description": "Proofpoint TAP API base URL (defaults to https://tap-api-v2.proofpoint.com)",
+          "format": "string",
+          "name": "PROOFPOINT_BASE_URL"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode for the server. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-technology/proofpoint-mcp:v1.1.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "e520b36a49",
+    "published_at": "2026-07-17T23:20:36.828067Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wyre-technology/proofpoint-mcp",
+    "server_version": "1.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-17T23:20:36.828067Z"
+  },
+  "title": "Proofpoint",
+  "type": "mcp_server",
+  "version": "1.1.0"
+}

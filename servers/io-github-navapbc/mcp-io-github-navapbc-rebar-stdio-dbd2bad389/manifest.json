@@ -1,0 +1,199 @@
+{
+  "description": "Event-sourced ticket system with a Jira reconciler, exposed as an MCP server.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:58+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-navapbc-rebar.stdio.dbd2bad389",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/navapbc/rebar",
+    "homepage": "https://github.com/navapbc/rebar",
+    "repository": "https://github.com/navapbc/rebar"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "nava-rebar==0.8.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.navapbc/rebar",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the repo root that holds the .tickets-tracker store (defaults to the git toplevel of the working dir).",
+          "name": "REBAR_ROOT"
+        },
+        {
+          "description": "Set to 1 to expose only the read tools (no write/mutation tools).",
+          "name": "REBAR_MCP_READONLY"
+        },
+        {
+          "description": "Set to 1 to enable the billable LLM tools (review_ticket / review_code / scan_spec / verify_completion / review_plan); off by default.",
+          "name": "REBAR_MCP_ALLOW_LLM"
+        },
+        {
+          "description": "Set to 1 to allow the live (mutating) Jira reconcile mode; otherwise reconcile is dry-run only.",
+          "name": "REBAR_MCP_ALLOW_JIRA_SYNC"
+        },
+        {
+          "description": "Transport for the MCP server: 'stdio' (default) or 'http' (the optional Streamable-HTTP transport).",
+          "name": "REBAR_MCP_TRANSPORT"
+        },
+        {
+          "description": "Bind host for the Streamable-HTTP transport (default 127.0.0.1).",
+          "name": "REBAR_MCP_HTTP_HOST"
+        },
+        {
+          "description": "Bind port for the Streamable-HTTP transport (1-65535; default 8000).",
+          "name": "REBAR_MCP_HTTP_PORT"
+        },
+        {
+          "description": "URL path the Streamable-HTTP transport serves on (default /mcp).",
+          "name": "REBAR_MCP_HTTP_PATH"
+        },
+        {
+          "description": "Comma-separated allowlist of exact host:port values accepted by the Streamable-HTTP DNS-rebinding protection; empty defaults to loopback.",
+          "name": "REBAR_MCP_HTTP_ALLOWED_HOSTS"
+        },
+        {
+          "description": "Comma-separated allowlist of exact Origin values accepted by the Streamable-HTTP DNS-rebinding protection; empty defaults to loopback.",
+          "name": "REBAR_MCP_HTTP_ALLOWED_ORIGINS"
+        },
+        {
+          "description": "Set to 1 to acknowledge TLS is terminated at the edge; required to bind the Streamable-HTTP transport to a non-loopback host.",
+          "name": "REBAR_MCP_HTTP_TLS_AT_EDGE"
+        },
+        {
+          "description": "Set to 1 to acknowledge running the Streamable-HTTP transport without a token verifier; required to boot the HTTP transport while auth is off.",
+          "name": "REBAR_MCP_ALLOW_UNAUTHENTICATED_HTTP"
+        },
+        {
+          "description": "Set to 1 to enable MCP authentication (the composite token verifier + Resource-Server wiring); off by default.",
+          "name": "REBAR_MCP_AUTH_ENABLED"
+        },
+        {
+          "description": "Comma-separated, ordered list of token-verifier strategies to compose (closed set: static, jwt, introspection, proxy, custom).",
+          "name": "REBAR_MCP_AUTH_STRATEGIES"
+        },
+        {
+          "description": "OAuth authorization-server issuer URL advertised in the Protected-Resource Metadata (RFC 9728) when auth is enabled.",
+          "name": "REBAR_MCP_AUTH_ISSUER_URL"
+        },
+        {
+          "description": "The single resource identifier (RFC 8707 audience) for this server; the composite verifier re-checks every accepted token against it.",
+          "name": "REBAR_MCP_AUTH_RESOURCE_SERVER_URL"
+        },
+        {
+          "description": "Comma-separated scopes a caller must hold; the SDK returns 403 insufficient_scope when a principal lacks one.",
+          "name": "REBAR_MCP_AUTH_REQUIRED_SCOPES"
+        },
+        {
+          "description": "Path to the JSON secrets file for the static-bearer verifier (stores only SHA-256 digests of the accepted tokens).",
+          "name": "REBAR_MCP_AUTH_STATIC_TOKENS_FILE"
+        },
+        {
+          "description": "HTTPS JWKS endpoint the `jwt` verifier fetches signing keys from (an OIDC provider's .well-known/jwks.json).",
+          "name": "REBAR_MCP_AUTH_JWT_JWKS_URI"
+        },
+        {
+          "description": "Expected `iss` claim for the `jwt` verifier; falls back to REBAR_MCP_AUTH_ISSUER_URL when unset.",
+          "name": "REBAR_MCP_AUTH_JWT_ISSUER"
+        },
+        {
+          "description": "Comma-separated PINNED, asymmetric-only JWS algorithms for the `jwt` verifier (default RS256,ES256); a symmetric algorithm on a JWKS source is refused.",
+          "name": "REBAR_MCP_AUTH_JWT_ALGORITHMS"
+        },
+        {
+          "description": "Clock-skew leeway in seconds applied to exp/nbf validation by the `jwt` verifier (default 60).",
+          "name": "REBAR_MCP_AUTH_JWT_LEEWAY"
+        },
+        {
+          "description": "Minimum seconds between JWKS refetches triggered by an unknown key id (the concurrency-safe flood guard; default 30).",
+          "name": "REBAR_MCP_AUTH_JWT_JWKS_REFETCH_COOLDOWN"
+        },
+        {
+          "description": "HTTP timeout in seconds for the `jwt` verifier's JWKS fetch (default 10).",
+          "name": "REBAR_MCP_AUTH_JWT_JWKS_TIMEOUT"
+        },
+        {
+          "description": "When set, the `jwt` verifier requires the JWT header `typ` to equal this (e.g. at+JWT per RFC 9068); unset skips the check.",
+          "name": "REBAR_MCP_AUTH_JWT_EXPECTED_TYP"
+        },
+        {
+          "description": "Set to 1 to permit a private/link-local/loopback JWKS host (SSRF guard is on by default); off by default.",
+          "name": "REBAR_MCP_AUTH_JWT_ALLOW_PRIVATE_JWKS_HOST"
+        },
+        {
+          "description": "The `introspection` verifier's RFC 7662 endpoint URL (must be https://); the opaque token is POSTed here on every request (no caching).",
+          "name": "REBAR_MCP_AUTH_INTROSPECTION_ENDPOINT"
+        },
+        {
+          "description": "The client id the `introspection` verifier presents to the Authorization Server via HTTP Basic (client_secret_basic).",
+          "name": "REBAR_MCP_AUTH_INTROSPECTION_CLIENT_ID"
+        },
+        {
+          "description": "The NAME of the env var holding the introspection client secret (never the secret itself); must be present + non-empty at startup or the server refuses to start (fail-closed).",
+          "name": "REBAR_MCP_AUTH_INTROSPECTION_CLIENT_SECRET_ENV"
+        },
+        {
+          "description": "Set to 1 to permit a private/link-local/loopback introspection endpoint host (SSRF guard is on by default); off by default.",
+          "name": "REBAR_MCP_AUTH_INTROSPECTION_ALLOW_PRIVATE_HOST"
+        },
+        {
+          "description": "Set to 1 to accept an active introspection response that OMITS `aud` (many AS do); off by default (fail-closed reject).",
+          "name": "REBAR_MCP_AUTH_INTROSPECTION_ALLOW_MISSING_AUD"
+        },
+        {
+          "description": "The NAME of the env var holding the trusted-proxy shared secret (never the secret itself); must be present + non-empty at startup or the `proxy` verifier refuses to start (fail-closed).",
+          "name": "REBAR_MCP_AUTH_PROXY_SECRET_ENV"
+        },
+        {
+          "description": "The header the fronting proxy sends its shared secret on; the identity is trusted only when this matches (constant-time; default x-proxy-auth).",
+          "name": "REBAR_MCP_AUTH_PROXY_SECRET_HEADER"
+        },
+        {
+          "description": "The header carrying the proxy-authenticated principal identity, trusted only when the secret header validates (default x-forwarded-user).",
+          "name": "REBAR_MCP_AUTH_PROXY_IDENTITY_HEADER"
+        },
+        {
+          "description": "Comma-separated fixed scope set granted to proxy-authenticated principals; empty by default (the principal holds no scopes).",
+          "name": "REBAR_MCP_AUTH_PROXY_SCOPES"
+        },
+        {
+          "description": "The `custom` strategy's `module:factory` import string, resolving to a factory that returns a TokenVerifier; a TRUSTED operator config value that loads and executes the operator-configured code at startup (fail-closed on any load error).",
+          "name": "REBAR_MCP_AUTH_CUSTOM_IMPORT"
+        }
+      ],
+      "identifier": "nava-rebar",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.8.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "dbd2bad389",
+    "published_at": "2026-07-16T03:07:32.047938Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.navapbc/rebar",
+    "server_version": "0.8.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-16T03:07:32.047938Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.8.0"
+}

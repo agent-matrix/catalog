@@ -1,0 +1,80 @@
+{
+  "description": "Read-only Nigerian electricity meter validation + DisCo list via VTpass (free keys). No payments.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:26+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Braynexservices-nigeria-electricity.stdio.9c9fb8768d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Braynexservices/nigeria-mcp",
+    "homepage": "https://github.com/Braynexservices/nigeria-mcp",
+    "repository": "https://github.com/Braynexservices/nigeria-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@braynexservices/nigeria-mcp-electricity@0.2.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Braynexservices/nigeria-electricity",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Provider selector \u2014 \"mock\" (default, offline fixtures) or \"vtpass\" for live data.",
+          "format": "string",
+          "name": "ELECTRICITY_PROVIDER"
+        },
+        {
+          "description": "VTpass API key \u2014 required when ELECTRICITY_PROVIDER=vtpass.",
+          "format": "string",
+          "isSecret": true,
+          "name": "VTPASS_API_KEY"
+        },
+        {
+          "description": "VTpass public key (PK_...) \u2014 required when ELECTRICITY_PROVIDER=vtpass.",
+          "format": "string",
+          "name": "VTPASS_PUBLIC_KEY"
+        },
+        {
+          "description": "VTpass secret key (SK_...) \u2014 required when ELECTRICITY_PROVIDER=vtpass.",
+          "format": "string",
+          "isSecret": true,
+          "name": "VTPASS_SECRET_KEY"
+        },
+        {
+          "description": "Set to https://vtpass.com/api for production (default is the VTpass sandbox).",
+          "format": "string",
+          "name": "VTPASS_BASE_URL"
+        }
+      ],
+      "identifier": "@braynexservices/nigeria-mcp-electricity",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9c9fb8768d",
+    "published_at": "2026-07-14T14:59:54.261444Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Braynexservices/nigeria-electricity",
+    "server_version": "0.2.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-14T14:59:54.261444Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.6"
+}

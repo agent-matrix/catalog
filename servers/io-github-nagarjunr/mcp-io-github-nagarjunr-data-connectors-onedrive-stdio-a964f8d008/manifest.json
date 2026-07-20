@@ -1,0 +1,96 @@
+{
+  "description": "Read-only MCP server for OneDrive: list files/folders via Microsoft Graph API.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:58+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nagarjunr-data-connectors-onedrive.stdio.a964f8d008",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nagarjunr/data-connectors-for-ai-agents",
+    "homepage": "https://github.com/nagarjunr/data-connectors-for-ai-agents",
+    "repository": "https://github.com/nagarjunr/data-connectors-for-ai-agents"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "data-connectors-ai==0.1.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nagarjunr/data-connectors-onedrive",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Azure AD app client ID",
+          "isRequired": true,
+          "name": "ONEDRIVE_CLIENT_ID"
+        },
+        {
+          "description": "Azure AD app client secret",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ONEDRIVE_CLIENT_SECRET"
+        },
+        {
+          "description": "Azure AD tenant ID",
+          "isRequired": true,
+          "name": "ONEDRIVE_TENANT_ID"
+        },
+        {
+          "description": "SharePoint site ID backing the OneDrive drive",
+          "isRequired": true,
+          "name": "ONEDRIVE_SITE_ID"
+        },
+        {
+          "description": "Default OneDrive folder path to list",
+          "name": "ONEDRIVE_DIRECTORY"
+        },
+        {
+          "default": "yourcompany.sharepoint.com",
+          "description": "SharePoint host (e.g. yourcompany.sharepoint.com)",
+          "name": "ONEDRIVE_HOST"
+        }
+      ],
+      "identifier": "data-connectors-ai",
+      "packageArguments": [
+        {
+          "name": "--from",
+          "type": "named",
+          "value": "data-connectors-ai[onedrive,mcp]==0.1.6"
+        },
+        {
+          "type": "positional",
+          "value": "data-connectors-onedrive-mcp"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a964f8d008",
+    "published_at": "2026-07-20T04:13:09.514718Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nagarjunr/data-connectors-onedrive",
+    "server_version": "0.1.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-20T04:13:09.514718Z"
+  },
+  "title": "OneDrive Connector",
+  "type": "mcp_server",
+  "version": "0.1.6"
+}

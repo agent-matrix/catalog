@@ -1,0 +1,92 @@
+{
+  "description": "Read-only MCP server for PostgreSQL: list schemas/tables, run guarded queries.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:58+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nagarjunr-data-connectors-postgres.stdio.db45709f82",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nagarjunr/data-connectors-for-ai-agents",
+    "homepage": "https://github.com/nagarjunr/data-connectors-for-ai-agents",
+    "repository": "https://github.com/nagarjunr/data-connectors-for-ai-agents"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "data-connectors-ai==0.1.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nagarjunr/data-connectors-postgres",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "PostgreSQL host",
+          "isRequired": true,
+          "name": "POSTGRES_HOST"
+        },
+        {
+          "default": "5432",
+          "description": "PostgreSQL port",
+          "name": "POSTGRES_PORT"
+        },
+        {
+          "description": "Database name",
+          "isRequired": true,
+          "name": "POSTGRES_DATABASE"
+        },
+        {
+          "description": "Database user (read-only role recommended)",
+          "isRequired": true,
+          "name": "POSTGRES_USER"
+        },
+        {
+          "description": "Database password",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "POSTGRES_PASSWORD"
+        }
+      ],
+      "identifier": "data-connectors-ai",
+      "packageArguments": [
+        {
+          "name": "--from",
+          "type": "named",
+          "value": "data-connectors-ai[postgres,mcp]==0.1.5"
+        },
+        {
+          "type": "positional",
+          "value": "data-connectors-postgres-mcp"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "db45709f82",
+    "published_at": "2026-07-17T18:22:32.268992Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nagarjunr/data-connectors-postgres",
+    "server_version": "0.1.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-17T18:22:32.268992Z"
+  },
+  "title": "PostgreSQL Connector",
+  "type": "mcp_server",
+  "version": "0.1.5"
+}

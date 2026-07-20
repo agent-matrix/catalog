@@ -1,0 +1,107 @@
+{
+  "description": "Context and automation MCP server for Warm financial data and approved write operations.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:52+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-jasonstockman-warmio.stdio.afeabbe118",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jasonstockman/warm-mcp",
+    "homepage": "https://github.com/jasonstockman/warm-mcp",
+    "repository": "https://github.com/jasonstockman/warm-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@warmio/mcp@7.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.jasonstockman/warmio",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional context API key. The local context key file is used when omitted.",
+          "isSecret": true,
+          "name": "WARM_CONTEXT_API_KEY"
+        },
+        {
+          "description": "Optional path to the context API key file.",
+          "format": "filepath",
+          "name": "WARM_CONTEXT_API_KEY_FILE"
+        },
+        {
+          "description": "Optional automation API key. The local automation key file is used when omitted.",
+          "isSecret": true,
+          "name": "WARM_AUTOMATION_API_KEY"
+        },
+        {
+          "description": "Optional path to the automation API key file.",
+          "format": "filepath",
+          "name": "WARM_AUTOMATION_API_KEY_FILE"
+        },
+        {
+          "description": "Optional path to the Warm configuration directory.",
+          "format": "filepath",
+          "name": "WARM_CONFIG_DIR"
+        },
+        {
+          "description": "Optional Warm API base URL override. Defaults to https://app.warm.io.",
+          "name": "WARM_API_URL"
+        },
+        {
+          "description": "Optional request timeout override in milliseconds.",
+          "name": "WARM_API_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "@warmio/mcp",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        },
+        {
+          "type": "positional",
+          "value": "--mode"
+        },
+        {
+          "choices": [
+            "context",
+            "automation"
+          ],
+          "default": "context",
+          "description": "Select the three-tool context or automation surface.",
+          "isRequired": true,
+          "type": "positional",
+          "valueHint": "mode"
+        }
+      ],
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "7.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "afeabbe118",
+    "published_at": "2026-07-15T02:02:26.422174Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.jasonstockman/warmio",
+    "server_version": "7.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-15T02:02:26.422174Z"
+  },
+  "title": "Warm",
+  "type": "mcp_server",
+  "version": "7.0.1"
+}

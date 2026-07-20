@@ -1,0 +1,91 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/olafkfreund/myrmex-gateway:1.0.3"
+      }
+    }
+  ],
+  "description": "Zero-inbound-port MCP gateway for managing distributed edge servers over reverse SSH tunnels",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:59+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/olafkfreund/myrmex-hive",
+  "id": "tool.io-github-olafkfreund-myrmex-hive.c010b855c6",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/olafkfreund/myrmex-hive",
+    "homepage": "https://github.com/olafkfreund/myrmex-hive",
+    "repository": "https://github.com/olafkfreund/myrmex-hive"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Zero-inbound-port MCP gateway for managing distributed edge servers over reverse SSH tunnels",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.olafkfreund/myrmex-hive",
+      "request_type": "POST",
+      "url": "https://github.com/olafkfreund/myrmex-hive"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Mount the gateway config. The gateway fails closed and will not start without authorized_keys_path and a host key \u2014 see docs/DEPLOYMENT.md.",
+            "isRequired": true,
+            "name": "-v",
+            "type": "named",
+            "value": "{config_dir}:/app/config:ro",
+            "variables": {
+              "config_dir": {
+                "description": "Host directory holding gateway_config.json, the SSH host key, and authorized_keys",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          "ghcr.io/olafkfreund/myrmex-gateway:1.0.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.olafkfreund/myrmex-hive",
+  "provenance": {
+    "identity_key": "968526f59a",
+    "promoted_from": "mcp.io-github-olafkfreund-myrmex-hive.stdio.968526f59a",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.olafkfreund/myrmex-hive",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-olafkfreund-myrmex-hive.stdio.968526f59a",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/olafkfreund/myrmex-hive",
+  "summary": "Zero-inbound-port MCP gateway for managing distributed edge servers over reverse SSH tunnels",
+  "tags": [
+    "distributed",
+    "gateway",
+    "hive",
+    "inbound",
+    "managing",
+    "myrmex",
+    "port",
+    "zero"
+  ],
+  "title": "Myrmex Hive",
+  "type": "tool",
+  "version": "1.0.3"
+}

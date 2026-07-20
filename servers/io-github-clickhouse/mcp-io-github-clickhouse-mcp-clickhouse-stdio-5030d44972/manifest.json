@@ -1,0 +1,110 @@
+{
+  "description": "Official ClickHouse MCP server for querying and exploring ClickHouse clusters and chDB.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:28+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ClickHouse-mcp-clickhouse.stdio.5030d44972",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ClickHouse/mcp-clickhouse",
+    "homepage": "https://github.com/ClickHouse/mcp-clickhouse",
+    "repository": "https://github.com/ClickHouse/mcp-clickhouse"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/clickhouse/mcp-clickhouse:0.4.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ClickHouse/mcp-clickhouse",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Hostname of the ClickHouse server",
+          "isRequired": true,
+          "name": "CLICKHOUSE_HOST"
+        },
+        {
+          "description": "Username for ClickHouse authentication",
+          "isRequired": true,
+          "name": "CLICKHOUSE_USER"
+        },
+        {
+          "description": "Password for ClickHouse authentication",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CLICKHOUSE_PASSWORD"
+        },
+        {
+          "description": "ClickHouse HTTP(S) port. Defaults to 8443 when CLICKHOUSE_SECURE=true, 8123 otherwise",
+          "name": "CLICKHOUSE_PORT"
+        },
+        {
+          "default": "true",
+          "description": "Use HTTPS to connect to ClickHouse",
+          "format": "boolean",
+          "name": "CLICKHOUSE_SECURE"
+        },
+        {
+          "default": "true",
+          "description": "Verify SSL certificates",
+          "format": "boolean",
+          "name": "CLICKHOUSE_VERIFY"
+        },
+        {
+          "description": "Default database to use",
+          "name": "CLICKHOUSE_DATABASE"
+        },
+        {
+          "description": "ClickHouse role to activate for the session",
+          "name": "CLICKHOUSE_ROLE"
+        },
+        {
+          "default": "false",
+          "description": "Allow write operations (DDL and DML). Queries run read-only by default",
+          "format": "boolean",
+          "name": "CLICKHOUSE_ALLOW_WRITE_ACCESS"
+        },
+        {
+          "default": "false",
+          "description": "Allow destructive operations (DROP, TRUNCATE) when write access is also enabled",
+          "format": "boolean",
+          "name": "CLICKHOUSE_ALLOW_DROP"
+        },
+        {
+          "default": "30",
+          "description": "Query tool timeout in seconds",
+          "format": "number",
+          "name": "CLICKHOUSE_MCP_QUERY_TIMEOUT"
+        }
+      ],
+      "identifier": "ghcr.io/clickhouse/mcp-clickhouse:0.4.1",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "5030d44972",
+    "published_at": "2026-07-17T17:22:03.100012Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ClickHouse/mcp-clickhouse",
+    "server_version": "0.4.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-17T17:22:03.100012Z"
+  },
+  "title": "ClickHouse",
+  "type": "mcp_server",
+  "version": "0.4.1"
+}

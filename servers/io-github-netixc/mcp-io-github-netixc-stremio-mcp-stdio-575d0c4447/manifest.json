@@ -1,0 +1,79 @@
+{
+  "description": "Search, play, and control Stremio on Android TV over native ADB.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:59+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-netixc-stremio-mcp.stdio.575d0c4447",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/netixc/stremio-mcp",
+    "homepage": "https://github.com/netixc/stremio-mcp",
+    "repository": "https://github.com/netixc/stremio-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "stremio-mcp-server==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.netixc/stremio-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Android TV IP address for playback and device control",
+          "name": "ANDROID_TV_HOST"
+        },
+        {
+          "default": "5555",
+          "description": "Current ADB connection port",
+          "name": "ANDROID_TV_PORT"
+        },
+        {
+          "description": "TMDB API key for title search",
+          "isSecret": true,
+          "name": "TMDB_API_KEY"
+        },
+        {
+          "description": "Stremio account token for library reads and writes",
+          "isSecret": true,
+          "name": "STREMIO_AUTH_KEY"
+        },
+        {
+          "default": "adb",
+          "description": "Path to the native ADB executable",
+          "name": "ADB_PATH"
+        }
+      ],
+      "identifier": "stremio-mcp-server",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "575d0c4447",
+    "published_at": "2026-07-17T17:37:48.198213Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.netixc/stremio-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-17T17:37:48.198213Z"
+  },
+  "title": "Stremio MCP Server",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

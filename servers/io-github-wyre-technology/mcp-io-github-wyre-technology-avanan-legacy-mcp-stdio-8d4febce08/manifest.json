@@ -1,0 +1,95 @@
+{
+  "description": "MCP server for the Avanan MSP SmartAPI \u2014 manage child MSPs, users, tenants, licenses, and usage.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:50:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wyre-technology-avanan-legacy-mcp.stdio.8d4febce08",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wyre-technology/avanan-legacy-mcp",
+    "homepage": "https://github.com/wyre-technology/avanan-legacy-mcp",
+    "repository": "https://github.com/wyre-technology/avanan-legacy-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-technology/avanan-legacy-mcp:v1.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wyre-technology/avanan-legacy-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Application ID provided by Avanan Support (x-av-app-id)",
+          "format": "string",
+          "isRequired": true,
+          "name": "AVANAN_APP_ID"
+        },
+        {
+          "description": "Token from the Avanan auth handshake (x-av-token)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AVANAN_TOKEN"
+        },
+        {
+          "description": "Shared secret used to compute the x-av-sig HMAC",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AVANAN_SECRET"
+        },
+        {
+          "description": "API region: us, eu, ca, or ap (defaults to JWT region claim, then us)",
+          "format": "string",
+          "name": "AVANAN_REGION"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode: 'stdio' for local CLI use, 'http' for gateway hosting",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "8080",
+          "description": "HTTP transport listen port",
+          "format": "string",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-technology/avanan-legacy-mcp:v1.1.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "8d4febce08",
+    "published_at": "2026-07-17T23:19:42.658465Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wyre-technology/avanan-legacy-mcp",
+    "server_version": "1.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-17T23:19:42.658465Z"
+  },
+  "title": "Avanan MSP (Legacy SmartAPI)",
+  "type": "mcp_server",
+  "version": "1.1.0"
+}

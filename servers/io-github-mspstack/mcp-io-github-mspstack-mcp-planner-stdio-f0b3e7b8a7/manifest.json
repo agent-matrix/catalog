@@ -1,0 +1,76 @@
+{
+  "description": "Microsoft Planner MCP server \u2014 plans, buckets, tasks via Microsoft Graph, ETags handled",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:58+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mspstack-mcp-planner.stdio.f0b3e7b8a7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mspstack/mcp-planner",
+    "homepage": "https://github.com/mspstack/mcp-planner",
+    "repository": "https://github.com/mspstack/mcp-planner"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-planner@0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mspstack/mcp-planner",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Microsoft Entra ID tenant id (GUID or domain)",
+          "isRequired": true,
+          "name": "MS_TENANT_ID"
+        },
+        {
+          "description": "Entra app registration client id",
+          "isRequired": true,
+          "name": "MS_CLIENT_ID"
+        },
+        {
+          "description": "Entra app registration client secret (app needs Tasks.ReadWrite.All, GroupMember.Read.All, User.Read.All application permissions)",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "MS_CLIENT_SECRET"
+        },
+        {
+          "default": "false",
+          "description": "true/1 registers the advanced toolset (graph_get, graph_find_endpoint) \u2014 a read-only escape hatch limited to /planner, /groups, /users",
+          "name": "PLANNER_ADVANCED_TOOLSET"
+        }
+      ],
+      "identifier": "mcp-planner",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f0b3e7b8a7",
+    "published_at": "2026-07-17T07:24:06.81113Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mspstack/mcp-planner",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-17T07:24:06.81113Z"
+  },
+  "title": "Microsoft Planner",
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

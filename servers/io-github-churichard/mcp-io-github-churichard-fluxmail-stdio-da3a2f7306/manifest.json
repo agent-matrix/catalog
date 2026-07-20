@@ -1,0 +1,80 @@
+{
+  "description": "Read, search, draft, send, and organize email through Gmail, Outlook, and IMAP/SMTP mailboxes.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-churichard-fluxmail.stdio.da3a2f7306",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/churichard/fluxmail",
+    "homepage": "https://github.com/churichard/fluxmail",
+    "repository": "https://github.com/churichard/fluxmail"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "fluxmail@0.5.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.churichard/fluxmail",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional override for Fluxmail's built-in Desktop OAuth client ID.",
+          "name": "GOOGLE_CLIENT_ID"
+        },
+        {
+          "description": "Client secret paired with a custom Google OAuth client ID.",
+          "isSecret": true,
+          "name": "GOOGLE_CLIENT_SECRET"
+        },
+        {
+          "description": "Directory for the Fluxmail database, encryption key, and stored settings.",
+          "format": "filepath",
+          "name": "FLUXMAIL_DATA_DIR",
+          "placeholder": "~/.fluxmail"
+        },
+        {
+          "description": "Optional Fluxmail license key for paid plan limits.",
+          "isSecret": true,
+          "name": "FLUXMAIL_LICENSE_KEY"
+        }
+      ],
+      "identifier": "fluxmail",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "stdio"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "da3a2f7306",
+    "published_at": "2026-07-18T01:52:07.508992Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.churichard/fluxmail",
+    "server_version": "0.5.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-18T01:52:07.508992Z"
+  },
+  "title": "Fluxmail",
+  "type": "mcp_server",
+  "version": "0.5.0"
+}

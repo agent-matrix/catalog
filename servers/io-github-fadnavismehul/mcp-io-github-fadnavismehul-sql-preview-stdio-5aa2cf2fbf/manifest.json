@@ -1,0 +1,90 @@
+{
+  "description": "Run governed SQL queries and inspect database schemas from MCP agents.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:48+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-fadnavismehul-sql-preview.stdio.5aa2cf2fbf",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/fadnavismehul/sql-preview",
+    "homepage": "https://github.com/fadnavismehul/sql-preview",
+    "repository": "https://github.com/fadnavismehul/sql-preview"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y"
+          },
+          "sql-preview@0.6.14"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.fadnavismehul/sql-preview",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "JSON array of SQL Preview connection profiles for headless use.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SQL_PREVIEW_CONNECTIONS"
+        },
+        {
+          "description": "Set to false to allow mutating SQL. Defaults to true.",
+          "format": "boolean",
+          "name": "SQL_PREVIEW_MCP_SAFE_MODE",
+          "value": "true"
+        },
+        {
+          "description": "Maximum rows returned by query tools. Defaults to 10000.",
+          "format": "number",
+          "name": "SQL_PREVIEW_MAX_ROWS",
+          "value": "10000"
+        }
+      ],
+      "identifier": "sql-preview",
+      "packageArguments": [
+        {
+          "description": "Run SQL Preview using stdio transport for local MCP clients.",
+          "name": "--stdio",
+          "type": "named"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.6.14"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5aa2cf2fbf",
+    "published_at": "2026-07-20T03:54:40.105876Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.fadnavismehul/sql-preview",
+    "server_version": "0.6.14",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-20T03:54:40.105876Z"
+  },
+  "title": "SQL Preview",
+  "type": "mcp_server",
+  "version": "0.6.14"
+}

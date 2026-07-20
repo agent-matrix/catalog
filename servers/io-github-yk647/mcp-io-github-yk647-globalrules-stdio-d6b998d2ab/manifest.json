@@ -1,0 +1,65 @@
+{
+  "description": "Verified country facts (VAT, holidays, visas; 70 countries), paid per call via x402 USDC on Base.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:50:11+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-yk647-globalrules.stdio.d6b998d2ab",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/yk647/globalrules",
+    "homepage": "https://github.com/yk647/globalrules",
+    "repository": "https://github.com/yk647/globalrules"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "globalrules-mcp@1.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.yk647/globalrules",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your EVM wallet private key (0x + 64 hex), used to sign x402 USDC payments on Base mainnet. Use a dedicated low-balance wallet funded with a few USDC.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "EVM_PRIVATE_KEY"
+        },
+        {
+          "description": "Optional override of the GlobalRules API base URL. Default: https://globalrules-api.onrender.com",
+          "format": "string",
+          "name": "GLOBALRULES_API"
+        }
+      ],
+      "identifier": "globalrules-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d6b998d2ab",
+    "published_at": "2026-07-17T07:46:10.95721Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.yk647/globalrules",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-17T07:46:10.95721Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

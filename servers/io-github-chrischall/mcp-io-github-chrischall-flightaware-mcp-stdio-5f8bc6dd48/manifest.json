@@ -1,0 +1,75 @@
+{
+  "description": "Live flight tracking and aviation data via FlightAware AeroAPI (flights, airports, alerts).",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:40+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-chrischall-flightaware-mcp.stdio.5f8bc6dd48",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/chrischall/flightaware-mcp",
+    "homepage": "https://github.com/chrischall/flightaware-mcp",
+    "repository": "https://github.com/chrischall/flightaware-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@chrischall/flightaware-mcp@0.3.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.chrischall/flightaware-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your FlightAware AeroAPI key (flightaware.com/aeroapi/portal)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AEROAPI_API_KEY"
+        },
+        {
+          "description": "Default directory for flight-map PNGs (default: current working directory)",
+          "format": "string",
+          "name": "AEROAPI_OUTPUT_DIR"
+        },
+        {
+          "description": "Seconds to cache identical live-data GET responses (default 15; 0 disables)",
+          "format": "string",
+          "name": "AEROAPI_CACHE_TTL"
+        },
+        {
+          "description": "Seconds to cache reference data \u2014 airports, operators, routes, ownership (default 3600; 0 disables)",
+          "format": "string",
+          "name": "AEROAPI_STATIC_CACHE_TTL"
+        }
+      ],
+      "identifier": "@chrischall/flightaware-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5f8bc6dd48",
+    "published_at": "2026-07-14T10:56:19.930434Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.chrischall/flightaware-mcp",
+    "server_version": "0.3.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-14T10:56:19.930434Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.2"
+}

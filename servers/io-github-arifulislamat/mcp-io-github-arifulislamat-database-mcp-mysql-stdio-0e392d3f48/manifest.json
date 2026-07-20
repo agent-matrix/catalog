@@ -1,0 +1,77 @@
+{
+  "description": "MCP server for MySQL. Read-only by default, row caps, statement timeouts, secrets never logged.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-arifulislamat-database-mcp-mysql.stdio.0e392d3f48",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/arifulislamat/database-mcp",
+    "homepage": "https://github.com/arifulislamat/database-mcp",
+    "repository": "https://github.com/arifulislamat/database-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@database-mcp/mysql@0.4.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.arifulislamat/database-mcp-mysql",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Database host",
+          "format": "string",
+          "isRequired": true,
+          "name": "MYSQL_HOST"
+        },
+        {
+          "description": "Database user (a read-only user is recommended)",
+          "format": "string",
+          "isRequired": true,
+          "name": "MYSQL_USER"
+        },
+        {
+          "description": "Database password (or use MYSQL_PASSWORD_FILE)",
+          "format": "string",
+          "isSecret": true,
+          "name": "MYSQL_PASSWORD"
+        },
+        {
+          "description": "Database name",
+          "format": "string",
+          "isRequired": true,
+          "name": "MYSQL_DATABASE"
+        }
+      ],
+      "identifier": "@database-mcp/mysql",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0e392d3f48",
+    "published_at": "2026-07-16T18:45:20.47054Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.arifulislamat/database-mcp-mysql",
+    "server_version": "0.4.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-16T18:45:20.47054Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.4.2"
+}

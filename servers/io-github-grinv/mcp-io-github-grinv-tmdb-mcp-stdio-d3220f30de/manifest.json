@@ -1,0 +1,73 @@
+{
+  "description": "MCP server for The Movie Database (TMDB) with IMDb/Rotten Tomatoes/Metacritic ratings via OMDb.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:29+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Grinv-tmdb-mcp.stdio.d3220f30de",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/Grinv/tmdb-mcp",
+    "homepage": "https://github.com/Grinv/tmdb-mcp",
+    "repository": "https://github.com/Grinv/tmdb-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Grinv/tmdb-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Required. TMDB v4 'Read Access Token' from themoviedb.org/settings/api (sent as a Bearer token).",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "TMDB_API_TOKEN"
+        },
+        {
+          "description": "Optional. Free key from omdbapi.com \u2014 enables IMDb/Rotten Tomatoes/Metacritic ratings.",
+          "isSecret": true,
+          "name": "OMDB_API_KEY"
+        },
+        {
+          "default": "en-US",
+          "description": "Optional. Default response language as ISO-639-1, optionally with a region (e.g. ru-RU, en-US, ja).",
+          "name": "TMDB_LANGUAGE"
+        },
+        {
+          "default": "US",
+          "description": "Optional. Default ISO-3166-1 country code (e.g. US, RU, GB) for region-specific results.",
+          "name": "TMDB_REGION"
+        }
+      ],
+      "fileSha256": "69ae66c443f78d130748e202a49ad4cfc3e3636e75eaf73da825847ee803c8f2",
+      "identifier": "https://github.com/Grinv/tmdb-mcp/releases/download/v0.4.0/tmdb-mcp.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d3220f30de",
+    "published_at": "2026-07-18T11:55:41.60384Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Grinv/tmdb-mcp",
+    "server_version": "0.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-18T11:55:41.60384Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.4.0"
+}

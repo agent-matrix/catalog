@@ -1,0 +1,85 @@
+{
+  "description": "Local repository graph, LSP-backed impact, Health, dependencies, duplicates and architecture.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:50:05+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sergii-ziborov-weavatrix.stdio.aaf605cb34",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sergii-ziborov/weavatrix",
+    "homepage": "https://github.com/sergii-ziborov/weavatrix",
+    "repository": "https://github.com/sergii-ziborov/weavatrix"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "weavatrix@0.3.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sergii-ziborov/weavatrix",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional semantic precision mode: lsp (default) uses the bundled bounded TypeScript/JavaScript language-server overlay; off keeps parser-only graphs",
+          "format": "string",
+          "name": "WEAVATRIX_PRECISION"
+        },
+        {
+          "description": "Optional semantic prewarm budget: bounded (default) keeps fast startup; full explicitly queries every eligible JS/TS target within hard resource ceilings",
+          "format": "string",
+          "name": "WEAVATRIX_PRECISION_PREWARM"
+        },
+        {
+          "description": "Optional explicit permission for verified_change to run requested test/check/verify package.json scripts; must be exactly 1",
+          "format": "string",
+          "name": "WEAVATRIX_ALLOW_TEST_RUNS"
+        }
+      ],
+      "identifier": "weavatrix",
+      "packageArguments": [
+        {
+          "description": "Absolute path to the initial Git repository; open_repo can explicitly switch local repositories",
+          "isRequired": true,
+          "type": "positional",
+          "valueHint": "repoRoot"
+        },
+        {
+          "default": "offline",
+          "description": "Local profile (offline or pinned) or exact comma-separated local groups graph,search,source,health,build,retarget,crossrepo",
+          "format": "string",
+          "type": "positional",
+          "valueHint": "capabilities"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "aaf605cb34",
+    "published_at": "2026-07-20T03:21:43.86107Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sergii-ziborov/weavatrix",
+    "server_version": "0.3.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-20T03:21:43.86107Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.5"
+}

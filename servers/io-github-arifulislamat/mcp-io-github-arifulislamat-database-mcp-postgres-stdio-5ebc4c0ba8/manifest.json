@@ -1,0 +1,77 @@
+{
+  "description": "MCP server for PostgreSQL. Read-only by default, row caps, timeouts, secrets never logged.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-arifulislamat-database-mcp-postgres.stdio.5ebc4c0ba8",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/arifulislamat/database-mcp",
+    "homepage": "https://github.com/arifulislamat/database-mcp",
+    "repository": "https://github.com/arifulislamat/database-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@database-mcp/postgres@0.4.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.arifulislamat/database-mcp-postgres",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Database host",
+          "format": "string",
+          "isRequired": true,
+          "name": "POSTGRES_HOST"
+        },
+        {
+          "description": "Database user (a read-only user is recommended)",
+          "format": "string",
+          "isRequired": true,
+          "name": "POSTGRES_USER"
+        },
+        {
+          "description": "Database password (or use POSTGRES_PASSWORD_FILE)",
+          "format": "string",
+          "isSecret": true,
+          "name": "POSTGRES_PASSWORD"
+        },
+        {
+          "description": "Database name",
+          "format": "string",
+          "isRequired": true,
+          "name": "POSTGRES_DATABASE"
+        }
+      ],
+      "identifier": "@database-mcp/postgres",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5ebc4c0ba8",
+    "published_at": "2026-07-16T18:45:58.57777Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.arifulislamat/database-mcp-postgres",
+    "server_version": "0.4.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-16T18:45:58.57777Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.4.2"
+}

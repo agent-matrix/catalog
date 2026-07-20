@@ -1,0 +1,99 @@
+{
+  "description": "Secure Umami Analytics MCP server for Cloud and self-hosted deployments",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:50:09+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-webcredo-umami-compass.stdio.17a7b23e2f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/webcredo/umami-compass",
+    "homepage": "https://github.com/webcredo/umami-compass",
+    "repository": "https://github.com/webcredo/umami-compass"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "umami-compass@0.1.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.webcredo/umami-compass",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Umami Cloud or client API key",
+          "isSecret": true,
+          "name": "UMAMI_API_KEY"
+        },
+        {
+          "description": "Existing self-hosted Bearer token",
+          "isSecret": true,
+          "name": "UMAMI_ACCESS_TOKEN"
+        },
+        {
+          "description": "Self-hosted Umami username",
+          "name": "UMAMI_USERNAME"
+        },
+        {
+          "description": "Self-hosted Umami password",
+          "isSecret": true,
+          "name": "UMAMI_PASSWORD"
+        },
+        {
+          "description": "Self-hosted Umami instance origin",
+          "name": "UMAMI_URL",
+          "placeholder": "https://analytics.example.com"
+        },
+        {
+          "description": "Optional exact Umami API root for a reverse proxy",
+          "name": "UMAMI_API_URL",
+          "placeholder": "https://analytics.example.com/custom/api"
+        },
+        {
+          "description": "Optional comma-separated website UUID allowlist",
+          "name": "UMAMI_WEBSITE_IDS"
+        },
+        {
+          "default": "core",
+          "description": "Comma-separated toolsets or all",
+          "name": "UMAMI_TOOLSETS",
+          "placeholder": "core,events,sessions,performance,reports,revenue,replay,heatmaps"
+        },
+        {
+          "default": "10485760",
+          "description": "Maximum decoded upstream JSON response size in bytes",
+          "name": "UMAMI_MAX_RESPONSE_BYTES"
+        }
+      ],
+      "identifier": "umami-compass",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "17a7b23e2f",
+    "published_at": "2026-07-13T12:04:21.067588Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.webcredo/umami-compass",
+    "server_version": "0.1.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-13T12:04:21.067588Z"
+  },
+  "title": "Umami Compass",
+  "type": "mcp_server",
+  "version": "0.1.3"
+}

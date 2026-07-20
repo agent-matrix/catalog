@@ -1,0 +1,82 @@
+{
+  "description": "Private signed AI task receipts with replay checks and optional validated AIPOU claims.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:24+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-0xddneto-ai-proof-of-us.stdio.5936e28c9a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/0xddneto/AI-Proof-of-Us",
+    "homepage": "https://github.com/0xddneto/AI-Proof-of-Us",
+    "repository": "https://github.com/0xddneto/AI-Proof-of-Us"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "aipou-mcp-server@0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.0xddneto/ai-proof-of-us",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Private key for a new dedicated farming wallet. Never use a primary wallet.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AIPOU_AGENT_PRIVATE_KEY"
+        },
+        {
+          "description": "AIPOU token contract address on the configured network.",
+          "format": "string",
+          "isRequired": true,
+          "name": "AIPOU_CONTRACT_ADDRESS"
+        },
+        {
+          "description": "AIPOU claims contract address on the configured network.",
+          "format": "string",
+          "isRequired": true,
+          "name": "AIPOU_CLAIMS_ADDRESS"
+        },
+        {
+          "description": "Optional Base-compatible JSON-RPC endpoint.",
+          "format": "string",
+          "name": "AIPOU_RPC_URL"
+        },
+        {
+          "description": "Optional local directory for receipt and collector state.",
+          "format": "string",
+          "name": "AIPOU_DATA_DIR"
+        }
+      ],
+      "identifier": "aipou-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5936e28c9a",
+    "published_at": "2026-07-13T12:00:15.302479Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.0xddneto/ai-proof-of-us",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-13T12:00:15.302479Z"
+  },
+  "title": "AI Proof of Us",
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

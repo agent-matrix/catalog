@@ -1,0 +1,82 @@
+{
+  "description": "Read-only MCP server for 1C:Enterprise via OData with metadata and query builder tools.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:36+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-alexgrebeshok-coder-onec-odata-mcp.stdio.b5d40fbc8e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/pyrfor/onec-odata-mcp",
+    "homepage": "https://github.com/pyrfor/onec-odata-mcp",
+    "repository": "https://github.com/pyrfor/onec-odata-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "onec-odata-mcp@1.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.alexgrebeshok-coder/onec-odata-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "1C OData endpoint URL (e.g. https://host/db/odata/standard.odata)",
+          "isRequired": true,
+          "name": "ONEC_BASE_URL"
+        },
+        {
+          "description": "Basic auth username for the OData endpoint",
+          "isRequired": true,
+          "name": "ONEC_USERNAME"
+        },
+        {
+          "description": "Basic auth password for the OData endpoint",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ONEC_PASSWORD"
+        },
+        {
+          "description": "Optional database name hint",
+          "name": "ONEC_DATABASE"
+        },
+        {
+          "description": "Metadata cache TTL in milliseconds (default 3600000)",
+          "name": "ONEC_METADATA_CACHE_TTL_MS"
+        },
+        {
+          "description": "Optional path to JSON config file ({ baseUrl, username, password })",
+          "name": "ONEC_CONFIG_PATH"
+        }
+      ],
+      "identifier": "onec-odata-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b5d40fbc8e",
+    "published_at": "2026-07-15T04:29:04.883883Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.alexgrebeshok-coder/onec-odata-mcp",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-15T04:29:04.883883Z"
+  },
+  "title": "1C OData MCP",
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

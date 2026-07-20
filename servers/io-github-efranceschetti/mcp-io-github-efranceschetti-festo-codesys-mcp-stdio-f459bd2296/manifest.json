@@ -1,0 +1,75 @@
+{
+  "description": "MCP server for Festo/CODESYS PLCs: IEC 61131-3 ST + validated PLCopen XML generation.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:48+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-efranceschetti-festo-codesys-mcp.stdio.f459bd2296",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "festo-codesys-mcp@1.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.efranceschetti/festo-codesys-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional. Absolute path to CODESYS.exe \u2014 enables the 12 ide_* tools that drive a live CODESYS V3.5 instance (Windows only).",
+          "format": "string",
+          "name": "FESTO_MCP_CODESYS_PATH"
+        },
+        {
+          "description": "Required when using the ide_* tools. CODESYS profile name exactly as shown in the CODESYS version selector.",
+          "format": "string",
+          "name": "FESTO_MCP_CODESYS_PROFILE"
+        },
+        {
+          "description": "Optional. Python interpreter for the XSD/semantic validators and hardware tools (needs lxml).",
+          "format": "string",
+          "name": "FESTO_MCP_PYTHON"
+        },
+        {
+          "description": "Optional. Set to 1 to enable the cpx_*/edcon_* hardware commissioning tools (bench use only).",
+          "format": "string",
+          "name": "FESTO_MCP_ENABLE_HARDWARE"
+        },
+        {
+          "description": "Optional. Set to 1 to allow file-writing tools to write outside the workspace directory.",
+          "format": "string",
+          "name": "FESTO_MCP_ALLOW_OUTSIDE_WORKSPACE"
+        }
+      ],
+      "identifier": "festo-codesys-mcp",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f459bd2296",
+    "published_at": "2026-07-17T17:06:27.113454Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.efranceschetti/festo-codesys-mcp",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-17T17:06:27.113454Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

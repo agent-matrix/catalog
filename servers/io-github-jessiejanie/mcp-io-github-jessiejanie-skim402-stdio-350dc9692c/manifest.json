@@ -1,0 +1,64 @@
+{
+  "description": "Clean web reader for AI agents. Pays $0.002/call in USDC on Base via x402. No API keys.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-JessieJanie-skim402.stdio.350dc9692c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/JessieJanie/skim402.git",
+    "homepage": "https://github.com/JessieJanie/skim402.git",
+    "repository": "https://github.com/JessieJanie/skim402.git"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "skim-mcp@0.1.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.JessieJanie/skim402",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base-network wallet private key (0x-prefixed, 64 hex chars). Fund the wallet with a small amount of USDC on Base to pay $0.002 per call. Create one at https://app.coinbase.com or any Base-compatible wallet.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SKIM_WALLET_PRIVATE_KEY"
+        },
+        {
+          "description": "Optional cap on per-call price in USD (default 0.01). Requests that would cost more than this are rejected without payment.",
+          "name": "SKIM_MAX_PRICE_USD"
+        }
+      ],
+      "identifier": "skim-mcp",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "350dc9692c",
+    "published_at": "2026-07-19T19:48:48.574365Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.JessieJanie/skim402",
+    "server_version": "0.1.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-19T19:48:48.574365Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.6"
+}

@@ -1,0 +1,72 @@
+{
+  "description": "Manage Kaiten spaces, boards, cards, comments, and tags with compact MCP responses.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:48+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-evvfebruary-kaiten-mcp.stdio.d328c14f82",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/evvfebruary/kaiten-mcp",
+    "homepage": "https://github.com/evvfebruary/kaiten-mcp",
+    "repository": "https://github.com/evvfebruary/kaiten-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "kaiten-mcp==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.evvfebruary/kaiten-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Kaiten API token from Profile > API key.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "KAITEN_API_TOKEN"
+        },
+        {
+          "description": "Kaiten workspace slug. Required unless KAITEN_BASE_URL is set.",
+          "format": "string",
+          "name": "KAITEN_WORKSPACE_SLUG"
+        },
+        {
+          "description": "Full Kaiten API root for on-prem or custom domains. Required unless KAITEN_WORKSPACE_SLUG is set.",
+          "format": "string",
+          "name": "KAITEN_BASE_URL"
+        }
+      ],
+      "identifier": "kaiten-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d328c14f82",
+    "published_at": "2026-07-18T09:48:34.261104Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.evvfebruary/kaiten-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-18T09:48:34.261104Z"
+  },
+  "title": "Kaiten",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

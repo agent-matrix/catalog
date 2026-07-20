@@ -1,0 +1,77 @@
+{
+  "description": "Provision PostgreSQL, manage Apache Kafka, and deploy apps with Aiven - all from your AI assistant.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:24+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-aiven-mcp.stdio.811037ec78",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/aiven-open/mcp-aiven",
+    "homepage": "https://github.com/aiven-open/mcp-aiven",
+    "repository": "https://github.com/aiven-open/mcp-aiven"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-aiven@1.14.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.aiven/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Aiven API token (create one at https://console.aiven.io/profile/tokens)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AIVEN_TOKEN"
+        },
+        {
+          "description": "Set to true to expose only read-only tools",
+          "format": "boolean",
+          "name": "AIVEN_READ_ONLY"
+        },
+        {
+          "description": "Comma-separated scopes to expose (e.g. pg, kafka, pg,kafka, or all). Valid: all, core, pg, kafka, application, integrations.",
+          "format": "string",
+          "name": "AIVEN_SERVICES_SCOPE"
+        },
+        {
+          "description": "Set to true to let the connection-info tool return live credentials instead of [REDACTED].",
+          "format": "boolean",
+          "name": "AIVEN_ALLOW_SECRETS"
+        }
+      ],
+      "identifier": "mcp-aiven",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.14.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "811037ec78",
+    "published_at": "2026-07-14T12:52:47.513285Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.aiven/mcp",
+    "server_version": "1.14.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-14T12:52:47.513285Z"
+  },
+  "title": "Aiven MCP",
+  "type": "mcp_server",
+  "version": "1.14.3"
+}

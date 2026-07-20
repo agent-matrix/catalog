@@ -1,0 +1,75 @@
+{
+  "description": "Pay for x402 paywalls, datasets, and store checkouts on Solana, behind hard spending caps.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-solinkify-mcp.stdio.605a585509",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@solinkify/mcp@0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.solinkify/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the agent's Solana JSON keypair (solana-keygen new -o agent-keypair.json)",
+          "format": "string",
+          "isRequired": true,
+          "name": "SOLINKIFY_WALLET_PATH"
+        },
+        {
+          "description": "Hard cap for a single payment in USD (default 1)",
+          "format": "number",
+          "name": "SOLINKIFY_MAX_PAYMENT_USD"
+        },
+        {
+          "description": "Hard cap for total spend per UTC day in USD (default 10)",
+          "format": "number",
+          "name": "SOLINKIFY_DAILY_CAP_USD"
+        },
+        {
+          "description": "devnet (default) or mainnet-beta",
+          "format": "string",
+          "name": "SOLINKIFY_NETWORK"
+        },
+        {
+          "description": "Custom Solana RPC endpoint (defaults to the network's public RPC)",
+          "format": "string",
+          "name": "SOLANA_RPC_URL"
+        }
+      ],
+      "identifier": "@solinkify/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "605a585509",
+    "published_at": "2026-07-14T09:08:09.630941Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.solinkify/mcp",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-14T09:08:09.630941Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

@@ -1,0 +1,90 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/rwnalds/engram:0.1.0"
+      }
+    }
+  ],
+  "description": "Git-backed markdown memory for AI agents; search hides superseded and archived notes.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:50:04+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/rwnalds/engram",
+  "id": "tool.io-github-rwnalds-engram.56d1a29c1a",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/rwnalds/engram",
+    "homepage": "https://github.com/rwnalds/engram",
+    "repository": "https://github.com/rwnalds/engram"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Git-backed markdown memory for AI agents; search hides superseded and archived notes.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.rwnalds/engram",
+      "request_type": "POST",
+      "url": "https://github.com/rwnalds/engram"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Mount your local markdown vault into the container",
+            "isRequired": true,
+            "name": "--mount",
+            "type": "named",
+            "value": "type=bind,src={vault_path},dst=/vault",
+            "variables": {
+              "vault_path": {
+                "description": "Absolute path to your local markdown vault (Obsidian-compatible)",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          "ghcr.io/rwnalds/engram:0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.rwnalds/engram",
+  "provenance": {
+    "identity_key": "104fb0bd71",
+    "promoted_from": "mcp.io-github-rwnalds-engram.stdio.104fb0bd71",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.rwnalds/engram",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-rwnalds-engram.stdio.104fb0bd71",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/rwnalds/engram",
+  "summary": "Git-backed markdown memory for AI agents; search hides superseded and archived notes.",
+  "tags": [
+    "agents",
+    "backed",
+    "engram",
+    "hides",
+    "markdown",
+    "memory",
+    "search"
+  ],
+  "title": "Engram",
+  "type": "tool",
+  "version": "0.1.0"
+}

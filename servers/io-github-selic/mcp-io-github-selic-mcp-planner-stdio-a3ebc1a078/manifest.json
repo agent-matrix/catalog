@@ -1,0 +1,71 @@
+{
+  "description": "Microsoft Planner MCP server \u2014 plans, buckets, tasks via Microsoft Graph, ETags handled",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:50:04+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-selic-mcp-planner.stdio.a3ebc1a078",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/selic/mcp-planner",
+    "homepage": "https://github.com/selic/mcp-planner",
+    "repository": "https://github.com/selic/mcp-planner"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-planner@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.selic/mcp-planner",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Microsoft Entra ID tenant id (GUID or domain)",
+          "isRequired": true,
+          "name": "MS_TENANT_ID"
+        },
+        {
+          "description": "Entra app registration client id",
+          "isRequired": true,
+          "name": "MS_CLIENT_ID"
+        },
+        {
+          "description": "Entra app registration client secret (app needs Tasks.ReadWrite.All, GroupMember.Read.All, User.Read.All application permissions)",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "MS_CLIENT_SECRET"
+        }
+      ],
+      "identifier": "mcp-planner",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a3ebc1a078",
+    "published_at": "2026-07-14T13:18:19.218189Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.selic/mcp-planner",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-14T13:18:19.218189Z"
+  },
+  "title": "Microsoft Planner",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

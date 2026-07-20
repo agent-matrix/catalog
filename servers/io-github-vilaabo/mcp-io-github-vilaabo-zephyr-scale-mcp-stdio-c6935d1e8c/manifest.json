@@ -1,0 +1,93 @@
+{
+  "description": "Zephyr Scale on self-hosted Jira Server/DC: test cases, cycles, executions, plans and attachments",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:50:09+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-vilaabo-zephyr-scale-mcp.stdio.c6935d1e8c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/vilaabo/zephyr-scale-mcp",
+    "homepage": "https://github.com/vilaabo/zephyr-scale-mcp",
+    "repository": "https://github.com/vilaabo/zephyr-scale-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "zephyr-scale-mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.vilaabo/zephyr-scale-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Jira base URL without a trailing slash, e.g. https://jira.example.com",
+          "isRequired": true,
+          "name": "JIRA_BASE_URL"
+        },
+        {
+          "description": "Jira Data Center Personal Access Token (used when JIRA_AUTH=pat, the default)",
+          "isSecret": true,
+          "name": "JIRA_PAT"
+        },
+        {
+          "description": "Authentication mode: pat (default) or basic",
+          "name": "JIRA_AUTH"
+        },
+        {
+          "description": "Username for JIRA_AUTH=basic",
+          "name": "JIRA_USERNAME"
+        },
+        {
+          "description": "Password for JIRA_AUTH=basic",
+          "isSecret": true,
+          "name": "JIRA_PASSWORD"
+        },
+        {
+          "description": "Project key used when a tool is called without projectKey",
+          "name": "ZEPHYR_DEFAULT_PROJECT_KEY"
+        },
+        {
+          "description": "true registers UNOFFICIAL tools backed by the internal /rest/tests/1.0 API: folder tree, folder deletion, exact status names",
+          "name": "ZEPHYR_ALLOW_INTERNAL_API"
+        },
+        {
+          "description": "true disables all write tools",
+          "name": "ZEPHYR_READONLY"
+        },
+        {
+          "description": "false allows self-signed certificates (disables TLS verification)",
+          "name": "JIRA_TLS_REJECT_UNAUTHORIZED"
+        }
+      ],
+      "identifier": "zephyr-scale-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c6935d1e8c",
+    "published_at": "2026-07-17T15:22:39.714417Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.vilaabo/zephyr-scale-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-17T15:22:39.714417Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

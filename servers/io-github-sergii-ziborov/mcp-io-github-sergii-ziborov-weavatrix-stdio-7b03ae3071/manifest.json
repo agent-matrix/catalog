@@ -1,0 +1,81 @@
+{
+  "description": "Code graph & blast-radius MCP for AI agents: change impact, dependents, health audit, clones.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:50:05+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sergii-ziborov-weavatrix.stdio.7b03ae3071",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sergii-ziborov/weavatrix",
+    "homepage": "https://github.com/sergii-ziborov/weavatrix",
+    "repository": "https://github.com/sergii-ziborov/weavatrix"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "weavatrix@0.1.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sergii-ziborov/weavatrix",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional endpoint used only when online is enabled and sync_graph is called",
+          "format": "string",
+          "name": "WEAVATRIX_SYNC_URL"
+        },
+        {
+          "description": "Optional bearer token for the configured graph sync endpoint",
+          "format": "string",
+          "isSecret": true,
+          "name": "WEAVATRIX_SYNC_TOKEN"
+        }
+      ],
+      "identifier": "weavatrix",
+      "packageArguments": [
+        {
+          "description": "Absolute path to the initial Git repository (the offline open_repo tool can explicitly switch repositories)",
+          "isRequired": true,
+          "type": "positional",
+          "valueHint": "repoRoot"
+        },
+        {
+          "default": "graph,search,source,health,build,retarget",
+          "description": "Full comma-separated set replacing the default; allowed groups are graph,search,source,health,build,retarget,online (omit retarget to pin one repository; add online only for network tools)",
+          "format": "string",
+          "type": "positional",
+          "valueHint": "capabilities"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7b03ae3071",
+    "published_at": "2026-07-15T20:17:42.671309Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sergii-ziborov/weavatrix",
+    "server_version": "0.1.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-15T20:17:42.671309Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.4"
+}

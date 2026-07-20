@@ -1,0 +1,72 @@
+{
+  "description": "Typed record store + hybrid search over MCP: deterministic lookups + semantic memory, per-customer.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:50:08+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-vectros-ai-mcp-server.stdio.133548aed7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/vectros-ai/vectros-mcp-server",
+    "homepage": "https://github.com/vectros-ai/vectros-mcp-server",
+    "repository": "https://github.com/vectros-ai/vectros-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@vectros-ai/mcp-server@0.10.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.vectros-ai/mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Vectros API key. Use a least-privilege scoped key (ssk_...); mint one with `npx -y @vectros-ai/cli bootstrap`. Required for a registry install, which cannot assume any other tooling is present. If you also install the vectros CLI (0.9.0+), the server can instead resolve the key from its keyring and this can be left unset.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "VECTROS_API_KEY"
+        },
+        {
+          "description": "Optional. When VECTROS_API_KEY is unset and the vectros CLI is installed, resolve this keyring entry instead of the active one.",
+          "name": "VECTROS_KEYRING_ALIAS"
+        },
+        {
+          "description": "Override the API base URL (default https://api.vectros.ai). Must be an official *.vectros.ai host.",
+          "name": "VECTROS_API_BASE_URL"
+        },
+        {
+          "description": "Comma-separated subset of tool names to register (default: all 21 tools).",
+          "name": "VECTROS_MCP_TOOLS"
+        }
+      ],
+      "identifier": "@vectros-ai/mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.10.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "133548aed7",
+    "published_at": "2026-07-19T11:14:07.791853Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.vectros-ai/mcp-server",
+    "server_version": "0.10.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-19T11:14:07.791853Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.10.0"
+}

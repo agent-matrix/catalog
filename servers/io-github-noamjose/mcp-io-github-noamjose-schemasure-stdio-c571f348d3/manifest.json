@@ -1,0 +1,79 @@
+{
+  "description": "Turn text/HTML into guaranteed schema-valid JSON, or pay nothing (x402, USDC on Base).",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:59+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-noamjose-schemasure.stdio.c571f348d3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/noamjose/schemasure",
+    "homepage": "https://github.com/noamjose/schemasure",
+    "repository": "https://github.com/noamjose/schemasure"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "schemasure-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.noamjose/schemasure",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "choices": [
+            "mock",
+            "google",
+            "openai"
+          ],
+          "default": "mock",
+          "description": "Extraction backend: mock (offline default), google, or openai.",
+          "name": "LLM_PROVIDER"
+        },
+        {
+          "description": "Google Generative AI API key (required only when LLM_PROVIDER=google).",
+          "isSecret": true,
+          "name": "GOOGLE_API_KEY"
+        },
+        {
+          "description": "OpenAI API key (required only when LLM_PROVIDER=openai).",
+          "isSecret": true,
+          "name": "OPENAI_API_KEY"
+        },
+        {
+          "description": "Override the default extraction model id for the selected provider.",
+          "name": "DEFAULT_MODEL"
+        }
+      ],
+      "identifier": "schemasure-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c571f348d3",
+    "published_at": "2026-07-16T08:28:43.533548Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.noamjose/schemasure",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-16T08:28:43.533548Z"
+  },
+  "title": "SchemaSure \u2014 structured extraction",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

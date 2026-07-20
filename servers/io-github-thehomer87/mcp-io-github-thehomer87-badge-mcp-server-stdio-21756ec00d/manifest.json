@@ -1,0 +1,68 @@
+{
+  "description": "Screen AI agents, read Badge fitness scores, and browse the public Talent Pool leaderboard.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:50:07+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-thehomer87-badge-mcp-server.stdio.21756ec00d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/thehomer87/badgeIA",
+    "homepage": "https://github.com/thehomer87/badgeIA",
+    "repository": "https://github.com/thehomer87/badgeIA"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@badgeia/mcp-server@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.thehomer87/badge-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Badge API key (create under Settings -> API keys). Required for screen_agent; optional for read-only tools.",
+          "isSecret": true,
+          "name": "BADGE_API_KEY"
+        },
+        {
+          "default": "https://api.badgeia.com",
+          "description": "Badge REST API base URL. Defaults to https://api.badgeia.com.",
+          "name": "BADGE_API_URL"
+        },
+        {
+          "description": "Override for the human-facing web origin used in verify/agent/leaderboard links. Auto-derived from BADGE_API_URL when unset.",
+          "name": "BADGE_WEB_URL"
+        }
+      ],
+      "identifier": "@badgeia/mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "21756ec00d",
+    "published_at": "2026-07-18T10:04:18.616769Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.thehomer87/badge-mcp-server",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-18T10:04:18.616769Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

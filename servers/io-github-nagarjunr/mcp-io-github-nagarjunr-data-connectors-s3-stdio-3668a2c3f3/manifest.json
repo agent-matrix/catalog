@@ -1,0 +1,87 @@
+{
+  "description": "Read-only MCP server for S3-compatible storage: list buckets and objects.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:58+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nagarjunr-data-connectors-s3.stdio.3668a2c3f3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nagarjunr/data-connectors-for-ai-agents",
+    "homepage": "https://github.com/nagarjunr/data-connectors-for-ai-agents",
+    "repository": "https://github.com/nagarjunr/data-connectors-for-ai-agents"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "data-connectors-ai==0.1.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nagarjunr/data-connectors-s3",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "S3-compatible endpoint URL",
+          "isRequired": true,
+          "name": "S3_ENDPOINT"
+        },
+        {
+          "description": "Access key (read-only credentials recommended)",
+          "isRequired": true,
+          "name": "AWS_ACCESS_KEY_ID"
+        },
+        {
+          "description": "Secret key",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AWS_SECRET_ACCESS_KEY"
+        },
+        {
+          "default": "us-east-1",
+          "description": "AWS region",
+          "name": "S3_REGION"
+        }
+      ],
+      "identifier": "data-connectors-ai",
+      "packageArguments": [
+        {
+          "name": "--from",
+          "type": "named",
+          "value": "data-connectors-ai[s3,mcp]==0.1.6"
+        },
+        {
+          "type": "positional",
+          "value": "data-connectors-s3-mcp"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "3668a2c3f3",
+    "published_at": "2026-07-20T04:13:10.210927Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nagarjunr/data-connectors-s3",
+    "server_version": "0.1.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-20T04:13:10.210927Z"
+  },
+  "title": "S3 Connector",
+  "type": "mcp_server",
+  "version": "0.1.6"
+}

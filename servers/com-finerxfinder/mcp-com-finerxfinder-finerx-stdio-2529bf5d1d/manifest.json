@@ -1,0 +1,61 @@
+{
+  "description": "US Rx price comparison + foreign-brand US-equivalent lookup. Observed prices, read-only.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:19+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-finerxfinder-finerx.stdio.2529bf5d1d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "finerx-mcp==1.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.finerxfinder/finerx",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "FineRx developer key (frx_live_...). Request one at https://www.finerxfinder.com/developers",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "FINERX_API_KEY"
+        },
+        {
+          "description": "Override the public API base URL (defaults to the production surface).",
+          "name": "FINERX_API_BASE"
+        }
+      ],
+      "identifier": "finerx-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "2529bf5d1d",
+    "published_at": "2026-07-19T13:25:37.836987Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.finerxfinder/finerx",
+    "server_version": "1.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-19T13:25:37.836987Z"
+  },
+  "title": "FineRx",
+  "type": "mcp_server",
+  "version": "1.2.0"
+}

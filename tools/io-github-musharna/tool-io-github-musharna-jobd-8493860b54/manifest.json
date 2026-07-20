@@ -1,0 +1,92 @@
+{
+  "artifacts": [
+    {
+      "kind": "pypi",
+      "spec": {
+        "package": "jobd",
+        "version": "0.5.16"
+      }
+    }
+  ],
+  "description": "Self-hostable GPU-aware job broker: submit, route by VRAM, babysit jobs across machines via MCP.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:58+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/musharna/jobd",
+  "id": "tool.io-github-musharna-jobd.8493860b54",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/musharna/jobd",
+    "homepage": "https://github.com/musharna/jobd",
+    "repository": "https://github.com/musharna/jobd"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Self-hostable GPU-aware job broker: submit, route by VRAM, babysit jobs across machines via MCP.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.musharna/jobd",
+      "request_type": "POST",
+      "url": "https://github.com/musharna/jobd"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "type": "positional",
+            "value": "--from",
+            "valueHint": "from-flag"
+          },
+          {
+            "type": "positional",
+            "value": "jobd[mcp]",
+            "valueHint": "package-with-mcp-extra"
+          },
+          {
+            "type": "positional",
+            "value": "jobd-mcp",
+            "valueHint": "mcp-entry-point"
+          },
+          "jobd==0.5.16"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.musharna/jobd",
+  "provenance": {
+    "identity_key": "486b811df1",
+    "promoted_from": "mcp.io-github-musharna-jobd.stdio.486b811df1",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.musharna/jobd",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-musharna-jobd.stdio.486b811df1",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/musharna/jobd",
+  "summary": "Self-hostable GPU-aware job broker: submit, route by VRAM, babysit jobs across machines via MCP.",
+  "tags": [
+    "aware",
+    "broker",
+    "hostable",
+    "jobd",
+    "route",
+    "self",
+    "submit"
+  ],
+  "title": "jobd",
+  "type": "tool",
+  "version": "0.5.16"
+}

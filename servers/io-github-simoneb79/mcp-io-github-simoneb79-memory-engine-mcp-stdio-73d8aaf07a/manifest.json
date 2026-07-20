@@ -1,0 +1,68 @@
+{
+  "description": "Local-first graph memory for AI assistants with SQLite, semantic search, and MCP tools.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-SimoneB79-memory-engine-mcp.stdio.73d8aaf07a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/SimoneB79/memory-engine-mcp",
+    "homepage": "https://github.com/SimoneB79/memory-engine-mcp",
+    "repository": "https://github.com/SimoneB79/memory-engine-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/simoneb79/memory-engine-mcp:1.5.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.SimoneB79/memory-engine-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "SQLite database path inside the container.",
+          "format": "string",
+          "name": "MEMORY_DB_PATH"
+        },
+        {
+          "description": "Optional directory for one-way markdown import.",
+          "format": "string",
+          "name": "MARKDOWN_SOURCE"
+        },
+        {
+          "description": "SSE server port. Default: 8085.",
+          "format": "number",
+          "name": "MEMORY_PORT"
+        }
+      ],
+      "identifier": "ghcr.io/simoneb79/memory-engine-mcp:1.5.3",
+      "registryType": "oci",
+      "transport": {
+        "type": "sse",
+        "url": "http://localhost:8085/sse"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "73d8aaf07a",
+    "published_at": "2026-07-17T07:50:59.860411Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.SimoneB79/memory-engine-mcp",
+    "server_version": "1.5.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-17T07:50:59.860411Z"
+  },
+  "title": "Memory Engine MCP",
+  "type": "mcp_server",
+  "version": "1.5.3"
+}

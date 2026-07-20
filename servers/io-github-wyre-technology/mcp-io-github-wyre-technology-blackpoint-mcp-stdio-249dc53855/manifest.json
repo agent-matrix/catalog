@@ -1,0 +1,82 @@
+{
+  "description": "MCP server for Blackpoint Cyber MDR \u2014 alerts, threats, and operations.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:50:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wyre-technology-blackpoint-mcp.stdio.249dc53855",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wyre-technology/blackpoint-mcp",
+    "homepage": "https://github.com/wyre-technology/blackpoint-mcp",
+    "repository": "https://github.com/wyre-technology/blackpoint-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-technology/blackpoint-mcp:v1.1.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wyre-technology/blackpoint-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Blackpoint Cyber API token (Bearer credential)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "BLACKPOINT_API_TOKEN"
+        },
+        {
+          "description": "Blackpoint API base URL (region-specific). Optional \u2014 defaults to the production US endpoint.",
+          "format": "string",
+          "name": "BLACKPOINT_BASE_URL"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode for the server. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-technology/blackpoint-mcp:v1.1.4",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "249dc53855",
+    "published_at": "2026-07-18T13:09:50.994153Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wyre-technology/blackpoint-mcp",
+    "server_version": "1.1.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-18T13:09:50.994153Z"
+  },
+  "title": "Blackpoint Cyber",
+  "type": "mcp_server",
+  "version": "1.1.4"
+}

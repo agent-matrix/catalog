@@ -1,0 +1,66 @@
+{
+  "description": "MCP enforcement layer that intercepts AI agent actions and blocks rule violations before execution.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:50:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-sunaivacore-gate.stdio.7126d79481",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@sunaiva/gate@2.0.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.sunaivacore/gate",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Pro-tier API key for premium rules. Free tier (35 local rules: 27 constitutional + 8 recommended-default) needs no key.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SUNAIVA_GATE_API_KEY"
+        },
+        {
+          "description": "Set to '1' to evaluate without blocking \u2014 writes 'would_have_blocked' to audit log.",
+          "format": "string",
+          "name": "SUNAIVA_GATE_DRY_RUN"
+        },
+        {
+          "description": "Emergency kill-switch: set to '1' to allow all actions unconditionally.",
+          "format": "string",
+          "name": "DISABLE_SUNAIVA_GATE"
+        }
+      ],
+      "identifier": "@sunaiva/gate",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.0.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7126d79481",
+    "published_at": "2026-07-19T02:17:41.41246Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.sunaivacore/gate",
+    "server_version": "2.0.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-19T02:17:41.41246Z"
+  },
+  "title": "Sunaiva Gate \u2014 Agent Rule Enforcement",
+  "type": "mcp_server",
+  "version": "2.0.4"
+}

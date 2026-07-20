@@ -1,0 +1,69 @@
+{
+  "description": "Scan AWS/Azure/GCP and generate Terraform HCL with import blocks, deterministically, for AI agents.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-bmoldo-terraback.stdio.ac8d8eafb0",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "terraback==0.6.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.bmoldo/terraback",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional offline license key (Ed25519-signed). Without it the server runs in the free Community tier with codify_batch capped at 25 resources per run.",
+          "format": "string",
+          "isSecret": true,
+          "name": "TERRABACK_LICENSE"
+        },
+        {
+          "description": "Azure subscription ID for terraform plan verification with the azurerm provider (recommended when scanning Azure).",
+          "format": "string",
+          "name": "ARM_SUBSCRIPTION_ID"
+        }
+      ],
+      "identifier": "terraback",
+      "packageArguments": [
+        {
+          "description": "Run the MCP server subcommand",
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.6.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ac8d8eafb0",
+    "published_at": "2026-07-16T17:56:33.189767Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.bmoldo/terraback",
+    "server_version": "0.6.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-16T17:56:33.189767Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.6.0"
+}

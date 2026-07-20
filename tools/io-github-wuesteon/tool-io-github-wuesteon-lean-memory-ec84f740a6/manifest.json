@@ -1,0 +1,85 @@
+{
+  "artifacts": [
+    {
+      "kind": "pypi",
+      "spec": {
+        "package": "lean-memory",
+        "version": "0.2.0"
+      }
+    }
+  ],
+  "description": "Embedded, local-first agent memory: one SQLite file per namespace, no server, no cloud.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:34+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/Wuesteon/lean-memory",
+  "id": "tool.io-github-wuesteon-lean-memory.ec84f740a6",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Wuesteon/lean-memory",
+    "homepage": "https://github.com/Wuesteon/lean-memory",
+    "repository": "https://github.com/Wuesteon/lean-memory"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Embedded, local-first agent memory: one SQLite file per namespace, no server, no cloud.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.Wuesteon/lean-memory",
+      "request_type": "POST",
+      "url": "https://github.com/Wuesteon/lean-memory"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "Install lean-memory with the extras the server needs: [mcp] (imported at startup \u2014 a bare install crashes), plus [models] and [extract] (the canonical real-quality backends; ~2 GB of open models download on first tool call). The package name and script name differ, so uvx needs --from.",
+            "isRequired": true,
+            "name": "--from",
+            "type": "named",
+            "value": "lean-memory[mcp,models,extract]"
+          },
+          "lean-memory==0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Wuesteon/lean-memory",
+  "provenance": {
+    "identity_key": "680b9302fd",
+    "promoted_from": "mcp.io-github-Wuesteon-lean-memory.stdio.680b9302fd",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Wuesteon/lean-memory",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-Wuesteon-lean-memory.stdio.680b9302fd",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/Wuesteon/lean-memory",
+  "summary": "Embedded, local-first agent memory: one SQLite file per namespace, no server, no cloud.",
+  "tags": [
+    "embedded",
+    "file",
+    "first",
+    "lean",
+    "local",
+    "memory",
+    "namespace",
+    "sqlite"
+  ],
+  "title": "lean-memory",
+  "type": "tool",
+  "version": "0.2.0"
+}

@@ -1,0 +1,59 @@
+{
+  "description": "Read-only Yahoo! Shopping product search via the Yahoo! Shopping Item Search API v3.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:50:11+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ymuichiro-yahoo-shopping-mcp.stdio.4607dfa832",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ymuichiro/yahoo-shopping-mcp",
+    "homepage": "https://github.com/ymuichiro/yahoo-shopping-mcp",
+    "repository": "https://github.com/ymuichiro/yahoo-shopping-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/ymuichiro/yahoo-shopping-mcp:v0.9.0-preview.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ymuichiro/yahoo-shopping-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Yahoo! JAPAN application ID.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "YAHOO_SHOPPING_APP_ID"
+        }
+      ],
+      "identifier": "ghcr.io/ymuichiro/yahoo-shopping-mcp:v0.9.0-preview.2",
+      "registryType": "oci",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:8000/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "4607dfa832",
+    "published_at": "2026-07-20T04:18:55.870695Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ymuichiro/yahoo-shopping-mcp",
+    "server_version": "0.9.0-preview.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-20T04:18:55.870695Z"
+  },
+  "title": "Yahoo! Shopping MCP",
+  "type": "mcp_server",
+  "version": "0.9.0-preview.2"
+}

@@ -1,0 +1,91 @@
+{
+  "description": "Code graph & blast-radius MCP for AI agents: change impact, dependents, health audit, clones.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:50:05+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sergii-ziborov-weavatrix.stdio.4a130a4980",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sergii-ziborov/weavatrix",
+    "homepage": "https://github.com/sergii-ziborov/weavatrix",
+    "repository": "https://github.com/sergii-ziborov/weavatrix"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "weavatrix@0.2.9"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sergii-ziborov/weavatrix",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional semantic precision mode: lsp (default) uses the bundled bounded TypeScript/JavaScript language-server overlay; off keeps parser-only graphs",
+          "format": "string",
+          "name": "WEAVATRIX_PRECISION"
+        },
+        {
+          "description": "Optional endpoint used only by explicit hosted-profile calls; preview_sync is local-only and sync_graph requires dry_run:false plus its exact short-lived confirmation before sending",
+          "format": "string",
+          "name": "WEAVATRIX_SYNC_URL"
+        },
+        {
+          "description": "Optional bearer token for confirmed sync_graph requests to the configured hosted endpoint; required by pull_architecture_contract",
+          "format": "string",
+          "isSecret": true,
+          "name": "WEAVATRIX_SYNC_TOKEN"
+        },
+        {
+          "description": "Optional explicit permission for verified_change to run requested test/check/verify package.json scripts; must be exactly 1",
+          "format": "string",
+          "name": "WEAVATRIX_ALLOW_TEST_RUNS"
+        }
+      ],
+      "identifier": "weavatrix",
+      "packageArguments": [
+        {
+          "description": "Absolute path to the initial Git repository (the offline open_repo tool can explicitly switch repositories)",
+          "isRequired": true,
+          "type": "positional",
+          "valueHint": "repoRoot"
+        },
+        {
+          "default": "offline",
+          "description": "Security profile (offline, pinned, osv, hosted, full) or exact comma-separated groups graph,search,source,health,build,retarget,crossrepo,advisories,hosted; legacy online aliases advisories plus hosted",
+          "format": "string",
+          "type": "positional",
+          "valueHint": "capabilities"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.9"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4a130a4980",
+    "published_at": "2026-07-18T15:18:01.841379Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sergii-ziborov/weavatrix",
+    "server_version": "0.2.9",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-18T15:18:01.841379Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.9"
+}

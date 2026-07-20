@@ -1,0 +1,71 @@
+{
+  "description": "Governed agent access to ERPNext \u2014 MCP + A2A doors, one spine. No debit without a credit.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:53+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-john-broadway-pacioli.stdio.80840fe0ee",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/john-broadway/pacioli",
+    "homepage": "https://github.com/john-broadway/pacioli",
+    "repository": "https://github.com/john-broadway/pacioli"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "name": "--from",
+            "type": "named",
+            "value": "pacioli[server]"
+          },
+          "pacioli==0.30.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.john-broadway/pacioli",
+  "packages": [
+    {
+      "identifier": "pacioli",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "serve",
+          "valueHint": "subcommand"
+        }
+      ],
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "name": "--from",
+          "type": "named",
+          "value": "pacioli[server]"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.30.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "80840fe0ee",
+    "published_at": "2026-07-18T04:06:21.464507Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.john-broadway/pacioli",
+    "server_version": "0.30.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-18T04:06:21.464507Z"
+  },
+  "title": "Pacioli \u2014 the governed front door to your ERPNext books",
+  "type": "mcp_server",
+  "version": "0.30.2"
+}

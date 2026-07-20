@@ -1,0 +1,95 @@
+{
+  "description": "MCP server for Unitrends Backup \u2014 appliances, jobs, recovery points, restores, alerts.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:50:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wyre-technology-unitrends-mcp.stdio.cd558e607e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wyre-technology/unitrends-mcp",
+    "homepage": "https://github.com/wyre-technology/unitrends-mcp",
+    "repository": "https://github.com/wyre-technology/unitrends-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-technology/unitrends-mcp:v1.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wyre-technology/unitrends-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the Unitrends appliance or MSP Console (e.g. https://unitrends.example.com)",
+          "format": "string",
+          "isRequired": true,
+          "name": "UNITRENDS_BASE_URL"
+        },
+        {
+          "description": "Unitrends API username",
+          "format": "string",
+          "isRequired": true,
+          "name": "UNITRENDS_USERNAME"
+        },
+        {
+          "description": "Unitrends API password",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "UNITRENDS_PASSWORD"
+        },
+        {
+          "default": "true",
+          "description": "Verify TLS certificates. Set 'false' for self-signed appliances.",
+          "format": "string",
+          "name": "UNITRENDS_VERIFY_TLS"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode for the server. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-technology/unitrends-mcp:v1.1.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "cd558e607e",
+    "published_at": "2026-07-17T23:19:30.06588Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wyre-technology/unitrends-mcp",
+    "server_version": "1.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-17T23:19:30.06588Z"
+  },
+  "title": "Unitrends Backup",
+  "type": "mcp_server",
+  "version": "1.1.0"
+}

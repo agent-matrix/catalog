@@ -1,0 +1,74 @@
+{
+  "description": "OurFamilyWizard co-parenting for Claude \u2014 messages, calendar, expenses, and journal",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:40+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-chrischall-ofw-mcp.stdio.37625739ec",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/chrischall/ofw-mcp",
+    "homepage": "https://github.com/chrischall/ofw-mcp",
+    "repository": "https://github.com/chrischall/ofw-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "ofw-mcp@2.6.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.chrischall/ofw-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your OurFamilyWizard login email address. Optional \u2014 if omitted, the server falls back to the fetchproxy browser extension (requires being signed in to ourfamilywizard.com).",
+          "format": "string",
+          "name": "OFW_USERNAME"
+        },
+        {
+          "description": "Your OurFamilyWizard password. Optional \u2014 see OFW_USERNAME.",
+          "format": "string",
+          "isSecret": true,
+          "name": "OFW_PASSWORD"
+        },
+        {
+          "description": "Write-tool gate: \"none\" registers no write tools; \"drafts\" registers draft-level writes only (save/delete drafts, upload attachments); \"all\" registers everything (default). Unrecognized values fail closed to \"none\".",
+          "format": "string",
+          "name": "OFW_WRITE_MODE"
+        },
+        {
+          "description": "Set to \"true\" to register calendar write tools (create/update/delete event) in \"drafts\" write mode. Events have no draft stage but are reversible. Never overrides \"none\".",
+          "format": "string",
+          "name": "OFW_CALENDAR_WRITES"
+        }
+      ],
+      "identifier": "ofw-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.6.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "37625739ec",
+    "published_at": "2026-07-17T12:45:15.633778Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.chrischall/ofw-mcp",
+    "server_version": "2.6.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-17T12:45:15.633778Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "2.6.3"
+}

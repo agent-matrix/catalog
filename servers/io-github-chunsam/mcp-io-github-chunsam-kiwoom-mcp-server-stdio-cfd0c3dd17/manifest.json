@@ -1,0 +1,80 @@
+{
+  "description": "Read-only MCP server for the Kiwoom Securities REST API: market data, account inquiry, ISA tax tool",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:28+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ChunSam-kiwoom-mcp-server.stdio.cfd0c3dd17",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ChunSam/kiwoom-mcp-server",
+    "homepage": "https://github.com/ChunSam/kiwoom-mcp-server",
+    "repository": "https://github.com/ChunSam/kiwoom-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "kiwoom-mcp-server@0.19.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ChunSam/kiwoom-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Kiwoom REST API app key (issued at openapi.kiwoom.com; VIRTUAL and REAL need separate keys)",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "KIWOOM_APP_KEY"
+        },
+        {
+          "description": "Kiwoom REST API app secret",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "KIWOOM_APP_SECRET"
+        },
+        {
+          "choices": [
+            "VIRTUAL",
+            "REAL"
+          ],
+          "default": "VIRTUAL",
+          "description": "VIRTUAL (\ubaa8\uc758\ud22c\uc790, mock trading) or REAL (\uc2e4\uc804\ud22c\uc790, live account)",
+          "name": "KIWOOM_MODE"
+        },
+        {
+          "default": "false",
+          "description": "Opt-in switch for the ISA tax-allowance tool (set true together with ISA_TYPE / ISA_OPENED_ON)",
+          "format": "boolean",
+          "name": "ISA_ENABLED"
+        }
+      ],
+      "identifier": "kiwoom-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.19.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "cfd0c3dd17",
+    "published_at": "2026-07-14T14:12:37.861623Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ChunSam/kiwoom-mcp-server",
+    "server_version": "0.19.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-14T14:12:37.861623Z"
+  },
+  "title": "Kiwoom Securities MCP Server",
+  "type": "mcp_server",
+  "version": "0.19.1"
+}

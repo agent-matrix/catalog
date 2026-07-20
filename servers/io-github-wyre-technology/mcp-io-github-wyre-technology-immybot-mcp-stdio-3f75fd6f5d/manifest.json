@@ -1,0 +1,95 @@
+{
+  "description": "MCP server for ImmyBot \u2014 Windows software deployment, maintenance, tenants, deployments.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:50:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wyre-technology-immybot-mcp.stdio.3f75fd6f5d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wyre-technology/immybot-mcp",
+    "homepage": "https://github.com/wyre-technology/immybot-mcp",
+    "repository": "https://github.com/wyre-technology/immybot-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-technology/immybot-mcp:v1.2.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wyre-technology/immybot-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "ImmyBot Azure AD tenant ID",
+          "format": "string",
+          "isRequired": true,
+          "name": "IMMYBOT_TENANT_ID"
+        },
+        {
+          "description": "ImmyBot OAuth client ID",
+          "format": "string",
+          "isRequired": true,
+          "name": "IMMYBOT_CLIENT_ID"
+        },
+        {
+          "description": "ImmyBot OAuth client secret",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "IMMYBOT_CLIENT_SECRET"
+        },
+        {
+          "description": "ImmyBot instance subdomain (e.g. 'acme' for acme.immy.bot)",
+          "format": "string",
+          "isRequired": true,
+          "name": "IMMYBOT_INSTANCE_SUBDOMAIN"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode for the server. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-technology/immybot-mcp:v1.2.4",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "3f75fd6f5d",
+    "published_at": "2026-07-18T16:57:22.930827Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wyre-technology/immybot-mcp",
+    "server_version": "1.2.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-18T16:57:22.930827Z"
+  },
+  "title": "ImmyBot",
+  "type": "mcp_server",
+  "version": "1.2.4"
+}
