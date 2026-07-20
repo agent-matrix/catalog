@@ -1,0 +1,98 @@
+{
+  "description": "Secure Open Finance Brasil MCP server with typed tools and a credential-free mock mode",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-brunovicco-openfinance-br-mcp.stdio.31e149aafd",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/brunovicco/openfinance-br-mcp",
+    "homepage": "https://github.com/brunovicco/openfinance-br-mcp",
+    "repository": "https://github.com/brunovicco/openfinance-br-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "openfinance-br-mcp==0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.brunovicco/openfinance-br-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "mock",
+          "description": "'mock' (default, no credentials needed - runs entirely in-memory), 'sandbox', or 'production'",
+          "format": "string",
+          "name": "ENVIRONMENT"
+        },
+        {
+          "description": "Client ID registered with the participating institution. Required unless ENVIRONMENT=mock",
+          "format": "string",
+          "name": "CLIENT_ID"
+        },
+        {
+          "description": "Path to the RSA private key used for private_key_jwt and JAR signing outside mock mode",
+          "format": "string",
+          "name": "PRIVATE_KEY_PATH"
+        },
+        {
+          "description": "Key ID matching the registered client JWKS entry outside mock mode",
+          "format": "string",
+          "name": "PRIVATE_KEY_KID"
+        },
+        {
+          "description": "Path to the client mTLS certificate used outside mock mode",
+          "format": "string",
+          "name": "MTLS_CERT_PATH"
+        },
+        {
+          "description": "Path to the client mTLS private key used outside mock mode",
+          "format": "string",
+          "name": "MTLS_KEY_PATH"
+        },
+        {
+          "description": "Optional Redis connection URL for persistent consent and token state",
+          "format": "string",
+          "isSecret": true,
+          "name": "REDIS_URL"
+        },
+        {
+          "description": "Required only when calling list_transactions with categorize=true (DSPy transaction categorization)",
+          "format": "string",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        }
+      ],
+      "identifier": "openfinance-br-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "31e149aafd",
+    "published_at": "2026-07-17T18:44:21.487119Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.brunovicco/openfinance-br-mcp",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-17T18:44:21.487119Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

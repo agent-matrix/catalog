@@ -1,0 +1,88 @@
+{
+  "description": "Neo4j Graph Data Science MCP server",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:59+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-neo4j-contrib-gds-agent.stdio.af5d4186be",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/neo4j-contrib/gds-agent",
+    "homepage": "https://github.com/neo4j-contrib/gds-agent",
+    "repository": "https://github.com/neo4j-contrib/gds-agent"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "gds-agent==1.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.neo4j-contrib/gds-agent",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Neo4j connection URI (neo4j:// or neo4j+s://)",
+          "isRequired": true,
+          "name": "NEO4J_URI"
+        },
+        {
+          "description": "Neo4j username",
+          "isRequired": true,
+          "name": "NEO4J_USERNAME"
+        },
+        {
+          "description": "Neo4j password",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "NEO4J_PASSWORD"
+        },
+        {
+          "description": "Neo4j database name",
+          "name": "NEO4J_DATABASE"
+        },
+        {
+          "description": "Aura API client ID (enables Aura Graph Analytics session mode)",
+          "name": "AURA_API_CLIENT_ID"
+        },
+        {
+          "description": "Aura API client secret",
+          "isSecret": true,
+          "name": "AURA_API_CLIENT_SECRET"
+        },
+        {
+          "description": "Aura project ID (only if the API client can access multiple projects)",
+          "name": "AURA_API_PROJECT_ID"
+        }
+      ],
+      "identifier": "gds-agent",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "af5d4186be",
+    "published_at": "2026-07-13T10:29:20.142895Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.neo4j-contrib/gds-agent",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-13T10:29:20.142895Z"
+  },
+  "title": "Neo4j GDS Agent",
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

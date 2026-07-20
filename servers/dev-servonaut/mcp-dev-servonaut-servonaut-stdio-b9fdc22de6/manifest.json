@@ -1,0 +1,74 @@
+{
+  "description": "Manage AWS, Hetzner, OVH and SSH servers: status, logs, CloudWatch, IP bans, safe command exec.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:23+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.dev-servonaut-servonaut.stdio.b9fdc22de6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/zb-ss/servonaut",
+    "homepage": "https://github.com/zb-ss/servonaut",
+    "repository": "https://github.com/zb-ss/servonaut"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "Install the MCP extra alongside the base package",
+            "name": "--from",
+            "type": "named",
+            "value": "servonaut[mcp]"
+          },
+          "servonaut==2.22.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "dev.servonaut/servonaut",
+  "packages": [
+    {
+      "identifier": "servonaut",
+      "packageArguments": [
+        {
+          "description": "Start the MCP server on stdio transport",
+          "type": "positional",
+          "value": "--mcp"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "Install the MCP extra alongside the base package",
+          "name": "--from",
+          "type": "named",
+          "value": "servonaut[mcp]"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.22.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b9fdc22de6",
+    "published_at": "2026-07-14T01:40:42.56459Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "dev.servonaut/servonaut",
+    "server_version": "2.22.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-14T01:40:42.56459Z"
+  },
+  "title": "Servonaut",
+  "type": "mcp_server",
+  "version": "2.22.0"
+}

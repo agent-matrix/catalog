@@ -1,0 +1,84 @@
+{
+  "description": "Embedded, local-first agent memory: one SQLite file per namespace, no server, no cloud.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:34+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Wuesteon-lean-memory.stdio.680b9302fd",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Wuesteon/lean-memory",
+    "homepage": "https://github.com/Wuesteon/lean-memory",
+    "repository": "https://github.com/Wuesteon/lean-memory"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "Install lean-memory with the extras the server needs: [mcp] (imported at startup \u2014 a bare install crashes), plus [models] and [extract] (the canonical real-quality backends; ~2 GB of open models download on first tool call). The package name and script name differ, so uvx needs --from.",
+            "isRequired": true,
+            "name": "--from",
+            "type": "named",
+            "value": "lean-memory[mcp,models,extract]"
+          },
+          "lean-memory==0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Wuesteon/lean-memory",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "~/.lean_memory",
+          "description": "Directory for per-namespace SQLite memory files. Defaults to ~/.lean_memory when unset.",
+          "name": "LM_DATA_ROOT"
+        }
+      ],
+      "identifier": "lean-memory",
+      "packageArguments": [
+        {
+          "description": "Console script entry point that starts the stdio MCP server.",
+          "isRequired": true,
+          "type": "positional",
+          "value": "lean-memory-mcp"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "Install lean-memory with the extras the server needs: [mcp] (imported at startup \u2014 a bare install crashes), plus [models] and [extract] (the canonical real-quality backends; ~2 GB of open models download on first tool call). The package name and script name differ, so uvx needs --from.",
+          "isRequired": true,
+          "name": "--from",
+          "type": "named",
+          "value": "lean-memory[mcp,models,extract]"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "680b9302fd",
+    "published_at": "2026-07-16T17:16:09.464719Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Wuesteon/lean-memory",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-16T17:16:09.464719Z"
+  },
+  "title": "lean-memory",
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

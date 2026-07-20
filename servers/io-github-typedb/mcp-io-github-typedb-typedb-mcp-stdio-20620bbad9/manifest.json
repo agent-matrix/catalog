@@ -1,0 +1,85 @@
+{
+  "description": "Execute TypeQL queries and manage databases and users on a TypeDB server.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:50:08+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-typedb-typedb-mcp.stdio.20620bbad9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/typedb/typedb-mcp-server",
+    "homepage": "https://github.com/typedb/typedb-mcp-server",
+    "repository": "https://github.com/typedb/typedb-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "name": "-p",
+            "type": "named",
+            "value": "8001:8001"
+          },
+          "docker.io/typedb/typedb-mcp:1.0.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.typedb/typedb-mcp",
+  "packages": [
+    {
+      "identifier": "docker.io/typedb/typedb-mcp:1.0.2",
+      "packageArguments": [
+        {
+          "description": "Address of TypeDB's HTTP endpoint, e.g. http://host.docker.internal:8000",
+          "format": "string",
+          "isRequired": true,
+          "name": "--typedb-address",
+          "type": "named"
+        },
+        {
+          "description": "TypeDB username (default: admin)",
+          "format": "string",
+          "name": "--typedb-username",
+          "type": "named"
+        },
+        {
+          "description": "TypeDB password (default: password)",
+          "format": "string",
+          "name": "--typedb-password",
+          "type": "named"
+        }
+      ],
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "name": "-p",
+          "type": "named",
+          "value": "8001:8001"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:8001/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "20620bbad9",
+    "published_at": "2026-07-17T15:37:41.378425Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.typedb/typedb-mcp",
+    "server_version": "1.0.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-17T15:37:41.378425Z"
+  },
+  "title": "TypeDB",
+  "type": "mcp_server",
+  "version": "1.0.2"
+}

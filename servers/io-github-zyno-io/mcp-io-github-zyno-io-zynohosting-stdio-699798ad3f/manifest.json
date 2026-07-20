@@ -1,0 +1,71 @@
+{
+  "description": "Manage authorized ZynoHosting sites, files, deployments, and downloads through local stdio.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:50:11+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-zyno-io-zynohosting.stdio.699798ad3f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/zyno-io/zynohosting-cli",
+    "homepage": "https://github.com/zyno-io/zynohosting-cli",
+    "repository": "https://github.com/zyno-io/zynohosting-cli"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@zyno-io/zynohosting@0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.zyno-io/zynohosting",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Absolute local roots the MCP server may read and write, separated by the platform path delimiter.",
+          "format": "string",
+          "isRequired": true,
+          "name": "ZYNO_HOSTING_MCP_ROOTS"
+        },
+        {
+          "description": "Optional tenant API key. Omit it when using credentials saved by zynohosting login.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ZYNO_HOSTING_API_KEY"
+        }
+      ],
+      "identifier": "@zyno-io/zynohosting",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "699798ad3f",
+    "published_at": "2026-07-17T07:59:12.890349Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.zyno-io/zynohosting",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-17T07:59:12.890349Z"
+  },
+  "title": "ZynoHosting",
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

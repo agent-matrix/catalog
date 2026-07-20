@@ -1,0 +1,90 @@
+{
+  "description": "Diagnose Airflow failures from UI links with bounded logs and optional recovery actions.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-madamak-apache-airflow-mcp-server.stdio.724bf53a15",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/madamak/apache-airflow-mcp-server",
+    "homepage": "https://github.com/madamak/apache-airflow-mcp-server",
+    "repository": "https://github.com/madamak/apache-airflow-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "apache-airflow-mcp-server==1.0.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.madamak/apache-airflow-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the Airflow instance.",
+          "isRequired": true,
+          "name": "AIRFLOW_MCP_HOST",
+          "placeholder": "https://airflow.example.com"
+        },
+        {
+          "description": "Bearer token. Provide this or both username and password; it takes precedence when set.",
+          "isSecret": true,
+          "name": "AIRFLOW_MCP_TOKEN"
+        },
+        {
+          "description": "Basic-auth username. Required with password when token is omitted.",
+          "name": "AIRFLOW_MCP_USERNAME"
+        },
+        {
+          "description": "Basic-auth password. Required with username when token is omitted.",
+          "isSecret": true,
+          "name": "AIRFLOW_MCP_PASSWORD"
+        },
+        {
+          "description": "The directory install uses the Airflow 3 client. See the README for Airflow 2 setup.",
+          "name": "AIRFLOW_MCP_API_VERSION",
+          "value": "v2"
+        },
+        {
+          "choices": [
+            "true",
+            "false"
+          ],
+          "default": "true",
+          "description": "Expose only read tools unless write access is deliberately selected.",
+          "format": "boolean",
+          "name": "AIRFLOW_MCP_READ_ONLY"
+        }
+      ],
+      "identifier": "apache-airflow-mcp-server",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "724bf53a15",
+    "published_at": "2026-07-16T15:50:22.488195Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.madamak/apache-airflow-mcp-server",
+    "server_version": "1.0.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-16T15:50:22.488195Z"
+  },
+  "title": "Incident Response MCP for Apache Airflow",
+  "type": "mcp_server",
+  "version": "1.0.2"
+}

@@ -1,0 +1,84 @@
+{
+  "description": "EU AI Act runtime evidence proxy for MCP servers: gating, tamper-evident audit, time anchor",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:50:08+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-vaaraio-vaara.stdio.be2b722133",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/vaaraio/vaara",
+    "homepage": "https://github.com/vaaraio/vaara",
+    "repository": "https://github.com/vaaraio/vaara"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "PyPI package providing the vaara-mcp-proxy entry point",
+            "name": "--from",
+            "type": "named",
+            "value": "vaara"
+          },
+          {
+            "type": "positional",
+            "value": "vaara-mcp-proxy"
+          },
+          "vaara==1.32.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.vaaraio/vaara",
+  "packages": [
+    {
+      "identifier": "vaara",
+      "packageArguments": [
+        {
+          "description": "Upstream MCP server in NAME=CMD form. Repeatable for fan-out (e.g. --upstream github=npx -y @modelcontextprotocol/server-github). Bare --upstream CMD lands under the default slot for single-upstream stdio.",
+          "isRepeated": true,
+          "isRequired": true,
+          "name": "--upstream",
+          "type": "named"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "PyPI package providing the vaara-mcp-proxy entry point",
+          "name": "--from",
+          "type": "named",
+          "value": "vaara"
+        },
+        {
+          "type": "positional",
+          "value": "vaara-mcp-proxy"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.32.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "be2b722133",
+    "published_at": "2026-07-15T13:16:45.444714Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.vaaraio/vaara",
+    "server_version": "1.32.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-15T13:16:45.444714Z"
+  },
+  "title": "Vaara",
+  "type": "mcp_server",
+  "version": "1.32.0"
+}

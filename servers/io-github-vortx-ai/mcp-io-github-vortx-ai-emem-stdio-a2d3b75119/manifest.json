@@ -1,7 +1,7 @@
 {
-  "description": "Content-addressed, ed25519-signed memory of every place on Earth. Apache-2.0, no keys for reads.",
+  "description": "Shared, verifiable memory for AI agents and robots: signed tokens that resolve and verify offline.",
   "harvest": {
-    "last_seen_at": "2026-07-13T05:48:29+00:00",
+    "last_seen_at": "2026-07-20T05:49:34+00:00",
     "seen_in_latest_run": true
   },
   "id": "mcp.io-github-Vortx-AI-emem.stdio.a2d3b75119",
@@ -30,12 +30,16 @@
     {
       "environmentVariables": [
         {
-          "description": "Bind address for the HTTP server. Defaults to 0.0.0.0:5051 inside the container.",
+          "description": "PaaS port convention: the container entrypoint binds 0.0.0.0:$PORT when EMEM_BIND is not set explicitly. Falls back to 5051.",
+          "name": "PORT"
+        },
+        {
+          "description": "Bind address for the HTTP server. When unset, the entrypoint derives it from PORT, falling back to 0.0.0.0:5051.",
           "name": "EMEM_BIND",
           "value": "0.0.0.0:5051"
         },
         {
-          "description": "Path to the persistent data directory (sled cache + ed25519 identity). Mount a volume here.",
+          "description": "Path to the persistent data directory (sled cache + ed25519 identity). Mount a volume here; on managed platforms that mount /data, set EMEM_DATA=/data.",
           "name": "EMEM_DATA",
           "value": "/var/emem"
         },
@@ -59,14 +63,14 @@
   ],
   "provenance": {
     "identity_key": "a2d3b75119",
-    "published_at": "2026-07-09T10:09:54.975231Z",
+    "published_at": "2026-07-17T03:27:34.8813Z",
     "registry_base_url": "https://registry.modelcontextprotocol.io",
     "server_name": "io.github.Vortx-AI/emem",
-    "server_version": "1.0.0",
+    "server_version": "1.1.0",
     "source": "mcp-registry",
-    "updated_at": "2026-07-09T10:09:54.975231Z"
+    "updated_at": "2026-07-17T03:27:34.8813Z"
   },
-  "title": "emem \u2014 Earth memory protocol",
+  "title": "emem, the verifiable memory protocol for the physical world",
   "type": "mcp_server",
-  "version": "1.0.0"
+  "version": "1.1.0"
 }

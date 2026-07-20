@@ -1,0 +1,92 @@
+{
+  "description": "Model Context Protocol (MCP) server for TestRail platform, enabling LLMs to manage test artifacts.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:50:08+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-uarlouski-testrail-mcp-server.stdio.0ad9d32434",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/uarlouski/testrail-mcp-server",
+    "homepage": "https://github.com/uarlouski/testrail-mcp-server",
+    "repository": "https://github.com/uarlouski/testrail-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@uarlouski/testrail-mcp-server@2.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.uarlouski/testrail-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of your TestRail instance (e.g. https://example.testrail.io)",
+          "format": "string",
+          "isRequired": true,
+          "name": "TESTRAIL_INSTANCE_URL"
+        },
+        {
+          "description": "Email address used to authenticate with TestRail",
+          "format": "string",
+          "isRequired": true,
+          "name": "TESTRAIL_USERNAME"
+        },
+        {
+          "description": "API key for authenticating with the TestRail API",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "TESTRAIL_API_KEY"
+        },
+        {
+          "description": "Enable shared steps management",
+          "format": "boolean",
+          "name": "TESTRAIL_ENABLE_SHARED_STEPS"
+        },
+        {
+          "description": "Allow write operations on TestRail (defaults to true)",
+          "format": "boolean",
+          "name": "TESTRAIL_ALLOW_WRITE_OPERATIONS"
+        },
+        {
+          "description": "Allow read operations on TestRail (defaults to true)",
+          "format": "boolean",
+          "name": "TESTRAIL_ALLOW_READ_OPERATIONS"
+        },
+        {
+          "description": "Allow delete operations on TestRail (defaults to false)",
+          "format": "boolean",
+          "name": "TESTRAIL_ALLOW_DELETE_OPERATIONS"
+        }
+      ],
+      "identifier": "@uarlouski/testrail-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0ad9d32434",
+    "published_at": "2026-07-17T14:49:50.135148Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.uarlouski/testrail-mcp-server",
+    "server_version": "2.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-17T14:49:50.135148Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "2.1.0"
+}

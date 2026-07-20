@@ -1,0 +1,108 @@
+{
+  "description": "Capability-gated Gerrit code review tools with opt-in review notifications pushed into the session",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:50:13+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.team-gaijin-go-gerrit-mcp.stdio.814e66e659",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/GaijinEntertainment/go-gerrit-mcp",
+    "homepage": "https://github.com/GaijinEntertainment/go-gerrit-mcp",
+    "repository": "https://github.com/GaijinEntertainment/go-gerrit-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/gaijinentertainment/go-gerrit-mcp:1.1.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "team.gaijin/go-gerrit-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the Gerrit instance",
+          "isRequired": true,
+          "name": "GERRIT_URL"
+        },
+        {
+          "description": "Account username for HTTP authentication",
+          "isRequired": true,
+          "name": "GERRIT_USERNAME"
+        },
+        {
+          "description": "HTTP password or token of the account",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GERRIT_TOKEN"
+        },
+        {
+          "default": "read",
+          "description": "Comma-separated capability groups to enable: read, comment, transition",
+          "name": "GERRIT_MCP_GROUPS"
+        },
+        {
+          "description": "Comma-separated Gerrit project allowlist confining every operation",
+          "name": "GERRIT_MCP_PROJECTS"
+        },
+        {
+          "default": "true",
+          "description": "Refuse trail-leaving operations on changes not owned by the authenticated account",
+          "format": "boolean",
+          "name": "GERRIT_MCP_OWN_CHANGES_ONLY"
+        },
+        {
+          "default": "false",
+          "description": "Enable review notifications: poll Gerrit for activity on subscribed changes and push it into the agent's session (requires a client with channel support)",
+          "format": "boolean",
+          "name": "GERRIT_MCP_REVIEW_NOTIFICATIONS"
+        },
+        {
+          "default": "60s",
+          "description": "Poll cadence for subscribed changes, as a Go duration",
+          "name": "GERRIT_MCP_REVIEW_NOTIFICATIONS_POLL_INTERVAL"
+        },
+        {
+          "default": "false",
+          "description": "Keep the authenticated account's own activity in review notifications",
+          "format": "boolean",
+          "name": "GERRIT_MCP_REVIEW_NOTIFICATIONS_INCLUDE_OWN"
+        },
+        {
+          "description": "Comma-separated usernames or numeric account IDs whose activity never becomes a review notification",
+          "name": "GERRIT_MCP_REVIEW_NOTIFICATIONS_EXCLUDE_ACCOUNTS"
+        },
+        {
+          "description": "Comma-separated regular expressions; matching message or comment text never becomes a review notification",
+          "name": "GERRIT_MCP_REVIEW_NOTIFICATIONS_EXCLUDE_PATTERNS"
+        }
+      ],
+      "identifier": "ghcr.io/gaijinentertainment/go-gerrit-mcp:1.1.3",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "814e66e659",
+    "published_at": "2026-07-15T13:20:47.723039Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "team.gaijin/go-gerrit-mcp",
+    "server_version": "1.1.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-15T13:20:47.723039Z"
+  },
+  "title": "Gerrit Code Review",
+  "type": "mcp_server",
+  "version": "1.1.3"
+}

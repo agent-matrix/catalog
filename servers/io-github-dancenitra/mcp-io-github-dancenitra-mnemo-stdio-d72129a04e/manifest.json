@@ -1,0 +1,73 @@
+{
+  "description": "Self-correcting agent memory + MCP server: recall, supersede/revert/review corrections, erasure.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:28+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-DanceNitra-mnemo.stdio.d72129a04e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/DanceNitra/mnemo",
+    "homepage": "https://github.com/DanceNitra/mnemo",
+    "repository": "https://github.com/DanceNitra/mnemo"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "agora-mnemo==1.12.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.DanceNitra/mnemo",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the JSON memory file the server persists to (defaults to ./mnemo_memory.json).",
+          "format": "string",
+          "name": "MNEMO_PATH"
+        },
+        {
+          "description": "1 (default) blocks a restated retired value from resurrecting a corrected fact; 0 = legacy keyed supersession.",
+          "format": "string",
+          "name": "MNEMO_ECHO_GUARD"
+        },
+        {
+          "description": "Optional OpenAI-compatible /embeddings endpoint for SEMANTIC recall (e.g. http://localhost:11434/v1/embeddings for local Ollama). Unset = deterministic lexical recall.",
+          "format": "string",
+          "name": "MNEMO_EMBED_URL"
+        },
+        {
+          "description": "Embedding model id used with MNEMO_EMBED_URL (default: text-embedding-3-small; for Ollama use e.g. nomic-embed-text).",
+          "format": "string",
+          "name": "MNEMO_EMBED_MODEL"
+        }
+      ],
+      "identifier": "agora-mnemo",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.12.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d72129a04e",
+    "published_at": "2026-07-18T17:07:02.194631Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.DanceNitra/mnemo",
+    "server_version": "1.12.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-18T17:07:02.194631Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.12.1"
+}

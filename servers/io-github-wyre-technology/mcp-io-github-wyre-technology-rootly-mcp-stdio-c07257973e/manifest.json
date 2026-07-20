@@ -1,0 +1,77 @@
+{
+  "description": "MCP server for Rootly \u2014 incidents, alerts, escalations, and post-incident reports.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:50:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wyre-technology-rootly-mcp.stdio.c07257973e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wyre-technology/rootly-mcp",
+    "homepage": "https://github.com/wyre-technology/rootly-mcp",
+    "repository": "https://github.com/wyre-technology/rootly-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-technology/rootly-mcp:v1.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wyre-technology/rootly-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Rootly API token (Bearer credential)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ROOTLY_API_TOKEN"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode for the server. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-technology/rootly-mcp:v1.2.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "c07257973e",
+    "published_at": "2026-07-17T23:20:41.132906Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wyre-technology/rootly-mcp",
+    "server_version": "1.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-17T23:20:41.132906Z"
+  },
+  "title": "Rootly",
+  "type": "mcp_server",
+  "version": "1.2.0"
+}

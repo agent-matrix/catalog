@@ -1,0 +1,100 @@
+{
+  "description": "Production-proven Polymarket CLOB V2 trading and data. Fail-closed fills; keys stay local.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-crp4222-pmq.stdio.607bdd70bc",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/crp4222/pmq",
+    "homepage": "https://github.com/crp4222/pmq",
+    "repository": "https://github.com/crp4222/pmq"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "pmquant==0.7.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.crp4222/pmq",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Set to 1 to register the LIVE trading tools (fak_buy, fak_sell, cancel_and_reconcile). Overridden by PMQ_MCP_PAPER=1; with neither set the server is read-only.",
+          "name": "PMQ_MCP_LIVE"
+        },
+        {
+          "description": "Set to 1 for paper trading: trading tools simulate displayed top-of-book fills against real books. No keys or exchange orders. Wins over PMQ_MCP_LIVE.",
+          "name": "PMQ_MCP_PAPER"
+        },
+        {
+          "description": "Initial paper balance in USD when a new state file is created (default 1000). Only relevant when PMQ_MCP_PAPER=1.",
+          "name": "PMQ_MCP_PAPER_USD"
+        },
+        {
+          "description": "Per-order hard cap in USD enforced before any buy, live and paper alike (default 10).",
+          "name": "PMQ_MCP_MAX_USD"
+        },
+        {
+          "description": "Durable cumulative BUY budget per UTC day (off when unset). Unknown live results retain the requested reservation through that UTC day.",
+          "name": "PMQ_MCP_DAILY_USD"
+        },
+        {
+          "description": "Local durable paper-ledger and daily-budget file. Defaults to $XDG_STATE_HOME/pmq or ~/.local/state/pmq; it contains no key material.",
+          "name": "PMQ_MCP_STATE_FILE"
+        },
+        {
+          "description": "EOA private key used only to sign orders locally when trading tools are enabled. Never printed or transmitted. Not needed for the read-only tools.",
+          "isSecret": true,
+          "name": "POLY_PRIVATE_KEY"
+        },
+        {
+          "description": "Funder wallet address. Required with signature_type > 0 (deposit wallets); also an optional default for public account_portfolio reads.",
+          "name": "POLY_FUNDER"
+        },
+        {
+          "description": "Polymarket signature type: 0 EOA, 1 POLY_PROXY, 2 POLY_GNOSIS_SAFE, 3 POLY_1271 (app deposit wallet). Run pmq-doctor if unsure.",
+          "name": "POLY_SIG_TYPE"
+        },
+        {
+          "description": "Append-only file of this server's own order ids. Enables order attribution when several senders share one wallet: account totals then count only orders placed through this server. Optional; without it behavior is unchanged.",
+          "name": "POLY_ORDER_LOG"
+        },
+        {
+          "description": "Colon-separated registry files of the wallet's other order-senders. Reconciliation claims trades unknown to every registry. Sound only if every sender on the wallet keeps a registry.",
+          "name": "POLY_FOREIGN_ORDER_LOGS"
+        }
+      ],
+      "identifier": "pmquant",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.7.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "607bdd70bc",
+    "published_at": "2026-07-14T17:04:41.075781Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.crp4222/pmq",
+    "server_version": "0.7.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-14T17:04:41.075781Z"
+  },
+  "title": "pmq (Polymarket CLOB V2)",
+  "type": "mcp_server",
+  "version": "0.7.1"
+}

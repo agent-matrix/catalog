@@ -1,0 +1,191 @@
+{
+  "description": "Single exec tool running caller Python in a network-isolated locked-down sandbox.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:51+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-inhuman-mcp-exec.stdio.ecdcbd0a38",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/inhuman/mcp-exec",
+    "homepage": "https://github.com/inhuman/mcp-exec",
+    "repository": "https://github.com/inhuman/mcp-exec"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "No network for the sandbox (stdio posture).",
+            "name": "--network",
+            "type": "named",
+            "value": "none"
+          },
+          {
+            "description": "Read-only root filesystem.",
+            "name": "--read-only",
+            "type": "named"
+          },
+          {
+            "description": "Drop all Linux capabilities.",
+            "name": "--cap-drop",
+            "type": "named",
+            "value": "ALL"
+          },
+          {
+            "description": "Block privilege escalation.",
+            "name": "--security-opt",
+            "type": "named",
+            "value": "no-new-privileges"
+          },
+          {
+            "description": "Run as the non-root sandbox user.",
+            "name": "--user",
+            "type": "named",
+            "value": "65532:65532"
+          },
+          {
+            "description": "Writable ephemeral workspace (rootfs is read-only).",
+            "name": "--tmpfs",
+            "type": "named",
+            "value": "/tmp:rw,noexec,nosuid,size=64m"
+          },
+          {
+            "description": "Memory limit.",
+            "name": "--memory",
+            "type": "named",
+            "value": "256m"
+          },
+          {
+            "description": "PID limit.",
+            "name": "--pids-limit",
+            "type": "named",
+            "value": "128"
+          },
+          {
+            "description": "CPU limit.",
+            "name": "--cpus",
+            "type": "named",
+            "value": "1"
+          },
+          "docker.io/idconstruct/mcp-exec:v0.5.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.inhuman/mcp-exec",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "stdio",
+          "description": "MCP transport. Must be 'stdio' for direct docker/stdio use.",
+          "name": "MCP_EXEC_TRANSPORT"
+        },
+        {
+          "default": "30",
+          "description": "Default wall-clock timeout per exec, seconds.",
+          "name": "MCP_EXEC_DEFAULT_TIMEOUT_S"
+        },
+        {
+          "default": "300",
+          "description": "Maximum wall-clock timeout a caller may request, seconds.",
+          "name": "MCP_EXEC_MAX_TIMEOUT_S"
+        },
+        {
+          "default": "1048576",
+          "description": "Cap on combined stdout/stderr before truncation.",
+          "name": "MCP_EXEC_MAX_OUTPUT_BYTES"
+        },
+        {
+          "default": "1048576",
+          "description": "Cap on stdin passed to the sandboxed code.",
+          "name": "MCP_EXEC_MAX_STDIN_BYTES"
+        },
+        {
+          "description": "Optional X-MCP-AUTH token (http/sse transports only).",
+          "isSecret": true,
+          "name": "MCP_EXEC_AUTH_TOKEN"
+        }
+      ],
+      "identifier": "docker.io/idconstruct/mcp-exec:v0.5.2",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "No network for the sandbox (stdio posture).",
+          "name": "--network",
+          "type": "named",
+          "value": "none"
+        },
+        {
+          "description": "Read-only root filesystem.",
+          "name": "--read-only",
+          "type": "named"
+        },
+        {
+          "description": "Drop all Linux capabilities.",
+          "name": "--cap-drop",
+          "type": "named",
+          "value": "ALL"
+        },
+        {
+          "description": "Block privilege escalation.",
+          "name": "--security-opt",
+          "type": "named",
+          "value": "no-new-privileges"
+        },
+        {
+          "description": "Run as the non-root sandbox user.",
+          "name": "--user",
+          "type": "named",
+          "value": "65532:65532"
+        },
+        {
+          "description": "Writable ephemeral workspace (rootfs is read-only).",
+          "name": "--tmpfs",
+          "type": "named",
+          "value": "/tmp:rw,noexec,nosuid,size=64m"
+        },
+        {
+          "description": "Memory limit.",
+          "name": "--memory",
+          "type": "named",
+          "value": "256m"
+        },
+        {
+          "description": "PID limit.",
+          "name": "--pids-limit",
+          "type": "named",
+          "value": "128"
+        },
+        {
+          "description": "CPU limit.",
+          "name": "--cpus",
+          "type": "named",
+          "value": "1"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "ecdcbd0a38",
+    "published_at": "2026-07-17T15:47:39.159109Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.inhuman/mcp-exec",
+    "server_version": "0.5.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-17T15:47:39.159109Z"
+  },
+  "title": "Exec Sandbox",
+  "type": "mcp_server",
+  "version": "0.5.2"
+}

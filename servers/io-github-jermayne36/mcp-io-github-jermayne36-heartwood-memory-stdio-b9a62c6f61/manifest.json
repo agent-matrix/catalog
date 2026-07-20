@@ -1,0 +1,72 @@
+{
+  "description": "Governed agent recall with signed provenance and policy gates. BUSL-1.1; not OSI open source.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:52+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-jermayne36-heartwood-memory.stdio.b9a62c6f61",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jermayne36/heartwood-memory",
+    "homepage": "https://github.com/jermayne36/heartwood-memory",
+    "repository": "https://github.com/jermayne36/heartwood-memory"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "heartwood-memory==0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.jermayne36/heartwood-memory",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the local Heartwood SQLite database.",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "HEARTWOOD_DB_PATH",
+          "placeholder": "heartwood.db"
+        },
+        {
+          "default": "tenant:default",
+          "description": "Tenant identifier used to isolate memories.",
+          "name": "HEARTWOOD_TENANT"
+        },
+        {
+          "default": "recall,explain_recall,health",
+          "description": "Comma-separated MCP tool allowlist; the default is read-only.",
+          "name": "HEARTWOOD_MCP_ALLOWED_TOOLS"
+        }
+      ],
+      "identifier": "heartwood-memory",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b9a62c6f61",
+    "published_at": "2026-07-16T18:35:50.99516Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.jermayne36/heartwood-memory",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-16T18:35:50.99516Z"
+  },
+  "title": "Heartwood Memory",
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

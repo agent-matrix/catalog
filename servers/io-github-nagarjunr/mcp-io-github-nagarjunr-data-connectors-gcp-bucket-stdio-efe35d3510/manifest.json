@@ -1,0 +1,76 @@
+{
+  "description": "Read-only MCP server for GCP Cloud Storage: list objects in a bucket.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:58+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nagarjunr-data-connectors-gcp-bucket.stdio.efe35d3510",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nagarjunr/data-connectors-for-ai-agents",
+    "homepage": "https://github.com/nagarjunr/data-connectors-for-ai-agents",
+    "repository": "https://github.com/nagarjunr/data-connectors-for-ai-agents"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "data-connectors-ai==0.1.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nagarjunr/data-connectors-gcp-bucket",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "GCS bucket name",
+          "isRequired": true,
+          "name": "GCP_BUCKET_NAME"
+        },
+        {
+          "description": "Path to a GCP service account JSON key (read-only storage role recommended)",
+          "isRequired": true,
+          "name": "GOOGLE_APPLICATION_CREDENTIALS"
+        }
+      ],
+      "identifier": "data-connectors-ai",
+      "packageArguments": [
+        {
+          "name": "--from",
+          "type": "named",
+          "value": "data-connectors-ai[gcp,mcp]==0.1.5"
+        },
+        {
+          "type": "positional",
+          "value": "data-connectors-gcp-bucket-mcp"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "efe35d3510",
+    "published_at": "2026-07-17T18:25:17.105893Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nagarjunr/data-connectors-gcp-bucket",
+    "server_version": "0.1.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-17T18:25:17.105893Z"
+  },
+  "title": "GCP Bucket Connector",
+  "type": "mcp_server",
+  "version": "0.1.5"
+}

@@ -1,0 +1,77 @@
+{
+  "description": "Unofficial MCP server for Karbon practice management: contacts, work, time, invoices, payments.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Mad-Man-Dan-karbon-mcp-server.stdio.c40c2a03df",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Mad-Man-Dan/karbon-mcp-server",
+    "homepage": "https://github.com/Mad-Man-Dan/karbon-mcp-server",
+    "repository": "https://github.com/Mad-Man-Dan/karbon-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "karbon-mcp-server@0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Mad-Man-Dan/karbon-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Bearer token (Application Authorization Token) from Karbon \u2192 Settings \u2192 Connected Apps \u2192 API Applications",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "KARBON_BEARER_TOKEN"
+        },
+        {
+          "description": "Access key (JWT starting with 'ey') from Karbon \u2192 Settings \u2192 Connected Apps \u2192 API Applications",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "KARBON_ACCESS_KEY"
+        },
+        {
+          "description": "Set to 'true' to disable all create/update tools (they are not registered at all)",
+          "format": "string",
+          "name": "KARBON_READ_ONLY"
+        },
+        {
+          "description": "Set to 'true' to enable the payment write tools (create/delete/reverse manual payments); off by default",
+          "format": "string",
+          "name": "KARBON_ALLOW_PAYMENT_WRITES"
+        }
+      ],
+      "identifier": "karbon-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c40c2a03df",
+    "published_at": "2026-07-16T04:19:26.989592Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Mad-Man-Dan/karbon-mcp-server",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-16T04:19:26.989592Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

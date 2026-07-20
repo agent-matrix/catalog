@@ -1,0 +1,113 @@
+{
+  "description": "MCP server for Salesforce CRM \u2014 Accounts, Contacts, Opportunities, Leads, Cases.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:50:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wyre-technology-salesforce-mcp.stdio.a196bd653a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wyre-technology/salesforce-mcp",
+    "homepage": "https://github.com/wyre-technology/salesforce-mcp",
+    "repository": "https://github.com/wyre-technology/salesforce-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-technology/salesforce-mcp:v1.0.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wyre-technology/salesforce-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway. Set to 'env' for stdio/local use.",
+          "format": "string",
+          "isRequired": true,
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "client_credentials",
+          "description": "Salesforce auth flow: 'client_credentials' (default, requires a Connected App with Client Credentials Flow enabled) or 'username_password' (fallback).",
+          "format": "string",
+          "name": "SALESFORCE_AUTH_FLOW"
+        },
+        {
+          "description": "Connected App consumer key. Required when SALESFORCE_AUTH_FLOW=client_credentials.",
+          "format": "string",
+          "isRequired": true,
+          "name": "SALESFORCE_CLIENT_ID"
+        },
+        {
+          "description": "Connected App consumer secret. Required when SALESFORCE_AUTH_FLOW=client_credentials.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SALESFORCE_CLIENT_SECRET"
+        },
+        {
+          "description": "Salesforce org's My Domain URL (e.g. https://yourorg.my.salesforce.com). Required when SALESFORCE_AUTH_FLOW=client_credentials.",
+          "format": "string",
+          "isRequired": true,
+          "name": "SALESFORCE_INSTANCE_URL"
+        },
+        {
+          "description": "Salesforce username. Only used when SALESFORCE_AUTH_FLOW=username_password.",
+          "format": "string",
+          "name": "SALESFORCE_USERNAME"
+        },
+        {
+          "description": "Salesforce password. Only used when SALESFORCE_AUTH_FLOW=username_password.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SALESFORCE_PASSWORD"
+        },
+        {
+          "description": "Salesforce security token. Only used when SALESFORCE_AUTH_FLOW=username_password; optional if the org has IP allowlisting configured instead.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SALESFORCE_TOKEN"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode for the server. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-technology/salesforce-mcp:v1.0.2",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "a196bd653a",
+    "published_at": "2026-07-19T00:53:59.342059Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wyre-technology/salesforce-mcp",
+    "server_version": "1.0.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-19T00:53:59.342059Z"
+  },
+  "title": "Salesforce",
+  "type": "mcp_server",
+  "version": "1.0.2"
+}

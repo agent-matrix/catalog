@@ -1,0 +1,106 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/inhuman/mcp-ssh-fleet:0.1.2"
+      }
+    }
+  ],
+  "description": "Curated ssh_probe diagnostics and single-host ssh_exec over an allowlisted SSH fleet.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:51+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/inhuman/mcp-ssh-fleet",
+  "id": "tool.io-github-inhuman-mcp-ssh-fleet.655fc58736",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/inhuman/mcp-ssh-fleet",
+    "homepage": "https://github.com/inhuman/mcp-ssh-fleet",
+    "repository": "https://github.com/inhuman/mcp-ssh-fleet"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Curated ssh_probe diagnostics and single-host ssh_exec over an allowlisted SSH fleet.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.inhuman/mcp-ssh-fleet",
+      "request_type": "POST",
+      "url": "https://github.com/inhuman/mcp-ssh-fleet"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Mount the host inventory allowlist (YAML), read-only.",
+            "isRequired": true,
+            "name": "-v",
+            "type": "named",
+            "value": "{inventory_path}:/etc/ssh-fleet/inventory.yaml:ro",
+            "variables": {
+              "inventory_path": {
+                "description": "Absolute path to your inventory.yaml on the host (see deploy/inventory.example.yaml).",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          {
+            "description": "Mount the private SSH key, read-only.",
+            "isRequired": true,
+            "name": "-v",
+            "type": "named",
+            "value": "{key_path}:/etc/ssh-fleet/id_ed25519:ro",
+            "variables": {
+              "key_path": {
+                "description": "Absolute path to the private SSH key on the host.",
+                "format": "filepath",
+                "isRequired": true,
+                "isSecret": true
+              }
+            }
+          },
+          "ghcr.io/inhuman/mcp-ssh-fleet:0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.inhuman/mcp-ssh-fleet",
+  "provenance": {
+    "identity_key": "0fb9c7c208",
+    "promoted_from": "mcp.io-github-inhuman-mcp-ssh-fleet.stdio.0fb9c7c208",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.inhuman/mcp-ssh-fleet",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-inhuman-mcp-ssh-fleet.stdio.0fb9c7c208",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/inhuman/mcp-ssh-fleet",
+  "summary": "Curated ssh_probe diagnostics and single-host ssh_exec over an allowlisted SSH fleet.",
+  "tags": [
+    "curated",
+    "diagnostics",
+    "exec",
+    "fleet",
+    "host",
+    "probe",
+    "single",
+    "ssh"
+  ],
+  "title": "SSH Fleet",
+  "type": "tool",
+  "version": "0.1.2"
+}

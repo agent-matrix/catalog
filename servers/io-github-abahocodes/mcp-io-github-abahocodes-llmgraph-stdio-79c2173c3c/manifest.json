@@ -1,0 +1,66 @@
+{
+  "description": "Invoke deployed LLMGraph no-code LLM workflows (chat, RAG, automations) as MCP tools.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:35+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-abahocodes-llmgraph.stdio.79c2173c3c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/abahocodes/llmgraph-mcp-server",
+    "homepage": "https://github.com/abahocodes/llmgraph-mcp-server",
+    "repository": "https://github.com/abahocodes/llmgraph-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@llmgraph/mcp-server@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.abahocodes/llmgraph",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Full deployment endpoint URL from the LLMGraph dashboard, e.g. https://llmgraph.ai/api/<graph_id>/<environment>",
+          "format": "string",
+          "isRequired": true,
+          "name": "LLMGRAPH_ENDPOINT"
+        },
+        {
+          "description": "API key for the deployment",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "LLMGRAPH_API_KEY"
+        }
+      ],
+      "identifier": "@llmgraph/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "79c2173c3c",
+    "published_at": "2026-07-15T02:03:53.146211Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.abahocodes/llmgraph",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-15T02:03:53.146211Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

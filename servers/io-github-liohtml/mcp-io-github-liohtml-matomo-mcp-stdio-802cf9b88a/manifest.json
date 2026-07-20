@@ -1,0 +1,70 @@
+{
+  "description": "Curated read-only Matomo Analytics tools: traffic, pages, referrers, e-commerce, real-time & more.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Liohtml-matomo-mcp.stdio.802cf9b88a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Liohtml/matomo-mcp",
+    "homepage": "https://github.com/Liohtml/matomo-mcp",
+    "repository": "https://github.com/Liohtml/matomo-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/liohtml/matomo-mcp:v0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Liohtml/matomo-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Matomo instance URL, e.g. https://matomo.example.com",
+          "format": "string",
+          "isRequired": true,
+          "name": "MATOMO_URL"
+        },
+        {
+          "description": "Matomo API token (token_auth) with view access",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "MATOMO_TOKEN"
+        },
+        {
+          "description": "Optional default site ID so tools don't require an explicit site_id",
+          "format": "number",
+          "name": "MATOMO_DEFAULT_SITE_ID"
+        }
+      ],
+      "identifier": "ghcr.io/liohtml/matomo-mcp:v0.1.2",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "802cf9b88a",
+    "published_at": "2026-07-17T06:40:57.041886Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Liohtml/matomo-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-17T06:40:57.041886Z"
+  },
+  "title": "Matomo Analytics",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

@@ -1,0 +1,96 @@
+{
+  "description": "LLM-operable Midjourney pipeline: 21 MCP tools to compose, generate, curate with vision, and log.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:54+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-laffeyp-cascade-img.stdio.d6da299505",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/laffeyp/cascade-img",
+    "homepage": "https://github.com/laffeyp/cascade-img",
+    "repository": "https://github.com/laffeyp/cascade-img"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "name": "--from",
+            "type": "named",
+            "value": "cascade-img"
+          },
+          {
+            "type": "positional",
+            "value": "cascade-mcp"
+          },
+          "cascade-img==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.laffeyp/cascade-img",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Discord user-account token the bridge daemon uses to talk to Midjourney (captured from the Discord desktop app; see RUNBOOK.md).",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DISCORD_USER_TOKEN"
+        },
+        {
+          "description": "Discord channel ID where the Midjourney bot runs.",
+          "isRequired": true,
+          "name": "MJ_CHANNEL_ID"
+        },
+        {
+          "description": "Version token for Midjourney's /imagine slash command, captured from Discord.",
+          "isRequired": true,
+          "name": "MJ_IMAGINE_VERSION"
+        },
+        {
+          "default": "http://127.0.0.1:5000",
+          "description": "URL of the running cascade-mj-bridge daemon that cascade-mcp forwards to.",
+          "name": "CASCADE_BRIDGE_URL"
+        }
+      ],
+      "identifier": "cascade-img",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "name": "--from",
+          "type": "named",
+          "value": "cascade-img"
+        },
+        {
+          "type": "positional",
+          "value": "cascade-mcp"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d6da299505",
+    "published_at": "2026-07-16T00:47:56.516839Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.laffeyp/cascade-img",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-16T00:47:56.516839Z"
+  },
+  "title": "cascade-img",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

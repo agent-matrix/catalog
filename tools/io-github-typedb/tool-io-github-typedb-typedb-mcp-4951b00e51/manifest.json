@@ -1,0 +1,81 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "docker.io/typedb/typedb-mcp:1.0.2"
+      }
+    }
+  ],
+  "description": "Execute TypeQL queries and manage databases and users on a TypeDB server.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:50:08+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/typedb/typedb-mcp-server",
+  "id": "tool.io-github-typedb-typedb-mcp.4951b00e51",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/typedb/typedb-mcp-server",
+    "homepage": "https://github.com/typedb/typedb-mcp-server",
+    "repository": "https://github.com/typedb/typedb-mcp-server"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Execute TypeQL queries and manage databases and users on a TypeDB server.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.typedb/typedb-mcp",
+      "request_type": "POST",
+      "url": "https://github.com/typedb/typedb-mcp-server"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "name": "-p",
+            "type": "named",
+            "value": "8001:8001"
+          },
+          "docker.io/typedb/typedb-mcp:1.0.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.typedb/typedb-mcp",
+  "provenance": {
+    "identity_key": "20620bbad9",
+    "promoted_from": "mcp.io-github-typedb-typedb-mcp.stdio.20620bbad9",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.typedb/typedb-mcp",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-typedb-typedb-mcp.stdio.20620bbad9",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/typedb/typedb-mcp-server",
+  "summary": "Execute TypeQL queries and manage databases and users on a TypeDB server.",
+  "tags": [
+    "databases",
+    "execute",
+    "manage",
+    "queries",
+    "typedb",
+    "typeql",
+    "users"
+  ],
+  "title": "TypeDB",
+  "type": "tool",
+  "version": "1.0.2"
+}

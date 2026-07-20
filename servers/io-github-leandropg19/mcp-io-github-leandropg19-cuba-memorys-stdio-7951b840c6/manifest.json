@@ -1,0 +1,90 @@
+{
+  "description": "Persistent memory MCP server. 25 tools, BM25+MMR+OOD retrieval, CFR-21 audit, knowledge graph.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-LeandroPG19-cuba-memorys.stdio.7951b840c6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/LeandroPG19/cuba-memorys",
+    "homepage": "https://github.com/LeandroPG19/cuba-memorys",
+    "repository": "https://github.com/LeandroPG19/cuba-memorys"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "cuba-memorys@0.14.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.LeandroPG19/cuba-memorys",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "PostgreSQL connection URL (e.g. postgresql://user:pass@localhost:5432/brain)",
+          "format": "string",
+          "isRequired": true,
+          "name": "DATABASE_URL"
+        },
+        {
+          "description": "Set to 'off' to disable v0.8 project scoping filters (admin/debug only).",
+          "format": "string",
+          "name": "CUBA_PROJECT_FILTER"
+        },
+        {
+          "description": "Directory used by cuba_sync export/import (default ./.cuba-memorys/).",
+          "format": "string",
+          "name": "CUBA_SYNC_DIR"
+        },
+        {
+          "description": "cuba_juez backend selector: claude_cli | anthropic_api | heuristic | auto (default auto).",
+          "format": "string",
+          "name": "CUBA_JUDGE"
+        },
+        {
+          "description": "Subprocess CLI used by ClaudeCodeJudge (default 'claude').",
+          "format": "string",
+          "name": "CUBA_JUEZ_CLI"
+        },
+        {
+          "description": "Model name passed to the judge backend (default 'claude-haiku-4-5').",
+          "format": "string",
+          "name": "CUBA_JUEZ_MODEL"
+        },
+        {
+          "description": "API key for AnthropicApiJudge (only used when feature 'anthropic-api' is built in).",
+          "format": "string",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        }
+      ],
+      "identifier": "cuba-memorys",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.14.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7951b840c6",
+    "published_at": "2026-07-15T16:41:24.156213Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.LeandroPG19/cuba-memorys",
+    "server_version": "0.14.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-15T16:41:24.156213Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.14.1"
+}

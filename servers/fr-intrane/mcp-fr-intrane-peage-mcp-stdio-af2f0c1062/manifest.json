@@ -1,0 +1,63 @@
+{
+  "description": "Give your agent a prepaid fiat wallet: pay any API per call in cents, no crypto, spend caps.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:23+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.fr-intrane-peage-mcp.stdio.af2f0c1062",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/javimosch/peage-mcp",
+    "homepage": "https://github.com/javimosch/peage-mcp",
+    "repository": "https://github.com/javimosch/peage-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "fr.intrane/peage-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Rail instance to target (default https://peage.intrane.fr). Point at a self-hosted or staging rail.",
+          "format": "string",
+          "name": "PEAGE_URL"
+        },
+        {
+          "description": "Existing wallet token (pw_...). If unset, peage_setup mints one and stores it at ~/.peage-mcp.json.",
+          "format": "string",
+          "isSecret": true,
+          "name": "PEAGE_WALLET_TOKEN"
+        }
+      ],
+      "fileSha256": "4d75a2a1b981a9bd2e99b88f6d1cf53b3c536f0494b5a6198d419682160bd66a",
+      "identifier": "https://github.com/javimosch/peage-mcp/releases/download/v0.1.3/peage-mcp-darwin-universal.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "af2f0c1062",
+    "published_at": "2026-07-18T18:33:00.582667Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "fr.intrane/peage-mcp",
+    "server_version": "0.1.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-18T18:33:00.582667Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.3"
+}

@@ -1,0 +1,64 @@
+{
+  "description": "Agent-native cold-email infrastructure: domains, mailboxes, warmup, sequences, replies via 17 tools",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:35+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-YS-projectcalc-agent-cold-email.stdio.3150215064",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/YS-projectcalc/agent-cold-email",
+    "homepage": "https://github.com/YS-projectcalc/agent-cold-email",
+    "repository": "https://github.com/YS-projectcalc/agent-cold-email"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "agent-cold-email@0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.YS-projectcalc/agent-cold-email",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Bearer token from POST /signup (free, no card) \u2014 or run `npx agent-cold-email demo` first. Optional at startup: without it, `initialize`/`tools/list` still work (unauthenticated introspection), but every `tools/call` fails until a key is set.",
+          "format": "string",
+          "isSecret": true,
+          "name": "AGENT_COLD_EMAIL_API_KEY"
+        },
+        {
+          "description": "Override the API base URL (default: https://agent-cold-email-api.yaakovscher.workers.dev)",
+          "format": "string",
+          "name": "AGENT_COLD_EMAIL_BASE_URL"
+        }
+      ],
+      "identifier": "agent-cold-email",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "3150215064",
+    "published_at": "2026-07-15T14:49:31.550098Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.YS-projectcalc/agent-cold-email",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-15T14:49:31.550098Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

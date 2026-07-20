@@ -1,0 +1,99 @@
+{
+  "description": "IT Glue MCP server for MSPs \u2014 documents, flexible assets, semantic vector search, RBAC, and BYOK",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:58+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mspstack-mcp-itglue.stdio.c201d8e387",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mspstack/mcp-itglue",
+    "homepage": "https://github.com/mspstack/mcp-itglue",
+    "repository": "https://github.com/mspstack/mcp-itglue"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-itglue@0.4.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mspstack/mcp-itglue",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "IT Glue API key (Account \u2192 Settings \u2192 API Keys)",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ITGLUE_API_KEY"
+        },
+        {
+          "default": "us",
+          "description": "IT Glue region: us, eu, or au",
+          "name": "ITGLUE_REGION"
+        },
+        {
+          "description": "Full API base URL (overrides ITGLUE_REGION)",
+          "name": "ITGLUE_BASE_URL"
+        },
+        {
+          "description": "OpenAI API key \u2014 enables semantic vector search tools",
+          "isSecret": true,
+          "name": "OPENAI_API_KEY"
+        },
+        {
+          "description": "Azure OpenAI API key \u2014 enables vector search via Azure (requires AZURE_OPENAI_ENDPOINT)",
+          "isSecret": true,
+          "name": "AZURE_OPENAI_API_KEY"
+        },
+        {
+          "description": "Azure OpenAI endpoint URL",
+          "name": "AZURE_OPENAI_ENDPOINT"
+        },
+        {
+          "default": "text-embedding-3-small",
+          "description": "Embedding model or Azure deployment name",
+          "name": "EMBEDDING_MODEL"
+        },
+        {
+          "default": "false",
+          "description": "true/1 registers the advanced toolset (itglue_get, itglue_find_endpoint) \u2014 an opt-in read-only escape hatch; password resources stay blocked",
+          "name": "ITGLUE_ADVANCED_TOOLSET"
+        },
+        {
+          "default": "./vector-index.json",
+          "description": "Path of the persisted vector index file",
+          "name": "VECTOR_INDEX_PATH"
+        }
+      ],
+      "identifier": "mcp-itglue",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c201d8e387",
+    "published_at": "2026-07-16T10:22:59.628381Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mspstack/mcp-itglue",
+    "server_version": "0.4.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-16T10:22:59.628381Z"
+  },
+  "title": "IT Glue",
+  "type": "mcp_server",
+  "version": "0.4.1"
+}

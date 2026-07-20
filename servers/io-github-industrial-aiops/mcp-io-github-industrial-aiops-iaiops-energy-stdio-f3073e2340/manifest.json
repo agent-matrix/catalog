@@ -1,0 +1,64 @@
+{
+  "description": "Industrial-AIOps energy edition: IEC-104/DNP3/IEC-61850 read-only OT connectors on iaiops.core.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:51+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-industrial-aiops-iaiops-energy.stdio.f3073e2340",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/industrial-aiops/industrial-aiops-energy",
+    "homepage": "https://github.com/industrial-aiops/industrial-aiops-energy",
+    "repository": "https://github.com/industrial-aiops/industrial-aiops-energy"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "iaiops-energy==0.1.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.industrial-aiops/iaiops-energy",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the iaiops endpoints config YAML (defines IEC-104/DNP3/IEC-61850 targets); omit to use the default location.",
+          "format": "filepath",
+          "name": "IAIOPS_CONFIG"
+        },
+        {
+          "description": "Master password that unlocks the encrypted secret store holding endpoint credentials.",
+          "format": "string",
+          "isSecret": true,
+          "name": "IAIOPS_MASTER_PASSWORD"
+        }
+      ],
+      "identifier": "iaiops-energy",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f3073e2340",
+    "published_at": "2026-07-13T14:02:08.626521Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.industrial-aiops/iaiops-energy",
+    "server_version": "0.1.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-13T14:02:08.626521Z"
+  },
+  "title": "Industrial-AIOps Energy",
+  "type": "mcp_server",
+  "version": "0.1.6"
+}

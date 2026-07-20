@@ -1,0 +1,107 @@
+{
+  "description": "Search ReliefWeb humanitarian reports, disasters, jobs, training, and country profiles via MCP.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:45+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cyanheads-reliefweb-mcp-server.stdio.2e86818525",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cyanheads/reliefweb-mcp-server",
+    "homepage": "https://github.com/cyanheads/reliefweb-mcp-server",
+    "repository": "https://github.com/cyanheads/reliefweb-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "bun",
+          "@cyanheads/reliefweb-mcp-server@0.1.13"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cyanheads/reliefweb-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Pre-approved appname for the ReliefWeb API v2. Required since November 2025.",
+          "format": "string",
+          "isRequired": true,
+          "name": "RELIEFWEB_APP_NAME"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "The hostname for the HTTP server.",
+          "format": "string",
+          "name": "MCP_HTTP_HOST"
+        },
+        {
+          "default": "3010",
+          "description": "The port to run the HTTP server on.",
+          "format": "string",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "default": "/mcp",
+          "description": "The endpoint path for the MCP server.",
+          "format": "string",
+          "name": "MCP_HTTP_ENDPOINT_PATH"
+        },
+        {
+          "description": "Public origin override for deployments behind a TLS-terminating reverse proxy.",
+          "format": "string",
+          "name": "MCP_PUBLIC_URL"
+        },
+        {
+          "default": "none",
+          "description": "Authentication mode to use: 'none', 'jwt', or 'oauth'.",
+          "format": "string",
+          "name": "MCP_AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Sets the minimum log level for output (e.g., 'debug', 'info', 'warn').",
+          "format": "string",
+          "name": "MCP_LOG_LEVEL"
+        }
+      ],
+      "identifier": "@cyanheads/reliefweb-mcp-server",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "start:http"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "bun",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3010/mcp"
+      },
+      "version": "0.1.13"
+    }
+  ],
+  "provenance": {
+    "identity_key": "2e86818525",
+    "published_at": "2026-07-13T17:07:17.499786Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cyanheads/reliefweb-mcp-server",
+    "server_version": "0.1.13",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-13T17:07:17.499786Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.13"
+}

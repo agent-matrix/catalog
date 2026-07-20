@@ -1,0 +1,96 @@
+{
+  "description": "Server ops MCP: logs, monitoring, code edit, Nginx & certs. Local + SSH, confirmations & redaction.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:29+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-GT-dinuo-server-ops-mcp.stdio.01fb66ddeb",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/GT-dinuo/server-ops-mcp",
+    "homepage": "https://github.com/GT-dinuo/server-ops-mcp",
+    "repository": "https://github.com/GT-dinuo/server-ops-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "server-ops-mcp@1.0.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.GT-dinuo/server-ops-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Project root path; all file operations are sandboxed here",
+          "format": "string",
+          "isRequired": true,
+          "name": "OPS_PROJECT_ROOT"
+        },
+        {
+          "description": "Remote server IP / domain; leave empty to run locally",
+          "format": "string",
+          "name": "OPS_SSH_HOST"
+        },
+        {
+          "description": "SSH port, default 22",
+          "format": "string",
+          "name": "OPS_SSH_PORT"
+        },
+        {
+          "description": "SSH username",
+          "format": "string",
+          "name": "OPS_SSH_USER"
+        },
+        {
+          "description": "Path to SSH private key (choose either key or password)",
+          "format": "string",
+          "name": "OPS_SSH_KEY"
+        },
+        {
+          "description": "SSH password (choose either key or password)",
+          "format": "string",
+          "isSecret": true,
+          "name": "OPS_SSH_PASSWORD"
+        },
+        {
+          "description": "Private key passphrase",
+          "format": "string",
+          "isSecret": true,
+          "name": "OPS_SSH_PASSPHRASE"
+        },
+        {
+          "description": "Path to an extra config file (see config.example.json)",
+          "format": "string",
+          "name": "OPS_CONFIG_PATH"
+        }
+      ],
+      "identifier": "server-ops-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "01fb66ddeb",
+    "published_at": "2026-07-16T06:54:47.903783Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.GT-dinuo/server-ops-mcp",
+    "server_version": "1.0.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-16T06:54:47.903783Z"
+  },
+  "title": "Server Ops MCP",
+  "type": "mcp_server",
+  "version": "1.0.3"
+}

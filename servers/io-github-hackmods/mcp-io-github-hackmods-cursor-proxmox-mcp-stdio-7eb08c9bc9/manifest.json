@@ -1,0 +1,65 @@
+{
+  "description": "Manage Proxmox VE via Cursor: QEMU, LXC, storage, HA, firewall, access.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:50+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-hackmods-cursor-proxmox-mcp.stdio.7eb08c9bc9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/hackmods/cursor-proxmox-mcp",
+    "homepage": "https://github.com/hackmods/cursor-proxmox-mcp",
+    "repository": "https://github.com/hackmods/cursor-proxmox-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "cursor-proxmox-mcp==1.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.hackmods/cursor-proxmox-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Absolute path to Proxmox MCP config.json (host, token, SSL).",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "PROXMOX_MCP_CONFIG"
+        },
+        {
+          "description": "API token secret when config uses ${PROXMOX_TOKEN_VALUE}.",
+          "isSecret": true,
+          "name": "PROXMOX_TOKEN_VALUE"
+        }
+      ],
+      "identifier": "cursor-proxmox-mcp",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7eb08c9bc9",
+    "published_at": "2026-07-19T16:37:25.093296Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.hackmods/cursor-proxmox-mcp",
+    "server_version": "1.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-19T16:37:25.093296Z"
+  },
+  "title": "Cursor Proxmox MCP",
+  "type": "mcp_server",
+  "version": "1.2.0"
+}

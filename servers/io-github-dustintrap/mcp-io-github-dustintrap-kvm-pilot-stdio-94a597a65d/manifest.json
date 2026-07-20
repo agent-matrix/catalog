@@ -1,0 +1,80 @@
+{
+  "description": "AI-agent control of physical machines via IP-KVM, Redfish BMC, and SSH: gated, verified, audited.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:28+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-DustinTrap-kvm-pilot.stdio.94a597a65d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/DustinTrap/kvm-pilot",
+    "homepage": "https://github.com/DustinTrap/kvm-pilot",
+    "repository": "https://github.com/DustinTrap/kvm-pilot"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "kvm-pilot==0.1.0b5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.DustinTrap/kvm-pilot",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Profile name from ~/.config/kvm-pilot/config.toml naming the KVM/BMC to target",
+          "name": "KVM_PILOT_PROFILE"
+        },
+        {
+          "description": "Least-privilege posture: only read-only tools are registered; effect gates force-closed. Recommended for first contact (set to 1)",
+          "name": "KVM_PILOT_MCP_READ_ONLY"
+        },
+        {
+          "description": "Rehearsal posture: destructive calls are logged, never sent (set to 1)",
+          "name": "KVM_PILOT_MCP_DRY_RUN"
+        },
+        {
+          "description": "Operator opt-in enabling power control of the managed host (per-effect gate; see also _ALLOW_HID, _ALLOW_MEDIA, _ALLOW_SSH, _ALLOW_APPLIANCE, _ALLOW_EXTERNAL_WRITE)",
+          "name": "KVM_PILOT_MCP_ALLOW_POWER"
+        },
+        {
+          "description": "Device password when not using a config-file profile (KVM_PILOT_HOST / KVM_PILOT_USER accompany it)",
+          "isSecret": true,
+          "name": "KVM_PILOT_PASSWD"
+        },
+        {
+          "description": "Optional: enables server-side vision for classify_screen / wait_for_state; without it, classification falls back to the calling agent",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        }
+      ],
+      "identifier": "kvm-pilot",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0b5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "94a597a65d",
+    "published_at": "2026-07-13T20:39:27.906721Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.DustinTrap/kvm-pilot",
+    "server_version": "0.1.0b5",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-13T20:39:27.906721Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0b5"
+}

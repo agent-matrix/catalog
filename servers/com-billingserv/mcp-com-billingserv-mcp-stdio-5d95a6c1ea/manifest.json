@@ -1,0 +1,68 @@
+{
+  "description": "BillingServ MCP server for customers, invoices, orders, packages, licenses, and revenue reports.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:17+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-billingserv-mcp.stdio.5d95a6c1ea",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/billingserv/mcp",
+    "homepage": "https://github.com/billingserv/mcp",
+    "repository": "https://github.com/billingserv/mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@billingserv/mcp-server@0.1.9"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.billingserv/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "BillingServ API v2 base URL, e.g. https://billing.example.com/api/v2",
+          "isRequired": true,
+          "name": "BILLINGSERV_API_BASE_URL"
+        },
+        {
+          "description": "BillingServ API key",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "BILLINGSERV_API_KEY"
+        },
+        {
+          "description": "Request timeout in milliseconds (default 15000)",
+          "name": "BILLINGSERV_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "@billingserv/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.9"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5d95a6c1ea",
+    "published_at": "2026-07-18T18:27:49.781104Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.billingserv/mcp",
+    "server_version": "0.1.9",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-18T18:27:49.781104Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.9"
+}

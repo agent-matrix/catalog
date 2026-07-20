@@ -1,0 +1,84 @@
+{
+  "description": "An MCP Server to utilize Codelogic's rich software dependency data in your AI programming assistant.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:28+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-CodeLogicIncEngineering-codelogic-mcp-server.stdio.b61e5a6d60",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/CodeLogicIncEngineering/codelogic-mcp-server",
+    "homepage": "https://github.com/CodeLogicIncEngineering/codelogic-mcp-server",
+    "repository": "https://github.com/CodeLogicIncEngineering/codelogic-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "codelogic-mcp-server==1.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.CodeLogicIncEngineering/codelogic-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "url to the CodeLogic server e.g. https://myco.app.codelogic.com",
+          "format": "string",
+          "isRequired": true,
+          "name": "CODELOGIC_SERVER_HOST"
+        },
+        {
+          "description": "CodeLogic server username",
+          "format": "string",
+          "isRequired": true,
+          "name": "CODELOGIC_USERNAME"
+        },
+        {
+          "description": "CodeLogic server password",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CODELOGIC_PASSWORD"
+        },
+        {
+          "description": "the workspace name that your code is scanned into",
+          "format": "string",
+          "isRequired": true,
+          "name": "CODELOGIC_WORKSPACE_NAME"
+        },
+        {
+          "description": "When enabled, additional debug files such as timing_log.txt and impact_data*.json will be generated. Defaults to false",
+          "format": "string",
+          "name": "CODELOGIC_DEBUG_MODE"
+        }
+      ],
+      "identifier": "codelogic-mcp-server",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b61e5a6d60",
+    "published_at": "2026-07-15T13:47:24.729488Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.CodeLogicIncEngineering/codelogic-mcp-server",
+    "server_version": "1.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-15T13:47:24.729488Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.2.0"
+}

@@ -1,0 +1,69 @@
+{
+  "description": "MyAnimeList MCP server: Jikan-powered reads plus official MAL personal-list management.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:29+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Grinv-mal-mcp.stdio.cb24c34b0d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Grinv/mal-mcp",
+    "homepage": "https://github.com/Grinv/mal-mcp",
+    "repository": "https://github.com/Grinv/mal-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mal-mcp@0.4.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Grinv/mal-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "MAL app Client ID (type 'other'). Also enables read-tool resilience with no login. See docs/auth.md.",
+          "isSecret": true,
+          "name": "MAL_CLIENT_ID"
+        },
+        {
+          "description": "OAuth refresh token (one-time auth, docs/auth.md); enables personal-list tools with auto-refresh.",
+          "isSecret": true,
+          "name": "MAL_REFRESH_TOKEN"
+        },
+        {
+          "description": "Advanced: standalone MAL access token. Works ~30 days without refresh; usually leave unset.",
+          "isSecret": true,
+          "name": "MAL_ACCESS_TOKEN"
+        }
+      ],
+      "identifier": "mal-mcp",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "cb24c34b0d",
+    "published_at": "2026-07-17T22:12:59.175711Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Grinv/mal-mcp",
+    "server_version": "0.4.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-17T22:12:59.175711Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.4.1"
+}

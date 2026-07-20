@@ -1,0 +1,60 @@
+{
+  "description": "Trigger security scans and read reports/vulnerabilities via the hosted Scannd API. Free: 2 scans/mo.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:21+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-scannd-scannd.stdio.ca679faef3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/zachforrest/webscannerio",
+    "homepage": "https://github.com/zachforrest/webscannerio",
+    "repository": "https://github.com/zachforrest/webscannerio"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "scannd-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.scannd/scannd",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Scannd API key (starts with sk_). Sent to the hosted API as the X-API-Key header. Get one at https://scannd.com; the free tier includes 2 scans/month.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SCANND_API_KEY"
+        }
+      ],
+      "identifier": "scannd-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ca679faef3",
+    "published_at": "2026-07-15T13:46:48.363248Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.scannd/scannd",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-15T13:46:48.363248Z"
+  },
+  "title": "Scannd",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

@@ -1,0 +1,72 @@
+{
+  "description": "Ask any website's AI concierge a grounded question, and generate the embed to add one to a site.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:59+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nirholas-concierge-mcp.stdio.0f245a539c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nirholas/three.ws",
+    "homepage": "https://github.com/nirholas/three.ws",
+    "repository": "https://github.com/nirholas/three.ws"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@three-ws/concierge-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nirholas/concierge-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://three.ws",
+          "description": "Base URL of the three.ws API that serves POST /api/concierge, and the origin the generated embed snippets point at. Override only when self-hosting or targeting a preview deployment.",
+          "format": "string",
+          "name": "THREE_WS_BASE"
+        },
+        {
+          "default": "45000",
+          "description": "Per-request timeout in milliseconds for the concierge answer call. The answer streams over a free-first LLM chain that can fail over across providers, so the default leaves room for one slow rung.",
+          "format": "number",
+          "name": "THREE_WS_TIMEOUT_MS"
+        },
+        {
+          "default": "12000",
+          "description": "Timeout in milliseconds for fetching a page that concierge_ask grounds its answer in. Separate from the answer timeout so a slow site cannot consume the whole call.",
+          "format": "number",
+          "name": "CONCIERGE_PAGE_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "@three-ws/concierge-mcp",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0f245a539c",
+    "published_at": "2026-07-19T14:47:39.664572Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nirholas/concierge-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-19T14:47:39.664572Z"
+  },
+  "title": "three.ws Concierge",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

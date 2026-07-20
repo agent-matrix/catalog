@@ -1,0 +1,100 @@
+{
+  "description": "Connect AI assistants to GitHub - manage repos, issues, PRs, and workflows through natural language.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:49+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-github-github-mcp-server.stdio.5acb7d7065",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/github/github-mcp-server",
+    "homepage": "https://github.com/github/github-mcp-server",
+    "repository": "https://github.com/github/github-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Publish the OAuth callback port to loopback so the in-container login callback is reachable",
+            "name": "-p",
+            "type": "named",
+            "value": "127.0.0.1:8085:8085"
+          },
+          {
+            "description": "Fixed OAuth callback port, matching the published port above",
+            "name": "-e",
+            "type": "named",
+            "value": "GITHUB_OAUTH_CALLBACK_PORT=8085"
+          },
+          {
+            "description": "Optional GitHub Personal Access Token. Omit to log in with OAuth on first use.",
+            "name": "-e",
+            "type": "named",
+            "value": "GITHUB_PERSONAL_ACCESS_TOKEN={token}",
+            "variables": {
+              "token": {
+                "format": "string",
+                "isSecret": true
+              }
+            }
+          },
+          "ghcr.io/github/github-mcp-server:1.6.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.github/github-mcp-server",
+  "packages": [
+    {
+      "identifier": "ghcr.io/github/github-mcp-server:1.6.0",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "Publish the OAuth callback port to loopback so the in-container login callback is reachable",
+          "name": "-p",
+          "type": "named",
+          "value": "127.0.0.1:8085:8085"
+        },
+        {
+          "description": "Fixed OAuth callback port, matching the published port above",
+          "name": "-e",
+          "type": "named",
+          "value": "GITHUB_OAUTH_CALLBACK_PORT=8085"
+        },
+        {
+          "description": "Optional GitHub Personal Access Token. Omit to log in with OAuth on first use.",
+          "name": "-e",
+          "type": "named",
+          "value": "GITHUB_PERSONAL_ACCESS_TOKEN={token}",
+          "variables": {
+            "token": {
+              "format": "string",
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "5acb7d7065",
+    "published_at": "2026-07-15T12:58:31.999992Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.github/github-mcp-server",
+    "server_version": "1.6.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-15T12:58:31.999992Z"
+  },
+  "title": "GitHub",
+  "type": "mcp_server",
+  "version": "1.6.0"
+}

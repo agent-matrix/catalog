@@ -1,0 +1,56 @@
+{
+  "description": "Append-only decisions with provenance, supersession, retrieval, and audited MCP actions.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:14+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-decisionlog-mcp.sse.258e3930a0",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://www.decisionlog.ai/api/mcp"
+    }
+  },
+  "name": "ai.decisionlog/mcp",
+  "provenance": {
+    "identity_key": "258e3930a0",
+    "published_at": "2026-07-17T04:19:14.368455Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.decisionlog/mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-17T04:19:14.368455Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Registered Decision Log MCP client identifier.",
+          "isRequired": true,
+          "name": "x-mcp-client-id"
+        },
+        {
+          "description": "Bearer authentication using the registered MCP client secret.",
+          "name": "Authorization",
+          "value": "Bearer {mcp_client_secret}",
+          "variables": {
+            "mcp_client_secret": {
+              "description": "Registered Decision Log MCP client secret.",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://www.decisionlog.ai/api/mcp"
+    }
+  ],
+  "title": "Decision Log",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

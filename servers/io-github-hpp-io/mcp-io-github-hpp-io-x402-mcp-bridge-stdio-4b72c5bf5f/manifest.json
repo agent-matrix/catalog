@@ -1,0 +1,75 @@
+{
+  "description": "MCP bridge for autonomous x402 payments in HPP USDC.e \u2014 discover and pay for services per call.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:50+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-hpp-io-x402-mcp-bridge.stdio.4b72c5bf5f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/hpp-io/x402-mcp-bridge",
+    "homepage": "https://github.com/hpp-io/x402-mcp-bridge",
+    "repository": "https://github.com/hpp-io/x402-mcp-bridge"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@hpp-io/x402-mcp-bridge@0.1.8"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.hpp-io/x402-mcp-bridge",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Delegate EOA private key used to sign payments. Auto-created in the OS keychain if unset.",
+          "isSecret": true,
+          "name": "DELEGATE_PRIVATE_KEY"
+        },
+        {
+          "description": "Target network: eip155:181228 (HPP Sepolia, default) or eip155:190415 (HPP Mainnet).",
+          "name": "HPP_NETWORK"
+        },
+        {
+          "description": "Optional upstream MCP server to proxy. Omit to expose only the local tools.",
+          "name": "RESOURCE_SERVER_URL"
+        },
+        {
+          "description": "Safe address for governance (Safe) mode. Set together with ALLOWANCE_MODULE_ADDRESS.",
+          "name": "SAFE_ADDRESS"
+        },
+        {
+          "description": "Safe AllowanceModule address for governance (Safe) mode. Set together with SAFE_ADDRESS.",
+          "name": "ALLOWANCE_MODULE_ADDRESS"
+        }
+      ],
+      "identifier": "@hpp-io/x402-mcp-bridge",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.8"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4b72c5bf5f",
+    "published_at": "2026-07-16T03:28:53.543377Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.hpp-io/x402-mcp-bridge",
+    "server_version": "0.1.8",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-16T03:28:53.543377Z"
+  },
+  "title": "HPP x402 MCP Bridge",
+  "type": "mcp_server",
+  "version": "0.1.8"
+}

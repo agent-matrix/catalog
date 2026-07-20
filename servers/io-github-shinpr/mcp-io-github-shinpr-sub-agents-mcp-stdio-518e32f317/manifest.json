@@ -1,0 +1,118 @@
+{
+  "description": "MCP server for AI sub-agent delegation across Cursor, Claude, Codex, Gemini, GLM, Grok, and OpenCode",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:50:05+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-shinpr-sub-agents-mcp.stdio.518e32f317",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/shinpr/sub-agents-mcp",
+    "homepage": "https://github.com/shinpr/sub-agents-mcp",
+    "repository": "https://github.com/shinpr/sub-agents-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "sub-agents-mcp@0.11.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.shinpr/sub-agents-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Absolute path to the directory containing agent definition files (.md or .txt)",
+          "format": "string",
+          "isRequired": true,
+          "name": "AGENTS_DIR"
+        },
+        {
+          "description": "Type of AI CLI to use: 'cursor', 'claude', 'gemini', 'codex', 'glm', 'grok', or 'opencode'",
+          "format": "string",
+          "isRequired": true,
+          "name": "AGENT_TYPE"
+        },
+        {
+          "description": "Approval/sandbox level for sub-agents: 'read-only', 'safe-edit' (default), or 'yolo'",
+          "format": "string",
+          "name": "AGENT_PERMISSION"
+        },
+        {
+          "description": "Optional model override applied to every sub-agent execution by this MCP server",
+          "format": "string",
+          "name": "AGENT_MODEL"
+        },
+        {
+          "description": "Optional backend-specific reasoning effort or model variant. Supported by codex, claude, glm, grok, and opencode.",
+          "format": "string",
+          "name": "AGENT_EFFORT"
+        },
+        {
+          "description": "API key for cursor-agent authentication (used only when AGENT_TYPE=cursor; passed via env, never via CLI args)",
+          "format": "string",
+          "isSecret": true,
+          "name": "CURSOR_API_KEY"
+        },
+        {
+          "description": "Z.ai API token for AGENT_TYPE=glm (passed to the claude binary via env, never via CLI args). Restart/reconnect the MCP server after changing it.",
+          "format": "string",
+          "isSecret": true,
+          "name": "CLI_API_KEY"
+        },
+        {
+          "description": "Maximum execution time for agents in milliseconds (default: 300000, max: 600000)",
+          "format": "string",
+          "name": "EXECUTION_TIMEOUT_MS"
+        },
+        {
+          "description": "Enable session management to maintain execution history across agent calls (default: false)",
+          "format": "string",
+          "name": "SESSION_ENABLED"
+        },
+        {
+          "description": "Directory path for storing session files (default: .mcp-sessions in current working directory)",
+          "format": "string",
+          "name": "SESSION_DIR"
+        },
+        {
+          "description": "Number of days to retain session history before automatic cleanup (default: 7)",
+          "format": "string",
+          "name": "SESSION_RETENTION_DAYS"
+        },
+        {
+          "description": "Path to CLI settings file/directory. Claude: --settings arg, Cursor: CURSOR_CONFIG_DIR, Codex: CODEX_HOME. Gemini/Grok/OpenCode not supported.",
+          "format": "string",
+          "name": "AGENTS_SETTINGS_PATH"
+        }
+      ],
+      "identifier": "sub-agents-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.11.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "518e32f317",
+    "published_at": "2026-07-14T09:54:45.001455Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.shinpr/sub-agents-mcp",
+    "server_version": "0.11.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-14T09:54:45.001455Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.11.0"
+}

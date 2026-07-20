@@ -1,0 +1,80 @@
+{
+  "description": "MCP server for Sonenta translation management: keys, translations, a11y, and source-health tools.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-sonenta-mcp.stdio.25a9dd6268",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sonenta/tools",
+    "homepage": "https://github.com/sonenta/tools",
+    "repository": "https://github.com/sonenta/tools"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@sonenta/mcp@0.46.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.sonenta/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Sonenta API key (mcp:* scope). If omitted, the server reads it from ~/.sonenta/credentials (run `sonenta login`). Legacy SONENTA_TOKEN / VERBUMIA_API_KEY / VERBUMIA_TOKEN are also accepted.",
+          "isSecret": true,
+          "name": "SONENTA_API_KEY"
+        },
+        {
+          "default": "https://api.sonenta.dev",
+          "description": "API host. Defaults to https://api.sonenta.dev.",
+          "name": "SONENTA_API_BASE"
+        },
+        {
+          "description": "Comma-separated project UUIDs to scope the server to. Optional; use SONENTA_PROJECT for a single project.",
+          "name": "SONENTA_PROJECTS"
+        },
+        {
+          "description": "Optional agent identity \u2014 a short run name that groups this session's work in the Sonenta dashboard.",
+          "name": "SONENTA_AGENT_NAME"
+        },
+        {
+          "description": "Optional agent identity \u2014 the agent kind (e.g. sonenta-i18n, sonenta-a11y).",
+          "name": "SONENTA_AGENT_TYPE"
+        },
+        {
+          "description": "Optional agent identity \u2014 the agent version. Defaults to the server's own version when unset.",
+          "name": "SONENTA_AGENT_VERSION"
+        }
+      ],
+      "identifier": "@sonenta/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.46.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "25a9dd6268",
+    "published_at": "2026-07-17T03:08:33.016816Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.sonenta/mcp",
+    "server_version": "0.46.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-17T03:08:33.016816Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.46.0"
+}

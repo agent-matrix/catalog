@@ -1,0 +1,71 @@
+{
+  "description": "MCP server exposing an Outflow workspace's live architecture graph as context for AI coding agents",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:54+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-laurells-outflow-mcp.stdio.3e6a5b6660",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/laurells/outflow-mcp",
+    "homepage": "https://github.com/laurells/outflow-mcp",
+    "repository": "https://github.com/laurells/outflow-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "outflow-mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.laurells/outflow-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of your running Outflow instance. Defaults to http://localhost:3000 if omitted.",
+          "format": "string",
+          "name": "OUTFLOW_BASE_URL"
+        },
+        {
+          "description": "API key for the workspace to expose. Create one from workspace settings in Outflow (Settings \u2192 API Keys) \u2014 the raw key (ofk_...) is shown once.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OUTFLOW_API_KEY"
+        },
+        {
+          "description": "ID of the workspace to expose. Found in the workspace URL (.../workspace/<id>/...) or workspace settings.",
+          "format": "string",
+          "isRequired": true,
+          "name": "OUTFLOW_WORKSPACE_ID"
+        }
+      ],
+      "identifier": "outflow-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "3e6a5b6660",
+    "published_at": "2026-07-17T15:00:55.18078Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.laurells/outflow-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-17T15:00:55.18078Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

@@ -1,0 +1,83 @@
+{
+  "description": "MCP server for Syncro MSP \u2014 customers, tickets, assets, invoices, and more.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:50:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wyre-technology-syncro-mcp.stdio.7ef0335044",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wyre-technology/syncro-mcp",
+    "homepage": "https://github.com/wyre-technology/syncro-mcp",
+    "repository": "https://github.com/wyre-technology/syncro-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-technology/syncro-mcp:v1.4.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wyre-technology/syncro-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Syncro account subdomain (e.g. 'acme' for acme.syncromsp.com)",
+          "format": "string",
+          "isRequired": true,
+          "name": "SYNCRO_SUBDOMAIN"
+        },
+        {
+          "description": "Syncro API key generated from the admin settings",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SYNCRO_API_KEY"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode for the server. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-technology/syncro-mcp:v1.4.1",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "7ef0335044",
+    "published_at": "2026-07-18T16:00:56.09777Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wyre-technology/syncro-mcp",
+    "server_version": "1.4.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-18T16:00:56.09777Z"
+  },
+  "title": "Syncro",
+  "type": "mcp_server",
+  "version": "1.4.1"
+}

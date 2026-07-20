@@ -1,0 +1,98 @@
+{
+  "description": "Bitemporal memory for AI agents with point-in-time recall and tamper-evident audit history.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:47+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ebeirne-lians.stdio.23e5370203",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Lians-ai/Lians",
+    "homepage": "https://github.com/Lians-ai/Lians",
+    "repository": "https://github.com/Lians-ai/Lians"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "name": "--from",
+            "type": "named",
+            "value": "lians-sdk[mcp]"
+          },
+          {
+            "type": "positional",
+            "value": "lians-mcp"
+          },
+          "lians-sdk==0.4.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ebeirne/lians",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional base URL of a hosted or self-hosted Lians server; omit for local SQLite mode",
+          "name": "LIANS_URL"
+        },
+        {
+          "description": "API key with read and write scopes",
+          "isSecret": true,
+          "name": "LIANS_API_KEY"
+        },
+        {
+          "default": "mcp-agent",
+          "description": "Agent identifier used as the memory namespace",
+          "name": "LIANS_AGENT_ID"
+        },
+        {
+          "default": "~/.lians/mcp.db",
+          "description": "Local SQLite path used when LIANS_URL is omitted",
+          "name": "LIANS_LOCAL_DB"
+        },
+        {
+          "default": "mcp",
+          "description": "Local tenant namespace",
+          "name": "LIANS_NAMESPACE"
+        }
+      ],
+      "identifier": "lians-sdk",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "name": "--from",
+          "type": "named",
+          "value": "lians-sdk[mcp]"
+        },
+        {
+          "type": "positional",
+          "value": "lians-mcp"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "23e5370203",
+    "published_at": "2026-07-17T20:48:42.720515Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ebeirne/lians",
+    "server_version": "0.4.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-17T20:48:42.720515Z"
+  },
+  "title": "Lians Agent Memory",
+  "type": "mcp_server",
+  "version": "0.4.1"
+}

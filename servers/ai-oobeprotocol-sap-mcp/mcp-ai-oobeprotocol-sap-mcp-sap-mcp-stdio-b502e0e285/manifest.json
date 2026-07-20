@@ -1,0 +1,100 @@
+{
+  "description": "Solana-native MCP gateway for SAP, DeFi tools, SNS identity, and x402 payments.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-oobeprotocol-sap-mcp-sap-mcp.stdio.b502e0e285",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/OOBE-PROTOCOL/sap-mcp",
+    "homepage": "https://github.com/OOBE-PROTOCOL/sap-mcp",
+    "repository": "https://github.com/OOBE-PROTOCOL/sap-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "--yes"
+          },
+          {
+            "type": "positional",
+            "value": "--package"
+          },
+          {
+            "type": "positional",
+            "value": "@oobe-protocol-labs/sap-mcp-server@0.7.1"
+          },
+          {
+            "type": "positional",
+            "value": "sap-mcp-server"
+          },
+          "@oobe-protocol-labs/sap-mcp-server@0.7.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.oobeprotocol.sap.mcp/sap-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Keep SAP MCP pointed at the active profile manager instead of stale client env overrides.",
+          "format": "boolean",
+          "name": "SAP_MCP_ALLOW_ENV_CONFIG_OVERRIDE",
+          "value": "false"
+        },
+        {
+          "default": "info",
+          "description": "Runtime log level for local SAP MCP stdio sessions.",
+          "format": "string",
+          "name": "SAP_LOG_LEVEL"
+        }
+      ],
+      "identifier": "@oobe-protocol-labs/sap-mcp-server",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "--yes"
+        },
+        {
+          "type": "positional",
+          "value": "--package"
+        },
+        {
+          "type": "positional",
+          "value": "@oobe-protocol-labs/sap-mcp-server@0.7.1"
+        },
+        {
+          "type": "positional",
+          "value": "sap-mcp-server"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.7.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b502e0e285",
+    "published_at": "2026-07-13T17:26:19.245835Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.oobeprotocol.sap.mcp/sap-mcp",
+    "server_version": "0.7.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-13T17:26:19.245835Z"
+  },
+  "title": "SAP MCP Server",
+  "type": "mcp_server",
+  "version": "0.7.1"
+}

@@ -1,0 +1,76 @@
+{
+  "description": "MCP server for Pear Protocol: markets, positions, orders, portfolio, and gated trade execution.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-MarvelNwachukwu-mcp-pear.stdio.f1f2998aff",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/MarvelNwachukwu/mcp-pear",
+    "homepage": "https://github.com/MarvelNwachukwu/mcp-pear",
+    "repository": "https://github.com/MarvelNwachukwu/mcp-pear"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@marvelcodes/mcp-pear@0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.MarvelNwachukwu/mcp-pear",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Pear API key for authenticated read/write tools (single-user mode). Public tools work without it.",
+          "isSecret": true,
+          "name": "PEAR_API_KEY"
+        },
+        {
+          "description": "Wallet address (0x...) bound to PEAR_API_KEY. Required alongside PEAR_API_KEY.",
+          "name": "PEAR_ADDRESS"
+        },
+        {
+          "description": "Pre-minted Pear JWT for multi-tenant orchestrators (JWT pass-through mode). Used directly when set.",
+          "isSecret": true,
+          "name": "PEAR_JWT"
+        },
+        {
+          "description": "Refresh token so the server refreshes an expired JWT itself instead of requiring a restart.",
+          "isSecret": true,
+          "name": "PEAR_REFRESH_TOKEN"
+        },
+        {
+          "description": "Set to 'true' to enable the write/trade-execution tools. Off by default.",
+          "name": "PEAR_TRADE_ENABLED"
+        }
+      ],
+      "identifier": "@marvelcodes/mcp-pear",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f1f2998aff",
+    "published_at": "2026-07-18T21:05:06.326232Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.MarvelNwachukwu/mcp-pear",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-18T21:05:06.326232Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

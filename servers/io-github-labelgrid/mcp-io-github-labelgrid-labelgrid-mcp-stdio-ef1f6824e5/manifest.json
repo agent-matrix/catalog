@@ -1,0 +1,89 @@
+{
+  "description": "Official LabelGrid MCP server \u2014 manage your music catalog, releases, analytics and distribution.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:54+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-labelgrid-labelgrid-mcp.stdio.ef1f6824e5",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/labelgrid/labelgrid-mcp",
+    "homepage": "https://github.com/labelgrid/labelgrid-mcp",
+    "repository": "https://github.com/labelgrid/labelgrid-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@labelgrid/mcp@0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.labelgrid/labelgrid-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your LabelGrid API token. Create one in your dashboard under Profile \u2192 API Tokens. Without it the server starts in setup mode and walks you through creating one.",
+          "format": "string",
+          "isSecret": true,
+          "name": "LABELGRID_API_TOKEN"
+        },
+        {
+          "description": "Override the API base URL. Defaults to the production API.",
+          "format": "string",
+          "name": "LABELGRID_API_URL"
+        },
+        {
+          "description": "Enable safe writes (create/update drafts, labels, artists, and similar). Enabled by default; set to false for read-only.",
+          "format": "string",
+          "name": "LABELGRID_ENABLE_WRITES"
+        },
+        {
+          "description": "Enable full writes (distribution, takedowns, immutable uploads). Disabled by default; also requires LABELGRID_FULL_WRITES_ACK.",
+          "format": "string",
+          "name": "LABELGRID_ENABLE_FULL_WRITES"
+        },
+        {
+          "description": "Must equal the exact acknowledgment sentence (see the README safety section) to arm full writes.",
+          "format": "string",
+          "name": "LABELGRID_FULL_WRITES_ACK"
+        },
+        {
+          "description": "Comma-separated subset of toolsets to expose (identity, reference, catalog, releases, review, analytics, accounting, delivery, webhooks, distribution). Defaults to all.",
+          "format": "string",
+          "name": "LABELGRID_TOOLSETS"
+        },
+        {
+          "description": "Force reads only; overrides both write flags. Defaults to false.",
+          "format": "string",
+          "name": "LABELGRID_READ_ONLY"
+        }
+      ],
+      "identifier": "@labelgrid/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ef1f6824e5",
+    "published_at": "2026-07-15T11:31:03.468606Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.labelgrid/labelgrid-mcp",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-15T11:31:03.468606Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

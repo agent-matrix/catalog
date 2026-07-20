@@ -1,0 +1,68 @@
+{
+  "description": "ERC-7303 token-controlled roles for AI agents: grant, check, and revoke permissions on-chain",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:54+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-kofujimura-tctc-mcp.stdio.8c9cb223ae",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/kofujimura/tctc-mcp",
+    "homepage": "https://github.com/kofujimura/tctc-mcp",
+    "repository": "https://github.com/kofujimura/tctc-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "tctc-mcp@0.3.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.kofujimura/tctc-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Issuer key enabling grant_role/revoke_role (admin mode). Omit for read-only mode: state-changing tools are then not even registered",
+          "format": "string",
+          "isSecret": true,
+          "name": "TCTC_ADMIN_PRIVATE_KEY"
+        }
+      ],
+      "identifier": "tctc-mcp",
+      "packageArguments": [
+        {
+          "description": "Path to the role/chain config JSON (see examples/ in the repo; the secret-free Sepolia demo config works out of the box)",
+          "format": "string",
+          "isRequired": true,
+          "name": "--config",
+          "type": "named"
+        }
+      ],
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8c9cb223ae",
+    "published_at": "2026-07-18T23:19:09.15787Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.kofujimura/tctc-mcp",
+    "server_version": "0.3.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-18T23:19:09.15787Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.2"
+}

@@ -1,0 +1,63 @@
+{
+  "description": "Read-only SSH server diagnostics via a fixed 38-command whitelist; secrets redacted, no write path.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:28+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Easton-OU-rootpilot-ssh-diagnose.stdio.ddf6842713",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Easton-OU/rootpilot-mcp",
+    "homepage": "https://github.com/Easton-OU/rootpilot-mcp",
+    "repository": "https://github.com/Easton-OU/rootpilot-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@rootpilot/mcp-ssh-diagnose@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Easton-OU/rootpilot-ssh-diagnose",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to your hosts.json (see hosts.example.json in the repo)",
+          "isRequired": true,
+          "name": "RP_HOSTS"
+        },
+        {
+          "description": "Target URL for the outbound-connectivity / DNS probes (default: https://cloudflare.com)",
+          "name": "RP_PROBE_URL"
+        }
+      ],
+      "identifier": "@rootpilot/mcp-ssh-diagnose",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ddf6842713",
+    "published_at": "2026-07-13T08:40:41.978666Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Easton-OU/rootpilot-ssh-diagnose",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-13T08:40:41.978666Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

@@ -1,0 +1,73 @@
+{
+  "description": "Rent real GPUs from the terminal. Per-second billing, $0.50 minimum. stdio MCP server.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:53+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-jyswee-gpusmarket.stdio.948eae195d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jyswee/gpusmarket",
+    "homepage": "https://github.com/jyswee/gpusmarket",
+    "repository": "https://github.com/jyswee/gpusmarket"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "isRequired": true,
+            "type": "positional",
+            "value": "mcp-serve"
+          },
+          "gpusmarket@2.4.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.jyswee/gpusmarket",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "GPUsMarket API key (gpu_...). Required: the MCP server exits without one. Get a key with 'gpusmarket signup' or from your dashboard.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GPUSMARKET_API_KEY"
+        }
+      ],
+      "identifier": "gpusmarket",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "isRequired": true,
+          "type": "positional",
+          "value": "mcp-serve"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.4.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "948eae195d",
+    "published_at": "2026-07-15T19:50:12.695018Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.jyswee/gpusmarket",
+    "server_version": "2.4.7",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-15T19:50:12.695018Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "2.4.7"
+}

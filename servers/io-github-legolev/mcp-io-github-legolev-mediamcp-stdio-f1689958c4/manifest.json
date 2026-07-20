@@ -1,0 +1,70 @@
+{
+  "description": "Generate and edit images and video via OpenRouter or any OpenAI-compatible API.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:54+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-legolev-mediamcp.stdio.f1689958c4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/legolev/mediamcp",
+    "homepage": "https://github.com/legolev/mediamcp",
+    "repository": "https://github.com/legolev/mediamcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mediamcp@0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.legolev/mediamcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "OpenRouter API key (https://openrouter.ai/keys)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OPENROUTER_API_KEY"
+        },
+        {
+          "description": "Directory for generated files (default: ~/Pictures/mediamcp)",
+          "format": "string",
+          "name": "MEDIAMCP_OUTPUT_DIR"
+        },
+        {
+          "description": "Default image model slug (default: google/gemini-2.5-flash-image)",
+          "format": "string",
+          "name": "MEDIAMCP_MODEL"
+        }
+      ],
+      "identifier": "mediamcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f1689958c4",
+    "published_at": "2026-07-16T09:57:57.427405Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.legolev/mediamcp",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-16T09:57:57.427405Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

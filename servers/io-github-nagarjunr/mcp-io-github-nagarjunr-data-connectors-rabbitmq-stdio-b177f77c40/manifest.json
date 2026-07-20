@@ -1,0 +1,91 @@
+{
+  "description": "MCP server for RabbitMQ: publish messages, poll one message from a queue.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:58+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nagarjunr-data-connectors-rabbitmq.stdio.b177f77c40",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nagarjunr/data-connectors-for-ai-agents",
+    "homepage": "https://github.com/nagarjunr/data-connectors-for-ai-agents",
+    "repository": "https://github.com/nagarjunr/data-connectors-for-ai-agents"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "data-connectors-ai==0.1.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nagarjunr/data-connectors-rabbitmq",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Full AMQP connection URL (overrides RABBITMQ_HOST/PORT/USERNAME/PASSWORD if set)",
+          "name": "CONNECTION_STRING"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "RabbitMQ host",
+          "name": "RABBITMQ_HOST"
+        },
+        {
+          "default": "5672",
+          "description": "RabbitMQ port",
+          "name": "RABBITMQ_PORT"
+        },
+        {
+          "description": "RabbitMQ username",
+          "isRequired": true,
+          "name": "RABBITMQ_USERNAME"
+        },
+        {
+          "description": "RabbitMQ password",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "RABBITMQ_PASSWORD"
+        }
+      ],
+      "identifier": "data-connectors-ai",
+      "packageArguments": [
+        {
+          "name": "--from",
+          "type": "named",
+          "value": "data-connectors-ai[rabbitmq,mcp]==0.1.5"
+        },
+        {
+          "type": "positional",
+          "value": "data-connectors-rabbitmq-mcp"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b177f77c40",
+    "published_at": "2026-07-17T18:26:09.769856Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nagarjunr/data-connectors-rabbitmq",
+    "server_version": "0.1.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-17T18:26:09.769856Z"
+  },
+  "title": "RabbitMQ Connector",
+  "type": "mcp_server",
+  "version": "0.1.5"
+}

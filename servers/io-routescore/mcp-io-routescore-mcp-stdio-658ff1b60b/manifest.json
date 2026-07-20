@@ -1,0 +1,67 @@
+{
+  "description": "Read-only pre-sign evidence for onchain agents: route quality, MEV exposure, clear/caution verdict.",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:50:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-routescore-mcp.stdio.658ff1b60b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/routescore/mcp",
+    "homepage": "https://github.com/routescore/mcp",
+    "repository": "https://github.com/routescore/mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@routescore/mcp@0.3.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.routescore/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Routescore API key (rs_live_...), free to mint on any tier. check_swap daily quotas are per account (free 100/day, Pro 1,000, Power 10,000); per-minute burst limits are per key. The broader modeled-quote, scenario, manifest, and record-retrieval surface requires Power. Generate one at https://www.routescore.io/account. Shown once.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ROUTESCORE_API_KEY"
+        },
+        {
+          "description": "Override the API base URL (default https://www.routescore.io). For local development use http://localhost:3000.",
+          "format": "string",
+          "name": "ROUTESCORE_API_URL"
+        }
+      ],
+      "identifier": "@routescore/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "658ff1b60b",
+    "published_at": "2026-07-15T20:27:53.493795Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.routescore/mcp",
+    "server_version": "0.3.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-15T20:27:53.493795Z"
+  },
+  "title": "Routescore",
+  "type": "mcp_server",
+  "version": "0.3.3"
+}

@@ -1,0 +1,103 @@
+{
+  "description": "Huly MCP: feature-complete MCP server for Huly integration",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:46+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-dearlordylord-huly-mcp.stdio.f790c7d074",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/dearlordylord/huly-mcp",
+    "homepage": "https://github.com/dearlordylord/huly-mcp",
+    "repository": "https://github.com/dearlordylord/huly-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@firfi/huly-mcp@0.44.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.dearlordylord/huly-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Huly API URL (e.g., https://huly.app)",
+          "format": "string",
+          "isRequired": true,
+          "name": "HULY_URL"
+        },
+        {
+          "description": "Your Huly account email",
+          "format": "string",
+          "isRequired": true,
+          "name": "HULY_EMAIL"
+        },
+        {
+          "description": "Your Huly account password",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "HULY_PASSWORD"
+        },
+        {
+          "description": "Huly workspace identifier",
+          "format": "string",
+          "isRequired": true,
+          "name": "HULY_WORKSPACE"
+        },
+        {
+          "description": "Connection timeout in milliseconds. Omit to use the package default.",
+          "format": "string",
+          "name": "HULY_CONNECTION_TIMEOUT"
+        },
+        {
+          "description": "Tool exposure mode: auto (default), native, or proxy. Auto keeps exact claude-code native and resolves Codex, Cursor, Windsurf, Copilot, opencode, Claude AI, and unknown clients to proxy mode.",
+          "format": "string",
+          "name": "HULY_TOOL_MODE"
+        },
+        {
+          "description": "Set true to make active TOOLSETS / TOOLS a hard allow-list for proxy search, schema lookup, and invocation. Defaults to false.",
+          "format": "string",
+          "name": "PROXY_OUTPUT_STRICT"
+        },
+        {
+          "description": "Comma-separated native Huly tool categories to expose, such as issues,projects,search. If unset with TOOLS, all native tools are exposed.",
+          "format": "string",
+          "name": "TOOLSETS"
+        },
+        {
+          "description": "Comma-separated exact native Huly tool names to expose in addition to selected TOOLSETS, such as list_documents,create_issue.",
+          "format": "string",
+          "name": "TOOLS"
+        }
+      ],
+      "identifier": "@firfi/huly-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.44.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f790c7d074",
+    "published_at": "2026-07-14T17:19:32.917419Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.dearlordylord/huly-mcp",
+    "server_version": "0.44.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-14T17:19:32.917419Z"
+  },
+  "title": "Huly MCP",
+  "type": "mcp_server",
+  "version": "0.44.5"
+}

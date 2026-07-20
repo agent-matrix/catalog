@@ -1,0 +1,78 @@
+{
+  "description": "MCP server for Open Finance Brasil - accounts, balances, PIX, and investments across 10 banks",
+  "harvest": {
+    "last_seen_at": "2026-07-20T05:49:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-brunovicco-openfinance-br-mcp.stdio.17f7046435",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/brunovicco/openfinance-br-mcp",
+    "homepage": "https://github.com/brunovicco/openfinance-br-mcp",
+    "repository": "https://github.com/brunovicco/openfinance-br-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "openfinance-br-mcp==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.brunovicco/openfinance-br-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "mock",
+          "description": "'mock' (default, no credentials needed - runs entirely in-memory), 'sandbox', or 'production'",
+          "format": "string",
+          "name": "ENVIRONMENT"
+        },
+        {
+          "description": "Client ID registered with the participating institution. Required unless ENVIRONMENT=mock",
+          "format": "string",
+          "name": "CLIENT_ID"
+        },
+        {
+          "description": "Client secret corresponding to CLIENT_ID. Required unless ENVIRONMENT=mock",
+          "format": "string",
+          "isSecret": true,
+          "name": "CLIENT_SECRET"
+        },
+        {
+          "description": "Required only when calling list_transactions with categorize=true (DSPy transaction categorization)",
+          "format": "string",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        }
+      ],
+      "identifier": "openfinance-br-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "17f7046435",
+    "published_at": "2026-07-14T01:55:36.338Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.brunovicco/openfinance-br-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-14T01:55:36.338Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}
