@@ -1,0 +1,75 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "quay.io/bluecat/mcp-servers:livenxmcp-0.30.1-test1"
+      }
+    }
+  ],
+  "description": "MCP server for LiveAction LiveNX (quay.io / MCP registry test publish)",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:14+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "tool.io-github-bdimic-bluecat-livenxmcp.e20b700eff",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "tool": {
+      "description": "MCP server for LiveAction LiveNX (quay.io / MCP registry test publish)",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.bdimic-bluecat/livenxmcp",
+      "request_type": "POST",
+      "url": "mcp+stdio://oci/quay.io/bluecat/mcp-servers:livenxmcp-0.30.1-test1"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "name": "-p",
+            "type": "named",
+            "value": "9985:9985"
+          },
+          "quay.io/bluecat/mcp-servers:livenxmcp-0.30.1-test1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.bdimic-bluecat/livenxmcp",
+  "provenance": {
+    "identity_key": "e770ae73fc",
+    "promoted_from": "mcp.io-github-bdimic-bluecat-livenxmcp.stdio.e770ae73fc",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.bdimic-bluecat/livenxmcp",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-bdimic-bluecat-livenxmcp.stdio.e770ae73fc",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "summary": "MCP server for LiveAction LiveNX (quay.io / MCP registry test publish)",
+  "tags": [
+    "liveaction",
+    "livenx",
+    "livenxmcp",
+    "publish",
+    "quay",
+    "registry",
+    "test"
+  ],
+  "title": "Livenxmcp",
+  "type": "tool",
+  "version": "0.30.1-test1"
+}

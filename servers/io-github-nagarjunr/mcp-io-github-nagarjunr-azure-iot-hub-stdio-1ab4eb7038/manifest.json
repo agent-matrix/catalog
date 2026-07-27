@@ -1,0 +1,69 @@
+{
+  "description": "MCP server for Azure IoT Hub: device registry, twins, methods, jobs, messaging.",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:40+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nagarjunr-azure-iot-hub.stdio.1ab4eb7038",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nagarjunr/iot-mcp-servers",
+    "homepage": "https://github.com/nagarjunr/iot-mcp-servers",
+    "repository": "https://github.com/nagarjunr/iot-mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "azure-iot-hub-mcp-server==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nagarjunr/azure-iot-hub",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "IoT Hub connection string with service/iothubowner rights, e.g. HostName=my-hub.azure-devices.net;SharedAccessKeyName=service;SharedAccessKey=...",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AZURE_IOT_HUB_CONNECTION_STRING"
+        },
+        {
+          "description": "AMQP port for send_c2d_message, default 5671",
+          "name": "AZURE_IOT_HUB_AMQP_PORT"
+        },
+        {
+          "description": "true/false, default true",
+          "name": "AZURE_IOT_HUB_AMQP_USE_TLS"
+        }
+      ],
+      "identifier": "azure-iot-hub-mcp-server",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1ab4eb7038",
+    "published_at": "2026-07-24T18:53:36.914018Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nagarjunr/azure-iot-hub",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-24T18:53:36.914018Z"
+  },
+  "title": "Azure IoT Hub",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

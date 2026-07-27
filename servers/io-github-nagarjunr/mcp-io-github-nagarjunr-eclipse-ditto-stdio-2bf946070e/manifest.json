@@ -1,0 +1,83 @@
+{
+  "description": "MCP server for the Eclipse Ditto digital twin HTTP API (things, policies, connections, more).",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:40+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nagarjunr-eclipse-ditto.stdio.2bf946070e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nagarjunr/iot-mcp-servers",
+    "homepage": "https://github.com/nagarjunr/iot-mcp-servers",
+    "repository": "https://github.com/nagarjunr/iot-mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "eclipse-ditto-mcp-server==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nagarjunr/eclipse-ditto",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the Ditto HTTP API, e.g. http://localhost:8080",
+          "isRequired": true,
+          "name": "DITTO_BASE_URL"
+        },
+        {
+          "description": "Basic auth username for the Things/Policies/Messages/Search API",
+          "name": "DITTO_USERNAME"
+        },
+        {
+          "description": "Basic auth password for the Things/Policies/Messages/Search API",
+          "isSecret": true,
+          "name": "DITTO_PASSWORD"
+        },
+        {
+          "description": "Bearer token, used instead of Basic auth for the same API",
+          "isSecret": true,
+          "name": "DITTO_BEARER_TOKEN"
+        },
+        {
+          "description": "Basic auth username for the separate DevOps/Connections realm",
+          "name": "DITTO_DEVOPS_USERNAME"
+        },
+        {
+          "description": "Basic auth password for the separate DevOps/Connections realm",
+          "isSecret": true,
+          "name": "DITTO_DEVOPS_PASSWORD"
+        }
+      ],
+      "identifier": "eclipse-ditto-mcp-server",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "2bf946070e",
+    "published_at": "2026-07-24T14:06:03.116518Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nagarjunr/eclipse-ditto",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-24T14:06:03.116518Z"
+  },
+  "title": "Eclipse Ditto",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

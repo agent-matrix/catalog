@@ -1,0 +1,95 @@
+{
+  "description": "Monitor MCP, CI, and HTTP targets with health history, TLS expiry, assertions, and diagnostics",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-oaslananka-health-monitor-mcp.stdio.ca87c41f3c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/oaslananka/health-monitor-mcp",
+    "homepage": "https://github.com/oaslananka/health-monitor-mcp",
+    "repository": "https://github.com/oaslananka/health-monitor-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "health-monitor-mcp@1.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.oaslananka/health-monitor-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Custom path for the SQLite database",
+          "format": "string",
+          "name": "HEALTH_MONITOR_DB"
+        },
+        {
+          "description": "Set to '1' to enable background scheduled checks",
+          "format": "string",
+          "name": "HEALTH_MONITOR_AUTO_CHECK"
+        },
+        {
+          "description": "Number of days to retain health check history",
+          "format": "string",
+          "name": "HEALTH_MONITOR_RETENTION_DAYS"
+        },
+        {
+          "description": "Maximum concurrent scheduled and interactive server checks",
+          "format": "string",
+          "name": "HEALTH_MONITOR_MAX_CONCURRENCY"
+        },
+        {
+          "description": "Optional GitHub token with Actions read access for private repositories and higher API rate limits",
+          "format": "string",
+          "isSecret": true,
+          "name": "GITHUB_TOKEN"
+        },
+        {
+          "description": "Optional GitLab token with read access to private projects, pipelines, jobs, and traces",
+          "format": "string",
+          "isSecret": true,
+          "name": "GITLAB_TOKEN"
+        },
+        {
+          "description": "Comma-separated self-hosted GitLab HTTPS origins allowed for monitoring",
+          "format": "string",
+          "name": "HEALTH_MONITOR_GITLAB_BASE_URL_ALLOWLIST"
+        },
+        {
+          "description": "Comma-separated private HTTP(S) origins allowed only in the full runtime profile",
+          "format": "string",
+          "name": "HEALTH_MONITOR_HTTP_TARGET_ALLOWLIST"
+        }
+      ],
+      "identifier": "health-monitor-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.4.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ca87c41f3c",
+    "published_at": "2026-07-22T23:11:09.996901Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.oaslananka/health-monitor-mcp",
+    "server_version": "1.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-22T23:11:09.996901Z"
+  },
+  "title": "MCP Health Monitor",
+  "type": "mcp_server",
+  "version": "1.4.0"
+}

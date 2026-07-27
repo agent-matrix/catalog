@@ -1,0 +1,106 @@
+{
+  "description": "Recover stranded native gas: empty a chain's balance to exactly zero on 25 EVM chains.",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-andresdefi-zerodust.stdio.46ef0f77b7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/andresdefi/zerodust",
+    "homepage": "https://github.com/andresdefi/zerodust",
+    "repository": "https://github.com/andresdefi/zerodust"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@zerodust/mcp-server@0.3.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.andresdefi/zerodust",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Custom API URL (defaults to https://api.zerodust.xyz)",
+          "format": "string",
+          "name": "ZERODUST_API_URL"
+        },
+        {
+          "description": "API key for higher rate limits. An agent can issue itself one with the zerodust_register_api_key tool, with no human signup step.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ZERODUST_API_KEY"
+        },
+        {
+          "description": "Set to \"true\" to enable the sweep tools. Sweeping moves real funds, so it is off by default and also requires one of the four signing-key variables below.",
+          "format": "string",
+          "name": "ZERODUST_ALLOW_EXECUTE"
+        },
+        {
+          "description": "Path or specifier of a module whose default export returns a viem LocalAccount. This is how Turnkey, Privy, AWS KMS or any other custody service is used, without a raw key ever reaching this server. Preferred over ZERODUST_PRIVATE_KEY.",
+          "format": "string",
+          "name": "ZERODUST_SIGNER_MODULE"
+        },
+        {
+          "description": "Path to an encrypted V3 keystore (as produced by `cast wallet import` or geth). Requires ZERODUST_KEYSTORE_PASSWORD_FILE or ZERODUST_KEYSTORE_PASSWORD.",
+          "format": "string",
+          "name": "ZERODUST_KEYSTORE_FILE"
+        },
+        {
+          "description": "Path to a file containing the keystore password, so the password never enters the MCP config.",
+          "format": "string",
+          "name": "ZERODUST_KEYSTORE_PASSWORD_FILE"
+        },
+        {
+          "description": "Keystore password inline. Prefer ZERODUST_KEYSTORE_PASSWORD_FILE.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ZERODUST_KEYSTORE_PASSWORD"
+        },
+        {
+          "description": "Path to a file containing a hex private key, so the key stays out of the MCP config.",
+          "format": "string",
+          "name": "ZERODUST_PRIVATE_KEY_FILE"
+        },
+        {
+          "description": "Private key for the agent's own wallet, inline. Used locally to sign the EIP-7702 authorization and EIP-712 sweep intent; never transmitted, only the resulting signatures are sent. The signer-module, keystore and key-file options above keep it out of your config entirely.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ZERODUST_PRIVATE_KEY"
+        },
+        {
+          "description": "Comma-separated allowlist of sweep destinations. When unset, funds can only be swept to the agent's own address.",
+          "format": "string",
+          "name": "ZERODUST_ALLOWED_DESTINATIONS"
+        }
+      ],
+      "identifier": "@zerodust/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "46ef0f77b7",
+    "published_at": "2026-07-25T12:48:47.567913Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.andresdefi/zerodust",
+    "server_version": "0.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-25T12:48:47.567913Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.1"
+}

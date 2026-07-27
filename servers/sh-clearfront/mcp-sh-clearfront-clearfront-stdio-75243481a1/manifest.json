@@ -1,0 +1,102 @@
+{
+  "description": "OSINT sweep of a digital footprint: breaches, accounts, data brokers, domains and IPs",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:01:00+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.sh-clearfront-clearfront.stdio.75243481a1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/scottmartinanderson/clearfront",
+    "homepage": "https://github.com/scottmartinanderson/clearfront",
+    "repository": "https://github.com/scottmartinanderson/clearfront"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "name": "--from",
+            "type": "named",
+            "value": "clearfront"
+          },
+          "clearfront==2.7.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "sh.clearfront/clearfront",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Have I Been Pwned API key, enables breach and paste lookups",
+          "format": "string",
+          "isSecret": true,
+          "name": "HIBP_API_KEY"
+        },
+        {
+          "description": "ipinfo.io token, enables IP geolocation and exposure reports",
+          "format": "string",
+          "isSecret": true,
+          "name": "IPINFO_TOKEN"
+        },
+        {
+          "description": "Shodan API key, enables internet-exposed device lookups",
+          "format": "string",
+          "isSecret": true,
+          "name": "SHODAN_API_KEY"
+        },
+        {
+          "description": "VirusTotal API key, enables reputation checks on IPs, domains, URLs and file hashes",
+          "format": "string",
+          "isSecret": true,
+          "name": "VIRUSTOTAL_API_KEY"
+        },
+        {
+          "description": "Anthropic API key, only needed for the AI-assisted multi-target sweep tool",
+          "format": "string",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        }
+      ],
+      "identifier": "clearfront",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "clearfront-mcp"
+        }
+      ],
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "name": "--from",
+          "type": "named",
+          "value": "clearfront"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.7.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "75243481a1",
+    "published_at": "2026-07-26T17:32:17.848812Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "sh.clearfront/clearfront",
+    "server_version": "2.7.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-26T17:32:17.848812Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "2.7.2"
+}

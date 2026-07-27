@@ -1,0 +1,74 @@
+{
+  "description": "Security-first MCP server that connects any OpenAPI, GraphQL, gRPC or SOAP API to AI agents.",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:08+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-TeodorMCP-universal-connector-mcp.stdio.300fa3e57b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/TeodorMCP/universal-connector-mcp",
+    "homepage": "https://github.com/TeodorMCP/universal-connector-mcp",
+    "repository": "https://github.com/TeodorMCP/universal-connector-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "universal-connector-mcp==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.TeodorMCP/universal-connector-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Comma-separated extra hosts allowed for outbound calls (spec hosts are allowed automatically).",
+          "format": "string",
+          "name": "UCMCP_ALLOWED_HOSTS"
+        },
+        {
+          "description": "Path to a YAML file of APIs to preload at startup.",
+          "format": "string",
+          "name": "UCMCP_APIS_CONFIG"
+        },
+        {
+          "description": "TTL in seconds for caching read-only responses (default 60, 0 disables).",
+          "format": "number",
+          "name": "UCMCP_CACHE_TTL"
+        },
+        {
+          "description": "Example credential convention: <API_NAME>_TOKEN / <API_NAME>_API_KEY are injected for the API loaded under that name.",
+          "format": "string",
+          "isSecret": true,
+          "name": "GITHUB_TOKEN"
+        }
+      ],
+      "identifier": "universal-connector-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "300fa3e57b",
+    "published_at": "2026-07-23T19:16:04.516218Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.TeodorMCP/universal-connector-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-23T19:16:04.516218Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

@@ -1,0 +1,84 @@
+{
+  "description": "Catch bad animations before they ship. Deterministic motion audit + vision-LLM design review.",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:14+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-bobaba99-motionlint.stdio.0b2fc0611e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/bobaba99/motionlint",
+    "homepage": "https://github.com/bobaba99/motionlint",
+    "repository": "https://github.com/bobaba99/motionlint"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "motionlint@0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.bobaba99/motionlint",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Anthropic API key for vision-LLM review. Optional \u2014 the deterministic audit needs no key, and Ollama, OpenAI or Google can be used instead.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        },
+        {
+          "description": "OpenAI API key for vision-LLM review. Optional.",
+          "format": "string",
+          "isSecret": true,
+          "name": "OPENAI_API_KEY"
+        },
+        {
+          "description": "Google API key for vision-LLM review. Optional.",
+          "format": "string",
+          "isSecret": true,
+          "name": "GOOGLE_API_KEY"
+        },
+        {
+          "description": "Override the OpenAI base URL to target an OpenAI-compatible endpoint. Optional.",
+          "format": "string",
+          "name": "OPENAI_BASE_URL"
+        }
+      ],
+      "identifier": "motionlint",
+      "packageArguments": [
+        {
+          "description": "Starts MotionLint in MCP stdio server mode.",
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0b2fc0611e",
+    "published_at": "2026-07-27T04:03:08.147525Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.bobaba99/motionlint",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-27T04:03:08.147525Z"
+  },
+  "title": "MotionLint",
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

@@ -1,0 +1,106 @@
+{
+  "description": "Unofficial MCP server for reading and managing Cloudcraft architecture blueprints",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-hypark5540-cloudcraft-mcp.stdio.ede8ca5146",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/hypark5540/cloudcraft-mcp",
+    "homepage": "https://github.com/hypark5540/cloudcraft-mcp",
+    "repository": "https://github.com/hypark5540/cloudcraft-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@hypark5540/cloudcraft-mcp@0.1.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.hypark5540/cloudcraft-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Cloudcraft API key with access to the target account",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CLOUDCRAFT_API_KEY"
+        },
+        {
+          "default": "https://api.cloudcraft.co",
+          "description": "Cloudcraft API base URL; HTTPS is required except for loopback testing",
+          "name": "CLOUDCRAFT_BASE_URL"
+        },
+        {
+          "choices": [
+            "DEBUG",
+            "INFO",
+            "WARNING",
+            "ERROR",
+            "CRITICAL"
+          ],
+          "default": "WARNING",
+          "description": "Minimum log level written to stderr",
+          "name": "CLOUDCRAFT_LOG_LEVEL"
+        },
+        {
+          "description": "Directory under which exported blueprint files may be written",
+          "name": "CLOUDCRAFT_EXPORT_DIR"
+        },
+        {
+          "choices": [
+            "false",
+            "true"
+          ],
+          "default": "false",
+          "description": "Enable create and update operations",
+          "name": "CLOUDCRAFT_ENABLE_WRITES"
+        },
+        {
+          "choices": [
+            "false",
+            "true"
+          ],
+          "default": "false",
+          "description": "Enable irreversible deletes; writes must also be enabled",
+          "name": "CLOUDCRAFT_ENABLE_DELETES"
+        },
+        {
+          "default": "26214400",
+          "description": "Maximum bytes accepted from one Cloudcraft API response",
+          "format": "number",
+          "name": "CLOUDCRAFT_MAX_RESPONSE_BYTES"
+        }
+      ],
+      "identifier": "@hypark5540/cloudcraft-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ede8ca5146",
+    "published_at": "2026-07-23T03:21:34.243343Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.hypark5540/cloudcraft-mcp",
+    "server_version": "0.1.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-23T03:21:34.243343Z"
+  },
+  "title": "Cloudcraft MCP",
+  "type": "mcp_server",
+  "version": "0.1.6"
+}

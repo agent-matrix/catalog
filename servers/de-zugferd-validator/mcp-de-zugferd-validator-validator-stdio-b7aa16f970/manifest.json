@@ -1,0 +1,60 @@
+{
+  "description": "Validiert E-Rechnungen (ZUGFeRD/Factur-X, XRechnung) gegen EN 16931 mit Korrekturvorschl\u00e4gen.",
+  "harvest": {
+    "last_seen_at": "2026-07-27T05:59:52+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.de-zugferd-validator-validator.stdio.b7aa16f970",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/tzatti1/zugferd-validator",
+    "homepage": "https://github.com/tzatti1/zugferd-validator",
+    "repository": "https://github.com/tzatti1/zugferd-validator"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "zugferd-mcp-client@1.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "de.zugferd-validator/validator",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API-Key von https://zugferd-validator.de/konto (Demo-Key: zv_demo_public_zugferd_2026)",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ZUGFERD_API_KEY"
+        }
+      ],
+      "identifier": "zugferd-mcp-client",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b7aa16f970",
+    "published_at": "2026-07-23T12:25:23.536019Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "de.zugferd-validator/validator",
+    "server_version": "1.0.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-23T12:25:23.536019Z"
+  },
+  "title": "ZUGFeRD Validator",
+  "type": "mcp_server",
+  "version": "1.0.2"
+}

@@ -1,0 +1,72 @@
+{
+  "description": "Read, search, edit and branch Translatize translation labels and fill missing translations.",
+  "harvest": {
+    "last_seen_at": "2026-07-27T05:59:51+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-translatize-mcp.stdio.bbfbe609cd",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Translatize/integrations",
+    "homepage": "https://github.com/Translatize/integrations",
+    "repository": "https://github.com/Translatize/integrations"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@translatize/mcp@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.translatize/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Translatize integration API token (an \"mcni_...\" string), bound to one project and branch. Create it under Project Settings -> Integrations at https://app.translatize.com.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "TRANSLATIZE_API_TOKEN"
+        },
+        {
+          "default": "https://api.translatize.com/v1",
+          "description": "API base URL including the /v1 segment. Defaults to https://api.translatize.com/v1.",
+          "format": "string",
+          "name": "TRANSLATIZE_API_URL"
+        },
+        {
+          "default": "https://app.translatize.com",
+          "description": "Web-app base URL used to build review links. Defaults to https://app.translatize.com.",
+          "format": "string",
+          "name": "TRANSLATIZE_APP_URL"
+        }
+      ],
+      "identifier": "@translatize/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "bbfbe609cd",
+    "published_at": "2026-07-21T18:26:27.760393Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.translatize/mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-21T18:26:27.760393Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

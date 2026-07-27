@@ -1,0 +1,85 @@
+{
+  "description": "Read-only Kafka observability MCP server: cluster health, consumer lag, and replay-readiness.",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:48+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sanjay-amu-kafka-sentinel-mcp.stdio.f23bbd6066",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sanjay-amu/kafka-sentinel-mcp",
+    "homepage": "https://github.com/sanjay-amu/kafka-sentinel-mcp",
+    "repository": "https://github.com/sanjay-amu/kafka-sentinel-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "kafka-sentinel-mcp==0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sanjay-amu/kafka-sentinel-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Kafka bootstrap servers, e.g. broker1:9092,broker2:9092",
+          "format": "string",
+          "isRequired": true,
+          "name": "KAFKA_BOOTSTRAP"
+        },
+        {
+          "description": "librdkafka security.protocol, e.g. SASL_SSL",
+          "format": "string",
+          "name": "KAFKA_SECURITY_PROTOCOL"
+        },
+        {
+          "description": "librdkafka sasl.mechanism, e.g. PLAIN or SCRAM-SHA-512",
+          "format": "string",
+          "name": "KAFKA_SASL_MECHANISM"
+        },
+        {
+          "description": "SASL username",
+          "format": "string",
+          "name": "KAFKA_SASL_USERNAME"
+        },
+        {
+          "description": "SASL password",
+          "format": "string",
+          "isSecret": true,
+          "name": "KAFKA_SASL_PASSWORD"
+        },
+        {
+          "description": "Path to CA certificate for SSL",
+          "format": "string",
+          "name": "KAFKA_SSL_CA_LOCATION"
+        }
+      ],
+      "identifier": "kafka-sentinel-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f23bbd6066",
+    "published_at": "2026-07-23T23:17:10.113409Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sanjay-amu/kafka-sentinel-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-23T23:17:10.113409Z"
+  },
+  "title": "Kafka Sentinel",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

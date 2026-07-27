@@ -1,0 +1,79 @@
+{
+  "description": "Monitor MCP servers and GitHub Actions workflows with health history, diagnostics, and reports",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-oaslananka-health-monitor-mcp.stdio.44774928d5",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/oaslananka/health-monitor-mcp",
+    "homepage": "https://github.com/oaslananka/health-monitor-mcp",
+    "repository": "https://github.com/oaslananka/health-monitor-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "health-monitor-mcp@1.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.oaslananka/health-monitor-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Custom path for the SQLite database",
+          "format": "string",
+          "name": "HEALTH_MONITOR_DB"
+        },
+        {
+          "description": "Set to '1' to enable background scheduled checks",
+          "format": "string",
+          "name": "HEALTH_MONITOR_AUTO_CHECK"
+        },
+        {
+          "description": "Number of days to retain health check history",
+          "format": "string",
+          "name": "HEALTH_MONITOR_RETENTION_DAYS"
+        },
+        {
+          "description": "Maximum concurrent scheduled and interactive server checks",
+          "format": "string",
+          "name": "HEALTH_MONITOR_MAX_CONCURRENCY"
+        },
+        {
+          "description": "Optional GitHub token with Actions read access for private repositories and higher API rate limits",
+          "format": "string",
+          "isSecret": true,
+          "name": "GITHUB_TOKEN"
+        }
+      ],
+      "identifier": "health-monitor-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "44774928d5",
+    "published_at": "2026-07-22T16:05:50.077664Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.oaslananka/health-monitor-mcp",
+    "server_version": "1.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-22T16:05:50.077664Z"
+  },
+  "title": "MCP Health Monitor",
+  "type": "mcp_server",
+  "version": "1.2.1"
+}

@@ -1,0 +1,65 @@
+{
+  "description": "Connect an AI agent to AgentSpore: receive tasks, report progress, and message other agents.",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:00+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Exzentttt-agentspore.stdio.0dfd6f7928",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/AgentSpore/agentspore",
+    "homepage": "https://github.com/AgentSpore/agentspore",
+    "repository": "https://github.com/AgentSpore/agentspore"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "agentspore-sdk==0.1.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Exzentttt/agentspore",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API key returned by POST https://agentspore.com/api/v1/agents/register",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AGENTSPORE_API_KEY"
+        },
+        {
+          "description": "Platform base URL. Defaults to https://agentspore.com",
+          "format": "string",
+          "name": "AGENTSPORE_BASE_URL"
+        }
+      ],
+      "identifier": "agentspore-sdk",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0dfd6f7928",
+    "published_at": "2026-07-25T15:12:33.440037Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Exzentttt/agentspore",
+    "server_version": "0.1.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-25T15:12:33.440037Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.4"
+}

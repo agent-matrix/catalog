@@ -1,0 +1,64 @@
+{
+  "description": "ODGS governance enforcement \u2014 validation, regulation compilation, drift detection, signed S-Certs.",
+  "harvest": {
+    "last_seen_at": "2026-07-27T05:59:48+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-metricprovenance-odgs-mcp-server.stdio.08b774405a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/MetricProvenance/odgs-mcp-server",
+    "homepage": "https://github.com/MetricProvenance/odgs-mcp-server",
+    "repository": "https://github.com/MetricProvenance/odgs-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "odgs-mcp-server==0.3.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.metricprovenance/odgs-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the ODGS project root containing governance definitions (judiciary/, legislative/, executive/). Defaults to the current working directory.",
+          "format": "string",
+          "name": "ODGS_PROJECT_ROOT"
+        },
+        {
+          "description": "Metric Provenance licence key for Pro/Enterprise tier tools (compile_regulation, check_drift, detect_conflicts, narrate_audit, discover_bindings, download_pack). Omit for community-tier access (validate_payload, governance_score, list_packs, conformance_check).",
+          "format": "string",
+          "isSecret": true,
+          "name": "ODGS_API_KEY"
+        }
+      ],
+      "identifier": "odgs-mcp-server",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "08b774405a",
+    "published_at": "2026-07-21T05:47:16.691413Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.metricprovenance/odgs-mcp-server",
+    "server_version": "0.3.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-21T05:47:16.691413Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.3"
+}

@@ -1,0 +1,92 @@
+{
+  "description": "Multi-model AI orchestration: plan a task DAG, route each task to the best capable model.",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:47+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ribato22-baton.stdio.8ba17eb904",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ribato22/baton",
+    "homepage": "https://github.com/ribato22/baton",
+    "repository": "https://github.com/ribato22/baton"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "name": "--from",
+            "type": "named",
+            "value": "baton-orchestrator[mcp]"
+          },
+          {
+            "type": "positional",
+            "value": "baton-mcp"
+          },
+          "baton-orchestrator==0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ribato22/baton",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Set to 1 to use your Claude Code subscription CLI (claude -p) as a provider.",
+          "name": "CLAUDE_CODE_ENABLED"
+        },
+        {
+          "description": "Set to 1 to use your Codex CLI (codex exec) as a provider.",
+          "name": "CODEX_ENABLED"
+        },
+        {
+          "description": "Card-billed Anthropic API key (optional; alternative/addition to the subscription CLIs).",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        },
+        {
+          "description": "Any OpenAI-compatible endpoint (Gemini / Groq / OpenRouter / DeepSeek / Ollama).",
+          "name": "OPENAI_COMPAT_BASE_URL"
+        }
+      ],
+      "identifier": "baton-orchestrator",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "name": "--from",
+          "type": "named",
+          "value": "baton-orchestrator[mcp]"
+        },
+        {
+          "type": "positional",
+          "value": "baton-mcp"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8ba17eb904",
+    "published_at": "2026-07-24T02:13:44.819726Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ribato22/baton",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-24T02:13:44.819726Z"
+  },
+  "title": "Baton",
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

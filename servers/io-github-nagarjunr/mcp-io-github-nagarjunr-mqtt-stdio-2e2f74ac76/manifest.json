@@ -1,0 +1,77 @@
+{
+  "description": "MCP server for MQTT 5.0 brokers (publish, subscribe, topic discovery).",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:40+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nagarjunr-mqtt.stdio.2e2f74ac76",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nagarjunr/iot-mcp-servers",
+    "homepage": "https://github.com/nagarjunr/iot-mcp-servers",
+    "repository": "https://github.com/nagarjunr/iot-mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mqtt5-mcp-server==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nagarjunr/mqtt",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Broker hostname or IP",
+          "isRequired": true,
+          "name": "MQTT_HOST"
+        },
+        {
+          "description": "Broker port, default 1883 (or 8883 for TLS)",
+          "name": "MQTT_PORT"
+        },
+        {
+          "description": "Broker username",
+          "name": "MQTT_USERNAME"
+        },
+        {
+          "description": "Broker password",
+          "isSecret": true,
+          "name": "MQTT_PASSWORD"
+        },
+        {
+          "description": "true/false, default false",
+          "name": "MQTT_USE_TLS"
+        }
+      ],
+      "identifier": "mqtt5-mcp-server",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "2e2f74ac76",
+    "published_at": "2026-07-24T15:10:04.942184Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nagarjunr/mqtt",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-24T15:10:04.942184Z"
+  },
+  "title": "MQTT",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

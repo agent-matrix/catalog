@@ -1,0 +1,87 @@
+{
+  "description": "Verify consequential AI actions before they execute.",
+  "harvest": {
+    "last_seen_at": "2026-07-27T05:59:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Actenon-kernel.stdio.69ec916912",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Actenon/actenon-kernel",
+    "homepage": "https://github.com/Actenon/actenon-kernel",
+    "repository": "https://github.com/Actenon/actenon-kernel"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "The MCP server entry point ships in the [mcp] extra.",
+            "isRequired": true,
+            "name": "--from",
+            "type": "named",
+            "value": "actenon-kernel[mcp]"
+          },
+          {
+            "description": "Console script that starts the stdio MCP server.",
+            "isRequired": true,
+            "type": "positional",
+            "value": "actenon-mcp"
+          },
+          "actenon-kernel==1.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Actenon/kernel",
+  "packages": [
+    {
+      "identifier": "actenon-kernel",
+      "packageArguments": [
+        {
+          "description": "Run offline with an ephemeral key and in-memory state. Omit for a production server, which requires --key-file and fails closed without it.",
+          "type": "positional",
+          "value": "--demo"
+        }
+      ],
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "The MCP server entry point ships in the [mcp] extra.",
+          "isRequired": true,
+          "name": "--from",
+          "type": "named",
+          "value": "actenon-kernel[mcp]"
+        },
+        {
+          "description": "Console script that starts the stdio MCP server.",
+          "isRequired": true,
+          "type": "positional",
+          "value": "actenon-mcp"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "69ec916912",
+    "published_at": "2026-07-25T08:35:08.902783Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Actenon/kernel",
+    "server_version": "1.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-25T08:35:08.902783Z"
+  },
+  "title": "Actenon Kernel",
+  "type": "mcp_server",
+  "version": "1.2.2"
+}

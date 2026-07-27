@@ -1,0 +1,96 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/modelscope/funasr-mcp:0.1.2"
+      }
+    }
+  ],
+  "description": "Transcribe local audio with FunASR and SenseVoice using private, on-device inference.",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/modelscope/FunASR",
+  "id": "tool.io-github-modelscope-funasr-mcp.30e019d012",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/modelscope/FunASR",
+    "homepage": "https://github.com/modelscope/FunASR",
+    "repository": "https://github.com/modelscope/FunASR"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Transcribe local audio with FunASR and SenseVoice using private, on-device inference.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.modelscope/funasr-mcp",
+      "request_type": "POST",
+      "url": "https://github.com/modelscope/FunASR"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Mount the host audio directory read-only at /audio in the container.",
+            "name": "--mount",
+            "type": "named",
+            "value": "type=bind,src={audio_directory},dst=/audio,readonly",
+            "variables": {
+              "audio_directory": {
+                "description": "Host directory containing audio files. Use /audio/<file> when calling the tool.",
+                "format": "filepath",
+                "isRequired": true,
+                "placeholder": "/path/to/audio"
+              }
+            }
+          },
+          {
+            "description": "Persist downloaded ModelScope model files between container runs.",
+            "name": "--mount",
+            "type": "named",
+            "value": "type=volume,src=funasr-mcp-cache,dst=/root/.cache/modelscope"
+          },
+          "ghcr.io/modelscope/funasr-mcp:0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.modelscope/funasr-mcp",
+  "provenance": {
+    "identity_key": "764bf88b58",
+    "promoted_from": "mcp.io-github-modelscope-funasr-mcp.stdio.764bf88b58",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.modelscope/funasr-mcp",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-modelscope-funasr-mcp.stdio.764bf88b58",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/modelscope/FunASR",
+  "summary": "Transcribe local audio with FunASR and SenseVoice using private, on-device inference.",
+  "tags": [
+    "audio",
+    "device",
+    "funasr",
+    "local",
+    "private",
+    "sensevoice",
+    "transcribe"
+  ],
+  "title": "FunASR",
+  "type": "tool",
+  "version": "0.1.2"
+}

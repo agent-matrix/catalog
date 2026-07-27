@@ -1,0 +1,76 @@
+{
+  "description": "Agent-first trading on the ZXOAR launchpad (Uniswap V4): scan, vet, guarded buy/sell, atomic launch",
+  "harvest": {
+    "last_seen_at": "2026-07-27T05:59:53+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.fi-zxoar-zxoar.stdio.7bb75c467f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/lockwood-launch/lockwood-protocol",
+    "homepage": "https://github.com/lockwood-launch/lockwood-protocol",
+    "repository": "https://github.com/lockwood-launch/lockwood-protocol"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "zxoar-mcp@0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "fi.zxoar/zxoar",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional trading key \u2014 without it the server is READ-ONLY (scan/vet/info only). Signs locally; never leaves your machine.",
+          "isSecret": true,
+          "name": "PRIVATE_KEY"
+        },
+        {
+          "description": "Server-enforced cap per trade in ETH (default 0.5).",
+          "name": "MAX_ETH_PER_TX"
+        },
+        {
+          "description": "Server-enforced cumulative session spend cap in ETH (default 2).",
+          "name": "MAX_ETH_PER_SESSION"
+        },
+        {
+          "description": "Server-enforced rate limit on state-changing calls (default 12).",
+          "name": "MAX_TX_PER_MINUTE"
+        },
+        {
+          "description": "Override the chain RPC (defaults to Robinhood Chain mainnet; pair with CHAIN_ID and the *_ADDRESS vars for forks/testnets).",
+          "name": "RPC_URL"
+        }
+      ],
+      "identifier": "zxoar-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7bb75c467f",
+    "published_at": "2026-07-22T19:17:40.405353Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "fi.zxoar/zxoar",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-22T19:17:40.405353Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

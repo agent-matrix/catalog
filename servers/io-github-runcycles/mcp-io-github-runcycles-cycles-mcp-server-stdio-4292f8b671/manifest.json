@@ -1,0 +1,74 @@
+{
+  "description": "Runtime budget authority for AI agents \u2014 reserve, enforce, reconcile spend across providers",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:48+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-runcycles-cycles-mcp-server.stdio.4292f8b671",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/runcycles/cycles-mcp-server",
+    "homepage": "https://github.com/runcycles/cycles-mcp-server",
+    "repository": "https://github.com/runcycles/cycles-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@runcycles/mcp-server@0.5.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.runcycles/cycles-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Cycles API key for authentication. Set CYCLES_MOCK=true for local development without a key.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CYCLES_API_KEY"
+        },
+        {
+          "description": "URL of the Cycles server (e.g. https://api.runcycles.io). Required unless CYCLES_MOCK=true.",
+          "isRequired": true,
+          "name": "CYCLES_BASE_URL"
+        },
+        {
+          "choices": [
+            "true",
+            "false"
+          ],
+          "default": "false",
+          "description": "Enable mock mode for local development \u2014 no API key or live server required.",
+          "name": "CYCLES_MOCK"
+        }
+      ],
+      "identifier": "@runcycles/mcp-server",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4292f8b671",
+    "published_at": "2026-07-22T00:23:36.745762Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.runcycles/cycles-mcp-server",
+    "server_version": "0.5.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-22T00:23:36.745762Z"
+  },
+  "title": "Cycles \u2014 Budget Authority for AI Agents",
+  "type": "mcp_server",
+  "version": "0.5.0"
+}

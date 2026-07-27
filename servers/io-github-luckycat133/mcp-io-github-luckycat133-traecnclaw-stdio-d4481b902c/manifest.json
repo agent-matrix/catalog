@@ -1,0 +1,77 @@
+{
+  "description": "MCP server for TraeCN desktop automation: task delegation, model control, dialogs, code review.",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:03+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Luckycat133-traecnclaw.stdio.d4481b902c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Luckycat133/traecnclaw-mcp-skill",
+    "homepage": "https://github.com/Luckycat133/traecnclaw-mcp-skill",
+    "repository": "https://github.com/Luckycat133/traecnclaw-mcp-skill"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "traecnclaw@0.3.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Luckycat133/traecnclaw",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "127.0.0.1",
+          "description": "Host the TraeCN gateway listens on.",
+          "format": "string",
+          "name": "TRAECN_HOST"
+        },
+        {
+          "default": "8788",
+          "description": "Port the TraeCN gateway listens on.",
+          "format": "string",
+          "name": "TRAECN_PORT"
+        },
+        {
+          "default": "public",
+          "description": "Tool exposure profile. 'public' limits to safe operations.",
+          "format": "string",
+          "name": "TRAECN_MCP_TOOL_PROFILE"
+        },
+        {
+          "description": "Bearer token for the TraeCN gateway. Keep secret.",
+          "format": "string",
+          "isSecret": true,
+          "name": "TRAECN_GATEWAY_TOKEN"
+        }
+      ],
+      "identifier": "traecnclaw",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d4481b902c",
+    "published_at": "2026-07-22T06:59:29.691544Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Luckycat133/traecnclaw",
+    "server_version": "0.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-22T06:59:29.691544Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.1"
+}

@@ -1,0 +1,70 @@
+{
+  "description": "Read-only-by-default MCP for Datanika: browse data, run dbt transforms, manage ELT pipelines.",
+  "harvest": {
+    "last_seen_at": "2026-07-27T05:59:53+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-datanika-datanika-mcp.stdio.849e1649f0",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/datanika-io/datanika-core",
+    "homepage": "https://github.com/datanika-io/datanika-core",
+    "repository": "https://github.com/datanika-io/datanika-core"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "datanika-mcp==0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.datanika/datanika-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Datanika instance URL (defaults to https://app.datanika.io; set this for a self-hosted instance)",
+          "format": "string",
+          "name": "DATANIKA_URL"
+        },
+        {
+          "description": "Datanika API key (from Settings -> API Keys)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DATANIKA_API_KEY"
+        },
+        {
+          "description": "Set to true to enable write/trigger tools (read-only by default)",
+          "format": "string",
+          "name": "DATANIKA_ALLOW_WRITE"
+        }
+      ],
+      "identifier": "datanika-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "849e1649f0",
+    "published_at": "2026-07-21T14:43:08.846356Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.datanika/datanika-mcp",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-21T14:43:08.846356Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.0"
+}
