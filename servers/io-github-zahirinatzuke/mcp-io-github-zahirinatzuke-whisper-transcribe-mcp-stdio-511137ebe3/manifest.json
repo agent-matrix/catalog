@@ -1,0 +1,66 @@
+{
+  "description": "Transcribe audio locally with faster-whisper or through the OpenAI Whisper API.",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ZahiriNatZuke-whisper-transcribe-mcp.stdio.511137ebe3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ZahiriNatZuke/whisper-transcribe-mcp",
+    "homepage": "https://github.com/ZahiriNatZuke/whisper-transcribe-mcp",
+    "repository": "https://github.com/ZahiriNatZuke/whisper-transcribe-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "whisper-transcribe-mcp==1.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ZahiriNatZuke/whisper-transcribe-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "OpenAI API key. Enables the cloud backend and optional GPT post-processing.",
+          "format": "string",
+          "isSecret": true,
+          "name": "OPENAI_API_KEY"
+        },
+        {
+          "default": "base",
+          "description": "Default faster-whisper model size when using the local backend.",
+          "format": "string",
+          "name": "WHISPER_MODEL"
+        }
+      ],
+      "identifier": "whisper-transcribe-mcp",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "511137ebe3",
+    "published_at": "2026-07-23T22:18:35.436291Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ZahiriNatZuke/whisper-transcribe-mcp",
+    "server_version": "1.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-23T22:18:35.436291Z"
+  },
+  "title": "Whisper Transcribe",
+  "type": "mcp_server",
+  "version": "1.1.2"
+}

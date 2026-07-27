@@ -1,0 +1,160 @@
+{
+  "description": "MCP server that lets AI agents create, fetch, verify, and publish Molpha oracle data.",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-molpha-mcp.stdio.2f05a65df3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/molpha/mcp",
+    "homepage": "https://github.com/molpha/mcp",
+    "repository": "https://github.com/molpha/mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@molpha/mcp@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.molpha/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "choices": [
+            "memory",
+            "keychain"
+          ],
+          "default": "memory",
+          "description": "Signing backend: memory (local keypair) or keychain (Privy / Turnkey).",
+          "isRequired": true,
+          "name": "SIGNER_BACKEND"
+        },
+        {
+          "description": "Path to a Solana JSON keypair file. Required when SIGNER_BACKEND=memory.",
+          "format": "filepath",
+          "name": "OWNER_KEYPAIR"
+        },
+        {
+          "choices": [
+            "privy",
+            "turnkey"
+          ],
+          "description": "Keychain provider: privy or turnkey. Required when SIGNER_BACKEND=keychain.",
+          "name": "KEYCHAIN_BACKEND"
+        },
+        {
+          "description": "Privy app ID. Required for KEYCHAIN_BACKEND=privy.",
+          "isSecret": true,
+          "name": "PRIVY_APP_ID"
+        },
+        {
+          "description": "Privy app secret. Required for KEYCHAIN_BACKEND=privy.",
+          "isSecret": true,
+          "name": "PRIVY_APP_SECRET"
+        },
+        {
+          "description": "Privy wallet ID. Required for KEYCHAIN_BACKEND=privy.",
+          "isSecret": true,
+          "name": "PRIVY_WALLET_ID"
+        },
+        {
+          "description": "Solana address for the Privy wallet.",
+          "name": "PRIVY_WALLET_ADDRESS"
+        },
+        {
+          "description": "Turnkey API public key. Required for KEYCHAIN_BACKEND=turnkey.",
+          "isSecret": true,
+          "name": "TURNKEY_API_PUBLIC_KEY"
+        },
+        {
+          "description": "Turnkey API private key. Required for KEYCHAIN_BACKEND=turnkey.",
+          "isSecret": true,
+          "name": "TURNKEY_API_PRIVATE_KEY"
+        },
+        {
+          "description": "Turnkey organization ID. Required for KEYCHAIN_BACKEND=turnkey.",
+          "isSecret": true,
+          "name": "TURNKEY_ORGANIZATION_ID"
+        },
+        {
+          "description": "Solana address for the Turnkey wallet.",
+          "name": "TURNKEY_WALLET_ADDRESS"
+        },
+        {
+          "default": "https://api.devnet.solana.com",
+          "description": "Solana RPC endpoint.",
+          "name": "SOLANA_RPC"
+        },
+        {
+          "description": "Comma-separated Molpha gateway URLs. Leave empty to use the SDK default.",
+          "name": "GATEWAY_ENDPOINTS"
+        },
+        {
+          "default": "evm-sepolia",
+          "description": "Comma-separated EVM verifier networks.",
+          "name": "MOLPHA_EVM_NETWORKS"
+        },
+        {
+          "default": "starknet-sepolia",
+          "description": "Comma-separated Starknet verifier networks.",
+          "name": "MOLPHA_STARKNET_NETWORKS"
+        },
+        {
+          "default": "false",
+          "description": "Preview all write and spend operations without submitting them.",
+          "format": "boolean",
+          "name": "MOLPHA_DRY_RUN"
+        },
+        {
+          "default": "100",
+          "description": "Process-local daily Solana submit cap.",
+          "format": "number",
+          "name": "MOLPHA_MAX_EXECUTES_PER_DAY"
+        },
+        {
+          "default": "1",
+          "description": "Refuse to fund an x402 round priced above this amount (decimal USDC).",
+          "name": "MOLPHA_X402_MAX_PRICE_USDC"
+        },
+        {
+          "default": "10",
+          "description": "Process-local daily x402 spend cap (decimal USDC).",
+          "name": "MOLPHA_X402_MAX_SPEND_PER_DAY_USDC"
+        },
+        {
+          "description": "Optional settling gateway PDA (base58) to skip discovery when the escrow is already funded.",
+          "name": "MOLPHA_X402_GATEWAY_PDA"
+        }
+      ],
+      "identifier": "@molpha/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "2f05a65df3",
+    "published_at": "2026-07-21T20:10:14.960113Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.molpha/mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-21T20:10:14.960113Z"
+  },
+  "title": "Molpha MCP",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

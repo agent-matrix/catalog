@@ -1,0 +1,86 @@
+{
+  "description": "MCP server for the Txtcel Solana protocol: agents post and read undeletable on-chain messages.",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:53+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-txtcel-mcp.stdio.0c1ce1f24c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/txtcel/txtcel-mcp",
+    "homepage": "https://github.com/txtcel/txtcel-mcp",
+    "repository": "https://github.com/txtcel/txtcel-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@txtcel/mcp@0.4.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.txtcel/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "RPC HTTP endpoint of the Solana cluster where the program is deployed",
+          "format": "string",
+          "isRequired": true,
+          "name": "TXTCEL_RPC"
+        },
+        {
+          "description": "Txtcel program address on the chosen cluster (mainnet: TXTCELhcJEVUMoMJxapBN7fsrX5rZ8Dr4dWDvkmboGY)",
+          "format": "string",
+          "isRequired": true,
+          "name": "TXTCEL_PROGRAM_ID"
+        },
+        {
+          "description": "Path to a dedicated agent keypair JSON file (alternative: TXTCEL_SECRET_KEY)",
+          "format": "filepath",
+          "name": "TXTCEL_KEYPAIR"
+        },
+        {
+          "description": "Agent secret key as JSON byte array or base58 (alternative: TXTCEL_KEYPAIR)",
+          "format": "string",
+          "isSecret": true,
+          "name": "TXTCEL_SECRET_KEY"
+        },
+        {
+          "description": "Commitment level: processed | confirmed | finalized (default: confirmed)",
+          "format": "string",
+          "name": "TXTCEL_COMMITMENT"
+        },
+        {
+          "description": "ComputeBudget price in micro-lamports per CU, 0 disables (default: 10000)",
+          "format": "number",
+          "name": "TXTCEL_PRIORITY_FEE"
+        }
+      ],
+      "identifier": "@txtcel/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0c1ce1f24c",
+    "published_at": "2026-07-20T17:05:25.200526Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.txtcel/mcp",
+    "server_version": "0.4.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-20T17:05:25.200526Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.4.4"
+}

@@ -1,0 +1,99 @@
+{
+  "description": "Computer use for Hyprland: semantic desktop state over IPC, plus vision and native input",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:02+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-IlyasKhallouki-hypruse.stdio.d2cf361e79",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/IlyasKhallouki/hypruse",
+    "homepage": "https://github.com/IlyasKhallouki/hypruse",
+    "repository": "https://github.com/IlyasKhallouki/hypruse"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "hypruse==0.9.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.IlyasKhallouki/hypruse",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "choices": [
+            "file",
+            "image"
+          ],
+          "default": "file",
+          "description": "How captures are returned: 'file' writes to XDG_RUNTIME_DIR and returns the path, 'image' returns the image inline. Use 'image' for clients that render MCP images but cannot read files, such as Claude Desktop.",
+          "name": "HYPRUSE_SCREENSHOT_MODE"
+        },
+        {
+          "default": "0",
+          "description": "Set to 1 to expose only the observation tools (desktop, screenshot, zoom, ui, marks, binds, wait_for). The agent can see and narrate but cannot click, type, or launch.",
+          "name": "HYPRUSE_READONLY"
+        },
+        {
+          "description": "Restrict input to a scope of windows and refuse everything outside it: 'launched' (only windows hypruse opened this session), 'class:firefox,kitty', or 'workspace:3,special:notes'. Unset means no confinement.",
+          "name": "HYPRUSE_CONFINE",
+          "placeholder": "launched"
+        },
+        {
+          "choices": [
+            "1",
+            "strict",
+            "0"
+          ],
+          "default": "1",
+          "description": "Refuse to click or type into system authentication dialogs (polkit, keyring prompts). On by default; 'strict' also refuses password fields in ordinary windows; 0 disables it.",
+          "name": "HYPRUSE_AUTH_GUARD"
+        },
+        {
+          "default": "0",
+          "description": "Set to 1 to refuse to act when the cursor or focused window moved since hypruse's last action, so the agent must re-read the desktop before retrying.",
+          "name": "HYPRUSE_STRICT"
+        },
+        {
+          "default": "0",
+          "description": "Set to 1 to make the agent's presence legible: tag every window it opens 'hypruse-owned' and flash an on-screen notice when it opens a window or captures the screen.",
+          "name": "HYPRUSE_MARK"
+        },
+        {
+          "default": "0",
+          "description": "Set to 1 to register the opt-in clipboard tool (never in read-only mode). Off by default because clipboards hold passwords.",
+          "name": "HYPRUSE_CLIPBOARD"
+        }
+      ],
+      "identifier": "hypruse",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.9.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d2cf361e79",
+    "published_at": "2026-07-26T10:32:34.776172Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.IlyasKhallouki/hypruse",
+    "server_version": "0.9.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-26T10:32:34.776172Z"
+  },
+  "title": "hypruse",
+  "type": "mcp_server",
+  "version": "0.9.4"
+}

@@ -1,0 +1,211 @@
+{
+  "description": "Runs a command in a throwaway Kubernetes pod and returns exit code, output and artifacts.",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-inhuman-mcp-k8s-ephemeral-job.stdio.cfe6225fde",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/inhuman/mcp-k8s-ephemeral-job",
+    "homepage": "https://github.com/inhuman/mcp-k8s-ephemeral-job",
+    "repository": "https://github.com/inhuman/mcp-k8s-ephemeral-job"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Mount the kubeconfig directory read-only so the server can reach the cluster.",
+            "name": "--volume",
+            "type": "named",
+            "value": "{kubeconfig_dir}:/kube:ro",
+            "variables": {
+              "kubeconfig_dir": {
+                "description": "Host directory holding your kubeconfig, e.g. /home/you/.kube",
+                "isRequired": true
+              }
+            }
+          },
+          {
+            "description": "Read-only root filesystem \u2014 the server writes nothing locally.",
+            "name": "--read-only",
+            "type": "named"
+          },
+          {
+            "description": "Drop all Linux capabilities.",
+            "name": "--cap-drop",
+            "type": "named",
+            "value": "ALL"
+          },
+          {
+            "description": "Block privilege escalation.",
+            "name": "--security-opt",
+            "type": "named",
+            "value": "no-new-privileges"
+          },
+          {
+            "description": "Memory limit for the server process itself.",
+            "name": "--memory",
+            "type": "named",
+            "value": "256m"
+          },
+          "docker.io/idconstruct/mcp-k8s-ephemeral-job:v0.7.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.inhuman/mcp-k8s-ephemeral-job",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Strict image allowlist (CSV). Empty means every call is rejected, so this must be set.",
+          "isRequired": true,
+          "name": "MCP_K8S_ALLOWED_IMAGES"
+        },
+        {
+          "default": "/kube/config",
+          "description": "Path to the kubeconfig inside the container. Empty = use in-cluster credentials.",
+          "name": "MCP_K8S_KUBECONFIG"
+        },
+        {
+          "default": "mcp-ephemeral",
+          "description": "Namespace the ephemeral pods are created in. Needs a Role/RoleBinding for jobs and pods.",
+          "name": "MCP_K8S_NAMESPACE"
+        },
+        {
+          "default": "stdio",
+          "description": "MCP transport: stdio | http | sse. Must be 'stdio' for direct docker/stdio use.",
+          "name": "MCP_K8S_TRANSPORT"
+        },
+        {
+          "default": "60",
+          "description": "Default wall-clock timeout per job, seconds.",
+          "name": "MCP_K8S_DEFAULT_TIMEOUT_S"
+        },
+        {
+          "default": "600",
+          "description": "Maximum wall-clock timeout a caller may request, seconds.",
+          "name": "MCP_K8S_MAX_TIMEOUT_S"
+        },
+        {
+          "default": "1048576",
+          "description": "Cap on combined stdout/stderr before truncation.",
+          "name": "MCP_K8S_MAX_OUTPUT_BYTES"
+        },
+        {
+          "default": "10485760",
+          "description": "Cap on the total size of returned artifacts.",
+          "name": "MCP_K8S_MAX_ARTIFACT_BYTES"
+        },
+        {
+          "default": "10",
+          "description": "Maximum ephemeral pods running at the same time.",
+          "name": "MCP_K8S_MAX_CONCURRENT"
+        },
+        {
+          "default": "1",
+          "description": "Pod CPU request; limits come from the caller or the namespace LimitRange.",
+          "name": "MCP_K8S_DEFAULT_CPU"
+        },
+        {
+          "default": "512Mi",
+          "description": "Pod memory request; limits come from the caller or the namespace LimitRange.",
+          "name": "MCP_K8S_DEFAULT_MEMORY"
+        },
+        {
+          "default": "busybox:1.36",
+          "description": "Helper image used to inject input files and collect artifacts.",
+          "name": "MCP_K8S_SIDECAR_IMAGE"
+        },
+        {
+          "description": "Image carrying git for the clone init container. Empty disables the clone field.",
+          "name": "MCP_K8S_CLONE_IMAGE"
+        },
+        {
+          "description": "Secret with git tokens, mounted only on the cloner. Empty disables the clone field.",
+          "isSecret": true,
+          "name": "MCP_K8S_CLONE_SECRET"
+        },
+        {
+          "description": "Existing PVC mounted into every job pod as a shared cache. Empty = no cache.",
+          "name": "MCP_K8S_CACHE_PVC"
+        },
+        {
+          "description": "Where the cache PVC is mounted, e.g. /go/pkg/mod. Empty = no cache.",
+          "name": "MCP_K8S_CACHE_MOUNT_PATH"
+        },
+        {
+          "description": "JSON object of env vars added to every job pod; caller keys win on collision.",
+          "name": "MCP_K8S_JOB_EXTRA_ENV"
+        },
+        {
+          "description": "Optional X-MCP-AUTH token required on every request (http/sse transports only).",
+          "isSecret": true,
+          "name": "MCP_K8S_AUTH_TOKEN"
+        }
+      ],
+      "identifier": "docker.io/idconstruct/mcp-k8s-ephemeral-job:v0.7.1",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "Mount the kubeconfig directory read-only so the server can reach the cluster.",
+          "name": "--volume",
+          "type": "named",
+          "value": "{kubeconfig_dir}:/kube:ro",
+          "variables": {
+            "kubeconfig_dir": {
+              "description": "Host directory holding your kubeconfig, e.g. /home/you/.kube",
+              "isRequired": true
+            }
+          }
+        },
+        {
+          "description": "Read-only root filesystem \u2014 the server writes nothing locally.",
+          "name": "--read-only",
+          "type": "named"
+        },
+        {
+          "description": "Drop all Linux capabilities.",
+          "name": "--cap-drop",
+          "type": "named",
+          "value": "ALL"
+        },
+        {
+          "description": "Block privilege escalation.",
+          "name": "--security-opt",
+          "type": "named",
+          "value": "no-new-privileges"
+        },
+        {
+          "description": "Memory limit for the server process itself.",
+          "name": "--memory",
+          "type": "named",
+          "value": "256m"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "cfe6225fde",
+    "published_at": "2026-07-20T09:51:22.058237Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.inhuman/mcp-k8s-ephemeral-job",
+    "server_version": "0.7.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-20T09:51:22.058237Z"
+  },
+  "title": "Kubernetes Ephemeral Job",
+  "type": "mcp_server",
+  "version": "0.7.1"
+}

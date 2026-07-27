@@ -1,0 +1,94 @@
+{
+  "description": "QuickBooks Online MCP server for invoices, customers, and payments. OAuth 2.1 + PKCE, stdio/HTTP.",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-amin-ale-mcp-quickbooks.stdio.cb72e48f67",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/amin-ale/mcp-quickbooks",
+    "homepage": "https://github.com/amin-ale/mcp-quickbooks",
+    "repository": "https://github.com/amin-ale/mcp-quickbooks"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "Run the server over stdio.",
+            "isRequired": true,
+            "type": "positional",
+            "value": "stdio"
+          },
+          "mcp-quickbooks==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.amin-ale/mcp-quickbooks",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Intuit app client id.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "QBO_CLIENT_ID"
+        },
+        {
+          "description": "Intuit app client secret.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "QBO_CLIENT_SECRET"
+        },
+        {
+          "default": "sandbox",
+          "description": "sandbox or production.",
+          "name": "QBO_ENVIRONMENT"
+        },
+        {
+          "description": "QuickBooks company (realm) id.",
+          "name": "QBO_REALM_ID"
+        },
+        {
+          "default": "com.intuit.quickbooks.accounting",
+          "description": "Space-separated OAuth scopes; defaults to accounting only.",
+          "name": "QBO_SCOPES"
+        }
+      ],
+      "identifier": "mcp-quickbooks",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "Run the server over stdio.",
+          "isRequired": true,
+          "type": "positional",
+          "value": "stdio"
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "cb72e48f67",
+    "published_at": "2026-07-26T11:59:15.976402Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.amin-ale/mcp-quickbooks",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-26T11:59:15.976402Z"
+  },
+  "title": "QuickBooks Online MCP Server",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

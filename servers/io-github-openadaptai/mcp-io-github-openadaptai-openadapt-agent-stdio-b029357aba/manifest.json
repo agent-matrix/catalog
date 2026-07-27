@@ -1,0 +1,76 @@
+{
+  "description": "Local Beta bridge for governed openadapt-flow workflows and attended actions.",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:05+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-OpenAdaptAI-openadapt-agent.stdio.b029357aba",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/OpenAdaptAI/openadapt-agent",
+    "homepage": "https://github.com/OpenAdaptAI/openadapt-agent",
+    "repository": "https://github.com/OpenAdaptAI/openadapt-agent"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "openadapt-agent==2.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.OpenAdaptAI/openadapt-agent",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Decryption key for encrypted-at-rest bundles (workflow.json.enc). Omit for plaintext bundles.",
+          "isSecret": true,
+          "name": "OPENADAPT_BUNDLE_KEY"
+        }
+      ],
+      "identifier": "openadapt-agent",
+      "packageArguments": [
+        {
+          "description": "Serve a directory of compiled bundles over MCP (stdio).",
+          "type": "positional",
+          "value": "serve",
+          "valueHint": "subcommand"
+        },
+        {
+          "description": "Directory of compiled openadapt-flow bundles (one bundle, or a directory whose immediate subdirectories are bundles). This is the operator's own private artifact and is never shipped with the package.",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "--bundles",
+          "type": "named",
+          "valueHint": "bundles_dir"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b029357aba",
+    "published_at": "2026-07-23T15:12:44.175407Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.OpenAdaptAI/openadapt-agent",
+    "server_version": "2.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-23T15:12:44.175407Z"
+  },
+  "title": "OpenAdapt Agent (openadapt-flow bridge)",
+  "type": "mcp_server",
+  "version": "2.0.1"
+}

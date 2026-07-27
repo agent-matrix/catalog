@@ -1,0 +1,59 @@
+{
+  "description": "Real-time Korean corporate disclosure (DART) events. Pay per call in USDC via x402. No API key.",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:03+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-LJaysk-kr-dart-events.stdio.23e34b09f8",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/LJaysk/kr-dart-events",
+    "homepage": "https://github.com/LJaysk/kr-dart-events",
+    "repository": "https://github.com/LJaysk/kr-dart-events"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/ljaysk/kr-dart-events-mcp:0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.LJaysk/kr-dart-events",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "EVM private key (0x...) of a wallet holding a few cents of USDC on Base. Used to sign x402 micro-payments. Gas is not needed.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "X402_PRIVATE_KEY"
+        }
+      ],
+      "identifier": "ghcr.io/ljaysk/kr-dart-events-mcp:0.1.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "23e34b09f8",
+    "published_at": "2026-07-20T16:40:36.740457Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.LJaysk/kr-dart-events",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-20T16:40:36.740457Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

@@ -1,0 +1,78 @@
+{
+  "description": "Kaspa x402 agent payer \u2014 pay x402 v2 services on Kaspa (KAS) per call, no account or API key",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:02+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Kali123411-kx402.stdio.f9c3921d5f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Kali123411/kx402",
+    "homepage": "https://github.com/Kali123411/kx402",
+    "repository": "https://github.com/Kali123411/kx402"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "kx402@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Kali123411/kx402",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the rusty-kaspa v2.0.0 nodejs WASM SDK (kaspa.js). Get it with the repo's `npm run fetch-sdk`.",
+          "format": "string",
+          "isRequired": true,
+          "name": "KASPA_X402_KASPA_WASM_MODULE"
+        },
+        {
+          "description": "Funding key: wallet-key:<path> to a 0600 file holding a 64-hex private key, or a raw 64-hex key.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "KASPA_X402_FUNDING_WALLET"
+        },
+        {
+          "description": "kaspa:mainnet or kaspa:testnet-10 (default testnet-10).",
+          "format": "string",
+          "name": "KASPA_X402_NETWORK"
+        }
+      ],
+      "identifier": "kx402",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f9c3921d5f",
+    "published_at": "2026-07-21T19:39:36.101634Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Kali123411/kx402",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-21T19:39:36.101634Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

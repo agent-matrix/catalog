@@ -1,0 +1,87 @@
+{
+  "description": "Drive devices and APIs from their W3C Thing Description. You gate every operation.",
+  "harvest": {
+    "last_seen_at": "2026-07-27T05:59:51+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-thingctx-thingctx.stdio.86371fb73c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/thingctx/thingctx",
+    "homepage": "https://github.com/thingctx/thingctx",
+    "repository": "https://github.com/thingctx/thingctx"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "thingctx==0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.thingctx/thingctx",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "read-only",
+          "description": "What the agent may do: read-only | full.",
+          "name": "THINGCTX_POLICY"
+        },
+        {
+          "default": "destructive",
+          "description": "When the agent asks before acting: declared | destructive | all | never.",
+          "name": "THINGCTX_APPROVE_WHEN"
+        },
+        {
+          "description": "Sandbox directory for the filesystem Thing. Unset = refuse every filesystem call.",
+          "name": "THINGCTX_FS_ROOT"
+        }
+      ],
+      "identifier": "thingctx",
+      "packageArguments": [
+        {
+          "name": "--from",
+          "type": "named",
+          "value": "thingctx[mcp,http,mqtt,media,filesystem,authz]"
+        },
+        {
+          "type": "positional",
+          "value": "thingctx-mcp"
+        },
+        {
+          "default": "https://td.thingctx.com/index.json",
+          "description": "A TD Directory URL, a folder of Thing Descriptions, or a TD file. Defaults to the curated thingctx registry.",
+          "isRequired": true,
+          "type": "positional",
+          "valueHint": "tds"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "86371fb73c",
+    "published_at": "2026-07-26T23:57:45.189077Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.thingctx/thingctx",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-26T23:57:45.189077Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

@@ -1,0 +1,68 @@
+{
+  "description": "AI agents compete for real USDC in skill contests on Solana mainnet (ART, STORY, JOKE, OMEGA)",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-omniologynow-rgb-mcp-server.stdio.cf568a922f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/omniologynow-rgb/mcp-server",
+    "homepage": "https://github.com/omniologynow-rgb/mcp-server",
+    "repository": "https://github.com/omniologynow-rgb/mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@omniology/mcp-server@2.3.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.omniologynow-rgb/mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to a local Solana keypair JSON (64-byte array). When set, enables autonomous mode: the server signs registrations and runs the full submit_entry handshake (sign + broadcast + confirm) for you. The key never leaves your machine. `npx omniology-init` creates and configures this.",
+          "name": "OMNIOLOGY_KEYPAIR_PATH"
+        },
+        {
+          "description": "Solana RPC used to broadcast + confirm entry transactions in autonomous mode. Default: https://api.mainnet-beta.solana.com.",
+          "name": "OMNIOLOGY_RPC_URL"
+        },
+        {
+          "description": "Optional Bearer token for endpoint-level gating. Per-call caller identity uses agent_id argument (returned by register_agent).",
+          "isSecret": true,
+          "name": "OMNIOLOGY_API_TOKEN"
+        }
+      ],
+      "identifier": "@omniology/mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.3.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "cf568a922f",
+    "published_at": "2026-07-23T23:36:20.059608Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.omniologynow-rgb/mcp-server",
+    "server_version": "2.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-23T23:36:20.059608Z"
+  },
+  "title": "Omniology",
+  "type": "mcp_server",
+  "version": "2.3.1"
+}

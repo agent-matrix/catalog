@@ -1,0 +1,74 @@
+{
+  "description": "MCP server for LiveAction LiveNX (quay.io / MCP registry test publish)",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:14+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-bdimic-bluecat-livenxmcp.stdio.e770ae73fc",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "name": "-p",
+            "type": "named",
+            "value": "9985:9985"
+          },
+          "quay.io/bluecat/mcp-servers:livenxmcp-0.30.1-test1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.bdimic-bluecat/livenxmcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "LiveNX API key",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "LIVENX_API_KEY"
+        },
+        {
+          "description": "LiveNX Prometheus password",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "LIVENX_PROM_PASSWORD"
+        }
+      ],
+      "identifier": "quay.io/bluecat/mcp-servers:livenxmcp-0.30.1-test1",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "name": "-p",
+          "type": "named",
+          "value": "9985:9985"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:9985/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "e770ae73fc",
+    "published_at": "2026-07-21T10:52:49.252319Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.bdimic-bluecat/livenxmcp",
+    "server_version": "0.30.1-test1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-21T10:52:49.252319Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.30.1-test1"
+}

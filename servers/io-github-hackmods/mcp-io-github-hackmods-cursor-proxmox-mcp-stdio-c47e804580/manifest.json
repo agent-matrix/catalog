@@ -1,0 +1,73 @@
+{
+  "description": "Manage Proxmox VE via Cursor: QEMU, LXC, storage, HA, firewall, access.",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:29+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-hackmods-cursor-proxmox-mcp.stdio.c47e804580",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/hackmods/cursor-proxmox-mcp",
+    "homepage": "https://github.com/hackmods/cursor-proxmox-mcp",
+    "repository": "https://github.com/hackmods/cursor-proxmox-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "cursor-proxmox-mcp==1.9.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.hackmods/cursor-proxmox-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Absolute path to Proxmox MCP config.json (host, token, SSL).",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "PROXMOX_MCP_CONFIG"
+        },
+        {
+          "description": "API token secret when config uses ${PROXMOX_TOKEN_VALUE}.",
+          "isSecret": true,
+          "name": "PROXMOX_TOKEN_VALUE"
+        },
+        {
+          "description": "Set to 1 for verbose tool_call detail (also bumps INFO\u2192DEBUG).",
+          "name": "PROXMOX_MCP_VERBOSE"
+        },
+        {
+          "description": "Override logging.level (DEBUG|INFO|WARNING|ERROR).",
+          "name": "PROXMOX_MCP_LOG_LEVEL"
+        }
+      ],
+      "identifier": "cursor-proxmox-mcp",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.9.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c47e804580",
+    "published_at": "2026-07-25T04:43:05.7798Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.hackmods/cursor-proxmox-mcp",
+    "server_version": "1.9.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-25T04:43:05.7798Z"
+  },
+  "title": "Cursor Proxmox MCP",
+  "type": "mcp_server",
+  "version": "1.9.0"
+}

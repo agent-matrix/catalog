@@ -1,0 +1,76 @@
+{
+  "description": "MCP server exposing cPanel UAPI (domains, DNS, email, MySQL, files) as tools for AI assistants.",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:06+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-RodrigueDev13-obambu-cpanel-mcp.stdio.3c1c504015",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/RodrigueDev13/obambu-cpanel-mcp",
+    "homepage": "https://github.com/RodrigueDev13/obambu-cpanel-mcp",
+    "repository": "https://github.com/RodrigueDev13/obambu-cpanel-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "obambu-cpanel-mcp@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.RodrigueDev13/obambu-cpanel-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "cPanel server hostname or IP address",
+          "isRequired": true,
+          "name": "CPANEL_HOST"
+        },
+        {
+          "default": "2083",
+          "description": "cPanel API port",
+          "name": "CPANEL_PORT"
+        },
+        {
+          "description": "cPanel account username",
+          "isRequired": true,
+          "name": "CPANEL_USERNAME"
+        },
+        {
+          "description": "cPanel API token (Security -> Manage API Tokens)",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CPANEL_API_TOKEN"
+        }
+      ],
+      "identifier": "obambu-cpanel-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "3c1c504015",
+    "published_at": "2026-07-24T21:13:53.208709Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.RodrigueDev13/obambu-cpanel-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-24T21:13:53.208709Z"
+  },
+  "title": "Obambu cPanel MCP",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

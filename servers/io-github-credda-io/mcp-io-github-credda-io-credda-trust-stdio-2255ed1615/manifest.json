@@ -1,0 +1,65 @@
+{
+  "description": "Check a counterparty's verifiable Credda trust record; verify or present signed credentials.",
+  "harvest": {
+    "last_seen_at": "2026-07-27T05:59:59+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Credda-io-credda-trust.stdio.2255ed1615",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@credda/mcp-server@0.1.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Credda-io/credda-trust",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional Credda platform API key. Without it the public read/verify tools still work; with it the platform tools (score reads, monitors, usage) are enabled.",
+          "isSecret": true,
+          "name": "CREDDA_API_KEY"
+        },
+        {
+          "description": "Optional. The external id this server presents credentials for; needed only by mint_my_trust_token and present_my_credential (with CREDDA_API_KEY).",
+          "name": "CREDDA_USER_ID"
+        },
+        {
+          "default": "https://api.credda.io",
+          "description": "Optional override for the Credda API base URL, e.g. for a staging deployment.",
+          "name": "CREDDA_API_BASE"
+        }
+      ],
+      "identifier": "@credda/mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "2255ed1615",
+    "published_at": "2026-07-24T01:57:59.418358Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Credda-io/credda-trust",
+    "server_version": "0.1.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-24T01:57:59.418358Z"
+  },
+  "title": "Credda Trust",
+  "type": "mcp_server",
+  "version": "0.1.3"
+}

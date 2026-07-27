@@ -1,0 +1,62 @@
+{
+  "description": "Governed MCP gateway: approval gates, signed audit receipts, and cost control for agent tool calls.",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:01:00+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.systems-blacklake-gateway.stdio.49640c721d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "blacklake@1.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "systems.blacklake/gateway",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "URL of the BlackLake API the bridge forwards to. Defaults to http://localhost:3100 (the address npx blacklake serve listens on).",
+          "format": "string",
+          "name": "BLACKLAKE_API_URL"
+        }
+      ],
+      "identifier": "blacklake",
+      "packageArguments": [
+        {
+          "description": "Starts the MCP stdio bridge. Pairs with a local API started by npx blacklake serve.",
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "49640c721d",
+    "published_at": "2026-07-24T10:49:04.700857Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "systems.blacklake/gateway",
+    "server_version": "1.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-24T10:49:04.700857Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.1.1"
+}

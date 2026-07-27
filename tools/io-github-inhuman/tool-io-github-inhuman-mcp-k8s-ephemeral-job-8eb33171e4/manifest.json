@@ -1,0 +1,113 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "docker.io/idconstruct/mcp-k8s-ephemeral-job:v0.7.1"
+      }
+    }
+  ],
+  "description": "Runs a command in a throwaway Kubernetes pod and returns exit code, output and artifacts.",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/inhuman/mcp-k8s-ephemeral-job",
+  "id": "tool.io-github-inhuman-mcp-k8s-ephemeral-job.8eb33171e4",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/inhuman/mcp-k8s-ephemeral-job",
+    "homepage": "https://github.com/inhuman/mcp-k8s-ephemeral-job",
+    "repository": "https://github.com/inhuman/mcp-k8s-ephemeral-job"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Runs a command in a throwaway Kubernetes pod and returns exit code, output and artifacts.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.inhuman/mcp-k8s-ephemeral-job",
+      "request_type": "POST",
+      "url": "https://github.com/inhuman/mcp-k8s-ephemeral-job"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Mount the kubeconfig directory read-only so the server can reach the cluster.",
+            "name": "--volume",
+            "type": "named",
+            "value": "{kubeconfig_dir}:/kube:ro",
+            "variables": {
+              "kubeconfig_dir": {
+                "description": "Host directory holding your kubeconfig, e.g. /home/you/.kube",
+                "isRequired": true
+              }
+            }
+          },
+          {
+            "description": "Read-only root filesystem \u2014 the server writes nothing locally.",
+            "name": "--read-only",
+            "type": "named"
+          },
+          {
+            "description": "Drop all Linux capabilities.",
+            "name": "--cap-drop",
+            "type": "named",
+            "value": "ALL"
+          },
+          {
+            "description": "Block privilege escalation.",
+            "name": "--security-opt",
+            "type": "named",
+            "value": "no-new-privileges"
+          },
+          {
+            "description": "Memory limit for the server process itself.",
+            "name": "--memory",
+            "type": "named",
+            "value": "256m"
+          },
+          "docker.io/idconstruct/mcp-k8s-ephemeral-job:v0.7.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.inhuman/mcp-k8s-ephemeral-job",
+  "provenance": {
+    "identity_key": "cfe6225fde",
+    "promoted_from": "mcp.io-github-inhuman-mcp-k8s-ephemeral-job.stdio.cfe6225fde",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.inhuman/mcp-k8s-ephemeral-job",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-inhuman-mcp-k8s-ephemeral-job.stdio.cfe6225fde",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/inhuman/mcp-k8s-ephemeral-job",
+  "summary": "Runs a command in a throwaway Kubernetes pod and returns exit code, output and artifacts.",
+  "tags": [
+    "command",
+    "ephemeral",
+    "exit",
+    "job",
+    "k8s",
+    "kubernetes",
+    "returns",
+    "runs",
+    "throwaway"
+  ],
+  "title": "Kubernetes Ephemeral Job",
+  "type": "tool",
+  "version": "0.7.1"
+}

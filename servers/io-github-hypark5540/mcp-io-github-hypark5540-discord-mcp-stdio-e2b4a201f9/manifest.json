@@ -1,0 +1,100 @@
+{
+  "description": "Safe Discord access for reading guild data and optionally managing bot messages",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-hypark5540-discord-mcp.stdio.e2b4a201f9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/hypark5540/discord-mcp",
+    "homepage": "https://github.com/hypark5540/discord-mcp",
+    "repository": "https://github.com/hypark5540/discord-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/hypark5540/discord-mcp:0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.hypark5540/discord-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Discord bot token",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DISCORD_TOKEN"
+        },
+        {
+          "choices": [
+            "false",
+            "true"
+          ],
+          "default": "false",
+          "description": "Expose message send and edit tools",
+          "name": "DISCORD_ENABLE_WRITES"
+        },
+        {
+          "choices": [
+            "false",
+            "true"
+          ],
+          "default": "false",
+          "description": "Expose the own-message delete tool; writes must also be enabled",
+          "name": "DISCORD_ENABLE_DELETES"
+        },
+        {
+          "choices": [
+            "false",
+            "true"
+          ],
+          "default": "false",
+          "description": "Permit writes without a guild or channel allowlist",
+          "name": "DISCORD_ALLOW_UNRESTRICTED_WRITES"
+        },
+        {
+          "description": "Comma-separated Discord guild IDs",
+          "name": "DISCORD_ALLOWED_GUILD_IDS"
+        },
+        {
+          "description": "Comma-separated Discord channel IDs",
+          "name": "DISCORD_ALLOWED_CHANNEL_IDS"
+        },
+        {
+          "default": "50000",
+          "description": "Maximum serialized MCP response size in characters",
+          "format": "number",
+          "name": "DISCORD_MAX_RESPONSE_CHARS"
+        }
+      ],
+      "identifier": "ghcr.io/hypark5540/discord-mcp:0.1.1",
+      "registryType": "oci",
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "e2b4a201f9",
+    "published_at": "2026-07-22T01:15:42.835744Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.hypark5540/discord-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-22T01:15:42.835744Z"
+  },
+  "title": "Discord MCP",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

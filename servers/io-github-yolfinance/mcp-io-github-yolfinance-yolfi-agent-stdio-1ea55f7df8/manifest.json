@@ -1,0 +1,72 @@
+{
+  "description": "Let AI agents add Yolfi crypto checkout, paylinks, webhooks, and status checks.",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:57+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-yolfinance-yolfi-agent.stdio.1ea55f7df8",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/yolfinance/yolfi-agent",
+    "homepage": "https://github.com/yolfinance/yolfi-agent",
+    "repository": "https://github.com/yolfinance/yolfi-agent"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@yolfi/agent@0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.yolfinance/yolfi-agent",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional. Explicit environment credentials take precedence over the protected credential stored by yolfi setup/checkin. Private API tools require one of these credentials.",
+          "format": "string",
+          "isSecret": true,
+          "name": "YOLFI_API_KEY"
+        },
+        {
+          "description": "Optional override for webhook verification in CI or deployed environments. Local create/rotate tools otherwise use endpoint-specific secrets from the protected Yolfi config.",
+          "format": "string",
+          "isSecret": true,
+          "name": "YOLFI_WEBHOOK_SECRET"
+        }
+      ],
+      "identifier": "@yolfi/agent",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1ea55f7df8",
+    "published_at": "2026-07-21T06:41:37.429393Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.yolfinance/yolfi-agent",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-21T06:41:37.429393Z"
+  },
+  "title": "Yolfi Payments MCP",
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

@@ -1,0 +1,87 @@
+{
+  "description": "Git-backed markdown memory for AI agents; search hides superseded and archived notes.",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:48+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-rwnalds-engram.stdio.d1112bd9ba",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/rwnalds/engram",
+    "homepage": "https://github.com/rwnalds/engram",
+    "repository": "https://github.com/rwnalds/engram"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Mount your local markdown vault into the container",
+            "isRequired": true,
+            "name": "--mount",
+            "type": "named",
+            "value": "type=bind,src={vault_path},dst=/vault",
+            "variables": {
+              "vault_path": {
+                "description": "Absolute path to your local markdown vault (Obsidian-compatible)",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          "ghcr.io/rwnalds/engram:0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.rwnalds/engram",
+  "packages": [
+    {
+      "identifier": "ghcr.io/rwnalds/engram:0.1.2",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "/vault",
+          "valueHint": "vault_dir"
+        }
+      ],
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "Mount your local markdown vault into the container",
+          "isRequired": true,
+          "name": "--mount",
+          "type": "named",
+          "value": "type=bind,src={vault_path},dst=/vault",
+          "variables": {
+            "vault_path": {
+              "description": "Absolute path to your local markdown vault (Obsidian-compatible)",
+              "format": "filepath",
+              "isRequired": true
+            }
+          }
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "d1112bd9ba",
+    "published_at": "2026-07-21T12:05:13.844822Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.rwnalds/engram",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-21T12:05:13.844822Z"
+  },
+  "title": "Engram",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

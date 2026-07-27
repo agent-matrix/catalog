@@ -1,0 +1,74 @@
+{
+  "description": "Polymarket whale trades and smart-money signals as agent tools, paid per call via x402.",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:45+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-predgeAI-whale-data-mcp.stdio.66cb79090a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/predgeAI/whale-data-mcp",
+    "homepage": "https://github.com/predgeAI/whale-data-mcp",
+    "repository": "https://github.com/predgeAI/whale-data-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@predge/whale-data-mcp@0.1.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.predgeAI/whale-data-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Funded Base-mainnet key that signs USDC micropayments. Required for paid tools; the free discovery tool works without it.",
+          "format": "string",
+          "isSecret": true,
+          "name": "BUYER_PRIVATE_KEY"
+        },
+        {
+          "description": "x402 network: 'base' (mainnet, real USDC) or 'base-sepolia' (only against a testnet deployment).",
+          "format": "string",
+          "name": "X402_NETWORK"
+        },
+        {
+          "description": "Hard per-call price cap in USD. Calls priced above it are refused before any payment. Default 0.05.",
+          "format": "string",
+          "name": "MAX_PRICE_USD"
+        },
+        {
+          "description": "Override the API base URL. Defaults to the production deployment.",
+          "format": "string",
+          "name": "PREDGE_BASE_URL"
+        }
+      ],
+      "identifier": "@predge/whale-data-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "66cb79090a",
+    "published_at": "2026-07-23T08:51:20.387117Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.predgeAI/whale-data-mcp",
+    "server_version": "0.1.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-23T08:51:20.387117Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.4"
+}

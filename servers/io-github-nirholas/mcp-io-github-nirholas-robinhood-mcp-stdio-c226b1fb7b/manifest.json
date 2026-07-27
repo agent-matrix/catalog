@@ -1,0 +1,76 @@
+{
+  "description": "Robinhood Crypto Trading API for AI agents: quotes, holdings, orders read-only; opt-in trading.",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nirholas-robinhood-mcp.stdio.c226b1fb7b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nirholas/robinhood-mcp",
+    "homepage": "https://github.com/nirholas/robinhood-mcp",
+    "repository": "https://github.com/nirholas/robinhood-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "robinhood-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nirholas/robinhood-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API key from your Robinhood crypto account settings (robinhood.com/account/crypto, web classic only).",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ROBINHOOD_CRYPTO_API_KEY"
+        },
+        {
+          "description": "Base64-encoded 32-byte Ed25519 private seed whose public key is registered with Robinhood. Generate one with `npx robinhood-keygen`.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ROBINHOOD_CRYPTO_PRIVATE_KEY"
+        },
+        {
+          "default": "v1",
+          "description": "API version: \"v1\" (default) or \"v2\". v2 adds fee-tier data to accounts and orders.",
+          "name": "ROBINHOOD_CRYPTO_API_VERSION"
+        },
+        {
+          "description": "Override the API host. Defaults to https://trading.robinhood.com.",
+          "name": "ROBINHOOD_CRYPTO_BASE_URL"
+        }
+      ],
+      "identifier": "robinhood-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c226b1fb7b",
+    "published_at": "2026-07-20T21:46:05.03401Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nirholas/robinhood-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-20T21:46:05.03401Z"
+  },
+  "title": "Robinhood Crypto",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

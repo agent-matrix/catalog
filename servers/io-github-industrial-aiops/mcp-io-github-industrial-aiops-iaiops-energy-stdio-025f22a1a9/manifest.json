@@ -1,0 +1,68 @@
+{
+  "description": "Industrial-AIOps energy edition: IEC-104/DNP3/IEC-61850 read-only OT connectors on iaiops.core.",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-industrial-aiops-iaiops-energy.stdio.025f22a1a9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/industrial-aiops/industrial-aiops-energy",
+    "homepage": "https://github.com/industrial-aiops/industrial-aiops-energy",
+    "repository": "https://github.com/industrial-aiops/industrial-aiops-energy"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "iaiops-energy==0.1.8"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.industrial-aiops/iaiops-energy",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the iaiops endpoints config YAML (defines IEC-104/DNP3/IEC-61850 targets); omit to use the default location.",
+          "format": "filepath",
+          "name": "IAIOPS_CONFIG"
+        },
+        {
+          "description": "Master password that unlocks the encrypted secret store holding endpoint credentials.",
+          "format": "string",
+          "isSecret": true,
+          "name": "IAIOPS_MASTER_PASSWORD"
+        },
+        {
+          "description": "Set to 1 to withhold every data-shipping tool (message bus, external historian, remote LLM) from list_tools() at registration time, for an airgap/sealed-box deployment. A data-exfiltration axis only, not read/write authorisation \u2014 every tool is governed and audited. This edition's connectors are monitor-only, so what this withholds are the base brain tools mirrored in from iaiops. Requires iaiops>=0.19.",
+          "name": "IAIOPS_NO_EGRESS"
+        }
+      ],
+      "identifier": "iaiops-energy",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.8"
+    }
+  ],
+  "provenance": {
+    "identity_key": "025f22a1a9",
+    "published_at": "2026-07-21T15:07:37.315173Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.industrial-aiops/iaiops-energy",
+    "server_version": "0.1.8",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-21T15:07:37.315173Z"
+  },
+  "title": "Industrial-AIOps Energy",
+  "type": "mcp_server",
+  "version": "0.1.8"
+}

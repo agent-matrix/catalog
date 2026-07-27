@@ -1,0 +1,60 @@
+{
+  "description": "VK (VKontakte): read walls, users, communities and stats; publish, edit and comment on posts.",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-bulatko-vk.stdio.7a25886e19",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/bulatko/vk-mcp-server.git",
+    "homepage": "https://github.com/bulatko/vk-mcp-server.git",
+    "repository": "https://github.com/bulatko/vk-mcp-server.git"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "vk-mcp-server@0.6.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.bulatko/vk",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "VK API access token. Quickest route if you manage a community: Manage -> API usage -> Access tokens -> Create token, ticking wall and photos \u2014 no app needed, and it is tied to neither a browser nor an IP. To act as yourself, create your own Standalone app at https://vk.com/editapp?act=create and run `npx vk-mcp-server --login <APP_ID>`. Use your own app rather than a shared ID: a token dies with the app that issued it. Full guide: https://github.com/bulatko/vk-mcp-server/blob/master/docs/SETUP.md",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "VK_ACCESS_TOKEN"
+        }
+      ],
+      "identifier": "vk-mcp-server",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.6.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7a25886e19",
+    "published_at": "2026-07-26T11:27:19.966157Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.bulatko/vk",
+    "server_version": "0.6.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-26T11:27:19.966157Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.6.1"
+}

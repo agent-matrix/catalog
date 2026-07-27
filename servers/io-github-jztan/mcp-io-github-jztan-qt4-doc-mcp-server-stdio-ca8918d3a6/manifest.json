@@ -1,0 +1,76 @@
+{
+  "description": "Offline MCP server for local Qt 4.8, Qt 5, and Qt 6 documentation with full-text search.",
+  "harvest": {
+    "last_seen_at": "2026-07-27T06:00:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-jztan-qt4-doc-mcp-server.stdio.ca8918d3a6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jztan/qt4-doc-mcp-server",
+    "homepage": "https://github.com/jztan/qt4-doc-mcp-server",
+    "repository": "https://github.com/jztan/qt4-doc-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "qt4-doc-mcp-server==0.7.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.jztan/qt4-doc-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Absolute path to a local Qt 4.8, Qt 5, or Qt 6 HTML documentation root (required)",
+          "format": "string",
+          "isRequired": true,
+          "name": "QT_DOC_BASE"
+        },
+        {
+          "description": "Writable directory for the search index and Markdown cache (default: $QT_DOC_BASE/.index; set when the documentation root is read-only)",
+          "format": "string",
+          "name": "QT_DOC_STATE_DIR"
+        },
+        {
+          "description": "Server bind address (default: 127.0.0.1)",
+          "format": "string",
+          "name": "SERVER_HOST"
+        },
+        {
+          "description": "Server port (default: 8000)",
+          "format": "number",
+          "name": "SERVER_PORT"
+        }
+      ],
+      "identifier": "qt4-doc-mcp-server",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://127.0.0.1:8000/mcp"
+      },
+      "version": "0.7.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ca8918d3a6",
+    "published_at": "2026-07-20T11:39:30.355109Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.jztan/qt4-doc-mcp-server",
+    "server_version": "0.7.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-20T11:39:30.355109Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.7.0"
+}
