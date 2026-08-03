@@ -1,0 +1,45 @@
+{
+  "description": "Read-only EU energy-label preflight over MCP: supplier-declared EPREL records, evidence-first",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:52:24+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-jithox-eu-energy-label-preflight.sse.b2151bc766",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://energy.mcp.jithox.com/mcp"
+    }
+  },
+  "name": "com.jithox/eu-energy-label-preflight",
+  "provenance": {
+    "identity_key": "b2151bc766",
+    "published_at": "2026-08-02T20:05:36.332021Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.jithox/eu-energy-label-preflight",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-02T20:05:36.332021Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "OAuth 2.1 bearer. Discover the authorization server via /.well-known/oauth-protected-resource; PKCE S256 is mandatory; tokens are audience-bound to https://energy.mcp.jithox.com/mcp with least-privilege per-tool scopes. A token issued for the Jithox E-Invoice, Import Preflight or Sanctions Preflight server is rejected here (separate resource/audience).",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization"
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://energy.mcp.jithox.com/mcp"
+    }
+  ],
+  "title": "Jithox EU Energy Label Preflight",
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

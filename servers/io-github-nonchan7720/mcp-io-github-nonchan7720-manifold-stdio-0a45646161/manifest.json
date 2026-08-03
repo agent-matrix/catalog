@@ -1,0 +1,110 @@
+{
+  "description": "MCP gateway aggregating MCP servers and OpenAPI/Swagger REST APIs behind one MCP endpoint",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:53:21+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nonchan7720-manifold.stdio.0a45646161",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nonchan7720/manifold",
+    "homepage": "https://github.com/nonchan7720/manifold",
+    "repository": "https://github.com/nonchan7720/manifold"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Expose the gateway port",
+            "isRequired": true,
+            "name": "-p",
+            "type": "named",
+            "value": "9999:9999"
+          },
+          {
+            "description": "Mount the Manifold configuration file into the container",
+            "isRequired": true,
+            "name": "-v",
+            "type": "named",
+            "value": "{config_path}:/home/nonroot/config.yaml",
+            "variables": {
+              "config_path": {
+                "description": "Absolute path to your config.yaml on the host",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          "ghcr.io/nonchan7720/manifold:v1.6.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nonchan7720/manifold",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base64-encoded 32-byte AES-256 key used to encrypt stored tokens (generate with: openssl rand -base64 32)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ENCRYPT_KEY"
+        },
+        {
+          "description": "Name of a backend server defined under mcpServers in config.yaml; forms the MCP endpoint path /mcp/{SERVER_NAME} (not read by the container itself)",
+          "format": "string",
+          "isRequired": true,
+          "name": "SERVER_NAME"
+        }
+      ],
+      "identifier": "ghcr.io/nonchan7720/manifold:v1.6.0",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "Expose the gateway port",
+          "isRequired": true,
+          "name": "-p",
+          "type": "named",
+          "value": "9999:9999"
+        },
+        {
+          "description": "Mount the Manifold configuration file into the container",
+          "isRequired": true,
+          "name": "-v",
+          "type": "named",
+          "value": "{config_path}:/home/nonroot/config.yaml",
+          "variables": {
+            "config_path": {
+              "description": "Absolute path to your config.yaml on the host",
+              "format": "filepath",
+              "isRequired": true
+            }
+          }
+        }
+      ],
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:9999/mcp/{SERVER_NAME}"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "0a45646161",
+    "published_at": "2026-08-01T16:09:45.015234Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nonchan7720/manifold",
+    "server_version": "1.6.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-01T16:09:45.015234Z"
+  },
+  "title": "Manifold",
+  "type": "mcp_server",
+  "version": "1.6.0"
+}

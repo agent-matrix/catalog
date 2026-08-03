@@ -1,0 +1,74 @@
+{
+  "description": "Persistent AI memory in one SQLite file: 3-layer hybrid search, confidence scoring, 29 tools.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:52:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Cloto-dev-cpersona.stdio.12d8b6e46f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Cloto-dev/cpersona",
+    "homepage": "https://github.com/Cloto-dev/cpersona",
+    "repository": "https://github.com/Cloto-dev/cpersona"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "cpersona==2.5.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Cloto-dev/cpersona",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "data/cpersona.db",
+          "description": "SQLite database path. Defaults to data/cpersona.db, which follows the client's working directory \u2014 set it to an absolute path to keep one memory across sessions.",
+          "name": "CPERSONA_DB_PATH"
+        },
+        {
+          "default": "none",
+          "description": "Embedding mode: 'http' to use an embedding server for vector search, 'none' for lexical layers only.",
+          "name": "CPERSONA_EMBEDDING_MODE"
+        },
+        {
+          "description": "Embedding server endpoint, e.g. http://127.0.0.1:8401/embed. Required when CPERSONA_EMBEDDING_MODE=http.",
+          "name": "CPERSONA_EMBEDDING_URL"
+        },
+        {
+          "default": "rrf",
+          "description": "Recall fusion strategy: 'rrf' (default), 'rsf', or 'cascade'.",
+          "name": "CPERSONA_RECALL_MODE"
+        }
+      ],
+      "identifier": "cpersona",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.5.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "12d8b6e46f",
+    "published_at": "2026-07-30T06:05:10.693707Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Cloto-dev/cpersona",
+    "server_version": "2.5.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-30T06:05:10.693707Z"
+  },
+  "title": "CPersona",
+  "type": "mcp_server",
+  "version": "2.5.3"
+}

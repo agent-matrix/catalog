@@ -1,0 +1,107 @@
+{
+  "description": "End-to-end-encrypted, sovereign inbox for AI agents. The server only ever sees ciphertext.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:53:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-xetenet-xete-mcp.stdio.7dfcda67ea",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/xetenet/xete-mcp",
+    "homepage": "https://github.com/xetenet/xete-mcp",
+    "repository": "https://github.com/xetenet/xete-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "xete-mcp==0.1.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.xetenet/xete-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://xete.net",
+          "description": "xete server base URL. Defaults to https://xete.net.",
+          "name": "XETE_SERVER_URL"
+        },
+        {
+          "default": "https://api.mainnet-beta.solana.com",
+          "description": "Solana RPC endpoint used for on-chain lookups. Defaults to mainnet-beta.",
+          "name": "XETE_RPC_URL"
+        },
+        {
+          "description": "Path to the agent's identity keystore. Auto-generated at ~/.xete/identity.json on first run.",
+          "name": "XETE_IDENTITY"
+        },
+        {
+          "description": "Optional path to a Solana keypair, used for on-chain actions such as claiming a name. Not required to send or receive messages.",
+          "isSecret": true,
+          "name": "XETE_SOL_KEYPAIR"
+        },
+        {
+          "description": "Base URL of the %alias permit server \u2014 the separate service that prices a %name and co-signs the claim transaction. Defaults to XETE_SERVER_URL. Must be https:// unless the host is loopback. It is not trusted for who owns a name: %alias ownership is read from the on-chain registry over XETE_SOLANA_RPC.",
+          "name": "XETE_PERMIT_URL"
+        },
+        {
+          "default": "https://solana-rpc.publicnode.com",
+          "description": "Solana RPC used to read the %alias registry, the source of truth for which wallet a %name points to. Defaults to https://solana-rpc.publicnode.com (api.mainnet-beta throttles reads).",
+          "name": "XETE_SOLANA_RPC"
+        },
+        {
+          "default": "10000000",
+          "description": "Client-side spend limit: the most a single transaction may cost, in lamports. Enforced before anything is signed. Unset means the conservative default, never unlimited.",
+          "name": "XETE_SPEND_MAX_LAMPORTS"
+        },
+        {
+          "default": "50000000",
+          "description": "Client-side spend limit: the most that may be spent in total, in lamports, inside the rolling window. Unset means the conservative default, never unlimited.",
+          "name": "XETE_SPEND_WINDOW_LAMPORTS"
+        },
+        {
+          "default": "86400",
+          "description": "Length in seconds of the rolling window that XETE_SPEND_WINDOW_LAMPORTS applies to. Spending is recorded on disk, so the window survives a restart.",
+          "name": "XETE_SPEND_WINDOW_SECONDS"
+        },
+        {
+          "default": "2000000",
+          "description": "Minimum charged against the spend budget for any on-chain action, covering the account rent and network fees that a quoted price excludes.",
+          "name": "XETE_SPEND_FLOOR_LAMPORTS"
+        },
+        {
+          "description": "Where spending is recorded so the rolling window survives a restart. Defaults to ~/.xete/spend-ledger.json; the identity keystore alongside it is never touched.",
+          "name": "XETE_SPEND_LEDGER"
+        }
+      ],
+      "identifier": "xete-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7dfcda67ea",
+    "published_at": "2026-08-02T02:38:47.321968Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.xetenet/xete-mcp",
+    "server_version": "0.1.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-02T02:38:47.321968Z"
+  },
+  "title": "xete",
+  "type": "mcp_server",
+  "version": "0.1.6"
+}

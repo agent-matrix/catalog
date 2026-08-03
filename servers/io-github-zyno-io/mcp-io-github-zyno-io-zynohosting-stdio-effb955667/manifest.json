@@ -1,0 +1,80 @@
+{
+  "description": "Manage ZynoHosting sites and create, discover, embed, and configure ZynoForms through local stdio.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:53:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-zyno-io-zynohosting.stdio.effb955667",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/zyno-io/zynohosting-cli",
+    "homepage": "https://github.com/zyno-io/zynohosting-cli",
+    "repository": "https://github.com/zyno-io/zynohosting-cli"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@zyno-io/zynohosting@0.4.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.zyno-io/zynohosting",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional allowlist of absolute local roots for local-file MCP tools, separated by the platform path delimiter. Omit to allow any local path accessible to the MCP process.",
+          "format": "string",
+          "name": "ZYNO_HOSTING_MCP_ROOTS"
+        },
+        {
+          "description": "Optional tenant API key. Omit it when using credentials saved by zynohosting login.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ZYNO_HOSTING_API_KEY"
+        },
+        {
+          "description": "Optional ZynoSuite API URL override for form tools. Standard production, alpha, and dev environments are inferred automatically.",
+          "format": "string",
+          "name": "ZYNO_SUITE_API_URL"
+        },
+        {
+          "description": "Optional Zyno Auth API URL override for scoped-token renewal. Standard production, alpha, and dev environments are inferred automatically.",
+          "format": "string",
+          "name": "ZYNO_AUTH_API_URL"
+        }
+      ],
+      "identifier": "@zyno-io/zynohosting",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "effb955667",
+    "published_at": "2026-08-02T08:38:46.352082Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.zyno-io/zynohosting",
+    "server_version": "0.4.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-02T08:38:46.352082Z"
+  },
+  "title": "ZynoHosting",
+  "type": "mcp_server",
+  "version": "0.4.3"
+}

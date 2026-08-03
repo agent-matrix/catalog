@@ -1,0 +1,67 @@
+{
+  "description": "Record an agent's decisions with reasons anyone can re-execute offline \u2014 verify recomputes them.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:53:28+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-s0fractal-warrant.stdio.d56f15c4da",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/s0fractal/warrant",
+    "homepage": "https://github.com/s0fractal/warrant",
+    "repository": "https://github.com/s0fractal/warrant"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "warrant-verify==0.8.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.s0fractal/warrant",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Absolute path to the warrant store this server files into and verifies. Defaults to .warrants relative to the server process's working directory, which an MCP host does not guarantee.",
+          "name": "WARRANT_STORE"
+        },
+        {
+          "description": "Ed25519 signing key. If unset, one is generated next to the store on the first filing and the result says so; any process that can read it can sign as this actor.",
+          "isSecret": true,
+          "name": "WARRANT_KEY"
+        },
+        {
+          "description": "Actor id written into filed warrants. Defaults to mcp-client@<hostname>.",
+          "name": "WARRANT_ACTOR"
+        }
+      ],
+      "identifier": "warrant-verify",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.8.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d56f15c4da",
+    "published_at": "2026-08-01T13:12:30.824271Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.s0fractal/warrant",
+    "server_version": "0.8.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-01T13:12:30.824271Z"
+  },
+  "title": "Warrant",
+  "type": "mcp_server",
+  "version": "0.8.0"
+}

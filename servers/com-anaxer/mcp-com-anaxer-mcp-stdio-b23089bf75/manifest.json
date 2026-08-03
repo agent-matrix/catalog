@@ -1,0 +1,66 @@
+{
+  "description": "Query Solana DEX data: prices, metadata, launches, graduations, live stream tails.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:52:21+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-anaxer-mcp.stdio.b23089bf75",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@anaxer/mcp@0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.anaxer/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Anaxer API key (Bearer). Set in the MCP host config \u2014 never pass as a tool argument.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ANAXER_API_KEY"
+        },
+        {
+          "description": "REST API base URL. Defaults to https://api.anaxer.com (local gateway: http://localhost:3010).",
+          "format": "string",
+          "name": "ANAXER_BASE_URL"
+        },
+        {
+          "description": "WebSocket URL override. Defaults to derived from ANAXER_BASE_URL \u2192 \u2026/v1/stream.",
+          "format": "string",
+          "name": "ANAXER_WS_URL"
+        }
+      ],
+      "identifier": "@anaxer/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b23089bf75",
+    "published_at": "2026-07-31T10:42:49.033501Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.anaxer/mcp",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-31T10:42:49.033501Z"
+  },
+  "title": "Anaxer",
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

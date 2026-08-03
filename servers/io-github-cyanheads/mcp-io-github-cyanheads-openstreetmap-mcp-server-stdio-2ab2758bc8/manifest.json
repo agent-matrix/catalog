@@ -1,0 +1,130 @@
+{
+  "description": "Geocode, reverse geocode, and run Overpass spatial queries on OpenStreetMap data.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:53:02+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cyanheads-openstreetmap-mcp-server.stdio.2ab2758bc8",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cyanheads/openstreetmap-mcp-server",
+    "homepage": "https://github.com/cyanheads/openstreetmap-mcp-server",
+    "repository": "https://github.com/cyanheads/openstreetmap-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "bun",
+          "@cyanheads/openstreetmap-mcp-server@0.3.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cyanheads/openstreetmap-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "127.0.0.1",
+          "description": "The hostname for the HTTP server.",
+          "format": "string",
+          "name": "MCP_HTTP_HOST"
+        },
+        {
+          "default": "3010",
+          "description": "The port to run the HTTP server on.",
+          "format": "string",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "default": "/mcp",
+          "description": "The endpoint path for the MCP server.",
+          "format": "string",
+          "name": "MCP_HTTP_ENDPOINT_PATH"
+        },
+        {
+          "description": "Public origin override for deployments behind a TLS-terminating reverse proxy (e.g. https://mcp.example.com).",
+          "format": "string",
+          "name": "MCP_PUBLIC_URL"
+        },
+        {
+          "default": "none",
+          "description": "Authentication mode to use: 'none', 'jwt', or 'oauth'.",
+          "format": "string",
+          "name": "MCP_AUTH_MODE"
+        },
+        {
+          "default": "https://nominatim.openstreetmap.org",
+          "description": "Nominatim API base URL. Override to use a private or mirror instance.",
+          "format": "string",
+          "name": "OSM_NOMINATIM_BASE_URL"
+        },
+        {
+          "default": "openstreetmap-mcp-server/0.3.5",
+          "description": "User-Agent sent to Nominatim and Overpass. Required by usage policy.",
+          "format": "string",
+          "name": "OSM_USER_AGENT"
+        },
+        {
+          "description": "Overpass API endpoint URL. When set, pins every query to this one endpoint and disables mirror failover. Leave unset to use OSM_OVERPASS_ENDPOINTS.",
+          "format": "string",
+          "name": "OSM_OVERPASS_BASE_URL"
+        },
+        {
+          "default": "https://overpass-api.de/api/interpreter",
+          "description": "Comma-separated ordered list of Overpass endpoints. A transient failure advances to the next entry within the same tool call; a single entry means no failover. Verify a mirror's usage policy, data coverage, and freshness before adding it. Ignored when OSM_OVERPASS_BASE_URL is set.",
+          "format": "string",
+          "name": "OSM_OVERPASS_ENDPOINTS"
+        },
+        {
+          "default": "2",
+          "description": "Maximum Overpass queries submitted at once. Match the slot budget the endpoint advertises at /api/status.",
+          "format": "number",
+          "name": "OSM_OVERPASS_MAX_CONCURRENCY"
+        },
+        {
+          "default": "info",
+          "description": "Sets the minimum log level for output (e.g., 'debug', 'info', 'warn').",
+          "format": "string",
+          "name": "MCP_LOG_LEVEL"
+        }
+      ],
+      "identifier": "@cyanheads/openstreetmap-mcp-server",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "start:http"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "bun",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3010/mcp"
+      },
+      "version": "0.3.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "2ab2758bc8",
+    "published_at": "2026-08-02T16:03:18.070731Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cyanheads/openstreetmap-mcp-server",
+    "server_version": "0.3.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-02T16:03:18.070731Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.5"
+}

@@ -1,0 +1,73 @@
+{
+  "description": "Discover and rank Stellar 8004 agents with a read-only MCP server and fail-closed contract probes.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:52:53+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-berkingurcan-stellar-agent-search.stdio.e35c0d4b53",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/berkingurcan/stellar-agent-search",
+    "homepage": "https://github.com/berkingurcan/stellar-agent-search",
+    "repository": "https://github.com/berkingurcan/stellar-agent-search"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "stellar-agent-search@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.berkingurcan/stellar-agent-search",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "mainnet",
+          "description": "Stellar network to target: mainnet | testnet. testnet also requires EXPLORER_BASE_URL \u2014 the default explorer indexes mainnet only, and the server refuses to start on the mismatched pair.",
+          "name": "STELLAR_NETWORK"
+        },
+        {
+          "description": "Override the stellar-8004 explorer API base URL.",
+          "name": "EXPLORER_BASE_URL"
+        },
+        {
+          "description": "Override the Soroban RPC URL used for the bounded Reputation-contract probe.",
+          "name": "STELLAR_RPC_URL"
+        },
+        {
+          "default": "true",
+          "description": "Set to 'false' to skip the bounded contract probe; reputation fields remain Explorer-declared either way.",
+          "name": "VERIFY_ONCHAIN"
+        }
+      ],
+      "identifier": "stellar-agent-search",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e35c0d4b53",
+    "published_at": "2026-07-30T03:59:07.339076Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.berkingurcan/stellar-agent-search",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-30T03:59:07.339076Z"
+  },
+  "title": "Stellar Agent Search",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

@@ -1,0 +1,54 @@
+{
+  "description": "Authenticated email gateway for AI agents \u2014 per-agent inboxes, HITL approval, SPF/DKIM verified.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:52:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.dev-e2a-mcp-server.sse.cac400521e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/tokencanopy/e2a",
+    "homepage": "https://github.com/tokencanopy/e2a",
+    "repository": "https://github.com/tokencanopy/e2a"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://api.e2a.dev/mcp"
+    }
+  },
+  "name": "dev.e2a/mcp-server",
+  "provenance": {
+    "identity_key": "cac400521e",
+    "published_at": "2026-07-28T18:16:32.15806Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "dev.e2a/mcp-server",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-28T18:16:32.15806Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "OAuth 2.1 is the recommended connection (add the connector and authorize \u2014 no key to paste; auto-discovered via /.well-known/oauth-protected-resource). For programmatic / self-host use, a Bearer e2a API key (e2a_acct_\u2026 or e2a_agt_\u2026) is also accepted.",
+          "name": "Authorization",
+          "value": "Bearer {e2a_api_key}",
+          "variables": {
+            "e2a_api_key": {
+              "description": "Your e2a API key from https://e2a.dev (optional \u2014 OAuth needs no pasted key).",
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://api.e2a.dev/mcp"
+    }
+  ],
+  "title": "e2a \u2014 email for AI agents",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

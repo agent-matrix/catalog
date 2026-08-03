@@ -1,0 +1,148 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "docker.io/juliusolsson/workflow-mcp@sha256:4b6889f9e78d0208e6d1d343ba23d0c5d092b1a1513a73c9c85deb2d00ab5855"
+      }
+    }
+  ],
+  "description": "Session-bound Docker workflow server through Codex. State is discarded with the container.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:52:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/Juliusolsson05/workflow-mcp",
+  "id": "tool.io-github-juliusolsson05-workflow-mcp.1967477019",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Juliusolsson05/workflow-mcp",
+    "homepage": "https://github.com/Juliusolsson05/workflow-mcp",
+    "repository": "https://github.com/Juliusolsson05/workflow-mcp"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Session-bound Docker workflow server through Codex. State is discarded with the container.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.Juliusolsson05/workflow-mcp",
+      "request_type": "POST",
+      "url": "https://github.com/Juliusolsson05/workflow-mcp"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "name": "--read-only",
+            "type": "named",
+            "value": "true"
+          },
+          {
+            "name": "--user",
+            "type": "named",
+            "value": "10001:10001"
+          },
+          {
+            "name": "--cap-drop",
+            "type": "named",
+            "value": "ALL"
+          },
+          {
+            "name": "--security-opt",
+            "type": "named",
+            "value": "no-new-privileges:true"
+          },
+          {
+            "name": "--security-opt",
+            "type": "named",
+            "value": "seccomp=unconfined"
+          },
+          {
+            "name": "--security-opt",
+            "type": "named",
+            "value": "apparmor=unconfined"
+          },
+          {
+            "name": "--pids-limit",
+            "type": "named",
+            "value": "256"
+          },
+          {
+            "name": "--memory",
+            "type": "named",
+            "value": "2g"
+          },
+          {
+            "name": "--cpus",
+            "type": "named",
+            "value": "1"
+          },
+          {
+            "name": "--tmpfs",
+            "type": "named",
+            "value": "/tmp:size=256m,mode=1777,uid=10001,gid=10001"
+          },
+          {
+            "name": "--tmpfs",
+            "type": "named",
+            "value": "/run/workflow-mcp:size=16m,mode=0700,uid=10001,gid=10001"
+          },
+          {
+            "name": "--mount",
+            "type": "named",
+            "value": "type=volume,target=/data"
+          },
+          {
+            "name": "--mount",
+            "type": "named",
+            "value": "type=bind,source={project},target=/workspace,readonly",
+            "variables": {
+              "project": {
+                "description": "Absolute project directory containing .claude/workflows and no .codex configuration.",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          "docker.io/juliusolsson/workflow-mcp@sha256:4b6889f9e78d0208e6d1d343ba23d0c5d092b1a1513a73c9c85deb2d00ab5855"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Juliusolsson05/workflow-mcp",
+  "provenance": {
+    "identity_key": "40495fc5e8",
+    "promoted_from": "mcp.io-github-Juliusolsson05-workflow-mcp.stdio.40495fc5e8",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Juliusolsson05/workflow-mcp",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-Juliusolsson05-workflow-mcp.stdio.40495fc5e8",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/Juliusolsson05/workflow-mcp",
+  "summary": "Session-bound Docker workflow server through Codex. State is discarded with the container.",
+  "tags": [
+    "bound",
+    "codex",
+    "docker",
+    "session",
+    "state",
+    "through",
+    "workflow"
+  ],
+  "title": "Workflow MCP",
+  "type": "tool",
+  "version": "1.1.0"
+}

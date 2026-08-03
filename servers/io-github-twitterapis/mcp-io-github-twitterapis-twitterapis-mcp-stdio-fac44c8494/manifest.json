@@ -1,0 +1,68 @@
+{
+  "description": "Official MCP server for twitterapis.com. Read and write Twitter/X: search, users, tweets, DMs.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:52:47+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-TwitterAPIs-twitterapis-mcp.stdio.fac44c8494",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/TwitterAPIs/twitterapis-mcp",
+    "homepage": "https://github.com/TwitterAPIs/twitterapis-mcp",
+    "repository": "https://github.com/TwitterAPIs/twitterapis-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@twitterapis/mcp@0.6.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.TwitterAPIs/twitterapis-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your twitterapis.com API key. Create one at https://www.twitterapis.com/dashboard. Required: every tool call authenticates with it.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "TWITTERAPIS_KEY"
+        },
+        {
+          "default": "https://api.twitterapis.com",
+          "description": "Override the API base URL. Defaults to https://api.twitterapis.com. Only set this if you were given a different endpoint.",
+          "name": "TWITTERAPIS_BASE_URL"
+        },
+        {
+          "description": "Per-request timeout in milliseconds. Raise it if you page through large follower lists on a slow link.",
+          "name": "TWITTERAPIS_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "@twitterapis/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.6.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "fac44c8494",
+    "published_at": "2026-08-02T17:42:02.431574Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.TwitterAPIs/twitterapis-mcp",
+    "server_version": "0.6.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-02T17:42:02.431574Z"
+  },
+  "title": "TwitterAPIs",
+  "type": "mcp_server",
+  "version": "0.6.4"
+}

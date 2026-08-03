@@ -1,0 +1,76 @@
+{
+  "description": "Connect Claude Code, Cursor & Windsurf to 2,600+ enterprise data sources with one binary.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:53:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-openenterprise-info-oe-mcp.stdio.cbb3c78bb7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/openenterprise-info/open-enterprise-ai-mcp-server",
+    "homepage": "https://github.com/openenterprise-info/open-enterprise-ai-mcp-server",
+    "repository": "https://github.com/openenterprise-info/open-enterprise-ai-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "binary",
+          "https://github.com/openenterprise-info/open-enterprise-ai-mcp-server/releases/download/v1.4.1/oe-mcp-linux==1.4.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.openenterprise-info/oe-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Absolute path to your oe-mcp.yaml config file (e.g. /home/user/oe-mcp/oe-mcp.yaml)",
+          "format": "string",
+          "isRequired": true,
+          "name": "OE_MCP_CONFIG_PATH"
+        }
+      ],
+      "fileSha256": "8c4a32bae4fd61b5d0d925039e0840ec16a33b9ad60aa2db1de3e9d815ec635b",
+      "identifier": "https://github.com/openenterprise-info/open-enterprise-ai-mcp-server/releases/download/v1.4.1/oe-mcp-linux",
+      "packageArguments": [
+        {
+          "isRequired": true,
+          "type": "",
+          "value": "--stdio"
+        },
+        {
+          "description": "Absolute path to your oe-mcp.yaml config file",
+          "format": "string",
+          "isRequired": true,
+          "name": "config",
+          "type": "",
+          "value": "${OE_MCP_CONFIG_PATH}"
+        }
+      ],
+      "registryType": "mcpb",
+      "runtimeHint": "binary",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.4.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "cbb3c78bb7",
+    "published_at": "2026-07-30T02:21:51.028742Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.openenterprise-info/oe-mcp",
+    "server_version": "1.4.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-30T02:21:51.028742Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.4.1"
+}

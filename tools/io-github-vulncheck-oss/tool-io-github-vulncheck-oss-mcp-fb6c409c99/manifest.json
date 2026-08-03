@@ -1,0 +1,88 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/vulncheck-oss/mcp:0.1.1"
+      }
+    }
+  ],
+  "description": "VulnCheck exploit intelligence \u2014 CVE research, exploit data, advisories, and threat analysis.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:53:35+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/vulncheck-oss/mcp",
+  "id": "tool.io-github-vulncheck-oss-mcp.fb6c409c99",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/vulncheck-oss/mcp",
+    "homepage": "https://github.com/vulncheck-oss/mcp",
+    "repository": "https://github.com/vulncheck-oss/mcp"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "VulnCheck exploit intelligence \u2014 CVE research, exploit data, advisories, and threat analysis.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.vulncheck-oss/mcp",
+      "request_type": "POST",
+      "url": "https://github.com/vulncheck-oss/mcp"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "VulnCheck API token for authenticating requests.",
+            "isRequired": true,
+            "name": "-e",
+            "type": "named",
+            "value": "VULNCHECK_API_TOKEN={token}",
+            "variables": {
+              "token": {
+                "format": "string",
+                "isRequired": true,
+                "isSecret": true
+              }
+            }
+          },
+          "ghcr.io/vulncheck-oss/mcp:0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.vulncheck-oss/mcp",
+  "provenance": {
+    "identity_key": "7b5f121630",
+    "promoted_from": "mcp.io-github-vulncheck-oss-mcp.stdio.7b5f121630",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.vulncheck-oss/mcp",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-vulncheck-oss-mcp.stdio.7b5f121630",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/vulncheck-oss/mcp",
+  "summary": "VulnCheck exploit intelligence \u2014 CVE research, exploit data, advisories, and threat analysis.",
+  "tags": [
+    "data",
+    "exploit",
+    "intelligence",
+    "research",
+    "vulncheck"
+  ],
+  "title": "VulnCheck",
+  "type": "tool",
+  "version": "0.1.1"
+}

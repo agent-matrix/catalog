@@ -1,0 +1,101 @@
+{
+  "description": "Source-free Weavatrix MCP: preview-gated sync, advisories, malware review, architecture contracts.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:53:29+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sergii-ziborov-weavatrix-online.stdio.f6980c7a15",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sergii-ziborov/weavatrix-online",
+    "homepage": "https://github.com/sergii-ziborov/weavatrix-online",
+    "repository": "https://github.com/sergii-ziborov/weavatrix-online"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "weavatrix-online@0.3.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sergii-ziborov/weavatrix-online",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Cloud or compatible self-hosted sync endpoint",
+          "format": "string",
+          "isRequired": true,
+          "name": "WEAVATRIX_SYNC_URL"
+        },
+        {
+          "description": "Scoped bearer token for the selected endpoint",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "WEAVATRIX_SYNC_TOKEN"
+        },
+        {
+          "description": "Optional explicit endpoint capability document URL; defaults to /api/v1/capabilities on the sync origin with legacy /api/health fallback",
+          "format": "string",
+          "name": "WEAVATRIX_CAPABILITIES_URL"
+        },
+        {
+          "description": "Optional explicit architecture-contract URL",
+          "format": "string",
+          "name": "WEAVATRIX_ARCHITECTURE_URL"
+        },
+        {
+          "description": "Core semantic precision: lsp (default) or off",
+          "format": "string",
+          "name": "WEAVATRIX_PRECISION"
+        },
+        {
+          "description": "Set to 1 only for sessions authorized to apply or roll back refactor plans",
+          "format": "string",
+          "name": "WEAVATRIX_ALLOW_SOURCE_EDITS"
+        },
+        {
+          "description": "Set to 1 only to authorize requested verified_change package scripts",
+          "format": "string",
+          "name": "WEAVATRIX_ALLOW_TEST_RUNS"
+        }
+      ],
+      "identifier": "weavatrix-online",
+      "packageArguments": [
+        {
+          "description": "Absolute path to the initial local Git repository",
+          "isRequired": true,
+          "type": "positional",
+          "valueHint": "repoRoot"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f6980c7a15",
+    "published_at": "2026-07-30T07:48:48.824973Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sergii-ziborov/weavatrix-online",
+    "server_version": "0.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-30T07:48:48.824973Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.1"
+}

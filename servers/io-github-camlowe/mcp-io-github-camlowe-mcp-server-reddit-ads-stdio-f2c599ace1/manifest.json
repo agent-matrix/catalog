@@ -1,0 +1,84 @@
+{
+  "description": "Reddit Ads API v3: campaigns, ad groups, ads, reports, plus working writes with safety tiers.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:52:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-camlowe-mcp-server-reddit-ads.stdio.f2c599ace1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/camlowe/mcp-server-reddit-ads",
+    "homepage": "https://github.com/camlowe/mcp-server-reddit-ads",
+    "repository": "https://github.com/camlowe/mcp-server-reddit-ads"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-server-reddit-ads@0.5.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.camlowe/mcp-server-reddit-ads",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Reddit app client id (from the Ads developer portal)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "REDDIT_CLIENT_ID"
+        },
+        {
+          "description": "Reddit app client secret",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "REDDIT_CLIENT_SECRET"
+        },
+        {
+          "description": "OAuth refresh token (mint one with: npx mcp-server-reddit-ads auth)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "REDDIT_REFRESH_TOKEN"
+        },
+        {
+          "description": "Write tier: read (default, no writes), safe, or spend",
+          "format": "string",
+          "name": "REDDIT_ADS_WRITE_TIER"
+        },
+        {
+          "description": "Default ad account id (a2_...) for single-account use",
+          "format": "string",
+          "name": "REDDIT_ADS_ACCOUNT_ID"
+        }
+      ],
+      "identifier": "mcp-server-reddit-ads",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f2c599ace1",
+    "published_at": "2026-07-28T21:12:54.304491Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.camlowe/mcp-server-reddit-ads",
+    "server_version": "0.5.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-28T21:12:54.304491Z"
+  },
+  "title": "Reddit Ads",
+  "type": "mcp_server",
+  "version": "0.5.3"
+}

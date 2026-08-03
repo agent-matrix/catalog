@@ -1,0 +1,138 @@
+{
+  "description": "Read-only access to secrets in a local KeePassXC vault. Runs commands with them injected.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:53:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-yarrasys-kdbx.stdio.85faf29298",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/yarrasys/kdbx",
+    "homepage": "https://github.com/yarrasys/kdbx",
+    "repository": "https://github.com/yarrasys/kdbx"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Mount the project directory containing the committed .keepassxc.json pointer file. kdbx discovers the pointer by walking up from the working directory.",
+            "isRequired": true,
+            "name": "-v",
+            "type": "named",
+            "value": "{project_dir}:/work",
+            "variables": {
+              "project_dir": {
+                "description": "Absolute path to the project whose secrets you want available",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          {
+            "description": "Mount the KeePassXC directory holding the vault and its key file. Mounted read-only: every tool this server exposes is a read.",
+            "isRequired": true,
+            "name": "-v",
+            "type": "named",
+            "value": "{keepassxc_dir}:/kpx:ro",
+            "variables": {
+              "keepassxc_dir": {
+                "description": "Absolute path to the KeePassXC directory, usually ~/.config/keepassxc",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          {
+            "description": "Run inside the mounted project so pointer discovery resolves.",
+            "name": "-w",
+            "type": "named",
+            "value": "/work"
+          },
+          "ghcr.io/yarrasys/kdbx:0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.yarrasys/kdbx",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "/kpx",
+          "description": "Where kdbx looks for vaults inside the container. Must match the mount target above.",
+          "name": "KEEPASSXC_DIR"
+        },
+        {
+          "description": "Environment to select, overriding the pointer's defaultEnv. Optional.",
+          "name": "KDBX_ENV"
+        }
+      ],
+      "identifier": "ghcr.io/yarrasys/kdbx:0.2.1",
+      "packageArguments": [
+        {
+          "description": "kdbx is a CLI; the MCP server is its `mcp` subcommand.",
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "Mount the project directory containing the committed .keepassxc.json pointer file. kdbx discovers the pointer by walking up from the working directory.",
+          "isRequired": true,
+          "name": "-v",
+          "type": "named",
+          "value": "{project_dir}:/work",
+          "variables": {
+            "project_dir": {
+              "description": "Absolute path to the project whose secrets you want available",
+              "format": "filepath",
+              "isRequired": true
+            }
+          }
+        },
+        {
+          "description": "Mount the KeePassXC directory holding the vault and its key file. Mounted read-only: every tool this server exposes is a read.",
+          "isRequired": true,
+          "name": "-v",
+          "type": "named",
+          "value": "{keepassxc_dir}:/kpx:ro",
+          "variables": {
+            "keepassxc_dir": {
+              "description": "Absolute path to the KeePassXC directory, usually ~/.config/keepassxc",
+              "format": "filepath",
+              "isRequired": true
+            }
+          }
+        },
+        {
+          "description": "Run inside the mounted project so pointer discovery resolves.",
+          "name": "-w",
+          "type": "named",
+          "value": "/work"
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "85faf29298",
+    "published_at": "2026-08-01T11:58:32.848016Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.yarrasys/kdbx",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-01T11:58:32.848016Z"
+  },
+  "title": "kdbx",
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

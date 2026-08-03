@@ -1,0 +1,64 @@
+{
+  "description": "Trusted African data, provenance, citations, and catalog search for AI agents.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:52:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Africa-Data-Bank-africadb.stdio.78fcb52608",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Africa-Data-Bank/afridb-platform",
+    "homepage": "https://github.com/Africa-Data-Bank/afridb-platform",
+    "repository": "https://github.com/Africa-Data-Bank/afridb-platform"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "docker.io/jmatrixjnr/afridb-mcp-server:1.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Africa-Data-Bank/africadb",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API key from a registered AfricaDB account. Free use is limited; paid plans raise quotas.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AFRICADB_API_TOKEN",
+          "placeholder": "adb_..."
+        },
+        {
+          "default": "https://api.africadb.com",
+          "description": "AfricaDB API base URL. Override only for a trusted self-hosted gateway.",
+          "name": "AFRICADB_API_URL"
+        }
+      ],
+      "identifier": "docker.io/jmatrixjnr/afridb-mcp-server:1.0.1",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "78fcb52608",
+    "published_at": "2026-08-02T20:19:55.348004Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Africa-Data-Bank/africadb",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-02T20:19:55.348004Z"
+  },
+  "title": "Africa Data Bank",
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

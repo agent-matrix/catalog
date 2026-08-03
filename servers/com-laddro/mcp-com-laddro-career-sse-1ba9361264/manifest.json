@@ -1,7 +1,7 @@
 {
-  "description": "Resume tailoring, cover letters, PDF export, and job search via the Laddro Career API",
+  "description": "Tailor resumes, generate cover letters, render CVs as PDF, and browse 22+ templates.",
   "harvest": {
-    "last_seen_at": "2026-07-27T05:59:47+00:00",
+    "last_seen_at": "2026-08-03T05:52:24+00:00",
     "seen_in_latest_run": true
   },
   "id": "mcp.com-laddro-career.sse.1ba9361264",
@@ -22,20 +22,35 @@
   "name": "com.laddro/career",
   "provenance": {
     "identity_key": "1ba9361264",
-    "published_at": "2026-05-12T21:34:01.51699Z",
+    "published_at": "2026-07-28T16:59:07.387615Z",
     "registry_base_url": "https://registry.modelcontextprotocol.io",
     "server_name": "com.laddro/career",
-    "server_version": "0.3.0",
+    "server_version": "0.4.0",
     "source": "mcp-registry",
-    "updated_at": "2026-05-12T21:34:01.51699Z"
+    "updated_at": "2026-07-28T16:59:07.387615Z"
   },
   "remotes": [
     {
+      "headers": [
+        {
+          "description": "Bearer token using your Laddro Career API key from console.laddro.com",
+          "name": "Authorization",
+          "value": "Bearer {LADDRO_API_KEY}",
+          "variables": {
+            "LADDRO_API_KEY": {
+              "description": "Your Laddro Career API key from console.laddro.com",
+              "isRequired": true,
+              "isSecret": true,
+              "placeholder": "laddro_live_..."
+            }
+          }
+        }
+      ],
       "type": "streamable-http",
       "url": "https://mcp.laddro.com/mcp"
     }
   ],
   "title": "Laddro Career",
   "type": "mcp_server",
-  "version": "0.3.0"
+  "version": "0.4.0"
 }

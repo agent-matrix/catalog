@@ -1,0 +1,93 @@
+{
+  "artifacts": [
+    {
+      "kind": "pypi",
+      "spec": {
+        "package": "mcp-multi-poc",
+        "version": "0.1.0"
+      }
+    }
+  ],
+  "description": "PoC Q5b: run a differently-named console script via a positional runtimeArgument.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:53:21+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/nithishr/mcp-registry-poc",
+  "id": "tool.io-github-nithishr-mcp-multi-poc-beta-script.dcb9aeac78",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nithishr/mcp-registry-poc",
+    "homepage": "https://github.com/nithishr/mcp-registry-poc",
+    "repository": "https://github.com/nithishr/mcp-registry-poc"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "PoC Q5b: run a differently-named console script via a positional runtimeArgument.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.nithishr/mcp-multi-poc-beta-script",
+      "request_type": "POST",
+      "url": "https://github.com/nithishr/mcp-registry-poc"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "Install the real package with the beta extra",
+            "isRequired": true,
+            "name": "--from",
+            "type": "named",
+            "value": "mcp-multi-poc[beta]"
+          },
+          {
+            "description": "The console script uvx should run; the identifier appended after this becomes a stray arg the server ignores",
+            "isRequired": true,
+            "type": "positional",
+            "value": "mcp-multi-poc-beta",
+            "valueHint": "mcp-multi-poc-beta"
+          },
+          "mcp-multi-poc==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nithishr/mcp-multi-poc-beta-script",
+  "provenance": {
+    "identity_key": "4f80394da7",
+    "promoted_from": "mcp.io-github-nithishr-mcp-multi-poc-beta-script.stdio.4f80394da7",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nithishr/mcp-multi-poc-beta-script",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-nithishr-mcp-multi-poc-beta-script.stdio.4f80394da7",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/nithishr/mcp-registry-poc",
+  "summary": "PoC Q5b: run a differently-named console script via a positional runtimeArgument.",
+  "tags": [
+    "beta",
+    "console",
+    "differently",
+    "multi",
+    "named",
+    "poc",
+    "positional",
+    "runtimeargument",
+    "script"
+  ],
+  "title": "Mcp Multi Poc Beta Script",
+  "type": "tool",
+  "version": "0.1.0"
+}

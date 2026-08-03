@@ -1,0 +1,79 @@
+{
+  "description": "Pay for x402 paywalls, datasets, and store checkouts on Solana, behind hard spending caps.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:52:28+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-solinkify-mcp.stdio.14ff17b0bd",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@solinkify/mcp@0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.solinkify/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the agent's Solana JSON keypair (solana-keygen new -o agent-keypair.json). Needed by the tools that spend; discovery and search tools run without it.",
+          "format": "string",
+          "name": "SOLINKIFY_WALLET_PATH"
+        },
+        {
+          "description": "Hard cap for a single payment in USD (default 1)",
+          "format": "number",
+          "name": "SOLINKIFY_MAX_PAYMENT_USD"
+        },
+        {
+          "description": "Hard cap for total spend per UTC day in USD (default 10)",
+          "format": "number",
+          "name": "SOLINKIFY_DAILY_CAP_USD"
+        },
+        {
+          "description": "Owner mode (ADR-008): base58 address of the wallet that funds pay_checkout through its on-chain SpendAuthority. The agent signs but never holds the owner's funds; per-payment cap, daily ceiling and revoke are enforced by the Solana program. Unset means payments come from the agent wallet.",
+          "format": "string",
+          "name": "SOLINKIFY_OWNER_WALLET"
+        },
+        {
+          "description": "devnet (default) or mainnet-beta",
+          "format": "string",
+          "name": "SOLINKIFY_NETWORK"
+        },
+        {
+          "description": "Custom Solana RPC endpoint (defaults to the network's public RPC)",
+          "format": "string",
+          "name": "SOLANA_RPC_URL"
+        }
+      ],
+      "identifier": "@solinkify/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "14ff17b0bd",
+    "published_at": "2026-07-27T08:16:07.150184Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.solinkify/mcp",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-27T08:16:07.150184Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

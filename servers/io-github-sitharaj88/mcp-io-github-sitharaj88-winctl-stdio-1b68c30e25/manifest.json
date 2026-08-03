@@ -1,0 +1,86 @@
+{
+  "description": "Windows desktop control for AI agents: screen, UI Automation, input, processes, files, shell.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:53:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sitharaj88-winctl.stdio.1b68c30e25",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sitharaj88/winctl",
+    "homepage": "https://github.com/sitharaj88/winctl",
+    "repository": "https://github.com/sitharaj88/winctl"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@sitharaj88/winctl@1.0.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sitharaj88/winctl",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "standard",
+          "description": "Permission profile: readonly (observation only), standard (adds desktop interaction and file access), or full (adds process control and shell execution). Defaults to standard.",
+          "format": "string",
+          "name": "WINCTL_PROFILE"
+        },
+        {
+          "description": "Comma-separated capability tiers, overriding the profile. Any of: observe, interact, filesystem, manage, shell.",
+          "format": "string",
+          "name": "WINCTL_TIERS"
+        },
+        {
+          "description": "Semicolon-separated folders that file tools may access. Empty means the whole filesystem except protected Windows system directories.",
+          "format": "string",
+          "name": "WINCTL_ALLOWED_PATHS"
+        },
+        {
+          "default": "true",
+          "description": "Set to false to skip user confirmation prompts for destructive actions. Defaults to true.",
+          "format": "string",
+          "name": "WINCTL_CONFIRM_DESTRUCTIVE"
+        },
+        {
+          "description": "Path to the JSONL audit log. Defaults to %LOCALAPPDATA%\\winctl\\audit.jsonl.",
+          "format": "string",
+          "name": "WINCTL_AUDIT_LOG"
+        },
+        {
+          "default": "1600",
+          "description": "Screenshots are downscaled to at most this width in pixels. Defaults to 1600.",
+          "format": "string",
+          "name": "WINCTL_MAX_IMAGE_WIDTH"
+        }
+      ],
+      "identifier": "@sitharaj88/winctl",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1b68c30e25",
+    "published_at": "2026-08-02T06:44:04.168465Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sitharaj88/winctl",
+    "server_version": "1.0.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-02T06:44:04.168465Z"
+  },
+  "title": "WinCtl",
+  "type": "mcp_server",
+  "version": "1.0.2"
+}

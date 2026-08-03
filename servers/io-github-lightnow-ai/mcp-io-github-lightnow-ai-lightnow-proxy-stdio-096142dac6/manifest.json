@@ -1,0 +1,66 @@
+{
+  "description": "Route MCP clients through LightNow-managed local proxy profiles.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:53:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-lightnow-ai-lightnow-proxy.stdio.096142dac6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/lightnow-ai/lightnow-proxy",
+    "homepage": "https://github.com/lightnow-ai/lightnow-proxy",
+    "repository": "https://github.com/lightnow-ai/lightnow-proxy"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "lightnow-proxy==1.7.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.lightnow-ai/lightnow-proxy",
+  "packages": [
+    {
+      "identifier": "lightnow-proxy",
+      "packageArguments": [
+        {
+          "description": "Path to the LightNow-generated Local Proxy config file.",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "--config",
+          "type": "named"
+        },
+        {
+          "name": "--transport",
+          "type": "named",
+          "value": "stdio"
+        }
+      ],
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.7.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "096142dac6",
+    "published_at": "2026-08-02T03:23:09.12404Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.lightnow-ai/lightnow-proxy",
+    "server_version": "1.7.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-02T03:23:09.12404Z"
+  },
+  "title": "LightNow Local Proxy",
+  "type": "mcp_server",
+  "version": "1.7.1"
+}

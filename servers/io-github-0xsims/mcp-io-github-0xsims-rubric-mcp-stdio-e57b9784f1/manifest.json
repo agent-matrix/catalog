@@ -1,0 +1,75 @@
+{
+  "description": "Attested evidence tools for AI agents: sanctions screening, agent/wallet records, paid via x402.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:52:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-0xsims-rubric-mcp.stdio.e57b9784f1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/0xsims/rubric-mcp",
+    "homepage": "https://github.com/0xsims/rubric-mcp",
+    "repository": "https://github.com/0xsims/rubric-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@rubric-protocol/mcp-server@2.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.0xsims/rubric-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional. USDC-on-Base wallet private key enabling paid x402 tools; without it paid tools return setup guidance.",
+          "format": "string",
+          "isSecret": true,
+          "name": "RUBRIC_WALLET_KEY"
+        },
+        {
+          "description": "Optional. Daily spend ceiling in USD for paid tools (default 1.00).",
+          "format": "string",
+          "name": "RUBRIC_X402_DAILY_LIMIT"
+        },
+        {
+          "description": "Optional. Rubric developer key for HCS-anchored attestation.",
+          "format": "string",
+          "isSecret": true,
+          "name": "RUBRIC_API_KEY"
+        },
+        {
+          "description": "Optional. Comma-separated tool modules (default core,x402).",
+          "format": "string",
+          "name": "RUBRIC_MCP_MODULES"
+        }
+      ],
+      "identifier": "@rubric-protocol/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e57b9784f1",
+    "published_at": "2026-07-28T01:47:55.786346Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.0xsims/rubric-mcp",
+    "server_version": "2.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-28T01:47:55.786346Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "2.2.2"
+}

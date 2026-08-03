@@ -1,0 +1,138 @@
+{
+  "description": "The Universal Agent Gateway (UAG) enables in-process agentic automation using Form.io.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:52:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-form-formio-uag.stdio.e802997f01",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/formio/uag",
+    "homepage": "https://github.com/formio/uag",
+    "repository": "https://github.com/formio/uag"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@formio/uag@1.13.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.form/formio-uag",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API endpoint to Enterprise project or OSS server",
+          "format": "string",
+          "isRequired": true,
+          "name": "PROJECT"
+        },
+        {
+          "description": "Project API Key (Enterprise) or ADMIN_KEY (OSS)",
+          "format": "string",
+          "isSecret": true,
+          "name": "PROJECT_KEY"
+        },
+        {
+          "description": "Server admin key for Community Edition. Not required for Enterprise deployment.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ADMIN_KEY"
+        },
+        {
+          "description": "License for Enterprise deployment. Not required for Community Edition. ",
+          "format": "string",
+          "isSecret": true,
+          "name": "UAG_LICENSE"
+        },
+        {
+          "description": "Secret used to generate and validate JWT tokens",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "JWT_SECRET"
+        },
+        {
+          "description": "Server port (default: 3200)",
+          "format": "string",
+          "name": "PORT"
+        },
+        {
+          "description": "Project cache refresh interval in seconds (default: 900)",
+          "format": "string",
+          "name": "PROJECT_TTL"
+        },
+        {
+          "description": "JWT token expiration in seconds (default: 3600)",
+          "format": "string",
+          "name": "JWT_EXPIRE_TIME"
+        },
+        {
+          "description": "Enterprise Portal connection secret",
+          "format": "string",
+          "isSecret": true,
+          "name": "PORTAL_SECRET"
+        },
+        {
+          "description": "Direct MongoDB connection URI (Enterprise)",
+          "format": "string",
+          "isSecret": true,
+          "name": "MONGO"
+        },
+        {
+          "description": "MongoDB driver configuration (JSON)",
+          "format": "string",
+          "name": "MONGO_CONFIG"
+        },
+        {
+          "description": "The URL clients reach the UAG at. Published in the .well-known OIDC (PKCE) definitions and used for authentication callbacks, so remote agents cannot authenticate without it. Must be a public URL when remote agents connect in; a private or localhost URL is fine for a local MCP client.",
+          "format": "string",
+          "isRequired": true,
+          "name": "BASE_URL"
+        },
+        {
+          "description": "Public URL to login form JSON endpoint",
+          "format": "string",
+          "name": "LOGIN_FORM"
+        },
+        {
+          "description": "CORS domain or JSON configuration (default: *)",
+          "format": "string",
+          "name": "CORS"
+        },
+        {
+          "description": "Debug logging filter (e.g. formio.*)",
+          "format": "string",
+          "name": "DEBUG"
+        }
+      ],
+      "identifier": "@formio/uag",
+      "registryType": "npm",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:{PORT}/mcp"
+      },
+      "version": "1.13.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e802997f01",
+    "published_at": "2026-07-30T03:23:34.467099Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.form/formio-uag",
+    "server_version": "1.13.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-30T03:23:34.467099Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.13.0"
+}

@@ -1,0 +1,58 @@
+{
+  "description": "Filtered, read-only IMAP and Gmail archived to disk as .eml + markdown, served over MCP.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:52:58+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-craigjmidwinter-mail-muncher.stdio.661943be8a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/craigjmidwinter/mail-muncher",
+    "homepage": "https://github.com/craigjmidwinter/mail-muncher",
+    "repository": "https://github.com/craigjmidwinter/mail-muncher"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/craigjmidwinter/mail-muncher:0.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.craigjmidwinter/mail-muncher",
+  "packages": [
+    {
+      "identifier": "ghcr.io/craigjmidwinter/mail-muncher:0.4.0",
+      "packageArguments": [
+        {
+          "description": "Serve the archive over stdio MCP. This is the image's default command; it is spelled out here so a client that appends its own arguments does not silently drop it.",
+          "type": "positional",
+          "value": "mcp",
+          "valueHint": "mcp"
+        }
+      ],
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "661943be8a",
+    "published_at": "2026-07-31T12:06:16.826826Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.craigjmidwinter/mail-muncher",
+    "server_version": "0.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-31T12:06:16.826826Z"
+  },
+  "title": "mail-muncher",
+  "type": "mcp_server",
+  "version": "0.4.0"
+}

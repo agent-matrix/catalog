@@ -1,0 +1,101 @@
+{
+  "description": "NovelAI image generation as MCP tools: txt2img, img2img, inpaint, upscale, Director, ControlNet.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:53:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-xinvxueyuan-novelai-image-mcp.stdio.dd3ca1ea08",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/xinvxueyuan/NovelAI-Image-MCP",
+    "homepage": "https://github.com/xinvxueyuan/NovelAI-Image-MCP",
+    "repository": "https://github.com/xinvxueyuan/NovelAI-Image-MCP"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "type": "positional",
+            "value": "run"
+          },
+          {
+            "type": "positional",
+            "value": "--rm"
+          },
+          {
+            "type": "positional",
+            "value": "-i"
+          },
+          {
+            "type": "positional",
+            "value": "-e"
+          },
+          {
+            "type": "positional",
+            "value": "NOVELAI_TOKEN"
+          },
+          "ghcr.io/xinvxueyuan/novelai-image-mcp:0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.xinvxueyuan/novelai-image-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "NovelAI persistent API token (preferred auth). Get from https://novelai.net/account",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "NOVELAI_TOKEN"
+        }
+      ],
+      "identifier": "ghcr.io/xinvxueyuan/novelai-image-mcp:0.3.0",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "--rm"
+        },
+        {
+          "type": "positional",
+          "value": "-i"
+        },
+        {
+          "type": "positional",
+          "value": "-e"
+        },
+        {
+          "type": "positional",
+          "value": "NOVELAI_TOKEN"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "dd3ca1ea08",
+    "published_at": "2026-08-01T06:56:45.294781Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.xinvxueyuan/novelai-image-mcp",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-01T06:56:45.294781Z"
+  },
+  "title": "NovelAI Image MCP",
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

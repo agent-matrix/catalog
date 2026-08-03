@@ -1,0 +1,65 @@
+{
+  "description": "Multi-step web research with citations via Perplexity's Agent API. Standard library only.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:53:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-zalez-perplexity-agent-mcp.stdio.b3ea779813",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/zalez/perplexity-agent-mcp",
+    "homepage": "https://github.com/zalez/perplexity-agent-mcp",
+    "repository": "https://github.com/zalez/perplexity-agent-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "perplexity-agent-mcp==0.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.zalez/perplexity-agent-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your Perplexity API key. Read at call time and sent only as an Authorization header to api.perplexity.ai; never logged or echoed.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PERPLEXITY_API_KEY"
+        },
+        {
+          "description": "How long a blocking call waits before handing back a response_id to collect later. Defaults to 55, just inside Claude Desktop's unconfigurable 60s tool-call timeout. Raise to 300 on clients without that limit.",
+          "name": "PERPLEXITY_AGENT_WAIT_SECONDS"
+        }
+      ],
+      "identifier": "perplexity-agent-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b3ea779813",
+    "published_at": "2026-08-02T10:49:19.419907Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.zalez/perplexity-agent-mcp",
+    "server_version": "0.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-02T10:49:19.419907Z"
+  },
+  "title": "Perplexity Agent",
+  "type": "mcp_server",
+  "version": "0.4.0"
+}

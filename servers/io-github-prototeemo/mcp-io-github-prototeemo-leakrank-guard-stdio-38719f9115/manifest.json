@@ -1,0 +1,65 @@
+{
+  "description": "Scans code changes for leaked secrets and insecure config, with actionable fixes for AI agents.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:52:45+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ProtoTeemo-leakrank-guard.stdio.38719f9115",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "leakrank-guard@0.2.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ProtoTeemo/leakrank-guard",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional. Normally the key is stored on this machine by `npx leakrank-guard login` (OS keychain, or ~/.config/leakrank/config.json at mode 0600), so no environment variable is needed. Set this only for CI or headless use.",
+          "format": "string",
+          "isSecret": true,
+          "name": "LEAKRANK_API_KEY"
+        }
+      ],
+      "identifier": "leakrank-guard",
+      "packageArguments": [
+        {
+          "description": "Subcommand that starts the stdio MCP server.",
+          "isRequired": true,
+          "type": "positional",
+          "value": "mcp",
+          "valueHint": "mcp"
+        }
+      ],
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "38719f9115",
+    "published_at": "2026-07-29T15:14:13.893014Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ProtoTeemo/leakrank-guard",
+    "server_version": "0.2.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-29T15:14:13.893014Z"
+  },
+  "title": "LeakRank Guard",
+  "type": "mcp_server",
+  "version": "0.2.3"
+}

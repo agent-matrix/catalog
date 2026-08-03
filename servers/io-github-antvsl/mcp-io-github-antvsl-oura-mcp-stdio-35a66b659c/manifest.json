@@ -1,0 +1,90 @@
+{
+  "description": "Sleep, readiness, HRV, resting heart rate, activity and stress from your Oura Ring",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:52:34+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-AntVsl-oura-mcp.stdio.35a66b659c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/AntVsl/oura_mcp",
+    "homepage": "https://github.com/AntVsl/oura_mcp",
+    "repository": "https://github.com/AntVsl/oura_mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "my-oura-mcp==0.2.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.AntVsl/oura-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Client ID of your Oura application from developer.ouraring.com",
+          "isRequired": true,
+          "name": "OURA_CLIENT_ID"
+        },
+        {
+          "description": "Client secret of your Oura application",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OURA_CLIENT_SECRET"
+        },
+        {
+          "default": "http://localhost:8765/callback",
+          "description": "OAuth redirect URI; must match the Oura application byte for byte",
+          "name": "OURA_REDIRECT_URI"
+        },
+        {
+          "default": "sandbox",
+          "description": "sandbox for Oura's synthetic data (no auth needed), production for your own",
+          "name": "OURA_API_MODE"
+        },
+        {
+          "default": "UTC",
+          "description": "IANA timezone deciding what counts as today. Set it explicitly on servers, whose clocks run in UTC",
+          "name": "OURA_TZ"
+        },
+        {
+          "default": ".oura/tokens.json",
+          "description": "Where the OAuth flow stores tokens. Written by the server, not set by hand",
+          "name": "OURA_TOKEN_STORE"
+        },
+        {
+          "description": "Public https address of this server, without a trailing slash. When set, the server runs its own OAuth 2.1 authorization server so claude.ai and the mobile apps can connect; leave empty for Claude Code, which authenticates with OURA_MCP_TOKEN",
+          "name": "OURA_PUBLIC_URL"
+        }
+      ],
+      "identifier": "my-oura-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "35a66b659c",
+    "published_at": "2026-07-30T18:59:15.228144Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.AntVsl/oura-mcp",
+    "server_version": "0.2.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-30T18:59:15.228144Z"
+  },
+  "title": "Oura Ring",
+  "type": "mcp_server",
+  "version": "0.2.3"
+}

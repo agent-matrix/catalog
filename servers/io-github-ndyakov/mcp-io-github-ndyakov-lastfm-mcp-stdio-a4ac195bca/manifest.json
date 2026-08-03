@@ -1,0 +1,67 @@
+{
+  "description": "Last.fm MCP server: scrobbles, charts, artist/album/track info and more",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:53:21+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ndyakov-lastfm-mcp.stdio.a4ac195bca",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ndyakov/lastfm-mcp",
+    "homepage": "https://github.com/ndyakov/lastfm-mcp",
+    "repository": "https://github.com/ndyakov/lastfm-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/ndyakov/lastfm-mcp:0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ndyakov/lastfm-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Last.fm API key (https://www.last.fm/api/account/create)",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "LASTFM_API_KEY"
+        },
+        {
+          "description": "Last.fm API secret; only needed for authenticated/write methods",
+          "isSecret": true,
+          "name": "LASTFM_API_SECRET"
+        },
+        {
+          "description": "Set to 1 to enable scrobbling/write tools",
+          "name": "LASTFM_ENABLE_WRITES"
+        }
+      ],
+      "identifier": "ghcr.io/ndyakov/lastfm-mcp:0.1.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "a4ac195bca",
+    "published_at": "2026-08-01T12:27:59.296993Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ndyakov/lastfm-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-01T12:27:59.296993Z"
+  },
+  "title": "Last.fm",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

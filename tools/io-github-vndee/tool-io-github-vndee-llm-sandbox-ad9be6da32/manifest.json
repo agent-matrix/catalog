@@ -1,0 +1,85 @@
+{
+  "artifacts": [
+    {
+      "kind": "pypi",
+      "spec": {
+        "package": "llm-sandbox",
+        "version": "0.3.43"
+      }
+    }
+  ],
+  "description": "Securely run LLM-generated code in isolated containers across 7 languages and 3 container backends.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:53:35+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/vndee/llm-sandbox",
+  "id": "tool.io-github-vndee-llm-sandbox.ad9be6da32",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/vndee/llm-sandbox",
+    "homepage": "https://github.com/vndee/llm-sandbox",
+    "repository": "https://github.com/vndee/llm-sandbox"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Securely run LLM-generated code in isolated containers across 7 languages and 3 container backends.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.vndee/llm-sandbox",
+      "request_type": "POST",
+      "url": "https://github.com/vndee/llm-sandbox"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "Install the MCP server extra. The base llm-sandbox package intentionally ships no container or MCP dependencies, so the extra is required for the server to start.",
+            "isRequired": true,
+            "name": "--from",
+            "type": "named",
+            "value": "llm-sandbox[mcp-docker]"
+          },
+          "llm-sandbox==0.3.43"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.vndee/llm-sandbox",
+  "provenance": {
+    "identity_key": "7de8b9b20c",
+    "promoted_from": "mcp.io-github-vndee-llm-sandbox.stdio.7de8b9b20c",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.vndee/llm-sandbox",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-vndee-llm-sandbox.stdio.7de8b9b20c",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/vndee/llm-sandbox",
+  "summary": "Securely run LLM-generated code in isolated containers across 7 languages and 3 container backends.",
+  "tags": [
+    "across",
+    "code",
+    "containers",
+    "generated",
+    "isolated",
+    "llm",
+    "sandbox",
+    "securely"
+  ],
+  "title": "LLM Sandbox",
+  "type": "tool",
+  "version": "0.3.43"
+}

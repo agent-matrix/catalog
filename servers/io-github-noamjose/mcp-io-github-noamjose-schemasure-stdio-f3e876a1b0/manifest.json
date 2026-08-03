@@ -1,0 +1,75 @@
+{
+  "description": "Extract schema-valid JSON from text/HTML or document images. Pay per call via x402 V2.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:53:21+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-noamjose-schemasure.stdio.f3e876a1b0",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/noamjose/schemasure",
+    "homepage": "https://github.com/noamjose/schemasure",
+    "repository": "https://github.com/noamjose/schemasure"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@noamjose/schemasure@0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.noamjose/schemasure",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://schemasure.com",
+          "description": "Base URL of SchemaSure. Text has free V1 evaluation without a wallet; image extraction is V2-only and always requires a wallet.",
+          "name": "SCHEMASURE_API_URL"
+        },
+        {
+          "default": "90000",
+          "description": "Per-call request timeout in milliseconds.",
+          "name": "SCHEMASURE_TIMEOUT_MS"
+        },
+        {
+          "description": "Optional 0x-prefixed EVM key. Enables paid x402 V2 text and image calls; signs Base USDC payments locally. Never sent to SchemaSure.",
+          "isSecret": true,
+          "name": "SCHEMASURE_PRIVATE_KEY"
+        },
+        {
+          "default": "0.10",
+          "description": "Client-side spend cap in USD per call (paid mode). The client refuses to pay more than this, even if the server advertises a higher price.",
+          "name": "SCHEMASURE_MAX_PRICE_USD"
+        }
+      ],
+      "identifier": "@noamjose/schemasure",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f3e876a1b0",
+    "published_at": "2026-07-31T20:02:58.298314Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.noamjose/schemasure",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-31T20:02:58.298314Z"
+  },
+  "title": "SchemaSure \u2014 structured extraction",
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

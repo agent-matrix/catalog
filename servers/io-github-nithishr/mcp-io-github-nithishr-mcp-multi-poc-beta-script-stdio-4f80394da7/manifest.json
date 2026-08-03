@@ -1,0 +1,81 @@
+{
+  "description": "PoC Q5b: run a differently-named console script via a positional runtimeArgument.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:53:21+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nithishr-mcp-multi-poc-beta-script.stdio.4f80394da7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nithishr/mcp-registry-poc",
+    "homepage": "https://github.com/nithishr/mcp-registry-poc",
+    "repository": "https://github.com/nithishr/mcp-registry-poc"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "Install the real package with the beta extra",
+            "isRequired": true,
+            "name": "--from",
+            "type": "named",
+            "value": "mcp-multi-poc[beta]"
+          },
+          {
+            "description": "The console script uvx should run; the identifier appended after this becomes a stray arg the server ignores",
+            "isRequired": true,
+            "type": "positional",
+            "value": "mcp-multi-poc-beta",
+            "valueHint": "mcp-multi-poc-beta"
+          },
+          "mcp-multi-poc==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nithishr/mcp-multi-poc-beta-script",
+  "packages": [
+    {
+      "identifier": "mcp-multi-poc",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "Install the real package with the beta extra",
+          "isRequired": true,
+          "name": "--from",
+          "type": "named",
+          "value": "mcp-multi-poc[beta]"
+        },
+        {
+          "description": "The console script uvx should run; the identifier appended after this becomes a stray arg the server ignores",
+          "isRequired": true,
+          "type": "positional",
+          "value": "mcp-multi-poc-beta",
+          "valueHint": "mcp-multi-poc-beta"
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4f80394da7",
+    "published_at": "2026-07-31T18:23:22.151097Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nithishr/mcp-multi-poc-beta-script",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-31T18:23:22.151097Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

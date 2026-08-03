@@ -1,0 +1,72 @@
+{
+  "description": "PDF-to-Markdown extraction that audits its own output and flags any extractor's silent drops.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:52:43+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-NameetP-pdfmux.stdio.f849a2002e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/NameetP/pdfmux",
+    "homepage": "https://github.com/NameetP/pdfmux",
+    "repository": "https://github.com/NameetP/pdfmux"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "pdfmux",
+          {
+            "isRequired": true,
+            "type": "positional",
+            "value": "serve"
+          },
+          "pdfmux==1.8.7"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.NameetP/pdfmux",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional Google AI API key. Enables the paid Gemini Flash fallback for pages where all local backends report low confidence. pdfmux runs 100% locally without this.",
+          "format": "string",
+          "isSecret": true,
+          "name": "GEMINI_API_KEY"
+        }
+      ],
+      "identifier": "pdfmux",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "isRequired": true,
+          "type": "positional",
+          "value": "serve"
+        }
+      ],
+      "runtimeHint": "pdfmux",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.8.7"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f849a2002e",
+    "published_at": "2026-07-27T17:41:55.454767Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.NameetP/pdfmux",
+    "server_version": "1.8.7",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-27T17:41:55.454767Z"
+  },
+  "title": "pdfmux",
+  "type": "mcp_server",
+  "version": "1.8.7"
+}

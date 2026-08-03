@@ -1,0 +1,69 @@
+{
+  "description": "Remote MCP server for your Gaggiuino espresso machine's shots and profiles",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:53:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ljcl-gaggiuino-mcp.stdio.a838dd847f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ljcl/gaggiuino-mcp",
+    "homepage": "https://github.com/ljcl/gaggiuino-mcp",
+    "repository": "https://github.com/ljcl/gaggiuino-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/ljcl/gaggiuino-mcp:1.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ljcl/gaggiuino-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Gaggiuino machine URL (default http://gaggiuino.local)",
+          "format": "string",
+          "name": "GAGGIUINO_URL"
+        },
+        {
+          "description": "Server port (default 8000)",
+          "format": "number",
+          "name": "PORT"
+        },
+        {
+          "description": "Bind address (default 0.0.0.0)",
+          "format": "string",
+          "name": "HOST"
+        }
+      ],
+      "identifier": "ghcr.io/ljcl/gaggiuino-mcp:1.1.0",
+      "registryType": "oci",
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:8000/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "a838dd847f",
+    "published_at": "2026-07-27T11:57:07.943199Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ljcl/gaggiuino-mcp",
+    "server_version": "1.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-27T11:57:07.943199Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.1.0"
+}

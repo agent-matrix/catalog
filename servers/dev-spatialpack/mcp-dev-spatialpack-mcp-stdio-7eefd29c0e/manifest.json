@@ -1,0 +1,85 @@
+{
+  "description": "Test whether 3D assets survive Apple Quick Look and Safari <model>, then fix what fails",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:52:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.dev-spatialpack-mcp.stdio.7eefd29c0e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@spatialpack/mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "dev.spatialpack/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Sandbox root for asset reads and writes, equivalent to --sandbox. Defaults to a per-process temp directory.",
+          "format": "filepath",
+          "name": "SPATIALPACK_MCP_SANDBOX"
+        },
+        {
+          "choices": [
+            "debug",
+            "info",
+            "warn",
+            "error",
+            "silent"
+          ],
+          "default": "info",
+          "description": "Log level for the JSON-Lines diagnostic stream on stderr: debug, info, warn, error, or silent. Defaults to info.",
+          "format": "string",
+          "name": "SPATIALPACK_MCP_LOG"
+        }
+      ],
+      "identifier": "@spatialpack/mcp",
+      "packageArguments": [
+        {
+          "description": "Path to a SpatialPack checkout. Only needed for the spec:// and learnings:// resources; every tool works without it. Defaults to the process working directory.",
+          "format": "filepath",
+          "name": "--repo-root",
+          "type": "named",
+          "valueHint": "/path/to/spatialpack"
+        },
+        {
+          "description": "Directory the server is allowed to read and write. Every file path a tool touches is clamped inside it. Defaults to a per-process temp directory.",
+          "format": "filepath",
+          "name": "--sandbox",
+          "type": "named",
+          "valueHint": "/path/to/sandbox"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7eefd29c0e",
+    "published_at": "2026-07-28T00:35:50.489647Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "dev.spatialpack/mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-28T00:35:50.489647Z"
+  },
+  "title": "SpatialPack \u2014 3D asset readiness",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}
