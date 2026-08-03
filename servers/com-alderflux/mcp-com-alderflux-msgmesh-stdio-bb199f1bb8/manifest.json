@@ -1,0 +1,77 @@
+{
+  "description": "Event bus for AI agents: watch_topic long-polls live events; manage topics, schemas, webhooks.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:52:21+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-alderflux-msgmesh.stdio.bb199f1bb8",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@msgmesh/mcp-server@0.1.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.alderflux/msgmesh",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "MsgMesh API key. Sign one (admin scope recommended) at https://msgmesh-panel.alderflux.com Keys page.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "MQ_API_KEY",
+          "placeholder": "mk_xxxxxxxx"
+        },
+        {
+          "default": "https://msgmesh-api.alderflux.com",
+          "description": "Control-plane base URL. Override only when self-hosting.",
+          "format": "string",
+          "name": "MQ_CONTROL_PLANE_URL"
+        },
+        {
+          "default": "https://msgmesh-api.alderflux.com",
+          "description": "Gateway (publish/consume) base URL. Override only when self-hosting.",
+          "format": "string",
+          "name": "MQ_GATEWAY_URL"
+        },
+        {
+          "default": "https://msgmesh-api.alderflux.com",
+          "description": "Realtime (presence) base URL. Override only when self-hosting.",
+          "format": "string",
+          "name": "MQ_REALTIME_URL"
+        }
+      ],
+      "identifier": "@msgmesh/mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "bb199f1bb8",
+    "published_at": "2026-07-29T16:51:28.421366Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.alderflux/msgmesh",
+    "server_version": "0.1.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-29T16:51:28.421366Z"
+  },
+  "title": "MsgMesh",
+  "type": "mcp_server",
+  "version": "0.1.6"
+}

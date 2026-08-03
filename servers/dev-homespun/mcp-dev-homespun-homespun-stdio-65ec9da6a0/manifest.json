@@ -1,0 +1,72 @@
+{
+  "description": "Deploy a multi-user web app from your agent: hosting, auth, database, and permissions.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:52:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.dev-homespun-homespun.stdio.65ec9da6a0",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/homespunapps/homespun",
+    "homepage": "https://github.com/homespunapps/homespun",
+    "repository": "https://github.com/homespunapps/homespun"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@homespunapps/mcp@1.6.31"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "dev.homespun/homespun",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Homespun agent API key. If unset, the server auto-registers a fresh agent against the relay on first use and saves the key to the shared CLI store (~/.config/homespun/config.json).",
+          "isSecret": true,
+          "name": "HOMESPUN_API_KEY"
+        },
+        {
+          "description": "Homespun relay base URL. Defaults to the hosted relay https://homespun.dev; set this to point at a different relay.",
+          "name": "HOMESPUN_URL"
+        },
+        {
+          "description": "Display name for the auto-registered agent on the relay.",
+          "name": "HOMESPUN_AGENT_NAME"
+        },
+        {
+          "description": "Registration secret, required only for relays running REGISTRATION_MODE=secret.",
+          "isSecret": true,
+          "name": "HOMESPUN_REGISTER_SECRET"
+        }
+      ],
+      "identifier": "@homespunapps/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.6.31"
+    }
+  ],
+  "provenance": {
+    "identity_key": "65ec9da6a0",
+    "published_at": "2026-07-30T15:44:32.512175Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "dev.homespun/homespun",
+    "server_version": "1.6.31",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-30T15:44:32.512175Z"
+  },
+  "title": "Homespun",
+  "type": "mcp_server",
+  "version": "1.6.31"
+}

@@ -1,0 +1,66 @@
+{
+  "description": "Bidirectional data lineage graph for Power BI (.pbix) files, from source to display",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:53:07+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-fabienfrfr-pbix-atlas.stdio.7d8091f34d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/fabienfrfr/pbix-atlas",
+    "homepage": "https://github.com/fabienfrfr/pbix-atlas",
+    "repository": "https://github.com/fabienfrfr/pbix-atlas"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "pbix-atlas==0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.fabienfrfr/pbix-atlas",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "8080",
+          "description": "Port the server listens on",
+          "name": "PBIX_LINEAGE_PORT"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "Host interface to bind to",
+          "name": "PBIX_LINEAGE_HOST"
+        }
+      ],
+      "identifier": "pbix-atlas",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://127.0.0.1:{PBIX_LINEAGE_PORT}/mcp/"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7d8091f34d",
+    "published_at": "2026-07-27T06:56:32.041889Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.fabienfrfr/pbix-atlas",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-27T06:56:32.041889Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

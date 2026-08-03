@@ -1,0 +1,84 @@
+{
+  "description": "Interact with Frappe/ERPNext sites \u2014 document CRUD, search, and whitelisted method calls",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:53:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-muthanii-frappe_mcp.stdio.314841f6f0",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/muthanii/frappe_mcp",
+    "homepage": "https://github.com/muthanii/frappe_mcp",
+    "repository": "https://github.com/muthanii/frappe_mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/muthanii/frappe-mcp:1.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.muthanii/frappe_mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of your Frappe/ERPNext site, e.g. https://your-site.erpnext.com",
+          "format": "string",
+          "isRequired": true,
+          "name": "FRAPPE_URL"
+        },
+        {
+          "description": "Frappe API key for token-based authentication",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "FRAPPE_API_KEY"
+        },
+        {
+          "description": "Frappe API secret paired with the API key",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "FRAPPE_API_SECRET"
+        },
+        {
+          "default": "true",
+          "description": "Set to 'false' to skip TLS certificate verification. Defaults to 'true'.",
+          "format": "string",
+          "name": "FRAPPE_VERIFY_SSL"
+        },
+        {
+          "default": "30",
+          "description": "Per-request timeout in seconds. Defaults to 30.",
+          "format": "number",
+          "name": "FRAPPE_TIMEOUT"
+        }
+      ],
+      "identifier": "ghcr.io/muthanii/frappe-mcp:1.2.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "314841f6f0",
+    "published_at": "2026-07-29T12:53:58.133149Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.muthanii/frappe_mcp",
+    "server_version": "1.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-29T12:53:58.133149Z"
+  },
+  "title": "Frappe MCP Server",
+  "type": "mcp_server",
+  "version": "1.2.0"
+}

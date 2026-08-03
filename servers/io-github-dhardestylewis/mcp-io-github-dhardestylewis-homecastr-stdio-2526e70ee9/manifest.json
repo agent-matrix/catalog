@@ -1,0 +1,75 @@
+{
+  "description": "U.S. property forecasts, public benchmarks, and permit or environmental context through MCP.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:53:05+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-dhardestylewis-homecastr.stdio.2526e70ee9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/dhardestylewis/homecastr",
+    "homepage": "https://github.com/dhardestylewis/homecastr",
+    "repository": "https://github.com/dhardestylewis/homecastr"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "homecastr-mcp-server@1.14.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.dhardestylewis/homecastr",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "hc_demo_public_readonly",
+          "description": "Homecastr API key. Use 'hc_demo_public_readonly' for free demo access (rate-limited). Get a full key at homecastr.com.",
+          "isSecret": true,
+          "name": "HOMECASTR_API_KEY"
+        },
+        {
+          "default": "https://www.homecastr.com",
+          "description": "Base URL for the Homecastr API. Defaults to https://www.homecastr.com - only override for self-hosted or staging environments.",
+          "name": "HOMECASTR_API_URL"
+        },
+        {
+          "default": "hc_demo_public_readonly",
+          "description": "Worldcastr alias for the same API credential. HOMECASTR_API_KEY takes precedence when both are set.",
+          "isSecret": true,
+          "name": "WORLDCASTR_API_KEY"
+        },
+        {
+          "default": "https://worldcastr.com",
+          "description": "Worldcastr API base URL. Set to https://worldcastr.com. HOMECASTR_API_URL takes precedence when both are set.",
+          "name": "WORLDCASTR_API_URL"
+        }
+      ],
+      "identifier": "homecastr-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.14.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "2526e70ee9",
+    "published_at": "2026-07-28T20:23:53.945306Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.dhardestylewis/homecastr",
+    "server_version": "1.14.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-28T20:23:53.945306Z"
+  },
+  "title": "Homecastr MCP",
+  "type": "mcp_server",
+  "version": "1.14.0"
+}

@@ -1,0 +1,95 @@
+{
+  "description": "MCP server for the AWS CLI. Read-only by default; single Go binary.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:52:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-FerhatDundar-aws-mcp-connector.stdio.65f45c5d1a",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/FerhatDundar/aws-mcp-connector",
+    "homepage": "https://github.com/FerhatDundar/aws-mcp-connector",
+    "repository": "https://github.com/FerhatDundar/aws-mcp-connector"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.FerhatDundar/aws-mcp-connector",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Named profile from ~/.aws/config to use. Leave unset to use the default profile.",
+          "format": "string",
+          "name": "AWS_PROFILE"
+        },
+        {
+          "description": "Default AWS region if not set elsewhere.",
+          "format": "string",
+          "name": "AWS_REGION"
+        },
+        {
+          "description": "Static AWS access key. Only needed if not using a profile/SSO/role.",
+          "format": "string",
+          "isSecret": true,
+          "name": "AWS_ACCESS_KEY_ID"
+        },
+        {
+          "description": "Static AWS secret key. Only needed if not using a profile/SSO/role.",
+          "format": "string",
+          "isSecret": true,
+          "name": "AWS_SECRET_ACCESS_KEY"
+        },
+        {
+          "description": "Temporary session token, if using short-lived credentials.",
+          "format": "string",
+          "isSecret": true,
+          "name": "AWS_SESSION_TOKEN"
+        },
+        {
+          "description": "Set to \"true\" to permit mutating AWS CLI commands. Defaults to read-only.",
+          "format": "string",
+          "name": "AWS_MCP_ALLOW_WRITE"
+        },
+        {
+          "description": "Optional comma-separated allowlist of AWS CLI service names (e.g. \"s3,ec2\"). Unset allows all.",
+          "format": "string",
+          "name": "AWS_MCP_ALLOWED_SERVICES"
+        },
+        {
+          "description": "Optional path to the aws binary. Defaults to \"aws\" resolved via PATH.",
+          "format": "string",
+          "name": "AWS_MCP_CLI_PATH"
+        }
+      ],
+      "fileSha256": "2bb60811b05e6c0faf25405c19d0fe022832952bedee253eed14e2ce0bea4fb0",
+      "identifier": "https://github.com/FerhatDundar/aws-mcp-connector/releases/download/v0.1.0/aws-mcp-connector-plugin-v0.1.0-darwin-arm64.zip",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "65f45c5d1a",
+    "published_at": "2026-08-02T01:44:22.895294Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.FerhatDundar/aws-mcp-connector",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-02T01:44:22.895294Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

@@ -1,0 +1,65 @@
+{
+  "description": "Hire verified, escrow-paid humans for real-world tasks: errands, photos, queues, bookings.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:53:40+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.market-mundane-mundane.stdio.94b7e3aebd",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sttruji/mundane-mcp",
+    "homepage": "https://github.com/sttruji/mundane-mcp",
+    "repository": "https://github.com/sttruji/mundane-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/sttruji/mundane-mcp:0.1.10"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "market.mundane/mundane",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Agent API key from POST /v1/agents/signup. Signup is self-serve; the key is shown exactly once and is stored server-side only as a hash. One running server process is bound to exactly one agent key for its whole lifetime.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "MUNDANE_API_KEY"
+        },
+        {
+          "default": "https://api.mundane.market/v1",
+          "description": "Base URL of the Mundane REST API. Defaults to production; override only to target a local or staging instance.",
+          "format": "string",
+          "name": "MUNDANE_API_BASE"
+        }
+      ],
+      "identifier": "ghcr.io/sttruji/mundane-mcp:0.1.10",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "94b7e3aebd",
+    "published_at": "2026-07-31T20:56:42.293187Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "market.mundane/mundane",
+    "server_version": "0.1.10",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-31T20:56:42.293187Z"
+  },
+  "title": "Mundane",
+  "type": "mcp_server",
+  "version": "0.1.10"
+}

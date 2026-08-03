@@ -1,0 +1,84 @@
+{
+  "description": "Govern model, retrieval, memory, and tool access for AI applications and agents.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:52:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-MatthewTracy-yagami.stdio.7c3bc93643",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/MatthewTracy/yagami",
+    "homepage": "https://github.com/MatthewTracy/yagami",
+    "repository": "https://github.com/MatthewTracy/yagami"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "yagami==0.7.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.MatthewTracy/yagami",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "name": "YAGAMI_HEADLESS",
+          "value": "true"
+        },
+        {
+          "name": "YAGAMI_MCP_SERVER_ENABLED",
+          "value": "true"
+        },
+        {
+          "name": "YAGAMI_REQUIRE_AUTH",
+          "value": "false"
+        }
+      ],
+      "identifier": "yagami",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "serve"
+        },
+        {
+          "name": "--host",
+          "type": "named",
+          "value": "127.0.0.1"
+        },
+        {
+          "name": "--port",
+          "type": "named",
+          "value": "8000"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://127.0.0.1:8000/mcp"
+      },
+      "version": "0.7.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7c3bc93643",
+    "published_at": "2026-07-28T22:45:05.254914Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.MatthewTracy/yagami",
+    "server_version": "0.7.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-28T22:45:05.254914Z"
+  },
+  "title": "Yagami AI Context Firewall",
+  "type": "mcp_server",
+  "version": "0.7.3"
+}

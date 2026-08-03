@@ -1,0 +1,64 @@
+{
+  "description": "Turn any document into a production-ready RAG dataset from Claude, Cursor, or any MCP host.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:52:19+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.app-faqai-mcp-server.stdio.bc67515e2a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Lemuran/faqai-app",
+    "homepage": "https://github.com/Lemuran/faqai-app",
+    "repository": "https://github.com/Lemuran/faqai-app"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@faqai/mcp-server@0.5.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "app.faqai/mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "FAQai API key (requires a paid plan). Create one at https://faqai.app/settings/api-keys",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "FAQAI_API_KEY"
+        },
+        {
+          "description": "Override the FAQai API base URL (defaults to https://faqai.app). Rarely needed.",
+          "name": "FAQAI_BASE_URL"
+        }
+      ],
+      "identifier": "@faqai/mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "bc67515e2a",
+    "published_at": "2026-07-28T22:52:28.508731Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "app.faqai/mcp-server",
+    "server_version": "0.5.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-28T22:52:28.508731Z"
+  },
+  "title": "FAQai",
+  "type": "mcp_server",
+  "version": "0.5.1"
+}

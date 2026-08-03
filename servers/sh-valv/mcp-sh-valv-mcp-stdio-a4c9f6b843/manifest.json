@@ -1,0 +1,101 @@
+{
+  "description": "Let coding agents query any SQL database safely. Read-only by default and scoped by your policies.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:53:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.sh-valv-mcp.stdio.a4c9f6b843",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/valv-dev/valv",
+    "homepage": "https://github.com/valv-dev/valv",
+    "repository": "https://github.com/valv-dev/valv"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@valv/mcp@0.6.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "sh.valv/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Database connection string. PostgreSQL, MySQL, SQLite, CockroachDB, or a ClickHouse HTTP URL.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DATABASE_URL"
+        },
+        {
+          "choices": [
+            "postgresql",
+            "mysql",
+            "sqlite",
+            "clickhouse"
+          ],
+          "description": "Datasource provider: postgresql, mysql, sqlite, or clickhouse. Inferred from DATABASE_URL when omitted.",
+          "format": "string",
+          "name": "VALV_PROVIDER"
+        },
+        {
+          "description": "Database name. Required for ClickHouse, whose URL does not carry one.",
+          "format": "string",
+          "name": "VALV_DATABASE"
+        },
+        {
+          "description": "Comma-separated allow-list of tables. When set, only these are exposed to the agent.",
+          "format": "string",
+          "name": "VALV_TABLES"
+        },
+        {
+          "description": "Comma-separated deny-list of tables, applied after the allow-list.",
+          "format": "string",
+          "name": "VALV_EXCLUDE"
+        },
+        {
+          "description": "Path to a policy module that takes full control of access. Without it, the server is read-only across all tables.",
+          "format": "filepath",
+          "name": "VALV_POLICY_FILE"
+        },
+        {
+          "description": "JSON context object the policy reads, e.g. {\"tenant\":{\"id\":\"acme\"}}.",
+          "format": "string",
+          "name": "VALV_CONTEXT"
+        },
+        {
+          "description": "Serve over Streamable HTTP on this port instead of stdio.",
+          "format": "number",
+          "name": "VALV_HTTP_PORT"
+        }
+      ],
+      "identifier": "@valv/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.6.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a4c9f6b843",
+    "published_at": "2026-07-28T08:14:34.542492Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "sh.valv/mcp",
+    "server_version": "0.6.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-28T08:14:34.542492Z"
+  },
+  "title": "valv",
+  "type": "mcp_server",
+  "version": "0.6.2"
+}

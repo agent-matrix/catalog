@@ -1,0 +1,86 @@
+{
+  "description": "MCP server for the Render Public API: all 207 endpoints plus workflow tools.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:52:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-LuSrodri-render-useful-mcp.stdio.2b27aea18d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/LuSrodri/render-useful-mcp",
+    "homepage": "https://github.com/LuSrodri/render-useful-mcp",
+    "repository": "https://github.com/LuSrodri/render-useful-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "render-useful-mcp@1.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.LuSrodri/render-useful-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Render API key, created at https://dashboard.render.com/u/settings#api-keys",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "RENDER_API_KEY",
+          "placeholder": "rnd_xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+        },
+        {
+          "description": "Default workspace, applied wherever a tool needs an ownerId and the caller omitted one.",
+          "format": "string",
+          "name": "RENDER_WORKSPACE_ID",
+          "placeholder": "tea-xxxxxxxxxxxxxxxxxxxx"
+        },
+        {
+          "description": "Comma-separated toolsets to expose, or 'all'. Defaults to all 17 toolsets.",
+          "format": "string",
+          "name": "RENDER_MCP_TOOLSETS",
+          "placeholder": "services,logs,postgres"
+        },
+        {
+          "default": "false",
+          "description": "Expose only non-mutating tools.",
+          "format": "boolean",
+          "name": "RENDER_MCP_READ_ONLY"
+        },
+        {
+          "default": "true",
+          "description": "Registers the render_toolsets tool, which reports which toolsets exist and which are enabled.",
+          "format": "boolean",
+          "name": "RENDER_MCP_DYNAMIC_TOOLSETS"
+        }
+      ],
+      "identifier": "render-useful-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "2b27aea18d",
+    "published_at": "2026-07-30T00:43:26.710102Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.LuSrodri/render-useful-mcp",
+    "server_version": "1.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-30T00:43:26.710102Z"
+  },
+  "title": "Render Useful MCP",
+  "type": "mcp_server",
+  "version": "1.1.1"
+}

@@ -1,0 +1,54 @@
+{
+  "description": "Manage tasks, Focus Zone, notes, projects, and task history from compatible AI assistants.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:52:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.in-calmloop-tasks.sse.7c6108789d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://calmloop.in/mcp"
+    }
+  },
+  "name": "in.calmloop/tasks",
+  "provenance": {
+    "identity_key": "7c6108789d",
+    "published_at": "2026-08-02T10:36:04.160679Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "in.calmloop/tasks",
+    "server_version": "2.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-02T10:36:04.160679Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "CalmLoop personal access token, sent as a Bearer token.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {calmloop_mcp_token}",
+          "variables": {
+            "calmloop_mcp_token": {
+              "description": "Personal access token from CalmLoop Settings > MCP Access.",
+              "format": "string",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://calmloop.in/mcp"
+    }
+  ],
+  "title": "CalmLoop Task Manager",
+  "type": "mcp_server",
+  "version": "2.0.0"
+}

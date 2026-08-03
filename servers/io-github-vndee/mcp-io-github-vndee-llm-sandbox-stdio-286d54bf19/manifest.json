@@ -1,0 +1,128 @@
+{
+  "description": "Securely run LLM-generated code in isolated containers across 7 languages and 4 backends.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:53:35+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-vndee-llm-sandbox.stdio.286d54bf19",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/vndee/llm-sandbox",
+    "homepage": "https://github.com/vndee/llm-sandbox",
+    "repository": "https://github.com/vndee/llm-sandbox"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "Install the MCP server extra. The base llm-sandbox package intentionally ships no container or MCP dependencies, so the extra is required for the server to start.",
+            "isRequired": true,
+            "name": "--from",
+            "type": "named",
+            "value": "llm-sandbox[mcp-docker]"
+          },
+          "llm-sandbox==0.3.42"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.vndee/llm-sandbox",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "choices": [
+            "docker",
+            "podman",
+            "kubernetes"
+          ],
+          "default": "docker",
+          "description": "Container backend to use. Must match the installed extra: mcp-docker, mcp-podman, or mcp-k8s.",
+          "name": "BACKEND"
+        },
+        {
+          "description": "Docker or Podman socket URL, e.g. unix:///var/run/docker.sock",
+          "name": "DOCKER_HOST"
+        },
+        {
+          "description": "Path to kubeconfig file when BACKEND=kubernetes.",
+          "name": "KUBECONFIG"
+        },
+        {
+          "default": "default",
+          "description": "Kubernetes namespace used for sandbox pods when BACKEND=kubernetes.",
+          "name": "NAMESPACE"
+        },
+        {
+          "default": "true",
+          "description": "Commit the container after a run so installed libraries persist between sessions.",
+          "name": "COMMIT_CONTAINER"
+        },
+        {
+          "default": "true",
+          "description": "Keep the base image after the session ends to avoid re-pulling it on the next run.",
+          "name": "KEEP_TEMPLATE"
+        },
+        {
+          "description": "Network mode for the sandbox container. Set to 'none' for hardened isolation. Docker and Podman backends only.",
+          "name": "SANDBOX_NETWORK_MODE"
+        },
+        {
+          "description": "Mount the sandbox root filesystem read-only. Recommended: true. Docker and Podman backends only.",
+          "name": "SANDBOX_READ_ONLY"
+        },
+        {
+          "description": "Comma-separated Linux capabilities to drop. Recommended: ALL. Docker and Podman backends only.",
+          "name": "SANDBOX_CAP_DROP"
+        },
+        {
+          "description": "Comma-separated container security options, e.g. no-new-privileges. Docker and Podman backends only.",
+          "name": "SANDBOX_SECURITY_OPT"
+        },
+        {
+          "description": "Memory limit for the sandbox container, e.g. 4g. Docker and Podman backends only.",
+          "name": "SANDBOX_MEMORY"
+        },
+        {
+          "description": "Fractional CPU allocation for the sandbox container, e.g. 1.5. Docker and Podman backends only.",
+          "name": "SANDBOX_CPUS"
+        }
+      ],
+      "identifier": "llm-sandbox",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "Install the MCP server extra. The base llm-sandbox package intentionally ships no container or MCP dependencies, so the extra is required for the server to start.",
+          "isRequired": true,
+          "name": "--from",
+          "type": "named",
+          "value": "llm-sandbox[mcp-docker]"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.42"
+    }
+  ],
+  "provenance": {
+    "identity_key": "286d54bf19",
+    "published_at": "2026-08-02T15:29:31.461097Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.vndee/llm-sandbox",
+    "server_version": "0.3.42",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-02T15:29:31.461097Z"
+  },
+  "title": "LLM Sandbox",
+  "type": "mcp_server",
+  "version": "0.3.42"
+}

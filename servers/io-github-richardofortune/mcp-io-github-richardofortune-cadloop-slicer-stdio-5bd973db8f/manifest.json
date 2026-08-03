@@ -1,0 +1,90 @@
+{
+  "description": "Find printer profiles, check bed fit, slice to .gcode.3mf and extract the G-code.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:53:27+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-richardofortune-cadloop-slicer.stdio.5bd973db8f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/richardofortune/cadloop",
+    "homepage": "https://github.com/richardofortune/cadloop",
+    "repository": "https://github.com/richardofortune/cadloop"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "name": "--from",
+            "type": "named",
+            "value": "cadloop"
+          },
+          {
+            "type": "positional",
+            "value": "cadloop-slicer"
+          },
+          "cadloop==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.richardofortune/cadloop-slicer",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "The only directory this server reads and writes. Defaults to ~/cad.",
+          "name": "SLICER_WORKSPACE"
+        },
+        {
+          "description": "Path to the slicer binary. Auto-detected if unset. Creality Print's CLI does not work headless on macOS; prefer OrcaSlicer, Bambu Studio or ElegooSlicer there.",
+          "name": "SLICER_BIN"
+        },
+        {
+          "description": "Extra profile roots, os.pathsep separated. Added to the auto-detected roots rather than replacing them.",
+          "name": "SLICER_PROFILE_DIRS"
+        },
+        {
+          "description": "Seconds before a slice is killed. Defaults to 600.",
+          "name": "SLICER_TIMEOUT"
+        }
+      ],
+      "identifier": "cadloop",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "name": "--from",
+          "type": "named",
+          "value": "cadloop"
+        },
+        {
+          "type": "positional",
+          "value": "cadloop-slicer"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5bd973db8f",
+    "published_at": "2026-07-27T23:47:31.766071Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.richardofortune/cadloop-slicer",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-27T23:47:31.766071Z"
+  },
+  "title": "cadloop Slicer",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

@@ -1,0 +1,97 @@
+{
+  "description": "Persistent memory for AI thinking partnerships: hybrid search and a temporal knowledge graph.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:53:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ygtalp-rawthink-mcp.stdio.b91d9559c1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ygtalp/rawthink-mcp",
+    "homepage": "https://github.com/ygtalp/rawthink-mcp",
+    "repository": "https://github.com/ygtalp/rawthink-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "rawthink-mcp==2.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ygtalp/rawthink-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "../vault",
+          "description": "Path to the vault directory holding sessions, qnotes and the knowledge graph.",
+          "name": "RAWTHINK_VAULT"
+        },
+        {
+          "description": "Path to memory.jsonl. Defaults to <vault>/memory.jsonl.",
+          "name": "MEMORY_FILE_PATH"
+        },
+        {
+          "default": "http://localhost:6333",
+          "description": "Qdrant server URL.",
+          "name": "QDRANT_URL"
+        },
+        {
+          "description": "Set to a directory to run Qdrant embedded instead of via Docker.",
+          "name": "QDRANT_PATH"
+        },
+        {
+          "default": "http://localhost:11434",
+          "description": "Ollama server URL. Without it, retrieval degrades to sparse-only.",
+          "name": "OLLAMA_URL"
+        },
+        {
+          "default": "bge-m3",
+          "description": "Embedding model. Changing it requires a full reindex.",
+          "name": "OLLAMA_MODEL"
+        },
+        {
+          "default": "full",
+          "description": "Which tools to expose: recall (4, read-only), record (5, the write path), or full (17).",
+          "name": "RAWTHINK_TOOL_PROFILE"
+        },
+        {
+          "description": "Path to the BM25 state file. Defaults to <vault>/.bm25_state.json.",
+          "name": "RAWTHINK_BM25_STATE"
+        },
+        {
+          "default": "INFO",
+          "description": "Log level for diagnostics on stderr.",
+          "name": "RAWTHINK_LOG_LEVEL"
+        }
+      ],
+      "identifier": "rawthink-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b91d9559c1",
+    "published_at": "2026-07-31T05:48:24.652194Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ygtalp/rawthink-mcp",
+    "server_version": "2.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-31T05:48:24.652194Z"
+  },
+  "title": "RAWThink",
+  "type": "mcp_server",
+  "version": "2.0.1"
+}

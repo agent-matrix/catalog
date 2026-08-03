@@ -1,0 +1,63 @@
+{
+  "description": "Read-only MCP server for querying Kenda token spend and waste",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:53:14+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-kenda-co-ingestion-mcp.stdio.069ab3f990",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/kenda-co/ingestion-mcp",
+    "homepage": "https://github.com/kenda-co/ingestion-mcp",
+    "repository": "https://github.com/kenda-co/ingestion-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "ingestion-mcp==0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.kenda-co/ingestion-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Kenda API base URL, e.g. https://api.kenda.app. Optional: normally read from ~/.kenda/config.json, which `kenda-collect init` writes. Set this to override the file.",
+          "name": "KENDA_ENDPOINT"
+        },
+        {
+          "description": "Per-customer Kenda ingest token (kenda_...). Optional: normally read from ~/.kenda/config.json. Set this to override the file.",
+          "isSecret": true,
+          "name": "KENDA_TOKEN"
+        }
+      ],
+      "identifier": "ingestion-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "069ab3f990",
+    "published_at": "2026-07-28T02:06:54.854349Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.kenda-co/ingestion-mcp",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-28T02:06:54.854349Z"
+  },
+  "title": "Kenda",
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

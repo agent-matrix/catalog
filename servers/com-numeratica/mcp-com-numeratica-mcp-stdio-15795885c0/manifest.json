@@ -1,0 +1,71 @@
+{
+  "description": "Deterministic US financial planning: retirement Monte Carlo, Roth conversion, RMD, tax, IRMAA, SS",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:52:26+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-numeratica-mcp.stdio.15795885c0",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/numeratica/mcp",
+    "homepage": "https://github.com/numeratica/mcp",
+    "repository": "https://github.com/numeratica/mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@numeratica/mcp@0.1.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.numeratica/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Numeratica API key (nmr_sk_...). Free self-serve key at https://docs.numeratica.com/get-key",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "NUMERATICA_API_KEY"
+        },
+        {
+          "description": "Override the API base URL. Defaults to https://api.numeratica.com; only needed for a staging or self-hosted deployment.",
+          "format": "string",
+          "name": "NUMERATICA_BASE_URL"
+        },
+        {
+          "description": "Per-request timeout in milliseconds (default 120000, minimum 1000). Raise it for long-horizon Monte Carlo runs.",
+          "format": "string",
+          "name": "NUMERATICA_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "@numeratica/mcp",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "15795885c0",
+    "published_at": "2026-07-28T00:45:54.020329Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.numeratica/mcp",
+    "server_version": "0.1.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-28T00:45:54.020329Z"
+  },
+  "title": "Numeratica \u2014 financial planning calculations",
+  "type": "mcp_server",
+  "version": "0.1.4"
+}

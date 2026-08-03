@@ -1,0 +1,150 @@
+{
+  "description": "Explore and query TimeBase streams, schemas, QQL, symbols, and server status via MCP.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:53:07+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-epam-TimeBase-MCP.stdio.4ecf25cfc1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/epam/TimeBase-MCP",
+    "homepage": "https://github.com/epam/TimeBase-MCP",
+    "repository": "https://github.com/epam/TimeBase-MCP"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Publish the MCP HTTP port.",
+            "name": "-p",
+            "type": "named",
+            "value": "8000:8000"
+          },
+          "ghcr.io/epam/timebase-mcp:0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.epam/TimeBase-MCP",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "dxtick://localhost:8011",
+          "description": "TimeBase native connection URL.",
+          "name": "TIMEBASE_URL",
+          "placeholder": "dxtick://localhost:8011"
+        },
+        {
+          "description": "Multi-server config as a JSON array string or path to a JSON file.",
+          "format": "string",
+          "name": "TIMEBASE_SERVERS"
+        },
+        {
+          "description": "Username for basic auth or oauth2_client_credentials.",
+          "format": "string",
+          "name": "TIMEBASE_USERNAME"
+        },
+        {
+          "description": "Password for basic auth.",
+          "format": "string",
+          "isSecret": true,
+          "name": "TIMEBASE_PASSWORD"
+        },
+        {
+          "description": "OAuth2 token endpoint for service-account client credentials.",
+          "format": "string",
+          "name": "TIMEBASE_OAUTH2_TOKEN_URL"
+        },
+        {
+          "description": "OAuth2 client ID for service-account or interactive login.",
+          "format": "string",
+          "name": "TIMEBASE_OAUTH2_CLIENT_ID"
+        },
+        {
+          "description": "OAuth2 client secret for service-account auth.",
+          "format": "string",
+          "isSecret": true,
+          "name": "TIMEBASE_OAUTH2_CLIENT_SECRET"
+        },
+        {
+          "description": "OAuth2 scope(s) for service-account or interactive login.",
+          "format": "string",
+          "name": "TIMEBASE_OAUTH2_SCOPE"
+        },
+        {
+          "choices": [
+            "DEBUG",
+            "INFO",
+            "WARNING",
+            "ERROR",
+            "CRITICAL"
+          ],
+          "default": "INFO",
+          "description": "Log level: DEBUG, INFO, WARNING, ERROR, or CRITICAL.",
+          "name": "MCP_LOG_LEVEL"
+        },
+        {
+          "choices": [
+            "auto",
+            "none",
+            "basic",
+            "oauth2_client_credentials",
+            "forward_identity"
+          ],
+          "default": "auto",
+          "description": "Outbound auth: auto, none, basic, oauth2_client_credentials, forward_identity.",
+          "name": "TIMEBASE_AUTH_MODE"
+        },
+        {
+          "description": "Public HTTPS URL of this MCP endpoint (e.g. https://mcp.example.com/mcp).",
+          "format": "string",
+          "name": "MCP_AUTH_PUBLIC_URL"
+        },
+        {
+          "description": "Expected JWT audience for inbound IdP auth.",
+          "format": "string",
+          "name": "MCP_AUTH_AUDIENCE"
+        },
+        {
+          "description": "Path to a hashed API-key store for inbound bearer-key auth.",
+          "format": "filepath",
+          "name": "MCP_AUTH_API_KEYS_FILE"
+        }
+      ],
+      "identifier": "ghcr.io/epam/timebase-mcp:0.2.1",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "Publish the MCP HTTP port.",
+          "name": "-p",
+          "type": "named",
+          "value": "8000:8000"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://127.0.0.1:8000/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "4ecf25cfc1",
+    "published_at": "2026-07-28T15:23:56.213404Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.epam/TimeBase-MCP",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-28T15:23:56.213404Z"
+  },
+  "title": "TimeBase",
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

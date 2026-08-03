@@ -1,0 +1,66 @@
+{
+  "description": "Sovereign encrypted memory for AI agents. 8 MCP tools. GDPR erasure. Runnable offline demos.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:52:45+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-SAIHM-Admin-saihm-mcp.stdio.7815295e80",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/SAIHM-Admin/saihm-mcp",
+    "homepage": "https://github.com/SAIHM-Admin/saihm-mcp",
+    "repository": "https://github.com/SAIHM-Admin/saihm-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@saihm/mcp-server@0.3.10"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.SAIHM-Admin/saihm-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Endpoint URL of the custodial SAIHM operator you run or subscribe to. Not the hosted service at https://saihm.coti.global, which is non-custodial: use @saihm/mcp-server-pro for that.",
+          "format": "string",
+          "isRequired": true,
+          "name": "SAIHM_ENDPOINT_URL"
+        },
+        {
+          "description": "Authorization header (typically 'Bearer <token>') issued by your operator.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SAIHM_AUTH_HEADER"
+        }
+      ],
+      "identifier": "@saihm/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.10"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7815295e80",
+    "published_at": "2026-07-28T23:10:59.987336Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.SAIHM-Admin/saihm-mcp",
+    "server_version": "0.3.10",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-28T23:10:59.987336Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.10"
+}

@@ -1,0 +1,73 @@
+{
+  "description": "Investigate fraud in plain English \u2014 explain verdicts with evidence, check email, IP and phone.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:53:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-kaidn-kaidn-mcp.stdio.d91abfa533",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Kaidn-io/kaidn-mcp",
+    "homepage": "https://github.com/Kaidn-io/kaidn-mcp",
+    "repository": "https://github.com/Kaidn-io/kaidn-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@kaidn/mcp@0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.kaidn/kaidn-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your secret Kaidn API key, from https://kaidn.io",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "KAIDN_API_KEY"
+        },
+        {
+          "default": "https://api.kaidn.io",
+          "description": "Override the Kaidn API base URL",
+          "name": "KAIDN_API_URL"
+        },
+        {
+          "description": "Set to 1 to register the mutating tools (add_to_list, label_outcome)",
+          "name": "KAIDN_MCP_ALLOW_WRITES"
+        },
+        {
+          "default": "100",
+          "description": "Ceiling on quota-consuming calls per process",
+          "name": "KAIDN_MCP_MAX_QUOTA_CALLS"
+        }
+      ],
+      "identifier": "@kaidn/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d91abfa533",
+    "published_at": "2026-08-01T17:35:34.92559Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.kaidn/kaidn-mcp",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-01T17:35:34.92559Z"
+  },
+  "title": "Kaidn",
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

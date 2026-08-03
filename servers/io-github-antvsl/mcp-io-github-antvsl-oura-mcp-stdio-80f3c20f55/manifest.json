@@ -1,0 +1,92 @@
+{
+  "description": "Sleep, readiness, HRV, resting heart rate, activity and stress from your Oura Ring",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:52:34+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-AntVsl-oura-mcp.stdio.80f3c20f55",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/AntVsl/oura_mcp",
+    "homepage": "https://github.com/AntVsl/oura_mcp",
+    "repository": "https://github.com/AntVsl/oura_mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "my-oura-mcp==0.4.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.AntVsl/oura-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Client ID of your Oura application from developer.ouraring.com",
+          "name": "OURA_CLIENT_ID"
+        },
+        {
+          "description": "Client secret of your Oura application",
+          "isSecret": true,
+          "name": "OURA_CLIENT_SECRET"
+        },
+        {
+          "default": "http://localhost:8765/callback",
+          "description": "OAuth redirect URI; must match the Oura application byte for byte",
+          "name": "OURA_REDIRECT_URI"
+        },
+        {
+          "default": "sandbox",
+          "description": "sandbox for Oura's synthetic data (no auth needed), production for your own",
+          "name": "OURA_API_MODE"
+        },
+        {
+          "default": "UTC",
+          "description": "IANA timezone deciding what counts as today. Set it explicitly on servers, whose clocks run in UTC",
+          "name": "OURA_TZ"
+        },
+        {
+          "default": ".oura/tokens.json",
+          "description": "Where the OAuth flow stores tokens. Written by the server, not set by hand",
+          "name": "OURA_TOKEN_STORE"
+        },
+        {
+          "description": "Public https address, without a trailing slash. Enables OAuth 2.1 for Claude.ai and ChatGPT; leave empty for local or Bearer-token clients",
+          "name": "OURA_PUBLIC_URL"
+        },
+        {
+          "description": "Comma-separated trusted OAuth redirect origins; defaults to Claude.ai and ChatGPT",
+          "name": "OURA_OAUTH_ALLOWED_REDIRECT_ORIGINS"
+        }
+      ],
+      "identifier": "my-oura-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "80f3c20f55",
+    "published_at": "2026-08-02T19:39:15.141889Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.AntVsl/oura-mcp",
+    "server_version": "0.4.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-02T19:39:15.141889Z"
+  },
+  "title": "Oura Ring",
+  "type": "mcp_server",
+  "version": "0.4.1"
+}

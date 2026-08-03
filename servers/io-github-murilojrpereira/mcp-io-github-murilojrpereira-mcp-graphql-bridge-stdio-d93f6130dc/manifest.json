@@ -1,0 +1,83 @@
+{
+  "description": "Bridges any GraphQL API to Claude Code \u2014 auto-generates MCP tools via schema introspection.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:53:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-murilojrpereira-mcp-graphql-bridge.stdio.d93f6130dc",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/murilojrpereira/mcp-graphql-bridge",
+    "homepage": "https://github.com/murilojrpereira/mcp-graphql-bridge",
+    "repository": "https://github.com/murilojrpereira/mcp-graphql-bridge"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-graphql-bridge@2.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.murilojrpereira/mcp-graphql-bridge",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "GraphQL endpoint URL used for executing queries and mutations. Defaults to the public Countries API.",
+          "name": "GRAPHQL_API_URL"
+        },
+        {
+          "description": "GraphQL endpoint URL used for schema introspection. Defaults to GRAPHQL_API_URL.",
+          "name": "GRAPHQL_INTROSPECTION_URL"
+        },
+        {
+          "description": "Bearer token for authenticating query and mutation execution.",
+          "isSecret": true,
+          "name": "GRAPHQL_TOKEN"
+        },
+        {
+          "description": "Bearer token for schema introspection. Defaults to GRAPHQL_TOKEN.",
+          "isSecret": true,
+          "name": "GRAPHQL_INTROSPECTION_TOKEN"
+        },
+        {
+          "description": "Maximum number of generated query and mutation tools. Defaults to 128.",
+          "name": "GRAPHQL_MAX_TOOLS"
+        },
+        {
+          "description": "Set to false to disable mutation tools and mutation execution. Defaults to true.",
+          "name": "GRAPHQL_INCLUDE_MUTATIONS"
+        },
+        {
+          "description": "Retries for transient upstream responses. Defaults to 0.",
+          "name": "GRAPHQL_MAX_RETRIES"
+        }
+      ],
+      "identifier": "mcp-graphql-bridge",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d93f6130dc",
+    "published_at": "2026-07-28T21:34:23.930055Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.murilojrpereira/mcp-graphql-bridge",
+    "server_version": "2.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-28T21:34:23.930055Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "2.1.0"
+}

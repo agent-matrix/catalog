@@ -1,0 +1,70 @@
+{
+  "description": "Manage the Massdriver infrastructure platform: projects, environments, deployments, and more.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:52:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.cloud-massdriver-mcp-server.stdio.d8eba69862",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/massdriver-cloud/mcp-server",
+    "homepage": "https://github.com/massdriver-cloud/mcp-server",
+    "repository": "https://github.com/massdriver-cloud/mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "docker.io/massdrivercloud/mcp-server:0.1.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "cloud.massdriver/mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Massdriver API key",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "MASSDRIVER_API_KEY"
+        },
+        {
+          "description": "Massdriver organization ID",
+          "format": "string",
+          "isRequired": true,
+          "name": "MASSDRIVER_ORGANIZATION_ID"
+        },
+        {
+          "description": "Massdriver API URL. Only needed for self-hosted Massdriver instances.",
+          "format": "string",
+          "name": "MASSDRIVER_URL"
+        }
+      ],
+      "identifier": "docker.io/massdrivercloud/mcp-server:0.1.5",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "d8eba69862",
+    "published_at": "2026-07-30T23:16:59.778254Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "cloud.massdriver/mcp-server",
+    "server_version": "0.1.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-30T23:16:59.778254Z"
+  },
+  "title": "Massdriver",
+  "type": "mcp_server",
+  "version": "0.1.5"
+}

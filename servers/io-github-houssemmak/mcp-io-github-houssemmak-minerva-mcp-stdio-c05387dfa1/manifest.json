@@ -1,0 +1,83 @@
+{
+  "description": "Microsoft 365 & Azure admin: Graph, ARM, and the PowerShell cmdlets Graph does not expose.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:52:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-HoussemMak-minerva-mcp.stdio.c05387dfa1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/HoussemMak/minerva-mcp",
+    "homepage": "https://github.com/HoussemMak/minerva-mcp",
+    "repository": "https://github.com/HoussemMak/minerva-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "minerva-mcp@0.4.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.HoussemMak/minerva-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Entra tenant id. Only needed for unattended app-only sign-in; omit it to sign in interactively with a device code.",
+          "name": "AZURE_TENANT_ID"
+        },
+        {
+          "description": "Application (client) id. Defaults to the public Microsoft Graph PowerShell client, so it is optional for trying the server out.",
+          "name": "AZURE_CLIENT_ID"
+        },
+        {
+          "description": "Client secret for app-only authentication. Leave unset to sign in interactively instead.",
+          "isSecret": true,
+          "name": "AZURE_CLIENT_SECRET"
+        },
+        {
+          "description": "SharePoint root URL, e.g. https://contoso.sharepoint.com. Required only by the SharePoint/PnP tool when PowerShell runs locally.",
+          "name": "MINERVA_SHAREPOINT_URL"
+        }
+      ],
+      "identifier": "minerva-mcp",
+      "packageArguments": [
+        {
+          "description": "Speak JSON-RPC over stdin/stdout. Required for local MCP clients; without it the server listens on HTTP instead.",
+          "isRequired": true,
+          "name": "--stdio",
+          "type": "named"
+        },
+        {
+          "description": "Refuse every write operation. Recommended when pointing the server at a production tenant.",
+          "name": "--read-only",
+          "type": "named"
+        }
+      ],
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c05387dfa1",
+    "published_at": "2026-07-29T14:39:57.686124Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.HoussemMak/minerva-mcp",
+    "server_version": "0.4.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-29T14:39:57.686124Z"
+  },
+  "title": "Minerva MCP \u2014 Microsoft 365 & Azure",
+  "type": "mcp_server",
+  "version": "0.4.2"
+}

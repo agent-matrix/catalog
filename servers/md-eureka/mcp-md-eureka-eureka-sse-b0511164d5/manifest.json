@@ -1,0 +1,53 @@
+{
+  "description": "The Eureka EHR as MCP tools: patients, schedule, notes, messages, billing, and orders.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:53:40+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.md-eureka-eureka.sse.b0511164d5",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://api.eureka.md/mcp"
+    }
+  },
+  "name": "md.eureka/eureka",
+  "provenance": {
+    "identity_key": "b0511164d5",
+    "published_at": "2026-07-27T19:43:59.194055Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "md.eureka/eureka",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-27T19:43:59.194055Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Your Eureka API key",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {api_key}",
+          "variables": {
+            "api_key": {
+              "description": "Your per-doctor Eureka API key (ask in your practice Slack channel or eureka.md/support)",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://api.eureka.md/mcp"
+    }
+  ],
+  "title": "Eureka EHR",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

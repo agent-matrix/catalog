@@ -1,0 +1,97 @@
+{
+  "description": "Gency AI product image generation - MCP server for Claude, Codex, Cursor, VS Code",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:52:17+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-gency-gency-mcp.stdio.1645836940",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/studiolab-dev/gency-mcp",
+    "homepage": "https://github.com/studiolab-dev/gency-mcp",
+    "repository": "https://github.com/studiolab-dev/gency-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@gency-ai/gency-mcp@0.6.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.gency/gency-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://openapi.gency.ai",
+          "description": "Gency API base URL",
+          "format": "string",
+          "name": "GENCY_API_URL"
+        },
+        {
+          "description": "OAuth client ID override. Defaults to the built-in official client, so most users never set this.",
+          "format": "string",
+          "name": "GENCY_OAUTH_CLIENT_ID"
+        },
+        {
+          "description": "OAuth client secret, only needed for confidential clients.",
+          "format": "string",
+          "isSecret": true,
+          "name": "GENCY_OAUTH_CLIENT_SECRET"
+        },
+        {
+          "description": "OAuth provider base URL. Defaults to GENCY_API_URL.",
+          "format": "string",
+          "name": "GENCY_OAUTH_API_BASE"
+        },
+        {
+          "default": "product:read product:write team:read team:write user:read",
+          "description": "Space-separated OAuth scopes.",
+          "format": "string",
+          "name": "GENCY_OAUTH_SCOPE"
+        },
+        {
+          "description": "serve-http only: OAuth client IDs whose tokens this server accepts (space or comma separated). Empty accepts any client.",
+          "format": "string",
+          "name": "GENCY_MCP_ALLOWED_CLIENT_IDS"
+        },
+        {
+          "description": "serve-http only: HMAC key for signed upload handles. Only needed when running more than one instance, so a handle issued by one verifies on another.",
+          "format": "string",
+          "isSecret": true,
+          "name": "GENCY_MCP_UPLOAD_SECRET"
+        },
+        {
+          "description": "RFC 8707 resource indicator to send on authorize/token/refresh requests. Opt-in until the Gency authorization server is confirmed to accept it.",
+          "format": "string",
+          "name": "GENCY_MCP_OAUTH_RESOURCE"
+        }
+      ],
+      "identifier": "@gency-ai/gency-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.6.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1645836940",
+    "published_at": "2026-07-30T05:27:57.913035Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.gency/gency-mcp",
+    "server_version": "0.6.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-30T05:27:57.913035Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.6.0"
+}

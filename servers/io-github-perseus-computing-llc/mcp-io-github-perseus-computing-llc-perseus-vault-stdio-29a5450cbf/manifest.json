@@ -1,0 +1,93 @@
+{
+  "description": "Persistent, deterministic memory for AI agents. Local-first: SQLite, FTS5, AES-256-GCM, 55+ tools.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:52:44+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Perseus-Computing-LLC-perseus-vault.stdio.29a5450cbf",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Perseus-Computing-LLC/perseus-vault",
+    "homepage": "https://github.com/Perseus-Computing-LLC/perseus-vault",
+    "repository": "https://github.com/Perseus-Computing-LLC/perseus-vault"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "name": "-i",
+            "type": "named"
+          },
+          {
+            "name": "--rm",
+            "type": "named"
+          },
+          {
+            "name": "-v",
+            "type": "named",
+            "value": "perseus-vault-data:/data"
+          },
+          "ghcr.io/perseus-computing-llc/perseus-vault:2.22.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Perseus-Computing-LLC/perseus-vault",
+  "packages": [
+    {
+      "identifier": "ghcr.io/perseus-computing-llc/perseus-vault:2.22.0",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "serve"
+        },
+        {
+          "type": "positional",
+          "value": "--db"
+        },
+        {
+          "type": "positional",
+          "value": "/data/perseus-vault.db"
+        }
+      ],
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "name": "-i",
+          "type": "named"
+        },
+        {
+          "name": "--rm",
+          "type": "named"
+        },
+        {
+          "name": "-v",
+          "type": "named",
+          "value": "perseus-vault-data:/data"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "29a5450cbf",
+    "published_at": "2026-07-29T13:14:55.218642Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Perseus-Computing-LLC/perseus-vault",
+    "server_version": "2.22.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-29T13:14:55.218642Z"
+  },
+  "title": "Perseus Vault \u2014 persistent, encrypted memory for AI agents",
+  "type": "mcp_server",
+  "version": "2.22.0"
+}

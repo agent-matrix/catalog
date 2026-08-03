@@ -1,0 +1,81 @@
+{
+  "description": "MCP server for Dynatrace Managed to access logs, events, and metrics.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:53:06+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-dynatrace-oss-dynatrace-managed-mcp.stdio.8d463ae007",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/dynatrace-oss/dynatrace-managed-mcp",
+    "homepage": "https://github.com/dynatrace-oss/dynatrace-managed-mcp",
+    "repository": "https://github.com/dynatrace-oss/dynatrace-managed-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@dynatrace-oss/dynatrace-managed-mcp-server@1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.dynatrace-oss/dynatrace-managed-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Maximum number of tool calls allowed per rate limit window. Defaults to 20.",
+          "format": "number",
+          "name": "DT_MCP_RATE_LIMIT_MAX_CALLS"
+        },
+        {
+          "description": "Rate limit window size in milliseconds. Defaults to 20000 (20 seconds).",
+          "format": "number",
+          "name": "DT_MCP_RATE_LIMIT_WINDOW_MS"
+        },
+        {
+          "description": "An escaped JSON array that defines the Dynatrace Managed environment(s) to connect to. See README file for contents of this.",
+          "format": "string",
+          "isRequired": true,
+          "name": "DT_ENVIRONMENT_CONFIGS"
+        },
+        {
+          "description": "Logging level (e.g. debug, info, warning, error)",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        },
+        {
+          "description": "Disable telemetry",
+          "format": "boolean",
+          "name": "DT_MCP_DISABLE_TELEMETRY"
+        }
+      ],
+      "identifier": "@dynatrace-oss/dynatrace-managed-mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8d463ae007",
+    "published_at": "2026-07-29T13:45:26.125317Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.dynatrace-oss/dynatrace-managed-mcp",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-29T13:45:26.125317Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

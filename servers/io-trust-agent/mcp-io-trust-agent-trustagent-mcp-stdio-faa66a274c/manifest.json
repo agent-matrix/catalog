@@ -1,0 +1,73 @@
+{
+  "description": "Is this address safe to pay? OFAC sanctions, ERC-8004 reputation, contract analysis.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:53:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-trust-agent-trustagent-mcp.stdio.faa66a274c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/MichalStachnik/trust-agent",
+    "homepage": "https://github.com/MichalStachnik/trust-agent",
+    "repository": "https://github.com/MichalStachnik/trust-agent"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "trustagent-mcp@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.trust-agent/trustagent-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://trust-agent.io",
+          "description": "Service to query. Defaults to the hosted deployment.",
+          "name": "TRUSTAGENT_URL"
+        },
+        {
+          "description": "Private key of a funded Base wallet. Enables the four paid tools, which settle per call in USDC over x402. Omit to run the free tools only \u2014 they need no wallet. Requires the optional peer dependency x402-fetch.",
+          "isSecret": true,
+          "name": "TRUSTAGENT_WALLET_KEY"
+        },
+        {
+          "default": "0.05",
+          "description": "Refuse any single paid call above this amount.",
+          "name": "TRUSTAGENT_MAX_PER_CALL_USD"
+        },
+        {
+          "default": "1.00",
+          "description": "Total spend ceiling across all paid calls in one session. A model looping on a retry is the realistic failure, and a per-call limit does not catch it.",
+          "name": "TRUSTAGENT_MAX_SESSION_USD"
+        }
+      ],
+      "identifier": "trustagent-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "faa66a274c",
+    "published_at": "2026-07-28T16:12:46.937322Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.trust-agent/trustagent-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-28T16:12:46.937322Z"
+  },
+  "title": "TrustAgent \u2014 counterparty verification",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

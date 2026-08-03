@@ -1,0 +1,70 @@
+{
+  "description": "Windows-local MCP server for PLAXIS 2D Remote Scripting: geometry, staged construction, results.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:53:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-yixuanzhong-plaxis-mcp.stdio.d2860d9d58",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/yixuanzhong/PLAXIS-MCP",
+    "homepage": "https://github.com/yixuanzhong/PLAXIS-MCP",
+    "repository": "https://github.com/yixuanzhong/PLAXIS-MCP"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "plaxis-mcp==0.3.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.yixuanzhong/plaxis-mcp",
+  "packages": [
+    {
+      "identifier": "plaxis-mcp",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "serve",
+          "valueHint": "command"
+        },
+        {
+          "choices": [
+            "input",
+            "output"
+          ],
+          "description": "Which PLAXIS endpoint this process serves. A process has one immutable role, so register Input and Output as two separate servers when both are needed. Run `plaxis-mcp setup` once per machine first: it generates the role profiles and stores the PLAXIS passwords in Windows Credential Manager.",
+          "isRequired": true,
+          "name": "--role",
+          "type": "named"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d2860d9d58",
+    "published_at": "2026-07-28T10:29:56.258245Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.yixuanzhong/plaxis-mcp",
+    "server_version": "0.3.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-28T10:29:56.258245Z"
+  },
+  "title": "PLAXIS",
+  "type": "mcp_server",
+  "version": "0.3.4"
+}

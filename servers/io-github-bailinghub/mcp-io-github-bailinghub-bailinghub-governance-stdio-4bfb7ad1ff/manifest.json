@@ -1,0 +1,77 @@
+{
+  "description": "Submit and inspect governed AI business actions through a self-hosted BailingHub control plane.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:52:53+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-bailinghub-bailinghub-governance.stdio.4bfb7ad1ff",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/bailinghub/bailinghub-mcp-server",
+    "homepage": "https://github.com/bailinghub/bailinghub-mcp-server",
+    "repository": "https://github.com/bailinghub/bailinghub-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "bailinghub-mcp-server@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.bailinghub/bailinghub-governance",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Absolute URL of the self-hosted BailingHub deployment.",
+          "format": "string",
+          "isRequired": true,
+          "name": "BAILINGHUB_BASE_URL"
+        },
+        {
+          "description": "Dedicated BailingHub Client Token restricted to the configured route.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "BAILINGHUB_CLIENT_TOKEN"
+        },
+        {
+          "description": "One allowlisted BailingHub route fixed by the operator for this server process.",
+          "format": "string",
+          "isRequired": true,
+          "name": "BAILINGHUB_ROUTE"
+        },
+        {
+          "description": "Optional explicit override for operator-controlled private HTTP networks.",
+          "format": "string",
+          "name": "BAILINGHUB_ALLOW_INSECURE_HTTP"
+        }
+      ],
+      "identifier": "bailinghub-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4bfb7ad1ff",
+    "published_at": "2026-07-28T04:37:56.190267Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.bailinghub/bailinghub-governance",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-28T04:37:56.190267Z"
+  },
+  "title": "BailingHub Governance",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

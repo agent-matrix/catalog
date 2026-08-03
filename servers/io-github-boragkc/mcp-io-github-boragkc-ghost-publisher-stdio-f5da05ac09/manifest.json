@@ -1,0 +1,102 @@
+{
+  "description": "Local-first MCP server for safe Ghost posts, Pages, scheduling, images, and publishing.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:52:34+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-BoraGkc-ghost-publisher.stdio.f5da05ac09",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/BoraGkc/ghost-publisher-mcp",
+    "homepage": "https://github.com/BoraGkc/ghost-publisher-mcp",
+    "repository": "https://github.com/BoraGkc/ghost-publisher-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "ghost-publisher-mcp@0.6.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.BoraGkc/ghost-publisher",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "URL of the Ghost site.",
+          "format": "string",
+          "isRequired": true,
+          "name": "GHOST_URL"
+        },
+        {
+          "description": "Admin API key from a Ghost custom integration.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GHOST_ADMIN_API_KEY"
+        },
+        {
+          "description": "Ghost Admin API compatibility version; defaults to v5.0.",
+          "format": "string",
+          "name": "GHOST_API_VERSION"
+        },
+        {
+          "description": "Permission profile: read-only, draft-editor, scheduler, or publisher. Defaults to publisher.",
+          "format": "string",
+          "name": "GHOST_PERMISSION_PROFILE"
+        },
+        {
+          "description": "Legacy alias for the read-only profile. Do not combine with GHOST_PERMISSION_PROFILE.",
+          "format": "string",
+          "name": "GHOST_READ_ONLY"
+        },
+        {
+          "description": "Allowed absolute directories for local image uploads.",
+          "format": "string",
+          "name": "GHOST_UPLOAD_ROOTS"
+        },
+        {
+          "description": "Optional deployment hook called once after a completely successful publish or unpublish batch.",
+          "format": "string",
+          "isSecret": true,
+          "name": "GHOST_DEPLOY_HOOK_URL"
+        },
+        {
+          "description": "Optional public post URL containing {slug} for live checks.",
+          "format": "string",
+          "name": "GHOST_PUBLIC_POST_URL_TEMPLATE"
+        },
+        {
+          "description": "Optional public page URL containing {slug} for headless live checks.",
+          "format": "string",
+          "name": "GHOST_PUBLIC_PAGE_URL_TEMPLATE"
+        }
+      ],
+      "identifier": "ghost-publisher-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.6.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f5da05ac09",
+    "published_at": "2026-08-02T13:13:04.655577Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.BoraGkc/ghost-publisher",
+    "server_version": "0.6.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-02T13:13:04.655577Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.6.0"
+}

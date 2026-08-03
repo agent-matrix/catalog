@@ -1,0 +1,64 @@
+{
+  "description": "Run Offensive360 SAST scans (60+ languages) on local code; findings with file/line and fixes",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:52:26+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-offensive360-o360-mcp.stdio.6957ab03c3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/offensive360/mcp-server",
+    "homepage": "https://github.com/offensive360/mcp-server",
+    "repository": "https://github.com/offensive360/mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "o360-mcp@1.0.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.offensive360/o360-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://sast.offensive360.com",
+          "description": "Offensive360 instance base URL",
+          "name": "O360_URL"
+        },
+        {
+          "description": "External scan token (free for public repos: https://offensive360.com/free-for-open-source/)",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "O360_TOKEN"
+        }
+      ],
+      "identifier": "o360-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6957ab03c3",
+    "published_at": "2026-08-02T13:25:59.875351Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.offensive360/o360-mcp",
+    "server_version": "1.0.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-02T13:25:59.875351Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.2"
+}

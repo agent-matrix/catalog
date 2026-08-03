@@ -1,0 +1,80 @@
+{
+  "description": "Move data between databases, queues and files at high throughput, without it entering context",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:53:17+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-marcomq-mq-bridge-app.stdio.6183237fcb",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/marcomq/mq-bridge-app",
+    "homepage": "https://github.com/marcomq/mq-bridge-app",
+    "repository": "https://github.com/marcomq/mq-bridge-app"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "name": "--rm",
+            "type": "named"
+          },
+          {
+            "name": "-i",
+            "type": "named"
+          },
+          "ghcr.io/marcomq/mq-bridge-app:0.2.11"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.marcomq/mq-bridge-app",
+  "packages": [
+    {
+      "identifier": "ghcr.io/marcomq/mq-bridge-app:0.2.11",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp",
+          "valueHint": "command"
+        },
+        {
+          "name": "--transport",
+          "type": "named",
+          "value": "stdio"
+        }
+      ],
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "name": "--rm",
+          "type": "named"
+        },
+        {
+          "name": "-i",
+          "type": "named"
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "6183237fcb",
+    "published_at": "2026-07-31T06:30:09.220613Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.marcomq/mq-bridge-app",
+    "server_version": "0.2.11",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-31T06:30:09.220613Z"
+  },
+  "title": "mq-bridge-app",
+  "type": "mcp_server",
+  "version": "0.2.11"
+}

@@ -1,0 +1,105 @@
+{
+  "description": "Persistent memory MCP server. 29 tools, BM25+MMR+OOD retrieval, CFR-21 audit, code graph.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:52:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-LeandroPG19-cuba-memorys.stdio.ecb7e90807",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/LeandroPG19/cuba-memorys",
+    "homepage": "https://github.com/LeandroPG19/cuba-memorys",
+    "repository": "https://github.com/LeandroPG19/cuba-memorys"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "cuba-memorys@0.19.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.LeandroPG19/cuba-memorys",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "PostgreSQL connection URL (e.g. postgresql://user:pass@localhost:5432/brain)",
+          "format": "string",
+          "isRequired": true,
+          "name": "DATABASE_URL"
+        },
+        {
+          "description": "Set to 'off' to disable v0.8 project scoping filters (admin/debug only).",
+          "format": "string",
+          "name": "CUBA_PROJECT_FILTER"
+        },
+        {
+          "description": "Directory used by cuba_sync export/import (default ./.cuba-memorys/).",
+          "format": "string",
+          "name": "CUBA_SYNC_DIR"
+        },
+        {
+          "description": "cuba_juez backend selector: claude_cli | anthropic_api | heuristic | auto (default auto).",
+          "format": "string",
+          "name": "CUBA_JUDGE"
+        },
+        {
+          "description": "Subprocess CLI used by ClaudeCodeJudge (default 'claude').",
+          "format": "string",
+          "name": "CUBA_JUEZ_CLI"
+        },
+        {
+          "description": "Model name passed to the judge backend (default 'claude-haiku-4-5').",
+          "format": "string",
+          "name": "CUBA_JUEZ_MODEL"
+        },
+        {
+          "description": "API key for AnthropicApiJudge (only used when feature 'anthropic-api' is built in).",
+          "format": "string",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        },
+        {
+          "description": "Isolated entities the REM cycle scans for relations per run (default 5, 0 disables).",
+          "format": "string",
+          "name": "CUBA_REM_RELATION_BATCH"
+        },
+        {
+          "description": "Directory holding the bge-reranker ONNX model; enables cross-encoder reranking (+93% nDCG on GPU).",
+          "format": "string",
+          "name": "CUBA_RERANKER_PATH"
+        },
+        {
+          "description": "Pad reranker batches to a constant 512 tokens. Defaults on for GPU builds, off on CPU.",
+          "format": "string",
+          "name": "CUBA_RERANK_FIXED_SHAPE"
+        }
+      ],
+      "identifier": "cuba-memorys",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.19.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ecb7e90807",
+    "published_at": "2026-07-29T18:20:15.965846Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.LeandroPG19/cuba-memorys",
+    "server_version": "0.19.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-29T18:20:15.965846Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.19.0"
+}

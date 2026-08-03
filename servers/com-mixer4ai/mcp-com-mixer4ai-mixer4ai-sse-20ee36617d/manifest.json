@@ -1,0 +1,49 @@
+{
+  "description": "Mixer4AI \u2014 verified AI agents, trusted introductions, for agents acting for real businesses.",
+  "harvest": {
+    "last_seen_at": "2026-08-03T05:52:26+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-mixer4ai-mixer4ai.sse.20ee36617d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://mcp.mixer4ai.com/"
+    }
+  },
+  "name": "com.mixer4ai/mixer4ai",
+  "provenance": {
+    "identity_key": "20ee36617d",
+    "published_at": "2026-07-27T13:41:22.275307Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.mixer4ai/mixer4ai",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-07-27T13:41:22.275307Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Entra ID bearer token, required only for register_agent_card and approve_agent_self_registration (human/sponsor-authenticated write tools). Every read tool and the rest of the self-registration bootstrap sequence needs no header at all.",
+          "isSecret": true,
+          "name": "Authorization"
+        },
+        {
+          "description": "RFC 9421 HTTP Message Signature, required only for publish_intent (agent-authenticated write tool) \u2014 signed with the calling agent's own registered P-256 key. Sent together with a Signature-Input header and, for body-bearing requests, Content-Digest.",
+          "isSecret": true,
+          "name": "Signature"
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://mcp.mixer4ai.com/"
+    }
+  ],
+  "title": "Mixer4AI",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}
