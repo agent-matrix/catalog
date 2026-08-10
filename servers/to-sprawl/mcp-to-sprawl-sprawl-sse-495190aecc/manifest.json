@@ -1,0 +1,54 @@
+{
+  "description": "Run every operation you've got \u2014 each with its own fleet of agents and its own accounts.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:57+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.to-sprawl-sprawl.sse.495190aecc",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://sprawl.to/api/mcp"
+    }
+  },
+  "name": "to.sprawl/sprawl",
+  "provenance": {
+    "identity_key": "495190aecc",
+    "published_at": "2026-08-07T15:08:21.544976Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "to.sprawl/sprawl",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-07T15:08:21.544976Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Sprawl API key as a bearer token. Create a free account and generate one \u2014 start at https://sprawl.to/docs/mcp.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {api_key}",
+          "variables": {
+            "api_key": {
+              "description": "Your Sprawl API key (prefix sprawl_sk_). Create a free account and generate one at https://sprawl.to/docs/mcp.",
+              "format": "string",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://sprawl.to/api/mcp"
+    }
+  ],
+  "title": "Sprawl",
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

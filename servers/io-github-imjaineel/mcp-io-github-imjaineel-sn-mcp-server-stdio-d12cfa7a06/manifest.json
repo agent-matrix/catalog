@@ -1,0 +1,75 @@
+{
+  "description": "Multi-instance read-only MCP server for ServiceNow",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:45+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ImJaineel-SN-MCP-Server.stdio.d12cfa7a06",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ImJaineel/SN-MCP-Server",
+    "homepage": "https://github.com/ImJaineel/SN-MCP-Server",
+    "repository": "https://github.com/ImJaineel/SN-MCP-Server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@imjaineel-dev/sn-mcp-server@2.2.22"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ImJaineel/SN-MCP-Server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to `sn-instance.json` file that contains ServiceNow instance credentials",
+          "format": "string",
+          "isRequired": true,
+          "name": "SN_INSTANCE_CONFIG"
+        },
+        {
+          "description": "Optional: Enable verbose logging for debugging",
+          "format": "boolean",
+          "name": "SN_MCP_SERVER_VERBOSE"
+        },
+        {
+          "description": "Optional: Preferred log directory (defaults to current working directory)",
+          "format": "string",
+          "name": "SN_LOG_DIR"
+        },
+        {
+          "description": "Optional: GitHub Personal Access Token for `sn_read_docs` (branch lookup and GitHub search)",
+          "format": "string",
+          "isSecret": true,
+          "name": "GITHUB_TOKEN"
+        }
+      ],
+      "identifier": "@imjaineel-dev/sn-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.2.22"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d12cfa7a06",
+    "published_at": "2026-08-09T09:38:28.259678Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ImJaineel/SN-MCP-Server",
+    "server_version": "2.2.22",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-09T09:38:28.259678Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "2.2.22"
+}

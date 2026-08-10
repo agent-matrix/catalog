@@ -1,0 +1,76 @@
+{
+  "description": "A security-focused MCP server for self-hosted n8n Community Edition.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-drzamarian-n8n-mcp-community.stdio.5279e221ff",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/drzamarian/n8n-mcp-community",
+    "homepage": "https://github.com/drzamarian/n8n-mcp-community",
+    "repository": "https://github.com/drzamarian/n8n-mcp-community"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "n8n-mcp-community@0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.drzamarian/n8n-mcp-community",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Absolute HTTP(S) base URL for the intended self-hosted n8n instance; plaintext HTTP is limited to loopback unless explicitly allowed.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "N8N_API_URL"
+        },
+        {
+          "description": "Dedicated least-privilege n8n Public API key.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "N8N_API_KEY"
+        },
+        {
+          "default": "read-only",
+          "description": "Operation mode: read-only, write, or unsafe.",
+          "name": "N8N_MCP_MODE"
+        },
+        {
+          "default": "0",
+          "description": "Keep 0 unless plaintext HTTP to a non-loopback host is explicitly accepted.",
+          "name": "N8N_ALLOW_INSECURE_HTTP"
+        }
+      ],
+      "identifier": "n8n-mcp-community",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5279e221ff",
+    "published_at": "2026-08-05T20:05:03.747119Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.drzamarian/n8n-mcp-community",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-05T20:05:03.747119Z"
+  },
+  "title": "n8n MCP Community",
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

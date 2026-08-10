@@ -1,0 +1,84 @@
+{
+  "description": "Live X/Twitter search and AI trend digests. No Twitter API key \u2014 pay per call in USDC via x402.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:05+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ciinkwia-twitter-signal-mcp.stdio.ed8784f222",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ciinkwia/twitter-signal-mcp",
+    "homepage": "https://github.com/ciinkwia/twitter-signal-mcp",
+    "repository": "https://github.com/ciinkwia/twitter-signal-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "twitter-signal-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ciinkwia/twitter-signal-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Coinbase CDP API key ID for the wallet that pays the per-call USDC fee",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CDP_API_KEY_ID"
+        },
+        {
+          "description": "Coinbase CDP API key secret",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CDP_API_KEY_SECRET"
+        },
+        {
+          "description": "Coinbase CDP wallet secret",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CDP_WALLET_SECRET"
+        },
+        {
+          "description": "Hard per-call USD ceiling; requests quoting more are refused before signing (default 0.05)",
+          "format": "string",
+          "name": "X402_MAX_PRICE"
+        },
+        {
+          "description": "Named CDP account to pay from (created automatically; default twitter-signal-mcp)",
+          "format": "string",
+          "name": "CDP_ACCOUNT_NAME"
+        }
+      ],
+      "identifier": "twitter-signal-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ed8784f222",
+    "published_at": "2026-08-10T03:08:11.323975Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ciinkwia/twitter-signal-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-10T03:08:11.323975Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

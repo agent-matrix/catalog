@@ -1,0 +1,90 @@
+{
+  "description": "MCP server for ConnectWise CPQ (Sell) \u2014 quotes, line items, customers, terms, and templates.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:51+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wyre-technology-connectwise-cpq-mcp.stdio.fe658a4a71",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wyre-technology/connectwise-cpq-mcp",
+    "homepage": "https://github.com/wyre-technology/connectwise-cpq-mcp",
+    "repository": "https://github.com/wyre-technology/connectwise-cpq-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-technology/connectwise-cpq-mcp:v1.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wyre-technology/connectwise-cpq-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "ConnectWise CPQ tenant/site access key (from the Sell URL ...home?accesskey=<this>)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CPQ_ACCESS_KEY"
+        },
+        {
+          "description": "ConnectWise CPQ public API key (Settings \u2192 Organization Settings \u2192 API Keys)",
+          "format": "string",
+          "isRequired": true,
+          "name": "CPQ_PUBLIC_KEY"
+        },
+        {
+          "description": "ConnectWise CPQ private API key (shown once at creation)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CPQ_PRIVATE_KEY"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-technology/connectwise-cpq-mcp:v1.0.1",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "fe658a4a71",
+    "published_at": "2026-08-04T20:16:14.805489Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wyre-technology/connectwise-cpq-mcp",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-04T20:16:14.805489Z"
+  },
+  "title": "ConnectWise CPQ",
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

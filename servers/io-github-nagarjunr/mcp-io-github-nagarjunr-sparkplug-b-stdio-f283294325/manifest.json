@@ -1,0 +1,86 @@
+{
+  "description": "MCP server for Sparkplug B: node/device discovery, metrics, commands, host state over MQTT.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:32+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nagarjunr-sparkplug-b.stdio.f283294325",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nagarjunr/iot-mcp-servers",
+    "homepage": "https://github.com/nagarjunr/iot-mcp-servers",
+    "repository": "https://github.com/nagarjunr/iot-mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "sparkplug-b-mcp-server==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nagarjunr/sparkplug-b",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "MQTT broker hostname or IP.",
+          "isRequired": true,
+          "name": "SPARKPLUG_MQTT_HOST"
+        },
+        {
+          "description": "This connector's Sparkplug Host Application ID (used in the spBv1.0/STATE/{id} topic).",
+          "isRequired": true,
+          "name": "SPARKPLUG_HOST_ID"
+        },
+        {
+          "description": "MQTT broker port, default 1883",
+          "name": "SPARKPLUG_MQTT_PORT"
+        },
+        {
+          "description": "Broker username, if required",
+          "name": "SPARKPLUG_MQTT_USERNAME"
+        },
+        {
+          "description": "Broker password, if required",
+          "isSecret": true,
+          "name": "SPARKPLUG_MQTT_PASSWORD"
+        },
+        {
+          "description": "true/false, default false",
+          "name": "SPARKPLUG_MQTT_USE_TLS"
+        },
+        {
+          "description": "Restrict discovery/watching to a single Sparkplug Group ID; omit to subscribe to every group",
+          "name": "SPARKPLUG_GROUP_ID"
+        }
+      ],
+      "identifier": "sparkplug-b-mcp-server",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f283294325",
+    "published_at": "2026-08-04T18:09:09.359051Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nagarjunr/sparkplug-b",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-04T18:09:09.359051Z"
+  },
+  "title": "Sparkplug B",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

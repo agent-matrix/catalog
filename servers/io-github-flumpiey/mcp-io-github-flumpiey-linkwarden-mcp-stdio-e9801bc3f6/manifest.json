@@ -1,0 +1,74 @@
+{
+  "description": "Read-first Linkwarden bookmarks MCP with opt-in write, delete, and collection tools.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:17+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-flumpiey-linkwarden-mcp.stdio.e9801bc3f6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/flumpiey/linkwarden-mcp",
+    "homepage": "https://github.com/flumpiey/linkwarden-mcp",
+    "repository": "https://github.com/flumpiey/linkwarden-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "linkwarden-mcp==0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.flumpiey/linkwarden-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Linkwarden instance base URL (no /api/v1 suffix)",
+          "isRequired": true,
+          "name": "LINKWARDEN_API_URL"
+        },
+        {
+          "description": "Access token from Linkwarden settings (Authorization: Bearer)",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "LINKWARDEN_API_KEY"
+        },
+        {
+          "description": "Comma-separated write scopes: links,collections,tags,raw. Empty = read-only.",
+          "name": "LINKWARDEN_MCP_WRITE_SCOPES"
+        },
+        {
+          "description": "Comma-separated delete scopes (never implied by write scopes)",
+          "name": "LINKWARDEN_MCP_DELETE_SCOPES"
+        }
+      ],
+      "identifier": "linkwarden-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e9801bc3f6",
+    "published_at": "2026-08-03T21:09:58.884203Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.flumpiey/linkwarden-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-03T21:09:58.884203Z"
+  },
+  "title": "Linkwarden MCP",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

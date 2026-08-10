@@ -1,0 +1,55 @@
+{
+  "description": "Encrypted database backups and restore-to-any-host disaster recovery for MySQL and PostgreSQL.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-provydon-dbmigratepro-backups.sse.2f18d32161",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://dbmigratepro.com/mcp"
+    }
+  },
+  "name": "io.github.provydon/dbmigratepro-backups",
+  "provenance": {
+    "identity_key": "2f18d32161",
+    "published_at": "2026-08-09T11:23:11.253518Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.provydon/dbmigratepro-backups",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-09T11:23:11.253518Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "A DBMigratePro API token, created under Settings -> API Tokens. Scope it to the mcp:backups ability if you want this server limited to backups and restores.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {token}",
+          "variables": {
+            "token": {
+              "description": "The API token value, shown once when you create it.",
+              "format": "string",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://dbmigratepro.com/mcp"
+    }
+  ],
+  "title": "DBMigratePro Backups",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

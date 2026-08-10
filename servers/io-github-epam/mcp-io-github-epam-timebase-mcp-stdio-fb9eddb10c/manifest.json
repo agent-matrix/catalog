@@ -1,0 +1,144 @@
+{
+  "description": "Explore and query TimeBase streams, schemas, QQL, symbols, and server status via MCP.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-epam-TimeBase-MCP.stdio.fb9eddb10c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/epam/TimeBase-MCP",
+    "homepage": "https://github.com/epam/TimeBase-MCP",
+    "repository": "https://github.com/epam/TimeBase-MCP"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "name": "--from",
+            "type": "named",
+            "value": "timebase-mcp[all]"
+          },
+          "timebase-mcp==0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.epam/TimeBase-MCP",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "dxtick://localhost:8011",
+          "description": "TimeBase native connection URL.",
+          "name": "TIMEBASE_URL",
+          "placeholder": "dxtick://localhost:8011"
+        },
+        {
+          "description": "Multi-server config as a JSON array string or path to a JSON file.",
+          "format": "string",
+          "name": "TIMEBASE_SERVERS"
+        },
+        {
+          "description": "Username for basic auth or oauth2_client_credentials.",
+          "format": "string",
+          "name": "TIMEBASE_USERNAME"
+        },
+        {
+          "description": "Password for basic auth.",
+          "format": "string",
+          "isSecret": true,
+          "name": "TIMEBASE_PASSWORD"
+        },
+        {
+          "description": "OAuth2 token endpoint for service-account client credentials.",
+          "format": "string",
+          "name": "TIMEBASE_OAUTH2_TOKEN_URL"
+        },
+        {
+          "description": "OAuth2 client ID for service-account or interactive login.",
+          "format": "string",
+          "name": "TIMEBASE_OAUTH2_CLIENT_ID"
+        },
+        {
+          "description": "OAuth2 client secret for service-account auth.",
+          "format": "string",
+          "isSecret": true,
+          "name": "TIMEBASE_OAUTH2_CLIENT_SECRET"
+        },
+        {
+          "description": "OAuth2 scope(s) for service-account or interactive login.",
+          "format": "string",
+          "name": "TIMEBASE_OAUTH2_SCOPE"
+        },
+        {
+          "choices": [
+            "DEBUG",
+            "INFO",
+            "WARNING",
+            "ERROR",
+            "CRITICAL"
+          ],
+          "default": "INFO",
+          "description": "Log level: DEBUG, INFO, WARNING, ERROR, or CRITICAL.",
+          "name": "MCP_LOG_LEVEL"
+        },
+        {
+          "choices": [
+            "auto",
+            "none",
+            "basic",
+            "oauth2_client_credentials",
+            "interactive"
+          ],
+          "default": "auto",
+          "description": "Outbound auth: auto, none, basic, oauth2_client_credentials, interactive.",
+          "name": "TIMEBASE_AUTH_MODE"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "Loopback host for interactive OAuth redirect in stdio mode.",
+          "name": "MCP_HOST"
+        },
+        {
+          "default": "8000",
+          "description": "Loopback port for interactive OAuth redirect in stdio mode.",
+          "format": "number",
+          "name": "MCP_PORT"
+        }
+      ],
+      "identifier": "timebase-mcp",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "name": "--from",
+          "type": "named",
+          "value": "timebase-mcp[all]"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "fb9eddb10c",
+    "published_at": "2026-08-05T09:33:32.122673Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.epam/TimeBase-MCP",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-05T09:33:32.122673Z"
+  },
+  "title": "TimeBase",
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

@@ -1,0 +1,55 @@
+{
+  "description": "Read and write a self-hosted Perfex CRM from an AI agent: 148 permission-filtered tools.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:32+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-themesic-perfex-crm.sse.71bcf8f019",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/themesic/perfex-rest-api-examples",
+    "homepage": "https://github.com/themesic/perfex-rest-api-examples",
+    "repository": "https://github.com/themesic/perfex-rest-api-examples"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://{perfex_host}/api/mcp"
+    }
+  },
+  "name": "com.themesic/perfex-crm",
+  "provenance": {
+    "identity_key": "71bcf8f019",
+    "published_at": "2026-08-06T15:04:08.462945Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.themesic/perfex-crm",
+    "server_version": "3.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-06T15:04:08.462945Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "An API token from your Perfex admin, Setup > API > API Management. The tool list is filtered by this token's permissions, so a read-only token exposes only read tools.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "authtoken"
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://{perfex_host}/api/mcp",
+      "variables": {
+        "perfex_host": {
+          "description": "The host of your own Perfex CRM installation, without a scheme or trailing slash - for example crm.yourcompany.com. The REST API module must be installed there with its MCP server enabled under Setup > API > Platform Settings.",
+          "isRequired": true
+        }
+      }
+    }
+  ],
+  "title": "Perfex CRM",
+  "type": "mcp_server",
+  "version": "3.1.0"
+}

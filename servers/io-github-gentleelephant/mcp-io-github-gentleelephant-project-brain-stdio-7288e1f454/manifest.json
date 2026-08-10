@@ -1,0 +1,75 @@
+{
+  "description": "Read-only source search and retrieval across configured GitHub repositories",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:44+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Gentleelephant-project-brain.stdio.7288e1f454",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Gentleelephant/project-brain",
+    "homepage": "https://github.com/Gentleelephant/project-brain",
+    "repository": "https://github.com/Gentleelephant/project-brain"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/gentleelephant/project-brain:v2.0.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Gentleelephant/project-brain",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Comma-separated owner/repo slugs or a path to a file with one slug per line",
+          "format": "string",
+          "isRequired": true,
+          "name": "PROJECT_BRAIN_REPO_LIST"
+        },
+        {
+          "description": "Writable directory for repository caches, indexes, and locks",
+          "format": "string",
+          "isRequired": true,
+          "name": "PROJECT_BRAIN_STATE_DIR"
+        },
+        {
+          "description": "Optional GitHub token for private repositories",
+          "format": "string",
+          "isSecret": true,
+          "name": "PB_GITHUB_TOKEN"
+        },
+        {
+          "description": "Minimum interval between on-demand repository refreshes",
+          "format": "string",
+          "name": "PB_FETCH_TTL"
+        }
+      ],
+      "identifier": "ghcr.io/gentleelephant/project-brain:v2.0.2",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "7288e1f454",
+    "published_at": "2026-08-07T04:51:48.973321Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Gentleelephant/project-brain",
+    "server_version": "2.0.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-07T04:51:48.973321Z"
+  },
+  "title": "Project Brain",
+  "type": "mcp_server",
+  "version": "2.0.2"
+}

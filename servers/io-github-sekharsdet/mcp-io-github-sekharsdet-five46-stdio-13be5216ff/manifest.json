@@ -1,0 +1,83 @@
+{
+  "description": "BYOK, fully local AI agent that tests your app/API and writes a real Playwright spec on success.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sekharsdet-five46.stdio.13be5216ff",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sekharsdet/five46",
+    "homepage": "https://github.com/sekharsdet/five46",
+    "repository": "https://github.com/sekharsdet/five46"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "five46@0.2.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sekharsdet/five46",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "LLM provider to use: openai, anthropic, gemini, groq, or bedrock",
+          "isRequired": true,
+          "name": "FIVE46_LLM_PROVIDER"
+        },
+        {
+          "description": "Your own API key for the chosen provider (for bedrock, your AWS region instead)",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "FIVE46_LLM_API_KEY"
+        },
+        {
+          "description": "Set to 1 to unlock POST/PUT/PATCH for the five46_api tool (read-only by default)",
+          "name": "FIVE46_MCP_ALLOW_WRITES"
+        },
+        {
+          "description": "Set to 1 to unlock DELETE (five46_api) and destructive-looking browser clicks (five46_test)",
+          "name": "FIVE46_MCP_ALLOW_DELETES"
+        },
+        {
+          "description": "Max concurrent scenarios for story mode (default: 2 for five46_test, 3 for five46_api; hard-capped at 5)",
+          "name": "FIVE46_MCP_CONCURRENCY"
+        }
+      ],
+      "identifier": "five46",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "13be5216ff",
+    "published_at": "2026-08-04T15:31:26.048958Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sekharsdet/five46",
+    "server_version": "0.2.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-04T15:31:26.048958Z"
+  },
+  "title": "five46",
+  "type": "mcp_server",
+  "version": "0.2.3"
+}

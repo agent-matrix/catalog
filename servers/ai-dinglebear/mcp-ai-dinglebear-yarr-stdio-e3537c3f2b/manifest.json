@@ -1,0 +1,125 @@
+{
+  "description": "Self-hosted media fleet operations across Sonarr, Radarr, Plex, and related apps over MCP and CLI.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:18+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-dinglebear-yarr.stdio.e3537c3f2b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/dinglebear-ai/yarr",
+    "homepage": "https://github.com/dinglebear-ai/yarr",
+    "repository": "https://github.com/dinglebear-ai/yarr"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@dinglebear/yarr@2.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.dinglebear/yarr",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional Sonarr base URL.",
+          "format": "string",
+          "name": "YARR_SONARR_URL",
+          "placeholder": "http://sonarr:8989"
+        },
+        {
+          "description": "Optional Sonarr API key.",
+          "format": "string",
+          "isSecret": true,
+          "name": "YARR_SONARR_API_KEY"
+        },
+        {
+          "description": "Optional Radarr base URL.",
+          "format": "string",
+          "name": "YARR_RADARR_URL",
+          "placeholder": "http://radarr:7878"
+        },
+        {
+          "description": "Optional Radarr API key.",
+          "format": "string",
+          "isSecret": true,
+          "name": "YARR_RADARR_API_KEY"
+        },
+        {
+          "description": "Optional Plex base URL.",
+          "format": "string",
+          "name": "YARR_PLEX_URL",
+          "placeholder": "http://plex:32400"
+        },
+        {
+          "description": "Optional Plex token.",
+          "format": "string",
+          "isSecret": true,
+          "name": "YARR_PLEX_TOKEN"
+        },
+        {
+          "description": "Optional GitHub release tag override for the downloaded Yarr binary.",
+          "format": "string",
+          "name": "YARR_VERSION",
+          "placeholder": "v2.2.2"
+        },
+        {
+          "default": "dinglebear-ai/yarr",
+          "description": "Optional GitHub owner/repo override for release asset downloads.",
+          "format": "string",
+          "name": "YARR_REPO",
+          "placeholder": "dinglebear-ai/yarr"
+        },
+        {
+          "description": "Optional release download base URL override.",
+          "format": "string",
+          "name": "YARR_RELEASE_BASE_URL"
+        },
+        {
+          "default": "info",
+          "description": "Tracing filter for Yarr logs.",
+          "format": "string",
+          "name": "RUST_LOG",
+          "placeholder": "info"
+        }
+      ],
+      "identifier": "@dinglebear/yarr",
+      "packageArguments": [
+        {
+          "description": "Run Yarr MCP over stdio.",
+          "format": "string",
+          "isRequired": true,
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e3537c3f2b",
+    "published_at": "2026-08-04T21:57:22.884031Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.dinglebear/yarr",
+    "server_version": "2.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-04T21:57:22.884031Z"
+  },
+  "title": "Yarr MCP",
+  "type": "mcp_server",
+  "version": "2.2.2"
+}

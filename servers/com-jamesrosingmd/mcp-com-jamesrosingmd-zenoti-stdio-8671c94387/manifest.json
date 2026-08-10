@@ -1,0 +1,70 @@
+{
+  "description": "MCP server for Zenoti spa/wellness/medspa \u2014 guests, appointments, bookings, invoices",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:26+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-jamesrosingmd-zenoti.stdio.8671c94387",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/tacit-code/zenoti-mcp-server",
+    "homepage": "https://github.com/tacit-code/zenoti-mcp-server",
+    "repository": "https://github.com/tacit-code/zenoti-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "zenoti-mcp-server@1.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.jamesrosingmd/zenoti",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Zenoti API key from Admin \u2192 Settings \u2192 Apps (backend app)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ZENOTI_API_KEY"
+        },
+        {
+          "description": "Zenoti API base URL (default https://api.zenoti.com)",
+          "format": "string",
+          "name": "ZENOTI_API_URL"
+        },
+        {
+          "description": "Default center GUID used when tools omit center_id (recommended)",
+          "format": "string",
+          "name": "ZENOTI_CENTER_ID"
+        }
+      ],
+      "identifier": "zenoti-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8671c94387",
+    "published_at": "2026-08-07T18:43:41.753565Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.jamesrosingmd/zenoti",
+    "server_version": "1.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-07T18:43:41.753565Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.1.0"
+}

@@ -1,0 +1,107 @@
+{
+  "description": "Google Workspace MCP server for Gmail, Calendar, Drive, Docs, Sheets, Slides, Contacts, and more",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mindstone-mcp-server-google-workspace.stdio.eae0c78e50",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mindstone/mcp-servers",
+    "homepage": "https://github.com/mindstone/mcp-servers",
+    "repository": "https://github.com/mindstone/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@mindstone/mcp-server-google-workspace@0.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mindstone/mcp-server-google-workspace",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Google OAuth client ID",
+          "format": "string",
+          "isRequired": true,
+          "name": "GOOGLE_CLIENT_ID"
+        },
+        {
+          "description": "Google OAuth client secret",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GOOGLE_CLIENT_SECRET"
+        },
+        {
+          "description": "Path to accounts.json written by the MCP host",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "ACCOUNTS_PATH"
+        },
+        {
+          "description": "Directory containing per-account Google OAuth token files",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "CREDENTIALS_PATH"
+        },
+        {
+          "default": "60000",
+          "description": "Outbound Google API request timeout in milliseconds (max 300000 = 5 min)",
+          "format": "number",
+          "name": "GOOGLE_WORKSPACE_REQUEST_TIMEOUT_MS"
+        },
+        {
+          "default": "0",
+          "description": "Set to 1 to disable background OAuth token refresh (tokens are only read, never refreshed)",
+          "format": "string",
+          "name": "GOOGLE_WORKSPACE_DISABLE_REFRESH"
+        },
+        {
+          "description": "Directory attachments and downloaded files are constrained to (defaults to a temp dir; reads/writes outside it are refused)",
+          "format": "filepath",
+          "name": "MCP_WORKSPACE_PATH"
+        },
+        {
+          "description": "Legacy fallback for MCP_WORKSPACE_PATH; prefer MCP_WORKSPACE_PATH",
+          "format": "filepath",
+          "name": "WORKSPACE_BASE_PATH"
+        },
+        {
+          "description": "Legacy fallback path to gauth.json OAuth client config; host-orchestrated setups use GOOGLE_CLIENT_ID/GOOGLE_CLIENT_SECRET instead",
+          "format": "filepath",
+          "name": "GAUTH_FILE"
+        }
+      ],
+      "identifier": "@mindstone/mcp-server-google-workspace",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "eae0c78e50",
+    "published_at": "2026-08-08T13:23:24.544924Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mindstone/mcp-server-google-workspace",
+    "server_version": "0.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-08T13:23:24.544924Z"
+  },
+  "title": "Google Workspace",
+  "type": "mcp_server",
+  "version": "0.4.0"
+}

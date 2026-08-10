@@ -1,0 +1,69 @@
+{
+  "description": "x402 pay-per-call crypto & financial market sentiment, divergence & analyst reads - NFA",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:25+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-dethboy-vedetta.stdio.381fdbde6e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/lacryptorina/vedetta-mcp",
+    "homepage": "https://github.com/lacryptorina/vedetta-mcp",
+    "repository": "https://github.com/lacryptorina/vedetta-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "vedetta-mcp@1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.dethboy/vedetta",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Hex private key of the wallet paying USDC on Base (x402). Optional: without it, paid tools return the live 402 offer instead of paying. Use a dedicated low-balance wallet.",
+          "format": "string",
+          "isSecret": true,
+          "name": "EVM_PRIVATE_KEY"
+        },
+        {
+          "description": "API base URL override (default https://vedetta.dethboy.com)",
+          "format": "string",
+          "name": "VEDETTA_API_URL"
+        },
+        {
+          "description": "Global price-cap override in USD; replaces the per-route listed-price caps",
+          "format": "string",
+          "name": "VEDETTA_MAX_PRICE_USD"
+        }
+      ],
+      "identifier": "vedetta-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "381fdbde6e",
+    "published_at": "2026-08-04T09:17:55.604082Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.dethboy/vedetta",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-04T09:17:55.604082Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

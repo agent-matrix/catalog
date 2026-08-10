@@ -1,0 +1,115 @@
+{
+  "description": "Polymarket trading, market discovery, copy trading and backtesting \u2014 48 MCP tools.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:13+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-demwick-polymarket-agent-mcp.stdio.e5267655d3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/demwick/polymarket-agent-mcp",
+    "homepage": "https://github.com/demwick/polymarket-agent-mcp",
+    "repository": "https://github.com/demwick/polymarket-agent-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "polymarket-agent-mcp@1.7.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.demwick/polymarket-agent-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "choices": [
+            "preview",
+            "live"
+          ],
+          "default": "preview",
+          "description": "Execution mode: 'preview' simulates trades in a local SQLite DB (default, safe for inspection); 'live' places real orders on Polymarket and requires all POLY_* credentials.",
+          "format": "string",
+          "name": "COPY_MODE"
+        },
+        {
+          "description": "Polygon wallet private key used to sign CLOB orders. Required only when COPY_MODE=live. Never logged, persisted, or transmitted outside signed order bodies.",
+          "format": "string",
+          "isSecret": true,
+          "name": "POLY_PRIVATE_KEY"
+        },
+        {
+          "description": "Polymarket CLOB API key. Required only when COPY_MODE=live.",
+          "format": "string",
+          "isSecret": true,
+          "name": "POLY_API_KEY"
+        },
+        {
+          "description": "Polymarket CLOB API secret. Required only when COPY_MODE=live.",
+          "format": "string",
+          "isSecret": true,
+          "name": "POLY_API_SECRET"
+        },
+        {
+          "description": "Polymarket CLOB API passphrase. Required only when COPY_MODE=live.",
+          "format": "string",
+          "isSecret": true,
+          "name": "POLY_API_PASSPHRASE"
+        },
+        {
+          "description": "Polymarket funder wallet address (proxy wallet) used for live trading.",
+          "format": "string",
+          "name": "POLY_FUNDER_ADDRESS"
+        },
+        {
+          "default": "20",
+          "description": "Maximum USDC the agent may spend per day. Used by BudgetManager to cap copy-trading exposure.",
+          "format": "number",
+          "name": "DAILY_BUDGET"
+        },
+        {
+          "default": "3",
+          "description": "Minimum conviction score (0\u2013100) required before a copy trade is executed.",
+          "format": "number",
+          "name": "MIN_CONVICTION"
+        },
+        {
+          "default": "137",
+          "description": "EVM chain ID for Polymarket (137 = Polygon mainnet).",
+          "format": "number",
+          "name": "CHAIN_ID"
+        },
+        {
+          "description": "Optional override for the SQLite database path. Defaults to a package-local file.",
+          "format": "filepath",
+          "name": "DB_PATH"
+        }
+      ],
+      "identifier": "polymarket-agent-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.7.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e5267655d3",
+    "published_at": "2026-08-07T01:05:18.443686Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.demwick/polymarket-agent-mcp",
+    "server_version": "1.7.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-07T01:05:18.443686Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.7.0"
+}

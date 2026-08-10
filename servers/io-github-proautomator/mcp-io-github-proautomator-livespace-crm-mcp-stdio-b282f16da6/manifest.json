@@ -1,0 +1,107 @@
+{
+  "description": "Unofficial local MCP server for Livespace CRM with read tools and guarded writes.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-proAutomator-livespace-crm-mcp.stdio.b282f16da6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/proAutomator/livespace-crm-mcp",
+    "homepage": "https://github.com/proAutomator/livespace-crm-mcp",
+    "repository": "https://github.com/proAutomator/livespace-crm-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "livespace-crm-mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.proAutomator/livespace-crm-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "3020",
+          "description": "Loopback port used by the local MCP server.",
+          "format": "number",
+          "name": "MCP_PORT"
+        },
+        {
+          "description": "Bare Livespace workspace subdomain, without protocol or domain suffix.",
+          "format": "string",
+          "isRequired": true,
+          "name": "LIVESPACE_SUBDOMAIN",
+          "placeholder": "your-workspace"
+        },
+        {
+          "description": "Per-user Livespace API key.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "LIVESPACE_API_KEY"
+        },
+        {
+          "description": "Per-user Livespace API secret.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "LIVESPACE_API_SECRET"
+        },
+        {
+          "description": "Random bearer token of at least 32 bytes, also sent by the client.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "MCP_AUTH_TOKEN"
+        },
+        {
+          "default": "false",
+          "description": "Expose write tools. Keep false unless writes are deliberately required.",
+          "format": "boolean",
+          "name": "LIVESPACE_MCP_ENABLE_WRITES"
+        },
+        {
+          "description": "Random HMAC key of at least 32 bytes. Required when writes are enabled.",
+          "format": "string",
+          "isSecret": true,
+          "name": "MCP_REQUEST_STATE_KEY"
+        }
+      ],
+      "identifier": "livespace-crm-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "headers": [
+          {
+            "name": "Authorization",
+            "value": "Bearer {MCP_AUTH_TOKEN}"
+          }
+        ],
+        "type": "streamable-http",
+        "url": "http://127.0.0.1:{MCP_PORT}/mcp"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b282f16da6",
+    "published_at": "2026-08-07T16:01:58.627226Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.proAutomator/livespace-crm-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-07T16:01:58.627226Z"
+  },
+  "title": "Livespace CRM MCP Server",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

@@ -1,0 +1,78 @@
+{
+  "description": "Is this transaction safe to sign? Decodes what it really does and answers allow, warn or block.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:19+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-godwin105-arbiter.stdio.882b90beb4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/godwin105/arbiter_AI",
+    "homepage": "https://github.com/godwin105/arbiter_AI",
+    "repository": "https://github.com/godwin105/arbiter_AI"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@arbiterlabs/mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.godwin105/arbiter",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://arbiter-hs23.onrender.com",
+          "description": "Arbiter deployment to call. Defaults to the hosted service.",
+          "format": "string",
+          "name": "ARBITER_URL"
+        },
+        {
+          "description": "Base64-encoded 64-byte Algorand private key used to pay for calls. The account needs USDC and must be opted in to the USDC asset. Without it every request stops at the paywall.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ARBITER_PRIVATE_KEY"
+        },
+        {
+          "default": "25",
+          "description": "Lifetime spending cap for this process, in USD. Enforced before anything is signed.",
+          "format": "number",
+          "name": "ARBITER_MAX_SPEND_USD"
+        },
+        {
+          "default": "1",
+          "description": "Refuse any single call priced above this, in USD.",
+          "format": "number",
+          "name": "ARBITER_MAX_PRICE_PER_CALL"
+        }
+      ],
+      "identifier": "@arbiterlabs/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "882b90beb4",
+    "published_at": "2026-08-05T15:17:47.361518Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.godwin105/arbiter",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-05T15:17:47.361518Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

@@ -1,0 +1,421 @@
+{
+  "description": "Routes to the best predicted fit from configured metadata/evidence after hard-capability filtering.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ribato22-volante.stdio.f98c6128e4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ribato22/volante",
+    "homepage": "https://github.com/ribato22/volante",
+    "repository": "https://github.com/ribato22/volante"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "name": "--from",
+            "type": "named",
+            "value": "volante[mcp]==0.8.0"
+          },
+          {
+            "type": "positional",
+            "value": "volante-mcp"
+          },
+          "volante==0.8.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ribato22/volante",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Anthropic API key.",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        },
+        {
+          "description": "Comma-separated Anthropic wire model ids.",
+          "name": "ANTHROPIC_MODELS"
+        },
+        {
+          "description": "Optional comma-separated canonical model ids.",
+          "name": "ANTHROPIC_NAMES"
+        },
+        {
+          "description": "Shared comma-separated routing strengths.",
+          "name": "ANTHROPIC_STRENGTHS"
+        },
+        {
+          "description": "Shared context-window tokens.",
+          "name": "ANTHROPIC_CONTEXT"
+        },
+        {
+          "description": "Shared maximum output tokens.",
+          "name": "ANTHROPIC_MAX_OUTPUT"
+        },
+        {
+          "description": "Declare tool-call support (1 or 0).",
+          "name": "ANTHROPIC_TOOLS"
+        },
+        {
+          "description": "Shared USD per 1k input tokens.",
+          "name": "ANTHROPIC_COST_IN"
+        },
+        {
+          "description": "Shared USD per 1k output tokens.",
+          "name": "ANTHROPIC_COST_OUT"
+        },
+        {
+          "description": "Shared capability tier from 1 to 4.",
+          "name": "ANTHROPIC_TIER"
+        },
+        {
+          "description": "Moonshot API key.",
+          "isSecret": true,
+          "name": "MOONSHOT_API_KEY"
+        },
+        {
+          "description": "Moonshot OpenAI-compatible base URL.",
+          "name": "MOONSHOT_BASE_URL"
+        },
+        {
+          "description": "Comma-separated Moonshot wire model ids.",
+          "name": "MOONSHOT_MODELS"
+        },
+        {
+          "description": "Optional comma-separated canonical model ids.",
+          "name": "MOONSHOT_NAMES"
+        },
+        {
+          "description": "Shared comma-separated routing strengths.",
+          "name": "MOONSHOT_STRENGTHS"
+        },
+        {
+          "description": "Shared context-window tokens.",
+          "name": "MOONSHOT_CONTEXT"
+        },
+        {
+          "description": "Shared maximum output tokens.",
+          "name": "MOONSHOT_MAX_OUTPUT"
+        },
+        {
+          "description": "Declare tool-call support (1 or 0).",
+          "name": "MOONSHOT_TOOLS"
+        },
+        {
+          "description": "Shared USD per 1k input tokens.",
+          "name": "MOONSHOT_COST_IN"
+        },
+        {
+          "description": "Shared USD per 1k output tokens.",
+          "name": "MOONSHOT_COST_OUT"
+        },
+        {
+          "description": "Shared capability tier from 1 to 4.",
+          "name": "MOONSHOT_TIER"
+        },
+        {
+          "description": "Local Ollama OpenAI-compatible base URL.",
+          "name": "OLLAMA_BASE_URL"
+        },
+        {
+          "description": "Optional credential for the Ollama endpoint.",
+          "isSecret": true,
+          "name": "OLLAMA_API_KEY"
+        },
+        {
+          "description": "Comma-separated Ollama wire model ids.",
+          "name": "OLLAMA_MODELS"
+        },
+        {
+          "description": "Optional comma-separated canonical model ids.",
+          "name": "OLLAMA_NAMES"
+        },
+        {
+          "description": "Shared comma-separated routing strengths.",
+          "name": "OLLAMA_STRENGTHS"
+        },
+        {
+          "description": "Shared context-window tokens.",
+          "name": "OLLAMA_CONTEXT"
+        },
+        {
+          "description": "Shared maximum output tokens.",
+          "name": "OLLAMA_MAX_OUTPUT"
+        },
+        {
+          "description": "Declare tool-call support (1 or 0).",
+          "name": "OLLAMA_TOOLS"
+        },
+        {
+          "description": "Shared USD per 1k input tokens.",
+          "name": "OLLAMA_COST_IN"
+        },
+        {
+          "description": "Shared USD per 1k output tokens.",
+          "name": "OLLAMA_COST_OUT"
+        },
+        {
+          "description": "Shared capability tier from 1 to 4.",
+          "name": "OLLAMA_TIER"
+        },
+        {
+          "description": "Set to 1 to enable the logged-in Claude Code CLI.",
+          "name": "CLAUDE_CODE_ENABLED"
+        },
+        {
+          "description": "Comma-separated Claude Code model ids.",
+          "name": "CLAUDE_CODE_MODELS"
+        },
+        {
+          "description": "Shared capability tier from 1 to 4.",
+          "name": "CLAUDE_CODE_TIER"
+        },
+        {
+          "description": "Shared maximum output tokens.",
+          "name": "CLAUDE_CODE_MAX_OUTPUT"
+        },
+        {
+          "description": "Per-call timeout in seconds.",
+          "name": "CLAUDE_CODE_TIMEOUT"
+        },
+        {
+          "description": "System-prompt mode: replace or append.",
+          "name": "CLAUDE_CODE_SYSTEM_PROMPT_MODE"
+        },
+        {
+          "description": "Set to 1 to enable the logged-in Codex CLI.",
+          "name": "CODEX_ENABLED"
+        },
+        {
+          "description": "Comma-separated Codex model ids.",
+          "name": "CODEX_MODELS"
+        },
+        {
+          "description": "Required capability tier from 1 to 4 when enabled.",
+          "name": "CODEX_TIER"
+        },
+        {
+          "description": "Shared context-window tokens.",
+          "name": "CODEX_CONTEXT"
+        },
+        {
+          "description": "Shared maximum output tokens.",
+          "name": "CODEX_MAX_OUTPUT"
+        },
+        {
+          "description": "Shared API-equivalent input valuation.",
+          "name": "CODEX_COST_IN"
+        },
+        {
+          "description": "Shared API-equivalent output valuation.",
+          "name": "CODEX_COST_OUT"
+        },
+        {
+          "description": "Per-call timeout in seconds.",
+          "name": "CODEX_TIMEOUT"
+        },
+        {
+          "description": "Compatible slot 1 base URL.",
+          "name": "OPENAI_COMPAT_BASE_URL"
+        },
+        {
+          "description": "Compatible slot 1 API key.",
+          "isSecret": true,
+          "name": "OPENAI_COMPAT_KEY"
+        },
+        {
+          "description": "Compatible slot 1 wire model id.",
+          "name": "OPENAI_COMPAT_MODEL"
+        },
+        {
+          "description": "Compatible slot 1 canonical model id.",
+          "name": "OPENAI_COMPAT_NAME"
+        },
+        {
+          "description": "Compatible slot 1 comma-separated strengths.",
+          "name": "OPENAI_COMPAT_STRENGTHS"
+        },
+        {
+          "description": "Compatible slot 1 context-window tokens.",
+          "name": "OPENAI_COMPAT_CONTEXT"
+        },
+        {
+          "description": "Compatible slot 1 maximum output tokens.",
+          "name": "OPENAI_COMPAT_MAX_OUTPUT"
+        },
+        {
+          "description": "Compatible slot 1 tool-call support (1 or 0).",
+          "name": "OPENAI_COMPAT_TOOLS"
+        },
+        {
+          "description": "Compatible slot 1 input cost.",
+          "name": "OPENAI_COMPAT_COST_IN"
+        },
+        {
+          "description": "Compatible slot 1 output cost.",
+          "name": "OPENAI_COMPAT_COST_OUT"
+        },
+        {
+          "description": "Compatible slot 1 capability tier.",
+          "name": "OPENAI_COMPAT_TIER"
+        },
+        {
+          "description": "Compatible slot 2 base URL.",
+          "name": "OPENAI_COMPAT_2_BASE_URL"
+        },
+        {
+          "description": "Compatible slot 2 API key.",
+          "isSecret": true,
+          "name": "OPENAI_COMPAT_2_KEY"
+        },
+        {
+          "description": "Compatible slot 2 wire model id.",
+          "name": "OPENAI_COMPAT_2_MODEL"
+        },
+        {
+          "description": "Compatible slot 2 canonical model id.",
+          "name": "OPENAI_COMPAT_2_NAME"
+        },
+        {
+          "description": "Compatible slot 2 comma-separated strengths.",
+          "name": "OPENAI_COMPAT_2_STRENGTHS"
+        },
+        {
+          "description": "Compatible slot 2 context-window tokens.",
+          "name": "OPENAI_COMPAT_2_CONTEXT"
+        },
+        {
+          "description": "Compatible slot 2 maximum output tokens.",
+          "name": "OPENAI_COMPAT_2_MAX_OUTPUT"
+        },
+        {
+          "description": "Compatible slot 2 tool-call support (1 or 0).",
+          "name": "OPENAI_COMPAT_2_TOOLS"
+        },
+        {
+          "description": "Compatible slot 2 input cost.",
+          "name": "OPENAI_COMPAT_2_COST_IN"
+        },
+        {
+          "description": "Compatible slot 2 output cost.",
+          "name": "OPENAI_COMPAT_2_COST_OUT"
+        },
+        {
+          "description": "Compatible slot 2 capability tier.",
+          "name": "OPENAI_COMPAT_2_TIER"
+        },
+        {
+          "description": "Compatible slot 3 base URL.",
+          "name": "OPENAI_COMPAT_3_BASE_URL"
+        },
+        {
+          "description": "Compatible slot 3 API key.",
+          "isSecret": true,
+          "name": "OPENAI_COMPAT_3_KEY"
+        },
+        {
+          "description": "Compatible slot 3 wire model id.",
+          "name": "OPENAI_COMPAT_3_MODEL"
+        },
+        {
+          "description": "Compatible slot 3 canonical model id.",
+          "name": "OPENAI_COMPAT_3_NAME"
+        },
+        {
+          "description": "Compatible slot 3 comma-separated strengths.",
+          "name": "OPENAI_COMPAT_3_STRENGTHS"
+        },
+        {
+          "description": "Compatible slot 3 context-window tokens.",
+          "name": "OPENAI_COMPAT_3_CONTEXT"
+        },
+        {
+          "description": "Compatible slot 3 maximum output tokens.",
+          "name": "OPENAI_COMPAT_3_MAX_OUTPUT"
+        },
+        {
+          "description": "Compatible slot 3 tool-call support (1 or 0).",
+          "name": "OPENAI_COMPAT_3_TOOLS"
+        },
+        {
+          "description": "Compatible slot 3 input cost.",
+          "name": "OPENAI_COMPAT_3_COST_IN"
+        },
+        {
+          "description": "Compatible slot 3 output cost.",
+          "name": "OPENAI_COMPAT_3_COST_OUT"
+        },
+        {
+          "description": "Compatible slot 3 capability tier.",
+          "name": "OPENAI_COMPAT_3_TIER"
+        },
+        {
+          "description": "Local strict-JSON quality-evidence file.",
+          "name": "VOLANTE_QUALITY_PROFILES_FILE"
+        },
+        {
+          "description": "Local strict-JSON per-model metadata override file.",
+          "name": "VOLANTE_MODEL_OVERRIDES_FILE"
+        },
+        {
+          "description": "Comma-separated domains that enable fetch_url.",
+          "name": "VOLANTE_FETCH_ALLOWLIST"
+        },
+        {
+          "description": "Root directory that enables confined read_file.",
+          "name": "VOLANTE_READ_ROOT"
+        },
+        {
+          "description": "Agentic execution sandbox. Unset auto-selects docker when available and otherwise disables code execution; subprocess opts in to unisolated execution.",
+          "name": "VOLANTE_SANDBOX"
+        },
+        {
+          "description": "Physical subscription calls allowed per run.",
+          "name": "VOLANTE_MAX_SUBSCRIPTION_CALLS"
+        }
+      ],
+      "identifier": "volante",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "name": "--from",
+          "type": "named",
+          "value": "volante[mcp]==0.8.0"
+        },
+        {
+          "type": "positional",
+          "value": "volante-mcp"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.8.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f98c6128e4",
+    "published_at": "2026-08-04T12:57:52.163367Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ribato22/volante",
+    "server_version": "0.8.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-04T12:57:52.163367Z"
+  },
+  "title": "Volante",
+  "type": "mcp_server",
+  "version": "0.8.0"
+}

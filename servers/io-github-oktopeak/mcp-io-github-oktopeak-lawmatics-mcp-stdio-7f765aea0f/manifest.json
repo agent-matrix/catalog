@@ -1,0 +1,106 @@
+{
+  "description": "Connect Claude to Lawmatics: matters, contacts, pipelines, tasks, forms, custom fields, invoices.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:34+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-oktopeak-lawmatics-mcp.stdio.7f765aea0f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/oktopeak/lawmatics-mcp",
+    "homepage": "https://github.com/oktopeak/lawmatics-mcp",
+    "repository": "https://github.com/oktopeak/lawmatics-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@oktopeak/lawmatics-mcp@1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.oktopeak/lawmatics-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Lawmatics OAuth access token (never expires). Obtain once with `npx @oktopeak/lawmatics-mcp auth`.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "LAWMATICS_ACCESS_TOKEN"
+        },
+        {
+          "description": "Set to '1' to disable all write tools (create/update/tag/submit). Read-only mode for cautious firms.",
+          "format": "string",
+          "name": "LAWMATICS_READ_ONLY"
+        },
+        {
+          "description": "Set to '1' to enable experimental tools (set-matter-custom-fields) whose API request shape is not fully documented by Lawmatics.",
+          "format": "string",
+          "name": "LAWMATICS_EXPERIMENTAL_TOOLS"
+        },
+        {
+          "description": "Client-side request throttle per minute (default: 50, the conservative documented per-firm limit; newer docs say 150).",
+          "format": "string",
+          "name": "LAWMATICS_RATE_LIMIT_PER_MIN"
+        },
+        {
+          "description": "Set to '0' to disable the local JSONL audit log (default path: ~/.lawmatics-mcp/audit.log).",
+          "format": "string",
+          "name": "LAWMATICS_AUDIT_LOG"
+        },
+        {
+          "description": "Override the audit log file location (default: ~/.lawmatics-mcp/audit.log). The log contains tool arguments, which can include client data.",
+          "format": "string",
+          "name": "LAWMATICS_AUDIT_LOG_PATH"
+        },
+        {
+          "description": "Only needed for the one-time `auth` command: your Lawmatics developer app client ID.",
+          "format": "string",
+          "name": "LAWMATICS_CLIENT_ID"
+        },
+        {
+          "description": "Only needed for the one-time `auth` command: your Lawmatics developer app client secret.",
+          "format": "string",
+          "isSecret": true,
+          "name": "LAWMATICS_CLIENT_SECRET"
+        },
+        {
+          "description": "Local port for the one-time OAuth callback (default: 5678). Must match the app's Callback URL.",
+          "format": "string",
+          "name": "LAWMATICS_REDIRECT_PORT"
+        },
+        {
+          "description": "Override the Lawmatics API base URL (default: https://api.lawmatics.com/v1).",
+          "format": "string",
+          "name": "LAWMATICS_API_BASE"
+        }
+      ],
+      "identifier": "@oktopeak/lawmatics-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7f765aea0f",
+    "published_at": "2026-08-08T09:37:33.89071Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.oktopeak/lawmatics-mcp",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-08T09:37:33.89071Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

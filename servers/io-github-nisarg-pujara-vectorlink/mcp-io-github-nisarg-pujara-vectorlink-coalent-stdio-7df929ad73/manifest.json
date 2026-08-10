@@ -1,0 +1,104 @@
+{
+  "description": "Fresh, attributed facts from your sources \u2014 cached, and invalidated the moment a source changes.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nisarg-pujara-vectorlink-coalent.stdio.7df929ad73",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Vectorlink-Labs/coalent",
+    "homepage": "https://github.com/Vectorlink-Labs/coalent",
+    "repository": "https://github.com/Vectorlink-Labs/coalent"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "Install the MCP SDK and OpenAI extras alongside the core package",
+            "isRequired": true,
+            "name": "--with",
+            "type": "named",
+            "value": "coalent[mcp,openai]"
+          },
+          {
+            "description": "The MCP server entry point (the coalent package also ships a separate `coalent` inspection CLI)",
+            "type": "positional",
+            "value": "coalent-mcp",
+            "valueHint": "coalent-mcp"
+          },
+          "coalent==0.6.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nisarg-pujara-vectorlink/coalent",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Required in folder (--watch) mode for semantic embeddings (text-embedding-3-small) and build synthesis (gpt-4o-mini); the server exits loudly without it rather than degrade. Factory (--cache-factory) mode brings its own models and needs no key.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OPENAI_API_KEY"
+        },
+        {
+          "description": "Optional shared secret for --transport http: when set, every HTTP request must carry Authorization: Bearer <token>. Unused over stdio.",
+          "isSecret": true,
+          "name": "COALENT_MCP_TOKEN"
+        }
+      ],
+      "identifier": "coalent",
+      "packageArguments": [
+        {
+          "default": "./docs",
+          "description": "Directory of documents to serve in zero-config folder mode. Advanced deployments replace this with --cache-factory module:function to serve a user-constructed cache over their own vector DB / embedder / LLM (see the README).",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "--watch",
+          "type": "named"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "Install the MCP SDK and OpenAI extras alongside the core package",
+          "isRequired": true,
+          "name": "--with",
+          "type": "named",
+          "value": "coalent[mcp,openai]"
+        },
+        {
+          "description": "The MCP server entry point (the coalent package also ships a separate `coalent` inspection CLI)",
+          "type": "positional",
+          "value": "coalent-mcp",
+          "valueHint": "coalent-mcp"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.6.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7df929ad73",
+    "published_at": "2026-08-05T07:44:39.93843Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nisarg-pujara-vectorlink/coalent",
+    "server_version": "0.6.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-05T07:44:39.93843Z"
+  },
+  "title": "Coalent",
+  "type": "mcp_server",
+  "version": "0.6.2"
+}

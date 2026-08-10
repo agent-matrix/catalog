@@ -1,0 +1,86 @@
+{
+  "description": "Serves Oracle Forms module content (.fmb/.mmb/.pll/.olb) from a directory to MCP clients.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:58+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-aoreshkov-oracle-forms-mcp.stdio.1e3116e3ac",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/aoreshkov/oracle-forms-mcp",
+    "homepage": "https://github.com/aoreshkov/oracle-forms-mcp",
+    "repository": "https://github.com/aoreshkov/oracle-forms-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/aoreshkov/oracle-forms-mcp:0.5.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.aoreshkov/oracle-forms-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Same as --converted-dir, for clients that set environment variables rather than arguments. The flag wins when both are given.",
+          "format": "filepath",
+          "name": "OFMCP_CONVERTED_DIR"
+        },
+        {
+          "description": "Same as --convert-command, for clients that set environment variables rather than arguments. The flag wins when both are given.",
+          "format": "filepath",
+          "name": "OFMCP_CONVERT_COMMAND"
+        }
+      ],
+      "identifier": "ghcr.io/aoreshkov/oracle-forms-mcp:0.5.0",
+      "packageArguments": [
+        {
+          "description": "Directory containing the Oracle Forms modules (in copy-mode, the pre-converted *_fmb.xml/*.pld files live here). Mount it into the container and point --forms-dir at the mount.",
+          "format": "string",
+          "isRequired": true,
+          "name": "--forms-dir",
+          "type": "named",
+          "value": "/forms"
+        },
+        {
+          "description": "Optional. Directory the converted XML / .pld text forms are kept in \u2014 one flat directory for all modules, each file named after its module (orders_fmb.xml, utils.pld). Mount a writable volume and point this at it to keep the text forms outside the cache. Must not be the forms directory. Also settable as OFMCP_CONVERTED_DIR.",
+          "format": "filepath",
+          "name": "--converted-dir",
+          "placeholder": "/converted",
+          "type": "named"
+        },
+        {
+          "description": "Optional. Site-supplied converter run instead of Oracle's frmf2xml, as `<command> <module>` with the working directory set to the module's cache directory. Mount the script into the container and point this at it. Also settable as OFMCP_CONVERT_COMMAND.",
+          "format": "filepath",
+          "name": "--convert-command",
+          "placeholder": "/opt/forms/convert.sh",
+          "type": "named"
+        }
+      ],
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "1e3116e3ac",
+    "published_at": "2026-08-07T11:38:30.701003Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.aoreshkov/oracle-forms-mcp",
+    "server_version": "0.5.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-07T11:38:30.701003Z"
+  },
+  "title": "Oracle Forms",
+  "type": "mcp_server",
+  "version": "0.5.0"
+}

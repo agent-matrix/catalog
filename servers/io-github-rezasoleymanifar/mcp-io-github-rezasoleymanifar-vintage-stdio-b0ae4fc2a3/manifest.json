@@ -1,0 +1,70 @@
+{
+  "description": "Free financial data from eleven sources behind six verbs, point-in-time where the source allows.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:51+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-RezaSoleymanifar-vintage.stdio.b0ae4fc2a3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/RezaSoleymanifar/vintage",
+    "homepage": "https://github.com/RezaSoleymanifar/vintage",
+    "repository": "https://github.com/RezaSoleymanifar/vintage"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "vintage-mcp==0.9.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.RezaSoleymanifar/vintage",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Contact string sent to SEC EDGAR, which asks for a real name and email. Format: 'Your Name your@email.com'.",
+          "format": "string",
+          "name": "VINTAGE_USER_AGENT"
+        },
+        {
+          "description": "Free key from https://fredaccount.stlouisfed.org/apikeys. Unlocks 800k macro series with ALFRED first-release vintages. Everything else works without it.",
+          "format": "string",
+          "isSecret": true,
+          "name": "FRED_API_KEY"
+        },
+        {
+          "description": "Where the gzipped response cache lives. Defaults to ~/.cache/vintage.",
+          "format": "string",
+          "name": "VINTAGE_CACHE_DIR"
+        }
+      ],
+      "identifier": "vintage-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.9.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b0ae4fc2a3",
+    "published_at": "2026-08-07T00:08:31.761624Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.RezaSoleymanifar/vintage",
+    "server_version": "0.9.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-07T00:08:31.761624Z"
+  },
+  "title": "Vintage",
+  "type": "mcp_server",
+  "version": "0.9.0"
+}

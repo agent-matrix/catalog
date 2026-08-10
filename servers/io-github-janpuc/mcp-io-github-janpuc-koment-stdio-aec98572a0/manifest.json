@@ -1,0 +1,163 @@
+{
+  "description": "Read and write checked code rationale stored outside source comments.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-janpuc-koment.stdio.aec98572a0",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/janpuc/koment",
+    "homepage": "https://github.com/janpuc/koment",
+    "repository": "https://github.com/janpuc/koment"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "type": "positional",
+            "value": "run"
+          },
+          {
+            "type": "positional",
+            "value": "--rm"
+          },
+          {
+            "type": "positional",
+            "value": "--interactive"
+          },
+          {
+            "type": "positional",
+            "value": "--user"
+          },
+          {
+            "type": "positional",
+            "value": "{host_user}",
+            "variables": {
+              "host_user": {
+                "description": "Host UID:GID allowed to write the repository mount.",
+                "isRequired": true,
+                "placeholder": "1000:1000"
+              }
+            }
+          },
+          {
+            "type": "positional",
+            "value": "--mount"
+          },
+          {
+            "type": "positional",
+            "value": "type=bind,src={repository},dst=/workspace",
+            "variables": {
+              "repository": {
+                "description": "Absolute path to the koment-enabled repository.",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          {
+            "type": "positional",
+            "value": "--workdir"
+          },
+          {
+            "type": "positional",
+            "value": "/workspace"
+          },
+          "ghcr.io/janpuc/koment:0.8.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.janpuc/koment",
+  "packages": [
+    {
+      "identifier": "ghcr.io/janpuc/koment:0.8.0",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        },
+        {
+          "type": "positional",
+          "value": "--write"
+        }
+      ],
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "--rm"
+        },
+        {
+          "type": "positional",
+          "value": "--interactive"
+        },
+        {
+          "type": "positional",
+          "value": "--user"
+        },
+        {
+          "type": "positional",
+          "value": "{host_user}",
+          "variables": {
+            "host_user": {
+              "description": "Host UID:GID allowed to write the repository mount.",
+              "isRequired": true,
+              "placeholder": "1000:1000"
+            }
+          }
+        },
+        {
+          "type": "positional",
+          "value": "--mount"
+        },
+        {
+          "type": "positional",
+          "value": "type=bind,src={repository},dst=/workspace",
+          "variables": {
+            "repository": {
+              "description": "Absolute path to the koment-enabled repository.",
+              "format": "filepath",
+              "isRequired": true
+            }
+          }
+        },
+        {
+          "type": "positional",
+          "value": "--workdir"
+        },
+        {
+          "type": "positional",
+          "value": "/workspace"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "aec98572a0",
+    "published_at": "2026-08-05T10:08:28.616594Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.janpuc/koment",
+    "server_version": "0.8.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-05T10:08:28.616594Z"
+  },
+  "title": "koment",
+  "type": "mcp_server",
+  "version": "0.8.0"
+}

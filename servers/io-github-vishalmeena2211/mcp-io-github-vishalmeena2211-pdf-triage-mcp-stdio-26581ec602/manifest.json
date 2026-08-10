@@ -1,0 +1,97 @@
+{
+  "description": "Read local PDFs without uploading. Classifies first, flags untrustworthy text, bounds output.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:49+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-vishalmeena2211-pdf-triage-mcp.stdio.26581ec602",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/vishalmeena2211/pdf-triage-mcp",
+    "homepage": "https://github.com/vishalmeena2211/pdf-triage-mcp",
+    "repository": "https://github.com/vishalmeena2211/pdf-triage-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "description": "A directory the server may read PDFs from. Repeat for multiple directories. This is a security boundary, not a convenience: any path resolving outside these roots is refused, symlinks included. Grant the narrowest directory that works.",
+            "format": "filepath",
+            "isRepeated": true,
+            "isRequired": true,
+            "name": "--root",
+            "type": "named"
+          },
+          "pdf-triage-mcp@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.vishalmeena2211/pdf-triage-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "choices": [
+            "debug",
+            "info",
+            "warn",
+            "error",
+            "silent"
+          ],
+          "default": "info",
+          "description": "Minimum severity written to stderr. Defaults to info.",
+          "format": "string",
+          "name": "PDF_TRIAGE_LOG_LEVEL"
+        },
+        {
+          "default": "40000",
+          "description": "Default truncation ceiling for tool responses, in characters. Guards the caller's context window. Defaults to 40000.",
+          "format": "number",
+          "name": "PDF_TRIAGE_MAX_CHARS"
+        },
+        {
+          "default": "104857600",
+          "description": "Largest PDF the server will read, in bytes. The parser buffers whole files rather than streaming. Defaults to 104857600 (100 MB).",
+          "format": "number",
+          "name": "PDF_TRIAGE_MAX_FILE_BYTES"
+        }
+      ],
+      "identifier": "pdf-triage-mcp",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "description": "A directory the server may read PDFs from. Repeat for multiple directories. This is a security boundary, not a convenience: any path resolving outside these roots is refused, symlinks included. Grant the narrowest directory that works.",
+          "format": "filepath",
+          "isRepeated": true,
+          "isRequired": true,
+          "name": "--root",
+          "type": "named"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "26581ec602",
+    "published_at": "2026-08-03T13:31:28.171444Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.vishalmeena2211/pdf-triage-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-03T13:31:28.171444Z"
+  },
+  "title": "PDF Triage",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

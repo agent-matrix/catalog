@@ -1,0 +1,103 @@
+{
+  "description": "Rust MCP server and CLI for Unraid GraphQL operations across NAS, Docker, VM, and storage workflows.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:18+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-dinglebear-unraid.stdio.a80559034d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/dinglebear-ai/unraid",
+    "homepage": "https://github.com/dinglebear-ai/unraid",
+    "repository": "https://github.com/dinglebear-ai/unraid"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@dinglebear/unraid@0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.dinglebear/unraid",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Full Unraid GraphQL endpoint URL.",
+          "format": "string",
+          "isRequired": true,
+          "name": "UNRAID_API_URL",
+          "placeholder": "https://unraid.example.com/graphql"
+        },
+        {
+          "description": "Unraid API key.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "UNRAID_API_KEY"
+        },
+        {
+          "description": "Optional GitHub release tag override for the downloaded Unraid RMCP binary.",
+          "format": "string",
+          "name": "UNRAID_RMCP_VERSION",
+          "placeholder": "v0.2.2"
+        },
+        {
+          "default": "dinglebear-ai/unraid-mcp",
+          "description": "Optional GitHub owner/repo override for release asset downloads.",
+          "format": "string",
+          "name": "UNRAID_RMCP_REPO",
+          "placeholder": "dinglebear-ai/unraid-mcp"
+        },
+        {
+          "description": "Optional release download base URL override.",
+          "format": "string",
+          "name": "UNRAID_RMCP_RELEASE_BASE_URL"
+        },
+        {
+          "default": "info",
+          "description": "Tracing filter for Unraid RMCP logs.",
+          "format": "string",
+          "name": "RUST_LOG",
+          "placeholder": "info"
+        }
+      ],
+      "identifier": "@dinglebear/unraid",
+      "packageArguments": [
+        {
+          "description": "Run Unraid RMCP over stdio.",
+          "format": "string",
+          "isRequired": true,
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a80559034d",
+    "published_at": "2026-08-04T14:11:59.281461Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.dinglebear/unraid",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-04T14:11:59.281461Z"
+  },
+  "title": "Unraid RMCP",
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

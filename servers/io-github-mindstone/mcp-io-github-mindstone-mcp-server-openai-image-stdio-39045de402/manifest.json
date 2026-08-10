@@ -1,0 +1,89 @@
+{
+  "description": "OpenAI image generation MCP server for Model Context Protocol hosts",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mindstone-mcp-server-openai-image.stdio.39045de402",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mindstone/mcp-servers",
+    "homepage": "https://github.com/mindstone/mcp-servers",
+    "repository": "https://github.com/mindstone/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@mindstone/mcp-server-openai-image@0.3.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mindstone/mcp-server-openai-image",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "OpenAI API key with image generation access",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OPENAI_API_KEY"
+        },
+        {
+          "description": "Workspace directory for saving generated images",
+          "format": "filepath",
+          "name": "MCP_WORKSPACE_PATH"
+        },
+        {
+          "default": "gpt-image-2",
+          "description": "Override the default OpenAI image model identifier",
+          "format": "string",
+          "name": "OPENAI_IMAGE_MODEL"
+        },
+        {
+          "default": "180000",
+          "description": "Outbound HTTP request timeout in milliseconds (max 1800000)",
+          "format": "number",
+          "name": "OPENAI_IMAGE_REQUEST_TIMEOUT_MS"
+        },
+        {
+          "description": "JSON array of absolute paths the connector may read through (and write generated images through) in-workspace symlinks that resolve into them. Mirrors the host's built-in file-tool declared-Space roots. Malformed or partially-malformed values fail closed to workspace-only. Optional; standalone users omit it.",
+          "format": "string",
+          "name": "MCP_ALLOWED_SYMLINK_ROOTS"
+        },
+        {
+          "description": "When set, serve MCP over HTTP on this port bound to 127.0.0.1 (loopback only) instead of stdio. Intended for host-managed local deployments; stdio hosts omit it.",
+          "format": "number",
+          "name": "MCP_HTTP_PORT"
+        }
+      ],
+      "identifier": "@mindstone/mcp-server-openai-image",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "39045de402",
+    "published_at": "2026-08-08T11:16:02.271354Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mindstone/mcp-server-openai-image",
+    "server_version": "0.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-08T11:16:02.271354Z"
+  },
+  "title": "OpenAI Image",
+  "type": "mcp_server",
+  "version": "0.3.1"
+}

@@ -1,0 +1,73 @@
+{
+  "description": "npm, PyPI & crates.io health, vulns and dependency graphs. Runs locally, no API key.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:56+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-adam121393-package-intel.stdio.5c192bf2fd",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/adam121393/package-intel",
+    "homepage": "https://github.com/adam121393/package-intel",
+    "repository": "https://github.com/adam121393/package-intel"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "package-intel-mcp@1.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.adam121393/package-intel",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://marketagent.adam121393.workers.dev",
+          "description": "Base URL of the backing API.",
+          "name": "API_URL"
+        },
+        {
+          "default": "eip155:8453",
+          "description": "CAIP-2 network id for payments. eip155:8453 is Base mainnet.",
+          "name": "NETWORK"
+        },
+        {
+          "description": "Optional. Leave unset to use the free tools. Setting it to the private key of a wallet funded with USDC on NETWORK additionally unlocks package_health and package_batch_health, paid per call. Use a dedicated low-balance wallet: this is a hot key that spends automatically.",
+          "isSecret": true,
+          "name": "X402_PRIVATE_KEY"
+        },
+        {
+          "default": "false",
+          "description": "Optional. Set to \"true\" to expose the paid tools without a wallet, paying instead by passing the tx_hash of a USDC transfer you settled yourself. For agents that manage their own on-chain payments.",
+          "name": "X402_TX_HASH"
+        }
+      ],
+      "identifier": "package-intel-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5c192bf2fd",
+    "published_at": "2026-08-08T22:31:15.903815Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.adam121393/package-intel",
+    "server_version": "1.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-08T22:31:15.903815Z"
+  },
+  "title": "Package Intel",
+  "type": "mcp_server",
+  "version": "1.1.0"
+}

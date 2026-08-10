@@ -1,0 +1,73 @@
+{
+  "description": "Self-correcting agent memory + MCP server: recall, supersede/revert/review corrections, erasure.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-DanceNitra-inspeximus.stdio.1099b089ba",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/DanceNitra/inspeximus",
+    "homepage": "https://github.com/DanceNitra/inspeximus",
+    "repository": "https://github.com/DanceNitra/inspeximus"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "inspeximus==2.3.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.DanceNitra/inspeximus",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the JSON memory file the server persists to (defaults to ./inspeximus_memory.json).",
+          "format": "string",
+          "name": "INSPEXIMUS_PATH"
+        },
+        {
+          "description": "1 (default) blocks a restated retired value from resurrecting a corrected fact; 0 = legacy keyed supersession.",
+          "format": "string",
+          "name": "INSPEXIMUS_ECHO_GUARD"
+        },
+        {
+          "description": "Optional OpenAI-compatible /embeddings endpoint for SEMANTIC recall (e.g. http://localhost:11434/v1/embeddings for local Ollama). Unset = deterministic lexical recall.",
+          "format": "string",
+          "name": "INSPEXIMUS_EMBED_URL"
+        },
+        {
+          "description": "Embedding model id used with INSPEXIMUS_EMBED_URL (default: text-embedding-3-small; for Ollama use e.g. nomic-embed-text).",
+          "format": "string",
+          "name": "INSPEXIMUS_EMBED_MODEL"
+        }
+      ],
+      "identifier": "inspeximus",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.3.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1099b089ba",
+    "published_at": "2026-08-09T19:50:33.060907Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.DanceNitra/inspeximus",
+    "server_version": "2.3.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-09T19:50:33.060907Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "2.3.2"
+}

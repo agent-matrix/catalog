@@ -1,0 +1,55 @@
+{
+  "description": "Keep a target database continuously in sync with a source on another provider, then promote it.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-provydon-dbmigratepro-continuous-migration.sse.6c2068f1fe",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://dbmigratepro.com/mcp-replicas"
+    }
+  },
+  "name": "io.github.provydon/dbmigratepro-continuous-migration",
+  "provenance": {
+    "identity_key": "6c2068f1fe",
+    "published_at": "2026-08-09T11:26:47.480346Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.provydon/dbmigratepro-continuous-migration",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-09T11:26:47.480346Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "A DBMigratePro API token, created under Settings -> API Tokens. Scope it to the mcp:replicas ability if you want this server limited to continuous migration.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {token}",
+          "variables": {
+            "token": {
+              "description": "The API token value, shown once when you create it.",
+              "format": "string",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://dbmigratepro.com/mcp-replicas"
+    }
+  ],
+  "title": "DBMigratePro Continuous Migration",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

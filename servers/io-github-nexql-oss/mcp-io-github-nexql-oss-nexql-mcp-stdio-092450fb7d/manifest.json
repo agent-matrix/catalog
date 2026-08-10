@@ -1,0 +1,71 @@
+{
+  "description": "Standalone Postgres MCP server \u2014 schema-aware, read-only by default, installable everywhere.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:49+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-NexQL-OSS-nexql-mcp.stdio.092450fb7d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/NexQL-OSS/mcp",
+    "homepage": "https://github.com/NexQL-OSS/mcp",
+    "repository": "https://github.com/NexQL-OSS/mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "nexql-mcp@0.2.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.NexQL-OSS/nexql-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Postgres connection string, used when no positional URL or --profile is given.",
+          "isSecret": true,
+          "name": "DATABASE_URL"
+        },
+        {
+          "description": "Path to config.toml (default: ~/.config/nexql-mcp/config.toml).",
+          "name": "NEXQL_MCP_CONFIG"
+        }
+      ],
+      "identifier": "nexql-mcp",
+      "packageArguments": [
+        {
+          "description": "Postgres connection string (postgres://user:pass@host:5432/dbname). Omit to use a saved --profile or DATABASE_URL.",
+          "type": "positional",
+          "valueHint": "connection_string"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "092450fb7d",
+    "published_at": "2026-08-08T15:14:26.83069Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.NexQL-OSS/nexql-mcp",
+    "server_version": "0.2.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-08T15:14:26.83069Z"
+  },
+  "title": "NexQL Postgres MCP",
+  "type": "mcp_server",
+  "version": "0.2.4"
+}

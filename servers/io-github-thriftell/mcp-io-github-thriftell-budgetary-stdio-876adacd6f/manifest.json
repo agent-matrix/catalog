@@ -1,0 +1,66 @@
+{
+  "description": "Pre-flight, probabilistic token-spend estimate (range, scenario, confidence) for a coding task.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:46+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-thriftell-budgetary.stdio.876adacd6f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/thriftell/budgetary-clients",
+    "homepage": "https://github.com/thriftell/budgetary-clients",
+    "repository": "https://github.com/thriftell/budgetary-clients"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@budgetary/mcp@0.9.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.thriftell/budgetary",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Budgetary API key (bg_live_ or bg_test_ prefix). Get one at https://budgetary.tools.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "BUDGETARY_API_KEY"
+        },
+        {
+          "description": "Optional tag naming the MCP host this server runs under \u2014 e.g. claude-code, cursor, codex, copilot. It labels each estimate with where it came from, and on claude-code it lets the server say once when no automatic submission of a finished run has been recorded here. Free-form; defaults to \"mcp\" when unset.",
+          "format": "string",
+          "name": "BUDGETARY_HOST"
+        }
+      ],
+      "identifier": "@budgetary/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.9.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "876adacd6f",
+    "published_at": "2026-08-08T04:47:59.103433Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.thriftell/budgetary",
+    "server_version": "0.9.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-08T04:47:59.103433Z"
+  },
+  "title": "Budgetary: estimate token spend",
+  "type": "mcp_server",
+  "version": "0.9.0"
+}

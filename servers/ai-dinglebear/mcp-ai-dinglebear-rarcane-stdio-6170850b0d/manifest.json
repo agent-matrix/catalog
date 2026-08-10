@@ -1,0 +1,103 @@
+{
+  "description": "Arcane Docker and Compose management over MCP and CLI with authenticated stdio and HTTP.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:18+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-dinglebear-rarcane.stdio.6170850b0d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/dinglebear-ai/rarcane",
+    "homepage": "https://github.com/dinglebear-ai/rarcane",
+    "repository": "https://github.com/dinglebear-ai/rarcane"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@dinglebear/rarcane@0.4.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.dinglebear/rarcane",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Arcane API base URL.",
+          "format": "string",
+          "isRequired": true,
+          "name": "RARCANE_API_URL",
+          "placeholder": "https://arcane.example.com"
+        },
+        {
+          "description": "Arcane API key or bearer token.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "RARCANE_API_KEY"
+        },
+        {
+          "description": "Optional GitHub release tag override for the downloaded Arcane RMCP binary.",
+          "format": "string",
+          "name": "ARCANE_RMCP_VERSION",
+          "placeholder": "vX.Y.Z"
+        },
+        {
+          "default": "dinglebear-ai/rarcane",
+          "description": "Optional GitHub owner/repo override for release asset downloads.",
+          "format": "string",
+          "name": "ARCANE_RMCP_REPO",
+          "placeholder": "dinglebear-ai/rarcane"
+        },
+        {
+          "description": "Optional release download base URL override.",
+          "format": "string",
+          "name": "ARCANE_RMCP_RELEASE_BASE_URL"
+        },
+        {
+          "default": "info",
+          "description": "Tracing filter for Arcane RMCP logs.",
+          "format": "string",
+          "name": "RUST_LOG",
+          "placeholder": "info"
+        }
+      ],
+      "identifier": "@dinglebear/rarcane",
+      "packageArguments": [
+        {
+          "description": "Run Arcane RMCP over stdio.",
+          "format": "string",
+          "isRequired": true,
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6170850b0d",
+    "published_at": "2026-08-04T21:50:32.821849Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.dinglebear/rarcane",
+    "server_version": "0.4.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-04T21:50:32.821849Z"
+  },
+  "title": "Arcane RMCP",
+  "type": "mcp_server",
+  "version": "0.4.4"
+}

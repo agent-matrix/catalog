@@ -1,0 +1,75 @@
+{
+  "description": "Xero MCP server for invoices, contacts, payments, quotes, and financial reports.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mindstone-mcp-server-xero.stdio.76ba2fbe45",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mindstone/mcp-servers",
+    "homepage": "https://github.com/mindstone/mcp-servers",
+    "repository": "https://github.com/mindstone/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@mindstone/mcp-server-xero@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mindstone/mcp-server-xero",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Xero Custom Connection client ID.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "XERO_CLIENT_ID"
+        },
+        {
+          "description": "Xero Custom Connection client secret.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "XERO_CLIENT_SECRET"
+        },
+        {
+          "description": "Optional externally-managed Xero bearer token. When set, this takes precedence over the Custom Connection client credentials.",
+          "format": "string",
+          "isSecret": true,
+          "name": "XERO_CLIENT_BEARER_TOKEN"
+        }
+      ],
+      "identifier": "@mindstone/mcp-server-xero",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "76ba2fbe45",
+    "published_at": "2026-08-09T20:55:37.19845Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mindstone/mcp-server-xero",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-09T20:55:37.19845Z"
+  },
+  "title": "Xero",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

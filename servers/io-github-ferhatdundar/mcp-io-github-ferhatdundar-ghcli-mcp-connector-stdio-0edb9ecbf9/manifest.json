@@ -1,0 +1,78 @@
+{
+  "description": "MCP server for the GitHub CLI (gh). Read-only by default; single Go binary.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:43+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-FerhatDundar-ghcli-mcp-connector.stdio.0edb9ecbf9",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/FerhatDundar/ghcli-mcp-connector",
+    "homepage": "https://github.com/FerhatDundar/ghcli-mcp-connector",
+    "repository": "https://github.com/FerhatDundar/ghcli-mcp-connector"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.FerhatDundar/ghcli-mcp-connector",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "gh CLI token. Leave unset to use whatever `gh auth login` already configured (OS keychain).",
+          "format": "string",
+          "isSecret": true,
+          "name": "GH_TOKEN"
+        },
+        {
+          "description": "Target a GitHub Enterprise hostname instead of github.com.",
+          "format": "string",
+          "name": "GH_HOST"
+        },
+        {
+          "description": "Set to \"true\" to permit state-changing gh commands. Defaults to read-only.",
+          "format": "string",
+          "name": "GHCLI_MCP_ALLOW_WRITE"
+        },
+        {
+          "description": "Optional comma-separated allowlist of \"owner/repo\" values, enforced when -R/--repo is passed. Unset allows all.",
+          "format": "string",
+          "name": "GHCLI_MCP_ALLOWED_REPOS"
+        },
+        {
+          "description": "Optional path to the gh binary. Defaults to \"gh\" resolved via PATH.",
+          "format": "string",
+          "name": "GHCLI_MCP_CLI_PATH"
+        }
+      ],
+      "fileSha256": "a5644eef2ec145285153847ef6a93ca3c335f9557d8d9f6df2c0c726639c2cf0",
+      "identifier": "https://github.com/FerhatDundar/ghcli-mcp-connector/releases/download/v0.1.0/ghcli-mcp-connector-plugin-v0.1.0-linux-amd64.zip",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0edb9ecbf9",
+    "published_at": "2026-08-03T23:00:54.775855Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.FerhatDundar/ghcli-mcp-connector",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-03T23:00:54.775855Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

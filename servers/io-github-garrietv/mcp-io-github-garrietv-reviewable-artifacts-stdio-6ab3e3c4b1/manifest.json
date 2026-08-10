@@ -1,0 +1,67 @@
+{
+  "description": "Reviewable workspace discovery and private HTML review creation via stdio MCP.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:18+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-garrietv-reviewable-artifacts.stdio.6ab3e3c4b1",
+  "lifecycle": {
+    "status": "deprecated"
+  },
+  "links": {
+    "documentation": "https://github.com/garrietv/reviewable-artifacts",
+    "homepage": "https://github.com/garrietv/reviewable-artifacts",
+    "repository": "https://github.com/garrietv/reviewable-artifacts"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "reviewable-artifacts-mcp@0.2.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.garrietv/reviewable-artifacts",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional advanced HTTPS origin override for self-hosted, staging, loopback, or a reachable interim service when the canonical domain is blocked.",
+          "name": "REVIEWABLE_MCP_BASE_URL"
+        },
+        {
+          "description": "Advanced compatibility credential for workspace reads and private-review creation. It takes precedence over a stored browser grant; keep it local and do not combine it with reviewer share URLs.",
+          "isSecret": true,
+          "name": "REVIEWABLE_MCP_WORKSPACE_KEY"
+        },
+        {
+          "description": "Advanced least-privilege credential: one or more reviewer share URLs for read-only access to those reviews. Takes precedence over a stored browser grant; owner links are rejected.",
+          "isSecret": true,
+          "name": "REVIEWABLE_MCP_REVIEWS"
+        }
+      ],
+      "identifier": "reviewable-artifacts-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6ab3e3c4b1",
+    "published_at": "2026-08-05T11:13:43.36663Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.garrietv/reviewable-artifacts",
+    "server_version": "0.2.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-05T14:28:41.006529Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.3"
+}

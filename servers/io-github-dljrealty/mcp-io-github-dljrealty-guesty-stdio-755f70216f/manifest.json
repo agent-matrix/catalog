@@ -1,0 +1,73 @@
+{
+  "description": "Guesty property-management MCP. Read-only: reservations, listings, calendar, guests, revenue.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-DLJRealty-guesty.stdio.755f70216f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/DLJRealty/guesty-mcp-server",
+    "homepage": "https://github.com/DLJRealty/guesty-mcp-server",
+    "repository": "https://github.com/DLJRealty/guesty-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "guesty-mcp-server@0.9.11"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.DLJRealty/guesty",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Guesty OAuth2 Client ID",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GUESTY_CLIENT_ID"
+        },
+        {
+          "description": "Guesty OAuth2 Client Secret",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GUESTY_CLIENT_SECRET"
+        },
+        {
+          "description": "License key for Pro/Business/Enterprise features (optional for free tier)",
+          "format": "string",
+          "isSecret": true,
+          "name": "GUESTY_MCP_LICENSE_KEY"
+        }
+      ],
+      "identifier": "guesty-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.9.11"
+    }
+  ],
+  "provenance": {
+    "identity_key": "755f70216f",
+    "published_at": "2026-08-06T20:02:12.392137Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.DLJRealty/guesty",
+    "server_version": "0.9.11",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-06T20:02:12.392137Z"
+  },
+  "title": "Guesty MCP Server",
+  "type": "mcp_server",
+  "version": "0.9.11"
+}

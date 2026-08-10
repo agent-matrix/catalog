@@ -1,0 +1,123 @@
+{
+  "description": "145+ tools across 8 databases: MySQL, PostgreSQL, Redshift, MongoDB, Redis, Kafka, and more",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:43+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sijunkim-db-gateway.stdio.792fe30129",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sijunkim/db-gateway",
+    "homepage": "https://github.com/sijunkim/db-gateway",
+    "repository": "https://github.com/sijunkim/db-gateway"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "db-gateway@1.0.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sijunkim/db-gateway",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Engines to enable, comma-separated. Only the listed engines get their tools registered. Example: mysql,redis,kafka",
+          "format": "string",
+          "isRequired": true,
+          "name": "DBS"
+        },
+        {
+          "description": "Set to true to hide every write tool and restrict *_execute_query to SELECT-style statements. Recommended when pointing at production.",
+          "format": "string",
+          "name": "READ_ONLY"
+        },
+        {
+          "description": "MySQL connection string(s), semicolon-separated for multiple instances. Format: mysql://<user>:<password>@<host>:3306/<database>?alias=dev&default=true \u2014 alias is required.",
+          "format": "string",
+          "isSecret": true,
+          "name": "MYSQL"
+        },
+        {
+          "description": "PostgreSQL connection string(s), semicolon-separated. Format: postgresql://<user>:<password>@<host>:5432/<database>?alias=dev&ssl=true \u2014 alias is required.",
+          "format": "string",
+          "isSecret": true,
+          "name": "POSTGRESQL"
+        },
+        {
+          "description": "Redshift connection string(s), semicolon-separated. Format: redshift://<user>:<password>@<host>:5439/<database>?alias=dev&ssl=true \u2014 alias is required.",
+          "format": "string",
+          "isSecret": true,
+          "name": "REDSHIFT"
+        },
+        {
+          "description": "MongoDB connection string(s), semicolon-separated. Format: mongodb://<user>:<password>@<host>:27017/<database>?alias=dev \u2014 alias is required.",
+          "format": "string",
+          "isSecret": true,
+          "name": "MONGODB"
+        },
+        {
+          "description": "Redis connection string(s), semicolon-separated. Format: redis://:<password>@<host>:6379/0?alias=dev \u2014 leave the password empty for a no-auth instance. alias is required.",
+          "format": "string",
+          "isSecret": true,
+          "name": "REDIS"
+        },
+        {
+          "description": "Elasticsearch connection string(s), semicolon-separated. Format: elasticsearch://<user>:<password>@<host>:9200?alias=dev, or http(s)://<host>:9200?alias=dev for no auth. alias is required.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ELASTICSEARCH"
+        },
+        {
+          "description": "Kafka connection string(s), semicolon-separated. Format: kafka://<user>:<password>@<broker1>:9092,<broker2>:9092?alias=dev&mechanism=plain \u2014 alias is required.",
+          "format": "string",
+          "isSecret": true,
+          "name": "KAFKA"
+        },
+        {
+          "description": "AWS region for DynamoDB. DynamoDB is configured with discrete variables instead of a connection string.",
+          "format": "string",
+          "name": "DYNAMODB_REGION"
+        },
+        {
+          "description": "AWS access key ID for DynamoDB.",
+          "format": "string",
+          "isSecret": true,
+          "name": "DYNAMODB_ACCESS_KEY_ID"
+        },
+        {
+          "description": "AWS secret access key for DynamoDB.",
+          "format": "string",
+          "isSecret": true,
+          "name": "DYNAMODB_SECRET_ACCESS_KEY"
+        }
+      ],
+      "identifier": "db-gateway",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "792fe30129",
+    "published_at": "2026-08-06T15:05:43.812356Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sijunkim/db-gateway",
+    "server_version": "1.0.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-06T15:05:43.812356Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.2"
+}

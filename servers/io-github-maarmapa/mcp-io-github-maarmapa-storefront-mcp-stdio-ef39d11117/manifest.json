@@ -1,0 +1,69 @@
+{
+  "description": "E-commerce storefront over MCP: public catalog tools plus token-gated back-office tools.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:47+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Maarmapa-storefront-mcp.stdio.ef39d11117",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Maarmapa/storefront-mcp",
+    "homepage": "https://github.com/Maarmapa/storefront-mcp",
+    "repository": "https://github.com/Maarmapa/storefront-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "storefront-mcp@1.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Maarmapa/storefront-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "memory",
+          "description": "Which catalog adapter to use: \"memory\" (bundled demo catalog, no setup) or \"woocommerce\" (Store API skeleton).",
+          "name": "CATALOG_ADAPTER"
+        },
+        {
+          "description": "Unlocks the 5 sensitive back-office tools (stock, orders, sales). On stdio the presence of this variable in the server process env unlocks them; leave it unset to expose only the 6 public catalog tools.",
+          "isSecret": true,
+          "name": "MCP_SECRET"
+        },
+        {
+          "default": "storefront-mcp",
+          "description": "Override the advertised server name.",
+          "name": "MCP_SERVER_NAME"
+        }
+      ],
+      "identifier": "storefront-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ef39d11117",
+    "published_at": "2026-08-05T02:09:25.771242Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Maarmapa/storefront-mcp",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-05T02:09:25.771242Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

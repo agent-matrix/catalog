@@ -1,0 +1,74 @@
+{
+  "description": "Search, move, mark, delete and draft your real mail over a self-hosted index.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:57+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-alexanderkrauck-mailindex-mcp.stdio.6f8e768a4b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/alexanderkrauck/mailindex-mcp",
+    "homepage": "https://github.com/alexanderkrauck/mailindex-mcp",
+    "repository": "https://github.com/alexanderkrauck/mailindex-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/alexanderkrauck/mailindex-mcp:0.1.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.alexanderkrauck/mailindex-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "PostgreSQL connection URL. This server keeps its own index and does not run without a database; the repository ships docker-compose files that start one for you.",
+          "format": "string",
+          "isRequired": true,
+          "name": "EMAILSERVER_DATABASE_URL"
+        },
+        {
+          "default": "development",
+          "description": "How callers are authenticated: development (no auth, loopback only), single_user (static bearer token), or google (multi-user OAuth).",
+          "name": "EMAILSERVER_AUTH_MODE"
+        },
+        {
+          "description": "Bearer token required in single_user mode. At least 32 characters, or the server refuses to start.",
+          "isSecret": true,
+          "name": "EMAILSERVER_API_TOKEN"
+        },
+        {
+          "description": "Key used to encrypt stored mailbox credentials at rest. Generate with: openssl rand -base64 32",
+          "isSecret": true,
+          "name": "CREDENTIAL_ENCRYPTION_KEY"
+        }
+      ],
+      "identifier": "ghcr.io/alexanderkrauck/mailindex-mcp:0.1.3",
+      "registryType": "oci",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:8002/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "6f8e768a4b",
+    "published_at": "2026-08-03T07:20:38.355796Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.alexanderkrauck/mailindex-mcp",
+    "server_version": "0.1.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-03T07:20:38.355796Z"
+  },
+  "title": "mailindex-mcp",
+  "type": "mcp_server",
+  "version": "0.1.3"
+}

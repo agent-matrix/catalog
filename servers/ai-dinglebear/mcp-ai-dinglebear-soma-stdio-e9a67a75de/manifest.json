@@ -1,0 +1,88 @@
+{
+  "description": "RMCP runtime for provider-backed agents with CLI, REST, HTTP MCP, plugins, and scaffold support.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:18+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-dinglebear-soma.stdio.e9a67a75de",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/dinglebear-ai/soma",
+    "homepage": "https://github.com/dinglebear-ai/soma",
+    "repository": "https://github.com/dinglebear-ai/soma"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/dinglebear-ai/soma:0.9.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.dinglebear/soma",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "/data",
+          "description": "Runtime data directory inside the Soma container.",
+          "format": "filepath",
+          "name": "SOMA_HOME",
+          "placeholder": "/data"
+        },
+        {
+          "default": "/data/providers",
+          "description": "Directory scanned for drop-in provider manifests and modules.",
+          "format": "filepath",
+          "name": "SOMA_PROVIDER_DIR",
+          "placeholder": "/data/providers"
+        },
+        {
+          "description": "Optional deployed platform API or upstream API base URL used by the SomaClient compatibility layer. Leave unset for local provider/runtime mode.",
+          "name": "SOMA_API_URL",
+          "placeholder": "https://api.example.com"
+        },
+        {
+          "description": "Optional bearer token or upstream API key for provider-backed calls that use SomaClient. Keep secret.",
+          "isSecret": true,
+          "name": "SOMA_API_KEY"
+        },
+        {
+          "default": "info",
+          "description": "Rust tracing filter for local CLI and stdio MCP logs.",
+          "name": "RUST_LOG"
+        }
+      ],
+      "identifier": "ghcr.io/dinglebear-ai/soma:0.9.0",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryType": "oci",
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "e9a67a75de",
+    "published_at": "2026-08-03T17:57:48.91549Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.dinglebear/soma",
+    "server_version": "0.9.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-03T17:57:48.91549Z"
+  },
+  "title": "Soma",
+  "type": "mcp_server",
+  "version": "0.9.0"
+}

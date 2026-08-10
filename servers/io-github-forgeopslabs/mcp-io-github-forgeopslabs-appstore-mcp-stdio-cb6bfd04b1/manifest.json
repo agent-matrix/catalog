@@ -1,0 +1,84 @@
+{
+  "description": "MCP server for the Apple App Store Connect API - 114 annotated tools, optional read-only mode.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:17+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-forgeopslabs-appstore-mcp.stdio.cb6bfd04b1",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/forgeopslabs/appstore-mcp",
+    "homepage": "https://github.com/forgeopslabs/appstore-mcp",
+    "repository": "https://github.com/forgeopslabs/appstore-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.forgeopslabs/appstore-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "App Store Connect issuer UUID (Users and Access -> Integrations).",
+          "format": "string",
+          "isRequired": true,
+          "name": "ASC_ISSUER_ID"
+        },
+        {
+          "description": "The App Store Connect API key's Key ID.",
+          "format": "string",
+          "isRequired": true,
+          "name": "ASC_KEY_ID"
+        },
+        {
+          "description": "Path to the downloaded .p8 private key (or use ASC_PRIVATE_KEY for inline PEM).",
+          "format": "string",
+          "name": "ASC_PRIVATE_KEY_PATH"
+        },
+        {
+          "description": "Inline .p8 PEM contents (alternative to ASC_PRIVATE_KEY_PATH).",
+          "format": "string",
+          "isSecret": true,
+          "name": "ASC_PRIVATE_KEY"
+        },
+        {
+          "description": "Set to 1 to serve only tools that cannot modify the account.",
+          "format": "string",
+          "name": "ASC_READ_ONLY"
+        },
+        {
+          "description": "Comma-separated tool groups to serve (e.g. 'core' or 'testflight,provisioning'). Defaults to all.",
+          "format": "string",
+          "name": "ASC_TOOLS"
+        }
+      ],
+      "fileSha256": "f054ae22cf70b4f776d6679a00ffae077e8b7d0bb00ea707ec498bff7cd82a45",
+      "identifier": "https://github.com/forgeopslabs/appstore-mcp/releases/download/v0.3.0/appstore-mcp.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "cb6bfd04b1",
+    "published_at": "2026-08-06T10:33:59.956151Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.forgeopslabs/appstore-mcp",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-06T10:33:59.956151Z"
+  },
+  "title": "App Store Connect",
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

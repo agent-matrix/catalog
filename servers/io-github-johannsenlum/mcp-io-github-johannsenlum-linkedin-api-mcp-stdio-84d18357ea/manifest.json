@@ -1,0 +1,70 @@
+{
+  "description": "Read LinkedIn profiles, companies, jobs and messages via your own browser session",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:45+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-JohannsenLum-linkedin-api-mcp.stdio.84d18357ea",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/JohannsenLum/linkedin-api-mcp",
+    "homepage": "https://github.com/JohannsenLum/linkedin-api-mcp",
+    "repository": "https://github.com/JohannsenLum/linkedin-api-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "linkedin-api-mcp==0.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.JohannsenLum/linkedin-api-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your LinkedIn li_at session cookie. Optional if you have already stored it in the OS keyring with `linkedin-api-mcp auth`, which is the recommended route \u2014 this cookie is equivalent to being logged in as you.",
+          "isSecret": true,
+          "name": "LINKEDIN_COOKIE"
+        },
+        {
+          "description": "Run the browser headless. Defaults to true; set to 0 to watch what it does.",
+          "name": "LINKEDIN_HEADLESS"
+        },
+        {
+          "description": "Minimum seconds between LinkedIn actions. Defaults to 2.",
+          "name": "LINKEDIN_MIN_INTERVAL"
+        },
+        {
+          "description": "Hard ceiling on LinkedIn actions per rolling hour. Defaults to 120. The server refuses past this rather than sleeping, so an agent in a loop is told to stop.",
+          "name": "LINKEDIN_MAX_PER_HOUR"
+        }
+      ],
+      "identifier": "linkedin-api-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "84d18357ea",
+    "published_at": "2026-08-08T16:47:52.344677Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.JohannsenLum/linkedin-api-mcp",
+    "server_version": "0.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-08T16:47:52.344677Z"
+  },
+  "title": "LinkedIn",
+  "type": "mcp_server",
+  "version": "0.0.1"
+}

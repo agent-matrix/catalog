@@ -1,7 +1,7 @@
 {
-  "description": "High-throughput X/Twitter crawl via tasks; download XLSX; x402 USDC Base/Solana top-ups.",
+  "description": "Fetch recent X posts by handle via MCP, with JSON and accountless x402 v2 USDC on Base.",
   "harvest": {
-    "last_seen_at": "2026-08-03T05:53:16+00:00",
+    "last_seen_at": "2026-08-10T04:07:27+00:00",
     "seen_in_latest_run": true
   },
   "id": "mcp.io-github-lvpiggyqq-xcatcher.sse.26ad39052a",
@@ -22,34 +22,33 @@
   "name": "io.github.lvpiggyqq/xcatcher",
   "provenance": {
     "identity_key": "26ad39052a",
-    "published_at": "2025-12-24T01:11:15.46271Z",
+    "published_at": "2026-08-07T11:57:57.104889Z",
     "registry_base_url": "https://registry.modelcontextprotocol.io",
     "server_name": "io.github.lvpiggyqq/xcatcher",
-    "server_version": "1.0.3",
+    "server_version": "3.0.0",
     "source": "mcp-registry",
-    "updated_at": "2025-12-24T01:11:15.46271Z"
+    "updated_at": "2026-08-07T11:57:57.104889Z"
   },
   "remotes": [
     {
       "headers": [
         {
-          "description": "Bearer xc_live_... API key (required).",
-          "name": "Authorization"
+          "description": "Optional Xcatcher API key for account tools. Discovery and direct x402 tools work without it.",
+          "isSecret": true,
+          "name": "Authorization",
+          "placeholder": "Bearer xc_live_..."
         },
         {
-          "description": "application/json (required).",
+          "default": "application/json",
+          "description": "Request JSON responses from the stateless Remote MCP server.",
           "name": "Accept"
-        },
-        {
-          "description": "application/json (required for JSON-RPC POST).",
-          "name": "Content-Type"
         }
       ],
       "type": "streamable-http",
       "url": "https://xcatcher.top/mcp/"
     }
   ],
-  "title": null,
+  "title": "Xcatcher \u2014 Recent X Posts",
   "type": "mcp_server",
-  "version": "1.0.3"
+  "version": "3.0.0"
 }

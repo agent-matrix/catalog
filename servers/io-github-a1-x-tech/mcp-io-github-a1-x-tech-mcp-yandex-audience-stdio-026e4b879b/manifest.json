@@ -1,0 +1,75 @@
+{
+  "description": "MCP server for Yandex Audience API: segments (CRM, lookalike, pixel), pixels, grants.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:35+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-A1-x-Tech-mcp-yandex-audience.stdio.026e4b879b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/A1-x-Tech/mcp-yandex-audience",
+    "homepage": "https://github.com/A1-x-Tech/mcp-yandex-audience",
+    "repository": "https://github.com/A1-x-Tech/mcp-yandex-audience"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-yandex-audience@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.A1-x-Tech/mcp-yandex-audience",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Yandex OAuth token, sent as `Authorization: OAuth \u2026`. Treat it as a secret.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "YANDEX_AUDIENCE_TOKEN"
+        },
+        {
+          "default": "https://api-audience.yandex.ru",
+          "description": "API host override (https://api-audience.yandex.com for international accounts).",
+          "name": "YANDEX_AUDIENCE_API_HOST"
+        },
+        {
+          "default": "60000",
+          "description": "Per-request timeout in milliseconds.",
+          "name": "YANDEX_AUDIENCE_TIMEOUT_MS"
+        },
+        {
+          "default": "3",
+          "description": "Retries on 429 (5xx/network retried for GET only).",
+          "name": "YANDEX_AUDIENCE_MAX_RETRIES"
+        }
+      ],
+      "identifier": "mcp-yandex-audience",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "026e4b879b",
+    "published_at": "2026-08-08T23:26:16.057125Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.A1-x-Tech/mcp-yandex-audience",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-08T23:26:16.057125Z"
+  },
+  "title": "Yandex Audience MCP",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

@@ -1,0 +1,94 @@
+{
+  "description": "Search, read, annotate, and add to your Zotero research library, local or web.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:35+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-54yyyu-zotero-mcp.stdio.55704b2324",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/54yyyu/zotero-mcp",
+    "homepage": "https://github.com/54yyyu/zotero-mcp",
+    "repository": "https://github.com/54yyyu/zotero-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "zotero-mcp-server==0.9.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.54yyyu/zotero-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "true",
+          "description": "Read from the local Zotero desktop app instead of the web API. Requires Zotero 7+ with the local API enabled in Settings > Advanced.",
+          "format": "boolean",
+          "name": "ZOTERO_LOCAL"
+        },
+        {
+          "description": "Zotero Web API key from https://www.zotero.org/settings/keys. Only needed when ZOTERO_LOCAL is false, or for write operations in hybrid mode.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ZOTERO_API_KEY"
+        },
+        {
+          "description": "Zotero user or group library ID. Only needed when ZOTERO_LOCAL is false, or for write operations in hybrid mode.",
+          "format": "string",
+          "name": "ZOTERO_LIBRARY_ID"
+        },
+        {
+          "choices": [
+            "user",
+            "group"
+          ],
+          "default": "user",
+          "description": "Whether ZOTERO_LIBRARY_ID refers to a personal or a group library.",
+          "format": "string",
+          "name": "ZOTERO_LIBRARY_TYPE"
+        },
+        {
+          "description": "Which optional tool groups to expose, as a comma-separated list. Every tool is sent to the model on each request, so optional capabilities are off by default. Use 'all' for the full surface, 'none' for core only, named groups (scite, duplicates, discovery, feeds, relations, libraries, search-admin, pdf-geometry) to add them, or a leading '-' to subtract.",
+          "format": "string",
+          "name": "ZOTERO_MCP_TOOLSETS"
+        }
+      ],
+      "identifier": "zotero-mcp-server",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "serve",
+          "valueHint": "serve"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.9.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "55704b2324",
+    "published_at": "2026-08-03T17:05:30.752637Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.54yyyu/zotero-mcp",
+    "server_version": "0.9.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-03T17:05:30.752637Z"
+  },
+  "title": "Zotero MCP",
+  "type": "mcp_server",
+  "version": "0.9.0"
+}

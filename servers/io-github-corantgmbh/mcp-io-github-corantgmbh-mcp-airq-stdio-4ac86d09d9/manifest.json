@@ -1,0 +1,64 @@
+{
+  "description": "MCP server for direct HTTP communication with air-Q air quality sensor devices",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-CorantGmbH-mcp-airq.stdio.4ac86d09d9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/CorantGmbH/mcp-airq",
+    "homepage": "https://github.com/CorantGmbH/mcp-airq",
+    "repository": "https://github.com/CorantGmbH/mcp-airq"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-airq==1.6.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.CorantGmbH/mcp-airq",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the air-Q device configuration JSON file",
+          "format": "string",
+          "name": "AIRQ_CONFIG_FILE"
+        },
+        {
+          "description": "Inline JSON array with configured air-Q devices",
+          "format": "string",
+          "isSecret": true,
+          "name": "AIRQ_DEVICES"
+        }
+      ],
+      "identifier": "mcp-airq",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.6.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4ac86d09d9",
+    "published_at": "2026-08-05T08:49:12.341121Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.CorantGmbH/mcp-airq",
+    "server_version": "1.6.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-05T08:49:12.341121Z"
+  },
+  "title": "air-Q",
+  "type": "mcp_server",
+  "version": "1.6.5"
+}

@@ -1,0 +1,78 @@
+{
+  "description": "Search stories and discover OSINT sources in Taranis AI.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:45+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-taranis-ai-taranis-mcp-server.stdio.a2fb59c6fa",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/taranis-ai/taranis-mcp-server",
+    "homepage": "https://github.com/taranis-ai/taranis-mcp-server",
+    "repository": "https://github.com/taranis-ai/taranis-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "taranis-mcp-server==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.taranis-ai/taranis-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "name": "MCP_TRANSPORT",
+          "value": "stdio"
+        },
+        {
+          "description": "Taranis API root, including the /api path.",
+          "isRequired": true,
+          "name": "TARANIS_API_URL",
+          "placeholder": "https://taranis.example/api"
+        },
+        {
+          "description": "Taranis JWT. Configure this or both username and password.",
+          "isSecret": true,
+          "name": "TARANIS_ACCESS_TOKEN"
+        },
+        {
+          "description": "Taranis username. Configure together with the password instead of a JWT.",
+          "name": "TARANIS_USERNAME"
+        },
+        {
+          "description": "Taranis password. Configure together with the username instead of a JWT.",
+          "isSecret": true,
+          "name": "TARANIS_PASSWORD"
+        }
+      ],
+      "identifier": "taranis-mcp-server",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a2fb59c6fa",
+    "published_at": "2026-08-06T13:51:19.95193Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.taranis-ai/taranis-mcp-server",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-06T13:51:19.95193Z"
+  },
+  "title": "Taranis AI",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

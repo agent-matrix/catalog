@@ -1,0 +1,70 @@
+{
+  "description": "Connect AI clients to a caller-owned Discord bot with 201 tools over stdio or authenticated HTTP.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:03+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cappyeo-discord-mcp.stdio.cdcc99ca90",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cappyeo/discord-mcp",
+    "homepage": "https://github.com/cappyeo/discord-mcp",
+    "repository": "https://github.com/cappyeo/discord-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@discord-mcp/cli@0.16.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cappyeo/discord-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Discord bot token. The optional Bot prefix is accepted.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DISCORD_TOKEN"
+        },
+        {
+          "description": "Expected Discord bot ID. Startup fails if the token belongs to another bot.",
+          "format": "string",
+          "name": "DISCORD_EXPECTED_BOT_ID"
+        },
+        {
+          "description": "Comma-separated Discord guild IDs this deployment may operate against.",
+          "format": "string",
+          "name": "ALLOWED_GUILDS"
+        }
+      ],
+      "identifier": "@discord-mcp/cli",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.16.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "cdcc99ca90",
+    "published_at": "2026-08-03T13:57:21.009022Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cappyeo/discord-mcp",
+    "server_version": "0.16.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-03T13:57:21.009022Z"
+  },
+  "title": "Discord MCP",
+  "type": "mcp_server",
+  "version": "0.16.2"
+}

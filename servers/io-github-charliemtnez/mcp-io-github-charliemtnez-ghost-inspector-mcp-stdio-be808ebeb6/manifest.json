@@ -1,0 +1,72 @@
+{
+  "description": "Analyze, validate and safely update Ghost Inspector end-to-end browser tests",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:04+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-charliemtnez-ghost-inspector-mcp.stdio.be808ebeb6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/charliemtnez/ghost-inspector-mcp",
+    "homepage": "https://github.com/charliemtnez/ghost-inspector-mcp",
+    "repository": "https://github.com/charliemtnez/ghost-inspector-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "ghost-inspector-mcp@0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.charliemtnez/ghost-inspector-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your personal Ghost Inspector key, from Account Settings then API Access. Read fresh on every call, never written to disk, never echoed back.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GHOST_INSPECTOR_API_KEY"
+        },
+        {
+          "description": "Organization id. Needed only to execute a validation; read it from gi_whoami.",
+          "name": "GHOST_INSPECTOR_ORG_ID"
+        },
+        {
+          "description": "Set to exactly true to register the two mutating tools. Anything else keeps the server read-only.",
+          "name": "GHOST_INSPECTOR_ALLOW_WRITES"
+        },
+        {
+          "description": "Set to \"true\" to let gi_run_test execute a stored test against a real environment, which can submit a real form. Deliberately not implied by GHOST_INSPECTOR_ALLOW_WRITES: an edit can be rolled back from the backup this server returns, a submission cannot. Defaults to false.",
+          "name": "GHOST_INSPECTOR_ALLOW_RUNS"
+        }
+      ],
+      "identifier": "ghost-inspector-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "be808ebeb6",
+    "published_at": "2026-08-06T19:44:02.43911Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.charliemtnez/ghost-inspector-mcp",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-06T19:44:02.43911Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

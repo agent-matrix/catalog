@@ -1,0 +1,55 @@
+{
+  "description": "Run multi-step tasks in a real Chrome browser: persistent environments, live view, human takeover.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:21+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-webrun-webrun.sse.bf8e37ecb6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://api.webrun.ai/mcp"
+    }
+  },
+  "name": "ai.webrun/webrun",
+  "provenance": {
+    "identity_key": "bf8e37ecb6",
+    "published_at": "2026-08-08T05:12:06.889205Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.webrun/webrun",
+    "server_version": "1.0.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-08T05:12:06.889205Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "WebRun API key as a bearer token.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {api_key}",
+          "variables": {
+            "api_key": {
+              "description": "WebRun API key (starts with wr_) from https://app.webrun.ai. Append :ENVIRONMENT_ID to attach a persistent environment that keeps its Chrome profile and logins across runs.",
+              "format": "string",
+              "isRequired": true,
+              "isSecret": true,
+              "placeholder": "wr_xxxxxxxx or wr_xxxxxxxx:ENVIRONMENT_ID"
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://api.webrun.ai/mcp"
+    }
+  ],
+  "title": "WebRun Browser Automation",
+  "type": "mcp_server",
+  "version": "1.0.2"
+}
