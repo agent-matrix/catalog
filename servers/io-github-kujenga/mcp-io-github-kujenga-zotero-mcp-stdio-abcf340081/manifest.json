@@ -1,0 +1,82 @@
+{
+  "description": "Search your Zotero library, retrieve item metadata, and read full text from AI assistants.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:26+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-kujenga-zotero-mcp.stdio.abcf340081",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/kujenga/zotero-mcp",
+    "homepage": "https://github.com/kujenga/zotero-mcp",
+    "repository": "https://github.com/kujenga/zotero-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "zotero-mcp==0.3.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.kujenga/zotero-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "false",
+          "description": "Use the local API from the Zotero desktop app instead of the Web API. Requires Zotero to be running with 'Allow other applications on this computer to communicate with Zotero' enabled under Settings > Advanced.",
+          "format": "boolean",
+          "name": "ZOTERO_LOCAL"
+        },
+        {
+          "description": "Zotero Web API key from https://www.zotero.org/settings/keys. Not required when ZOTERO_LOCAL is true.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ZOTERO_API_KEY"
+        },
+        {
+          "description": "Zotero library ID (your user ID for user libraries). Not required when ZOTERO_LOCAL is true.",
+          "format": "string",
+          "name": "ZOTERO_LIBRARY_ID"
+        },
+        {
+          "choices": [
+            "user",
+            "group"
+          ],
+          "default": "user",
+          "description": "Whether ZOTERO_LIBRARY_ID refers to a user or group library.",
+          "format": "string",
+          "name": "ZOTERO_LIBRARY_TYPE"
+        }
+      ],
+      "identifier": "zotero-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "abcf340081",
+    "published_at": "2026-08-07T03:38:58.417955Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.kujenga/zotero-mcp",
+    "server_version": "0.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-07T03:38:58.417955Z"
+  },
+  "title": "Zotero MCP",
+  "type": "mcp_server",
+  "version": "0.3.1"
+}

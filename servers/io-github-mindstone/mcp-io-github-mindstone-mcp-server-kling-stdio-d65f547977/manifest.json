@@ -1,0 +1,85 @@
+{
+  "description": "Kling AI video generation MCP server for Model Context Protocol hosts",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mindstone-mcp-server-kling.stdio.d65f547977",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mindstone/mcp-servers",
+    "homepage": "https://github.com/mindstone/mcp-servers",
+    "repository": "https://github.com/mindstone/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@mindstone/mcp-server-kling@0.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mindstone/mcp-server-kling",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Kling API access key",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "KLING_ACCESS_KEY"
+        },
+        {
+          "description": "Kling API secret key",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "KLING_SECRET_KEY"
+        },
+        {
+          "default": "60000",
+          "description": "Outbound HTTP request timeout in milliseconds (max 1800000)",
+          "format": "number",
+          "name": "KLING_REQUEST_TIMEOUT_MS"
+        },
+        {
+          "description": "Workspace directory that local media inputs and downloads are constrained to. Defaults to the system temp directory when unset.",
+          "format": "filepath",
+          "name": "MCP_WORKSPACE_PATH"
+        },
+        {
+          "description": "Sandbox root for download_kling_video outputs. Must resolve inside MCP_WORKSPACE_PATH. Defaults to <workspace>/kling-downloads.",
+          "format": "filepath",
+          "name": "KLING_DOWNLOAD_ROOT"
+        }
+      ],
+      "identifier": "@mindstone/mcp-server-kling",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d65f547977",
+    "published_at": "2026-08-07T15:21:09.766514Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mindstone/mcp-server-kling",
+    "server_version": "0.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-07T15:21:09.766514Z"
+  },
+  "title": "Kling",
+  "type": "mcp_server",
+  "version": "0.4.0"
+}

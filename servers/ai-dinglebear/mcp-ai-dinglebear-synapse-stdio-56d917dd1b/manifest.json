@@ -1,0 +1,105 @@
+{
+  "description": "Host, Docker, Compose, SSH, logs, ZFS, and file operations over MCP and CLI.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:18+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-dinglebear-synapse.stdio.56d917dd1b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/dinglebear-ai/synapse",
+    "homepage": "https://github.com/dinglebear-ai/synapse",
+    "repository": "https://github.com/dinglebear-ai/synapse"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@dinglebear/synapse@1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.dinglebear/synapse",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional Synapse appdata directory.",
+          "format": "string",
+          "name": "SYNAPSE_HOME",
+          "placeholder": "~/.synapse"
+        },
+        {
+          "description": "Inline host topology as a JSON array.",
+          "format": "string",
+          "name": "SYNAPSE_HOSTS_CONFIG"
+        },
+        {
+          "description": "Path to a host configuration file.",
+          "format": "string",
+          "name": "SYNAPSE_CONFIG_FILE"
+        },
+        {
+          "description": "Optional GitHub release tag override for the downloaded Synapse binary.",
+          "format": "string",
+          "name": "SYNAPSE_RMCP_VERSION",
+          "placeholder": "v1.0.0"
+        },
+        {
+          "default": "dinglebear-ai/synapse",
+          "description": "Optional GitHub owner/repo override for release asset downloads.",
+          "format": "string",
+          "name": "SYNAPSE_RMCP_REPO",
+          "placeholder": "dinglebear-ai/synapse"
+        },
+        {
+          "description": "Optional release download base URL override.",
+          "format": "string",
+          "name": "SYNAPSE_RMCP_RELEASE_BASE_URL"
+        },
+        {
+          "default": "info,rmcp=warn",
+          "description": "Tracing filter for Synapse logs.",
+          "format": "string",
+          "name": "RUST_LOG",
+          "placeholder": "info,rmcp=warn"
+        }
+      ],
+      "identifier": "@dinglebear/synapse",
+      "packageArguments": [
+        {
+          "description": "Run Synapse RMCP over stdio.",
+          "format": "string",
+          "isRequired": true,
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "56d917dd1b",
+    "published_at": "2026-08-04T21:53:02.736003Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.dinglebear/synapse",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-04T21:53:02.736003Z"
+  },
+  "title": "Synapse RMCP",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

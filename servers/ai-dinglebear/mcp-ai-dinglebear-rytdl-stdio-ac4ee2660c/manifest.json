@@ -1,0 +1,93 @@
+{
+  "description": "yt-dlp search, download, metadata, delivery, and Plex workflows over MCP and CLI.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:18+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-dinglebear-rytdl.stdio.ac4ee2660c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/dinglebear-ai/rytdl",
+    "homepage": "https://github.com/dinglebear-ai/rytdl",
+    "repository": "https://github.com/dinglebear-ai/rytdl"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@dinglebear/rytdl@1.0.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.dinglebear/rytdl",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional Plex server URL for playlist and Plex sync workflows.",
+          "format": "string",
+          "name": "YTDLP_PLEX_URL",
+          "placeholder": "http://plex.local:32400"
+        },
+        {
+          "description": "Optional Plex token for playlist and Plex sync workflows.",
+          "format": "string",
+          "isSecret": true,
+          "name": "YTDLP_PLEX_TOKEN"
+        },
+        {
+          "description": "Optional AcoustID client key for identification and auto-retagging workflows.",
+          "format": "string",
+          "isSecret": true,
+          "name": "YTDLP_ACOUSTID_CLIENT_KEY"
+        },
+        {
+          "description": "Optional GitHub release tag override for the downloaded YTDL RMCP binary.",
+          "format": "string",
+          "name": "YTDL_RMCP_BINARY_VERSION",
+          "placeholder": "v1.0.1"
+        },
+        {
+          "default": "https://github.com/dinglebear-ai/rytdl/releases/download",
+          "description": "Optional release download base URL override.",
+          "format": "string",
+          "name": "YTDL_RMCP_RELEASE_BASE_URL",
+          "placeholder": "https://github.com/dinglebear-ai/rytdl/releases/download"
+        },
+        {
+          "default": "info",
+          "description": "Tracing filter for YTDL RMCP logs.",
+          "format": "string",
+          "name": "RUST_LOG",
+          "placeholder": "info"
+        }
+      ],
+      "identifier": "@dinglebear/rytdl",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ac4ee2660c",
+    "published_at": "2026-08-04T21:50:43.461348Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.dinglebear/rytdl",
+    "server_version": "1.0.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-04T21:50:43.461348Z"
+  },
+  "title": "YTDL RMCP",
+  "type": "mcp_server",
+  "version": "1.0.4"
+}

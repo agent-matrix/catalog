@@ -1,0 +1,163 @@
+{
+  "description": "Read and write checked code rationale stored outside source comments.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:25+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-koment-dev-koment.stdio.f71b983ed5",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/koment-dev/koment",
+    "homepage": "https://github.com/koment-dev/koment",
+    "repository": "https://github.com/koment-dev/koment"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "type": "positional",
+            "value": "run"
+          },
+          {
+            "type": "positional",
+            "value": "--rm"
+          },
+          {
+            "type": "positional",
+            "value": "--interactive"
+          },
+          {
+            "type": "positional",
+            "value": "--user"
+          },
+          {
+            "type": "positional",
+            "value": "{host_user}",
+            "variables": {
+              "host_user": {
+                "description": "Host UID:GID allowed to write the repository mount.",
+                "isRequired": true,
+                "placeholder": "1000:1000"
+              }
+            }
+          },
+          {
+            "type": "positional",
+            "value": "--mount"
+          },
+          {
+            "type": "positional",
+            "value": "type=bind,src={repository},dst=/workspace",
+            "variables": {
+              "repository": {
+                "description": "Absolute path to the koment-enabled repository.",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          {
+            "type": "positional",
+            "value": "--workdir"
+          },
+          {
+            "type": "positional",
+            "value": "/workspace"
+          },
+          "ghcr.io/koment-dev/koment:2.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.koment-dev/koment",
+  "packages": [
+    {
+      "identifier": "ghcr.io/koment-dev/koment:2.0.1",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        },
+        {
+          "type": "positional",
+          "value": "--write"
+        }
+      ],
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "--rm"
+        },
+        {
+          "type": "positional",
+          "value": "--interactive"
+        },
+        {
+          "type": "positional",
+          "value": "--user"
+        },
+        {
+          "type": "positional",
+          "value": "{host_user}",
+          "variables": {
+            "host_user": {
+              "description": "Host UID:GID allowed to write the repository mount.",
+              "isRequired": true,
+              "placeholder": "1000:1000"
+            }
+          }
+        },
+        {
+          "type": "positional",
+          "value": "--mount"
+        },
+        {
+          "type": "positional",
+          "value": "type=bind,src={repository},dst=/workspace",
+          "variables": {
+            "repository": {
+              "description": "Absolute path to the koment-enabled repository.",
+              "format": "filepath",
+              "isRequired": true
+            }
+          }
+        },
+        {
+          "type": "positional",
+          "value": "--workdir"
+        },
+        {
+          "type": "positional",
+          "value": "/workspace"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "f71b983ed5",
+    "published_at": "2026-08-06T08:48:50.189236Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.koment-dev/koment",
+    "server_version": "2.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-06T08:48:50.189236Z"
+  },
+  "title": "koment",
+  "type": "mcp_server",
+  "version": "2.0.1"
+}

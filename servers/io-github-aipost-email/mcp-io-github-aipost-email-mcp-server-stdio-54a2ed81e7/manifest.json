@@ -1,0 +1,79 @@
+{
+  "description": "Typed structured messaging for AI agents via AIPost.email with Ed25519 signing",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:35+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-AIPOST-EMAIL-mcp-server.stdio.54a2ed81e7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/AIPOST-EMAIL/mcp-server",
+    "homepage": "https://github.com/AIPOST-EMAIL/mcp-server",
+    "repository": "https://github.com/AIPOST-EMAIL/mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "node",
+          "@aipost/mcp-server@1.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.AIPOST-EMAIL/mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your AIPost.email API key (starts with mfo_). Get one for free at https://aipost.email/register",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AIPOST_API_KEY"
+        },
+        {
+          "description": "Optional path to an Ed25519 private key file for message signing",
+          "name": "AIPOST_ED25519_KEY_PATH"
+        },
+        {
+          "description": "Override the AIPost.email API base URL (default: https://aipost.email)",
+          "name": "AIPOST_BASE_URL"
+        }
+      ],
+      "identifier": "@aipost/mcp-server",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "-y"
+        },
+        {
+          "type": "positional",
+          "value": "@aipost/mcp-server"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "node",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "54a2ed81e7",
+    "published_at": "2026-08-09T04:03:55.020056Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.AIPOST-EMAIL/mcp-server",
+    "server_version": "1.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-09T04:03:55.020056Z"
+  },
+  "title": "AIPost MCP Server",
+  "type": "mcp_server",
+  "version": "1.1.1"
+}

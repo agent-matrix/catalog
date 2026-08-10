@@ -1,0 +1,104 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/skyhook-io/radar:1.9.2"
+      }
+    }
+  ],
+  "description": "Kubernetes visibility for AI agents: query workloads, events, logs, topology, and Helm releases.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:43+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/skyhook-io/radar",
+  "id": "tool.io-github-skyhook-io-radar.6e37434ff9",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/skyhook-io/radar",
+    "homepage": "https://github.com/skyhook-io/radar",
+    "repository": "https://github.com/skyhook-io/radar"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Kubernetes visibility for AI agents: query workloads, events, logs, topology, and Helm releases.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.skyhook-io/radar",
+      "request_type": "POST",
+      "url": "https://github.com/skyhook-io/radar"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Expose Radar's HTTP server (UI + MCP) on 127.0.0.1:9280 only",
+            "isRequired": true,
+            "name": "-p",
+            "type": "named",
+            "value": "127.0.0.1:9280:9280"
+          },
+          {
+            "description": "Mount your kubeconfig into the container (read-only)",
+            "isRequired": true,
+            "name": "-v",
+            "type": "named",
+            "value": "{kubeconfig_path}:/kubeconfig:ro",
+            "variables": {
+              "kubeconfig_path": {
+                "description": "Absolute path to your kubeconfig file on the host, e.g. /home/you/.kube/config (a leading ~ is not expanded when the client execs docker directly)",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          {
+            "description": "Point Radar at the mounted kubeconfig",
+            "isRequired": true,
+            "name": "-e",
+            "type": "named",
+            "value": "KUBECONFIG=/kubeconfig"
+          },
+          "ghcr.io/skyhook-io/radar:1.9.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.skyhook-io/radar",
+  "provenance": {
+    "identity_key": "06006505fe",
+    "promoted_from": "mcp.io-github-skyhook-io-radar.stdio.06006505fe",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.skyhook-io/radar",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-skyhook-io-radar.stdio.06006505fe",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/skyhook-io/radar",
+  "summary": "Kubernetes visibility for AI agents: query workloads, events, logs, topology, and Helm releases.",
+  "tags": [
+    "agents",
+    "events",
+    "kubernetes",
+    "query",
+    "radar",
+    "visibility",
+    "workloads"
+  ],
+  "title": "Radar",
+  "type": "tool",
+  "version": "1.9.2"
+}

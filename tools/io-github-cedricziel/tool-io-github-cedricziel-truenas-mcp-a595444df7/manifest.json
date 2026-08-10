@@ -1,0 +1,82 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/cedricziel/truenas-mcp:0.2.3"
+      }
+    }
+  ],
+  "description": "Inspect and manage TrueNAS SCALE storage, shares, apps and system state with your own API key",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:03+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/cedricziel/truenas-mcp",
+  "id": "tool.io-github-cedricziel-truenas-mcp.a595444df7",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cedricziel/truenas-mcp",
+    "homepage": "https://github.com/cedricziel/truenas-mcp",
+    "repository": "https://github.com/cedricziel/truenas-mcp"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Inspect and manage TrueNAS SCALE storage, shares, apps and system state with your own API key",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.cedricziel/truenas-mcp",
+      "request_type": "POST",
+      "url": "https://github.com/cedricziel/truenas-mcp"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Bind the MCP listener to loopback only. Plaintext is enabled below on the assumption that nothing off-host can reach it.",
+            "name": "--publish",
+            "type": "named",
+            "value": "127.0.0.1:8080:8080"
+          },
+          "ghcr.io/cedricziel/truenas-mcp:0.2.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cedricziel/truenas-mcp",
+  "provenance": {
+    "identity_key": "d778082530",
+    "promoted_from": "mcp.io-github-cedricziel-truenas-mcp.stdio.d778082530",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cedricziel/truenas-mcp",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-cedricziel-truenas-mcp.stdio.d778082530",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/cedricziel/truenas-mcp",
+  "summary": "Inspect and manage TrueNAS SCALE storage, shares, apps and system state with your own API key",
+  "tags": [
+    "apps",
+    "inspect",
+    "manage",
+    "scale",
+    "shares",
+    "storage",
+    "truenas"
+  ],
+  "title": "TrueNAS SCALE",
+  "type": "tool",
+  "version": "0.2.3"
+}

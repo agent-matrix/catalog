@@ -1,0 +1,79 @@
+{
+  "description": "Pull Hilan (Hilanet / \u05d7\u05d9\u05dc\u05df, \u05d7\u05d9\u05dc\u05e0\u05d8) payslips and Form 106 into any AI assistant.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:47+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-udah1-hilan-mcp.stdio.e2e3a48724",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/udah1/hilan-mcp",
+    "homepage": "https://github.com/udah1/hilan-mcp",
+    "repository": "https://github.com/udah1/hilan-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "hilan-mcp@0.3.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.udah1/hilan-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Default tenant as a full URL, e.g. \"https://amdocs.net.hilan.co.il\" (optional if you always pass a `tenant` argument to tools instead). Takes priority over COMPANY_TENANT/COMPANY_CODE.",
+          "format": "string",
+          "name": "COMPANY_URL"
+        },
+        {
+          "description": "Default tenant subdomain, e.g. \"amdocs\" (optional if COMPANY_URL is set or a `tenant` argument is always passed to tools).",
+          "format": "string",
+          "name": "COMPANY_TENANT"
+        },
+        {
+          "description": "Default tenant as a numeric org code, e.g. \"5227\" (optional, lowest priority of the three tenant env vars).",
+          "format": "string",
+          "name": "COMPANY_CODE"
+        },
+        {
+          "description": "Database encryption key (only needed if you skip `npx hilan-mcp setup-key`, which stores it in your OS credential store instead).",
+          "format": "string",
+          "isSecret": true,
+          "name": "HILAN_DB_KEY"
+        },
+        {
+          "description": "Path to a CA bundle, only needed on a network with a TLS-intercepting corporate proxy (e.g. \"self-signed certificate in certificate chain\" errors).",
+          "format": "string",
+          "name": "NODE_EXTRA_CA_CERTS"
+        }
+      ],
+      "identifier": "hilan-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e2e3a48724",
+    "published_at": "2026-08-06T17:39:21.205879Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.udah1/hilan-mcp",
+    "server_version": "0.3.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-06T17:39:21.205879Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.2"
+}

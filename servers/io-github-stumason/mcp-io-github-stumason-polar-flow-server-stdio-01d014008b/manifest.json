@@ -1,0 +1,78 @@
+{
+  "description": "Self-hosted Polar health analytics with a built-in MCP server: sleep, HRV, workouts, baselines.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:53+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-StuMason-polar-flow-server.stdio.01d014008b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/StuMason/polar-flow-server",
+    "homepage": "https://github.com/StuMason/polar-flow-server",
+    "repository": "https://github.com/StuMason/polar-flow-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "docker.io/stumason/polar-flow-server:1.5.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.StuMason/polar-flow-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "PostgreSQL connection string, e.g. postgresql+asyncpg://user:pass@host:5432/polar",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DATABASE_URL"
+        },
+        {
+          "description": "Polar AccessLink OAuth client id (register at admin.polaraccesslink.com)",
+          "format": "string",
+          "isRequired": true,
+          "name": "POLAR_CLIENT_ID"
+        },
+        {
+          "description": "Polar AccessLink OAuth client secret",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "POLAR_CLIENT_SECRET"
+        },
+        {
+          "description": "Public HTTPS base URL of this deployment; enables OAuth sign-in for MCP connectors",
+          "format": "string",
+          "name": "BASE_URL"
+        }
+      ],
+      "identifier": "docker.io/stumason/polar-flow-server:1.5.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:8000/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "01d014008b",
+    "published_at": "2026-08-06T10:09:44.400115Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.StuMason/polar-flow-server",
+    "server_version": "1.5.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-06T10:09:44.400115Z"
+  },
+  "title": "Polar Health Data (self-hosted)",
+  "type": "mcp_server",
+  "version": "1.5.0"
+}

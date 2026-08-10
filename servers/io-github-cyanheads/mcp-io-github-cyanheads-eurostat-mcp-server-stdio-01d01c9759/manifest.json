@@ -1,0 +1,154 @@
+{
+  "description": "Search and query the Eurostat catalogue \u2014 EU economy, demography, trade, and NUTS regional data.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:08+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cyanheads-eurostat-mcp-server.stdio.01d01c9759",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cyanheads/eurostat-mcp-server",
+    "homepage": "https://github.com/cyanheads/eurostat-mcp-server",
+    "repository": "https://github.com/cyanheads/eurostat-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "bun",
+          "@cyanheads/eurostat-mcp-server@0.5.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cyanheads/eurostat-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "127.0.0.1",
+          "description": "The hostname for the HTTP server.",
+          "format": "string",
+          "name": "MCP_HTTP_HOST"
+        },
+        {
+          "default": "3010",
+          "description": "The port to run the HTTP server on.",
+          "format": "string",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "default": "/mcp",
+          "description": "The endpoint path for the MCP server.",
+          "format": "string",
+          "name": "MCP_HTTP_ENDPOINT_PATH"
+        },
+        {
+          "description": "Public origin override for deployments behind a TLS-terminating reverse proxy (e.g. https://mcp.example.com).",
+          "format": "string",
+          "name": "MCP_PUBLIC_URL"
+        },
+        {
+          "default": "none",
+          "description": "Authentication mode to use: 'none', 'jwt', or 'oauth'.",
+          "format": "string",
+          "name": "MCP_AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Sets the minimum log level for output (e.g., 'debug', 'info', 'warn').",
+          "format": "string",
+          "name": "MCP_LOG_LEVEL"
+        },
+        {
+          "default": "https://ec.europa.eu/eurostat/api/dissemination",
+          "description": "Eurostat API base URL. Override when using a mirror or proxy.",
+          "format": "string",
+          "name": "EUROSTAT_BASE_URL"
+        },
+        {
+          "default": "30000",
+          "description": "HTTP request timeout in milliseconds for Eurostat API calls.",
+          "format": "string",
+          "name": "EUROSTAT_REQUEST_TIMEOUT_MS"
+        },
+        {
+          "default": "43200000",
+          "description": "How long a fetched catalogue TOC stays usable before the next catalogue call refreshes it, in milliseconds. Defaults to 12 hours.",
+          "format": "string",
+          "name": "EUROSTAT_TOC_CACHE_TTL_MS"
+        },
+        {
+          "default": "120000",
+          "description": "HTTP timeout for one eurostat_download_dataset transfer, in milliseconds. Held separate from EUROSTAT_REQUEST_TIMEOUT_MS because a bulk body streams for minutes where a metadata call answers in seconds. Defaults to 2 minutes.",
+          "format": "string",
+          "name": "EUROSTAT_BULK_TIMEOUT_MS"
+        },
+        {
+          "default": "52428800",
+          "description": "Byte budget for one eurostat_download_dataset transfer, counted on the decoded TSV rather than on the wire. Eurostat sends the body chunked with no Content-Length, so the budget is enforced while streaming and the transfer is aborted when it is reached. Defaults to 50 MiB.",
+          "format": "string",
+          "name": "EUROSTAT_BULK_MAX_BYTES"
+        },
+        {
+          "default": "none",
+          "description": "Set to 'duckdb' to enable the dataframe canvas, which lists the eurostat_dataframe_describe and eurostat_dataframe_query tools, lets eurostat_query_dataset stage a match larger than its 5,000-row inline cap as a SQL table, and lets eurostat_download_dataset retain a whole bulk download instead of only its inline preview. The DuckDB binding ships with the server, so this variable is the only switch.",
+          "format": "string",
+          "name": "CANVAS_PROVIDER_TYPE"
+        },
+        {
+          "description": "Directory DuckDB writes canvas spill files to. Must be writable by the server process. Defaults to a 'mcp-canvas' directory under the OS temp directory.",
+          "format": "string",
+          "name": "CANVAS_TEMP_PATH"
+        },
+        {
+          "default": "86400000",
+          "description": "Sliding lifetime of a staged dataframe canvas in milliseconds; every call against it extends the window. Defaults to 24 hours.",
+          "format": "string",
+          "name": "CANVAS_TTL_MS"
+        },
+        {
+          "default": "10000",
+          "description": "Maximum rows a single eurostat_dataframe_query returns before the result is reported as truncated.",
+          "format": "string",
+          "name": "CANVAS_DEFAULT_ROW_LIMIT"
+        }
+      ],
+      "identifier": "@cyanheads/eurostat-mcp-server",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "start:http"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "bun",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3010/mcp"
+      },
+      "version": "0.5.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "01d01c9759",
+    "published_at": "2026-08-04T16:57:20.197805Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cyanheads/eurostat-mcp-server",
+    "server_version": "0.5.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-04T16:57:20.197805Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.5.0"
+}

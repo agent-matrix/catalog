@@ -1,0 +1,130 @@
+{
+  "description": "Local-first RAG MCP server: hybrid search over a folder of your own documents",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sfrangulov-minirag-mcp.stdio.37b69b74e3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sfrangulov/minirag-mcp",
+    "homepage": "https://github.com/sfrangulov/minirag-mcp",
+    "repository": "https://github.com/sfrangulov/minirag-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "minirag-mcp==0.5.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sfrangulov/minirag-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "One document root; also the security boundary for file access. Defaults to the process working directory. Ignored when BASE_DIRS is set.",
+          "format": "filepath",
+          "name": "BASE_DIR"
+        },
+        {
+          "description": "JSON array of document roots, e.g. [\"/docs/a\", \"/docs/b\"]. Takes precedence over BASE_DIR. An invalid value is a hard configuration error.",
+          "format": "string",
+          "name": "BASE_DIRS",
+          "placeholder": "[\"/docs/a\", \"/docs/b\"]"
+        },
+        {
+          "description": "LanceDB index directory. Defaults to <first root>/.minirag/lancedb, so each corpus gets its own index.",
+          "format": "filepath",
+          "name": "DB_PATH"
+        },
+        {
+          "description": "Embedding model cache. Defaults to the platform user cache dir, so the ~220 MB model is downloaded once and shared.",
+          "format": "filepath",
+          "name": "CACHE_DIR"
+        },
+        {
+          "default": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+          "description": "fastembed model id. Changing it makes existing vectors incompatible with new queries; pair with a new DB_PATH or a full re-ingest.",
+          "format": "string",
+          "name": "MODEL_NAME"
+        },
+        {
+          "default": "104857600",
+          "description": "Per-file size limit in bytes, enforced before parsing.",
+          "format": "number",
+          "name": "MAX_FILE_SIZE"
+        },
+        {
+          "default": "110",
+          "description": "Retrieval-unit size in the embedding model's own tokens. Range 16-128; the ceiling is the model's trained sequence length.",
+          "format": "number",
+          "name": "CHUNK_TOKEN_BUDGET"
+        },
+        {
+          "default": "0.6",
+          "description": "Keyword weight in the weighted RRF fusion, range 0.0-1.0. 0 is vector-only; higher values raise the BM25 contribution.",
+          "format": "number",
+          "name": "RAG_HYBRID_WEIGHT"
+        },
+        {
+          "choices": [
+            "similar",
+            "related"
+          ],
+          "description": "Result grouping filter. 'similar' keeps only the closest group; 'related' also keeps the next one. Unset means no grouping filter.",
+          "format": "string",
+          "name": "RAG_GROUPING"
+        },
+        {
+          "description": "Drop results whose vector distance exceeds this value. Lower is stricter. Unset means no distance filter.",
+          "format": "number",
+          "name": "RAG_MAX_DISTANCE"
+        },
+        {
+          "description": "Keep chunks from at most this many best-scoring files. Unset means no per-file filter.",
+          "format": "number",
+          "name": "RAG_MAX_FILES"
+        },
+        {
+          "description": "Extra paragraph appended to the instructions the server hands the client at connect time, for corpus-specific guidance.",
+          "format": "string",
+          "name": "RAG_INSTRUCTIONS_APPEND"
+        },
+        {
+          "default": "false",
+          "description": "Let ingest_url fetch hosts resolving to loopback, link-local, private, reserved or unspecified addresses. Off by default.",
+          "format": "boolean",
+          "name": "ALLOW_PRIVATE_URLS"
+        }
+      ],
+      "identifier": "minirag-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "37b69b74e3",
+    "published_at": "2026-08-09T19:21:06.346417Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sfrangulov/minirag-mcp",
+    "server_version": "0.5.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-09T19:21:06.346417Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.5.0"
+}

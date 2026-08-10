@@ -1,0 +1,90 @@
+{
+  "description": "Answer questions from documents too large to fit in context, reading only the sections you need.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:43+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-DocSlicer-docslicer.stdio.7bd7b61ab1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/DocSlicer/DocSlicer",
+    "homepage": "https://github.com/DocSlicer/DocSlicer",
+    "repository": "https://github.com/DocSlicer/DocSlicer"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "isRequired": true,
+            "name": "--from",
+            "type": "named",
+            "value": "docslicer[mcp]==0.2.3"
+          },
+          {
+            "isRequired": true,
+            "type": "positional",
+            "value": "docslicer-mcp"
+          },
+          "docslicer==0.2.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.DocSlicer/docslicer",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Restrict file sources and outputs to this directory tree.",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "DOCSLICER_MCP_ROOT"
+        },
+        {
+          "default": "1",
+          "description": "Set to 0 to reject http(s) sources and only permit local files.",
+          "name": "DOCSLICER_MCP_ALLOW_URLS"
+        }
+      ],
+      "identifier": "docslicer",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "isRequired": true,
+          "name": "--from",
+          "type": "named",
+          "value": "docslicer[mcp]==0.2.3"
+        },
+        {
+          "isRequired": true,
+          "type": "positional",
+          "value": "docslicer-mcp"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7bd7b61ab1",
+    "published_at": "2026-08-10T03:27:53.123402Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.DocSlicer/docslicer",
+    "server_version": "0.2.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-10T03:27:53.123402Z"
+  },
+  "title": "DocSlicer",
+  "type": "mcp_server",
+  "version": "0.2.3"
+}

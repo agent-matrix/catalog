@@ -1,0 +1,89 @@
+{
+  "description": "MCP server for Cisco Catalyst SD-WAN (vManage): fabric inventory, device health, alarms, policies.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:35+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-pcDamasceno-cisco-sdwan-mcp.stdio.583ec071c4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/pcDamasceno/cisco-sdwan-mcp",
+    "homepage": "https://github.com/pcDamasceno/cisco-sdwan-mcp",
+    "repository": "https://github.com/pcDamasceno/cisco-sdwan-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "cisco-sdwan-mcp==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.pcDamasceno/cisco-sdwan-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Cisco Catalyst SD-WAN Manager URL, e.g. https://vmanage.example.com:8443",
+          "isRequired": true,
+          "name": "SDWAN_VMANAGE_URL"
+        },
+        {
+          "description": "vManage username. Use a dedicated read-only account.",
+          "isRequired": true,
+          "name": "SDWAN_USERNAME"
+        },
+        {
+          "description": "vManage password for SDWAN_USERNAME.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SDWAN_PASSWORD"
+        },
+        {
+          "default": "stdio",
+          "description": "Must be stdio for this install. The server itself defaults to http; set http only when deploying it as a service.",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "true",
+          "description": "Verify the vManage TLS certificate. Prefer SDWAN_CA_BUNDLE over disabling this.",
+          "name": "SDWAN_VERIFY_SSL"
+        },
+        {
+          "description": "Path to a CA bundle for a private-CA or self-signed vManage certificate.",
+          "name": "SDWAN_CA_BUNDLE"
+        },
+        {
+          "default": "false",
+          "description": "Register the configuration-changing tools. Read-only when unset.",
+          "name": "SDWAN_ENABLE_WRITES"
+        }
+      ],
+      "identifier": "cisco-sdwan-mcp",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "583ec071c4",
+    "published_at": "2026-08-04T18:22:30.556004Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.pcDamasceno/cisco-sdwan-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-04T18:22:30.556004Z"
+  },
+  "title": "Cisco SD-WAN MCP Server",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

@@ -1,0 +1,83 @@
+{
+  "description": "MCP server for Oracle, MSSQL, PostgreSQL, MySQL, SQLite, MongoDB, and Qdrant vector search access.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:35+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-phatngoit-mcp-db-connect.stdio.b19ab94279",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/phatngoit/MCP-DB",
+    "homepage": "https://github.com/phatngoit/MCP-DB",
+    "repository": "https://github.com/phatngoit/MCP-DB"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-db-connect@0.1.21"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.phatngoit/mcp-db-connect",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Full mcp-db-connect config (security + connections) as YAML or JSON. When set, file-based config discovery is skipped entirely.",
+          "isSecret": true,
+          "name": "MCP_DB_CONFIG"
+        }
+      ],
+      "identifier": "mcp-db-connect",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "serve-http"
+        },
+        {
+          "default": "127.0.0.1",
+          "name": "--host",
+          "type": "named"
+        },
+        {
+          "default": "3000",
+          "format": "number",
+          "name": "--port",
+          "type": "named"
+        },
+        {
+          "default": "/mcp",
+          "name": "--path",
+          "type": "named"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://127.0.0.1:3000/mcp"
+      },
+      "version": "0.1.21"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b19ab94279",
+    "published_at": "2026-08-05T18:56:35.361515Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.phatngoit/mcp-db-connect",
+    "server_version": "0.1.21",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-05T18:56:35.361515Z"
+  },
+  "title": "MCP DB Connect",
+  "type": "mcp_server",
+  "version": "0.1.21"
+}

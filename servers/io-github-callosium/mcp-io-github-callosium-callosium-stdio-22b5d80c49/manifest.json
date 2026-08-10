@@ -1,0 +1,85 @@
+{
+  "description": "One shared memory for every AI you use, in plain Markdown files you own.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:03+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-callosium-callosium.stdio.22b5d80c49",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/callosium/callosium",
+    "homepage": "https://github.com/callosium/callosium",
+    "repository": "https://github.com/callosium/callosium"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "callosium@0.1.18"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.callosium/callosium",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional. Where the local embedding model is cached. Defaults to a per-user cache directory.",
+          "format": "filepath",
+          "name": "CALLOSIUM_MODEL_DIR"
+        }
+      ],
+      "identifier": "callosium",
+      "packageArguments": [
+        {
+          "description": "Serve the brain over MCP on stdio.",
+          "type": "positional",
+          "value": "mcp"
+        },
+        {
+          "description": "Path to your brain folder. Run 'callosium' first: the dashboard creates or adopts it.",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "--brain",
+          "type": "named"
+        },
+        {
+          "description": "Agent id for this AI client, issued by the dashboard's Agents screen.",
+          "isRequired": true,
+          "name": "--agent",
+          "type": "named"
+        },
+        {
+          "description": "Token for this agent, issued alongside the id. Scopes which folders this AI may read.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "--token",
+          "type": "named"
+        }
+      ],
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.18"
+    }
+  ],
+  "provenance": {
+    "identity_key": "22b5d80c49",
+    "published_at": "2026-08-04T13:25:39.544493Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.callosium/callosium",
+    "server_version": "0.1.18",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-04T13:25:39.544493Z"
+  },
+  "title": "Callosium",
+  "type": "mcp_server",
+  "version": "0.1.18"
+}

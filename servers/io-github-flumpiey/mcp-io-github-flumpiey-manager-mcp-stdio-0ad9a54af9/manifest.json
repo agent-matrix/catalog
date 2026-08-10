@@ -1,0 +1,74 @@
+{
+  "description": "MCP server for Manager.io bookkeeping: read-first with opt-in scoped task and write tools",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:17+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-flumpiey-manager-mcp.stdio.0ad9a54af9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/flumpiey/manager-mcp",
+    "homepage": "https://github.com/flumpiey/manager-mcp",
+    "repository": "https://github.com/flumpiey/manager-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "manager-mcp==0.2.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.flumpiey/manager-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Manager API base URL (include /api2 when required)",
+          "isRequired": true,
+          "name": "MANAGER_API_URL"
+        },
+        {
+          "description": "Access token from Manager Settings (sent as X-API-KEY)",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "MANAGER_API_KEY"
+        },
+        {
+          "description": "Comma-separated write scopes: quotes,orders,parties,items,sales,purchases,banking,payroll,ledger,raw. Recommended: banking,sales,parties",
+          "name": "MANAGER_MCP_WRITE_SCOPES"
+        },
+        {
+          "description": "Comma-separated delete scopes (never implied by write scopes)",
+          "name": "MANAGER_MCP_DELETE_SCOPES"
+        }
+      ],
+      "identifier": "manager-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0ad9a54af9",
+    "published_at": "2026-08-03T21:36:35.653249Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.flumpiey/manager-mcp",
+    "server_version": "0.2.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-03T21:36:35.653249Z"
+  },
+  "title": "Manager.io MCP",
+  "type": "mcp_server",
+  "version": "0.2.6"
+}

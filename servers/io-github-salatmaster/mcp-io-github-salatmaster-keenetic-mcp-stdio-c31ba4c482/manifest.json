@@ -1,0 +1,69 @@
+{
+  "description": "Control a Keenetic router: devices, Wi-Fi, VPN routing, segments, safe verified writes.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-salatmaster-keenetic-mcp.stdio.c31ba4c482",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/salatmaster/keenetic-mcp",
+    "homepage": "https://github.com/salatmaster/keenetic-mcp",
+    "repository": "https://github.com/salatmaster/keenetic-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "keenetic-mcp@0.3.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.salatmaster/keenetic-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Router address on the LAN, for example 192.168.1.1. Optional: `npx keenetic-mcp init` discovers it from the default gateway and stores it.",
+          "format": "string",
+          "name": "KEENETIC_HOST"
+        },
+        {
+          "description": "Router login. Optional, defaults to admin.",
+          "format": "string",
+          "name": "KEENETIC_USER"
+        },
+        {
+          "description": "Router password. Optional: the setup wizard stores it in the operating system keychain instead. Use this in a container, where there is no keychain.",
+          "format": "string",
+          "isSecret": true,
+          "name": "KEENETIC_PASSWORD"
+        }
+      ],
+      "identifier": "keenetic-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c31ba4c482",
+    "published_at": "2026-08-08T14:15:11.862819Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.salatmaster/keenetic-mcp",
+    "server_version": "0.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-08T14:15:11.862819Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.1"
+}

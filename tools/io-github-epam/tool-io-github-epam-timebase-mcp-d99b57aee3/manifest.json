@@ -1,0 +1,82 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/epam/timebase-mcp:0.2.2"
+      }
+    }
+  ],
+  "description": "Explore and query TimeBase streams, schemas, QQL, symbols, and server status via MCP.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/epam/TimeBase-MCP",
+  "id": "tool.io-github-epam-timebase-mcp.d99b57aee3",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/epam/TimeBase-MCP",
+    "homepage": "https://github.com/epam/TimeBase-MCP",
+    "repository": "https://github.com/epam/TimeBase-MCP"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Explore and query TimeBase streams, schemas, QQL, symbols, and server status via MCP.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.epam/TimeBase-MCP",
+      "request_type": "POST",
+      "url": "https://github.com/epam/TimeBase-MCP"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Publish the MCP HTTP port.",
+            "name": "-p",
+            "type": "named",
+            "value": "8000:8000"
+          },
+          "ghcr.io/epam/timebase-mcp:0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.epam/TimeBase-MCP",
+  "provenance": {
+    "identity_key": "1de46fb020",
+    "promoted_from": "mcp.io-github-epam-TimeBase-MCP.stdio.1de46fb020",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.epam/TimeBase-MCP",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-epam-TimeBase-MCP.stdio.1de46fb020",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/epam/TimeBase-MCP",
+  "summary": "Explore and query TimeBase streams, schemas, QQL, symbols, and server status via MCP.",
+  "tags": [
+    "explore",
+    "query",
+    "schemas",
+    "status",
+    "streams",
+    "symbols",
+    "timebase"
+  ],
+  "title": "TimeBase",
+  "type": "tool",
+  "version": "0.2.2"
+}

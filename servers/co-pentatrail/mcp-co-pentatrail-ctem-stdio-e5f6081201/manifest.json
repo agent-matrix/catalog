@@ -1,0 +1,63 @@
+{
+  "description": "PentaTrail ASM/CTEM: attack surface discovery, asset inventory, findings by threat level",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.co-pentatrail-ctem.stdio.e5f6081201",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@pentatrail/mcp-server@0.7.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "co.pentatrail/ctem",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "PentaTrail API key (ptk_...). Create one in Dashboard > Settings.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PENTATRAIL_API_KEY"
+        },
+        {
+          "default": "https://api.pentatrail.co",
+          "description": "Customer API base URL.",
+          "format": "string",
+          "isRequired": true,
+          "name": "PENTATRAIL_API_URL"
+        }
+      ],
+      "identifier": "@pentatrail/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.7.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e5f6081201",
+    "published_at": "2026-08-09T13:18:58.461174Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "co.pentatrail/ctem",
+    "server_version": "0.7.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-09T13:18:58.461174Z"
+  },
+  "title": "PentaTrail CTEM",
+  "type": "mcp_server",
+  "version": "0.7.1"
+}

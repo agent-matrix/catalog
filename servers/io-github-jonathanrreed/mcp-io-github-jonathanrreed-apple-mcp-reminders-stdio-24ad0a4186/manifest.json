@@ -1,0 +1,72 @@
+{
+  "description": "List, create, update, complete, and delete reminders in Apple Reminders on macOS.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:45+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-JonathanRReed-apple-mcp-reminders.stdio.24ad0a4186",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/JonathanRReed/Apple-MCPs",
+    "homepage": "https://github.com/JonathanRReed/Apple-MCPs",
+    "repository": "https://github.com/JonathanRReed/Apple-MCPs"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "apple-mcp-reminders==1.0.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.JonathanRReed/apple-mcp-reminders",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "choices": [
+            "safe_readonly",
+            "safe_manage",
+            "full_access"
+          ],
+          "default": "safe_manage",
+          "description": "Safety mode for Reminders operations: safe_readonly, safe_manage, or full_access.",
+          "format": "string",
+          "name": "APPLE_REMINDERS_MCP_SAFETY_MODE"
+        },
+        {
+          "description": "Comma-separated allow-list of reminder list names. Empty allows all lists.",
+          "format": "string",
+          "name": "APPLE_REMINDERS_MCP_ALLOWED_LISTS",
+          "placeholder": "Reminders,Groceries"
+        }
+      ],
+      "identifier": "apple-mcp-reminders",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "24ad0a4186",
+    "published_at": "2026-08-05T18:22:24.066694Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.JonathanRReed/apple-mcp-reminders",
+    "server_version": "1.0.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-05T18:22:24.066694Z"
+  },
+  "title": "Apple Reminders",
+  "type": "mcp_server",
+  "version": "1.0.2"
+}

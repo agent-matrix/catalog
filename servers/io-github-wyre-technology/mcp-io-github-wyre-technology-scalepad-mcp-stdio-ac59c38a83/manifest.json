@@ -1,0 +1,94 @@
+{
+  "description": "MCP server for ScalePad \u2014 Core, Lifecycle Manager, ControlMap, Backup Radar, and Quoter.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:51+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wyre-technology-scalepad-mcp.stdio.ac59c38a83",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wyre-technology/scalepad-mcp",
+    "homepage": "https://github.com/wyre-technology/scalepad-mcp",
+    "repository": "https://github.com/wyre-technology/scalepad-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-technology/scalepad-mcp:v1.0.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wyre-technology/scalepad-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "ScalePad platform API key (generated in the ScalePad app by an Administrator)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SCALEPAD_API_KEY"
+        },
+        {
+          "default": "us",
+          "description": "Data-residency region for ControlMap/Backup Radar: 'us' (default), 'eu', 'ca', or 'au'",
+          "format": "string",
+          "name": "SCALEPAD_REGION"
+        },
+        {
+          "description": "Optional Quoter OAuth Client ID \u2014 only for the standalone api.quoter.com path",
+          "format": "string",
+          "name": "QUOTER_CLIENT_ID"
+        },
+        {
+          "description": "Optional Quoter OAuth Client Secret, paired with QUOTER_CLIENT_ID",
+          "format": "string",
+          "isSecret": true,
+          "name": "QUOTER_CLIENT_SECRET"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode for the server. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-technology/scalepad-mcp:v1.0.3",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "ac59c38a83",
+    "published_at": "2026-08-07T01:54:46.122423Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wyre-technology/scalepad-mcp",
+    "server_version": "1.0.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-07T01:54:46.122423Z"
+  },
+  "title": "ScalePad",
+  "type": "mcp_server",
+  "version": "1.0.3"
+}

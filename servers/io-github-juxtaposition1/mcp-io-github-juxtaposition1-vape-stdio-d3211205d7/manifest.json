@@ -1,0 +1,75 @@
+{
+  "description": "Autonomous on-chain security detective for Base, exposed over the Model Context Protocol (MCP).",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-jUXTAPOSITION1-vape.stdio.d3211205d7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jUXTAPOSITION1/V.A.P.E",
+    "homepage": "https://github.com/jUXTAPOSITION1/V.A.P.E",
+    "repository": "https://github.com/jUXTAPOSITION1/V.A.P.E"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "vape-mcp-server==1.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.jUXTAPOSITION1/vape",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Etherscan V2 API key. Without it, contract_source degrades to an honest error.",
+          "isSecret": true,
+          "name": "ETHERSCAN_API_KEY"
+        },
+        {
+          "description": "Alchemy API key (Base/Eth/Arb/Op). Without it, wallet_trace returns an error.",
+          "isSecret": true,
+          "name": "VAPE_TRACE_ALCHEMY_API"
+        },
+        {
+          "description": "Tavily search key. Falls back to a keyless, less reliable search path if unset.",
+          "isSecret": true,
+          "name": "TAVILY_API_KEY"
+        },
+        {
+          "description": "Brave Search key, tried if TAVILY_API_KEY unset. Falls back to keyless search.",
+          "isSecret": true,
+          "name": "BRAVE_API_KEY"
+        }
+      ],
+      "identifier": "vape-mcp-server",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d3211205d7",
+    "published_at": "2026-08-08T20:58:40.591925Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.jUXTAPOSITION1/vape",
+    "server_version": "1.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-08T20:58:40.591925Z"
+  },
+  "title": "V.A.P.E. \u2014 On-Chain Security Detective",
+  "type": "mcp_server",
+  "version": "1.1.1"
+}

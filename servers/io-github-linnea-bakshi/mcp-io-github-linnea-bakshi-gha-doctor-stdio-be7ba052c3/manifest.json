@@ -1,0 +1,64 @@
+{
+  "description": "Diagnose GitHub Actions CI: lint, flaky tests, wasted minutes, health score. Read-only MCP tools.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:26+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-linnea-bakshi-gha-doctor.stdio.be7ba052c3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/linnea-bakshi/gha-doctor",
+    "homepage": "https://github.com/linnea-bakshi/gha-doctor",
+    "repository": "https://github.com/linnea-bakshi/gha-doctor"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/linnea-bakshi/gha-doctor:0.53.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.linnea-bakshi/gha-doctor",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "GitHub token for run-history analysis and log reading (optional for public-repo lint; raises the API rate limit and enables private repos and logs)",
+          "isSecret": true,
+          "name": "GITHUB_TOKEN"
+        }
+      ],
+      "identifier": "ghcr.io/linnea-bakshi/gha-doctor:0.53.0",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "--mcp",
+          "valueHint": "--mcp"
+        }
+      ],
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "be7ba052c3",
+    "published_at": "2026-08-03T19:17:50.647344Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.linnea-bakshi/gha-doctor",
+    "server_version": "0.53.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-03T19:17:50.647344Z"
+  },
+  "title": "gha-doctor",
+  "type": "mcp_server",
+  "version": "0.53.0"
+}

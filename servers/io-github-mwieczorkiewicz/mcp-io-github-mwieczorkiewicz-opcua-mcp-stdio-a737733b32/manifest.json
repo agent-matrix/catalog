@@ -1,0 +1,87 @@
+{
+  "description": "Read, write, browse, search, and subscribe to live data on an OPC-UA industrial automation server.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mwieczorkiewicz-opcua-mcp.stdio.a737733b32",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mwieczorkiewicz/opcua-mcp",
+    "homepage": "https://github.com/mwieczorkiewicz/opcua-mcp",
+    "repository": "https://github.com/mwieczorkiewicz/opcua-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/mwieczorkiewicz/opcua-mcp:main-29734c4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mwieczorkiewicz/opcua-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "opc.tcp://localhost:4840",
+          "description": "OPC-UA server endpoint to connect to, e.g. opc.tcp://your-plc-host:4840",
+          "isRequired": true,
+          "name": "OPCUA_ENDPOINT"
+        },
+        {
+          "default": "anonymous",
+          "description": "Authentication mode against the OPC-UA server",
+          "name": "OPCUA_AUTH_MODE"
+        },
+        {
+          "description": "Username, required if OPCUA_AUTH_MODE=username",
+          "name": "OPCUA_USERNAME"
+        },
+        {
+          "description": "Password, required if OPCUA_AUTH_MODE=username",
+          "isSecret": true,
+          "name": "OPCUA_PASSWORD"
+        },
+        {
+          "default": "None",
+          "description": "OPC-UA transport security policy, e.g. Basic256Sha256",
+          "name": "OPCUA_SECURITY_POLICY"
+        },
+        {
+          "default": "None",
+          "description": "OPC-UA transport security mode, e.g. SignAndEncrypt",
+          "name": "OPCUA_SECURITY_MODE"
+        },
+        {
+          "default": "stdio",
+          "description": "MCP transport: stdio (for local MCP clients) or http (for remote/hosted deployments)",
+          "name": "SERVER_TRANSPORT"
+        }
+      ],
+      "identifier": "ghcr.io/mwieczorkiewicz/opcua-mcp:main-29734c4",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "a737733b32",
+    "published_at": "2026-08-05T11:20:21.125128Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mwieczorkiewicz/opcua-mcp",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-05T11:20:21.125128Z"
+  },
+  "title": "OPC-UA MCP Server",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

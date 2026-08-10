@@ -1,0 +1,86 @@
+{
+  "description": "Read-only Sui blockchain analytics: 47 tools, protocol-aware tx decoding, no API keys or wallet.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:35+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-0xfreak0-sui-mcp.stdio.870948a3fb",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/0xfreak0/sui-mcp",
+    "homepage": "https://github.com/0xfreak0/sui-mcp",
+    "repository": "https://github.com/0xfreak0/sui-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "sui-analytics-mcp@1.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.0xfreak0/sui-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "choices": [
+            "mainnet",
+            "testnet",
+            "devnet"
+          ],
+          "default": "mainnet",
+          "description": "Default network when a tool call doesn't pass one. Every tool also takes a per-call network argument.",
+          "format": "string",
+          "name": "SUI_NETWORK"
+        },
+        {
+          "description": "Override the gRPC fullnode endpoint for the default network only.",
+          "format": "string",
+          "name": "SUI_FULLNODE_URL"
+        },
+        {
+          "description": "Override the GraphQL endpoint for the default network only.",
+          "format": "string",
+          "name": "SUI_GRAPHQL_URL"
+        },
+        {
+          "description": "Path to a locally built Revela move-decompiler binary. Only decompile_module needs it.",
+          "format": "filepath",
+          "name": "SUI_DECOMPILER_PATH"
+        },
+        {
+          "description": "JSON file of address attribution labels that overrides the shipped set for fund tracing.",
+          "format": "filepath",
+          "name": "SUI_LABELS_FILE"
+        }
+      ],
+      "identifier": "sui-analytics-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "870948a3fb",
+    "published_at": "2026-08-07T19:11:21.849596Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.0xfreak0/sui-mcp",
+    "server_version": "1.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-07T19:11:21.849596Z"
+  },
+  "title": "Sui Analytics",
+  "type": "mcp_server",
+  "version": "1.1.1"
+}

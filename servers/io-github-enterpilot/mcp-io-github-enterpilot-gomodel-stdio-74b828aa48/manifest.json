@@ -1,0 +1,63 @@
+{
+  "description": "Self-hosted gateway aggregating upstream MCP servers behind one authenticated HTTP endpoint.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:43+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ENTERPILOT-gomodel.stdio.74b828aa48",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ENTERPILOT/GoModel",
+    "homepage": "https://github.com/ENTERPILOT/GoModel",
+    "repository": "https://github.com/ENTERPILOT/GoModel"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "docker.io/enterpilot/gomodel:0.1.69"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ENTERPILOT/gomodel",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Gateway API key clients authenticate with; unset runs the gateway in unsafe (no-auth) mode.",
+          "isSecret": true,
+          "name": "GOMODEL_MASTER_KEY"
+        },
+        {
+          "description": "JSON object of upstream MCP servers to aggregate, e.g. {\"github\":{\"url\":\"https://api.githubcopilot.com/mcp/\",\"headers\":{\"Authorization\":\"Bearer ${GITHUB_PAT}\"}}}. Servers can also be declared in config.yaml or the admin dashboard.",
+          "name": "MCP_SERVERS"
+        }
+      ],
+      "identifier": "docker.io/enterpilot/gomodel:0.1.69",
+      "registryType": "oci",
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:8080/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "74b828aa48",
+    "published_at": "2026-08-06T13:55:54.001213Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ENTERPILOT/gomodel",
+    "server_version": "0.1.69",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-06T13:55:54.001213Z"
+  },
+  "title": "GoModel",
+  "type": "mcp_server",
+  "version": "0.1.69"
+}

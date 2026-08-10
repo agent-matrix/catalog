@@ -1,0 +1,80 @@
+{
+  "description": "Ranked codebase search and static symbol navigation for coding agents.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:18+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-codenib-codenib.stdio.8fcbd7e9c8",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sysevol-ai/CodeNib",
+    "homepage": "https://github.com/sysevol-ai/CodeNib",
+    "repository": "https://github.com/sysevol-ai/CodeNib"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "Install the version-matched CodeNib MCP runtime extra.",
+            "name": "--with",
+            "type": "named",
+            "value": "codenib[mcp]==0.2.0"
+          },
+          "codenib==0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.codenib/codenib",
+  "packages": [
+    {
+      "identifier": "codenib",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        },
+        {
+          "description": "Repository checkout previously indexed with CodeNib.",
+          "format": "filepath",
+          "isRequired": true,
+          "type": "positional",
+          "valueHint": "repository"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "Install the version-matched CodeNib MCP runtime extra.",
+          "name": "--with",
+          "type": "named",
+          "value": "codenib[mcp]==0.2.0"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8fcbd7e9c8",
+    "published_at": "2026-08-06T07:44:39.1145Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.codenib/codenib",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-06T07:44:39.1145Z"
+  },
+  "title": "CodeNib",
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

@@ -1,0 +1,84 @@
+{
+  "description": "An AI agent that runs your Avito account \u2014 148 tools for chats, listings, promotion, orders.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-elchin92-avito-mcp.stdio.3511a6d992",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/elchin92/avito-mcp",
+    "homepage": "https://github.com/elchin92/avito-mcp",
+    "repository": "https://github.com/elchin92/avito-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "avito-mcp@2.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.elchin92/avito-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Avito OAuth client_id (from https://www.avito.ru/professionals/api).",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Client_id"
+        },
+        {
+          "description": "Avito OAuth client_secret (from https://www.avito.ru/professionals/api).",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Client_secret"
+        },
+        {
+          "description": "Avito profile id (numeric account id); auto-injected into {user_id}/{userId} path params.",
+          "format": "string",
+          "isRequired": true,
+          "name": "Profile_id"
+        },
+        {
+          "choices": [
+            "legacy",
+            "dual",
+            "modern"
+          ],
+          "default": "legacy",
+          "description": "Which MCP protocol revisions this process serves: legacy = 2025-11-25 only, dual = 2025-11-25 and 2026-07-28, modern = 2026-07-28 only.",
+          "format": "string",
+          "name": "AVITO_MCP_PROTOCOL_ERA"
+        }
+      ],
+      "identifier": "avito-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "3511a6d992",
+    "published_at": "2026-08-03T20:31:09.097817Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.elchin92/avito-mcp",
+    "server_version": "2.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-03T20:31:09.097817Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "2.0.0"
+}

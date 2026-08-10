@@ -1,0 +1,49 @@
+{
+  "description": "Quote.Trade MCP: login, deposit address, market data, orders, and withdraws.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:57+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.trade-quote-mcp.sse.d83400a16d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://quote.trade/mcp"
+    }
+  },
+  "name": "trade.quote/mcp",
+  "provenance": {
+    "identity_key": "d83400a16d",
+    "published_at": "2026-08-06T15:06:54.012689Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "trade.quote/mcp",
+    "server_version": "1.5.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-06T15:06:54.012689Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Quote.Trade API key from wallet login/logon. Required for private tools.",
+          "isSecret": true,
+          "name": "X-MBX-APIKEY"
+        },
+        {
+          "description": "Sent only to this MCP host so it can HMAC-sign private calls. Downstream APIs get X-MBX-APIKEY + signature, not this secret.",
+          "isSecret": true,
+          "name": "X-Quote-Trade-API-Secret"
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://quote.trade/mcp"
+    }
+  ],
+  "title": "Quote.Trade MCP Adapter",
+  "type": "mcp_server",
+  "version": "1.5.6"
+}

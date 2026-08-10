@@ -1,0 +1,84 @@
+{
+  "description": "Permission-aware retrieval for AI systems: policy-enforced access to organizational knowledge.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:19+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-gateco-gateco.stdio.1d68e723dc",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/fortisil/gateco-sdk-python",
+    "homepage": "https://github.com/fortisil/gateco-sdk-python",
+    "repository": "https://github.com/fortisil/gateco-sdk-python"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "name": "--from",
+            "type": "named",
+            "value": "gateco[mcp]"
+          },
+          {
+            "type": "positional",
+            "value": "gateco-mcp"
+          },
+          "gateco==1.8.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.gateco/gateco",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Gateco API key (create one in the Gateco dashboard under Settings > API Keys)",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GATECO_API_KEY"
+        },
+        {
+          "description": "Gateco API base URL. Defaults to https://api.gateco.ai; set only for self-hosted or staging deployments.",
+          "name": "GATECO_BASE_URL"
+        }
+      ],
+      "identifier": "gateco",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "name": "--from",
+          "type": "named",
+          "value": "gateco[mcp]"
+        },
+        {
+          "type": "positional",
+          "value": "gateco-mcp"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.8.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1d68e723dc",
+    "published_at": "2026-08-04T16:21:31.744996Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.gateco/gateco",
+    "server_version": "1.8.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-04T16:21:31.744996Z"
+  },
+  "title": "Gateco",
+  "type": "mcp_server",
+  "version": "1.8.1"
+}

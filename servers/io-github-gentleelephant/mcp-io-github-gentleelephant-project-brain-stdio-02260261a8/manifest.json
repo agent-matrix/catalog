@@ -1,0 +1,111 @@
+{
+  "description": "Read-only source retrieval across cataloged GitHub repositories",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:44+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Gentleelephant-project-brain.stdio.02260261a8",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Gentleelephant/project-brain",
+    "homepage": "https://github.com/Gentleelephant/project-brain",
+    "repository": "https://github.com/Gentleelephant/project-brain"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/gentleelephant/project-brain:v1.5.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Gentleelephant/project-brain",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Directory containing Project Brain project YAML files",
+          "format": "string",
+          "isRequired": true,
+          "name": "PROJECT_BRAIN_CATALOG_DIR"
+        },
+        {
+          "description": "Writable directory for repository caches, indexes, locks, and drafts",
+          "format": "string",
+          "isRequired": true,
+          "name": "PROJECT_BRAIN_STATE_DIR"
+        },
+        {
+          "description": "Directory containing human-reviewed Project Brain knowledge documents",
+          "format": "string",
+          "name": "PROJECT_BRAIN_KNOWLEDGE_DIR"
+        },
+        {
+          "description": "Optional GitHub token for private catalog repositories",
+          "format": "string",
+          "isSecret": true,
+          "name": "PB_GITHUB_TOKEN"
+        },
+        {
+          "description": "Minimum interval between on-demand repository refreshes",
+          "format": "string",
+          "name": "PB_FETCH_TTL"
+        },
+        {
+          "description": "Base URL of an OpenAI-compatible chat completions API for catalog enrichment",
+          "format": "string",
+          "name": "PB_LLM_BASE_URL"
+        },
+        {
+          "description": "Model name used by project_config_enrich",
+          "format": "string",
+          "name": "PB_LLM_MODEL"
+        },
+        {
+          "description": "API key for the enrichment LLM",
+          "format": "string",
+          "isSecret": true,
+          "name": "PB_LLM_API_KEY"
+        },
+        {
+          "description": "Timeout for enrichment LLM calls, for example 120s",
+          "format": "string",
+          "name": "PB_LLM_TIMEOUT"
+        },
+        {
+          "description": "Maximum output tokens for enrichment LLM calls",
+          "format": "string",
+          "name": "PB_LLM_MAX_TOKENS"
+        },
+        {
+          "description": "Sampling temperature for enrichment LLM calls",
+          "format": "string",
+          "name": "PB_LLM_TEMPERATURE"
+        }
+      ],
+      "identifier": "ghcr.io/gentleelephant/project-brain:v1.5.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "02260261a8",
+    "published_at": "2026-08-07T02:37:34.312594Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Gentleelephant/project-brain",
+    "server_version": "1.5.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-07T02:37:34.312594Z"
+  },
+  "title": "Project Brain",
+  "type": "mcp_server",
+  "version": "1.5.0"
+}

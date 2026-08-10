@@ -1,0 +1,84 @@
+{
+  "description": "Full-CRUD Adobe Experience Platform server: 46 tools for schemas, ingestion, profiles, audiences.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:25+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-focusgts-aep.stdio.3f450ea4d9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Focus-GTS/aep-mcp-server",
+    "homepage": "https://github.com/Focus-GTS/aep-mcp-server",
+    "repository": "https://github.com/Focus-GTS/aep-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@focusgts/aep-mcp-server@0.6.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.focusgts/aep",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Adobe I/O client ID from an OAuth Server-to-Server credential in the Adobe Developer Console.",
+          "isRequired": true,
+          "name": "AEP_CLIENT_ID"
+        },
+        {
+          "description": "Adobe I/O client secret paired with AEP_CLIENT_ID.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AEP_CLIENT_SECRET"
+        },
+        {
+          "description": "Adobe IMS organization ID, in the form xxxxxxxxx@AdobeOrg.",
+          "isRequired": true,
+          "name": "AEP_ORG_ID"
+        },
+        {
+          "default": "prod",
+          "description": "AEP sandbox to scope every call to. Defaults to 'prod'. Use a development sandbox to enable write operations.",
+          "name": "AEP_SANDBOX_NAME"
+        },
+        {
+          "default": "safe",
+          "description": "Write posture: 'read-only' (no mutation anywhere), 'safe' (default \u2014 writes only in sandboxes Adobe classifies as development), or 'production' (writes anywhere). Reads are never restricted.",
+          "name": "AEP_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Pino log level. Logs go to stderr; stdout is reserved for the MCP JSON-RPC stream.",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "@focusgts/aep-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.6.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "3f450ea4d9",
+    "published_at": "2026-08-08T23:48:59.159511Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.focusgts/aep",
+    "server_version": "0.6.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-08T23:48:59.159511Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.6.1"
+}

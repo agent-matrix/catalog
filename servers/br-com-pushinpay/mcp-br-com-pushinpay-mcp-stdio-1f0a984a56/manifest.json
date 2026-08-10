@@ -1,0 +1,65 @@
+{
+  "description": "MCP oficial da PushinPay: cobran\u00e7as PIX, consulta de transa\u00e7\u00f5es e saldo via IA.",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:06:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.br-com-pushinpay-mcp.stdio.1f0a984a56",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Pushin-Pay/pushinpay-mcp-server",
+    "homepage": "https://github.com/Pushin-Pay/pushinpay-mcp-server",
+    "repository": "https://github.com/Pushin-Pay/pushinpay-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@pushinpaybr/mcp-server@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "br.com.pushinpay/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Token da conta PushinPay (gerado no painel).",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PUSHINPAY_TOKEN"
+        },
+        {
+          "default": "sandbox",
+          "description": "Ambiente: sandbox (padr\u00e3o) ou production.",
+          "name": "PUSHINPAY_ENV"
+        }
+      ],
+      "identifier": "@pushinpaybr/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1f0a984a56",
+    "published_at": "2026-08-04T18:07:57.294256Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "br.com.pushinpay/mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-04T18:07:57.294256Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

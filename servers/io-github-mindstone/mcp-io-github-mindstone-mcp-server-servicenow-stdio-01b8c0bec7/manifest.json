@@ -1,0 +1,85 @@
+{
+  "description": "ServiceNow ITSM MCP server for Model Context Protocol hosts",
+  "harvest": {
+    "last_seen_at": "2026-08-10T04:07:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mindstone-mcp-server-servicenow.stdio.01b8c0bec7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mindstone/mcp-servers",
+    "homepage": "https://github.com/mindstone/mcp-servers",
+    "repository": "https://github.com/mindstone/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@mindstone/mcp-server-servicenow@0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mindstone/mcp-server-servicenow",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "ServiceNow instance name (e.g. acme for acme.service-now.com)",
+          "format": "string",
+          "isRequired": true,
+          "name": "SERVICENOW_INSTANCE"
+        },
+        {
+          "description": "ServiceNow username",
+          "format": "string",
+          "isRequired": true,
+          "name": "SERVICENOW_USERNAME"
+        },
+        {
+          "description": "ServiceNow password",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SERVICENOW_PASSWORD"
+        },
+        {
+          "description": "OAuth 2.0 client ID (optional; alternative to username/password when the instance enforces MFA/SSO \u2014 requires an OAuth application registry entry with the client credentials grant enabled)",
+          "format": "string",
+          "name": "SERVICENOW_CLIENT_ID"
+        },
+        {
+          "description": "OAuth 2.0 client secret (optional; used with SERVICENOW_CLIENT_ID instead of username/password)",
+          "format": "string",
+          "isSecret": true,
+          "name": "SERVICENOW_CLIENT_SECRET"
+        }
+      ],
+      "identifier": "@mindstone/mcp-server-servicenow",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "01b8c0bec7",
+    "published_at": "2026-08-07T10:39:39.476216Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mindstone/mcp-server-servicenow",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-07T10:39:39.476216Z"
+  },
+  "title": "ServiceNow",
+  "type": "mcp_server",
+  "version": "0.3.0"
+}
