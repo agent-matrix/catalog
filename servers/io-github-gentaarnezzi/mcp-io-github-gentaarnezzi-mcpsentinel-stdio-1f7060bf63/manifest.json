@@ -1,0 +1,69 @@
+{
+  "description": "Precision-first security scanning for Model Context Protocol servers.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:58+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-gentaArnezzi-mcpsentinel.stdio.1f7060bf63",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/gentaArnezzi/MCPSentinel",
+    "homepage": "https://github.com/gentaArnezzi/MCPSentinel",
+    "repository": "https://github.com/gentaArnezzi/MCPSentinel"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-guardian-scan==0.7.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.gentaArnezzi/mcpsentinel",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Comma-separated MCP server hostnames, optionally with an exact port, that the MCP-native scanner may connect to.",
+          "format": "string",
+          "isRequired": true,
+          "name": "MCPSENTINEL_ALLOWED_HOSTS"
+        },
+        {
+          "description": "Set to true only to permit an explicitly allowlisted private or reserved HTTP address in a trusted local network.",
+          "format": "string",
+          "name": "MCPSENTINEL_ALLOW_PRIVATE_HTTP_TARGETS"
+        },
+        {
+          "description": "Set to true only for a reviewed, one-time operator approval of the current MCP metadata baseline.",
+          "format": "string",
+          "name": "MCPSENTINEL_MCP_APPROVE_BASELINE"
+        }
+      ],
+      "identifier": "mcp-guardian-scan",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.7.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1f7060bf63",
+    "published_at": "2026-08-14T14:54:46.020831Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.gentaArnezzi/mcpsentinel",
+    "server_version": "0.7.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-14T14:54:46.020831Z"
+  },
+  "title": "MCPSentinel",
+  "type": "mcp_server",
+  "version": "0.7.0"
+}

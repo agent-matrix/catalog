@@ -1,0 +1,98 @@
+{
+  "description": "Persistent memory for AI agents: Markdown entries, hybrid search, typed graph links",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-veronchenko-inkwell-memory.stdio.5600c95741",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/veronchenko/inkwell-memory",
+    "homepage": "https://github.com/veronchenko/inkwell-memory",
+    "repository": "https://github.com/veronchenko/inkwell-memory"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Host folder holding the knowledge base, mounted at /knowledge in the container",
+            "format": "filepath",
+            "isRequired": true,
+            "name": "-v",
+            "type": "named",
+            "value": "{knowledge_path}:/knowledge",
+            "variables": {
+              "knowledge_path": {
+                "default": "~/.inkwell/knowledge",
+                "description": "Absolute path on the host where entries and the search index are stored",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          "docker.io/foreigndmitryi/inkwell-memory:0.14.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.veronchenko/inkwell-memory",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "/knowledge",
+          "description": "Knowledge base root inside the container; matches the volume mount target",
+          "format": "filepath",
+          "name": "INKWELL_DATA_PATH"
+        },
+        {
+          "default": "1",
+          "description": "Set to 0 to skip the web dashboard process and run the MCP server only",
+          "format": "string",
+          "name": "INKWELL_ENABLE_DASHBOARD"
+        }
+      ],
+      "identifier": "docker.io/foreigndmitryi/inkwell-memory:0.14.0",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "Host folder holding the knowledge base, mounted at /knowledge in the container",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "-v",
+          "type": "named",
+          "value": "{knowledge_path}:/knowledge",
+          "variables": {
+            "knowledge_path": {
+              "default": "~/.inkwell/knowledge",
+              "description": "Absolute path on the host where entries and the search index are stored",
+              "format": "filepath",
+              "isRequired": true
+            }
+          }
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "5600c95741",
+    "published_at": "2026-08-14T15:33:49.902392Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.veronchenko/inkwell-memory",
+    "server_version": "0.14.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-14T15:33:49.902392Z"
+  },
+  "title": "Inkwell",
+  "type": "mcp_server",
+  "version": "0.14.0"
+}

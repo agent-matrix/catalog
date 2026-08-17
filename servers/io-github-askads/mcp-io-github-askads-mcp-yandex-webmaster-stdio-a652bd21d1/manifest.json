@@ -1,0 +1,83 @@
+{
+  "description": "MCP server for Yandex Webmaster API: indexing, search queries, sitemaps, diagnostics, links.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-askads-mcp-yandex-webmaster.stdio.a652bd21d1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/askads/mcp-yandex-webmaster",
+    "homepage": "https://github.com/askads/mcp-yandex-webmaster",
+    "repository": "https://github.com/askads/mcp-yandex-webmaster"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-yandex-webmaster@1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.askads/mcp-yandex-webmaster",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Yandex OAuth token with Webmaster access, sent as `Authorization: OAuth <token>`. Treat it as a secret.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "YANDEX_OAUTH_TOKEN"
+        },
+        {
+          "description": "Token owner's user id; auto-detected via GET /v4/user when unset.",
+          "name": "YANDEX_USER_ID"
+        },
+        {
+          "description": "Default host_id (e.g. https:example.com:443) used when a tool call omits one.",
+          "name": "YANDEX_WEBMASTER_HOST_ID"
+        },
+        {
+          "default": "https://api.webmaster.yandex.net/v4",
+          "description": "API root override.",
+          "name": "YANDEX_WEBMASTER_API_BASE"
+        },
+        {
+          "default": "60000",
+          "description": "Per-request timeout in milliseconds.",
+          "name": "YANDEX_WEBMASTER_TIMEOUT_MS"
+        },
+        {
+          "default": "3",
+          "description": "Retries on transient errors (429 \u2014 except the daily QUOTA_EXCEEDED; 5xx/network for reads).",
+          "name": "YANDEX_WEBMASTER_MAX_RETRIES"
+        }
+      ],
+      "identifier": "mcp-yandex-webmaster",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a652bd21d1",
+    "published_at": "2026-08-11T16:58:54.353323Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.askads/mcp-yandex-webmaster",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-11T16:58:54.353323Z"
+  },
+  "title": "Yandex Webmaster MCP",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

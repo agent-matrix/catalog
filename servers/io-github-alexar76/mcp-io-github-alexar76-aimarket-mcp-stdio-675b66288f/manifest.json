@@ -1,0 +1,67 @@
+{
+  "description": "Stdio + HTTP MCP gateway: SSRF-hardened web_fetch, web_search, metis_verify, market_search.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-alexar76-aimarket-mcp.stdio.675b66288f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/alexar76/aimarket-mcp",
+    "homepage": "https://github.com/alexar76/aimarket-mcp",
+    "repository": "https://github.com/alexar76/aimarket-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "aimarket-mcp==0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.alexar76/aimarket-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Metis verify API base URL",
+          "name": "AIMARKET_METIS_URL"
+        },
+        {
+          "description": "Optional bearer token for Metis verify",
+          "isSecret": true,
+          "name": "AIMARKET_METIS_KEY"
+        },
+        {
+          "description": "DuckDuckGo HTML search endpoint override",
+          "name": "AIMARKET_SEARCH_URL"
+        }
+      ],
+      "identifier": "aimarket-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "675b66288f",
+    "published_at": "2026-08-16T20:44:18.893109Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.alexar76/aimarket-mcp",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-16T20:44:18.893109Z"
+  },
+  "title": "AIMarket MCP Gateway",
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

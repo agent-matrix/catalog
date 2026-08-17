@@ -1,0 +1,88 @@
+{
+  "description": "MCP server for the Google Forms API: create forms, manage questions, read responses and watches.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:14+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-A1-x-Tech-mcp-google-forms.stdio.d843d86ee6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/A1-x-Tech/mcp-google-forms",
+    "homepage": "https://github.com/A1-x-Tech/mcp-google-forms",
+    "repository": "https://github.com/A1-x-Tech/mcp-google-forms"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-google-forms@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.A1-x-Tech/mcp-google-forms",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Google OAuth2 client id (refresh-token flow).",
+          "name": "GOOGLE_FORMS_CLIENT_ID"
+        },
+        {
+          "description": "Google OAuth2 client secret (refresh-token flow). Treat it as a secret.",
+          "isSecret": true,
+          "name": "GOOGLE_FORMS_CLIENT_SECRET"
+        },
+        {
+          "description": "Google OAuth2 refresh token, exchanged for access tokens automatically. Treat it as a secret.",
+          "isSecret": true,
+          "name": "GOOGLE_FORMS_REFRESH_TOKEN"
+        },
+        {
+          "description": "Static OAuth2 access token (~1h lifetime) \u2014 alternative to the refresh-token trio, mostly for testing.",
+          "isSecret": true,
+          "name": "GOOGLE_FORMS_ACCESS_TOKEN"
+        },
+        {
+          "default": "https://forms.googleapis.com",
+          "description": "API root override.",
+          "name": "GOOGLE_FORMS_API_BASE"
+        },
+        {
+          "default": "60000",
+          "description": "Per-request timeout in milliseconds.",
+          "name": "GOOGLE_FORMS_TIMEOUT_MS"
+        },
+        {
+          "default": "3",
+          "description": "Retries on transient errors (429 always; 5xx/network for reads).",
+          "name": "GOOGLE_FORMS_MAX_RETRIES"
+        }
+      ],
+      "identifier": "mcp-google-forms",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d843d86ee6",
+    "published_at": "2026-08-10T23:22:08.617887Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.A1-x-Tech/mcp-google-forms",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-10T23:22:08.617887Z"
+  },
+  "title": "Google Forms MCP",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

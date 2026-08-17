@@ -1,0 +1,66 @@
+{
+  "description": "Safety boundary for agent written GitHub PR reviews: pending and invisible, submitting is opt-in",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:01+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-eclipsesource-review-guard.stdio.da1602edc9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/eclipsesource/review-guard",
+    "homepage": "https://github.com/eclipsesource/review-guard",
+    "repository": "https://github.com/eclipsesource/review-guard"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@eclipsesource/review-guard-mcp@0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.eclipsesource/review-guard",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "GitHub token with pull request read and write access. Can be left unset if the GitHub CLI is authenticated, because the server then falls back to gh auth token.",
+          "isSecret": true,
+          "name": "GITHUB_TOKEN"
+        }
+      ],
+      "identifier": "@eclipsesource/review-guard-mcp",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "--stdio",
+          "valueHint": "stdio"
+        }
+      ],
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "da1602edc9",
+    "published_at": "2026-08-14T12:42:53.665999Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.eclipsesource/review-guard",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-14T12:42:53.665999Z"
+  },
+  "title": "ReviewGuard",
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

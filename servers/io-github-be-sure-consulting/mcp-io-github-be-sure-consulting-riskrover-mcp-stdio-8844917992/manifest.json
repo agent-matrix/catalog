@@ -1,0 +1,65 @@
+{
+  "description": "Connect AI agents to RiskRover for PRA-based test coverage assessment and reviewed PBS workflows.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:18+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Be-Sure-Consulting-riskrover-mcp.stdio.8844917992",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Be-Sure-Consulting/riskrover-mcp",
+    "homepage": "https://github.com/Be-Sure-Consulting/riskrover-mcp",
+    "repository": "https://github.com/Be-Sure-Consulting/riskrover-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "riskrover-mcp-server@0.4.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Be-Sure-Consulting/riskrover-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "RiskRover API token. Read-only scope is enough for assessment and PBS drafting.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "RISKROVER_API_TOKEN"
+        },
+        {
+          "description": "Optional default RiskRover project ID; it can instead be supplied in the request.",
+          "format": "string",
+          "name": "RISKROVER_PROJECT_ID"
+        }
+      ],
+      "identifier": "riskrover-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8844917992",
+    "published_at": "2026-08-11T09:33:55.677682Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Be-Sure-Consulting/riskrover-mcp",
+    "server_version": "0.4.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-11T09:33:55.677682Z"
+  },
+  "title": "RiskRover MCP",
+  "type": "mcp_server",
+  "version": "0.4.2"
+}

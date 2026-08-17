@@ -1,0 +1,90 @@
+{
+  "artifacts": [
+    {
+      "kind": "other",
+      "spec": {
+        "package": "longhorn-mcp",
+        "registry": "npm",
+        "version": "0.1.1"
+      }
+    }
+  ],
+  "description": "MCP server for the Longhorn distributed storage manager API, with a --read-only mode.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/rafaelgaspar/longhorn-mcp",
+  "id": "tool.io-github-rafaelgaspar-longhorn-mcp.1f7ca92a50",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/rafaelgaspar/longhorn-mcp",
+    "homepage": "https://github.com/rafaelgaspar/longhorn-mcp",
+    "repository": "https://github.com/rafaelgaspar/longhorn-mcp"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "MCP server for the Longhorn distributed storage manager API, with a --read-only mode.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.rafaelgaspar/longhorn-mcp",
+      "request_type": "POST",
+      "url": "https://github.com/rafaelgaspar/longhorn-mcp"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "default": "http://longhorn-backend.longhorn-system.svc.cluster.local:9500",
+            "description": "Base URL of the Longhorn manager API.",
+            "format": "string",
+            "name": "--longhorn-url",
+            "type": "named"
+          },
+          {
+            "description": "Register only read tools; the client also refuses any non-GET request.",
+            "name": "--read-only",
+            "type": "named"
+          },
+          "longhorn-mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.rafaelgaspar/longhorn-mcp",
+  "provenance": {
+    "identity_key": "5dea285319",
+    "promoted_from": "mcp.io-github-rafaelgaspar-longhorn-mcp.stdio.5dea285319",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.rafaelgaspar/longhorn-mcp",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-rafaelgaspar-longhorn-mcp.stdio.5dea285319",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/rafaelgaspar/longhorn-mcp",
+  "summary": "MCP server for the Longhorn distributed storage manager API, with a --read-only mode.",
+  "tags": [
+    "distributed",
+    "longhorn",
+    "manager",
+    "mode",
+    "only",
+    "read",
+    "storage"
+  ],
+  "title": "Longhorn Mcp",
+  "type": "tool",
+  "version": "0.1.1"
+}

@@ -1,0 +1,91 @@
+{
+  "description": "Auditable memory for AI agents: provable deletion, tamper-evident audit, time-travel recall.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:40+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-attestari-attestari.stdio.150bb5ba11",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/attestari/attestari",
+    "homepage": "https://github.com/attestari/attestari",
+    "repository": "https://github.com/attestari/attestari"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "The MCP server lives in the `server` extra; the core package stays dependency-free.",
+            "isRequired": true,
+            "name": "--from",
+            "type": "named",
+            "value": "attestari[server]"
+          },
+          "attestari==0.0.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.attestari/attestari",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base64 32-byte root key. Set it to enable encryption at rest and cryptographic erasure (forget() destroys the subject's key and signs the certificate). Without it, forget() is a logical delete and certificates are left unsigned.",
+          "isSecret": true,
+          "name": "ATTESTARI_KEK"
+        },
+        {
+          "description": "Postgres DSN. Set it to use Postgres + pgvector instead of the default local SQLite file (concurrent access, indexed hybrid search).",
+          "isSecret": true,
+          "name": "ATTESTARI_DATABASE_URL"
+        },
+        {
+          "default": "~/.attestari/attestari.db",
+          "description": "Where the default SQLite ledger lives.",
+          "name": "ATTESTARI_SQLITE_PATH"
+        },
+        {
+          "description": "Enables Claude-powered fact extraction; falls back to the built-in regex extractor when unset.",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        }
+      ],
+      "identifier": "attestari",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "The MCP server lives in the `server` extra; the core package stays dependency-free.",
+          "isRequired": true,
+          "name": "--from",
+          "type": "named",
+          "value": "attestari[server]"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.0.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "150bb5ba11",
+    "published_at": "2026-08-12T07:58:39.158217Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.attestari/attestari",
+    "server_version": "0.0.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-12T07:58:39.158217Z"
+  },
+  "title": "Attestari",
+  "type": "mcp_server",
+  "version": "0.0.6"
+}

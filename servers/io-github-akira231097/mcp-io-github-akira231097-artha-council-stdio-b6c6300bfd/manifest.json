@@ -1,0 +1,181 @@
+{
+  "description": "Auditable equity research and fail-closed broker execution for US and Indian cash equities.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-akira231097-artha-council.stdio.b6c6300bfd",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/akira231097/artha-council",
+    "homepage": "https://github.com/akira231097/artha-council",
+    "repository": "https://github.com/akira231097/artha-council"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/akira231097/artha-council-mcp:1.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.akira231097/artha-council",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Market profile: US or IN.",
+          "format": "string",
+          "name": "ARTHA_MCP_MARKET"
+        },
+        {
+          "description": "Broker adapter: snapshot, upstox, zerodha, none, or plugin.",
+          "format": "string",
+          "name": "ARTHA_MCP_BROKER"
+        },
+        {
+          "description": "Research boundary: embedded, host_orchestrated, or plugin. India should use host_orchestrated or a market-native plugin.",
+          "format": "string",
+          "name": "ARTHA_MCP_RESEARCH_MODE"
+        },
+        {
+          "description": "Persistent directory for journals, receipts, jobs, portfolio state, and audit artifacts.",
+          "format": "string",
+          "name": "ARTHA_MCP_DATA_DIR"
+        },
+        {
+          "description": "Capability mode: read_only, operator, or trading. Defaults to read_only.",
+          "format": "string",
+          "name": "ARTHA_MCP_ACCESS_MODE"
+        },
+        {
+          "description": "Explicit operations switch. Defaults to false.",
+          "format": "string",
+          "name": "ARTHA_MCP_OPERATIONS_ENABLED"
+        },
+        {
+          "description": "Explicit live-trading switch. Defaults to false.",
+          "format": "string",
+          "name": "ARTHA_MCP_TRADING_ENABLED"
+        },
+        {
+          "description": "Final MCP placement kill switch. Defaults to true.",
+          "format": "string",
+          "name": "ARTHA_MCP_KILL_SWITCH"
+        },
+        {
+          "description": "Maximum value of one order in the selected market currency. Defaults to 25 USD or 2500 INR.",
+          "format": "string",
+          "name": "ARTHA_MCP_MAX_ORDER_VALUE"
+        },
+        {
+          "description": "Maximum total daily order value in the selected market currency. Defaults to 50 USD or 5000 INR.",
+          "format": "string",
+          "name": "ARTHA_MCP_MAX_DAILY_ORDER_VALUE"
+        },
+        {
+          "description": "Maximum number of broker placements per market day. Defaults to 2.",
+          "format": "string",
+          "name": "ARTHA_MCP_MAX_DAILY_ORDERS"
+        },
+        {
+          "description": "Maximum queued or running allowlisted workflows. Defaults to 8 and prevents an unbounded work queue.",
+          "format": "string",
+          "name": "ARTHA_MCP_MAX_PENDING_JOBS"
+        },
+        {
+          "description": "Optional Financial Modeling Prep key for embedded US research.",
+          "format": "string",
+          "isSecret": true,
+          "name": "FMP_API_KEY"
+        },
+        {
+          "description": "Optional Finnhub key for embedded US research enrichment.",
+          "format": "string",
+          "isSecret": true,
+          "name": "FINNHUB_API_KEY"
+        },
+        {
+          "description": "Optional Google Gemini key for embedded Council roles and web-grounded research.",
+          "format": "string",
+          "isSecret": true,
+          "name": "GOOGLE_API_KEY"
+        },
+        {
+          "description": "Optional Telegram bot token for Artha notifications.",
+          "format": "string",
+          "isSecret": true,
+          "name": "TELEGRAM_BOT_TOKEN"
+        },
+        {
+          "description": "Optional Telegram destination used with TELEGRAM_BOT_TOKEN.",
+          "format": "string",
+          "isSecret": true,
+          "name": "TELEGRAM_CHAT_ID"
+        },
+        {
+          "description": "Upstox live account/read token used for portfolio, quote, margin, and fee proof.",
+          "format": "string",
+          "isSecret": true,
+          "name": "UPSTOX_ACCESS_TOKEN"
+        },
+        {
+          "description": "Separate Upstox sandbox token, required only when ARTHA_UPSTOX_SANDBOX=true.",
+          "format": "string",
+          "isSecret": true,
+          "name": "UPSTOX_SANDBOX_ACCESS_TOKEN"
+        },
+        {
+          "description": "Operator attestation that this deployment IP is registered with the selected Indian broker.",
+          "format": "string",
+          "name": "ARTHA_INDIA_STATIC_IP_REGISTERED"
+        },
+        {
+          "description": "Operator attestation that required demat authorization is valid for Indian delivery sells.",
+          "format": "string",
+          "name": "ARTHA_INDIA_DEMAT_SELL_AUTHORIZED"
+        },
+        {
+          "description": "Optional exchange-approved algo name configured in the Upstox app.",
+          "format": "string",
+          "name": "ARTHA_UPSTOX_ALGO_NAME"
+        },
+        {
+          "description": "Required only for the Zerodha adapter.",
+          "format": "string",
+          "isSecret": true,
+          "name": "KITE_API_KEY"
+        },
+        {
+          "description": "Required only for the Zerodha adapter.",
+          "format": "string",
+          "isSecret": true,
+          "name": "KITE_ACCESS_TOKEN"
+        }
+      ],
+      "identifier": "ghcr.io/akira231097/artha-council-mcp:1.3.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "b6c6300bfd",
+    "published_at": "2026-08-11T22:32:51.404638Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.akira231097/artha-council",
+    "server_version": "1.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-11T22:32:51.404638Z"
+  },
+  "title": "Artha Council",
+  "type": "mcp_server",
+  "version": "1.3.0"
+}

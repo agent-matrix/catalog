@@ -1,0 +1,59 @@
+{
+  "description": "Read-only MCP access to your own Apple Health data, mirrored from the Marrow iOS app.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.tech-skeletonarmy-marrow.stdio.1dbfb143ff",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/skeletonarmytech/marrow-mcp",
+    "homepage": "https://github.com/skeletonarmytech/marrow-mcp",
+    "repository": "https://github.com/skeletonarmytech/marrow-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "python",
+          "marrow-mcp==0.2.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "tech.skeletonarmy/marrow",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Directory holding the SQLite mirror and the two generated tokens. Defaults to ./data.",
+          "name": "MARROW_DATA"
+        }
+      ],
+      "identifier": "marrow-mcp",
+      "registryType": "pypi",
+      "runtimeHint": "python",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:8800/mcp"
+      },
+      "version": "0.2.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1dbfb143ff",
+    "published_at": "2026-08-16T23:15:25.206967Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "tech.skeletonarmy/marrow",
+    "server_version": "0.2.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-16T23:15:25.206967Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.3"
+}

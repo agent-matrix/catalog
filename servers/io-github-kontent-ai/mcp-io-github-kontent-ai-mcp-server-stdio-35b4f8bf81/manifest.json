@@ -1,0 +1,70 @@
+{
+  "description": "Connect to Kontent.ai to manage content, types, taxonomies, and workflows via natural language",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:06+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-kontent-ai-mcp-server.stdio.35b4f8bf81",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/kontent-ai/mcp-server",
+    "homepage": "https://github.com/kontent-ai/mcp-server",
+    "repository": "https://github.com/kontent-ai/mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@kontent-ai/mcp-server@0.38.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.kontent-ai/mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Kontent.ai environment ID",
+          "isRequired": true,
+          "name": "KONTENT_ENVIRONMENT_ID"
+        },
+        {
+          "description": "Server port for HTTP transport (defaults to 3001)",
+          "name": "PORT"
+        }
+      ],
+      "identifier": "@kontent-ai/mcp-server",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "shttp"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3001/{KONTENT_ENVIRONMENT_ID}/mcp"
+      },
+      "version": "0.38.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "35b4f8bf81",
+    "published_at": "2026-08-11T09:09:23.247483Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.kontent-ai/mcp-server",
+    "server_version": "0.38.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-11T09:09:23.247483Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.38.0"
+}

@@ -1,0 +1,69 @@
+{
+  "description": "Guardrailed fleet ops for AI agents: multi-cluster Kubernetes via OCM with policy, approval, audit.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sandeepbazar-ocm-mcp-server.stdio.4d0cff0ed6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sandeepbazar/ocm-mcp-server",
+    "homepage": "https://github.com/sandeepbazar/ocm-mcp-server",
+    "repository": "https://github.com/sandeepbazar/ocm-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/sandeepbazar/ocm-mcp-server:0.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sandeepbazar/ocm-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path (inside the container) to the mounted kubeconfig with the OCM hub context.",
+          "format": "string",
+          "isRequired": true,
+          "name": "KUBECONFIG"
+        },
+        {
+          "description": "Kubeconfig context name of the OCM hub cluster (defaults to the current context).",
+          "format": "string",
+          "name": "OCM_MCP_HUB_CONTEXT"
+        },
+        {
+          "description": "Set to 'true' to disable the gated write path entirely (read-only fleet access).",
+          "format": "string",
+          "name": "OCM_MCP_READ_ONLY"
+        }
+      ],
+      "identifier": "ghcr.io/sandeepbazar/ocm-mcp-server:0.4.0",
+      "registryType": "oci",
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "4d0cff0ed6",
+    "published_at": "2026-08-13T05:39:53.837324Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sandeepbazar/ocm-mcp-server",
+    "server_version": "0.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-13T05:39:53.837324Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.4.0"
+}

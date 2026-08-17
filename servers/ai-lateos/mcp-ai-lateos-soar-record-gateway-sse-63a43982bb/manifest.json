@@ -1,0 +1,49 @@
+{
+  "description": "SOAR security playbooks for AI agents: fetch, full-text search, and count. Metered via Stripe.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:11:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-lateos-soar-record-gateway.sse.63a43982bb",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/lateos-ai/website",
+    "homepage": "https://github.com/lateos-ai/website",
+    "repository": "https://github.com/lateos-ai/website"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://soar-api.nevada-f99.workers.dev/mcp"
+    }
+  },
+  "name": "ai.lateos/soar-record-gateway",
+  "provenance": {
+    "identity_key": "63a43982bb",
+    "published_at": "2026-08-14T03:44:27.960723Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.lateos/soar-record-gateway",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-14T03:44:27.960723Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "SOAR API key formatted as 'Bearer soar_live_<key>'. Keys are issued per Stripe customer. No key? POST to the Payment-Required URL in an HTTP 402 MPP challenge from https://soar-api.nevada-f99.workers.dev/v1/records/fetch to subscribe via Stripe checkout (metered SOAR plan, $0.01/search, no upfront charge), then retrieve the issued key once from the credential_endpoint.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization"
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://soar-api.nevada-f99.workers.dev/mcp"
+    }
+  ],
+  "title": "SOAR Record Gateway",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

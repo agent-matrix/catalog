@@ -1,0 +1,104 @@
+{
+  "description": "Non-custodial cross-chain OTC for AI agents: sealed RFQ, negotiation, HTLC atomic swaps. Testnet.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:24+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Hashlock-Tech-hashlock.stdio.f547f1ee66",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Hashlock-Tech/hashlock-mcp",
+    "homepage": "https://github.com/Hashlock-Tech/hashlock-mcp",
+    "repository": "https://github.com/Hashlock-Tech/hashlock-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "description": "Auto-confirm npx install prompt",
+            "isRequired": true,
+            "type": "positional",
+            "value": "-y"
+          },
+          "@hashlock-tech/mcp@0.6.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Hashlock-Tech/hashlock",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "EVM private key (0x, 32-byte) for autonomous SIWE login + EVM settlement \u2014 dedicated TESTNET key",
+          "isSecret": true,
+          "name": "HASHLOCK_EVM_KEY"
+        },
+        {
+          "description": "TRON private key (64-hex) for autonomous login + TRON settlement",
+          "isSecret": true,
+          "name": "HASHLOCK_TRON_KEY"
+        },
+        {
+          "description": "Bitcoin WIF (signet) for autonomous BIP-322 login + BTC HTLC claims",
+          "isSecret": true,
+          "name": "HASHLOCK_BTC_KEY"
+        },
+        {
+          "description": "A ready JWT (alternative to a key)",
+          "isSecret": true,
+          "name": "HASHLOCK_TOKEN"
+        },
+        {
+          "default": "https://dev.hashlock.markets/api",
+          "description": "REST API endpoint override",
+          "name": "HASHLOCK_API_URL"
+        },
+        {
+          "default": "https://ethereum-sepolia-rpc.publicnode.com",
+          "description": "EVM RPC the agent submits fund/claim through",
+          "name": "HASHLOCK_EVM_RPC"
+        },
+        {
+          "default": "https://nile.trongrid.io",
+          "description": "TRON full host",
+          "name": "HASHLOCK_TRON_HOST"
+        }
+      ],
+      "identifier": "@hashlock-tech/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "description": "Auto-confirm npx install prompt",
+          "isRequired": true,
+          "type": "positional",
+          "value": "-y"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.6.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f547f1ee66",
+    "published_at": "2026-08-13T15:47:33.693603Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Hashlock-Tech/hashlock",
+    "server_version": "1.6.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-13T15:47:33.693603Z"
+  },
+  "title": "Hashlock Markets",
+  "type": "mcp_server",
+  "version": "1.6.0"
+}

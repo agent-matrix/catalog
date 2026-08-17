@@ -1,0 +1,153 @@
+{
+  "description": "OAuth 2.1/OIDC resource-server reference for secure MCP authorization",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:43+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-brunovicco-mcp-server-auth-template.stdio.ad25fe1178",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/brunovicco/mcp-server-auth-template",
+    "homepage": "https://github.com/brunovicco/mcp-server-auth-template",
+    "repository": "https://github.com/brunovicco/mcp-server-auth-template"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "name": "--read-only",
+            "type": "named"
+          },
+          {
+            "name": "--tmpfs",
+            "type": "named",
+            "value": "/tmp:rw,noexec,nosuid,nodev,size=16m"
+          },
+          {
+            "name": "--cap-drop",
+            "type": "named",
+            "value": "ALL"
+          },
+          {
+            "name": "--security-opt",
+            "type": "named",
+            "value": "no-new-privileges:true"
+          },
+          {
+            "name": "--publish",
+            "type": "named",
+            "value": "127.0.0.1:8000:8000"
+          },
+          "ghcr.io/brunovicco/mcp-server-auth-template:v0.6.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.brunovicco/mcp-server-auth-template",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Protected-resource URL advertised by this deployment",
+          "isRequired": true,
+          "name": "MCP_SERVER_RESOURCE_SERVER_URL"
+        },
+        {
+          "choices": [
+            "entra",
+            "generic"
+          ],
+          "description": "Authorization-server adapter to use",
+          "isRequired": true,
+          "name": "MCP_SERVER_AUTH_PROVIDER"
+        },
+        {
+          "default": "[\"mcp:tools:call\"]",
+          "description": "JSON array of baseline delegated OAuth scopes",
+          "name": "MCP_SERVER_REQUIRED_SCOPES"
+        },
+        {
+          "default": "[\"127.0.0.1:8000\"]",
+          "description": "Additional exact Host values accepted by the local container transport",
+          "name": "MCP_SERVER_TRANSPORT_ALLOWED_HOSTS"
+        },
+        {
+          "description": "Required when MCP_SERVER_AUTH_PROVIDER=entra",
+          "name": "MCP_SERVER_ENTRA_TENANT_ID"
+        },
+        {
+          "description": "Required when MCP_SERVER_AUTH_PROVIDER=entra",
+          "name": "MCP_SERVER_ENTRA_AUDIENCE"
+        },
+        {
+          "description": "Required when MCP_SERVER_AUTH_PROVIDER=entra",
+          "name": "MCP_SERVER_ENTRA_APPLICATION_ID_URI"
+        },
+        {
+          "description": "Required when MCP_SERVER_AUTH_PROVIDER=generic",
+          "name": "MCP_SERVER_GENERIC_ISSUER_URL"
+        },
+        {
+          "description": "Required when MCP_SERVER_AUTH_PROVIDER=generic",
+          "name": "MCP_SERVER_GENERIC_AUDIENCE"
+        },
+        {
+          "default": "[]",
+          "description": "Optional JSON array of explicitly trusted cross-origin JWKS origins",
+          "name": "MCP_SERVER_GENERIC_JWKS_ALLOWED_ORIGINS"
+        }
+      ],
+      "identifier": "ghcr.io/brunovicco/mcp-server-auth-template:v0.6.2",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "name": "--read-only",
+          "type": "named"
+        },
+        {
+          "name": "--tmpfs",
+          "type": "named",
+          "value": "/tmp:rw,noexec,nosuid,nodev,size=16m"
+        },
+        {
+          "name": "--cap-drop",
+          "type": "named",
+          "value": "ALL"
+        },
+        {
+          "name": "--security-opt",
+          "type": "named",
+          "value": "no-new-privileges:true"
+        },
+        {
+          "name": "--publish",
+          "type": "named",
+          "value": "127.0.0.1:8000:8000"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://127.0.0.1:8000/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "ad25fe1178",
+    "published_at": "2026-08-11T13:19:10.300987Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.brunovicco/mcp-server-auth-template",
+    "server_version": "0.6.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-11T13:19:10.300987Z"
+  },
+  "title": "MCP Server Auth Template",
+  "type": "mcp_server",
+  "version": "0.6.2"
+}

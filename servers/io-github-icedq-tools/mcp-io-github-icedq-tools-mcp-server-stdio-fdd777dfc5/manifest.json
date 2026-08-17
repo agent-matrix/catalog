@@ -1,0 +1,116 @@
+{
+  "description": "MCP Server for iceDQ Data Reliability Platform",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:01+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-icedq-tools-mcp-server.stdio.fdd777dfc5",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/icedq-tools/mcp-server",
+    "homepage": "https://github.com/icedq-tools/mcp-server",
+    "repository": "https://github.com/icedq-tools/mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@icedq/mcp-server@1.0.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.icedq-tools/mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "The base URL of your iceDQ instance (e.g., https://app.icedq.net)",
+          "format": "string",
+          "isRequired": true,
+          "name": "ICEDQ_BASE_URL"
+        },
+        {
+          "description": "The authentication realm name (e.g., icedq or iam.icedq)",
+          "format": "string",
+          "isRequired": true,
+          "name": "ICEDQ_REALM"
+        },
+        {
+          "description": "OAuth client ID for API authentication",
+          "format": "string",
+          "isRequired": true,
+          "name": "ICEDQ_CLIENT_ID"
+        },
+        {
+          "description": "How to authenticate: 'username_password' uses credentials below, 'access_token' uses a token file instead",
+          "format": "string",
+          "isRequired": true,
+          "name": "AUTH_TYPE"
+        },
+        {
+          "description": "OAuth client secret. Required when AUTH_TYPE is 'username_password'.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ICEDQ_CLIENT_SECRET"
+        },
+        {
+          "description": "Your iceDQ username. Required when AUTH_TYPE is 'username_password'.",
+          "format": "string",
+          "name": "ICEDQ_USERNAME"
+        },
+        {
+          "description": "Your iceDQ password. Required when AUTH_TYPE is 'username_password'.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ICEDQ_PASSWORD"
+        },
+        {
+          "description": "Path to JSON file containing access_token and refresh_token. Required when AUTH_TYPE is 'access_token'.",
+          "format": "filepath",
+          "name": "TOKENS_PATH"
+        },
+        {
+          "description": "Your iceDQ organization ID (e.g., org-iam.icedq)",
+          "format": "string",
+          "isRequired": true,
+          "name": "ICEDQ_ORG_ID"
+        },
+        {
+          "description": "Enable SSL certificate verification. Set to false only for self-signed certs in testing.",
+          "format": "boolean",
+          "name": "VERIFY_SSL"
+        },
+        {
+          "description": "Timeout for API requests, in seconds",
+          "format": "number",
+          "name": "REQUEST_TIMEOUT"
+        }
+      ],
+      "identifier": "@icedq/mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "fdd777dfc5",
+    "published_at": "2026-08-12T20:10:16.203252Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.icedq-tools/mcp-server",
+    "server_version": "1.0.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-12T20:10:16.203252Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.3"
+}

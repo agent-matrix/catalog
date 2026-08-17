@@ -1,0 +1,62 @@
+{
+  "description": "Non-custodial Bitcoin DCA for agent treasuries: approve USDT once, stack WBTC on Celo forever.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:47+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-csacanam-comprabtc.stdio.eddac2fef2",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/csacanam/comprabtc",
+    "homepage": "https://github.com/csacanam/comprabtc",
+    "repository": "https://github.com/csacanam/comprabtc"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "comprabtc-mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.csacanam/comprabtc",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Treasury/agent wallet that owns the plan (holds USDT, signs setup txs, receives WBTC). Required only for create/renew/cancel; reads work without it.",
+          "isSecret": true,
+          "name": "COMPRABTC_WALLET_PRIVATE_KEY"
+        },
+        {
+          "description": "Safety cap per installment in USDT (default 50, pool-depth guard).",
+          "name": "COMPRABTC_MAX_PER_RUN_USDT"
+        }
+      ],
+      "identifier": "comprabtc-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "eddac2fef2",
+    "published_at": "2026-08-12T08:27:26.063982Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.csacanam/comprabtc",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-12T08:27:26.063982Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

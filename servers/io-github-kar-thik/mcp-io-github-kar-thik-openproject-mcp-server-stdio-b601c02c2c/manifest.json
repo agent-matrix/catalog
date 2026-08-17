@@ -1,0 +1,83 @@
+{
+  "description": "87 tools for the OpenProject API v3: work packages, attachments, git activity, time, reporting",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:05+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-kar-thik-openproject-mcp-server.stdio.b601c02c2c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/kar-thik/openproject-mcp",
+    "homepage": "https://github.com/kar-thik/openproject-mcp",
+    "repository": "https://github.com/kar-thik/openproject-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "openproject-mcp-server==0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.kar-thik/openproject-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "OpenProject instance root URL, e.g. https://openproject.example.com",
+          "format": "string",
+          "isRequired": true,
+          "name": "OPENPROJECT_URL"
+        },
+        {
+          "description": "API key from My account -> Access tokens in OpenProject",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OPENPROJECT_API_KEY"
+        },
+        {
+          "description": "Set to 1 to serve read tools only",
+          "format": "string",
+          "name": "OPENPROJECT_MCP_READ_ONLY"
+        },
+        {
+          "description": "Set to 1 to enable the membership-write tools (hidden by default)",
+          "format": "string",
+          "name": "OPENPROJECT_MCP_ADMIN_TOOLS"
+        },
+        {
+          "description": "Comma-separated tool groups to drop, e.g. meetings,budgets",
+          "format": "string",
+          "name": "OPENPROJECT_MCP_DISABLE"
+        }
+      ],
+      "identifier": "openproject-mcp-server",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b601c02c2c",
+    "published_at": "2026-08-12T00:59:34.298556Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.kar-thik/openproject-mcp-server",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-12T00:59:34.298556Z"
+  },
+  "title": "OpenProject",
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

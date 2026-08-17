@@ -1,0 +1,64 @@
+{
+  "description": "Screen AI agents, read Badge fitness scores, and browse the public Talent Pool leaderboard.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:28+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-thehomer87-badge-mcp-server.stdio.43e8f97d0f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@badgeia/mcp-server@0.1.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.thehomer87/badge-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Badge API key (create under Settings -> API keys). Required for screen_agent; optional for read-only tools.",
+          "isSecret": true,
+          "name": "BADGE_API_KEY"
+        },
+        {
+          "default": "https://api.badgeia.com",
+          "description": "Badge REST API base URL. Defaults to https://api.badgeia.com.",
+          "name": "BADGE_API_URL"
+        },
+        {
+          "description": "Override for the human-facing web origin used in verify/agent/leaderboard links. Auto-derived from BADGE_API_URL when unset.",
+          "name": "BADGE_WEB_URL"
+        }
+      ],
+      "identifier": "@badgeia/mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "43e8f97d0f",
+    "published_at": "2026-08-10T05:23:50.103061Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.thehomer87/badge-mcp-server",
+    "server_version": "0.1.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-10T05:23:50.103061Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.3"
+}

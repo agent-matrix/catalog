@@ -1,0 +1,63 @@
+{
+  "description": "Consult other LLMs as tools \u2014 ask them, compare their answers, synthesize a conclusion.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Totti0135-model-council.stdio.79b5672208",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Totti0135/model-council",
+    "homepage": "https://github.com/Totti0135/model-council",
+    "repository": "https://github.com/Totti0135/model-council"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "model-council-mcp==0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Totti0135/model-council",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Comma-separated short ids for the models to seat, e.g. 'gpt5,glm'. Each id then takes its own <ID>_BASE_URL, <ID>_API_KEY, <ID>_MODEL and optional <ID>_FORMAT (openai or anthropic). Omit to use a config file instead.",
+          "format": "string",
+          "name": "COUNCIL_MODELS"
+        },
+        {
+          "description": "Path to a JSON config file, for rosters large enough that several models share one endpoint. Defaults to ~/.config/model-council/config.json when that exists.",
+          "format": "filepath",
+          "name": "COUNCIL_CONFIG"
+        }
+      ],
+      "identifier": "model-council-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "79b5672208",
+    "published_at": "2026-08-14T08:32:05.073911Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Totti0135/model-council",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-14T08:32:05.073911Z"
+  },
+  "title": "Model Council",
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

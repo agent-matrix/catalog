@@ -1,0 +1,67 @@
+{
+  "description": "Validate UK addresses, postcodes, emails and phone numbers \u2014 Royal Mail PAF, live SMTP and HLR.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.uk-co-postio-postcode-address-validation.stdio.64e3fa7cd3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/postio-uk/postio-integrations",
+    "homepage": "https://github.com/postio-uk/postio-integrations",
+    "repository": "https://github.com/postio-uk/postio-integrations"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@postio/mcp@0.1.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "uk.co.postio/postcode-address-validation",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Postio API key (pk_\u2026). Free key, first 100 lookups on us, no card: https://postio.co.uk/signup",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "POSTIO_API_KEY"
+        },
+        {
+          "description": "Override the API base URL. Defaults to https://api.postio.co.uk. Only needed for staging.",
+          "format": "string",
+          "name": "POSTIO_BASE_URL"
+        }
+      ],
+      "identifier": "@postio/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "64e3fa7cd3",
+    "published_at": "2026-08-14T10:21:08.853097Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "uk.co.postio/postcode-address-validation",
+    "server_version": "0.1.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-14T10:21:08.853097Z"
+  },
+  "title": "Postio \u2014 UK Address, Postcode, Email & Phone Validation",
+  "type": "mcp_server",
+  "version": "0.1.4"
+}

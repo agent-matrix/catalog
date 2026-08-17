@@ -1,0 +1,67 @@
+{
+  "description": "Safe-write Postgres MCP server with preview-before-execute writes and rollback safety.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:04+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-jpka-sw-postgres-mcp.stdio.b4cd177b5e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jpka/sw-postgres-mcp",
+    "homepage": "https://github.com/jpka/sw-postgres-mcp",
+    "repository": "https://github.com/jpka/sw-postgres-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "sw-postgres-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.jpka/sw-postgres-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Postgres connection string for the read-only role.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DATABASE_URL_READONLY"
+        },
+        {
+          "description": "Postgres connection string for the writer role.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DATABASE_URL_WRITER"
+        }
+      ],
+      "identifier": "sw-postgres-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b4cd177b5e",
+    "published_at": "2026-08-13T14:11:35.120166Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.jpka/sw-postgres-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-13T14:11:35.120166Z"
+  },
+  "title": "sw-postgres-mcp",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

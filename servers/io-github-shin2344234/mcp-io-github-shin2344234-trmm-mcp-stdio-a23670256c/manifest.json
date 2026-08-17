@@ -1,0 +1,78 @@
+{
+  "description": "Read your TacticalRMM fleet; run commands only after per-command human approval.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:24+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-shin2344234-trmm-mcp.stdio.a23670256c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/shin2344234/trmm-mcp",
+    "homepage": "https://github.com/shin2344234/trmm-mcp",
+    "repository": "https://github.com/shin2344234/trmm-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "trmm-mcp==1.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.shin2344234/trmm-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of your TacticalRMM backend, e.g. https://api.example.com",
+          "format": "string",
+          "isRequired": true,
+          "name": "TRMM_API_URL"
+        },
+        {
+          "description": "TacticalRMM API key bound to a read-only role. Used for all reads.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "TRMM_READONLY_API_KEY"
+        },
+        {
+          "description": "TacticalRMM API key permitted to execute. Only needed for elevate or command mode, and only used after an approval is granted.",
+          "format": "string",
+          "isSecret": true,
+          "name": "TRMM_COMMAND_API_KEY"
+        },
+        {
+          "default": "readonly",
+          "description": "readonly (default, 20 read tools), elevate (adds 8 execution tools, each requiring out-of-band human approval), or command (execution with no gate).",
+          "format": "string",
+          "name": "TRMM_MCP_MODE"
+        }
+      ],
+      "identifier": "trmm-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a23670256c",
+    "published_at": "2026-08-14T14:24:32.727327Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.shin2344234/trmm-mcp",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-14T14:24:32.727327Z"
+  },
+  "title": "TacticalRMM",
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

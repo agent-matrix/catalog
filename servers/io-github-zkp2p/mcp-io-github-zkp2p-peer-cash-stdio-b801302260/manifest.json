@@ -1,0 +1,80 @@
+{
+  "description": "MCP server for preparing and tracking Peer Cash Base USDC cash-outs",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:35+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-zkp2p-peer-cash.stdio.b801302260",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/zkp2p/peer-cash-mcp",
+    "homepage": "https://github.com/zkp2p/peer-cash-mcp",
+    "repository": "https://github.com/zkp2p/peer-cash-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "peer-cash-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.zkp2p/peer-cash",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Peer Cash environment: production, preproduction, or staging",
+          "format": "string",
+          "name": "PEER_CASH_ENVIRONMENT"
+        },
+        {
+          "description": "Custom Base RPC URL for reads and receipt finalization",
+          "format": "string",
+          "isSecret": true,
+          "name": "PEER_CASH_RPC_URL"
+        },
+        {
+          "description": "Curator API key when the selected environment requires one",
+          "format": "string",
+          "isSecret": true,
+          "name": "PEER_CASH_API_KEY"
+        },
+        {
+          "description": "Six-character Peer integration referral code",
+          "format": "string",
+          "name": "PEER_CASH_REFERRAL_CODE"
+        },
+        {
+          "description": "Analytics-only ERC-8021 attribution code",
+          "format": "string",
+          "name": "PEER_CASH_REFERRER"
+        }
+      ],
+      "identifier": "peer-cash-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b801302260",
+    "published_at": "2026-08-14T09:46:23.078939Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.zkp2p/peer-cash",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-14T09:46:23.078939Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

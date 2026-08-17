@@ -1,0 +1,82 @@
+{
+  "description": "Connects coding agents to a running QuestDB Web Console: notebook cells, SQL queries, and charts.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-questdb-mcp-server-questdb.stdio.c96e90019d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/questdb/mcp-server-questdb",
+    "homepage": "https://github.com/questdb/mcp-server-questdb",
+    "repository": "https://github.com/questdb/mcp-server-questdb"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@questdb/mcp-server-questdb@0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.questdb/mcp-server-questdb",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "http://127.0.0.1:9000",
+          "description": "QuestDB Web Console origin.",
+          "format": "string",
+          "name": "CONSOLE_ORIGIN"
+        },
+        {
+          "description": "Fixed WebSocket port for pairing. Auto-allocated when unset.",
+          "format": "number",
+          "name": "MCP_BRIDGE_PORT"
+        },
+        {
+          "description": "Log file location. Defaults to a timestamped file under /tmp/questdb-mcp-bridge.",
+          "format": "filepath",
+          "name": "LOG_PATH"
+        },
+        {
+          "choices": [
+            "ERROR",
+            "WARN",
+            "INFO",
+            "DEBUG"
+          ],
+          "default": "INFO",
+          "description": "Log verbosity. DEBUG adds heartbeats and full tool payloads.",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "@questdb/mcp-server-questdb",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c96e90019d",
+    "published_at": "2026-08-11T17:27:48.739253Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.questdb/mcp-server-questdb",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-11T17:27:48.739253Z"
+  },
+  "title": "QuestDB Web Console MCP Server",
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

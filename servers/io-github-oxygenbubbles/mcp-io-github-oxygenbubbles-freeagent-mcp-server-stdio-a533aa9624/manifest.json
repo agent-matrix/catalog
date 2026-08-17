@@ -1,0 +1,96 @@
+{
+  "description": "FreeAgent accounting MCP: bank reconciliation, expenses, mileage claims and receipts.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-OxygenBubbles-freeagent-mcp-server.stdio.a533aa9624",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/OxygenBubbles/freeagent-mcp-server",
+    "homepage": "https://github.com/OxygenBubbles/freeagent-mcp-server",
+    "repository": "https://github.com/OxygenBubbles/freeagent-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@oxygenbubbles/freeagent-mcp-server@3.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.OxygenBubbles/freeagent-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "FreeAgent OAuth app client ID (from dev.freeagent.com)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "FREEAGENT_CLIENT_ID"
+        },
+        {
+          "description": "FreeAgent OAuth app client secret",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "FREEAGENT_CLIENT_SECRET"
+        },
+        {
+          "description": "FreeAgent long-lived OAuth refresh token",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "FREEAGENT_REFRESH_TOKEN"
+        },
+        {
+          "description": "JSON map of vendor name to FreeAgent category URL (extends built-in mappings)",
+          "format": "string",
+          "name": "VENDOR_CATEGORIES"
+        },
+        {
+          "description": "Default pence-per-mile rate (overrides HMRC 45p/25p)",
+          "format": "string",
+          "name": "MILEAGE_RATE_PENCE"
+        },
+        {
+          "description": "OpenRouteService API key for driving distance calculation",
+          "format": "string",
+          "isSecret": true,
+          "name": "ORS_API_KEY"
+        },
+        {
+          "description": "Google Maps API key (alternative to ORS for distance calculation)",
+          "format": "string",
+          "isSecret": true,
+          "name": "GOOGLE_MAPS_API_KEY"
+        }
+      ],
+      "identifier": "@oxygenbubbles/freeagent-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "3.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a533aa9624",
+    "published_at": "2026-08-14T19:56:56.249387Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.OxygenBubbles/freeagent-mcp-server",
+    "server_version": "3.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-14T19:56:56.249387Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "3.0.1"
+}

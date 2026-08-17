@@ -1,0 +1,79 @@
+{
+  "description": "Offload grunt work from your premium agent to cheap models \u2014 auto-routing and billing isolation.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-millennialdreamer-cheaplane.stdio.38636d0c01",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/millennialdreamer/cheaplane",
+    "homepage": "https://github.com/millennialdreamer/cheaplane",
+    "repository": "https://github.com/millennialdreamer/cheaplane"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "cheaplane==0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.millennialdreamer/cheaplane",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "http://localhost:4000",
+          "description": "OpenAI-compatible endpoint serving the cheap models \u2014 usually a local LiteLLM proxy.",
+          "name": "DELEGATE_BASE_URL"
+        },
+        {
+          "default": "sk-litellm",
+          "description": "Key for that endpoint. A local proxy ignores it; set a real one for a hosted endpoint.",
+          "isSecret": true,
+          "name": "DELEGATE_API_KEY"
+        },
+        {
+          "default": "120",
+          "description": "Per-call timeout in seconds. Raise it for long documents.",
+          "name": "DELEGATE_TIMEOUT"
+        },
+        {
+          "description": "JSON remapping the built-in aliases to your proxy's model names, e.g. {\"deepseek\": \"deepseek-v4\"}.",
+          "name": "DELEGATE_MODEL_MAP"
+        },
+        {
+          "description": "Set to 1 to disable the local savings ledger (metadata only, never task content).",
+          "name": "DELEGATE_NO_LOG"
+        }
+      ],
+      "identifier": "cheaplane",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "38636d0c01",
+    "published_at": "2026-08-16T14:21:22.311428Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.millennialdreamer/cheaplane",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-16T14:21:22.311428Z"
+  },
+  "title": "Cheaplane",
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

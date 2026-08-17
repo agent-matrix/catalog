@@ -1,0 +1,124 @@
+{
+  "description": "MCP server for Bags on Solana: token analytics, trade quotes, and gated write operations.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-edycutjong-bagos.stdio.5af3feeb89",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/edycutjong/bagos",
+    "homepage": "https://github.com/edycutjong/bagos",
+    "repository": "https://github.com/edycutjong/bagos"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "bagos-mcp-server@2.5.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.edycutjong/bagos",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Bags API key from dev.bags.fm. Required for all tools.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "BAGS_API_KEY"
+        },
+        {
+          "choices": [
+            "devnet",
+            "mainnet"
+          ],
+          "default": "devnet",
+          "description": "Solana cluster: devnet (default) or mainnet. Writes on mainnet move real funds.",
+          "format": "string",
+          "name": "BAGS_NETWORK"
+        },
+        {
+          "description": "Custom Solana RPC endpoint. Defaults to the public RPC for BAGS_NETWORK.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SOLANA_RPC_URL"
+        },
+        {
+          "description": "Path to a Solana keypair JSON file. Only required for write tools.",
+          "format": "filepath",
+          "name": "BAGS_KEYPAIR_PATH"
+        },
+        {
+          "default": "0.1",
+          "description": "Hard cap on SOL spent by any single transaction. Default 0.1.",
+          "format": "number",
+          "name": "BAGS_MAX_SOL_PER_TX"
+        },
+        {
+          "default": "1.0",
+          "description": "Hard cap on total SOL spent across one server session. Default 1.0.",
+          "format": "number",
+          "name": "BAGS_MAX_SOL_PER_SESSION"
+        },
+        {
+          "default": "false",
+          "description": "Set true to skip the two-step confirmation on writes. Default false.",
+          "format": "boolean",
+          "name": "BAGS_ALLOW_UNCONFIRMED"
+        },
+        {
+          "description": "Mint address of the BOS token used for gating write tools.",
+          "format": "string",
+          "name": "BOS_TOKEN_MINT"
+        },
+        {
+          "default": "10000",
+          "description": "Minimum BOS balance required to call write tools. Default 10000.",
+          "format": "number",
+          "name": "BOS_REQUIRED_BALANCE"
+        },
+        {
+          "default": "false",
+          "description": "Permit non-SOL-input swaps, which the SOL-denominated caps cannot limit.",
+          "format": "boolean",
+          "name": "BAGS_ALLOW_UNCAPPED_TOKEN_SWAPS"
+        },
+        {
+          "default": "false",
+          "description": "Makes bags_get_claimable_fees return fabricated data instead of calling the API. Default false.",
+          "format": "boolean",
+          "name": "USE_MOCK_DATA"
+        }
+      ],
+      "identifier": "bagos-mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.5.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5af3feeb89",
+    "published_at": "2026-08-16T02:27:37.584084Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.edycutjong/bagos",
+    "server_version": "2.5.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-16T02:27:37.584084Z"
+  },
+  "title": "BagOS",
+  "type": "mcp_server",
+  "version": "2.5.1"
+}

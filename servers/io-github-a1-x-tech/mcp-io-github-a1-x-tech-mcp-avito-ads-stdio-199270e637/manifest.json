@@ -1,0 +1,96 @@
+{
+  "description": "MCP server for the Avito Ads API: campaigns, ad groups, creatives, statistics and balances.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:14+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-A1-x-Tech-mcp-avito-ads.stdio.199270e637",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/A1-x-Tech/mcp-avito-ads",
+    "homepage": "https://github.com/A1-x-Tech/mcp-avito-ads",
+    "repository": "https://github.com/A1-x-Tech/mcp-avito-ads"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-avito-ads@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.A1-x-Tech/mcp-avito-ads",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "OAuth2 client id of your Avito application (grant_type=client_credentials).",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AVITO_ADS_CLIENT_ID"
+        },
+        {
+          "description": "OAuth2 client secret of your Avito application. Treat it as a secret.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AVITO_ADS_CLIENT_SECRET"
+        },
+        {
+          "description": "Ad account id (positive integer) every request is scoped to.",
+          "isRequired": true,
+          "name": "AVITO_ADS_ACCOUNT_ID"
+        },
+        {
+          "default": "production",
+          "description": "Which API to talk to: production or sandbox.",
+          "name": "AVITO_ADS_ENVIRONMENT"
+        },
+        {
+          "default": "https://api.avito.ru/ads/",
+          "description": "API root override, replacing host and environment prefix (e.g. a local mock).",
+          "name": "AVITO_ADS_API_BASE"
+        },
+        {
+          "default": "30000",
+          "description": "Per-request timeout in milliseconds.",
+          "name": "AVITO_ADS_TIMEOUT_MS"
+        },
+        {
+          "default": "4",
+          "description": "Retries on 429 (always) and on 5xx / network errors for reads only.",
+          "name": "AVITO_ADS_MAX_RETRIES"
+        },
+        {
+          "default": "60",
+          "description": "Refresh the OAuth2 token this many seconds before it expires.",
+          "name": "AVITO_ADS_TOKEN_LEEWAY_SECONDS"
+        }
+      ],
+      "identifier": "mcp-avito-ads",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "199270e637",
+    "published_at": "2026-08-11T16:23:57.446938Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.A1-x-Tech/mcp-avito-ads",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-11T16:23:57.446938Z"
+  },
+  "title": "Avito Ads MCP",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

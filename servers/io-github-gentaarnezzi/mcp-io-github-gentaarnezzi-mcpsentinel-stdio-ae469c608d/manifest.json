@@ -1,0 +1,64 @@
+{
+  "description": "Precision-first security scanning for Model Context Protocol servers.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:58+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-gentaArnezzi-mcpsentinel.stdio.ae469c608d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/gentaArnezzi/MCPSentinel",
+    "homepage": "https://github.com/gentaArnezzi/MCPSentinel",
+    "repository": "https://github.com/gentaArnezzi/MCPSentinel"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-guardian-scan==0.8.7"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.gentaArnezzi/mcpsentinel",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Comma-separated MCP server hostnames, optionally with an exact port, that the MCP-native scanner may connect to.",
+          "format": "string",
+          "isRequired": true,
+          "name": "MCPSENTINEL_ALLOWED_HOSTS"
+        },
+        {
+          "description": "Set to true only to permit an explicitly allowlisted private or reserved HTTP address in a trusted local network.",
+          "format": "string",
+          "name": "MCPSENTINEL_ALLOW_PRIVATE_HTTP_TARGETS"
+        }
+      ],
+      "identifier": "mcp-guardian-scan",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.8.7"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ae469c608d",
+    "published_at": "2026-08-14T18:33:21.269927Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.gentaArnezzi/mcpsentinel",
+    "server_version": "0.8.7",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-14T18:33:21.269927Z"
+  },
+  "title": "MCPSentinel",
+  "type": "mcp_server",
+  "version": "0.8.7"
+}

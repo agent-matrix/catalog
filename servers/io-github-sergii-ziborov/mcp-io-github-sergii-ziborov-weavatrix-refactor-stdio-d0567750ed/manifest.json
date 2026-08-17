@@ -1,0 +1,83 @@
+{
+  "description": "Transactional refactoring MCP with 11 evidence-backed tools, hash-bound previews, and rollback.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:24+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sergii-ziborov-weavatrix-refactor.stdio.d0567750ed",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sergii-ziborov/weavatrix-refactor",
+    "homepage": "https://github.com/sergii-ziborov/weavatrix-refactor",
+    "repository": "https://github.com/sergii-ziborov/weavatrix-refactor"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "weavatrix-refactor@1.0.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sergii-ziborov/weavatrix-refactor",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Set to 1 to authorize apply_edit_plan and rollback to write source files; unset, the refactor tools stay preview-only",
+          "format": "string",
+          "name": "WEAVATRIX_ALLOW_SOURCE_EDITS"
+        },
+        {
+          "description": "Optional directory for the rollback snapshot store; defaults to a per-repo location",
+          "format": "string",
+          "name": "WEAVATRIX_REFACTOR_HOME"
+        },
+        {
+          "description": "Core semantic precision: lsp (default) or off",
+          "format": "string",
+          "name": "WEAVATRIX_PRECISION"
+        }
+      ],
+      "identifier": "weavatrix-refactor",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        },
+        {
+          "default": ".",
+          "description": "Absolute path to the initial local repository; defaults to the current directory",
+          "format": "filepath",
+          "type": "positional",
+          "valueHint": "repoRoot"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d0567750ed",
+    "published_at": "2026-08-11T07:20:46.188512Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sergii-ziborov/weavatrix-refactor",
+    "server_version": "1.0.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-11T07:20:46.188512Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.4"
+}

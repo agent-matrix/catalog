@@ -1,0 +1,94 @@
+{
+  "artifacts": [
+    {
+      "kind": "other",
+      "spec": {
+        "package": "meet-live-assist-server",
+        "registry": "npm",
+        "version": "0.7.3"
+      }
+    }
+  ],
+  "description": "Your own agent inside a live Google Meet or Zoom call. Local-first, no hosted service.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:06+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/krystiangw/meet-live-assist-extension",
+  "id": "tool.io-github-krystiangw-meet-live-assist.64bce37499",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/krystiangw/meet-live-assist-extension",
+    "homepage": "https://github.com/krystiangw/meet-live-assist-extension",
+    "repository": "https://github.com/krystiangw/meet-live-assist-extension"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Your own agent inside a live Google Meet or Zoom call. Local-first, no hosted service.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.krystiangw/meet-live-assist",
+      "request_type": "POST",
+      "url": "https://github.com/krystiangw/meet-live-assist-extension"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "description": "The package ships two binaries; -p picks the MCP one rather than the bridge server.",
+            "isRequired": true,
+            "name": "-p",
+            "type": "named",
+            "value": "meet-live-assist-server"
+          },
+          {
+            "description": "The stdio MCP adapter.",
+            "isRequired": true,
+            "type": "positional",
+            "value": "meet-live-assist-mcp",
+            "valueHint": "meet-live-assist-mcp"
+          },
+          "meet-live-assist-server@0.7.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.krystiangw/meet-live-assist",
+  "provenance": {
+    "identity_key": "dd75144b19",
+    "promoted_from": "mcp.io-github-krystiangw-meet-live-assist.stdio.dd75144b19",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.krystiangw/meet-live-assist",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-krystiangw-meet-live-assist.stdio.dd75144b19",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/krystiangw/meet-live-assist-extension",
+  "summary": "Your own agent inside a live Google Meet or Zoom call. Local-first, no hosted service.",
+  "tags": [
+    "assist",
+    "call",
+    "first",
+    "google",
+    "inside",
+    "live",
+    "local",
+    "meet",
+    "zoom"
+  ],
+  "title": "Meet Live Assist",
+  "type": "tool",
+  "version": "0.7.3"
+}

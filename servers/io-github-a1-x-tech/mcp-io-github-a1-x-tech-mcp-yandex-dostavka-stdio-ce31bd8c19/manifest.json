@@ -1,0 +1,95 @@
+{
+  "description": "MCP server for the Yandex Delivery B2B API: express claims, tracking, NDD/pickup-point orders.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:14+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-A1-x-Tech-mcp-yandex-dostavka.stdio.ce31bd8c19",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/A1-x-Tech/mcp-yandex-dostavka",
+    "homepage": "https://github.com/A1-x-Tech/mcp-yandex-dostavka",
+    "repository": "https://github.com/A1-x-Tech/mcp-yandex-dostavka"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-yandex-dostavka@1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.A1-x-Tech/mcp-yandex-dostavka",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Shared Bearer token for both contours (dostavka.yandex.ru cabinet, \u00ab\u0418\u043d\u0442\u0435\u0433\u0440\u0430\u0446\u0438\u0438\u00bb \u2192 \u00ab\u041f\u043e\u043b\u0443\u0447\u0438\u0442\u044c \u0442\u043e\u043a\u0435\u043d\u00bb). Treat it as a secret.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "YANDEX_DELIVERY_TOKEN"
+        },
+        {
+          "description": "Express-contour override of the shared token.",
+          "isSecret": true,
+          "name": "YANDEX_DELIVERY_EXPRESS_TOKEN"
+        },
+        {
+          "description": "Platform-contour override of the shared token.",
+          "isSecret": true,
+          "name": "YANDEX_DELIVERY_PLATFORM_TOKEN"
+        },
+        {
+          "default": "https://b2b.taxi.yandex.net",
+          "description": "Express API root override.",
+          "name": "YANDEX_DELIVERY_EXPRESS_BASE_URL"
+        },
+        {
+          "default": "https://b2b-authproxy.taxi.yandex.net",
+          "description": "Platform API root; set https://b2b.taxi.tst.yandex.net for the test contour.",
+          "name": "YANDEX_DELIVERY_PLATFORM_BASE_URL"
+        },
+        {
+          "default": "ru",
+          "description": "Accept-Language header (required by the express methods).",
+          "name": "YANDEX_DELIVERY_LANG"
+        },
+        {
+          "default": "60000",
+          "description": "Per-request timeout in milliseconds.",
+          "name": "YANDEX_DELIVERY_TIMEOUT_MS"
+        },
+        {
+          "default": "3",
+          "description": "Retries on transient errors (429 always; 5xx/network for idempotent calls only).",
+          "name": "YANDEX_DELIVERY_MAX_RETRIES"
+        }
+      ],
+      "identifier": "mcp-yandex-dostavka",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ce31bd8c19",
+    "published_at": "2026-08-11T16:58:56.242558Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.A1-x-Tech/mcp-yandex-dostavka",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-11T16:58:56.242558Z"
+  },
+  "title": "Yandex Delivery MCP",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

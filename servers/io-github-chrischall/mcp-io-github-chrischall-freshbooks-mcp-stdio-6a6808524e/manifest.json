@@ -1,0 +1,83 @@
+{
+  "description": "FreshBooks invoicing for Claude \u2014 invoices, clients, estimates, and payments",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:44+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-chrischall-freshbooks-mcp.stdio.6a6808524e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/chrischall/freshbooks-mcp",
+    "homepage": "https://github.com/chrischall/freshbooks-mcp",
+    "repository": "https://github.com/chrischall/freshbooks-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@chrischall/freshbooks-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.chrischall/freshbooks-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "OAuth client ID from my.freshbooks.com/#/developer",
+          "format": "string",
+          "isRequired": true,
+          "name": "FRESHBOOKS_CLIENT_ID"
+        },
+        {
+          "description": "OAuth client secret",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "FRESHBOOKS_CLIENT_SECRET"
+        },
+        {
+          "description": "OAuth refresh token from the one-time bootstrap (rotates on every use)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "FRESHBOOKS_REFRESH_TOKEN"
+        },
+        {
+          "description": "Registered redirect URI; required on refresh calls too (default https://localhost/callback)",
+          "format": "string",
+          "name": "FRESHBOOKS_REDIRECT_URI"
+        },
+        {
+          "description": "Path for the rotating-refresh-token store (default ~/.freshbooks-mcp/session.json)",
+          "format": "string",
+          "name": "FRESHBOOKS_TOKEN_STORE"
+        }
+      ],
+      "identifier": "@chrischall/freshbooks-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6a6808524e",
+    "published_at": "2026-08-12T22:30:13.067318Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.chrischall/freshbooks-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-12T22:30:13.067318Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

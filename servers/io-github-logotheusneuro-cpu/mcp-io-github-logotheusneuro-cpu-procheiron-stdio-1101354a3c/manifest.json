@@ -1,0 +1,84 @@
+{
+  "description": "Review gate for shared agent memory: an unreviewed or hand-edited memory is never served.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:07+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-logotheusneuro-cpu-procheiron.stdio.1101354a3c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/logotheusneuro-cpu/procheiron-core",
+    "homepage": "https://github.com/logotheusneuro-cpu/procheiron-core",
+    "repository": "https://github.com/logotheusneuro-cpu/procheiron-core"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "procheiron==0.3.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.logotheusneuro-cpu/procheiron",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional ed25519 private key hex for signed authorship (requires the 'crypto' extra). Mint one with `procheiron keygen`. Omit for tamper-evidence without signatures.",
+          "isSecret": true,
+          "name": "PROCHEIRON_SIGNING_KEY"
+        }
+      ],
+      "identifier": "procheiron",
+      "packageArguments": [
+        {
+          "description": "The procheiron CLI is subcommand-dispatched; the MCP server is `procheiron mcp`. Without this the invocation exits 2 before the server starts.",
+          "isRequired": true,
+          "type": "positional",
+          "value": "mcp",
+          "valueHint": "subcommand"
+        },
+        {
+          "description": "Path to the memory commons this server reads. Create one with `procheiron init <path>`.",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "--root",
+          "type": "named",
+          "value": "/path/to/your/commons"
+        },
+        {
+          "description": "Bound client identity. Used as created_by for proposals and as the acting actor for the promotion gate, so an agent cannot review its own record.",
+          "isRequired": true,
+          "name": "--actor",
+          "type": "named",
+          "value": "your-agent-name"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1101354a3c",
+    "published_at": "2026-08-10T22:01:12.233158Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.logotheusneuro-cpu/procheiron",
+    "server_version": "0.3.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-10T22:01:12.233158Z"
+  },
+  "title": "Procheiron",
+  "type": "mcp_server",
+  "version": "0.3.2"
+}

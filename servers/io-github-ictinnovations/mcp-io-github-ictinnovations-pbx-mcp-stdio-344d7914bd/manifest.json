@@ -1,0 +1,110 @@
+{
+  "description": "Inspect and control Asterisk (AMI) and FreeSWITCH (ESL) PBX servers from your AI assistant.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:01+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ictinnovations-pbx-mcp.stdio.344d7914bd",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ictinnovations/pbx-mcp",
+    "homepage": "https://github.com/ictinnovations/pbx-mcp",
+    "repository": "https://github.com/ictinnovations/pbx-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "pbx-mcp@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ictinnovations/pbx-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Hostname or IP of the Asterisk server. Set this to enable the Asterisk tools.",
+          "format": "string",
+          "name": "ASTERISK_AMI_HOST"
+        },
+        {
+          "default": "5038",
+          "description": "Asterisk Manager Interface port. Defaults to 5038.",
+          "format": "number",
+          "name": "ASTERISK_AMI_PORT"
+        },
+        {
+          "description": "AMI username from manager.conf.",
+          "format": "string",
+          "name": "ASTERISK_AMI_USERNAME"
+        },
+        {
+          "description": "AMI secret from manager.conf.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ASTERISK_AMI_PASSWORD"
+        },
+        {
+          "default": "false",
+          "description": "Connect to AMI over TLS. Set true if tlsenable=yes in manager.conf.",
+          "format": "boolean",
+          "name": "ASTERISK_AMI_TLS"
+        },
+        {
+          "description": "Hostname or IP of the FreeSWITCH server. Set this to enable the FreeSWITCH tools.",
+          "format": "string",
+          "name": "FREESWITCH_ESL_HOST"
+        },
+        {
+          "default": "8021",
+          "description": "FreeSWITCH inbound event socket port. Defaults to 8021.",
+          "format": "number",
+          "name": "FREESWITCH_ESL_PORT"
+        },
+        {
+          "description": "Event socket password from event_socket.conf.xml. Defaults to ClueCon, which you should change.",
+          "format": "string",
+          "isSecret": true,
+          "name": "FREESWITCH_ESL_PASSWORD"
+        },
+        {
+          "default": "false",
+          "description": "Unlocks call control. When false the server is read-only and the originate and hangup tools are not registered at all. Placing a call on a live trunk costs real money, so leave this off unless you mean it.",
+          "format": "boolean",
+          "name": "PBX_MCP_ALLOW_WRITE"
+        },
+        {
+          "default": "10000",
+          "description": "Per command timeout in milliseconds. Defaults to 10000.",
+          "format": "number",
+          "name": "PBX_MCP_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "pbx-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "344d7914bd",
+    "published_at": "2026-08-12T05:42:42.345864Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ictinnovations/pbx-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-12T05:42:42.345864Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

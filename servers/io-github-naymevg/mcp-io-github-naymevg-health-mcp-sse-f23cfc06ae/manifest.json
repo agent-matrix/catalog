@@ -1,0 +1,55 @@
+{
+  "description": "Self-hosted MCP server for Android Health Connect \u2014 34 metrics, daily rollups, dedup, 5 LLM tools.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:13+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-naymEvg-health-mcp.sse.f23cfc06ae",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/naymEvg/health-conect-mcp",
+    "homepage": "https://github.com/naymEvg/health-conect-mcp",
+    "repository": "https://github.com/naymEvg/health-conect-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://{host}/mcp-health"
+    }
+  },
+  "name": "io.github.naymEvg/health-mcp",
+  "provenance": {
+    "identity_key": "f23cfc06ae",
+    "published_at": "2026-08-11T11:10:45.88799Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.naymEvg/health-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-11T11:10:45.88799Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "MCP authentication token. Set MCP_TOKEN in .env, generate with: openssl rand -hex 32. Include 'Bearer ' prefix.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization"
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://{host}/mcp-health",
+      "variables": {
+        "host": {
+          "description": "Your server's public hostname with TLS (e.g., health.example.com). Deploy via Docker Compose \u2014 see repo README.",
+          "isRequired": true
+        }
+      }
+    }
+  ],
+  "title": "Health Hub MCP",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

@@ -1,0 +1,108 @@
+{
+  "description": "Market data, SEC filings and risk tools for Webull, Saxo and IBKR. Only you can send an order.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:18+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Blahaj-gif-hitl-finance-mcp.stdio.050148d065",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Blahaj-gif/Finance-mcp",
+    "homepage": "https://github.com/Blahaj-gif/Finance-mcp",
+    "repository": "https://github.com/Blahaj-gif/Finance-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "hitl-finance-mcp==0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Blahaj-gif/hitl-finance-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Webull OpenAPI app key. Without it prices fall back to Yahoo and the account and order tools are unavailable; everything else still works.",
+          "isSecret": true,
+          "name": "WEBULL_APP_KEY"
+        },
+        {
+          "description": "Webull OpenAPI app secret. Signs every request; the app key alone cannot authenticate.",
+          "isSecret": true,
+          "name": "WEBULL_APP_SECRET"
+        },
+        {
+          "default": "us",
+          "description": "Webull region: us, hk, jp, sg, th, my, uk, au, eu, br, mx, za.",
+          "name": "WEBULL_REGION_ID"
+        },
+        {
+          "default": "prod",
+          "description": "prod trades the real account. paper repoints the ENTIRE client at Webull's sandbox, quotes included, and needs separate sandbox credentials \u2014 production keys return 401 there.",
+          "name": "WEBULL_ENVIRONMENT"
+        },
+        {
+          "default": "webull",
+          "description": "Which broker adapter the account and order tools use, and where prices come from: webull, saxo or ibkr. Only the tools the configured broker can serve are registered, so the tool list never advertises one that would refuse. Webull is the only adapter that has been run against a live account; saxo and ibkr are written from published documentation and say so in every result they produce.",
+          "name": "FINANCE_BROKER"
+        },
+        {
+          "description": "Only for FINANCE_BROKER=saxo. A 24-hour simulation token comes from Saxo's Developer Portal with no approval process and no live money; live access needs the OAuth2 code flow. UNVERIFIED ADAPTER.",
+          "isSecret": true,
+          "name": "SAXO_ACCESS_TOKEN"
+        },
+        {
+          "default": "sim",
+          "description": "sim or live. Selects Saxo's simulation gateway or the live one.",
+          "name": "SAXO_ENVIRONMENT"
+        },
+        {
+          "default": "https://localhost:5000/v1/api",
+          "description": "Only for FINANCE_BROKER=ibkr. This is the Client Portal Web API, not the TWS socket API: run IBKR's Client Portal Gateway and log in at https://localhost:5000 in a browser first. A paper account works and is the better choice. UNVERIFIED ADAPTER.",
+          "name": "IBKR_BASE_URL"
+        },
+        {
+          "description": "Set to 1 to accept the Client Portal Gateway's self-signed certificate unverified, or point IBKR_CACERT at it instead. This is a decision about the connection carrying your orders, so it is never made for you.",
+          "name": "IBKR_TLS_INSECURE"
+        },
+        {
+          "description": "A descriptive User-Agent with a real contact address, e.g. 'Jane Doe (jane@example.com)'. The SEC's fair-access policy requires it and the filings tools refuse to send requests without one rather than risk an IP ban.",
+          "name": "SEC_USER_AGENT"
+        },
+        {
+          "description": "Optional. BLS allows 25 macro queries a day without a key; a free key raises it to 500 and extends history from 10 to 20 years.",
+          "isSecret": true,
+          "name": "BLS_API_KEY"
+        }
+      ],
+      "identifier": "hitl-finance-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "050148d065",
+    "published_at": "2026-08-11T11:52:01.07567Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Blahaj-gif/hitl-finance-mcp",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-11T11:52:01.07567Z"
+  },
+  "title": "Finance MCP",
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

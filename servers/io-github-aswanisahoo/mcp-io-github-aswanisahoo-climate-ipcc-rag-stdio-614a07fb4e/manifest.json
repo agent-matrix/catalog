@@ -1,0 +1,68 @@
+{
+  "description": "Search IPCC AR6 WG1 and answer with page-level citations, or refuse when unsupported.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:17+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-AswaniSahoo-climate-ipcc-rag.stdio.614a07fb4e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/AswaniSahoo/climate-risk-agent",
+    "homepage": "https://github.com/AswaniSahoo/climate-risk-agent",
+    "repository": "https://github.com/AswaniSahoo/climate-risk-agent"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/aswanisahoo/climate-ipcc-rag-mcp:0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.AswaniSahoo/climate-ipcc-rag",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "AI Studio API key. Either this or the Vertex variables must be set: retrieval is hybrid, so the dense half embeds every query.",
+          "format": "string",
+          "isSecret": true,
+          "name": "GEMINI_API_KEY"
+        },
+        {
+          "description": "Set to \"true\" to authenticate through Vertex AI with Application Default Credentials instead of an API key.",
+          "format": "string",
+          "name": "GOOGLE_GENAI_USE_VERTEXAI"
+        },
+        {
+          "description": "Google Cloud project id. Required when GOOGLE_GENAI_USE_VERTEXAI is true.",
+          "format": "string",
+          "name": "GOOGLE_CLOUD_PROJECT"
+        }
+      ],
+      "identifier": "ghcr.io/aswanisahoo/climate-ipcc-rag-mcp:0.1.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "614a07fb4e",
+    "published_at": "2026-08-10T20:06:30.589596Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.AswaniSahoo/climate-ipcc-rag",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-10T20:06:30.589596Z"
+  },
+  "title": "IPCC AR6 Climate Retrieval",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

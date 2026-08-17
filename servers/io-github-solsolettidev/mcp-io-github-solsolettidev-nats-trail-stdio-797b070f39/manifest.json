@@ -1,0 +1,64 @@
+{
+  "description": "Read-only NATS and JetStream observability: trace a request across streams, rank what is broken.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:26+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-solsolettidev-nats-trail.stdio.797b070f39",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/solsolettidev/nats-trail",
+    "homepage": "https://github.com/solsolettidev/nats-trail",
+    "repository": "https://github.com/solsolettidev/nats-trail"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@nats-trail/mcp@0.5.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.solsolettidev/nats-trail",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "URL of the NATS Trail bridge, e.g. http://127.0.0.1:4000. Without it the server answers only from local state and cannot reach JetStream.",
+          "format": "string",
+          "name": "NATS_TRAIL_API"
+        },
+        {
+          "description": "Bearer token for the bridge, required when it has auth enabled. A read-scoped token is enough: this server never mutates.",
+          "format": "string",
+          "isSecret": true,
+          "name": "NATS_TRAIL_TOKEN"
+        }
+      ],
+      "identifier": "@nats-trail/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "797b070f39",
+    "published_at": "2026-08-15T18:35:33.387111Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.solsolettidev/nats-trail",
+    "server_version": "0.5.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-15T18:35:33.387111Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.5.0"
+}

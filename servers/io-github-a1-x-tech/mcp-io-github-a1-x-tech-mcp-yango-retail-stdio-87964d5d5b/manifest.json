@@ -1,0 +1,75 @@
+{
+  "description": "MCP server for the Yango Tech Retail B2B API: orders, products, prices, discounts, stocks.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:14+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-A1-x-Tech-mcp-yango-retail.stdio.87964d5d5b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/A1-x-Tech/mcp-yango-retail",
+    "homepage": "https://github.com/A1-x-Tech/mcp-yango-retail",
+    "repository": "https://github.com/A1-x-Tech/mcp-yango-retail"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-yango-retail@1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.A1-x-Tech/mcp-yango-retail",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Bearer token issued by Yango Tech for the retailer account. Treat it as a secret.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "YANGO_RETAIL_TOKEN"
+        },
+        {
+          "default": "https://api.retailtech.yango.com",
+          "description": "API root override.",
+          "name": "YANGO_RETAIL_API_BASE_URL"
+        },
+        {
+          "default": "60000",
+          "description": "Per-request timeout in milliseconds.",
+          "name": "YANGO_RETAIL_TIMEOUT_MS"
+        },
+        {
+          "default": "3",
+          "description": "Retries on transient errors (429 always; 5xx/network for reads only).",
+          "name": "YANGO_RETAIL_MAX_RETRIES"
+        }
+      ],
+      "identifier": "mcp-yango-retail",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "87964d5d5b",
+    "published_at": "2026-08-11T16:58:59.057912Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.A1-x-Tech/mcp-yango-retail",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-11T16:58:59.057912Z"
+  },
+  "title": "Yango Tech Retail MCP",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

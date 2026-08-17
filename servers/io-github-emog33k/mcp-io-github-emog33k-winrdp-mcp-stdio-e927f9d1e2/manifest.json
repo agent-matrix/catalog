@@ -1,0 +1,80 @@
+{
+  "description": "Zero-config server to provision and administer any Windows RDP box over WinRM/SSH/SMB.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:56+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-emog33k-winrdp-mcp.stdio.e927f9d1e2",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/emog33k/winrdp-mcp",
+    "homepage": "https://github.com/emog33k/winrdp-mcp",
+    "repository": "https://github.com/emog33k/winrdp-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "Run the MCP server in controller mode (stdio).",
+            "isRequired": true,
+            "type": "positional",
+            "value": "serve",
+            "valueHint": "serve"
+          },
+          "winrdp-mcp==0.1.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.emog33k/winrdp-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional Fernet key to encrypt the host inventory at rest. Omit to use a machine-local key file.",
+          "isSecret": true,
+          "name": "WINRDP_VAULT_KEY"
+        },
+        {
+          "default": "full",
+          "description": "Tool profile to expose: full (default), admin, rdp, or core.",
+          "name": "WINRDP_PROFILE"
+        }
+      ],
+      "identifier": "winrdp-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "Run the MCP server in controller mode (stdio).",
+          "isRequired": true,
+          "type": "positional",
+          "value": "serve",
+          "valueHint": "serve"
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e927f9d1e2",
+    "published_at": "2026-08-10T12:49:27.041735Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.emog33k/winrdp-mcp",
+    "server_version": "0.1.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-10T12:49:27.041735Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.3"
+}

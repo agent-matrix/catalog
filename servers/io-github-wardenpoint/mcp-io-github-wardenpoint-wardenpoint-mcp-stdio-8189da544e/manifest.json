@@ -1,0 +1,73 @@
+{
+  "description": "Configure on-call alerting from an AI agent: recipients, groups, escalation policies, schedules.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:34+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-WardenPoint-wardenpoint-mcp.stdio.8189da544e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/WardenPoint/wardenpoint-mcp",
+    "homepage": "https://github.com/WardenPoint/wardenpoint-mcp",
+    "repository": "https://github.com/WardenPoint/wardenpoint-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@wardenpoint/mcp-server@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.WardenPoint/wardenpoint-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Origin of your WardenPoint installation, without a trailing slash and without /api/v1 \u2014 e.g. https://wardenpoint.com. The server reads the API description from it at startup, so the tools always match the version you actually run.",
+          "isRequired": true,
+          "name": "WARDENPOINT_BASE_URL"
+        },
+        {
+          "description": "A company API key from Dashboard \u2192 Integrations \u2192 API keys. Abilities are chosen when you issue it; read-only is a good place to start. Not needed for --list-tools.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "WARDENPOINT_API_TOKEN"
+        },
+        {
+          "description": "Per-request timeout in milliseconds. Defaults to 30000.",
+          "name": "WARDENPOINT_TIMEOUT_MS"
+        },
+        {
+          "description": "Set to 1 to skip certificate verification. Development stands only \u2014 never against production.",
+          "name": "WARDENPOINT_ALLOW_INSECURE_TLS"
+        }
+      ],
+      "identifier": "@wardenpoint/mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8189da544e",
+    "published_at": "2026-08-14T09:45:36.66157Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.WardenPoint/wardenpoint-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-14T09:45:36.66157Z"
+  },
+  "title": "WardenPoint",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

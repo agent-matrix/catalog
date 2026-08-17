@@ -1,0 +1,91 @@
+{
+  "description": "Drives a real Android device over ADB and attaches the resulting screen to every action.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-edgecasehuman-droidsight.stdio.b52c04168c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/edgecasehuman/droidsight",
+    "homepage": "https://github.com/edgecasehuman/droidsight",
+    "repository": "https://github.com/edgecasehuman/droidsight"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@edgecasehuman/droidsight@1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.edgecasehuman/droidsight",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "The only Android target the process may use. Required when ADB reports more than one authorized device; the server refuses to guess.",
+          "name": "DROIDSIGHT_DEVICE_SERIAL"
+        },
+        {
+          "description": "Explicit path to the ADB executable. Falls back to ANDROID_SDK_ROOT, ANDROID_HOME, then PATH.",
+          "name": "DROIDSIGHT_ADB_PATH"
+        },
+        {
+          "description": "Confines host paths used by APK installation and file push/pull. Defaults to the process working directory.",
+          "name": "DROIDSIGHT_LOCAL_ROOT"
+        },
+        {
+          "description": "Numeric PIN for UI actions that require automatic unlock.",
+          "isSecret": true,
+          "name": "DROIDSIGHT_DEVICE_PIN"
+        },
+        {
+          "description": "Set to 1 to publish the arbitrary shell and macro tools. Grants authority equivalent to broad ADB shell access.",
+          "name": "DROIDSIGHT_ALLOW_SHELL"
+        },
+        {
+          "description": "Path to a persistent debug log. File logging is otherwise disabled.",
+          "name": "DROIDSIGHT_DEBUG_LOG"
+        },
+        {
+          "description": "Tracing filter. Defaults to warn, or debug when a debug log path is set.",
+          "name": "DROIDSIGHT_LOG"
+        },
+        {
+          "description": "Set to 1 to start the long-running device event monitor. Requires DROIDSIGHT_DEVICE_SERIAL.",
+          "name": "DROIDSIGHT_EVENTS"
+        },
+        {
+          "description": "Set to 1 to start the background enforcement loop. It re-applies watched device state on a timer, including unlocking the screen. Off by default.",
+          "name": "DROIDSIGHT_SENTINEL"
+        }
+      ],
+      "identifier": "@edgecasehuman/droidsight",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b52c04168c",
+    "published_at": "2026-08-12T04:28:36.195866Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.edgecasehuman/droidsight",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-12T04:28:36.195866Z"
+  },
+  "title": "droidsight",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

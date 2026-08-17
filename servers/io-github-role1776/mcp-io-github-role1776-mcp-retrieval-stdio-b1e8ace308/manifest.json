@@ -1,0 +1,104 @@
+{
+  "description": "Web search, image search, and page scraping as Markdown. No API keys required.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Role1776-mcp-retrieval.stdio.b1e8ace308",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Role1776/mcp-retrieval",
+    "homepage": "https://github.com/Role1776/mcp-retrieval",
+    "repository": "https://github.com/Role1776/mcp-retrieval"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/role1776/mcp-retrieval:0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Role1776/mcp-retrieval",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "20",
+          "description": "Upper bound for snippets per query (default 20).",
+          "name": "MAX_RESULTS"
+        },
+        {
+          "default": "10",
+          "description": "Upper bound for images per query (default 10).",
+          "name": "MAX_IMAGES"
+        },
+        {
+          "default": "5000",
+          "description": "Default per-call timeout in milliseconds (default 5000).",
+          "name": "DEFAULT_TIMEOUT_MS"
+        },
+        {
+          "default": "10000",
+          "description": "Highest timeout a call may request, in milliseconds (default 10000).",
+          "name": "MAX_TIMEOUT_MS"
+        },
+        {
+          "default": "10",
+          "description": "Maximum queries or URLs accepted in one call (default 10).",
+          "name": "MAX_QUERIES"
+        },
+        {
+          "default": "local",
+          "description": "local (text, debug) or prod (JSON, info). Logs go to stderr.",
+          "name": "LOG_MODE"
+        },
+        {
+          "description": "Outbound proxy scheme. Optional; set all five PROXY_* variables or none.",
+          "name": "PROXY_SCHEME"
+        },
+        {
+          "description": "Outbound proxy host. Enables per-request rotating proxy sessions.",
+          "name": "PROXY_HOST"
+        },
+        {
+          "description": "Outbound proxy port. Required when PROXY_HOST is set.",
+          "name": "PROXY_PORT"
+        },
+        {
+          "description": "Outbound proxy username. Required when PROXY_HOST is set.",
+          "isSecret": true,
+          "name": "PROXY_LOGIN"
+        },
+        {
+          "description": "Outbound proxy password. Required when PROXY_HOST is set.",
+          "isSecret": true,
+          "name": "PROXY_PASSWORD"
+        }
+      ],
+      "identifier": "ghcr.io/role1776/mcp-retrieval:0.1.2",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "b1e8ace308",
+    "published_at": "2026-08-12T01:27:16.085629Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Role1776/mcp-retrieval",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-12T01:27:16.085629Z"
+  },
+  "title": "MCP Retrieval",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

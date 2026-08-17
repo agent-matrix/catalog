@@ -1,0 +1,59 @@
+{
+  "description": "Self-hosted low-code platform (Docker); its MCP endpoint runs on your own instance, not via npx.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:18+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-polterguy-magic.stdio.e11466730e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/polterguy/magic",
+    "homepage": "https://github.com/polterguy/magic",
+    "repository": "https://github.com/polterguy/magic"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "docker.io/servergardens/magic-aio:v23.2.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.polterguy/magic",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Hostname of your own Magic instance, e.g. magic.example.com",
+          "format": "string",
+          "isRequired": true,
+          "name": "magic_host"
+        }
+      ],
+      "identifier": "docker.io/servergardens/magic-aio:v23.2.5",
+      "registryType": "oci",
+      "transport": {
+        "type": "streamable-http",
+        "url": "https://{magic_host}/magic/modules/mcp/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "e11466730e",
+    "published_at": "2026-08-12T15:21:01.436447Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.polterguy/magic",
+    "server_version": "23.2.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-12T15:21:01.436447Z"
+  },
+  "title": "Magic Cloud",
+  "type": "mcp_server",
+  "version": "23.2.5"
+}

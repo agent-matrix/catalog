@@ -1,0 +1,66 @@
+{
+  "description": "Unlimited agent mailboxes \u2014 create identities, read/wait for mail, extract OTPs, send email.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-openagentemail-mcp.stdio.e564af0b6d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/openagentemail/openagentemail",
+    "homepage": "https://github.com/openagentemail/openagentemail",
+    "repository": "https://github.com/openagentemail/openagentemail"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@openagentemail/mcp@0.5.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.openagentemail/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Bearer key for the openagent.email API \u2014 best: the identity token (oa_\u2026) returned by POST /v1/identities.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OPENAGENTEMAIL_API_KEY"
+        },
+        {
+          "default": "http://localhost:3100",
+          "description": "Base URL of the openagent.email API.",
+          "format": "string",
+          "name": "OPENAGENTEMAIL_API_URL"
+        }
+      ],
+      "identifier": "@openagentemail/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e564af0b6d",
+    "published_at": "2026-08-15T07:05:24.231487Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.openagentemail/mcp",
+    "server_version": "0.5.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-15T07:05:24.231487Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.5.1"
+}

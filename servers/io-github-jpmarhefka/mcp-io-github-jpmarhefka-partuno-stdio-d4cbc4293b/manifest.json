@@ -1,0 +1,87 @@
+{
+  "description": "DigiKey and Mouser MCP server for component research, BOM analysis, and sourcing.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:25+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-JPMarhefka-partuno.stdio.d4cbc4293b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/JPMarhefka/Partuno",
+    "homepage": "https://github.com/JPMarhefka/Partuno",
+    "repository": "https://github.com/JPMarhefka/Partuno"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "partuno==4.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.JPMarhefka/partuno",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional DigiKey bearer token for local mode.",
+          "isSecret": true,
+          "name": "DIGIKEY_ACCESS_TOKEN"
+        },
+        {
+          "description": "DigiKey OAuth client ID for the operator's integration.",
+          "isSecret": true,
+          "name": "DIGIKEY_CLIENT_ID"
+        },
+        {
+          "description": "DigiKey OAuth client secret for the operator's integration.",
+          "isSecret": true,
+          "name": "DIGIKEY_CLIENT_SECRET"
+        },
+        {
+          "description": "Optional Mouser Search API key for catalog workflows.",
+          "isSecret": true,
+          "name": "MOUSER_SEARCH_API_KEY"
+        },
+        {
+          "description": "Optional Mouser Account API key for order-history and Cart workflows.",
+          "isSecret": true,
+          "name": "MOUSER_ACCOUNT_API_KEY"
+        }
+      ],
+      "identifier": "partuno",
+      "packageArguments": [
+        {
+          "isRequired": true,
+          "type": "positional",
+          "value": "partuno-mcp"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "4.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d4cbc4293b",
+    "published_at": "2026-08-12T21:17:04.810968Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.JPMarhefka/partuno",
+    "server_version": "4.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-12T21:17:04.810968Z"
+  },
+  "title": "Partuno \u2014 DigiKey & Mouser MCP Server",
+  "type": "mcp_server",
+  "version": "4.0.0"
+}

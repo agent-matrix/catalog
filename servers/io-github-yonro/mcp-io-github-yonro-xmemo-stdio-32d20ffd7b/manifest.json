@@ -1,0 +1,73 @@
+{
+  "description": "Shared, governed long-term memory for AI agents across tools and sessions via MCP and REST.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:34+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-yonro-xmemo.stdio.32d20ffd7b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/yonro/memory-os-cli",
+    "homepage": "https://github.com/yonro/memory-os-cli",
+    "repository": "https://github.com/yonro/memory-os-cli"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@xmemo/client@0.4.181"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.yonro/xmemo",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Bearer token issued by XMemo for the stdio proxy. Optional for discovery; required for tool execution.",
+          "isSecret": true,
+          "name": "XMEMO_KEY"
+        },
+        {
+          "description": "Optional XMemo service base URL. Defaults to https://xmemo.dev.",
+          "name": "XMEMO_URL"
+        }
+      ],
+      "identifier": "@xmemo/client",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        },
+        {
+          "type": "positional",
+          "value": "serve"
+        }
+      ],
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.181"
+    }
+  ],
+  "provenance": {
+    "identity_key": "32d20ffd7b",
+    "published_at": "2026-08-13T16:29:40.631778Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.yonro/xmemo",
+    "server_version": "0.4.345",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-13T16:29:40.631778Z"
+  },
+  "title": "XMemo",
+  "type": "mcp_server",
+  "version": "0.4.345"
+}

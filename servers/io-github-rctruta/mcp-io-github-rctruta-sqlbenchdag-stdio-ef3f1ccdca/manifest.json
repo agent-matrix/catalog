@@ -1,0 +1,63 @@
+{
+  "description": "Query pre-computed SQL engine benchmarks. Runs standalone, no server setup required.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-rctruta-sqlbenchdag.stdio.ef3f1ccdca",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/rctruta/sql-benchmarks-dagster",
+    "homepage": "https://github.com/rctruta/sql-benchmarks-dagster",
+    "repository": "https://github.com/rctruta/sql-benchmarks-dagster"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "sqlbenchdag==0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.rctruta/sqlbenchdag",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Directory of experiment result capsules. The package ships the SQL suites, taxonomy and templates but NOT capsules, which are run output \u2014 so on a fresh install the catalog tools work and list_results is empty until this points at a results directory.",
+          "name": "SB_RESULTS_DIR"
+        },
+        {
+          "description": "Optional. Base URL of a running SQL Benchmarks REST API. Leave unset and the read tools mount the API in-process \u2014 no server needed. Set it only when the API runs elsewhere, or to use submit_experiment, which needs a process that outlives the request.",
+          "name": "SB_API_BASE"
+        }
+      ],
+      "identifier": "sqlbenchdag",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ef3f1ccdca",
+    "published_at": "2026-08-10T17:42:45.040888Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.rctruta/sqlbenchdag",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-10T17:42:45.040888Z"
+  },
+  "title": "SQL Benchmarks Lab",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

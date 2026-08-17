@@ -1,0 +1,68 @@
+{
+  "description": "Persistent memory for AI coding agents: one Rust binary, one local SQLite database.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-asanabrial-leteo.stdio.d4c54c811e",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='cargo' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/asanabrial/leteo",
+    "homepage": "https://github.com/asanabrial/leteo",
+    "repository": "https://github.com/asanabrial/leteo"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.asanabrial/leteo",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Where the database lives. Defaults to ~/.leteo, and only needs setting for a store kept somewhere else \u2014 the server is started by the agent rather than by a person, so it cannot inherit a shell's environment.",
+          "format": "filepath",
+          "name": "LETEO_DATA_DIR"
+        }
+      ],
+      "identifier": "leteo",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        },
+        {
+          "description": "Which tools the server exposes. `agent` is the nineteen an agent reaches for while it works; the three that change or count the whole store sit behind `admin`.",
+          "name": "--tools",
+          "type": "named",
+          "value": "agent"
+        }
+      ],
+      "registryType": "cargo",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d4c54c811e",
+    "published_at": "2026-08-11T20:48:06.900018Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.asanabrial/leteo",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-11T20:48:06.900018Z"
+  },
+  "title": "Leteo",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

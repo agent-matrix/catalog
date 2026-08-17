@@ -1,0 +1,104 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/fatihbaltaci/godrop:1.3.1"
+      }
+    }
+  ],
+  "description": "Self-hosted file host: upload a file, get a public URL an agent can paste into a pull request.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:56+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/fatihbaltaci/GoDrop",
+  "id": "tool.io-github-fatihbaltaci-godrop.4c8c86cac2",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/fatihbaltaci/GoDrop",
+    "homepage": "https://github.com/fatihbaltaci/GoDrop",
+    "repository": "https://github.com/fatihbaltaci/GoDrop"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Self-hosted file host: upload a file, get a public URL an agent can paste into a pull request.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.fatihbaltaci/godrop",
+      "request_type": "POST",
+      "url": "https://github.com/fatihbaltaci/GoDrop"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "type": "positional",
+            "value": "run",
+            "valueHint": "run"
+          },
+          {
+            "description": "Keep stdin open, which is the whole transport.",
+            "name": "-i",
+            "type": "named"
+          },
+          {
+            "description": "The process holds no state, so nothing is left behind.",
+            "name": "--rm",
+            "type": "named"
+          },
+          {
+            "description": "Where your instance answers.",
+            "isRepeated": true,
+            "name": "-e",
+            "type": "named",
+            "value": "GODROP_URL"
+          },
+          {
+            "description": "The token that authorises uploads.",
+            "isRepeated": true,
+            "name": "-e",
+            "type": "named",
+            "value": "GODROP_TOKEN"
+          },
+          "ghcr.io/fatihbaltaci/godrop:1.3.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.fatihbaltaci/godrop",
+  "provenance": {
+    "identity_key": "97eab6f3bc",
+    "promoted_from": "mcp.io-github-fatihbaltaci-godrop.stdio.97eab6f3bc",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.fatihbaltaci/godrop",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-fatihbaltaci-godrop.stdio.97eab6f3bc",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/fatihbaltaci/GoDrop",
+  "summary": "Self-hosted file host: upload a file, get a public URL an agent can paste into a pull request.",
+  "tags": [
+    "file",
+    "godrop",
+    "host",
+    "hosted",
+    "self",
+    "upload"
+  ],
+  "title": "GoDrop",
+  "type": "tool",
+  "version": "1.3.1"
+}

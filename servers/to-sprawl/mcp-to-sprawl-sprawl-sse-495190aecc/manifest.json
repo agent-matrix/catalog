@@ -1,7 +1,7 @@
 {
-  "description": "Run every operation you've got \u2014 each with its own fleet of agents and its own accounts.",
+  "description": "Build and supervise fleets of agents from Claude Code, Codex or Cursor. Connects over OAuth.",
   "harvest": {
-    "last_seen_at": "2026-08-10T04:07:57+00:00",
+    "last_seen_at": "2026-08-17T03:13:39+00:00",
     "seen_in_latest_run": true
   },
   "id": "mcp.to-sprawl-sprawl.sse.495190aecc",
@@ -18,27 +18,25 @@
   "name": "to.sprawl/sprawl",
   "provenance": {
     "identity_key": "495190aecc",
-    "published_at": "2026-08-07T15:08:21.544976Z",
+    "published_at": "2026-08-12T00:03:28.286848Z",
     "registry_base_url": "https://registry.modelcontextprotocol.io",
     "server_name": "to.sprawl/sprawl",
-    "server_version": "1.0.1",
+    "server_version": "1.1.0",
     "source": "mcp-registry",
-    "updated_at": "2026-08-07T15:08:21.544976Z"
+    "updated_at": "2026-08-12T00:03:28.286848Z"
   },
   "remotes": [
     {
       "headers": [
         {
-          "description": "Sprawl API key as a bearer token. Create a free account and generate one \u2014 start at https://sprawl.to/docs/mcp.",
-          "isRequired": true,
+          "description": "OPTIONAL. This server supports OAuth 2.1 with PKCE, discovered automatically at /.well-known/oauth-protected-resource \u2014 browser-based clients (claude.ai connectors and similar) should use that and need no header at all. Supply this header only for headless, CLI, or CI callers that have no browser to complete consent with: a Sprawl API key as a bearer token, from https://sprawl.to/docs/mcp.",
           "isSecret": true,
           "name": "Authorization",
           "value": "Bearer {api_key}",
           "variables": {
             "api_key": {
-              "description": "Your Sprawl API key (prefix sprawl_sk_). Create a free account and generate one at https://sprawl.to/docs/mcp.",
+              "description": "Your Sprawl API key (prefix sprawl_sk_), for headless callers only \u2014 browser-based clients should use OAuth instead and skip this entirely. Create a free account and generate one at https://sprawl.to/docs/mcp.",
               "format": "string",
-              "isRequired": true,
               "isSecret": true
             }
           }
@@ -50,5 +48,5 @@
   ],
   "title": "Sprawl",
   "type": "mcp_server",
-  "version": "1.0.1"
+  "version": "1.1.0"
 }

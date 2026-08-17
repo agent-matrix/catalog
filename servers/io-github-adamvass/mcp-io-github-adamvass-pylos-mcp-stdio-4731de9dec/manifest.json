@@ -1,0 +1,80 @@
+{
+  "description": "Read-focused, prompt-injection-hardened email MCP server for any IMAP provider",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:36+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-adamVass-pylos-mcp.stdio.4731de9dec",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/adamVass/pylos-mcp",
+    "homepage": "https://github.com/adamVass/pylos-mcp",
+    "repository": "https://github.com/adamVass/pylos-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "pylos-mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.adamVass/pylos-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Account login.",
+          "format": "string",
+          "isRequired": true,
+          "name": "EMAIL_USER"
+        },
+        {
+          "description": "App password. Either this or EMAIL_PASSWORD_CMD is required.",
+          "format": "string",
+          "isSecret": true,
+          "name": "EMAIL_PASSWORD"
+        },
+        {
+          "description": "One of gmail, icloud, yahoo, gmx, fastmail, mailbox.org, posteo. Fills in IMAP, SMTP and Sieve hosts and ports.",
+          "format": "string",
+          "name": "PROVIDER"
+        },
+        {
+          "description": "IMAP hostname for self-hosted or unlisted providers. Overrides the preset.",
+          "format": "string",
+          "name": "IMAP_HOST"
+        },
+        {
+          "description": "Comma-separated list of tiers beyond read, which is always included. Defaults to drafts.",
+          "format": "string",
+          "name": "CAPABILITIES"
+        }
+      ],
+      "identifier": "pylos-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4731de9dec",
+    "published_at": "2026-08-10T23:27:03.606797Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.adamVass/pylos-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-10T23:27:03.606797Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}
