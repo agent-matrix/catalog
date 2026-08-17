@@ -1,0 +1,77 @@
+{
+  "description": "134 paid APIs as MCP tools, billed per call in USDC on Base. No account, no login.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:59+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-halowerk-halowerk-mcp.stdio.bd7785f763",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/halowerk/halowerk-mcp",
+    "homepage": "https://github.com/halowerk/halowerk-mcp",
+    "repository": "https://github.com/halowerk/halowerk-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "halowerk-mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.halowerk/halowerk-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Private key of the paying wallet, hex with or without 0x. Use a throwaway wallet holding only a few dollars of USDC on Base. Without it, only the free catalogue and price tools work.",
+          "isSecret": true,
+          "name": "HALOWERK_PRIVATE_KEY"
+        },
+        {
+          "default": "0.05",
+          "description": "Ceiling per call in USDC. A more expensive service is refused, not bought. Default 0.05.",
+          "name": "HALOWERK_MAX_PREIS_USDC"
+        },
+        {
+          "default": "1.00",
+          "description": "Ceiling per session in USDC. Once reached the server refuses further paid calls. Default 1.00.",
+          "name": "HALOWERK_BUDGET_USDC"
+        },
+        {
+          "default": "hero",
+          "description": "hero (12 curated services, default), gateway (3 meta-tools, smallest context) or all (70 services).",
+          "name": "HALOWERK_MODUS"
+        },
+        {
+          "description": "Set to 1 for a dry run: returns price and call plan, pays nothing.",
+          "name": "HALOWERK_TROCKEN"
+        }
+      ],
+      "identifier": "halowerk-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "bd7785f763",
+    "published_at": "2026-08-12T09:05:41.425056Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.halowerk/halowerk-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-12T09:05:41.425056Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

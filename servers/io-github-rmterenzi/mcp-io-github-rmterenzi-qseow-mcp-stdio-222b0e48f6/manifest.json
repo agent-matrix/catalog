@@ -1,0 +1,110 @@
+{
+  "description": "Agent tools for Qlik Sense Enterprise on Windows: troubleshoot, govern, query and build.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:21+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-rmterenzi-qseow-mcp.stdio.222b0e48f6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/rmterenzi/qseow-mcp",
+    "homepage": "https://github.com/rmterenzi/qseow-mcp",
+    "repository": "https://github.com/rmterenzi/qseow-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "qseow-mcp@0.5.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.rmterenzi/qseow-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Hostname of the Qlik Sense node, no scheme (e.g. sense.example.com).",
+          "format": "string",
+          "isRequired": true,
+          "name": "QSEOW_HOST"
+        },
+        {
+          "default": "certificate",
+          "description": "'certificate' (service identity via QMC-exported certs) or 'jwt' (per-user, through a JWT virtual proxy). Defaults to certificate.",
+          "format": "string",
+          "name": "QSEOW_AUTH_MODE"
+        },
+        {
+          "description": "Path to the QMC-exported client certificate (PEM). Required in certificate mode; also enables the Proxy-API session tools in jwt mode.",
+          "format": "filepath",
+          "name": "QSEOW_CERT_PATH"
+        },
+        {
+          "description": "Path to the client certificate private key (PEM).",
+          "format": "filepath",
+          "name": "QSEOW_CERT_KEY_PATH"
+        },
+        {
+          "description": "Path to the Qlik root CA (PEM). Supply it to keep TLS verification on.",
+          "format": "filepath",
+          "name": "QSEOW_ROOT_CERT_PATH"
+        },
+        {
+          "description": "Signed JWT for the virtual proxy (jwt mode only).",
+          "format": "string",
+          "isSecret": true,
+          "name": "QSEOW_JWT"
+        },
+        {
+          "default": "jwt",
+          "description": "Virtual proxy prefix for jwt mode, e.g. 'jwt'.",
+          "format": "string",
+          "name": "QSEOW_VP_PREFIX"
+        },
+        {
+          "default": "false",
+          "description": "Set true to register write tools. Default false: mutating tools are never registered, so the tool list is genuinely read-only.",
+          "format": "string",
+          "name": "QSEOW_ALLOW_MUTATIONS"
+        },
+        {
+          "default": "analyst,developer,admin",
+          "description": "Comma-separated personas to expose: analyst, developer, admin.",
+          "format": "string",
+          "name": "QSEOW_TOOL_GROUPS"
+        },
+        {
+          "default": "true",
+          "description": "Set false only for self-signed lab certificates. Leave on in production.",
+          "format": "string",
+          "name": "QSEOW_TLS_VERIFY"
+        }
+      ],
+      "identifier": "qseow-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "222b0e48f6",
+    "published_at": "2026-08-12T12:28:29.39285Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.rmterenzi/qseow-mcp",
+    "server_version": "0.5.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-12T12:28:29.39285Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.5.2"
+}

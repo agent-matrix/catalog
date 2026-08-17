@@ -1,0 +1,88 @@
+{
+  "description": "Expose declarative YAML-defined workflows as MCP tools over stdio",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-orieg-yaml-workflow.stdio.ca81be1a72",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/orieg/yaml-workflow",
+    "homepage": "https://github.com/orieg/yaml-workflow",
+    "repository": "https://github.com/orieg/yaml-workflow"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "Install the package with the [mcp] extra so the serve-mcp command is available",
+            "name": "--from",
+            "type": "named",
+            "value": "yaml-workflow[mcp]"
+          },
+          "yaml-workflow==0.9.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.orieg/yaml-workflow",
+  "packages": [
+    {
+      "identifier": "yaml-workflow",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "serve-mcp"
+        },
+        {
+          "description": "Directory containing workflow YAML definitions to expose as tools",
+          "isRequired": true,
+          "name": "--dir",
+          "type": "named",
+          "value": "{workflow_dir}",
+          "variables": {
+            "workflow_dir": {
+              "default": "workflows",
+              "description": "Path to the directory of workflow definitions",
+              "format": "filepath",
+              "isRequired": true
+            }
+          }
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "Install the package with the [mcp] extra so the serve-mcp command is available",
+          "name": "--from",
+          "type": "named",
+          "value": "yaml-workflow[mcp]"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.9.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ca81be1a72",
+    "published_at": "2026-08-15T06:33:00.725118Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.orieg/yaml-workflow",
+    "server_version": "0.9.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-15T06:33:00.725118Z"
+  },
+  "title": "YAML Workflow",
+  "type": "mcp_server",
+  "version": "0.9.4"
+}

@@ -1,0 +1,62 @@
+{
+  "description": "Live cross-DEX pool prices, liquidity and spreads on 6 EVM chains, read from on-chain pool state.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:54+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-donnywin85-arb-dex-mcp.stdio.21e5069281",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/donnywin85/arb-dex-mcp",
+    "homepage": "https://github.com/donnywin85/arb-dex-mcp",
+    "repository": "https://github.com/donnywin85/arb-dex-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "arb-dex-mcp@1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.donnywin85/arb-dex-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your own RapidAPI key for the Multi-Chain DEX Prices & Liquidity API (https://rapidapi.com/donnydev/api/multi-chain-dex-prices-liquidity). The free-tier subscription is enough to start. Required for live pool prices and fresh sweeps; without it get_chains, get_pairs and get_spreads fall back to a free hourly public snapshot and say so in the payload.",
+          "isSecret": true,
+          "name": "RAPIDAPI_KEY"
+        },
+        {
+          "description": "Optional request timeout in milliseconds. Defaults to 45000 \u2014 a full-chain live scan is a real on-chain sweep and can take ~30s.",
+          "name": "ARB_DEX_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "arb-dex-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "21e5069281",
+    "published_at": "2026-08-13T12:26:43.127261Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.donnywin85/arb-dex-mcp",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-13T12:26:43.127261Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

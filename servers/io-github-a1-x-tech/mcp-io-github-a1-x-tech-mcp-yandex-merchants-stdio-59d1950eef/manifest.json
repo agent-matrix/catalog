@@ -1,0 +1,75 @@
+{
+  "description": "MCP server for the Yandex Merchants partner API: feeds, offer prices, discounts, hide/unhide.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:14+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-A1-x-Tech-mcp-yandex-merchants.stdio.59d1950eef",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/A1-x-Tech/mcp-yandex-merchants",
+    "homepage": "https://github.com/A1-x-Tech/mcp-yandex-merchants",
+    "repository": "https://github.com/A1-x-Tech/mcp-yandex-merchants"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-yandex-merchants@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.A1-x-Tech/mcp-yandex-merchants",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Yandex OAuth token with the products:partner-api scope, obtained under the login that uploaded the feed. Treat it as a secret.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "YANDEX_MERCHANTS_OAUTH_TOKEN"
+        },
+        {
+          "default": "https://yandex.ru/products/api/ext/partner",
+          "description": "API root override.",
+          "name": "YANDEX_MERCHANTS_BASE_URL"
+        },
+        {
+          "default": "60000",
+          "description": "Per-request timeout in milliseconds.",
+          "name": "YANDEX_MERCHANTS_TIMEOUT_MS"
+        },
+        {
+          "default": "3",
+          "description": "Retries on transient errors (429 always; 5xx/network for GET only).",
+          "name": "YANDEX_MERCHANTS_MAX_RETRIES"
+        }
+      ],
+      "identifier": "mcp-yandex-merchants",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "59d1950eef",
+    "published_at": "2026-08-10T23:22:14.3019Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.A1-x-Tech/mcp-yandex-merchants",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-10T23:22:14.3019Z"
+  },
+  "title": "Yandex Merchants MCP",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

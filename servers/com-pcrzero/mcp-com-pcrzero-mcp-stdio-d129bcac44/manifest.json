@@ -1,0 +1,70 @@
+{
+  "description": "Issue signed receipts for AI agent actions; verify any receipt offline - free, no account.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:07+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-pcrzero-mcp.stdio.d129bcac44",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Scytalex-LLC/pcrzero-mcp",
+    "homepage": "https://github.com/Scytalex-LLC/pcrzero-mcp",
+    "repository": "https://github.com/Scytalex-LLC/pcrzero-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@scytalex-llc/pcrzero-mcp@0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.pcrzero/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Set to http to enable streamable-http transport (default stdio).",
+          "format": "string",
+          "name": "PCRZERO_MCP_TRANSPORT"
+        },
+        {
+          "description": "HTTP auth mode: client_key (default, per-request API key header \u2014 required for remote/Bazaar) or env_key (loopback sidecar only).",
+          "format": "string",
+          "name": "PCRZERO_MCP_AUTH_MODE"
+        },
+        {
+          "description": "Optional process env API key for env_key (loopback) mode only. Never used as a shared multi-client key in client_key mode. issue_receipt always requires a key.",
+          "format": "string",
+          "isSecret": true,
+          "name": "PCRZERO_API_KEY"
+        }
+      ],
+      "identifier": "@scytalex-llc/pcrzero-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://127.0.0.1:3333/mcp"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d129bcac44",
+    "published_at": "2026-08-13T04:37:31.70819Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.pcrzero/mcp",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-13T04:37:31.70819Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

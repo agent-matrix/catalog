@@ -1,0 +1,70 @@
+{
+  "description": "Manage DNS zones and records (zonefiles, RRSets, TTL, protection) via the Hetzner Cloud API",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:13+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ni-c-hetzner-dns-mcp.stdio.48d69fa245",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ni-c/hetzner-dns-mcp",
+    "homepage": "https://github.com/ni-c/hetzner-dns-mcp",
+    "repository": "https://github.com/ni-c/hetzner-dns-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "hetzner-dns-mcp@0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ni-c/hetzner-dns-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Hetzner Cloud API token (project-scoped, Cloud Console -> Security -> API tokens)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "HETZNER_API_TOKEN"
+        },
+        {
+          "description": "Set to true to register only the read-only tools (default: false)",
+          "format": "boolean",
+          "name": "HETZNER_READ_ONLY"
+        },
+        {
+          "description": "Override the Hetzner Cloud API base URL (default: https://api.hetzner.cloud/v1)",
+          "format": "string",
+          "name": "HETZNER_API_BASE_URL"
+        }
+      ],
+      "identifier": "hetzner-dns-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "48d69fa245",
+    "published_at": "2026-08-16T14:23:25.945848Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ni-c/hetzner-dns-mcp",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-16T14:23:25.945848Z"
+  },
+  "title": "Hetzner DNS",
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

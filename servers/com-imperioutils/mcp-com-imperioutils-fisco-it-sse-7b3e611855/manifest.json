@@ -1,7 +1,7 @@
 {
-  "description": "Italian tax + NIS2 scope: Codice Fiscale, P.IVA, IBAN, ATECO, IMU, F24, FatturaPA. Free, no LLM.",
+  "description": "Italian tax + anti-fraud: CF, P.IVA, IBAN, ATECO, IMU, F24, FatturaPA, NIS2. 23 free + 5 with key.",
   "harvest": {
-    "last_seen_at": "2026-08-10T04:06:26+00:00",
+    "last_seen_at": "2026-08-17T03:12:02+00:00",
     "seen_in_latest_run": true
   },
   "id": "mcp.com-imperioutils-fisco-it.sse.7b3e611855",
@@ -18,20 +18,27 @@
   "name": "com.imperioutils/fisco-it",
   "provenance": {
     "identity_key": "7b3e611855",
-    "published_at": "2026-07-28T17:40:54.722612Z",
+    "published_at": "2026-08-16T01:05:27.788857Z",
     "registry_base_url": "https://registry.modelcontextprotocol.io",
     "server_name": "com.imperioutils/fisco-it",
-    "server_version": "1.1.0",
+    "server_version": "2.0.0",
     "source": "mcp-registry",
-    "updated_at": "2026-07-28T17:40:54.722612Z"
+    "updated_at": "2026-08-16T01:05:27.788857Z"
   },
   "remotes": [
     {
+      "headers": [
+        {
+          "description": "Optional. Unlocks the 5 guardian_* tools, which read the supplier ledger of a specific account, and raises the per-minute limit from the anonymous tier to your plan's. The 23 tax tools work with no account at all. A free account issues a key at https://imperioutils.com/signup",
+          "isSecret": true,
+          "name": "X-API-Key"
+        }
+      ],
       "type": "streamable-http",
       "url": "https://imperioutils.com/api/mcp"
     }
   ],
   "title": "Imperio \u2014 Italian Tax & Compliance Tools",
   "type": "mcp_server",
-  "version": "1.1.0"
+  "version": "2.0.0"
 }

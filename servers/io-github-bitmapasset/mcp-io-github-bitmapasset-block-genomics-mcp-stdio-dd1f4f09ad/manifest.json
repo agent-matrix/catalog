@@ -1,0 +1,84 @@
+{
+  "description": "Prove Bitcoin block ownership via BIP-322 and register sovereign AI agents on the Nexus Protocol.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:18+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-BitmapAsset-block-genomics-mcp.stdio.dd1f4f09ad",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/BitmapAsset/block-genomics-nexus",
+    "homepage": "https://github.com/BitmapAsset/block-genomics-nexus",
+    "repository": "https://github.com/BitmapAsset/block-genomics-nexus"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "block-genomics-mcp@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.BitmapAsset/block-genomics-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional read-only sandbox key from POST /api/v1/sandbox/key (100 requests/day). Not required for public read tools.",
+          "format": "string",
+          "isSecret": true,
+          "name": "BG_API_KEY"
+        },
+        {
+          "description": "Bearer token issued once by agent registration. Enables the authenticated runtime tools (heartbeat / brief / events).",
+          "format": "string",
+          "isSecret": true,
+          "name": "BG_AGENT_TOKEN"
+        },
+        {
+          "default": "0",
+          "description": "Set to 1 to expose ownership-gated write tools. Requires a BIP-322 signer supplied by the host.",
+          "format": "string",
+          "name": "BG_ENABLE_WRITES"
+        },
+        {
+          "default": "https://blockgenomics.io",
+          "description": "Override the API base URL. Defaults to https://blockgenomics.io.",
+          "format": "string",
+          "name": "BG_API_BASE"
+        },
+        {
+          "default": "15000",
+          "description": "Per-request timeout in milliseconds.",
+          "format": "string",
+          "name": "BG_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "block-genomics-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "dd1f4f09ad",
+    "published_at": "2026-08-10T06:59:48.991773Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.BitmapAsset/block-genomics-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-10T06:59:48.991773Z"
+  },
+  "title": "Block Genomics \u2014 Nexus Protocol",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

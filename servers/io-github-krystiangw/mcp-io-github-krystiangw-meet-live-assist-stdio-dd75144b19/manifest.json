@@ -1,0 +1,101 @@
+{
+  "description": "Your own agent inside a live Google Meet or Zoom call. Local-first, no hosted service.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:06+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-krystiangw-meet-live-assist.stdio.dd75144b19",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/krystiangw/meet-live-assist-extension",
+    "homepage": "https://github.com/krystiangw/meet-live-assist-extension",
+    "repository": "https://github.com/krystiangw/meet-live-assist-extension"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "description": "The package ships two binaries; -p picks the MCP one rather than the bridge server.",
+            "isRequired": true,
+            "name": "-p",
+            "type": "named",
+            "value": "meet-live-assist-server"
+          },
+          {
+            "description": "The stdio MCP adapter.",
+            "isRequired": true,
+            "type": "positional",
+            "value": "meet-live-assist-mcp",
+            "valueHint": "meet-live-assist-mcp"
+          },
+          "meet-live-assist-server@0.7.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.krystiangw/meet-live-assist",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "http://127.0.0.1:8848",
+          "description": "Base URL of the bridge server on this machine. Defaults to http://127.0.0.1:8848, which is right unless you moved the port.",
+          "format": "string",
+          "name": "MLA_URL"
+        },
+        {
+          "description": "Where the bridge server writes. The adapter reads the access token from <dir>/.mla-token, and asks the running server for this path when it can, so it is normally unnecessary.",
+          "format": "string",
+          "name": "TRANSCRIPTS_DIR"
+        },
+        {
+          "description": "Access token for the bridge server. Only needed when the token file cannot be read; the adapter finds it by itself in the normal case.",
+          "format": "string",
+          "isSecret": true,
+          "name": "MLA_TOKEN"
+        }
+      ],
+      "identifier": "meet-live-assist-server",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "description": "The package ships two binaries; -p picks the MCP one rather than the bridge server.",
+          "isRequired": true,
+          "name": "-p",
+          "type": "named",
+          "value": "meet-live-assist-server"
+        },
+        {
+          "description": "The stdio MCP adapter.",
+          "isRequired": true,
+          "type": "positional",
+          "value": "meet-live-assist-mcp",
+          "valueHint": "meet-live-assist-mcp"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.7.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "dd75144b19",
+    "published_at": "2026-08-12T09:22:27.522148Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.krystiangw/meet-live-assist",
+    "server_version": "0.7.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-12T09:22:27.522148Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.7.3"
+}

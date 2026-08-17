@@ -1,0 +1,63 @@
+{
+  "description": "EN 16931: validate invoice data or a UBL/CII file, emit UBL or CII XML. XRechnung, Peppol. Not PDF.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:11:59+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-attestwire-en16931.stdio.2b7bc109c2",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@attestwire/mcp@1.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.attestwire/en16931",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional. An Attestwire API key. Five of the nine tools work without it; validate_invoice, validate_invoice_xml, generate_invoice and get_upgrade_link require one. The issue_api_key tool mints a free key (100 documents/month, no card), but minting does not authenticate a live connection: save the key, configure it here, and reconnect.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ATTESTWIRE_API_KEY"
+        },
+        {
+          "default": "https://api.attestwire.com/mcp",
+          "description": "Optional endpoint override. Defaults to https://api.attestwire.com/mcp.",
+          "format": "string",
+          "name": "ATTESTWIRE_MCP_URL"
+        }
+      ],
+      "identifier": "@attestwire/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "2b7bc109c2",
+    "published_at": "2026-08-16T02:49:51.396662Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.attestwire/en16931",
+    "server_version": "1.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-16T02:49:51.396662Z"
+  },
+  "title": "Attestwire",
+  "type": "mcp_server",
+  "version": "1.1.2"
+}

@@ -1,0 +1,76 @@
+{
+  "description": "Append-only event log for cross-agent context/memory sharing via 3 MCP tools.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-RudrenduPaul-swarm-rd-orchestrator.stdio.b9c0bd5b03",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/RudrenduPaul/swarm-rd-orchestrator",
+    "homepage": "https://github.com/RudrenduPaul/swarm-rd-orchestrator",
+    "repository": "https://github.com/RudrenduPaul/swarm-rd-orchestrator"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "name": "--from",
+            "type": "named",
+            "value": "swarm-rd-orchestrator-cli"
+          },
+          "swarm-rd-orchestrator-cli==0.0.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.RudrenduPaul/swarm-rd-orchestrator",
+  "packages": [
+    {
+      "identifier": "swarm-rd-orchestrator-cli",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "swarm-rd-cli",
+          "valueHint": "script_name"
+        },
+        {
+          "type": "positional",
+          "value": "mcp",
+          "valueHint": "subcommand"
+        }
+      ],
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "name": "--from",
+          "type": "named",
+          "value": "swarm-rd-orchestrator-cli"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.0.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b9c0bd5b03",
+    "published_at": "2026-08-11T05:25:48.095737Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.RudrenduPaul/swarm-rd-orchestrator",
+    "server_version": "0.0.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-11T05:25:48.095737Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.0.3"
+}

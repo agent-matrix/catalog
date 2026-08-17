@@ -1,0 +1,83 @@
+{
+  "description": "Reads your own Garmin mirror: readiness, training load, muscle freshness, and read-only SQL.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:25+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Imgrund-hybridlog.stdio.88e597b77e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Imgrund/hybridlog",
+    "homepage": "https://github.com/Imgrund/hybridlog",
+    "repository": "https://github.com/Imgrund/hybridlog"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/imgrund/hybridlog:0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Imgrund/hybridlog",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "PostgreSQL URL of the hybridlog database this server reads. The database is created and filled by a hybridlog installation, not by this image.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DATABASE_URL"
+        },
+        {
+          "description": "APP_KEY of the same hybridlog installation, so the container can read what that installation encrypted.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "APP_KEY"
+        }
+      ],
+      "identifier": "ghcr.io/imgrund/hybridlog:0.1.2",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "php"
+        },
+        {
+          "type": "positional",
+          "value": "artisan"
+        },
+        {
+          "type": "positional",
+          "value": "mcp:start"
+        },
+        {
+          "type": "positional",
+          "value": "garmin"
+        }
+      ],
+      "registryType": "oci",
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "88e597b77e",
+    "published_at": "2026-08-15T22:28:37.396797Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Imgrund/hybridlog",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-15T22:28:37.396797Z"
+  },
+  "title": "hybridlog",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

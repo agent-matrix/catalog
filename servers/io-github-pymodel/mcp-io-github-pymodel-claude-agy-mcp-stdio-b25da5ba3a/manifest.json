@@ -1,0 +1,83 @@
+{
+  "description": "Delegate heavy tasks from Claude Code to the Antigravity CLI (Gemini) with quota-aware failover.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-PyModel-claude-agy-mcp.stdio.b25da5ba3a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/PyModel/claude-agy-mcp",
+    "homepage": "https://github.com/PyModel/claude-agy-mcp",
+    "repository": "https://github.com/PyModel/claude-agy-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@pymodel/claude-agy-mcp@1.0.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.PyModel/claude-agy-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the agy binary (defaults to `agy` on PATH)",
+          "format": "string",
+          "name": "AGY_PATH"
+        },
+        {
+          "description": "Override the runtime ceiling for all tools, in seconds (use AGY_TIMEOUT_<TOOL> to override a single tool)",
+          "format": "number",
+          "name": "AGY_TIMEOUT"
+        },
+        {
+          "description": "Absolute runtime ceiling in seconds (default 3600); the bridge does not kill on inactivity, only on cancellation, quota exhaustion, or this ceiling",
+          "format": "number",
+          "name": "AGY_MAX_RUNTIME"
+        },
+        {
+          "description": "Truncation cap for tool output, in characters (default 50000)",
+          "format": "number",
+          "name": "AGY_MAX_OUTPUT_CHARS"
+        },
+        {
+          "description": "Fallback model when no chain entry is available (defaults to Gemini 3.6 Flash (High))",
+          "format": "string",
+          "name": "AGY_DEFAULT_MODEL"
+        },
+        {
+          "description": "Set to `strict` to instruct the calling agent not to absorb failed delegations (default `fallback`)",
+          "format": "string",
+          "name": "AGY_ON_FAILURE"
+        }
+      ],
+      "identifier": "@pymodel/claude-agy-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b25da5ba3a",
+    "published_at": "2026-08-14T03:01:38.619768Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.PyModel/claude-agy-mcp",
+    "server_version": "1.0.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-14T03:01:38.619768Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.3"
+}

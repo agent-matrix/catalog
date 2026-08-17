@@ -1,0 +1,64 @@
+{
+  "description": "Verify email addresses, clean lists, and audit a domain SPF, DKIM, DMARC and MX setup.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.net-mail7-email-validation.stdio.3b6bd2a370",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/dvlop/mail7-mcp",
+    "homepage": "https://github.com/dvlop/mail7-mcp",
+    "repository": "https://github.com/dvlop/mail7-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mail7-mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "net.mail7/email-validation",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Mail7 API key. Optional, but anonymous callers are limited to 5 checks per minute and a 25-address bulk sample. Get one at https://mail7.net/account/",
+          "format": "string",
+          "isSecret": true,
+          "name": "MAIL7_API_KEY"
+        },
+        {
+          "description": "Override the API endpoint. Defaults to https://mail7.net/api",
+          "format": "string",
+          "name": "MAIL7_BASE_URL"
+        }
+      ],
+      "identifier": "mail7-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "3b6bd2a370",
+    "published_at": "2026-08-13T00:25:13.937332Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "net.mail7/email-validation",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-13T00:25:13.937332Z"
+  },
+  "title": "Mail7 Email Validation",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

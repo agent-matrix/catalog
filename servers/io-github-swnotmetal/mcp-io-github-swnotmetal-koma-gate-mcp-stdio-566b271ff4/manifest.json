@@ -1,0 +1,81 @@
+{
+  "description": "Classifies prompt injection, jailbreaks, and out-of-scope user input before agents act on it.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:27+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-swnotmetal-koma-gate-mcp.stdio.566b271ff4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/swnotmetal/Project-Koma",
+    "homepage": "https://github.com/swnotmetal/Project-Koma",
+    "repository": "https://github.com/swnotmetal/Project-Koma"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "koma-gate-mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.swnotmetal/koma-gate-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "LLM provider: openai, anthropic, google, deepseek, or ollama (default: google)",
+          "name": "KOMA_PROVIDER"
+        },
+        {
+          "description": "Optional model override for the selected provider",
+          "name": "KOMA_MODEL"
+        },
+        {
+          "description": "Google Gemini API key (used by the default provider)",
+          "isSecret": true,
+          "name": "GEMINI_API_KEY"
+        },
+        {
+          "description": "OpenAI API key when KOMA_PROVIDER=openai",
+          "isSecret": true,
+          "name": "OPENAI_API_KEY"
+        },
+        {
+          "description": "Anthropic API key when KOMA_PROVIDER=anthropic",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        },
+        {
+          "description": "DeepSeek API key when KOMA_PROVIDER=deepseek",
+          "isSecret": true,
+          "name": "DEEPSEEK_API_KEY"
+        }
+      ],
+      "identifier": "koma-gate-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "566b271ff4",
+    "published_at": "2026-08-15T17:21:00.851992Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.swnotmetal/koma-gate-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-15T17:21:00.851992Z"
+  },
+  "title": "Koma Gate MCP",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

@@ -1,0 +1,78 @@
+{
+  "description": "Persistent, verified memory for AI coding agents: recall, capture, guardrails, review queue.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-AiDimag-aidimag.stdio.e9edccfa2c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/AiDimag/aidimag",
+    "homepage": "https://github.com/AiDimag/aidimag",
+    "repository": "https://github.com/AiDimag/aidimag"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "aidimag@1.0.22"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.AiDimag/aidimag",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Absolute path to the git repository whose memory store to serve. Optional: defaults to walking up from the current working directory.",
+          "format": "string",
+          "name": "AIDIMAG_REPO"
+        },
+        {
+          "description": "LLM provider for extraction features (chat_harvest, knowledge ingestion): openai | ollama | off. Optional: auto-detected.",
+          "format": "string",
+          "name": "AIDIMAG_LLM"
+        },
+        {
+          "description": "OpenAI API key, used only if the OpenAI provider is selected/detected for extraction features.",
+          "format": "string",
+          "isSecret": true,
+          "name": "OPENAI_API_KEY"
+        }
+      ],
+      "identifier": "aidimag",
+      "packageArguments": [
+        {
+          "description": "Start the aidimag MCP server over stdio",
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.22"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e9edccfa2c",
+    "published_at": "2026-08-11T23:53:54.77148Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.AiDimag/aidimag",
+    "server_version": "1.0.22",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-11T23:53:54.77148Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.22"
+}

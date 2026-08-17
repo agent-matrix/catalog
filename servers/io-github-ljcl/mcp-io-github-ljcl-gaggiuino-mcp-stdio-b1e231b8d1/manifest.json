@@ -1,0 +1,96 @@
+{
+  "description": "Remote MCP server for your Gaggiuino espresso machine's shots and profiles",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:07+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ljcl-gaggiuino-mcp.stdio.b1e231b8d1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ljcl/gaggiuino-mcp",
+    "homepage": "https://github.com/ljcl/gaggiuino-mcp",
+    "repository": "https://github.com/ljcl/gaggiuino-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/ljcl/gaggiuino-mcp:3.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ljcl/gaggiuino-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Gaggiuino machine URL (default http://gaggiuino.local)",
+          "format": "string",
+          "name": "GAGGIUINO_URL"
+        },
+        {
+          "description": "Server port (default 8000)",
+          "format": "number",
+          "name": "PORT"
+        },
+        {
+          "description": "Bind address (default 0.0.0.0)",
+          "format": "string",
+          "name": "HOST"
+        },
+        {
+          "description": "Public https origin clients reach this server on, with no path (e.g. https://box.tailnet.ts.net). Set with MCP_OAUTH_SECRET to enable OAuth; it is advertised as the OAuth resource and must match the URL entered in the client exactly",
+          "format": "string",
+          "name": "MCP_PUBLIC_URL"
+        },
+        {
+          "description": "Signing key for self-issued OAuth access and refresh tokens, at least 32 characters (openssl rand -hex 32). Keep it stable across restarts so clients stay signed in",
+          "format": "string",
+          "isSecret": true,
+          "name": "MCP_OAUTH_SECRET"
+        },
+        {
+          "description": "scrypt hash of the passphrase you type on the OAuth consent page, in the form scrypt$N$r$p$salt$hash. Required whenever OAuth is enabled. Generate with `bun run hash-passphrase` \u2014 never store the passphrase itself",
+          "format": "string",
+          "isSecret": true,
+          "name": "MCP_OAUTH_PASSPHRASE_HASH"
+        },
+        {
+          "description": "Comma-separated browser origins allowed to call /mcp, or * to allow any (unsafe). Requests with no Origin header are unaffected",
+          "format": "string",
+          "name": "MCP_ALLOWED_ORIGINS"
+        },
+        {
+          "description": "Comma-separated Host header values to accept on /mcp. Empty disables host validation",
+          "format": "string",
+          "name": "MCP_ALLOWED_HOSTS"
+        }
+      ],
+      "identifier": "ghcr.io/ljcl/gaggiuino-mcp:3.1.0",
+      "registryType": "oci",
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:8000/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "b1e231b8d1",
+    "published_at": "2026-08-13T11:50:14.949789Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ljcl/gaggiuino-mcp",
+    "server_version": "3.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-13T11:50:14.949789Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "3.1.0"
+}

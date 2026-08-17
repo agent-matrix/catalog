@@ -1,0 +1,72 @@
+{
+  "description": "Disposable Algorand wallet for AI agents. Pay x402 resources in USDC, no human provisioning.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:01+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-inviti8-obolus.stdio.83c6deb009",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/inviti8/Obolus",
+    "homepage": "https://github.com/inviti8/Obolus",
+    "repository": "https://github.com/inviti8/Obolus"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "obolus==0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.inviti8/obolus",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "testnet",
+          "description": "Which chain to use: 'testnet' (the default) or 'mainnet'. Mainnet spends real money.",
+          "format": "string",
+          "name": "OBOLUS_NETWORK"
+        },
+        {
+          "description": "Where the vault key and session ledger live. Defaults to %LOCALAPPDATA%\\Obolus on Windows and ~/.obolus elsewhere. Point this at a NEW directory only if you intend a new wallet: the seed here is the only way back to money already on chain.",
+          "format": "string",
+          "name": "OBOLUS_DATA_DIR"
+        }
+      ],
+      "identifier": "obolus",
+      "packageArguments": [
+        {
+          "description": "Serve MCP on stdio. Required: a client builds its launch command from the package name, and bare `obolus` is the CLI, which exits with a usage error instead of speaking MCP.",
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "83c6deb009",
+    "published_at": "2026-08-14T06:09:38.722736Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.inviti8/obolus",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-14T06:09:38.722736Z"
+  },
+  "title": "Obolus",
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

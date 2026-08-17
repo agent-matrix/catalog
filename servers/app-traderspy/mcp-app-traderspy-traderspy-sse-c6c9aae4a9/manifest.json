@@ -1,0 +1,58 @@
+{
+  "description": "AI crypto signals, smart money whale positions, live futures prices and indicators",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:11:58+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.app-traderspy-traderspy.sse.c6c9aae4a9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/target1m/traderspy-mcp",
+    "homepage": "https://github.com/target1m/traderspy-mcp",
+    "repository": "https://github.com/target1m/traderspy-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://mcp.traderspy.app/mcp"
+    }
+  },
+  "name": "app.traderspy/traderspy",
+  "provenance": {
+    "identity_key": "c6c9aae4a9",
+    "published_at": "2026-08-15T20:34:26.849732Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "app.traderspy/traderspy",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-15T20:34:26.849732Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Personal TraderSpy MCP key. Generate one for free at https://traderspy.app/mcp",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {api_key}",
+          "variables": {
+            "api_key": {
+              "description": "TraderSpy MCP key, starts with mcp_",
+              "format": "string",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://mcp.traderspy.app/mcp"
+    }
+  ],
+  "title": "TraderSpy",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

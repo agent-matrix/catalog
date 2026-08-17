@@ -1,0 +1,86 @@
+{
+  "description": "HYTHE \u2014 coordination bus + shared truth for AI agent fleets \u2014 self-hosted MCP server + stdio bridge.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.dev-hythe-hythe.stdio.468b44b7bf",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/hythe-dev/hythe",
+    "homepage": "https://github.com/hythe-dev/hythe",
+    "repository": "https://github.com/hythe-dev/hythe"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@hythe/mcp@0.1.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "dev.hythe/hythe",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Stable exact agent identity for this client lane; required so restarts and compaction cannot adopt another principal",
+          "format": "string",
+          "isRequired": true,
+          "name": "HYTHE_AGENT_ID"
+        },
+        {
+          "description": "Optional path to one protected per-agent credential file: regular, non-symlink, owned by the client user, mode 0400 or 0600, containing one hya1 token. Never place the token itself in an environment variable.",
+          "format": "string",
+          "name": "HYTHE_AGENT_KEY_FILE"
+        },
+        {
+          "description": "Client authorization expectation: observe, mixed, or required (default observe). Move to mixed and then required only after this exact lane has a credential and passes /agent/whoami.",
+          "format": "string",
+          "name": "HYTHE_AGENT_AUTH_MODE"
+        },
+        {
+          "description": "Shared API key authenticating the bridge to your self-hosted HYTHE server (create a protected .env with: npx -y @hythe/mcp@0.1.6 init --write-env --agent-id <agent-id>)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "API_KEY"
+        },
+        {
+          "description": "HYTHE server host (default 127.0.0.1)",
+          "format": "string",
+          "name": "MCP_HOST"
+        },
+        {
+          "description": "HYTHE server port (default 6174)",
+          "format": "string",
+          "name": "MCP_PORT"
+        }
+      ],
+      "identifier": "@hythe/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "468b44b7bf",
+    "published_at": "2026-08-15T01:37:30.599941Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "dev.hythe/hythe",
+    "server_version": "0.1.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-15T01:37:30.599941Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.6"
+}

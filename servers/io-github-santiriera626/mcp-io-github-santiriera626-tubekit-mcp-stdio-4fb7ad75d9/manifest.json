@@ -1,0 +1,72 @@
+{
+  "description": "Compliance-aware MCP server for YouTube publishing, analytics and creator insights.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-santiriera626-tubekit-mcp.stdio.4fb7ad75d9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/santiriera626/tubekit-mcp",
+    "homepage": "https://github.com/santiriera626/tubekit-mcp",
+    "repository": "https://github.com/santiriera626/tubekit-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "tubekit-mcp==0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.santiriera626/tubekit-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "~/.config/tubekit/master.key",
+          "description": "Path to the Fernet key that encrypts stored OAuth tokens at rest. The server refuses to start without one.",
+          "format": "filepath",
+          "name": "TUBEKIT_MASTER_KEY_PATH"
+        },
+        {
+          "description": "Path to your own Google Cloud OAuth client JSON. Required to refresh access tokens.",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "TUBEKIT_OAUTH_CLIENT_SECRETS_PATH"
+        },
+        {
+          "default": "state.db",
+          "description": "SQLite file holding the audit log, quota ledger and channel state.",
+          "format": "filepath",
+          "name": "TUBEKIT_STATE_DB_PATH"
+        }
+      ],
+      "identifier": "tubekit-mcp",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4fb7ad75d9",
+    "published_at": "2026-08-10T04:44:43.81126Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.santiriera626/tubekit-mcp",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-10T04:44:43.81126Z"
+  },
+  "title": "tubekit",
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

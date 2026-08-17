@@ -1,0 +1,71 @@
+{
+  "description": "Control tvsub subtitle selection, translation, styling, overlay, and sync from MCP.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:06+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-launzi-tvsub-mcp.stdio.6da0da85db",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/launzi/tvsub-mcp",
+    "homepage": "https://github.com/launzi/tvsub-mcp",
+    "repository": "https://github.com/launzi/tvsub-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "tvsub-mcp==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.launzi/tvsub-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Anthropic API key; required only for subtitle translation",
+          "format": "string",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        }
+      ],
+      "identifier": "tvsub-mcp",
+      "packageArguments": [
+        {
+          "description": "Absolute path to the installed tvsub directory",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "--tvsub-root",
+          "placeholder": "/absolute/path/to/tvsub",
+          "type": "named"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6da0da85db",
+    "published_at": "2026-08-15T14:38:00.176954Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.launzi/tvsub-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-15T14:38:00.176954Z"
+  },
+  "title": "tvsub MCP",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

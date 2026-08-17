@@ -1,0 +1,86 @@
+{
+  "description": "Local-first AI memory layer with hybrid search. Postgres + pgvector. Self-hosted, MIT.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:28+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-MihaiBuilds-memory-vault.stdio.107d109f39",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/MihaiBuilds/memory-vault",
+    "homepage": "https://github.com/MihaiBuilds/memory-vault",
+    "repository": "https://github.com/MihaiBuilds/memory-vault"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/mihaibuilds/memory-vault-mcp:1.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.MihaiBuilds/memory-vault",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Hostname of the Postgres+pgvector instance Memory Vault connects to (e.g. 'host.docker.internal' when Postgres runs on the host, 'localhost' when running natively, or the service name when both run in compose)",
+          "format": "string",
+          "isRequired": true,
+          "name": "DB_HOST"
+        },
+        {
+          "default": "5432",
+          "description": "Postgres port",
+          "format": "string",
+          "isRequired": true,
+          "name": "DB_PORT"
+        },
+        {
+          "default": "memory_vault",
+          "description": "Postgres database name",
+          "format": "string",
+          "isRequired": true,
+          "name": "DB_NAME"
+        },
+        {
+          "default": "memory_vault",
+          "description": "Postgres user with read/write access to the memory vault database",
+          "format": "string",
+          "isRequired": true,
+          "name": "DB_USER"
+        },
+        {
+          "description": "Postgres password for DB_USER",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DB_PASSWORD"
+        }
+      ],
+      "identifier": "ghcr.io/mihaibuilds/memory-vault-mcp:1.1.1",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "107d109f39",
+    "published_at": "2026-08-16T13:30:27.199655Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.MihaiBuilds/memory-vault",
+    "server_version": "1.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-16T13:30:27.199655Z"
+  },
+  "title": "Memory Vault",
+  "type": "mcp_server",
+  "version": "1.1.1"
+}

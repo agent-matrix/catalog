@@ -1,0 +1,54 @@
+{
+  "description": "Korean patents by meaning, not keywords: describe an invention in plain words or by drawing.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.kr-wandsol-patent-search.sse.c5cad19bac",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://mcp.wandsol.kr/mcp"
+    }
+  },
+  "name": "kr.wandsol/patent-search",
+  "provenance": {
+    "identity_key": "c5cad19bac",
+    "published_at": "2026-08-12T02:11:07.590143Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "kr.wandsol/patent-search",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-12T02:11:07.590143Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "PatSol API key issued at https://mcp.wandsol.kr",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {patsol_api_key}",
+          "variables": {
+            "patsol_api_key": {
+              "description": "PatSol API key issued at https://mcp.wandsol.kr",
+              "format": "string",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://mcp.wandsol.kr/mcp"
+    }
+  ],
+  "title": "PatSol MCP \u2014 AI Patent Search (Korea)",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

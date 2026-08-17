@@ -1,0 +1,68 @@
+{
+  "description": "29 tools, no API key \u2014 grounds AI agents in Overture Maps open data.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:45+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-chuofringer-placeroot.stdio.79d99b0c5e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/chuofringer/placeroot",
+    "homepage": "https://github.com/chuofringer/placeroot",
+    "repository": "https://github.com/chuofringer/placeroot"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "placeroot==0.9.7"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.chuofringer/placeroot",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Set to 'off' to disable the local on-disk tile cache. Optional; caching is on by default.",
+          "name": "PLACEROOT_CACHE"
+        }
+      ],
+      "identifier": "placeroot",
+      "packageArguments": [
+        {
+          "description": "Serve streamable-HTTP on 127.0.0.1:8321/mcp instead of stdio.",
+          "isRequired": true,
+          "name": "--http",
+          "type": "named"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://127.0.0.1:8321/mcp"
+      },
+      "version": "0.9.7"
+    }
+  ],
+  "provenance": {
+    "identity_key": "79d99b0c5e",
+    "published_at": "2026-08-15T02:48:49.384098Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.chuofringer/placeroot",
+    "server_version": "0.9.7",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-15T02:48:49.384098Z"
+  },
+  "title": "PlaceRoot",
+  "type": "mcp_server",
+  "version": "0.9.7"
+}

@@ -1,0 +1,71 @@
+{
+  "description": "Wraps the ShimGuard CLI as a single generic MCP tool for agent-shim provenance checks.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-RudrenduPaul-shimguard.stdio.a7556b2b07",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/RudrenduPaul/ShimGuard",
+    "homepage": "https://github.com/RudrenduPaul/ShimGuard",
+    "repository": "https://github.com/RudrenduPaul/ShimGuard"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "name": "--from",
+            "type": "named",
+            "value": "shimguard-cli"
+          },
+          "shimguard-cli==0.1.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.RudrenduPaul/shimguard",
+  "packages": [
+    {
+      "identifier": "shimguard-cli",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "shimguard-mcp",
+          "valueHint": "script_name"
+        }
+      ],
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "name": "--from",
+          "type": "named",
+          "value": "shimguard-cli"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a7556b2b07",
+    "published_at": "2026-08-11T05:16:23.388344Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.RudrenduPaul/shimguard",
+    "server_version": "0.1.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-11T05:16:23.388344Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.5"
+}

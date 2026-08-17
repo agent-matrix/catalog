@@ -1,0 +1,97 @@
+{
+  "description": "QuickBooks Online MCP server: invoices, bills, customers, vendors, employees, and accounts",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mindstone-mcp-server-quickbooks.stdio.5d5b64f83d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mindstone/mcp-servers",
+    "homepage": "https://github.com/mindstone/mcp-servers",
+    "repository": "https://github.com/mindstone/mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@mindstone/mcp-server-quickbooks@0.4.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mindstone/mcp-server-quickbooks",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Intuit Developer app client ID",
+          "format": "string",
+          "isRequired": true,
+          "name": "QUICKBOOKS_CLIENT_ID"
+        },
+        {
+          "description": "Intuit Developer app client secret",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "QUICKBOOKS_CLIENT_SECRET"
+        },
+        {
+          "description": "OAuth 2.0 refresh token",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "QUICKBOOKS_REFRESH_TOKEN"
+        },
+        {
+          "description": "QuickBooks company (realm) ID",
+          "format": "string",
+          "isRequired": true,
+          "name": "QUICKBOOKS_REALM_ID"
+        },
+        {
+          "default": "production",
+          "description": "sandbox or production",
+          "format": "string",
+          "name": "QUICKBOOKS_ENVIRONMENT"
+        },
+        {
+          "description": "Optional path to a host bridge state file used for credential management",
+          "format": "string",
+          "name": "MCP_HOST_BRIDGE_STATE"
+        },
+        {
+          "description": "Backwards-compatible alias for MCP_HOST_BRIDGE_STATE",
+          "format": "string",
+          "name": "MINDSTONE_REBEL_BRIDGE_STATE"
+        }
+      ],
+      "identifier": "@mindstone/mcp-server-quickbooks",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5d5b64f83d",
+    "published_at": "2026-08-10T11:06:11.102751Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mindstone/mcp-server-quickbooks",
+    "server_version": "0.4.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-10T11:06:11.102751Z"
+  },
+  "title": "QuickBooks Online",
+  "type": "mcp_server",
+  "version": "0.4.2"
+}

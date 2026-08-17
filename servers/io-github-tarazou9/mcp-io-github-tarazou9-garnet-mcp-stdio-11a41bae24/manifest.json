@@ -1,0 +1,106 @@
+{
+  "description": "RAG memory for LLM agents over Garnet Vector Sets: store text as embeddings, recall by meaning.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:27+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-tarazou9-garnet-mcp.stdio.11a41bae24",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='nuget' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/tarazou9/garnet-mcp",
+    "homepage": "https://github.com/tarazou9/garnet-mcp",
+    "repository": "https://github.com/tarazou9/garnet-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.tarazou9/garnet-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "name": "Garnet__Host",
+          "value": "{garnet_host}",
+          "variables": {
+            "garnet_host": {
+              "description": "Hostname of the Garnet (or any Redis-compatible) server. Defaults to 127.0.0.1 when left blank."
+            }
+          }
+        },
+        {
+          "name": "Garnet__Port",
+          "value": "{garnet_port}",
+          "variables": {
+            "garnet_port": {
+              "description": "Port of the Garnet server. Defaults to 6379 when left blank."
+            }
+          }
+        },
+        {
+          "name": "Embeddings__Provider",
+          "value": "{embeddings_provider}",
+          "variables": {
+            "embeddings_provider": {
+              "description": "Embedding provider: 'AzureOpenAI' for real embeddings, or 'Fake' for a deterministic offline provider (no external calls)."
+            }
+          }
+        },
+        {
+          "name": "Embeddings__Endpoint",
+          "value": "{embeddings_endpoint}",
+          "variables": {
+            "embeddings_endpoint": {
+              "description": "Azure OpenAI endpoint, e.g. https://YOUR-RESOURCE.openai.azure.com/ (required when Embeddings__Provider=AzureOpenAI). Authenticated keyless via DefaultAzureCredential."
+            }
+          }
+        },
+        {
+          "name": "Embeddings__DeploymentName",
+          "value": "{embeddings_deployment}",
+          "variables": {
+            "embeddings_deployment": {
+              "description": "Azure OpenAI embedding deployment name, e.g. text-embedding-3-small."
+            }
+          }
+        },
+        {
+          "name": "Embeddings__Dimensions",
+          "value": "{embeddings_dimensions}",
+          "variables": {
+            "embeddings_dimensions": {
+              "description": "Embedding vector dimensions, e.g. 1536 for text-embedding-3-small."
+            }
+          }
+        }
+      ],
+      "identifier": "GarnetMcp.Server",
+      "registryBaseUrl": "https://api.nuget.org/v3/index.json",
+      "registryType": "nuget",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "11a41bae24",
+    "published_at": "2026-08-10T19:37:51.200207Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.tarazou9/garnet-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-10T19:37:51.200207Z"
+  },
+  "title": "garnet-mcp",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

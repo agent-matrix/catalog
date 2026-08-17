@@ -1,0 +1,90 @@
+{
+  "description": "Security-first SendGrid MCP server: dry-run default, recipient allowlists, rate caps, audit log.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Choppaaahh-sendgrid-mcp-secure.stdio.7776bb0880",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Choppaaahh/sendgrid-mcp-secure",
+    "homepage": "https://github.com/Choppaaahh/sendgrid-mcp-secure",
+    "repository": "https://github.com/Choppaaahh/sendgrid-mcp-secure"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "sendgrid-mcp-secure==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Choppaaahh/sendgrid-mcp-secure",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "SendGrid API key (use a restricted key with Mail Send scope only)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SENDGRID_API_KEY"
+        },
+        {
+          "description": "dry-run (default) or live",
+          "format": "string",
+          "name": "SENDGRID_MCP_MODE"
+        },
+        {
+          "description": "Comma-separated recipient addresses/domains allowed to receive mail",
+          "format": "string",
+          "name": "SENDGRID_MCP_RECIPIENT_ALLOWLIST"
+        },
+        {
+          "description": "Hourly cap on write operations (sends)",
+          "format": "number",
+          "name": "SENDGRID_MCP_WRITES_PER_HOUR"
+        },
+        {
+          "description": "Max recipients per send",
+          "format": "number",
+          "name": "SENDGRID_MCP_MAX_RECIPIENTS"
+        },
+        {
+          "description": "Path to the append-only audit log",
+          "format": "string",
+          "name": "SENDGRID_MCP_AUDIT_LOG"
+        },
+        {
+          "description": "BCC stays disabled unless explicitly enabled",
+          "format": "boolean",
+          "name": "SENDGRID_MCP_ALLOW_BCC"
+        }
+      ],
+      "identifier": "sendgrid-mcp-secure",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7776bb0880",
+    "published_at": "2026-08-14T19:16:51.421066Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Choppaaahh/sendgrid-mcp-secure",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-14T19:16:51.421066Z"
+  },
+  "title": "SendGrid Secure",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

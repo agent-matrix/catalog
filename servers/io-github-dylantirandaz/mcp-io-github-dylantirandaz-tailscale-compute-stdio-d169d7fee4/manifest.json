@@ -1,0 +1,84 @@
+{
+  "description": "Run builds, tests, and benchmarks on your own Tailscale compute node.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-dylantirandaz-tailscale-compute.stdio.d169d7fee4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/dylantirandaz/tailscale-compute-mcp",
+    "homepage": "https://github.com/dylantirandaz/tailscale-compute-mcp",
+    "repository": "https://github.com/dylantirandaz/tailscale-compute-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@dylantirandaz/tailscale-compute-mcp@0.1.0-beta.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.dylantirandaz/tailscale-compute",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "SSH user and direct Tailscale IP address or full MagicDNS name.",
+          "format": "string",
+          "isRequired": true,
+          "name": "TAILSCALE_COMPUTE_HOST"
+        },
+        {
+          "description": "Absolute local project path. The default is the MCP process directory.",
+          "format": "string",
+          "name": "TAILSCALE_COMPUTE_LOCAL_ROOT"
+        },
+        {
+          "description": "Managed workspace root on the remote node. The default is .cache/tailscale-compute-mcp.",
+          "format": "string",
+          "name": "TAILSCALE_COMPUTE_REMOTE_ROOT"
+        },
+        {
+          "description": "Remote shell: auto, /bin/sh, /bin/bash, or /bin/zsh.",
+          "format": "string",
+          "name": "TAILSCALE_COMPUTE_REMOTE_SHELL"
+        },
+        {
+          "description": "SSH connection timeout from 1 through 60 seconds.",
+          "format": "string",
+          "name": "TAILSCALE_COMPUTE_CONNECT_TIMEOUT_SECONDS"
+        },
+        {
+          "description": "Local audit log path. The default is ~/.config/tailscale-compute-mcp/compute-audit.log.",
+          "format": "string",
+          "name": "TAILSCALE_COMPUTE_AUDIT_LOG"
+        }
+      ],
+      "identifier": "@dylantirandaz/tailscale-compute-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0-beta.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d169d7fee4",
+    "published_at": "2026-08-13T23:33:31.24412Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.dylantirandaz/tailscale-compute",
+    "server_version": "0.1.0-beta.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-13T23:33:31.24412Z"
+  },
+  "title": "Tailscale Compute",
+  "type": "mcp_server",
+  "version": "0.1.0-beta.3"
+}

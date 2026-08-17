@@ -1,0 +1,101 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/brunovicco/mcp-server-auth-template:v0.6.2"
+      }
+    }
+  ],
+  "description": "OAuth 2.1/OIDC resource-server reference for secure MCP authorization",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:43+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/brunovicco/mcp-server-auth-template",
+  "id": "tool.io-github-brunovicco-mcp-server-auth-template.053568c570",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/brunovicco/mcp-server-auth-template",
+    "homepage": "https://github.com/brunovicco/mcp-server-auth-template",
+    "repository": "https://github.com/brunovicco/mcp-server-auth-template"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "OAuth 2.1/OIDC resource-server reference for secure MCP authorization",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.brunovicco/mcp-server-auth-template",
+      "request_type": "POST",
+      "url": "https://github.com/brunovicco/mcp-server-auth-template"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "name": "--read-only",
+            "type": "named"
+          },
+          {
+            "name": "--tmpfs",
+            "type": "named",
+            "value": "/tmp:rw,noexec,nosuid,nodev,size=16m"
+          },
+          {
+            "name": "--cap-drop",
+            "type": "named",
+            "value": "ALL"
+          },
+          {
+            "name": "--security-opt",
+            "type": "named",
+            "value": "no-new-privileges:true"
+          },
+          {
+            "name": "--publish",
+            "type": "named",
+            "value": "127.0.0.1:8000:8000"
+          },
+          "ghcr.io/brunovicco/mcp-server-auth-template:v0.6.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.brunovicco/mcp-server-auth-template",
+  "provenance": {
+    "identity_key": "ad25fe1178",
+    "promoted_from": "mcp.io-github-brunovicco-mcp-server-auth-template.stdio.ad25fe1178",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.brunovicco/mcp-server-auth-template",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-brunovicco-mcp-server-auth-template.stdio.ad25fe1178",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/brunovicco/mcp-server-auth-template",
+  "summary": "OAuth 2.1/OIDC resource-server reference for secure MCP authorization",
+  "tags": [
+    "auth",
+    "authorization",
+    "oauth",
+    "oidc",
+    "reference",
+    "resource",
+    "secure",
+    "template"
+  ],
+  "title": "MCP Server Auth Template",
+  "type": "tool",
+  "version": "0.6.2"
+}

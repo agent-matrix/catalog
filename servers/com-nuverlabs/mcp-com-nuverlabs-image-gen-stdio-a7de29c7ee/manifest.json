@@ -1,0 +1,92 @@
+{
+  "description": "Generate and edit images from your coding agent with Gemini and OpenAI, using your own API keys.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:07+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-nuverlabs-image-gen.stdio.a7de29c7ee",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nuver-labs/image-gen-mcp",
+    "homepage": "https://github.com/nuver-labs/image-gen-mcp",
+    "repository": "https://github.com/nuver-labs/image-gen-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@nuver-labs/image-gen-mcp@0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.nuverlabs/image-gen",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Google Gemini API key. Enables the Gemini provider. At least one provider key is required.",
+          "isSecret": true,
+          "name": "GEMINI_API_KEY"
+        },
+        {
+          "description": "OpenAI API key. Enables the OpenAI provider. At least one provider key is required.",
+          "isSecret": true,
+          "name": "OPENAI_API_KEY"
+        },
+        {
+          "description": "Provider used when a tool call does not name one: gemini or openai. Defaults to whichever key is set, preferring gemini.",
+          "name": "IMAGE_GEN_MCP_DEFAULT_PROVIDER"
+        },
+        {
+          "description": "Default Gemini model. Defaults to gemini-3.1-flash-image.",
+          "name": "IMAGE_GEN_MCP_GEMINI_MODEL"
+        },
+        {
+          "description": "Default OpenAI model. Defaults to gpt-image-2.",
+          "name": "IMAGE_GEN_MCP_OPENAI_MODEL"
+        },
+        {
+          "description": "Directory used when a tool call passes no output_path.",
+          "name": "IMAGE_GEN_MCP_OUTPUT_DIR"
+        },
+        {
+          "description": "Comma separated directories that file reads and writes are confined to. Unset means unrestricted.",
+          "name": "IMAGE_GEN_MCP_ALLOWED_DIRS"
+        },
+        {
+          "description": "Per-request timeout to the provider API in milliseconds. Defaults to 180000.",
+          "name": "IMAGE_GEN_MCP_TIMEOUT_MS"
+        },
+        {
+          "description": "Path of the JSONL image ledger. Defaults to ~/.image-gen-mcp/images.jsonl. Set to none to disable the file.",
+          "name": "IMAGE_GEN_MCP_LOG_FILE"
+        }
+      ],
+      "identifier": "@nuver-labs/image-gen-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a7de29c7ee",
+    "published_at": "2026-08-13T11:04:46.12209Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.nuverlabs/image-gen",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-13T11:04:46.12209Z"
+  },
+  "title": "Image Gen",
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

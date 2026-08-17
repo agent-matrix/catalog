@@ -1,0 +1,76 @@
+{
+  "description": "Classifies GPU workloads as inference or training from telemetry alone via MCP tools.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-RudrenduPaul-workloadtruth.stdio.5976fe3086",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/RudrenduPaul/WorkloadTruth",
+    "homepage": "https://github.com/RudrenduPaul/WorkloadTruth",
+    "repository": "https://github.com/RudrenduPaul/WorkloadTruth"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "name": "--from",
+            "type": "named",
+            "value": "workloadtruth-cli"
+          },
+          "workloadtruth-cli==0.1.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.RudrenduPaul/workloadtruth",
+  "packages": [
+    {
+      "identifier": "workloadtruth-cli",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "workloadtruth",
+          "valueHint": "script_name"
+        },
+        {
+          "type": "positional",
+          "value": "mcp",
+          "valueHint": "subcommand"
+        }
+      ],
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "name": "--from",
+          "type": "named",
+          "value": "workloadtruth-cli"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5976fe3086",
+    "published_at": "2026-08-11T01:07:24.946195Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.RudrenduPaul/workloadtruth",
+    "server_version": "0.1.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-11T01:07:24.946195Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.4"
+}

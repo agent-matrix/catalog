@@ -1,0 +1,93 @@
+{
+  "description": "MCP server for Google Merchant Center (Merchant API v1): products, promotions, reports, issues.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:14+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-A1-x-Tech-mcp-google-merchants.stdio.1d5578dbc9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/A1-x-Tech/mcp-google-merchants",
+    "homepage": "https://github.com/A1-x-Tech/mcp-google-merchants",
+    "repository": "https://github.com/A1-x-Tech/mcp-google-merchants"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-google-merchants@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.A1-x-Tech/mcp-google-merchants",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Google OAuth 2.0 client ID (refresh-token flow).",
+          "isSecret": true,
+          "name": "GOOGLE_MERCHANTS_CLIENT_ID"
+        },
+        {
+          "description": "Google OAuth 2.0 client secret (refresh-token flow).",
+          "isSecret": true,
+          "name": "GOOGLE_MERCHANTS_CLIENT_SECRET"
+        },
+        {
+          "description": "OAuth refresh token with scope https://www.googleapis.com/auth/content.",
+          "isSecret": true,
+          "name": "GOOGLE_MERCHANTS_REFRESH_TOKEN"
+        },
+        {
+          "description": "Pre-minted OAuth access token (~1h lifetime) \u2014 alternative to the refresh trio.",
+          "isSecret": true,
+          "name": "GOOGLE_MERCHANTS_ACCESS_TOKEN"
+        },
+        {
+          "description": "Default Merchant Center account ID; tools can override it per call.",
+          "name": "GOOGLE_MERCHANTS_ACCOUNT_ID"
+        },
+        {
+          "default": "https://merchantapi.googleapis.com",
+          "description": "API root host override.",
+          "name": "GOOGLE_MERCHANTS_API_BASE"
+        },
+        {
+          "default": "60000",
+          "description": "Per-request timeout in milliseconds.",
+          "name": "GOOGLE_MERCHANTS_TIMEOUT_MS"
+        },
+        {
+          "default": "3",
+          "description": "Retries on transient errors (429 always; 5xx/network for reads).",
+          "name": "GOOGLE_MERCHANTS_MAX_RETRIES"
+        }
+      ],
+      "identifier": "mcp-google-merchants",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1d5578dbc9",
+    "published_at": "2026-08-10T23:22:09.300164Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.A1-x-Tech/mcp-google-merchants",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-10T23:22:09.300164Z"
+  },
+  "title": "Google Merchant Center MCP",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

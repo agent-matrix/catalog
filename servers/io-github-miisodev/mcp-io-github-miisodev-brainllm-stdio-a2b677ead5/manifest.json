@@ -1,0 +1,93 @@
+{
+  "description": "Persistent graph-structured memory for LLMs in TriliumNext Notes \u2014 readable and editable by humans.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-miisodev-brainllm.stdio.a2b677ead5",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/miisodev/BrainLLM",
+    "homepage": "https://github.com/miisodev/BrainLLM",
+    "repository": "https://github.com/miisodev/BrainLLM"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "brainllm@10.4.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.miisodev/brainllm",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the TriliumNext instance, e.g. http://localhost:8080",
+          "format": "string",
+          "isRequired": true,
+          "name": "TRILIUM_BASE_URL"
+        },
+        {
+          "description": "ETAPI token. Required unless TRILIUM_PASSWORD is set. Create one in Trilium under Options \u2192 ETAPI.",
+          "format": "string",
+          "isSecret": true,
+          "name": "TRILIUM_ETAPI_TOKEN"
+        },
+        {
+          "description": "Alternative to TRILIUM_ETAPI_TOKEN \u2014 BrainLLM mints a token on first start and caches it beside brainllm.json.",
+          "format": "string",
+          "isSecret": true,
+          "name": "TRILIUM_PASSWORD"
+        },
+        {
+          "default": "core",
+          "description": "core (default) exposes the 39 brain-aware tools; full additionally exposes the 33 raw ETAPI tools.",
+          "format": "string",
+          "name": "BRAINLLM_MODE"
+        },
+        {
+          "description": "IANA timezone used to stamp dated notes, e.g. Africa/Johannesburg. Defaults to the host timezone.",
+          "format": "string",
+          "name": "BRAINLLM_TZ"
+        },
+        {
+          "description": "Enables the OAuth 2.1 / CIMD endpoints required by claude.ai and other hosted Claude surfaces. This is the password entered on the consent screen when authorizing a client.",
+          "format": "string",
+          "isSecret": true,
+          "name": "BRAINLLM_OWNER_PASSWORD"
+        },
+        {
+          "description": "Override for the public origin when a proxy rewrites Host. Must exactly match the URL entered in the client.",
+          "format": "string",
+          "name": "BRAINLLM_PUBLIC_URL"
+        }
+      ],
+      "identifier": "brainllm",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "10.4.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a2b677ead5",
+    "published_at": "2026-08-16T16:59:54.138685Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.miisodev/brainllm",
+    "server_version": "10.4.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-16T16:59:54.138685Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "10.4.1"
+}

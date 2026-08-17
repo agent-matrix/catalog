@@ -1,0 +1,96 @@
+{
+  "description": "Safe-write Shopify operations: plan-before-execute writes with out-of-band approval and audit.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:04+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-jpka-shopify-operations-mcp.stdio.32cc797857",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jpka/shopify-operations-mcp",
+    "homepage": "https://github.com/jpka/shopify-operations-mcp",
+    "repository": "https://github.com/jpka/shopify-operations-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "shopify-operations-mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.jpka/shopify-operations-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "The myshopify.com store domain, e.g. my-store.myshopify.com. Overrides shopify.storeDomain from the config file.",
+          "format": "string",
+          "isRequired": true,
+          "name": "SHOPIFY_STORE_DOMAIN"
+        },
+        {
+          "description": "Shopify Admin API access token. Required and only ever read from the environment \u2014 never from the config file.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SHOPIFY_ADMIN_TOKEN"
+        },
+        {
+          "description": "Path to a config.json with shopify/plans/approvalServer/protectedTags settings. Defaults to ./config.json in the working directory.",
+          "format": "string",
+          "name": "SHOPIFY_CONFIG"
+        },
+        {
+          "description": "How long a plan token stays valid before it must be executed or expires, in milliseconds. Default 60000.",
+          "format": "string",
+          "name": "SHOPIFY_PLAN_TTL_MS"
+        },
+        {
+          "description": "Port the localhost human-approval HTTP server binds to (127.0.0.1 only). Default 4319.",
+          "format": "string",
+          "name": "SHOPIFY_APPROVAL_SERVER_PORT"
+        },
+        {
+          "description": "Comma-separated tags that plans may never modify; any plan touching an item carrying one is refused. Default do-not-touch.",
+          "format": "string",
+          "name": "SHOPIFY_PROTECTED_TAGS"
+        },
+        {
+          "description": "Identity recorded as the caller on every audit log row. Default unknown.",
+          "format": "string",
+          "name": "SHOPIFY_CALLER_ID"
+        },
+        {
+          "description": "File path for the tamper-evident JSONL audit log. Default shopify-operations-audit.jsonl in the working directory.",
+          "format": "string",
+          "name": "SHOPIFY_AUDIT_PATH"
+        }
+      ],
+      "identifier": "shopify-operations-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "32cc797857",
+    "published_at": "2026-08-15T23:23:24.511661Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.jpka/shopify-operations-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-15T23:23:24.511661Z"
+  },
+  "title": "shopify-operations-mcp",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

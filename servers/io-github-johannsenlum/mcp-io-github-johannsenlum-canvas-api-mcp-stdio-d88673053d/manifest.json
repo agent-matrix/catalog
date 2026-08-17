@@ -1,0 +1,73 @@
+{
+  "description": "MCP server exposing the Canvas LMS REST API (1,116 endpoints) for AI assistants",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:26+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-JohannsenLum-canvas-api-mcp.stdio.d88673053d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/JohannsenLum/canvas-api-mcp",
+    "homepage": "https://github.com/JohannsenLum/canvas-api-mcp",
+    "repository": "https://github.com/JohannsenLum/canvas-api-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "canvas-api-mcp==1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.JohannsenLum/canvas-api-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of your Canvas LMS instance, e.g. https://yourschool.instructure.com",
+          "format": "string",
+          "isRequired": true,
+          "name": "CANVAS_BASE_URL"
+        },
+        {
+          "description": "Canvas API access token (Canvas: Account > Settings > New Access Token)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CANVAS_TOKEN"
+        },
+        {
+          "description": "Optional cap on the number of pages fetched per paginated Canvas API call",
+          "format": "number",
+          "name": "CANVAS_MAX_PAGES"
+        }
+      ],
+      "identifier": "canvas-api-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d88673053d",
+    "published_at": "2026-08-10T14:45:51.780869Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.JohannsenLum/canvas-api-mcp",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-10T14:45:51.780869Z"
+  },
+  "title": "Canvas API MCP",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

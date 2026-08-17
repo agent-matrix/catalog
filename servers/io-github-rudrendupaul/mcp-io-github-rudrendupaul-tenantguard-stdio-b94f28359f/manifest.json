@@ -1,0 +1,76 @@
+{
+  "description": "Scans self-hosted multi-tenant AI-agent platforms for tenant-isolation gaps via an MCP tool.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-RudrenduPaul-tenantguard.stdio.b94f28359f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/RudrenduPaul/TenantGuard",
+    "homepage": "https://github.com/RudrenduPaul/TenantGuard",
+    "repository": "https://github.com/RudrenduPaul/TenantGuard"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "name": "--from",
+            "type": "named",
+            "value": "tenantguard-cli"
+          },
+          "tenantguard-cli==0.1.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.RudrenduPaul/tenantguard",
+  "packages": [
+    {
+      "identifier": "tenantguard-cli",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "tenantguard",
+          "valueHint": "script_name"
+        },
+        {
+          "type": "positional",
+          "value": "mcp",
+          "valueHint": "subcommand"
+        }
+      ],
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "name": "--from",
+          "type": "named",
+          "value": "tenantguard-cli"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b94f28359f",
+    "published_at": "2026-08-11T02:54:07.178396Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.RudrenduPaul/tenantguard",
+    "server_version": "0.1.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-11T02:54:07.178396Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.5"
+}

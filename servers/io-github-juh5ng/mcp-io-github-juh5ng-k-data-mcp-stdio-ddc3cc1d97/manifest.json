@@ -1,0 +1,68 @@
+{
+  "description": "Korean market data: kimchi premium, sell-side research, news. Pay per call in USDC via x402.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:04+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-juh5ng-k-data-mcp.stdio.ddc3cc1d97",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/juh5ng/k-data-mcp",
+    "homepage": "https://github.com/juh5ng/k-data-mcp",
+    "repository": "https://github.com/juh5ng/k-data-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "k-data-mcp@0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.juh5ng/k-data-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Private key of a dedicated wallet holding USDC on Base. Each tool call spends from it. No ETH needed - x402 settles off-chain and the facilitator pays gas.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "K_DATA_PRIVATE_KEY"
+        },
+        {
+          "default": "1",
+          "description": "Hard cap on cumulative spend for the session. The server refuses any call that would exceed it.",
+          "name": "K_DATA_MAX_SPEND_USD"
+        },
+        {
+          "description": "Point at a different K-Data deployment.",
+          "name": "K_DATA_BASE_URL"
+        }
+      ],
+      "identifier": "k-data-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ddc3cc1d97",
+    "published_at": "2026-08-13T13:35:50.496447Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.juh5ng/k-data-mcp",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-13T13:35:50.496447Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

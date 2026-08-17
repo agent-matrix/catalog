@@ -1,0 +1,79 @@
+{
+  "description": "Auditable memory for coding agents: evidence chains, supersession history, keyless embedded SQLite",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:34+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-yul761-statecore-mcp.stdio.44071f00ec",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/yul761/StateCore",
+    "homepage": "https://github.com/yul761/StateCore",
+    "repository": "https://github.com/yul761/StateCore"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "statecore-mcp@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.yul761/statecore-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Override the memory scope name (defaults to the git repository root, else the working directory)",
+          "format": "string",
+          "name": "STATECORE_SCOPE"
+        },
+        {
+          "description": "Set to 'true' together with MODEL_* variables to enable background distillation of conversational events; everything else works without it",
+          "format": "string",
+          "name": "FEATURE_LLM"
+        },
+        {
+          "description": "OpenAI-compatible API key for background distillation (DeepSeek, OpenAI, Ollama, ...); not required for core memory, audit, and recall",
+          "format": "string",
+          "isSecret": true,
+          "name": "MODEL_API_KEY"
+        },
+        {
+          "description": "OpenAI-compatible base URL for the distillation model (e.g. https://api.deepseek.com/v1)",
+          "format": "string",
+          "name": "MODEL_BASE_URL"
+        },
+        {
+          "description": "Model used for background distillation (e.g. deepseek-chat)",
+          "format": "string",
+          "name": "MODEL_NAME"
+        }
+      ],
+      "identifier": "statecore-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "44071f00ec",
+    "published_at": "2026-08-15T03:31:43.038401Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.yul761/statecore-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-15T03:31:43.038401Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

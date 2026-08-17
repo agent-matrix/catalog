@@ -1,0 +1,134 @@
+{
+  "description": "Self-hosted file host: upload a file, get a public URL an agent can paste into a pull request.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:56+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-fatihbaltaci-godrop.stdio.97eab6f3bc",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/fatihbaltaci/GoDrop",
+    "homepage": "https://github.com/fatihbaltaci/GoDrop",
+    "repository": "https://github.com/fatihbaltaci/GoDrop"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "type": "positional",
+            "value": "run",
+            "valueHint": "run"
+          },
+          {
+            "description": "Keep stdin open, which is the whole transport.",
+            "name": "-i",
+            "type": "named"
+          },
+          {
+            "description": "The process holds no state, so nothing is left behind.",
+            "name": "--rm",
+            "type": "named"
+          },
+          {
+            "description": "Where your instance answers.",
+            "isRepeated": true,
+            "name": "-e",
+            "type": "named",
+            "value": "GODROP_URL"
+          },
+          {
+            "description": "The token that authorises uploads.",
+            "isRepeated": true,
+            "name": "-e",
+            "type": "named",
+            "value": "GODROP_TOKEN"
+          },
+          "ghcr.io/fatihbaltaci/godrop:1.3.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.fatihbaltaci/godrop",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "The base URL of the GoDrop you host, such as https://files.example.com.",
+          "format": "string",
+          "isRequired": true,
+          "name": "GODROP_URL"
+        },
+        {
+          "description": "An API token from that instance: godrop token create --name mcp.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GODROP_TOKEN"
+        }
+      ],
+      "identifier": "ghcr.io/fatihbaltaci/godrop:1.3.1",
+      "packageArguments": [
+        {
+          "description": "Serve MCP on stdin and stdout instead of starting a server.",
+          "type": "positional",
+          "value": "mcp",
+          "valueHint": "mcp"
+        }
+      ],
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "run",
+          "valueHint": "run"
+        },
+        {
+          "description": "Keep stdin open, which is the whole transport.",
+          "name": "-i",
+          "type": "named"
+        },
+        {
+          "description": "The process holds no state, so nothing is left behind.",
+          "name": "--rm",
+          "type": "named"
+        },
+        {
+          "description": "Where your instance answers.",
+          "isRepeated": true,
+          "name": "-e",
+          "type": "named",
+          "value": "GODROP_URL"
+        },
+        {
+          "description": "The token that authorises uploads.",
+          "isRepeated": true,
+          "name": "-e",
+          "type": "named",
+          "value": "GODROP_TOKEN"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "97eab6f3bc",
+    "published_at": "2026-08-16T16:47:15.295968Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.fatihbaltaci/godrop",
+    "server_version": "1.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-16T16:47:15.295968Z"
+  },
+  "title": "GoDrop",
+  "type": "mcp_server",
+  "version": "1.3.1"
+}

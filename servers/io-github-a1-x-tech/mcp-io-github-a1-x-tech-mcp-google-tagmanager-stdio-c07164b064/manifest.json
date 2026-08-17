@@ -1,0 +1,93 @@
+{
+  "description": "MCP server for the Google Tag Manager API v2: containers, workspaces, tags, triggers, publishing.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:14+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-A1-x-Tech-mcp-google-tagmanager.stdio.c07164b064",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/A1-x-Tech/mcp-google-tagmanager",
+    "homepage": "https://github.com/A1-x-Tech/mcp-google-tagmanager",
+    "repository": "https://github.com/A1-x-Tech/mcp-google-tagmanager"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-google-tagmanager@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.A1-x-Tech/mcp-google-tagmanager",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Google OAuth client id (refresh-token flow).",
+          "name": "GOOGLE_TAGMANAGER_CLIENT_ID"
+        },
+        {
+          "description": "Google OAuth client secret (refresh-token flow). Treat it as a secret.",
+          "isSecret": true,
+          "name": "GOOGLE_TAGMANAGER_CLIENT_SECRET"
+        },
+        {
+          "description": "Google OAuth refresh token; exchanged for access tokens automatically. Treat it as a secret.",
+          "isSecret": true,
+          "name": "GOOGLE_TAGMANAGER_REFRESH_TOKEN"
+        },
+        {
+          "description": "Ready-made OAuth access token (~1h lifetime). Alternative to the client-id/secret/refresh-token trio.",
+          "isSecret": true,
+          "name": "GOOGLE_TAGMANAGER_ACCESS_TOKEN"
+        },
+        {
+          "default": "https://tagmanager.googleapis.com",
+          "description": "API root host override.",
+          "name": "GOOGLE_TAGMANAGER_API_BASE"
+        },
+        {
+          "default": "60000",
+          "description": "Per-request timeout in milliseconds.",
+          "name": "GOOGLE_TAGMANAGER_TIMEOUT_MS"
+        },
+        {
+          "default": "3",
+          "description": "Retries on transient errors (429, quota 403, and 5xx/network for reads).",
+          "name": "GOOGLE_TAGMANAGER_MAX_RETRIES"
+        },
+        {
+          "default": "4200",
+          "description": "Minimum spacing between API requests, for the 0.25 QPS quota.",
+          "name": "GOOGLE_TAGMANAGER_MIN_INTERVAL_MS"
+        }
+      ],
+      "identifier": "mcp-google-tagmanager",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c07164b064",
+    "published_at": "2026-08-10T23:22:10.845712Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.A1-x-Tech/mcp-google-tagmanager",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-10T23:22:10.845712Z"
+  },
+  "title": "Google Tag Manager MCP",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

@@ -1,0 +1,88 @@
+{
+  "description": "MCP server for the Google Search Console API: search analytics, sitemaps, URL inspection, sites.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:14+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-A1-x-Tech-mcp-google-search-console.stdio.cdf4880f43",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/A1-x-Tech/mcp-google-search-console",
+    "homepage": "https://github.com/A1-x-Tech/mcp-google-search-console",
+    "repository": "https://github.com/A1-x-Tech/mcp-google-search-console"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-google-search-console@1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.A1-x-Tech/mcp-google-search-console",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Google OAuth2 client id (refresh-token flow).",
+          "name": "GOOGLE_SEARCH_CONSOLE_CLIENT_ID"
+        },
+        {
+          "description": "Google OAuth2 client secret (refresh-token flow). Treat it as a secret.",
+          "isSecret": true,
+          "name": "GOOGLE_SEARCH_CONSOLE_CLIENT_SECRET"
+        },
+        {
+          "description": "Google OAuth2 refresh token, exchanged for access tokens automatically. Treat it as a secret.",
+          "isSecret": true,
+          "name": "GOOGLE_SEARCH_CONSOLE_REFRESH_TOKEN"
+        },
+        {
+          "description": "Static OAuth2 access token (~1h lifetime) \u2014 alternative to the refresh-token trio, mostly for testing.",
+          "isSecret": true,
+          "name": "GOOGLE_SEARCH_CONSOLE_ACCESS_TOKEN"
+        },
+        {
+          "default": "https://searchconsole.googleapis.com",
+          "description": "API root override.",
+          "name": "GOOGLE_SEARCH_CONSOLE_API_BASE"
+        },
+        {
+          "default": "60000",
+          "description": "Per-request timeout in milliseconds.",
+          "name": "GOOGLE_SEARCH_CONSOLE_TIMEOUT_MS"
+        },
+        {
+          "default": "3",
+          "description": "Retries on transient errors (429 always; 5xx/network for reads).",
+          "name": "GOOGLE_SEARCH_CONSOLE_MAX_RETRIES"
+        }
+      ],
+      "identifier": "mcp-google-search-console",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "cdf4880f43",
+    "published_at": "2026-08-11T16:59:04.521523Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.A1-x-Tech/mcp-google-search-console",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-11T16:59:04.521523Z"
+  },
+  "title": "Google Search Console MCP",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

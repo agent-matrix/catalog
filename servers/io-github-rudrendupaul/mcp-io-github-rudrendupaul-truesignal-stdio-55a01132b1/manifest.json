@@ -1,0 +1,71 @@
+{
+  "description": "Wraps the truesignal CLI as a single generic MCP tool for threat/connector status checks.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-RudrenduPaul-truesignal.stdio.55a01132b1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/RudrenduPaul/truesignal",
+    "homepage": "https://github.com/RudrenduPaul/truesignal",
+    "repository": "https://github.com/RudrenduPaul/truesignal"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "name": "--from",
+            "type": "named",
+            "value": "truesignal-cli"
+          },
+          "truesignal-cli==0.1.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.RudrenduPaul/truesignal",
+  "packages": [
+    {
+      "identifier": "truesignal-cli",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "truesignal-mcp",
+          "valueHint": "script_name"
+        }
+      ],
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "name": "--from",
+          "type": "named",
+          "value": "truesignal-cli"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "55a01132b1",
+    "published_at": "2026-08-11T05:02:46.288723Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.RudrenduPaul/truesignal",
+    "server_version": "0.1.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-11T05:02:46.288723Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.5"
+}

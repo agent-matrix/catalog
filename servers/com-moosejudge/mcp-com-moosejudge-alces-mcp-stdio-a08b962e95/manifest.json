@@ -1,0 +1,72 @@
+{
+  "description": "Alces for Jira Data Center \u2014 MCP server bridging Jira DC/JSM with AI agents",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:06+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-moosejudge-alces-mcp.stdio.a08b962e95",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://gitlab.com/moosejudge/alces-mcp",
+    "homepage": "https://gitlab.com/moosejudge/alces-mcp",
+    "repository": "https://gitlab.com/moosejudge/alces-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "alces-mcp@0.8.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.moosejudge/alces-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the Jira Data Center instance",
+          "format": "string",
+          "isRequired": true,
+          "name": "JIRA_URL"
+        },
+        {
+          "description": "Personal Access Token for standard operations",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "JIRA_USER_TOKEN"
+        },
+        {
+          "description": "Personal Access Token for elevated/admin operations (optional)",
+          "format": "string",
+          "isSecret": true,
+          "name": "JIRA_ADMIN_TOKEN"
+        }
+      ],
+      "identifier": "alces-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.8.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a08b962e95",
+    "published_at": "2026-08-13T05:50:36.722801Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.moosejudge/alces-mcp",
+    "server_version": "0.8.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-13T05:50:36.722801Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.8.0"
+}

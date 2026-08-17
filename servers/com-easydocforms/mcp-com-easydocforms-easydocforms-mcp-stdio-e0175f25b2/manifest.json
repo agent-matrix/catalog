@@ -1,0 +1,63 @@
+{
+  "description": "Healthcare intake for agents: import blank PDFs, create patient fill links, fetch completed PDFs.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:01+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-easydocforms-easydocforms-mcp.stdio.e0175f25b2",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/easydocforms/easydocforms-mcp",
+    "homepage": "https://github.com/easydocforms/easydocforms-mcp",
+    "repository": "https://github.com/easydocforms/easydocforms-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/easydocforms/easydocforms-mcp:0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.easydocforms/easydocforms-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "EasyDocForms Partner API key (edfk_live_*), created under Settings \u2192 Integrations \u2192 Partner API",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "EASYDOCFORMS_API_KEY"
+        },
+        {
+          "description": "Optional API base URL override",
+          "name": "EASYDOCFORMS_BASE_URL"
+        }
+      ],
+      "identifier": "ghcr.io/easydocforms/easydocforms-mcp:0.1.2",
+      "registryType": "oci",
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "e0175f25b2",
+    "published_at": "2026-08-13T20:09:03.683208Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.easydocforms/easydocforms-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-13T20:09:03.683208Z"
+  },
+  "title": "EasyDocForms",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

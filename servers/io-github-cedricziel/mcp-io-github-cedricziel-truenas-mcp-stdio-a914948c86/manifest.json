@@ -1,0 +1,100 @@
+{
+  "description": "Inspect and manage TrueNAS SCALE storage, shares, apps and system state with your own API key",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:44+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cedricziel-truenas-mcp.stdio.a914948c86",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cedricziel/truenas-mcp",
+    "homepage": "https://github.com/cedricziel/truenas-mcp",
+    "repository": "https://github.com/cedricziel/truenas-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Bind the MCP listener to loopback only. Plaintext is enabled below on the assumption that nothing off-host can reach it.",
+            "name": "--publish",
+            "type": "named",
+            "value": "127.0.0.1:8080:8080"
+          },
+          "ghcr.io/cedricziel/truenas-mcp:0.4.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cedricziel/truenas-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "TrueNAS host to manage, optionally `host:port`. Requires TrueNAS SCALE 25.04 or later.",
+          "isRequired": true,
+          "name": "TRUENAS_MCP_TARGET",
+          "placeholder": "nas.local"
+        },
+        {
+          "description": "Serve MCP without TLS. Set here because the listener is published on loopback only; drop it and supply TRUENAS_MCP_TLS_CERT/KEY if the port is reachable from elsewhere.",
+          "format": "boolean",
+          "name": "TRUENAS_MCP_ALLOW_PLAINTEXT",
+          "value": "true"
+        },
+        {
+          "default": "false",
+          "description": "Accept the TrueNAS certificate unverified while keeping the connection encrypted. TrueNAS ships a self-signed certificate for `CN=localhost`, so no address you can reach it by will validate.",
+          "format": "boolean",
+          "name": "TRUENAS_MCP_TARGET_INSECURE"
+        },
+        {
+          "default": "false",
+          "description": "Expose the mutating tools. Read-only by default; unrecoverable operations stay unreachable either way.",
+          "format": "boolean",
+          "name": "TRUENAS_MCP_ENABLE_WRITES"
+        }
+      ],
+      "identifier": "ghcr.io/cedricziel/truenas-mcp:0.4.1",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "Bind the MCP listener to loopback only. Plaintext is enabled below on the assumption that nothing off-host can reach it.",
+          "name": "--publish",
+          "type": "named",
+          "value": "127.0.0.1:8080:8080"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "headers": [
+          {
+            "description": "Your own TrueNAS API key as `Bearer <key>`. Create it under Credentials -> API Keys. The server stores no credential; the session reaches exactly what this key permits.",
+            "isRequired": true,
+            "isSecret": true,
+            "name": "Authorization"
+          }
+        ],
+        "type": "streamable-http",
+        "url": "http://localhost:8080/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "a914948c86",
+    "published_at": "2026-08-11T20:41:05.208334Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cedricziel/truenas-mcp",
+    "server_version": "0.4.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-11T20:41:05.208334Z"
+  },
+  "title": "TrueNAS SCALE",
+  "type": "mcp_server",
+  "version": "0.4.1"
+}

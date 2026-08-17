@@ -1,0 +1,72 @@
+{
+  "description": "Read-only IBM MQ diagnostics for AI agents. Cited root cause, never destructive.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:18+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-pramodreddyboddu-mq-sentinel.stdio.d2a638d167",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/pramodreddyboddu/mq-sentinel",
+    "homepage": "https://github.com/pramodreddyboddu/mq-sentinel",
+    "repository": "https://github.com/pramodreddyboddu/mq-sentinel"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mq-sentinel==0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.pramodreddyboddu/mq-sentinel",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "true",
+          "description": "Set true for local demo only. Refused when environment=prod.",
+          "format": "boolean",
+          "name": "MQS_AUTH_DISABLE_AUTH_FOR_LOCAL_DEV"
+        },
+        {
+          "choices": [
+            "dev",
+            "staging",
+            "prod"
+          ],
+          "default": "dev",
+          "description": "dev | staging | prod \u2014 used in audit and RBAC.",
+          "format": "string",
+          "name": "MQS_SERVER_ENVIRONMENT"
+        }
+      ],
+      "identifier": "mq-sentinel",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d2a638d167",
+    "published_at": "2026-08-13T14:09:16.987819Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.pramodreddyboddu/mq-sentinel",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-13T14:09:16.987819Z"
+  },
+  "title": "MQ-Sentinel",
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

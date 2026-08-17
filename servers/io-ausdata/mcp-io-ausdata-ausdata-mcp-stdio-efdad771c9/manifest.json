@@ -1,0 +1,71 @@
+{
+  "description": "Australian public data (ABS, RBA, ATO + 6 more) via the ausdata.io gateway. Free tier, no card.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:13+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-ausdata-ausdata-mcp.stdio.efdad771c9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Bigred97/ausdata-mcp-client",
+    "homepage": "https://github.com/Bigred97/ausdata-mcp-client",
+    "repository": "https://github.com/Bigred97/ausdata-mcp-client"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "ausdata-mcp@0.4.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.ausdata/ausdata-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API key (bearer token) for api.ausdata.io. Get a free key at https://ausdata.io \u2014 500 calls/month, no credit card.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AUSDATA_API_KEY"
+        },
+        {
+          "description": "Override the gateway base URL. Defaults to https://api.ausdata.io.",
+          "format": "string",
+          "name": "AUSDATA_API_URL"
+        },
+        {
+          "description": "Per-request timeout in milliseconds. Defaults to 30000.",
+          "format": "string",
+          "name": "AUSDATA_TIMEOUT"
+        }
+      ],
+      "identifier": "ausdata-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "efdad771c9",
+    "published_at": "2026-08-14T23:12:17.647897Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.ausdata/ausdata-mcp",
+    "server_version": "0.4.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-14T23:12:17.647897Z"
+  },
+  "title": "ausdata.io \u2014 Australian Public Data",
+  "type": "mcp_server",
+  "version": "0.4.5"
+}

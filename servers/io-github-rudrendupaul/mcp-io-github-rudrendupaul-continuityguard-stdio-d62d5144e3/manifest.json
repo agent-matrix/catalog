@@ -1,0 +1,71 @@
+{
+  "description": "Wraps the ContinuityGuard CLI as a single generic MCP tool for video-clip continuity scans.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-RudrenduPaul-continuityguard.stdio.d62d5144e3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/RudrenduPaul/ContinuityGuard",
+    "homepage": "https://github.com/RudrenduPaul/ContinuityGuard",
+    "repository": "https://github.com/RudrenduPaul/ContinuityGuard"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "name": "--from",
+            "type": "named",
+            "value": "continuityguard-cli"
+          },
+          "continuityguard-cli==0.1.7"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.RudrenduPaul/continuityguard",
+  "packages": [
+    {
+      "identifier": "continuityguard-cli",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "continuityguard-mcp",
+          "valueHint": "script_name"
+        }
+      ],
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "name": "--from",
+          "type": "named",
+          "value": "continuityguard-cli"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.7"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d62d5144e3",
+    "published_at": "2026-08-11T05:17:03.411824Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.RudrenduPaul/continuityguard",
+    "server_version": "0.1.7",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-11T05:17:03.411824Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.7"
+}

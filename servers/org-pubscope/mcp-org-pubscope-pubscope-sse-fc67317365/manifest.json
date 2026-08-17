@@ -1,7 +1,7 @@
 {
-  "description": "Search 46,000+ academic journals: trust scores, quartiles, indexing and citation verification.",
+  "description": "Journal intelligence: indexing, quartile, APC, trust score, measured publication times",
   "harvest": {
-    "last_seen_at": "2026-08-10T04:07:56+00:00",
+    "last_seen_at": "2026-08-17T03:13:38+00:00",
     "seen_in_latest_run": true
   },
   "id": "mcp.org-pubscope-pubscope.sse.fc67317365",
@@ -22,20 +22,27 @@
   "name": "org.pubscope/pubscope",
   "provenance": {
     "identity_key": "fc67317365",
-    "published_at": "2026-07-27T07:12:34.588Z",
+    "published_at": "2026-08-13T12:50:30.463541Z",
     "registry_base_url": "https://registry.modelcontextprotocol.io",
     "server_name": "org.pubscope/pubscope",
-    "server_version": "1.0.0",
+    "server_version": "1.1.0",
     "source": "mcp-registry",
-    "updated_at": "2026-07-27T07:12:34.588Z"
+    "updated_at": "2026-08-13T12:50:30.463541Z"
   },
   "remotes": [
     {
+      "headers": [
+        {
+          "description": "Optional. Without it the server answers with journal identity, indexing status and SJR quartile. With it, the measured and composite layer is included: Trust Score, Journal Impact Factor, APC amount, acceptance rate and measured submission-to-publication time. A key is free from https://pubscope.org/login",
+          "isSecret": true,
+          "name": "X-Api-Key"
+        }
+      ],
       "type": "streamable-http",
       "url": "https://pubscope.org/api/mcp"
     }
   ],
   "title": null,
   "type": "mcp_server",
-  "version": "1.0.0"
+  "version": "1.1.0"
 }

@@ -1,0 +1,74 @@
+{
+  "description": "Build and operate declarative REST/Kafka services on Orion: 53 tools over the full admin API.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:12:23+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-GoPlasmatic-orion.stdio.8cbabe72cb",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/GoPlasmatic/Orion",
+    "homepage": "https://github.com/GoPlasmatic/Orion",
+    "repository": "https://github.com/GoPlasmatic/Orion"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/goplasmatic/orion-cli:1.0.0-rc.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.GoPlasmatic/orion",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "URL of the Orion server to manage (e.g. http://localhost:8080)",
+          "format": "string",
+          "isRequired": true,
+          "name": "ORION_SERVER_URL"
+        },
+        {
+          "description": "API key, if the Orion server has admin authentication enabled",
+          "format": "string",
+          "isSecret": true,
+          "name": "ORION_API_KEY"
+        }
+      ],
+      "identifier": "ghcr.io/goplasmatic/orion-cli:1.0.0-rc.1",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        },
+        {
+          "type": "positional",
+          "value": "serve"
+        }
+      ],
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "8cbabe72cb",
+    "published_at": "2026-08-14T08:49:46.509259Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.GoPlasmatic/orion",
+    "server_version": "1.0.0-rc.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-14T08:49:46.509259Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.0-rc.1"
+}

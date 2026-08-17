@@ -1,0 +1,65 @@
+{
+  "description": "Policy proxy for MCP tool calls. A denied call never reaches the downstream server.",
+  "harvest": {
+    "last_seen_at": "2026-08-17T03:13:26+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sp3ak-safenode-mcp-gateway.stdio.9443a7deb0",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sp3ak/safenode-mcp-gateway",
+    "homepage": "https://github.com/sp3ak/safenode-mcp-gateway",
+    "repository": "https://github.com/sp3ak/safenode-mcp-gateway"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "safenode-mcp-gateway@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sp3ak/safenode-mcp-gateway",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "SafeNode API key. Free tier at https://safenode.tech \u2014 no card required.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SAFENODE_API_KEY"
+        },
+        {
+          "description": "Override the SafeNode API base URL. Defaults to https://safenode.tech.",
+          "format": "string",
+          "name": "SAFENODE_BASE_URL"
+        }
+      ],
+      "identifier": "safenode-mcp-gateway",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9443a7deb0",
+    "published_at": "2026-08-10T08:30:28.251562Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sp3ak/safenode-mcp-gateway",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-10T08:30:28.251562Z"
+  },
+  "title": "SafeNode MCP Gateway",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}
