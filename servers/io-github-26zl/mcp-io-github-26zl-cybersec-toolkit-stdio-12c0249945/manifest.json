@@ -1,0 +1,112 @@
+{
+  "description": "Authorization-gated MCP server to discover and run 670+ security tools for CTF, pentest, and DFIR.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-26zl-cybersec-toolkit.stdio.12c0249945",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/26zl/cybersec-toolkit",
+    "homepage": "https://github.com/26zl/cybersec-toolkit",
+    "repository": "https://github.com/26zl/cybersec-toolkit"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "name": "--entrypoint",
+            "type": "named",
+            "value": "uv"
+          },
+          "ghcr.io/26zl/cybersec-toolkit:1.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.26zl/cybersec-toolkit",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "0",
+          "description": "Set to 1 only for explicitly authorized external scopes.",
+          "name": "CYBERSEC_MCP_ALLOW_EXTERNAL"
+        },
+        {
+          "default": "0",
+          "description": "Set to 1 to enable unsandboxed run_script execution.",
+          "name": "CYBERSEC_MCP_ALLOW_SCRIPTS"
+        }
+      ],
+      "identifier": "ghcr.io/26zl/cybersec-toolkit:1.1.1",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "--directory"
+        },
+        {
+          "type": "positional",
+          "value": "mcp_server"
+        },
+        {
+          "type": "positional",
+          "value": "fastmcp"
+        },
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "server.py"
+        },
+        {
+          "type": "positional",
+          "value": "--transport"
+        },
+        {
+          "type": "positional",
+          "value": "stdio"
+        },
+        {
+          "type": "positional",
+          "value": "--no-banner"
+        }
+      ],
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "name": "--entrypoint",
+          "type": "named",
+          "value": "uv"
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "12c0249945",
+    "published_at": "2026-08-22T20:39:28.618715Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.26zl/cybersec-toolkit",
+    "server_version": "1.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-22T20:39:28.618715Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.1.1"
+}

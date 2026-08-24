@@ -1,0 +1,80 @@
+{
+  "description": "Convert DOCX/XLSX to Markdown \u2014 native chart-data extraction, optional VLM for figures",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:51+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-HelgDemidov-refigure.stdio.9fe663d13f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/HelgDemidov/refigure",
+    "homepage": "https://github.com/HelgDemidov/refigure",
+    "repository": "https://github.com/HelgDemidov/refigure"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "refigure==0.3.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.HelgDemidov/refigure",
+  "packages": [
+    {
+      "identifier": "refigure",
+      "packageArguments": [
+        {
+          "description": "Use Streamable HTTP transport instead of the stdio default",
+          "name": "--transport",
+          "type": "named",
+          "value": "http"
+        },
+        {
+          "description": "Bearer-token file (one 'token = caller_id' pair per line) \u2014 refigure-mcp refuses to start over HTTP without one",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "--mcp-auth-token-file",
+          "type": "named"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "Bind host \u2014 loopback by default; a non-loopback value is accepted but logs a startup warning",
+          "name": "--mcp-http-host",
+          "type": "named"
+        },
+        {
+          "default": "8000",
+          "description": "Bind port",
+          "format": "number",
+          "name": "--mcp-http-port",
+          "type": "named"
+        }
+      ],
+      "registryType": "pypi",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://{--mcp-http-host}:{--mcp-http-port}/mcp"
+      },
+      "version": "0.3.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9fe663d13f",
+    "published_at": "2026-08-22T19:08:22.05513Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.HelgDemidov/refigure",
+    "server_version": "0.3.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-22T19:08:22.05513Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.5"
+}

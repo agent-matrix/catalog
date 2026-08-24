@@ -1,0 +1,55 @@
+{
+  "description": "Read-only MCP server for WordPress plugin audits: vulnerabilities, bloat, cron, orphaned tables.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mwstech-auditra.sse.b7ae1b520e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mwstech/auditra",
+    "homepage": "https://github.com/mwstech/auditra",
+    "repository": "https://github.com/mwstech/auditra"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://{site_domain}/wp-json/auditra/v1/mcp/{token}"
+    }
+  },
+  "name": "io.github.mwstech/auditra",
+  "provenance": {
+    "identity_key": "b7ae1b520e",
+    "published_at": "2026-08-21T05:19:27.972795Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mwstech/auditra",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-21T05:19:27.972795Z"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://{site_domain}/wp-json/auditra/v1/mcp/{token}",
+      "variables": {
+        "site_domain": {
+          "description": "The domain of the WordPress site running the Auditra plugin, without a scheme or trailing slash (for example: example.com). The site must be reachable over HTTPS.",
+          "format": "string",
+          "isRequired": true,
+          "placeholder": "example.com"
+        },
+        "token": {
+          "description": "The access token generated in the site's wp-admin under Tools \u2192 Auditra. Treat it like a password: anyone holding this URL can read the site's plugin inventory. It can be revoked and regenerated from the same screen at any time.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true
+        }
+      }
+    }
+  ],
+  "title": "Auditra",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

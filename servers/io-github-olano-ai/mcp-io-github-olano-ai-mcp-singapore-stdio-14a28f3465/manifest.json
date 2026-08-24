@@ -1,0 +1,88 @@
+{
+  "description": "Singapore public data, transport, rail, property, business, economy, weather, and analytics.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:45+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-olano-ai-mcp-singapore.stdio.14a28f3465",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/olano-ai/mcp-singapore",
+    "homepage": "https://github.com/olano-ai/mcp-singapore",
+    "repository": "https://github.com/olano-ai/mcp-singapore"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@olano/mcp-singapore@0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.olano-ai/mcp-singapore",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional data.gov.sg API key for production limits.",
+          "isSecret": true,
+          "name": "DATA_GOV_SG_API_KEY"
+        },
+        {
+          "description": "Optional OneMap token for geocoding, routing, themes, and address-based rail lookup.",
+          "isSecret": true,
+          "name": "ONEMAP_TOKEN"
+        },
+        {
+          "description": "Optional LTA DataMall Account Key for dynamic transport APIs.",
+          "isSecret": true,
+          "name": "LTA_DATAMALL_API_KEY"
+        },
+        {
+          "description": "Optional private directory for the persistent public-response cache.",
+          "name": "OLANO_SG_CACHE_DIR"
+        },
+        {
+          "choices": [
+            "all",
+            "mobility",
+            "property",
+            "business",
+            "economy",
+            "civic",
+            "finance"
+          ],
+          "default": "all",
+          "description": "Optional aggregate tool profile: all, mobility, property, business, economy, civic, or finance.",
+          "name": "OLANO_SG_PROFILE"
+        }
+      ],
+      "identifier": "@olano/mcp-singapore",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "14a28f3465",
+    "published_at": "2026-08-20T16:36:55.81779Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.olano-ai/mcp-singapore",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-20T16:36:55.81779Z"
+  },
+  "title": "Singapore MCP by Olano",
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

@@ -1,0 +1,81 @@
+{
+  "description": "Zero-knowledge secrets manager \u2014 local crypto-plane MCP server: decrypts and injects secrets.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.dev-seekrit-mcp.stdio.7cfcdc5529",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mileszim/seekrit",
+    "homepage": "https://github.com/mileszim/seekrit",
+    "repository": "https://github.com/mileszim/seekrit"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@seekrit/mcp@0.6.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "dev.seekrit/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Machine (M2M) client id from POST https://mcp.seekrit.dev/signup \u2014 mints an admin token automatically, no separate token to copy.",
+          "format": "string",
+          "name": "SEEKRIT_CLIENT_ID"
+        },
+        {
+          "description": "Machine (M2M) client secret paired with SEEKRIT_CLIENT_ID.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SEEKRIT_CLIENT_SECRET"
+        },
+        {
+          "description": "An existing skt_\u2026 service or admin token, if you already have one instead of machine credentials.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SEEKRIT_TOKEN"
+        },
+        {
+          "description": "Passphrase for the token's private key. Required for tools that decrypt (get_secret, run_command) when authenticating with SEEKRIT_TOKEN.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SEEKRIT_PASSPHRASE"
+        },
+        {
+          "description": "Override the API base URL. Defaults to the hosted seekrit API.",
+          "format": "string",
+          "name": "SEEKRIT_API_URL"
+        }
+      ],
+      "identifier": "@seekrit/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.6.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7cfcdc5529",
+    "published_at": "2026-08-17T23:43:29.945131Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "dev.seekrit/mcp",
+    "server_version": "0.6.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-17T23:43:29.945131Z"
+  },
+  "title": "seekrit (local crypto plane)",
+  "type": "mcp_server",
+  "version": "0.6.1"
+}

@@ -1,0 +1,90 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/sassoftware/sas-mcp-server:1.11.0"
+      }
+    }
+  ],
+  "description": "Execute SAS code and query Compute, CAS, and model APIs on SAS Viya via OAuth 2.0.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:52+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/sassoftware/sas-mcp-server",
+  "id": "tool.io-github-sassoftware-sas-mcp-server.dcb011e0e4",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sassoftware/sas-mcp-server",
+    "homepage": "https://github.com/sassoftware/sas-mcp-server",
+    "repository": "https://github.com/sassoftware/sas-mcp-server"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Execute SAS code and query Compute, CAS, and model APIs on SAS Viya via OAuth 2.0.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.sassoftware/sas-mcp-server",
+      "request_type": "POST",
+      "url": "https://github.com/sassoftware/sas-mcp-server"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Mount the SAS Viya CLI token cache into the container. The server reads ~/.sas/credentials.json, and $HOME is /app inside the image, so the .sas directory has to land at /app/.sas.",
+            "isRequired": true,
+            "name": "-v",
+            "type": "named",
+            "value": "{sas_token_dir}:/app/.sas",
+            "variables": {
+              "sas_token_dir": {
+                "description": "The .sas directory in your home directory, written by `sas-viya auth loginCode`. On Windows, C:\\Users\\<you>\\.sas.",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          "ghcr.io/sassoftware/sas-mcp-server:1.11.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sassoftware/sas-mcp-server",
+  "provenance": {
+    "identity_key": "68e3bb4739",
+    "promoted_from": "mcp.io-github-sassoftware-sas-mcp-server.stdio.68e3bb4739",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sassoftware/sas-mcp-server",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-sassoftware-sas-mcp-server.stdio.68e3bb4739",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/sassoftware/sas-mcp-server",
+  "summary": "Execute SAS code and query Compute, CAS, and model APIs on SAS Viya via OAuth 2.0.",
+  "tags": [
+    "apis",
+    "code",
+    "compute",
+    "execute",
+    "model",
+    "query",
+    "sas"
+  ],
+  "title": "SAS Viya",
+  "type": "tool",
+  "version": "1.11.0"
+}

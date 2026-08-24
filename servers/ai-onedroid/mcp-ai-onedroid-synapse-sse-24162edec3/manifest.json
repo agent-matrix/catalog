@@ -1,0 +1,54 @@
+{
+  "description": "Governed MCP gateway: one endpoint for your tools, with credential custody and audit log.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-onedroid-synapse.sse.24162edec3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://synapse.onedroid.ai/mcp"
+    }
+  },
+  "name": "ai.onedroid/synapse",
+  "provenance": {
+    "identity_key": "24162edec3",
+    "published_at": "2026-08-21T11:45:36.784116Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.onedroid/synapse",
+    "server_version": "1.0.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-21T11:45:36.784116Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Bearer <your Synapse personal access token>. The token identifies your hub, so this endpoint needs no hub slug. Best for developers, CI and headless agents.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {token}",
+          "variables": {
+            "token": {
+              "description": "A Synapse personal access token, created in the Synapse UI.",
+              "format": "string",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://synapse.onedroid.ai/mcp"
+    }
+  ],
+  "title": "OneDroid Synapse",
+  "type": "mcp_server",
+  "version": "1.0.2"
+}

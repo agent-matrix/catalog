@@ -1,0 +1,80 @@
+{
+  "description": "Run an app portfolio across Google Play and the App Store: vitals, reviews, earnings, releases.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sonlenef-storepilot-mcp.stdio.fedbff7735",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sonlenef/storepilot-mcp",
+    "homepage": "https://github.com/sonlenef/storepilot-mcp",
+    "repository": "https://github.com/sonlenef/storepilot-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "storepilot==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sonlenef/storepilot-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to a Google Cloud service account JSON key with Play Console access. Enables the Google Play tools.",
+          "isSecret": true,
+          "name": "STOREPILOT_GOOGLE_CREDENTIALS"
+        },
+        {
+          "description": "Play reports bucket id from Play Console -> Download reports -> Copy Cloud Storage URI. Required for installs, ratings and earnings.",
+          "name": "STOREPILOT_GOOGLE_REPORTS_BUCKET"
+        },
+        {
+          "description": "Path to the App Store Connect API .p8 private key. Enables the App Store tools.",
+          "isSecret": true,
+          "name": "STOREPILOT_ASC_KEY_PATH"
+        },
+        {
+          "description": "App Store Connect API Key ID.",
+          "name": "STOREPILOT_ASC_KEY_ID"
+        },
+        {
+          "description": "App Store Connect API Issuer ID.",
+          "name": "STOREPILOT_ASC_ISSUER_ID"
+        },
+        {
+          "description": "Vendor number from App Store Connect -> Payments and Financial Reports. Required only for sales reports.",
+          "name": "STOREPILOT_ASC_VENDOR_NUMBER"
+        }
+      ],
+      "identifier": "storepilot",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "fedbff7735",
+    "published_at": "2026-08-17T06:55:10.063934Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sonlenef/storepilot-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-17T06:55:10.063934Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

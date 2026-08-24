@@ -1,0 +1,89 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/partymola/monzo-mcp:v0.7.0"
+      }
+    }
+  ],
+  "description": "Read-only MCP server for the Monzo banking API: OAuth, local transaction cache, spending analysis.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:46+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/partymola/monzo-mcp",
+  "id": "tool.io-github-partymola-monzo-mcp.6d84f94c9c",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/partymola/monzo-mcp",
+    "homepage": "https://github.com/partymola/monzo-mcp",
+    "repository": "https://github.com/partymola/monzo-mcp"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Read-only MCP server for the Monzo banking API: OAuth, local transaction cache, spending analysis.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.partymola/monzo-mcp",
+      "request_type": "POST",
+      "url": "https://github.com/partymola/monzo-mcp"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "isRequired": true,
+            "name": "-v",
+            "type": "named",
+            "value": "{data_volume}:/data",
+            "variables": {
+              "data_volume": {
+                "default": "monzo-mcp-data",
+                "description": "Docker volume or host directory holding the OAuth credentials and the transaction cache. Without it the container starts but every tool reports that it is not configured, and anything authorised is lost when the container is replaced.",
+                "isRequired": true
+              }
+            }
+          },
+          "ghcr.io/partymola/monzo-mcp:v0.7.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.partymola/monzo-mcp",
+  "provenance": {
+    "identity_key": "651ede8ba8",
+    "promoted_from": "mcp.io-github-partymola-monzo-mcp.stdio.651ede8ba8",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.partymola/monzo-mcp",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-partymola-monzo-mcp.stdio.651ede8ba8",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/partymola/monzo-mcp",
+  "summary": "Read-only MCP server for the Monzo banking API: OAuth, local transaction cache, spending analysis.",
+  "tags": [
+    "banking",
+    "local",
+    "monzo",
+    "oauth",
+    "only",
+    "read",
+    "transaction"
+  ],
+  "title": "Monzo Mcp",
+  "type": "tool",
+  "version": "0.7.0"
+}

@@ -1,0 +1,55 @@
+{
+  "description": "Consulta y opera gastos compartidos, deudas, presupuestos e ingresos de tu grupo.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:28+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-controlargastos-gastos-compartidos.sse.8dd4a9d459",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://controlargastos.es/api/mcp"
+    }
+  },
+  "name": "com.controlargastos/gastos-compartidos",
+  "provenance": {
+    "identity_key": "8dd4a9d459",
+    "published_at": "2026-08-22T11:06:01.670115Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.controlargastos/gastos-compartidos",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-22T11:06:01.670115Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Token de agente de ControlarGastos. Se genera en Perfil \u2192 Tokens de agente, con permisos granulares por herramienta.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {agent_token}",
+          "variables": {
+            "agent_token": {
+              "description": "Token de agente generado en https://controlargastos.es/app/perfil",
+              "format": "string",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://controlargastos.es/api/mcp"
+    }
+  ],
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

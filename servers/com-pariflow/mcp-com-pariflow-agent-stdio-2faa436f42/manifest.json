@@ -1,0 +1,62 @@
+{
+  "description": "Search prediction markets, preview trades, and place explicitly confirmed Pariflow orders.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:35+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-pariflow-agent.stdio.2faa436f42",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@pariflow-market/mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.pariflow/agent",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Single-use Pariflow setup code. It is exchanged locally for a scoped key.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PARIFLOW_SETUP_CODE"
+        }
+      ],
+      "identifier": "@pariflow-market/mcp",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "2faa436f42",
+    "published_at": "2026-08-18T09:52:31.083186Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.pariflow/agent",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-18T09:52:31.083186Z"
+  },
+  "title": "Pariflow Agent",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

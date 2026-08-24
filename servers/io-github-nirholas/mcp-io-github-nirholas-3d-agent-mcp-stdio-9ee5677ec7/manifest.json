@@ -1,0 +1,70 @@
+{
+  "description": "MCP tools from three.ws: free + paid text-to-3D, rigging, agent reputation, market intel.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:44+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nirholas-3d-agent-mcp.stdio.9ee5677ec7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nirholas/three.ws",
+    "homepage": "https://github.com/nirholas/three.ws",
+    "repository": "https://github.com/nirholas/three.ws"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@three-ws/mcp-server@1.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nirholas/3d-agent-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Solana address that receives USDC when a client pays for a tool call (falls back to X402_PAY_TO_SOLANA / X402_PAY_TO). Required to settle paid tools.",
+          "format": "string",
+          "name": "MCP_SVM_PAYMENT_ADDRESS"
+        },
+        {
+          "description": "Solana mainnet RPC endpoint. Defaults to the public cluster \u2014 bring your own (Helius / Quicknode / Triton) for production traffic.",
+          "format": "string",
+          "name": "SOLANA_RPC_URL"
+        },
+        {
+          "description": "Optional Helius API key \u2014 enables exact supply and richer DAS data in pump.fun snapshots.",
+          "format": "string",
+          "isSecret": true,
+          "name": "HELIUS_API_KEY"
+        }
+      ],
+      "identifier": "@three-ws/mcp-server",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9ee5677ec7",
+    "published_at": "2026-08-19T22:05:05.532215Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nirholas/3d-agent-mcp",
+    "server_version": "1.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-19T22:05:05.532215Z"
+  },
+  "title": "three.ws 3D Agent Tools",
+  "type": "mcp_server",
+  "version": "1.2.2"
+}

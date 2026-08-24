@@ -1,0 +1,83 @@
+{
+  "description": "Tamper-evident records of AI agent decisions. Verify offline, or publish a proof link.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:21+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-darkmatter-hub-mcp-server.stdio.14f0ce4477",
+  "lifecycle": {
+    "status": "deprecated"
+  },
+  "links": {
+    "documentation": "https://github.com/darkmatter-hub/mcp",
+    "homepage": "https://github.com/darkmatter-hub/mcp",
+    "repository": "https://github.com/darkmatter-hub/mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y"
+          },
+          "@darkmatterhub/mcp-server@0.3.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.darkmatter-hub/mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional. Publishes each record to DarkMatter and returns a verification URL. Without it, records stay on local disk and verify offline.",
+          "isSecret": true,
+          "name": "DARKMATTER_API_KEY"
+        },
+        {
+          "default": "false",
+          "description": "Optional. Set to 'true' to make published records readable by anyone holding the link. Off by default.",
+          "name": "DARKMATTER_SHARE"
+        },
+        {
+          "description": "Optional. Override the API host. Defaults to https://darkmatterhub.ai.",
+          "name": "DARKMATTER_API_URL"
+        },
+        {
+          "description": "Optional. Directory for local record storage.",
+          "name": "DARKMATTER_MCP_STORE_DIR"
+        }
+      ],
+      "identifier": "@darkmatterhub/mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "14f0ce4477",
+    "published_at": "2026-08-20T17:59:01.225493Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.darkmatter-hub/mcp-server",
+    "server_version": "0.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-20T18:31:15.959183Z"
+  },
+  "title": "DarkMatter",
+  "type": "mcp_server",
+  "version": "0.3.1"
+}

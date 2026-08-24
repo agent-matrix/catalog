@@ -1,0 +1,55 @@
+{
+  "description": "7 agent tools (prune, convert, estimate, diff, patch, generate, validate). USDC on Base L2.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.dev-nanotoll-nanotoll-mcp.sse.932affe128",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://mcp.nanotoll.dev/mcp"
+    }
+  },
+  "name": "dev.nanotoll/nanotoll-mcp",
+  "provenance": {
+    "identity_key": "932affe128",
+    "published_at": "2026-08-21T11:56:21.49992Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "dev.nanotoll/nanotoll-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-21T11:56:21.49992Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Nanotoll API key (obtain via POST https://macs.nanotoll.dev/api/v1/register). Forwarded as Bearer token to backend services. All tools billed in USDC on Base L2; HTTP 402 on insufficient balance.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {apiKey}"
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://mcp.nanotoll.dev/mcp",
+      "variables": {
+        "apiKey": {
+          "description": "Nanotoll API key obtained from MACS POST /api/v1/register.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "placeholder": "nt_live_xxxxxxxxxxxxxxxxxxxxxxxx"
+        }
+      }
+    }
+  ],
+  "title": "Nanotoll MCP",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

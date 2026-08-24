@@ -1,0 +1,106 @@
+{
+  "description": "Deploy AI agents on-chain on Solana with an EIP-8004 identity. Deploy fee funds $THREE buybacks.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:44+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nirholas-metaplex-agent.stdio.c08afabd34",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nirholas/three.ws",
+    "homepage": "https://github.com/nirholas/three.ws",
+    "repository": "https://github.com/nirholas/three.ws"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@three-ws/metaplex-agent-mcp@0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nirholas/metaplex-agent",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base58 secret key (or JSON byte array) for the minting wallet. Optional: read tools and the Phantom/Solflare prepare/send flow work without it.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SOLANA_SECRET_KEY"
+        },
+        {
+          "description": "HTTPS Solana RPC endpoint. Defaults to the public endpoint for the configured network; bring your own (Helius / Quicknode / Triton) for production.",
+          "format": "string",
+          "name": "SOLANA_RPC_URL"
+        },
+        {
+          "default": "mainnet",
+          "description": "Default cluster: mainnet or devnet. Defaults to mainnet; every tool also takes a per-call network.",
+          "format": "string",
+          "name": "METAPLEX_AGENT_NETWORK"
+        },
+        {
+          "default": "true",
+          "description": "Refuse to broadcast a mint or registration until the call is re-issued with confirm=true. Default true.",
+          "format": "boolean",
+          "name": "REQUIRE_CONFIRM"
+        },
+        {
+          "default": "0.02",
+          "description": "Mainnet deploy fee, in SOL, paid to DEPLOY_FEE_WALLET in the same transaction as the mint. Default 0.02.",
+          "format": "string",
+          "name": "DEPLOY_FEE_SOL"
+        },
+        {
+          "description": "Wallet the deploy fee is paid to. Defaults to the three.ws $THREE buyback wallet; override only when self-hosting a fork.",
+          "format": "string",
+          "name": "DEPLOY_FEE_WALLET"
+        },
+        {
+          "default": "true",
+          "description": "Set false to build a fork that charges no deploy fee. Default true.",
+          "format": "boolean",
+          "name": "DEPLOY_FEE_ENABLED"
+        },
+        {
+          "default": "50000",
+          "description": "$THREE balance in the paying wallet that halves the deploy fee. Default 50000.",
+          "format": "string",
+          "name": "THREE_HALF_PRICE_AT"
+        },
+        {
+          "default": "250000",
+          "description": "$THREE balance in the paying wallet that waives the deploy fee entirely. Default 250000.",
+          "format": "string",
+          "name": "THREE_FREE_AT"
+        }
+      ],
+      "identifier": "@three-ws/metaplex-agent-mcp",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c08afabd34",
+    "published_at": "2026-08-19T22:02:25.314526Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nirholas/metaplex-agent",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-19T22:02:25.314526Z"
+  },
+  "title": "Metaplex Agent Registry",
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

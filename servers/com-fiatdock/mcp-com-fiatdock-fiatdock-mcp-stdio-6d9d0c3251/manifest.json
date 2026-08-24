@@ -1,0 +1,74 @@
+{
+  "description": "Cash out an AI agent's USDC to a real bank account (non-custodial). Plus Base data + a marketplace",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:29+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-fiatdock-fiatdock-mcp.stdio.6d9d0c3251",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/fiatdock/fiatdock",
+    "homepage": "https://github.com/fiatdock/fiatdock",
+    "repository": "https://github.com/fiatdock/fiatdock"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "fiatdock-mcp@1.7.9"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.fiatdock/fiatdock-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://fiatdock.com",
+          "description": "FiatDock API base URL",
+          "name": "FIATDOCK_URL"
+        },
+        {
+          "default": "all",
+          "description": "Install only the tool groups you need, so unused tools don't take up your agent's context: 'ramp' (4 tools: quotes, USDC<->bank sessions, order status), 'data' (11 tools: token price/safety/report, gas, balances, tx status, address intelligence), 'marketplace' (3 tools: search, inspect and pay for other agents' MCP services). Comma-separate to combine, e.g. 'ramp,marketplace'. Default: all 18. An unrecognised value serves all tools rather than none.",
+          "name": "FIATDOCK_TOOLS"
+        },
+        {
+          "description": "Agent wallet key that auto-pays the x402 fee for paid tools ($0.001-$0.05 depending on the tool, plus whatever a marketplace seller charges). Optional: the five free tools (get_quote, get_order_status, token_price, search_services, get_service) work without it. Use a dedicated low-balance wallet.",
+          "isSecret": true,
+          "name": "AGENT_PRIVATE_KEY"
+        },
+        {
+          "description": "Price-bait guard for call_service: refuse to pay if a paid gateway call's total x402 charge exceeds this many USD. Optional (default: no ceiling); overridable per call via the maxPriceUsd argument.",
+          "name": "FIATDOCK_MAX_PRICE_USD"
+        }
+      ],
+      "identifier": "fiatdock-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.7.9"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6d9d0c3251",
+    "published_at": "2026-08-23T08:08:04.370073Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.fiatdock/fiatdock-mcp",
+    "server_version": "1.7.9",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-23T08:08:04.370073Z"
+  },
+  "title": "FiatDock",
+  "type": "mcp_server",
+  "version": "1.7.9"
+}

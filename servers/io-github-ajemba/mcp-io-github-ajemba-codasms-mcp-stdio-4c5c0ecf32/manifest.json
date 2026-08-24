@@ -1,0 +1,63 @@
+{
+  "description": "Receive one-time SMS/OTP verification codes via the CODASMS API: get a number, wait, release.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:03+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ajemba-codasms-mcp.stdio.4c5c0ecf32",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ajemba/codasms-mcp",
+    "homepage": "https://github.com/ajemba/codasms-mcp",
+    "repository": "https://github.com/ajemba/codasms-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "codasms-mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ajemba/codasms-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your coda_live_ reseller key from https://codasms.com/reseller",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CODASMS_API_KEY"
+        },
+        {
+          "description": "Optional cap (US cents) \u2014 get_number refuses numbers priced above this.",
+          "name": "CODASMS_MAX_PRICE_CENTS"
+        }
+      ],
+      "identifier": "codasms-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4c5c0ecf32",
+    "published_at": "2026-08-19T15:32:38.751402Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ajemba/codasms-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-19T15:32:38.751402Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

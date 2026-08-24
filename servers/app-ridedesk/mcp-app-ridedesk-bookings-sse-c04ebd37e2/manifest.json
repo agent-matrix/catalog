@@ -1,0 +1,47 @@
+{
+  "description": "Quote and book airport transfers on a RideDesk operator's live desk. Agents never set prices.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:25+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.app-ridedesk-bookings.sse.c04ebd37e2",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ridedeskapp/ridedesk",
+    "homepage": "https://github.com/ridedeskapp/ridedesk",
+    "repository": "https://github.com/ridedeskapp/ridedesk"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://{tenant_domain}/api/mcp"
+    }
+  },
+  "name": "app.ridedesk/bookings",
+  "provenance": {
+    "identity_key": "c04ebd37e2",
+    "published_at": "2026-08-19T07:24:37.286711Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "app.ridedesk/bookings",
+    "server_version": "1.0.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-19T07:24:37.286711Z"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://{tenant_domain}/api/mcp",
+      "variables": {
+        "tenant_domain": {
+          "description": "The operator's RideDesk domain: <workspace>.ridedesk.app or their verified custom domain. Requires the operator's AI agents add-on; connect via OAuth (staff consent) or an API key from Settings.",
+          "isRequired": true
+        }
+      }
+    }
+  ],
+  "title": "RideDesk Bookings",
+  "type": "mcp_server",
+  "version": "1.0.3"
+}

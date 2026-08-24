@@ -1,0 +1,69 @@
+{
+  "description": "Email infrastructure and authentication for developers: domains, inbox routes, auth apps, deploys.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-smbcloudXYZ-smbcloud-cli.stdio.dd302e9171",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/smbcloudXYZ/smbcloud-cli",
+    "homepage": "https://github.com/smbcloudXYZ/smbcloud-cli",
+    "repository": "https://github.com/smbcloudXYZ/smbcloud-cli"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "dnx",
+          "SmbCloud.Cli==0.5.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.smbcloudXYZ/smbcloud-cli",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Mail app API key (smb_mail_...) used by the mail_send tool. Optional: every other tool uses the session from `smb login`.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SMB_MAIL_API_KEY"
+        }
+      ],
+      "identifier": "SmbCloud.Cli",
+      "packageArguments": [
+        {
+          "description": "Run the CLI as an MCP server over stdio instead of executing a one-shot command.",
+          "isRequired": true,
+          "name": "--mcp",
+          "type": "named"
+        }
+      ],
+      "registryBaseUrl": "https://api.nuget.org/v3/index.json",
+      "registryType": "nuget",
+      "runtimeHint": "dnx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "dd302e9171",
+    "published_at": "2026-08-17T05:42:42.09789Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.smbcloudXYZ/smbcloud-cli",
+    "server_version": "0.5.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-17T05:42:42.09789Z"
+  },
+  "title": "smbCloud Mail & Auth",
+  "type": "mcp_server",
+  "version": "0.5.2"
+}

@@ -1,0 +1,85 @@
+{
+  "description": "Self-custodial pump.fun sniper: arm strategies, snipe, manage positions. Simulate by default.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:44+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nirholas-agent-sniper.stdio.c77a62e5a4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nirholas/three.ws",
+    "homepage": "https://github.com/nirholas/three.ws",
+    "repository": "https://github.com/nirholas/three.ws"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@three-ws/agent-sniper@0.1.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nirholas/agent-sniper",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "simulate",
+          "description": "Trade mode: simulate | live. simulate scores, guards, and logs every decision but NEVER broadcasts. live signs and broadcasts real transactions with real funds. Defaults to simulate \u2014 keep it there until your strategy is verified.",
+          "format": "string",
+          "name": "SNIPER_MODE"
+        },
+        {
+          "default": "mainnet",
+          "description": "Solana cluster to trade on: mainnet | devnet. Defaults to mainnet.",
+          "format": "string",
+          "name": "SNIPER_NETWORK"
+        },
+        {
+          "description": "Solana RPC endpoint. A public RPC rate-limits under the new-mint firehose, so live mode refuses to start without this set. Optional in simulate mode.",
+          "format": "string",
+          "name": "SOLANA_RPC_URL"
+        },
+        {
+          "description": "Default self-custody wallet secret for single-agent runs \u2014 base58, a JSON byte array, or 0x-hex. Stays on your machine; the engine signs locally. Required only for live trading. Treat it like a password.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SOLANA_SECRET_KEY"
+        }
+      ],
+      "identifier": "@three-ws/agent-sniper",
+      "packageArguments": [
+        {
+          "description": "Run the stdio MCP server face. The same binary also serves 'run' (trade loop), 'serve' (x402 API), 'arm', and 'status'.",
+          "type": "positional",
+          "value": "mcp",
+          "valueHint": "subcommand"
+        }
+      ],
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c77a62e5a4",
+    "published_at": "2026-08-19T22:05:24.722768Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nirholas/agent-sniper",
+    "server_version": "0.1.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-19T22:05:24.722768Z"
+  },
+  "title": "Agent Sniper",
+  "type": "mcp_server",
+  "version": "0.1.6"
+}

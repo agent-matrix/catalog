@@ -1,0 +1,62 @@
+{
+  "description": "Read-only MCP server for the open-banking.io PSD2 bank API \u2014 accounts, balances, transactions.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:46+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-open-banking-io-mcp-server.stdio.0c299fed37",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/open-banking-io/mcp-server",
+    "homepage": "https://github.com/open-banking-io/mcp-server",
+    "repository": "https://github.com/open-banking-io/mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uv",
+          "https://github.com/open-banking-io/mcp-server/releases/download/v0.1.0/open-banking-io-mcp.mcpb==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.open-banking-io/mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to (or inline JSON of) the credentials bundle exported from the open-banking.io app (Settings \u2192 Credentials) \u2014 contains apiBaseUrl, apiKey and the encryption private key.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OBI_CREDENTIALS"
+        }
+      ],
+      "fileSha256": "52f1fa71c442641b7854d02c18a580ef5cabcbe5deac1093169130725833597a",
+      "identifier": "https://github.com/open-banking-io/mcp-server/releases/download/v0.1.0/open-banking-io-mcp.mcpb",
+      "registryType": "mcpb",
+      "runtimeHint": "uv",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0c299fed37",
+    "published_at": "2026-08-20T07:14:08.636123Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.open-banking-io/mcp-server",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-20T07:14:08.636123Z"
+  },
+  "title": "Open Banking (open-banking.io)",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

@@ -1,0 +1,54 @@
+{
+  "description": "Query your data warehouses, run workflows, and render maps from your CARTO workspace.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:28+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-carto-carto.sse.beacbd00f7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://{region}.api.carto.com/mcp/{account_path}"
+    }
+  },
+  "name": "com.carto/carto",
+  "provenance": {
+    "identity_key": "beacbd00f7",
+    "published_at": "2026-08-19T15:36:49.145904Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.carto/carto",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-19T15:36:49.145904Z"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://{region}.api.carto.com/mcp/{account_path}",
+      "variables": {
+        "account_path": {
+          "description": "Your CARTO account ID, or 'sso/<account ID>' if your organization signs in through SSO. Copy this from the MCP Server URL in your CARTO Workspace under Developers > Workflow API & MCP Server.",
+          "isRequired": true
+        },
+        "region": {
+          "choices": [
+            "gcp-us-east1",
+            "gcp-europe-west1",
+            "gcp-asia-northeast1",
+            "gcp-australia-southeast1"
+          ],
+          "default": "gcp-us-east1",
+          "description": "The region of your CARTO tenant. Shown in your CARTO Workspace under Developers > Workflow API & MCP Server.",
+          "isRequired": true
+        }
+      }
+    }
+  ],
+  "title": "CARTO",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

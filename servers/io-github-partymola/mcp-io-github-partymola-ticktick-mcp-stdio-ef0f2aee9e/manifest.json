@@ -1,0 +1,127 @@
+{
+  "description": "MCP server for TickTick task management: field-preserving updates and completion tracking.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:46+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-partymola-ticktick-mcp.stdio.ef0f2aee9e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/partymola/ticktick-mcp",
+    "homepage": "https://github.com/partymola/ticktick-mcp",
+    "repository": "https://github.com/partymola/ticktick-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "isRequired": true,
+            "name": "--user",
+            "type": "named",
+            "value": "{uid_gid}",
+            "variables": {
+              "uid_gid": {
+                "description": "Your own user and group id, as `uid:gid` (run `id -u`:`id -g`). The container runs as root otherwise, and anything it writes into the mounted directory becomes root-owned - after which a host-side `ticktick-mcp` can no longer update its session-token cache and falls back to a signon TickTick throttles.",
+                "isRequired": true,
+                "placeholder": "1000:1000"
+              }
+            }
+          },
+          {
+            "isRequired": true,
+            "name": "-v",
+            "type": "named",
+            "value": "{data_volume}:/data",
+            "variables": {
+              "data_volume": {
+                "description": "Absolute path to the host directory of an ALREADY AUTHORISED setup - it must already hold the cached OAuth token written by running `ticktick-mcp auth` in a terminal. Not an empty volume and not a relative path: the OAuth step cannot run inside the container, and a container without a cached token reads standard input, which is the JSON-RPC channel. Also holds the .env, the v2 session token and the completion-tracking database.",
+                "format": "filepath",
+                "isRequired": true,
+                "placeholder": "/home/you/.config/ticktick-mcp"
+              }
+            }
+          },
+          "ghcr.io/partymola/ticktick-mcp:v0.3.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.partymola/ticktick-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "TickTick OAuth client ID. Needed only if you are not mounting a .env file.",
+          "name": "TICKTICK_CLIENT_ID"
+        },
+        {
+          "description": "TickTick OAuth client secret. Needed only if you are not mounting a .env file.",
+          "isSecret": true,
+          "name": "TICKTICK_CLIENT_SECRET"
+        },
+        {
+          "description": "TickTick account username. Needed only if you are not mounting a .env file.",
+          "name": "TICKTICK_USERNAME"
+        },
+        {
+          "description": "TickTick account password. Needed only if you are not mounting a .env file.",
+          "isSecret": true,
+          "name": "TICKTICK_PASSWORD"
+        }
+      ],
+      "identifier": "ghcr.io/partymola/ticktick-mcp:v0.3.3",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "isRequired": true,
+          "name": "--user",
+          "type": "named",
+          "value": "{uid_gid}",
+          "variables": {
+            "uid_gid": {
+              "description": "Your own user and group id, as `uid:gid` (run `id -u`:`id -g`). The container runs as root otherwise, and anything it writes into the mounted directory becomes root-owned - after which a host-side `ticktick-mcp` can no longer update its session-token cache and falls back to a signon TickTick throttles.",
+              "isRequired": true,
+              "placeholder": "1000:1000"
+            }
+          }
+        },
+        {
+          "isRequired": true,
+          "name": "-v",
+          "type": "named",
+          "value": "{data_volume}:/data",
+          "variables": {
+            "data_volume": {
+              "description": "Absolute path to the host directory of an ALREADY AUTHORISED setup - it must already hold the cached OAuth token written by running `ticktick-mcp auth` in a terminal. Not an empty volume and not a relative path: the OAuth step cannot run inside the container, and a container without a cached token reads standard input, which is the JSON-RPC channel. Also holds the .env, the v2 session token and the completion-tracking database.",
+              "format": "filepath",
+              "isRequired": true,
+              "placeholder": "/home/you/.config/ticktick-mcp"
+            }
+          }
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "ef0f2aee9e",
+    "published_at": "2026-08-21T00:16:59.430112Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.partymola/ticktick-mcp",
+    "server_version": "0.3.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-21T00:16:59.430112Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.3"
+}

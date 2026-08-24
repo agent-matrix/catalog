@@ -1,0 +1,77 @@
+{
+  "description": "Deploy AI agents on-chain: mint a Metaplex Core asset + EIP-8004 identity on Solana. By three.ws.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:44+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nirholas-metaplex-agent.stdio.ef18850c0a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nirholas/three.ws",
+    "homepage": "https://github.com/nirholas/three.ws",
+    "repository": "https://github.com/nirholas/three.ws"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@three-ws/metaplex-agent-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nirholas/metaplex-agent",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base58 secret key (or JSON byte array) for the minting wallet. Optional: read tools and the Phantom/Solflare prepare/send flow work without it.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SOLANA_SECRET_KEY"
+        },
+        {
+          "description": "HTTPS Solana RPC endpoint. Defaults to the public endpoint for the configured network; bring your own (Helius / Quicknode / Triton) for production.",
+          "format": "string",
+          "name": "SOLANA_RPC_URL"
+        },
+        {
+          "default": "mainnet",
+          "description": "Default cluster: mainnet or devnet. Defaults to mainnet; every tool also takes a per-call network.",
+          "format": "string",
+          "name": "METAPLEX_AGENT_NETWORK"
+        },
+        {
+          "default": "true",
+          "description": "Refuse to broadcast a mint or registration until the call is re-issued with confirm=true. Default true.",
+          "format": "boolean",
+          "name": "REQUIRE_CONFIRM"
+        }
+      ],
+      "identifier": "@three-ws/metaplex-agent-mcp",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ef18850c0a",
+    "published_at": "2026-08-19T01:11:13.056029Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nirholas/metaplex-agent",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-19T01:11:13.056029Z"
+  },
+  "title": "Metaplex Agent Registry",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

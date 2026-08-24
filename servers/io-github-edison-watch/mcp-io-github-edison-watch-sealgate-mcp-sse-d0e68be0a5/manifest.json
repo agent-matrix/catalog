@@ -1,0 +1,52 @@
+{
+  "description": "Sealgate gateway proxy: list governed MCP servers and review agent session and audit status.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:49+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Edison-Watch-sealgate-mcp.sse.d0e68be0a5",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Edison-Watch/sealgate-mcp",
+    "homepage": "https://github.com/Edison-Watch/sealgate-mcp",
+    "repository": "https://github.com/Edison-Watch/sealgate-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://mcp.sealgate.ai/mcp/{api_key}/?client={label}"
+    }
+  },
+  "name": "io.github.Edison-Watch/sealgate-mcp",
+  "provenance": {
+    "identity_key": "d0e68be0a5",
+    "published_at": "2026-08-19T19:20:17.699121Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Edison-Watch/sealgate-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-19T19:20:17.699121Z"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://mcp.sealgate.ai/mcp/{api_key}/?client={label}",
+      "variables": {
+        "api_key": {
+          "description": "Sealgate API key issued from your dashboard, passed as a URL path segment (not an Authorization header and not OAuth).",
+          "isRequired": true,
+          "isSecret": true
+        },
+        "label": {
+          "default": "mcp",
+          "description": "Optional client session label used to tag the connection."
+        }
+      }
+    }
+  ],
+  "title": "Sealgate",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

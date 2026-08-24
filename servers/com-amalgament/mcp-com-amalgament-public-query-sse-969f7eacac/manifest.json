@@ -1,0 +1,45 @@
+{
+  "description": "Agent-native MCP over US public + government records, entity- and parcel-keyed.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:27+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-amalgament-public-query.sse.969f7eacac",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://api.amalgament.com/mcp"
+    }
+  },
+  "name": "com.amalgament/public-query",
+  "provenance": {
+    "identity_key": "969f7eacac",
+    "published_at": "2026-08-20T04:11:45.894027Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.amalgament/public-query",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-20T04:11:45.894027Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Amalgament API key (freemium: POST /signup {\"email\": \"...\"} at https://api.amalgament.com/signup returns a key + 500 free credits). Tool calls are credit-metered; errors and empty results are free. The claude.ai custom connector uses OAuth instead of this header.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "X-API-Key"
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://api.amalgament.com/mcp"
+    }
+  ],
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

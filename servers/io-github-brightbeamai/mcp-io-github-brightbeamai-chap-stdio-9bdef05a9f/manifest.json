@@ -1,0 +1,66 @@
+{
+  "description": "Auditable records of human decisions over AI agent work. Approvals, edits, overrides, escalations.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:46+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-BrightbeamAI-chap.stdio.9bdef05a9f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/BrightbeamAI/chap",
+    "homepage": "https://github.com/BrightbeamAI/chap",
+    "repository": "https://github.com/BrightbeamAI/chap"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@brightbeamai/chap-coordinator-mcp@0.2.11"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.BrightbeamAI/chap",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to a SQLite file. Without it the coordinator runs in memory and workspaces are lost when the client restarts.",
+          "format": "filepath",
+          "name": "CHAP_DB_PATH",
+          "placeholder": "~/chap.db"
+        },
+        {
+          "description": "Comma-separated CHAP profiles enabled on new workspaces. Defaults to Core plus review, whisper, deliberation, handoff, control, routing, modes and audit-scitt.",
+          "format": "string",
+          "name": "CHAP_PROFILES",
+          "placeholder": "core/1.0,review/1.0,audit-scitt/1.0"
+        }
+      ],
+      "identifier": "@brightbeamai/chap-coordinator-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.11"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9bdef05a9f",
+    "published_at": "2026-08-20T17:14:49.804979Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.BrightbeamAI/chap",
+    "server_version": "0.2.11",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-20T17:14:49.804979Z"
+  },
+  "title": "CHAP Coordinator",
+  "type": "mcp_server",
+  "version": "0.2.11"
+}

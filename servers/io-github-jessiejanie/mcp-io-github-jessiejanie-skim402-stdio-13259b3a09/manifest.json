@@ -1,0 +1,68 @@
+{
+  "description": "Clean web reader for AI agents. Card API key or x402 wallet pay-per-call. Free tier included.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:52+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-JessieJanie-skim402.stdio.13259b3a09",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/JessieJanie/skim402.git",
+    "homepage": "https://github.com/JessieJanie/skim402.git",
+    "repository": "https://github.com/JessieJanie/skim402.git"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "skim-mcp@0.1.8"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.JessieJanie/skim402",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Card plan API key \u2014 easiest way to get started. Get one free at https://skim402.com/pricing. Unlocks higher rate limits without a crypto wallet.",
+          "isSecret": true,
+          "name": "SKIM_API_KEY"
+        },
+        {
+          "description": "Wallet pay alternative: Base-network private key (0x-prefixed). Fund with a small USDC balance on Base to pay $0.002 per read call via x402. Use SKIM_API_KEY instead if you prefer a card plan.",
+          "isSecret": true,
+          "name": "SKIM_WALLET_PRIVATE_KEY"
+        },
+        {
+          "description": "Optional cap on per-call price in USD (default 0.01). Requests priced above this are rejected before payment.",
+          "name": "SKIM_MAX_PRICE_USD"
+        }
+      ],
+      "identifier": "skim-mcp",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.8"
+    }
+  ],
+  "provenance": {
+    "identity_key": "13259b3a09",
+    "published_at": "2026-08-22T21:59:16.456014Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.JessieJanie/skim402",
+    "server_version": "0.1.8",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-22T21:59:16.456014Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.8"
+}

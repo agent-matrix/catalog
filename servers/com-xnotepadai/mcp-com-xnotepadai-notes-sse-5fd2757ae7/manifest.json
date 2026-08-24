@@ -1,0 +1,57 @@
+{
+  "description": "Create, search, and update notes in an xNotepad AI notebook, with semantic search and AI Q&A.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-xnotepadai-notes.sse.5fd2757ae7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/rajnaik/xNotePadAI",
+    "homepage": "https://github.com/rajnaik/xNotePadAI",
+    "repository": "https://github.com/rajnaik/xNotePadAI"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://www.xnotepadai.com/api/mcp/"
+    }
+  },
+  "name": "com.xnotepadai/notes",
+  "provenance": {
+    "identity_key": "5fd2757ae7",
+    "published_at": "2026-08-23T10:22:54.239539Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.xnotepadai/notes",
+    "server_version": "3.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-23T10:22:54.239539Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Bearer token scoping access to a single xNotepad AI notebook.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {api_key}",
+          "variables": {
+            "api_key": {
+              "description": "Token from xNotepad AI Settings > Connected Apps > Generate Token (https://www.xnotepadai.com/settings/).",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://www.xnotepadai.com/api/mcp/"
+    }
+  ],
+  "title": "xNotepad AI",
+  "type": "mcp_server",
+  "version": "3.0.0"
+}

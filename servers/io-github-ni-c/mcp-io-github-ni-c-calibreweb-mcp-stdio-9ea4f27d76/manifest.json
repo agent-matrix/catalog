@@ -1,0 +1,75 @@
+{
+  "description": "Read-only MCP server for Calibre-Web: library search, browsing and covers via the OPDS feed",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:44+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ni-c-calibreweb-mcp.stdio.9ea4f27d76",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ni-c/calibreweb-mcp",
+    "homepage": "https://github.com/ni-c/calibreweb-mcp",
+    "repository": "https://github.com/ni-c/calibreweb-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "calibreweb-mcp@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ni-c/calibreweb-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Root URL of the Calibre-Web instance, e.g. https://books.example.com",
+          "format": "string",
+          "isRequired": true,
+          "name": "CALIBRE_WEB_URL"
+        },
+        {
+          "description": "Username of the Calibre-Web account (web login); leave unset together with the password for anonymous-browsing instances",
+          "format": "string",
+          "name": "CALIBRE_WEB_USERNAME"
+        },
+        {
+          "description": "Password of that account (web login password)",
+          "format": "string",
+          "isSecret": true,
+          "name": "CALIBRE_WEB_PASSWORD"
+        },
+        {
+          "description": "Set to true to accept self-signed certificates (scoped to the configured host)",
+          "format": "string",
+          "name": "CALIBRE_WEB_INSECURE_TLS"
+        }
+      ],
+      "identifier": "calibreweb-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9ea4f27d76",
+    "published_at": "2026-08-18T23:08:34.15552Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ni-c/calibreweb-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-18T23:08:34.15552Z"
+  },
+  "title": "Calibre-Web",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

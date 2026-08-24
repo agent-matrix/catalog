@@ -1,0 +1,111 @@
+{
+  "description": "Run the Grok Build CLI as MCP tools: agent runs with live progress, code review, web research.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:56+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Nuruvala-grok-build-mcp-server.stdio.69094a4f0a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Nuruvala/grok-build-to-claude",
+    "homepage": "https://github.com/Nuruvala/grok-build-to-claude",
+    "repository": "https://github.com/Nuruvala/grok-build-to-claude"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "grok-build-mcp-server@0.2.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Nuruvala/grok-build-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the grok executable. Only needed when grok is not on PATH.",
+          "format": "filepath",
+          "name": "GROK_BINARY"
+        },
+        {
+          "choices": [
+            "read-only",
+            "write",
+            "full"
+          ],
+          "default": "read-only",
+          "description": "Highest permission level any call may request. Granted once at registration and never prompts again.",
+          "name": "GROK_MCP_PERMISSION_CEILING"
+        },
+        {
+          "choices": [
+            "read-only",
+            "write",
+            "full"
+          ],
+          "default": "read-only",
+          "description": "Permission level used when a call specifies none. Must be at or below the ceiling.",
+          "name": "GROK_MCP_DEFAULT_PERMISSION"
+        },
+        {
+          "default": "grok-4.6",
+          "description": "Model used when a call omits one.",
+          "name": "GROK_MCP_DEFAULT_MODEL"
+        },
+        {
+          "default": "high",
+          "description": "Reasoning effort used when a call omits one.",
+          "name": "GROK_MCP_DEFAULT_EFFORT"
+        },
+        {
+          "default": "1800000",
+          "description": "Wall-clock kill for a single run, in milliseconds.",
+          "format": "number",
+          "name": "GROK_MCP_TIMEOUT_MS"
+        },
+        {
+          "description": "Directory for background job records. Defaults to $XDG_STATE_HOME/grok-mcp.",
+          "format": "filepath",
+          "name": "GROK_MCP_STATE_DIR"
+        },
+        {
+          "default": "4",
+          "description": "Background runs alive at once. Use off, none, or unlimited for no cap.",
+          "name": "GROK_MCP_MAX_CONCURRENT_RUNS"
+        },
+        {
+          "description": "Emit structuredContent alongside _meta. Off by default because some clients mishandle it.",
+          "format": "boolean",
+          "name": "STRUCTURED_CONTENT_ENABLED"
+        }
+      ],
+      "identifier": "grok-build-mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "69094a4f0a",
+    "published_at": "2026-08-18T21:41:39.091811Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Nuruvala/grok-build-mcp-server",
+    "server_version": "0.2.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-18T21:41:39.091811Z"
+  },
+  "title": "Grok Build",
+  "type": "mcp_server",
+  "version": "0.2.3"
+}

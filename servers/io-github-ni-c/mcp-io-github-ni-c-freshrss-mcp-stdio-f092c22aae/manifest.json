@@ -1,0 +1,82 @@
+{
+  "description": "MCP server for FreshRSS, the self-hosted RSS feed aggregator",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:44+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ni-c-freshrss-mcp.stdio.f092c22aae",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ni-c/freshrss-mcp",
+    "homepage": "https://github.com/ni-c/freshrss-mcp",
+    "repository": "https://github.com/ni-c/freshrss-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@ni-c/freshrss-mcp@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ni-c/freshrss-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Root URL of the FreshRSS instance, e.g. https://rss.example.com",
+          "format": "string",
+          "isRequired": true,
+          "name": "FRESHRSS_URL"
+        },
+        {
+          "description": "FreshRSS user name",
+          "format": "string",
+          "isRequired": true,
+          "name": "FRESHRSS_USER"
+        },
+        {
+          "description": "API password from Settings -> Profile -> API management, not the web login password",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "FRESHRSS_API_PASSWORD"
+        },
+        {
+          "description": "Set to true to register only the read tools",
+          "format": "boolean",
+          "name": "FRESHRSS_READ_ONLY"
+        },
+        {
+          "description": "Set to true to accept a self-signed certificate for this connection only",
+          "format": "boolean",
+          "name": "FRESHRSS_INSECURE_TLS"
+        }
+      ],
+      "identifier": "@ni-c/freshrss-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f092c22aae",
+    "published_at": "2026-08-18T11:05:56.64608Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ni-c/freshrss-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-18T11:05:56.64608Z"
+  },
+  "title": "FreshRSS",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

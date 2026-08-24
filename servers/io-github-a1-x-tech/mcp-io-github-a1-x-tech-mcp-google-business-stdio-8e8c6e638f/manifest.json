@@ -1,0 +1,106 @@
+{
+  "description": "MCP server for Google Business Profile: locations, reviews, local posts and performance metrics.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-A1-x-Tech-mcp-google-business.stdio.8e8c6e638f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/A1-x-Tech/mcp-google-business",
+    "homepage": "https://github.com/A1-x-Tech/mcp-google-business",
+    "repository": "https://github.com/A1-x-Tech/mcp-google-business"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-google-business@1.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.A1-x-Tech/mcp-google-business",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "OAuth2 client id from Google Cloud Console (refresh flow).",
+          "isRequired": true,
+          "name": "GOOGLE_BUSINESS_CLIENT_ID"
+        },
+        {
+          "description": "OAuth2 client secret. Treat it as a secret.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GOOGLE_BUSINESS_CLIENT_SECRET"
+        },
+        {
+          "description": "OAuth2 refresh token with the business.manage scope. Treat it as a secret.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GOOGLE_BUSINESS_REFRESH_TOKEN"
+        },
+        {
+          "description": "Ready-made access token (~1 h) as an alternative to the refresh-flow trio above.",
+          "isSecret": true,
+          "name": "GOOGLE_BUSINESS_ACCESS_TOKEN"
+        },
+        {
+          "default": "60000",
+          "description": "Per-request timeout in milliseconds.",
+          "name": "GOOGLE_BUSINESS_TIMEOUT_MS"
+        },
+        {
+          "default": "3",
+          "description": "Retries on transient errors (429 always; 5xx/network on idempotent calls).",
+          "name": "GOOGLE_BUSINESS_MAX_RETRIES"
+        },
+        {
+          "default": "https://mybusinessaccountmanagement.googleapis.com",
+          "description": "Account Management API base override.",
+          "name": "GOOGLE_BUSINESS_ACCOUNTS_API_BASE"
+        },
+        {
+          "default": "https://mybusinessbusinessinformation.googleapis.com",
+          "description": "Business Information API base override.",
+          "name": "GOOGLE_BUSINESS_INFO_API_BASE"
+        },
+        {
+          "default": "https://businessprofileperformance.googleapis.com",
+          "description": "Business Profile Performance API base override.",
+          "name": "GOOGLE_BUSINESS_PERFORMANCE_API_BASE"
+        },
+        {
+          "default": "https://mybusiness.googleapis.com",
+          "description": "Legacy v4 My Business API base override (reviews, local posts).",
+          "name": "GOOGLE_BUSINESS_V4_API_BASE"
+        }
+      ],
+      "identifier": "mcp-google-business",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8e8c6e638f",
+    "published_at": "2026-08-18T22:02:47.058285Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.A1-x-Tech/mcp-google-business",
+    "server_version": "1.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-18T22:02:47.058285Z"
+  },
+  "title": "Google Business Profile MCP",
+  "type": "mcp_server",
+  "version": "1.1.0"
+}

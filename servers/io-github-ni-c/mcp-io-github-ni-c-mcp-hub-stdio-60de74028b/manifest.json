@@ -1,0 +1,77 @@
+{
+  "description": "Serve many stdio MCP servers from one container, for ChatGPT, Claude and other MCP clients",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:44+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ni-c-mcp-hub.stdio.60de74028b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ni-c/mcp-hub",
+    "homepage": "https://github.com/ni-c/mcp-hub",
+    "repository": "https://github.com/ni-c/mcp-hub"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/ni-c/mcp-hub:0.8.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ni-c/mcp-hub",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Public base URL exactly as clients see it, e.g. https://mcp.example.net (no path)",
+          "format": "string",
+          "isRequired": true,
+          "name": "EXTERNAL_URL"
+        },
+        {
+          "description": "bcrypt hash of the OAuth login password (htpasswd -bnBC 10 \"\" 'pw' | tr -d ':\\n')",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PASSWORD_HASH"
+        },
+        {
+          "description": "Comma-separated IPs/CIDRs of the reverse proxy allowed to set X-Forwarded-* headers",
+          "format": "string",
+          "name": "TRUSTED_PROXIES"
+        },
+        {
+          "default": "80",
+          "description": "Listen port inside the container",
+          "format": "number",
+          "name": "PORT"
+        }
+      ],
+      "identifier": "ghcr.io/ni-c/mcp-hub:0.8.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:{PORT}/hub"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "60de74028b",
+    "published_at": "2026-08-18T19:40:52.625962Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ni-c/mcp-hub",
+    "server_version": "0.8.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-18T19:40:52.625962Z"
+  },
+  "title": "mcp-hub",
+  "type": "mcp_server",
+  "version": "0.8.0"
+}

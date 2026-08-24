@@ -1,0 +1,53 @@
+{
+  "description": "Send transactional email and manage domains, audiences, and broadcasts from any MCP client.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.dev-eusend-eusend.sse.0859998ddc",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://mcp.eusend.dev/mcp"
+    }
+  },
+  "name": "dev.eusend/eusend",
+  "provenance": {
+    "identity_key": "0859998ddc",
+    "published_at": "2026-08-17T05:21:31.007002Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "dev.eusend/eusend",
+    "server_version": "0.2.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-17T05:21:31.007002Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Bearer token carrying your eusend API key.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {api_key}",
+          "variables": {
+            "api_key": {
+              "description": "Eusend API key (eu_live_\u2026 or eu_test_\u2026).",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://mcp.eusend.dev/mcp"
+    }
+  ],
+  "title": "Eusend",
+  "type": "mcp_server",
+  "version": "0.2.3"
+}

@@ -1,0 +1,58 @@
+{
+  "description": "Read-only Postgres ops/DBA diagnostics: slow queries, EXPLAIN, locks, index and table health.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:46+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-pascalallen-pgmcp.stdio.0b4b581f6a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/pascalallen/pgmcp",
+    "homepage": "https://github.com/pascalallen/pgmcp",
+    "repository": "https://github.com/pascalallen/pgmcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/pascalallen/pgmcp:1.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.pascalallen/pgmcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Postgres connection string (read-only role recommended)",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PGMCP_DATABASE_URL"
+        }
+      ],
+      "identifier": "ghcr.io/pascalallen/pgmcp:1.1.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "0b4b581f6a",
+    "published_at": "2026-08-20T19:02:27.150786Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.pascalallen/pgmcp",
+    "server_version": "1.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-20T19:02:27.150786Z"
+  },
+  "title": "pgmcp",
+  "type": "mcp_server",
+  "version": "1.1.0"
+}

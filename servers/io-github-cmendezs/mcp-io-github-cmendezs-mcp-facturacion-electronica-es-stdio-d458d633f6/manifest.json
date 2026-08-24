@@ -1,0 +1,84 @@
+{
+  "description": "Spanish e-invoicing MCP server: VERI*FACTU, Facturae/FACe, SII, Crea y Crece B2B.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:13+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cmendezs-mcp-facturacion-electronica-es.stdio.d458d633f6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cmendezs/mcp-facturacion-electronica-es",
+    "homepage": "https://github.com/cmendezs/mcp-facturacion-electronica-es",
+    "repository": "https://github.com/cmendezs/mcp-facturacion-electronica-es"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-facturacion-electronica-es==0.8.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cmendezs/mcp-facturacion-electronica-es",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Target environment for AEAT endpoints: 'sandbox' or 'production'.",
+          "format": "string",
+          "isRequired": true,
+          "name": "AEAT_ENV"
+        },
+        {
+          "description": "Filesystem path to the FNMT-RCM PKCS#12 certificate (.p12 / .pfx) used for MTLS submission to AEAT (VERI*FACTU and SII) and for JWS-signed FACe submission.",
+          "format": "string",
+          "name": "AEAT_CERTIFICATE_PATH"
+        },
+        {
+          "description": "Passphrase for the PKCS#12 certificate at AEAT_CERTIFICATE_PATH.",
+          "format": "string",
+          "name": "AEAT_CERTIFICATE_PASSWORD"
+        },
+        {
+          "description": "Taxpayer NIF used as the default submitter identity for AEAT submissions.",
+          "format": "string",
+          "name": "AEAT_NIF"
+        },
+        {
+          "description": "Target environment for FACe API: 'sandbox' or 'production'.",
+          "format": "string",
+          "name": "FACE_ENV"
+        },
+        {
+          "description": "Logging level inherited from mcp-einvoicing-core: DEBUG, INFO (default), WARNING, or ERROR.",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "mcp-facturacion-electronica-es",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.8.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d458d633f6",
+    "published_at": "2026-08-22T03:39:40.418499Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cmendezs/mcp-facturacion-electronica-es",
+    "server_version": "0.8.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-22T03:39:40.418499Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.8.0"
+}

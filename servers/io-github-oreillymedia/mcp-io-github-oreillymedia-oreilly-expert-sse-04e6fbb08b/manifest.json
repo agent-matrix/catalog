@@ -1,0 +1,50 @@
+{
+  "description": "Grounded, citable answers to tech questions from O'Reilly's library. Requires Expert MCP access.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:46+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-oreillymedia-oreilly-expert.sse.04e6fbb08b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://api.oreilly.com/api/expert/v1/mcp"
+    }
+  },
+  "name": "io.github.oreillymedia/oreilly-expert",
+  "provenance": {
+    "identity_key": "04e6fbb08b",
+    "published_at": "2026-08-20T22:27:32.24624Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.oreillymedia/oreilly-expert",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-20T22:27:32.24624Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Optional. OAuth is the recommended way to authenticate: OAuth-capable clients (e.g. Claude Code, Cursor, VS Code) start the OAuth flow automatically when no token is provided. Alternatively, supply a personal access token here for token-based authentication. Note that authenticating is necessary but not sufficient \u2014 your O'Reilly account must also carry the Expert MCP entitlement, or requests are rejected with HTTP 403.",
+          "name": "Authorization",
+          "value": "Bearer {mcp_access_token}",
+          "variables": {
+            "mcp_access_token": {
+              "description": "Your O'Reilly personal access token, used only for token-based authentication. Leave unset to authenticate via OAuth. See https://learning.oreilly.com/apidocs/mcp/expert/#section/Authentication for details on generating a token, and ask your O'Reilly account administrator if you need the Expert MCP entitlement enabled.",
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://api.oreilly.com/api/expert/v1/mcp"
+    }
+  ],
+  "title": "O'Reilly Expert MCP Server",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

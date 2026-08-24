@@ -1,0 +1,68 @@
+{
+  "description": "Answer questions from documents too large to fit in context, reading only the sections you need.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:49+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-DocSlicer-docslicer.stdio.57674392f2",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/DocSlicer/DocSlicer",
+    "homepage": "https://github.com/DocSlicer/DocSlicer",
+    "repository": "https://github.com/DocSlicer/DocSlicer"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.DocSlicer/docslicer",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Restrict file sources and outputs to this directory tree. Several may be given, separated by the platform path separator.",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "DOCSLICER_MCP_ROOT"
+        },
+        {
+          "default": "1",
+          "description": "Set to 0 to refuse documents dropped into a Claude chat, which the app copies into its own directory outside DOCSLICER_MCP_ROOT.",
+          "name": "DOCSLICER_MCP_ALLOW_CLAUDE_DIR"
+        },
+        {
+          "default": "1",
+          "description": "Set to 0 to reject http(s) sources and only permit local files.",
+          "name": "DOCSLICER_MCP_ALLOW_URLS"
+        }
+      ],
+      "fileSha256": "a8afd782d5aa05f7379d9646aaf88366d8e3b44d6b573ce0bd224588e30b29f6",
+      "identifier": "https://github.com/DocSlicer/DocSlicer/releases/download/v0.2.4/docslicer-0.2.4.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "57674392f2",
+    "published_at": "2026-08-19T02:27:57.160963Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.DocSlicer/docslicer",
+    "server_version": "0.2.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-19T02:27:57.160963Z"
+  },
+  "title": "DocSlicer",
+  "type": "mcp_server",
+  "version": "0.2.4"
+}

@@ -1,0 +1,80 @@
+{
+  "description": "Read-only FreeStyle glucose sensor access via LibreLinkUp. Not a medical device.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:36+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-lozit-mcp-freestyle.stdio.550ce78938",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/lozit/mcp-freestyle",
+    "homepage": "https://github.com/lozit/mcp-freestyle",
+    "repository": "https://github.com/lozit/mcp-freestyle"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-freestyle@0.1.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.lozit/mcp-freestyle",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "LibreLinkUp *follower* account e-mail \u2014 not the primary LibreLink account. The password is stored once via `npx mcp-freestyle-login` in the OS keychain, so it never appears in this configuration.",
+          "isRequired": true,
+          "name": "LIBRELINKUP_EMAIL"
+        },
+        {
+          "description": "Overrides the OS keychain. Intended for CI and one-off runs; prefer `mcp-freestyle-login` so no credential lands in a config file.",
+          "isSecret": true,
+          "name": "LIBRELINKUP_PASSWORD"
+        },
+        {
+          "default": "4.16.0",
+          "description": "Pinned LibreLinkUp client version sent as the `version` header. Upstream rejects stale values \u2014 set this to the current LibreLinkUp app version if requests start failing.",
+          "name": "LIBRELINKUP_VERSION"
+        },
+        {
+          "default": "llu.android",
+          "description": "Client product identifier sent as the `product` header.",
+          "name": "LIBRELINKUP_PRODUCT"
+        },
+        {
+          "default": "https://api.libreview.io",
+          "description": "Entry point for authentication. The regional host is discovered at login and is never configured here.",
+          "name": "LIBRELINKUP_BASE_URL"
+        }
+      ],
+      "identifier": "mcp-freestyle",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "550ce78938",
+    "published_at": "2026-08-19T14:44:48.199859Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.lozit/mcp-freestyle",
+    "server_version": "0.1.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-19T14:44:48.199859Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.4"
+}

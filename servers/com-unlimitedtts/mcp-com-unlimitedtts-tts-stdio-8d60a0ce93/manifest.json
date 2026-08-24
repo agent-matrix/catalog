@@ -1,0 +1,76 @@
+{
+  "description": "Quote-first, non-custodial x402 text-to-speech with spend policy, MP3 artifacts, and receipts.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-unlimitedtts-tts.stdio.8d60a0ce93",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sisygoboom/unlimitedtts-agents",
+    "homepage": "https://github.com/sisygoboom/unlimitedtts-agents",
+    "repository": "https://github.com/sisygoboom/unlimitedtts-agents"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@unlimitedtts/mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.unlimitedtts/tts",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "production",
+          "description": "Runtime environment. Defaults to production; staging explicitly selects the staging API and Base Sepolia pins.",
+          "format": "string",
+          "name": "UNLIMITEDTTS_ENVIRONMENT"
+        },
+        {
+          "default": "0.10",
+          "description": "Maximum authorized USDC amount for one synthesis.",
+          "format": "string",
+          "name": "UNLIMITEDTTS_MAX_USDC_PER_CALL"
+        },
+        {
+          "default": "1.00",
+          "description": "Maximum committed, unknown, and reserved spend in a rolling 24-hour window.",
+          "format": "string",
+          "name": "UNLIMITEDTTS_ROLLING_24H_USDC"
+        },
+        {
+          "description": "Absolute approved directory for private MP3 artifacts and sanitized receipts.",
+          "format": "string",
+          "name": "UNLIMITEDTTS_OUTPUT_DIRECTORY"
+        }
+      ],
+      "identifier": "@unlimitedtts/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8d60a0ce93",
+    "published_at": "2026-08-22T14:38:01.780274Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.unlimitedtts/tts",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-22T14:38:01.780274Z"
+  },
+  "title": "UnlimitedTTS",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

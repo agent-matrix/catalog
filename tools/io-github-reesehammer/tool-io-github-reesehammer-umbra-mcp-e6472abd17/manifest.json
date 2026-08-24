@@ -1,0 +1,88 @@
+{
+  "artifacts": [
+    {
+      "kind": "pypi",
+      "spec": {
+        "package": "umbra-py",
+        "version": "0.1.0"
+      }
+    }
+  ],
+  "description": "Search, quicklook and measure Umbra's open SAR archive from any MCP client.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:50+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/reesehammer/umbra-py",
+  "id": "tool.io-github-reesehammer-umbra-mcp.e6472abd17",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/reesehammer/umbra-py",
+    "homepage": "https://github.com/reesehammer/umbra-py",
+    "repository": "https://github.com/reesehammer/umbra-py"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Search, quicklook and measure Umbra's open SAR archive from any MCP client.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.reesehammer/umbra-mcp",
+      "request_type": "POST",
+      "url": "https://github.com/reesehammer/umbra-py"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "The server ships inside the umbra-py distribution and needs its [mcp] extra, so the package uvx installs is not the bare identifier.",
+            "name": "--from",
+            "type": "named",
+            "value": "umbra-py[mcp]"
+          },
+          {
+            "description": "The console script to run from that distribution ([project.scripts] in pyproject.toml).",
+            "type": "positional",
+            "value": "umbra-mcp",
+            "valueHint": "console_script"
+          },
+          "umbra-py==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.reesehammer/umbra-mcp",
+  "provenance": {
+    "identity_key": "b79399aa86",
+    "promoted_from": "mcp.io-github-reesehammer-umbra-mcp.stdio.b79399aa86",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.reesehammer/umbra-mcp",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-reesehammer-umbra-mcp.stdio.b79399aa86",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/reesehammer/umbra-py",
+  "summary": "Search, quicklook and measure Umbra's open SAR archive from any MCP client.",
+  "tags": [
+    "archive",
+    "client",
+    "measure",
+    "quicklook",
+    "search",
+    "umbra"
+  ],
+  "title": "Umbra open SAR archive",
+  "type": "tool",
+  "version": "0.1.0"
+}

@@ -1,0 +1,72 @@
+{
+  "description": "Checks .NET solutions against a fluent C# architecture spec and explains the rules to agents.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:05+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-andypgray-loadbearing.stdio.ecc05f0b34",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/andypgray/loadbearing",
+    "homepage": "https://github.com/andypgray/loadbearing",
+    "repository": "https://github.com/andypgray/loadbearing"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "dnx",
+          "Zphil.LoadBearing.Cli==0.6.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.andypgray/loadbearing",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the solution to check when no solution argument is passed. A config generated from this manifest passes none, so this is where a repository the walk-up cannot resolve binds: set it at install time, or the server starts unbound and its session works from the CLI alone.",
+          "format": "filepath",
+          "name": "LOADBEARING_SOLUTION_PATH"
+        }
+      ],
+      "identifier": "Zphil.LoadBearing.Cli",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        },
+        {
+          "description": "The solution to check. Optional, but supply it for most repositories: when omitted the server reads LOADBEARING_SOLUTION_PATH, then walks up from its working directory, which resolves only where exactly one .sln, .slnf or .slnx sits at or above that directory. It finds nothing where the solution is under src/, and refuses as ambiguous where several sit side by side. A solution file passed here beats both; a server that cannot bind still starts, returns the reason from every tool call, and names the loadbearing CLI command that answers from the same model. A config generated from this manifest passes nothing here, so a repository the walk-up cannot resolve is bound at install time or its session works from the CLI alone.",
+          "format": "filepath",
+          "type": "positional",
+          "valueHint": "solution"
+        }
+      ],
+      "registryBaseUrl": "https://api.nuget.org/v3/index.json",
+      "registryType": "nuget",
+      "runtimeHint": "dnx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.6.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ecc05f0b34",
+    "published_at": "2026-08-22T22:25:26.018103Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.andypgray/loadbearing",
+    "server_version": "0.6.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-22T22:25:26.018103Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.6.1"
+}

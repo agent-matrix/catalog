@@ -1,0 +1,65 @@
+{
+  "description": "Thin MCP and CLI proxy for AI agent and MCP security auditing via a hosted backend",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-joepangallo-mcp-audit-server.stdio.5740329a34",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/joepangallo/mcp-audit-server",
+    "homepage": "https://github.com/joepangallo/mcp-audit-server",
+    "repository": "https://github.com/joepangallo/mcp-audit-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "ledd-mcp-audit-server@3.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.joepangallo/mcp-audit-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API key for the managed hosted audit backend",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AGENT_SECURITY_API_KEY"
+        },
+        {
+          "description": "Optional HTTPS API origin for self-hosted or private deployments",
+          "format": "string",
+          "name": "AGENT_SECURITY_BASE_URL"
+        }
+      ],
+      "identifier": "ledd-mcp-audit-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "3.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5740329a34",
+    "published_at": "2026-08-23T23:58:42.693543Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.joepangallo/mcp-audit-server",
+    "server_version": "3.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-23T23:58:42.693543Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "3.0.1"
+}

@@ -1,0 +1,88 @@
+{
+  "description": "Read-only MCP server for self-hosted Atlassian Bamboo CI/CD",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:29+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-hmdmph-bamboo-mcp.stdio.e993edcdea",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/hmdmph/bamboo-mcp",
+    "homepage": "https://github.com/hmdmph/bamboo-mcp",
+    "repository": "https://github.com/hmdmph/bamboo-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/hmdmph/bamboo-mcp:0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.hmdmph/bamboo-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of your Bamboo server, e.g. https://bamboo.example.com",
+          "format": "string",
+          "isRequired": true,
+          "name": "BAMBOO_URL"
+        },
+        {
+          "description": "Bamboo personal access token. Read permission is sufficient.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "BAMBOO_TOKEN"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode. Must be stdio when the client runs the container.",
+          "format": "string",
+          "isRequired": true,
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "description": "HTTP proxy URL, if Bamboo is only reachable via a proxy.",
+          "format": "string",
+          "name": "BAMBOO_PROXY"
+        },
+        {
+          "description": "Bitbucket base URL, used to build source links in build results.",
+          "format": "string",
+          "name": "BITBUCKET_URL"
+        },
+        {
+          "default": "false",
+          "description": "Set to true to log requests and errors to stderr.",
+          "format": "string",
+          "name": "VERBOSE"
+        }
+      ],
+      "identifier": "ghcr.io/hmdmph/bamboo-mcp:0.1.2",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "e993edcdea",
+    "published_at": "2026-08-17T14:45:16.777821Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.hmdmph/bamboo-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-17T14:45:16.777821Z"
+  },
+  "title": "Bamboo MCP Server",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

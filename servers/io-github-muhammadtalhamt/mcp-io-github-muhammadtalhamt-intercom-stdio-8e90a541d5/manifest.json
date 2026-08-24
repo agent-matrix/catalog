@@ -1,0 +1,88 @@
+{
+  "description": "Relays messages between two Claude Code sessions on different machines using the Channels API",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-MuhammadTalhaMT-intercom.stdio.8e90a541d5",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/MuhammadTalhaMT/claude-intercom",
+    "homepage": "https://github.com/MuhammadTalhaMT/claude-intercom",
+    "repository": "https://github.com/MuhammadTalhaMT/claude-intercom"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "claude-intercom@2.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.MuhammadTalhaMT/intercom",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Label for this instance, e.g. backend or frontend. Appears in message tags so the other side knows who is talking.",
+          "format": "string",
+          "isRequired": true,
+          "name": "MY_ROLE"
+        },
+        {
+          "description": "Address of the other machine as host:port. A Tailscale address is recommended over a public one.",
+          "format": "string",
+          "isRequired": true,
+          "name": "REMOTE_HOST"
+        },
+        {
+          "description": "Shared secret authenticating messages between the two instances. Must match on both sides. There is no default: without it the intercom starts unpaired, binds no port, and refuses to send.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "INTERCOM_SECRET",
+          "placeholder": "output of: openssl rand -base64 32"
+        },
+        {
+          "description": "Port to listen on for incoming messages. Defaults to 8788.",
+          "format": "number",
+          "name": "INTERCOM_PORT"
+        },
+        {
+          "description": "Interface to bind the listener to. Defaults to 0.0.0.0. Set 127.0.0.1 when a tunnel fronts the intercom, so only the tunnel can connect.",
+          "format": "string",
+          "name": "INTERCOM_HOST"
+        },
+        {
+          "description": "How long an outbound POST may hang before giving up. Defaults to 10000.",
+          "format": "number",
+          "name": "INTERCOM_SEND_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "claude-intercom",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8e90a541d5",
+    "published_at": "2026-08-19T17:11:43.073947Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.MuhammadTalhaMT/intercom",
+    "server_version": "2.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-19T17:11:43.073947Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "2.1.0"
+}

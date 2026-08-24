@@ -1,0 +1,101 @@
+{
+  "description": "Search, quicklook and measure Umbra's open SAR archive from any MCP client.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:50+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-reesehammer-umbra-mcp.stdio.b79399aa86",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/reesehammer/umbra-py",
+    "homepage": "https://github.com/reesehammer/umbra-py",
+    "repository": "https://github.com/reesehammer/umbra-py"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "The server ships inside the umbra-py distribution and needs its [mcp] extra, so the package uvx installs is not the bare identifier.",
+            "name": "--from",
+            "type": "named",
+            "value": "umbra-py[mcp]"
+          },
+          {
+            "description": "The console script to run from that distribution ([project.scripts] in pyproject.toml).",
+            "type": "positional",
+            "value": "umbra-mcp",
+            "valueHint": "console_script"
+          },
+          "umbra-py==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.reesehammer/umbra-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Canopy API token. Set it and the same search tools query Umbra's authenticated commercial archive instead of the open bucket; leave it unset for the open data, which needs no credentials.",
+          "isSecret": true,
+          "name": "UMBRA_CANOPY_TOKEN"
+        },
+        {
+          "description": "Path to a local catalog index (built with 'umbra index build' or fetched with 'umbra index fetch'). Without one the server walks the public bucket per search, which is correct but slow.",
+          "format": "filepath",
+          "name": "UMBRA_INDEX_DB"
+        },
+        {
+          "description": "Enables the two opt-in model tools, describe_scene and narrate_change. Every other tool is deterministic and calls no model.",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        },
+        {
+          "description": "Alternative provider for the same two model tools, and the encoder behind find_similar_text.",
+          "isSecret": true,
+          "name": "OPENAI_API_KEY"
+        }
+      ],
+      "identifier": "umbra-py",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "The server ships inside the umbra-py distribution and needs its [mcp] extra, so the package uvx installs is not the bare identifier.",
+          "name": "--from",
+          "type": "named",
+          "value": "umbra-py[mcp]"
+        },
+        {
+          "description": "The console script to run from that distribution ([project.scripts] in pyproject.toml).",
+          "type": "positional",
+          "value": "umbra-mcp",
+          "valueHint": "console_script"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b79399aa86",
+    "published_at": "2026-08-21T21:49:35.924352Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.reesehammer/umbra-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-21T21:49:35.924352Z"
+  },
+  "title": "Umbra open SAR archive",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

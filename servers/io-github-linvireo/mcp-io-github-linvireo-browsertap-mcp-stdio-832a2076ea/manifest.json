@@ -1,0 +1,70 @@
+{
+  "description": "MCP server that drives the real Chrome you already use, through an extension and CDP.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:53+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-LinVireo-browsertap-mcp.stdio.832a2076ea",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/LinVireo/browsertap-mcp",
+    "homepage": "https://github.com/LinVireo/browsertap-mcp",
+    "repository": "https://github.com/LinVireo/browsertap-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "browsertap-mcp==0.4.12"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.LinVireo/browsertap-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Which connected browser an unqualified call targets: chrome, edge or opera. Defaults to whichever registered first.",
+          "name": "BROWSERTAP_PREFERRED_BROWSER"
+        },
+        {
+          "description": "Approval profile: lab or safe. Defaults to lab, which skips approval prompts and still enforces the cross-process lock, the quiet-input gate, target activation and on-screen confirmation; safe asks before every physical input.",
+          "name": "BROWSERTAP_MODE"
+        },
+        {
+          "description": "Base loopback port for the bridge daemon. Defaults to 18765.",
+          "name": "BROWSERTAP_BRIDGE_PORT"
+        },
+        {
+          "description": "Directory holding the bridge token and runtime state. Defaults to ~/.browsertap.",
+          "name": "BROWSERTAP_STATE_DIR"
+        }
+      ],
+      "identifier": "browsertap-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.12"
+    }
+  ],
+  "provenance": {
+    "identity_key": "832a2076ea",
+    "published_at": "2026-08-23T17:46:51.886231Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.LinVireo/browsertap-mcp",
+    "server_version": "0.4.12",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-23T17:46:51.886231Z"
+  },
+  "title": "BrowserTap MCP",
+  "type": "mcp_server",
+  "version": "0.4.12"
+}

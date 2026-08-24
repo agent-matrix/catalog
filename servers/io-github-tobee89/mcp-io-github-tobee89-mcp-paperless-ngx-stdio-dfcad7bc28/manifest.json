@@ -1,0 +1,103 @@
+{
+  "description": "MCP server for Paperless-ngx 3.x \u2014 full REST API coverage, schema-aware, token-frugal.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:57+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-tobee89-mcp-paperless-ngx.stdio.dfcad7bc28",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/tobee89/mcp-paperless-ngx",
+    "homepage": "https://github.com/tobee89/mcp-paperless-ngx",
+    "repository": "https://github.com/tobee89/mcp-paperless-ngx"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-paperless-ngx@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.tobee89/mcp-paperless-ngx",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the Paperless-ngx instance",
+          "isRequired": true,
+          "name": "PAPERLESS_URL"
+        },
+        {
+          "description": "Paperless-ngx API token",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PAPERLESS_TOKEN"
+        },
+        {
+          "description": "URL used when building links, if the instance is reachable under a different name from outside",
+          "name": "PAPERLESS_PUBLIC_URL"
+        },
+        {
+          "description": "Comma-separated toolsets, or all",
+          "name": "PAPERLESS_TOOLSETS"
+        },
+        {
+          "default": "false",
+          "description": "Expose only tools that cannot change anything",
+          "name": "PAPERLESS_READ_ONLY"
+        },
+        {
+          "description": "Extra request headers; needed behind forward-auth proxies such as Authentik",
+          "name": "PAPERLESS_HEADERS"
+        },
+        {
+          "description": "Where downloaded files are written",
+          "format": "filepath",
+          "name": "PAPERLESS_DOWNLOAD_DIR"
+        },
+        {
+          "default": "100",
+          "description": "Hard ceiling on list page sizes",
+          "name": "PAPERLESS_MAX_PAGE_SIZE"
+        },
+        {
+          "default": "60000",
+          "description": "Request timeout in milliseconds",
+          "name": "PAPERLESS_TIMEOUT_MS"
+        },
+        {
+          "default": "10",
+          "description": "REST API version sent in the Accept header",
+          "name": "PAPERLESS_API_VERSION"
+        }
+      ],
+      "identifier": "mcp-paperless-ngx",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "dfcad7bc28",
+    "published_at": "2026-08-20T17:51:31.170404Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.tobee89/mcp-paperless-ngx",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-20T17:51:31.170404Z"
+  },
+  "title": "Paperless-ngx",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

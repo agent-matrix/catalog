@@ -1,7 +1,7 @@
 {
-  "description": "Hostile-by-default critic that grades AI agent output against your acceptance policy.",
+  "description": "SeaOtter dispatches work to a Superteam and checks the delivered outcome before money moves.",
   "harvest": {
-    "last_seen_at": "2026-08-17T03:11:56+00:00",
+    "last_seen_at": "2026-08-24T03:15:23+00:00",
     "seen_in_latest_run": true
   },
   "id": "mcp.ai-seaotter-otterscore.sse.e9fcdcddd5",
@@ -18,20 +18,38 @@
   "name": "ai.seaotter/otterscore",
   "provenance": {
     "identity_key": "e9fcdcddd5",
-    "published_at": "2026-06-21T15:09:38.228456Z",
+    "published_at": "2026-08-20T06:09:47.251021Z",
     "registry_base_url": "https://registry.modelcontextprotocol.io",
     "server_name": "ai.seaotter/otterscore",
-    "server_version": "1.0.0",
+    "server_version": "2.0.2",
     "source": "mcp-registry",
-    "updated_at": "2026-06-21T15:09:38.228456Z"
+    "updated_at": "2026-08-20T06:09:47.251021Z"
   },
   "remotes": [
     {
+      "headers": [
+        {
+          "description": "Bearer API key for non-OAuth clients. OAuth 2.1 clients use the endpoint's protected-resource metadata instead.",
+          "format": "string",
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {seaotter_api_key}",
+          "variables": {
+            "seaotter_api_key": {
+              "description": "A scoped sk-otter key issued through the SeaOtter agent connection door.",
+              "format": "string",
+              "isRequired": true,
+              "isSecret": true,
+              "placeholder": "sk-otter-..."
+            }
+          }
+        }
+      ],
       "type": "streamable-http",
       "url": "https://mcp.seaotter.ai/mcp"
     }
   ],
-  "title": null,
+  "title": "SeaOtter Dispatch",
   "type": "mcp_server",
-  "version": "1.0.0"
+  "version": "2.0.2"
 }

@@ -1,0 +1,62 @@
+{
+  "description": "Full Agent Swarm API and MCP server with local SQLite storage for multi-agent orchestration.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-desplega-ai-agent-swarm.sse.d4886d6fbe",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/desplega-ai/agent-swarm",
+    "homepage": "https://github.com/desplega-ai/agent-swarm",
+    "repository": "https://github.com/desplega-ai/agent-swarm"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://{swarm_host}/mcp"
+    }
+  },
+  "name": "io.github.desplega-ai/agent-swarm",
+  "provenance": {
+    "identity_key": "d4886d6fbe",
+    "published_at": "2026-08-22T10:49:35.701551Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.desplega-ai/agent-swarm",
+    "server_version": "1.135.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-22T10:49:35.701551Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Bearer token using the API key for your Agent Swarm instance (include the Bearer prefix).",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "placeholder": "Bearer <token>"
+        },
+        {
+          "description": "ID of an agent registered on your Agent Swarm instance.",
+          "isRequired": true,
+          "name": "X-Agent-ID",
+          "placeholder": "00000000-0000-0000-0000-000000000000"
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://{swarm_host}/mcp",
+      "variables": {
+        "swarm_host": {
+          "description": "Host of YOUR agent-swarm instance, e.g. swarm.example.com",
+          "isRequired": true
+        }
+      }
+    }
+  ],
+  "title": "Agent Swarm",
+  "type": "mcp_server",
+  "version": "1.135.0"
+}
