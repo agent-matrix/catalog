@@ -1,0 +1,94 @@
+{
+  "description": "Read-only Symfony introspection: routes, services, entities, Doctrine, security, Twig and more.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:53+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-shakaran-symfony-agent-mcp.stdio.4c2b4c6f53",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/shakaran/symfony-agent-mcp",
+    "homepage": "https://github.com/shakaran/symfony-agent-mcp",
+    "repository": "https://github.com/shakaran/symfony-agent-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@shakaran/symfony-agent-mcp@1.0.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.shakaran/symfony-agent-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "true",
+          "description": "Progressive tool discovery. Left on, tools/list advertises five discovery meta-tools and the rest become callable once a category is activated (~828 tokens on connect). Set to false to advertise all 1,677 up front (~154,000).",
+          "format": "boolean",
+          "name": "SYMFONY_MCP_DYNAMIC_TOOLS"
+        },
+        {
+          "default": "40000",
+          "description": "Token ceiling for the schemas a session may have active at once.",
+          "format": "number",
+          "name": "SYMFONY_MCP_TOKEN_BUDGET"
+        },
+        {
+          "description": "Colon-separated allowlist of directories the server may read. Any app_path outside them is refused.",
+          "format": "filepath",
+          "name": "SYMFONY_MCP_ALLOWED_PATHS"
+        },
+        {
+          "description": "Enables session-token authentication. Unset, authentication is off.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SYMFONY_MCP_SESSION_SECRET"
+        },
+        {
+          "description": "Client-side token, required only once SYMFONY_MCP_SESSION_SECRET is set.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SYMFONY_MCP_SESSION_TOKEN"
+        },
+        {
+          "default": "true",
+          "description": "Encrypted audit log of every tool call.",
+          "format": "boolean",
+          "name": "SYMFONY_MCP_AUDIT"
+        },
+        {
+          "default": "true",
+          "description": "Scan every result for credentials before returning it. Turning this off is reported as CRITICAL by the startup audit.",
+          "format": "boolean",
+          "name": "SYMFONY_MCP_DLP"
+        }
+      ],
+      "identifier": "@shakaran/symfony-agent-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4c2b4c6f53",
+    "published_at": "2026-08-23T11:55:11.588646Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.shakaran/symfony-agent-mcp",
+    "server_version": "1.0.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-23T11:55:11.588646Z"
+  },
+  "title": "Symfony Agent MCP",
+  "type": "mcp_server",
+  "version": "1.0.2"
+}

@@ -1,0 +1,90 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/verivus-oss/sqry-mcp:v30.0.0"
+      }
+    }
+  ],
+  "description": "AST-based semantic code search: 39 tools over 37 languages. Call tracing and impact analysis.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:59+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/verivus-oss/sqry",
+  "id": "tool.io-github-verivus-oss-sqry.5fb2ad50db",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/verivus-oss/sqry",
+    "homepage": "https://github.com/verivus-oss/sqry",
+    "repository": "https://github.com/verivus-oss/sqry"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "AST-based semantic code search: 39 tools over 37 languages. Call tracing and impact analysis.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.verivus-oss/sqry",
+      "request_type": "POST",
+      "url": "https://github.com/verivus-oss/sqry"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Bind mount the host workspace into the container",
+            "isRequired": true,
+            "name": "--mount",
+            "type": "named",
+            "value": "type=bind,src={source_path},dst=/workspace",
+            "variables": {
+              "source_path": {
+                "description": "Workspace path on the host",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          "ghcr.io/verivus-oss/sqry-mcp:v30.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.verivus-oss/sqry",
+  "provenance": {
+    "identity_key": "b4147f234c",
+    "promoted_from": "mcp.io-github-verivus-oss-sqry.stdio.b4147f234c",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.verivus-oss/sqry",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-verivus-oss-sqry.stdio.b4147f234c",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/verivus-oss/sqry",
+  "summary": "AST-based semantic code search: 39 tools over 37 languages. Call tracing and impact analysis.",
+  "tags": [
+    "based",
+    "code",
+    "over",
+    "search",
+    "semantic",
+    "sqry",
+    "tools"
+  ],
+  "title": "sqry - Semantic Code Search",
+  "type": "tool",
+  "version": "30.0.0"
+}

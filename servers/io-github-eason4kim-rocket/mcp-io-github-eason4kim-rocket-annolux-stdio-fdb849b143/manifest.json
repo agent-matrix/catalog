@@ -1,0 +1,65 @@
+{
+  "description": "Search a curated English and Chinese web index through one read-only MCP tool.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:25+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-eason4kim-rocket-annolux.stdio.fdb849b143",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/eason4kim-rocket/annolux",
+    "homepage": "https://github.com/eason4kim-rocket/annolux",
+    "repository": "https://github.com/eason4kim-rocket/annolux"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/eason4kim-rocket/annolux-mcp:0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.eason4kim-rocket/annolux",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://api.annolux.com",
+          "description": "Annolux API origin.",
+          "format": "string",
+          "name": "ANNOLUX_API_URL"
+        },
+        {
+          "description": "Annolux API key created in the account dashboard.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ANNOLUX_API_KEY"
+        }
+      ],
+      "identifier": "ghcr.io/eason4kim-rocket/annolux-mcp:0.1.2",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "fdb849b143",
+    "published_at": "2026-08-23T10:13:15.245159Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.eason4kim-rocket/annolux",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-23T10:13:15.245159Z"
+  },
+  "title": "Annolux Search",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

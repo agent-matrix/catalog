@@ -1,0 +1,84 @@
+{
+  "description": "Read-only PostgreSQL over MCP. Writes refused at the parsed SQL, plus a READ ONLY transaction.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:49+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Eszetael-postgres-mcp-hardened.stdio.d6dee876fb",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Eszetael/postgres-mcp-hardened",
+    "homepage": "https://github.com/Eszetael/postgres-mcp-hardened",
+    "repository": "https://github.com/Eszetael/postgres-mcp-hardened"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "isRequired": true,
+            "type": "positional",
+            "value": "--stdio"
+          },
+          "postgres-mcp-hardened@0.1.9"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Eszetael/postgres-mcp-hardened",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Connection string for the role the server connects as. Use a role that cannot write \u2014 the server refuses writes twice, but a read-only role is the layer that does not depend on us being correct. `--print-setup-sql` prints the SQL that creates one.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DATABASE_URL"
+        },
+        {
+          "description": "Server-side statement timeout, e.g. `5s`. A question that would pin the database is cancelled by PostgreSQL, not by hope.",
+          "name": "MCP_STATEMENT_TIMEOUT"
+        },
+        {
+          "description": "Comma-separated allowlist. A table off the list is refused by name, and hiding it inside a CTE, a view or a join does not help.",
+          "name": "MCP_ALLOW_TABLES"
+        },
+        {
+          "description": "Path to the tamper-evident audit log. Entries are chained by hash and survive a restart; `--verify-audit` checks the chain against an off-host anchor.",
+          "name": "MCP_AUDIT_LOG"
+        }
+      ],
+      "identifier": "postgres-mcp-hardened",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "isRequired": true,
+          "type": "positional",
+          "value": "--stdio"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.9"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d6dee876fb",
+    "published_at": "2026-08-18T14:23:23.689513Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Eszetael/postgres-mcp-hardened",
+    "server_version": "0.1.9",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-18T14:23:23.689513Z"
+  },
+  "title": "PostgreSQL (hardened, read-only)",
+  "type": "mcp_server",
+  "version": "0.1.9"
+}

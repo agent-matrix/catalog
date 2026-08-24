@@ -1,0 +1,59 @@
+{
+  "description": "French property market data \u2014 17M+ DVF sales, 22M+ DPE energy ratings, 20M+ building records.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:56+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-NormiHQ-normi.sse.0b7fea57a6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/NormiHQ/Normi",
+    "homepage": "https://github.com/NormiHQ/Normi",
+    "repository": "https://github.com/NormiHQ/Normi"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://mcp.normi.fr/mcp"
+    }
+  },
+  "name": "io.github.NormiHQ/normi",
+  "provenance": {
+    "identity_key": "0b7fea57a6",
+    "published_at": "2026-08-23T14:49:35.593636Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.NormiHQ/normi",
+    "server_version": "0.2.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-23T14:49:35.593636Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Bearer authentication with your Normi API key (get one free at https://normi.fr/dashboard/tokens)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {normi_api_key}",
+          "variables": {
+            "normi_api_key": {
+              "description": "Your Normi API key \u2014 a 49-character token starting with normi_",
+              "format": "string",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://mcp.normi.fr/mcp"
+    }
+  ],
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.3"
+}

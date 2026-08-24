@@ -1,0 +1,129 @@
+{
+  "description": "PDF MCP server: generate PDF/A, sign & verify PAdES (LTV), forms, merge, split, encrypt. 28 tools",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:56+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Nizoka-pdfnative-mcp.stdio.cec1327d00",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Nizoka/pdfnative-mcp",
+    "homepage": "https://github.com/Nizoka/pdfnative-mcp",
+    "repository": "https://github.com/Nizoka/pdfnative-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y",
+            "valueHint": "skip-confirm"
+          },
+          {
+            "type": "positional",
+            "value": "pdfnative-mcp",
+            "valueHint": "package"
+          },
+          "pdfnative-mcp@1.6.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Nizoka/pdfnative-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Absolute path of a sandboxed directory where outputMode='file' may write PDFs. Unset: every tool returns base64 only (file output disabled).",
+          "format": "filepath",
+          "name": "PDFNATIVE_MCP_OUTPUT_DIR"
+        },
+        {
+          "description": "Opt-in content-addressed response cache directory (SHA-256 keyed, 1h TTL, 256 MiB LRU, plaintext at rest). Never caches encrypt/decrypt, sign, timestamp, add_ltv, update_metadata, encrypted builds or file output.",
+          "format": "filepath",
+          "name": "PDFNATIVE_MCP_CACHE_DIR"
+        },
+        {
+          "description": "Serve Streamable HTTP on this loopback port instead of stdio (MCP 2026-07-28, stateless). Unauthenticated unless PDFNATIVE_MCP_HTTP_TOKEN is set.",
+          "format": "number",
+          "name": "PDFNATIVE_MCP_PORT"
+        },
+        {
+          "description": "Opt-in bearer token for the HTTP transport (>= 16 chars, no whitespace). When set, /mcp requires 'Authorization: Bearer <token>' or answers 401. Never logged.",
+          "isSecret": true,
+          "name": "PDFNATIVE_MCP_HTTP_TOKEN"
+        },
+        {
+          "description": "Per-stream FlateDecode decompression cap in bytes (zip-bomb mitigation; default 104857600 = 100 MiB). Integer >= 1024; an invalid value refuses to start the server.",
+          "format": "number",
+          "name": "PDFNATIVE_MCP_MAX_INFLATE_BYTES"
+        },
+        {
+          "description": "http(s) URL of the RFC 3161 timestamp authority used by sign_pdf timestamp=true and timestamp_pdf (PAdES B-T / B-LTA). Unset: those calls fail with TSA_NOT_CONFIGURED and no network request is made. Tool arguments can never supply a URL.",
+          "name": "PDFNATIVE_MCP_TSA_URL"
+        },
+        {
+          "description": "Optional Authorization header value sent to the TSA (e.g. 'Basic ...' or 'Bearer ...'). Never logged or echoed.",
+          "isSecret": true,
+          "name": "PDFNATIVE_MCP_TSA_AUTH"
+        },
+        {
+          "choices": [
+            "ocsp",
+            "crl",
+            "ocsp,crl"
+          ],
+          "description": "'ocsp', 'crl' or 'ocsp,crl': enables online revocation collection for add_ltv mode='online' (PAdES B-LT). Unset: that mode fails with REVOCATION_NOT_CONFIGURED; mode='offline' stays fully offline. Requires PDFNATIVE_MCP_NETWORK_ALLOWED_HOSTS.",
+          "name": "PDFNATIVE_MCP_REVOCATION"
+        },
+        {
+          "description": "Comma-separated allow-list of OCSP / CRL responder hosts ('host', 'host:port' or '*.suffix'). Mandatory when PDFNATIVE_MCP_REVOCATION is set: responder URLs found in certificates are fetched only if the host matches (http(s) only, no credentials, no redirects, internal addresses rejected unless listed verbatim).",
+          "name": "PDFNATIVE_MCP_NETWORK_ALLOWED_HOSTS"
+        },
+        {
+          "description": "Per-request timeout for TSA / OCSP / CRL calls in milliseconds, 1000-120000 (default 10000).",
+          "format": "number",
+          "name": "PDFNATIVE_MCP_NETWORK_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "pdfnative-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y",
+          "valueHint": "skip-confirm"
+        },
+        {
+          "type": "positional",
+          "value": "pdfnative-mcp",
+          "valueHint": "package"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.6.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "cec1327d00",
+    "published_at": "2026-08-23T16:54:17.462859Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Nizoka/pdfnative-mcp",
+    "server_version": "1.6.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-23T16:54:17.462859Z"
+  },
+  "title": "pdfnative MCP \u2014 PDF generation, PAdES signing & introspection",
+  "type": "mcp_server",
+  "version": "1.6.0"
+}

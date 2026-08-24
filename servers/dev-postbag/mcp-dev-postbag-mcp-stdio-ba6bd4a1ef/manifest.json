@@ -1,0 +1,76 @@
+{
+  "description": "Form backend that routes: one tool per Postbag API operation, plus quickstart and explain.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.dev-postbag-mcp.stdio.ba6bd4a1ef",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/faahim/postbag",
+    "homepage": "https://github.com/faahim/postbag",
+    "repository": "https://github.com/faahim/postbag"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y"
+          },
+          "@postbag/mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "dev.postbag/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "A Postbag API key (pb_live_\u2026 or pb_test_\u2026). Mint one at https://postbag.dev/app or with `postbag login`.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "POSTBAG_API_KEY"
+        },
+        {
+          "default": "https://postbag.dev",
+          "description": "Base URL of the Postbag API. Defaults to https://postbag.dev \u2014 set this only for a self-hosted instance.",
+          "name": "POSTBAG_API_URL"
+        }
+      ],
+      "identifier": "@postbag/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ba6bd4a1ef",
+    "published_at": "2026-08-21T15:11:44.374639Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "dev.postbag/mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-21T15:11:44.374639Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

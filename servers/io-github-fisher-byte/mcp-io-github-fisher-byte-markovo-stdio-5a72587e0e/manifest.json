@@ -1,0 +1,73 @@
+{
+  "description": "Convert files and authorized public HTTPS pages to Markdown with secure job and billing guidance.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:26+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-fisher-byte-markovo.stdio.5a72587e0e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/fisher-byte/markovo",
+    "homepage": "https://github.com/fisher-byte/markovo",
+    "repository": "https://github.com/fisher-byte/markovo"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "markovo==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.fisher-byte/markovo",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Create a key at https://markovo.net/app#developer. Store it in the MCP host secret store; do not paste it into prompts.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "MARKOVO_API_KEY"
+        },
+        {
+          "description": "Dedicated existing directory that bounds all MCP file reads and writes. File tools fail closed when it is missing.",
+          "format": "string",
+          "isRequired": true,
+          "name": "MARKOVO_MCP_ROOT"
+        }
+      ],
+      "identifier": "markovo",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5a72587e0e",
+    "published_at": "2026-08-23T10:38:29.041977Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.fisher-byte/markovo",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-23T10:38:29.041977Z"
+  },
+  "title": "Markovo File to Markdown",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

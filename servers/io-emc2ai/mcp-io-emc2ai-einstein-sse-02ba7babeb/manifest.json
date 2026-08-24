@@ -1,7 +1,7 @@
 {
-  "description": "40 AI crypto tools: whale tracking, security scans, DeFi analytics, quantum security, and more.",
+  "description": "AI price forecasts, whale flows, market sentiment and prediction signals. 18 tools free, no account.",
   "harvest": {
-    "last_seen_at": "2026-08-17T03:12:14+00:00",
+    "last_seen_at": "2026-08-24T03:15:40+00:00",
     "seen_in_latest_run": true
   },
   "id": "mcp.io-emc2ai-einstein.sse.02ba7babeb",
@@ -22,31 +22,32 @@
   "name": "io.emc2ai/einstein",
   "provenance": {
     "identity_key": "02ba7babeb",
-    "published_at": "2026-03-22T21:40:57.186204Z",
+    "published_at": "2026-08-23T12:37:01.151942Z",
     "registry_base_url": "https://registry.modelcontextprotocol.io",
     "server_name": "io.emc2ai/einstein",
-    "server_version": "2.0.0",
+    "server_version": "3.0.0",
     "source": "mcp-registry",
-    "updated_at": "2026-03-22T21:40:57.186204Z"
+    "updated_at": "2026-08-23T12:37:01.151942Z"
   },
   "remotes": [
     {
       "headers": [
         {
-          "description": "x402 payment token (Base USDC). Tool calls return 402 with payment instructions if omitted.",
+          "description": "Bearer token from Einstein's OAuth 2.1 flow. Discovered automatically via /.well-known/oauth-protected-resource \u2014 clients register themselves. Required only for paid tools; the free tools accept anonymous calls.",
           "isSecret": true,
-          "name": "X-PAYMENT"
+          "name": "Authorization"
         },
         {
-          "description": "Wallet address for whitelisted free access (optional).",
-          "name": "X-WALLET-ADDRESS"
+          "description": "x402 payment token (Base USDC), for autonomous agents paying per call on the legacy per-skill tool names. Not needed by ordinary MCP clients, which use OAuth and a credit balance instead.",
+          "isSecret": true,
+          "name": "X-PAYMENT"
         }
       ],
       "type": "streamable-http",
       "url": "https://emc2ai.io/api/mcp"
     }
   ],
-  "title": "Agent Einstein \u2014 Autonomous Crypto Intelligence",
+  "title": "Agent Einstein \u2014 Crypto & Market Intelligence",
   "type": "mcp_server",
-  "version": "2.0.0"
+  "version": "3.0.0"
 }

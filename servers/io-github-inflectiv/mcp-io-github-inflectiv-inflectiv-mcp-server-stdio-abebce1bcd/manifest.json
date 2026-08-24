@@ -1,0 +1,72 @@
+{
+  "description": "Search, build and manage Inflectiv datasets and AI agents, plus ChainAware on-chain intelligence.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-inflectiv-inflectiv-mcp-server.stdio.abebce1bcd",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/inflectiv/inflectiv-mcp-server",
+    "homepage": "https://github.com/inflectiv/inflectiv-mcp-server",
+    "repository": "https://github.com/inflectiv/inflectiv-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@inflectiv-ai/inflectiv-mcp@1.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.inflectiv/inflectiv-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API key scoped to a dataset (starts with `inf_`). Create one from any dataset page in the dashboard.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "INFLECTIV_API_KEY"
+        },
+        {
+          "default": "https://app.inflectiv.ai/api/platform",
+          "description": "Override API URL (for self-hosted or local dev)",
+          "format": "string",
+          "name": "INFLECTIV_BASE_URL"
+        },
+        {
+          "description": "EVM wallet private key for x402 crypto payments. When set and credits are 0, pays per-request with USDC on Base.",
+          "format": "string",
+          "isSecret": true,
+          "name": "INFLECTIV_WALLET_PRIVATE_KEY"
+        }
+      ],
+      "identifier": "@inflectiv-ai/inflectiv-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "abebce1bcd",
+    "published_at": "2026-08-18T10:29:54.393239Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.inflectiv/inflectiv-mcp-server",
+    "server_version": "1.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-18T10:29:54.393239Z"
+  },
+  "title": "Inflectiv",
+  "type": "mcp_server",
+  "version": "1.2.0"
+}

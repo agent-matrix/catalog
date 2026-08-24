@@ -1,0 +1,87 @@
+{
+  "description": "Local MCP server for Weeek (stdio transport) \u2014 read-only by default, opt-in write tools.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:01+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-YOLKINS-weeek-mcp.stdio.4dc3fe375e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/YOLKINS/weeek-mcp",
+    "homepage": "https://github.com/YOLKINS/weeek-mcp",
+    "repository": "https://github.com/YOLKINS/weeek-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "weeek-mcp@1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.YOLKINS/weeek-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Weeek Public API v1 access token. Required \u2014 the server refuses to start without it.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "WEEEK_ACCESS_TOKEN"
+        },
+        {
+          "default": "true",
+          "description": "Gate for the write tools. Defaults to 'true': a fresh install exposes only the ten read tools. Set to 'false' to additionally expose the five write tools (create/update/move/complete a task, set an MR link) \u2014 an explicit operator opt-in, never the default.",
+          "name": "READ_ONLY"
+        },
+        {
+          "description": "Optional comma-separated allowlist of tool names to register (still subject to READ_ONLY). Pair with READ_ONLY=false for a granular write rollout, e.g. 'weeek_complete_task'.",
+          "name": "ENABLED_TOOLS"
+        },
+        {
+          "default": "https://api.weeek.net/public/v1",
+          "description": "Override the Weeek API base URL. Defaults to the public v1 endpoint.",
+          "name": "WEEEK_BASE_URL"
+        },
+        {
+          "default": "30000",
+          "description": "Per-request timeout in milliseconds.",
+          "format": "number",
+          "name": "WEEEK_TIMEOUT_MS"
+        },
+        {
+          "default": "65536",
+          "description": "Upper bound on the JSON length of a single tool response, protecting the agent's context window from unbounded list/detail payloads.",
+          "format": "number",
+          "name": "MAX_RESPONSE_CHARS"
+        }
+      ],
+      "identifier": "weeek-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4dc3fe375e",
+    "published_at": "2026-08-17T10:44:33.445355Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.YOLKINS/weeek-mcp",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-17T10:44:33.445355Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

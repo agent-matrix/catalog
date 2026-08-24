@@ -1,0 +1,69 @@
+{
+  "description": "Run any model on the live WaveSpeed catalog: image, video, audio, 3D.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:24+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-wavespeed-mcp.stdio.8472eb1aea",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/WaveSpeedAI/mcp-server",
+    "homepage": "https://github.com/WaveSpeedAI/mcp-server",
+    "repository": "https://github.com/WaveSpeedAI/mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@wavespeed/mcp@1.0.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.wavespeed/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "WaveSpeed API key (https://wavespeed.ai/accesskey). Optional when the wavespeed CLI is logged in.",
+          "format": "string",
+          "isSecret": true,
+          "name": "WAVESPEED_API_KEY"
+        },
+        {
+          "description": "Override the WaveSpeed API base URL. Defaults to https://api.wavespeed.ai.",
+          "format": "string",
+          "name": "WAVESPEED_BASE_URL"
+        },
+        {
+          "description": "Override the client name reported for channel attribution. Defaults to wavespeed-mcp.",
+          "format": "string",
+          "name": "WAVESPEED_CLIENT_NAME"
+        }
+      ],
+      "identifier": "@wavespeed/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8472eb1aea",
+    "published_at": "2026-08-20T11:43:18.779052Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.wavespeed/mcp",
+    "server_version": "1.0.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-20T11:43:18.779052Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.6"
+}

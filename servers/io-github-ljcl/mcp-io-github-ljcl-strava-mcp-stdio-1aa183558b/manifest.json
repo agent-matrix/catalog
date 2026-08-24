@@ -1,0 +1,106 @@
+{
+  "description": "Remote MCP server for your Strava activities, segments, and routes",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:36+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ljcl-strava-mcp.stdio.1aa183558b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ljcl/strava-mcp",
+    "homepage": "https://github.com/ljcl/strava-mcp",
+    "repository": "https://github.com/ljcl/strava-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/ljcl/strava-mcp:2.13.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ljcl/strava-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Strava API client ID",
+          "format": "string",
+          "isRequired": true,
+          "name": "STRAVA_CLIENT_ID"
+        },
+        {
+          "description": "Strava API client secret",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "STRAVA_CLIENT_SECRET"
+        },
+        {
+          "description": "Public HTTPS URL used for the Strava OAuth callback",
+          "format": "string",
+          "isRequired": true,
+          "name": "PUBLIC_URL"
+        },
+        {
+          "description": "Optional initial access token from setup-auth",
+          "format": "string",
+          "isSecret": true,
+          "name": "STRAVA_ACCESS_TOKEN"
+        },
+        {
+          "description": "Optional initial refresh token from setup-auth",
+          "format": "string",
+          "isSecret": true,
+          "name": "STRAVA_REFRESH_TOKEN"
+        },
+        {
+          "description": "Shared secret gating /mcp and the OAuth web routes (recommended when internet-facing)",
+          "format": "string",
+          "isSecret": true,
+          "name": "MCP_AUTH_TOKEN"
+        },
+        {
+          "description": "Server port (default 3000)",
+          "format": "number",
+          "name": "PORT"
+        },
+        {
+          "description": "Override token storage directory (default ./data)",
+          "format": "string",
+          "name": "TOKEN_DATA_DIR"
+        },
+        {
+          "description": "Absolute directory for exported route files",
+          "format": "filepath",
+          "name": "ROUTE_EXPORT_PATH"
+        }
+      ],
+      "identifier": "ghcr.io/ljcl/strava-mcp:2.13.2",
+      "registryType": "oci",
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3000/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "1aa183558b",
+    "published_at": "2026-08-20T21:49:40.748251Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ljcl/strava-mcp",
+    "server_version": "2.13.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-20T21:49:40.748251Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "2.13.2"
+}

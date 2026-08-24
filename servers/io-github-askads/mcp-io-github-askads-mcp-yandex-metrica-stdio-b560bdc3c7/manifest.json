@@ -1,0 +1,87 @@
+{
+  "description": "MCP server for Yandex Metrica API: list counters, goals and pull web-analytics statistics.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:06+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-askads-mcp-yandex-metrica.stdio.b560bdc3c7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/askads/mcp-yandex-metrica",
+    "homepage": "https://github.com/askads/mcp-yandex-metrica",
+    "repository": "https://github.com/askads/mcp-yandex-metrica"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-yandex-metrica@1.4.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.askads/mcp-yandex-metrica",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Yandex Metrica OAuth token (scope metrika:read) \u2014 read access to analytics data. Treat it as a secret. Optional: without it the server starts anyway and connects through the in-chat login (start_login / finish_login).",
+          "isSecret": true,
+          "name": "YANDEX_METRIKA_TOKEN"
+        },
+        {
+          "description": "ClientID of your own Yandex OAuth app for the in-chat login. Defaults to the Ask Ads app scoped to metrika:read.",
+          "name": "YANDEX_METRIKA_OAUTH_CLIENT_ID"
+        },
+        {
+          "description": "Default Metrica counter id, used when a tool call omits counterId.",
+          "name": "YANDEX_METRIKA_COUNTER_ID"
+        },
+        {
+          "default": "ru",
+          "description": "Language for API responses (ru, en, ...).",
+          "name": "YANDEX_METRIKA_LANG"
+        },
+        {
+          "default": "https://api-metrika.yandex.net",
+          "description": "API root host. Override only for a proxy or a non-default endpoint.",
+          "name": "YANDEX_METRIKA_API_BASE"
+        },
+        {
+          "default": "60000",
+          "description": "Per-request timeout in milliseconds.",
+          "name": "YANDEX_METRIKA_TIMEOUT_MS"
+        },
+        {
+          "default": "3",
+          "description": "Max retries for transient errors (429 rate limit, 5xx on reads).",
+          "name": "YANDEX_METRIKA_MAX_RETRIES"
+        }
+      ],
+      "identifier": "mcp-yandex-metrica",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.4.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b560bdc3c7",
+    "published_at": "2026-08-18T23:33:53.939577Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.askads/mcp-yandex-metrica",
+    "server_version": "1.4.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-18T23:33:53.939577Z"
+  },
+  "title": "Yandex Metrica MCP",
+  "type": "mcp_server",
+  "version": "1.4.1"
+}

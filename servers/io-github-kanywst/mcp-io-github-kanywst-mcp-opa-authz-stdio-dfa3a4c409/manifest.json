@@ -1,0 +1,78 @@
+{
+  "description": "Authorization answers from real policy code: evaluate Rego locally, or ask an AuthZEN 1.0 PDP.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:34+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-kanywst-mcp-opa-authz.stdio.dfa3a4c409",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/kanywst/mcp-opa-authz",
+    "homepage": "https://github.com/kanywst/mcp-opa-authz",
+    "repository": "https://github.com/kanywst/mcp-opa-authz"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/kanywst/mcp-opa-authz:0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.kanywst/mcp-opa-authz",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Default AuthZEN Access Evaluation endpoint, e.g. https://pdp.example.com/access/v1/evaluation. Only evaluate_policy works without it.",
+          "format": "string",
+          "name": "AUTHZEN_PDP_URL"
+        },
+        {
+          "description": "Authorization header value for the PDP. A value with no scheme is sent as \"Bearer <token>\".",
+          "format": "string",
+          "isSecret": true,
+          "name": "AUTHZEN_PDP_TOKEN"
+        },
+        {
+          "description": "Per-request timeout for PDP calls, as a Go duration. Default 10s.",
+          "format": "string",
+          "name": "AUTHZEN_PDP_TIMEOUT"
+        },
+        {
+          "description": "Wall-clock limit on a single Rego evaluation, as a Go duration. Default 5s.",
+          "format": "string",
+          "name": "MCP_OPA_EVAL_TIMEOUT"
+        },
+        {
+          "description": "Re-enable http.send, net.lookup_ip_addr and opa.runtime inside evaluated policies. Off by default: policy source evaluated here comes from a model and runs inside the server process.",
+          "format": "boolean",
+          "name": "MCP_OPA_ALLOW_NETWORK_BUILTINS"
+        }
+      ],
+      "identifier": "ghcr.io/kanywst/mcp-opa-authz:0.2.1",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "dfa3a4c409",
+    "published_at": "2026-08-19T18:51:00.298093Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.kanywst/mcp-opa-authz",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-19T18:51:00.298093Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

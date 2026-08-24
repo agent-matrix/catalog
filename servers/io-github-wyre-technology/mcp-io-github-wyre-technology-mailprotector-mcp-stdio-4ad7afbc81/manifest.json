@@ -1,0 +1,89 @@
+{
+  "description": "MCP server for Mailprotector \u2014 customers, domains, users, quarantine, allow/block rules for MSPs.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:17:01+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wyre-technology-mailprotector-mcp.stdio.4ad7afbc81",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wyre-technology/mailprotector-mcp",
+    "homepage": "https://github.com/wyre-technology/mailprotector-mcp",
+    "repository": "https://github.com/wyre-technology/mailprotector-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-technology/mailprotector-mcp:v1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wyre-technology/mailprotector-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Mailprotector API key (per manager-role, from the web console profile page)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "MAILPROTECTOR_API_KEY"
+        },
+        {
+          "description": "The MSP's reseller id in Mailprotector (the default scope for scoped tools)",
+          "format": "string",
+          "isRequired": true,
+          "name": "MAILPROTECTOR_RESELLER_ID"
+        },
+        {
+          "default": "https://emailservice.io",
+          "description": "API host override",
+          "format": "string",
+          "name": "MAILPROTECTOR_BASE_URL"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway. The image defaults to 'gateway'.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-technology/mailprotector-mcp:v1.0.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "4ad7afbc81",
+    "published_at": "2026-08-18T16:32:32.118Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wyre-technology/mailprotector-mcp",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-18T16:32:32.118Z"
+  },
+  "title": "Mailprotector",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

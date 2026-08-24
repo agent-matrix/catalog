@@ -1,0 +1,88 @@
+{
+  "description": "Serve many stdio MCP servers from one container, for ChatGPT, Claude and other MCP clients",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:44+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ni-c-mcp-hub.stdio.64eb3f2a7e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ni-c/mcp-hub",
+    "homepage": "https://github.com/ni-c/mcp-hub",
+    "repository": "https://github.com/ni-c/mcp-hub"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@ni-c/mcp-hub@0.6.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ni-c/mcp-hub",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Public base URL exactly as clients see it, e.g. https://mcp.example.net (no path)",
+          "format": "string",
+          "isRequired": true,
+          "name": "EXTERNAL_URL"
+        },
+        {
+          "description": "bcrypt hash of the OAuth login password (htpasswd -bnBC 10 \"\" 'pw' | tr -d ':\\n')",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PASSWORD_HASH"
+        },
+        {
+          "description": "Path to the mcp.json listing the servers to expose, in Claude Code's mcpServers format (default /config/mcp.json)",
+          "format": "string",
+          "name": "CONFIG_PATH"
+        },
+        {
+          "description": "Directory for the JWT key and OAuth client state; must persist across restarts (default /data)",
+          "format": "string",
+          "name": "DATA_PATH"
+        },
+        {
+          "description": "Comma-separated IPs/CIDRs of the reverse proxy allowed to set X-Forwarded-* headers",
+          "format": "string",
+          "name": "TRUSTED_PROXIES"
+        },
+        {
+          "default": "3000",
+          "description": "Listen port",
+          "format": "number",
+          "name": "PORT"
+        }
+      ],
+      "identifier": "@ni-c/mcp-hub",
+      "registryType": "npm",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:{PORT}/hub"
+      },
+      "version": "0.6.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "64eb3f2a7e",
+    "published_at": "2026-08-17T21:26:43.38439Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ni-c/mcp-hub",
+    "server_version": "0.6.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-17T21:26:43.38439Z"
+  },
+  "title": "mcp-hub",
+  "type": "mcp_server",
+  "version": "0.6.3"
+}

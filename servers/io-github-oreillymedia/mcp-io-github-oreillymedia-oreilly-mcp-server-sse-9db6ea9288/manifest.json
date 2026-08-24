@@ -1,0 +1,50 @@
+{
+  "description": "Search O'Reilly for tech books, courses, events, and more. Requires an O'Reilly subscription.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:46+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-oreillymedia-oreilly-mcp-server.sse.9db6ea9288",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://api.oreilly.com/api/search/v1/mcp"
+    }
+  },
+  "name": "io.github.oreillymedia/oreilly-mcp-server",
+  "provenance": {
+    "identity_key": "9db6ea9288",
+    "published_at": "2026-08-20T22:29:00.440006Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.oreillymedia/oreilly-mcp-server",
+    "server_version": "1.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-20T22:29:00.440006Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Optional. OAuth is the recommended way to authenticate: OAuth-capable clients (e.g. Claude Code, Cursor, VS Code) start the OAuth flow automatically when no token is provided. Alternatively, supply a personal access token here for token-based authentication.",
+          "name": "Authorization",
+          "value": "Bearer {mcp_access_token}",
+          "variables": {
+            "mcp_access_token": {
+              "description": "Your O'Reilly personal access token, used only for token-based authentication. Leave unset to authenticate via OAuth. See https://learning.oreilly.com/apidocs/mcp/content/#section/Authentication for details on generating a token.",
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://api.oreilly.com/api/search/v1/mcp"
+    }
+  ],
+  "title": "O'Reilly Media MCP Server",
+  "type": "mcp_server",
+  "version": "1.3.0"
+}

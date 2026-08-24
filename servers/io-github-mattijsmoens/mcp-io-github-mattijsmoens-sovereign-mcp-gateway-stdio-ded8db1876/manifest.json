@@ -1,0 +1,68 @@
+{
+  "description": "Gating proxy for MCP servers: policy, verification and one audit trail across upstreams.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mattijsmoens-sovereign-mcp-gateway.stdio.ded8db1876",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mattijsmoens/sovereign-mcp-gateway",
+    "homepage": "https://github.com/mattijsmoens/sovereign-mcp-gateway",
+    "repository": "https://github.com/mattijsmoens/sovereign-mcp-gateway"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "sovereign-mcp-gateway==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mattijsmoens/sovereign-mcp-gateway",
+  "packages": [
+    {
+      "identifier": "sovereign-mcp-gateway",
+      "packageArguments": [
+        {
+          "description": "Path to the gateway configuration: which upstream MCP servers to proxy, the tool policy, and where to write the audit log. See the repository README for the format and an example.",
+          "isRequired": true,
+          "name": "--config",
+          "type": "named",
+          "value": "{config_path}",
+          "variables": {
+            "config_path": {
+              "description": "Path to your gateway.json",
+              "format": "filepath",
+              "isRequired": true
+            }
+          }
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ded8db1876",
+    "published_at": "2026-08-22T13:23:04.785224Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mattijsmoens/sovereign-mcp-gateway",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-22T13:23:04.785224Z"
+  },
+  "title": "Sovereign Gateway",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

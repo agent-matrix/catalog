@@ -1,0 +1,82 @@
+{
+  "artifacts": [
+    {
+      "kind": "pypi",
+      "spec": {
+        "package": "tgms",
+        "version": "0.7.0"
+      }
+    }
+  ],
+  "description": "Bi-temporal graph store with 15 verified temporal operators as typed, deterministic MCP tools.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:17:04+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/zxf-work/tgms",
+  "id": "tool.io-github-zxf-work-tgms.576a9366ed",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/zxf-work/tgms",
+    "homepage": "https://github.com/zxf-work/tgms",
+    "repository": "https://github.com/zxf-work/tgms"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Bi-temporal graph store with 15 verified temporal operators as typed, deterministic MCP tools.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.zxf-work/tgms",
+      "request_type": "POST",
+      "url": "https://github.com/zxf-work/tgms"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "tgms[agent] pulls in the fastmcp/litellm extra the serve command needs; the bare tgms wheel does not carry them and `uvx tgms serve` fails with ModuleNotFoundError: fastmcp.",
+            "name": "--from",
+            "type": "named",
+            "value": "tgms[agent]"
+          },
+          "tgms==0.7.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.zxf-work/tgms",
+  "provenance": {
+    "identity_key": "64dfedbc95",
+    "promoted_from": "mcp.io-github-zxf-work-tgms.stdio.64dfedbc95",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.zxf-work/tgms",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-zxf-work-tgms.stdio.64dfedbc95",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/zxf-work/tgms",
+  "summary": "Bi-temporal graph store with 15 verified temporal operators as typed, deterministic MCP tools.",
+  "tags": [
+    "graph",
+    "operators",
+    "store",
+    "temporal",
+    "tgms",
+    "verified"
+  ],
+  "title": "Tgms",
+  "type": "tool",
+  "version": "0.7.0"
+}

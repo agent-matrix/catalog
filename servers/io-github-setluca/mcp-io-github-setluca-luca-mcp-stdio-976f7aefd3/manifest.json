@@ -1,0 +1,96 @@
+{
+  "description": "Work your Luca workspace from any MCP client: 183 API tools + 15 task tools for leads and calls.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:53+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-setluca-luca-mcp.stdio.976f7aefd3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@setluca/mcp@0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.setluca/luca-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Luca developer API key (from Luca settings, developer API keys).",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "LUCA_API_KEY"
+        },
+        {
+          "description": "Alias for LUCA_API_KEY. Used only when LUCA_API_KEY is not set.",
+          "isSecret": true,
+          "name": "LUCA_API_TOKEN"
+        },
+        {
+          "description": "Luca API origin. Defaults to https://api.setluca.com.",
+          "name": "LUCA_API_BASE_URL"
+        },
+        {
+          "choices": [
+            "x-api-key",
+            "authorization",
+            "bearer"
+          ],
+          "default": "x-api-key",
+          "description": "Header used to send the API key. Defaults to x-api-key.",
+          "name": "LUCA_AUTH_HEADER"
+        },
+        {
+          "description": "Optional default workspace id for every call.",
+          "name": "LUCA_WORKSPACE_ID"
+        },
+        {
+          "description": "Optional default workspace slug for every call.",
+          "name": "LUCA_WORKSPACE_SLUG"
+        },
+        {
+          "default": "30000",
+          "description": "How long one API attempt may run before it is cancelled and retried. Defaults to 30000.",
+          "name": "LUCA_REQUEST_TIMEOUT_MS"
+        },
+        {
+          "choices": [
+            "full",
+            "tasks"
+          ],
+          "default": "full",
+          "description": "Which tool surface to register. Defaults to full.",
+          "name": "LUCA_TOOLSET"
+        }
+      ],
+      "identifier": "@setluca/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "976f7aefd3",
+    "published_at": "2026-08-21T11:57:33.444862Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.setluca/luca-mcp",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-21T11:57:33.444862Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

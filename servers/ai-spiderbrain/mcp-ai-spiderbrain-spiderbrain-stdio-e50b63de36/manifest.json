@@ -1,0 +1,78 @@
+{
+  "description": "Deterministic context layer for your codebase: change impact, blast radius, answers with receipts.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:23+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-spiderbrain-spiderbrain.stdio.e50b63de36",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/aabhisrv/Spiderbrain.ai-Coremind",
+    "homepage": "https://github.com/aabhisrv/Spiderbrain.ai-Coremind",
+    "repository": "https://github.com/aabhisrv/Spiderbrain.ai-Coremind"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "spiderbrain@0.2.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.spiderbrain/spiderbrain",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Absolute path to the repository to serve, which must already contain a committed .spiderbrain/ folder. Set this: an MCP client's working directory is usually not your repository, and without it the server serves the working directory and reports that no understanding layer was found. Equivalent to passing --root.",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "SPIDERBRAIN_ROOT"
+        },
+        {
+          "description": "Optional. Enables the cloud why-layer used by the sb_ask tool. The structural tools work offline without it.",
+          "isSecret": true,
+          "name": "SPIDERBRAIN_API_KEY"
+        },
+        {
+          "description": "Optional. Base URL of the public brain registry this server consults on the first tool call when the repository has no committed .spiderbrain/ folder. Defaults to https://spiderbrain.ai/registry.",
+          "name": "SPIDERBRAIN_REGISTRY"
+        }
+      ],
+      "identifier": "spiderbrain",
+      "packageArguments": [
+        {
+          "description": "Subcommand that starts the stdio MCP server. Without it the binary prints help to stdout and exits.",
+          "isRequired": true,
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e50b63de36",
+    "published_at": "2026-08-22T17:25:09.484038Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.spiderbrain/spiderbrain",
+    "server_version": "0.2.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-22T17:25:09.484038Z"
+  },
+  "title": "Spiderbrain",
+  "type": "mcp_server",
+  "version": "0.2.3"
+}

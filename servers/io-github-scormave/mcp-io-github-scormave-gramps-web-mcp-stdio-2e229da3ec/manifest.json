@@ -1,0 +1,94 @@
+{
+  "description": "MCP server for structured access to Gramps Web genealogy data",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:58+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Scormave-gramps-web-mcp.stdio.2e229da3ec",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Scormave/gramps-web-mcp",
+    "homepage": "https://github.com/Scormave/gramps-web-mcp",
+    "repository": "https://github.com/Scormave/gramps-web-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/scormave/gramps-web-mcp:1.0.7"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Scormave/gramps-web-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Pinned to stdio for registry-installed containers that the client spawns itself. The image's own default is http (Streamable HTTP on port 8080) for networked Docker deployments; see the README for that setup.",
+          "name": "MCP_TRANSPORT",
+          "value": "stdio"
+        },
+        {
+          "description": "Base URL of your Gramps Web instance",
+          "isRequired": true,
+          "name": "GRAMPS_API_URL"
+        },
+        {
+          "description": "Gramps Web API username",
+          "isRequired": true,
+          "name": "GRAMPS_USERNAME"
+        },
+        {
+          "description": "Gramps Web API password or token",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GRAMPS_PASSWORD"
+        },
+        {
+          "description": "Gramps Web tree UUID",
+          "isRequired": true,
+          "name": "GRAMPS_TREE_ID"
+        },
+        {
+          "default": "false",
+          "description": "Set to true to block create, update, and delete tools",
+          "name": "GRAMPS_READ_ONLY"
+        },
+        {
+          "default": "true",
+          "description": "Serialize create/update/delete HTTP calls in-process (set false to allow parallel writes)",
+          "name": "GRAMPS_MUTATION_SERIALIZE"
+        },
+        {
+          "default": "0",
+          "description": "Minimum milliseconds between mutation HTTP calls. Use 250 or 500 on SQLite if you see database is locked",
+          "name": "GRAMPS_MUTATION_MIN_INTERVAL_MS"
+        }
+      ],
+      "identifier": "ghcr.io/scormave/gramps-web-mcp:1.0.7",
+      "registryType": "oci",
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "2e229da3ec",
+    "published_at": "2026-08-17T19:30:10.716465Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Scormave/gramps-web-mcp",
+    "server_version": "1.0.7",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-17T19:30:10.716465Z"
+  },
+  "title": "Gramps Web MCP",
+  "type": "mcp_server",
+  "version": "1.0.7"
+}

@@ -1,0 +1,84 @@
+{
+  "description": "MCP server for the Shopify Admin API: products, orders, customers, inventory, discounts.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-A1-x-Tech-mcp-shopify-admin.stdio.9a43a1cf38",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/A1-x-Tech/mcp-shopify-admin",
+    "homepage": "https://github.com/A1-x-Tech/mcp-shopify-admin",
+    "repository": "https://github.com/A1-x-Tech/mcp-shopify-admin"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-shopify-admin@1.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.A1-x-Tech/mcp-shopify-admin",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Permanent store host, e.g. my-store.myshopify.com (a bare store name works too).",
+          "isRequired": true,
+          "name": "SHOPIFY_STORE_DOMAIN"
+        },
+        {
+          "description": "Ready-to-use Shopify Admin API access token. This server does not perform OAuth or refresh it; treat it as a secret.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SHOPIFY_ACCESS_TOKEN"
+        },
+        {
+          "default": "2026-01",
+          "description": "Admin API version: a quarterly YYYY-MM release or unstable.",
+          "name": "SHOPIFY_API_VERSION"
+        },
+        {
+          "description": "Full http/https URL of the GraphQL endpoint, replacing host and version (e.g. a local mock).",
+          "name": "SHOPIFY_API_BASE"
+        },
+        {
+          "default": "30000",
+          "description": "Per-request timeout in milliseconds.",
+          "name": "SHOPIFY_TIMEOUT_MS"
+        },
+        {
+          "default": "4",
+          "description": "Retries on THROTTLED/429 (always) and on 5xx / network errors for reads only.",
+          "name": "SHOPIFY_MAX_RETRIES"
+        }
+      ],
+      "identifier": "mcp-shopify-admin",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9a43a1cf38",
+    "published_at": "2026-08-23T01:42:07.037092Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.A1-x-Tech/mcp-shopify-admin",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-23T01:42:07.037092Z"
+  },
+  "title": "Shopify Admin MCP",
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

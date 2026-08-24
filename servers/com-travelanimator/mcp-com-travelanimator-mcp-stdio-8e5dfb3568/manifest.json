@@ -1,0 +1,77 @@
+{
+  "description": "Make animated travel-route videos: plan a route, style the animation, render an MP4.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-travelanimator-mcp.stdio.8e5dfb3568",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Lascade-Co/travelanimator-mcp",
+    "homepage": "https://github.com/Lascade-Co/travelanimator-mcp",
+    "repository": "https://github.com/Lascade-Co/travelanimator-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "Installs the optional MCP extra, which carries the MCP SDK.",
+            "isRequired": true,
+            "name": "--from",
+            "type": "named",
+            "value": "travel-animator[mcp]"
+          },
+          "travel-animator==1.0.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.travelanimator/mcp",
+  "packages": [
+    {
+      "identifier": "travel-animator",
+      "packageArguments": [
+        {
+          "description": "The subcommand that starts the stdio MCP server.",
+          "isRequired": true,
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "Installs the optional MCP extra, which carries the MCP SDK.",
+          "isRequired": true,
+          "name": "--from",
+          "type": "named",
+          "value": "travel-animator[mcp]"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8e5dfb3568",
+    "published_at": "2026-08-19T19:17:03.303458Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.travelanimator/mcp",
+    "server_version": "1.0.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-19T19:17:03.303458Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.3"
+}

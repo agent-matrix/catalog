@@ -1,0 +1,80 @@
+{
+  "description": "Source-linked CodeGraph exploration, ranked search, and static navigation for coding agents.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:21+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-codenib-codenib.stdio.77215761f9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sysevol-ai/CodeNib",
+    "homepage": "https://github.com/sysevol-ai/CodeNib",
+    "repository": "https://github.com/sysevol-ai/CodeNib"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "Install the version-matched CodeNib CodeGraph and MCP runtime.",
+            "name": "--with",
+            "type": "named",
+            "value": "codenib[graph,mcp]==0.2.2"
+          },
+          "codenib==0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.codenib/codenib",
+  "packages": [
+    {
+      "identifier": "codenib",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        },
+        {
+          "description": "Repository checkout previously indexed with CodeNib.",
+          "format": "filepath",
+          "isRequired": true,
+          "type": "positional",
+          "valueHint": "repository"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "Install the version-matched CodeNib CodeGraph and MCP runtime.",
+          "name": "--with",
+          "type": "named",
+          "value": "codenib[graph,mcp]==0.2.2"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "77215761f9",
+    "published_at": "2026-08-21T11:28:39.652392Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.codenib/codenib",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-21T11:28:39.652392Z"
+  },
+  "title": "CodeNib",
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

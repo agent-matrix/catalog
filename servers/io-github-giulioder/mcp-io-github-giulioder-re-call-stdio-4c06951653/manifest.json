@@ -1,0 +1,95 @@
+{
+  "description": "Trustworthy Postgres plus pgvector memory for AI agents.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:50+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-GiulioDER-re-call.stdio.4c06951653",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/GiulioDER/RE-call",
+    "homepage": "https://github.com/GiulioDER/RE-call",
+    "repository": "https://github.com/GiulioDER/RE-call"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "name": "--from",
+            "type": "named",
+            "value": "recall-rag[mcp,fastembed]==0.9.8"
+          },
+          {
+            "type": "positional",
+            "value": "recall-mcp"
+          },
+          "recall-rag==0.9.8"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.GiulioDER/re-call",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "PostgreSQL serving DSN for the RE-call memory store.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "RECALL_SERVING_DSN",
+          "placeholder": "postgresql://recall:recall@localhost:5432/recall"
+        },
+        {
+          "default": "default",
+          "description": "Tenant id served by this local stdio server.",
+          "format": "string",
+          "name": "RECALL_TENANT"
+        },
+        {
+          "description": "Set to development only for local uncalibrated corpora.",
+          "format": "string",
+          "name": "RECALL_TRUST_MODE",
+          "placeholder": "development"
+        }
+      ],
+      "identifier": "recall-rag",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "name": "--from",
+          "type": "named",
+          "value": "recall-rag[mcp,fastembed]==0.9.8"
+        },
+        {
+          "type": "positional",
+          "value": "recall-mcp"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.9.8"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4c06951653",
+    "published_at": "2026-08-22T19:16:58.303083Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.GiulioDER/re-call",
+    "server_version": "0.9.8",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-22T19:16:58.303083Z"
+  },
+  "title": "RE-call MCP Memory Server",
+  "type": "mcp_server",
+  "version": "0.9.8"
+}

@@ -1,0 +1,113 @@
+{
+  "description": "MCP server for one MySQL database: schema, read-only queries and guarded writes.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:27+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-gistrec-mcp-mysql-client.stdio.0978f6dc03",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/gistrec/mcp-mysql-client",
+    "homepage": "https://github.com/gistrec/mcp-mysql-client",
+    "repository": "https://github.com/gistrec/mcp-mysql-client"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-mysql-client@1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.gistrec/mcp-mysql-client",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "127.0.0.1",
+          "description": "Database host.",
+          "name": "MYSQL_HOST"
+        },
+        {
+          "default": "3306",
+          "description": "Database port.",
+          "name": "MYSQL_PORT"
+        },
+        {
+          "description": "MySQL user. Use one with the least privileges the task needs, never root.",
+          "isRequired": true,
+          "name": "MYSQL_USER"
+        },
+        {
+          "description": "Password for that user. Treat it as a secret; MYSQL_PASS_FILE reads it from a file instead.",
+          "isSecret": true,
+          "name": "MYSQL_PASS"
+        },
+        {
+          "description": "The one database this server is bound to. No tool can leave it.",
+          "isRequired": true,
+          "name": "MYSQL_DB"
+        },
+        {
+          "default": "false",
+          "description": "Require a TLS connection to the server.",
+          "name": "MYSQL_SSL"
+        },
+        {
+          "description": "Path to the CA bundle verifying the server certificate; implies MYSQL_SSL.",
+          "name": "MYSQL_SSL_CA"
+        },
+        {
+          "default": "false",
+          "description": "Allow INSERT statements through the execute tool.",
+          "name": "ALLOW_INSERT_OPERATION"
+        },
+        {
+          "default": "false",
+          "description": "Allow UPDATE statements through the execute tool.",
+          "name": "ALLOW_UPDATE_OPERATION"
+        },
+        {
+          "default": "false",
+          "description": "Allow DELETE statements through the execute tool.",
+          "name": "ALLOW_DELETE_OPERATION"
+        },
+        {
+          "default": "1000",
+          "description": "Row cap for one read; the result is marked truncated when it is hit.",
+          "name": "MYSQL_MAX_ROWS"
+        },
+        {
+          "default": "30000",
+          "description": "Statement timeout in milliseconds; the connection is dropped on expiry.",
+          "name": "MYSQL_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "mcp-mysql-client",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0978f6dc03",
+    "published_at": "2026-08-23T00:25:01.481823Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.gistrec/mcp-mysql-client",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-23T00:25:01.481823Z"
+  },
+  "title": "MySQL MCP",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

@@ -1,0 +1,70 @@
+{
+  "description": "Tidy a large Outlook / Hotmail mailbox. Folder subtree moves, bulk ops with dry run, never sends.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:36+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ma2no4413-outlook-mcp.stdio.373f4d7c53",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ma2no4413/outlook-mcp",
+    "homepage": "https://github.com/ma2no4413/outlook-mcp",
+    "repository": "https://github.com/ma2no4413/outlook-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/ma2no4413/outlook-mcp:0.2.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ma2no4413/outlook-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Application (client) ID from the Azure app registration. See docs/AZURE.en.md for how to obtain one.",
+          "isRequired": true,
+          "name": "OUTLOOK_CLIENT_ID"
+        },
+        {
+          "description": "Path to the token cache file. In Docker, point this at a mounted volume so the sign-in survives restarts. The file is the key to the mailbox; never bake it into an image.",
+          "isSecret": true,
+          "name": "OUTLOOK_TOKEN_CACHE"
+        },
+        {
+          "description": "common for personal and work/school accounts, consumers for personal Microsoft accounts only. Defaults to common.",
+          "name": "OUTLOOK_TENANT"
+        },
+        {
+          "description": "Set to true to disable every write tool at once, leaving only search and read.",
+          "name": "OUTLOOK_READONLY"
+        }
+      ],
+      "identifier": "ghcr.io/ma2no4413/outlook-mcp:0.2.6",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "373f4d7c53",
+    "published_at": "2026-08-19T03:22:11.097159Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ma2no4413/outlook-mcp",
+    "server_version": "0.2.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-19T03:22:11.097159Z"
+  },
+  "title": "Outlook Mailbox Tidier",
+  "type": "mcp_server",
+  "version": "0.2.6"
+}

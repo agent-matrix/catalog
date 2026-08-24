@@ -1,0 +1,71 @@
+{
+  "description": "Search Lightning FM's Nostr music catalog, look up artists, and check what's live now.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:40+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.fm-lightning-lightning-fm-mcp.stdio.71b23f6168",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Lightning-FM/lightning-fm-mcp",
+    "homepage": "https://github.com/Lightning-FM/lightning-fm-mcp",
+    "repository": "https://github.com/Lightning-FM/lightning-fm-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "lightning-fm-mcp@0.1.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "fm.lightning/lightning-fm-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "wss://relay.lightning.fm",
+          "description": "Comma-separated relay URLs to query. Only add a relay here if it gates writes the way relay.lightning.fm does (allowlisted artists only) \u2014 an unrestricted public relay hands back every other app's kind-31337 events too, not just Lightning FM's.",
+          "format": "string",
+          "name": "LFM_NOSTR_RELAYS"
+        },
+        {
+          "default": "https://media.lightning.fm",
+          "description": "Blossom server audio/image hashes resolve against.",
+          "format": "string",
+          "name": "LFM_BLOSSOM_URL"
+        },
+        {
+          "default": "60000",
+          "description": "How long a fetched catalog/profile/now-playing snapshot is reused, in milliseconds, before the next tool call re-queries the relays.",
+          "format": "string",
+          "name": "LFM_CACHE_TTL_MS"
+        }
+      ],
+      "identifier": "lightning-fm-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "71b23f6168",
+    "published_at": "2026-08-19T19:37:36.215976Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "fm.lightning/lightning-fm-mcp",
+    "server_version": "0.1.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-19T19:37:36.215976Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.4"
+}

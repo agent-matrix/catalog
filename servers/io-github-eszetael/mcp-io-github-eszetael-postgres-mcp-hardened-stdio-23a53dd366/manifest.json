@@ -1,0 +1,63 @@
+{
+  "description": "Read-only PostgreSQL over MCP. Writes refused at the parsed SQL, plus a READ ONLY transaction.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:49+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Eszetael-postgres-mcp-hardened.stdio.23a53dd366",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Eszetael/postgres-mcp-hardened",
+    "homepage": "https://github.com/Eszetael/postgres-mcp-hardened",
+    "repository": "https://github.com/Eszetael/postgres-mcp-hardened"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/eszetael/postgres-mcp-hardened:0.1.7"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Eszetael/postgres-mcp-hardened",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Connection string for a role that cannot write.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DATABASE_URL"
+        },
+        {
+          "description": "Address to bind, default 127.0.0.1:8080.",
+          "name": "MCP_ADDR"
+        }
+      ],
+      "identifier": "ghcr.io/eszetael/postgres-mcp-hardened:0.1.7",
+      "registryType": "oci",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:8080/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "23a53dd366",
+    "published_at": "2026-08-18T07:14:04.665947Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Eszetael/postgres-mcp-hardened",
+    "server_version": "0.1.7",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-18T07:14:04.665947Z"
+  },
+  "title": "PostgreSQL (hardened, read-only)",
+  "type": "mcp_server",
+  "version": "0.1.7"
+}

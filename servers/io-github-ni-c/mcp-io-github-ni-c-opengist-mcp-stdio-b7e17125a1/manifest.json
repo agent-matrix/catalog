@@ -1,0 +1,76 @@
+{
+  "description": "Read, create, update and delete gists on a self-hosted Opengist instance",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:44+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ni-c-opengist-mcp.stdio.b7e17125a1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ni-c/opengist-mcp",
+    "homepage": "https://github.com/ni-c/opengist-mcp",
+    "repository": "https://github.com/ni-c/opengist-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "opengist-mcp@0.2.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ni-c/opengist-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the Opengist instance, e.g. https://gist.example.com",
+          "format": "string",
+          "isRequired": true,
+          "name": "OPENGIST_URL"
+        },
+        {
+          "description": "Opengist Personal Access Token (starts with og_), created under Settings -> Access Tokens",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OPENGIST_TOKEN"
+        },
+        {
+          "description": "Set to true to not register any write tools (create, update, delete, fork, like)",
+          "format": "string",
+          "name": "OPENGIST_READ_ONLY"
+        },
+        {
+          "description": "Set to true to accept self-signed TLS certificates (scoped to the Opengist connection)",
+          "format": "string",
+          "name": "OPENGIST_INSECURE_TLS"
+        }
+      ],
+      "identifier": "opengist-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b7e17125a1",
+    "published_at": "2026-08-18T19:54:54.019894Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ni-c/opengist-mcp",
+    "server_version": "0.2.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-18T19:54:54.019894Z"
+  },
+  "title": "Opengist",
+  "type": "mcp_server",
+  "version": "0.2.3"
+}

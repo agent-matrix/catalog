@@ -1,0 +1,80 @@
+{
+  "description": "MCP server for the Yango Delivery claims B2B API: price checks, delivery claims, courier tracking.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-A1-x-Tech-mcp-yango-delivery.stdio.38771377f1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/A1-x-Tech/mcp-yango-delivery",
+    "homepage": "https://github.com/A1-x-Tech/mcp-yango-delivery",
+    "repository": "https://github.com/A1-x-Tech/mcp-yango-delivery"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-yango-delivery@1.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.A1-x-Tech/mcp-yango-delivery",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "OAuth Bearer token from the delivery cabinet (Integration tab -> \"Get token\"). Treat it as a secret.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "YANGO_DELIVERY_TOKEN"
+        },
+        {
+          "default": "https://b2b.taxi.yandex.net",
+          "description": "API root override.",
+          "name": "YANGO_DELIVERY_BASE_URL"
+        },
+        {
+          "default": "en",
+          "description": "Accept-Language header value (required by most claim methods).",
+          "name": "YANGO_DELIVERY_LANG"
+        },
+        {
+          "default": "60000",
+          "description": "Per-request timeout in milliseconds.",
+          "name": "YANGO_DELIVERY_TIMEOUT_MS"
+        },
+        {
+          "default": "3",
+          "description": "Retries on transient errors (429 always; 5xx/network for idempotent calls only).",
+          "name": "YANGO_DELIVERY_MAX_RETRIES"
+        }
+      ],
+      "identifier": "mcp-yango-delivery",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "38771377f1",
+    "published_at": "2026-08-18T22:15:26.163963Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.A1-x-Tech/mcp-yango-delivery",
+    "server_version": "1.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-18T22:15:26.163963Z"
+  },
+  "title": "Yango Delivery MCP",
+  "type": "mcp_server",
+  "version": "1.1.0"
+}

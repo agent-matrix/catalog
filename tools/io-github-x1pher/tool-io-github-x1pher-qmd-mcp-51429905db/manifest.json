@@ -1,0 +1,117 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/x1pher/qmd-mcp:v0.1.3"
+      }
+    }
+  ],
+  "description": "Local QMD search and bounded index maintenance through a Streamable HTTP MCP server.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:01+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/X1pheR/qmd-mcp",
+  "id": "tool.io-github-x1pher-qmd-mcp.51429905db",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/X1pheR/qmd-mcp",
+    "homepage": "https://github.com/X1pheR/qmd-mcp",
+    "repository": "https://github.com/X1pheR/qmd-mcp"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Local QMD search and bounded index maintenance through a Streamable HTTP MCP server.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.X1pheR/qmd-mcp",
+      "request_type": "POST",
+      "url": "https://github.com/X1pheR/qmd-mcp"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "name": "--publish",
+            "type": "named",
+            "value": "127.0.0.1:8181:8181"
+          },
+          {
+            "name": "--volume",
+            "type": "named",
+            "value": "{configDir}:/config:ro",
+            "variables": {
+              "configDir": {
+                "description": "Host directory containing index.yml.",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          {
+            "name": "--volume",
+            "type": "named",
+            "value": "{contentDir}:/vault:ro",
+            "variables": {
+              "contentDir": {
+                "description": "Host directory containing the files to index.",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          {
+            "name": "--volume",
+            "type": "named",
+            "value": "{dataDir}:/data",
+            "variables": {
+              "dataDir": {
+                "description": "Host directory for the QMD index, model cache, and runtime state.",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          "ghcr.io/x1pher/qmd-mcp:v0.1.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.X1pheR/qmd-mcp",
+  "provenance": {
+    "identity_key": "44b7200417",
+    "promoted_from": "mcp.io-github-X1pheR-qmd-mcp.stdio.44b7200417",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.X1pheR/qmd-mcp",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-X1pheR-qmd-mcp.stdio.44b7200417",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/X1pheR/qmd-mcp",
+  "summary": "Local QMD search and bounded index maintenance through a Streamable HTTP MCP server.",
+  "tags": [
+    "bounded",
+    "index",
+    "local",
+    "maintenance",
+    "qmd",
+    "search",
+    "through"
+  ],
+  "title": "QMD MCP",
+  "type": "tool",
+  "version": "0.1.3"
+}

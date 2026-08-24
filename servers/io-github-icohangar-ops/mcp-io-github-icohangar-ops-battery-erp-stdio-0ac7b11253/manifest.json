@@ -1,0 +1,62 @@
+{
+  "description": "Battery value-chain inventory MCP: lookup SKUs, status/reorder, bin-check, audited confirmation.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-icohangar-ops-battery-erp.stdio.0ac7b11253",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/icohangar-ops/battery-erp",
+    "homepage": "https://github.com/icohangar-ops/battery-erp",
+    "repository": "https://github.com/icohangar-ops/battery-erp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "battery-erp==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.icohangar-ops/battery-erp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Shared secret required for record_bin_confirmation (mutating).",
+          "isSecret": true,
+          "name": "BATTERY_ERP_CONFIRM_TOKEN"
+        },
+        {
+          "description": "Optional path for append-only JSONL audit events.",
+          "name": "BATTERY_ERP_AUDIT_LOG"
+        }
+      ],
+      "identifier": "battery-erp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0ac7b11253",
+    "published_at": "2026-08-22T19:21:08.764164Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.icohangar-ops/battery-erp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-22T19:21:08.764164Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

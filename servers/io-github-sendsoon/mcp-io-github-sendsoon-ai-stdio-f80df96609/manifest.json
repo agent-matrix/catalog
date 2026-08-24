@@ -1,0 +1,72 @@
+{
+  "description": "Send email, look up public IP information, and convert files to Markdown through SendSoon.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:53+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sendsoon-ai.stdio.f80df96609",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sendsoon/ai",
+    "homepage": "https://github.com/sendsoon/ai",
+    "repository": "https://github.com/sendsoon/ai"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@sendsoon/ai@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sendsoon/ai",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Recipient address allowed for test sends.",
+          "format": "string",
+          "isRequired": true,
+          "name": "SENDSOON_EMAIL_RECIPIENT"
+        },
+        {
+          "description": "SendSoon API Key (ssk_live_...). Leave empty for the anonymous trial of three sends per public IP per day.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SENDSOON_API_KEY"
+        },
+        {
+          "default": "https://www.sendsoonai.com",
+          "description": "Override the SendSoon API base URL. Defaults to https://www.sendsoonai.com.",
+          "format": "string",
+          "name": "SENDSOON_API_BASE_URL"
+        }
+      ],
+      "identifier": "@sendsoon/ai",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f80df96609",
+    "published_at": "2026-08-22T05:32:30.045573Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sendsoon/ai",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-22T05:32:30.045573Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

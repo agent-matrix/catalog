@@ -1,0 +1,70 @@
+{
+  "description": "Rent real NVIDIA GPUs from your agent. Browse with no wallet; pay per second onchain.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:17:06+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.tech-prismnetwork-mcp.stdio.086aad22bd",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@prismnetwork/mcp@0.8.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "tech.prismnetwork/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Agent wallet private key (0x...). Only needed to lease and pay; browsing works without it",
+          "isSecret": true,
+          "name": "PRISM_AGENT_KEY"
+        },
+        {
+          "default": "0x62C042265991bEa17B07229322A01850974626dA",
+          "description": "Prism LeaseEscrow contract address",
+          "name": "PRISM_ESCROW"
+        },
+        {
+          "default": "5",
+          "description": "Most this wallet may spend through Prism in any 24 hours. Defaults to 5. Set 0 to remove the ceiling.",
+          "name": "PRISM_DAILY_BUDGET_USDG"
+        },
+        {
+          "default": "1",
+          "description": "Most any single lease or generation may cost. Defaults to 1.",
+          "name": "PRISM_MAX_USDG"
+        }
+      ],
+      "identifier": "@prismnetwork/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.8.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "086aad22bd",
+    "published_at": "2026-08-21T07:52:01.858195Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "tech.prismnetwork/mcp",
+    "server_version": "0.8.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-21T07:52:01.858195Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.8.4"
+}

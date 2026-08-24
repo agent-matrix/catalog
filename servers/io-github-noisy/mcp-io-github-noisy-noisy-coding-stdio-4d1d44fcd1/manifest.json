@@ -1,0 +1,59 @@
+{
+  "description": "Voice interface for Claude Code: talk to your agent and it talks back while it works.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:45+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-noisy-noisy-coding.stdio.4d1d44fcd1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/noisy/noisy-coding",
+    "homepage": "https://github.com/noisy/noisy-coding",
+    "repository": "https://github.com/noisy/noisy-coding"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "docker.io/noisy/noisy-coding:2.13.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.noisy/noisy-coding",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "xAI API key for Grok voice synthesis and transcription (configured once on the dashboard, stored in the config volume)",
+          "format": "string",
+          "isSecret": true,
+          "name": "XAI_API_KEY"
+        }
+      ],
+      "identifier": "docker.io/noisy/noisy-coding:2.13.3",
+      "registryType": "oci",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://127.0.0.1:8767/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "4d1d44fcd1",
+    "published_at": "2026-08-17T09:18:20.621417Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.noisy/noisy-coding",
+    "server_version": "2.13.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-17T09:18:20.621417Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "2.13.3"
+}

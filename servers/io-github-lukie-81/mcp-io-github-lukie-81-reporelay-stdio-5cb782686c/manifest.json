@@ -1,0 +1,74 @@
+{
+  "description": "Bounded local MCP access to one approved repository for AI read/search and structured handoffs.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:53+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Lukie-81-reporelay.stdio.5cb782686c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Lukie-81/RepoRelay",
+    "homepage": "https://github.com/Lukie-81/RepoRelay",
+    "repository": "https://github.com/Lukie-81/RepoRelay"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "reporelay-mcp@1.2.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Lukie-81/reporelay",
+  "packages": [
+    {
+      "identifier": "reporelay-mcp",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "quickstart"
+        },
+        {
+          "description": "Absolute path to the repository RepoRelay may access.",
+          "format": "filepath",
+          "isRequired": true,
+          "type": "positional",
+          "valueHint": "repository-root"
+        }
+      ],
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "headers": [
+          {
+            "description": "Bridge secret generated and protected locally by RepoRelay.",
+            "isRequired": true,
+            "isSecret": true,
+            "name": "X-RepoRelay-Bridge-Secret"
+          }
+        ],
+        "type": "streamable-http",
+        "url": "http://127.0.0.1:7676/mcp"
+      },
+      "version": "1.2.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5cb782686c",
+    "published_at": "2026-08-18T09:41:34.203192Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Lukie-81/reporelay",
+    "server_version": "1.2.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-18T09:41:34.203192Z"
+  },
+  "title": "RepoRelay",
+  "type": "mcp_server",
+  "version": "1.2.5"
+}

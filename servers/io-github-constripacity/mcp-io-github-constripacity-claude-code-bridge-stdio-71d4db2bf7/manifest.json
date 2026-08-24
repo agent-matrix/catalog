@@ -1,0 +1,73 @@
+{
+  "description": "Durable local-first MCP relay for independent coding agents.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:14+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-constripacity-claude-code-bridge.stdio.71d4db2bf7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/constripacity/Claude-Bridge",
+    "homepage": "https://github.com/constripacity/Claude-Bridge",
+    "repository": "https://github.com/constripacity/Claude-Bridge"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "claude-code-bridge==1.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.constripacity/claude-code-bridge",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "SQLite database path (default: ./claude-bridge.db). Share the same path across HTTP and stdio instances to share state.",
+          "format": "string",
+          "name": "CLAUDE_BRIDGE_DB"
+        },
+        {
+          "description": "Optional Bearer token for HTTP mode. As of 1.2.0, binding a non-loopback host requires this token together with an explicit trusted host (CLAUDE_BRIDGE_TRUSTED_HOSTS), unless --allow-unauthenticated-network is passed; loopback (stdio and localhost) does not require it. When set, all HTTP endpoints except /status require Authorization: Bearer <token>. Not used in stdio mode.",
+          "format": "string",
+          "isSecret": true,
+          "name": "CLAUDE_BRIDGE_AUTH_TOKEN"
+        }
+      ],
+      "identifier": "claude-code-bridge",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "--stdio",
+          "valueHint": "--stdio"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "71d4db2bf7",
+    "published_at": "2026-08-17T22:24:41.265982Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.constripacity/claude-code-bridge",
+    "server_version": "1.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-17T22:24:41.265982Z"
+  },
+  "title": "Claude Bridge",
+  "type": "mcp_server",
+  "version": "1.2.0"
+}

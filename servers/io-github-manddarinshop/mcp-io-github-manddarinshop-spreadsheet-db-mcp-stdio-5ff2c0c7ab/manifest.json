@@ -1,0 +1,69 @@
+{
+  "description": "SQLite-authoritative entity database with an async Google Sheets projection for AI agents.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:54+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ManddarinShop-spreadsheet-db-mcp.stdio.5ff2c0c7ab",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ManddarinShop/Hikoutei",
+    "homepage": "https://github.com/ManddarinShop/Hikoutei",
+    "repository": "https://github.com/ManddarinShop/Hikoutei"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "spreadsheet-db-mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ManddarinShop/spreadsheet-db-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the entity configuration file (hikoutei.config.json). Optional; the server also looks for ./hikoutei.config.json in the working directory.",
+          "format": "string",
+          "name": "HIKOUTEI_MCP_CONFIG"
+        },
+        {
+          "description": "Google Sheets spreadsheet URL. Absent means local-only mode (no Google contact); when set, the Google Sheets projection is enabled and GOOGLE_APPLICATION_CREDENTIALS must also be set.",
+          "format": "string",
+          "name": "HIKOUTEI_SYNC_SPREADSHEET_URL"
+        },
+        {
+          "description": "Path to a Google service-account key file (JSON) used for the Sheets projection. Only needed when HIKOUTEI_SYNC_SPREADSHEET_URL is set.",
+          "format": "string",
+          "isSecret": true,
+          "name": "GOOGLE_APPLICATION_CREDENTIALS"
+        }
+      ],
+      "identifier": "spreadsheet-db-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5ff2c0c7ab",
+    "published_at": "2026-08-17T07:14:19.325288Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ManddarinShop/spreadsheet-db-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-17T07:14:19.325288Z"
+  },
+  "title": "Spreadsheet DB",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

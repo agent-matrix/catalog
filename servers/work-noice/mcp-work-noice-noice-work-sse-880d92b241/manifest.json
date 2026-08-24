@@ -1,0 +1,55 @@
+{
+  "description": "Operate one Noice.work site with role-scoped tools for content, media, workflows, and publishing.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:17:07+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.work-noice-noice-work.sse.880d92b241",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://{site}/api/mcp"
+    }
+  },
+  "name": "work.noice/noice-work",
+  "provenance": {
+    "identity_key": "880d92b241",
+    "published_at": "2026-08-20T10:32:03.092494Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "work.noice/noice-work",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-20T10:32:03.092494Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "A role-scoped Noice.work management key in the form: Bearer pk_...",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "placeholder": "Bearer pk_..."
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://{site}/api/mcp",
+      "variables": {
+        "site": {
+          "description": "The full hostname of the Noice.work site to operate, without https:// or a path.",
+          "format": "string",
+          "isRequired": true,
+          "placeholder": "your-site.example.com"
+        }
+      }
+    }
+  ],
+  "title": "Noice.work",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

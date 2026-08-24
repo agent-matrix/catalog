@@ -1,0 +1,172 @@
+{
+  "description": "Local Go MCP server: DuckDuckGo/Bing web + image search, readability scraping to Markdown.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:58+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Role1776-mcp-retrieval.stdio.bfa2e8f62b",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/Role1776/mcp-retrieval",
+    "homepage": "https://github.com/Role1776/mcp-retrieval",
+    "repository": "https://github.com/Role1776/mcp-retrieval"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Role1776/mcp-retrieval",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "choices": [
+            "stdio",
+            "http"
+          ],
+          "default": "stdio",
+          "description": "stdio (client spawns the process) or http (streamable HTTP listener).",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "mcp-retrieval",
+          "description": "Server name reported in the MCP initialize handshake.",
+          "name": "MCP_NAME"
+        },
+        {
+          "default": "/mcp",
+          "description": "HTTP path the MCP endpoint is served on. Used only when MCP_TRANSPORT=http.",
+          "name": "MCP_PATH"
+        },
+        {
+          "default": "8080",
+          "description": "TCP port to listen on. Used only when MCP_TRANSPORT=http.",
+          "name": "SERVER_PORT"
+        },
+        {
+          "default": "60s",
+          "description": "HTTP read timeout as a Go duration. Used only when MCP_TRANSPORT=http.",
+          "name": "SERVER_READ_TIMEOUT"
+        },
+        {
+          "default": "60s",
+          "description": "HTTP write timeout as a Go duration. Used only when MCP_TRANSPORT=http.",
+          "name": "SERVER_WRITE_TIMEOUT"
+        },
+        {
+          "choices": [
+            "local",
+            "prod"
+          ],
+          "default": "local",
+          "description": "local (text, debug) or prod (JSON, info). Logs go to stderr.",
+          "name": "LOG_MODE"
+        },
+        {
+          "default": "100",
+          "description": "Idle connections the outbound HTTP client keeps per host.",
+          "name": "MAX_IDLE_CONNS_PER_HOST"
+        },
+        {
+          "default": "10",
+          "description": "Maximum queries or URLs accepted in one call.",
+          "name": "MAX_QUERIES"
+        },
+        {
+          "default": "5",
+          "description": "Snippets returned per query when the call does not ask for a count.",
+          "name": "DEFAULT_RESULTS"
+        },
+        {
+          "default": "20",
+          "description": "Upper bound for snippets per query.",
+          "name": "MAX_RESULTS"
+        },
+        {
+          "default": "5",
+          "description": "Images returned per query when the call does not ask for a count.",
+          "name": "DEFAULT_IMAGES"
+        },
+        {
+          "default": "10",
+          "description": "Upper bound for images per query.",
+          "name": "MAX_IMAGES"
+        },
+        {
+          "default": "5000",
+          "description": "Per-call timeout in milliseconds when the call does not request one.",
+          "name": "DEFAULT_TIMEOUT_MS"
+        },
+        {
+          "default": "1000",
+          "description": "Lowest timeout a call may request, in milliseconds.",
+          "name": "MIN_TIMEOUT_MS"
+        },
+        {
+          "default": "10000",
+          "description": "Highest timeout a call may request, in milliseconds.",
+          "name": "MAX_TIMEOUT_MS"
+        },
+        {
+          "default": "20000",
+          "description": "Characters kept per scraped page when the call does not ask for a limit.",
+          "name": "DEFAULT_DOCUMENT_CHARS"
+        },
+        {
+          "default": "20000",
+          "description": "Upper bound for characters kept per scraped page.",
+          "name": "MAX_DOCUMENT_CHARS"
+        },
+        {
+          "description": "Outbound proxy scheme. Optional; set all five PROXY_* variables or none.",
+          "name": "PROXY_SCHEME"
+        },
+        {
+          "description": "Outbound proxy host. Enables per-request rotating proxy sessions.",
+          "name": "PROXY_HOST"
+        },
+        {
+          "description": "Outbound proxy port. Required when PROXY_HOST is set.",
+          "name": "PROXY_PORT"
+        },
+        {
+          "description": "Outbound proxy username. Required when PROXY_HOST is set.",
+          "isSecret": true,
+          "name": "PROXY_LOGIN"
+        },
+        {
+          "description": "Outbound proxy password. Required when PROXY_HOST is set.",
+          "isSecret": true,
+          "name": "PROXY_PASSWORD"
+        }
+      ],
+      "fileSha256": "253bd83891e536ad0fa2943caae2be265318f4d30f6cdddfb21874e2aa141698",
+      "identifier": "https://github.com/Role1776/mcp-retrieval/releases/download/v0.1.7/mcp-retrieval_0.1.7_linux_amd64.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.7"
+    }
+  ],
+  "provenance": {
+    "identity_key": "bfa2e8f62b",
+    "published_at": "2026-08-17T23:06:09.27807Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Role1776/mcp-retrieval",
+    "server_version": "0.1.7",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-17T23:06:09.27807Z"
+  },
+  "title": "MCP Retrieval",
+  "type": "mcp_server",
+  "version": "0.1.7"
+}

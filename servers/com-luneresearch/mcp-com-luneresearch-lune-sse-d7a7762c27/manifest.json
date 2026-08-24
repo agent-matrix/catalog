@@ -1,0 +1,58 @@
+{
+  "description": "Search peer-reviewed papers and research methodology guidance from your AI agent.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-luneresearch-lune.sse.d7a7762c27",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/RetrogradeLabs/lune-mcp-server",
+    "homepage": "https://github.com/RetrogradeLabs/lune-mcp-server",
+    "repository": "https://github.com/RetrogradeLabs/lune-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://mcp.luneresearch.com"
+    }
+  },
+  "name": "com.luneresearch/lune",
+  "provenance": {
+    "identity_key": "d7a7762c27",
+    "published_at": "2026-08-19T07:26:32.228681Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.luneresearch/lune",
+    "server_version": "2.0.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-19T07:26:32.228681Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Bearer token. Use a Lune PAT or an OAuth access token from https://luneresearch.com/dashboard/settings/credentials.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {api_key}",
+          "variables": {
+            "api_key": {
+              "description": "Lune personal access token (lune_...).",
+              "format": "string",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://mcp.luneresearch.com"
+    }
+  ],
+  "title": "Lune Research",
+  "type": "mcp_server",
+  "version": "2.0.2"
+}

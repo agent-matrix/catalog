@@ -1,0 +1,72 @@
+{
+  "description": "Leanroute MCP: route to 13 LLM providers, check pricing/usage/credit, manage keys from any agent.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.dev-leanroute-mcp-server.stdio.85ae6cd4fa",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/leanroute/ai-gateway",
+    "homepage": "https://github.com/leanroute/ai-gateway",
+    "repository": "https://github.com/leanroute/ai-gateway"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@leanroute/mcp-server@0.1.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "dev.leanroute/mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Admin API key (gw_admin_*). Mint at https://leanroute.dev/dashboard/admin-keys. Required for platform tools (pricing, usage, credit, key management).",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "LEANROUTE_ADMIN_KEY"
+        },
+        {
+          "description": "Runtime API key (gw_live_*). Mint at https://leanroute.dev/dashboard/keys. Optional \u2014 only required for the route_call tool that dispatches actual LLM completions.",
+          "format": "string",
+          "isSecret": true,
+          "name": "LEANROUTE_RUNTIME_KEY"
+        },
+        {
+          "default": "https://api.leanroute.dev",
+          "description": "Base URL override for self-hosted Leanroute instances.",
+          "format": "string",
+          "name": "LEANROUTE_BASE_URL"
+        }
+      ],
+      "identifier": "@leanroute/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "85ae6cd4fa",
+    "published_at": "2026-08-22T15:20:03.343193Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "dev.leanroute/mcp-server",
+    "server_version": "0.1.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-22T15:20:03.343193Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.3"
+}

@@ -1,7 +1,7 @@
 {
   "description": "Real-time Amazon, WIPO & PACER data for AI agents \u2014 19 tools via the MCP protocol.",
   "harvest": {
-    "last_seen_at": "2026-08-17T03:12:30+00:00",
+    "last_seen_at": "2026-08-24T03:15:56+00:00",
     "seen_in_latest_run": true
   },
   "id": "mcp.io-github-Pangolin-spg-pangolinfo-mcp.sse.569f64398a",
@@ -22,28 +22,34 @@
   "name": "io.github.Pangolin-spg/pangolinfo-mcp",
   "provenance": {
     "identity_key": "569f64398a",
-    "published_at": "2026-07-31T05:28:37.697543Z",
+    "published_at": "2026-08-19T05:28:41.20907Z",
     "registry_base_url": "https://registry.modelcontextprotocol.io",
     "server_name": "io.github.Pangolin-spg/pangolinfo-mcp",
-    "server_version": "0.7.3",
+    "server_version": "0.7.9",
     "source": "mcp-registry",
-    "updated_at": "2026-07-31T05:28:37.697543Z"
+    "updated_at": "2026-08-19T05:28:41.20907Z"
   },
   "remotes": [
     {
-      "type": "streamable-http",
-      "url": "https://mcp.pangolinfo.com/mcp",
-      "variables": {
-        "api_key": {
-          "description": "Your permanent Pangolinfo API key from https://tool.pangolinfo.com",
-          "format": "string",
-          "isRequired": true,
-          "isSecret": true
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {api_key}",
+          "variables": {
+            "api_key": {
+              "description": "Your permanent Pangolinfo API key from https://tool.pangolinfo.com",
+              "format": "string",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
         }
-      }
+      ],
+      "type": "streamable-http",
+      "url": "https://mcp.pangolinfo.com/mcp"
     }
   ],
   "title": "Pangolinfo Amazon Data MCP",
   "type": "mcp_server",
-  "version": "0.7.3"
+  "version": "0.7.9"
 }

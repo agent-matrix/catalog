@@ -1,0 +1,89 @@
+{
+  "description": "Search, document and execute authenticated API calls across 500+ apps via one MCP server",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:24+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-withone-mcp.stdio.a04210b1b1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/withoneai/mcp",
+    "homepage": "https://github.com/withoneai/mcp",
+    "repository": "https://github.com/withoneai/mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@withone/mcp@1.2.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.withone/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "One API key from https://app.withone.ai/settings/api-keys",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ONE_SECRET"
+        },
+        {
+          "default": "admin",
+          "description": "Restrict actions by HTTP method: read (GET), write (GET/POST/PUT/PATCH) or admin (all)",
+          "name": "ONE_PERMISSIONS"
+        },
+        {
+          "default": "*",
+          "description": "Comma-separated connection keys the agent may see, or * for all",
+          "name": "ONE_CONNECTION_KEYS"
+        },
+        {
+          "default": "*",
+          "description": "Comma-separated action IDs the agent may see and run, or * for all",
+          "name": "ONE_ACTION_IDS"
+        },
+        {
+          "default": "false",
+          "description": "Set true to drop execute_one_action and run in knowledge-only mode",
+          "name": "ONE_KNOWLEDGE_AGENT"
+        },
+        {
+          "description": "Scope connections to a single user, team, organization or project identifier",
+          "name": "ONE_IDENTITY"
+        },
+        {
+          "description": "Type of ONE_IDENTITY: user, team, organization or project",
+          "name": "ONE_IDENTITY_TYPE"
+        }
+      ],
+      "identifier": "@withone/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.2.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a04210b1b1",
+    "published_at": "2026-08-17T21:15:25.379427Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.withone/mcp",
+    "server_version": "1.2.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-17T21:15:25.379427Z"
+  },
+  "title": "One",
+  "type": "mcp_server",
+  "version": "1.2.3"
+}

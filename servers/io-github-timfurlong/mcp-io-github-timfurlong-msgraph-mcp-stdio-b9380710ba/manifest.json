@@ -1,0 +1,68 @@
+{
+  "description": "MCP server for Microsoft Graph: Outlook mail and calendar, plus read-only Microsoft Teams",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:57+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-timfurlong-msgraph-mcp.stdio.b9380710ba",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/timfurlong/msgraph-mcp",
+    "homepage": "https://github.com/timfurlong/msgraph-mcp",
+    "repository": "https://github.com/timfurlong/msgraph-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "msgraph-mcp-server==0.3.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.timfurlong/msgraph-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Client ID of your Entra (Azure AD) app registration",
+          "isRequired": true,
+          "name": "MSGRAPH_MCP_CLIENT_ID"
+        },
+        {
+          "description": "Entra tenant ID (or 'common' / 'organizations' / 'consumers')",
+          "isRequired": true,
+          "name": "MSGRAPH_MCP_TENANT_ID"
+        },
+        {
+          "description": "Override the token cache location (default ~/.msgraph-mcp/token_cache.bin)",
+          "name": "MSGRAPH_MCP_TOKEN_CACHE_PATH"
+        }
+      ],
+      "identifier": "msgraph-mcp-server",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b9380710ba",
+    "published_at": "2026-08-21T21:39:24.031639Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.timfurlong/msgraph-mcp",
+    "server_version": "0.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-21T21:39:24.031639Z"
+  },
+  "title": "MSGraph MCP",
+  "type": "mcp_server",
+  "version": "0.3.1"
+}

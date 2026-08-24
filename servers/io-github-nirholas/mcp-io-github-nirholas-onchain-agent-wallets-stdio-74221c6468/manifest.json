@@ -1,0 +1,82 @@
+{
+  "description": "Give an AI agent a Solana spending allowance instead of your key. Chain-enforced cap, x402.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:44+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nirholas-onchain-agent-wallets.stdio.74221c6468",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nirholas/onchain-agent-wallets",
+    "homepage": "https://github.com/nirholas/onchain-agent-wallets",
+    "repository": "https://github.com/nirholas/onchain-agent-wallets"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@three-ws/onchain-agent-wallets@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nirholas/onchain-agent-wallets",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Owner secret key, base58 or a JSON byte array. Optional: without it every owner action is returned as an unsigned transaction for Phantom, Solflare, Backpack, or a Ledger to sign.",
+          "format": "string",
+          "isSecret": true,
+          "name": "OWNER_SECRET_KEY"
+        },
+        {
+          "default": "mainnet",
+          "description": "Cluster: mainnet or devnet. Defaults to mainnet. State is kept per network, so a devnet rehearsal never touches mainnet agents.",
+          "format": "string",
+          "name": "OAW_NETWORK"
+        },
+        {
+          "description": "HTTPS Solana RPC endpoint. Defaults to the public endpoint for the configured network; bring your own (Helius / Quicknode / Triton) for production.",
+          "format": "string",
+          "name": "SOLANA_RPC_URL"
+        },
+        {
+          "description": "Where agent keypairs, guardrails, and the spend ledger are stored. Defaults to ~/.onchain-agent-wallets, written 0600 inside a 0700 directory.",
+          "format": "string",
+          "name": "OAW_STATE_DIR"
+        },
+        {
+          "default": "true",
+          "description": "Refuse to broadcast anything that moves value until the call is re-issued with confirm:true. Default true.",
+          "format": "boolean",
+          "name": "REQUIRE_CONFIRM"
+        }
+      ],
+      "identifier": "@three-ws/onchain-agent-wallets",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "74221c6468",
+    "published_at": "2026-08-19T23:41:25.396475Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nirholas/onchain-agent-wallets",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-19T23:41:25.396475Z"
+  },
+  "title": "Onchain Agent Wallets",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

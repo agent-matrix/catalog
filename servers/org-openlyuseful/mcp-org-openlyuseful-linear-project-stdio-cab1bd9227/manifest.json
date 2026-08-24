@@ -1,0 +1,118 @@
+{
+  "description": "Scope-gated Linear project administration with optional GitHub and Obsidian evidence adapters",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:17:06+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.org-openlyuseful-linear-project.stdio.cab1bd9227",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Openly-Useful/linear-project-skills",
+    "homepage": "https://github.com/Openly-Useful/linear-project-skills",
+    "repository": "https://github.com/Openly-Useful/linear-project-skills"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@openly-useful/linear-project-mcp-server@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "org.openlyuseful/linear-project",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Linear API key. Configure this or LINEAR_ACCESS_TOKEN through a protected secret store.",
+          "isSecret": true,
+          "name": "LINEAR_API_KEY"
+        },
+        {
+          "description": "Linear OAuth access token. Configure this or LINEAR_API_KEY through a protected secret store.",
+          "isSecret": true,
+          "name": "LINEAR_ACCESS_TOKEN"
+        },
+        {
+          "description": "Exact Linear organization ID allowed for scoped operations.",
+          "isRequired": true,
+          "name": "LINEAR_ALLOWED_ORGANIZATION_ID"
+        },
+        {
+          "description": "Comma-separated exact Linear team IDs. Required when reusing an existing team; leave empty only while bootstrapping a new dedicated team.",
+          "name": "LINEAR_ALLOWED_TEAM_IDS"
+        },
+        {
+          "description": "Comma-separated exact Linear project IDs. Required after project discovery; leave empty only during initial bootstrap.",
+          "name": "LINEAR_ALLOWED_PROJECT_IDS"
+        },
+        {
+          "description": "Comma-separated exact scope codes. Leave empty for read-only capability inspection.",
+          "name": "LINEAR_ALLOWED_SCOPE_CODES"
+        },
+        {
+          "description": "Optional GitHub token used only by the read-only evidence adapter.",
+          "isSecret": true,
+          "name": "GITHUB_TOKEN"
+        },
+        {
+          "description": "Comma-separated owner/repository allowlist for GitHub evidence reads.",
+          "name": "GITHUB_ALLOWED_REPOSITORIES"
+        },
+        {
+          "description": "Optional normalized absolute path to an Obsidian vault.",
+          "format": "filepath",
+          "name": "OBSIDIAN_VAULT_PATH"
+        },
+        {
+          "description": "Optional expected Obsidian vault directory name.",
+          "name": "OBSIDIAN_VAULT_NAME"
+        },
+        {
+          "description": "Comma-separated vault-relative directories allowed for Obsidian operations.",
+          "name": "OBSIDIAN_ALLOWED_DIRECTORIES"
+        },
+        {
+          "default": "false",
+          "description": "Global mutation gate. Keep false unless opening a separately bounded write window.",
+          "format": "boolean",
+          "name": "MCP_WRITES_ENABLED"
+        },
+        {
+          "description": "Future RFC3339 expiry for a write window; enabled windows may last at most 60 minutes.",
+          "name": "MCP_WRITE_WINDOW_EXPIRES_AT"
+        },
+        {
+          "description": "Optional normalized absolute path for the append-only NDJSON operation audit.",
+          "format": "filepath",
+          "name": "MCP_AUDIT_LOG_PATH"
+        }
+      ],
+      "identifier": "@openly-useful/linear-project-mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "cab1bd9227",
+    "published_at": "2026-08-23T15:43:21.391643Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "org.openlyuseful/linear-project",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-23T15:43:21.391643Z"
+  },
+  "title": "Linear Project",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

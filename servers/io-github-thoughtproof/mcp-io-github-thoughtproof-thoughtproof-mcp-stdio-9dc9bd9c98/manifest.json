@@ -1,0 +1,71 @@
+{
+  "description": "Local stdio MCP. Hero verify_decision (DQL spend / Sentinel exit). execute true only on ALLOW.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:59+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ThoughtProof-thoughtproof-mcp.stdio.9dc9bd9c98",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ThoughtProof/thoughtproof-mcp",
+    "homepage": "https://github.com/ThoughtProof/thoughtproof-mcp",
+    "repository": "https://github.com/ThoughtProof/thoughtproof-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "thoughtproof-mcp@0.3.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ThoughtProof/thoughtproof-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Required for DQL-backed verify_decision calls. Sentinel and RV paths use their respective keys.",
+          "format": "string",
+          "isSecret": true,
+          "name": "DQL_API_KEY"
+        },
+        {
+          "description": "Optional; needed when mode=sentinel or auto-route picks Sentinel.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SENTINEL_API_KEY"
+        },
+        {
+          "description": "Optional operator key for verify_claim / verify_trade / Sentinel fallback.",
+          "format": "string",
+          "isSecret": true,
+          "name": "THOUGHTPROOF_API_KEY"
+        }
+      ],
+      "identifier": "thoughtproof-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9dc9bd9c98",
+    "published_at": "2026-08-17T20:17:41.239701Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ThoughtProof/thoughtproof-mcp",
+    "server_version": "0.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-17T20:17:41.239701Z"
+  },
+  "title": "ThoughtProof",
+  "type": "mcp_server",
+  "version": "0.3.1"
+}

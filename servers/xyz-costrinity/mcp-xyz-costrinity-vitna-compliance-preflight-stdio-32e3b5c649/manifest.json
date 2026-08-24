@@ -1,0 +1,72 @@
+{
+  "description": "Pre-action allow/deny for AI agents. 24 statutes, 13 jurisdictions: EU AI Act, GDPR, DPDP.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:17:07+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.xyz-costrinity-vitna-compliance-preflight.stdio.32e3b5c649",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/COSTRINITY/vitna-compliance-mcp",
+    "homepage": "https://github.com/COSTRINITY/vitna-compliance-mcp",
+    "repository": "https://github.com/COSTRINITY/vitna-compliance-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@costrinity/vitna-compliance-mcp@0.3.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "xyz.costrinity/vitna-compliance-preflight",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your VITNA operator UUID. Optional: if unset, the first tool call self-provisions a restricted trial key. The old VIGIL_OWNER_ID name is still accepted.",
+          "name": "VITNA_OWNER_ID"
+        },
+        {
+          "description": "Your VITNA API key (new keys vitna_..., legacy vigil_... keys remain valid). Optional: self-provisioned if unset. The old VIGIL_API_KEY name is still accepted.",
+          "isSecret": true,
+          "name": "VITNA_API_KEY"
+        },
+        {
+          "description": "Email to own the self-provisioned trial account. Optional: a throwaway is used if unset (claim later to bind a real email). The old VIGIL_EMAIL name is still accepted.",
+          "name": "VITNA_EMAIL"
+        },
+        {
+          "default": "https://vitna.costrinity.xyz",
+          "description": "VITNA base URL; override only for self-hosted. The old VIGIL_BASE_URL name is still accepted.",
+          "name": "VITNA_BASE_URL"
+        }
+      ],
+      "identifier": "@costrinity/vitna-compliance-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "32e3b5c649",
+    "published_at": "2026-08-19T08:04:50.165241Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "xyz.costrinity/vitna-compliance-preflight",
+    "server_version": "0.3.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-19T08:04:50.165241Z"
+  },
+  "title": "VITNA \u2014 Agent Compliance Preflight",
+  "type": "mcp_server",
+  "version": "0.3.6"
+}

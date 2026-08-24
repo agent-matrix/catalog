@@ -1,0 +1,93 @@
+{
+  "description": "Pay-per-call UK MOT history, reliability analytics and identifier utilities. x402 USDC on Base.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.dev-mossforge-databroker.stdio.c379290cab",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mossforge/databroker",
+    "homepage": "https://github.com/mossforge/databroker",
+    "repository": "https://github.com/mossforge/databroker"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@mossforge/databroker-mcp@0.4.7"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "dev.mossforge/databroker",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the DataBroker API, e.g. https://api.databroker.mossforge.dev",
+          "format": "string",
+          "isRequired": true,
+          "name": "DATABROKER_BASE_URL"
+        },
+        {
+          "description": "Signer provider: \"raw\" (default, self-custodied private key) or \"cdp\" (Coinbase CDP-managed wallet)",
+          "format": "string",
+          "name": "DATABROKER_SIGNER"
+        },
+        {
+          "description": "0x-prefixed private key for the paying wallet. Required when DATABROKER_SIGNER=raw (the default).",
+          "format": "string",
+          "isSecret": true,
+          "name": "DATABROKER_WALLET_KEY"
+        },
+        {
+          "description": "Coinbase CDP API key id. Required when DATABROKER_SIGNER=cdp.",
+          "format": "string",
+          "isSecret": true,
+          "name": "CDP_API_KEY_ID"
+        },
+        {
+          "description": "Coinbase CDP API key secret. Required when DATABROKER_SIGNER=cdp.",
+          "format": "string",
+          "isSecret": true,
+          "name": "CDP_API_KEY_SECRET"
+        },
+        {
+          "description": "Coinbase CDP wallet secret. Required when DATABROKER_SIGNER=cdp.",
+          "format": "string",
+          "isSecret": true,
+          "name": "CDP_WALLET_SECRET"
+        },
+        {
+          "description": "Per-call spend cap in USDC. Calls priced above this are declined before payment.",
+          "format": "string",
+          "name": "DATABROKER_MAX_USDC"
+        }
+      ],
+      "identifier": "@mossforge/databroker-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.7"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c379290cab",
+    "published_at": "2026-08-21T17:19:31.169513Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "dev.mossforge/databroker",
+    "server_version": "0.4.7",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-21T17:19:31.169513Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.4.7"
+}

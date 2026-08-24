@@ -1,0 +1,83 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/aoreshkov/kotlin-lib-mcp:0.5.0"
+      }
+    }
+  ],
+  "description": "Kotlin/Java library sources, public API and KDoc from the real Maven sources jar, for AI agents",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:05+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/aoreshkov/kotlin-lib-mcp",
+  "id": "tool.io-github-aoreshkov-kotlin-lib-mcp.a94d409c65",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/aoreshkov/kotlin-lib-mcp",
+    "homepage": "https://github.com/aoreshkov/kotlin-lib-mcp",
+    "repository": "https://github.com/aoreshkov/kotlin-lib-mcp"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Kotlin/Java library sources, public API and KDoc from the real Maven sources jar, for AI agents",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.aoreshkov/kotlin-lib-mcp",
+      "request_type": "POST",
+      "url": "https://github.com/aoreshkov/kotlin-lib-mcp"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Persist the downloaded sources and parsed index across container runs. Without it every session re-downloads and re-analyzes each library, since the container is --rm.",
+            "name": "-v",
+            "type": "named",
+            "value": "kotlin-lib-mcp-cache:/home/mcp/.cache"
+          },
+          "ghcr.io/aoreshkov/kotlin-lib-mcp:0.5.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.aoreshkov/kotlin-lib-mcp",
+  "provenance": {
+    "identity_key": "c060b6c9ec",
+    "promoted_from": "mcp.io-github-aoreshkov-kotlin-lib-mcp.stdio.c060b6c9ec",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.aoreshkov/kotlin-lib-mcp",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-aoreshkov-kotlin-lib-mcp.stdio.c060b6c9ec",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/aoreshkov/kotlin-lib-mcp",
+  "summary": "Kotlin/Java library sources, public API and KDoc from the real Maven sources jar, for AI agents",
+  "tags": [
+    "java",
+    "kdoc",
+    "kotlin",
+    "lib",
+    "library",
+    "public",
+    "real",
+    "sources"
+  ],
+  "title": "Kotlin & Java Library Sources",
+  "type": "tool",
+  "version": "0.5.0"
+}

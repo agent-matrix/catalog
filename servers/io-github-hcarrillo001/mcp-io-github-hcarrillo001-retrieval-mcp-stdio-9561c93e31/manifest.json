@@ -1,0 +1,70 @@
+{
+  "description": "LLM evals as MCP tools: score outputs for faithfulness, relevancy, and hallucination.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:29+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-hcarrillo001-retrieval-mcp.stdio.9561c93e31",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/hcarrillo001/retrieval-mcp",
+    "homepage": "https://github.com/hcarrillo001/retrieval-mcp",
+    "repository": "https://github.com/hcarrillo001/retrieval-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/hcarrillo001/retrieval-mcp:1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.hcarrillo001/retrieval-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Judge model API key. Not needed if you set RETRIEVAL_JUDGE_BACKEND=ollama to run the judge locally.",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        },
+        {
+          "default": "anthropic",
+          "description": "Which judge to score with: anthropic (default), openai, or ollama for a fully local judge.",
+          "name": "RETRIEVAL_JUDGE_BACKEND"
+        },
+        {
+          "description": "Judge model id, e.g. claude-sonnet-4-6 or qwen2.5:14b for Ollama.",
+          "name": "RETRIEVAL_JUDGE_MODEL"
+        },
+        {
+          "description": "Spend cap for judge calls. Unset means no cap.",
+          "name": "RETRIEVAL_BUDGET_USD"
+        }
+      ],
+      "identifier": "ghcr.io/hcarrillo001/retrieval-mcp:1.0.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "9561c93e31",
+    "published_at": "2026-08-24T01:28:29.412844Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.hcarrillo001/retrieval-mcp",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-24T01:28:29.412844Z"
+  },
+  "title": "retriEVAL",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

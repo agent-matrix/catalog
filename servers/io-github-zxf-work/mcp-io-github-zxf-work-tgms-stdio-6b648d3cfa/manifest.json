@@ -1,0 +1,80 @@
+{
+  "description": "Bi-temporal graph store with 15 verified temporal operators as typed, deterministic MCP tools.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:17:04+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-zxf-work-tgms.stdio.6b648d3cfa",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/zxf-work/tgms",
+    "homepage": "https://github.com/zxf-work/tgms",
+    "repository": "https://github.com/zxf-work/tgms"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "tgms[agent] pulls in the fastmcp/litellm extra the serve command needs; the bare tgms wheel does not carry them and `uvx tgms serve` fails with ModuleNotFoundError: fastmcp.",
+            "name": "--from",
+            "type": "named",
+            "value": "tgms[agent]"
+          },
+          "tgms==0.6.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.zxf-work/tgms",
+  "packages": [
+    {
+      "identifier": "tgms",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "serve"
+        },
+        {
+          "description": "Path to a TGMS store directory (create one with `tgms ingest` or `tgms synth`)",
+          "format": "string",
+          "isRequired": true,
+          "name": "--store",
+          "type": "named",
+          "valueHint": "/path/to/store"
+        }
+      ],
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "tgms[agent] pulls in the fastmcp/litellm extra the serve command needs; the bare tgms wheel does not carry them and `uvx tgms serve` fails with ModuleNotFoundError: fastmcp.",
+          "name": "--from",
+          "type": "named",
+          "value": "tgms[agent]"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.6.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6b648d3cfa",
+    "published_at": "2026-08-21T15:44:21.706731Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.zxf-work/tgms",
+    "server_version": "0.6.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-21T15:44:21.706731Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.6.2"
+}

@@ -1,0 +1,132 @@
+{
+  "description": "Secure Kubernetes MCP server: scoped, redacted diagnostics and human-approved writes",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:58+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-tonylchang-janus-mcp.stdio.ca388196aa",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/tonylchang/janus-mcp",
+    "homepage": "https://github.com/tonylchang/janus-mcp",
+    "repository": "https://github.com/tonylchang/janus-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Interactive: stdio is the MCP transport",
+            "type": "positional",
+            "value": "-i"
+          },
+          {
+            "description": "Remove the container on exit",
+            "type": "positional",
+            "value": "--rm"
+          },
+          {
+            "description": "Mount the kubeconfig read-only",
+            "isRequired": true,
+            "name": "-v",
+            "type": "named",
+            "value": "{kubeconfig_path}:/home/janus/.kube/config:ro",
+            "variables": {
+              "kubeconfig_path": {
+                "default": "~/.kube/config",
+                "description": "Path to the kubeconfig on the host",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          {
+            "description": "Mount the janus-mcp operator config read-only",
+            "isRequired": true,
+            "name": "-v",
+            "type": "named",
+            "value": "{config_dir}:/home/janus/.config/janus-mcp:ro",
+            "variables": {
+              "config_dir": {
+                "default": "~/.config/janus-mcp",
+                "description": "Directory containing config.yaml (pinned context, allowed namespaces)",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          "ghcr.io/tonylchang/janus-mcp:v0.4.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.tonylchang/janus-mcp",
+  "packages": [
+    {
+      "identifier": "ghcr.io/tonylchang/janus-mcp:v0.4.1",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "Interactive: stdio is the MCP transport",
+          "type": "positional",
+          "value": "-i"
+        },
+        {
+          "description": "Remove the container on exit",
+          "type": "positional",
+          "value": "--rm"
+        },
+        {
+          "description": "Mount the kubeconfig read-only",
+          "isRequired": true,
+          "name": "-v",
+          "type": "named",
+          "value": "{kubeconfig_path}:/home/janus/.kube/config:ro",
+          "variables": {
+            "kubeconfig_path": {
+              "default": "~/.kube/config",
+              "description": "Path to the kubeconfig on the host",
+              "format": "filepath",
+              "isRequired": true
+            }
+          }
+        },
+        {
+          "description": "Mount the janus-mcp operator config read-only",
+          "isRequired": true,
+          "name": "-v",
+          "type": "named",
+          "value": "{config_dir}:/home/janus/.config/janus-mcp:ro",
+          "variables": {
+            "config_dir": {
+              "default": "~/.config/janus-mcp",
+              "description": "Directory containing config.yaml (pinned context, allowed namespaces)",
+              "format": "filepath",
+              "isRequired": true
+            }
+          }
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "ca388196aa",
+    "published_at": "2026-08-18T01:06:37.464263Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.tonylchang/janus-mcp",
+    "server_version": "0.4.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-18T01:06:37.464263Z"
+  },
+  "title": "Janus",
+  "type": "mcp_server",
+  "version": "0.4.1"
+}

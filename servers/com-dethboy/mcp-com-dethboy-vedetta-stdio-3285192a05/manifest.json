@@ -1,0 +1,69 @@
+{
+  "description": "x402 pay-per-call crypto sentiment, divergence & analyst reads. USDC on Base. NFA.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:15:28+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-dethboy-vedetta.stdio.3285192a05",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/lacryptorina/vedetta-mcp",
+    "homepage": "https://github.com/lacryptorina/vedetta-mcp",
+    "repository": "https://github.com/lacryptorina/vedetta-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "vedetta-mcp@1.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.dethboy/vedetta",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Hex private key of the wallet paying USDC on Base (x402). Optional: without it, paid tools return the live 402 offer instead of paying. Use a dedicated low-balance wallet.",
+          "format": "string",
+          "isSecret": true,
+          "name": "EVM_PRIVATE_KEY"
+        },
+        {
+          "description": "API base URL override (default https://vedetta.dethboy.com)",
+          "format": "string",
+          "name": "VEDETTA_API_URL"
+        },
+        {
+          "description": "Global price-cap override in USD; replaces the per-route listed-price caps",
+          "format": "string",
+          "name": "VEDETTA_MAX_PRICE_USD"
+        }
+      ],
+      "identifier": "vedetta-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "3285192a05",
+    "published_at": "2026-08-20T12:56:35.89207Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.dethboy/vedetta",
+    "server_version": "1.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-20T12:56:35.89207Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.1.0"
+}

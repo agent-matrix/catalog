@@ -1,0 +1,77 @@
+{
+  "description": "Unofficial MCP server for the ZEN.com Payment Gateway: payment links, transactions, refunds.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:35+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-krystiangw-zen.stdio.5a717522c6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/krystiangw/zen-mcp",
+    "homepage": "https://github.com/krystiangw/zen-mcp",
+    "repository": "https://github.com/krystiangw/zen-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@krystiangw/zen-mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.krystiangw/zen",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "ZEN Terminal API Key (Authorization header)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ZEN_API_KEY"
+        },
+        {
+          "description": "ZEN paywall secret for request signing (required for write ops)",
+          "format": "string",
+          "isSecret": true,
+          "name": "ZEN_PAYWALL_SECRET"
+        },
+        {
+          "description": "ZEN IPN secret for webhook verification",
+          "format": "string",
+          "isSecret": true,
+          "name": "ZEN_IPN_SECRET"
+        },
+        {
+          "description": "sandbox (default) or production",
+          "format": "string",
+          "name": "ZEN_ENV"
+        }
+      ],
+      "identifier": "@krystiangw/zen-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5a717522c6",
+    "published_at": "2026-08-17T13:35:37.756454Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.krystiangw/zen",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-17T13:35:37.756454Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

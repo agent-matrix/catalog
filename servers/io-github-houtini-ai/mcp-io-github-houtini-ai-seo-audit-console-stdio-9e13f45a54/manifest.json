@@ -1,0 +1,103 @@
+{
+  "description": "Technical SEO in Claude: GSC + crawl + DataForSEO - audit, market sizing, content recon.",
+  "harvest": {
+    "last_seen_at": "2026-08-24T03:16:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-houtini-ai-seo-audit-console.stdio.9e13f45a54",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/houtini-ai/seo-audit",
+    "homepage": "https://github.com/houtini-ai/seo-audit",
+    "repository": "https://github.com/houtini-ai/seo-audit"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@houtini/seo-audit-console@0.8.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.houtini-ai/seo-audit-console",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the Google service-account JSON key with Search Console access.",
+          "format": "string",
+          "isRequired": true,
+          "name": "GOOGLE_APPLICATION_CREDENTIALS"
+        },
+        {
+          "description": "Directory for per-property SQLite databases and reports. Defaults to ~/Documents/seo-audit-console.",
+          "format": "string",
+          "name": "SAC_DATA_DIR"
+        },
+        {
+          "description": "DataForSEO API username (optional, enables SERP/keyword/domain/market/recon checks).",
+          "format": "string",
+          "name": "DATAFORSEO_USERNAME"
+        },
+        {
+          "description": "DataForSEO API password (optional).",
+          "format": "string",
+          "isSecret": true,
+          "name": "DATAFORSEO_PASSWORD"
+        },
+        {
+          "description": "TTL for the DataForSEO response cache, in days. Default 7.",
+          "format": "string",
+          "name": "DATAFORSEO_CACHE_DAYS"
+        },
+        {
+          "description": "Firecrawl API key (optional). Lets content recon scrape competitor pages. Get one at https://firecrawl.link/2d1PLD8",
+          "format": "string",
+          "isSecret": true,
+          "name": "FIRECRAWL_API_KEY"
+        },
+        {
+          "description": "Supadata API key (optional). Lets content recon transcribe the ranking videos (YouTube/TikTok/X).",
+          "format": "string",
+          "isSecret": true,
+          "name": "SUPADATA_API_KEY"
+        },
+        {
+          "description": "Majestic API key (optional). Enriches link_intersect with Trust Flow + Topical Trust Flow and re-sorts prospects by real authority.",
+          "format": "string",
+          "isSecret": true,
+          "name": "MAJESTIC_API_KEY"
+        },
+        {
+          "description": "TTL for the Majestic response cache, in days. Default 30.",
+          "format": "string",
+          "name": "MAJESTIC_CACHE_DAYS"
+        }
+      ],
+      "identifier": "@houtini/seo-audit-console",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.8.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9e13f45a54",
+    "published_at": "2026-08-22T08:29:24.859586Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.houtini-ai/seo-audit-console",
+    "server_version": "0.8.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-22T08:29:24.859586Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.8.0"
+}
