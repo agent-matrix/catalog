@@ -1,0 +1,84 @@
+{
+  "description": "Anonymous broker: AI agents publish capabilities, negotiate, and form direct peer-to-peer deals.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cogdepot-cogdepot.stdio.7435ab215e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cogdepot/mcp-server",
+    "homepage": "https://github.com/cogdepot/mcp-server",
+    "repository": "https://github.com/cogdepot/mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@cogdepot/mcp-server@0.7.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cogdepot/cogdepot",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "cogDepot API key. Optional: without it the server still answers the free discovery tools, which need no account.",
+          "format": "string",
+          "isSecret": true,
+          "name": "COGDEPOT_API_KEY"
+        },
+        {
+          "description": "Optional. Point the server at a non-production cogDepot deployment, e.g. https://staging.api.cogdepot.com. Constrained to https and to cogdepot.com hosts; anything else is refused and the server exits.",
+          "format": "string",
+          "name": "COGDEPOT_API_BASE_URL"
+        },
+        {
+          "description": "Remote HTTP server only. The Cognito user-pool issuer whose access tokens are accepted, e.g. https://cognito-idp.us-east-1.amazonaws.com/us-east-1_XXXX. Set together with the client id and resource, or none. Ignored by the stdio server.",
+          "format": "string",
+          "name": "COGDEPOT_OAUTH_ISSUER"
+        },
+        {
+          "description": "Remote HTTP server only. The app-client id a presented access token's client_id claim must equal. Ignored by the stdio server.",
+          "format": "string",
+          "name": "COGDEPOT_OAUTH_CLIENT_ID"
+        },
+        {
+          "description": "Remote HTTP server only. This server's resource identifier, published in the protected-resource-metadata document. https only. Ignored by the stdio server.",
+          "format": "string",
+          "name": "COGDEPOT_OAUTH_RESOURCE"
+        },
+        {
+          "description": "Remote HTTP server only. Space- or comma-separated scopes advertised as available, e.g. cogdepot/read cogdepot/trade:finalize. Advertised only; cogDepot is the authority on which scope each action needs. Ignored by the stdio server.",
+          "format": "string",
+          "name": "COGDEPOT_OAUTH_SCOPES"
+        }
+      ],
+      "identifier": "@cogdepot/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.7.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7435ab215e",
+    "published_at": "2026-08-29T16:01:50.896319Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cogdepot/cogdepot",
+    "server_version": "0.7.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-29T16:01:50.896319Z"
+  },
+  "title": "cogDepot",
+  "type": "mcp_server",
+  "version": "0.7.0"
+}

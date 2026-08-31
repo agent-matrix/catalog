@@ -1,0 +1,54 @@
+{
+  "description": "Query and troubleshoot your local network in plain language: 37 tools, strictly local, no cloud.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:38:04+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.app-deviceshelf-deviceshelf-server.stdio.f7ca0dc71b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wealthwallet/deviceshelf-server:1.9.18"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "app.deviceshelf/deviceshelf-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "8088",
+          "description": "Port the server listens on; the MCP endpoint is served at /mcp on this port.",
+          "name": "DEVICESHELF_API_PORT"
+        }
+      ],
+      "identifier": "ghcr.io/wealthwallet/deviceshelf-server:1.9.18",
+      "registryType": "oci",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:{DEVICESHELF_API_PORT}/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "f7ca0dc71b",
+    "published_at": "2026-08-30T02:22:47.149803Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "app.deviceshelf/deviceshelf-server",
+    "server_version": "1.9.18",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-30T02:22:47.149803Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.9.18"
+}

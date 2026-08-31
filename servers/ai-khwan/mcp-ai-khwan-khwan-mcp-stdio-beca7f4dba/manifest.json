@@ -1,0 +1,76 @@
+{
+  "description": "Durable AI memory: recall distilled facts in a later session or subagent, and remember new ones.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:37:57+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-khwan-khwan-mcp.stdio.beca7f4dba",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/khwanlabs/khwan-mcp",
+    "homepage": "https://github.com/khwanlabs/khwan-mcp",
+    "repository": "https://github.com/khwanlabs/khwan-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "khwan-mcp==0.3.8"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.khwan/khwan-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your Khwan key from https://app.khwan.ai (kwk_live_...). It authenticates you to Khwan; it is not your model provider's key.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "KHWAN_API_KEY"
+        },
+        {
+          "description": "Select a named core (brain). Paid plans only \u2014 the free plan has just `default`, and an unknown slug answers 404. Leave unset to use the default.",
+          "format": "string",
+          "name": "KHWAN_CORE"
+        },
+        {
+          "description": "A separate brain inside the core, created on first write \u2014 3 on the free plan, unlimited on paid. Sets the X-Khwan-User header.",
+          "format": "string",
+          "name": "KHWAN_USER"
+        },
+        {
+          "description": "Override the API base URL, e.g. http://127.0.0.1:8010 for a self-hosted engine.",
+          "format": "string",
+          "name": "KHWAN_BASE_URL"
+        }
+      ],
+      "identifier": "khwan-mcp",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.8"
+    }
+  ],
+  "provenance": {
+    "identity_key": "beca7f4dba",
+    "published_at": "2026-08-26T09:17:35.386356Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.khwan/khwan-mcp",
+    "server_version": "0.3.8",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-26T09:17:35.386356Z"
+  },
+  "title": "Khwan",
+  "type": "mcp_server",
+  "version": "0.3.8"
+}

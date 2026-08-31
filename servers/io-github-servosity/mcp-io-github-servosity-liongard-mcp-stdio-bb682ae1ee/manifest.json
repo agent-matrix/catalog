@@ -1,0 +1,77 @@
+{
+  "description": "Liongard config visibility: sync your estate offline, then drift-check and search it from one CLI.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Servosity-liongard-mcp.stdio.bb682ae1ee",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/servosity/msp-skills",
+    "homepage": "https://github.com/servosity/msp-skills",
+    "repository": "https://github.com/servosity/msp-skills"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Servosity/liongard-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Liongard Access Key ID, the half that pairs with LIONGARD_ACCESS_KEY_SECRET; the server composes the two into the base64 X-ROAR-API-KEY. One of two ways to authenticate - set EITHER this pair OR the pre-encoded LIONGARD_API_KEY, never both. LIONGARD_API_KEY wins when it is set, so leave it blank to use this pair.",
+          "isSecret": true,
+          "name": "LIONGARD_ACCESS_KEY_ID"
+        },
+        {
+          "description": "Liongard Access Key Secret, the other half of LIONGARD_ACCESS_KEY_ID. One of two ways to authenticate - set EITHER this pair OR the pre-encoded LIONGARD_API_KEY, never both. LIONGARD_API_KEY wins when it is set, so leave it blank to use this pair.",
+          "isSecret": true,
+          "name": "LIONGARD_ACCESS_KEY_SECRET"
+        },
+        {
+          "description": "Pre-encoded X-ROAR-API-KEY: base64 of 'accessKeyId:accessKeySecret'. One of two ways to authenticate - set EITHER this key OR the LIONGARD_ACCESS_KEY_ID + LIONGARD_ACCESS_KEY_SECRET pair, never both. This key wins when it is set, and the pair is ignored.",
+          "isSecret": true,
+          "name": "LIONGARD_API_KEY"
+        },
+        {
+          "description": "Full API base URL. Leave blank: the CLI builds it from LIONGARD_INSTANCE. Set it only to point at a different host.",
+          "name": "LIONGARD_BASE_URL"
+        },
+        {
+          "default": "example",
+          "description": "Your Liongard subdomain (the 'acme' in acme.app.liongard.com); builds the API URL.",
+          "isRequired": true,
+          "name": "LIONGARD_INSTANCE"
+        }
+      ],
+      "fileSha256": "27841b84be9a42d05a5eba8687a3f9f959e84a9c6bdc3d8c686c525eec2a7f68",
+      "identifier": "https://github.com/Servosity/msp-skills/releases/download/liongard-v0.1.2/liongard-mcp.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "bb682ae1ee",
+    "published_at": "2026-08-27T01:23:08.633567Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Servosity/liongard-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-27T01:23:08.633567Z"
+  },
+  "title": "Liongard MCP",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

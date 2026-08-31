@@ -1,0 +1,69 @@
+{
+  "description": "Every Atera RMM + PSA endpoint, plus a local SQLite mirror that answers fleet-health, SLA, and",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Servosity-atera-mcp.stdio.1273fcc416",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/servosity/msp-skills",
+    "homepage": "https://github.com/servosity/msp-skills",
+    "repository": "https://github.com/servosity/msp-skills"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Servosity/atera-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Set the ATERA_ACCOUNT_API credential for the Atera MCP server.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ATERA_ACCOUNT_API"
+        },
+        {
+          "description": "Set the ATERA_API_KEY credential for the Atera MCP server.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ATERA_API_KEY"
+        },
+        {
+          "default": "https://app.atera.com/api/v3",
+          "description": "Base URL for the Atera API. Leave the prefilled default unless your account uses a different regional or self-hosted host.",
+          "name": "ATERA_BASE_URL"
+        }
+      ],
+      "fileSha256": "67a91b02d7601fd7fdafc3e46bced3fa992961c67c47c3496a4da3096c4132dd",
+      "identifier": "https://github.com/Servosity/msp-skills/releases/download/atera-v0.1.2/atera-mcp.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1273fcc416",
+    "published_at": "2026-08-26T15:26:13.974607Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Servosity/atera-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-26T15:26:13.974607Z"
+  },
+  "title": "Atera MCP",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

@@ -1,0 +1,93 @@
+{
+  "description": "MCP server for the Google Docs API: read and edit documents, styles, tables, images, comments.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:38:52+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-A1-x-Tech-mcp-google-docs.stdio.b00b6fdd67",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/A1-x-Tech/mcp-google-docs",
+    "homepage": "https://github.com/A1-x-Tech/mcp-google-docs",
+    "repository": "https://github.com/A1-x-Tech/mcp-google-docs"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@a1-x-tech/mcp-google-docs@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.A1-x-Tech/mcp-google-docs",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Google OAuth2 client id (refresh-token flow).",
+          "name": "GOOGLE_DOCS_CLIENT_ID"
+        },
+        {
+          "description": "Google OAuth2 client secret (refresh-token flow). Treat it as a secret.",
+          "isSecret": true,
+          "name": "GOOGLE_DOCS_CLIENT_SECRET"
+        },
+        {
+          "description": "Google OAuth2 refresh token, exchanged for access tokens automatically. Treat it as a secret.",
+          "isSecret": true,
+          "name": "GOOGLE_DOCS_REFRESH_TOKEN"
+        },
+        {
+          "description": "Static OAuth2 access token (~1h lifetime) \u2014 alternative to the refresh-token trio, mostly for testing.",
+          "isSecret": true,
+          "name": "GOOGLE_DOCS_ACCESS_TOKEN"
+        },
+        {
+          "default": "https://docs.googleapis.com",
+          "description": "Docs API root override.",
+          "name": "GOOGLE_DOCS_API_BASE"
+        },
+        {
+          "default": "https://www.googleapis.com",
+          "description": "Drive API root override (markdown import/export, document export, comments).",
+          "name": "GOOGLE_DOCS_DRIVE_API_BASE"
+        },
+        {
+          "default": "60000",
+          "description": "Per-request timeout in milliseconds.",
+          "name": "GOOGLE_DOCS_TIMEOUT_MS"
+        },
+        {
+          "default": "3",
+          "description": "Retries on transient errors (429 always; 5xx/network for reads).",
+          "name": "GOOGLE_DOCS_MAX_RETRIES"
+        }
+      ],
+      "identifier": "@a1-x-tech/mcp-google-docs",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b00b6fdd67",
+    "published_at": "2026-08-30T01:56:00.828201Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.A1-x-Tech/mcp-google-docs",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-30T01:56:00.828201Z"
+  },
+  "title": "Google Docs MCP",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

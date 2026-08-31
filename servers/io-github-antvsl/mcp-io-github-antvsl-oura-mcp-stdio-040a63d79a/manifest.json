@@ -1,0 +1,81 @@
+{
+  "description": "Sleep, readiness, HRV, resting heart rate, activity and stress from your Oura Ring",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:38:57+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-AntVsl-oura-mcp.stdio.040a63d79a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/AntVsl/oura_mcp",
+    "homepage": "https://github.com/AntVsl/oura_mcp",
+    "repository": "https://github.com/AntVsl/oura_mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "docker.io/iican/oura-mcp:0.4.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.AntVsl/oura-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Shared secret guarding the HTTP endpoint. Required whenever the server binds to anything other than loopback; without it the server refuses to start",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OURA_MCP_TOKEN"
+        },
+        {
+          "description": "Public https address, without a trailing slash. Enables OAuth 2.1 for Claude.ai and ChatGPT; leave empty for local or Bearer-token clients",
+          "name": "OURA_PUBLIC_URL"
+        },
+        {
+          "description": "Comma-separated trusted OAuth redirect origins; defaults to Claude.ai and ChatGPT",
+          "name": "OURA_OAUTH_ALLOWED_REDIRECT_ORIGINS"
+        },
+        {
+          "description": "Client ID of your Oura application from developer.ouraring.com",
+          "name": "OURA_CLIENT_ID"
+        },
+        {
+          "description": "Client secret of your Oura application",
+          "isSecret": true,
+          "name": "OURA_CLIENT_SECRET"
+        },
+        {
+          "default": "UTC",
+          "description": "IANA timezone deciding what counts as today. Container clocks run in UTC, so set this",
+          "name": "OURA_TZ"
+        }
+      ],
+      "identifier": "docker.io/iican/oura-mcp:0.4.2",
+      "registryType": "oci",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:8000/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "040a63d79a",
+    "published_at": "2026-08-30T09:00:12.186901Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.AntVsl/oura-mcp",
+    "server_version": "0.4.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-30T09:00:12.186901Z"
+  },
+  "title": "Oura Ring",
+  "type": "mcp_server",
+  "version": "0.4.2"
+}

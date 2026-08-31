@@ -1,0 +1,64 @@
+{
+  "description": "Pay x402 APIs in USDC on Base, Solana, and BNB Chain with spend mandates, receipts, idempotency.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-stevemilton-payagent-mcp.stdio.f63b21f9a1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/arispay-inc/payagent-mcp",
+    "homepage": "https://github.com/arispay-inc/payagent-mcp",
+    "repository": "https://github.com/arispay-inc/payagent-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@arispay/payagent-mcp@4.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.stevemilton/payagent-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "ArisPay developer API key (ap_live_\u2026 / ap_test_\u2026). Optional \u2014 the create_user tool can self-provision one from just an email, or set PAYAGENT_PRIVATE_KEY to sign locally with no account.",
+          "isSecret": true,
+          "name": "ARISPAY_API_KEY"
+        },
+        {
+          "description": "EVM private key for permissionless local signing (zero-signup mode): pay_api signs x402 payments with it directly \u2014 no ArisPay account needed. Generate one with `npx payagent wallet new`. Never sent to any server.",
+          "isSecret": true,
+          "name": "PAYAGENT_PRIVATE_KEY"
+        }
+      ],
+      "identifier": "@arispay/payagent-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "4.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f63b21f9a1",
+    "published_at": "2026-08-25T08:56:44.761404Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.stevemilton/payagent-mcp",
+    "server_version": "4.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-25T08:56:44.761404Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "4.0.0"
+}

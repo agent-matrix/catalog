@@ -1,0 +1,71 @@
+{
+  "description": "Delegate bulk code edits to a cheap worker model. Gated, atomic. PHP and Python.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:05+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-FixemBCN-mcp-bifrost.stdio.de73d06bcb",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/FixemBCN/MCP-Bifrost",
+    "homepage": "https://github.com/FixemBCN/MCP-Bifrost",
+    "repository": "https://github.com/FixemBCN/MCP-Bifrost"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-bifrost==0.1.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.FixemBCN/mcp-bifrost",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Worker API key. Not needed when BIFROST_WORKER_BASE_URL points at a local endpoint.",
+          "isSecret": true,
+          "name": "DEEPSEEK_API_KEY"
+        },
+        {
+          "description": "OpenAI-compatible endpoint for the worker model. Set this to run a local model so no code leaves the machine.",
+          "name": "BIFROST_WORKER_BASE_URL"
+        },
+        {
+          "description": "Worker model identifier. Defaults to deepseek-chat.",
+          "name": "BIFROST_WORKER_MODEL"
+        },
+        {
+          "description": "Path to the operational log. Defaults to .bifrost/history.db in the working directory.",
+          "name": "BIFROST_DB"
+        }
+      ],
+      "identifier": "mcp-bifrost",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "de73d06bcb",
+    "published_at": "2026-08-24T21:15:50.087685Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.FixemBCN/mcp-bifrost",
+    "server_version": "0.1.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-24T21:15:50.087685Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.5"
+}

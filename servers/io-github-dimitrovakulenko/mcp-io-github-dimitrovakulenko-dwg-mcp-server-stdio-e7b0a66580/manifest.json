@@ -1,0 +1,65 @@
+{
+  "description": "Read-only MCP server for inspecting AutoCAD DWG files",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-dimitrovakulenko-dwg-mcp-server.stdio.e7b0a66580",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/dimitrovakulenko/dwg-mcp-server",
+    "homepage": "https://github.com/dimitrovakulenko/dwg-mcp-server",
+    "repository": "https://github.com/dimitrovakulenko/dwg-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@dmytro-prototypes/dwg-mcp-server@0.1.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.dimitrovakulenko/dwg-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Semicolon-separated absolute directories allowed for DWG access when the MCP client, AI agent, or test harness does not provide MCP roots. Optional when MCP roots are supported.",
+          "format": "string",
+          "name": "DWG_MCP_ALLOWED_ROOTS",
+          "placeholder": "/absolute/path/to/dwg/files;/another/dwg/folder"
+        },
+        {
+          "description": "Semicolon-separated host folders mounted read-only into Docker at their original absolute paths. Access is still authorized by MCP roots or DWG_MCP_ALLOWED_ROOTS. Defaults to DWG_MCP_ALLOWED_ROOTS, then $HOME.",
+          "format": "string",
+          "name": "DWG_MCP_DOCKER_MOUNTS",
+          "placeholder": "/absolute/path/to/dwg/files;/another/dwg/folder"
+        }
+      ],
+      "identifier": "@dmytro-prototypes/dwg-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e7b0a66580",
+    "published_at": "2026-08-27T14:22:18.548008Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.dimitrovakulenko/dwg-mcp-server",
+    "server_version": "0.1.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-27T14:22:18.548008Z"
+  },
+  "title": "DWG MCP Server",
+  "type": "mcp_server",
+  "version": "0.1.5"
+}

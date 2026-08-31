@@ -1,0 +1,73 @@
+{
+  "description": "Read and search Proton Mail, then create human-approved drafts without send capability.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-fbossiere-proton-safe-mcp.stdio.ee0cded614",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/fbossiere/proton-safe-mcp",
+    "homepage": "https://github.com/fbossiere/proton-safe-mcp",
+    "repository": "https://github.com/fbossiere/proton-safe-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "proton-safe-mcp==1.0.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.fbossiere/proton-safe-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Proton address configured in Proton Mail Bridge",
+          "format": "string",
+          "isRequired": true,
+          "name": "PROTON_BRIDGE_USER",
+          "placeholder": "your-address@proton.me"
+        },
+        {
+          "default": "1143",
+          "description": "Local IMAP port shown by Proton Mail Bridge",
+          "format": "number",
+          "name": "PROTON_IMAP_PORT"
+        }
+      ],
+      "identifier": "proton-safe-mcp",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "serve"
+        }
+      ],
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ee0cded614",
+    "published_at": "2026-08-30T05:21:34.333002Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.fbossiere/proton-safe-mcp",
+    "server_version": "1.0.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-30T05:21:34.333002Z"
+  },
+  "title": "Proton Safe MCP",
+  "type": "mcp_server",
+  "version": "1.0.2"
+}

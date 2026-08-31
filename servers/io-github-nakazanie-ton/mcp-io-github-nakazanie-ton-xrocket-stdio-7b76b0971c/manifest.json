@@ -1,0 +1,124 @@
+{
+  "description": "Unofficial xRocket market data and opt-in local account and financial workflow tools",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:11+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nakazanie-ton-xrocket.stdio.7b76b0971c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nakazanie-ton/myrocket",
+    "homepage": "https://github.com/nakazanie-ton/myrocket",
+    "repository": "https://github.com/nakazanie-ton/myrocket"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "xrocket-mcp@0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nakazanie-ton/xrocket",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "choices": [
+            "public",
+            "private-read",
+            "full"
+          ],
+          "default": "public",
+          "description": "Tool catalog: public, private-read, or full",
+          "name": "XROCKET_PROFILE"
+        },
+        {
+          "choices": [
+            "testnet",
+            "mainnet"
+          ],
+          "default": "mainnet",
+          "description": "Official xRocket environment",
+          "name": "XROCKET_ENVIRONMENT"
+        },
+        {
+          "description": "xRocket bearer token required for private profiles",
+          "isSecret": true,
+          "name": "XROCKET_API_TOKEN"
+        },
+        {
+          "choices": [
+            "false",
+            "true"
+          ],
+          "default": "false",
+          "description": "Allow guarded order and cancel execution in full profile",
+          "format": "boolean",
+          "name": "XROCKET_ENABLE_TRADING"
+        },
+        {
+          "choices": [
+            "false",
+            "true"
+          ],
+          "default": "false",
+          "description": "Allow guarded internal funding/trading transfers in full profile",
+          "format": "boolean",
+          "name": "XROCKET_ENABLE_TRANSFERS"
+        },
+        {
+          "choices": [
+            "false",
+            "true"
+          ],
+          "default": "false",
+          "description": "Allow guarded blockchain withdrawals in full profile",
+          "format": "boolean",
+          "name": "XROCKET_ENABLE_WITHDRAWALS"
+        },
+        {
+          "choices": [
+            "false",
+            "true"
+          ],
+          "default": "false",
+          "description": "Additional explicit gate for every mainnet financial write",
+          "format": "boolean",
+          "name": "XROCKET_ALLOW_MAINNET_WRITES"
+        },
+        {
+          "description": "Optional lifetime in milliseconds for prepared approvals",
+          "format": "number",
+          "name": "XROCKET_APPROVAL_TTL_MS",
+          "placeholder": "300000"
+        }
+      ],
+      "identifier": "xrocket-mcp",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7b76b0971c",
+    "published_at": "2026-08-24T14:18:28.139614Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nakazanie-ton/xrocket",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-24T14:18:28.139614Z"
+  },
+  "title": "xRocket Exchange MCP",
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

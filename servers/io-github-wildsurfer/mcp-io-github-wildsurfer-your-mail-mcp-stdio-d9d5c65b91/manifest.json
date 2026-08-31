@@ -1,0 +1,66 @@
+{
+  "description": "Read-only, self-hosted MCP access to IMAP email, mirrored locally and indexed by notmuch.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:40+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-wildsurfer-your-mail-mcp.stdio.d9d5c65b91",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wildsurfer/your-mail-mcp",
+    "homepage": "https://github.com/wildsurfer/your-mail-mcp",
+    "repository": "https://github.com/wildsurfer/your-mail-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wildsurfer/your-mail-mcp:0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.wildsurfer/your-mail-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Public base URL the server is reached at (used for OAuth metadata)",
+          "format": "string",
+          "isRequired": true,
+          "name": "PUBLIC_URL"
+        },
+        {
+          "description": "Passphrase gating the OAuth consent step",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OAUTH_PASSPHRASE"
+        }
+      ],
+      "identifier": "ghcr.io/wildsurfer/your-mail-mcp:0.2.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:8080/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "d9d5c65b91",
+    "published_at": "2026-08-26T09:03:39.92813Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.wildsurfer/your-mail-mcp",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-26T09:03:39.92813Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

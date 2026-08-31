@@ -1,0 +1,82 @@
+{
+  "description": "Every App Store Connect + StoreKit 2 endpoint. 890 tools in 13 profiles, narrow to 27.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-erayendes-asc-mcp.stdio.342e112228",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/erayendes/app-store-connect-mcp",
+    "homepage": "https://github.com/erayendes/app-store-connect-mcp",
+    "repository": "https://github.com/erayendes/app-store-connect-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@erayendes/asc-mcp@2.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.erayendes/asc-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "App Store Connect API Key ID. Normally written for you by `npx -y @erayendes/asc-mcp setup`.",
+          "name": "ASC_KEY_ID"
+        },
+        {
+          "description": "App Store Connect Issuer ID (a UUID). Normally written for you by `setup`.",
+          "name": "ASC_ISSUER_ID"
+        },
+        {
+          "description": "The .p8 private key as PEM text. Prefer `setup`, which stores it in the macOS Keychain instead of any config file; set this only where a Keychain is unavailable, such as CI.",
+          "isSecret": true,
+          "name": "ASC_PRIVATE_KEY"
+        },
+        {
+          "description": "Path to the .p8 file, as an alternative to pasting its contents. Off macOS this is what `setup` records.",
+          "name": "ASC_PRIVATE_KEY_PATH"
+        },
+        {
+          "description": "Bundle ID of one app. Only needed by the StoreKit 2 transaction tools on the monetization profile.",
+          "name": "ASC_BUNDLE_ID"
+        }
+      ],
+      "identifier": "@erayendes/asc-mcp",
+      "packageArguments": [
+        {
+          "description": "Which slice of App Store Connect to serve. One of app-info, distribution, monetization, marketing, access, testflight, analytics, provisioning, game-center, app-clips, xcode-cloud, webhooks, background-assets. Narrow further with a colon \u2014 monetization:subscription-pricing is 27 tools instead of 207. Omit it to serve the default working set, which is larger.",
+          "type": "positional",
+          "valueHint": "profile"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.3.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "342e112228",
+    "published_at": "2026-08-25T11:32:47.068012Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.erayendes/asc-mcp",
+    "server_version": "2.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-25T11:32:47.068012Z"
+  },
+  "title": "Heimdall",
+  "type": "mcp_server",
+  "version": "2.3.0"
+}

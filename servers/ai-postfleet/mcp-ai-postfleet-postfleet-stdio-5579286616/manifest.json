@@ -1,0 +1,66 @@
+{
+  "description": "Give an AI agent its own email address: send, reply, read, and wait for mail.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:37:59+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-postfleet-postfleet.stdio.5579286616",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Thestral12/postfleet-mcp",
+    "homepage": "https://github.com/Thestral12/postfleet-mcp",
+    "repository": "https://github.com/Thestral12/postfleet-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@postfleet/mcp@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.postfleet/postfleet",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your Postfleet API key (pf_...) from https://postfleet.ai",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "POSTFLEET_API_KEY"
+        },
+        {
+          "default": "https://api.postfleet.ai",
+          "description": "API origin override for staging or self-hosted deployments",
+          "format": "string",
+          "name": "POSTFLEET_API_URL"
+        }
+      ],
+      "identifier": "@postfleet/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5579286616",
+    "published_at": "2026-08-24T03:40:44.665517Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.postfleet/postfleet",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-24T03:40:44.665517Z"
+  },
+  "title": "Postfleet",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

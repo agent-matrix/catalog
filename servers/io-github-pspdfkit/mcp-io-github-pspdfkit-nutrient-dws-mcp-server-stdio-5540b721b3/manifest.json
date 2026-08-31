@@ -1,0 +1,80 @@
+{
+  "description": "Nutrient Processor + Data Extraction MCP: convert, OCR, sign, redact, and extract PDFs/Office docs.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:13+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-PSPDFKit-nutrient-dws-mcp-server.stdio.5540b721b3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/PSPDFKit/nutrient-dws-mcp-server",
+    "homepage": "https://github.com/PSPDFKit/nutrient-dws-mcp-server",
+    "repository": "https://github.com/PSPDFKit/nutrient-dws-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@nutrient-sdk/dws-mcp-server@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.PSPDFKit/nutrient-dws-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Nutrient DWS API key. Optional for local desktop use (browser sign-in on first request); required for CI or headless environments.",
+          "format": "string",
+          "isSecret": true,
+          "name": "NUTRIENT_DWS_API_KEY"
+        },
+        {
+          "description": "Data Extraction API key (starts with pdf_live_), needed for parse_document and extract_fields in static-key mode. OAuth covers both products.",
+          "format": "string",
+          "isSecret": true,
+          "name": "NUTRIENT_DWS_EXTRACTION_API_KEY"
+        },
+        {
+          "description": "Local directory the server is allowed to read and write documents in.",
+          "format": "string",
+          "name": "SANDBOX_PATH"
+        },
+        {
+          "description": "Minimum logging level; defaults to info.",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        },
+        {
+          "description": "Log file path; defaults to a temporary file in stdio mode.",
+          "format": "string",
+          "name": "MCP_LOG_FILE"
+        }
+      ],
+      "identifier": "@nutrient-sdk/dws-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5540b721b3",
+    "published_at": "2026-08-24T23:29:02.851962Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.PSPDFKit/nutrient-dws-mcp-server",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-24T23:29:02.851962Z"
+  },
+  "title": "Nutrient DWS MCP Server",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

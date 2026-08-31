@@ -1,0 +1,91 @@
+{
+  "description": "Temporal engineering context for agents via MCP.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-STiFLeR7-memex.stdio.952613c0a7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/STiFLeR7/memex",
+    "homepage": "https://github.com/STiFLeR7/memex",
+    "repository": "https://github.com/STiFLeR7/memex"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "memex-mcp==0.9.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.STiFLeR7/memex",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Bolt URI of your Neo4j instance",
+          "format": "string",
+          "isRequired": true,
+          "name": "NEO4J_URI"
+        },
+        {
+          "description": "Neo4j username",
+          "format": "string",
+          "isRequired": true,
+          "name": "NEO4J_USER"
+        },
+        {
+          "description": "Neo4j password",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "NEO4J_PASSWORD"
+        },
+        {
+          "description": "Google Gemini API key for entity extraction",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GEMINI_API_KEY"
+        }
+      ],
+      "identifier": "memex-mcp",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "serve"
+        },
+        {
+          "name": "--repo",
+          "type": "named",
+          "value": "."
+        }
+      ],
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.9.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "952613c0a7",
+    "published_at": "2026-08-26T05:32:36.099953Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.STiFLeR7/memex",
+    "server_version": "0.9.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-26T05:32:36.099953Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.9.0"
+}

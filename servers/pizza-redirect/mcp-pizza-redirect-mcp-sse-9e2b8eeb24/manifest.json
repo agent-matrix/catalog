@@ -1,0 +1,54 @@
+{
+  "description": "Manage URL redirects, domains, email forwards, and analytics on redirect.pizza.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.pizza-redirect-mcp.sse.9e2b8eeb24",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://redirect.pizza/mcp"
+    }
+  },
+  "name": "pizza.redirect/mcp",
+  "provenance": {
+    "identity_key": "9e2b8eeb24",
+    "published_at": "2026-08-25T08:18:13.194823Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "pizza.redirect/mcp",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-25T08:18:13.194823Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Team API token from https://redirect.pizza/api-tokens",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {token}",
+          "variables": {
+            "token": {
+              "description": "Team API token (starts with rpa_)",
+              "isRequired": true,
+              "isSecret": true,
+              "placeholder": "rpa_\u2026"
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://redirect.pizza/mcp"
+    }
+  ],
+  "title": "redirect.pizza",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

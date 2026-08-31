@@ -1,0 +1,73 @@
+{
+  "description": "MCP server for Sigma Computing. Provision dashboards, build models, and automate cloud analytics.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:29+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-christianclaudio-sigma.stdio.f8dad31cb0",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/christianclaudio/mcp-server-sigma",
+    "homepage": "https://github.com/christianclaudio/mcp-server-sigma",
+    "repository": "https://github.com/christianclaudio/mcp-server-sigma"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-server-sigma==1.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.christianclaudio/sigma",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your Sigma API client ID",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SIGMA_CLIENT_ID"
+        },
+        {
+          "description": "Your Sigma API client secret",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SIGMA_CLIENT_SECRET"
+        },
+        {
+          "description": "Region-specific Sigma API host URL (e.g. https://api.us-a.aws.sigmacomputing.com)",
+          "format": "string",
+          "isRequired": true,
+          "name": "SIGMA_API_BASE_URL"
+        }
+      ],
+      "identifier": "mcp-server-sigma",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f8dad31cb0",
+    "published_at": "2026-08-30T16:05:09.492977Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.christianclaudio/sigma",
+    "server_version": "1.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-30T16:05:09.492977Z"
+  },
+  "title": "mcp-server-sigma",
+  "type": "mcp_server",
+  "version": "1.1.2"
+}

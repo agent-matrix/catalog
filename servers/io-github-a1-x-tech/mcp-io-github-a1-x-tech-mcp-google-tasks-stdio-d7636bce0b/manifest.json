@@ -1,0 +1,88 @@
+{
+  "description": "MCP server for the Google Tasks API: task lists, subtasks, due dates, complete and move tasks.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:38:52+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-A1-x-Tech-mcp-google-tasks.stdio.d7636bce0b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/A1-x-Tech/mcp-google-tasks",
+    "homepage": "https://github.com/A1-x-Tech/mcp-google-tasks",
+    "repository": "https://github.com/A1-x-Tech/mcp-google-tasks"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-google-tasks@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.A1-x-Tech/mcp-google-tasks",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Google OAuth2 client id (refresh-token flow).",
+          "name": "GOOGLE_TASKS_CLIENT_ID"
+        },
+        {
+          "description": "Google OAuth2 client secret (refresh-token flow). Treat it as a secret.",
+          "isSecret": true,
+          "name": "GOOGLE_TASKS_CLIENT_SECRET"
+        },
+        {
+          "description": "Google OAuth2 refresh token, exchanged for access tokens automatically. Treat it as a secret.",
+          "isSecret": true,
+          "name": "GOOGLE_TASKS_REFRESH_TOKEN"
+        },
+        {
+          "description": "Static OAuth2 access token (~1h lifetime) \u2014 alternative to the refresh-token trio, mostly for testing.",
+          "isSecret": true,
+          "name": "GOOGLE_TASKS_ACCESS_TOKEN"
+        },
+        {
+          "default": "https://tasks.googleapis.com",
+          "description": "API root override.",
+          "name": "GOOGLE_TASKS_API_BASE"
+        },
+        {
+          "default": "60000",
+          "description": "Per-request timeout in milliseconds.",
+          "name": "GOOGLE_TASKS_TIMEOUT_MS"
+        },
+        {
+          "default": "3",
+          "description": "Retries on transient errors (429 always; 5xx/network for reads).",
+          "name": "GOOGLE_TASKS_MAX_RETRIES"
+        }
+      ],
+      "identifier": "mcp-google-tasks",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d7636bce0b",
+    "published_at": "2026-08-30T01:55:10.091681Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.A1-x-Tech/mcp-google-tasks",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-30T01:55:10.091681Z"
+  },
+  "title": "Google Tasks MCP",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

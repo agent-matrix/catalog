@@ -1,0 +1,95 @@
+{
+  "description": "Matches news to Polymarket markets and returns the market's probability. Optional capped trading.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:17+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Sofiia7-actually.stdio.5e5c826670",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Sofiia7/actually",
+    "homepage": "https://github.com/Sofiia7/actually",
+    "repository": "https://github.com/Sofiia7/actually"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "actually-mcp-server@0.1.7"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Sofiia7/actually",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional. Your own Polygon EOA private key. Enables the trading tools (place_order, sell_order, cancel_order, get_open_orders, get_positions). Omit to run signal-only, which needs no key and no wallet.",
+          "format": "string",
+          "isSecret": true,
+          "name": "POLYMARKET_PRIVATE_KEY"
+        },
+        {
+          "description": "Optional. Per-order USD cap for the trading tools (default 100). Enforced server-side against the market's own price, so a caller cannot understate an order to slip past it.",
+          "format": "number",
+          "name": "ACTUALLY_MAX_ORDER_USD"
+        },
+        {
+          "description": "Optional. Rolling UTC-day USD cap shared by place_order and sell_order (default 500). Held in a persisted ledger, so it survives restarts.",
+          "format": "number",
+          "name": "ACTUALLY_DAILY_LIMIT_USD"
+        },
+        {
+          "description": "Optional. Set to exactly 'true' to additionally register redeem_position. A second opt-in beyond the private key, because it submits a real on-chain transaction through Polymarket's relayer and is still in testing.",
+          "format": "string",
+          "name": "ACTUALLY_ENABLE_REDEEM"
+        },
+        {
+          "description": "Optional. Set to exactly 'true' to let check_news fall back to Polymarket's own market search when nothing in the cached set matches. Off by default: the query is built from the caller's text and leaves the machine.",
+          "format": "string",
+          "name": "ACTUALLY_SEARCH_FALLBACK"
+        },
+        {
+          "description": "Optional. Where the spend ledger is stored (default ~/.actually-mcp-server/spend-guard.json).",
+          "format": "string",
+          "name": "ACTUALLY_SPEND_STATE_PATH"
+        },
+        {
+          "description": "Optional. Only if you run your own Cloudflare Worker instead of the shared default.",
+          "format": "string",
+          "name": "ACTUALLY_WORKER_URL"
+        },
+        {
+          "description": "Optional. Shared secret for your own Worker. Not a private credential: the default one ships inside every client by design.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ACTUALLY_WORKER_SECRET"
+        }
+      ],
+      "identifier": "actually-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.7"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5e5c826670",
+    "published_at": "2026-08-26T10:07:08.344557Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Sofiia7/actually",
+    "server_version": "0.1.7",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-26T10:07:08.344557Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.7"
+}

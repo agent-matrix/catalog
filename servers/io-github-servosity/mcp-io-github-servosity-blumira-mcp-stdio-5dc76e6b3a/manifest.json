@@ -1,0 +1,72 @@
+{
+  "description": "Cross-account Blumira findings, detections, and agents in one offline-searchable store.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Servosity-blumira-mcp.stdio.5dc76e6b3a",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/servosity/msp-skills",
+    "homepage": "https://github.com/servosity/msp-skills",
+    "repository": "https://github.com/servosity/msp-skills"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Servosity/blumira-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Pre-minted Blumira JWT. An alternative to BLUMIRA_CLIENT_ID + BLUMIRA_CLIENT_SECRET: set this OR the Client ID/Secret pair.",
+          "isSecret": true,
+          "name": "BLUMIRA_API_TOKEN"
+        },
+        {
+          "default": "https://api.blumira.com/public-api/v1",
+          "description": "Base URL for the Blumira API. Leave the prefilled default unless your account uses a different regional or self-hosted host.",
+          "name": "BLUMIRA_BASE_URL"
+        },
+        {
+          "description": "Blumira API Client ID (Settings > Organization > Generate API Credentials). With BLUMIRA_CLIENT_SECRET, the server mints and auto-refreshes a JWT.",
+          "isSecret": true,
+          "name": "BLUMIRA_CLIENT_ID"
+        },
+        {
+          "description": "Blumira API Client Secret, paired with BLUMIRA_CLIENT_ID to mint a JWT (OAuth2 client_credentials, audience public-api).",
+          "isSecret": true,
+          "name": "BLUMIRA_CLIENT_SECRET"
+        }
+      ],
+      "fileSha256": "6653a4674647c33a761fb04cf4e072f5b487cf45f50b60d676f39ef932a7228a",
+      "identifier": "https://github.com/Servosity/msp-skills/releases/download/blumira-v0.1.2/blumira-mcp.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5dc76e6b3a",
+    "published_at": "2026-08-27T01:22:27.602511Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Servosity/blumira-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-27T01:22:27.602511Z"
+  },
+  "title": "Blumira MCP",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

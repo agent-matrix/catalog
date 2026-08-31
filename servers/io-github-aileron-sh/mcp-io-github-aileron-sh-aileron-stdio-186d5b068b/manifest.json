@@ -1,0 +1,67 @@
+{
+  "description": "Read-only queries over Aileron audit journals: verify integrity, search recorded tool calls",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:21+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-aileron-sh-aileron.stdio.186d5b068b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/aileron-sh/aileron",
+    "homepage": "https://github.com/aileron-sh/aileron",
+    "repository": "https://github.com/aileron-sh/aileron"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "aileron==0.1.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.aileron-sh/aileron",
+  "packages": [
+    {
+      "identifier": "aileron",
+      "packageArguments": [
+        {
+          "description": "Runs the read-only journal server. Aileron's other subcommands are CLI tools, not MCP servers.",
+          "type": "positional",
+          "value": "serve",
+          "valueHint": "subcommand"
+        },
+        {
+          "default": ".",
+          "description": "Directory holding the journals to expose. Paths are confined to it, so nothing outside can be read.",
+          "isRequired": true,
+          "name": "--root",
+          "type": "named"
+        }
+      ],
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "186d5b068b",
+    "published_at": "2026-08-25T00:51:01.96375Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.aileron-sh/aileron",
+    "server_version": "0.1.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-25T00:51:01.96375Z"
+  },
+  "title": "Aileron Journal",
+  "type": "mcp_server",
+  "version": "0.1.5"
+}

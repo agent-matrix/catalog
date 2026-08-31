@@ -1,0 +1,69 @@
+{
+  "description": "AML risk scoring for crypto addresses and transactions on Ethereum, BSC, TRON, TON, Bitcoin",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:50+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-traql-mcp-server.stdio.598b32fbac",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/traql/mcp-server",
+    "homepage": "https://github.com/traql/mcp-server",
+    "repository": "https://github.com/traql/mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@traql/mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.traql/mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API key from https://app.traql.io. Without it the server runs on the keyless tier: a coarse verdict, 3 free checks per IP per day, then payment-gated on the hosted API.",
+          "isSecret": true,
+          "name": "TRAQL_API_KEY"
+        },
+        {
+          "default": "https://api.traql.io",
+          "description": "Base URL of the traql API. Override only when self-hosting.",
+          "name": "TRAQL_API_URL"
+        },
+        {
+          "default": "30000",
+          "description": "Per-request timeout in milliseconds.",
+          "name": "TRAQL_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "@traql/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "598b32fbac",
+    "published_at": "2026-08-24T09:19:04.901526Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.traql/mcp-server",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-24T09:19:04.901526Z"
+  },
+  "title": "traql",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

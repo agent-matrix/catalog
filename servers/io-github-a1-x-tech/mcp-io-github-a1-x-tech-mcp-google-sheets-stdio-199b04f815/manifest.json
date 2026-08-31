@@ -1,0 +1,88 @@
+{
+  "description": "MCP server for the Google Sheets API: read and write ranges, sheets, formatting, charts, sharing.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:38:52+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-A1-x-Tech-mcp-google-sheets.stdio.199b04f815",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/A1-x-Tech/mcp-google-sheets",
+    "homepage": "https://github.com/A1-x-Tech/mcp-google-sheets",
+    "repository": "https://github.com/A1-x-Tech/mcp-google-sheets"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@a1-x-tech/mcp-google-sheets@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.A1-x-Tech/mcp-google-sheets",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Google OAuth2 client id (refresh-token flow).",
+          "name": "GOOGLE_SHEETS_CLIENT_ID"
+        },
+        {
+          "description": "Google OAuth2 client secret (refresh-token flow). Treat it as a secret.",
+          "isSecret": true,
+          "name": "GOOGLE_SHEETS_CLIENT_SECRET"
+        },
+        {
+          "description": "Google OAuth2 refresh token, exchanged for access tokens automatically. Treat it as a secret.",
+          "isSecret": true,
+          "name": "GOOGLE_SHEETS_REFRESH_TOKEN"
+        },
+        {
+          "description": "Static OAuth2 access token (~1h lifetime) \u2014 alternative to the refresh-token trio, mostly for testing.",
+          "isSecret": true,
+          "name": "GOOGLE_SHEETS_ACCESS_TOKEN"
+        },
+        {
+          "default": "https://sheets.googleapis.com",
+          "description": "Sheets API root override.",
+          "name": "GOOGLE_SHEETS_API_BASE"
+        },
+        {
+          "default": "60000",
+          "description": "Per-request timeout in milliseconds.",
+          "name": "GOOGLE_SHEETS_TIMEOUT_MS"
+        },
+        {
+          "default": "3",
+          "description": "Retries on transient errors (429 always; 5xx/network for reads).",
+          "name": "GOOGLE_SHEETS_MAX_RETRIES"
+        }
+      ],
+      "identifier": "@a1-x-tech/mcp-google-sheets",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "199b04f815",
+    "published_at": "2026-08-30T01:55:52.286134Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.A1-x-Tech/mcp-google-sheets",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-30T01:55:52.286134Z"
+  },
+  "title": "Google Sheets MCP",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

@@ -1,0 +1,78 @@
+{
+  "description": "Every Datto RMM API operation, plus a local SQLite fleet store and fleet-wide analytics no other",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Servosity-datto-rmm-mcp.stdio.01177533ba",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/servosity/msp-skills",
+    "homepage": "https://github.com/servosity/msp-skills",
+    "repository": "https://github.com/servosity/msp-skills"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Servosity/datto-rmm-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Set the DATTO_RMM_API_KEY credential for the Datto RMM MCP server.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DATTO_RMM_API_KEY"
+        },
+        {
+          "description": "Set the DATTO_RMM_API_SECRET_KEY credential for the Datto RMM MCP server.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DATTO_RMM_API_SECRET_KEY"
+        },
+        {
+          "description": "Full API base URL, e.g. https://merlot-api.centrastage.net/api. Overrides the platform shortcut above. Leave blank when you set the platform.",
+          "name": "DATTO_RMM_BASE_URL"
+        },
+        {
+          "description": "Regional platform shortcut that selects the API host: pinotage, merlot, concord, vidal, zinfandel, or syrah. It is the 'merlot' in merlot.centrastage.net. Leave blank if you set the base URL directly.",
+          "name": "DATTO_RMM_PLATFORM"
+        },
+        {
+          "description": "Set the DATTO_RMM_TOKEN credential for the Datto RMM MCP server.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DATTO_RMM_TOKEN"
+        }
+      ],
+      "fileSha256": "38c667a031f727bceae2ac526d59d6a2ac06df2eb828794a19dd9d019bec18bb",
+      "identifier": "https://github.com/Servosity/msp-skills/releases/download/datto-rmm-v0.1.4/datto-rmm-mcp.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "01177533ba",
+    "published_at": "2026-08-27T01:17:41.477572Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Servosity/datto-rmm-mcp",
+    "server_version": "0.1.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-27T01:17:41.477572Z"
+  },
+  "title": "Datto RMM MCP",
+  "type": "mcp_server",
+  "version": "0.1.4"
+}

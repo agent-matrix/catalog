@@ -1,0 +1,75 @@
+{
+  "description": "Manage social media DMs and scheduled posts from your AI assistant, across 12 platforms.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:25+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-azorkai-crmsolid-mcp.stdio.1fffdc84fb",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/CRM-Solid/crmsolid-mcp",
+    "homepage": "https://github.com/CRM-Solid/crmsolid-mcp",
+    "repository": "https://github.com/CRM-Solid/crmsolid-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@crmsolid/mcp-server@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.azorkai/crmsolid-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "CRM Solid API key (csk_...), created under Settings, Developers in the panel.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CRMSOLID_API_KEY"
+        },
+        {
+          "description": "API base URL. Defaults to https://api.crmsolid.com; set it for self-hosted or white-label installs.",
+          "format": "string",
+          "name": "CRMSOLID_BASE_URL"
+        },
+        {
+          "description": "Set to 1 to expose only read tools and block every write.",
+          "format": "string",
+          "name": "CRMSOLID_READ_ONLY"
+        },
+        {
+          "description": "Comma separated allow list of tool names to expose.",
+          "format": "string",
+          "name": "CRMSOLID_TOOLS"
+        }
+      ],
+      "identifier": "@crmsolid/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1fffdc84fb",
+    "published_at": "2026-08-27T11:58:16.261033Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.azorkai/crmsolid-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-27T11:58:16.261033Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

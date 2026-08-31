@@ -1,0 +1,75 @@
+{
+  "description": "Capability-aware MCP server for Rancher-managed Kubernetes: discovery, resources, workflows.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:24+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-rex-rancher-mcp.stdio.44dc4cd87e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/rex/mcp-rancher",
+    "homepage": "https://github.com/rex/mcp-rancher",
+    "repository": "https://github.com/rex/mcp-rancher"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "rancher-mcp==1.59.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.rex/rancher-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Rancher server URL (single-instance mode)",
+          "isRequired": true,
+          "name": "RANCHER_URL"
+        },
+        {
+          "description": "Rancher API token (token-xxxxx:yyyyyyyyy)",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "RANCHER_TOKEN"
+        },
+        {
+          "description": "Verify TLS certificates (default true)",
+          "name": "RANCHER_VERIFY_SSL"
+        },
+        {
+          "description": "Multi-instance config JSON (overrides single-instance mode; supports per-instance read_only)",
+          "isSecret": true,
+          "name": "RANCHER_INSTANCES_JSON"
+        }
+      ],
+      "identifier": "rancher-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.59.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "44dc4cd87e",
+    "published_at": "2026-08-25T20:06:35.359981Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.rex/rancher-mcp",
+    "server_version": "1.59.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-25T20:06:35.359981Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.59.0"
+}

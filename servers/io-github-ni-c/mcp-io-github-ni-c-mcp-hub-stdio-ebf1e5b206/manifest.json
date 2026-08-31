@@ -1,0 +1,81 @@
+{
+  "description": "Many stdio MCP servers from one container, published over HTTPS with OAuth 2.1 for any MCP client",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:14+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ni-c-mcp-hub.stdio.ebf1e5b206",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ni-c/mcp-hub",
+    "homepage": "https://github.com/ni-c/mcp-hub",
+    "repository": "https://github.com/ni-c/mcp-hub"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@ni-c/mcp-hub@0.10.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ni-c/mcp-hub",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the mcp.json listing the servers to expose, in Claude Code's mcpServers format (default mcp.json in the working directory)",
+          "format": "string",
+          "name": "CONFIG_PATH"
+        },
+        {
+          "default": "60",
+          "description": "Minutes of inactivity before a server is put to sleep; 0 starts every server at launch and keeps it running (default 60)",
+          "format": "number",
+          "name": "IDLE_TIMEOUT_MINUTES"
+        },
+        {
+          "description": "Tool snapshots of sleeping servers (default .mcp-hub/tool-cache.json beside the config)",
+          "format": "string",
+          "name": "TOOL_CACHE_PATH"
+        },
+        {
+          "description": "Mirror the hub's log lines into this file; stdout carries the protocol, so logging goes to stderr otherwise",
+          "format": "string",
+          "name": "LOG_FILE"
+        }
+      ],
+      "identifier": "@ni-c/mcp-hub",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "--stdio"
+        }
+      ],
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.10.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ebf1e5b206",
+    "published_at": "2026-08-26T22:26:18.3082Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ni-c/mcp-hub",
+    "server_version": "0.10.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-26T22:26:18.3082Z"
+  },
+  "title": "mcp-hub",
+  "type": "mcp_server",
+  "version": "0.10.0"
+}

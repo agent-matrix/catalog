@@ -1,0 +1,97 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/nonchan7720/manifold:v1.6.4"
+      }
+    }
+  ],
+  "description": "MCP gateway aggregating MCP servers and OpenAPI/Swagger REST APIs behind one MCP endpoint",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:14+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/nonchan7720/manifold",
+  "id": "tool.io-github-nonchan7720-manifold.31f8115cf4",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nonchan7720/manifold",
+    "homepage": "https://github.com/nonchan7720/manifold",
+    "repository": "https://github.com/nonchan7720/manifold"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "MCP gateway aggregating MCP servers and OpenAPI/Swagger REST APIs behind one MCP endpoint",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.nonchan7720/manifold",
+      "request_type": "POST",
+      "url": "https://github.com/nonchan7720/manifold"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Expose the gateway port",
+            "isRequired": true,
+            "name": "-p",
+            "type": "named",
+            "value": "9999:9999"
+          },
+          {
+            "description": "Mount the Manifold configuration file into the container",
+            "isRequired": true,
+            "name": "-v",
+            "type": "named",
+            "value": "{config_path}:/home/nonroot/config.yaml",
+            "variables": {
+              "config_path": {
+                "description": "Absolute path to your config.yaml on the host",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          "ghcr.io/nonchan7720/manifold:v1.6.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nonchan7720/manifold",
+  "provenance": {
+    "identity_key": "0f83a947f7",
+    "promoted_from": "mcp.io-github-nonchan7720-manifold.stdio.0f83a947f7",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nonchan7720/manifold",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-nonchan7720-manifold.stdio.0f83a947f7",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/nonchan7720/manifold",
+  "summary": "MCP gateway aggregating MCP servers and OpenAPI/Swagger REST APIs behind one MCP endpoint",
+  "tags": [
+    "aggregating",
+    "gateway",
+    "manifold",
+    "openapi",
+    "rest",
+    "servers",
+    "swagger"
+  ],
+  "title": "Manifold",
+  "type": "tool",
+  "version": "1.6.4"
+}

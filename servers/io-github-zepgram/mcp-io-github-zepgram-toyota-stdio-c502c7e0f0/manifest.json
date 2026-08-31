@@ -1,0 +1,93 @@
+{
+  "description": "Toyota & Lexus vehicles: fuel, range, location, trips, health, climate, charging, commands",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:45+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-zepgram-toyota.stdio.c502c7e0f0",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/zepgram/toyota-mcp",
+    "homepage": "https://github.com/zepgram/toyota-mcp",
+    "repository": "https://github.com/zepgram/toyota-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "toyota-mcp==0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.zepgram/toyota",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "MyToyota account email \u2014 only for the headless password sign-in; prefer `toyota-mcp login`",
+          "name": "TOYOTA_USERNAME"
+        },
+        {
+          "description": "MyToyota account password \u2014 only for the headless password sign-in; prefer `toyota-mcp login`",
+          "isSecret": true,
+          "name": "TOYOTA_PASSWORD"
+        },
+        {
+          "description": "VIN selector when several vehicles share the account",
+          "name": "TOYOTA_VIN"
+        },
+        {
+          "description": "T for Toyota (default), L for Lexus",
+          "name": "TOYOTA_BRAND"
+        },
+        {
+          "description": "true (default) for km/L, false for miles/gallons",
+          "name": "TOYOTA_USE_METRIC"
+        }
+      ],
+      "identifier": "toyota-mcp",
+      "packageArguments": [
+        {
+          "description": "register only the read tools",
+          "name": "--read-only",
+          "type": "named"
+        },
+        {
+          "description": "osm (worldwide addresses) or fr (French addresses and fuel prices)",
+          "name": "--addresses",
+          "type": "named",
+          "valueHint": "osm"
+        },
+        {
+          "description": "named places, e.g. home=43.6045,1.4440;work=43.6290,1.3630",
+          "name": "--places",
+          "type": "named",
+          "valueHint": "home=lat,lon"
+        }
+      ],
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c502c7e0f0",
+    "published_at": "2026-08-29T19:09:08.735933Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.zepgram/toyota",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-29T19:09:08.735933Z"
+  },
+  "title": "Toyota & Lexus",
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

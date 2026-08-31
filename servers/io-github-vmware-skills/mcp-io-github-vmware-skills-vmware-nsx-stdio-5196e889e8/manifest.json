@@ -1,0 +1,91 @@
+{
+  "description": "VMware NSX networking management with 33 MCP tools: segments, gateways, NAT, routing, IPAM.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-vmware-skills-vmware-nsx.stdio.5196e889e8",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/vmware-skills/VMware-NSX",
+    "homepage": "https://github.com/vmware-skills/VMware-NSX",
+    "repository": "https://github.com/vmware-skills/VMware-NSX"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "The PyPI distribution is vmware-nsx-mgmt; the command it installs is vmware-nsx.",
+            "name": "--from",
+            "type": "named",
+            "value": "vmware-nsx-mgmt"
+          },
+          {
+            "type": "positional",
+            "value": "vmware-nsx",
+            "valueHint": "command"
+          },
+          "vmware-nsx-mgmt==1.8.12"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.vmware-skills/vmware-nsx",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the config file. Defaults to ~/.vmware-nsx/config.yaml.",
+          "format": "filepath",
+          "name": "VMWARE_NSX_CONFIG"
+        }
+      ],
+      "identifier": "vmware-nsx-mgmt",
+      "packageArguments": [
+        {
+          "description": "Starts the stdio MCP server. Without it the console script runs the human CLI and exits.",
+          "type": "positional",
+          "value": "mcp",
+          "valueHint": "subcommand"
+        }
+      ],
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "The PyPI distribution is vmware-nsx-mgmt; the command it installs is vmware-nsx.",
+          "name": "--from",
+          "type": "named",
+          "value": "vmware-nsx-mgmt"
+        },
+        {
+          "type": "positional",
+          "value": "vmware-nsx",
+          "valueHint": "command"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.8.12"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5196e889e8",
+    "published_at": "2026-08-30T09:36:36.767584Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.vmware-skills/vmware-nsx",
+    "server_version": "1.8.12",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-30T09:36:36.767584Z"
+  },
+  "title": "VMware NSX",
+  "type": "mcp_server",
+  "version": "1.8.12"
+}

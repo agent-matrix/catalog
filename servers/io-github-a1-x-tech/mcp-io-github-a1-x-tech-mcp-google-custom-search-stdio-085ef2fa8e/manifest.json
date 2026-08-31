@@ -1,0 +1,79 @@
+{
+  "description": "MCP server for Google Custom Search: web and image search via a Programmable Search Engine.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:38:52+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-A1-x-Tech-mcp-google-custom-search.stdio.085ef2fa8e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/A1-x-Tech/mcp-google-custom-search",
+    "homepage": "https://github.com/A1-x-Tech/mcp-google-custom-search",
+    "repository": "https://github.com/A1-x-Tech/mcp-google-custom-search"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-google-custom-search@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.A1-x-Tech/mcp-google-custom-search",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Google Cloud API key with the Custom Search API enabled. Treat it as a secret.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GOOGLE_CUSTOM_SEARCH_API_KEY"
+        },
+        {
+          "description": "Default Programmable Search Engine id (cx). Tools accept a per-call engine_id override.",
+          "name": "GOOGLE_CUSTOM_SEARCH_ENGINE_ID"
+        },
+        {
+          "default": "https://customsearch.googleapis.com",
+          "description": "API root override.",
+          "name": "GOOGLE_CUSTOM_SEARCH_API_BASE"
+        },
+        {
+          "default": "30000",
+          "description": "Per-request timeout in milliseconds.",
+          "name": "GOOGLE_CUSTOM_SEARCH_TIMEOUT_MS"
+        },
+        {
+          "default": "3",
+          "description": "Retries on transient errors (429, and 5xx/network \u2014 the API is idempotent GETs only).",
+          "name": "GOOGLE_CUSTOM_SEARCH_MAX_RETRIES"
+        }
+      ],
+      "identifier": "mcp-google-custom-search",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "085ef2fa8e",
+    "published_at": "2026-08-30T01:55:18.982632Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.A1-x-Tech/mcp-google-custom-search",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-30T01:55:18.982632Z"
+  },
+  "title": "Google Custom Search MCP",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

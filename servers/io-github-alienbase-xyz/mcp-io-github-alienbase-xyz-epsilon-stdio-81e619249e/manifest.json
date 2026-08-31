@@ -1,0 +1,72 @@
+{
+  "description": "Non-custodial limit, stop-loss and DCA trading on Epsilon (Robinhood Chain) for AI agents",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-alienbase-xyz-epsilon.stdio.81e619249e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/alienbase-xyz/EpsilonRobinhood",
+    "homepage": "https://github.com/alienbase-xyz/EpsilonRobinhood",
+    "repository": "https://github.com/alienbase-xyz/EpsilonRobinhood"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@epsilon-exchange/mcp@0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.alienbase-xyz/epsilon",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Epsilon developer key (eps_\u2026) \u2014 create one at developers.epsilon.exchange",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "EPSILON_API_KEY"
+        },
+        {
+          "description": "0x-prefixed private key of a dedicated trading wallet; omit for read-only (quotes, order status, market stats)",
+          "format": "string",
+          "isSecret": true,
+          "name": "EPSILON_WALLET_KEY"
+        },
+        {
+          "description": "Optional rev-share payout address (0x\u2026): the referral leg of every fill routed by this server is paid there on-chain. Never changes the maker's fee \u2014 it only redirects the existing leg.",
+          "format": "string",
+          "name": "EPSILON_REFERRER"
+        }
+      ],
+      "identifier": "@epsilon-exchange/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "81e619249e",
+    "published_at": "2026-08-28T04:02:46.551717Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.alienbase-xyz/epsilon",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-28T04:02:46.551717Z"
+  },
+  "title": "Epsilon",
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

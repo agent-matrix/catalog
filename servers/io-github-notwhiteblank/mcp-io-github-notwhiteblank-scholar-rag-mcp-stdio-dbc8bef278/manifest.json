@@ -1,0 +1,72 @@
+{
+  "description": "Academic paper knowledge-base MCP server: PDF ingest, vector search with reranking, KB management.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:14+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-notwhiteblank-scholar-rag-mcp.stdio.dbc8bef278",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/notwhiteblank/scholar-rag-mcp",
+    "homepage": "https://github.com/notwhiteblank/scholar-rag-mcp",
+    "repository": "https://github.com/notwhiteblank/scholar-rag-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "scholar-rag-mcp==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.notwhiteblank/scholar-rag-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Data root directory (knowledge bases, caches, jobs)",
+          "name": "SCHOLAR_RAG_DATA_DIR"
+        },
+        {
+          "description": "OpenAI-compatible chat endpoint for annotation/keywords (e.g. local vLLM)",
+          "isRequired": true,
+          "name": "SCHOLAR_RAG_CHAT_BASE_URL"
+        },
+        {
+          "description": "OpenAI-compatible embeddings endpoint",
+          "isRequired": true,
+          "name": "SCHOLAR_RAG_EMBED_BASE_URL"
+        },
+        {
+          "description": "Rerank endpoint (/v1/rerank)",
+          "isRequired": true,
+          "name": "SCHOLAR_RAG_RERANK_BASE_URL"
+        }
+      ],
+      "identifier": "scholar-rag-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "dbc8bef278",
+    "published_at": "2026-08-27T03:59:41.459285Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.notwhiteblank/scholar-rag-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-27T03:59:41.459285Z"
+  },
+  "title": "Scholar RAG MCP",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

@@ -1,0 +1,83 @@
+{
+  "description": "CLI and MCP server for Kaseya BMS PSA: tickets, CRM, contracts, finance, and offline analytics.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Servosity-kaseya-bms-mcp.stdio.2b4437d03e",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/servosity/msp-skills",
+    "homepage": "https://github.com/servosity/msp-skills",
+    "repository": "https://github.com/servosity/msp-skills"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Servosity/kaseya-bms-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://api.bms.kaseya.com",
+          "description": "Base URL for the Kaseya BMS API. Leave the prefilled default unless your account uses a different regional or self-hosted host.",
+          "name": "KASEYA_BMS_BASE_URL"
+        },
+        {
+          "description": "Alias for KASEYA_BMS_TOKEN - a pre-minted Kaseya BMS JWT sent as a Bearer token. Set one of the two, or use 'auth login'.",
+          "isSecret": true,
+          "name": "KASEYA_BMS_BEARER_AUTH"
+        },
+        {
+          "description": "Password for KASEYA_BMS_USERNAME. Exchanged for a JWT; never sent on data calls.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "KASEYA_BMS_PASSWORD"
+        },
+        {
+          "description": "Your company name exactly as it appears under My Settings in BMS. The authenticate call rejects the login without it.",
+          "isRequired": true,
+          "name": "KASEYA_BMS_TENANT"
+        },
+        {
+          "description": "Pre-minted Kaseya BMS JWT, sent as a Bearer token. Set this OR KASEYA_BMS_BEARER_AUTH; alternatively run 'kaseya-bms-cli auth login' to mint one from username/password/tenant.",
+          "isSecret": true,
+          "name": "KASEYA_BMS_TOKEN"
+        },
+        {
+          "description": "Kaseya BMS login used by `auth login` to exchange for a short-lived JWT.",
+          "isRequired": true,
+          "name": "KASEYA_BMS_USERNAME"
+        }
+      ],
+      "fileSha256": "d056be6feeca1e34bc321631644d0860771302a9239a4a17d9187f2a552eaab2",
+      "identifier": "https://github.com/Servosity/msp-skills/releases/download/kaseya-bms-v0.1.1/kaseya-bms-mcp.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "2b4437d03e",
+    "published_at": "2026-08-26T05:28:34.664814Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Servosity/kaseya-bms-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-26T05:28:34.664814Z"
+  },
+  "title": "Kaseya BMS MCP",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

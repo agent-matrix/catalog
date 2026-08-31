@@ -1,0 +1,85 @@
+{
+  "description": "Read Lighter perpetual markets and place guarded orders, including the H100 compute-price market.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:40+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-winter0x-lighter-mcp.stdio.063b3d9be2",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/winter0x/lighter-agent",
+    "homepage": "https://github.com/winter0x/lighter-agent",
+    "repository": "https://github.com/winter0x/lighter-agent"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "lighter-mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.winter0x/lighter-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "mainnet",
+          "description": "Deployment to read: mainnet, testnet, or robinhood. Defaults to mainnet.",
+          "name": "LIGHTER_NETWORK"
+        },
+        {
+          "description": "Sub-account the agent trades from. Read-only tools work without it.",
+          "name": "LIGHTER_ACCOUNT_INDEX"
+        },
+        {
+          "description": "API key slot bound to the sub-account, 0 to 254.",
+          "name": "LIGHTER_API_KEY_INDEX"
+        },
+        {
+          "description": "API key private key. Full write authority over the account it is bound to, so use a dedicated sub-account.",
+          "isSecret": true,
+          "name": "LIGHTER_API_KEY_PRIVATE_KEY"
+        },
+        {
+          "description": "Per-order notional ceiling in USD. Required before any order can be signed.",
+          "name": "LIGHTER_MAX_NOTIONAL_USD"
+        },
+        {
+          "description": "Layer-2 chain id bound into every signature. Mainnet uses 304 and testnet 300, so this is only needed on a deployment that publishes none.",
+          "name": "LIGHTER_CHAIN_ID"
+        },
+        {
+          "description": "Read-only token for account observation without a signing key.",
+          "isSecret": true,
+          "name": "LIGHTER_READ_ONLY_TOKEN"
+        }
+      ],
+      "identifier": "lighter-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "063b3d9be2",
+    "published_at": "2026-08-26T10:13:31.182966Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.winter0x/lighter-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-26T10:13:31.182966Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

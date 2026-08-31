@@ -1,0 +1,83 @@
+{
+  "description": "Tamper-evident records of AI agent decisions. Verify offline, or publish a proof link.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:35+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-darkmatter-hub-verifiable-agent-audit-trail.stdio.abaff5ac0d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/darkmatter-hub/mcp",
+    "homepage": "https://github.com/darkmatter-hub/mcp",
+    "repository": "https://github.com/darkmatter-hub/mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y"
+          },
+          "@darkmatterhub/mcp-server@0.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.darkmatter-hub/verifiable-agent-audit-trail",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional. Publishes each record to DarkMatter and returns a verification URL. Without it, records stay on local disk and verify offline.",
+          "isSecret": true,
+          "name": "DARKMATTER_API_KEY"
+        },
+        {
+          "default": "false",
+          "description": "Optional. Set to 'true' to make published records readable by anyone holding the link. Off by default.",
+          "name": "DARKMATTER_SHARE"
+        },
+        {
+          "description": "Optional. Override the API host. Defaults to https://darkmatterhub.ai.",
+          "name": "DARKMATTER_API_URL"
+        },
+        {
+          "description": "Optional. Directory for local record storage.",
+          "name": "DARKMATTER_MCP_STORE_DIR"
+        }
+      ],
+      "identifier": "@darkmatterhub/mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "abaff5ac0d",
+    "published_at": "2026-08-28T19:50:23.22962Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.darkmatter-hub/verifiable-agent-audit-trail",
+    "server_version": "0.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-28T19:50:23.22962Z"
+  },
+  "title": "DarkMatter",
+  "type": "mcp_server",
+  "version": "0.4.0"
+}

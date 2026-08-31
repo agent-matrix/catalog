@@ -1,0 +1,112 @@
+{
+  "description": "FHIR MCP server with SMART Backend Services, response compaction, FHIRPath, and guarded writes.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-faulkj-fhirhydrant.stdio.3a0a2c2c4c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/faulkj/fhirHydrant",
+    "homepage": "https://github.com/faulkj/fhirHydrant",
+    "repository": "https://github.com/faulkj/fhirHydrant"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "fhirhydrant@0.17.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.faulkj/fhirhydrant",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Run the installed package over MCP stdio.",
+          "format": "string",
+          "isRequired": true,
+          "name": "MCP_TRANSPORT",
+          "value": "stdio"
+        },
+        {
+          "choices": [
+            "smart",
+            "none"
+          ],
+          "default": "smart",
+          "description": "FHIR authentication mode. Use none only for an unauthenticated FHIR endpoint.",
+          "format": "string",
+          "isRequired": true,
+          "name": "FHIR_AUTH"
+        },
+        {
+          "description": "Full base URL of the FHIR API, such as https://fhir.example.org/fhir/R4.",
+          "format": "string",
+          "isRequired": true,
+          "name": "FHIR_SERVER_URL",
+          "placeholder": "https://fhir.example.org/fhir/R4"
+        },
+        {
+          "description": "SMART Backend Services token endpoint. Required when FHIR_AUTH=smart unless it can be derived from FHIR_BASE_URL.",
+          "format": "string",
+          "name": "FHIR_TOKEN_URL",
+          "placeholder": "https://fhir.example.org/oauth2/token"
+        },
+        {
+          "description": "SMART Backend Services client ID. Required when FHIR_AUTH=smart.",
+          "format": "string",
+          "name": "FHIR_CLIENT_ID"
+        },
+        {
+          "description": "Base64-encoded PKCS#8 private signing key. Required when FHIR_AUTH=smart.",
+          "format": "string",
+          "isSecret": true,
+          "name": "FHIR_ACTIVE_KEY"
+        },
+        {
+          "description": "Externally reachable JWKS URL for the signing key. Recommended for SMART authentication over stdio.",
+          "format": "string",
+          "name": "FHIR_JWKS_URL",
+          "placeholder": "https://example.org/.well-known/jwks.json"
+        },
+        {
+          "choices": [
+            "R4",
+            "R4B",
+            "R5"
+          ],
+          "default": "R4",
+          "description": "FHIR release used for FHIRPath and response shaping.",
+          "format": "string",
+          "name": "FHIR_VERSION"
+        }
+      ],
+      "identifier": "fhirhydrant",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.17.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "3a0a2c2c4c",
+    "published_at": "2026-08-27T23:22:00.575379Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.faulkj/fhirhydrant",
+    "server_version": "0.17.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-27T23:22:00.575379Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.17.3"
+}

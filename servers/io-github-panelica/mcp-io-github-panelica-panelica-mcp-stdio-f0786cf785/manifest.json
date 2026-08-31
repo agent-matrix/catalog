@@ -1,0 +1,73 @@
+{
+  "description": "Manage a Panelica hosting panel in plain English - 404 scoped, HMAC-signed tools.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:14+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Panelica-panelica-mcp.stdio.f0786cf785",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Panelica/panelica-mcp",
+    "homepage": "https://github.com/Panelica/panelica-mcp",
+    "repository": "https://github.com/Panelica/panelica-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "panelica-mcp@0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Panelica/panelica-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "External API base URL of your panel, e.g. https://panel.example.com:8443/api/external",
+          "format": "string",
+          "isRequired": true,
+          "name": "PANELICA_BASE_URL"
+        },
+        {
+          "description": "API key from the panel (Developer -> API). Grant only the scopes the assistant needs.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PANELICA_API_KEY"
+        },
+        {
+          "description": "API secret paired with the key; used locally for HMAC-SHA256 request signing.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PANELICA_API_SECRET"
+        }
+      ],
+      "identifier": "panelica-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f0786cf785",
+    "published_at": "2026-08-26T19:25:08.667429Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Panelica/panelica-mcp",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-26T19:25:08.667429Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

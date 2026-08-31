@@ -1,7 +1,7 @@
 {
-  "description": "Crypto intelligence MCP for market data, DeFi, wallets, security, DEX, NFTs, and Solana.",
+  "description": "Evidence-backed crypto due diligence with sources, freshness, and a runtime receipt on every call.",
   "harvest": {
-    "last_seen_at": "2026-08-24T03:17:07+00:00",
+    "last_seen_at": "2026-08-31T08:41:01+00:00",
     "seen_in_latest_run": true
   },
   "id": "mcp.xyz-hiveintelligence-mcp.sse.f43bb5642b",
@@ -22,29 +22,32 @@
   "name": "xyz.hiveintelligence/mcp",
   "provenance": {
     "identity_key": "f43bb5642b",
-    "published_at": "2026-05-31T17:24:33.895316Z",
+    "published_at": "2026-08-29T05:28:25.012675Z",
     "registry_base_url": "https://registry.modelcontextprotocol.io",
     "server_name": "xyz.hiveintelligence/mcp",
-    "server_version": "1.1.4",
+    "server_version": "1.5.2",
     "source": "mcp-registry",
-    "updated_at": "2026-05-31T17:24:33.895316Z"
+    "updated_at": "2026-08-29T05:28:25.012675Z"
   },
   "remotes": [
     {
       "headers": [
         {
-          "description": "Hive API key as a Bearer token.",
-          "isRequired": true,
+          "description": "Optional Bearer Hive API key for headless remote MCP access; interactive clients should use OAuth discovery",
           "isSecret": true,
-          "name": "Authorization",
-          "placeholder": "Bearer hive_your_api_key"
+          "name": "Authorization"
+        },
+        {
+          "description": "Optional legacy Hive API key header for headless remote MCP access",
+          "isSecret": true,
+          "name": "X-API-Key"
         }
       ],
       "type": "streamable-http",
       "url": "https://mcp.hiveintelligence.xyz/mcp"
     }
   ],
-  "title": null,
+  "title": "Hive Intelligence MCP",
   "type": "mcp_server",
-  "version": "1.1.4"
+  "version": "1.5.2"
 }

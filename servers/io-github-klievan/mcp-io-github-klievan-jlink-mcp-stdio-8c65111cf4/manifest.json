@@ -1,0 +1,70 @@
+{
+  "description": "Debug embedded firmware on real hardware: J-Link probes, Cortex-M faults, RTT logs, GDB.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:11+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Klievan-jlink-mcp.stdio.8c65111cf4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Klievan/jlink-mcp",
+    "homepage": "https://github.com/Klievan/jlink-mcp",
+    "repository": "https://github.com/Klievan/jlink-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "jlink-mcp@0.6.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Klievan/jlink-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Target device name, exactly as J-Link spells it (e.g. nRF52840_XXAA, STM32F407VG). Use the search_devices tool to find it.",
+          "isRequired": true,
+          "name": "JLINK_DEVICE"
+        },
+        {
+          "description": "Serial number of a specific probe, when more than one is attached.",
+          "name": "JLINK_SERIAL"
+        },
+        {
+          "description": "CMSIS-SVD file for the target. Without it, peripheral reads are undecoded hex.",
+          "name": "SVD_PATH"
+        },
+        {
+          "description": "Address of the firmware's _SEGGER_RTT symbol. Lets RTT survive a reset or flash.",
+          "name": "JLINK_RTT_ADDR"
+        }
+      ],
+      "identifier": "jlink-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.6.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8c65111cf4",
+    "published_at": "2026-08-28T08:39:57.503509Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Klievan/jlink-mcp",
+    "server_version": "0.6.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-28T08:39:57.503509Z"
+  },
+  "title": "J-Link MCP",
+  "type": "mcp_server",
+  "version": "0.6.0"
+}

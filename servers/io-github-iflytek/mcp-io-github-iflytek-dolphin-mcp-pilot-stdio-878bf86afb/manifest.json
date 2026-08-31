@@ -1,0 +1,74 @@
+{
+  "description": "AI agent interface to Apache DolphinScheduler: 58 MCP tools for workflow orchestration & data ops.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:45+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-iflytek-dolphin-mcp-pilot.stdio.878bf86afb",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/iflytek/dolphin-mcp-pilot",
+    "homepage": "https://github.com/iflytek/dolphin-mcp-pilot",
+    "repository": "https://github.com/iflytek/dolphin-mcp-pilot"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/iflytek/dolphin-mcp-pilot:0.3.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.iflytek/dolphin-mcp-pilot",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "DolphinScheduler API base URL (e.g. http://localhost:12345/dolphinscheduler)",
+          "isRequired": true,
+          "name": "DS_URL"
+        },
+        {
+          "description": "DolphinScheduler API token (leave empty to use DS_USER/DS_PASSWORD instead)",
+          "name": "DS_TOKEN"
+        },
+        {
+          "description": "DolphinScheduler username (alternative to DS_TOKEN)",
+          "name": "DS_USER"
+        },
+        {
+          "description": "DolphinScheduler password (used with DS_USER)",
+          "name": "DS_PASSWORD"
+        },
+        {
+          "description": "Tenant code (default: 'default')",
+          "name": "DS_TENANT_CODE"
+        }
+      ],
+      "identifier": "ghcr.io/iflytek/dolphin-mcp-pilot:0.3.1",
+      "registryType": "oci",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:8001/mcp/"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "878bf86afb",
+    "published_at": "2026-08-31T02:19:05.654587Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.iflytek/dolphin-mcp-pilot",
+    "server_version": "0.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-31T02:19:05.654587Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.1"
+}

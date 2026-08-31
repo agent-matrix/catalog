@@ -1,0 +1,67 @@
+{
+  "description": "Free consent-based emailing, blog publishing, and interactive email template design tools",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-good-sender-goodsender-mcp.stdio.a4245e4b98",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/good-sender/mcp",
+    "homepage": "https://github.com/good-sender/mcp",
+    "repository": "https://github.com/good-sender/mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "docker.io/goodsender/goodsender-mcp:0.4.1-rc3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.good-sender/goodsender-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your GoodSender API key (from the API Keys section of the GoodSender Console).",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GOODSENDER_API_KEY"
+        },
+        {
+          "description": "Set to false to opt out of anonymous usage/reliability telemetry.",
+          "name": "GOODSENDER_TELEMETRY"
+        },
+        {
+          "description": "Set to true so mutating tools run immediately without asking for action confirmation. Use for unattended agent loops (for example Claude Cowork on a schedule). Default false: publish and send wait for confirmation.",
+          "name": "GOODSENDER_DISABLE_ACTION_GUARDS"
+        }
+      ],
+      "identifier": "docker.io/goodsender/goodsender-mcp:0.4.1-rc3",
+      "registryType": "oci",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:9889/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "a4245e4b98",
+    "published_at": "2026-08-30T12:45:41.975473Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.good-sender/goodsender-mcp",
+    "server_version": "0.4.1-rc3",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-30T12:45:41.975473Z"
+  },
+  "title": "GoodSender",
+  "type": "mcp_server",
+  "version": "0.4.1-rc3"
+}

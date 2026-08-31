@@ -1,0 +1,92 @@
+{
+  "description": "Give an agent a wallet. Pays for x402 resources within hard limits. Base + USDC, gasless.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:36+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-devmster-x402-trinity.stdio.45d758c591",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/devmster/x402-trinity",
+    "homepage": "https://github.com/devmster/x402-trinity",
+    "repository": "https://github.com/devmster/x402-trinity"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "x402-trinity@0.1.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.devmster/x402-trinity",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Private key of the wallet that pays. Use a dedicated wallet holding only what you would accept losing. The server refuses to start without it.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "X402_PRIVATE_KEY"
+        },
+        {
+          "description": "Hard ceiling for a single payment, in atomic units (USDC has 6 decimals, so 50000 is $0.05). Required: a model decides when payments happen, so the cap cannot come from the model.",
+          "format": "string",
+          "isRequired": true,
+          "name": "X402_MAX_PER_REQUEST",
+          "placeholder": "50000"
+        },
+        {
+          "description": "Lifetime ceiling across all payments, in atomic units. Required for the same reason as the per-request cap.",
+          "format": "string",
+          "isRequired": true,
+          "name": "X402_TOTAL_BUDGET",
+          "placeholder": "1000000"
+        },
+        {
+          "description": "Path to a file that makes the lifetime budget survive restarts. Without it the total resets every time the server starts.",
+          "format": "filepath",
+          "name": "X402_BUDGET_FILE",
+          "placeholder": "./.x402-budget.json"
+        },
+        {
+          "description": "Comma-separated hosts that may be paid. Anything else is refused however convincing the challenge looks.",
+          "format": "string",
+          "name": "X402_ALLOW_HOSTS",
+          "placeholder": "api.example.com"
+        },
+        {
+          "description": "Networks to accept. Defaults to base.",
+          "format": "string",
+          "name": "X402_NETWORKS",
+          "placeholder": "base"
+        }
+      ],
+      "identifier": "x402-trinity",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "45d758c591",
+    "published_at": "2026-08-26T06:46:32.699572Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.devmster/x402-trinity",
+    "server_version": "0.1.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-26T06:46:32.699572Z"
+  },
+  "title": "x402 Trinity",
+  "type": "mcp_server",
+  "version": "0.1.5"
+}

@@ -1,0 +1,146 @@
+{
+  "description": "Safety-first X (Twitter) API v2 MCP server: 41 typed tools across 12 packages, policy-gated.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:09+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-IvanBBaev-x-mcp-ai.stdio.32efd86995",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/IvanBBaev/x-mcp",
+    "homepage": "https://github.com/IvanBBaev/x-mcp",
+    "repository": "https://github.com/IvanBBaev/x-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "x-mcp-ai@0.8.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.IvanBBaev/x-mcp-ai",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Authentication mode: oauth2 (default) or app-only.",
+          "format": "string",
+          "name": "X_MCP_AUTH_MODE"
+        },
+        {
+          "description": "OAuth 2.0 client ID (oauth2 mode).",
+          "format": "string",
+          "name": "X_MCP_CLIENT_ID"
+        },
+        {
+          "description": "OAuth 2.0 client secret (confidential clients only).",
+          "format": "string",
+          "isSecret": true,
+          "name": "X_MCP_CLIENT_SECRET"
+        },
+        {
+          "description": "Application-only bearer token (app-only mode).",
+          "format": "string",
+          "isSecret": true,
+          "name": "X_MCP_BEARER_TOKEN"
+        },
+        {
+          "description": "Path to the rotating OAuth 2.0 token store (default: OS-resolved).",
+          "format": "string",
+          "name": "X_MCP_TOKEN_FILE"
+        },
+        {
+          "description": "Set to 1 to keep OAuth 2.0 tokens in the OS keychain (macOS, Linux) instead of a token file. Mutually exclusive with an explicit X_MCP_TOKEN_FILE.",
+          "format": "string",
+          "name": "X_MCP_TOKEN_KEYCHAIN"
+        },
+        {
+          "description": "Policy preset: read-only (default), engage, publish, manage, or full.",
+          "format": "string",
+          "name": "X_MCP_POLICY"
+        },
+        {
+          "description": "Comma-separated op:domain cells to allow on top of the preset (e.g. read:dm,write:dm).",
+          "format": "string",
+          "name": "X_MCP_POLICY_ALLOW"
+        },
+        {
+          "description": "Comma-separated op:domain cells to deny; deny beats allow beats preset.",
+          "format": "string",
+          "name": "X_MCP_POLICY_DENY"
+        },
+        {
+          "description": "Set to 1 to drop policy-denied tools from registration entirely instead of registering them annotated as denied.",
+          "format": "string",
+          "name": "X_MCP_HIDE_DENIED"
+        },
+        {
+          "description": "Directory uploads must resolve inside. Media upload is disabled unless this is set.",
+          "format": "string",
+          "name": "X_MCP_MEDIA_DIR"
+        },
+        {
+          "description": "Comma-separated specially-provisioned access classes to declare: pilot, premium-user, enterprise. Unset means the conservative default (app+user, user-only).",
+          "format": "string",
+          "name": "X_MCP_AVAILABILITY"
+        },
+        {
+          "description": "Path to a profiles file holding named configuration blocks.",
+          "format": "string",
+          "name": "X_MCP_PROFILES_FILE"
+        },
+        {
+          "description": "Name of the profile to select from the profiles file.",
+          "format": "string",
+          "name": "X_MCP_PROFILE"
+        },
+        {
+          "description": "Per-HTTP-request timeout in milliseconds (default 30000).",
+          "format": "string",
+          "name": "X_MCP_TIMEOUT_MS"
+        },
+        {
+          "description": "Diagnostic verbosity on stderr: silent, error, info (default), or debug.",
+          "format": "string",
+          "name": "X_MCP_LOG_LEVEL"
+        },
+        {
+          "description": "Session spend cap in USD.",
+          "format": "string",
+          "name": "X_MCP_CREDIT_BUDGET"
+        },
+        {
+          "description": "Budget enforcement: warn (default) or hard.",
+          "format": "string",
+          "name": "X_MCP_BUDGET_MODE"
+        }
+      ],
+      "identifier": "x-mcp-ai",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.8.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "32efd86995",
+    "published_at": "2026-08-29T18:14:32.391946Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.IvanBBaev/x-mcp-ai",
+    "server_version": "0.8.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-29T18:14:32.391946Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.8.0"
+}

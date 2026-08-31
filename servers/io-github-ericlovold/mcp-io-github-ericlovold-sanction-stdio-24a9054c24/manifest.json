@@ -1,0 +1,70 @@
+{
+  "description": "The wallet an AI agent carries \u2014 mandate, budget, vault, and audit. Counterparties verify first.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ericlovold-sanction.stdio.24a9054c24",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ericlovold/sanction",
+    "homepage": "https://github.com/ericlovold/sanction",
+    "repository": "https://github.com/ericlovold/sanction"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "sanction-mcp@0.9.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ericlovold/sanction",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Agent API key (pxy_...). Create one at https://getsanction.com or via POST /api/v1/wallets then POST /api/v1/agents.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SANCTION_API_KEY"
+        },
+        {
+          "description": "Optional override for sanction_wallet_status; by default the wallet derives from the agent key.",
+          "name": "SANCTION_WALLET_ID"
+        },
+        {
+          "default": "https://getsanction.com/api/v1",
+          "description": "Sanction API base URL.",
+          "name": "SANCTION_API_URL"
+        }
+      ],
+      "identifier": "sanction-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.9.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "24a9054c24",
+    "published_at": "2026-08-28T22:02:37.588626Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ericlovold/sanction",
+    "server_version": "0.9.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-28T22:02:37.588626Z"
+  },
+  "title": "Sanction",
+  "type": "mcp_server",
+  "version": "0.9.0"
+}

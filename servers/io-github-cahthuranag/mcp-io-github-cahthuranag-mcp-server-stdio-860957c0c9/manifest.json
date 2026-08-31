@@ -1,0 +1,62 @@
+{
+  "description": "Real-time & historical exchange rates for 160+ currencies. No API key needed to start.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:28+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cahthuranag-mcp-server.stdio.860957c0c9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cahthuranag/mcp-server",
+    "homepage": "https://github.com/cahthuranag/mcp-server",
+    "repository": "https://github.com/cahthuranag/mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@allratestoday/mcp-server@0.5.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cahthuranag/mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional. Without it the server runs keyless: get_exchange_rate answers from the official ECB daily reference table (~30 majors) and list_currencies works. A free key (https://allratestoday.com/register) unlocks real-time mid-market rates for 160+ currencies, historical series, and multi-target/point-in-time lookups.",
+          "isSecret": true,
+          "name": "ALLRATES_API_KEY"
+        },
+        {
+          "description": "Override API base URL (default: https://allratestoday.com/api).",
+          "name": "ALLRATES_BASE_URL"
+        }
+      ],
+      "identifier": "@allratestoday/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "860957c0c9",
+    "published_at": "2026-08-30T09:25:38.641626Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cahthuranag/mcp-server",
+    "server_version": "0.5.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-30T09:25:38.641626Z"
+  },
+  "title": "AllRatesToday",
+  "type": "mcp_server",
+  "version": "0.5.0"
+}

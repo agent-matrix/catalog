@@ -1,0 +1,70 @@
+{
+  "description": "Guardrailed fleet ops for AI agents: multi-cluster Kubernetes via OCM with policy, approval, audit.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ocm-mcp-server-ocm-mcp-server.stdio.fee34ce268",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ocm-mcp-server/ocm-mcp-server",
+    "homepage": "https://github.com/ocm-mcp-server/ocm-mcp-server",
+    "repository": "https://github.com/ocm-mcp-server/ocm-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "ocm-mcp-server==0.5.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ocm-mcp-server/ocm-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the kubeconfig with the OCM hub context (and optional spoke contexts).",
+          "format": "string",
+          "isRequired": true,
+          "name": "KUBECONFIG"
+        },
+        {
+          "description": "Kubeconfig context name of the OCM hub cluster (defaults to the current context).",
+          "format": "string",
+          "name": "OCM_MCP_HUB_CONTEXT"
+        },
+        {
+          "description": "Set to 'true' to disable the gated write path entirely (read-only fleet access).",
+          "format": "string",
+          "name": "OCM_MCP_READ_ONLY"
+        }
+      ],
+      "identifier": "ocm-mcp-server",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "fee34ce268",
+    "published_at": "2026-08-29T08:21:38.003413Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ocm-mcp-server/ocm-mcp-server",
+    "server_version": "0.5.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-29T08:21:38.003413Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.5.0"
+}

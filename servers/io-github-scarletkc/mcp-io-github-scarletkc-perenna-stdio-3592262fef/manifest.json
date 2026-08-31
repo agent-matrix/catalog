@@ -1,0 +1,86 @@
+{
+  "description": "A lightweight, Git-backed permanent memory for AI agents.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:26+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-scarletkc-perenna.stdio.3592262fef",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/scarletkc/Perenna",
+    "homepage": "https://github.com/scarletkc/Perenna",
+    "repository": "https://github.com/scarletkc/Perenna"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "perenna==0.4.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.scarletkc/perenna",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Git remote name used for optional synchronization (for example, origin); leave unset for local-only operation",
+          "name": "PERENNA_GIT_REMOTE"
+        },
+        {
+          "description": "Embedding provider API key (optional; overrides a stored key; providers can also be configured via `vexor init`)",
+          "isSecret": true,
+          "name": "VEXOR_API_KEY"
+        },
+        {
+          "description": "Remote reranker API key (optional; overrides a stored key; only needed when rerank is set to remote)",
+          "isSecret": true,
+          "name": "VEXOR_REMOTE_RERANK_API_KEY"
+        },
+        {
+          "description": "Non-secret Vexor config as a JSON object, e.g. {\"provider\": \"gemini\", \"rerank\": \"bm25\"} (optional; merged over ~/.vexor/config.json; credential fields are rejected, use the dedicated variables)",
+          "name": "VEXOR_CONFIG_JSON"
+        }
+      ],
+      "identifier": "perenna",
+      "packageArguments": [
+        {
+          "description": "Run the local MCP server over stdio",
+          "type": "positional",
+          "value": "mcp"
+        },
+        {
+          "description": "Perenna data directory; defaults to ~/.perenna",
+          "format": "filepath",
+          "name": "--home",
+          "type": "named"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "3592262fef",
+    "published_at": "2026-08-28T02:15:07.590934Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.scarletkc/perenna",
+    "server_version": "0.4.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-28T02:15:07.590934Z"
+  },
+  "title": "Perenna",
+  "type": "mcp_server",
+  "version": "0.4.1"
+}

@@ -1,0 +1,80 @@
+{
+  "description": "Read-only MCP for iMessage, SMS, MMS, and RCS history already present in Apple Messages on Mac.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-anipotts-imessage-mcp.stdio.75ffa15b48",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/anipotts/imessage-mcp",
+    "homepage": "https://github.com/anipotts/imessage-mcp",
+    "repository": "https://github.com/anipotts/imessage-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "node",
+          "imessage-mcp@2.0.0-beta.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.anipotts/imessage-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Absolute path to a live or faithfully copied Mac chat.db. Defaults to the current user's Messages database.",
+          "name": "IMESSAGE_DB"
+        },
+        {
+          "description": "Use live unified Contacts or handles only. Values: live, none.",
+          "name": "IMESSAGE_CONTACTS"
+        },
+        {
+          "description": "Startup disclosure ceiling. Values: full, redacted, aggregate.",
+          "name": "IMESSAGE_PRIVACY"
+        },
+        {
+          "description": "Set to 1 to permit explicit full-mode attachment-path requests.",
+          "name": "IMESSAGE_ATTACHMENT_PATHS"
+        },
+        {
+          "description": "Operator-owned 0600 regular file containing at least 32 random bytes for stable authenticated opaque references.",
+          "isRequired": true,
+          "name": "IMESSAGE_REFERENCE_KEY_FILE"
+        },
+        {
+          "description": "Operator-owned 0600 regular file containing a unique random identity for this database lineage and its faithful copies.",
+          "isRequired": true,
+          "name": "IMESSAGE_DATABASE_ID_FILE"
+        }
+      ],
+      "identifier": "imessage-mcp",
+      "registryType": "npm",
+      "runtimeHint": "node",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.0.0-beta.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "75ffa15b48",
+    "published_at": "2026-08-27T03:22:34.904213Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.anipotts/imessage-mcp",
+    "server_version": "2.0.0-beta.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-27T03:22:34.904213Z"
+  },
+  "title": "iMessage MCP",
+  "type": "mcp_server",
+  "version": "2.0.0-beta.2"
+}

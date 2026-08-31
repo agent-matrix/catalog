@@ -1,0 +1,66 @@
+{
+  "description": "Send transactional email and manage domains, audiences, and broadcasts from any MCP client.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:38:48+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.dev-eusend-eusend.stdio.cdbde02c9c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@eusend_dev/mcp@0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "dev.eusend/eusend",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Eusend API key. Use an eu_test_ key to trial calls without delivering mail.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "EUSEND_API_KEY"
+        },
+        {
+          "description": "Default sender address, so the assistant does not guess an unverified one.",
+          "format": "string",
+          "name": "EUSEND_FROM"
+        },
+        {
+          "description": "Default reply-to address used when a send omits one.",
+          "format": "string",
+          "name": "EUSEND_REPLY_TO"
+        }
+      ],
+      "identifier": "@eusend_dev/mcp",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "cdbde02c9c",
+    "published_at": "2026-08-30T07:51:16.652621Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "dev.eusend/eusend",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-30T07:51:16.652621Z"
+  },
+  "title": "Eusend",
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

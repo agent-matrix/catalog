@@ -1,0 +1,89 @@
+{
+  "description": "MCP server for Proofpoint Essentials -- MSP org, domain, user, licensing, and reporting management.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:19+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-WYRE-AI-proofpoint-essentials-mcp.stdio.77ee214c85",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/WYRE-AI/proofpoint-essentials-mcp",
+    "homepage": "https://github.com/WYRE-AI/proofpoint-essentials-mcp",
+    "repository": "https://github.com/WYRE-AI/proofpoint-essentials-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-ai/proofpoint-essentials-mcp:v1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.WYRE-AI/proofpoint-essentials-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Proofpoint Essentials org-administrator username (used for the X-User header)",
+          "format": "string",
+          "isRequired": true,
+          "name": "PROOFPOINT_ESSENTIALS_USERNAME"
+        },
+        {
+          "description": "Proofpoint Essentials org-administrator password (used for the X-Password header)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PROOFPOINT_ESSENTIALS_PASSWORD"
+        },
+        {
+          "default": "us1",
+          "description": "Region subdomain, e.g. 'us1' or 'eu1'. Defaults to 'us1'.",
+          "format": "string",
+          "name": "PROOFPOINT_ESSENTIALS_REGION"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-ai/proofpoint-essentials-mcp:v1.0.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "77ee214c85",
+    "published_at": "2026-08-28T17:58:12.553413Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.WYRE-AI/proofpoint-essentials-mcp",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-28T17:58:12.553413Z"
+  },
+  "title": "Proofpoint Essentials",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

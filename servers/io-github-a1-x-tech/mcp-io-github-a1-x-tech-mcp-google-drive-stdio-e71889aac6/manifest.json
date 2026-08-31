@@ -1,0 +1,88 @@
+{
+  "description": "MCP server for the Google Drive API: search, upload, download, organize and share files.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:38:52+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-A1-x-Tech-mcp-google-drive.stdio.e71889aac6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/A1-x-Tech/mcp-google-drive",
+    "homepage": "https://github.com/A1-x-Tech/mcp-google-drive",
+    "repository": "https://github.com/A1-x-Tech/mcp-google-drive"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@a1-x-tech/mcp-google-drive@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.A1-x-Tech/mcp-google-drive",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Google OAuth2 client id (refresh-token flow).",
+          "name": "GOOGLE_DRIVE_CLIENT_ID"
+        },
+        {
+          "description": "Google OAuth2 client secret (refresh-token flow). Treat it as a secret.",
+          "isSecret": true,
+          "name": "GOOGLE_DRIVE_CLIENT_SECRET"
+        },
+        {
+          "description": "Google OAuth2 refresh token, exchanged for access tokens automatically. Treat it as a secret.",
+          "isSecret": true,
+          "name": "GOOGLE_DRIVE_REFRESH_TOKEN"
+        },
+        {
+          "description": "Static OAuth2 access token (~1h lifetime) \u2014 alternative to the refresh-token trio, mostly for testing.",
+          "isSecret": true,
+          "name": "GOOGLE_DRIVE_ACCESS_TOKEN"
+        },
+        {
+          "default": "https://www.googleapis.com",
+          "description": "API root override.",
+          "name": "GOOGLE_DRIVE_API_BASE"
+        },
+        {
+          "default": "60000",
+          "description": "Per-request timeout in milliseconds.",
+          "name": "GOOGLE_DRIVE_TIMEOUT_MS"
+        },
+        {
+          "default": "3",
+          "description": "Retries on transient errors (429 always; 5xx/network for reads).",
+          "name": "GOOGLE_DRIVE_MAX_RETRIES"
+        }
+      ],
+      "identifier": "@a1-x-tech/mcp-google-drive",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e71889aac6",
+    "published_at": "2026-08-30T01:56:01.429429Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.A1-x-Tech/mcp-google-drive",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-30T01:56:01.429429Z"
+  },
+  "title": "Google Drive MCP",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

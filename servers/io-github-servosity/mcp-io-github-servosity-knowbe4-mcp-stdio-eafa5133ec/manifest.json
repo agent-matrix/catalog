@@ -1,0 +1,74 @@
+{
+  "description": "Every KnowBe4 KMSAT reporting feature plus a local SQLite store that answers the cross-client",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Servosity-knowbe4-mcp.stdio.eafa5133ec",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/servosity/msp-skills",
+    "homepage": "https://github.com/servosity/msp-skills",
+    "repository": "https://github.com/servosity/msp-skills"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Servosity/knowbe4-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Set the KNOWBE4_API_KEY credential for the KnowBe4 MCP server.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "KNOWBE4_API_KEY"
+        },
+        {
+          "description": "Full API base URL. Leave blank: the CLI builds it from KNOWBE4_REGION. Set it only to point at a different host.",
+          "name": "KNOWBE4_BASE_URL"
+        },
+        {
+          "default": "us",
+          "description": "Set the KNOWBE4_REGION credential for the KnowBe4 MCP server.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "KNOWBE4_REGION"
+        },
+        {
+          "description": "Separate bearer key for the KnowBe4 User Events API, which has its own host and key. Needed only for the `events` commands; leave blank otherwise.",
+          "isSecret": true,
+          "name": "KNOWBE4_USER_EVENT_API_KEY"
+        }
+      ],
+      "fileSha256": "e59f25ba4a74f7ff002606dd9602cc8524c15875d3088e8dd2739a35c20fcdd3",
+      "identifier": "https://github.com/Servosity/msp-skills/releases/download/knowbe4-v0.1.1/knowbe4-mcp.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "eafa5133ec",
+    "published_at": "2026-08-26T05:29:31.668068Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Servosity/knowbe4-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-26T05:29:31.668068Z"
+  },
+  "title": "KnowBe4 MCP",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

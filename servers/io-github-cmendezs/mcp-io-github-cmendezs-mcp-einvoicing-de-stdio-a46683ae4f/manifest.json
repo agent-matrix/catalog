@@ -1,0 +1,68 @@
+{
+  "description": "German e-invoicing MCP server: ZUGFeRD 2.x, XRechnung 3.x, EN 16931, KoSIT validation, Peppol.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cmendezs-mcp-einvoicing-de.stdio.a46683ae4f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cmendezs/mcp-einvoicing-de",
+    "homepage": "https://github.com/cmendezs/mcp-einvoicing-de",
+    "repository": "https://github.com/cmendezs/mcp-einvoicing-de"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-einvoicing-de==0.10.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cmendezs/mcp-einvoicing-de",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Logging level: DEBUG, INFO (default), WARNING, or ERROR",
+          "format": "string",
+          "name": "EINVOICING_DE_LOG_LEVEL"
+        },
+        {
+          "description": "Set to 1 to opt in to remote KoSIT cloud validation by default across all invoice_validate calls (egresses the full invoice payload). Local Schematron only by default; callers can still opt in per-call with cloud_validate=True.",
+          "format": "string",
+          "name": "EINVOICING_DE_KOSIT_ENABLE"
+        },
+        {
+          "description": "URL of a self-hosted KoSIT validation tool REST endpoint (e.g. http://localhost:8080/api/v1/validate), used only when cloud validation is enabled (cloud_validate=True or EINVOICING_DE_KOSIT_ENABLE=1). Defaults to an [Unverified] validator.kosit.de endpoint if unset.",
+          "format": "string",
+          "name": "EINVOICING_DE_KOSIT_VALIDATOR_URL"
+        }
+      ],
+      "identifier": "mcp-einvoicing-de",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.10.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a46683ae4f",
+    "published_at": "2026-08-24T12:09:12.191946Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cmendezs/mcp-einvoicing-de",
+    "server_version": "0.10.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-24T12:09:12.191946Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.10.0"
+}

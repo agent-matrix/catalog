@@ -1,0 +1,67 @@
+{
+  "description": "Every Domotz endpoint, plus a local SQLite fleet mirror that answers cross-site questions.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Servosity-domotz-mcp.stdio.3b2e8b7847",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/servosity/msp-skills",
+    "homepage": "https://github.com/servosity/msp-skills",
+    "repository": "https://github.com/servosity/msp-skills"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Servosity/domotz-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Set the DOMOTZ_API_KEY credential for the Domotz MCP server.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DOMOTZ_API_KEY"
+        },
+        {
+          "description": "Full API base URL. Leave blank: the CLI builds it from DOMOTZ_REGION. Set it only to point at a different host.",
+          "name": "DOMOTZ_BASE_URL"
+        },
+        {
+          "default": "us-east-1-cell-1",
+          "description": "Selects the Domotz API cell for your portal (default us-east-1-cell-1).",
+          "name": "DOMOTZ_REGION"
+        }
+      ],
+      "fileSha256": "f0c915c9d76aaf055b9a5ead97537ca9bdd2532eaa5d10e4ad373aa553e825c7",
+      "identifier": "https://github.com/Servosity/msp-skills/releases/download/domotz-v0.1.2/domotz-mcp.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "3b2e8b7847",
+    "published_at": "2026-08-27T01:20:20.615619Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Servosity/domotz-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-27T01:20:20.615619Z"
+  },
+  "title": "Domotz MCP",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

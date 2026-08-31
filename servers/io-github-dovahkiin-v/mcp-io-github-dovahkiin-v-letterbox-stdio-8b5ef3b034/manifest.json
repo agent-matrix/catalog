@@ -1,0 +1,71 @@
+{
+  "description": "File-based comms protocol for AI-to-AI dialogue between terminal agents.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-dovahkiin-v-letterbox.stdio.8b5ef3b034",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/dovahkiin-v/letterbox",
+    "homepage": "https://github.com/dovahkiin-v/letterbox",
+    "repository": "https://github.com/dovahkiin-v/letterbox"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "letterbox==1.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.dovahkiin-v/letterbox",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Channel name to open. Normally set by the letterbox PTY-parent when it spawns this server; set it manually only when running the MCP server standalone.",
+          "format": "string",
+          "isRequired": true,
+          "name": "LETTERBOX_CHANNEL"
+        },
+        {
+          "description": "This endpoint's identity on the channel \u2014 the name the peer agent sees on every message.",
+          "format": "string",
+          "isRequired": true,
+          "name": "LETTERBOX_SENDER"
+        },
+        {
+          "description": "Per-launch instance id, the watcher/own-write join key that stops an agent seeing its own messages as incoming. Must be unique per launch.",
+          "format": "string",
+          "isRequired": true,
+          "name": "LETTERBOX_INSTANCE_ID"
+        }
+      ],
+      "identifier": "letterbox",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8b5ef3b034",
+    "published_at": "2026-08-24T22:33:12.843311Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.dovahkiin-v/letterbox",
+    "server_version": "1.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-24T22:33:12.843311Z"
+  },
+  "title": "Letterbox",
+  "type": "mcp_server",
+  "version": "1.2.2"
+}

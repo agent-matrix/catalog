@@ -1,0 +1,73 @@
+{
+  "description": "Query a verified document collection: passages that answer a question, with their source.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:49+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-jorgell23-sys-markdown-document-search.stdio.9307916bfd",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jorgell23-sys/mdcx",
+    "homepage": "https://github.com/jorgell23-sys/mdcx",
+    "repository": "https://github.com/jorgell23-sys/mdcx"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mdcx==1.12.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.jorgell23-sys/markdown-document-search",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Absolute path to the .mdcx package to query",
+          "isRequired": true,
+          "name": "MDCX_FILE"
+        },
+        {
+          "description": "Key that decrypts the package",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "MDCX_KEY"
+        }
+      ],
+      "identifier": "mdcx",
+      "packageArguments": [
+        {
+          "description": "Module that starts the server",
+          "isRequired": true,
+          "name": "-m",
+          "type": "named",
+          "value": "mdcx.mcp_server"
+        }
+      ],
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.12.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9307916bfd",
+    "published_at": "2026-08-28T16:14:03.487982Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.jorgell23-sys/markdown-document-search",
+    "server_version": "1.12.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-28T16:14:03.487982Z"
+  },
+  "title": "Document corpus",
+  "type": "mcp_server",
+  "version": "1.12.0"
+}

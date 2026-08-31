@@ -1,0 +1,45 @@
+{
+  "description": "Your agent pings once per run; get a public up/late/down status page. Auto-creates checks. One call.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:38:49+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.dev-workers-notdown-app-pulse-monitor.sse.818afebefa",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://pulse.notdown-app.workers.dev/mcp/{key}"
+    }
+  },
+  "name": "dev.workers.notdown-app.pulse/monitor",
+  "provenance": {
+    "identity_key": "818afebefa",
+    "published_at": "2026-08-29T06:56:40.226466Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "dev.workers.notdown-app.pulse/monitor",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-29T06:56:40.226466Z"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://pulse.notdown-app.workers.dev/mcp/{key}",
+      "variables": {
+        "key": {
+          "description": "Your private namespace. No signup, no email: invent any secret string of 16+ characters and it becomes your namespace on first use. Tools: ping, list_checks, get_check, delete_check.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true
+        }
+      }
+    }
+  ],
+  "title": "Pulse \u2014 heartbeat & status monitor for AI agents",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

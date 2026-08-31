@@ -1,0 +1,79 @@
+{
+  "description": "Inspect a page for Cloudflare Turnstile free, and clear Turnstile and WAF challenges.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:17+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-SolveGate-solvegate-mcp.stdio.da361027f7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/SolveGate/solvegate-mcp",
+    "homepage": "https://github.com/SolveGate/solvegate-mcp",
+    "repository": "https://github.com/SolveGate/solvegate-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "solvegate-mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.SolveGate/solvegate-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API key for solving. Optional \u2014 the inspect_page tool works without one, so the server is useful before you have an account. A free sk_test_ sandbox key needs no card.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SOLVEGATE_API_KEY"
+        },
+        {
+          "description": "API base URL. Defaults to https://api.solvegate.io.",
+          "format": "string",
+          "name": "SOLVEGATE_BASE_URL"
+        },
+        {
+          "description": "Where inspect_page runs. Defaults to https://solvegate.io.",
+          "format": "string",
+          "name": "SOLVEGATE_SITE_URL"
+        },
+        {
+          "description": "Per-request timeout in milliseconds. Defaults to 30000.",
+          "format": "number",
+          "name": "SOLVEGATE_TIMEOUT_MS"
+        },
+        {
+          "description": "How long solve_turnstile waits for a pending solve, in milliseconds. Defaults to 60000.",
+          "format": "number",
+          "name": "SOLVEGATE_MAX_WAIT_MS"
+        }
+      ],
+      "identifier": "solvegate-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "da361027f7",
+    "published_at": "2026-08-25T17:29:50.277492Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.SolveGate/solvegate-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-25T17:29:50.277492Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

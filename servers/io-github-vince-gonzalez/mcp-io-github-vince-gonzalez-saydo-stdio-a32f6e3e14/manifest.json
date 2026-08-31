@@ -1,0 +1,81 @@
+{
+  "description": "Does the tool do what it says? Conformance receipts for MCP servers, and unknown when unchecked.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-vince-gonzalez-saydo.stdio.a32f6e3e14",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/vince-gonzalez/saydo",
+    "homepage": "https://github.com/vince-gonzalez/saydo",
+    "repository": "https://github.com/vince-gonzalez/saydo"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "The MCP server sits behind an optional dependency so the library and harness stay installable without the SDK.",
+            "isRequired": true,
+            "name": "--from",
+            "type": "named",
+            "value": "saydo[mcp]"
+          },
+          {
+            "description": "The stdio server entry point. Full command: uvx --from 'saydo[mcp]' saydo-mcp",
+            "isRequired": true,
+            "type": "positional",
+            "value": "saydo-mcp"
+          },
+          "saydo==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.vince-gonzalez/saydo",
+  "packages": [
+    {
+      "identifier": "saydo",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "The MCP server sits behind an optional dependency so the library and harness stay installable without the SDK.",
+          "isRequired": true,
+          "name": "--from",
+          "type": "named",
+          "value": "saydo[mcp]"
+        },
+        {
+          "description": "The stdio server entry point. Full command: uvx --from 'saydo[mcp]' saydo-mcp",
+          "isRequired": true,
+          "type": "positional",
+          "value": "saydo-mcp"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a32f6e3e14",
+    "published_at": "2026-08-31T04:18:44.593941Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.vince-gonzalez/saydo",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-31T04:18:44.593941Z"
+  },
+  "title": "SayDo",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

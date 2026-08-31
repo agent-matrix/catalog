@@ -1,0 +1,71 @@
+{
+  "description": "Verifies a merchant storefront is legitimate before an AI agent commits payment.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:59+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-maxigirl123-storefront-guard.stdio.e338ded5ec",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/maxigirl123/Fortik",
+    "homepage": "https://github.com/maxigirl123/Fortik",
+    "repository": "https://github.com/maxigirl123/Fortik"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "storefront-guard-mcp-server@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.maxigirl123/storefront-guard",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Google Safe Browsing API key for scam domain checks. Optional \u2014 degrades gracefully if not set.",
+          "format": "string",
+          "isSecret": true,
+          "name": "GOOGLE_SAFE_BROWSING_API_KEY"
+        },
+        {
+          "description": "SAM.gov API key for US federal exclusions check. Optional \u2014 skipped if not set.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SAM_GOV_API_KEY"
+        },
+        {
+          "description": "URLhaus Auth-Key for malware URL lookups. Optional \u2014 degrades gracefully if not set.",
+          "format": "string",
+          "isSecret": true,
+          "name": "URLHAUS_AUTH_KEY"
+        }
+      ],
+      "identifier": "storefront-guard-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e338ded5ec",
+    "published_at": "2026-08-29T04:51:41.730765Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.maxigirl123/storefront-guard",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-29T04:51:41.730765Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

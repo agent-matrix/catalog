@@ -1,0 +1,66 @@
+{
+  "description": "IMBA spend MCP: USDT TRC-20 deposit and catalog buy with your key. No withdraw.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:38:28+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-imbawallet-agent.stdio.7562d659d7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/IMBAwallet/IMBA_front",
+    "homepage": "https://github.com/IMBAwallet/IMBA_front",
+    "repository": "https://github.com/IMBAwallet/IMBA_front"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@imba_wallet/agent-mcp@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.imbawallet/agent",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Decimal agent client_id from register",
+          "format": "string",
+          "isRequired": true,
+          "name": "IMBA_AGENT_CLIENT_ID"
+        },
+        {
+          "description": "Ed25519 private key (PKCS#8 PEM or base64). Never a shared IMBA key.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "IMBA_AGENT_PRIVATE_KEY"
+        }
+      ],
+      "identifier": "@imba_wallet/agent-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7562d659d7",
+    "published_at": "2026-08-27T08:23:48.335472Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.imbawallet/agent",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-27T08:23:48.335472Z"
+  },
+  "title": "IMBA Agent Spend",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

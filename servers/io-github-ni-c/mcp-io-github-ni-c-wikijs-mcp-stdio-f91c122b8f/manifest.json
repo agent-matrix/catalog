@@ -1,0 +1,95 @@
+{
+  "description": "Search, read and edit Wiki.js pages, and manage its assets, users, groups and comments",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:14+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ni-c-wikijs-mcp.stdio.f91c122b8f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ni-c/wikijs-mcp",
+    "homepage": "https://github.com/ni-c/wikijs-mcp",
+    "repository": "https://github.com/ni-c/wikijs-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/ni-c/wikijs-mcp:0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ni-c/wikijs-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the Wiki.js instance, e.g. https://wiki.example.com",
+          "format": "string",
+          "isRequired": true,
+          "name": "WIKIJS_URL"
+        },
+        {
+          "description": "API key from Administration \u2192 API Access. WIKIJS_API_KEY is accepted as an alias",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "WIKIJS_TOKEN"
+        },
+        {
+          "description": "Locale assumed by page tools that are not given one; part of a page's identity (default: en)",
+          "format": "string",
+          "name": "WIKIJS_LOCALE"
+        },
+        {
+          "description": "Set to true to register only the read tools (default: false)",
+          "format": "boolean",
+          "name": "WIKIJS_READ_ONLY"
+        },
+        {
+          "description": "Comma-separated page path prefixes the write tools are confined to, matched by path segment",
+          "format": "string",
+          "name": "WIKIJS_ALLOWED_PATHS"
+        },
+        {
+          "description": "Comma-separated tool names or list_* prefixes to register; 'essential' selects a curated preset (default: all tools)",
+          "format": "string",
+          "name": "WIKIJS_ALLOW_TOOLS"
+        },
+        {
+          "description": "Comma-separated tool names or list_* prefixes to remove from whatever the allow list left",
+          "format": "string",
+          "name": "WIKIJS_DENY_TOOLS"
+        },
+        {
+          "description": "Set to true to accept a self-signed certificate from a self-hosted instance (default: false)",
+          "format": "boolean",
+          "name": "WIKIJS_INSECURE_TLS"
+        }
+      ],
+      "identifier": "ghcr.io/ni-c/wikijs-mcp:0.1.1",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "f91c122b8f",
+    "published_at": "2026-08-30T19:51:25.436146Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ni-c/wikijs-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-30T19:51:25.436146Z"
+  },
+  "title": "Wiki.js",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

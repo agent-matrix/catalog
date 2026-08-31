@@ -1,0 +1,117 @@
+{
+  "description": "An artifact manager for system specifications.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:36+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-dfch-biz-dfch-specmgr.stdio.54ba027a0b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/dfch/biz.dfch.SpecMgr",
+    "homepage": "https://github.com/dfch/biz.dfch.SpecMgr",
+    "repository": "https://github.com/dfch/biz.dfch.SpecMgr"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "Install with the 'mcp' extra so the MCP server dependencies (mcp SDK) are available; the base package alone has no MCP support.",
+            "name": "--from",
+            "type": "named",
+            "value": "biz-dfch-specmgr[mcp]"
+          },
+          {
+            "type": "positional",
+            "value": "python"
+          },
+          "biz-dfch-specmgr==0.14.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.dfch/biz-dfch-specmgr",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "choices": [
+            "stdio",
+            "sse"
+          ],
+          "default": "stdio",
+          "description": "Transport mode for the MCP server.",
+          "name": "SPECMGR_MCP_TRANSPORT"
+        },
+        {
+          "default": "localhost",
+          "description": "Bind address, SSE transport only.",
+          "name": "SPECMGR_MCP_HOST"
+        },
+        {
+          "default": "8000",
+          "description": "TCP port, SSE transport only.",
+          "format": "number",
+          "name": "SPECMGR_MCP_PORT"
+        },
+        {
+          "default": "docs/adr",
+          "description": "Base directory scanned for Architecture Decision Record (.md) files.",
+          "format": "filepath",
+          "name": "SPECMGR_ADR_DIR"
+        }
+      ],
+      "identifier": "biz-dfch-specmgr",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "-m"
+        },
+        {
+          "type": "positional",
+          "value": "biz.dfch.specmgr"
+        },
+        {
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "Install with the 'mcp' extra so the MCP server dependencies (mcp SDK) are available; the base package alone has no MCP support.",
+          "name": "--from",
+          "type": "named",
+          "value": "biz-dfch-specmgr[mcp]"
+        },
+        {
+          "type": "positional",
+          "value": "python"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.14.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "54ba027a0b",
+    "published_at": "2026-08-30T19:27:45.504999Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.dfch/biz-dfch-specmgr",
+    "server_version": "0.14.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-30T19:27:45.504999Z"
+  },
+  "title": "SpecMgr",
+  "type": "mcp_server",
+  "version": "0.14.0"
+}

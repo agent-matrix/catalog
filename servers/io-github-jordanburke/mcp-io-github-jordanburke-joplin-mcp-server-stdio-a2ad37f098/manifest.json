@@ -1,0 +1,120 @@
+{
+  "description": "Search, read, create, edit and sync Joplin notes and notebooks via a headless Joplin sidecar.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:49+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-jordanburke-joplin-mcp-server.stdio.a2ad37f098",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jordanburke/joplin-mcp-server",
+    "homepage": "https://github.com/jordanburke/joplin-mcp-server",
+    "repository": "https://github.com/jordanburke/joplin-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "joplin-mcp-server@2.3.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.jordanburke/joplin-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Joplin API token, for external mode only (see JOPLIN_HOST). Sidecar mode manages its own token and ignores this.",
+          "format": "string",
+          "isSecret": true,
+          "name": "JOPLIN_TOKEN"
+        },
+        {
+          "description": "Connect to an existing Joplin instance at this host instead of running a sidecar",
+          "format": "string",
+          "name": "JOPLIN_HOST"
+        },
+        {
+          "description": "Port of the existing Joplin instance (default: 41184)",
+          "format": "string",
+          "name": "JOPLIN_PORT"
+        },
+        {
+          "description": "Joplin data directory for sidecar mode (default: ~/.config/joplin-mcp)",
+          "format": "string",
+          "name": "JOPLIN_PROFILE"
+        },
+        {
+          "description": "Path to the joplin CLI binary, overriding auto-detection",
+          "format": "string",
+          "name": "JOPLIN_CLI"
+        },
+        {
+          "description": "Sync target: none, filesystem, webdav, nextcloud, joplin-cloud, joplin-server, s3, dropbox, onedrive (default: none)",
+          "format": "string",
+          "name": "JOPLIN_SYNC_TARGET"
+        },
+        {
+          "description": "Sync target URL or path; the bucket name for the s3 target",
+          "format": "string",
+          "name": "JOPLIN_SYNC_PATH"
+        },
+        {
+          "description": "Sync username or email; the access key for the s3 target",
+          "format": "string",
+          "name": "JOPLIN_SYNC_USERNAME"
+        },
+        {
+          "description": "Sync password; the secret key for the s3 target",
+          "format": "string",
+          "isSecret": true,
+          "name": "JOPLIN_SYNC_PASSWORD"
+        },
+        {
+          "description": "S3 region (default: us-east-1)",
+          "format": "string",
+          "name": "JOPLIN_SYNC_REGION"
+        },
+        {
+          "description": "S3 endpoint URL for non-AWS providers such as Backblaze B2, MinIO, R2 or Wasabi (default: https://s3.amazonaws.com/)",
+          "format": "string",
+          "name": "JOPLIN_SYNC_ENDPOINT"
+        },
+        {
+          "description": "Use path-style S3 URLs, which self-hosted providers such as MinIO usually require: true or false (default: false)",
+          "format": "string",
+          "name": "JOPLIN_SYNC_FORCE_PATH_STYLE"
+        },
+        {
+          "description": "Log verbosity: debug, info, warn or error (default: info)",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "joplin-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.3.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a2ad37f098",
+    "published_at": "2026-08-31T00:09:09.470659Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.jordanburke/joplin-mcp-server",
+    "server_version": "2.3.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-31T00:09:09.470659Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "2.3.3"
+}

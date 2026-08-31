@@ -1,0 +1,79 @@
+{
+  "description": "Read-first MCP server for Twilio Segment: routing, stale sources, delivery health, governance.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:51+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-katekruger-segment-mcp.stdio.977127d24b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/katekruger/segment-mcp",
+    "homepage": "https://github.com/katekruger/segment-mcp",
+    "repository": "https://github.com/katekruger/segment-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "segment-mcp==0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.katekruger/segment-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Segment Public API token. Only a Workspace Owner can mint one \u2014 Segment App -> Workspace Settings -> Access Management -> Tokens -> Create Token -> Public API.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SEGMENT_API_TOKEN"
+        },
+        {
+          "description": "Workspace region: 'us' or 'eu'. No default \u2014 must be set explicitly, or the server refuses to start.",
+          "isRequired": true,
+          "name": "SEGMENT_REGION"
+        },
+        {
+          "default": "read",
+          "description": "read (default) | write | admin. Every tool in v0.1 is read-only regardless of this setting.",
+          "name": "SEGMENT_MCP_MODE"
+        },
+        {
+          "description": "Separate credential for the Profile API (not yet wired to a tool in this version). Leave unset.",
+          "name": "SEGMENT_PROFILE_TOKEN"
+        },
+        {
+          "description": "Unify Space ID for the Profile API (not yet wired to a tool in this version). Leave unset.",
+          "name": "SEGMENT_PROFILE_SPACE_ID"
+        }
+      ],
+      "identifier": "segment-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "977127d24b",
+    "published_at": "2026-08-30T19:53:06.936413Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.katekruger/segment-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-30T19:53:06.936413Z"
+  },
+  "title": "segment-mcp",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

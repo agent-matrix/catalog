@@ -1,0 +1,89 @@
+{
+  "description": "Microsoft Entra SCIM 2.0 Provisioning API: user and group lifecycle, with a local mock.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:36+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-darrenjrobinson-entra-scim-mcp.stdio.f1b3cd488d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/darrenjrobinson/entra-scim-mcp",
+    "homepage": "https://github.com/darrenjrobinson/entra-scim-mcp",
+    "repository": "https://github.com/darrenjrobinson/entra-scim-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "entra-scim-mcp@0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.darrenjrobinson/entra-scim-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Directory (tenant) GUID. Required to authenticate against a live tenant; not needed for ENTRA_SCIM_DRY_RUN or ENTRA_SCIM_STATIC_TOKEN, which supply their own placeholder.",
+          "name": "ENTRA_TENANT_ID"
+        },
+        {
+          "description": "App registration (client) GUID. Required to authenticate against a live tenant; not needed for ENTRA_SCIM_DRY_RUN or ENTRA_SCIM_STATIC_TOKEN.",
+          "name": "ENTRA_CLIENT_ID"
+        },
+        {
+          "description": "Client secret value. For a live tenant set exactly one of ENTRA_CLIENT_SECRET or ENTRA_CLIENT_CERT_PATH; a certificate is preferred for anything long-lived.",
+          "isSecret": true,
+          "name": "ENTRA_CLIENT_SECRET"
+        },
+        {
+          "description": "Path to a PEM holding the certificate and its private key. Set exactly one of ENTRA_CLIENT_SECRET or ENTRA_CLIENT_CERT_PATH.",
+          "name": "ENTRA_CLIENT_CERT_PATH"
+        },
+        {
+          "description": "Password for the PEM, if it is encrypted.",
+          "isSecret": true,
+          "name": "ENTRA_CLIENT_CERT_PASSWORD"
+        },
+        {
+          "description": "Override the SCIM base URL (default https://graph.microsoft.com/rp/scim). Point it at the bundled mock to try the tools without a tenant.",
+          "name": "ENTRA_SCIM_BASE_URL"
+        },
+        {
+          "description": "Use a fixed bearer token instead of Azure AD. Refuses any microsoft.com/microsoft.us host and requires ENTRA_SCIM_BASE_URL; intended for the local mock only.",
+          "isSecret": true,
+          "name": "ENTRA_SCIM_STATIC_TOKEN"
+        },
+        {
+          "description": "Set to 1 to run every client-side validation and return the request that would have been sent, without sending it or acquiring a token.",
+          "name": "ENTRA_SCIM_DRY_RUN"
+        }
+      ],
+      "identifier": "entra-scim-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f1b3cd488d",
+    "published_at": "2026-08-25T23:07:57.573269Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.darrenjrobinson/entra-scim-mcp",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-25T23:07:57.573269Z"
+  },
+  "title": "Microsoft Entra SCIM",
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

@@ -1,0 +1,68 @@
+{
+  "description": "Every Salesbuildr resource as a scriptable command, plus offline margin and pipeline analytics.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Servosity-salesbuildr-mcp.stdio.adcb3b3eb0",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/servosity/msp-skills",
+    "homepage": "https://github.com/servosity/msp-skills",
+    "repository": "https://github.com/servosity/msp-skills"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Servosity/salesbuildr-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Set the SALESBUILDR_API_KEY credential for the Salesbuildr MCP server.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SALESBUILDR_API_KEY"
+        },
+        {
+          "description": "Full API base URL. Leave blank: the CLI builds it from SALESBUILDR_TENANT. Set it only to point at a different host.",
+          "name": "SALESBUILDR_BASE_URL"
+        },
+        {
+          "default": "your-tenant",
+          "description": "Your Salesbuildr tenant subdomain (the {tenant} in https://{tenant}.salesbuildr.com).",
+          "isRequired": true,
+          "name": "SALESBUILDR_TENANT"
+        }
+      ],
+      "fileSha256": "fa601d2f33076cbc69d1ed17e608f60b5957f57313d8b1bb6d718796f97e49b9",
+      "identifier": "https://github.com/Servosity/msp-skills/releases/download/salesbuildr-v0.1.1/salesbuildr-mcp.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "adcb3b3eb0",
+    "published_at": "2026-08-26T05:33:26.39807Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Servosity/salesbuildr-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-26T05:33:26.39807Z"
+  },
+  "title": "Salesbuildr MCP",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

@@ -1,0 +1,63 @@
+{
+  "description": "Search your local Nimbus index and run its built-in agents from any MCP client.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:14+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nimbus-agent-nimbus.stdio.0b909b6a93",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nimbus-agent/nimbus-mcp",
+    "homepage": "https://github.com/nimbus-agent/nimbus-mcp",
+    "repository": "https://github.com/nimbus-agent/nimbus-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@nimbus-dev/mcp@0.4.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nimbus-agent/nimbus",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional absolute path to the nimbus binary. Only needed when the launcher cannot find it on PATH or in a known install directory \u2014 most commonly a GUI-launched editor on macOS, which spawns MCP servers without the user's shell PATH.",
+          "format": "filepath",
+          "name": "NIMBUS_BIN"
+        },
+        {
+          "description": "Optional. How long the Nimbus CLI's MCP adapter waits for an agent brief before returning a clean timeout error; defaults to 60000. Lower it when your client's own MCP transport timeout is shorter, so the tool reports a timeout instead of having the call severed underneath it. Read by the nimbus mcp-server process the launcher execs, which inherits this environment unchanged.",
+          "format": "number",
+          "name": "NIMBUS_MCP_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "@nimbus-dev/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0b909b6a93",
+    "published_at": "2026-08-25T15:00:00.76117Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nimbus-agent/nimbus",
+    "server_version": "0.4.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-25T15:00:00.76117Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.4.1"
+}

@@ -1,0 +1,59 @@
+{
+  "description": "Scan prompts for injection attacks, redact PII, and audit LLM SDK usage from any MCP client",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:38:09+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.co-promptguard-security.stdio.f8abebe086",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/acebot712/promptguard",
+    "homepage": "https://github.com/acebot712/promptguard",
+    "repository": "https://github.com/acebot712/promptguard"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@promptguard/mcp-server@1.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "co.promptguard/security",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "PromptGuard API key (starts with pg_live_)",
+          "format": "string",
+          "isSecret": true,
+          "name": "PROMPTGUARD_API_KEY"
+        }
+      ],
+      "identifier": "@promptguard/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f8abebe086",
+    "published_at": "2026-08-24T03:40:51.154986Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "co.promptguard/security",
+    "server_version": "1.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-24T03:40:51.154986Z"
+  },
+  "title": "PromptGuard",
+  "type": "mcp_server",
+  "version": "1.1.2"
+}

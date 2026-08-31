@@ -1,0 +1,78 @@
+{
+  "description": "Every Action1 endpoint, plus fleet-wide patch and vulnerability views across all your organizations.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Servosity-action1-mcp.stdio.eada9324cf",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/servosity/msp-skills",
+    "homepage": "https://github.com/servosity/msp-skills",
+    "repository": "https://github.com/servosity/msp-skills"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Servosity/action1-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://app.action1.com/api/3.0",
+          "description": "Base URL for the Action1 API. Leave the prefilled default unless your account uses a different regional or self-hosted host.",
+          "name": "ACTION1_BASE_URL"
+        },
+        {
+          "description": "Set the ACTION1_CLIENT_ID credential for the Action1 MCP server.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ACTION1_CLIENT_ID"
+        },
+        {
+          "description": "Set the ACTION1_CLIENT_SECRET credential for the Action1 MCP server.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ACTION1_CLIENT_SECRET"
+        },
+        {
+          "description": "Pre-minted Action1 bearer token, used instead of ACTION1_CLIENT_ID + ACTION1_CLIENT_SECRET. Leave blank when you set the client ID and secret; the CLI mints and refreshes the token itself.",
+          "isSecret": true,
+          "name": "ACTION1_OAUTH2"
+        },
+        {
+          "description": "Organization ID the fleet commands scope to by default (the --org flag overrides it). Leave blank to span every organization your credentials can see.",
+          "name": "ACTION1_ORG_ID"
+        }
+      ],
+      "fileSha256": "d217fe5b0da6f5cb803dde0ae7d0ee02b5f9306eb76c659709cf0af94b2c28c3",
+      "identifier": "https://github.com/Servosity/msp-skills/releases/download/action1-v0.1.1/action1-mcp.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "eada9324cf",
+    "published_at": "2026-08-26T05:02:42.575588Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Servosity/action1-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-26T05:02:42.575588Z"
+  },
+  "title": "Action1 MCP",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

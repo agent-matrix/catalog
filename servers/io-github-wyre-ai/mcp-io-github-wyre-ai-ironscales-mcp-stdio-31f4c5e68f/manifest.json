@@ -1,0 +1,83 @@
+{
+  "description": "MCP server for Ironscales phishing incident management \u2014 incidents, mailboxes, and reporting.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:19+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-WYRE-AI-ironscales-mcp.stdio.31f4c5e68f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/WYRE-AI/ironscales-mcp",
+    "homepage": "https://github.com/WYRE-AI/ironscales-mcp",
+    "repository": "https://github.com/WYRE-AI/ironscales-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-ai/ironscales-mcp:v1.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.WYRE-AI/ironscales-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Ironscales API key",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "IRONSCALES_API_KEY"
+        },
+        {
+          "description": "Ironscales company (tenant) identifier",
+          "format": "string",
+          "isRequired": true,
+          "name": "IRONSCALES_COMPANY_ID"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode for the server. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-ai/ironscales-mcp:v1.2.2",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "31f4c5e68f",
+    "published_at": "2026-08-26T13:44:08.362604Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.WYRE-AI/ironscales-mcp",
+    "server_version": "1.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-26T13:44:08.362604Z"
+  },
+  "title": "Ironscales",
+  "type": "mcp_server",
+  "version": "1.2.2"
+}

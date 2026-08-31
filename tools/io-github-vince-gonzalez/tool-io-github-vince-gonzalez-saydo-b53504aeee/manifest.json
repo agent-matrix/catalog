@@ -1,0 +1,90 @@
+{
+  "artifacts": [
+    {
+      "kind": "pypi",
+      "spec": {
+        "package": "saydo",
+        "version": "0.1.1"
+      }
+    }
+  ],
+  "description": "Does the tool do what it says? Conformance receipts for MCP servers, and unknown when unchecked.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/vince-gonzalez/saydo",
+  "id": "tool.io-github-vince-gonzalez-saydo.b53504aeee",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/vince-gonzalez/saydo",
+    "homepage": "https://github.com/vince-gonzalez/saydo",
+    "repository": "https://github.com/vince-gonzalez/saydo"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Does the tool do what it says? Conformance receipts for MCP servers, and unknown when unchecked.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.vince-gonzalez/saydo",
+      "request_type": "POST",
+      "url": "https://github.com/vince-gonzalez/saydo"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "The MCP server sits behind an optional dependency so the library and harness stay installable without the SDK.",
+            "isRequired": true,
+            "name": "--from",
+            "type": "named",
+            "value": "saydo[mcp]"
+          },
+          {
+            "description": "The stdio server entry point. Full command: uvx --from 'saydo[mcp]' saydo-mcp",
+            "isRequired": true,
+            "type": "positional",
+            "value": "saydo-mcp"
+          },
+          "saydo==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.vince-gonzalez/saydo",
+  "provenance": {
+    "identity_key": "a32f6e3e14",
+    "promoted_from": "mcp.io-github-vince-gonzalez-saydo.stdio.a32f6e3e14",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.vince-gonzalez/saydo",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-vince-gonzalez-saydo.stdio.a32f6e3e14",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/vince-gonzalez/saydo",
+  "summary": "Does the tool do what it says? Conformance receipts for MCP servers, and unknown when unchecked.",
+  "tags": [
+    "conformance",
+    "does",
+    "receipts",
+    "saydo",
+    "says",
+    "servers",
+    "what"
+  ],
+  "title": "SayDo",
+  "type": "tool",
+  "version": "0.1.1"
+}

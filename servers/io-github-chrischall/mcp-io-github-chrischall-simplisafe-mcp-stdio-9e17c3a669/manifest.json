@@ -1,0 +1,70 @@
+{
+  "description": "Check SimpliSafe system state and sensors, review events, arm/disarm, and control smart locks",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:29+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-chrischall-simplisafe-mcp.stdio.9e17c3a669",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/chrischall/simplisafe-mcp",
+    "homepage": "https://github.com/chrischall/simplisafe-mcp",
+    "repository": "https://github.com/chrischall/simplisafe-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "simplisafe-mcp@0.1.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.chrischall/simplisafe-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "OAuth refresh token from the one-time browser login (scripts/bootstrap-auth.mjs)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SIMPLISAFE_REFRESH_TOKEN"
+        },
+        {
+          "description": "Set to false to disable the on-disk token cache and re-authenticate on every process start. Defaults to enabled.",
+          "format": "string",
+          "name": "SIMPLISAFE_TOKEN_CACHE"
+        },
+        {
+          "description": "Absolute path for the token cache file. Defaults to $MCP_DATA_DIR/.simplisafe-mcp/token.json.",
+          "format": "string",
+          "name": "SIMPLISAFE_TOKEN_FILE"
+        }
+      ],
+      "identifier": "simplisafe-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9e17c3a669",
+    "published_at": "2026-08-28T11:34:44.614116Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.chrischall/simplisafe-mcp",
+    "server_version": "0.1.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-28T11:34:44.614116Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.3"
+}

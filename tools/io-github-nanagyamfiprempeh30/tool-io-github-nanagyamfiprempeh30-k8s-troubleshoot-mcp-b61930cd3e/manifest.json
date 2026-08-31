@@ -1,0 +1,91 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "docker.io/yawgyamfiprem32/k8s-troubleshoot-mcp:1.0.0"
+      }
+    }
+  ],
+  "description": "Read-only Kubernetes diagnostics: pods, logs, events, workloads, services, PVCs and nodes.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:13+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/NanaGyamfiPrempeh30/k8s-troubleshoot-mcp",
+  "id": "tool.io-github-nanagyamfiprempeh30-k8s-troubleshoot-mcp.b61930cd3e",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/NanaGyamfiPrempeh30/k8s-troubleshoot-mcp",
+    "homepage": "https://github.com/NanaGyamfiPrempeh30/k8s-troubleshoot-mcp",
+    "repository": "https://github.com/NanaGyamfiPrempeh30/k8s-troubleshoot-mcp"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Read-only Kubernetes diagnostics: pods, logs, events, workloads, services, PVCs and nodes.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.NanaGyamfiPrempeh30/k8s-troubleshoot-mcp",
+      "request_type": "POST",
+      "url": "https://github.com/NanaGyamfiPrempeh30/k8s-troubleshoot-mcp"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Mount the kubeconfig read-only. This server performs no writes of any kind, so a writable mount would grant privilege it has no use for.",
+            "isRequired": true,
+            "name": "--mount",
+            "type": "named",
+            "value": "type=bind,src={kubeconfig_path},dst=/kubeconfig,readonly",
+            "variables": {
+              "kubeconfig_path": {
+                "description": "Absolute path on the host to a kubeconfig scoped to the diagnostic ServiceAccount. Generate it with scripts/generate-kubeconfig.sh \u2014 do not mount an admin kubeconfig. The file must be readable by UID 10001, which the container runs as.",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          "docker.io/yawgyamfiprem32/k8s-troubleshoot-mcp:1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.NanaGyamfiPrempeh30/k8s-troubleshoot-mcp",
+  "provenance": {
+    "identity_key": "2ac56965a2",
+    "promoted_from": "mcp.io-github-NanaGyamfiPrempeh30-k8s-troubleshoot-mcp.stdio.2ac56965a2",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.NanaGyamfiPrempeh30/k8s-troubleshoot-mcp",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-NanaGyamfiPrempeh30-k8s-troubleshoot-mcp.stdio.2ac56965a2",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/NanaGyamfiPrempeh30/k8s-troubleshoot-mcp",
+  "summary": "Read-only Kubernetes diagnostics: pods, logs, events, workloads, services, PVCs and nodes.",
+  "tags": [
+    "diagnostics",
+    "k8s",
+    "kubernetes",
+    "logs",
+    "only",
+    "pods",
+    "read",
+    "troubleshoot"
+  ],
+  "title": "Kubernetes Troubleshoot",
+  "type": "tool",
+  "version": "1.0.0"
+}

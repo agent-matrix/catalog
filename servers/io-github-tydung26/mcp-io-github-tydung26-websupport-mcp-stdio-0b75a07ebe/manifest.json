@@ -1,0 +1,88 @@
+{
+  "description": "Manage a Websupport account: DNS, FTP, hosting, databases, mailboxes, VPS and invoices.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:36+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-tydung26-websupport-mcp.stdio.0b75a07ebe",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/tydung26/websupport-mcp",
+    "homepage": "https://github.com/tydung26/websupport-mcp",
+    "repository": "https://github.com/tydung26/websupport-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "websupport-mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.tydung26/websupport-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API key identifier from WebAdmin (Security -> API keys). Generate a Standard pair; a DynDNS pair authenticates against one endpoint only.",
+          "isRequired": true,
+          "name": "WEBSUPPORT_API_KEY"
+        },
+        {
+          "description": "API secret paired with the key. Used only to sign requests; it is never transmitted.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "WEBSUPPORT_API_SECRET"
+        },
+        {
+          "default": "https://rest.websupport.sk",
+          "description": "Market selection. Defaults to https://rest.websupport.sk. Also live: rest.websupport.cz, rest.websupport.hu, rest.websupport.se.",
+          "name": "WEBSUPPORT_API_BASE_URL"
+        },
+        {
+          "choices": [
+            "en_us",
+            "sk",
+            "cs_cz",
+            "hu"
+          ],
+          "default": "en_us",
+          "description": "Language for API responses.",
+          "name": "WEBSUPPORT_ACCEPT_LANGUAGE"
+        },
+        {
+          "description": "Set to 1 to register the 13 write tools. Omit for a read-only deployment, where they never appear in tools/list at all.",
+          "name": "WEBSUPPORT_ALLOW_WRITE"
+        },
+        {
+          "description": "Set to 1 to register the 7 destructive tools, each of which also requires confirm: true on every call. Independent of WEBSUPPORT_ALLOW_WRITE.",
+          "name": "WEBSUPPORT_ALLOW_DESTRUCTIVE"
+        }
+      ],
+      "identifier": "websupport-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0b75a07ebe",
+    "published_at": "2026-08-25T06:46:44.978358Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.tydung26/websupport-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-25T06:46:44.978358Z"
+  },
+  "title": "Websupport",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

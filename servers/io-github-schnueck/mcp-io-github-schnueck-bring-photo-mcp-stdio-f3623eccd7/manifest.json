@@ -1,0 +1,116 @@
+{
+  "description": "Add products to Bring! from a photo \u2014 MCP for AI recognition, catalog matching, and verified writes.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:26+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-schnueck-bring-photo-mcp.stdio.f3623eccd7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/schnueck/bring-photo-mcp",
+    "homepage": "https://github.com/schnueck/bring-photo-mcp",
+    "repository": "https://github.com/schnueck/bring-photo-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y"
+          },
+          "bring-photo-mcp@1.0.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.schnueck/bring-photo-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "choices": [
+            "test",
+            "prod"
+          ],
+          "description": "Runtime boundary: use test for dedicated test lists or prod for explicitly allowlisted production lists.",
+          "format": "string",
+          "isRequired": true,
+          "name": "BRING_ENV"
+        },
+        {
+          "description": "Email address of the Bring account.",
+          "format": "string",
+          "isRequired": true,
+          "name": "BRING_EMAIL"
+        },
+        {
+          "description": "Password of the Bring account. Store it only in the client or secret-manager environment.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "BRING_PASSWORD"
+        },
+        {
+          "description": "Exact name of the default Bring list.",
+          "format": "string",
+          "isRequired": true,
+          "name": "BRING_DEFAULT_LIST"
+        },
+        {
+          "description": "Comma-separated exact names of every Bring list the server may access.",
+          "format": "string",
+          "isRequired": true,
+          "name": "BRING_ALLOWED_LISTS"
+        },
+        {
+          "default": "de-DE",
+          "description": "Bring catalog locale.",
+          "format": "string",
+          "name": "BRING_LOCALE"
+        },
+        {
+          "default": "MCP-TEST-",
+          "description": "Required non-empty item-name prefix for opt-in live E2E runs in test mode.",
+          "format": "string",
+          "name": "BRING_TEST_ITEM_PREFIX"
+        },
+        {
+          "description": "Optional exact name of a second dedicated test list for copy, move, and multi-list E2E checks.",
+          "format": "string",
+          "name": "BRING_TEST_SECOND_LIST"
+        }
+      ],
+      "identifier": "bring-photo-mcp",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f3623eccd7",
+    "published_at": "2026-08-29T21:21:15.481457Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.schnueck/bring-photo-mcp",
+    "server_version": "1.0.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-29T21:21:15.481457Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.2"
+}

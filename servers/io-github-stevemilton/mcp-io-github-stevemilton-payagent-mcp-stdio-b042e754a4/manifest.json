@@ -1,0 +1,64 @@
+{
+  "description": "Gives AI agents a wallet: pay x402 APIs (USD + EUR), check balances, self-onboard in one tool call.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-stevemilton-payagent-mcp.stdio.b042e754a4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/arispay-inc/ArisPay",
+    "homepage": "https://github.com/arispay-inc/ArisPay",
+    "repository": "https://github.com/arispay-inc/ArisPay"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@arispay/payagent-mcp@3.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.stevemilton/payagent-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "ArisPay developer API key (ap_live_\u2026 / ap_test_\u2026). Optional \u2014 the create_user tool can self-provision one from just an email, or set PAYAGENT_PRIVATE_KEY to sign locally with no account.",
+          "isSecret": true,
+          "name": "ARISPAY_API_KEY"
+        },
+        {
+          "description": "EVM private key for permissionless local signing (zero-signup mode): pay_api signs x402 payments with it directly \u2014 no ArisPay account needed. Generate one with `npx payagent wallet new`. Never sent to any server.",
+          "isSecret": true,
+          "name": "PAYAGENT_PRIVATE_KEY"
+        }
+      ],
+      "identifier": "@arispay/payagent-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "3.3.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b042e754a4",
+    "published_at": "2026-08-24T12:27:42.244935Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.stevemilton/payagent-mcp",
+    "server_version": "3.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-24T12:27:42.244935Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "3.3.1"
+}
