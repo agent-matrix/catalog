@@ -1,0 +1,86 @@
+{
+  "description": "Odoo virtual employee via MCP: query, create, modify records, workflows, PDFs, and activities.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:28+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-singleflo-odoo-assistant.stdio.cba8edc32a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/singleflo/odoo-assistant-mcp",
+    "homepage": "https://github.com/singleflo/odoo-assistant-mcp",
+    "repository": "https://github.com/singleflo/odoo-assistant-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "odoo-assistant==0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.singleflo/odoo-assistant",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your Odoo instance URL (e.g. http://localhost:8069)",
+          "format": "string",
+          "isRequired": true,
+          "name": "ODOO_BASE_URL"
+        },
+        {
+          "description": "Odoo database name. Optional: discovered automatically when the instance serves exactly one database; required when it serves several (the error names them).",
+          "format": "string",
+          "name": "ODOO_DB"
+        },
+        {
+          "description": "Odoo login username. Optional: omitted, the login is discovered from the API key.",
+          "format": "string",
+          "name": "ODOO_USER"
+        },
+        {
+          "description": "Odoo API key (Odoo 14+ required). Generate under Preferences / My Profile > Account Security > New API Key. Passwords are not accepted.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ODOO_API_KEY"
+        },
+        {
+          "description": "Safety ceiling 0-5, default 3 (state transitions allowed, destructive ops blocked). See server_safety.py.",
+          "format": "string",
+          "name": "ODOO_MCP_MAX_LEVEL"
+        },
+        {
+          "description": "Comma-separated hosts this server refuses to WRITE to (requires ODOO_ALLOW_PROD_WRITE=yes to override). Empty by default: protection is the operator's opt-in, no host is baked in.",
+          "format": "string",
+          "name": "ODOO_MCP_PROTECTED_HOSTS"
+        }
+      ],
+      "identifier": "odoo-assistant",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "cba8edc32a",
+    "published_at": "2026-08-25T15:35:48.98637Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.singleflo/odoo-assistant",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-25T15:35:48.98637Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

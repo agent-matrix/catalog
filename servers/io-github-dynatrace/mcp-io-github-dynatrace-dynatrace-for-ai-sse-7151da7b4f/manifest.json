@@ -1,0 +1,69 @@
+{
+  "description": "Connect AI assistants to Dynatrace to query observability data and analyze problems.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:04+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Dynatrace-dynatrace-for-ai.sse.7151da7b4f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Dynatrace/dynatrace-for-ai",
+    "homepage": "https://github.com/Dynatrace/dynatrace-for-ai",
+    "repository": "https://github.com/Dynatrace/dynatrace-for-ai"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://{environment_id}.apps.dynatrace.com/platform-reserved/mcp-gateway/v0.1/servers/dynatrace-mcp/mcp"
+    }
+  },
+  "name": "io.github.Dynatrace/dynatrace-for-ai",
+  "provenance": {
+    "identity_key": "7151da7b4f",
+    "published_at": "2026-08-31T07:39:06.514514Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Dynatrace/dynatrace-for-ai",
+    "server_version": "7.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-31T07:39:06.514514Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Dynatrace Platform Token with MCP gateway scopes",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {platform_token}",
+          "variables": {
+            "platform_token": {
+              "description": "Your Dynatrace Platform Token with MCP gateway scopes",
+              "format": "string",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        },
+        {
+          "name": "X-Http-Source",
+          "value": "dynatrace-for-ai/7.0.0"
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://{environment_id}.apps.dynatrace.com/platform-reserved/mcp-gateway/v0.1/servers/dynatrace-mcp/mcp",
+      "variables": {
+        "environment_id": {
+          "description": "Your Dynatrace environment ID, e.g. abc12345 from https://abc12345.apps.dynatrace.com",
+          "format": "string",
+          "isRequired": true
+        }
+      }
+    }
+  ],
+  "title": "Dynatrace",
+  "type": "mcp_server",
+  "version": "7.0.0"
+}

@@ -1,0 +1,94 @@
+{
+  "description": "MCP-native LLM councils for debates, juries, blind panels, refinement, and custom deliberation.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-faulkj-legion.stdio.f63583fef3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/faulkj/legion-mcp",
+    "homepage": "https://github.com/faulkj/legion-mcp",
+    "repository": "https://github.com/faulkj/legion-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "legion-mcp@0.3.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.faulkj/legion",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Default OpenAI Responses-compatible API root for model files that omit baseUrl.",
+          "format": "string",
+          "name": "DEFAULT_BASE_URL",
+          "placeholder": "https://api.openai.com/v1"
+        },
+        {
+          "description": "Default provider or gateway key for model files that omit apiKey.",
+          "format": "string",
+          "isSecret": true,
+          "name": "DEFAULT_API_KEY"
+        },
+        {
+          "default": "5",
+          "description": "Maximum discussion rounds accepted by a council run.",
+          "format": "number",
+          "name": "MAX_ROUNDS"
+        },
+        {
+          "description": "Optional soft cumulative token budget for a council run.",
+          "format": "number",
+          "name": "TOKEN_BUDGET"
+        },
+        {
+          "default": "true",
+          "description": "Allow callers to define ad-hoc council roles inline.",
+          "format": "boolean",
+          "name": "DYNAMIC_ROLES"
+        },
+        {
+          "choices": [
+            "debug",
+            "info",
+            "warn",
+            "error"
+          ],
+          "default": "info",
+          "description": "Logging verbosity. Logs are written to stderr for stdio safety.",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "legion-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f63583fef3",
+    "published_at": "2026-08-26T07:18:17.223597Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.faulkj/legion",
+    "server_version": "0.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-26T07:18:17.223597Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.1"
+}

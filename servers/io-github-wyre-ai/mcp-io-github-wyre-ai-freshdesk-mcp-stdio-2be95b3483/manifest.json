@@ -1,0 +1,83 @@
+{
+  "description": "MCP server for Freshdesk \u2014 tickets, contacts, companies, agents, groups, and knowledge base.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:19+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-WYRE-AI-freshdesk-mcp.stdio.2be95b3483",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/WYRE-AI/freshdesk-mcp",
+    "homepage": "https://github.com/WYRE-AI/freshdesk-mcp",
+    "repository": "https://github.com/WYRE-AI/freshdesk-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-ai/freshdesk-mcp:v1.0.11"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.WYRE-AI/freshdesk-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Freshdesk account subdomain \u2014 the part before .freshdesk.com (e.g. 'acme')",
+          "format": "string",
+          "isRequired": true,
+          "name": "FRESHDESK_DOMAIN"
+        },
+        {
+          "description": "Freshdesk API key (found under Profile Settings in the Freshdesk portal)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "FRESHDESK_API_KEY"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode for the server. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-ai/freshdesk-mcp:v1.0.11",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "2be95b3483",
+    "published_at": "2026-08-28T00:32:38.112978Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.WYRE-AI/freshdesk-mcp",
+    "server_version": "1.0.11",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-28T00:32:38.112978Z"
+  },
+  "title": "Freshdesk",
+  "type": "mcp_server",
+  "version": "1.0.11"
+}

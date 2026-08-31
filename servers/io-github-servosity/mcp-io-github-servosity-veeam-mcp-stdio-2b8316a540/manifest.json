@@ -1,0 +1,64 @@
+{
+  "description": "Sync Veeam Service Provider Console tenants to local SQLite; cross-company backup answers offline.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Servosity-veeam-mcp.stdio.2b8316a540",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/servosity/msp-skills",
+    "homepage": "https://github.com/servosity/msp-skills",
+    "repository": "https://github.com/servosity/msp-skills"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Servosity/veeam-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://your-vspc-host:1280/api/v3",
+          "description": "Your VSPC appliance REST API base URL, e.g. https://vspc.example.com:1280/api/v3 (per-instance).",
+          "isRequired": true,
+          "name": "VEEAM_BASE_URL"
+        },
+        {
+          "description": "Bearer token for the VSPC REST API (POST /token with your portal credentials).",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "VEEAM_TOKEN"
+        }
+      ],
+      "fileSha256": "072a430e865ffa89d88b5d164d947dd698f31e3a4576a963e253553fe489575b",
+      "identifier": "https://github.com/Servosity/msp-skills/releases/download/veeam-v0.1.2/veeam-mcp.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "2b8316a540",
+    "published_at": "2026-08-27T01:21:47.318025Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Servosity/veeam-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-27T01:21:47.318025Z"
+  },
+  "title": "Veeam VSPC MCP",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

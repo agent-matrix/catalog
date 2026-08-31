@@ -1,0 +1,82 @@
+{
+  "description": "Provider-agnostic, AI-review-first MCP server for Bitbucket Cloud.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-droplinkperformance-bitbucket-mcp-server.stdio.4d6ac6a2f6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/droplinkperformance/bitbucket-mcp-server",
+    "homepage": "https://github.com/droplinkperformance/bitbucket-mcp-server",
+    "repository": "https://github.com/droplinkperformance/bitbucket-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@droplinkperformance/bitbucket-mcp-server@1.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.droplinkperformance/bitbucket-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Bitbucket API token (ATATT), app password, or OAuth access token",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "BITBUCKET_ACCESS_TOKEN"
+        },
+        {
+          "description": "Atlassian account email (required with API tokens)",
+          "format": "string",
+          "isRequired": true,
+          "name": "BITBUCKET_EMAIL"
+        },
+        {
+          "description": "Default Bitbucket workspace when a tool omits workspace",
+          "format": "string",
+          "name": "BITBUCKET_DEFAULT_WORKSPACE"
+        },
+        {
+          "description": "LLM backend for analyze_pull_request (openai, anthropic, gemini, bedrock)",
+          "format": "string",
+          "name": "LLM_PROVIDER"
+        },
+        {
+          "description": "OpenAI API key when LLM_PROVIDER is openai",
+          "format": "string",
+          "isSecret": true,
+          "name": "OPENAI_API_KEY"
+        }
+      ],
+      "identifier": "@droplinkperformance/bitbucket-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4d6ac6a2f6",
+    "published_at": "2026-08-25T15:06:07.864951Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.droplinkperformance/bitbucket-mcp-server",
+    "server_version": "1.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-25T15:06:07.864951Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.2.0"
+}

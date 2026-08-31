@@ -1,0 +1,73 @@
+{
+  "description": "MCP stdio server for Attestify OS \u2014 governed agent execution and Attestify Trust signed evidence.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:24+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-attestifyagent-attestify-mcp.stdio.245b93eb66",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/attestifyagent/attestify-mcp",
+    "homepage": "https://github.com/attestifyagent/attestify-mcp",
+    "repository": "https://github.com/attestifyagent/attestify-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "attestify-mcp@0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.attestifyagent/attestify-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://attestifyos.com",
+          "description": "Base URL of the deployed Attestify app.",
+          "name": "ATTESTIFY_BASE_URL"
+        },
+        {
+          "description": "Tenant API key issued via POST /api/keys, sent as X-API-Key on /api/run calls.",
+          "isSecret": true,
+          "name": "ATTESTIFY_API_KEY"
+        },
+        {
+          "description": "Attestify Trust agent ID, from a one-time `npx attestify trust-init` run. Enables attestify_trust_submit_evidence and attestify_trust_verify.",
+          "name": "TRUST_AGENT_ID"
+        },
+        {
+          "description": "That agent's Ed25519 private key (base64url), from the same trust-init run. Never leaves this server except as a signature.",
+          "isSecret": true,
+          "name": "TRUST_PRIVATE_KEY"
+        }
+      ],
+      "identifier": "attestify-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "245b93eb66",
+    "published_at": "2026-08-28T11:27:19.321174Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.attestifyagent/attestify-mcp",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-28T11:27:19.321174Z"
+  },
+  "title": "Attestify OS",
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

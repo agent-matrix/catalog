@@ -1,0 +1,67 @@
+{
+  "description": "Read-only VMware Aria Operations for Logs (Log Insight): search + aggregation. 7 MCP tools.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-vmware-skills-vmware-log-insight.stdio.1f3929a530",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/vmware-skills/VMware-Log-Insight",
+    "homepage": "https://github.com/vmware-skills/VMware-Log-Insight",
+    "repository": "https://github.com/vmware-skills/VMware-Log-Insight"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "vmware-log-insight==1.8.15"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.vmware-skills/vmware-log-insight",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the config file. Defaults to ~/.vmware-log-insight/config.yaml.",
+          "format": "filepath",
+          "name": "VMWARE_LOG_INSIGHT_CONFIG"
+        }
+      ],
+      "identifier": "vmware-log-insight",
+      "packageArguments": [
+        {
+          "description": "Starts the stdio MCP server. Without it the console script runs the human CLI and exits.",
+          "type": "positional",
+          "value": "mcp",
+          "valueHint": "subcommand"
+        }
+      ],
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.8.15"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1f3929a530",
+    "published_at": "2026-08-31T07:26:06.74779Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.vmware-skills/vmware-log-insight",
+    "server_version": "1.8.15",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-31T07:26:06.74779Z"
+  },
+  "title": "VMware Log Insight",
+  "type": "mcp_server",
+  "version": "1.8.15"
+}

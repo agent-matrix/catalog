@@ -1,0 +1,45 @@
+{
+  "description": "Query your ISP's revenue, subscribers, payments and routers. Needs a Centipid account and API key.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:38:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-centipidbilling-billing.sse.3074b5e41d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://mcp.centipidbilling.com/mcp"
+    }
+  },
+  "name": "com.centipidbilling/billing",
+  "provenance": {
+    "identity_key": "3074b5e41d",
+    "published_at": "2026-08-27T01:49:27.857447Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.centipidbilling/billing",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-27T01:49:27.857447Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Bearer <key>, where <key> is created in the Centipid billing app under Settings, Developer. The key identifies which ISP the request belongs to and carries that operator's own permissions.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization"
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://mcp.centipidbilling.com/mcp"
+    }
+  ],
+  "title": "Centipid ISP Billing",
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

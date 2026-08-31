@@ -1,0 +1,92 @@
+{
+  "description": "Share ordinary text files between concurrent agents without silently overwriting edits.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:25+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-baalimago-slivingdoc.stdio.376fccd369",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/baalimago/slivingdoc",
+    "homepage": "https://github.com/baalimago/slivingdoc",
+    "repository": "https://github.com/baalimago/slivingdoc"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y"
+          },
+          "slivingdoc@0.1.8"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.baalimago/slivingdoc",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "S3-compatible bucket that stores the shared text workspace.",
+          "isRequired": true,
+          "name": "SLIVINGDOC_BUCKET"
+        },
+        {
+          "description": "Optional AWS profile used by the standard AWS credential chain.",
+          "name": "AWS_PROFILE"
+        },
+        {
+          "default": "us-east-1",
+          "description": "AWS region for the bucket or S3-compatible endpoint.",
+          "name": "AWS_REGION"
+        },
+        {
+          "description": "Optional endpoint for an S3-compatible store such as SeaweedFS.",
+          "name": "AWS_ENDPOINT_URL_S3"
+        },
+        {
+          "description": "Optional root that contains directories agents may pull and commit.",
+          "name": "SLIVINGDOC_WORKSPACE_ROOT"
+        }
+      ],
+      "identifier": "slivingdoc",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "serve"
+        }
+      ],
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.8"
+    }
+  ],
+  "provenance": {
+    "identity_key": "376fccd369",
+    "published_at": "2026-08-26T07:15:47.85661Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.baalimago/slivingdoc",
+    "server_version": "0.1.8",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-26T07:15:47.85661Z"
+  },
+  "title": "slivingdoc",
+  "type": "mcp_server",
+  "version": "0.1.8"
+}

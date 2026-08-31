@@ -1,0 +1,79 @@
+{
+  "description": "MCP server for Rustpad, the self-hosted collaborative text editor",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:14+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ni-c-rustpad-mcp.stdio.9c4ebc2c1f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ni-c/rustpad-mcp",
+    "homepage": "https://github.com/ni-c/rustpad-mcp",
+    "repository": "https://github.com/ni-c/rustpad-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "rustpad-mcp@0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ni-c/rustpad-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the Rustpad instance, e.g. https://rustpad.example.net",
+          "format": "string",
+          "isRequired": true,
+          "name": "RUSTPAD_URL"
+        },
+        {
+          "description": "Exactly 'true' registers only the 3 read tools",
+          "format": "string",
+          "name": "RUSTPAD_READ_ONLY"
+        },
+        {
+          "description": "Exactly 'true' accepts a self-signed certificate, scoped to this connection",
+          "format": "string",
+          "name": "RUSTPAD_INSECURE_TLS"
+        },
+        {
+          "description": "Comma-separated tool names or list_* prefixes to register; 'essential' selects a curated preset (default: all tools)",
+          "format": "string",
+          "name": "RUSTPAD_ALLOW_TOOLS"
+        },
+        {
+          "description": "Comma-separated tool names or list_* prefixes to remove from whatever RUSTPAD_ALLOW_TOOLS left",
+          "format": "string",
+          "name": "RUSTPAD_DENY_TOOLS"
+        }
+      ],
+      "identifier": "rustpad-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9c4ebc2c1f",
+    "published_at": "2026-08-26T22:21:15.838763Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ni-c/rustpad-mcp",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-26T22:21:15.838763Z"
+  },
+  "title": "Rustpad MCP Server",
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

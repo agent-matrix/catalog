@@ -1,0 +1,201 @@
+{
+  "description": "MCP server for AI image generation via OpenAI, Stable Diffusion (SD WebUI), or placeholders.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:23+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-pvliesdonk-image-generation-mcp.stdio.81c6fdcf55",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/pvliesdonk/image-generation-mcp",
+    "homepage": "https://github.com/pvliesdonk/image-generation-mcp",
+    "repository": "https://github.com/pvliesdonk/image-generation-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "image-generation-mcp==1.12.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.pvliesdonk/image-generation-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "file:///data/state",
+          "description": "Persistent-state backend URL shared by every pvl-core subsystem that needs state. `memory://` is in-process and lost on restart; `file:///path` persists on one server; `redis://`, `dynamodb://` and `mongodb://` each need their matching extra. When unset, defaults to `file:///data/state` (the volume family Docker images mount), or to `memory://` \u2014 with a warning \u2014 on a host where that directory is not usable.",
+          "name": "IMAGE_GENERATION_MCP_KV_STORE_URL"
+        },
+        {
+          "description": "Comma-separated explicit tool names this instance exposes; every other tool is hidden from listings and cannot be invoked. Names matching no registered tool are inert. Mutually exclusive with `tools_deny`. Takes effect through `apply_tool_visibility`.",
+          "name": "IMAGE_GENERATION_MCP_TOOLS_ALLOW"
+        },
+        {
+          "description": "Comma-separated explicit tool names hidden from this instance (absent from listings, cannot be invoked). Names matching no registered tool are inert. Mutually exclusive with `tools_allow`. Takes effect through `apply_tool_visibility`.",
+          "name": "IMAGE_GENERATION_MCP_TOOLS_DENY"
+        },
+        {
+          "description": "Rename this server instance; defaults to the project name.",
+          "name": "IMAGE_GENERATION_MCP_SERVER_NAME"
+        },
+        {
+          "description": "Replaces the default MCP instructions text sent to clients.",
+          "name": "IMAGE_GENERATION_MCP_INSTRUCTIONS"
+        },
+        {
+          "choices": [
+            "DEBUG",
+            "INFO",
+            "WARNING",
+            "ERROR",
+            "CRITICAL"
+          ],
+          "default": "INFO",
+          "description": "Log level for FastMCP internals and app loggers (DEBUG / INFO / WARNING / ERROR / CRITICAL). The -v CLI flag overrides to DEBUG.",
+          "name": "FASTMCP_LOG_LEVEL"
+        },
+        {
+          "default": "true",
+          "description": "Set false for plain or structured JSON log output.",
+          "format": "boolean",
+          "name": "FASTMCP_ENABLE_RICH_LOGGING"
+        },
+        {
+          "description": "Deprecated alias for IMAGE_GENERATION_MCP_SD_WEBUI_HOST; logs a warning when used.",
+          "name": "IMAGE_GENERATION_MCP_A1111_HOST"
+        },
+        {
+          "description": "Deprecated alias for IMAGE_GENERATION_MCP_SD_WEBUI_MODEL; logs a warning when used.",
+          "name": "IMAGE_GENERATION_MCP_A1111_MODEL"
+        },
+        {
+          "default": "true",
+          "description": "When true, write-tagged tools (image generation, transforms, uploads) are hidden from clients. Set false to enable them.",
+          "format": "boolean",
+          "name": "IMAGE_GENERATION_MCP_READ_ONLY"
+        },
+        {
+          "default": "~/.image-generation-mcp/images",
+          "description": "Directory where generated images are saved. Created automatically on first use.",
+          "format": "filepath",
+          "name": "IMAGE_GENERATION_MCP_SCRATCH_DIR"
+        },
+        {
+          "description": "OpenAI API key. Enables the OpenAI provider (gpt-image-2, gpt-image-1.5, dall-e-3) when set.",
+          "isSecret": true,
+          "name": "IMAGE_GENERATION_MCP_OPENAI_API_KEY"
+        },
+        {
+          "description": "Google API key. Enables the Gemini provider (gemini-3.1-flash-image and others) when set. Get a key at https://aistudio.google.com/apikey.",
+          "isSecret": true,
+          "name": "IMAGE_GENERATION_MCP_GOOGLE_API_KEY"
+        },
+        {
+          "description": "SD WebUI base URL (such as http://localhost:7860). Enables the SD WebUI provider when set. Compatible with AUTOMATIC1111, Forge, reForge, and Forge-neo.",
+          "name": "IMAGE_GENERATION_MCP_SD_WEBUI_HOST"
+        },
+        {
+          "description": "SD WebUI checkpoint name, used for model-aware preset detection (SD 1.5 / SDXL / Lightning) and checkpoint override. Unset uses the instance's current model.",
+          "name": "IMAGE_GENERATION_MCP_SD_WEBUI_MODEL"
+        },
+        {
+          "default": "auto",
+          "description": "Provider used when no keyword triggers auto-selection: auto, openai, gemini, sd_webui, or placeholder. auto picks the first configured provider.",
+          "name": "IMAGE_GENERATION_MCP_DEFAULT_PROVIDER"
+        },
+        {
+          "default": "64",
+          "description": "Maximum number of transformed image results (resize, crop, convert) kept in memory. Set 0 to disable caching.",
+          "format": "number",
+          "name": "IMAGE_GENERATION_MCP_TRANSFORM_CACHE_SIZE"
+        },
+        {
+          "default": "openai",
+          "description": "Comma-separated provider names that cost money; generate_image asks for confirmation (client elicitation) before using them. An empty value falls back to this default; to disable confirmation, set a value that names no provider (such as none).",
+          "name": "IMAGE_GENERATION_MCP_PAID_PROVIDERS"
+        },
+        {
+          "default": "~/.image-generation-mcp/styles",
+          "description": "Directory for style preset files (Markdown with YAML front matter). Created automatically if it does not exist.",
+          "format": "filepath",
+          "name": "IMAGE_GENERATION_MCP_STYLES_DIR"
+        },
+        {
+          "default": "false",
+          "description": "Allow reading input images from local filesystem paths. Off by default: only URLs and uploads are accepted.",
+          "format": "boolean",
+          "name": "IMAGE_GENERATION_MCP_ALLOW_LOCAL_FILE_INPUT"
+        },
+        {
+          "default": "20971520",
+          "description": "Maximum accepted input image size in bytes.",
+          "format": "number",
+          "name": "IMAGE_GENERATION_MCP_MAX_INPUT_IMAGE_BYTES"
+        },
+        {
+          "default": "30.0",
+          "description": "HTTP timeout in seconds when fetching remote image URLs (fetch_image and URL inputs).",
+          "format": "number",
+          "name": "IMAGE_GENERATION_MCP_FETCH_TIMEOUT_S"
+        },
+        {
+          "default": "3600.0",
+          "description": "Link lifetime in seconds when the caller requests no explicit TTL.",
+          "format": "number",
+          "name": "IMAGE_GENERATION_MCP_TRANSFER_TTL_DEFAULT_S"
+        },
+        {
+          "default": "86400.0",
+          "description": "Ceiling in seconds a caller-requested link TTL is clamped to.",
+          "format": "number",
+          "name": "IMAGE_GENERATION_MCP_TRANSFER_TTL_MAX_S"
+        },
+        {
+          "default": "60.0",
+          "description": "Post-success grace window in seconds: a served token's TTL shrinks to this so a stalled transfer can retry within it.",
+          "format": "number",
+          "name": "IMAGE_GENERATION_MCP_TRANSFER_GRACE_TTL_S"
+        },
+        {
+          "default": "60.0",
+          "description": "Crashed-handler reclaim window in seconds for an in-flight reservation.",
+          "format": "number",
+          "name": "IMAGE_GENERATION_MCP_TRANSFER_LEASE_S"
+        },
+        {
+          "default": "104857600",
+          "description": "Maximum size in bytes of a single upload.",
+          "format": "number",
+          "name": "IMAGE_GENERATION_MCP_TRANSFER_MAX_UPLOAD_BYTES"
+        }
+      ],
+      "identifier": "image-generation-mcp",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.12.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "81c6fdcf55",
+    "published_at": "2026-08-25T11:52:03.966236Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.pvliesdonk/image-generation-mcp",
+    "server_version": "1.12.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-25T11:52:03.966236Z"
+  },
+  "title": "Image Generation MCP Server",
+  "type": "mcp_server",
+  "version": "1.12.1"
+}

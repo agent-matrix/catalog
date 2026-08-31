@@ -1,0 +1,138 @@
+{
+  "description": "Least-privilege Discord MCP for privacy-safe reads, audits, and reviewed administration",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:46+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-j-256-discord-mcp.stdio.a2a26defce",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/j-256/discord-mcp",
+    "homepage": "https://github.com/j-256/discord-mcp",
+    "repository": "https://github.com/j-256/discord-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "type": "positional",
+            "value": "--read-only"
+          },
+          {
+            "type": "positional",
+            "value": "--cap-drop=ALL"
+          },
+          {
+            "type": "positional",
+            "value": "--security-opt=no-new-privileges:true"
+          },
+          {
+            "type": "positional",
+            "value": "--pids-limit=64"
+          },
+          {
+            "description": "Read-only bind mount for the non-secret connector configuration",
+            "isRequired": true,
+            "name": "--mount",
+            "type": "named",
+            "value": "type=bind,source={config_file},target=/configuration/discord-mcp.json,readonly",
+            "variables": {
+              "config_file": {
+                "description": "Absolute host path to the connector configuration",
+                "format": "filepath",
+                "isRequired": true,
+                "placeholder": "/absolute/path/to/discord-mcp.json"
+              }
+            }
+          },
+          "ghcr.io/j-256/discord-mcp:0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.j-256/discord-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Discord bot token sent only to fixed Discord REST and vetted Gateway origins",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DISCORD_BOT_TOKEN"
+        }
+      ],
+      "identifier": "ghcr.io/j-256/discord-mcp:0.1.1",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "serve"
+        },
+        {
+          "type": "positional",
+          "value": "--config"
+        },
+        {
+          "type": "positional",
+          "value": "/configuration/discord-mcp.json"
+        }
+      ],
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "--read-only"
+        },
+        {
+          "type": "positional",
+          "value": "--cap-drop=ALL"
+        },
+        {
+          "type": "positional",
+          "value": "--security-opt=no-new-privileges:true"
+        },
+        {
+          "type": "positional",
+          "value": "--pids-limit=64"
+        },
+        {
+          "description": "Read-only bind mount for the non-secret connector configuration",
+          "isRequired": true,
+          "name": "--mount",
+          "type": "named",
+          "value": "type=bind,source={config_file},target=/configuration/discord-mcp.json,readonly",
+          "variables": {
+            "config_file": {
+              "description": "Absolute host path to the connector configuration",
+              "format": "filepath",
+              "isRequired": true,
+              "placeholder": "/absolute/path/to/discord-mcp.json"
+            }
+          }
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "a2a26defce",
+    "published_at": "2026-08-27T15:53:43.116987Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.j-256/discord-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-27T15:53:43.116987Z"
+  },
+  "title": "Discord MCP",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

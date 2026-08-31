@@ -1,0 +1,77 @@
+{
+  "description": "Manage and live-debug LoRaWAN devices on a ChirpStack v4 network server over its gRPC API",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-oliveres-chirpstack-mcp-server.stdio.b487d1411e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/oliveres/chirpstack-mcp-server",
+    "homepage": "https://github.com/oliveres/chirpstack-mcp-server",
+    "repository": "https://github.com/oliveres/chirpstack-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "chirpstack-mcp-server==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.oliveres/chirpstack-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "host:port of the ChirpStack API (the web-UI port, usually 8080)",
+          "format": "string",
+          "isRequired": true,
+          "name": "CHIRPSTACK_SERVER"
+        },
+        {
+          "description": "ChirpStack API key (tenant or global admin)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CHIRPSTACK_API_KEY"
+        },
+        {
+          "description": "Comma-separated toolsets to enable, or 'all' (default: devices,debug,applications,profiles,gateways)",
+          "format": "string",
+          "name": "CHIRPSTACK_TOOLSETS"
+        },
+        {
+          "description": "Use TLS instead of plain h2c (default: false)",
+          "format": "boolean",
+          "name": "CHIRPSTACK_TLS"
+        }
+      ],
+      "identifier": "chirpstack-mcp-server",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b487d1411e",
+    "published_at": "2026-08-29T19:53:32.709308Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.oliveres/chirpstack-mcp-server",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-29T19:53:32.709308Z"
+  },
+  "title": "ChirpStack",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

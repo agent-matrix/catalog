@@ -1,0 +1,70 @@
+{
+  "description": "Economic-safety tools for trading agents: executable quote + rug/honeypot pretrade check via x402.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:38:26+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-getplexa-mcp.stdio.a2f7a40ad3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/plexa-xyz/mcp",
+    "homepage": "https://github.com/plexa-xyz/mcp",
+    "repository": "https://github.com/plexa-xyz/mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@getplexa/mcp@0.1.9"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.getplexa/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Funded wallet private key \u2014 pays Plexa per call (x402 USDC) and signs locally. Plexa never receives it. Use a dedicated low-balance wallet.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AGENT_WALLET_KEY"
+        },
+        {
+          "description": "Plexa public API base URL (default https://api.getplexa.com).",
+          "format": "string",
+          "name": "PLEXA_BASE_URL"
+        },
+        {
+          "description": "Chain the wallet is funded on / quotes default to. Accepted: base | polygon | matic | arbitrum | arbitrum-one | arb | eip155:8453 | eip155:137 | eip155:42161 (default base). pretrade_check is Base-only today.",
+          "format": "string",
+          "name": "CHAIN"
+        }
+      ],
+      "identifier": "@getplexa/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.9"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a2f7a40ad3",
+    "published_at": "2026-08-29T09:28:44.851844Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.getplexa/mcp",
+    "server_version": "0.1.9",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-29T09:28:44.851844Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.9"
+}

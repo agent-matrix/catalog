@@ -1,0 +1,70 @@
+{
+  "description": "Swap, transfer, track a portfolio and use Aave V3 on Base, HyperEVM and Monad.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:38:50+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.finance-fibrous-fibx.stdio.6525b33576",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Fibrous-Finance/fibx",
+    "homepage": "https://github.com/Fibrous-Finance/fibx",
+    "repository": "https://github.com/Fibrous-Finance/fibx"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "fibx@0.9.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "finance.fibrous/fibx",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Custom fibx-server URL for Privy wallet operations. Optional; only needed when self-hosting the backend.",
+          "name": "FIBX_API_URL"
+        },
+        {
+          "description": "Encryption key for the local session file. Optional; auto-generated per machine when unset.",
+          "isSecret": true,
+          "name": "FIBX_SESSION_SECRET"
+        }
+      ],
+      "identifier": "fibx",
+      "packageArguments": [
+        {
+          "description": "Starts the MCP server over stdio.",
+          "type": "positional",
+          "value": "mcp-start",
+          "valueHint": "subcommand"
+        }
+      ],
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.9.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6525b33576",
+    "published_at": "2026-08-29T11:37:46.360701Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "finance.fibrous/fibx",
+    "server_version": "0.9.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-29T11:37:46.360701Z"
+  },
+  "title": "FibX",
+  "type": "mcp_server",
+  "version": "0.9.0"
+}

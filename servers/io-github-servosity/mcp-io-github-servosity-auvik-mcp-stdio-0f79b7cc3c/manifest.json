@@ -1,0 +1,81 @@
+{
+  "description": "Every Auvik endpoint as a command, plus the cross-client answers the Auvik UI and API cannot give",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Servosity-auvik-mcp.stdio.0f79b7cc3c",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/servosity/msp-skills",
+    "homepage": "https://github.com/servosity/msp-skills",
+    "repository": "https://github.com/servosity/msp-skills"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Servosity/auvik-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Auvik API key (Basic auth password). Auvik > Admin > Integrations > Auvik API.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AUVIK_API_KEY"
+        },
+        {
+          "default": "https://auvikapi.us1.my.auvik.com",
+          "description": "Your Auvik regional API host with no path suffix, e.g. https://auvikapi.us1.my.auvik.com",
+          "isRequired": true,
+          "name": "AUVIK_BASE_URL"
+        },
+        {
+          "description": "Tenant ID the inventory reads and sync default to (the --tenant flag overrides it). Child tenants are included in the response. Leave blank to use your credential's own tenant.",
+          "name": "AUVIK_TENANT"
+        },
+        {
+          "description": "The Auvik user email whose API key you are using (Basic auth username).",
+          "isRequired": true,
+          "name": "AUVIK_USERNAME"
+        },
+        {
+          "description": "Overrides the User-Agent the CLI sends on Auvik requests. Leave blank to use the CLI's own built-in User-Agent.",
+          "name": "AUVIK_USER_AGENT"
+        },
+        {
+          "description": "Binds this MCP server to one tenant-gated client profile, so every call answers for that customer. Leave blank to use the profile configured as default_client_profile.",
+          "name": "PRINTING_PRESS_CLIENT_PROFILE"
+        }
+      ],
+      "fileSha256": "45586fac9c80c8b3bd8156b868bdf911707a662a7eb5a7fd187c8837357b695c",
+      "identifier": "https://github.com/Servosity/msp-skills/releases/download/auvik-v0.2.2/auvik-mcp.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0f79b7cc3c",
+    "published_at": "2026-08-27T00:53:43.966839Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Servosity/auvik-mcp",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-27T00:53:43.966839Z"
+  },
+  "title": "Auvik MCP",
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

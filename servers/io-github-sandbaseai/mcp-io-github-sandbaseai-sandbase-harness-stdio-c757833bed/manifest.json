@@ -1,0 +1,64 @@
+{
+  "description": "Stdio MCP bridge for SandBase Harness agents, sessions, turns, artifacts, and cancellation.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:26+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sandbaseai-sandbase-harness.stdio.c757833bed",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sandbaseai/sandbase-harness",
+    "homepage": "https://github.com/sandbaseai/sandbase-harness",
+    "repository": "https://github.com/sandbaseai/sandbase-harness"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/sandbaseai/sandbase-harness-mcp:0.3.8"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sandbaseai/sandbase-harness",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "URL of the SandBase Harness runtime API.",
+          "format": "string",
+          "isRequired": true,
+          "name": "MANAGED_AGENTS_URL"
+        },
+        {
+          "description": "API key when the connected Harness runtime requires authentication.",
+          "format": "string",
+          "isSecret": true,
+          "name": "MANAGED_AGENTS_API_KEY"
+        }
+      ],
+      "identifier": "ghcr.io/sandbaseai/sandbase-harness-mcp:0.3.8",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "c757833bed",
+    "published_at": "2026-08-30T04:39:42.293152Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sandbaseai/sandbase-harness",
+    "server_version": "0.3.8",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-30T04:39:42.293152Z"
+  },
+  "title": "SandBase Harness",
+  "type": "mcp_server",
+  "version": "0.3.8"
+}

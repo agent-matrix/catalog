@@ -1,0 +1,77 @@
+{
+  "description": "Local-first repo intelligence for agents: DNA, health, blast radius, and Dispatch jobs.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Shailesh200-prism.stdio.b481fb9983",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Shailesh200/prism",
+    "homepage": "https://github.com/Shailesh200/prism",
+    "repository": "https://github.com/Shailesh200/prism"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@repo-prism/mcp-server@1.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Shailesh200/prism",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional override when the MCP client starts from a directory outside the project.",
+          "format": "string",
+          "name": "PRISM_WORKSPACE"
+        },
+        {
+          "description": "Optional override to spawn local Cursor SDK workers. Prefer prism init / first start_job (Cursor.auth.login). Do not put this in mcp.json for normal use.",
+          "format": "string",
+          "isSecret": true,
+          "name": "CURSOR_API_KEY"
+        },
+        {
+          "description": "Set to worker to skip Intelligence tools and hide start_job / start_my_day / init. Dispatch job agents do not attach Prism MCP.",
+          "format": "string",
+          "name": "PRISM_DISPATCH_ROLE"
+        }
+      ],
+      "identifier": "@repo-prism/mcp-server",
+      "packageArguments": [
+        {
+          "description": "Optional absolute path to the repository root. Defaults to nearest git root from the client cwd.",
+          "type": "positional",
+          "valueHint": "workspace"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b481fb9983",
+    "published_at": "2026-08-26T15:07:25.985434Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Shailesh200/prism",
+    "server_version": "1.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-26T15:07:25.985434Z"
+  },
+  "title": "Prism",
+  "type": "mcp_server",
+  "version": "1.1.1"
+}

@@ -1,0 +1,481 @@
+{
+  "description": "Markdown vault MCP server with FTS5 + semantic search and frontmatter indexing",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:23+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-pvliesdonk-markdown-vault-mcp.stdio.fdf6449e50",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/pvliesdonk/markdown-vault-mcp",
+    "homepage": "https://github.com/pvliesdonk/markdown-vault-mcp",
+    "repository": "https://github.com/pvliesdonk/markdown-vault-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "markdown-vault-mcp==4.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.pvliesdonk/markdown-vault-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "file:///data/state",
+          "description": "Persistent-state backend URL shared by every pvl-core subsystem that needs state. `memory://` is in-process and lost on restart; `file:///path` persists on one server; `redis://`, `dynamodb://` and `mongodb://` each need their matching extra. When unset, defaults to `file:///data/state` (the volume family Docker images mount), or to `memory://` \u2014 with a warning \u2014 on a host where that directory is not usable.",
+          "name": "MARKDOWN_VAULT_MCP_KV_STORE_URL"
+        },
+        {
+          "description": "Comma-separated explicit tool names this instance exposes; every other tool is hidden from listings and cannot be invoked. Names matching no registered tool are inert. Mutually exclusive with `tools_deny`. Takes effect through `apply_tool_visibility`.",
+          "name": "MARKDOWN_VAULT_MCP_TOOLS_ALLOW"
+        },
+        {
+          "description": "Comma-separated explicit tool names hidden from this instance (absent from listings, cannot be invoked). Names matching no registered tool are inert. Mutually exclusive with `tools_allow`. Takes effect through `apply_tool_visibility`.",
+          "name": "MARKDOWN_VAULT_MCP_TOOLS_DENY"
+        },
+        {
+          "description": "Rename this server instance; defaults to the project name.",
+          "name": "MARKDOWN_VAULT_MCP_SERVER_NAME"
+        },
+        {
+          "description": "Replaces the default MCP instructions text sent to clients.",
+          "name": "MARKDOWN_VAULT_MCP_INSTRUCTIONS"
+        },
+        {
+          "choices": [
+            "DEBUG",
+            "INFO",
+            "WARNING",
+            "ERROR",
+            "CRITICAL"
+          ],
+          "default": "INFO",
+          "description": "Log level for FastMCP internals and app loggers (DEBUG / INFO / WARNING / ERROR / CRITICAL). The -v CLI flag overrides to DEBUG.",
+          "name": "FASTMCP_LOG_LEVEL"
+        },
+        {
+          "default": "true",
+          "description": "Set false for plain or structured JSON log output.",
+          "format": "boolean",
+          "name": "FASTMCP_ENABLE_RICH_LOGGING"
+        },
+        {
+          "default": "http://localhost:11434",
+          "description": "Ollama server URL for the ollama embedding provider. Bare (not MARKDOWN_VAULT_MCP_-prefixed), matching the Ollama ecosystem convention.",
+          "name": "OLLAMA_HOST"
+        },
+        {
+          "description": "OpenAI API key for the openai embedding provider, and the fallback key for the summarize tool when MARKDOWN_VAULT_MCP_SUMMARIZE_OPENAI_API_KEY is unset. Bare (not MARKDOWN_VAULT_MCP_-prefixed), matching the OpenAI ecosystem convention.",
+          "isSecret": true,
+          "name": "OPENAI_API_KEY"
+        },
+        {
+          "description": "Bare fallback for MARKDOWN_VAULT_MCP_OPENAI_BASE_URL (embeddings). For the summarize tool it only routes traffic when an API key already enables the feature; it never enables summarize by itself.",
+          "name": "OPENAI_BASE_URL"
+        },
+        {
+          "description": "Bare fallback for MARKDOWN_VAULT_MCP_OPENAI_EMBEDDING_MODEL.",
+          "name": "OPENAI_EMBEDDING_MODEL"
+        },
+        {
+          "default": "60",
+          "description": "Maximum seconds an index-backed tool or resource waits for the FTS index to become queryable during a cold-start background build before raising IndexUnavailableError(reason=\"timeout\"). Increase for large vaults.",
+          "format": "number",
+          "name": "MARKDOWN_VAULT_MCP_BUILD_TIMEOUT_S"
+        },
+        {
+          "default": "60",
+          "description": "Maximum seconds an index-querying read tool waits for the IndexWriter to drain when called with wait_for_pending_writes=true. On timeout the tool answers from the current index and reports index_stale=true in the response _meta.",
+          "format": "number",
+          "name": "MARKDOWN_VAULT_MCP_DRAIN_TIMEOUT_S"
+        },
+        {
+          "default": "/data/vault",
+          "description": "Path to the markdown vault directory. Required \u2014 the server refuses to start without it. Symbolic links inside the vault are followed on Python 3.13+.",
+          "format": "filepath",
+          "name": "MARKDOWN_VAULT_MCP_SOURCE_DIR"
+        },
+        {
+          "default": "false",
+          "description": "Set to true to hide the write tools (write, edit, append, delete, rename, move_folder, fetch, git_sync, the okf_* tools, create_upload_link) and serve a search-only vault. git_sync also needs managed git mode; create_upload_link needs an HTTP transport.",
+          "format": "boolean",
+          "name": "MARKDOWN_VAULT_MCP_READ_ONLY"
+        },
+        {
+          "default": "false",
+          "description": "Hide the MCP Apps UI tools (browse_vault, show_context) from the tool listing for clients that do not render MCP Apps panels.",
+          "format": "boolean",
+          "name": "MARKDOWN_VAULT_MCP_DISABLE_APPS_UI"
+        },
+        {
+          "description": "Path to the SQLite FTS5 index file; unset keeps the index in memory. Set it for persistence across restarts.",
+          "format": "filepath",
+          "name": "MARKDOWN_VAULT_MCP_INDEX_PATH"
+        },
+        {
+          "description": "Path to the change-tracking state file. Defaults to {SOURCE_DIR}/.markdown_vault_mcp/state.json.",
+          "format": "filepath",
+          "name": "MARKDOWN_VAULT_MCP_STATE_PATH"
+        },
+        {
+          "description": "Path to the numpy embeddings file; required to enable semantic search.",
+          "format": "filepath",
+          "name": "MARKDOWN_VAULT_MCP_EMBEDDINGS_PATH"
+        },
+        {
+          "description": "Comma-separated frontmatter fields promoted to the tag index for structured filtering. Changing it cold-rebuilds the index once on next startup; SEARCHABLE_FIELDS inherits this value when unset.",
+          "name": "MARKDOWN_VAULT_MCP_INDEXED_FIELDS"
+        },
+        {
+          "description": "Comma-separated frontmatter fields required on every document; documents missing any are excluded from the index.",
+          "name": "MARKDOWN_VAULT_MCP_REQUIRED_FIELDS"
+        },
+        {
+          "description": "Comma-separated glob patterns excluded from scanning, e.g. .obsidian/**,.trash/**.",
+          "name": "MARKDOWN_VAULT_MCP_EXCLUDE"
+        },
+        {
+          "default": "title",
+          "description": "Frontmatter field used as the document title (falls back to title, the first H1, then the filename). Changing it cold-rebuilds the index once on next startup.",
+          "name": "MARKDOWN_VAULT_MCP_TITLE_FIELD"
+        },
+        {
+          "description": "Comma-separated frontmatter fields whose text values become keyword-searchable and enrich first-chunk embeddings. Inherits INDEXED_FIELDS when unset; the sentinel none means filterable but not searchable. Changing it cold-rebuilds the index and re-embeds once on next startup.",
+          "name": "MARKDOWN_VAULT_MCP_SEARCHABLE_FIELDS"
+        },
+        {
+          "default": "_templates",
+          "description": "Relative folder where note templates live (used by the create_from_template prompt).",
+          "name": "MARKDOWN_VAULT_MCP_TEMPLATES_FOLDER"
+        },
+        {
+          "description": "Directory of .md prompt files that extend or override built-in prompts; a relative path is resolved against SOURCE_DIR.",
+          "name": "MARKDOWN_VAULT_MCP_PROMPTS_FOLDER"
+        },
+        {
+          "default": "_conventions.md",
+          "description": "Filename of the per-folder conventions files surfaced to clients at write time (bare .md filename without glob characters). Set to none to disable folder conventions.",
+          "name": "MARKDOWN_VAULT_MCP_CONVENTIONS_FILE"
+        },
+        {
+          "default": "auto",
+          "description": "OKF (Open Knowledge Format) read semantics. With auto (the default), read annotations switch on when the vault declares an OKF version in its root index.md. Use off to disable OKF semantics entirely, or on to force them for an undeclared vault. Annotations are read-only; write behavior is never affected.",
+          "name": "MARKDOWN_VAULT_MCP_OKF_MODE"
+        },
+        {
+          "default": "false",
+          "description": "OKF (Open Knowledge Format) enforced write layer. When true on an OKF-active vault, the server stamps generated provenance on each write and clears any verified attestation when a note's content changes. It also keeps each written folder's log.md and index.md current, and exposes the okf_verify tool. Requires OKF_MODE to be auto or on (a true value with OKF_MODE=off is a config error). Off by default.",
+          "format": "boolean",
+          "name": "MARKDOWN_VAULT_MCP_OKF_WRITE"
+        },
+        {
+          "default": "elicit",
+          "description": "How the okf_verify tool attributes a human review. This applies only when OKF_WRITE is on, which gates the tool. With elicit (the default), okf_verify asks the human to confirm the review through an MCP elicitation and records the attestation only on an affirmative reply. It fails closed when the client cannot elicit or the human declines, so a model that holds the human's token cannot self-attest. Use trust-auth to attribute to the authenticated caller with no confirmation (safe only when the sole caller is a human-driven UI), or off to hide the tool so attestation happens through external tooling. A non-default value with OKF_WRITE off is a config error.",
+          "name": "MARKDOWN_VAULT_MCP_OKF_VERIFY"
+        },
+        {
+          "description": "Comma-separated allowed attachment extensions without the dot (e.g. pdf,png,jpg); use * to allow every non-markdown file. Unset selects the built-in allowlist.",
+          "name": "MARKDOWN_VAULT_MCP_ATTACHMENT_EXTENSIONS"
+        },
+        {
+          "default": "1.0",
+          "description": "Maximum attachment size in MB returned by read / accepted by write; 0 disables the limit.",
+          "format": "number",
+          "name": "MARKDOWN_VAULT_MCP_MAX_ATTACHMENT_SIZE_MB"
+        },
+        {
+          "default": "262144",
+          "description": "Maximum bytes returned by a full-document read of a note; use `read(path, section=\u2026)` for partial reads. 0 disables the limit.",
+          "format": "number",
+          "name": "MARKDOWN_VAULT_MCP_MAX_NOTE_READ_BYTES"
+        },
+        {
+          "default": "2",
+          "description": "Maximum chunks returned per document in search results.",
+          "format": "number",
+          "name": "MARKDOWN_VAULT_MCP_CHUNKS_PER_FILE"
+        },
+        {
+          "default": "200",
+          "description": "Width of the snippet window (words) in search results; 0 returns full chunk content.",
+          "format": "number",
+          "name": "MARKDOWN_VAULT_MCP_SNIPPET_WORDS"
+        },
+        {
+          "default": "0.25",
+          "description": "Down-weights longer chunks in ranking: score / (1 + alpha * log(chunk_count)).",
+          "format": "number",
+          "name": "MARKDOWN_VAULT_MCP_LENGTH_DOWNWEIGHT_ALPHA"
+        },
+        {
+          "default": "400",
+          "description": "Word cap per chunk; the adaptive chunker splits at deeper heading levels, then paragraph/word boundaries, to respect it. Match it to the embedding model's context. A reindex applies a new value.",
+          "format": "number",
+          "name": "MARKDOWN_VAULT_MCP_MAX_CHUNK_WORDS"
+        },
+        {
+          "description": "Character cap enforced alongside MAX_CHUNK_WORDS to bound token-dense chunks. Unset derives min(1500, model context * 2.8). Set a positive value for an exact cap, or -1 to scale with the model's full context (can exhaust memory on long-context models). A reindex applies a new value.",
+          "format": "number",
+          "name": "MARKDOWN_VAULT_MCP_MAX_CHUNK_CHARS"
+        },
+        {
+          "default": "40",
+          "description": "Words of overlap between adjacent budget-split fragments of the same heading section (0 disables). A reindex applies a new value.",
+          "format": "number",
+          "name": "MARKDOWN_VAULT_MCP_CHUNK_OVERLAP_WORDS"
+        },
+        {
+          "description": "Folder-prefix score multipliers (`prefix:weight` pairs, comma-separated, weights > 0) applied to all search modes; the deepest matching prefix wins (sessions:0.5 demotes sessions/**).",
+          "name": "MARKDOWN_VAULT_MCP_FOLDER_WEIGHTS"
+        },
+        {
+          "description": "Per-column BM25 weights (`column:weight` pairs, comma-separated, weights >= 0) for keyword ranking. Columns: path, title, folder, heading, content, summary.",
+          "name": "MARKDOWN_VAULT_MCP_FTS_WEIGHTS"
+        },
+        {
+          "description": "Embedding provider: openai, ollama, or fastembed. Unset auto-detects from the environment.",
+          "name": "MARKDOWN_VAULT_MCP_EMBEDDING_PROVIDER"
+        },
+        {
+          "default": "nomic-embed-text",
+          "description": "Ollama embedding model name.",
+          "name": "MARKDOWN_VAULT_MCP_OLLAMA_MODEL"
+        },
+        {
+          "default": "false",
+          "description": "Force Ollama to embed on CPU only.",
+          "format": "boolean",
+          "name": "MARKDOWN_VAULT_MCP_OLLAMA_CPU_ONLY"
+        },
+        {
+          "default": "https://api.openai.com/v1",
+          "description": "OpenAI-compatible API base URL for embeddings; the bare OPENAI_BASE_URL is honoured as a fallback.",
+          "name": "MARKDOWN_VAULT_MCP_OPENAI_BASE_URL"
+        },
+        {
+          "default": "text-embedding-3-small",
+          "description": "OpenAI-compatible embedding model name; the bare OPENAI_EMBEDDING_MODEL is honoured as a fallback.",
+          "name": "MARKDOWN_VAULT_MCP_OPENAI_EMBEDDING_MODEL"
+        },
+        {
+          "default": "BAAI/bge-small-en-v1.5",
+          "description": "FastEmbed model name.",
+          "name": "MARKDOWN_VAULT_MCP_FASTEMBED_MODEL"
+        },
+        {
+          "description": "FastEmbed model cache directory (in Docker, stored under /data/state/fastembed).",
+          "name": "MARKDOWN_VAULT_MCP_FASTEMBED_CACHE_DIR"
+        },
+        {
+          "default": "false",
+          "description": "Enrich embedding input with the note title, chunk heading, and (first chunk) searchable-field values. Flipping it re-embeds the whole vault once on next startup.",
+          "format": "boolean",
+          "name": "MARKDOWN_VAULT_MCP_EMBED_CONTEXT"
+        },
+        {
+          "default": "30.0",
+          "description": "Per-request wall-clock budget in seconds for a single embedding HTTP call (OpenAI/Ollama). The local FastEmbed backend runs in-process with no network call and ignores this. CPU-only or large-model workloads may need 60-120 s; raise this if batches time out.",
+          "format": "number",
+          "name": "MARKDOWN_VAULT_MCP_EMBED_TIMEOUT_S"
+        },
+        {
+          "default": "4",
+          "description": "Number of chunks sent per embedding request. Smaller batches shorten each request (useful under a tight timeout on slow models) at the cost of more round-trips.",
+          "format": "number",
+          "name": "MARKDOWN_VAULT_MCP_EMBEDDING_BATCH_SIZE"
+        },
+        {
+          "description": "Token/password for HTTPS git auth; remotes must be HTTPS when set.",
+          "isSecret": true,
+          "name": "MARKDOWN_VAULT_MCP_GIT_TOKEN"
+        },
+        {
+          "description": "HTTPS remote URL for managed git mode: the server clones into an empty SOURCE_DIR on startup (or validates an existing origin) and enables the pull loop, auto-commit, and deferred push.",
+          "name": "MARKDOWN_VAULT_MCP_GIT_REPO_URL"
+        },
+        {
+          "default": "x-access-token",
+          "description": "Username for HTTPS git auth prompts (x-access-token for GitHub, oauth2 for GitLab, the account name for Bitbucket).",
+          "name": "MARKDOWN_VAULT_MCP_GIT_USERNAME"
+        },
+        {
+          "default": "600",
+          "description": "Seconds between git fetch + fast-forward update attempts; 0 disables periodic pull.",
+          "format": "number",
+          "name": "MARKDOWN_VAULT_MCP_GIT_PULL_INTERVAL_S"
+        },
+        {
+          "default": "30.0",
+          "description": "Seconds of write-idle time before pushing; 0 pushes only on shutdown.",
+          "format": "number",
+          "name": "MARKDOWN_VAULT_MCP_GIT_PUSH_DELAY_S"
+        },
+        {
+          "default": "markdown-vault-mcp",
+          "description": "Git committer name for auto-commits; set this in Docker where git config user.name is empty.",
+          "name": "MARKDOWN_VAULT_MCP_GIT_COMMIT_NAME"
+        },
+        {
+          "default": "noreply@markdown-vault-mcp",
+          "description": "Git committer email for auto-commits.",
+          "name": "MARKDOWN_VAULT_MCP_GIT_COMMIT_EMAIL"
+        },
+        {
+          "description": "OIDC claim key used as the commit author name (e.g. name); overrides GIT_COMMIT_NAME per request when an OIDC token is present.",
+          "name": "MARKDOWN_VAULT_MCP_GIT_COMMIT_NAME_CLAIM"
+        },
+        {
+          "description": "OIDC claim key used as the commit author email (e.g. email); overrides GIT_COMMIT_EMAIL per request when an OIDC token is present.",
+          "name": "MARKDOWN_VAULT_MCP_GIT_COMMIT_EMAIL_CLAIM"
+        },
+        {
+          "default": "true",
+          "description": "Run git lfs pull on startup to fetch LFS-tracked attachments; set to false for repos without LFS.",
+          "format": "boolean",
+          "name": "MARKDOWN_VAULT_MCP_GIT_LFS"
+        },
+        {
+          "default": "true",
+          "description": "Watch the vault for external filesystem changes; auto-disabled when git pull or the webhook is active. Requires the file-watcher extra.",
+          "format": "boolean",
+          "name": "MARKDOWN_VAULT_MCP_FILE_WATCHER"
+        },
+        {
+          "default": "2.0",
+          "description": "Seconds of quiet after the last filesystem event before reindexing.",
+          "format": "number",
+          "name": "MARKDOWN_VAULT_MCP_FILE_WATCHER_DEBOUNCE_S"
+        },
+        {
+          "default": "true",
+          "description": "Keep the non-recursive watch on the vault root; set false to register zero source-dir-rooted FSEvents streams (avoids repeated macOS access prompts on a home-rooted vault) at the cost of root-level files relying on scans.",
+          "format": "boolean",
+          "name": "MARKDOWN_VAULT_MCP_FILE_WATCHER_ROOT_FLOOR"
+        },
+        {
+          "description": "Shared secret for the GitHub push-event webhook; when set, mounts POST /github-webhook on HTTP/SSE transports to trigger an immediate pull + reindex on push events.",
+          "isSecret": true,
+          "name": "MARKDOWN_VAULT_MCP_GITHUB_WEBHOOK_SECRET"
+        },
+        {
+          "description": "Summarization backend (only openai is recognised). Unset auto-detects: the backend activates when credentials or an explicit endpoint are present.",
+          "name": "MARKDOWN_VAULT_MCP_SUMMARIZE_PROVIDER"
+        },
+        {
+          "description": "API key for the OpenAI-compatible summarize endpoint; the bare OPENAI_API_KEY is honoured as a fallback. Unset works for keyless local endpoints (Ollama).",
+          "isSecret": true,
+          "name": "MARKDOWN_VAULT_MCP_SUMMARIZE_OPENAI_API_KEY"
+        },
+        {
+          "description": "OpenAI-compatible endpoint base URL for the summarize tool; setting it enables the tool even without an API key. The bare OPENAI_BASE_URL routes traffic only when a key already enables the feature.",
+          "name": "MARKDOWN_VAULT_MCP_SUMMARIZE_OPENAI_BASE_URL"
+        },
+        {
+          "default": "gpt-5-mini",
+          "description": "Chat model id used for summaries.",
+          "name": "MARKDOWN_VAULT_MCP_SUMMARIZE_OPENAI_MODEL"
+        },
+        {
+          "default": "8192",
+          "description": "Upper bound on generated tokens per summarize call; on reasoning models this budget also covers internal reasoning tokens.",
+          "format": "number",
+          "name": "MARKDOWN_VAULT_MCP_SUMMARIZE_MAX_TOKENS"
+        },
+        {
+          "default": "50",
+          "description": "Cap on the number of notes summarised in one call (subtree expansion truncates to this many).",
+          "format": "number",
+          "name": "MARKDOWN_VAULT_MCP_SUMMARIZE_MAX_NOTES"
+        },
+        {
+          "default": "200000",
+          "description": "Aggregate cap on note characters sent to the model in one call; excess is truncated with a flag on the result.",
+          "format": "number",
+          "name": "MARKDOWN_VAULT_MCP_SUMMARIZE_MAX_INPUT_CHARS"
+        },
+        {
+          "default": "120.0",
+          "description": "Per-request wall-clock budget in seconds for a single summarize backend call; keep it below the MCP client's request timeout so the server-side error wins the race.",
+          "format": "number",
+          "name": "MARKDOWN_VAULT_MCP_SUMMARIZE_TIMEOUT"
+        },
+        {
+          "default": "3600.0",
+          "description": "Link lifetime in seconds when the caller requests no explicit TTL.",
+          "format": "number",
+          "name": "MARKDOWN_VAULT_MCP_TRANSFER_TTL_DEFAULT_S"
+        },
+        {
+          "default": "86400.0",
+          "description": "Ceiling in seconds a caller-requested link TTL is clamped to.",
+          "format": "number",
+          "name": "MARKDOWN_VAULT_MCP_TRANSFER_TTL_MAX_S"
+        },
+        {
+          "default": "60.0",
+          "description": "Post-success grace window in seconds: a served token's TTL shrinks to this so a stalled transfer can retry within it.",
+          "format": "number",
+          "name": "MARKDOWN_VAULT_MCP_TRANSFER_GRACE_TTL_S"
+        },
+        {
+          "default": "60.0",
+          "description": "Crashed-handler reclaim window in seconds for an in-flight reservation.",
+          "format": "number",
+          "name": "MARKDOWN_VAULT_MCP_TRANSFER_LEASE_S"
+        },
+        {
+          "default": "104857600",
+          "description": "Maximum size in bytes of a single upload.",
+          "format": "number",
+          "name": "MARKDOWN_VAULT_MCP_TRANSFER_MAX_UPLOAD_BYTES"
+        },
+        {
+          "default": "25.0",
+          "description": "Seconds a long-running tool call may run in the foreground before it is promoted to a background job and a job handle is returned instead.",
+          "format": "number",
+          "name": "MARKDOWN_VAULT_MCP_JOBS_SOFT_DEADLINE_S"
+        },
+        {
+          "default": "3600.0",
+          "description": "Seconds a background-job record (working or finished) is retained for polling before it expires from the store.",
+          "format": "number",
+          "name": "MARKDOWN_VAULT_MCP_JOBS_RESULT_TTL_S"
+        },
+        {
+          "default": "256",
+          "description": "Maximum live background jobs per calling subject; further promotions are rejected until older records expire.",
+          "format": "number",
+          "name": "MARKDOWN_VAULT_MCP_JOBS_MAX_PER_SUBJECT"
+        }
+      ],
+      "identifier": "markdown-vault-mcp",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "4.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "fdf6449e50",
+    "published_at": "2026-08-25T05:50:24.351016Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.pvliesdonk/markdown-vault-mcp",
+    "server_version": "4.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-25T05:50:24.351016Z"
+  },
+  "title": "Markdown Vault MCP",
+  "type": "mcp_server",
+  "version": "4.0.0"
+}

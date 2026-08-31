@@ -1,0 +1,126 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/koment-dev/koment:3.2.0"
+      }
+    }
+  ],
+  "description": "Read and write checked code rationale stored outside source comments.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:52+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/koment-dev/koment",
+  "id": "tool.io-github-koment-dev-koment.1636b256df",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/koment-dev/koment",
+    "homepage": "https://github.com/koment-dev/koment",
+    "repository": "https://github.com/koment-dev/koment"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Read and write checked code rationale stored outside source comments.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.koment-dev/koment",
+      "request_type": "POST",
+      "url": "https://github.com/koment-dev/koment"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "type": "positional",
+            "value": "run"
+          },
+          {
+            "type": "positional",
+            "value": "--rm"
+          },
+          {
+            "type": "positional",
+            "value": "--interactive"
+          },
+          {
+            "type": "positional",
+            "value": "--user"
+          },
+          {
+            "type": "positional",
+            "value": "{host_user}",
+            "variables": {
+              "host_user": {
+                "description": "Host UID:GID allowed to write the repository mount.",
+                "isRequired": true,
+                "placeholder": "1000:1000"
+              }
+            }
+          },
+          {
+            "type": "positional",
+            "value": "--mount"
+          },
+          {
+            "type": "positional",
+            "value": "type=bind,src={repository},dst=/workspace",
+            "variables": {
+              "repository": {
+                "description": "Absolute path to the koment-enabled repository.",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          {
+            "type": "positional",
+            "value": "--workdir"
+          },
+          {
+            "type": "positional",
+            "value": "/workspace"
+          },
+          "ghcr.io/koment-dev/koment:3.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.koment-dev/koment",
+  "provenance": {
+    "identity_key": "e8186b5d33",
+    "promoted_from": "mcp.io-github-koment-dev-koment.stdio.e8186b5d33",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.koment-dev/koment",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-koment-dev-koment.stdio.e8186b5d33",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/koment-dev/koment",
+  "summary": "Read and write checked code rationale stored outside source comments.",
+  "tags": [
+    "checked",
+    "code",
+    "koment",
+    "rationale",
+    "read",
+    "stored",
+    "write"
+  ],
+  "title": "koment",
+  "type": "tool",
+  "version": "3.2.0"
+}

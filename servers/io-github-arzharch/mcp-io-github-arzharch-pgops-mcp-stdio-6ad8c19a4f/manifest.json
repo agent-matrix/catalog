@@ -1,0 +1,68 @@
+{
+  "description": "Safe, audited PostgreSQL operations for AI agents: queries, migrations, EXPLAIN, containers",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:23+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-arzharch-pgops-mcp.stdio.6ad8c19a4f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/arzharch/pgops-mcp",
+    "homepage": "https://github.com/arzharch/pgops-mcp",
+    "repository": "https://github.com/arzharch/pgops-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/arzharch/pgops-mcp:0.1.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.arzharch/pgops-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "PostgreSQL connection string. From inside a container, localhost is the container itself \u2014 use host.docker.internal or the compose service name.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PGOPS_DSN"
+        },
+        {
+          "default": "0",
+          "description": "Set to 1 to withhold every mutating tool.",
+          "name": "PGOPS_READ_ONLY"
+        },
+        {
+          "default": "/var/lib/pgops/audit.jsonl",
+          "description": "Path to the audit log inside the container. Mount a volume at this path or the log dies with the container.",
+          "name": "PGOPS_AUDIT_LOG"
+        }
+      ],
+      "identifier": "ghcr.io/arzharch/pgops-mcp:0.1.5",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "6ad8c19a4f",
+    "published_at": "2026-08-28T17:33:07.662687Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.arzharch/pgops-mcp",
+    "server_version": "0.1.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-28T17:33:07.662687Z"
+  },
+  "title": "pgops",
+  "type": "mcp_server",
+  "version": "0.1.5"
+}

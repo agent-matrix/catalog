@@ -1,0 +1,69 @@
+{
+  "description": "Send RCS messages from your agent and get typed replies. Automatic SMS fallback.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:38:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-cadencercs-cadence.stdio.7212a32e91",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/dwixom/rcs-agent-mvp",
+    "homepage": "https://github.com/dwixom/rcs-agent-mvp",
+    "repository": "https://github.com/dwixom/rcs-agent-mvp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@cadencercs/mcp@0.3.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.cadencercs/cadence",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your Cadence API key. A sandbox key (sk_sandbox_\u2026) simulates delivery end to end and reaches no handset; a live key sends real messages. Get one free at https://cadencercs.com/app.html \u2014 no card, no compliance wait.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CADENCE_API_KEY"
+        },
+        {
+          "description": "Set to 1 to expose the three one-way-door tools: sync_google, request_verification and request_launch. They create an agent at Google that can never be deleted, and freeze the launch questionnaire. Left unset they are absent from tools/list entirely, so no model in this configuration can reach them.",
+          "name": "CADENCE_ALLOW_IRREVERSIBLE"
+        },
+        {
+          "default": "https://api.cadencercs.com",
+          "description": "Override the API host. Defaults to https://api.cadencercs.com.",
+          "name": "CADENCE_API_URL"
+        }
+      ],
+      "identifier": "@cadencercs/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7212a32e91",
+    "published_at": "2026-08-25T23:41:23.636745Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.cadencercs/cadence",
+    "server_version": "0.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-25T23:41:23.636745Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.1"
+}

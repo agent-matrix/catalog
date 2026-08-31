@@ -1,0 +1,45 @@
+{
+  "description": "Give your agent one stable URL to publish a result or keep a page updated every run. One call.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:38:49+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.dev-workers-notdown-app-handoff-publish.sse.90d43b3263",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://handoff.notdown-app.workers.dev/mcp/{key}"
+    }
+  },
+  "name": "dev.workers.notdown-app.handoff/publish",
+  "provenance": {
+    "identity_key": "90d43b3263",
+    "published_at": "2026-08-28T02:34:53.608128Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "dev.workers.notdown-app.handoff/publish",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-28T02:34:53.608128Z"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://handoff.notdown-app.workers.dev/mcp/{key}",
+      "variables": {
+        "key": {
+          "description": "Your private publishing namespace. No signup, no email: just invent any secret string of 16+ characters \u2014 it becomes your namespace on first use. Tools: publish_page, update_page, list_pages, delete_page.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true
+        }
+      }
+    }
+  ],
+  "title": "Handoff \u2014 publish agent results as shareable pages",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

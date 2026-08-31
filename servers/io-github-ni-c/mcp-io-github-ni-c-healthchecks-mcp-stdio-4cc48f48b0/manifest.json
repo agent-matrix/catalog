@@ -1,0 +1,85 @@
+{
+  "description": "Inspect, create and adjust Healthchecks cron and uptime checks, and read why one failed",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:14+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ni-c-healthchecks-mcp.stdio.4cc48f48b0",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ni-c/healthchecks-mcp",
+    "homepage": "https://github.com/ni-c/healthchecks-mcp",
+    "repository": "https://github.com/ni-c/healthchecks-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "healthchecks-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ni-c/healthchecks-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Project API key, exactly 32 characters, from Project Settings \u2192 API Access",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "HEALTHCHECKS_API_KEY"
+        },
+        {
+          "description": "Site root of a self-hosted instance, e.g. https://hc.example.net (default: https://healthchecks.io)",
+          "format": "string",
+          "name": "HEALTHCHECKS_URL"
+        },
+        {
+          "description": "Set to true to register only the read tools (default: false)",
+          "format": "boolean",
+          "name": "HEALTHCHECKS_READ_ONLY"
+        },
+        {
+          "description": "Comma-separated tool names or list_* prefixes to register; 'essential' selects a curated preset (default: all tools)",
+          "format": "string",
+          "name": "HEALTHCHECKS_ALLOW_TOOLS"
+        },
+        {
+          "description": "Comma-separated tool names or list_* prefixes to remove from whatever the allow list left",
+          "format": "string",
+          "name": "HEALTHCHECKS_DENY_TOOLS"
+        },
+        {
+          "description": "Set to true to accept a self-signed certificate from a self-hosted instance (default: false)",
+          "format": "boolean",
+          "name": "HEALTHCHECKS_INSECURE_TLS"
+        }
+      ],
+      "identifier": "healthchecks-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4cc48f48b0",
+    "published_at": "2026-08-29T13:37:17.940106Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ni-c/healthchecks-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-29T13:37:17.940106Z"
+  },
+  "title": "Healthchecks",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

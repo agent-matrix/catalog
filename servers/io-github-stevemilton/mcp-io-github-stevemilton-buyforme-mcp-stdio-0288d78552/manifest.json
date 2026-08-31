@@ -1,0 +1,64 @@
+{
+  "description": "BuyForMe: pay any x402 URL (USD or EUR) with ArisPay delegated custody. Alias of payagent-mcp.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-stevemilton-buyforme-mcp.stdio.0288d78552",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/arispay-inc/arispay-x402",
+    "homepage": "https://github.com/arispay-inc/arispay-x402",
+    "repository": "https://github.com/arispay-inc/arispay-x402"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "buyforme-mcp@1.0.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.stevemilton/buyforme-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional. ArisPay developer API key (ap_live_\u2026 / ap_test_\u2026). The create_user tool can self-provision one from just an email.",
+          "isSecret": true,
+          "name": "ARISPAY_API_KEY"
+        },
+        {
+          "description": "EVM private key for permissionless local signing (zero-signup mode): pay_api signs x402 payments with it directly \u2014 no ArisPay account needed. Generate one with `npx payagent wallet new`. Never sent to any server.",
+          "isSecret": true,
+          "name": "PAYAGENT_PRIVATE_KEY"
+        }
+      ],
+      "identifier": "buyforme-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0288d78552",
+    "published_at": "2026-08-24T12:35:42.997849Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.stevemilton/buyforme-mcp",
+    "server_version": "1.0.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-24T12:35:42.997849Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.3"
+}

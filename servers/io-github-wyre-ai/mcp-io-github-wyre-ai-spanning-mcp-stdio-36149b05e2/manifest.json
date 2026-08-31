@@ -1,0 +1,89 @@
+{
+  "description": "MCP server for Spanning Cloud Backup \u2014 M365/GWS/Salesforce backups, restores, audit.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:19+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-WYRE-AI-spanning-mcp.stdio.36149b05e2",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/WYRE-AI/spanning-mcp",
+    "homepage": "https://github.com/WYRE-AI/spanning-mcp",
+    "repository": "https://github.com/WYRE-AI/spanning-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-ai/spanning-mcp:v1.1.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.WYRE-AI/spanning-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Platform: 'm365', 'gws', or 'salesforce'",
+          "format": "string",
+          "isRequired": true,
+          "name": "SPANNING_PLATFORM"
+        },
+        {
+          "description": "Spanning admin account email",
+          "format": "string",
+          "isRequired": true,
+          "name": "SPANNING_ADMIN_EMAIL"
+        },
+        {
+          "description": "Spanning API token",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SPANNING_API_TOKEN"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode for the server. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-ai/spanning-mcp:v1.1.4",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "36149b05e2",
+    "published_at": "2026-08-26T13:45:58.172709Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.WYRE-AI/spanning-mcp",
+    "server_version": "1.1.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-26T13:45:58.172709Z"
+  },
+  "title": "Spanning Cloud Backup",
+  "type": "mcp_server",
+  "version": "1.1.4"
+}

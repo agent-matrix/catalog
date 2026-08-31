@@ -1,0 +1,96 @@
+{
+  "description": "Safe, audited PostgreSQL operations for AI agents: queries, migrations, EXPLAIN, containers",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:23+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-arzharch-pgops-mcp.stdio.e813b88eac",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/arzharch/pgops-mcp",
+    "homepage": "https://github.com/arzharch/pgops-mcp",
+    "repository": "https://github.com/arzharch/pgops-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "pgops-mcp==0.1.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.arzharch/pgops-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "PostgreSQL connection string for the database to operate on.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PGOPS_DSN"
+        },
+        {
+          "description": "Optional separate DSN for the read-only pool. Use a role with no write grants to enforce read-only at the database rather than only in the server.",
+          "isSecret": true,
+          "name": "PGOPS_READONLY_DSN"
+        },
+        {
+          "default": "0",
+          "description": "Set to 1 to withhold every mutating tool. Write tools are not registered at all, so an agent cannot call them.",
+          "name": "PGOPS_READ_ONLY"
+        },
+        {
+          "default": "0",
+          "description": "Set to 1 to register container.restart and container.exec. Off by default: Docker socket access is root-equivalent on the host.",
+          "name": "PGOPS_APPROVAL_MODE"
+        },
+        {
+          "default": "~/.pgops/audit.jsonl",
+          "description": "Path to the append-only JSONL audit log.",
+          "name": "PGOPS_AUDIT_LOG"
+        },
+        {
+          "default": "5000",
+          "description": "Statement timeout applied to every query unless a tool call overrides it.",
+          "name": "PGOPS_DEFAULT_TIMEOUT_MS"
+        },
+        {
+          "default": "30000",
+          "description": "Ceiling a caller-supplied timeout is clamped to.",
+          "name": "PGOPS_MAX_TIMEOUT_MS"
+        },
+        {
+          "default": "100",
+          "description": "Rows returned by query.read when the caller does not specify a limit.",
+          "name": "PGOPS_DEFAULT_ROW_LIMIT"
+        }
+      ],
+      "identifier": "pgops-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e813b88eac",
+    "published_at": "2026-08-28T18:42:34.452954Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.arzharch/pgops-mcp",
+    "server_version": "0.1.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-28T18:42:34.452954Z"
+  },
+  "title": "pgops",
+  "type": "mcp_server",
+  "version": "0.1.6"
+}

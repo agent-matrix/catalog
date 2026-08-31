@@ -1,0 +1,78 @@
+{
+  "description": "Search the Couchbase documentation from your MCP client via a hosted documentation agent.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:03+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Couchbase-Ecosystem-couchbase-guru.stdio.d3d7c7641d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Couchbase-Ecosystem/couchbase-guru",
+    "homepage": "https://github.com/Couchbase-Ecosystem/couchbase-guru",
+    "repository": "https://github.com/Couchbase-Ecosystem/couchbase-guru"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "docker.io/couchbaseecosystem/couchbase-guru:0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Couchbase-Ecosystem/couchbase-guru",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Transport mode for the server (stdio or http). Default is stdio.",
+          "format": "string",
+          "name": "CB_MCP_TRANSPORT"
+        },
+        {
+          "description": "Host to run the MCP server on (default: 127.0.0.1). Used only for HTTP transport mode.",
+          "format": "string",
+          "name": "CB_MCP_HOST"
+        },
+        {
+          "description": "Port to run the MCP server on (default: 8000). Used only for HTTP transport mode.",
+          "format": "number",
+          "name": "CB_MCP_PORT"
+        },
+        {
+          "description": "Base URL of the documentation agent backend. Set this to run against your own self-hosted agent; if unset, the public agent is used.",
+          "format": "string",
+          "name": "CB_AGENT_BASE_URL"
+        },
+        {
+          "description": "Secret salt used to pseudonymize client IPs (HTTP transport). Set a shared value for consistent hashing across multiple instances; a local salt is generated when unset.",
+          "format": "string",
+          "isSecret": true,
+          "name": "CB_AGENT_IP_SALT"
+        }
+      ],
+      "identifier": "docker.io/couchbaseecosystem/couchbase-guru:0.1.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "d3d7c7641d",
+    "published_at": "2026-08-27T19:54:38.649121Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Couchbase-Ecosystem/couchbase-guru",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-27T19:54:38.649121Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

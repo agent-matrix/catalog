@@ -1,0 +1,71 @@
+{
+  "description": "Safe-by-default SQL guardrails for AI agents: AST-checked queries, per-table policy, audit log.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:37:58+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-midplane-midplane.stdio.b4d5b631ea",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/midplaneai/midplane",
+    "homepage": "https://github.com/midplaneai/midplane",
+    "repository": "https://github.com/midplaneai/midplane"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "docker.io/midplane/midplane:0.20.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.midplane/midplane",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Postgres connection string the agent's queries run against. Pass it with --env-file, never with an inline -e: a DSN on the docker command line leaks the password to `ps aux` and your shell history.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DATABASE_URL"
+        },
+        {
+          "description": "Path (inside the container) to a policy YAML granting per-table read/read_write access, tenant scoping, and column masking. Omit for the safe default: reads allowed, writes and DDL denied.",
+          "format": "filepath",
+          "name": "MIDPLANE_POLICY_FILE"
+        },
+        {
+          "default": "8080",
+          "description": "Port the Streamable HTTP transport binds. Must match the url above if changed.",
+          "name": "PORT"
+        }
+      ],
+      "identifier": "docker.io/midplane/midplane:0.20.0",
+      "registryType": "oci",
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:8080/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "b4d5b631ea",
+    "published_at": "2026-08-25T13:07:26.745026Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.midplane/midplane",
+    "server_version": "0.20.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-25T13:07:26.745026Z"
+  },
+  "title": "Midplane",
+  "type": "mcp_server",
+  "version": "0.20.0"
+}

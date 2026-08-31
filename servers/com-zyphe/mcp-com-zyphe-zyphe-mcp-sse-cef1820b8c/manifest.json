@@ -1,0 +1,54 @@
+{
+  "description": "Run KYB and AML case reviews and configure Zyphe verification flows, forms and API keys.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:38:48+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-zyphe-zyphe-mcp.sse.cef1820b8c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://api.zyphe.com/mcp"
+    }
+  },
+  "name": "com.zyphe/zyphe-mcp",
+  "provenance": {
+    "identity_key": "cef1820b8c",
+    "published_at": "2026-08-26T15:06:15.03459Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.zyphe/zyphe-mcp",
+    "server_version": "1.14.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-26T15:06:15.03459Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Bot token issued from the Bots page of the Zyphe dashboard, or via POST /organizations/{organization_id}/bots/create. The plain token is shown only once at creation; regenerate it if lost.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {bot_token}",
+          "variables": {
+            "bot_token": {
+              "description": "Zyphe bot token. Starts with zyphe_bot_.",
+              "isRequired": true,
+              "isSecret": true,
+              "placeholder": "zyphe_bot_..."
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://api.zyphe.com/mcp"
+    }
+  ],
+  "title": "Zyphe",
+  "type": "mcp_server",
+  "version": "1.14.1"
+}

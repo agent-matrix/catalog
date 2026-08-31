@@ -1,0 +1,62 @@
+{
+  "description": "x402 payment tools for MCP clients: pay, verify a STARK receipt, hash per RFC 8785. No account.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:58+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.tech-vauban-pay-mcp.stdio.4981ec858c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@vauban-org/pay-mcp@0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "tech.vauban/pay-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Starknet Sepolia RPC endpoint for the two chain-reading tools. Optional; defaults to a public node not operated by Vauban.",
+          "name": "STARKNET_RPC_URL"
+        },
+        {
+          "description": "Starknet Sepolia account address enabling make_payment chain mode. Optional; without it make_payment returns a hash-only pending result with no network call.",
+          "name": "PAY_MCP_SEPOLIA_ACCOUNT_ADDRESS"
+        },
+        {
+          "description": "Private key for that account. Optional; never required to try the tools.",
+          "isSecret": true,
+          "name": "PAY_MCP_SEPOLIA_PRIVATE_KEY"
+        }
+      ],
+      "identifier": "@vauban-org/pay-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4981ec858c",
+    "published_at": "2026-08-25T16:05:44.947151Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "tech.vauban/pay-mcp",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-25T16:05:44.947151Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

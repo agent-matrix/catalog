@@ -1,0 +1,78 @@
+{
+  "description": "NovelAI image generation as MCP tools: txt2img, img2img, inpaint, upscale, Director, ControlNet.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-xinvxueyuan-novelai-image-mcp.stdio.48ef608e5a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/xinvxueyuan/NovelAI-Image-MCP",
+    "homepage": "https://github.com/xinvxueyuan/NovelAI-Image-MCP",
+    "repository": "https://github.com/xinvxueyuan/NovelAI-Image-MCP"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "type": "positional",
+            "value": "novelai-image-mcp"
+          },
+          {
+            "type": "positional",
+            "value": "serve"
+          },
+          "novelai-image-mcp==0.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.xinvxueyuan/novelai-image-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "NovelAI persistent API token (preferred auth). Get from https://novelai.net/account",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "NOVELAI_TOKEN"
+        }
+      ],
+      "identifier": "novelai-image-mcp",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "novelai-image-mcp"
+        },
+        {
+          "type": "positional",
+          "value": "serve"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "48ef608e5a",
+    "published_at": "2026-08-28T14:41:10.244995Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.xinvxueyuan/novelai-image-mcp",
+    "server_version": "0.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-28T14:41:10.244995Z"
+  },
+  "title": "NovelAI Image MCP",
+  "type": "mcp_server",
+  "version": "0.4.0"
+}

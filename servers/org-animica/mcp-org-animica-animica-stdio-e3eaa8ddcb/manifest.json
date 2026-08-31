@@ -1,0 +1,90 @@
+{
+  "description": "Animica chain data, free keyless AI inference, quantum randomness, x402 discovery, mining stats.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:54+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.org-animica-animica.stdio.e3eaa8ddcb",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://gitlab.com/Animica/animica-core",
+    "homepage": "https://gitlab.com/Animica/animica-core",
+    "repository": "https://gitlab.com/Animica/animica-core"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "animica-mcp==0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "org.animica/animica",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional Animica API key (anm_live_...) for higher AI rate limits. The server works without it.",
+          "isSecret": true,
+          "name": "ANIMICA_API_KEY"
+        },
+        {
+          "default": "https://rpc.animica.org/rpc",
+          "description": "Animica node JSON-RPC endpoint (read-only allow-listed methods only).",
+          "name": "ANIMICA_RPC_URL"
+        },
+        {
+          "default": "https://animica.dev/v1",
+          "description": "OpenAI-compatible /v1 base URL used for AI inference (chat, models, embeddings). https://animica.dev/v1 is the free keyless endpoint.",
+          "name": "ANIMICA_BASE_URL"
+        },
+        {
+          "default": "https://pool.animica.org",
+          "description": "Mining-pool stats API base URL.",
+          "name": "ANIMICA_POOL_URL"
+        },
+        {
+          "default": "https://pool.animica.org",
+          "description": "Quantum randomness beacon base URL (/beacon/* endpoints).",
+          "name": "ANIMICA_BEACON_URL"
+        },
+        {
+          "default": "animica-chat",
+          "description": "Default model id for the animica_ai_ask tool.",
+          "name": "ANIMICA_MODEL"
+        },
+        {
+          "default": "180",
+          "description": "HTTP timeout in seconds for backend calls. The network is volunteer-served, so allow generous time.",
+          "name": "ANIMICA_MCP_TIMEOUT_S"
+        }
+      ],
+      "identifier": "animica-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e3eaa8ddcb",
+    "published_at": "2026-08-25T15:24:24.688872Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "org.animica/animica",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-25T15:24:24.688872Z"
+  },
+  "title": "Animica",
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

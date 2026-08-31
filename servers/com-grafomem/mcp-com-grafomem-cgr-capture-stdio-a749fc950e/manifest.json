@@ -1,0 +1,84 @@
+{
+  "description": "Record agent judgments and their real outcomes on GRAFOMEM Cloud. Capture now, score later.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:38:26+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-grafomem-cgr-capture.stdio.a749fc950e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/GNS-Foundation/grafomem",
+    "homepage": "https://github.com/GNS-Foundation/grafomem",
+    "repository": "https://github.com/GNS-Foundation/grafomem"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "grafomem-cgr==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.grafomem/cgr-capture",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your GRAFOMEM Cloud tenant API key (X-API-Key). Needs decisions:read for the durability guard.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GRAFOMEM_CGR_TENANT_KEY"
+        },
+        {
+          "description": "The tenant id you expect that key to resolve to. If the key resolves to any other tenant, every write is refused.",
+          "isRequired": true,
+          "name": "GRAFOMEM_CGR_TENANT"
+        },
+        {
+          "description": "Role handles to public agent_key (64-hex Ed25519), inline as JSON. Example: {\"cc-builder@acme\":\"<64-hex>\"}. Use this or GRAFOMEM_CGR_ROLE_KEYS.",
+          "name": "GRAFOMEM_CGR_ROLE_KEYS_JSON"
+        },
+        {
+          "description": "Path to a JSON file with the same role-handle to public agent_key mapping. Use this or GRAFOMEM_CGR_ROLE_KEYS_JSON.",
+          "format": "filepath",
+          "name": "GRAFOMEM_CGR_ROLE_KEYS"
+        },
+        {
+          "description": "Comma-separated tenant ids to always refuse, even if pinned by mistake. Put your production tenant here.",
+          "name": "GRAFOMEM_CGR_FORBIDDEN_TENANTS"
+        },
+        {
+          "default": "https://api.grafomem.com",
+          "description": "GRAFOMEM Cloud base URL. Defaults to https://api.grafomem.com.",
+          "name": "GRAFOMEM_API"
+        }
+      ],
+      "identifier": "grafomem-cgr",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a749fc950e",
+    "published_at": "2026-08-24T17:25:50.943071Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.grafomem/cgr-capture",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-24T17:25:50.943071Z"
+  },
+  "title": "GRAFOMEM CGR Capture",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

@@ -1,0 +1,107 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/j-256/discord-mcp:0.1.1"
+      }
+    }
+  ],
+  "description": "Least-privilege Discord MCP for privacy-safe reads, audits, and reviewed administration",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:46+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/j-256/discord-mcp",
+  "id": "tool.io-github-j-256-discord-mcp.399a3839a7",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/j-256/discord-mcp",
+    "homepage": "https://github.com/j-256/discord-mcp",
+    "repository": "https://github.com/j-256/discord-mcp"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Least-privilege Discord MCP for privacy-safe reads, audits, and reviewed administration",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.j-256/discord-mcp",
+      "request_type": "POST",
+      "url": "https://github.com/j-256/discord-mcp"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "type": "positional",
+            "value": "--read-only"
+          },
+          {
+            "type": "positional",
+            "value": "--cap-drop=ALL"
+          },
+          {
+            "type": "positional",
+            "value": "--security-opt=no-new-privileges:true"
+          },
+          {
+            "type": "positional",
+            "value": "--pids-limit=64"
+          },
+          {
+            "description": "Read-only bind mount for the non-secret connector configuration",
+            "isRequired": true,
+            "name": "--mount",
+            "type": "named",
+            "value": "type=bind,source={config_file},target=/configuration/discord-mcp.json,readonly",
+            "variables": {
+              "config_file": {
+                "description": "Absolute host path to the connector configuration",
+                "format": "filepath",
+                "isRequired": true,
+                "placeholder": "/absolute/path/to/discord-mcp.json"
+              }
+            }
+          },
+          "ghcr.io/j-256/discord-mcp:0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.j-256/discord-mcp",
+  "provenance": {
+    "identity_key": "a2a26defce",
+    "promoted_from": "mcp.io-github-j-256-discord-mcp.stdio.a2a26defce",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.j-256/discord-mcp",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-j-256-discord-mcp.stdio.a2a26defce",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/j-256/discord-mcp",
+  "summary": "Least-privilege Discord MCP for privacy-safe reads, audits, and reviewed administration",
+  "tags": [
+    "audits",
+    "discord",
+    "least",
+    "privacy",
+    "privilege",
+    "reads",
+    "safe"
+  ],
+  "title": "Discord MCP",
+  "type": "tool",
+  "version": "0.1.1"
+}

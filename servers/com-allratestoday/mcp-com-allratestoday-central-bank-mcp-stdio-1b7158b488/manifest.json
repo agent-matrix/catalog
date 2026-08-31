@@ -1,0 +1,62 @@
+{
+  "description": "Official central-bank & tax-authority rates from 100+ sources. No API key needed to start.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:38:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-allratestoday-central-bank-mcp.stdio.1b7158b488",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/AllRates-Today/central-bank-mcp",
+    "homepage": "https://github.com/AllRates-Today/central-bank-mcp",
+    "repository": "https://github.com/AllRates-Today/central-bank-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@allratestoday/central-bank-mcp@0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.allratestoday/central-bank-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional. Without it the server runs keyless: the latest published table of any source plus the source catalogue. A free key (https://allratestoday.com/register) unlocks historical dates, time series, cross-bank comparison and publication calendars.",
+          "isSecret": true,
+          "name": "ALLRATES_API_KEY"
+        },
+        {
+          "description": "Override API base URL (default: https://allratestoday.com/api).",
+          "name": "ALLRATES_BASE_URL"
+        }
+      ],
+      "identifier": "@allratestoday/central-bank-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1b7158b488",
+    "published_at": "2026-08-30T09:19:39.525793Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.allratestoday/central-bank-mcp",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-30T09:19:39.525793Z"
+  },
+  "title": "Central Bank Rates (AllRatesToday)",
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

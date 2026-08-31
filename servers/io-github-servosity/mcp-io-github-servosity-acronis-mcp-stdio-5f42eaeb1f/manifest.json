@@ -1,0 +1,79 @@
+{
+  "description": "The first real CLI for the Acronis Cyber Protect Cloud platform  -  every tenant, agent, and usage",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Servosity-acronis-mcp.stdio.5f42eaeb1f",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/servosity/msp-skills",
+    "homepage": "https://github.com/servosity/msp-skills",
+    "repository": "https://github.com/servosity/msp-skills"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Servosity/acronis-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Full API base URL. Leave blank: the CLI builds it from ACRONIS_DATACENTER. Set it only to point at a different host.",
+          "name": "ACRONIS_BASE_URL"
+        },
+        {
+          "description": "Sets ACRONIS_BEARER_AUTH for the Acronis Cyber Protect Cloud MCP server.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ACRONIS_BEARER_AUTH"
+        },
+        {
+          "description": "OAuth2 client ID of the Acronis API client (Acronis console: Settings > API clients). Used with ACRONIS_CLIENT_SECRET to mint a bearer token.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ACRONIS_CLIENT_ID"
+        },
+        {
+          "description": "OAuth2 client secret paired with ACRONIS_CLIENT_ID. Acronis shows it once, when the API client is created.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ACRONIS_CLIENT_SECRET"
+        },
+        {
+          "default": "eu2-cloud",
+          "description": "Acronis datacenter host prefix (for example eu2-cloud or us-cloud).",
+          "name": "ACRONIS_DATACENTER"
+        }
+      ],
+      "fileSha256": "83b52b8be858c42a5df971fe916001b9d18636c9fcec89466d3dc047b2861511",
+      "identifier": "https://github.com/Servosity/msp-skills/releases/download/acronis-v0.1.1/acronis-mcp.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5f42eaeb1f",
+    "published_at": "2026-08-26T05:02:20.500716Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Servosity/acronis-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-26T05:02:20.500716Z"
+  },
+  "title": "Acronis MCP",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

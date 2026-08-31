@@ -1,0 +1,82 @@
+{
+  "description": "Read-only access to App Store Connect and Google Play: apps, releases, and reviews.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-JohnBilousov-appstore-play-mcp.stdio.6151e516ed",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/JohnBilousov/appstore-play-mcp",
+    "homepage": "https://github.com/JohnBilousov/appstore-play-mcp",
+    "repository": "https://github.com/JohnBilousov/appstore-play-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "appstore-play-mcp@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.JohnBilousov/appstore-play-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "App Store Connect API key id. Omit the App Store block to run Play-only.",
+          "format": "string",
+          "name": "ASC_KEY_ID"
+        },
+        {
+          "description": "App Store Connect issuer id.",
+          "format": "string",
+          "name": "ASC_ISSUER_ID"
+        },
+        {
+          "description": "Path to the AuthKey_<KEY_ID>.p8 private key downloaded from App Store Connect.",
+          "format": "filepath",
+          "isSecret": true,
+          "name": "ASC_KEY_PATH"
+        },
+        {
+          "description": "Path to the Google service account JSON with Android Publisher access.",
+          "format": "filepath",
+          "isSecret": true,
+          "name": "PLAY_SERVICE_ACCOUNT_PATH"
+        },
+        {
+          "description": "Comma-separated Play package names. Required for Play: the API cannot list apps.",
+          "format": "string",
+          "name": "PLAY_PACKAGES"
+        }
+      ],
+      "identifier": "appstore-play-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6151e516ed",
+    "published_at": "2026-08-24T12:19:27.195959Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.JohnBilousov/appstore-play-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-24T12:19:27.195959Z"
+  },
+  "title": "App Store & Google Play",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

@@ -1,0 +1,82 @@
+{
+  "description": "Run scheduled LLM-written email digests from local files and feeds. Local-first MCP server.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:23+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ariaxhan-agentmailkit.stdio.c05872271d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ariaxhan/agentmailkit",
+    "homepage": "https://github.com/ariaxhan/agentmailkit",
+    "repository": "https://github.com/ariaxhan/agentmailkit"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "name": "--from",
+            "type": "named",
+            "value": "agentmailkit[mcp]"
+          },
+          {
+            "type": "positional",
+            "value": "agentmailkit",
+            "valueHint": "command"
+          },
+          "agentmailkit==0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ariaxhan/agentmailkit",
+  "packages": [
+    {
+      "identifier": "agentmailkit",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp",
+          "valueHint": "subcommand"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "name": "--from",
+          "type": "named",
+          "value": "agentmailkit[mcp]"
+        },
+        {
+          "type": "positional",
+          "value": "agentmailkit",
+          "valueHint": "command"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c05872271d",
+    "published_at": "2026-08-26T20:22:28.594656Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ariaxhan/agentmailkit",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-26T20:22:28.594656Z"
+  },
+  "title": "agentmailkit",
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

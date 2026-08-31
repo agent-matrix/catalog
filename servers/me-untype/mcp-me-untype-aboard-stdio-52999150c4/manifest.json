@@ -1,0 +1,64 @@
+{
+  "description": "Falsifiable claims about systemic problems: causal graph, forecasts, dossiers.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:53+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.me-untype-aboard.stdio.52999150c4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ostin-pil/aboard",
+    "homepage": "https://github.com/ostin-pil/aboard",
+    "repository": "https://github.com/ostin-pil/aboard"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "aboard-mcp-server@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "me.untype/aboard",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://aboard.untype.me",
+          "description": "Base URL of the aboard instance to read from. Defaults to the canonical deploy; set it to point the server at another instance.",
+          "name": "ABOARD_API_BASE_URL"
+        },
+        {
+          "description": "Service token issued by the aboard operator. Needed only by the four write tools, each of which opens a pull request a human must review. The five read tools need no credential.",
+          "isSecret": true,
+          "name": "ABOARD_AGENT_TOKEN"
+        }
+      ],
+      "identifier": "aboard-mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "52999150c4",
+    "published_at": "2026-08-24T18:19:04.729772Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "me.untype/aboard",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-24T18:19:04.729772Z"
+  },
+  "title": "aboard",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

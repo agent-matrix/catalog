@@ -1,0 +1,53 @@
+{
+  "description": "App Store keyword ranks, the 11-30 cusp band, metadata audits and rival positions.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:38:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-rankcusp-aso.sse.b6a072b246",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://rankcusp.com/api/mcp"
+    }
+  },
+  "name": "com.rankcusp/aso",
+  "provenance": {
+    "identity_key": "b6a072b246",
+    "published_at": "2026-08-25T12:32:05.623635Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.rankcusp/aso",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-25T12:32:05.623635Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Bearer auth with a rankcusp service key - create one free at https://rankcusp.com",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {rankcusp_api_key}",
+          "variables": {
+            "rankcusp_api_key": {
+              "description": "Service key from Account -> API keys on rankcusp.com. A device key will not do: it belongs to one machine.",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://rankcusp.com/api/mcp"
+    }
+  ],
+  "title": "rankcusp",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

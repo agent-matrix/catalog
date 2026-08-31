@@ -1,0 +1,62 @@
+{
+  "description": "Generate game-ready 3D models, textures, and audio from natural language, over MCP.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:37:56+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-gessa-mcp-server.stdio.c564272019",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@gessa/mcp-server@1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.gessa/mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Gessa MCP API key (mcpkey_...). Mint one anonymously at https://api.gessa.ai/api/agent-onboarding or claim a workspace at create.gessa.ai. Scopes: mcp:read, mcp:write.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GESSA_API_KEY"
+        },
+        {
+          "default": "https://api.gessa.ai",
+          "description": "Override the API origin the stdio proxy forwards to. Defaults to https://api.gessa.ai.",
+          "name": "GESSA_API_URL"
+        }
+      ],
+      "identifier": "@gessa/mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c564272019",
+    "published_at": "2026-08-25T01:00:11.487874Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.gessa/mcp-server",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-25T01:00:11.487874Z"
+  },
+  "title": "Gessa: game asset generation for AI agents",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

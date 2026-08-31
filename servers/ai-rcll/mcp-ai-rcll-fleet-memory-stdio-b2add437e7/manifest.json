@@ -1,0 +1,64 @@
+{
+  "description": "Self-hosted shared memory for a team of AI agents. Rooms, L0-L3 depth, no LLM on the read path.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:37:59+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-rcll-fleet-memory.stdio.b2add437e7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Holetron-lab/fleet-memory",
+    "homepage": "https://github.com/Holetron-lab/fleet-memory",
+    "repository": "https://github.com/Holetron-lab/fleet-memory"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "fleet-memory-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.rcll/fleet-memory",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "http://127.0.0.1:5100",
+          "description": "Base URL of the fleet-memory backend (self-hosted). Defaults to http://127.0.0.1:5100. The pre-rebrand name HINDSIGHT_URL is still read as a fallback.",
+          "name": "FLEET_URL"
+        },
+        {
+          "default": "fleet-main",
+          "description": "Default memory bank ID for retain/recall. The pre-rebrand variable MEMPALACE_BANK is still read as a fallback. Migrating from hindsight-mempalace-mcp? Set this to mempalace-main to keep reading your existing bank; see mcp-server/README.md.",
+          "name": "FLEET_BANK"
+        }
+      ],
+      "identifier": "fleet-memory-mcp",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b2add437e7",
+    "published_at": "2026-08-28T13:08:31.43419Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.rcll/fleet-memory",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-28T13:08:31.43419Z"
+  },
+  "title": "RCLL",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

@@ -1,0 +1,80 @@
+{
+  "description": "Compose and render video from one JSON template. Deterministic, runs locally, no generative model.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:38:49+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.dev-leclap-video.stdio.5e68bfdcb4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/heristop/leclap",
+    "homepage": "https://github.com/heristop/leclap",
+    "repository": "https://github.com/heristop/leclap"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@leclap/mcp@0.3.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "dev.leclap/video",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Directory rendered videos are written to. Defaults to ~/.leclap/renders.",
+          "format": "filepath",
+          "name": "LECLAP_MCP_OUTPUT_DIR"
+        },
+        {
+          "description": "Allowlisted directory the server may read source media from. Defaults to ~/.leclap/media.",
+          "format": "filepath",
+          "name": "LECLAP_MCP_MEDIA_DIR"
+        },
+        {
+          "description": "Per-render timeout in milliseconds. Defaults to 600000.",
+          "format": "number",
+          "name": "LECLAP_MCP_RENDER_TIMEOUT_MS"
+        },
+        {
+          "description": "Opt in to the Remotion clip renderer, which executes local JavaScript. Off by default.",
+          "format": "boolean",
+          "name": "LECLAP_MCP_ALLOW_REMOTION"
+        },
+        {
+          "description": "Path to a Remotion entry point used by render_remotion_clip when it is enabled.",
+          "format": "filepath",
+          "name": "LECLAP_MCP_REMOTION_ENTRY"
+        }
+      ],
+      "identifier": "@leclap/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5e68bfdcb4",
+    "published_at": "2026-08-24T17:57:45.339387Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "dev.leclap/video",
+    "server_version": "0.3.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-24T17:57:45.339387Z"
+  },
+  "title": "LeClap",
+  "type": "mcp_server",
+  "version": "0.3.4"
+}

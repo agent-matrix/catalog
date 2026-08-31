@@ -1,0 +1,56 @@
+{
+  "description": "AI transcription from URLs or files. 119 languages, diarization, SRT/VTT/text export.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:38:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-scriptivox-www-transcription.sse.a57296213f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/SparkleOfficial/scriptivox-mcp-server",
+    "homepage": "https://github.com/SparkleOfficial/scriptivox-mcp-server",
+    "repository": "https://github.com/SparkleOfficial/scriptivox-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://platform.scriptivox.com/mcp"
+    }
+  },
+  "name": "com.scriptivox.www/transcription",
+  "provenance": {
+    "identity_key": "a57296213f",
+    "published_at": "2026-08-25T17:04:50.379955Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.scriptivox.www/transcription",
+    "server_version": "1.1.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-25T17:04:50.379955Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Scriptivox API key. OPTIONAL: get_pricing, get_supported_languages, get_product_info and get_api_docs work without it. The transcription tools need it.",
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {scriptivox_api_key}",
+          "variables": {
+            "scriptivox_api_key": {
+              "description": "API key (sk_live_...) from https://platform.scriptivox.com/keys",
+              "format": "string",
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://platform.scriptivox.com/mcp"
+    }
+  ],
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.1.4"
+}

@@ -1,0 +1,77 @@
+{
+  "description": "MCP server for Atera RMM \u2014 customers, tickets, and more.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:19+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-WYRE-AI-atera-mcp.stdio.4ef17ae4e2",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/WYRE-AI/atera-mcp",
+    "homepage": "https://github.com/WYRE-AI/atera-mcp",
+    "repository": "https://github.com/WYRE-AI/atera-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-ai/atera-mcp:v1.5.10"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.WYRE-AI/atera-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Atera API key (X-Api-Key) for authenticating against the Atera REST API",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ATERA_API_KEY"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode for the server. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-ai/atera-mcp:v1.5.10",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "4ef17ae4e2",
+    "published_at": "2026-08-26T13:42:25.110896Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.WYRE-AI/atera-mcp",
+    "server_version": "1.5.10",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-26T13:42:25.110896Z"
+  },
+  "title": "Atera",
+  "type": "mcp_server",
+  "version": "1.5.10"
+}

@@ -1,0 +1,80 @@
+{
+  "description": "Open, local revenue-intelligence CLI for Maxio Advanced Billing  -  MRR waterfalls",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Servosity-maxio-mcp.stdio.31cccd129b",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/servosity/msp-skills",
+    "homepage": "https://github.com/servosity/msp-skills",
+    "repository": "https://github.com/servosity/msp-skills"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Servosity/maxio-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Single-secret Maxio credential, sent as the HTTP Basic username with the constant 'x' as the password. Use this or the MAXIO_USERNAME + MAXIO_PASSWORD pair.",
+          "isSecret": true,
+          "name": "MAXIO_API_KEY"
+        },
+        {
+          "description": "Full API base URL. Leave blank: the CLI builds it from MAXIO_SITE. Set it only to point at a different host.",
+          "name": "MAXIO_BASE_URL"
+        },
+        {
+          "description": "Set the MAXIO_PASSWORD credential for the Maxio MCP server.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "MAXIO_PASSWORD"
+        },
+        {
+          "default": "subdomain",
+          "description": "Set the MAXIO_SITE credential for the Maxio MCP server.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "MAXIO_SITE"
+        },
+        {
+          "description": "Set the MAXIO_USERNAME credential for the Maxio MCP server.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "MAXIO_USERNAME"
+        }
+      ],
+      "fileSha256": "dd4ebc3d873dda8ca40d4d7234c23ef71265990038c0e0a20a10101b00e86e11",
+      "identifier": "https://github.com/Servosity/msp-skills/releases/download/maxio-v0.1.1/maxio-mcp.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "31cccd129b",
+    "published_at": "2026-08-26T05:29:09.720833Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Servosity/maxio-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-26T05:29:09.720833Z"
+  },
+  "title": "Maxio MCP",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

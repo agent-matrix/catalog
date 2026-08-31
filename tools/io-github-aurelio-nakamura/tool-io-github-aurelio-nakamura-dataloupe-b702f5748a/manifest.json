@@ -1,0 +1,103 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/aurelio-nakamura/dataloupe:0.11.1"
+      }
+    }
+  ],
+  "description": "Offline MCP server to explore CSV/JSON/Parquet/Excel: preview, query, diff, render interactive HTML",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:24+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/aurelio-nakamura/dataloupe",
+  "id": "tool.io-github-aurelio-nakamura-dataloupe.b702f5748a",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/aurelio-nakamura/dataloupe",
+    "homepage": "https://github.com/aurelio-nakamura/dataloupe",
+    "repository": "https://github.com/aurelio-nakamura/dataloupe"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Offline MCP server to explore CSV/JSON/Parquet/Excel: preview, query, diff, render interactive HTML",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.aurelio-nakamura/dataloupe",
+      "request_type": "POST",
+      "url": "https://github.com/aurelio-nakamura/dataloupe"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Keep stdin open for the JSON-RPC stdio transport",
+            "isRequired": true,
+            "name": "-i",
+            "type": "named"
+          },
+          {
+            "description": "Remove the container when the server exits",
+            "isRequired": true,
+            "name": "--rm",
+            "type": "named"
+          },
+          {
+            "description": "Mount the directory holding your data files into the container at /data (the server's file access is confined here)",
+            "isRepeated": true,
+            "isRequired": true,
+            "name": "--mount",
+            "type": "named",
+            "value": "type=bind,src={source_path},dst=/data",
+            "variables": {
+              "source_path": {
+                "description": "Absolute path on the host to the directory containing your data files",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          "ghcr.io/aurelio-nakamura/dataloupe:0.11.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.aurelio-nakamura/dataloupe",
+  "provenance": {
+    "identity_key": "4af0f3b026",
+    "promoted_from": "mcp.io-github-aurelio-nakamura-dataloupe.stdio.4af0f3b026",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.aurelio-nakamura/dataloupe",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-aurelio-nakamura-dataloupe.stdio.4af0f3b026",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/aurelio-nakamura/dataloupe",
+  "summary": "Offline MCP server to explore CSV/JSON/Parquet/Excel: preview, query, diff, render interactive HTML",
+  "tags": [
+    "dataloupe",
+    "excel",
+    "explore",
+    "json",
+    "offline",
+    "parquet",
+    "preview"
+  ],
+  "title": "Dataloupe",
+  "type": "tool",
+  "version": "0.11.1"
+}

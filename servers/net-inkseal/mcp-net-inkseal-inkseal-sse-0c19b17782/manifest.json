@@ -1,0 +1,54 @@
+{
+  "description": "Send documents for signature: upload, place fields, draft, and send once a human agrees.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:53+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.net-inkseal-inkseal.sse.0c19b17782",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://inkseal.net/mcp"
+    }
+  },
+  "name": "net.inkseal/inkseal",
+  "provenance": {
+    "identity_key": "0c19b17782",
+    "published_at": "2026-08-26T05:22:58.584858Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "net.inkseal/inkseal",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-26T05:22:58.584858Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "An InkSeal API key, minted at https://inkseal.net/api-keys under Service credentials. It decides which workspace this server acts in and which tools you are offered.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {api_key}",
+          "variables": {
+            "api_key": {
+              "description": "The key itself, starting with isk_.",
+              "isRequired": true,
+              "isSecret": true,
+              "placeholder": "isk_..."
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://inkseal.net/mcp"
+    }
+  ],
+  "title": "InkSeal",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

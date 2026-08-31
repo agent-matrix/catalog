@@ -1,0 +1,71 @@
+{
+  "description": "Every Cork API operation, plus cross-client risk attribution and exploitability-first vuln triage.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Servosity-cork-mcp.stdio.fdaeb2bc75",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/servosity/msp-skills",
+    "homepage": "https://github.com/servosity/msp-skills",
+    "repository": "https://github.com/servosity/msp-skills"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Servosity/cork-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Set the CORK_API_KEY credential for the Cork MCP server.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CORK_API_KEY"
+        },
+        {
+          "default": "https://api.corkinc.com/api/v1",
+          "description": "Base URL for the Cork API. Leave the prefilled default unless your account uses a different regional or self-hosted host.",
+          "name": "CORK_BASE_URL"
+        },
+        {
+          "description": "Overrides the User-Agent the CLI sends on Cork requests. Leave blank to use the CLI's own built-in User-Agent.",
+          "name": "CORK_USER_AGENT"
+        },
+        {
+          "description": "Binds this MCP server to one tenant-gated client profile, so every call answers for that customer. Leave blank to use the profile configured as default_client_profile.",
+          "name": "PRINTING_PRESS_CLIENT_PROFILE"
+        }
+      ],
+      "fileSha256": "2f774ed40561c59ad7c6f9a21f8e5885e8996e56729698be17082bb1bf076708",
+      "identifier": "https://github.com/Servosity/msp-skills/releases/download/cork-v0.1.2/cork-mcp.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "fdaeb2bc75",
+    "published_at": "2026-08-27T01:17:38.686339Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Servosity/cork-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-27T01:17:38.686339Z"
+  },
+  "title": "Cork MCP",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

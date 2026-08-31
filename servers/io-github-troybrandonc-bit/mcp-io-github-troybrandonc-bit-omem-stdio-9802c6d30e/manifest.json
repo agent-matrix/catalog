@@ -1,0 +1,83 @@
+{
+  "description": "Memory for AI agents that tracks beliefs over time and surfaces contradictions",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:36+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-troybrandonc-bit-omem.stdio.9802c6d30e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/troybrandonc-bit/Omem",
+    "homepage": "https://github.com/troybrandonc-bit/Omem",
+    "repository": "https://github.com/troybrandonc-bit/Omem"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "omem-infrastructure==0.2.11"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.troybrandonc-bit/omem",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API key from the OMEM server. It is printed on first run of `omem-server`.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OMEM_API_KEY"
+        },
+        {
+          "description": "Project id to read and write memory in, also printed on first run.",
+          "format": "string",
+          "isRequired": true,
+          "name": "OMEM_PROJECT"
+        },
+        {
+          "default": "http://127.0.0.1:8787",
+          "description": "URL of the OMEM server.",
+          "format": "string",
+          "name": "OMEM_BASE_URL"
+        },
+        {
+          "default": "mcp-agent",
+          "description": "The agent whose memory this process reads and writes. Fixed here rather than passed as a tool argument, so the model cannot act as a different agent.",
+          "format": "string",
+          "name": "OMEM_AGENT"
+        },
+        {
+          "description": "The end user this process is acting for. Also fixed here, not a tool argument. Leave unset and no user-scoped memory is visible.",
+          "format": "string",
+          "name": "OMEM_USER"
+        }
+      ],
+      "identifier": "omem-infrastructure",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.11"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9802c6d30e",
+    "published_at": "2026-08-28T21:12:49.888975Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.troybrandonc-bit/omem",
+    "server_version": "0.2.11",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-28T21:12:49.888975Z"
+  },
+  "title": "OMEM",
+  "type": "mcp_server",
+  "version": "0.2.11"
+}

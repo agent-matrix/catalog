@@ -1,0 +1,74 @@
+{
+  "description": "Sync your ConnectWise Automate fleet to local SQLite and answer cross-client RMM questions offline.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Servosity-connectwise-automate-mcp.stdio.7154c7440c",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/servosity/msp-skills",
+    "homepage": "https://github.com/servosity/msp-skills",
+    "repository": "https://github.com/servosity/msp-skills"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Servosity/connectwise-automate-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Full API base URL. Leave blank: the CLI builds it from CONNECTWISE_AUTOMATE_SERVER. Set it only to point at a different host.",
+          "name": "CONNECTWISE_AUTOMATE_BASE_URL"
+        },
+        {
+          "description": "Registered integration clientId GUID, sent as the clientId header (required for v2020.11+).",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CONNECTWISE_AUTOMATE_CLIENT_ID"
+        },
+        {
+          "default": "YOUR_SERVER.hostedrmm.com",
+          "description": "Your Automate host, e.g. company.hostedrmm.com (endpoint base URL).",
+          "isRequired": true,
+          "name": "CONNECTWISE_AUTOMATE_SERVER"
+        },
+        {
+          "description": "Bearer token for the ConnectWise Automate API (short-lived; mint with apitoken mint).",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CONNECTWISE_AUTOMATE_TOKEN"
+        }
+      ],
+      "fileSha256": "72fd383a5e38f3fdedd2358665a6b1d1af19b2fa353758fb3ddaf4e27c8443bf",
+      "identifier": "https://github.com/Servosity/msp-skills/releases/download/connectwise-automate-v0.1.2/connectwise-automate-mcp.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7154c7440c",
+    "published_at": "2026-08-27T01:22:38.23113Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Servosity/connectwise-automate-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-27T01:22:38.23113Z"
+  },
+  "title": "ConnectWise Automate MCP",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

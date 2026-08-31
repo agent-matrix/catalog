@@ -1,0 +1,73 @@
+{
+  "description": "Policy-gated, audited SSH for Linux and Windows hosts: roles, approvals, and an audit log.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:36+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-tufantunc-ssh-mcp.stdio.2511c96291",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/tufantunc/ssh-mcp",
+    "homepage": "https://github.com/tufantunc/ssh-mcp",
+    "repository": "https://github.com/tufantunc/ssh-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "ssh-mcp@2.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.tufantunc/ssh-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Password for the configured profile; a per-profile SSH_MCP_<PROFILE>_PASSWORD takes precedence. Credentials are never accepted as CLI arguments.",
+          "isSecret": true,
+          "name": "SSH_MCP_PASSWORD"
+        },
+        {
+          "description": "Path to the private key file to authenticate with \u2014 the path, not the key material. A per-profile SSH_MCP_<PROFILE>_KEY takes precedence.",
+          "format": "filepath",
+          "name": "SSH_MCP_KEY"
+        },
+        {
+          "description": "Passphrase for an encrypted private key.",
+          "isSecret": true,
+          "name": "SSH_MCP_PASSPHRASE"
+        },
+        {
+          "description": "Password the sudo tool escalates with, when the policy in force allows the privileged class.",
+          "isSecret": true,
+          "name": "SSH_MCP_SUDO_PASSWORD"
+        }
+      ],
+      "identifier": "ssh-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.4.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "2511c96291",
+    "published_at": "2026-08-24T17:24:06.005631Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.tufantunc/ssh-mcp",
+    "server_version": "2.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-24T17:24:06.005631Z"
+  },
+  "title": "SSH \u2014 policy-gated remote access",
+  "type": "mcp_server",
+  "version": "2.4.0"
+}

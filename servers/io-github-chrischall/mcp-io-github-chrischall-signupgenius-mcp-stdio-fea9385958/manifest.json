@@ -1,0 +1,105 @@
+{
+  "description": "SignUpGenius for Claude \u2014 sign-ups, slots, groups, and RSVPs. Free accounts or Pro API key.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:29+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-chrischall-signupgenius-mcp.stdio.fea9385958",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/chrischall/signupgenius-mcp",
+    "homepage": "https://github.com/chrischall/signupgenius-mcp",
+    "repository": "https://github.com/chrischall/signupgenius-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "signupgenius-mcp@1.5.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.chrischall/signupgenius-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "SignUpGenius login email (recommended). Pair with SIGNUPGENIUS_PASSWORD for session mode \u2014 works on free accounts. No SSO/2FA.",
+          "format": "string",
+          "name": "SIGNUPGENIUS_EMAIL"
+        },
+        {
+          "description": "SignUpGenius password (recommended) \u2014 required iff SIGNUPGENIUS_EMAIL is set.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SIGNUPGENIUS_PASSWORD"
+        },
+        {
+          "description": "SignUpGenius Pro API key (Pro Tools > API Management). Required only for slot REPORTS \u2014 Pro subscription needed.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SIGNUPGENIUS_USER_KEY"
+        },
+        {
+          "description": "Friendly account name used in startup logs.",
+          "format": "string",
+          "name": "SIGNUPGENIUS_NAME"
+        },
+        {
+          "description": "Override the default JSON API base (v2/k for key mode, v3 for session mode).",
+          "format": "string",
+          "name": "SIGNUPGENIUS_BASE_URL"
+        },
+        {
+          "description": "Session mode only: override the host for legacy /SUGboxAPI.cfm calls. Defaults to https://www.signupgenius.com.",
+          "format": "string",
+          "name": "SIGNUPGENIUS_LEGACY_BASE_URL"
+        },
+        {
+          "description": "Session mode only: override the login-form host. Defaults to https://www.signupgenius.com.",
+          "format": "string",
+          "name": "SIGNUPGENIUS_LOGIN_URL"
+        },
+        {
+          "description": "Set to 1 to skip the fetchproxy browser-extension fallback (missing creds become a hard error \u2014 useful in headless CI).",
+          "format": "string",
+          "name": "SIGNUPGENIUS_DISABLE_FETCHPROXY"
+        },
+        {
+          "description": "Set to false to disable the on-disk session cache and re-authenticate on every process start. Defaults to enabled.",
+          "format": "string",
+          "name": "SIGNUPGENIUS_SESSION_CACHE"
+        },
+        {
+          "description": "Absolute path for the session cache file. Defaults to $MCP_DATA_DIR/.signupgenius-mcp/session.json.",
+          "format": "string",
+          "name": "SIGNUPGENIUS_SESSION_FILE"
+        }
+      ],
+      "identifier": "signupgenius-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.5.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "fea9385958",
+    "published_at": "2026-08-28T11:34:38.982511Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.chrischall/signupgenius-mcp",
+    "server_version": "1.5.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-28T11:34:38.982511Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.5.0"
+}

@@ -1,0 +1,79 @@
+{
+  "description": "Artifacts for any coding agent: a durable link with versions, diffs, and comments on the page.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:36+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-unravel-team-thing.stdio.63ae7e7512",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/unravel-team/thing-cli",
+    "homepage": "https://github.com/unravel-team/thing-cli",
+    "repository": "https://github.com/unravel-team/thing-cli"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "description": "Run the CLI as a Model Context Protocol server over stdio",
+            "isRequired": true,
+            "type": "positional",
+            "value": "mcp",
+            "valueHint": "mcp"
+          },
+          "@unravel-tech/thing@0.4.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.unravel-team/thing",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API token from usething.ai, under Settings then Tokens. Lets the server publish on your behalf with no terminal login.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "THING_TOKEN"
+        },
+        {
+          "description": "Base URL of the thing server. Defaults to https://usething.ai; only set this for a self-hosted instance.",
+          "name": "THING_SERVER"
+        }
+      ],
+      "identifier": "@unravel-tech/thing",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "description": "Run the CLI as a Model Context Protocol server over stdio",
+          "isRequired": true,
+          "type": "positional",
+          "value": "mcp",
+          "valueHint": "mcp"
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "63ae7e7512",
+    "published_at": "2026-08-29T08:17:01.10111Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.unravel-team/thing",
+    "server_version": "0.4.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-29T08:17:01.10111Z"
+  },
+  "title": "thing",
+  "type": "mcp_server",
+  "version": "0.4.1"
+}

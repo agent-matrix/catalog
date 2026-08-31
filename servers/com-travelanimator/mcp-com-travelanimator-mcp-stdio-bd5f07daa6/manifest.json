@@ -1,0 +1,84 @@
+{
+  "description": "Make animated travel-route videos: plan a route, style the animation, render an MP4.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:38:46+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-travelanimator-mcp.stdio.bd5f07daa6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Lascade-Co/travelanimator-mcp",
+    "homepage": "https://github.com/Lascade-Co/travelanimator-mcp",
+    "repository": "https://github.com/Lascade-Co/travelanimator-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "Installs the optional MCP extra, which carries the MCP SDK.",
+            "isRequired": true,
+            "name": "--from",
+            "type": "named",
+            "value": "travel-animator[mcp]"
+          },
+          "travel-animator==1.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.travelanimator/mcp",
+  "packages": [
+    {
+      "identifier": "travel-animator",
+      "packageArguments": [
+        {
+          "description": "The subcommand that starts the stdio MCP server.",
+          "isRequired": true,
+          "type": "positional",
+          "value": "mcp"
+        },
+        {
+          "description": "Records which listing this config came from. Optional.",
+          "isRequired": true,
+          "name": "--source",
+          "type": "named",
+          "value": "mcp-registry"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "Installs the optional MCP extra, which carries the MCP SDK.",
+          "isRequired": true,
+          "name": "--from",
+          "type": "named",
+          "value": "travel-animator[mcp]"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "bd5f07daa6",
+    "published_at": "2026-08-27T14:36:48.109019Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.travelanimator/mcp",
+    "server_version": "1.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-27T14:36:48.109019Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.1.1"
+}

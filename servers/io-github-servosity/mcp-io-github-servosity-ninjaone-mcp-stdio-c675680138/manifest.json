@@ -1,0 +1,80 @@
+{
+  "description": "Every NinjaOne report, plus a local store that answers fleet-wide questions no single API call can",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Servosity-ninjaone-mcp.stdio.c675680138",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/servosity/msp-skills",
+    "homepage": "https://github.com/servosity/msp-skills",
+    "repository": "https://github.com/servosity/msp-skills"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Servosity/ninjaone-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://app.ninjarmm.com",
+          "description": "Base URL for the NinjaOne API. Leave the prefilled default unless your account uses a different regional or self-hosted host.",
+          "name": "NINJAONE_BASE_URL"
+        },
+        {
+          "description": "Set the NINJAONE_CLIENT_ID credential for the NinjaOne MCP server.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "NINJAONE_CLIENT_ID"
+        },
+        {
+          "description": "Set the NINJAONE_CLIENT_SECRET credential for the NinjaOne MCP server.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "NINJAONE_CLIENT_SECRET"
+        },
+        {
+          "description": "Set the NINJAONE_OAUTH_SCOPE credential for the NinjaOne MCP server.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "NINJAONE_OAUTH_SCOPE"
+        },
+        {
+          "default": "https://app.ninjarmm.com/ws/oauth/token",
+          "description": "Token endpoint the client-credentials exchange posts to. Leave the prefilled default unless your tenant uses a different token endpoint.",
+          "name": "NINJAONE_TOKEN_URL"
+        }
+      ],
+      "fileSha256": "c2c31f2052364a5583395b5dafcbd788160e0a28eb21baa03a9ac2033e38efb6",
+      "identifier": "https://github.com/Servosity/msp-skills/releases/download/ninjaone-v0.1.11/ninjaone-mcp.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.11"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c675680138",
+    "published_at": "2026-08-26T15:27:10.609272Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Servosity/ninjaone-mcp",
+    "server_version": "0.1.11",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-26T15:27:10.609272Z"
+  },
+  "title": "NinjaOne MCP",
+  "type": "mcp_server",
+  "version": "0.1.11"
+}

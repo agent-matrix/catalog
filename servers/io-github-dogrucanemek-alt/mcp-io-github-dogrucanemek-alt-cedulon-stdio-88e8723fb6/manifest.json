@@ -1,0 +1,78 @@
+{
+  "description": "Policy-gated agent spend with signed receipts and rail-extract audit",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-dogrucanemek-alt-cedulon.stdio.88e8723fb6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/dogrucanemek-alt/cedulon",
+    "homepage": "https://github.com/dogrucanemek-alt/cedulon",
+    "repository": "https://github.com/dogrucanemek-alt/cedulon"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@cedulon/mcp-server@0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.dogrucanemek-alt/cedulon",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional JSON file that persists the in-process ledger",
+          "format": "filepath",
+          "name": "CEDULON_STATE_PATH"
+        },
+        {
+          "default": "10",
+          "description": "Per-payment amount cap (demo default 10)",
+          "format": "string",
+          "name": "CEDULON_MAX_AMOUNT"
+        },
+        {
+          "default": "30",
+          "description": "Window cumulative cap (demo default 30)",
+          "format": "string",
+          "name": "CEDULON_MAX_CUMULATIVE"
+        },
+        {
+          "default": "3",
+          "description": "Window payment-count cap (demo default 3)",
+          "format": "number",
+          "name": "CEDULON_MAX_PAYMENTS"
+        }
+      ],
+      "identifier": "@cedulon/mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "88e8723fb6",
+    "published_at": "2026-08-28T10:46:58.885031Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.dogrucanemek-alt/cedulon",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-28T10:46:58.885031Z"
+  },
+  "title": "Cedulon",
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

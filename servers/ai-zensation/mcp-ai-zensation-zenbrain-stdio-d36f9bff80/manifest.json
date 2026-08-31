@@ -1,0 +1,64 @@
+{
+  "description": "Seven-layer agent memory: episodic, semantic, procedural and core. Local SQLite, no account.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:38:03+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-zensation-zenbrain.stdio.d36f9bff80",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/zensation-ai/zenbrain",
+    "homepage": "https://github.com/zensation-ai/zenbrain",
+    "repository": "https://github.com/zensation-ai/zenbrain"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@zensation/mcp@0.1.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.zensation/zenbrain",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "./zenbrain.db",
+          "description": "Path to the SQLite file that holds the memory. Use ':memory:' for a store that is discarded when the process exits.",
+          "name": "ZENBRAIN_DB"
+        },
+        {
+          "default": "personal,work,learning,creative",
+          "description": "Comma-separated context domains for cross-context memory.",
+          "name": "ZENBRAIN_CONTEXTS"
+        }
+      ],
+      "identifier": "@zensation/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d36f9bff80",
+    "published_at": "2026-08-29T10:55:44.121465Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.zensation/zenbrain",
+    "server_version": "0.1.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-29T10:55:44.121465Z"
+  },
+  "title": "ZenBrain Memory",
+  "type": "mcp_server",
+  "version": "0.1.3"
+}

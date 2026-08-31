@@ -1,0 +1,80 @@
+{
+  "description": "Safety-first MCP server for Discord with privacy-safe reads, audits, and reviewed administration",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:46+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-j-256-guildcontrol.stdio.a77d953530",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/j-256/guildcontrol",
+    "homepage": "https://github.com/j-256/guildcontrol",
+    "repository": "https://github.com/j-256/guildcontrol"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "guildcontrol@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.j-256/guildcontrol",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Discord bot token sent only to fixed Discord REST and vetted Gateway origins",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DISCORD_BOT_TOKEN"
+        }
+      ],
+      "identifier": "guildcontrol",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "serve"
+        },
+        {
+          "type": "positional",
+          "value": "--config"
+        },
+        {
+          "description": "Absolute path to one strict versioned non-secret configuration document",
+          "format": "filepath",
+          "isRequired": true,
+          "placeholder": "/absolute/path/to/guildcontrol.json",
+          "type": "positional",
+          "valueHint": "config_file"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a77d953530",
+    "published_at": "2026-08-30T20:39:27.165827Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.j-256/guildcontrol",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-30T20:39:27.165827Z"
+  },
+  "title": "GuildControl MCP",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

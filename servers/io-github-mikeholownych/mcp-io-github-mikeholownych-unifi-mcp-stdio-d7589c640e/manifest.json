@@ -1,0 +1,80 @@
+{
+  "description": "MCP server for Ubiquiti UniFi Network and Protect. 63 tools, 16 agent skills.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:02+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mikeholownych-unifi-mcp.stdio.d7589c640e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mikeholownych/unifi-mcp",
+    "homepage": "https://github.com/mikeholownych/unifi-mcp",
+    "repository": "https://github.com/mikeholownych/unifi-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-unifi==0.8.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mikeholownych/unifi-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "JSON array of UniFi device configs (name, url, api_key, services, site)",
+          "format": "string",
+          "isRequired": true,
+          "name": "UNIFI_DEVICES"
+        },
+        {
+          "description": "Auth mode: local (session), local_api_key (Integration API), or cloud",
+          "format": "string",
+          "name": "UNIFI_MODE"
+        },
+        {
+          "description": "Controller username for session auth (UNIFI_MODE=local)",
+          "format": "string",
+          "name": "UNIFI_USERNAME"
+        },
+        {
+          "description": "Controller password for session auth (UNIFI_MODE=local)",
+          "format": "string",
+          "isSecret": true,
+          "name": "UNIFI_PASSWORD"
+        },
+        {
+          "description": "Verify SSL certificates (false for self-signed)",
+          "format": "string",
+          "name": "UNIFI_VERIFY_SSL"
+        }
+      ],
+      "identifier": "mcp-unifi",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.8.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d7589c640e",
+    "published_at": "2026-08-26T16:10:36.554732Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mikeholownych/unifi-mcp",
+    "server_version": "0.8.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-26T16:10:36.554732Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.8.2"
+}

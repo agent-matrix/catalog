@@ -1,0 +1,77 @@
+{
+  "description": "MCP server for Kaseya SaaS Alerts \u2014 SaaS security monitoring for M365 & Google Workspace.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:19+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-WYRE-AI-saas-alerts-mcp.stdio.737601df1a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/WYRE-AI/saas-alerts-mcp",
+    "homepage": "https://github.com/WYRE-AI/saas-alerts-mcp",
+    "repository": "https://github.com/WYRE-AI/saas-alerts-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-ai/saas-alerts-mcp:v1.2.7"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.WYRE-AI/saas-alerts-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "SaaS Alerts API key (sent as the api_key header). Required.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SAAS_ALERTS_API_KEY"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode. 'stdio' for local CLI; image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "'env' reads vars locally; 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-ai/saas-alerts-mcp:v1.2.7",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "737601df1a",
+    "published_at": "2026-08-28T16:44:37.435178Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.WYRE-AI/saas-alerts-mcp",
+    "server_version": "1.2.7",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-28T16:44:37.435178Z"
+  },
+  "title": "SaaS Alerts",
+  "type": "mcp_server",
+  "version": "1.2.7"
+}

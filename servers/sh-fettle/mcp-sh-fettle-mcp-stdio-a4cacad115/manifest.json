@@ -1,0 +1,73 @@
+{
+  "description": "Uptime monitoring for developers \u2014 monitors, incidents, heartbeats and status pages",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:40:57+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.sh-fettle-mcp.stdio.a4cacad115",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/darkweid/monitoring-mcp",
+    "homepage": "https://github.com/darkweid/monitoring-mcp",
+    "repository": "https://github.com/darkweid/monitoring-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "fettle-mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "sh.fettle/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Fettle API key (Settings \u2192 API Keys at https://fettle.sh). Read scope lists and inspects; write scope is needed to create, change or pause anything.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "FETTLE_API_KEY"
+        },
+        {
+          "default": "https://api.fettle.sh",
+          "description": "Base URL of the Fettle API. Only set this to point the server at something other than production.",
+          "format": "string",
+          "name": "FETTLE_API_URL"
+        },
+        {
+          "default": "30000",
+          "description": "How long one tool call may take before it is abandoned.",
+          "format": "number",
+          "name": "FETTLE_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "fettle-mcp",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a4cacad115",
+    "published_at": "2026-08-25T07:13:11.362162Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "sh.fettle/mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-25T07:13:11.362162Z"
+  },
+  "title": "Fettle",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

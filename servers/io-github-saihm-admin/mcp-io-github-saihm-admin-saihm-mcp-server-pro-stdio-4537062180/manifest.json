@@ -1,0 +1,75 @@
+{
+  "description": "Enterprise-ready portable memory for AI agents: encrypted, shareable, provably erased. Join SAIHM.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-SAIHM-Admin-saihm-mcp-server-pro.stdio.4537062180",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/SAIHM-Admin/saihm-mcp-server-pro",
+    "homepage": "https://github.com/SAIHM-Admin/saihm-mcp-server-pro",
+    "repository": "https://github.com/SAIHM-Admin/saihm-mcp-server-pro"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@saihm/mcp-server-pro@0.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.SAIHM-Admin/saihm-mcp-server-pro",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://saihm.coti.global/mcp",
+          "description": "SAIHM operator endpoint. Optional: defaults to the hosted service at https://saihm.coti.global/mcp.",
+          "format": "string",
+          "name": "SAIHM_ENDPOINT_URL"
+        },
+        {
+          "description": "Self-join is ON by default: the saihm_join tool generates a non-custodial identity on this device and activates the free trial, so no master secret is needed. Set to '0' to suppress the tool.",
+          "format": "string",
+          "name": "SAIHM_SELF_JOIN"
+        },
+        {
+          "description": "Path to a mode-600 file holding a 64+ hex-char master secret. Only needed if you opt out of self-join or are restoring an existing identity. Never transmitted.",
+          "format": "filepath",
+          "isSecret": true,
+          "name": "SAIHM_MASTER_SECRET_FILE"
+        },
+        {
+          "description": "Base dir for the self-join identity file ($SAIHM_HOME/free-identity.key, mode 600). Defaults to ~/.saihm.",
+          "format": "filepath",
+          "name": "SAIHM_HOME"
+        }
+      ],
+      "identifier": "@saihm/mcp-server-pro",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4537062180",
+    "published_at": "2026-08-28T08:07:16.819207Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.SAIHM-Admin/saihm-mcp-server-pro",
+    "server_version": "0.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-28T08:07:16.819207Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.4.0"
+}

@@ -1,0 +1,83 @@
+{
+  "description": "Read-only MCP server for Inforcer M365 baseline governance, plus assessment and report runs.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:19+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-WYRE-AI-inforcer-mcp.stdio.723b0df5b3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/WYRE-AI/inforcer-mcp",
+    "homepage": "https://github.com/WYRE-AI/inforcer-mcp",
+    "repository": "https://github.com/WYRE-AI/inforcer-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-ai/inforcer-mcp:v1.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.WYRE-AI/inforcer-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Inforcer API region. One of: anz, eu, uk, us. Required.",
+          "format": "string",
+          "isRequired": true,
+          "name": "INFORCER_REGION"
+        },
+        {
+          "description": "Inforcer API key (sent as the Inf-Api-Key header). Required.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "INFORCER_API_KEY"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode for the server. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-ai/inforcer-mcp:v1.1.1",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "723b0df5b3",
+    "published_at": "2026-08-26T13:44:01.855522Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.WYRE-AI/inforcer-mcp",
+    "server_version": "1.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-26T13:44:01.855522Z"
+  },
+  "title": "Inforcer",
+  "type": "mcp_server",
+  "version": "1.1.1"
+}

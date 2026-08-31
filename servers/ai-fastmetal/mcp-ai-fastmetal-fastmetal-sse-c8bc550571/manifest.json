@@ -1,0 +1,53 @@
+{
+  "description": "Run and compare LLMs, generate images and video, with the real yen cost returned per call.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:37:56+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-fastmetal-fastmetal.sse.c8bc550571",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://mcp.fastmetal.ai/mcp"
+    }
+  },
+  "name": "ai.fastmetal/fastmetal",
+  "provenance": {
+    "identity_key": "c8bc550571",
+    "published_at": "2026-08-30T03:11:23.838652Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.fastmetal/fastmetal",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-30T03:11:23.838652Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Your FastMetal API key as a bearer token, e.g. 'Bearer sk-...'. Create a key with a spend cap in the FastMetal dashboard.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {api_key}",
+          "variables": {
+            "api_key": {
+              "description": "FastMetal API key from https://fastmetal.ai/keys",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://mcp.fastmetal.ai/mcp"
+    }
+  ],
+  "title": "FastMetal",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

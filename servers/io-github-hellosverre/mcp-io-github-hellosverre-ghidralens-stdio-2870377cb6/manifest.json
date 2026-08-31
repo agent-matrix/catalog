@@ -1,0 +1,64 @@
+{
+  "description": "Interactive Ghidra views in your AI client: decompile, rename, and navigate a binary.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:43+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-hellosverre-ghidralens.stdio.2870377cb6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/hellosverre/ghidralens",
+    "homepage": "https://github.com/hellosverre/ghidralens",
+    "repository": "https://github.com/hellosverre/ghidralens"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "ghidralens@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.hellosverre/ghidralens",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Shared secret printed by the PyGhidra bridge on startup. Start the bridge first: python bridge/serve.py --binary <path>",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GHIDRALENS_TOKEN"
+        },
+        {
+          "default": "http://127.0.0.1:8799",
+          "description": "Where the PyGhidra bridge is listening. Defaults to http://127.0.0.1:8799",
+          "name": "GHIDRALENS_BRIDGE_URL"
+        }
+      ],
+      "identifier": "ghidralens",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "2870377cb6",
+    "published_at": "2026-08-28T15:54:11.442513Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.hellosverre/ghidralens",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-28T15:54:11.442513Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

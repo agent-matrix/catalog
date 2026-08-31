@@ -1,0 +1,84 @@
+{
+  "description": "Read-only OctoWatch DLP Cloud MCP: risks, idle time, productivity, monitoring.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-extralabs-octowatch-mcp.stdio.4751f2ce62",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/extralabs/octowatch-mcp-server",
+    "homepage": "https://github.com/extralabs/octowatch-mcp-server",
+    "repository": "https://github.com/extralabs/octowatch-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "octowatch-mcp==0.5.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.extralabs/octowatch-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://cloud.octowatchdlp.com",
+          "description": "Cloud API host (serverBase). Default: public cloud.",
+          "format": "string",
+          "name": "OCTOWATCH_API_BASE"
+        },
+        {
+          "default": "demo@octowatchdlp.com",
+          "description": "Console operator email. Demo default works for try-out.",
+          "format": "string",
+          "name": "OCTOWATCH_EMAIL"
+        },
+        {
+          "default": "demo",
+          "description": "Console password. Use a least-privilege operator for real tenants.",
+          "format": "string",
+          "isSecret": true,
+          "name": "OCTOWATCH_PASSWORD"
+        },
+        {
+          "choices": [
+            "all",
+            "core",
+            "console"
+          ],
+          "default": "all",
+          "description": "Tool filter: all | core | console (console includes core).",
+          "format": "string",
+          "name": "OCTOWATCH_TOOLSETS"
+        }
+      ],
+      "identifier": "octowatch-mcp",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4751f2ce62",
+    "published_at": "2026-08-27T10:38:08.695857Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.extralabs/octowatch-mcp",
+    "server_version": "0.5.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-27T10:38:08.695857Z"
+  },
+  "title": "OctoWatch DLP",
+  "type": "mcp_server",
+  "version": "0.5.1"
+}

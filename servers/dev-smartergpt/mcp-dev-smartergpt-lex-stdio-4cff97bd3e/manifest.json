@@ -1,0 +1,95 @@
+{
+  "description": "Episodic memory, Frames, Policy Neighborhoods, and policy enforcement for AI agents.",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:38:49+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.dev-smartergpt-lex.stdio.4cff97bd3e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Guffawaffle/lex",
+    "homepage": "https://github.com/Guffawaffle/lex",
+    "repository": "https://github.com/Guffawaffle/lex"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@smartergpt/lex-mcp@4.0.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "dev.smartergpt/lex",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Project root directory for Lex runtime discovery. Defaults to current working directory.",
+          "format": "string",
+          "name": "LEX_WORKSPACE_ROOT"
+        },
+        {
+          "description": "Frame-store backend: sqlite or postgres. Defaults to sqlite unless LEX_DATABASE_URL selects PostgreSQL.",
+          "format": "string",
+          "name": "LEX_STORE"
+        },
+        {
+          "description": "Path to SQLite database file. Defaults to .smartergpt/lex/memory.db under the project root.",
+          "format": "string",
+          "name": "LEX_DB_PATH"
+        },
+        {
+          "description": "Alias for LEX_DB_PATH (backwards compatibility). Same behavior.",
+          "format": "string",
+          "name": "LEX_MEMORY_DB"
+        },
+        {
+          "description": "PostgreSQL connection URL for the compatibility adapter. Treat as secret because it may contain credentials.",
+          "format": "string",
+          "isSecret": true,
+          "name": "LEX_DATABASE_URL"
+        },
+        {
+          "description": "PostgreSQL password supplied separately when LEX_DATABASE_URL omits one.",
+          "format": "string",
+          "isSecret": true,
+          "name": "LEX_POSTGRES_PASSWORD"
+        },
+        {
+          "description": "Maximum PostgreSQL compatibility-adapter pool size. Defaults to 10.",
+          "format": "string",
+          "name": "LEX_POSTGRES_POOL_MAX"
+        },
+        {
+          "description": "Set to any value to enable debug logging to stderr.",
+          "format": "string",
+          "name": "LEX_DEBUG"
+        }
+      ],
+      "identifier": "@smartergpt/lex-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "4.0.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4cff97bd3e",
+    "published_at": "2026-08-29T23:35:46.524557Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "dev.smartergpt/lex",
+    "server_version": "4.0.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-29T23:35:46.524557Z"
+  },
+  "title": "Lex",
+  "type": "mcp_server",
+  "version": "4.0.4"
+}

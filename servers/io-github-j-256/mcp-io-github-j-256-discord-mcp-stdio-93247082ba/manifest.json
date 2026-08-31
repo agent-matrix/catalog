@@ -1,0 +1,80 @@
+{
+  "description": "Least-privilege Discord MCP for privacy-safe reads, audits, and reviewed administration",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:46+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-j-256-discord-mcp.stdio.93247082ba",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/j-256/discord-mcp",
+    "homepage": "https://github.com/j-256/discord-mcp",
+    "repository": "https://github.com/j-256/discord-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@j-256/discord-mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.j-256/discord-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Discord bot token sent only to fixed Discord REST and vetted Gateway origins",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DISCORD_BOT_TOKEN"
+        }
+      ],
+      "identifier": "@j-256/discord-mcp",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "serve"
+        },
+        {
+          "type": "positional",
+          "value": "--config"
+        },
+        {
+          "description": "Absolute path to one strict versioned non-secret configuration document",
+          "format": "filepath",
+          "isRequired": true,
+          "placeholder": "/absolute/path/to/discord-mcp.json",
+          "type": "positional",
+          "valueHint": "config_file"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "93247082ba",
+    "published_at": "2026-08-27T15:53:43.116987Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.j-256/discord-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-27T15:53:43.116987Z"
+  },
+  "title": "Discord MCP",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

@@ -1,0 +1,107 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/j-256/guildcontrol:0.1.2"
+      }
+    }
+  ],
+  "description": "Safety-first MCP server for Discord with privacy-safe reads, audits, and reviewed administration",
+  "harvest": {
+    "last_seen_at": "2026-08-31T08:39:46+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/j-256/guildcontrol",
+  "id": "tool.io-github-j-256-guildcontrol.aff1eb7a55",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/j-256/guildcontrol",
+    "homepage": "https://github.com/j-256/guildcontrol",
+    "repository": "https://github.com/j-256/guildcontrol"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Safety-first MCP server for Discord with privacy-safe reads, audits, and reviewed administration",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.j-256/guildcontrol",
+      "request_type": "POST",
+      "url": "https://github.com/j-256/guildcontrol"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "type": "positional",
+            "value": "--read-only"
+          },
+          {
+            "type": "positional",
+            "value": "--cap-drop=ALL"
+          },
+          {
+            "type": "positional",
+            "value": "--security-opt=no-new-privileges:true"
+          },
+          {
+            "type": "positional",
+            "value": "--pids-limit=64"
+          },
+          {
+            "description": "Read-only bind mount for the non-secret connector configuration",
+            "isRequired": true,
+            "name": "--mount",
+            "type": "named",
+            "value": "type=bind,source={config_file},target=/configuration/guildcontrol.json,readonly",
+            "variables": {
+              "config_file": {
+                "description": "Absolute host path to the connector configuration",
+                "format": "filepath",
+                "isRequired": true,
+                "placeholder": "/absolute/path/to/guildcontrol.json"
+              }
+            }
+          },
+          "ghcr.io/j-256/guildcontrol:0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.j-256/guildcontrol",
+  "provenance": {
+    "identity_key": "a5ae9002a6",
+    "promoted_from": "mcp.io-github-j-256-guildcontrol.stdio.a5ae9002a6",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.j-256/guildcontrol",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-j-256-guildcontrol.stdio.a5ae9002a6",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/j-256/guildcontrol",
+  "summary": "Safety-first MCP server for Discord with privacy-safe reads, audits, and reviewed administration",
+  "tags": [
+    "discord",
+    "first",
+    "guildcontrol",
+    "privacy",
+    "reads",
+    "safe",
+    "safety"
+  ],
+  "title": "GuildControl MCP",
+  "type": "tool",
+  "version": "0.1.2"
+}
