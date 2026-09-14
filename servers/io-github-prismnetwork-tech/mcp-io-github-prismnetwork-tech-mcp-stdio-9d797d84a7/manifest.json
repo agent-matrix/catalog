@@ -1,0 +1,74 @@
+{
+  "description": "Rent real NVIDIA GPUs from your agent. Browse with no wallet; pay per second onchain.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-prismnetwork-tech-mcp.stdio.9d797d84a7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/prismnetwork-tech/prism",
+    "homepage": "https://github.com/prismnetwork-tech/prism",
+    "repository": "https://github.com/prismnetwork-tech/prism"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@prismnetwork/mcp@0.9.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.prismnetwork-tech/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Agent wallet private key (0x...). Only needed to lease and pay; browsing works without it",
+          "isSecret": true,
+          "name": "PRISM_AGENT_KEY"
+        },
+        {
+          "default": "0xfD4228eEEfC49e4b76A0CD40af9fdd546220B2FD",
+          "description": "Prism LeaseEscrow contract address",
+          "name": "PRISM_ESCROW"
+        },
+        {
+          "default": "5",
+          "description": "Most this wallet may spend through Prism in any 24 hours. Defaults to 5. Set 0 to remove the ceiling",
+          "name": "PRISM_DAILY_BUDGET_USDG"
+        },
+        {
+          "default": "1",
+          "description": "Most any single lease or generation may cost. Defaults to 1. A max_usdg argument can lower it and cannot raise it",
+          "name": "PRISM_MAX_USDG"
+        }
+      ],
+      "identifier": "@prismnetwork/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.9.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9d797d84a7",
+    "published_at": "2026-09-04T17:46:28.660376Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.prismnetwork-tech/mcp",
+    "server_version": "0.9.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-04T17:46:28.660376Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.9.4"
+}

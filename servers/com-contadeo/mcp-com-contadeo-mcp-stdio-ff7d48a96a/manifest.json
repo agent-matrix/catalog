@@ -1,0 +1,68 @@
+{
+  "description": "Contadeo: emite y consulta comprobantes electr\u00f3nicos del SRI (Ecuador) desde asistentes de IA",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:17+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-contadeo-mcp.stdio.ff7d48a96a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "contadeo-mcp@0.24.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.contadeo/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API key de Contadeo (prefijo cdo_), creada en el panel en Configuraci\u00f3n \u2192 API con rol emisor.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CONTADEO_API_KEY"
+        },
+        {
+          "default": "https://contadeo.com/api",
+          "description": "Base de la API de Contadeo, sin slash final; solo se cambia para apuntar a otro despliegue.",
+          "format": "string",
+          "name": "CONTADEO_API_URL"
+        },
+        {
+          "description": "Secreto que ata cada emisi\u00f3n al resumen preparado; sin \u00e9l ese enlace queda apagado.",
+          "format": "string",
+          "isSecret": true,
+          "name": "MCP_CONFIRM_SECRET"
+        }
+      ],
+      "identifier": "contadeo-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.24.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ff7d48a96a",
+    "published_at": "2026-09-05T16:26:10.508062Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.contadeo/mcp",
+    "server_version": "0.24.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-05T16:26:10.508062Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.24.1"
+}

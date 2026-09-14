@@ -1,0 +1,105 @@
+{
+  "description": "Fast discovery search and self-hosted web research for MCP agents.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:07+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-TinySuiteHQ-tinysearch.stdio.06fc2e4edf",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/TinySuiteHQ/TinySearch",
+    "homepage": "https://github.com/TinySuiteHQ/TinySearch",
+    "repository": "https://github.com/TinySuiteHQ/TinySearch"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "docker.io/marcellm01/tinysearch:v0.6.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.TinySuiteHQ/tinysearch",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "MCP transport to serve: stdio (default), sse, or streamable-http.",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "description": "Path to a tinysearch_config.json inside the container, for overriding search/embedding defaults.",
+          "name": "TINYSEARCH_CONFIG_PATH"
+        },
+        {
+          "description": "SearXNG search endpoint URL. Only needed if not using the bundled Compose SearXNG service.",
+          "name": "SEARXNG_URL"
+        },
+        {
+          "description": "Embedding implementation: onnx (default) or openai_compatible.",
+          "name": "TINYSEARCH_EMBEDDING_BACKEND"
+        },
+        {
+          "description": "Local ONNX preset (fast, balanced, quality) or a Hugging Face ONNX repository id.",
+          "name": "TINYSEARCH_EMBEDDING_MODEL"
+        },
+        {
+          "description": "OpenTelemetry service.name resource attribute; defaults to tinysearch.",
+          "name": "OTEL_SERVICE_NAME"
+        },
+        {
+          "description": "Common OTLP endpoint for optional TinySearch traces and metrics.",
+          "name": "OTEL_EXPORTER_OTLP_ENDPOINT"
+        },
+        {
+          "description": "OTLP transport: http/protobuf (default) or grpc.",
+          "name": "OTEL_EXPORTER_OTLP_PROTOCOL"
+        },
+        {
+          "description": "Optional authentication or routing headers for the OTLP exporter.",
+          "isSecret": true,
+          "name": "OTEL_EXPORTER_OTLP_HEADERS"
+        },
+        {
+          "description": "Additional standard OpenTelemetry resource attributes.",
+          "name": "OTEL_RESOURCE_ATTRIBUTES"
+        },
+        {
+          "description": "Set to otlp to enable traces explicitly or none to disable them.",
+          "name": "OTEL_TRACES_EXPORTER"
+        },
+        {
+          "description": "Set to otlp to enable metrics explicitly or none to disable them.",
+          "name": "OTEL_METRICS_EXPORTER"
+        },
+        {
+          "description": "Set true to disable all OpenTelemetry signals.",
+          "name": "OTEL_SDK_DISABLED"
+        }
+      ],
+      "identifier": "docker.io/marcellm01/tinysearch:v0.6.4",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "06fc2e4edf",
+    "published_at": "2026-09-05T15:27:38.66466Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.TinySuiteHQ/tinysearch",
+    "server_version": "0.6.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-05T15:27:38.66466Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.6.4"
+}

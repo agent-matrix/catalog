@@ -1,0 +1,81 @@
+{
+  "description": "Policy engine tools: author rules, simulate impact, replay decisions, and deploy.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-lexq-lexq.stdio.22efdaf2fb",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/lexq-io/lexq-cli",
+    "homepage": "https://github.com/lexq-io/lexq-cli",
+    "repository": "https://github.com/lexq-io/lexq-cli"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "name": "-y",
+            "type": "named"
+          },
+          "@lexq/cli@0.3.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.lexq/lexq",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "LexQ API key. Or leave it unset and run `lexq auth login` once.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "LEXQ_API_KEY"
+        }
+      ],
+      "identifier": "@lexq/cli",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "serve"
+        },
+        {
+          "name": "--mcp",
+          "type": "named"
+        }
+      ],
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "name": "-y",
+          "type": "named"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "22efdaf2fb",
+    "published_at": "2026-09-09T11:14:56.469164Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.lexq/lexq",
+    "server_version": "0.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-09T11:14:56.469164Z"
+  },
+  "title": "LexQ",
+  "type": "mcp_server",
+  "version": "0.3.1"
+}

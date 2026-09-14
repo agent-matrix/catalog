@@ -1,0 +1,63 @@
+{
+  "description": "Freedom-of-information requests for Germany via FragDenStaat.de, the froide FOI portal.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:01+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-notDIRK-fds-mcp.stdio.5df6672cd6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/notDIRK/fds-mcp",
+    "homepage": "https://github.com/notDIRK/fds-mcp",
+    "repository": "https://github.com/notDIRK/fds-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "fds-mcp==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.notDIRK/fds-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://fragdenstaat.de",
+          "description": "Which froide instance to use. Defaults to https://fragdenstaat.de",
+          "name": "FDS_MCP_BASE_URL"
+        },
+        {
+          "description": "OAuth bearer token. Only needed for the tools that read your own requests or submit one; the four search tools work without it.",
+          "isSecret": true,
+          "name": "FDS_TOKEN"
+        }
+      ],
+      "identifier": "fds-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5df6672cd6",
+    "published_at": "2026-09-05T12:51:57.732093Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.notDIRK/fds-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-05T12:51:57.732093Z"
+  },
+  "title": "FragDenStaat",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

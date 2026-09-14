@@ -1,0 +1,55 @@
+{
+  "description": "Publish a single HTML file as a live HTTPS site in seconds. Versioned deploys, no delete tool.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:21+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-hdply-hdply.sse.6c4caea88f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://api.app.hdply.com/mcp"
+    }
+  },
+  "name": "com.hdply/hdply",
+  "provenance": {
+    "identity_key": "6c4caea88f",
+    "published_at": "2026-09-05T12:16:11.084864Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.hdply/hdply",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-05T12:16:11.084864Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "hdply API key from https://app.hdply.com/settings",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {api_key}",
+          "variables": {
+            "api_key": {
+              "description": "Your hdply API key (starts with hdply_sk_)",
+              "format": "string",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://api.app.hdply.com/mcp"
+    }
+  ],
+  "title": "hdply",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

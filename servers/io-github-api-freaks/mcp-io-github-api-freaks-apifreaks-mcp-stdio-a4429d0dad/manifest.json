@@ -1,0 +1,65 @@
+{
+  "description": "APIFreaks MCP: live APIs for agents. Enable modules with ENABLE_MODULES; discover via list_modules.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:13+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-api-freaks-apifreaks-mcp.stdio.a4429d0dad",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/api-freaks/apifreaks-mcp",
+    "homepage": "https://github.com/api-freaks/apifreaks-mcp",
+    "repository": "https://github.com/api-freaks/apifreaks-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@apifreaks/mcp@2.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.api-freaks/apifreaks-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your APIFreaks API key \u2014 get one free at apifreaks.com",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "APIFREAKS_API_KEY"
+        },
+        {
+          "description": "Comma-separated modules to register (e.g. ip-intelligence,whois,dns,domain,weather). If unset, only list_modules is available \u2014 call it for needs_enable[] and a paste-ready ENABLE_MODULES=... line, then restart. Available: ip-intelligence, geocoding, whois, dns, scraper, email-validation, phone-validation, ssl, domain, screenshot, pdf, currency, commodity, financial, zipcode, weather, geography, timezone, user-agent",
+          "isRequired": true,
+          "name": "ENABLE_MODULES"
+        }
+      ],
+      "identifier": "@apifreaks/mcp",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a4429d0dad",
+    "published_at": "2026-09-10T16:06:54.100218Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.api-freaks/apifreaks-mcp",
+    "server_version": "2.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-10T16:06:54.100218Z"
+  },
+  "title": "APIFreaks MCP",
+  "type": "mcp_server",
+  "version": "2.1.0"
+}

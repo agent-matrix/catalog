@@ -1,0 +1,95 @@
+{
+  "description": "Consult Grok through xAI's metered API with exact model selection and no fallback",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:58+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Lykhoyda-ask-grok.stdio.1c3ca6c073",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Lykhoyda/ask-llm",
+    "homepage": "https://github.com/Lykhoyda/ask-llm",
+    "repository": "https://github.com/Lykhoyda/ask-llm"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@ask-llm/grok-mcp@0.1.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Lykhoyda/ask-grok",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "xAI API key used only for requests to https://api.x.ai",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "XAI_API_KEY"
+        },
+        {
+          "default": "xai-api",
+          "description": "Explicit harness: xai-api (default) or grok-cli; no automatic failover",
+          "format": "string",
+          "name": "ASK_GROK_HARNESS"
+        },
+        {
+          "description": "Exact selected-harness model override (API default grok-4.6; CLI default grok-build; no fallback)",
+          "format": "string",
+          "name": "ASK_GROK_MODEL"
+        },
+        {
+          "default": "high",
+          "description": "Reasoning effort: low, medium, high, or xhigh (default: high)",
+          "format": "string",
+          "name": "ASK_GROK_REASONING_EFFORT"
+        },
+        {
+          "default": "16384",
+          "description": "xAI API output-token ceiling to bound accidental spend (default: 16384)",
+          "format": "string",
+          "name": "ASK_GROK_MAX_OUTPUT_TOKENS"
+        },
+        {
+          "default": "600000",
+          "description": "Timeout for xAI API requests in milliseconds (default: 600000)",
+          "format": "string",
+          "name": "ASK_GROK_TIMEOUT_MS"
+        },
+        {
+          "default": "warn",
+          "description": "Log verbosity: debug, info, warn, error (default: warn)",
+          "format": "string",
+          "name": "GMCPT_LOG_LEVEL"
+        }
+      ],
+      "identifier": "@ask-llm/grok-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1c3ca6c073",
+    "published_at": "2026-09-13T14:15:22.166916Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Lykhoyda/ask-grok",
+    "server_version": "0.1.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-13T14:15:22.166916Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.5"
+}

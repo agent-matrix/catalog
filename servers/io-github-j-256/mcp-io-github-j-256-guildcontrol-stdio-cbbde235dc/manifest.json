@@ -1,0 +1,138 @@
+{
+  "description": "Safety-first MCP server for Discord with privacy-safe reads, audits, and reviewed administration",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:43+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-j-256-guildcontrol.stdio.cbbde235dc",
+  "lifecycle": {
+    "status": "deprecated"
+  },
+  "links": {
+    "documentation": "https://github.com/j-256/guildcontrol",
+    "homepage": "https://github.com/j-256/guildcontrol",
+    "repository": "https://github.com/j-256/guildcontrol"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "type": "positional",
+            "value": "--read-only"
+          },
+          {
+            "type": "positional",
+            "value": "--cap-drop=ALL"
+          },
+          {
+            "type": "positional",
+            "value": "--security-opt=no-new-privileges:true"
+          },
+          {
+            "type": "positional",
+            "value": "--pids-limit=64"
+          },
+          {
+            "description": "Read-only bind mount for the non-secret connector configuration",
+            "isRequired": true,
+            "name": "--mount",
+            "type": "named",
+            "value": "type=bind,source={config_file},target=/configuration/guildcontrol.json,readonly",
+            "variables": {
+              "config_file": {
+                "description": "Absolute host path to the connector configuration",
+                "format": "filepath",
+                "isRequired": true,
+                "placeholder": "/absolute/path/to/guildcontrol.json"
+              }
+            }
+          },
+          "ghcr.io/j-256/guildcontrol:0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.j-256/guildcontrol",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Discord bot token sent only to fixed Discord REST and vetted Gateway origins",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DISCORD_BOT_TOKEN"
+        }
+      ],
+      "identifier": "ghcr.io/j-256/guildcontrol:0.2.0",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "serve"
+        },
+        {
+          "type": "positional",
+          "value": "--config"
+        },
+        {
+          "type": "positional",
+          "value": "/configuration/guildcontrol.json"
+        }
+      ],
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "--read-only"
+        },
+        {
+          "type": "positional",
+          "value": "--cap-drop=ALL"
+        },
+        {
+          "type": "positional",
+          "value": "--security-opt=no-new-privileges:true"
+        },
+        {
+          "type": "positional",
+          "value": "--pids-limit=64"
+        },
+        {
+          "description": "Read-only bind mount for the non-secret connector configuration",
+          "isRequired": true,
+          "name": "--mount",
+          "type": "named",
+          "value": "type=bind,source={config_file},target=/configuration/guildcontrol.json,readonly",
+          "variables": {
+            "config_file": {
+              "description": "Absolute host path to the connector configuration",
+              "format": "filepath",
+              "isRequired": true,
+              "placeholder": "/absolute/path/to/guildcontrol.json"
+            }
+          }
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "cbbde235dc",
+    "published_at": "2026-08-31T20:45:12.576279Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.j-256/guildcontrol",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-01T05:29:10.968311Z"
+  },
+  "title": "GuildControl MCP",
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

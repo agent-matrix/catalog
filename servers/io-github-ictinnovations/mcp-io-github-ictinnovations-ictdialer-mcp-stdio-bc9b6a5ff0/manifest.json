@@ -1,0 +1,90 @@
+{
+  "description": "Monitor ICTDialer outbound auto-dialer campaigns, and start and stop them when writes are on.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ictinnovations-ictdialer-mcp.stdio.bc9b6a5ff0",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ictinnovations/ictdialer-mcp",
+    "homepage": "https://github.com/ictinnovations/ictdialer-mcp",
+    "repository": "https://github.com/ictinnovations/ictdialer-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "ictdialer-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ictinnovations/ictdialer-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of your ICTDialer server, without the /rest suffix, e.g. https://your-ictdialer.",
+          "format": "string",
+          "isRequired": true,
+          "name": "ICTDIALER_BASE_URL"
+        },
+        {
+          "description": "API account username.",
+          "format": "string",
+          "isRequired": true,
+          "name": "ICTDIALER_USERNAME"
+        },
+        {
+          "description": "Password for the account.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ICTDIALER_PASSWORD"
+        },
+        {
+          "default": "false",
+          "description": "Unlocks starting and stopping campaigns, which begins live outbound calling and can cost money. When false those tools are not registered at all. Leave off unless you mean it.",
+          "format": "boolean",
+          "name": "ICTDIALER_MCP_ALLOW_WRITE"
+        },
+        {
+          "default": "30000",
+          "description": "Per request timeout in milliseconds. Defaults to 30000.",
+          "format": "number",
+          "name": "ICTDIALER_TIMEOUT_MS"
+        },
+        {
+          "default": "false",
+          "description": "Skip TLS certificate verification. Only for a self-signed test server.",
+          "format": "boolean",
+          "name": "ICTDIALER_TLS_INSECURE"
+        }
+      ],
+      "identifier": "ictdialer-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "bc9b6a5ff0",
+    "published_at": "2026-09-01T10:51:58.208178Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ictinnovations/ictdialer-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-01T10:51:58.208178Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

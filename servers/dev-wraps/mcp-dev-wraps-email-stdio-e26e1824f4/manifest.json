@@ -1,0 +1,88 @@
+{
+  "description": "Query SES send history, delivery events, domains and suppressions, and send from your AWS account.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:36+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.dev-wraps-email.stdio.e26e1824f4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/wraps-team/wraps-js",
+    "homepage": "https://github.com/wraps-team/wraps-js",
+    "repository": "https://github.com/wraps-team/wraps-js"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@wraps.dev/mcp@0.7.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "dev.wraps/email",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Region your Wraps stack is deployed in. Optional only if your active AWS profile supplies one \u2014 SES identities are per-region.",
+          "format": "string",
+          "name": "AWS_REGION"
+        },
+        {
+          "description": "AWS profile to use. Credentials are read locally and never leave the machine.",
+          "format": "string",
+          "name": "AWS_PROFILE"
+        },
+        {
+          "description": "Set to true to enable the send_email tool. Read-only by default.",
+          "format": "boolean",
+          "name": "WRAPS_WRITE_ENABLED"
+        },
+        {
+          "description": "Default from address for send_email. Must be a domain verified in your SES account.",
+          "format": "string",
+          "name": "WRAPS_FROM_EMAIL"
+        },
+        {
+          "description": "Comma-separated addresses the agent may send to. Restricts send_email when write mode is on.",
+          "format": "string",
+          "name": "WRAPS_ALLOWED_RECIPIENTS"
+        },
+        {
+          "description": "Comma-separated domains the agent may send to. Matching is exact; list subdomains explicitly.",
+          "format": "string",
+          "name": "WRAPS_ALLOWED_RECIPIENT_DOMAINS"
+        },
+        {
+          "description": "DynamoDB table holding email history. Defaults to wraps-email-history.",
+          "format": "string",
+          "name": "WRAPS_HISTORY_TABLE_NAME"
+        }
+      ],
+      "identifier": "@wraps.dev/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.7.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e26e1824f4",
+    "published_at": "2026-09-09T16:15:27.10278Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "dev.wraps/email",
+    "server_version": "0.7.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-09T16:15:27.10278Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.7.1"
+}

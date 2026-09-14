@@ -1,0 +1,98 @@
+{
+  "description": "Reportia HTTP API as 66 curated MCP tools (accounting, mappings, SIIGO).",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:43+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-javalenciacai-mcp-reportia.stdio.0be025c7ca",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/javalenciacai/mcp-reportia.git",
+    "homepage": "https://github.com/javalenciacai/mcp-reportia.git",
+    "repository": "https://github.com/javalenciacai/mcp-reportia.git"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@james.valencia/mcp-reportia@0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.javalenciacai/mcp-reportia",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the Reportia API (without trailing slash). Example: https://reportia.example.com",
+          "isRequired": true,
+          "name": "REPORTIA_BASE_URL"
+        },
+        {
+          "description": "Bearer token for M2M authentication. Mutually exclusive with REPORTIA_COOKIE; either can be paired with REPORTIA_EMAIL+REPORTIA_PASSWORD (session login) for cookie fallback.",
+          "isSecret": true,
+          "name": "REPORTIA_TOKEN"
+        },
+        {
+          "description": "Pre-issued Reportia session cookie (e.g. connect.sid=s%3A...). For upstream callers that already hold the resolved user's session and want the child to authenticate as that user without re-login. Mutually exclusive with REPORTIA_TOKEN. Skips /api/auth/login and /api/auth/logout.",
+          "isSecret": true,
+          "name": "REPORTIA_COOKIE"
+        },
+        {
+          "description": "Email for cookie-session authentication.",
+          "name": "REPORTIA_EMAIL"
+        },
+        {
+          "description": "Password for cookie-session authentication.",
+          "isSecret": true,
+          "name": "REPORTIA_PASSWORD"
+        },
+        {
+          "description": "Default companyId used when a tool accepts it as optional.",
+          "name": "REPORTIA_COMPANY_ID"
+        },
+        {
+          "description": "HTTP request timeout in milliseconds (default 30000).",
+          "name": "REPORTIA_TIMEOUT_MS"
+        },
+        {
+          "description": "Directory where downloaded Excel/PDF exports are saved (default ./downloads).",
+          "name": "REPORTIA_DOWNLOAD_DIR"
+        },
+        {
+          "description": "Custom User-Agent header (default mcp-reportia/0.1.0).",
+          "name": "REPORTIA_USER_AGENT"
+        },
+        {
+          "description": "Maximum bytes for a single binary download (default 104857600 = 100MB).",
+          "name": "REPORTIA_MAX_DOWNLOAD_BYTES"
+        }
+      ],
+      "identifier": "@james.valencia/mcp-reportia",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0be025c7ca",
+    "published_at": "2026-09-07T23:12:00.412363Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.javalenciacai/mcp-reportia",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-07T23:12:00.412363Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

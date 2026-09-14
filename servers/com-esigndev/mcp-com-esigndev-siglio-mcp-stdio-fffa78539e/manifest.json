@@ -1,0 +1,61 @@
+{
+  "description": "MCP server for Siglio. Lets an AI assistant send documents for e-signature by email or text.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:19+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-esigndev-siglio-mcp.stdio.fffa78539e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "siglio-mcp@1.0.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.esigndev/siglio-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your Siglio API key. Sandbox keys start with sig_sandbox_ and live keys start with sig_live_. Get one at https://esigndev.com",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SIGLIO_API_KEY"
+        },
+        {
+          "description": "Set to true to allow a live key. Without it, live keys are refused and only sandbox keys will run. Leave unset while testing.",
+          "format": "string",
+          "name": "SIGLIO_ALLOW_LIVE"
+        }
+      ],
+      "identifier": "siglio-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "fffa78539e",
+    "published_at": "2026-09-13T20:32:36.631392Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.esigndev/siglio-mcp",
+    "server_version": "1.0.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-13T20:32:36.631392Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.3"
+}

@@ -1,0 +1,90 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/ravibagri5/crossplane-mcp-server:0.1.5"
+      }
+    }
+  ],
+  "description": "Read-only access to a Crossplane control plane: resources, claims, packages, compositions.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/ravibagri5/crossplane-mcp-server",
+  "id": "tool.io-github-ravibagri5-crossplane-mcp-server.fbb487aeb6",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ravibagri5/crossplane-mcp-server",
+    "homepage": "https://github.com/ravibagri5/crossplane-mcp-server",
+    "repository": "https://github.com/ravibagri5/crossplane-mcp-server"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Read-only access to a Crossplane control plane: resources, claims, packages, compositions.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.ravibagri5/crossplane-mcp-server",
+      "request_type": "POST",
+      "url": "https://github.com/ravibagri5/crossplane-mcp-server"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Mount your kubeconfig directory into the container",
+            "isRequired": true,
+            "name": "-v",
+            "type": "named",
+            "value": "{kubeconfig_path}:/home/nonroot/.kube:ro",
+            "variables": {
+              "kubeconfig_path": {
+                "default": "${HOME}/.kube",
+                "description": "Absolute path to your .kube directory",
+                "isRequired": true
+              }
+            }
+          },
+          "ghcr.io/ravibagri5/crossplane-mcp-server:0.1.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ravibagri5/crossplane-mcp-server",
+  "provenance": {
+    "identity_key": "9b7a310020",
+    "promoted_from": "mcp.io-github-ravibagri5-crossplane-mcp-server.stdio.9b7a310020",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ravibagri5/crossplane-mcp-server",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-ravibagri5-crossplane-mcp-server.stdio.9b7a310020",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/ravibagri5/crossplane-mcp-server",
+  "summary": "Read-only access to a Crossplane control plane: resources, claims, packages, compositions.",
+  "tags": [
+    "access",
+    "control",
+    "crossplane",
+    "only",
+    "plane",
+    "read",
+    "resources"
+  ],
+  "title": "Crossplane",
+  "type": "tool",
+  "version": "0.1.5"
+}

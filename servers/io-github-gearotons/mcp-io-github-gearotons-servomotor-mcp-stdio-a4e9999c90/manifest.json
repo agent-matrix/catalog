@@ -1,0 +1,68 @@
+{
+  "description": "Drive Gearotons M17 open-source servomotors from plain English over RS-485; mock mode, no hardware.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:52+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Gearotons-servomotor-mcp.stdio.a4e9999c90",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Gearotons/servomotor-mcp",
+    "homepage": "https://github.com/Gearotons/servomotor-mcp",
+    "repository": "https://github.com/Gearotons/servomotor-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "servomotor-mcp==0.3.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Gearotons/servomotor-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "auto",
+          "description": "'auto' (default: real serial backend when the servomotor library is installed, mock otherwise), 'serial', or 'mock'.",
+          "name": "GEAROTONS_MOTOR_BACKEND"
+        },
+        {
+          "description": "Optional default port for the connect tool (e.g. /dev/cu.usbserial-210, /dev/ttyUSB0, COM3). Normally unnecessary: the model discovers ports with list_serial_ports.",
+          "name": "GEAROTONS_SERIAL_PORT"
+        },
+        {
+          "default": "180",
+          "description": "Default speed in degrees/second for the high-level move tools.",
+          "name": "GEAROTONS_DEFAULT_SPEED_DPS"
+        }
+      ],
+      "identifier": "servomotor-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a4e9999c90",
+    "published_at": "2026-09-09T09:31:08.280595Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Gearotons/servomotor-mcp",
+    "server_version": "0.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-09T09:31:08.280595Z"
+  },
+  "title": "Gearotons M17 Servomotor",
+  "type": "mcp_server",
+  "version": "0.3.1"
+}

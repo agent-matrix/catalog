@@ -1,0 +1,65 @@
+{
+  "description": "Sandbox-only MuPag MCP server for approved payments, subscriptions, refunds, and reconciliation.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.br-com-mupag-mcp-server.stdio.c0d3b9c9bf",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@mupag/mcp-server@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "br.com.mupag/mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "MuPag sandbox secret key beginning with sk_test_.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "MUPAG_API_KEY"
+        },
+        {
+          "description": "Fixed sandbox environment for this release.",
+          "format": "string",
+          "isRequired": true,
+          "name": "MUPAG_ENV",
+          "value": "test"
+        }
+      ],
+      "identifier": "@mupag/mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c0d3b9c9bf",
+    "published_at": "2026-09-04T15:42:39.007362Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "br.com.mupag/mcp-server",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-04T15:42:39.007362Z"
+  },
+  "title": "MuPag Sandbox Payments",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

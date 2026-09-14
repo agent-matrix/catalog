@@ -1,0 +1,73 @@
+{
+  "description": "MCP server for BlueCat LiveWire",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-bluecat-livewiremcp.stdio.21bcea9ad9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "name": "-p",
+            "type": "named",
+            "value": "9997:9997"
+          },
+          "quay.io/bluecat/livewiremcp:26.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.bluecat/livewiremcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the LiveWire backend API",
+          "isRequired": true,
+          "name": "LIVEWIRE_BASE_URL"
+        },
+        {
+          "description": "LiveWire API key",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "LIVEWIRE_API_KEY"
+        }
+      ],
+      "identifier": "quay.io/bluecat/livewiremcp:26.2",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "name": "-p",
+          "type": "named",
+          "value": "9997:9997"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:9997/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "21bcea9ad9",
+    "published_at": "2026-09-02T13:55:32.316406Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.bluecat/livewiremcp",
+    "server_version": "26.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-02T13:55:32.316406Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "26.2"
+}

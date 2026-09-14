@@ -1,0 +1,69 @@
+{
+  "description": "Create and edit Word, PowerPoint, and Excel files with typed plans and safe previews",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ilia-sokolov-officeagent.stdio.068e6dfaa6",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='nuget' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/ilia-sokolov/OfficeAgent.NET",
+    "homepage": "https://github.com/ilia-sokolov/OfficeAgent.NET",
+    "repository": "https://github.com/ilia-sokolov/OfficeAgent.NET"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ilia-sokolov/officeagent",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "documents",
+          "description": "Connection id the agent uses to address documents on the filesystem (any non-empty string). Optional: with nothing configured the server starts with an in-memory session connection whose documents last only while it runs. Set this and RootPath to edit documents on disk instead; SharePoint is OfficeAgent__SharePointConnections__0__*",
+          "name": "OfficeAgent__FileSystemConnections__0__ConnectionId",
+          "placeholder": "documents"
+        },
+        {
+          "description": "Absolute path to the directory this filesystem connection may read and write documents under. Only .docx is allowed unless OfficeAgent__FileSystemConnections__0__AllowedExtensions__N adds more (.pptx for decks or .xlsx for workbooks). Deck connections usually want OfficeAgent__FileSystemConnections__0__DefaultChangeMode=Direct because PowerPoint cannot record tracked changes",
+          "format": "filepath",
+          "name": "OfficeAgent__FileSystemConnections__0__RootPath",
+          "placeholder": "/path/to/documents"
+        },
+        {
+          "default": "false",
+          "description": "Set to true to expose create_document, so an agent can author a new file in the connection rather than only editing existing ones. Off by default: creating agent-named files under a connection root is a capability the host should choose deliberately",
+          "name": "OfficeAgent__AllowCreation",
+          "placeholder": "true"
+        }
+      ],
+      "identifier": "OfficeAgent.Mcp",
+      "registryType": "nuget",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.8.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "068e6dfaa6",
+    "published_at": "2026-09-12T18:56:01.478572Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ilia-sokolov/officeagent",
+    "server_version": "0.8.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-12T18:56:01.478572Z"
+  },
+  "title": "OfficeAgent.NET",
+  "type": "mcp_server",
+  "version": "0.8.0"
+}

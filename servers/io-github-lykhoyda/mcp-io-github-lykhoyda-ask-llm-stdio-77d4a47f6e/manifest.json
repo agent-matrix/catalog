@@ -1,0 +1,148 @@
+{
+  "description": "Unified MCP server for Gemini, Codex, Claude, Grok, Ollama, and Antigravity",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:58+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Lykhoyda-ask-llm.stdio.77d4a47f6e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Lykhoyda/ask-llm",
+    "homepage": "https://github.com/Lykhoyda/ask-llm",
+    "repository": "https://github.com/Lykhoyda/ask-llm"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@ask-llm/mcp@0.9.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Lykhoyda/ask-llm",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "xAI API key for metered Grok requests; Ask LLM never enables billing or credits",
+          "format": "string",
+          "isSecret": true,
+          "name": "XAI_API_KEY"
+        },
+        {
+          "default": "xai-api",
+          "description": "Explicit Grok harness: xai-api (default) or grok-cli; no failover",
+          "format": "string",
+          "name": "ASK_GROK_HARNESS"
+        },
+        {
+          "description": "Exact selected-harness model override (API default grok-4.6; CLI default grok-build; no fallback)",
+          "format": "string",
+          "name": "ASK_GROK_MODEL"
+        },
+        {
+          "default": "high",
+          "description": "Grok reasoning effort: low, medium, high, or xhigh (default: high)",
+          "format": "string",
+          "name": "ASK_GROK_REASONING_EFFORT"
+        },
+        {
+          "default": "16384",
+          "description": "xAI API output-token ceiling to bound accidental spend (default: 16384)",
+          "format": "string",
+          "name": "ASK_GROK_MAX_OUTPUT_TOKENS"
+        },
+        {
+          "default": "600000",
+          "description": "Timeout for xAI API requests in milliseconds (default: 600000)",
+          "format": "string",
+          "name": "ASK_GROK_TIMEOUT_MS"
+        },
+        {
+          "description": "Optional Cursor CLI credential for ask-cursor-agent; alternative to agent login",
+          "format": "string",
+          "isSecret": true,
+          "name": "CURSOR_API_KEY"
+        },
+        {
+          "default": "600000",
+          "description": "Timeout for model-neutral Cursor Agent harness calls (default: 600000)",
+          "format": "string",
+          "name": "ASK_CURSOR_TIMEOUT_MS"
+        },
+        {
+          "default": "opus",
+          "description": "Default Claude model alias or full model name (default: opus)",
+          "format": "string",
+          "name": "ASK_CLAUDE_MODEL"
+        },
+        {
+          "default": "sonnet",
+          "description": "Claude CLI fallback when Opus is overloaded or unavailable (default: sonnet)",
+          "format": "string",
+          "name": "ASK_CLAUDE_FALLBACK_MODEL"
+        },
+        {
+          "default": "600000",
+          "description": "Timeout for Claude CLI execution in milliseconds (default: 600000 = 10 minutes)",
+          "format": "string",
+          "name": "ASK_CLAUDE_TIMEOUT_MS"
+        },
+        {
+          "default": "http://localhost:11434",
+          "description": "Ollama server address (default: http://localhost:11434)",
+          "format": "string",
+          "name": "OLLAMA_HOST"
+        },
+        {
+          "default": "300000",
+          "description": "Timeout for Antigravity (agy) execution in milliseconds (default: 300000 = 5 minutes)",
+          "format": "string",
+          "name": "ASK_ANTIGRAVITY_TIMEOUT_MS"
+        },
+        {
+          "default": "1",
+          "description": "Set to '0' to drop agy's --sandbox flag if it blocks --add-dir context reads (default: sandbox on)",
+          "format": "string",
+          "name": "ASK_ANTIGRAVITY_SANDBOX"
+        },
+        {
+          "default": "300000",
+          "description": "Timeout for CLI execution in milliseconds (default: 300000 = 5 minutes)",
+          "format": "string",
+          "name": "GMCPT_TIMEOUT_MS"
+        },
+        {
+          "default": "warn",
+          "description": "Log verbosity: debug, info, warn, error (default: warn)",
+          "format": "string",
+          "name": "GMCPT_LOG_LEVEL"
+        }
+      ],
+      "identifier": "@ask-llm/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.9.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "77d4a47f6e",
+    "published_at": "2026-09-13T14:15:23.056812Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Lykhoyda/ask-llm",
+    "server_version": "0.9.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-13T14:15:23.056812Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.9.3"
+}

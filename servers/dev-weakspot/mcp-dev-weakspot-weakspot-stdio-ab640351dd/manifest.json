@@ -1,0 +1,72 @@
+{
+  "description": "Audit Solidity and Rust smart contracts from your editor. Pays per audit in USDC over x402.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:35+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.dev-weakspot-weakspot.stdio.ab640351dd",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "weakspot-mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "dev.weakspot/weakspot",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Private key of a funded Base wallet. This server SPENDS REAL USDC from it with no human in the loop \u2014 use a fresh wallet funded with only what you are willing to lose, never a personal or deployer key. Only weakspot_audit needs it; the pricing, status and wallet-status tools work without one.",
+          "format": "string",
+          "isSecret": true,
+          "name": "WEAKSPOT_PRIVATE_KEY"
+        },
+        {
+          "default": "4",
+          "description": "Hard cap in USD on any single audit (default 4, the highest tier). Checked twice: against the tier price, and again against the amount the server actually quotes. An LLM decides when to call the paying tool, so this is the main spend control.",
+          "format": "number",
+          "name": "WEAKSPOT_MAX_USD"
+        },
+        {
+          "default": "https://weakspot.dev",
+          "description": "Base URL of the Weakspot deployment to use. Defaults to https://weakspot.dev; override to point at staging or a self-hosted instance.",
+          "format": "string",
+          "name": "WEAKSPOT_URL"
+        },
+        {
+          "description": "Base RPC endpoint, used only to read the wallet's USDC balance in weakspot_wallet_status. Nothing else needs it.",
+          "format": "string",
+          "name": "WEAKSPOT_RPC_URL"
+        }
+      ],
+      "identifier": "weakspot-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ab640351dd",
+    "published_at": "2026-09-05T11:51:20.712038Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "dev.weakspot/weakspot",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-05T11:51:20.712038Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

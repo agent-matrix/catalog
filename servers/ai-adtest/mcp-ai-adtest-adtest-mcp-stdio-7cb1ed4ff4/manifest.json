@@ -1,0 +1,70 @@
+{
+  "description": "AI-only ad scoring for Claude: score image, video or text ads on 13 dimensions before you spend.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:04+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-adtest-adtest-mcp.stdio.7cb1ed4ff4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/menaker/adtest-mcp",
+    "homepage": "https://github.com/menaker/adtest-mcp",
+    "repository": "https://github.com/menaker/adtest-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "adtest-mcp@1.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.adtest/adtest-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "AdTest.AI developer API key (app.adtest.ai \u2192 Developer \u2192 Generate key). Each successful analysis costs 1 credit.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ADTEST_API_KEY"
+        },
+        {
+          "description": "Optional API base URL override (default https://app.adtest.ai/adtest-api).",
+          "format": "string",
+          "name": "ADTEST_API_BASE"
+        },
+        {
+          "description": "Optional max wait for a job in milliseconds (default 900000 = 15 min).",
+          "format": "number",
+          "name": "ADTEST_POLL_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "adtest-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7cb1ed4ff4",
+    "published_at": "2026-09-01T21:42:48.138341Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.adtest/adtest-mcp",
+    "server_version": "1.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-01T21:42:48.138341Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.1.0"
+}

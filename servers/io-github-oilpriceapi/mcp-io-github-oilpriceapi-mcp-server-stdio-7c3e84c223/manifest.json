@@ -1,0 +1,74 @@
+{
+  "description": "Source-timestamped energy data and reviewed OilPriceAPI product facts for MCP clients.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:00+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-OilpriceAPI-mcp-server.stdio.7c3e84c223",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/OilpriceAPI/mcp-server",
+    "homepage": "https://github.com/OilpriceAPI/mcp-server",
+    "repository": "https://github.com/OilpriceAPI/mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "oilpriceapi-mcp@3.2.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.OilpriceAPI/mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your OilPriceAPI key from oilpriceapi.com/auth/signup. Optional: without it, keyless demo mode.",
+          "format": "string",
+          "isSecret": true,
+          "name": "OILPRICEAPI_KEY"
+        },
+        {
+          "description": "Tool scope: read (default) or write (explicit mutation opt-in).",
+          "format": "string",
+          "name": "OILPRICEAPI_MCP_SCOPE"
+        },
+        {
+          "description": "Tool profile: all, core, market, or automation.",
+          "format": "string",
+          "name": "OILPRICEAPI_MCP_PROFILE"
+        },
+        {
+          "description": "Comma-separated category allowlist (core, market, automation) that overrides the profile.",
+          "format": "string",
+          "name": "OILPRICEAPI_MCP_CATEGORIES"
+        }
+      ],
+      "identifier": "oilpriceapi-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "3.2.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7c3e84c223",
+    "published_at": "2026-09-04T12:37:01.655674Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.OilpriceAPI/mcp-server",
+    "server_version": "3.2.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-04T12:37:01.655674Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "3.2.4"
+}

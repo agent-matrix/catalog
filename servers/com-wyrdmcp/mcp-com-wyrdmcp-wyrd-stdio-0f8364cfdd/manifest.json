@@ -1,0 +1,66 @@
+{
+  "description": "Exposes one granted folder to any AI client, read-only, behind a path-containment fence.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-wyrdmcp-wyrd.stdio.0f8364cfdd",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/MortalPastry/wyrd-mcp",
+    "homepage": "https://github.com/MortalPastry/wyrd-mcp",
+    "repository": "https://github.com/MortalPastry/wyrd-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "wyrd-mcp@0.1.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.wyrdmcp/wyrd",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Absolute path to the single folder to serve, read-only. Used when --grant is not passed. The server refuses to start if neither is set.",
+          "format": "filepath",
+          "name": "WYRD_GRANT"
+        }
+      ],
+      "identifier": "wyrd-mcp",
+      "packageArguments": [
+        {
+          "description": "Absolute path to the single folder to serve, read-only. Wins over WYRD_GRANT. Every file inside it is readable, including hidden ones \u2014 grant a subfolder containing only what you mean to share.",
+          "format": "filepath",
+          "name": "--grant",
+          "type": "named"
+        }
+      ],
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0f8364cfdd",
+    "published_at": "2026-08-31T23:07:23.546867Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.wyrdmcp/wyrd",
+    "server_version": "0.1.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-31T23:07:23.546867Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.3"
+}

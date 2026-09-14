@@ -1,0 +1,97 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/drolosoft/immich-photo-manager:2.0.11"
+      }
+    }
+  ],
+  "description": "Photo management for self-hosted Immich: search, albums, duplicates, faces, PDF reports. 94 tools.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/drolosoft/immich-photo-manager",
+  "id": "tool.io-github-drolosoft-immich-photo-manager.18b343ba95",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/drolosoft/immich-photo-manager",
+    "homepage": "https://github.com/drolosoft/immich-photo-manager",
+    "repository": "https://github.com/drolosoft/immich-photo-manager"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Photo management for self-hosted Immich: search, albums, duplicates, faces, PDF reports. 94 tools.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.drolosoft/immich-photo-manager",
+      "request_type": "POST",
+      "url": "https://github.com/drolosoft/immich-photo-manager"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Publish the MCP port; the server listens on 8626 inside the container",
+            "isRequired": true,
+            "name": "-p",
+            "type": "named",
+            "value": "8626:8626"
+          },
+          {
+            "description": "Directory on the host for the PDFs and zips the tools write, and for credentials set from the client",
+            "name": "-v",
+            "type": "named",
+            "value": "{exports_dir}:/data",
+            "variables": {
+              "exports_dir": {
+                "description": "Host directory to mount on /data",
+                "format": "filepath"
+              }
+            }
+          },
+          "ghcr.io/drolosoft/immich-photo-manager:2.0.11"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.drolosoft/immich-photo-manager",
+  "provenance": {
+    "identity_key": "cd329b7638",
+    "promoted_from": "mcp.io-github-drolosoft-immich-photo-manager.stdio.cd329b7638",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.drolosoft/immich-photo-manager",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-drolosoft-immich-photo-manager.stdio.cd329b7638",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/drolosoft/immich-photo-manager",
+  "summary": "Photo management for self-hosted Immich: search, albums, duplicates, faces, PDF reports. 94 tools.",
+  "tags": [
+    "albums",
+    "duplicates",
+    "hosted",
+    "immich",
+    "management",
+    "manager",
+    "photo",
+    "search",
+    "self"
+  ],
+  "title": "Immich Photo Manager",
+  "type": "tool",
+  "version": "2.0.11"
+}

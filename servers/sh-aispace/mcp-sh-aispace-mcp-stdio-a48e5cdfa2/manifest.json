@@ -1,0 +1,80 @@
+{
+  "description": "Secure, expiring artifact storage and handoff for AI agents.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:44+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.sh-aispace-mcp.stdio.a48e5cdfa2",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/aispace-sh/aispace-client",
+    "homepage": "https://github.com/aispace-sh/aispace-client",
+    "repository": "https://github.com/aispace-sh/aispace-client"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@aispace-sh/cli@0.4.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "sh.aispace/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Scoped aispace bot key (ask_...).",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AISPACE_KEY"
+        },
+        {
+          "description": "Optional aispace service origin; defaults to https://aispace.sh.",
+          "format": "string",
+          "name": "AISPACE_URL"
+        },
+        {
+          "description": "Optional platform path-list restricting local file access.",
+          "format": "string",
+          "name": "AISPACE_ALLOWED_ROOTS"
+        }
+      ],
+      "identifier": "@aispace-sh/cli",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        },
+        {
+          "type": "positional",
+          "value": "serve"
+        }
+      ],
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a48e5cdfa2",
+    "published_at": "2026-09-10T00:28:14.228602Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "sh.aispace/mcp",
+    "server_version": "0.4.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-10T00:28:14.228602Z"
+  },
+  "title": "aispace",
+  "type": "mcp_server",
+  "version": "0.4.1"
+}

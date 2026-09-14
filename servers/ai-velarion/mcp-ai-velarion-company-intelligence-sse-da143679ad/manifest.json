@@ -1,0 +1,46 @@
+{
+  "description": "Cited exec, director and say-on-pay data for ~3,000 US public companies, 12 industries.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-velarion-company-intelligence.sse.da143679ad",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://api.velarion.ai/mcp"
+    }
+  },
+  "name": "ai.velarion/company-intelligence",
+  "provenance": {
+    "identity_key": "da143679ad",
+    "published_at": "2026-09-04T21:14:51.221256Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.velarion/company-intelligence",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-04T21:14:51.221256Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Velarion agent token. Free tier: cited executive, director, and say-on-pay compensation facts, attribution required on every response. Analysis tools (benchmarking, risk prediction, governance cards) are paid. Self-issue a token instantly, no human in the loop: POST https://api.velarion.ai/agent/v1/token/self-serve with {\"agent_label\": \"<your agent>\", \"contact_email\": \"<reachable address>\"}, or request one at https://intel.velarion.ai/developers. The raw token is returned once. Tokens are per-agent, scoped, and revocable.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "X-Velarion-Agent-Token"
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://api.velarion.ai/mcp"
+    }
+  ],
+  "title": "Velarion Company Intelligence",
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

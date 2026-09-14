@@ -1,0 +1,73 @@
+{
+  "description": "Geocoding, walking/driving/cycling distances, route optimization, isochrones and POI search on OSM",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:00+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ni-c-osm-mcp.stdio.a6d5c35d13",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ni-c/osm-mcp",
+    "homepage": "https://github.com/ni-c/osm-mcp",
+    "repository": "https://github.com/ni-c/osm-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/ni-c/osm-mcp:0.3.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ni-c/osm-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Identifying User-Agent sent to all OSM services (Nominatim requires one)",
+          "format": "string",
+          "name": "OSM_USER_AGENT"
+        },
+        {
+          "description": "Optional OpenRouteService key; switches routing/matrix/isochrones to ORS",
+          "format": "string",
+          "isSecret": true,
+          "name": "ORS_API_KEY"
+        },
+        {
+          "description": "Comma-separated tool names or list_* prefixes to register; 'essential' selects a curated preset (default: all tools)",
+          "format": "string",
+          "name": "OSM_ALLOW_TOOLS"
+        },
+        {
+          "description": "Comma-separated tool names or list_* prefixes to remove from whatever OSM_ALLOW_TOOLS left",
+          "format": "string",
+          "name": "OSM_DENY_TOOLS"
+        }
+      ],
+      "identifier": "ghcr.io/ni-c/osm-mcp:0.3.1",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "a6d5c35d13",
+    "published_at": "2026-09-07T11:23:52.695034Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ni-c/osm-mcp",
+    "server_version": "0.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-07T11:23:52.695034Z"
+  },
+  "title": "OpenStreetMap",
+  "type": "mcp_server",
+  "version": "0.3.1"
+}

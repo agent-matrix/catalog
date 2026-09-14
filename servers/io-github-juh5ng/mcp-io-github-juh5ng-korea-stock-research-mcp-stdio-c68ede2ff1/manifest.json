@@ -1,0 +1,67 @@
+{
+  "description": "Korean equity research, analyst revisions, kimchi premium and news via x402.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:45+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-juh5ng-korea-stock-research-mcp.stdio.c68ede2ff1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/juh5ng/k-data-mcp",
+    "homepage": "https://github.com/juh5ng/k-data-mcp",
+    "repository": "https://github.com/juh5ng/k-data-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "k-data-mcp@0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.juh5ng/korea-stock-research-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Private key of a dedicated wallet holding USDC on Base. Each tool call spends from it. No ETH needed - x402 settles off-chain and the facilitator pays gas.",
+          "isSecret": true,
+          "name": "K_DATA_PRIVATE_KEY"
+        },
+        {
+          "default": "1",
+          "description": "Hard cap on cumulative spend for the session. The server refuses any call that would exceed it.",
+          "name": "K_DATA_MAX_SPEND_USD"
+        },
+        {
+          "description": "Point at a different K-Data deployment.",
+          "name": "K_DATA_BASE_URL"
+        }
+      ],
+      "identifier": "k-data-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c68ede2ff1",
+    "published_at": "2026-09-06T01:32:03.831077Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.juh5ng/korea-stock-research-mcp",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-06T01:32:03.831077Z"
+  },
+  "title": "K-Data \u2014 Korean Sell-Side Research & Market Data",
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

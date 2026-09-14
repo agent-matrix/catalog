@@ -1,0 +1,91 @@
+{
+  "description": "Retrieval over the folder the session opened: files, search, read, code_pack, write_note.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:47+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-kiycoh-silica-core.stdio.a76c8b41c7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/kiycoh/silica-core",
+    "homepage": "https://github.com/kiycoh/silica-core",
+    "repository": "https://github.com/kiycoh/silica-core"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "The server lives behind the [mcp] extra, the local model behind [dense]; without them the install carries the CLI and no server.",
+            "isRequired": true,
+            "name": "--from",
+            "type": "named",
+            "value": "silica-core[mcp,dense]"
+          },
+          "silica-core==0.8.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.kiycoh/silica-core",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Folder to index and serve. Unset means the directory the client launched the server in.",
+          "format": "filepath",
+          "name": "SILICA_VAULT"
+        }
+      ],
+      "identifier": "silica-core",
+      "packageArguments": [
+        {
+          "description": "Serve files, search, read, code_pack and write_note over stdio.",
+          "isRequired": true,
+          "type": "positional",
+          "value": "mcp",
+          "valueHint": "subcommand"
+        },
+        {
+          "description": "A static model in the server process, index and vectors built in the background at start; search is lexical until they land. `lexical` is the light server.",
+          "name": "--retrieval",
+          "type": "named",
+          "value": "local-hybrid"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "The server lives behind the [mcp] extra, the local model behind [dense]; without them the install carries the CLI and no server.",
+          "isRequired": true,
+          "name": "--from",
+          "type": "named",
+          "value": "silica-core[mcp,dense]"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.8.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a76c8b41c7",
+    "published_at": "2026-09-11T04:29:51.381614Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.kiycoh/silica-core",
+    "server_version": "0.8.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-11T04:29:51.381614Z"
+  },
+  "title": "Silica Core",
+  "type": "mcp_server",
+  "version": "0.8.2"
+}

@@ -1,0 +1,80 @@
+{
+  "description": "All 94 LearnWorlds LMS API endpoints as safety-categorized MCP tools (read/write/destructive).",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:02+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ohneben-learnworlds-mcp.stdio.8414dfa7df",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ohneben/Learnworlds-MCP",
+    "homepage": "https://github.com/ohneben/Learnworlds-MCP",
+    "repository": "https://github.com/ohneben/Learnworlds-MCP"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/ohneben/learnworlds-mcp:1.0.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ohneben/learnworlds-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of your LearnWorlds school's API, e.g. https://<your-school>.learnworlds.com/admin/api",
+          "format": "string",
+          "isRequired": true,
+          "name": "LEARNWORLDS_BASE_URL"
+        },
+        {
+          "description": "Bearer access token (LearnWorlds admin -> Settings -> Integrations -> Developers).",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "LEARNWORLDS_API_TOKEN"
+        },
+        {
+          "description": "Your school's Client ID, sent as the Lw-Client header.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "LEARNWORLDS_CLIENT_ID"
+        },
+        {
+          "description": "Optional bearer token required on the /mcp endpoint. Empty = open (localhost only).",
+          "format": "string",
+          "isSecret": true,
+          "name": "MCP_SHARED_TOKEN"
+        }
+      ],
+      "identifier": "ghcr.io/ohneben/learnworlds-mcp:1.0.2",
+      "registryType": "oci",
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:8765/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "8414dfa7df",
+    "published_at": "2026-09-05T07:57:58.399671Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ohneben/learnworlds-mcp",
+    "server_version": "1.0.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-05T07:57:58.399671Z"
+  },
+  "title": "LearnWorlds",
+  "type": "mcp_server",
+  "version": "1.0.2"
+}

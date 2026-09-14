@@ -1,0 +1,74 @@
+{
+  "description": "Search willhaben.at for second-hand listings and rank the underpriced ones",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:26+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-taneron-willmehr.stdio.37b8b4534a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/taneron/willmehr",
+    "homepage": "https://github.com/taneron/willmehr",
+    "repository": "https://github.com/taneron/willmehr"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "willmehr@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.taneron/willmehr",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "choices": [
+            "full",
+            "public"
+          ],
+          "default": "full",
+          "description": "'full' (default) registers the account tools; 'public' runs anonymously, reads no credential and paces requests for a shared IP.",
+          "name": "WILLMEHR_MODE"
+        },
+        {
+          "description": "Session cookie from a logged-in willhaben browser session, needed only by the willhaben_my_* tools. Must contain BBX_JSESSIONID and x-bbx-csrf-token. Sessions expire within roughly half an hour.",
+          "isSecret": true,
+          "name": "WILLHABEN_COOKIE"
+        },
+        {
+          "default": "400",
+          "description": "Minimum spacing between requests to willhaben, in milliseconds.",
+          "name": "WILLHABEN_MIN_INTERVAL_MS"
+        }
+      ],
+      "identifier": "willmehr",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "37b8b4534a",
+    "published_at": "2026-09-01T21:03:44.99068Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.taneron/willmehr",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-01T21:03:44.99068Z"
+  },
+  "title": "willmehr",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

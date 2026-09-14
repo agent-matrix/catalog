@@ -1,0 +1,91 @@
+{
+  "description": "openITCOCKPIT monitoring: host and service state, history, downtimes, acknowledgements, patches",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:03+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-openITCOCKPIT-mcp-server.stdio.ebcd08fab7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/openITCOCKPIT/openITCOCKPIT-MCP-Server",
+    "homepage": "https://github.com/openITCOCKPIT/openITCOCKPIT-MCP-Server",
+    "repository": "https://github.com/openITCOCKPIT/openITCOCKPIT-MCP-Server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "docker.io/openitcockpit/mcp-server:0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.openITCOCKPIT/mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API key of a dedicated, least-privilege openITCOCKPIT user. This server presents it to openITCOCKPIT; it is never handed to a client.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OITC_APIKEY"
+        },
+        {
+          "description": "Base URL of the openITCOCKPIT instance, e.g. https://openitcockpit.example.org - without a path.",
+          "format": "string",
+          "isRequired": true,
+          "name": "OITC_BASEURL"
+        },
+        {
+          "choices": [
+            "stdio",
+            "http"
+          ],
+          "default": "stdio",
+          "description": "Transport mode. The image defaults to 'http', which additionally requires MCP_AUTH_TOKEN and a published port; a client that runs this container itself wants 'stdio'.",
+          "name": "OITC_TRANSPORT"
+        },
+        {
+          "choices": [
+            "false",
+            "true"
+          ],
+          "default": "false",
+          "description": "Register the 15 tools that change the monitoring configuration. Off by default: they are not even registered unless this is 'true'.",
+          "name": "OITC_ENABLE_WRITE_TOOLS"
+        },
+        {
+          "choices": [
+            "true",
+            "false"
+          ],
+          "default": "true",
+          "description": "Verify the openITCOCKPIT TLS certificate. On by default; for a self-signed instance set OITC_CA_BUNDLE rather than turning this off.",
+          "name": "OITC_VERIFY_TLS"
+        }
+      ],
+      "identifier": "docker.io/openitcockpit/mcp-server:0.2.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "ebcd08fab7",
+    "published_at": "2026-09-07T20:23:02.779113Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.openITCOCKPIT/mcp-server",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-07T20:23:02.779113Z"
+  },
+  "title": "openITCOCKPIT",
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

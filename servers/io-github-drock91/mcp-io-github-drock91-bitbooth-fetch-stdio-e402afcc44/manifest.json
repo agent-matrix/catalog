@@ -1,0 +1,90 @@
+{
+  "description": "Discover BitBooth APIs for free, then buy capped x402 fetch, PageDelta, and wallet checks.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:50+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Drock91-bitbooth-fetch.stdio.e402afcc44",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Drock91/bitbooth-docs",
+    "homepage": "https://github.com/Drock91/bitbooth-docs",
+    "repository": "https://github.com/Drock91/bitbooth-docs"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@bitbooth/mcp-fetch@2.3.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Drock91/bitbooth-fetch",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Hex private key for Base USDC payments. Required for the default base rail; not used in xrpl-rlusd mode.",
+          "format": "string",
+          "isSecret": true,
+          "name": "BITBOOTH_AGENT_KEY"
+        },
+        {
+          "description": "BitBooth gateway URL. Defaults to https://app.heinrichstech.com; Base Sepolia is the default payment network.",
+          "format": "string",
+          "name": "BITBOOTH_API_URL"
+        },
+        {
+          "description": "EVM chain ID for the legacy fetch tool. The default public origin currently requires 84532 (Base Sepolia); 8453 is only for a separately configured compatible mainnet origin.",
+          "format": "string",
+          "name": "BITBOOTH_CHAIN_ID"
+        },
+        {
+          "description": "Payment rail. Defaults to base. Set exactly to xrpl-rlusd to enable XRPL mainnet watch tools and optionally PageDelta.",
+          "format": "string",
+          "name": "BITBOOTH_PAYMENT_RAIL"
+        },
+        {
+          "description": "Dedicated low-balance XRPL agent seed. Required only when BITBOOTH_PAYMENT_RAIL=xrpl-rlusd.",
+          "format": "string",
+          "isSecret": true,
+          "name": "BITBOOTH_XRPL_SEED"
+        },
+        {
+          "description": "Hard maximum payment per call. XRPL defaults to 0.001; explicitly set at least 0.010000 to expose the 0.010000-RLUSD PageDelta tool.",
+          "format": "string",
+          "name": "BITBOOTH_MAX_PER_CALL_USD"
+        },
+        {
+          "description": "Hard stablecoin spend cap per wallet and UTC day for this process. Defaults to 1.00 on Base and 0.10 in xrpl-rlusd mode.",
+          "format": "string",
+          "name": "BITBOOTH_DAILY_LIMIT_USD"
+        }
+      ],
+      "identifier": "@bitbooth/mcp-fetch",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.3.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e402afcc44",
+    "published_at": "2026-09-12T02:45:49.479212Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Drock91/bitbooth-fetch",
+    "server_version": "2.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-12T02:45:49.479212Z"
+  },
+  "title": "BitBooth Agent Tools",
+  "type": "mcp_server",
+  "version": "2.3.1"
+}

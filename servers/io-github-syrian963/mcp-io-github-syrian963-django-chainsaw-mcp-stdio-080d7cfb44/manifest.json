@@ -1,0 +1,64 @@
+{
+  "description": "Finds what will hurt in a Django project: cascades, N+1, unsafe migrations, tenant leaks.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:25+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-syrian963-django-chainsaw-mcp.stdio.080d7cfb44",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/syrian963/django-chainsaw-mcp",
+    "homepage": "https://github.com/syrian963/django-chainsaw-mcp",
+    "repository": "https://github.com/syrian963/django-chainsaw-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "django-chainsaw-mcp==0.1.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.syrian963/django-chainsaw-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Absolute path to the Django project to analyse - the directory containing manage.py, or whichever directory the settings module is importable from. This server must run in an interpreter that can import that project, so install it into the project's own environment rather than an isolated one.",
+          "isRequired": true,
+          "name": "DJANGO_CHAINSAW_PROJECT_PATH"
+        },
+        {
+          "description": "Dotted path to the settings module, for example myproject.settings. Point it at the settings the site actually runs on: a base or partial module can import cleanly and load no models, and the server says so when that happens.",
+          "isRequired": true,
+          "name": "DJANGO_CHAINSAW_SETTINGS_MODULE"
+        }
+      ],
+      "identifier": "django-chainsaw-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "080d7cfb44",
+    "published_at": "2026-09-09T15:09:03.21626Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.syrian963/django-chainsaw-mcp",
+    "server_version": "0.1.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-09T15:09:03.21626Z"
+  },
+  "title": "Django Chainsaw",
+  "type": "mcp_server",
+  "version": "0.1.4"
+}

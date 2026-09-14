@@ -1,0 +1,81 @@
+{
+  "description": "Sync WHOOP recovery, sleep, strain, and workouts into Postgres and query them from any MCP client.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:24+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cunicopia-dev-whoop-postgres-mcp.stdio.6c399788d7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cunicopia-dev/whoop-mcp",
+    "homepage": "https://github.com/cunicopia-dev/whoop-mcp",
+    "repository": "https://github.com/cunicopia-dev/whoop-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "whoop-postgres-mcp==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cunicopia-dev/whoop-postgres-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Client ID of your WHOOP developer app (developer.whoop.com).",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "WHOOP_CLIENT_ID"
+        },
+        {
+          "description": "Client secret of your WHOOP developer app.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "WHOOP_CLIENT_SECRET"
+        },
+        {
+          "description": "OAuth redirect URI, exactly as registered on the WHOOP app (e.g. http://localhost:8765/callback).",
+          "format": "string",
+          "isRequired": true,
+          "name": "WHOOP_REDIRECT_URI"
+        },
+        {
+          "description": "Postgres DSN the server syncs into and reads from (e.g. postgresql://user:pass@localhost:5432/whoop). Tokens are stored in this database.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "WHOOP_DB_URL"
+        }
+      ],
+      "identifier": "whoop-postgres-mcp",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6c399788d7",
+    "published_at": "2026-09-13T11:46:41.936223Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cunicopia-dev/whoop-postgres-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-13T11:46:41.936223Z"
+  },
+  "title": "WHOOP MCP",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

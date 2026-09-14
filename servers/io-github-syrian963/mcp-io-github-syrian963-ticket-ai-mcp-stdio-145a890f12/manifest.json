@@ -1,0 +1,104 @@
+{
+  "description": "Measures tickets against the ones your team already shipped: sections, length, labels, duplicates.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:25+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-syrian963-ticket-ai-mcp.stdio.145a890f12",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/syrian963/Ticket-AI-MCP",
+    "homepage": "https://github.com/syrian963/Ticket-AI-MCP",
+    "repository": "https://github.com/syrian963/Ticket-AI-MCP"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "ticket-ai-mcp==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.syrian963/ticket-ai-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Which tracker to read: gitlab, jira or github.",
+          "isRequired": true,
+          "name": "TICKET_AI_TRACKER"
+        },
+        {
+          "description": "The project to measure. A GitLab path like acme/shop or its numeric id, a Jira project key like PROJ, or a GitHub owner/repo.",
+          "isRequired": true,
+          "name": "TICKET_AI_PROJECT"
+        },
+        {
+          "description": "Base URL of the GitLab instance, for example https://gitlab.example.com. Required when the tracker is gitlab.",
+          "name": "TICKET_AI_GITLAB_URL"
+        },
+        {
+          "description": "GitLab personal access token. The read_api scope is enough; nothing here writes.",
+          "isSecret": true,
+          "name": "TICKET_AI_GITLAB_TOKEN"
+        },
+        {
+          "description": "Base URL of the Jira instance. Cloud or self-hosted Server and Data Center; which one is detected from the instance.",
+          "name": "TICKET_AI_JIRA_URL"
+        },
+        {
+          "description": "Account email, for Jira Cloud's basic auth. Leave unset for a public board or for a Server personal access token.",
+          "name": "TICKET_AI_JIRA_EMAIL"
+        },
+        {
+          "description": "Jira API token from id.atlassian.com, or a Server personal access token on its own. Leave unset to read a public instance anonymously.",
+          "isSecret": true,
+          "name": "TICKET_AI_JIRA_TOKEN"
+        },
+        {
+          "description": "GitHub token with read access to the repository's issues.",
+          "isSecret": true,
+          "name": "TICKET_AI_GITHUB_TOKEN"
+        },
+        {
+          "description": "Checkout to search when gathering context for a subject. Defaults to the working directory, which on a wrong guess produces confident nonsense - the report names the directory it searched.",
+          "name": "TICKET_AI_REPO"
+        },
+        {
+          "description": "Force the language tickets should be written in, overriding what was measured in the corpus. Leave unset unless the board is mid-switch: a measurement beats a setting.",
+          "name": "TICKET_AI_TICKET_LANGUAGE"
+        },
+        {
+          "description": "Where the learned profile is kept between runs. Defaults to .ticket-ai/ under the working directory.",
+          "name": "TICKET_AI_CACHE_DIR"
+        }
+      ],
+      "identifier": "ticket-ai-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "145a890f12",
+    "published_at": "2026-09-11T11:46:27.917279Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.syrian963/ticket-ai-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-11T11:46:27.917279Z"
+  },
+  "title": "Ticket AI",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

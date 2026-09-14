@@ -1,0 +1,82 @@
+{
+  "description": "Access Pretorin controls, evidence, narratives, and local Plan-backed Campaigns from AI tools.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-pretorin-ai-pretorin.stdio.934c2d19bf",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/pretorin-ai/pretorin-cli.git",
+    "homepage": "https://github.com/pretorin-ai/pretorin-cli.git",
+    "repository": "https://github.com/pretorin-ai/pretorin-cli.git"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "name": "--with",
+            "type": "named",
+            "value": "hatchet-sdk==1.39.0"
+          },
+          "pretorin==0.29.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.pretorin-ai/pretorin",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your Pretorin API key from https://platform.pretorin.com/",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PRETORIN_API_KEY"
+        },
+        {
+          "description": "Optional OS-path-separator-delimited additional project roots allowed for local Campaign MCP operations.",
+          "name": "PRETORIN_MCP_ALLOWED_PROJECT_ROOTS"
+        }
+      ],
+      "identifier": "pretorin",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp-serve"
+        }
+      ],
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "name": "--with",
+          "type": "named",
+          "value": "hatchet-sdk==1.39.0"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.29.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "934c2d19bf",
+    "published_at": "2026-09-09T13:27:33.507468Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.pretorin-ai/pretorin",
+    "server_version": "0.29.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-09T13:27:33.507468Z"
+  },
+  "title": "Pretorin Compliance",
+  "type": "mcp_server",
+  "version": "0.29.4"
+}

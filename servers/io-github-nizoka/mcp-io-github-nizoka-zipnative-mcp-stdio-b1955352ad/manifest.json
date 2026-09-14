@@ -1,0 +1,112 @@
+{
+  "description": "ZIP MCP server: create, inspect, verify, extract securely, modify without recompression. 13 tools",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:00+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Nizoka-zipnative-mcp.stdio.b1955352ad",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Nizoka/zipnative-mcp",
+    "homepage": "https://github.com/Nizoka/zipnative-mcp",
+    "repository": "https://github.com/Nizoka/zipnative-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "type": "positional",
+            "value": "-y",
+            "valueHint": "skip-confirm"
+          },
+          {
+            "type": "positional",
+            "value": "zipnative-mcp",
+            "valueHint": "package"
+          },
+          "zipnative-mcp@1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Nizoka/zipnative-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Absolute path of the one sandbox directory: zipPath / sourcePath inputs are read from it and outputMode='file' / outputDir outputs are written under it (never overwritten; the real path of every file read and of every parent written must stay inside \u2014 a planted symlink or junction is SECURITY_VIOLATION). Unset: every tool works on base64 only (no file I/O beyond the opt-in cache).",
+          "format": "filepath",
+          "name": "ZIPNATIVE_MCP_OUTPUT_DIR"
+        },
+        {
+          "description": "Opt-in content-addressed response cache directory (SHA-256 keyed, 1h TTL, 256 MiB LRU, plaintext at rest). Never caches zipPath / sourcePath inputs, file output, defaultDate='now', parallel, describe_engine or draft_governance_issue.",
+          "format": "filepath",
+          "name": "ZIPNATIVE_MCP_CACHE_DIR"
+        },
+        {
+          "description": "Serve Streamable HTTP on this loopback port (POST /mcp) instead of stdio (MCP 2026-07-28, stateless, legacy fallback). Unauthenticated unless ZIPNATIVE_MCP_HTTP_TOKEN is set.",
+          "format": "number",
+          "name": "ZIPNATIVE_MCP_PORT"
+        },
+        {
+          "description": "Opt-in bearer token for the HTTP transport (>= 16 chars, no whitespace; a weaker value refuses to start). When set, /mcp requires 'Authorization: Bearer <token>' or answers 401. Compared constant-time, never logged.",
+          "isSecret": true,
+          "name": "ZIPNATIVE_MCP_HTTP_TOKEN"
+        },
+        {
+          "description": "Operator ceiling for limits.maxEntryUncompressedSize and limits.maxTotalUncompressedSize in bytes (default 8589934592 = 8 GiB, the engine default). Integer >= 1024, read once at startup; an invalid value refuses to start. A per-call value above it is refused with LIMIT_CEILING_EXCEEDED.",
+          "format": "number",
+          "name": "ZIPNATIVE_MCP_MAX_UNCOMPRESSED_BYTES"
+        },
+        {
+          "description": "Operator ceiling for limits.maxEntries and scan_zip_forward maxEntries (default 100000, the engine default; the scanner's default budget of 10000 is clamped to it, only an explicit value above it is refused). Integer >= 1, read once at startup; an invalid value refuses to start.",
+          "format": "number",
+          "name": "ZIPNATIVE_MCP_MAX_ENTRIES"
+        },
+        {
+          "description": "Operator ceiling for create_zip parallel.workers (default 8; with no explicit workers the engine default max(1, min(cores - 1, 8)) applies, bounded by this ceiling; 0 disables worker threads and keeps compression on the calling thread). Integer >= 0, read once at startup; an invalid value refuses to start.",
+          "format": "number",
+          "name": "ZIPNATIVE_MCP_WORKERS"
+        }
+      ],
+      "identifier": "zipnative-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "-y",
+          "valueHint": "skip-confirm"
+        },
+        {
+          "type": "positional",
+          "value": "zipnative-mcp",
+          "valueHint": "package"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b1955352ad",
+    "published_at": "2026-09-07T18:33:44.962196Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Nizoka/zipnative-mcp",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-07T18:33:44.962196Z"
+  },
+  "title": "zipnative MCP \u2014 ZIP creation, inspection, secure extraction & verification",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

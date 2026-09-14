@@ -1,0 +1,93 @@
+{
+  "description": "x402 HTTP 402 + MCP paywall: charge USDC per agent call. Self-host via npx or Docker.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:46+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-kevin2003050666-coder-x402-micro-tollgate.stdio.0ac8f41d9c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/kevin2003050666-coder/x402-micro-tollgate",
+    "homepage": "https://github.com/kevin2003050666-coder/x402-micro-tollgate",
+    "repository": "https://github.com/kevin2003050666-coder/x402-micro-tollgate"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "x402-micro-tollgate@0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.kevin2003050666-coder/x402-micro-tollgate",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Coinbase CDP API key ID for the x402 facilitator",
+          "isSecret": true,
+          "name": "CDP_API_KEY_ID"
+        },
+        {
+          "description": "Coinbase CDP API key secret for the x402 facilitator",
+          "isSecret": true,
+          "name": "CDP_API_KEY_SECRET"
+        },
+        {
+          "description": "EVM address that receives USDC settlements",
+          "name": "X402_PAY_TO"
+        },
+        {
+          "description": "Upstream HTTP API to proxy after payment (omit for built-in mock)",
+          "name": "UPSTREAM_URL"
+        },
+        {
+          "default": "$0.001",
+          "description": "Dollar price per paid call, e.g. $0.001",
+          "name": "PRICE"
+        },
+        {
+          "default": "eip155:84532",
+          "description": "CAIP-2 network id (eip155:84532 Base Sepolia or eip155:8453 Base)",
+          "name": "NETWORK"
+        },
+        {
+          "default": "development",
+          "description": "development or production",
+          "name": "X402_ENVIRONMENT"
+        }
+      ],
+      "identifier": "x402-micro-tollgate",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "--stdio"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0ac8f41d9c",
+    "published_at": "2026-09-02T05:41:36.121692Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.kevin2003050666-coder/x402-micro-tollgate",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-02T05:41:36.121692Z"
+  },
+  "title": "x402 Micro Tollgate",
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

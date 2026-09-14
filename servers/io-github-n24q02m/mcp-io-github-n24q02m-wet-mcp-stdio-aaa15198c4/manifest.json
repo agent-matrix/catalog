@@ -1,0 +1,64 @@
+{
+  "description": "Open-source MCP server for AI agents: web search, content extraction, and library docs.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:59+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-n24q02m-wet-mcp.stdio.aaa15198c4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/n24q02m/wet.git",
+    "homepage": "https://github.com/n24q02m/wet.git",
+    "repository": "https://github.com/n24q02m/wet.git"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "wet-mcp==3.14.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.n24q02m/wet-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Provider API keys (format: PROVIDER_API_KEY:key,...). Select models per task with EMBEDDING_MODELS / RERANK_MODELS / LLM_MODELS (CSV provider/model, order = litellm fallback); provider is inferred from the model prefix. Empty embedding/rerank chain falls back to fastretrieval's built-in local reference model.",
+          "isSecret": true,
+          "name": "API_KEYS"
+        },
+        {
+          "description": "GitHub personal access token for higher rate limits on library discovery",
+          "isSecret": true,
+          "name": "GITHUB_TOKEN"
+        }
+      ],
+      "identifier": "wet-mcp",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "3.14.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "aaa15198c4",
+    "published_at": "2026-09-14T04:47:52.742701Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.n24q02m/wet-mcp",
+    "server_version": "3.14.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-14T04:47:52.742701Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "3.14.6"
+}

@@ -1,0 +1,72 @@
+{
+  "description": "List, create, update, and delete events in Apple Calendar on macOS.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-JonathanRReed-apple-calendar-mcp.stdio.549889940b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/JonathanRReed/Apple-MCPs",
+    "homepage": "https://github.com/JonathanRReed/Apple-MCPs",
+    "repository": "https://github.com/JonathanRReed/Apple-MCPs"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "apple-calendar-mcp==1.0.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.JonathanRReed/apple-calendar-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "choices": [
+            "safe_readonly",
+            "safe_manage",
+            "full_access"
+          ],
+          "default": "safe_manage",
+          "description": "Safety mode for Calendar operations: safe_readonly, safe_manage, or full_access.",
+          "format": "string",
+          "name": "APPLE_CALENDAR_MCP_SAFETY_MODE"
+        },
+        {
+          "description": "Comma-separated allow-list of calendar names. Empty allows all calendars.",
+          "format": "string",
+          "name": "APPLE_CALENDAR_MCP_ALLOWED_CALENDARS",
+          "placeholder": "Work,Personal"
+        }
+      ],
+      "identifier": "apple-calendar-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "549889940b",
+    "published_at": "2026-09-04T20:28:21.975672Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.JonathanRReed/apple-calendar-mcp",
+    "server_version": "1.0.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-04T20:28:21.975672Z"
+  },
+  "title": "Apple Calendar",
+  "type": "mcp_server",
+  "version": "1.0.4"
+}

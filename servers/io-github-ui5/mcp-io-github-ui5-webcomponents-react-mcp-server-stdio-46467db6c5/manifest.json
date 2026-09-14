@@ -1,7 +1,7 @@
 {
   "description": "MCP server for UI5 Web Components for React - Developer documentation and API assistance",
   "harvest": {
-    "last_seen_at": "2026-08-31T08:39:19+00:00",
+    "last_seen_at": "2026-09-14T07:54:07+00:00",
     "seen_in_latest_run": true
   },
   "id": "mcp.io-github-UI5-webcomponents-react-mcp-server.stdio.46467db6c5",
@@ -18,6 +18,27 @@
       "exec": {
         "cmd": [
           "npx",
+          {
+            "description": "Serve over the Streamable HTTP transport instead of stdio.",
+            "name": "--http",
+            "type": "named"
+          },
+          {
+            "default": "7427",
+            "description": "Port the local HTTP server listens on.",
+            "format": "number",
+            "name": "--port",
+            "type": "named",
+            "value": "{port}",
+            "valueHint": "port",
+            "variables": {
+              "port": {
+                "default": "7427",
+                "description": "Port the local HTTP server listens on.",
+                "format": "number"
+              }
+            }
+          },
           "@ui5/webcomponents-react-mcp@2.25.1"
         ],
         "env": {}
@@ -30,22 +51,47 @@
     {
       "identifier": "@ui5/webcomponents-react-mcp",
       "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "description": "Serve over the Streamable HTTP transport instead of stdio.",
+          "name": "--http",
+          "type": "named"
+        },
+        {
+          "default": "7427",
+          "description": "Port the local HTTP server listens on.",
+          "format": "number",
+          "name": "--port",
+          "type": "named",
+          "value": "{port}",
+          "valueHint": "port",
+          "variables": {
+            "port": {
+              "default": "7427",
+              "description": "Port the local HTTP server listens on.",
+              "format": "number"
+            }
+          }
+        }
+      ],
+      "runtimeHint": "npx",
       "transport": {
-        "type": "stdio"
+        "type": "streamable-http",
+        "url": "http://localhost:{port}/mcp"
       },
       "version": "2.25.1"
     }
   ],
   "provenance": {
     "identity_key": "46467db6c5",
-    "published_at": "2026-08-17T13:41:50.539766Z",
+    "published_at": "2026-09-11T13:43:30.672626Z",
     "registry_base_url": "https://registry.modelcontextprotocol.io",
     "server_name": "io.github.UI5/webcomponents-react-mcp-server",
-    "server_version": "2.25.1",
+    "server_version": "2.26.1",
     "source": "mcp-registry",
-    "updated_at": "2026-08-17T13:41:50.539766Z"
+    "updated_at": "2026-09-11T13:43:30.672626Z"
   },
   "title": null,
   "type": "mcp_server",
-  "version": "2.25.1"
+  "version": "2.26.1"
 }

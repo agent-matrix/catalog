@@ -1,0 +1,63 @@
+{
+  "description": "Commerce preflights, D365 authorization, signed evidence, and reports; no marketplace or ERP writes.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:18+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-decionis-commerce-gate.stdio.7a8ff338c2",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@decionis/commerce@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.decionis/commerce-gate",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Decionis API key. Required for ERP guard, Protocol evaluation, and evidence calls.",
+          "isSecret": true,
+          "name": "DECIONIS_API_KEY"
+        },
+        {
+          "description": "Organization UUID that binds Protocol evaluation and evidence calls. The ERP guard instead authenticates request.tenant_id with the configured API key.",
+          "name": "DECIONIS_ORG_ID"
+        },
+        {
+          "description": "Optional Decionis API origin. Defaults to https://api.decionis.com.",
+          "name": "DECIONIS_API_BASE"
+        }
+      ],
+      "identifier": "@decionis/commerce",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7a8ff338c2",
+    "published_at": "2026-09-09T23:53:04.751421Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.decionis/commerce-gate",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-09T23:53:04.751421Z"
+  },
+  "title": "Decionis CommerceGate MCP",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

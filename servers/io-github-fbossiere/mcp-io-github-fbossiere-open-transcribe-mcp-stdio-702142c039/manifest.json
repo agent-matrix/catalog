@@ -1,0 +1,108 @@
+{
+  "description": "Provider-independent speech-to-text with normalized transcripts over MCP.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:35+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-fbossiere-open-transcribe-mcp.stdio.702142c039",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/fbossiere/open-transcribe-mcp",
+    "homepage": "https://github.com/fbossiere/open-transcribe-mcp",
+    "repository": "https://github.com/fbossiere/open-transcribe-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "open-transcribe-mcp==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.fbossiere/open-transcribe-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Loopback address used by the locally installed server.",
+          "name": "OT_HOST",
+          "value": "127.0.0.1"
+        },
+        {
+          "default": "8000",
+          "description": "Port used by the locally installed Streamable HTTP server.",
+          "name": "OT_PORT"
+        },
+        {
+          "description": "A strong, random token shared with the local MCP client.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OT_SECURITY__BEARER_TOKEN"
+        },
+        {
+          "description": "Optional Microsoft Speech resource endpoint.",
+          "name": "OT_MICROSOFT__ENDPOINT",
+          "placeholder": "https://YOUR-RESOURCE.cognitiveservices.azure.com"
+        },
+        {
+          "description": "Optional Microsoft Speech API key.",
+          "isSecret": true,
+          "name": "OT_MICROSOFT__API_KEY"
+        },
+        {
+          "description": "Optional ElevenLabs API key.",
+          "isSecret": true,
+          "name": "OT_ELEVENLABS__API_KEY"
+        },
+        {
+          "description": "Optional Groq API key.",
+          "isSecret": true,
+          "name": "OT_GROQ__API_KEY"
+        }
+      ],
+      "identifier": "open-transcribe-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "headers": [
+          {
+            "description": "Bearer token configured for the local OpenTranscribe server.",
+            "isRequired": true,
+            "isSecret": true,
+            "name": "Authorization",
+            "value": "Bearer {OT_SECURITY__BEARER_TOKEN}",
+            "variables": {
+              "OT_SECURITY__BEARER_TOKEN": {
+                "description": "A strong, random token shared with the local MCP client.",
+                "isRequired": true,
+                "isSecret": true
+              }
+            }
+          }
+        ],
+        "type": "streamable-http",
+        "url": "http://127.0.0.1:{OT_PORT}/mcp"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "702142c039",
+    "published_at": "2026-09-06T12:10:39.643331Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.fbossiere/open-transcribe-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-06T12:10:39.643331Z"
+  },
+  "title": "OpenTranscribe MCP",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

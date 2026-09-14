@@ -1,0 +1,106 @@
+{
+  "description": "Stop shipping agents on vibes. Score every agent output for quality, safety, and cost.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-iris-eval-mcp-server.stdio.024d7220af",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/iris-eval/mcp-server",
+    "homepage": "https://github.com/iris-eval/mcp-server",
+    "repository": "https://github.com/iris-eval/mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@iris-eval/mcp-server@0.8.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.iris-eval/mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API key for HTTP authentication (optional, recommended for production)",
+          "format": "string",
+          "isSecret": true,
+          "name": "IRIS_API_KEY"
+        },
+        {
+          "description": "SQLite database path",
+          "format": "string",
+          "name": "IRIS_DB_PATH"
+        },
+        {
+          "description": "Log level: debug, info, warn, error",
+          "format": "string",
+          "name": "IRIS_LOG_LEVEL"
+        },
+        {
+          "description": "Directory for the database, custom rules and preferences (default ~/.iris)",
+          "format": "string",
+          "name": "IRIS_HOME"
+        },
+        {
+          "description": "Enables evaluate_with_llm_judge and verify_citations with an Anthropic model. Optional: the deterministic rules never need a key",
+          "format": "string",
+          "isSecret": true,
+          "name": "IRIS_ANTHROPIC_API_KEY"
+        },
+        {
+          "description": "Enables evaluate_with_llm_judge and verify_citations with an OpenAI model. Optional: the deterministic rules never need a key",
+          "format": "string",
+          "isSecret": true,
+          "name": "IRIS_OPENAI_API_KEY"
+        },
+        {
+          "description": "Hard cap on the worst-case cost of one judge or citation call (default 0.25)",
+          "format": "string",
+          "name": "IRIS_LLM_JUDGE_MAX_COST_USD_PER_EVAL"
+        },
+        {
+          "description": "Let verify_citations fetch URLs (off by default)",
+          "format": "boolean",
+          "name": "IRIS_CITATION_ALLOW_FETCH"
+        },
+        {
+          "description": "Start the dashboard alongside the server (same as --dashboard)",
+          "format": "boolean",
+          "name": "IRIS_DASHBOARD"
+        },
+        {
+          "description": "Dashboard port (default 6920); IRIS_PORT is the MCP HTTP transport port (default 3000)",
+          "format": "number",
+          "name": "IRIS_DASHBOARD_PORT"
+        }
+      ],
+      "identifier": "@iris-eval/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.8.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "024d7220af",
+    "published_at": "2026-09-04T23:01:23.73116Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.iris-eval/mcp-server",
+    "server_version": "0.8.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-04T23:01:23.73116Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.8.1"
+}

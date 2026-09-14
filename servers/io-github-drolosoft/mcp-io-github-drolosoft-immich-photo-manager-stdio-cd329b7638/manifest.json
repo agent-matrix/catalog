@@ -1,0 +1,107 @@
+{
+  "description": "Photo management for self-hosted Immich: search, albums, duplicates, faces, PDF reports. 94 tools.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-drolosoft-immich-photo-manager.stdio.cd329b7638",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/drolosoft/immich-photo-manager",
+    "homepage": "https://github.com/drolosoft/immich-photo-manager",
+    "repository": "https://github.com/drolosoft/immich-photo-manager"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Publish the MCP port; the server listens on 8626 inside the container",
+            "isRequired": true,
+            "name": "-p",
+            "type": "named",
+            "value": "8626:8626"
+          },
+          {
+            "description": "Directory on the host for the PDFs and zips the tools write, and for credentials set from the client",
+            "name": "-v",
+            "type": "named",
+            "value": "{exports_dir}:/data",
+            "variables": {
+              "exports_dir": {
+                "description": "Host directory to mount on /data",
+                "format": "filepath"
+              }
+            }
+          },
+          "ghcr.io/drolosoft/immich-photo-manager:2.0.11"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.drolosoft/immich-photo-manager",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "URL of your Immich server. Optional at start: without it every tool answers with the fix and one update_credentials call connects the container.",
+          "name": "IMMICH_BASE_URL"
+        },
+        {
+          "description": "Immich API key",
+          "isSecret": true,
+          "name": "IMMICH_API_KEY"
+        },
+        {
+          "description": "Extra hostnames the container may be reached under (a reverse proxy, another container). DNS-rebinding protection stays on.",
+          "name": "MCP_ALLOWED_HOSTS"
+        }
+      ],
+      "identifier": "ghcr.io/drolosoft/immich-photo-manager:2.0.11",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "Publish the MCP port; the server listens on 8626 inside the container",
+          "isRequired": true,
+          "name": "-p",
+          "type": "named",
+          "value": "8626:8626"
+        },
+        {
+          "description": "Directory on the host for the PDFs and zips the tools write, and for credentials set from the client",
+          "name": "-v",
+          "type": "named",
+          "value": "{exports_dir}:/data",
+          "variables": {
+            "exports_dir": {
+              "description": "Host directory to mount on /data",
+              "format": "filepath"
+            }
+          }
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:8626/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "cd329b7638",
+    "published_at": "2026-09-03T22:23:48.772652Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.drolosoft/immich-photo-manager",
+    "server_version": "2.0.11",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-03T22:23:48.772652Z"
+  },
+  "title": "Immich Photo Manager",
+  "type": "mcp_server",
+  "version": "2.0.11"
+}

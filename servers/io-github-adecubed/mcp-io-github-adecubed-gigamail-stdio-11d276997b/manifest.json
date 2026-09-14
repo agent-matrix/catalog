@@ -1,0 +1,91 @@
+{
+  "description": "Your real mailbox and calendar for your agent (M365/IMAP); a human approves every send.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-adecubed-gigamail.stdio.11d276997b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/adecubed/gigamail",
+    "homepage": "https://github.com/adecubed/gigamail",
+    "repository": "https://github.com/adecubed/gigamail"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "type": "positional",
+            "value": "--from",
+            "valueHint": "--from"
+          },
+          {
+            "type": "positional",
+            "value": "gigamail[all]==0.3.1",
+            "valueHint": "gigamail[all]==0.3.1"
+          },
+          {
+            "type": "positional",
+            "value": "gigamail-server",
+            "valueHint": "gigamail-server"
+          },
+          "gigamail==0.3.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.adecubed/gigamail",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Data directory (Windows: %APPDATA%\\ADE, POSIX: ~/.ade). Optional; declare it if your MCP client filters the subprocess environment.",
+          "name": "GIGAMAIL_ROOT"
+        }
+      ],
+      "identifier": "gigamail",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "type": "positional",
+          "value": "--from",
+          "valueHint": "--from"
+        },
+        {
+          "type": "positional",
+          "value": "gigamail[all]==0.3.1",
+          "valueHint": "gigamail[all]==0.3.1"
+        },
+        {
+          "type": "positional",
+          "value": "gigamail-server",
+          "valueHint": "gigamail-server"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "11d276997b",
+    "published_at": "2026-09-08T09:43:39.415593Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.adecubed/gigamail",
+    "server_version": "0.3.1-1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-08T09:43:39.415593Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.1-1"
+}

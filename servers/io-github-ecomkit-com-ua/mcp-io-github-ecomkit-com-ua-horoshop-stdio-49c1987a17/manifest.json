@@ -1,0 +1,95 @@
+{
+  "description": "MCP server for the Horoshop e-commerce API \u2014 orders, catalog, customers, webhooks",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:34+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ecomkit-com-ua-horoshop.stdio.49c1987a17",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ecomkit-com-ua/horoshop-mcp",
+    "homepage": "https://github.com/ecomkit-com-ua/horoshop-mcp",
+    "repository": "https://github.com/ecomkit-com-ua/horoshop-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "horoshop-mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ecomkit-com-ua/horoshop",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Store domain, e.g. myshop.com.ua (with or without https://)",
+          "format": "string",
+          "isRequired": true,
+          "name": "HOROSHOP_DOMAIN"
+        },
+        {
+          "description": "Login of a dedicated admin account created in the Horoshop panel (\u041d\u0430\u043b\u0430\u0448\u0442\u0443\u0432\u0430\u043d\u043d\u044f \u2192 \u0410\u0434\u043c\u0456\u043d\u0438)",
+          "format": "string",
+          "isRequired": true,
+          "name": "HOROSHOP_LOGIN"
+        },
+        {
+          "description": "Password of that admin account. Horoshop has no API keys, so admin credentials are used",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "HOROSHOP_PASSWORD"
+        },
+        {
+          "description": "Set to 1 to hide every tool that writes to the store. Recommended for a first run",
+          "format": "boolean",
+          "name": "HOROSHOP_READONLY"
+        },
+        {
+          "default": "60000",
+          "description": "Request timeout in milliseconds",
+          "format": "number",
+          "name": "HOROSHOP_TIMEOUT_MS"
+        },
+        {
+          "default": "100000",
+          "description": "Cap on a single tool response; larger exports are truncated with a note",
+          "format": "number",
+          "name": "HOROSHOP_MAX_RESPONSE_BYTES"
+        },
+        {
+          "description": "Set to 1 to use plain http instead of https (dev stores only)",
+          "format": "boolean",
+          "name": "HOROSHOP_INSECURE_HTTP"
+        }
+      ],
+      "identifier": "horoshop-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "49c1987a17",
+    "published_at": "2026-09-03T11:47:44.684815Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ecomkit-com-ua/horoshop",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-03T11:47:44.684815Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

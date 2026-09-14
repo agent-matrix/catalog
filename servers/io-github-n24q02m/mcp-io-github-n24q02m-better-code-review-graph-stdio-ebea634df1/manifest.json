@@ -1,0 +1,112 @@
+{
+  "description": "Token-efficient code review knowledge graph: semantic search and call-graph resolution.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:57+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-n24q02m-better-code-review-graph.stdio.ebea634df1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/n24q02m/better-code-review-graph.git",
+    "homepage": "https://github.com/n24q02m/better-code-review-graph.git",
+    "repository": "https://github.com/n24q02m/better-code-review-graph.git"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "better-code-review-graph==3.25.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.n24q02m/better-code-review-graph",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Embedding models in selection order; the current runtime uses the first provider/model entry; empty = local ONNX",
+          "name": "EMBEDDING_MODELS"
+        },
+        {
+          "description": "Built-in fastretrieval model ID or local directory with fastretrieval-manifest.json",
+          "name": "LOCAL_EMBEDDING_MODEL"
+        },
+        {
+          "description": "Fastretrieval TextCrossEncoder model ID; empty = reranking disabled",
+          "name": "LOCAL_RERANK_MODEL"
+        },
+        {
+          "description": "Required positive output dimension for an external local embedding ID without a manifest",
+          "name": "LOCAL_EMBEDDING_DIM"
+        },
+        {
+          "description": "ONNX file path inside a manifest-backed local embedding directory",
+          "name": "LOCAL_EMBEDDING_MODEL_FILE"
+        },
+        {
+          "description": "Explicit pooling for an external local embedding ID without a manifest",
+          "name": "LOCAL_EMBEDDING_POOLING"
+        },
+        {
+          "description": "Explicit L2 normalization for an external local embedding ID without a manifest",
+          "name": "LOCAL_EMBEDDING_NORMALIZE"
+        },
+        {
+          "description": "Summarizer model selection; first provider/model entry only, no fallback; empty = disabled",
+          "name": "SUMMARY_MODELS"
+        },
+        {
+          "description": "Credential for explicitly selected Cohere embeddings, including a configured CF AI Gateway route",
+          "isSecret": true,
+          "name": "COHERE_API_KEY"
+        },
+        {
+          "description": "Credential for explicitly selected OpenRouter completion models",
+          "isSecret": true,
+          "name": "OPENROUTER_API_KEY"
+        },
+        {
+          "description": "DEPRECATED (honored one release): embedding backend override 'local' or 'cloud'. Use EMBEDDING_MODELS instead.",
+          "name": "EMBEDDING_BACKEND"
+        },
+        {
+          "description": "Provider-compatible cloud embedding endpoint, including CF AI Gateway; SSRF-guarded.",
+          "name": "EMBEDDING_API_BASE"
+        },
+        {
+          "description": "Provider-compatible summarizer base URL, including CF AI Gateway; SSRF-guarded.",
+          "name": "LLM_API_BASE"
+        },
+        {
+          "description": "DEPRECATED (honored one release): single summarizer model as a litellm 'provider/model' string. Use SUMMARY_MODELS instead.",
+          "name": "SUMMARY_MODEL"
+        }
+      ],
+      "identifier": "better-code-review-graph",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "3.25.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ebea634df1",
+    "published_at": "2026-09-11T22:10:53.989976Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.n24q02m/better-code-review-graph",
+    "server_version": "3.25.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-11T22:10:53.989976Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "3.25.1"
+}

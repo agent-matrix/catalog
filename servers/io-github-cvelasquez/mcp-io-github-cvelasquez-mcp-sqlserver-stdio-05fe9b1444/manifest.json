@@ -1,0 +1,65 @@
+{
+  "description": "MCP server for DBAs running dozens of SQL Server instances: grouped connections, plans, indexes",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:24+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cvelasquez-mcp-sqlserver.stdio.05fe9b1444",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cvelasquez/mcp-sqlserver",
+    "homepage": "https://github.com/cvelasquez/mcp-sqlserver",
+    "repository": "https://github.com/cvelasquez/mcp-sqlserver"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@cevelas/mcp-sqlserver@3.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cvelasquez/mcp-sqlserver",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to connections.json. Defaults to ~/.mcp-sqlserver/connections.json; create one with --init.",
+          "format": "filepath",
+          "name": "MSSQL_MCP_CONNECTIONS"
+        },
+        {
+          "description": "The connections JSON inline, for setups that keep credentials out of the filesystem.",
+          "format": "string",
+          "isSecret": true,
+          "name": "MSSQL_MCP_CONNECTIONS_JSON"
+        }
+      ],
+      "identifier": "@cevelas/mcp-sqlserver",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "3.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "05fe9b1444",
+    "published_at": "2026-09-10T15:33:56.329944Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cvelasquez/mcp-sqlserver",
+    "server_version": "3.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-10T15:33:56.329944Z"
+  },
+  "title": "SQL Server MCP",
+  "type": "mcp_server",
+  "version": "3.0.0"
+}

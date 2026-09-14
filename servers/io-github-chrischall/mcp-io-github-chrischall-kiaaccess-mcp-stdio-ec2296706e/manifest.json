@@ -1,0 +1,76 @@
+{
+  "description": "Kia Access for Claude \u2014 vehicle status, location, doors, climate, and charging",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-chrischall-kiaaccess-mcp.stdio.ec2296706e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/chrischall/kiaaccess-mcp",
+    "homepage": "https://github.com/chrischall/kiaaccess-mcp",
+    "repository": "https://github.com/chrischall/kiaaccess-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "kiaaccess-mcp@0.8.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.chrischall/kiaaccess-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your Kia Owners Portal / Kia Access account email address.",
+          "format": "string",
+          "isRequired": true,
+          "name": "KIA_USERNAME"
+        },
+        {
+          "description": "Your Kia Owners Portal / Kia Access account password.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "KIA_PASSWORD"
+        },
+        {
+          "description": "Write-tool gate: \"none\" registers no vehicle commands; \"comfort\" registers climate and charging only; \"all\" adds door lock/unlock (default \"comfort\"). Unrecognized values fail closed to \"none\".",
+          "format": "string",
+          "name": "KIA_WRITE_MODE"
+        },
+        {
+          "description": "Optional stable device UUID used for the app login handshake. Generated and cached under ~/.kiaaccess-mcp/ when omitted.",
+          "format": "string",
+          "name": "KIA_DEVICE_ID"
+        }
+      ],
+      "identifier": "kiaaccess-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.8.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ec2296706e",
+    "published_at": "2026-09-10T17:50:07.266299Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.chrischall/kiaaccess-mcp",
+    "server_version": "0.8.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-10T17:50:07.266299Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.8.1"
+}

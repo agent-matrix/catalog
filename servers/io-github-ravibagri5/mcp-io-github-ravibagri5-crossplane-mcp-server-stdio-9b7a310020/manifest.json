@@ -1,0 +1,80 @@
+{
+  "description": "Read-only access to a Crossplane control plane: resources, claims, packages, compositions.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ravibagri5-crossplane-mcp-server.stdio.9b7a310020",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ravibagri5/crossplane-mcp-server",
+    "homepage": "https://github.com/ravibagri5/crossplane-mcp-server",
+    "repository": "https://github.com/ravibagri5/crossplane-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Mount your kubeconfig directory into the container",
+            "isRequired": true,
+            "name": "-v",
+            "type": "named",
+            "value": "{kubeconfig_path}:/home/nonroot/.kube:ro",
+            "variables": {
+              "kubeconfig_path": {
+                "default": "${HOME}/.kube",
+                "description": "Absolute path to your .kube directory",
+                "isRequired": true
+              }
+            }
+          },
+          "ghcr.io/ravibagri5/crossplane-mcp-server:0.1.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ravibagri5/crossplane-mcp-server",
+  "packages": [
+    {
+      "identifier": "ghcr.io/ravibagri5/crossplane-mcp-server:0.1.5",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "Mount your kubeconfig directory into the container",
+          "isRequired": true,
+          "name": "-v",
+          "type": "named",
+          "value": "{kubeconfig_path}:/home/nonroot/.kube:ro",
+          "variables": {
+            "kubeconfig_path": {
+              "default": "${HOME}/.kube",
+              "description": "Absolute path to your .kube directory",
+              "isRequired": true
+            }
+          }
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "9b7a310020",
+    "published_at": "2026-09-12T19:38:23.350991Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ravibagri5/crossplane-mcp-server",
+    "server_version": "0.1.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-12T19:38:23.350991Z"
+  },
+  "title": "Crossplane",
+  "type": "mcp_server",
+  "version": "0.1.5"
+}

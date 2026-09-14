@@ -1,0 +1,103 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/partymola/ticktick-mcp:v0.4.1"
+      }
+    }
+  ],
+  "description": "MCP server for TickTick task management: field-preserving updates and completion tracking.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:04+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/partymola/ticktick-mcp",
+  "id": "tool.io-github-partymola-ticktick-mcp.50561adef1",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/partymola/ticktick-mcp",
+    "homepage": "https://github.com/partymola/ticktick-mcp",
+    "repository": "https://github.com/partymola/ticktick-mcp"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "MCP server for TickTick task management: field-preserving updates and completion tracking.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.partymola/ticktick-mcp",
+      "request_type": "POST",
+      "url": "https://github.com/partymola/ticktick-mcp"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "isRequired": true,
+            "name": "--user",
+            "type": "named",
+            "value": "{uid_gid}",
+            "variables": {
+              "uid_gid": {
+                "description": "Your own user and group id, as `uid:gid` (run `id -u`:`id -g`). The container runs as root otherwise, and anything it writes into the mounted directory becomes root-owned - after which a host-side `ticktick-mcp` can no longer update its session-token cache and falls back to a signon TickTick throttles.",
+                "isRequired": true,
+                "placeholder": "1000:1000"
+              }
+            }
+          },
+          {
+            "isRequired": true,
+            "name": "-v",
+            "type": "named",
+            "value": "{data_volume}:/data",
+            "variables": {
+              "data_volume": {
+                "description": "Absolute path to the host directory of an ALREADY AUTHORISED setup - it must already hold the cached OAuth token written by running `ticktick-mcp auth` in a terminal. Not an empty volume and not a relative path: the OAuth step cannot run inside the container, and a container without a cached token reads standard input, which is the JSON-RPC channel. Also holds the .env, the v2 session token and the completion-tracking database.",
+                "format": "filepath",
+                "isRequired": true,
+                "placeholder": "/home/you/.config/ticktick-mcp"
+              }
+            }
+          },
+          "ghcr.io/partymola/ticktick-mcp:v0.4.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.partymola/ticktick-mcp",
+  "provenance": {
+    "identity_key": "34871191c5",
+    "promoted_from": "mcp.io-github-partymola-ticktick-mcp.stdio.34871191c5",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.partymola/ticktick-mcp",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-partymola-ticktick-mcp.stdio.34871191c5",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/partymola/ticktick-mcp",
+  "summary": "MCP server for TickTick task management: field-preserving updates and completion tracking.",
+  "tags": [
+    "completion",
+    "field",
+    "management",
+    "preserving",
+    "task",
+    "ticktick",
+    "updates"
+  ],
+  "title": "Ticktick Mcp",
+  "type": "tool",
+  "version": "0.4.1"
+}

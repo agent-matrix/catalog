@@ -1,0 +1,90 @@
+{
+  "description": "MCP server for MikroTik routers: firewall, NAT, routing, DHCP, DNS, WireGuard and more via SSH.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:43+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-jeff-nasseri-mikrotik-mcp.stdio.b800321e83",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jeff-nasseri/mikrotik-mcp",
+    "homepage": "https://github.com/jeff-nasseri/mikrotik-mcp",
+    "repository": "https://github.com/jeff-nasseri/mikrotik-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-server-mikrotik==0.15.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.jeff-nasseri/mikrotik-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "IP address or hostname of the MikroTik router (single-device mode; default: 127.0.0.1). Not needed when an inventory is configured.",
+          "format": "string",
+          "name": "MIKROTIK_HOST"
+        },
+        {
+          "description": "SSH username for the MikroTik router (single-device mode; default: admin)",
+          "format": "string",
+          "name": "MIKROTIK_USERNAME"
+        },
+        {
+          "description": "SSH password for the MikroTik router (single-device mode)",
+          "format": "string",
+          "isSecret": true,
+          "name": "MIKROTIK_PASSWORD"
+        },
+        {
+          "description": "SSH port of the MikroTik router (single-device mode; default: 22)",
+          "format": "string",
+          "name": "MIKROTIK_PORT"
+        },
+        {
+          "description": "Path to SSH private key file for key-based authentication (single-device mode)",
+          "format": "string",
+          "name": "MIKROTIK_KEY_FILENAME"
+        },
+        {
+          "description": "Path to a YAML file listing multiple MikroTik devices (title, host, port, username, password, key_filename, tags, region). See docs/reference/inventory.",
+          "format": "string",
+          "name": "MIKROTIK_INVENTORY_FILE"
+        },
+        {
+          "description": "Inline multi-device inventory as a YAML (or JSON) list; takes precedence over MIKROTIK_INVENTORY_FILE and the single-device variables. Holds credentials.",
+          "format": "string",
+          "isSecret": true,
+          "name": "MIKROTIK_INVENTORY"
+        }
+      ],
+      "identifier": "mcp-server-mikrotik",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.15.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b800321e83",
+    "published_at": "2026-09-01T20:05:53.556634Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.jeff-nasseri/mikrotik-mcp",
+    "server_version": "0.15.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-01T20:05:53.556634Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.15.0.0"
+}

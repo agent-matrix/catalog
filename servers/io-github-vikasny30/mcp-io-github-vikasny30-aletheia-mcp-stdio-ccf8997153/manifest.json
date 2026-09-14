@@ -1,0 +1,94 @@
+{
+  "description": "Deterministic pre-execution filter that blocks known scope-creep and prompt-injection tool calls",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-vikasny30-aletheia-mcp.stdio.ccf8997153",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/vikasny30/aletheia-mcp",
+    "homepage": "https://github.com/vikasny30/aletheia-mcp",
+    "repository": "https://github.com/vikasny30/aletheia-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "aletheia-mcp@0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.vikasny30/aletheia-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Set to \"true\" to authorize filesystem writes (equivalent to --allow-write).",
+          "name": "ALETHEIA_ALLOW_WRITE"
+        },
+        {
+          "description": "Set to \"true\" to authorize outbound network requests (equivalent to --allow-network).",
+          "name": "ALETHEIA_ALLOW_NETWORK"
+        },
+        {
+          "description": "Set to \"true\" to authorize requests to localhost / 127.0.0.1 (equivalent to --allow-loopback).",
+          "name": "ALETHEIA_ALLOW_LOOPBACK"
+        },
+        {
+          "description": "Operator token required to loosen an already-running session's mandate at runtime.",
+          "isSecret": true,
+          "name": "ALETHEIA_OPERATOR_SECRET"
+        }
+      ],
+      "identifier": "aletheia-mcp",
+      "packageArguments": [
+        {
+          "description": "Authorize filesystem writes and mutations (default: read-only).",
+          "name": "--allow-write",
+          "type": "named"
+        },
+        {
+          "description": "Authorize outbound network requests (default: local-only).",
+          "name": "--allow-network",
+          "type": "named"
+        },
+        {
+          "description": "Authorize requests to localhost / 127.0.0.1 dev servers (default: blocked).",
+          "name": "--allow-loopback",
+          "type": "named"
+        },
+        {
+          "description": "Comma-separated list of directories writes are confined to (default: current working directory).",
+          "format": "filepath",
+          "name": "--allowed-paths",
+          "type": "named"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ccf8997153",
+    "published_at": "2026-09-06T13:05:53.412023Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.vikasny30/aletheia-mcp",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-06T13:05:53.412023Z"
+  },
+  "title": "Aletheia Runtime Safety & Scope Creep Filter",
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

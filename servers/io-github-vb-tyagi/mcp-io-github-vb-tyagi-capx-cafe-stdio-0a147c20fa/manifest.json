@@ -1,0 +1,77 @@
+{
+  "description": "Agent-native X (Twitter) posting as one MCP server; every post clears a server-side guardrail.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-vb-tyagi-capx-cafe.stdio.0a147c20fa",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/vb-tyagi/capx-cafe",
+    "homepage": "https://github.com/vb-tyagi/capx-cafe",
+    "repository": "https://github.com/vb-tyagi/capx-cafe"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "capx-cafe@0.1.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.vb-tyagi/capx-cafe",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "URL of the hosted capx chokepoint that enforces the server-side guardrail on every post",
+          "isRequired": true,
+          "name": "CAPX_CHOKEPOINT_URL"
+        },
+        {
+          "description": "Whitelisted user email used to authenticate to the chokepoint",
+          "isRequired": true,
+          "name": "CAPX_EMAIL"
+        },
+        {
+          "choices": [
+            "byo",
+            "capx-app"
+          ],
+          "description": "Connection lane: 'byo' (bring your own X app) or 'capx-app' (capx-managed app)",
+          "name": "CAPX_LANE"
+        },
+        {
+          "description": "X (Twitter) OAuth client ID; required only on the BYO lane",
+          "name": "X_CLIENT_ID"
+        }
+      ],
+      "identifier": "capx-cafe",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0a147c20fa",
+    "published_at": "2026-09-03T10:27:44.732096Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.vb-tyagi/capx-cafe",
+    "server_version": "0.1.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-03T10:27:44.732096Z"
+  },
+  "title": "capx caf\u00e9",
+  "type": "mcp_server",
+  "version": "0.1.3"
+}

@@ -1,0 +1,69 @@
+{
+  "description": "Structural code intelligence over MCP: symbols, callers, imports and blast radius, 40+ languages.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:56+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-munhq-codeindex.stdio.fa45912530",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/munhq/codeindex",
+    "homepage": "https://github.com/munhq/codeindex",
+    "repository": "https://github.com/munhq/codeindex"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@munhq/codeindex@0.4.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.munhq/codeindex",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Directory to index. Defaults to the enclosing project root of wherever the client starts the server, which is the right answer for every editor and agent that launches it inside a repository. Set it only when the server runs somewhere other than the code.",
+          "format": "string",
+          "name": "CODEINDEX_WORKSPACE"
+        },
+        {
+          "description": "Set to 1 to keep the index inside this server process. By default every session on one repository shares a single background daemon that parses and watches the tree once, and each session is a thin relay onto it. Turn that off for a sandbox with no writable runtime directory.",
+          "format": "string",
+          "name": "CODEINDEX_NO_DAEMON"
+        },
+        {
+          "description": "Seconds with no session attached before the shared daemon exits and returns its memory. Default 900. Set 0 to keep it resident.",
+          "format": "string",
+          "name": "CODEINDEX_DAEMON_IDLE_SECS"
+        }
+      ],
+      "identifier": "@munhq/codeindex",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "fa45912530",
+    "published_at": "2026-09-07T13:04:29.008938Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.munhq/codeindex",
+    "server_version": "0.4.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-07T13:04:29.008938Z"
+  },
+  "title": "codeindex",
+  "type": "mcp_server",
+  "version": "0.4.1"
+}

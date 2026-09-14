@@ -1,0 +1,77 @@
+{
+  "description": "Self-hosted Chrome for AI agents, with a live noVNC view a human can take over.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-AetherAI3-agent-browser.stdio.dab5e0bc6a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/AetherAI3/agent-browser",
+    "homepage": "https://github.com/AetherAI3/agent-browser",
+    "repository": "https://github.com/AetherAI3/agent-browser"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "aether-browser@0.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.AetherAI3/agent-browser",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of your Agent Browser server. Defaults to http://127.0.0.1:8092.",
+          "name": "AGENT_BROWSER_URL"
+        },
+        {
+          "description": "Controller token, if the server runs authenticated.",
+          "isSecret": true,
+          "name": "AGENT_BROWSER_CONTROLLER_TOKEN"
+        },
+        {
+          "description": "Observer token for read-only health and snapshot calls.",
+          "isSecret": true,
+          "name": "AGENT_BROWSER_OBSERVER_TOKEN"
+        }
+      ],
+      "identifier": "aether-browser",
+      "packageArguments": [
+        {
+          "description": "Start the Agent Browser MCP server on stdio.",
+          "isRequired": true,
+          "type": "positional",
+          "value": "mcp",
+          "valueHint": "mcp"
+        }
+      ],
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "dab5e0bc6a",
+    "published_at": "2026-09-04T11:43:03.876996Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.AetherAI3/agent-browser",
+    "server_version": "0.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-04T11:43:03.876996Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.2"
+}

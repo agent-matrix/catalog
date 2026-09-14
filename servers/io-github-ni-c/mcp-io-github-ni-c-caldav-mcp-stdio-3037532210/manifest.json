@@ -1,0 +1,126 @@
+{
+  "description": "Read and write CalDAV calendars: events, tasks and journal entries over the open standard",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:00+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ni-c-caldav-mcp.stdio.3037532210",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ni-c/caldav-mcp",
+    "homepage": "https://github.com/ni-c/caldav-mcp",
+    "repository": "https://github.com/ni-c/caldav-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@ni-c/caldav-mcp@0.1.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ni-c/caldav-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Root of the CalDAV server, e.g. https://dav.example.net. A calendar collection URL also works.",
+          "format": "string",
+          "isRequired": true,
+          "name": "CALDAV_URL"
+        },
+        {
+          "description": "Account name. Most hosted services want an app-specific password with it.",
+          "format": "string",
+          "name": "CALDAV_USERNAME"
+        },
+        {
+          "description": "Password or app-specific password. Deleted from the environment once read.",
+          "format": "string",
+          "isSecret": true,
+          "name": "CALDAV_PASSWORD"
+        },
+        {
+          "description": "Bearer token, as an alternative to username and password. Not both.",
+          "format": "string",
+          "isSecret": true,
+          "name": "CALDAV_TOKEN"
+        },
+        {
+          "description": "Comma-separated calendars this server may touch, by path or final path segment. Default: all of them.",
+          "format": "string",
+          "name": "CALDAV_CALENDARS"
+        },
+        {
+          "description": "IANA zone for timestamps that carry no offset, e.g. Europe/Berlin (default: UTC)",
+          "format": "string",
+          "name": "CALDAV_TIMEZONE"
+        },
+        {
+          "description": "The address you are invited as, so respond_to_event can find your own attendee line",
+          "format": "string",
+          "name": "CALDAV_USER_EMAIL"
+        },
+        {
+          "description": "Entries a listing returns by default, 1 to 500 (default: 100)",
+          "format": "number",
+          "name": "CALDAV_MAX_EVENTS"
+        },
+        {
+          "description": "Set to true to register only the read tools (default: false)",
+          "format": "boolean",
+          "name": "CALDAV_READ_ONLY"
+        },
+        {
+          "description": "Set to true to accept a self-signed certificate on the configured host only (default: false)",
+          "format": "boolean",
+          "name": "CALDAV_INSECURE_TLS"
+        },
+        {
+          "description": "Set to true to allow a plain http:// URL to a host that is not loopback, which sends the credentials unencrypted (default: false)",
+          "format": "boolean",
+          "name": "CALDAV_ALLOW_PLAINTEXT"
+        },
+        {
+          "description": "Comma-separated tool names or list_* prefixes to register; 'essential' selects a curated preset (default: all tools)",
+          "format": "string",
+          "name": "CALDAV_ALLOW_TOOLS"
+        },
+        {
+          "description": "Comma-separated tool names or list_* prefixes to remove from whatever the allow list left",
+          "format": "string",
+          "name": "CALDAV_DENY_TOOLS"
+        },
+        {
+          "description": "Deliberately unprefixed, and reaches every MCP server in the environment. Set to false to make guarded tools use the two-call token instead of a dialog (default: true)",
+          "format": "boolean",
+          "name": "ELICITATION"
+        }
+      ],
+      "identifier": "@ni-c/caldav-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "3037532210",
+    "published_at": "2026-09-08T13:33:55.516892Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ni-c/caldav-mcp",
+    "server_version": "0.1.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-08T13:33:55.516892Z"
+  },
+  "title": "CalDAV calendars",
+  "type": "mcp_server",
+  "version": "0.1.4"
+}

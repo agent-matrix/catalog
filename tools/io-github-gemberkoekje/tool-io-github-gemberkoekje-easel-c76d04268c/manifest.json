@@ -1,0 +1,84 @@
+{
+  "artifacts": [
+    {
+      "kind": "pypi",
+      "spec": {
+        "package": "easel-paint",
+        "version": "0.2.0"
+      }
+    }
+  ],
+  "description": "A headless painting engine for AI agents: brushes, paint load, wet blending, canvas texture.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:52+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/Gemberkoekje/EaselAPI",
+  "id": "tool.io-github-gemberkoekje-easel.c76d04268c",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Gemberkoekje/EaselAPI",
+    "homepage": "https://github.com/Gemberkoekje/EaselAPI",
+    "repository": "https://github.com/Gemberkoekje/EaselAPI"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "A headless painting engine for AI agents: brushes, paint load, wet blending, canvas texture.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.Gemberkoekje/easel",
+      "request_type": "POST",
+      "url": "https://github.com/Gemberkoekje/EaselAPI"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "The whole launch command is: uvx --from \"easel-paint[mcp]\" easel-mcp. Two things make it longer than usual. The MCP server is an optional extra, because nothing else in the engine imports mcp and a painter working from Python or the shell never needs its 28 dependencies; and the console script is easel-mcp, not easel-paint, because the package is a painting engine of which the server is one face. A client that cannot assemble this should run that command verbatim.",
+            "isRequired": true,
+            "name": "--from",
+            "type": "named",
+            "value": "easel-paint[mcp]"
+          },
+          "easel-paint==0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Gemberkoekje/easel",
+  "provenance": {
+    "identity_key": "88f92fcd1c",
+    "promoted_from": "mcp.io-github-Gemberkoekje-easel.stdio.88f92fcd1c",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Gemberkoekje/easel",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-Gemberkoekje-easel.stdio.88f92fcd1c",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/Gemberkoekje/EaselAPI",
+  "summary": "A headless painting engine for AI agents: brushes, paint load, wet blending, canvas texture.",
+  "tags": [
+    "agents",
+    "brushes",
+    "easel",
+    "engine",
+    "headless",
+    "paint",
+    "painting"
+  ],
+  "title": "Easel",
+  "type": "tool",
+  "version": "0.2.0"
+}

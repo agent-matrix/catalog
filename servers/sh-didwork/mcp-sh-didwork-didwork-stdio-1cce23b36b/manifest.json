@@ -1,0 +1,62 @@
+{
+  "description": "Verify that an agent's claimed outcome actually happened, using independently gathered evidence",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:44+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.sh-didwork-didwork.stdio.1cce23b36b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@didwork/mcp@0.0.9"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "sh.didwork/didwork",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "DidWork API key, free at https://didwork.sh/console. Optional: the server falls back to the ~/.didwork/api_key file (or DIDWORK_API_KEY_FILE); with no key at all it runs keyless and only http.ok claims verify.",
+          "format": "string",
+          "isSecret": true,
+          "name": "DIDWORK_API_KEY"
+        },
+        {
+          "description": "Override the DidWork API base URL (defaults to the hosted API)",
+          "format": "string",
+          "name": "DIDWORK_BASE_URL"
+        }
+      ],
+      "identifier": "@didwork/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.0.9"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1cce23b36b",
+    "published_at": "2026-09-04T10:21:18.609662Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "sh.didwork/didwork",
+    "server_version": "0.0.9",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-04T10:21:18.609662Z"
+  },
+  "title": "DidWork",
+  "type": "mcp_server",
+  "version": "0.0.9"
+}

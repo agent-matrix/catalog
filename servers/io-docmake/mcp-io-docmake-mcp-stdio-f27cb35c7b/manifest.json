@@ -1,0 +1,74 @@
+{
+  "description": "Generate DOCX and PDF documents from your DocMake templates",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-docmake-mcp.stdio.f27cb35c7b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/docmake-io/mcp",
+    "homepage": "https://github.com/docmake-io/mcp",
+    "repository": "https://github.com/docmake-io/mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@docmake/mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.docmake/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "DocMake API key, created at app.docmake.io under Settings > API Keys",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DOCMAKE_API_KEY",
+          "placeholder": "dm_your_key_here"
+        },
+        {
+          "description": "Directory rendered documents are saved to. Defaults to ~/Downloads/DocMake",
+          "format": "filepath",
+          "name": "DOCMAKE_OUTPUT_DIR"
+        },
+        {
+          "default": "https://app.docmake.io/api/v1",
+          "description": "API base URL, for self-hosted setups. Defaults to https://app.docmake.io/api/v1",
+          "format": "string",
+          "name": "DOCMAKE_API_BASE"
+        }
+      ],
+      "identifier": "@docmake/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f27cb35c7b",
+    "published_at": "2026-08-31T12:04:54.586743Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.docmake/mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-31T12:04:54.586743Z"
+  },
+  "title": "DocMake",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

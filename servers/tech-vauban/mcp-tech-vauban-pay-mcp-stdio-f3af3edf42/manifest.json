@@ -1,0 +1,79 @@
+{
+  "description": "x402 tools for MCP clients: pay exact/Starknet or STARK-receipt 402s, verify, JCS-hash. No account.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:45+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.tech-vauban-pay-mcp.stdio.f3af3edf42",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@vauban-pay/mcp@0.7.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "tech.vauban/pay-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Starknet Sepolia RPC endpoint for the two chain-reading tools. Optional; defaults to a public node not operated by Vauban.",
+          "name": "STARKNET_RPC_URL"
+        },
+        {
+          "description": "Starknet Sepolia account address enabling make_payment chain mode. Optional; without it make_payment returns a hash-only pending result with no network call.",
+          "name": "PAY_MCP_SEPOLIA_ACCOUNT_ADDRESS"
+        },
+        {
+          "description": "Private key for that account. Optional; never required to try the tools.",
+          "isSecret": true,
+          "name": "PAY_MCP_SEPOLIA_PRIVATE_KEY"
+        },
+        {
+          "description": "Standard x402 path: comma-separated payTo addresses pay_for_resource may pay, or * for any. Empty pays nobody (fail closed).",
+          "name": "PAY_MCP_STANDARD_X402_PAYEES"
+        },
+        {
+          "description": "Standard x402 path: cap on one payment in atomic units (default 0.1 STRK).",
+          "name": "PAY_MCP_STANDARD_X402_MAX_WEI"
+        },
+        {
+          "description": "Standard x402 path: a signer of its own (falls back to PAY_MCP_SEPOLIA_*).",
+          "name": "PAY_MCP_STANDARD_X402_ACCOUNT_ADDRESS"
+        },
+        {
+          "description": "Private key for that account. Optional.",
+          "isSecret": true,
+          "name": "PAY_MCP_STANDARD_X402_PRIVATE_KEY"
+        }
+      ],
+      "identifier": "@vauban-pay/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.7.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f3af3edf42",
+    "published_at": "2026-09-08T06:55:23.214124Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "tech.vauban/pay-mcp",
+    "server_version": "0.7.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-08T06:55:23.214124Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.7.1"
+}

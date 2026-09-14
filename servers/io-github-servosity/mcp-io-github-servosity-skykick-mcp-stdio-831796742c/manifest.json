@@ -1,0 +1,84 @@
+{
+  "description": "Fleet backup posture, stale snapshots, and coverage gaps for SkyKick Cloud Backup.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:04+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Servosity-skykick-mcp.stdio.831796742c",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/servosity/msp-skills",
+    "homepage": "https://github.com/servosity/msp-skills",
+    "repository": "https://github.com/servosity/msp-skills"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Servosity/skykick-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://apis.cloudservices.connectwise.com",
+          "description": "Base URL for the SkyKick API. Leave the prefilled default unless your account uses a different regional or self-hosted host.",
+          "name": "SKYKICK_BASE_URL"
+        },
+        {
+          "description": "Set the SKYKICK_CLIENT_ID credential for the SkyKick MCP server.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SKYKICK_CLIENT_ID"
+        },
+        {
+          "description": "Set the SKYKICK_CLIENT_SECRET credential for the SkyKick MCP server.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SKYKICK_CLIENT_SECRET"
+        },
+        {
+          "description": "Optional OAuth scope override for the SkyKick MCP server. Defaults to 'Partner' when unset.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SKYKICK_OAUTH_SCOPE"
+        },
+        {
+          "default": "https://apis.cloudservices.connectwise.com/auth/token",
+          "description": "Token endpoint the client-credentials exchange posts to. Leave the prefilled default unless your tenant uses a different token endpoint.",
+          "name": "SKYKICK_TOKEN_URL"
+        },
+        {
+          "description": "Set to 1 to keep credentials off disk. The token cache becomes a no-op, so the connector mints a fresh token each run instead of writing one to config.json. Leave blank for the default cached behaviour.",
+          "name": "SKYKICK_NO_CONFIG_WRITE"
+        }
+      ],
+      "fileSha256": "f907a1de312ce557d057177fa487d75a8249b9a4f6b4ebe2cab6b45bd3889bd1",
+      "identifier": "https://github.com/Servosity/msp-skills/releases/download/skykick-v0.1.3/skykick-mcp.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "831796742c",
+    "published_at": "2026-09-06T19:12:50.634414Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Servosity/skykick-mcp",
+    "server_version": "0.1.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-06T19:12:50.634414Z"
+  },
+  "title": "SkyKick MCP",
+  "type": "mcp_server",
+  "version": "0.1.3"
+}

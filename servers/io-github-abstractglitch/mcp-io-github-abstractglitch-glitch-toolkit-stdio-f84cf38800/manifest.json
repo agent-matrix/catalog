@@ -1,0 +1,76 @@
+{
+  "description": "Read-only checks that fail a guardrail which is present but has stopped refusing anything",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:40+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-AbstractGlitch-glitch-toolkit.stdio.f84cf38800",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/AbstractGlitch/glitch-toolkit",
+    "homepage": "https://github.com/AbstractGlitch/glitch-toolkit",
+    "repository": "https://github.com/AbstractGlitch/glitch-toolkit"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "The distribution is glitch-toolkit; the server entry point is glitch-mcp, and the MCP SDK is an optional extra so the checker itself keeps its no-dependency promise.",
+            "name": "--from",
+            "type": "named",
+            "value": "glitch-toolkit[mcp]"
+          },
+          {
+            "type": "positional",
+            "value": "glitch-mcp",
+            "valueHint": "command"
+          },
+          "glitch-toolkit==0.1.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.AbstractGlitch/glitch-toolkit",
+  "packages": [
+    {
+      "identifier": "glitch-toolkit",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "The distribution is glitch-toolkit; the server entry point is glitch-mcp, and the MCP SDK is an optional extra so the checker itself keeps its no-dependency promise.",
+          "name": "--from",
+          "type": "named",
+          "value": "glitch-toolkit[mcp]"
+        },
+        {
+          "type": "positional",
+          "value": "glitch-mcp",
+          "valueHint": "command"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f84cf38800",
+    "published_at": "2026-09-08T19:44:48.313886Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.AbstractGlitch/glitch-toolkit",
+    "server_version": "0.1.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-08T19:44:48.313886Z"
+  },
+  "title": "Glitch Toolkit",
+  "type": "mcp_server",
+  "version": "0.1.3"
+}

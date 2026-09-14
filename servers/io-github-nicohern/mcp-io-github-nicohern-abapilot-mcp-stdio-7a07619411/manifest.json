@@ -1,0 +1,85 @@
+{
+  "description": "ABAP MCP connector for SAP ECC and on-premise S/4HANA. Requires a licensed ABAPilot backend.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:00+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-NicoHern-abapilot-mcp.stdio.7a07619411",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/NicoHern/abapilot-mcp",
+    "homepage": "https://github.com/NicoHern/abapilot-mcp",
+    "repository": "https://github.com/NicoHern/abapilot-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "abapilot@1.0.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.NicoHern/abapilot-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "URL of the ABAPilot SICF endpoint in your SAP system, e.g. https://sap-host:8443/sap/bc/abapilot",
+          "isRequired": true,
+          "name": "ABAPILOT_URL"
+        },
+        {
+          "description": "SAP user for basic authentication",
+          "name": "ABAPILOT_USER"
+        },
+        {
+          "description": "SAP password for basic authentication",
+          "isSecret": true,
+          "name": "ABAPILOT_PASSWORD"
+        },
+        {
+          "description": "Bearer token, alternative to basic authentication",
+          "isSecret": true,
+          "name": "ABAPILOT_TOKEN"
+        },
+        {
+          "description": "SAP client number, e.g. 100",
+          "name": "ABAPILOT_CLIENT"
+        },
+        {
+          "description": "Comma-separated allowlist of tool names to expose to the client. Optional; default is the full catalog.",
+          "name": "ABAPILOT_TOOLS"
+        },
+        {
+          "description": "Set to 1 to skip TLS certificate verification (development systems only)",
+          "name": "ABAPILOT_TLS_INSECURE"
+        }
+      ],
+      "identifier": "abapilot",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7a07619411",
+    "published_at": "2026-09-09T17:26:40.782835Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.NicoHern/abapilot-mcp",
+    "server_version": "1.0.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-09T17:26:40.782835Z"
+  },
+  "title": "ABAPilot",
+  "type": "mcp_server",
+  "version": "1.0.6"
+}

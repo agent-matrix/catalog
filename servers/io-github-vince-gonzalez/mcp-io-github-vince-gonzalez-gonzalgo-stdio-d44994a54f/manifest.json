@@ -1,0 +1,77 @@
+{
+  "description": "Reports what a checked Lean 4 or Metamath proof rests on: inherited sorry, compiler trust, axioms.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-vince-gonzalez-gonzalgo.stdio.d44994a54f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/vince-gonzalez/gonzalgo",
+    "homepage": "https://github.com/vince-gonzalez/gonzalgo",
+    "repository": "https://github.com/vince-gonzalez/gonzalgo"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "The MCP server lives behind an optional dependency so the analysis tools stay dependency-light for CLI-only users.",
+            "isRequired": true,
+            "name": "--from",
+            "type": "named",
+            "value": "gonzalgo[mcp]"
+          },
+          "gonzalgo==0.5.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.vince-gonzalez/gonzalgo",
+  "packages": [
+    {
+      "identifier": "gonzalgo",
+      "packageArguments": [
+        {
+          "description": "Starts the stdio server. Without it the binary runs the analysis CLI.",
+          "isRequired": true,
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "The MCP server lives behind an optional dependency so the analysis tools stay dependency-light for CLI-only users.",
+          "isRequired": true,
+          "name": "--from",
+          "type": "named",
+          "value": "gonzalgo[mcp]"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d44994a54f",
+    "published_at": "2026-09-11T06:02:18.277417Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.vince-gonzalez/gonzalgo",
+    "server_version": "0.5.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-11T06:02:18.277417Z"
+  },
+  "title": "gonzalgo",
+  "type": "mcp_server",
+  "version": "0.5.6"
+}

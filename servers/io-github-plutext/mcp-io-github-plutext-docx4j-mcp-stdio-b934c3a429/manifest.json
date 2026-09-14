@@ -1,0 +1,78 @@
+{
+  "description": "Read, convert and fill Word (.docx) documents: templates, Markdown/HTML in and out, PDF with math.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:09+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-plutext-docx4j-mcp.stdio.b934c3a429",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/plutext/docx4j-mcp",
+    "homepage": "https://github.com/plutext/docx4j-mcp",
+    "repository": "https://github.com/plutext/docx4j-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "isRequired": true,
+            "name": "-v",
+            "type": "named",
+            "value": "{documents_dir}:/data",
+            "variables": {
+              "documents_dir": {
+                "description": "Host folder the server may read/write",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          "ghcr.io/plutext/docx4j-mcp:0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.plutext/docx4j-mcp",
+  "packages": [
+    {
+      "identifier": "ghcr.io/plutext/docx4j-mcp:0.2.0",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "isRequired": true,
+          "name": "-v",
+          "type": "named",
+          "value": "{documents_dir}:/data",
+          "variables": {
+            "documents_dir": {
+              "description": "Host folder the server may read/write",
+              "format": "filepath",
+              "isRequired": true
+            }
+          }
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "b934c3a429",
+    "published_at": "2026-09-08T12:02:10.779987Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.plutext/docx4j-mcp",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-08T12:02:10.779987Z"
+  },
+  "title": "docx4j Word documents",
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

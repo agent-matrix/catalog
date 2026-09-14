@@ -1,0 +1,94 @@
+{
+  "description": "Servidor MCP do zapCore (WhatsApp): leitura sempre, envio atr\u00e1s de flag e allowlist de destino.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-adeiltonpessini-zapcore-mcp.stdio.abcefb6e25",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/adeiltonpessini/zapcore",
+    "homepage": "https://github.com/adeiltonpessini/zapcore",
+    "repository": "https://github.com/adeiltonpessini/zapcore"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "isRequired": true,
+            "name": "-i",
+            "type": "named"
+          },
+          {
+            "isRequired": true,
+            "name": "--rm",
+            "type": "named"
+          },
+          "ghcr.io/adeiltonpessini/zapcore-mcp:0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.adeiltonpessini/zapcore-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Token da inst\u00e2ncia zapCore.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ZAPCORE_TOKEN"
+        },
+        {
+          "default": "https://zapcore.barberai.online",
+          "description": "Base da API do zapCore.",
+          "name": "ZAPCORE_URL"
+        },
+        {
+          "default": "0",
+          "description": "Liga as 4 tools de envio; exige ZAPCORE_MCP_ALLOW.",
+          "name": "ZAPCORE_MCP_WRITE"
+        },
+        {
+          "description": "Destinos autorizados, E.164 separados por v\u00edrgula.",
+          "name": "ZAPCORE_MCP_ALLOW"
+        }
+      ],
+      "identifier": "ghcr.io/adeiltonpessini/zapcore-mcp:0.1.0",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "isRequired": true,
+          "name": "-i",
+          "type": "named"
+        },
+        {
+          "isRequired": true,
+          "name": "--rm",
+          "type": "named"
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "abcefb6e25",
+    "published_at": "2026-09-13T02:08:51.265887Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.adeiltonpessini/zapcore-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-13T02:08:51.265887Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

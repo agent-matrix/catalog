@@ -1,0 +1,75 @@
+{
+  "description": "Hand a secret to another agent as an encrypted, pay-per-read token, delivered exactly once.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:09+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-slidingbox-hydrate-dehydrate.stdio.c0108effec",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@slidingbox/hydrate-dehydrate-mcp@0.1.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.slidingbox/hydrate-dehydrate",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Evaluation key (sbk_<id>.<hmac>) covering a fixed number of free reads. Ask support@slidingbox.ai.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SLIDINGBOX_API_KEY"
+        },
+        {
+          "description": "Base wallet private key holding USDC. Reads cost $0.02 each, paid per call over x402. Use a wallet funded for this and nothing else.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SLIDINGBOX_PRIVATE_KEY"
+        },
+        {
+          "default": "https://slidingbox.ai",
+          "description": "Service base URL.",
+          "format": "string",
+          "name": "SLIDINGBOX_URL"
+        },
+        {
+          "default": "eip155:8453",
+          "description": "CAIP-2 chain for payment. Base mainnet by default.",
+          "format": "string",
+          "name": "SLIDINGBOX_NETWORK"
+        }
+      ],
+      "identifier": "@slidingbox/hydrate-dehydrate-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c0108effec",
+    "published_at": "2026-09-02T04:28:57.178447Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.slidingbox/hydrate-dehydrate",
+    "server_version": "0.1.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-02T04:28:57.178447Z"
+  },
+  "title": "Slidingbox Hydrate/Dehydrate",
+  "type": "mcp_server",
+  "version": "0.1.3"
+}

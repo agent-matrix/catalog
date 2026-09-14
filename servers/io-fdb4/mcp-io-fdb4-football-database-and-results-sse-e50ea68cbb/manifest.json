@@ -1,0 +1,53 @@
+{
+  "description": "Historical football results, teams, competitions and draw/streak statistics via 10 read-only tools.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-fdb4-football-database-and-results.sse.e50ea68cbb",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://fdb4.io/mcp"
+    }
+  },
+  "name": "io.fdb4/football-database-and-results",
+  "provenance": {
+    "identity_key": "e50ea68cbb",
+    "published_at": "2026-08-31T10:38:33.377124Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.fdb4/football-database-and-results",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-31T10:38:33.377124Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Bearer <API key> \u2014 create a key at https://fdb4.io/api. Each tool call costs 1 point; initialize/tools/list are free.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {api_key}",
+          "variables": {
+            "api_key": {
+              "description": "FDB4 API key",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://fdb4.io/mcp"
+    }
+  ],
+  "title": "Football Database and Results",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

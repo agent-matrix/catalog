@@ -1,0 +1,103 @@
+{
+  "description": "Local advisory pre-trade risk gate for agents. Never places orders.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:50+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Diabloluo-deadlatch.stdio.4074af124c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Diabloluo/deadlatch",
+    "homepage": "https://github.com/Diabloluo/deadlatch",
+    "repository": "https://github.com/Diabloluo/deadlatch"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "name": "--from",
+            "type": "named",
+            "value": "deadlatch==0.1.0"
+          },
+          {
+            "type": "positional",
+            "value": "deadlatch-mcp",
+            "valueHint": "entrypoint"
+          },
+          "deadlatch==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Diabloluo/deadlatch",
+  "packages": [
+    {
+      "identifier": "deadlatch",
+      "packageArguments": [
+        {
+          "description": "Local policy YAML or JSON. Startup config, not a tool argument.",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "--policy",
+          "type": "named"
+        },
+        {
+          "description": "Local portfolio snapshot JSON. Startup config, not a tool argument.",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "--portfolio",
+          "type": "named"
+        },
+        {
+          "description": "Optional local audit JSONL path.",
+          "format": "filepath",
+          "name": "--audit-path",
+          "type": "named"
+        },
+        {
+          "description": "Optional local kill-switch file. Read every tool call; can only tighten policy.",
+          "format": "filepath",
+          "name": "--kill-switch-path",
+          "type": "named"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "name": "--from",
+          "type": "named",
+          "value": "deadlatch==0.1.0"
+        },
+        {
+          "type": "positional",
+          "value": "deadlatch-mcp",
+          "valueHint": "entrypoint"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4074af124c",
+    "published_at": "2026-09-14T00:53:58.899719Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Diabloluo/deadlatch",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-14T00:53:58.899719Z"
+  },
+  "title": "Deadlatch",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

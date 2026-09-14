@@ -1,0 +1,97 @@
+{
+  "description": "MCP server exposing Actual Budget accounts, transactions, budgets and reporting to LLM assistants.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-s-stefanov-actual-mcp.stdio.99fabffcc0",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/s-stefanov/actual-mcp",
+    "homepage": "https://github.com/s-stefanov/actual-mcp",
+    "repository": "https://github.com/s-stefanov/actual-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "actual-mcp@1.13.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.s-stefanov/actual-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "URL of your Actual Budget server",
+          "isRequired": true,
+          "name": "ACTUAL_SERVER_URL"
+        },
+        {
+          "description": "Actual Budget server password",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ACTUAL_PASSWORD"
+        },
+        {
+          "description": "Budget sync ID",
+          "isRequired": true,
+          "name": "ACTUAL_BUDGET_SYNC_ID"
+        },
+        {
+          "description": "Local dir for cached budget data",
+          "name": "ACTUAL_DATA_DIR"
+        },
+        {
+          "description": "E2E encryption password, if enabled",
+          "isSecret": true,
+          "name": "ACTUAL_BUDGET_ENCRYPTION_PASSWORD"
+        },
+        {
+          "default": "60000",
+          "description": "Sync cache TTL in ms",
+          "name": "ACTUAL_SYNC_TTL_MS"
+        }
+      ],
+      "identifier": "actual-mcp",
+      "packageArguments": [
+        {
+          "name": "--sse",
+          "type": "named"
+        },
+        {
+          "name": "--port",
+          "type": "named",
+          "value": "3000"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3000/mcp"
+      },
+      "version": "1.13.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "99fabffcc0",
+    "published_at": "2026-09-12T10:55:17.664065Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.s-stefanov/actual-mcp",
+    "server_version": "1.13.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-12T10:55:17.664065Z"
+  },
+  "title": "Actual Budget MCP Server",
+  "type": "mcp_server",
+  "version": "1.13.0"
+}

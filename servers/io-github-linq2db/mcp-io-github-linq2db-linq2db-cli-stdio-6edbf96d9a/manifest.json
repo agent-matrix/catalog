@@ -1,0 +1,79 @@
+{
+  "description": "Inspect database schemas and execute SQL queries across multiple database providers with LINQ to DB.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:49+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-linq2db-linq2db-cli.stdio.6edbf96d9a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/linq2db/linq2db",
+    "homepage": "https://github.com/linq2db/linq2db",
+    "repository": "https://github.com/linq2db/linq2db"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "dnx",
+          "linq2db.cli==6.5.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.linq2db/linq2db.cli",
+  "packages": [
+    {
+      "identifier": "linq2db.cli",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        },
+        {
+          "description": "Absolute path to a local linq2db query/MCP configuration file containing database profiles.",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "--config",
+          "type": "named"
+        },
+        {
+          "description": "Default database profile from the configuration file.",
+          "format": "string",
+          "name": "--profile",
+          "type": "named"
+        },
+        {
+          "default": "false",
+          "description": "Register the write-capable tool. Execution also requires enableExecute=true in the selected profile.",
+          "format": "boolean",
+          "name": "--enable-execute-tool",
+          "type": "named"
+        }
+      ],
+      "registryBaseUrl": "https://api.nuget.org/v3/index.json",
+      "registryType": "nuget",
+      "runtimeHint": "dnx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "6.5.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6edbf96d9a",
+    "published_at": "2026-09-11T15:30:54.432615Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.linq2db/linq2db.cli",
+    "server_version": "6.5.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-11T15:30:54.432615Z"
+  },
+  "title": "LINQ to DB",
+  "type": "mcp_server",
+  "version": "6.5.0"
+}

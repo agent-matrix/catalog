@@ -1,0 +1,86 @@
+{
+  "description": "Recall locally stored agent memories through an MCP-compatible host.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:40+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-hermes-labs-ai-fidelis-memory.stdio.d0b43ae073",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/hermes-labs-ai/fidelis",
+    "homepage": "https://github.com/hermes-labs-ai/fidelis",
+    "repository": "https://github.com/hermes-labs-ai/fidelis"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "name": "--from",
+            "type": "named",
+            "value": "fidelis-memory"
+          },
+          "fidelis-memory==0.0.97"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.hermes-labs-ai/fidelis-memory",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Port of the local fidelis-server process (default: 19420).",
+          "format": "number",
+          "name": "FIDELIS_PORT"
+        }
+      ],
+      "identifier": "fidelis-memory",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "fidelis"
+        },
+        {
+          "type": "positional",
+          "value": "mcp"
+        },
+        {
+          "type": "positional",
+          "value": "serve"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "name": "--from",
+          "type": "named",
+          "value": "fidelis-memory"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.0.97"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d0b43ae073",
+    "published_at": "2026-09-12T22:46:00.868572Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.hermes-labs-ai/fidelis-memory",
+    "server_version": "0.0.97",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-12T22:46:00.868572Z"
+  },
+  "title": "Fidelis Memory",
+  "type": "mcp_server",
+  "version": "0.0.97"
+}

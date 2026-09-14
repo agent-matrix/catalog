@@ -1,0 +1,91 @@
+{
+  "description": "BuchhaltungsButler API v1: alle 54 Endpunkte als sicherheitskategorisierte MCP-Tools",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:02+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ohneben-buchhaltungsbutler-mcp.stdio.0d967a6dd6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ohneben/Buchhaltungsbutler-MCP",
+    "homepage": "https://github.com/ohneben/Buchhaltungsbutler-MCP",
+    "repository": "https://github.com/ohneben/Buchhaltungsbutler-MCP"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/ohneben/buchhaltungsbutler-mcp:1.0.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ohneben/buchhaltungsbutler-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "choices": [
+            "stdio",
+            "http"
+          ],
+          "default": "stdio",
+          "description": "Transport des Servers. Fuer lokale MCP-Clients auf 'stdio' setzen; das Image startet sonst den HTTP-Transport.",
+          "isRequired": true,
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "description": "BuchhaltungsButler API-Client (HTTP-Basic-Benutzername). Zu finden unter Einstellungen -> API.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "BB_API_CLIENT"
+        },
+        {
+          "description": "BuchhaltungsButler API-Secret (HTTP-Basic-Passwort). Zu finden unter Einstellungen -> API.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "BB_API_SECRET"
+        },
+        {
+          "description": "api_key des Mandanten, auf dem gearbeitet wird. Zu finden in den Firmendaten des Kunden.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "BB_API_KEY"
+        },
+        {
+          "default": "90",
+          "description": "Clientseitiges Limit an Anfragen pro Minute. BuchhaltungsButler erlaubt 100 pro Kunde und Minute.",
+          "format": "number",
+          "name": "BB_RATE_LIMIT"
+        },
+        {
+          "description": "Ueberschreibt die API-Basis-URL. Standard ist der Wert aus der mitgelieferten Spec.",
+          "name": "BB_BASE_URL"
+        }
+      ],
+      "identifier": "ghcr.io/ohneben/buchhaltungsbutler-mcp:1.0.5",
+      "registryType": "oci",
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "0d967a6dd6",
+    "published_at": "2026-09-06T13:18:13.780545Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ohneben/buchhaltungsbutler-mcp",
+    "server_version": "1.0.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-06T13:18:13.780545Z"
+  },
+  "title": "BuchhaltungsButler",
+  "type": "mcp_server",
+  "version": "1.0.5"
+}

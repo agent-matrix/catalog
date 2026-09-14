@@ -1,0 +1,83 @@
+{
+  "description": "Look up any Australian company by ABN, ACN or name. USD 0.01 per lookup, paid in USDC via x402.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:46+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-keitaemsden-lab-asic-lookup.stdio.722a3fd8b3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/keitaemsden-lab/asic-lookup-mcp",
+    "homepage": "https://github.com/keitaemsden-lab/asic-lookup-mcp",
+    "repository": "https://github.com/keitaemsden-lab/asic-lookup-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@nightshiftbuilds/asic-lookup-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.keitaemsden-lab/asic-lookup",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Total USD this server may spend from your wallet before it stops. Required: the server refuses to start without it. About 100 lookups per dollar.",
+          "format": "string",
+          "isRequired": true,
+          "name": "SPEND_CAP_USD"
+        },
+        {
+          "description": "Private key of a Base mainnet wallet holding a little USDC. No ETH needed: x402 payments are settled by a facilitator, so the wallet signs off-chain and pays no gas. Use PRIVATE_KEY_FILE instead to keep the key out of your client config.",
+          "format": "string",
+          "isSecret": true,
+          "name": "PRIVATE_KEY"
+        },
+        {
+          "description": "Path to a file containing the wallet private key. Preferred over PRIVATE_KEY. Set exactly one of the two.",
+          "format": "filepath",
+          "name": "PRIVATE_KEY_FILE"
+        },
+        {
+          "default": "0.01",
+          "description": "Most this server will pay for a single lookup. Defaults to 0.01, the advertised price. A 402 asking for more than this is refused rather than paid.",
+          "format": "string",
+          "name": "MAX_PRICE_USD_PER_CALL"
+        },
+        {
+          "default": "45000",
+          "description": "How long to wait for the API, in milliseconds. 1000 to 300000, default 45000.",
+          "format": "number",
+          "name": "REQUEST_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "@nightshiftbuilds/asic-lookup-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "722a3fd8b3",
+    "published_at": "2026-09-09T09:12:03.390299Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.keitaemsden-lab/asic-lookup",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-09T09:12:03.390299Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

@@ -1,0 +1,129 @@
+{
+  "description": "A persistent Docker or Fly computer with a Three.js interface and optional live Xfce desktop.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:36+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-flujo-app-mcp-virtual-computer.stdio.767f9db8bc",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/flujo-app/mcp-virtual-computer",
+    "homepage": "https://github.com/flujo-app/mcp-virtual-computer",
+    "repository": "https://github.com/flujo-app/mcp-virtual-computer"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-virtual-computer==0.2.11"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.flujo-app/mcp-virtual-computer",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "choices": [
+            "docker",
+            "fly"
+          ],
+          "default": "docker",
+          "description": "Computer provider. Use docker for a local container or fly for a permanent Fly Machine.",
+          "format": "string",
+          "name": "BACKEND"
+        },
+        {
+          "default": "agent-workstation",
+          "description": "Stable identity of the one persistent computer.",
+          "format": "string",
+          "isRequired": true,
+          "name": "COMPUTER_ID",
+          "placeholder": "agent-workstation"
+        },
+        {
+          "choices": [
+            "true",
+            "false"
+          ],
+          "default": "true",
+          "description": "Start the real Xfce desktop instead of the virtual desktop.",
+          "format": "boolean",
+          "name": "DESKTOP_ENVIRONMENT"
+        },
+        {
+          "choices": [
+            "false",
+            "true"
+          ],
+          "default": "true",
+          "description": "Allow outbound network access from the computer.",
+          "format": "boolean",
+          "name": "NETWORK_ACCESS"
+        },
+        {
+          "choices": [
+            "false",
+            "true"
+          ],
+          "default": "true",
+          "description": "On Windows, install and start Docker Desktop lazily when needed.",
+          "format": "boolean",
+          "name": "AUTO_INSTALL_DOCKER"
+        },
+        {
+          "choices": [
+            "false",
+            "true"
+          ],
+          "default": "true",
+          "description": "Download flyctl into the user profile when it is missing.",
+          "format": "boolean",
+          "name": "AUTO_INSTALL_FLYCTL"
+        },
+        {
+          "description": "Optional Fly API token. A cached flyctl login is also supported.",
+          "format": "string",
+          "isSecret": true,
+          "name": "FLY_API_TOKEN"
+        },
+        {
+          "choices": [
+            "false",
+            "true"
+          ],
+          "default": "false",
+          "description": "Also expose runtime status and network/desktop switching tools to the model. The MCP App can always use them.",
+          "format": "boolean",
+          "name": "EXPOSE_LIFECYCLE_TOOLS"
+        }
+      ],
+      "identifier": "mcp-virtual-computer",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.11"
+    }
+  ],
+  "provenance": {
+    "identity_key": "767f9db8bc",
+    "published_at": "2026-09-02T23:50:57.559401Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.flujo-app/mcp-virtual-computer",
+    "server_version": "0.2.11",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-02T23:50:57.559401Z"
+  },
+  "title": "MCP Virtual Computer",
+  "type": "mcp_server",
+  "version": "0.2.11"
+}

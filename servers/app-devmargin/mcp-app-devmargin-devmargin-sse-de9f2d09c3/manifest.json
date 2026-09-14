@@ -1,0 +1,52 @@
+{
+  "description": "Read-only MCP over your own revenue and net margin across 14 billing rails",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:11+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.app-devmargin-devmargin.sse.de9f2d09c3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://devmargin.app/api/mcp"
+    }
+  },
+  "name": "app.devmargin/devmargin",
+  "provenance": {
+    "identity_key": "de9f2d09c3",
+    "published_at": "2026-09-05T19:17:49.181764Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "app.devmargin/devmargin",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-05T19:17:49.181764Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {token}"
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://devmargin.app/api/mcp",
+      "variables": {
+        "token": {
+          "description": "Personal access token from DevMargin \u2192 Settings. Read-only: it can list your portfolio and cannot change anything.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "placeholder": "dmt_..."
+        }
+      }
+    }
+  ],
+  "title": "DevMargin",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

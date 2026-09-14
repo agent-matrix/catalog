@@ -1,0 +1,80 @@
+{
+  "description": "Generic Baserow API client MCP server with automatic 2FA (TOTP) auth and OpenAPI validation.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:11+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-aficiomaquinas-mcp-baserow-schema.stdio.f1e4aab0bd",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/aficiomaquinas/mcp-baserow-schema",
+    "homepage": "https://github.com/aficiomaquinas/mcp-baserow-schema",
+    "repository": "https://github.com/aficiomaquinas/mcp-baserow-schema"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-baserow-schema@2.0.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.aficiomaquinas/mcp-baserow-schema",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of your Baserow instance, e.g. https://baserow.example.com",
+          "format": "string",
+          "isRequired": true,
+          "name": "BASEROW_API_URL"
+        },
+        {
+          "description": "Baserow account email",
+          "format": "string",
+          "isRequired": true,
+          "name": "BASEROW_USERNAME"
+        },
+        {
+          "description": "Baserow account password",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "BASEROW_PASSWORD"
+        },
+        {
+          "description": "Base32 TOTP secret of your Baserow account's 2FA (totp) setup",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "BASEROW_TOTP_SECRET"
+        }
+      ],
+      "identifier": "mcp-baserow-schema",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.0.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f1e4aab0bd",
+    "published_at": "2026-09-02T19:14:56.783333Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.aficiomaquinas/mcp-baserow-schema",
+    "server_version": "2.0.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-02T19:14:56.783333Z"
+  },
+  "title": "Baserow Schema MCP",
+  "type": "mcp_server",
+  "version": "2.0.2"
+}

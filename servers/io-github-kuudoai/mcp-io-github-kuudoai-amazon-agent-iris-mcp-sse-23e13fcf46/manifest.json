@@ -1,0 +1,62 @@
+{
+  "description": "MCP server that creates Amazon listing images and product video from live catalog data.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:57+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-KuudoAI-amazon-agent-iris-mcp.sse.23e13fcf46",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/KuudoAI/amazon-agent-iris-mcp",
+    "homepage": "https://github.com/KuudoAI/amazon-agent-iris-mcp",
+    "repository": "https://github.com/KuudoAI/amazon-agent-iris-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://{AGENT_IRIS_HOST}/mcp"
+    }
+  },
+  "name": "io.github.KuudoAI/amazon-agent-iris-mcp",
+  "provenance": {
+    "identity_key": "23e13fcf46",
+    "published_at": "2026-09-06T21:38:31.85974Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.KuudoAI/amazon-agent-iris-mcp",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-06T21:38:31.85974Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Kuudo API key or deployment bearer token.",
+          "name": "Authorization",
+          "value": "Bearer {AUTH_TOKEN}",
+          "variables": {
+            "AUTH_TOKEN": {
+              "description": "Kuudo API key or deployment bearer token.",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://{AGENT_IRIS_HOST}/mcp",
+      "variables": {
+        "AGENT_IRIS_HOST": {
+          "description": "Hostname of your Amazon Agent Iris deployment.",
+          "isRequired": true,
+          "placeholder": "agent-iris.example.com"
+        }
+      }
+    }
+  ],
+  "title": "Amazon listing image and video MCP server (Amazon Agent Iris)",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

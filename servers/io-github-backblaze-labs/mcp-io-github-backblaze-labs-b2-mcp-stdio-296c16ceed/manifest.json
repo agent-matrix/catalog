@@ -1,0 +1,85 @@
+{
+  "description": "Operate Backblaze B2 buckets, files, keys, Object Lock, and S3-compatible storage.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-backblaze-labs-b2-mcp.stdio.296c16ceed",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/backblaze-labs/b2-mcp",
+    "homepage": "https://github.com/backblaze-labs/b2-mcp",
+    "repository": "https://github.com/backblaze-labs/b2-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@backblaze-labs/b2-mcp@0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.backblaze-labs/b2-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Backblaze B2 application key ID for native B2 and S3-compatible tools.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "B2_APPLICATION_KEY_ID"
+        },
+        {
+          "description": "Backblaze B2 application key secret.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "B2_APPLICATION_KEY"
+        },
+        {
+          "description": "Optional fallback S3-compatible region used before authorization.",
+          "format": "string",
+          "name": "B2_REGION",
+          "placeholder": "us-east-005"
+        },
+        {
+          "description": "Optional master key ID for Partner/Groups API tools.",
+          "format": "string",
+          "isSecret": true,
+          "name": "B2_MASTER_KEY_ID"
+        },
+        {
+          "description": "Optional master key secret for Partner/Groups API tools.",
+          "format": "string",
+          "isSecret": true,
+          "name": "B2_MASTER_KEY"
+        }
+      ],
+      "identifier": "@backblaze-labs/b2-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "296c16ceed",
+    "published_at": "2026-09-01T22:46:26.184867Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.backblaze-labs/b2-mcp",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-01T22:46:26.184867Z"
+  },
+  "title": "Backblaze B2 MCP Server",
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

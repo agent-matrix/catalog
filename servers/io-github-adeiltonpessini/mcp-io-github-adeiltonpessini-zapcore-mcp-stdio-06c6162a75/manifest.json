@@ -1,0 +1,94 @@
+{
+  "description": "Servidor MCP do zapCore (WhatsApp): leitura sempre, envio atr\u00e1s de flag e allowlist de destino.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-adeiltonpessini-zapcore-mcp.stdio.06c6162a75",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/adeiltonpessini/zapcore",
+    "homepage": "https://github.com/adeiltonpessini/zapcore",
+    "repository": "https://github.com/adeiltonpessini/zapcore"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "zapcore-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.adeiltonpessini/zapcore-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Token da inst\u00e2ncia zapCore (header `token` da API v2).",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ZAPCORE_TOKEN"
+        },
+        {
+          "default": "https://zapcore.barberai.online",
+          "description": "Base da API do zapCore.",
+          "name": "ZAPCORE_URL"
+        },
+        {
+          "default": "0",
+          "description": "`1`/`true`/`yes` registra as 4 tools de envio. Sem allowlist (ZAPCORE_MCP_ALLOW) o servidor recusa a subir.",
+          "name": "ZAPCORE_MCP_WRITE"
+        },
+        {
+          "description": "Destinos autorizados a receber envio: telefones E.164 (s\u00f3 d\u00edgitos) separados por v\u00edrgula. Obrigat\u00f3rio quando ZAPCORE_MCP_WRITE est\u00e1 ligado.",
+          "name": "ZAPCORE_MCP_ALLOW"
+        },
+        {
+          "default": "30000",
+          "description": "Timeout por chamada HTTP \u00e0 API do zapCore, em milissegundos.",
+          "name": "ZAPCORE_MCP_TIMEOUT_MS"
+        },
+        {
+          "default": "<TEMP>/zapcore-mcp",
+          "description": "Diret\u00f3rio onde `zap_media_download` grava o arquivo baixado.",
+          "name": "ZAPCORE_MCP_DOWNLOAD_DIR"
+        },
+        {
+          "description": "Client ID do service token do Cloudflare Access, se a base estiver atr\u00e1s do Access. Anda em par com ZAPCORE_CF_ACCESS_CLIENT_SECRET \u2014 os dois ou nenhum.",
+          "isSecret": true,
+          "name": "ZAPCORE_CF_ACCESS_CLIENT_ID"
+        },
+        {
+          "description": "Client secret do service token do Cloudflare Access. Par de ZAPCORE_CF_ACCESS_CLIENT_ID.",
+          "isSecret": true,
+          "name": "ZAPCORE_CF_ACCESS_CLIENT_SECRET"
+        }
+      ],
+      "identifier": "zapcore-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "06c6162a75",
+    "published_at": "2026-09-13T02:08:51.265887Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.adeiltonpessini/zapcore-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-13T02:08:51.265887Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

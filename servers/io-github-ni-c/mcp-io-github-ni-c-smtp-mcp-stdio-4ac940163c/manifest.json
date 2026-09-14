@@ -1,0 +1,158 @@
+{
+  "description": "MCP server that sends mail over SMTP, gated behind an allowlist and a human confirmation",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:00+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ni-c-smtp-mcp.stdio.4ac940163c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ni-c/smtp-mcp",
+    "homepage": "https://github.com/ni-c/smtp-mcp",
+    "repository": "https://github.com/ni-c/smtp-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@ni-c/smtp-mcp@0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ni-c/smtp-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Hostname of the SMTP server, e.g. smtp.example.net.",
+          "format": "string",
+          "isRequired": true,
+          "name": "SMTP_HOST"
+        },
+        {
+          "description": "Port. Defaults to 587 for starttls, 465 for implicit, 25 for none.",
+          "format": "number",
+          "name": "SMTP_PORT"
+        },
+        {
+          "description": "starttls (default), implicit or none. STARTTLS is required, never opportunistic.",
+          "format": "string",
+          "name": "SMTP_TLS"
+        },
+        {
+          "description": "Username for SMTP authentication.",
+          "format": "string",
+          "isRequired": true,
+          "name": "SMTP_USER"
+        },
+        {
+          "description": "Password or app-specific password for SMTP authentication.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SMTP_PASSWORD"
+        },
+        {
+          "description": "The only sender this server will use, e.g. \"Name <person@example.net>\". There is no from parameter.",
+          "format": "string",
+          "isRequired": true,
+          "name": "SMTP_FROM"
+        },
+        {
+          "description": "Reply-To header on every message, e.g. \"Team <team@example.net>\". Unset means no Reply-To header and replies go to SMTP_FROM. There is no reply_to parameter.",
+          "format": "string",
+          "name": "SMTP_REPLY_TO"
+        },
+        {
+          "description": "Set to \"true\" to register the sending tools. Defaults to false: the server cannot send until it is set.",
+          "format": "boolean",
+          "name": "SMTP_ALLOW_SEND"
+        },
+        {
+          "description": "Comma-separated addresses and @domains this server may write to. Required with SMTP_ALLOW_SEND=true; \"*\" allows any.",
+          "format": "string",
+          "name": "SMTP_ALLOWED_RECIPIENTS"
+        },
+        {
+          "description": "Maximum distinct recipients across To, Cc and Bcc in one message. Default 10.",
+          "format": "number",
+          "name": "SMTP_MAX_RECIPIENTS"
+        },
+        {
+          "description": "Sliding hourly cap on messages sent. Default 20.",
+          "format": "number",
+          "name": "SMTP_MAX_SENDS_PER_HOUR"
+        },
+        {
+          "description": "Maximum size of the composed message. Default 10485760.",
+          "format": "number",
+          "name": "SMTP_MAX_MESSAGE_BYTES"
+        },
+        {
+          "description": "Maximum size of a single attachment. Default 5242880.",
+          "format": "number",
+          "name": "SMTP_MAX_ATTACHMENT_BYTES"
+        },
+        {
+          "description": "Directory attachments are read from. Unset means attachments are unavailable.",
+          "format": "string",
+          "name": "SMTP_ATTACHMENT_DIR"
+        },
+        {
+          "description": "Comma-separated content types that may be attached. Defaults to a document and image allowlist.",
+          "format": "string",
+          "name": "SMTP_ATTACHMENT_TYPES"
+        },
+        {
+          "description": "Text appended below the standard signature delimiter of every message.",
+          "format": "string",
+          "name": "SMTP_SIGNATURE"
+        },
+        {
+          "description": "File the audit lines are appended to, in addition to stderr.",
+          "format": "string",
+          "name": "SMTP_AUDIT_LOG"
+        },
+        {
+          "description": "Comma-separated tool names, a prefix with one trailing *, or \"essential\" for the curated preset.",
+          "format": "string",
+          "name": "SMTP_ALLOW_TOOLS"
+        },
+        {
+          "description": "Comma-separated tool names or prefixes to remove, applied after SMTP_ALLOW_TOOLS.",
+          "format": "string",
+          "name": "SMTP_DENY_TOOLS"
+        },
+        {
+          "description": "Set to \"true\" to accept self-signed certificates. Prefer a proper internal CA.",
+          "format": "boolean",
+          "name": "SMTP_INSECURE_TLS"
+        }
+      ],
+      "identifier": "@ni-c/smtp-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4ac940163c",
+    "published_at": "2026-09-07T18:06:20.626217Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ni-c/smtp-mcp",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-07T18:06:20.626217Z"
+  },
+  "title": "SMTP",
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

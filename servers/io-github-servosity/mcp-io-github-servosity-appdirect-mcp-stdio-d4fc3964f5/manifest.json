@@ -1,0 +1,84 @@
+{
+  "description": "AppDirect marketplace operations with an offline mirror and cross-company billing reconciliation.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:04+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Servosity-appdirect-mcp.stdio.d4fc3964f5",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/servosity/msp-skills",
+    "homepage": "https://github.com/servosity/msp-skills",
+    "repository": "https://github.com/servosity/msp-skills"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Servosity/appdirect-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://marketplace.appdirect.com/api",
+          "description": "Base URL for the AppDirect API. Leave the prefilled default unless your account uses a different regional or self-hosted host.",
+          "name": "APPDIRECT_BASE_URL"
+        },
+        {
+          "description": "Set the APPDIRECT_CLIENT_ID credential for the AppDirect MCP server.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "APPDIRECT_CLIENT_ID"
+        },
+        {
+          "description": "Set the APPDIRECT_CLIENT_SECRET credential for the AppDirect MCP server.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "APPDIRECT_CLIENT_SECRET"
+        },
+        {
+          "description": "Optional. Overrides the OAuth2 scope sent to AppDirect (default: ROLE_PARTNER ROLE_PARTNER_READ).",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "APPDIRECT_OAUTH_SCOPE"
+        },
+        {
+          "default": "https://marketplace.appdirect.com/oauth2/token",
+          "description": "Token endpoint the client-credentials exchange posts to. Leave the prefilled default unless your tenant uses a different token endpoint.",
+          "name": "APPDIRECT_TOKEN_URL"
+        },
+        {
+          "description": "Set to 1 to keep credentials off disk. The token cache becomes a no-op, so the connector mints a fresh token each run instead of writing one to config.toml. Leave blank for the default cached behaviour.",
+          "name": "APPDIRECT_NO_CONFIG_WRITE"
+        }
+      ],
+      "fileSha256": "fb83c38c19efef8a99a247faf1697604cafdd15e35c0a9c62fe97a573ebcf677",
+      "identifier": "https://github.com/Servosity/msp-skills/releases/download/appdirect-v0.1.4/appdirect-mcp.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d4fc3964f5",
+    "published_at": "2026-09-06T18:53:36.676774Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Servosity/appdirect-mcp",
+    "server_version": "0.1.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-06T18:53:36.676774Z"
+  },
+  "title": "AppDirect MCP",
+  "type": "mcp_server",
+  "version": "0.1.4"
+}

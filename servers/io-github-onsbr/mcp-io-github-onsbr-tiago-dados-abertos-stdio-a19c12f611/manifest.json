@@ -1,0 +1,69 @@
+{
+  "description": "MCP server que conecta agentes de IA aos dados abertos do ONS (Operador Nacional do Sistema)",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:00+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ONSBR-tiago-dados-abertos.stdio.a19c12f611",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-tiago-dados-abertos==1.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ONSBR/tiago-dados-abertos",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "fuso em que 'hoje' e 'ontem' sao resolvidos; padrao America/Sao_Paulo",
+          "name": "MCP_DATA_TZ"
+        },
+        {
+          "description": "segundos ate interromper uma consulta; padrao 30",
+          "name": "MCP_QUERY_TIMEOUT_S"
+        },
+        {
+          "description": "User-Agent das leituras HTTPS; troque o contato antes de expor",
+          "name": "MCP_HTTP_UA"
+        }
+      ],
+      "identifier": "mcp-tiago-dados-abertos",
+      "packageArguments": [
+        {
+          "description": "modo stdio, para IDEs e Claude Desktop",
+          "type": "positional",
+          "value": "--stdio"
+        }
+      ],
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a19c12f611",
+    "published_at": "2026-09-08T11:48:28.911743Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ONSBR/tiago-dados-abertos",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-08T11:48:28.911743Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

@@ -1,0 +1,102 @@
+{
+  "description": "Schedule a GitHub Projects backlog into Google Calendar, as a CLI or an MCP server.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-danielsousaoliveira-cal-auto-python.stdio.8a50a4bb6c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/danielsousaoliveira/auto-calendar-python",
+    "homepage": "https://github.com/danielsousaoliveira/auto-calendar-python",
+    "repository": "https://github.com/danielsousaoliveira/auto-calendar-python"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "cal-auto-python==0.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.danielsousaoliveira/cal-auto-python",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "GitHub personal access token used to query the GitHub Project.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GITHUB_TOKEN"
+        },
+        {
+          "description": "GitHub Projects V2 node ID of the board to read.",
+          "isRequired": true,
+          "name": "GITHUB_PROJECT_ID"
+        },
+        {
+          "description": "IANA timezone name used to schedule events, e.g. Europe/Lisbon.",
+          "isRequired": true,
+          "name": "CAL_AUTO_TIMEZONE"
+        },
+        {
+          "description": "Directory holding Google OAuth credentials and token. Defaults to the platform config directory.",
+          "name": "CAL_AUTO_CONFIG_DIR"
+        },
+        {
+          "description": "Start of the working day as HH:MM. Defaults to 09:00.",
+          "name": "CAL_AUTO_WORKING_DAY_START"
+        },
+        {
+          "description": "End of the working day as HH:MM. Defaults to 17:00.",
+          "name": "CAL_AUTO_WORKING_DAY_END"
+        },
+        {
+          "description": "Google Calendar ID to schedule events into. Defaults to primary.",
+          "name": "CAL_AUTO_CALENDAR_ID"
+        },
+        {
+          "description": "Google Tasks list ID to create tasks in. Defaults to @default.",
+          "name": "CAL_AUTO_TASK_LIST_ID"
+        },
+        {
+          "description": "Comma-separated email addresses to invite to scheduled events.",
+          "name": "CAL_AUTO_ATTENDEES"
+        },
+        {
+          "description": "Comma-separated GitHub Project status names to schedule. Defaults to Backlog.",
+          "name": "CAL_AUTO_SCHEDULABLE_STATUSES"
+        },
+        {
+          "description": "Whether all-day events count against free/busy slots. Defaults to false.",
+          "name": "CAL_AUTO_COUNT_ALL_DAY_EVENTS"
+        }
+      ],
+      "identifier": "cal-auto-python",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8a50a4bb6c",
+    "published_at": "2026-09-09T10:46:37.915542Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.danielsousaoliveira/cal-auto-python",
+    "server_version": "0.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-09T10:46:37.915542Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.0.1"
+}

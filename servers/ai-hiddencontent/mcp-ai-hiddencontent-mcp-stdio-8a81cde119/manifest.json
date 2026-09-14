@@ -1,0 +1,65 @@
+{
+  "description": "Check a document for hidden text before your agent reads it. PDF, Office, RTF, HTML.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:07+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-hiddencontent-mcp.stdio.8a81cde119",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/AeroSpark-ai/hidden-content-service",
+    "homepage": "https://github.com/AeroSpark-ai/hidden-content-service",
+    "repository": "https://github.com/AeroSpark-ai/hidden-content-service"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.hiddencontent/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API token for the HiddenContent service. Get one at https://hiddencontent.ai/start?ref=mcp-registry \u2014 the server refuses to start without it and says so.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "HCS_API_TOKEN"
+        },
+        {
+          "description": "Base URL of the service. Defaults to the hosted API; set it only when pointing at a self-hosted instance.",
+          "name": "HCS_URL"
+        },
+        {
+          "description": "Comma-separated list of what your agent can actually do. The only accepted values are `tool-use`, `network-egress` and `code-execution`. These turn on the checks for concealed text that instructs a model to call a tool, send data or run code \u2014 declaring more can raise severity and never lowers it, and declaring nothing leaves those checks inert. Defaults to `tool-use` in the bundle install.",
+          "name": "HCS_CAPABILITIES"
+        }
+      ],
+      "fileSha256": "f8327824860848532ccf838b8f4370c6c8720fa03b71219bc8ec66c586a836e1",
+      "identifier": "https://github.com/AeroSpark-ai/hiddencontent-mcp/releases/download/v0.4.13/hiddencontent.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "8a81cde119",
+    "published_at": "2026-09-02T17:39:58.661121Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.hiddencontent/mcp",
+    "server_version": "0.4.13",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-02T17:39:58.661121Z"
+  },
+  "title": "HiddenContent",
+  "type": "mcp_server",
+  "version": "0.4.13"
+}

@@ -1,0 +1,92 @@
+{
+  "description": "Biomedical MCP server: genes, variants, trials, literature, patents, optional SQL/R/biowasm tools.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-yeyuan98-biomcp-ts.stdio.e5cb3e9118",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/yeyuan98/biomcp-ts",
+    "homepage": "https://github.com/yeyuan98/biomcp-ts",
+    "repository": "https://github.com/yeyuan98/biomcp-ts"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "biomcp@1.4.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.yeyuan98/biomcp-ts",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Set to 1 to enable the samtools/bedtools/bcftools biowasm analysis tools",
+          "name": "ANALYSIS_BIOWASM"
+        },
+        {
+          "description": "Set to 1 to enable the R/Bioconductor analysis tools (requires the webr peer dependency; use the pinned one-shot client command)",
+          "name": "ANALYSIS_R"
+        },
+        {
+          "description": "Set to mysql or sqlite to enable the read-only SQL database tools",
+          "name": "DB_TYPE"
+        },
+        {
+          "description": "Higher NCBI E-utilities rate limits (3 -> 10 req/s)",
+          "isSecret": true,
+          "name": "NCBI_API_KEY"
+        },
+        {
+          "description": "Higher Semantic Scholar rate limits",
+          "isSecret": true,
+          "name": "S2_API_KEY"
+        },
+        {
+          "description": "Higher OpenFDA rate limits",
+          "isSecret": true,
+          "name": "OPENFDA_API_KEY"
+        },
+        {
+          "description": "Required by the variant_oncokb tool (OncoKB annotations)",
+          "isSecret": true,
+          "name": "ONCOKB_TOKEN"
+        },
+        {
+          "description": "Required for DisGeNET disease-gene associations",
+          "isSecret": true,
+          "name": "DISGENET_API_KEY"
+        }
+      ],
+      "identifier": "biomcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.4.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e5cb3e9118",
+    "published_at": "2026-09-10T06:41:26.977234Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.yeyuan98/biomcp-ts",
+    "server_version": "1.4.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-10T06:41:26.977234Z"
+  },
+  "title": "BioMCP-TS",
+  "type": "mcp_server",
+  "version": "1.4.2"
+}

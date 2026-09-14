@@ -1,0 +1,59 @@
+{
+  "description": "Mint a secure HTTPS endpoint for your agents. Each on its own dedicated domain.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:18+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-dnsmint-mcp.stdio.b8b135ff59",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "dnsmint-mcp-server@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.dnsmint/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "A DNSMint API key. Create one at https://dnsmint.com/app/settings.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DNSMINT_API_KEY"
+        },
+        {
+          "description": "Set to true to expose release_hostname. Releasing is permanent and the name is never issued again, so it is off by default.",
+          "name": "DNSMINT_ALLOW_RELEASE"
+        }
+      ],
+      "identifier": "dnsmint-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b8b135ff59",
+    "published_at": "2026-09-12T03:38:55.926099Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.dnsmint/mcp",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-12T03:38:55.926099Z"
+  },
+  "title": "DNSMint",
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

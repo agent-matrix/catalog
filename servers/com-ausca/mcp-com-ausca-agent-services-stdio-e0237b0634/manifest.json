@@ -1,0 +1,71 @@
+{
+  "description": "Pay-per-call APIs and MCP services for agents, no accounts or keys, with verifiable receipts.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-ausca-agent-services.stdio.e0237b0634",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/auscahq/ausca",
+    "homepage": "https://github.com/auscahq/ausca",
+    "repository": "https://github.com/auscahq/ausca"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "ausca@0.0.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.ausca/agent-services",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional local wallet key for paid tools. Discovery and artifact commit remain keyless.",
+          "format": "string",
+          "isSecret": true,
+          "name": "AUSCA_PRIVATE_KEY"
+        },
+        {
+          "description": "Required positive per-call USD cap whenever AUSCA_PRIVATE_KEY is configured.",
+          "format": "number",
+          "name": "AUSCA_MAX_PAYMENT_USD"
+        }
+      ],
+      "identifier": "ausca",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.0.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e0237b0634",
+    "published_at": "2026-09-07T14:20:14.194141Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.ausca/agent-services",
+    "server_version": "1.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-07T14:20:14.194141Z"
+  },
+  "title": "Ausca",
+  "type": "mcp_server",
+  "version": "1.2.1"
+}

@@ -1,0 +1,76 @@
+{
+  "description": "Pin visual feedback on any live web page and send it to Claude Code, Cursor or your AI agent.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Jonahbkerr-yocoolab.stdio.7b0f0824ba",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Yocoolab/mcp-server",
+    "homepage": "https://github.com/Yocoolab/mcp-server",
+    "repository": "https://github.com/Yocoolab/mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@yocoolab/mcp-server@2.4.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Jonahbkerr/yocoolab",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your Yocoolab JWT, from the Chrome extension settings or app.yocoolab.com. When unset, thread feedback tools are disabled but bridge, companion and activity tools still work.",
+          "format": "string",
+          "isSecret": true,
+          "name": "YOCOOLAB_TOKEN"
+        },
+        {
+          "description": "Yocoolab API base URL. Defaults to https://app.yocoolab.com.",
+          "format": "string",
+          "name": "YOCOOLAB_API_URL"
+        },
+        {
+          "description": "GitHub PAT with repo scope, needed only for the PR-creation tools. Auto-detected from the gh CLI when authenticated.",
+          "format": "string",
+          "isSecret": true,
+          "name": "GITHUB_TOKEN"
+        },
+        {
+          "description": "Absolute path to your project workspace, used to resolve file references in selections. Defaults to the current working directory.",
+          "format": "string",
+          "name": "YOCOOLAB_BRIDGE_WORKSPACE"
+        }
+      ],
+      "identifier": "@yocoolab/mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.4.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7b0f0824ba",
+    "published_at": "2026-09-07T06:02:35.785782Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Jonahbkerr/yocoolab",
+    "server_version": "2.4.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-07T06:02:35.785782Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "2.4.3"
+}

@@ -1,0 +1,73 @@
+{
+  "description": "Email infrastructure for AI agents: send, authenticate domains, track delivery, diagnose issues.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-vaemail-vaemail.stdio.c76ecff213",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/vaemail/vaemail-mcp",
+    "homepage": "https://github.com/vaemail/vaemail-mcp",
+    "repository": "https://github.com/vaemail/vaemail-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "vaemail@1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.vaemail/vaemail",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "VaEmail API key (created in the dashboard, ideally scoped and capped for this agent). Required for every tool except vaemail_capabilities.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "VAEMAIL_API_KEY"
+        },
+        {
+          "description": "API base URL. Default https://app.vaemail.fr.",
+          "format": "string",
+          "name": "VAEMAIL_BASE_URL"
+        }
+      ],
+      "identifier": "vaemail",
+      "packageArguments": [
+        {
+          "description": "Start the MCP server (the same package also provides the `vaemail` CLI).",
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c76ecff213",
+    "published_at": "2026-09-06T20:32:38.712035Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.vaemail/vaemail",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-06T20:32:38.712035Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

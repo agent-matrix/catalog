@@ -1,0 +1,68 @@
+{
+  "description": "A2A v1.0.1 agents as MCP 2026-07-28 tools, with the tasks extension",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:43+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-AmirK-S-a2a-to-mcp.stdio.44833f1378",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/AmirK-S/a2a-to-mcp",
+    "homepage": "https://github.com/AmirK-S/a2a-to-mcp",
+    "repository": "https://github.com/AmirK-S/a2a-to-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "a2a-to-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.AmirK-S/a2a-to-mcp",
+  "packages": [
+    {
+      "identifier": "a2a-to-mcp",
+      "packageArguments": [
+        {
+          "description": "JSON file declaring the A2A agents to expose, by alias",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "--config",
+          "placeholder": "agents.json",
+          "type": "named"
+        },
+        {
+          "default": "8931",
+          "description": "TCP port to bind",
+          "name": "--port",
+          "type": "named"
+        }
+      ],
+      "registryType": "npm",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:{--port}/mcp"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "44833f1378",
+    "published_at": "2026-09-06T05:23:32.706117Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.AmirK-S/a2a-to-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-06T05:23:32.706117Z"
+  },
+  "title": "A2A to MCP bridge",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

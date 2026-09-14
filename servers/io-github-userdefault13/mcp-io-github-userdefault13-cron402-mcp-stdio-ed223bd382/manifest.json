@@ -1,0 +1,86 @@
+{
+  "description": "Schedule webhook calls, pay per run in USDC on Base via x402. Ten tools, built for small models.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:32+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-userdefault13-cron402-mcp.stdio.ed223bd382",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/userdefault13/ai-cron-site",
+    "homepage": "https://github.com/userdefault13/ai-cron-site",
+    "repository": "https://github.com/userdefault13/ai-cron-site"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "name": "-y",
+            "type": "named"
+          },
+          "cron402-mcp@1.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.userdefault13/cron402-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Agent wallet private key (0x\u2026). Fund with USDC on Base mainnet or Sepolia. Without it the server starts read-only: the free tools still work.",
+          "format": "string",
+          "isSecret": true,
+          "name": "CRON402_PRIVATE_KEY"
+        },
+        {
+          "description": "CAIP-2 network id. Default eip155:8453 (Base mainnet); use eip155:84532 for Sepolia.",
+          "format": "string",
+          "name": "CRON402_NETWORK"
+        },
+        {
+          "description": "cron402 API base URL. Defaults to the production Worker.",
+          "format": "string",
+          "name": "CRON402_API_URL"
+        },
+        {
+          "description": "Directory where created job ids are remembered so list_crons can recover them. Defaults to ~/.cron402.",
+          "format": "string",
+          "name": "CRON402_STATE_DIR"
+        }
+      ],
+      "identifier": "cron402-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "name": "-y",
+          "type": "named"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ed223bd382",
+    "published_at": "2026-09-07T21:27:07.842207Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.userdefault13/cron402-mcp",
+    "server_version": "1.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-07T21:27:07.842207Z"
+  },
+  "title": "cron402",
+  "type": "mcp_server",
+  "version": "1.1.1"
+}

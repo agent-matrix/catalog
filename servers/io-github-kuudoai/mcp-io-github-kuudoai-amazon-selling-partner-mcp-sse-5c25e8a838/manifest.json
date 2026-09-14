@@ -1,0 +1,62 @@
+{
+  "description": "MCP server for the Amazon Selling Partner API: orders, listings, pricing, FBA, and reimbursements.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:57+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-KuudoAI-amazon-selling-partner-mcp.sse.5c25e8a838",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/KuudoAI/amazon-selling-partner-mcp",
+    "homepage": "https://github.com/KuudoAI/amazon-selling-partner-mcp",
+    "repository": "https://github.com/KuudoAI/amazon-selling-partner-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://{SELLING_PARTNER_HOST}/mcp"
+    }
+  },
+  "name": "io.github.KuudoAI/amazon-selling-partner-mcp",
+  "provenance": {
+    "identity_key": "5c25e8a838",
+    "published_at": "2026-09-06T12:33:47.904298Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.KuudoAI/amazon-selling-partner-mcp",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-06T12:33:47.904298Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Kuudo API key or deployment bearer token.",
+          "name": "Authorization",
+          "value": "Bearer {AUTH_TOKEN}",
+          "variables": {
+            "AUTH_TOKEN": {
+              "description": "Kuudo API key or deployment bearer token.",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://{SELLING_PARTNER_HOST}/mcp",
+      "variables": {
+        "SELLING_PARTNER_HOST": {
+          "description": "Hostname of your Amazon Selling Partner MCP deployment.",
+          "isRequired": true,
+          "placeholder": "selling-partner.example.com"
+        }
+      }
+    }
+  ],
+  "title": "Amazon Seller Central MCP server (Amazon Selling Partner MCP)",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

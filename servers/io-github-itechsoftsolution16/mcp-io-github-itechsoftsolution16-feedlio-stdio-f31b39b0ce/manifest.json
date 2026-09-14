@@ -1,0 +1,63 @@
+{
+  "description": "Feedlio MCP server exposing posting and scheduling tools to Claude Desktop and Claude Code.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-itechsoftsolution16-feedlio.stdio.f31b39b0ce",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@itechsoftsolutions/social-mcp-server@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.itechsoftsolution16/feedlio",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://api.feedlio.io/graphql",
+          "description": "GraphQL endpoint of social-auth-api-gateway",
+          "format": "string",
+          "isRequired": true,
+          "name": "FEEDLIO_API_URL"
+        },
+        {
+          "description": "Feedlio personal access token (Settings -> MCP), needs posts:write/posts:read/accounts:read/workspaces:read scopes",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "FEEDLIO_API_TOKEN"
+        }
+      ],
+      "identifier": "@itechsoftsolutions/social-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f31b39b0ce",
+    "published_at": "2026-09-10T09:24:30.852781Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.itechsoftsolution16/feedlio",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-10T09:24:30.852781Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

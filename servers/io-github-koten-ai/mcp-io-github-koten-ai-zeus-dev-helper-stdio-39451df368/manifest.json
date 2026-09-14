@@ -1,0 +1,104 @@
+{
+  "description": "Coach first Zeus Client app to green (stdio MCP).",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:47+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-koten-ai-zeus-dev-helper.stdio.39451df368",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/koten-ai/zeus_dev_helper_mcp",
+    "homepage": "https://github.com/koten-ai/zeus_dev_helper_mcp",
+    "repository": "https://github.com/koten-ai/zeus_dev_helper_mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "zeus-dev-helper-mcp==0.6.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.koten-ai/zeus-dev-helper",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Public Zeus API base URL (port 8080, never Hub :9091).",
+          "format": "string",
+          "name": "ZEUS_URL",
+          "placeholder": "http://localhost:8080"
+        },
+        {
+          "description": "Default bucket for bootstrap and auth probes.",
+          "format": "string",
+          "name": "ZEUS_BUCKET"
+        },
+        {
+          "description": "Default scope for bootstrap and auth probes.",
+          "format": "string",
+          "name": "ZEUS_SCOPE"
+        },
+        {
+          "description": "Zeus basic-auth username (presence only; never logged).",
+          "format": "string",
+          "isSecret": true,
+          "name": "ZEUS_USERNAME"
+        },
+        {
+          "description": "Zeus basic-auth password (presence only; never logged).",
+          "format": "string",
+          "isSecret": true,
+          "name": "ZEUS_PASSWORD"
+        },
+        {
+          "description": "Zeus bearer token (presence only; never logged).",
+          "format": "string",
+          "isSecret": true,
+          "name": "ZEUS_BEARER_TOKEN"
+        },
+        {
+          "description": "Local clone of zeus_chat_request for offline min templates.",
+          "format": "filepath",
+          "name": "ZEUS_CHAT_REQUEST_DIR"
+        },
+        {
+          "description": "GitHub token to fetch private zeus_chat_request catalogs.",
+          "format": "string",
+          "isSecret": true,
+          "name": "GITHUB_TOKEN"
+        },
+        {
+          "description": "Local clone of demo_travel_sample for travel_golden_path.",
+          "format": "filepath",
+          "name": "DEMO_TRAVEL_SAMPLE_DIR"
+        }
+      ],
+      "identifier": "zeus-dev-helper-mcp",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.6.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "39451df368",
+    "published_at": "2026-09-08T14:42:34.009672Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.koten-ai/zeus-dev-helper",
+    "server_version": "0.6.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-08T14:42:34.009672Z"
+  },
+  "title": "Zeus Dev Helper",
+  "type": "mcp_server",
+  "version": "0.6.0"
+}

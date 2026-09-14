@@ -1,0 +1,70 @@
+{
+  "description": "Multitenant Streamable HTTP bridge over Nutanix's official v4 API MCP server (Prism Central).",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:08+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-WYRE-AI-nutanix-mcp.stdio.2fb241a9c1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/WYRE-AI/nutanix-mcp",
+    "homepage": "https://github.com/WYRE-AI/nutanix-mcp",
+    "repository": "https://github.com/WYRE-AI/nutanix-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-ai/nutanix-mcp:v1.0.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.WYRE-AI/nutanix-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "8080",
+          "description": "Public listen port for the bridge (POST /mcp, GET /health)",
+          "format": "string",
+          "name": "PORT"
+        },
+        {
+          "default": "3600000",
+          "description": "Idle tenant timeout before an upstream child is evicted (ms)",
+          "format": "string",
+          "name": "IDLE_EVICT_MS"
+        },
+        {
+          "default": "60000",
+          "description": "How long to wait for a spawned child to answer the MCP handshake (ms)",
+          "format": "string",
+          "name": "SPAWN_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-ai/nutanix-mcp:v1.0.5",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "2fb241a9c1",
+    "published_at": "2026-09-03T13:08:14.817779Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.WYRE-AI/nutanix-mcp",
+    "server_version": "1.0.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-03T13:08:14.817779Z"
+  },
+  "title": "Nutanix Prism Central",
+  "type": "mcp_server",
+  "version": "1.0.5"
+}

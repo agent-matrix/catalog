@@ -1,0 +1,138 @@
+{
+  "description": "ServiceNow developer data plane: Table API, CMDB, update sets, schema. Read-only, allow/deny, audit.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:45+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-jschuller-mcp-server-servicenow.stdio.358b4283b3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jschuller/mcp-server-servicenow",
+    "homepage": "https://github.com/jschuller/mcp-server-servicenow",
+    "repository": "https://github.com/jschuller/mcp-server-servicenow"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-server-servicenow==0.7.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.jschuller/mcp-server-servicenow",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "ServiceNow instance URL",
+          "format": "string",
+          "isRequired": true,
+          "name": "SERVICENOW_INSTANCE_URL"
+        },
+        {
+          "description": "Auth type: basic, oauth, or api_key",
+          "format": "string",
+          "isRequired": true,
+          "name": "SERVICENOW_AUTH_TYPE"
+        },
+        {
+          "description": "Username for basic or OAuth auth",
+          "format": "string",
+          "name": "SERVICENOW_USERNAME"
+        },
+        {
+          "description": "Password for basic or OAuth auth",
+          "format": "string",
+          "isSecret": true,
+          "name": "SERVICENOW_PASSWORD"
+        },
+        {
+          "description": "OAuth client ID",
+          "format": "string",
+          "name": "SERVICENOW_CLIENT_ID"
+        },
+        {
+          "description": "OAuth client secret",
+          "format": "string",
+          "isSecret": true,
+          "name": "SERVICENOW_CLIENT_SECRET"
+        },
+        {
+          "description": "API key for api_key auth",
+          "format": "string",
+          "isSecret": true,
+          "name": "SERVICENOW_API_KEY"
+        },
+        {
+          "description": "Header name for api_key auth (default X-ServiceNow-API-Key)",
+          "format": "string",
+          "name": "SERVICENOW_API_KEY_HEADER"
+        },
+        {
+          "description": "OAuth token URL (default <instance>/oauth_token.do)",
+          "format": "string",
+          "name": "SERVICENOW_TOKEN_URL"
+        },
+        {
+          "description": "HTTP timeout in seconds (default 30)",
+          "format": "number",
+          "name": "SERVICENOW_TIMEOUT"
+        },
+        {
+          "description": "Hide write tools and refuse non-GET requests",
+          "format": "boolean",
+          "name": "SERVICENOW_READ_ONLY"
+        },
+        {
+          "description": "Comma-separated tables/globs that may be accessed",
+          "format": "string",
+          "name": "SERVICENOW_TABLE_ALLOWLIST"
+        },
+        {
+          "description": "Comma-separated tables/globs that may never be accessed",
+          "format": "string",
+          "name": "SERVICENOW_TABLE_DENYLIST"
+        },
+        {
+          "description": "Permit arbitrary javascript: in caller queries",
+          "format": "boolean",
+          "name": "SERVICENOW_ALLOW_JS_QUERIES"
+        },
+        {
+          "description": "Confirm update/delete via MCP elicitation (opt-in)",
+          "format": "boolean",
+          "name": "SERVICENOW_WRITE_CONFIRM"
+        },
+        {
+          "description": "Audit log target: stderr (default), off, or a file path",
+          "format": "string",
+          "name": "SERVICENOW_AUDIT_LOG"
+        }
+      ],
+      "identifier": "mcp-server-servicenow",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.7.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "358b4283b3",
+    "published_at": "2026-09-05T15:09:13.628336Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.jschuller/mcp-server-servicenow",
+    "server_version": "0.7.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-05T15:09:13.628336Z"
+  },
+  "title": "ServiceNow MCP Server",
+  "type": "mcp_server",
+  "version": "0.7.0"
+}

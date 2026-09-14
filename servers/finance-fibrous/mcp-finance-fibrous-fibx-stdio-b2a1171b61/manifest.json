@@ -1,0 +1,74 @@
+{
+  "description": "Swap, transfer, portfolio and Aave V3 on Base, HyperEVM and Monad, with the FibX app as MCP Apps UI.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.finance-fibrous-fibx.stdio.b2a1171b61",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Fibrous-Finance/fibx",
+    "homepage": "https://github.com/Fibrous-Finance/fibx",
+    "repository": "https://github.com/Fibrous-Finance/fibx"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "fibx@0.10.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "finance.fibrous/fibx",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Custom fibx-server URL for Privy wallet operations. Optional; only needed when self-hosting the backend.",
+          "name": "FIBX_API_URL"
+        },
+        {
+          "description": "Encryption key for the local session file. Optional; auto-generated per machine when unset.",
+          "isSecret": true,
+          "name": "FIBX_SESSION_SECRET"
+        },
+        {
+          "description": "WalletConnect Cloud project id used by connect_wallet. Optional; a shared public id ships in the bundle. Set your own from cloud.reown.com if the shared id's quota is exhausted.",
+          "name": "FIBX_WC_PROJECT_ID"
+        }
+      ],
+      "identifier": "fibx",
+      "packageArguments": [
+        {
+          "description": "Starts the MCP server over stdio.",
+          "type": "positional",
+          "value": "mcp-start",
+          "valueHint": "subcommand"
+        }
+      ],
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.10.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b2a1171b61",
+    "published_at": "2026-09-05T20:21:39.834666Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "finance.fibrous/fibx",
+    "server_version": "0.10.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-05T20:21:39.834666Z"
+  },
+  "title": "FibX",
+  "type": "mcp_server",
+  "version": "0.10.1"
+}

@@ -1,0 +1,70 @@
+{
+  "description": "Persistent memory for AI coding agents: one Rust binary, one local SQLite database.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:14+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-asanabrial-leteo.stdio.c31568c9ac",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/asanabrial/leteo",
+    "homepage": "https://github.com/asanabrial/leteo",
+    "repository": "https://github.com/asanabrial/leteo"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@asanabrial/leteo@0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.asanabrial/leteo",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Where the database lives. Defaults to ~/.leteo, and only needs setting for a store kept somewhere else \u2014 the server is started by the agent rather than by a person, so it cannot inherit a shell's environment.",
+          "format": "filepath",
+          "name": "LETEO_DATA_DIR"
+        }
+      ],
+      "identifier": "@asanabrial/leteo",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        },
+        {
+          "description": "Which tools the server exposes. `agent` is the nineteen an agent reaches for while it works; the three that change or count the whole store sit behind `admin`.",
+          "name": "--tools",
+          "type": "named",
+          "value": "agent"
+        }
+      ],
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c31568c9ac",
+    "published_at": "2026-09-01T23:13:28.91086Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.asanabrial/leteo",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-01T23:13:28.91086Z"
+  },
+  "title": "Leteo",
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

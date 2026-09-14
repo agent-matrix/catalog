@@ -1,0 +1,85 @@
+{
+  "description": "MCP server for Linkwarden, the self-hosted bookmark manager with page preservation",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:00+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ni-c-linkwarden-mcp.stdio.c278b5fa7d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ni-c/linkwarden-mcp",
+    "homepage": "https://github.com/ni-c/linkwarden-mcp",
+    "repository": "https://github.com/ni-c/linkwarden-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/ni-c/linkwarden-mcp:0.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ni-c/linkwarden-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the Linkwarden instance, e.g. https://links.example.net (without /api/v1)",
+          "format": "string",
+          "isRequired": true,
+          "name": "LINKWARDEN_URL"
+        },
+        {
+          "description": "Access token from Settings -> Access Tokens",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "LINKWARDEN_TOKEN"
+        },
+        {
+          "description": "Set to true to register only the 11 read tools and no write tools",
+          "format": "boolean",
+          "name": "LINKWARDEN_READ_ONLY"
+        },
+        {
+          "description": "Comma-separated tool names or list_* prefixes to register; 'essential' selects a curated preset (default: all tools)",
+          "format": "string",
+          "name": "LINKWARDEN_ALLOW_TOOLS"
+        },
+        {
+          "description": "Comma-separated tool names or list_* prefixes to remove from whatever LINKWARDEN_ALLOW_TOOLS left",
+          "format": "string",
+          "name": "LINKWARDEN_DENY_TOOLS"
+        },
+        {
+          "description": "Set to true to accept self-signed certificates for this connection only",
+          "format": "boolean",
+          "name": "LINKWARDEN_INSECURE_TLS"
+        }
+      ],
+      "identifier": "ghcr.io/ni-c/linkwarden-mcp:0.4.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "c278b5fa7d",
+    "published_at": "2026-09-07T20:11:00.78757Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ni-c/linkwarden-mcp",
+    "server_version": "0.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-07T20:11:00.78757Z"
+  },
+  "title": "Linkwarden",
+  "type": "mcp_server",
+  "version": "0.4.0"
+}

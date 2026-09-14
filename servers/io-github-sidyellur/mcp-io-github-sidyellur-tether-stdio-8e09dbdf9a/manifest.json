@@ -1,0 +1,74 @@
+{
+  "description": "Local-first agent memory over SQLite: remember, recall, link, forget. Degrades, never fails.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:21+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sidyellur-tether.stdio.8e09dbdf9a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sidyellur/tether",
+    "homepage": "https://github.com/sidyellur/tether",
+    "repository": "https://github.com/sidyellur/tether"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "tether-memory==0.6.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sidyellur/tether",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the SQLite memory file. Defaults to the platform data dir (e.g. ~/.local/share/tether/memory.db).",
+          "format": "filepath",
+          "name": "TETHER_DB"
+        },
+        {
+          "description": "Set to 0 to force keyword-only recall. Semantic recall needs the [semantic] extra and is on by default when available.",
+          "format": "string",
+          "name": "TETHER_SEMANTIC"
+        },
+        {
+          "description": "Optional libSQL/Turso primary URL to sync memory across devices. Leave unset for local-only.",
+          "format": "string",
+          "name": "TETHER_SYNC_URL"
+        },
+        {
+          "description": "Auth token for TETHER_SYNC_URL.",
+          "format": "string",
+          "isSecret": true,
+          "name": "TETHER_SYNC_TOKEN"
+        }
+      ],
+      "identifier": "tether-memory",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.6.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8e09dbdf9a",
+    "published_at": "2026-09-07T02:10:10.298517Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sidyellur/tether",
+    "server_version": "0.6.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-07T02:10:10.298517Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.6.0"
+}

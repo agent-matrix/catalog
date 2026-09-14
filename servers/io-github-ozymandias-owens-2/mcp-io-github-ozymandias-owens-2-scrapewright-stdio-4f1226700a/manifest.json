@@ -1,0 +1,94 @@
+{
+  "description": "Give it a store URL, get structured rows. A model writes the parser once; replays are free.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:01+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Ozymandias-Owens-2-scrapewright.stdio.4f1226700a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Ozymandias-Owens-2/scrapewright",
+    "homepage": "https://github.com/Ozymandias-Owens-2/scrapewright",
+    "repository": "https://github.com/Ozymandias-Owens-2/scrapewright"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "The MCP server, the model client and spreadsheet export are optional extras; the bare package cannot start the server.",
+            "name": "--from",
+            "type": "named",
+            "value": "scrapewright[mcp,llm,excel]"
+          },
+          "scrapewright==1.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Ozymandias-Owens-2/scrapewright",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Only needed for sites on no known platform, where a recipe has to be written once. Shopify and WooCommerce stores work without it.",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        },
+        {
+          "description": "Where compiled recipes are kept. Point it at durable storage, or every restart pays to work the same sites out again. Defaults to ~/.scrapewright/recipes.json",
+          "name": "SCRAPEWRIGHT_CACHE"
+        },
+        {
+          "choices": [
+            "0",
+            "1"
+          ],
+          "default": "1",
+          "description": "Set to 0 to ignore robots.txt. Only reasonable on sites you own or have written permission for; the default is to obey.",
+          "name": "SCRAPEWRIGHT_OBEY_ROBOTS"
+        }
+      ],
+      "identifier": "scrapewright",
+      "packageArguments": [
+        {
+          "description": "scrapewright is a CLI first; `mcp` is the subcommand that speaks the protocol.",
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "The MCP server, the model client and spreadsheet export are optional extras; the bare package cannot start the server.",
+          "name": "--from",
+          "type": "named",
+          "value": "scrapewright[mcp,llm,excel]"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4f1226700a",
+    "published_at": "2026-09-03T18:56:28.019199Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Ozymandias-Owens-2/scrapewright",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-03T18:56:28.019199Z"
+  },
+  "title": "scrapewright",
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

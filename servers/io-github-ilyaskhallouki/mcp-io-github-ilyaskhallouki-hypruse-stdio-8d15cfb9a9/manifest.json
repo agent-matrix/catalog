@@ -1,0 +1,119 @@
+{
+  "description": "Computer use for Hyprland: semantic desktop state over IPC, plus vision and native input",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:54+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-IlyasKhallouki-hypruse.stdio.8d15cfb9a9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/IlyasKhallouki/hypruse",
+    "homepage": "https://github.com/IlyasKhallouki/hypruse",
+    "repository": "https://github.com/IlyasKhallouki/hypruse"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "hypruse==0.11.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.IlyasKhallouki/hypruse",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "choices": [
+            "file",
+            "image"
+          ],
+          "default": "file",
+          "description": "How captures are returned: 'file' writes to XDG_RUNTIME_DIR and returns the path, 'image' returns the image inline. Use 'image' for clients that render MCP images but cannot read files, such as Claude Desktop.",
+          "name": "HYPRUSE_SCREENSHOT_MODE"
+        },
+        {
+          "default": "0",
+          "description": "Set to 1 to expose only the observation tools (desktop, screenshot, zoom, ui, marks, binds, wait_for). The agent can see and narrate but cannot click, type, or launch.",
+          "name": "HYPRUSE_READONLY"
+        },
+        {
+          "description": "Restrict input to a scope of windows and refuse everything outside it: 'launched' (only windows hypruse opened this session), 'class:firefox,kitty', or 'workspace:3,special:notes'. Unset means no confinement.",
+          "name": "HYPRUSE_CONFINE",
+          "placeholder": "launched"
+        },
+        {
+          "choices": [
+            "1",
+            "strict",
+            "0"
+          ],
+          "default": "1",
+          "description": "Refuse to click or type into system authentication dialogs (polkit, keyring prompts). On by default; 'strict' also refuses password fields in ordinary windows; 0 disables it.",
+          "name": "HYPRUSE_AUTH_GUARD"
+        },
+        {
+          "default": "0",
+          "description": "Set to 1 to refuse to act when the cursor or focused window moved since hypruse's last action, so the agent must re-read the desktop before retrying.",
+          "name": "HYPRUSE_STRICT"
+        },
+        {
+          "default": "0",
+          "description": "Set to 1 to make the agent's presence legible: tag every window it opens 'hypruse-owned' and flash an on-screen notice when it opens a window or captures the screen.",
+          "name": "HYPRUSE_MARK"
+        },
+        {
+          "default": "0",
+          "description": "Set to 1 to register the opt-in clipboard tool (never in read-only mode). Off by default because clipboards hold passwords.",
+          "name": "HYPRUSE_CLIPBOARD"
+        },
+        {
+          "default": "0",
+          "description": "Record every tool call, refusals included, as one NDJSON line: 1 writes to XDG_STATE_HOME/hypruse/journal.ndjson, or give a path. Read it back with 'hypruse journal'. Off by default.",
+          "name": "HYPRUSE_JOURNAL"
+        },
+        {
+          "default": "8388608",
+          "description": "Rotate the journal once it reaches this size, keeping one previous generation alongside it. Set 0 to never rotate.",
+          "name": "HYPRUSE_JOURNAL_MAX_BYTES"
+        },
+        {
+          "default": "0",
+          "description": "Set to 1 to record typed and copied text in the journal verbatim instead of as a length plus digest. Off by default because keystrokes are passwords; needed only to replay typing.",
+          "name": "HYPRUSE_JOURNAL_TEXT"
+        },
+        {
+          "default": "0",
+          "description": "Set to 1 for a rehearsal: every acting tool validates its arguments and runs every trust guard, then reports what it would have done and delivers no input.",
+          "name": "HYPRUSE_DRYRUN"
+        }
+      ],
+      "identifier": "hypruse",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.11.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8d15cfb9a9",
+    "published_at": "2026-09-13T17:30:08.617045Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.IlyasKhallouki/hypruse",
+    "server_version": "0.11.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-13T17:30:08.617045Z"
+  },
+  "title": "hypruse",
+  "type": "mcp_server",
+  "version": "0.11.0"
+}

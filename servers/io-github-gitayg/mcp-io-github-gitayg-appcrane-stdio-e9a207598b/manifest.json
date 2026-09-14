@@ -1,0 +1,72 @@
+{
+  "description": "Deploy and manage apps on your own AppCrane instance, the self-hosted PaaS for AI-built apps.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-gitayg-appcrane.stdio.e9a207598b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/gitayg/appcrane-mcp",
+    "homepage": "https://github.com/gitayg/appcrane-mcp",
+    "repository": "https://github.com/gitayg/appcrane-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "appcrane-mcp@1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.gitayg/appcrane",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of your own AppCrane instance, e.g. https://crane.example.com. Without it the connector still starts and answers tools/list from the bundled catalog, but cannot execute tools.",
+          "format": "string",
+          "name": "APPCRANE_URL",
+          "placeholder": "https://crane.example.com"
+        },
+        {
+          "description": "Your AppCrane API key, sent to the instance as the X-API-Key header. Required to execute tools.",
+          "format": "string",
+          "isSecret": true,
+          "name": "APPCRANE_KEY"
+        },
+        {
+          "description": "Optional GitHub personal access token, sent as X-Github-Token, to unlock the github_* passthrough tools.",
+          "format": "string",
+          "isSecret": true,
+          "name": "APPCRANE_GITHUB_TOKEN"
+        }
+      ],
+      "identifier": "appcrane-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e9a207598b",
+    "published_at": "2026-09-07T01:10:47.024434Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.gitayg/appcrane",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-07T01:10:47.024434Z"
+  },
+  "title": "AppCrane",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

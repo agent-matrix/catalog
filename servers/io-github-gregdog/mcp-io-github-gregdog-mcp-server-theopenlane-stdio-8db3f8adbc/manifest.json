@@ -1,0 +1,83 @@
+{
+  "description": "MCP server for Openlane GRC: controls, evidence, policies, risks, workflows, and approvals.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:52+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-GregDog-mcp-server-theopenlane.stdio.8db3f8adbc",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/GregDog/mcp-server-theopenlane",
+    "homepage": "https://github.com/GregDog/mcp-server-theopenlane",
+    "repository": "https://github.com/GregDog/mcp-server-theopenlane"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/gregdog/mcp-server-theopenlane:v0.5.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.GregDog/mcp-server-theopenlane",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Openlane API token or PAT",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OPENLANE_API_TOKEN"
+        },
+        {
+          "description": "Organization ID for multi-org PATs",
+          "name": "OPENLANE_ORGANIZATION_ID"
+        },
+        {
+          "default": "https://api.theopenlane.io",
+          "description": "Openlane API base URL",
+          "name": "OPENLANE_BASE_URL"
+        },
+        {
+          "default": "false",
+          "description": "Enable write MCP tools",
+          "name": "OPENLANE_ALLOW_WRITE"
+        },
+        {
+          "default": "false",
+          "description": "Enable delete MCP tools",
+          "name": "OPENLANE_ALLOW_DELETE"
+        }
+      ],
+      "identifier": "ghcr.io/gregdog/mcp-server-theopenlane:v0.5.2",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "serve"
+        }
+      ],
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "8db3f8adbc",
+    "published_at": "2026-09-02T23:57:27.367257Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.GregDog/mcp-server-theopenlane",
+    "server_version": "0.5.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-02T23:57:27.367257Z"
+  },
+  "title": "Openlane MCP Server",
+  "type": "mcp_server",
+  "version": "0.5.2"
+}

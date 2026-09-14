@@ -1,0 +1,80 @@
+{
+  "description": "PDFs, JavaScript pages and ordinary HTML as clean Markdown, robots.txt honoured per RFC 9309.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:40+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-url2md-mcp.stdio.aa233a7abf",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@url2md-io/mcp@0.1.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.url2md/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to a file holding the 0x-prefixed private key of a wallet with USDC on Base. Preferred over URL2MD_PRIVATE_KEY: a path is not a secret, and a key on a command line is visible to every process on the machine. One of the two key variables is required.",
+          "format": "filepath",
+          "name": "URL2MD_PRIVATE_KEY_FILE"
+        },
+        {
+          "description": "The key itself: 0x followed by 64 hex characters. Use URL2MD_PRIVATE_KEY_FILE instead where you can. One of the two key variables is required.",
+          "isSecret": true,
+          "name": "URL2MD_PRIVATE_KEY"
+        },
+        {
+          "default": "0.10",
+          "description": "The most this server will commit for one call, in USD, across every payment round of that call. A tolled page takes two rounds and this ceiling covers both.",
+          "name": "URL2MD_MAX_PRICE_USD"
+        },
+        {
+          "default": "1.00",
+          "description": "The most this server will commit in total for as long as the process runs. Restarting resets it.",
+          "name": "URL2MD_MAX_SPEND_USD"
+        },
+        {
+          "default": "https://url2md.io",
+          "description": "The url2md deployment to call. Must be https (only a loopback address may be plain http), because this is the origin every 402 is checked against.",
+          "name": "URL2MD_BASE_URL"
+        },
+        {
+          "default": "90000",
+          "description": "How long to wait for one conversion, in milliseconds. The default covers the service's own worst case: 20 s of fetching plus 55 s of headless render. Do not lower it to 30 s \u2014 that is the navigation timeout inside the browser, and on a page that needed a browser your payment has already settled by the time the render starts.",
+          "name": "URL2MD_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "@url2md-io/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "aa233a7abf",
+    "published_at": "2026-09-13T21:35:16.971159Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.url2md/mcp",
+    "server_version": "0.1.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-13T21:35:16.971159Z"
+  },
+  "title": "url2md",
+  "type": "mcp_server",
+  "version": "0.1.4"
+}

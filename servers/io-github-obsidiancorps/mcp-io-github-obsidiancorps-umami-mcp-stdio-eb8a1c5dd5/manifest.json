@@ -1,0 +1,92 @@
+{
+  "description": "Umami v3 MCP for Cloud or self-hosted analytics, with read-only, privacy-conscious defaults.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:00+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ObsidianCorps-umami-mcp.stdio.eb8a1c5dd5",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/obsidiancorps/umami-mcp",
+    "homepage": "https://github.com/obsidiancorps/umami-mcp",
+    "repository": "https://github.com/obsidiancorps/umami-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@obsidiancorps/umami-mcp@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ObsidianCorps/umami-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Umami Cloud API key. Configure this or one self-hosted authentication mode.",
+          "format": "string",
+          "isSecret": true,
+          "name": "UMAMI_API_KEY"
+        },
+        {
+          "description": "Base URL of a self-hosted Umami instance, for example https://analytics.example.com.",
+          "format": "string",
+          "name": "UMAMI_BASE_URL"
+        },
+        {
+          "description": "Pre-issued self-hosted Umami token. Use with UMAMI_BASE_URL instead of login credentials.",
+          "format": "string",
+          "isSecret": true,
+          "name": "UMAMI_TOKEN"
+        },
+        {
+          "description": "Self-hosted Umami username. Use with UMAMI_BASE_URL and UMAMI_PASSWORD.",
+          "format": "string",
+          "name": "UMAMI_USERNAME"
+        },
+        {
+          "description": "Self-hosted Umami password. Use with UMAMI_BASE_URL and UMAMI_USERNAME.",
+          "format": "string",
+          "isSecret": true,
+          "name": "UMAMI_PASSWORD"
+        },
+        {
+          "description": "Optional Base32 TOTP setup secret for automatic Umami 3.3+ two-factor login.",
+          "format": "string",
+          "isSecret": true,
+          "name": "UMAMI_TWO_FACTOR_SECRET"
+        },
+        {
+          "description": "Optional default website UUID used when a tool call does not select a website.",
+          "format": "string",
+          "name": "UMAMI_DEFAULT_WEBSITE_ID"
+        }
+      ],
+      "identifier": "@obsidiancorps/umami-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "eb8a1c5dd5",
+    "published_at": "2026-09-03T17:28:29.042004Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ObsidianCorps/umami-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-03T17:28:29.042004Z"
+  },
+  "title": "ObsidianCorps Umami Analytics",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

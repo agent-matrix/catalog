@@ -1,0 +1,79 @@
+{
+  "description": "Read any page past its anti-bot wall, crawl sites, search without an API key, solve captchas locally",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:35+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.dev-ilien-svipall-mcp.stdio.34ffa1d450",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ilien-dev/svipall",
+    "homepage": "https://github.com/ilien-dev/svipall",
+    "repository": "https://github.com/ilien-dev/svipall"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "name": "--rm",
+            "type": "named"
+          },
+          {
+            "name": "--interactive",
+            "type": "named"
+          },
+          {
+            "name": "--volume",
+            "type": "named",
+            "value": "svipall:/data"
+          },
+          "ghcr.io/ilien-dev/svipall:1.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "dev.ilien.svipall/mcp",
+  "packages": [
+    {
+      "identifier": "ghcr.io/ilien-dev/svipall:1.0.1",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "name": "--rm",
+          "type": "named"
+        },
+        {
+          "name": "--interactive",
+          "type": "named"
+        },
+        {
+          "name": "--volume",
+          "type": "named",
+          "value": "svipall:/data"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "34ffa1d450",
+    "published_at": "2026-09-11T22:55:46.543381Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "dev.ilien.svipall/mcp",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-11T22:55:46.543381Z"
+  },
+  "title": "Svipall",
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

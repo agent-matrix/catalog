@@ -1,0 +1,75 @@
+{
+  "description": "Model Context Protocol server for live & historical sports stats and odds via ESPN.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:21+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-christianclaudio-espn.stdio.d0ba71f640",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/christianclaudio/mcp-server-espn",
+    "homepage": "https://github.com/christianclaudio/mcp-server-espn",
+    "repository": "https://github.com/christianclaudio/mcp-server-espn"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-server-espn==1.0.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.christianclaudio/espn",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://site.web.api.espn.com",
+          "description": "Optional REST base URL override",
+          "name": "ESPN_BASE_URL"
+        },
+        {
+          "default": "30.0",
+          "description": "HTTP request timeout in seconds",
+          "name": "ESPN_TIMEOUT_SECONDS"
+        },
+        {
+          "default": "3",
+          "description": "Maximum retry attempts on HTTP 429 / 5xx",
+          "name": "ESPN_MAX_RETRIES"
+        },
+        {
+          "default": "0",
+          "description": "Restrict server execution strictly to read-only inspection tools",
+          "name": "ESPN_MCP_READONLY"
+        }
+      ],
+      "identifier": "mcp-server-espn",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d0ba71f640",
+    "published_at": "2026-09-04T05:45:57.129208Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.christianclaudio/espn",
+    "server_version": "1.0.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-04T05:45:57.129208Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.2"
+}

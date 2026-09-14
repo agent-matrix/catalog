@@ -1,0 +1,76 @@
+{
+  "description": "Talk to your own fitness data. Findings computed in code against your own 28-day baselines.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Zsadigzade-trainbud.stdio.892a443eda",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Zsadigzade/trainbud",
+    "homepage": "https://github.com/Zsadigzade/trainbud",
+    "repository": "https://github.com/Zsadigzade/trainbud"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "trainbud@0.7.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Zsadigzade/trainbud",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "The email address for your Connect account. Stored only in your local .env; `npx trainbud setup` writes it for you.",
+          "isRequired": true,
+          "name": "GARMIN_EMAIL"
+        },
+        {
+          "description": "Your Connect password. Stored only in your local .env. Accounts with MFA enabled are not supported, because the unofficial library this drives cannot complete that flow.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GARMIN_PASSWORD"
+        },
+        {
+          "description": "Optional, and only for the watch app's Ask card and daily insight. The MCP tools themselves need no model key: every finding is computed in code, and the model only phrases it.",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        }
+      ],
+      "identifier": "trainbud",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "start"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.7.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "892a443eda",
+    "published_at": "2026-09-08T19:54:08.847672Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Zsadigzade/trainbud",
+    "server_version": "0.7.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-08T19:54:08.847672Z"
+  },
+  "title": "TrainBud",
+  "type": "mcp_server",
+  "version": "0.7.2"
+}

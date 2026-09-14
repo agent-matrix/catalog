@@ -1,0 +1,88 @@
+{
+  "description": "MCP server for Google Workspace \u2014 Sheets, Drive, Docs (HTML or Markdown), and Calendar.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:46+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-khuisman-mcp-gee-sweet.stdio.35d16cacd9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/khuisman/mcp-gee-sweet",
+    "homepage": "https://github.com/khuisman/mcp-gee-sweet",
+    "repository": "https://github.com/khuisman/mcp-gee-sweet"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-gee-sweet==0.9.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.khuisman/mcp-gee-sweet",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "choices": [
+            "oauth",
+            "service_account",
+            "adc"
+          ],
+          "description": "Pin a single auth method with no fallback, instead of the default waterfall (OAuth, then service account, then Application Default Credentials).",
+          "name": "AUTH_METHOD"
+        },
+        {
+          "default": "credentials.json",
+          "description": "Path to an OAuth Client ID JSON file downloaded from GCP Console, used for the oauth auth method.",
+          "name": "CREDENTIALS_PATH"
+        },
+        {
+          "default": "token.json",
+          "description": "Path where the OAuth token is cached after the first interactive authorization.",
+          "name": "TOKEN_PATH"
+        },
+        {
+          "default": "service_account.json",
+          "description": "Path to a Google service account JSON key file, used for the service_account auth method.",
+          "name": "SERVICE_ACCOUNT_PATH"
+        },
+        {
+          "description": "Base64-encoded service account JSON key, as an alternative to SERVICE_ACCOUNT_PATH for headless or container deployments.",
+          "isSecret": true,
+          "name": "CREDENTIALS_CONFIG"
+        },
+        {
+          "description": "Comma-separated list of tool function names to register. Default: all tools enabled.",
+          "name": "ENABLED_TOOLS"
+        }
+      ],
+      "identifier": "mcp-gee-sweet",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.9.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "35d16cacd9",
+    "published_at": "2026-09-09T04:01:11.633689Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.khuisman/mcp-gee-sweet",
+    "server_version": "0.9.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-09T04:01:11.633689Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.9.0"
+}

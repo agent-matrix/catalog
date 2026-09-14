@@ -1,0 +1,127 @@
+{
+  "description": "Secure filesystem MCP server for reading, writing, searching, diffing, and patching files.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:43+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-j0hanz-filesystem-mcp.stdio.6b60f4f9d7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/j0hanz/filesystem-mcp",
+    "homepage": "https://github.com/j0hanz/filesystem-mcp",
+    "repository": "https://github.com/j0hanz/filesystem-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Keep stdin open for stdio transport.",
+            "format": "boolean",
+            "isRequired": true,
+            "name": "-i",
+            "type": "named"
+          },
+          {
+            "description": "Remove the container on exit.",
+            "format": "boolean",
+            "isRequired": true,
+            "name": "--rm",
+            "type": "named"
+          },
+          {
+            "description": "Mount the directory to expose to the server.",
+            "isRepeated": true,
+            "isRequired": true,
+            "name": "-v",
+            "type": "named",
+            "value": "{host_dir}:/workspace:ro",
+            "variables": {
+              "host_dir": {
+                "description": "Host directory path to expose to the server.",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          "ghcr.io/j0hanz/filesystem-mcp:2.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.j0hanz/filesystem-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Allowed directories inside the container, ':'-separated. Alternative to positional arguments.",
+          "format": "string",
+          "name": "FS_ALLOWED_DIRS"
+        }
+      ],
+      "identifier": "ghcr.io/j0hanz/filesystem-mcp:2.1.1",
+      "packageArguments": [
+        {
+          "default": "/workspace",
+          "description": "Container path of the mounted directory.",
+          "isRequired": true,
+          "type": "positional",
+          "valueHint": "/workspace"
+        }
+      ],
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "Keep stdin open for stdio transport.",
+          "format": "boolean",
+          "isRequired": true,
+          "name": "-i",
+          "type": "named"
+        },
+        {
+          "description": "Remove the container on exit.",
+          "format": "boolean",
+          "isRequired": true,
+          "name": "--rm",
+          "type": "named"
+        },
+        {
+          "description": "Mount the directory to expose to the server.",
+          "isRepeated": true,
+          "isRequired": true,
+          "name": "-v",
+          "type": "named",
+          "value": "{host_dir}:/workspace:ro",
+          "variables": {
+            "host_dir": {
+              "description": "Host directory path to expose to the server.",
+              "format": "filepath",
+              "isRequired": true
+            }
+          }
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "6b60f4f9d7",
+    "published_at": "2026-09-05T18:43:34.584164Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.j0hanz/filesystem-mcp",
+    "server_version": "2.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-05T18:43:34.584164Z"
+  },
+  "title": "Filesystem MCP",
+  "type": "mcp_server",
+  "version": "2.1.1"
+}

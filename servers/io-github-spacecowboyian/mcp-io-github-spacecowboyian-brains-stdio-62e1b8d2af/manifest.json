@@ -1,0 +1,114 @@
+{
+  "description": "Personal wiki and memory for AI assistants: store, search, and recall structured notes.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:23+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-spacecowboyian-brains.stdio.62e1b8d2af",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/spacecowboyian/brains",
+    "homepage": "https://github.com/spacecowboyian/brains",
+    "repository": "https://github.com/spacecowboyian/brains"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "default": "stdio",
+            "description": "Run in stdio transport mode (required for MCP clients like Claude Desktop)",
+            "format": "string",
+            "isRequired": true,
+            "name": "BRAINS_TRANSPORT",
+            "type": ""
+          },
+          "brains-mcp@1.80.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.spacecowboyian/brains",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to local wiki directory (used when STORAGE_BACKEND=local or omitted)",
+          "format": "string",
+          "name": "WIKI_DIR"
+        },
+        {
+          "description": "Storage backend: 'local' (default), 'supabase', or 'drive'",
+          "format": "string",
+          "name": "STORAGE_BACKEND"
+        },
+        {
+          "description": "Google OAuth client ID (required for Google Drive backend)",
+          "format": "string",
+          "name": "GOOGLE_CLIENT_ID"
+        },
+        {
+          "description": "Google OAuth client secret (required for Google Drive backend)",
+          "format": "string",
+          "isSecret": true,
+          "name": "GOOGLE_CLIENT_SECRET"
+        },
+        {
+          "description": "Google OAuth refresh token (required for Google Drive backend)",
+          "format": "string",
+          "isSecret": true,
+          "name": "GOOGLE_REFRESH_TOKEN"
+        },
+        {
+          "description": "Google Drive folder ID for wiki storage",
+          "format": "string",
+          "name": "DRIVE_FOLDER_ID"
+        },
+        {
+          "description": "Supabase project URL (required for Supabase backend)",
+          "format": "string",
+          "name": "SUPABASE_URL"
+        },
+        {
+          "description": "Supabase service role key (required for Supabase backend)",
+          "format": "string",
+          "isSecret": true,
+          "name": "SUPABASE_SERVICE_ROLE_KEY"
+        }
+      ],
+      "identifier": "brains-mcp",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "default": "stdio",
+          "description": "Run in stdio transport mode (required for MCP clients like Claude Desktop)",
+          "format": "string",
+          "isRequired": true,
+          "name": "BRAINS_TRANSPORT",
+          "type": ""
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.80.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "62e1b8d2af",
+    "published_at": "2026-08-31T22:22:43.687184Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.spacecowboyian/brains",
+    "server_version": "1.80.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-31T22:22:43.687184Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.80.0"
+}

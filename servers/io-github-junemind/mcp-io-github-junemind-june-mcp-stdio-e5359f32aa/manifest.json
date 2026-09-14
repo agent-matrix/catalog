@@ -1,0 +1,112 @@
+{
+  "description": "Shared, cited knowledge-graph memory for agents \u2014 ask, search, remember, keep standing instructions",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Junemind-june-mcp.stdio.e5359f32aa",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Junemind/june-mcp",
+    "homepage": "https://github.com/Junemind/june-mcp",
+    "repository": "https://github.com/Junemind/june-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "june-mcp==0.4.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Junemind/june-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your June endpoint, e.g. http://localhost:8000 (the Jun\u00ea desktop app's local engine, your own june-local service, or a hosted Team workspace)",
+          "isRequired": true,
+          "name": "JUNE_BASE_URL"
+        },
+        {
+          "description": "The canvas (workspace) to bind this connection to \u2014 a name (e.g. 'work') or a canvas id; names resolve at startup and ambiguous names fail closed",
+          "isRequired": true,
+          "name": "JUNE_CANVAS"
+        },
+        {
+          "description": "Your June API key (set JUNE_ALLOW_ANON=1 instead to explicitly opt out for keyless local setups)",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "JUNE_API_KEY"
+        },
+        {
+          "description": "Bring-your-own LLM key for cited answers \u2014 forwarded per-request as a header, never logged or stored on the service",
+          "isSecret": true,
+          "name": "JUNE_LLM_KEY"
+        },
+        {
+          "description": "Set to 1 to create the named canvas on first run if it doesn't exist yet (refused in read-only mode)",
+          "name": "JUNE_CANVAS_CREATE"
+        },
+        {
+          "description": "Set to 1 to hide and refuse all write tools (memory becomes read-only)",
+          "name": "JUNE_READONLY"
+        },
+        {
+          "description": "Opt-in directory agents may upload files from via june_ingest_file \u2014 unset means that tool doesn't exist",
+          "name": "JUNE_FILES_ROOT"
+        },
+        {
+          "description": "Canvas holding the agent's standing docs/skills/learnings (default 'agent_docs')",
+          "name": "JUNE_DOCS_CANVAS"
+        },
+        {
+          "description": "Set to 0 to disable the periodic standing-docs digest re-injected on tool results (default on)",
+          "name": "JUNE_DOCS_REFRESH"
+        },
+        {
+          "description": "Tool calls between digest injections (default 12) \u2014 lower it for small-context agents",
+          "name": "JUNE_REFRESH_CALLS"
+        },
+        {
+          "description": "Wall-clock fallback between digest injections (default 10)",
+          "name": "JUNE_REFRESH_MINUTES"
+        },
+        {
+          "description": "Standing-docs digest size cap in characters (default 2000)",
+          "name": "JUNE_DIGEST_CHARS"
+        },
+        {
+          "description": "Opt-in directory for repo sync \u2014 enables june_docs_export / june_page_export / june_page_import (fenced writes, commit-only git); unset means those tools don't exist",
+          "name": "JUNE_EXPORT_ROOT"
+        }
+      ],
+      "identifier": "june-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e5359f32aa",
+    "published_at": "2026-09-12T15:56:11.712194Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Junemind/june-mcp",
+    "server_version": "0.4.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-12T15:56:11.712194Z"
+  },
+  "title": "Jun\u00ea",
+  "type": "mcp_server",
+  "version": "0.4.1"
+}

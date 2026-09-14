@@ -1,0 +1,82 @@
+{
+  "description": "Persistent cross-model memory for AI agents: verifiable, portable, client-side encrypted.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-chaelynet-chainmemory.stdio.f2ab2a8931",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/chaelynet/chainmemory-mcp",
+    "homepage": "https://github.com/chaelynet/chainmemory-mcp",
+    "repository": "https://github.com/chaelynet/chainmemory-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "chainmemory-mcp@2.6.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.chaelynet/chainmemory",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "ChainMemory API key. REQUIRED for every tool except chainmemory_seal. Get one at https://faucet.chainmemory.ai",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CHAINMEMORY_API_KEY"
+        },
+        {
+          "description": "12-word BIP-39 phrase for the blind vault. Optional: without it the server works exactly as before, but sealed:true is unavailable. Generate one with chainmemory_new_seed. It never leaves your machine and cannot be recovered.",
+          "format": "string",
+          "isSecret": true,
+          "name": "CHAINMEMORY_SEED_PHRASE"
+        },
+        {
+          "description": "API base URL (default: https://api.chainmemory.ai)",
+          "format": "string",
+          "name": "CHAINMEMORY_API_BASE"
+        },
+        {
+          "description": "Private key for AICHAIN wallet",
+          "format": "string",
+          "isSecret": true,
+          "name": "AICHAIN_KEY"
+        },
+        {
+          "description": "RPC endpoint (default: https://rpc.chainmemory.ai)",
+          "format": "string",
+          "name": "AICHAIN_RPC"
+        }
+      ],
+      "identifier": "chainmemory-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.6.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f2ab2a8931",
+    "published_at": "2026-09-12T13:28:02.644638Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.chaelynet/chainmemory",
+    "server_version": "2.6.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-12T13:28:02.644638Z"
+  },
+  "title": "ChainMemory",
+  "type": "mcp_server",
+  "version": "2.6.1"
+}

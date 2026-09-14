@@ -1,0 +1,78 @@
+{
+  "description": "Host files from coding agents; stage on a branch and attach to GitHub PRs.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:44+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.sh-uploads-mcp.stdio.5855479c09",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/buildinternet/uploads",
+    "homepage": "https://github.com/buildinternet/uploads",
+    "repository": "https://github.com/buildinternet/uploads"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@buildinternet/uploads@0.52.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "sh.uploads/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Workspace bearer token (up_<workspace>_\u2026). Mint with uploads login.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "UPLOADS_TOKEN"
+        },
+        {
+          "description": "Workspace name. Inferred from the token when omitted.",
+          "format": "string",
+          "name": "UPLOADS_WORKSPACE"
+        },
+        {
+          "default": "https://api.uploads.sh",
+          "description": "API origin. Defaults to https://api.uploads.sh.",
+          "format": "string",
+          "name": "UPLOADS_API_URL"
+        }
+      ],
+      "identifier": "@buildinternet/uploads",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.52.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5855479c09",
+    "published_at": "2026-09-02T21:19:05.732429Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "sh.uploads/mcp",
+    "server_version": "0.52.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-02T21:19:05.732429Z"
+  },
+  "title": "uploads.sh",
+  "type": "mcp_server",
+  "version": "0.52.1"
+}

@@ -1,0 +1,97 @@
+{
+  "description": "SEC 10-K/10-Q/8-K search, RAG Q&A, comparison, and anomaly detection with citations.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:43+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-jahanv01-sec-intelligence-mcp.stdio.e1f791383f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jahanv01/sec-intelligence-mcp",
+    "homepage": "https://github.com/jahanv01/sec-intelligence-mcp",
+    "repository": "https://github.com/jahanv01/sec-intelligence-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "sec-intelligence-mcp==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.jahanv01/sec-intelligence-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Google Gemini API key (free tier). Get one at https://aistudio.google.com/apikey",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GEMINI_API_KEY"
+        },
+        {
+          "description": "Qdrant vector database URL, e.g. http://localhost:6333 for local Docker, or a Qdrant Cloud cluster URL",
+          "isRequired": true,
+          "name": "QDRANT_URL"
+        },
+        {
+          "description": "Only needed for a hosted Qdrant Cloud instance; leave unset for local Qdrant",
+          "isSecret": true,
+          "name": "QDRANT_API_KEY"
+        },
+        {
+          "description": "LangFuse secret key for observability (free tier). Get one at https://cloud.langfuse.com",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "LANGFUSE_SECRET_KEY"
+        },
+        {
+          "description": "LangFuse public key, paired with LANGFUSE_SECRET_KEY",
+          "isRequired": true,
+          "name": "LANGFUSE_PUBLIC_KEY"
+        },
+        {
+          "default": "sec-intelligence-mcp dev@example.com",
+          "description": "Identifying User-Agent for SEC EDGAR requests, e.g. \"YourApp you@email.com\"",
+          "name": "SEC_EDGAR_USER_AGENT"
+        },
+        {
+          "default": "intfloat/e5-base-v2",
+          "description": "sentence-transformers model for embeddings",
+          "name": "EMBEDDING_MODEL"
+        },
+        {
+          "default": "gemini-flash-lite-latest",
+          "description": "Gemini model for answer generation",
+          "name": "GEMINI_MODEL"
+        }
+      ],
+      "identifier": "sec-intelligence-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e1f791383f",
+    "published_at": "2026-09-12T19:44:38.382922Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.jahanv01/sec-intelligence-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-12T19:44:38.382922Z"
+  },
+  "title": "SEC Intelligence",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

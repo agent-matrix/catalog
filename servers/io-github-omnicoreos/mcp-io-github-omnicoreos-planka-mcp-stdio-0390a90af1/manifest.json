@@ -1,0 +1,121 @@
+{
+  "description": "Planka 2.x MCP server with verified card, task, comment, label, and list operations.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:02+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-omnicoreos-planka-mcp.stdio.0390a90af1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/omnicoreos/planka-mcp",
+    "homepage": "https://github.com/omnicoreos/planka-mcp",
+    "repository": "https://github.com/omnicoreos/planka-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@omnicoreos/planka-mcp@0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.omnicoreos/planka-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Planka base URL, for example https://planka.example.com",
+          "format": "string",
+          "isRequired": true,
+          "name": "PLANKA_BASE_URL"
+        },
+        {
+          "description": "Planka API key (X-Api-Key). Recommended: replaces the email/password login",
+          "format": "string",
+          "isSecret": true,
+          "name": "PLANKA_API_KEY"
+        },
+        {
+          "description": "Email or username of the Planka agent user. Only needed when PLANKA_API_KEY is not set",
+          "format": "string",
+          "name": "PLANKA_AGENT_EMAIL"
+        },
+        {
+          "description": "Password of the Planka agent user. Only needed when PLANKA_API_KEY is not set",
+          "format": "string",
+          "isSecret": true,
+          "name": "PLANKA_AGENT_PASSWORD"
+        },
+        {
+          "description": "Board id used when a tool call omits boardId",
+          "format": "string",
+          "name": "PLANKA_DEFAULT_BOARD_ID"
+        },
+        {
+          "description": "Comma-separated board ids this server may see and touch. Everything else is hidden",
+          "format": "string",
+          "name": "PLANKA_ALLOWED_BOARD_IDS"
+        },
+        {
+          "description": "Comma-separated project ids this server may see. Everything else is hidden",
+          "format": "string",
+          "name": "PLANKA_ALLOWED_PROJECT_IDS"
+        },
+        {
+          "description": "Set to true to hide and refuse every write tool",
+          "format": "string",
+          "name": "PLANKA_READ_ONLY"
+        },
+        {
+          "description": "Comma-separated tool names to switch off, for example planka_get_board",
+          "format": "string",
+          "name": "PLANKA_DISABLED_TOOLS"
+        },
+        {
+          "description": "Comma-separated list ids that must not receive cards nor be edited or deleted",
+          "format": "string",
+          "name": "PLANKA_PROTECTED_LIST_IDS"
+        },
+        {
+          "description": "Set to true to drop the deprecated tool aliases from tools/list. They stay callable",
+          "format": "string",
+          "name": "PLANKA_HIDE_DEPRECATED"
+        },
+        {
+          "description": "Label planka_board_summary flags as unblocked/ready. Unset: no highlighting",
+          "format": "string",
+          "name": "PLANKA_SUMMARY_HIGHLIGHT_LABEL"
+        },
+        {
+          "description": "Comma-separated columns planka_board_summary returns cards from when the call does not say",
+          "format": "string",
+          "name": "PLANKA_SUMMARY_DECISION_LISTS"
+        }
+      ],
+      "identifier": "@omnicoreos/planka-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0390a90af1",
+    "published_at": "2026-09-03T21:58:51.716269Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.omnicoreos/planka-mcp",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-03T21:58:51.716269Z"
+  },
+  "title": "Planka MCP",
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

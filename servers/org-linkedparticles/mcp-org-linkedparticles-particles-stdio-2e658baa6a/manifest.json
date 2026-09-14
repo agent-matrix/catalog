@@ -1,0 +1,111 @@
+{
+  "description": "An append-only ledger of sourced, dated, confidence-scored claims your agent cites and you audit",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:43+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.org-linkedparticles-particles.stdio.2e658baa6a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/LinkedParticles/particles-engine-py",
+    "homepage": "https://github.com/LinkedParticles/particles-engine-py",
+    "repository": "https://github.com/LinkedParticles/particles-engine-py"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "The distribution that provides the server. Its console script is named `particles`, so the executable and the package name differ and `--from` is required.",
+            "name": "--from",
+            "type": "named",
+            "value": "linkedparticles"
+          },
+          {
+            "description": "The console script installed by the linkedparticles distribution.",
+            "type": "positional",
+            "value": "particles",
+            "valueHint": "executable"
+          },
+          "linkedparticles==1.139.8"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "org.linkedparticles/particles",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Anthropic API key. Required for the tools that call a model \u2014 `query` composes a cited natural-language answer, and the semantic half of `lint` reasons over claim pairs. The accessors that only read the store (`particle_show`, `particles_list`, `subjects_*`, `events_*`, `graph_view`, `quality_report`) work without it.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        },
+        {
+          "default": "sqlite+aiosqlite:///./particles.db",
+          "description": "SQLAlchemy URL of the belief store to serve. Defaults to `sqlite+aiosqlite:///./particles.db` in the working directory.",
+          "name": "DATABASE_URL"
+        },
+        {
+          "description": "Path to a `config.yaml` holding the rest of the engine's settings \u2014 additional stores, model selection per purpose, and the `mcp.write.enabled_stores` allowlist that turns the write tools on.",
+          "format": "filepath",
+          "name": "PARTICLES_CONFIG"
+        }
+      ],
+      "identifier": "linkedparticles",
+      "packageArguments": [
+        {
+          "description": "The CLI command group that hosts the Model Context Protocol surface.",
+          "type": "positional",
+          "value": "mcp",
+          "valueHint": "command"
+        },
+        {
+          "description": "Serve the belief store over stdio. Read-only by default: the read tools are always registered, and the write tools are added only for stores explicitly listed in `mcp.write.enabled_stores`.",
+          "type": "positional",
+          "value": "serve",
+          "valueHint": "subcommand"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "The distribution that provides the server. Its console script is named `particles`, so the executable and the package name differ and `--from` is required.",
+          "name": "--from",
+          "type": "named",
+          "value": "linkedparticles"
+        },
+        {
+          "description": "The console script installed by the linkedparticles distribution.",
+          "type": "positional",
+          "value": "particles",
+          "valueHint": "executable"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.139.8"
+    }
+  ],
+  "provenance": {
+    "identity_key": "2e658baa6a",
+    "published_at": "2026-09-13T18:39:27.041541Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "org.linkedparticles/particles",
+    "server_version": "1.139.8",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-13T18:39:27.041541Z"
+  },
+  "title": "Particles",
+  "type": "mcp_server",
+  "version": "1.139.8"
+}

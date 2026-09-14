@@ -1,0 +1,97 @@
+{
+  "description": "Cross-platform FastMCP server for authenticated remote Linux/macOS host administration",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:40+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Abktya-universal-host-manager-mcp.stdio.6126252b1b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Abktya/universal-host-manager-mcp",
+    "homepage": "https://github.com/Abktya/universal-host-manager-mcp",
+    "repository": "https://github.com/Abktya/universal-host-manager-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "universal-host-manager-mcp==0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Abktya/universal-host-manager-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "127.0.0.1",
+          "description": "Interface to bind to",
+          "name": "HOST"
+        },
+        {
+          "default": "8765",
+          "description": "Port to listen on",
+          "name": "PORT"
+        },
+        {
+          "description": "Directory that read_file/write_file/list_dir are restricted to",
+          "isRequired": true,
+          "name": "MCP_WORKSPACE_DIR"
+        },
+        {
+          "description": "Auth0 tenant domain, e.g. your-tenant.eu.auth0.com",
+          "isRequired": true,
+          "name": "AUTH0_DOMAIN"
+        },
+        {
+          "description": "Auth0 application client ID",
+          "isRequired": true,
+          "name": "AUTH0_CLIENT_ID"
+        },
+        {
+          "description": "Auth0 application client secret",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AUTH0_CLIENT_SECRET"
+        },
+        {
+          "description": "Auth0 API audience/identifier",
+          "isRequired": true,
+          "name": "AUTH0_AUDIENCE"
+        },
+        {
+          "default": "false",
+          "description": "Set to true only for local-only testing without Auth0",
+          "name": "ALLOW_INSECURE_NO_AUTH"
+        }
+      ],
+      "identifier": "universal-host-manager-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://{HOST}:{PORT}/mcp"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6126252b1b",
+    "published_at": "2026-09-12T10:48:27.731784Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Abktya/universal-host-manager-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-12T10:48:27.731784Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

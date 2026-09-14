@@ -1,0 +1,86 @@
+{
+  "description": "MCP server for IVOA astronomical archives: NOIRLab Astro Data Lab, NRAO/ALMA, CADC, ESO, Gaia",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:00+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-NSF-Simons-CosmicAI-Institute-manna.stdio.fe3fa8ac7b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/NSF-Simons-CosmicAI-Institute/manna",
+    "homepage": "https://github.com/NSF-Simons-CosmicAI-Institute/manna",
+    "repository": "https://github.com/NSF-Simons-CosmicAI-Institute/manna"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "manna-mcp==0.7.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.NSF-Simons-CosmicAI-Institute/manna",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Comma-separated archive short_names to activate (e.g. 'datalab,alma'). Unset means all.",
+          "name": "MANNA_ARCHIVES"
+        },
+        {
+          "description": "Comma-separated hostnames the server may fetch. Unset means any public host.",
+          "name": "MANNA_ALLOWED_HOSTS"
+        },
+        {
+          "choices": [
+            "DEBUG",
+            "INFO",
+            "WARNING",
+            "ERROR"
+          ],
+          "default": "INFO",
+          "description": "Logging verbosity.",
+          "name": "MANNA_LOG_LEVEL"
+        },
+        {
+          "default": "200",
+          "description": "Max rows returned inline before a result is promoted to an async job or truncated.",
+          "name": "MANNA_INLINE_ROW_LIMIT"
+        }
+      ],
+      "identifier": "manna-mcp",
+      "packageArguments": [
+        {
+          "description": "Serve MCP over stdio. Without it the server binds an HTTP port instead.",
+          "type": "positional",
+          "value": "--stdio"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.7.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "fe3fa8ac7b",
+    "published_at": "2026-09-10T14:56:52.386274Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.NSF-Simons-CosmicAI-Institute/manna",
+    "server_version": "0.7.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-10T14:56:52.386274Z"
+  },
+  "title": "MANNA",
+  "type": "mcp_server",
+  "version": "0.7.2"
+}

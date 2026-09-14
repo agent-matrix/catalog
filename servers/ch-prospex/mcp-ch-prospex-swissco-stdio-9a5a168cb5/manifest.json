@@ -1,0 +1,71 @@
+{
+  "description": "Swiss company data: Zefix register, SHAB gazette, simap tenders, FINMA, GLEIF and ARAMIS",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:13+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ch-prospex-swissco.stdio.9a5a168cb5",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/prospex-ch/swissco-cli",
+    "homepage": "https://github.com/prospex-ch/swissco-cli",
+    "repository": "https://github.com/prospex-ch/swissco-cli"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "swissco-mcp==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ch.prospex/swissco",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Zefix PublicREST username, issued by zefix@bj.admin.ch. Optional: every tool works without it.",
+          "name": "ZEFIX_USER"
+        },
+        {
+          "description": "The matching Zefix PublicREST password.",
+          "isSecret": true,
+          "name": "ZEFIX_PASSWORD"
+        },
+        {
+          "description": "Where gazette bodies and the two FINMA files are cached. Defaults to ~/.swissco.",
+          "name": "SWISSCO_STATE"
+        },
+        {
+          "description": "Seconds between requests. Raises the floor of 0.5s and cannot lower it.",
+          "name": "SWISSCO_INTERVAL"
+        }
+      ],
+      "identifier": "swissco-mcp",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9a5a168cb5",
+    "published_at": "2026-09-07T11:26:24.262655Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ch.prospex/swissco",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-07T11:26:24.262655Z"
+  },
+  "title": "Swiss company data",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

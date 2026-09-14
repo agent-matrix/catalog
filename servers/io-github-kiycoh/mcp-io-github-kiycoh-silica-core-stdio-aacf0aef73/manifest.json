@@ -1,0 +1,85 @@
+{
+  "description": "Retrieval over the folder the session opened: files, search, read, code_pack, write_note.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:47+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-kiycoh-silica-core.stdio.aacf0aef73",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/kiycoh/silica-core",
+    "homepage": "https://github.com/kiycoh/silica-core",
+    "repository": "https://github.com/kiycoh/silica-core"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "The server lives behind the [mcp] extra; without it the install carries the CLI and no server.",
+            "isRequired": true,
+            "name": "--from",
+            "type": "named",
+            "value": "silica-core[mcp]"
+          },
+          "silica-core==0.8.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.kiycoh/silica-core",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Folder to index and serve. Unset means the directory the client launched the server in.",
+          "format": "filepath",
+          "name": "SILICA_VAULT"
+        }
+      ],
+      "identifier": "silica-core",
+      "packageArguments": [
+        {
+          "description": "Serve files, search, read, code_pack and write_note over stdio.",
+          "isRequired": true,
+          "type": "positional",
+          "value": "mcp",
+          "valueHint": "subcommand"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "The server lives behind the [mcp] extra; without it the install carries the CLI and no server.",
+          "isRequired": true,
+          "name": "--from",
+          "type": "named",
+          "value": "silica-core[mcp]"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.8.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "aacf0aef73",
+    "published_at": "2026-09-10T22:59:35.447482Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.kiycoh/silica-core",
+    "server_version": "0.8.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-10T22:59:35.447482Z"
+  },
+  "title": "Silica Core",
+  "type": "mcp_server",
+  "version": "0.8.1"
+}

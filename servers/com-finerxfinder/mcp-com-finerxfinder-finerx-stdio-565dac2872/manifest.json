@@ -1,0 +1,61 @@
+{
+  "description": "US Rx prices by pharmacy + the free discount card (get, email, image) + foreign-brand US analogs.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-finerxfinder-finerx.stdio.565dac2872",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "finerx-mcp==1.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.finerxfinder/finerx",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "FineRx developer key (frx_live_...). Request one at https://www.finerxfinder.com/developers",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "FINERX_API_KEY"
+        },
+        {
+          "description": "Override the public API base URL (defaults to the production surface).",
+          "name": "FINERX_API_BASE"
+        }
+      ],
+      "identifier": "finerx-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.3.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "565dac2872",
+    "published_at": "2026-09-09T14:44:24.249457Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.finerxfinder/finerx",
+    "server_version": "1.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-09T14:44:24.249457Z"
+  },
+  "title": "FineRx",
+  "type": "mcp_server",
+  "version": "1.3.0"
+}

@@ -1,0 +1,73 @@
+{
+  "description": "Quantum-inspired keyring for AI coding agents with superposition, entanglement, and tunneling.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:53+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-I4cTime-q-ring.stdio.681712d44d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/I4cTime/q-ring",
+    "homepage": "https://github.com/I4cTime/q-ring",
+    "repository": "https://github.com/I4cTime/q-ring"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@i4ctime/q-ring@0.16.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.I4cTime/q-ring",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "choices": [
+            "keyring",
+            "file"
+          ],
+          "default": "keyring",
+          "description": "Secret storage backend. Defaults to the OS keychain; set to \"file\" for headless hosts with no Secret Service (CI, containers).",
+          "name": "QRING_BACKEND"
+        },
+        {
+          "description": "Passphrase for the encrypted file backend (AES-256-GCM). Required only when QRING_BACKEND=file \u2014 without it the file backend fails closed.",
+          "isSecret": true,
+          "name": "QRING_FILE_PASSPHRASE"
+        },
+        {
+          "description": "Custom path for the encrypted file store (default: ~/.config/q-ring/file-backend.enc).",
+          "format": "filepath",
+          "name": "QRING_FILE_BACKEND_PATH"
+        }
+      ],
+      "identifier": "@i4ctime/q-ring",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.16.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "681712d44d",
+    "published_at": "2026-09-03T15:24:04.152298Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.I4cTime/q-ring",
+    "server_version": "0.16.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-03T15:24:04.152298Z"
+  },
+  "title": "q-ring",
+  "type": "mcp_server",
+  "version": "0.16.2"
+}

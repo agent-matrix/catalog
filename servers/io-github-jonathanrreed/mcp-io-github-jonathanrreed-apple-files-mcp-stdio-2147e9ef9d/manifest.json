@@ -1,0 +1,72 @@
+{
+  "description": "Inspect and manage local files and folders inside allowed roots on macOS.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-JonathanRReed-apple-files-mcp.stdio.2147e9ef9d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/JonathanRReed/Apple-MCPs",
+    "homepage": "https://github.com/JonathanRReed/Apple-MCPs",
+    "repository": "https://github.com/JonathanRReed/Apple-MCPs"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "apple-files-mcp==1.0.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.JonathanRReed/apple-files-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "choices": [
+            "safe_readonly",
+            "safe_manage",
+            "full_access"
+          ],
+          "default": "safe_manage",
+          "description": "Safety mode for file operations: safe_readonly, safe_manage, or full_access.",
+          "format": "string",
+          "name": "APPLE_FILES_MCP_SAFETY_MODE"
+        },
+        {
+          "description": "Comma-separated directories the server may access. Defaults to Desktop, Documents, Downloads, and iCloud Drive.",
+          "format": "string",
+          "name": "APPLE_FILES_MCP_ALLOWED_ROOTS",
+          "placeholder": "~/Desktop,~/Documents,~/Downloads"
+        }
+      ],
+      "identifier": "apple-files-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "2147e9ef9d",
+    "published_at": "2026-09-04T20:28:23.014137Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.JonathanRReed/apple-files-mcp",
+    "server_version": "1.0.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-04T20:28:23.014137Z"
+  },
+  "title": "Apple Files",
+  "type": "mcp_server",
+  "version": "1.0.4"
+}

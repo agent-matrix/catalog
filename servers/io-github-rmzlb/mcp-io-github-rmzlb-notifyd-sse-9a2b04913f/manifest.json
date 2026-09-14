@@ -1,0 +1,55 @@
+{
+  "description": "Operate a self-hosted notifyd instance: digest, jobs, retries, suppressions, projects, test sends.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:13+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-rmzlb-notifyd.sse.9a2b04913f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/rmzlb/notifyd",
+    "homepage": "https://github.com/rmzlb/notifyd",
+    "repository": "https://github.com/rmzlb/notifyd"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://{notifyd_host}/mcp"
+    }
+  },
+  "name": "io.github.rmzlb/notifyd",
+  "provenance": {
+    "identity_key": "9a2b04913f",
+    "published_at": "2026-09-11T14:49:53.254629Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.rmzlb/notifyd",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-11T14:49:53.254629Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Bearer <ADMIN_API_KEY> for full access, or Bearer <READONLY_API_KEY> for the read-only tool set",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization"
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://{notifyd_host}/mcp",
+      "variables": {
+        "notifyd_host": {
+          "description": "Hostname of your notifyd instance (one instance per company)",
+          "isRequired": true
+        }
+      }
+    }
+  ],
+  "title": "notifyd",
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

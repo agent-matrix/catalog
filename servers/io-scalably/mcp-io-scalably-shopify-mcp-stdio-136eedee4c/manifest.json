@@ -1,0 +1,78 @@
+{
+  "description": "Read-only Shopify Admin GraphQL MCP: query, introspect, bulk export, ShopifyQL. 6 tools.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:40+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-scalably-shopify-mcp.stdio.136eedee4c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/scalably-io/shopify-mcp",
+    "homepage": "https://github.com/scalably-io/shopify-mcp",
+    "repository": "https://github.com/scalably-io/shopify-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "scalably-shopify-mcp==1.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.scalably/shopify-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "JSON object mapping alias to store config for multi-store setups; holds tokens, treat as a secret",
+          "isSecret": true,
+          "name": "SHOPIFY_STORES"
+        },
+        {
+          "description": "Single-store admin domain, '<shop>.myshopify.com'; ignored if SHOPIFY_STORES is set",
+          "name": "SHOPIFY_SHOP_DOMAIN"
+        },
+        {
+          "description": "Dev Dashboard custom-app Client ID; required unless SHOPIFY_ACCESS_TOKEN is set",
+          "name": "SHOPIFY_CLIENT_ID"
+        },
+        {
+          "description": "Dev Dashboard custom-app Client Secret; required unless SHOPIFY_ACCESS_TOKEN is set",
+          "isSecret": true,
+          "name": "SHOPIFY_CLIENT_SECRET"
+        },
+        {
+          "description": "Legacy shpat_ access token; alternative to Client ID/Secret",
+          "isSecret": true,
+          "name": "SHOPIFY_ACCESS_TOKEN"
+        }
+      ],
+      "identifier": "scalably-shopify-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "136eedee4c",
+    "published_at": "2026-09-09T05:19:29.523163Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.scalably/shopify-mcp",
+    "server_version": "1.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-09T05:19:29.523163Z"
+  },
+  "title": "Shopify MCP",
+  "type": "mcp_server",
+  "version": "1.1.0"
+}

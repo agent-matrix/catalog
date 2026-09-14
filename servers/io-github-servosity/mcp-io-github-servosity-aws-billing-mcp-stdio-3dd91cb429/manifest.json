@@ -1,0 +1,83 @@
+{
+  "description": "Get a non-expert from zero to a Slack-delivered, plain-English, waste-flagged AWS bill breakdown",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:04+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Servosity-aws-billing-mcp.stdio.3dd91cb429",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/servosity/msp-skills",
+    "homepage": "https://github.com/servosity/msp-skills",
+    "repository": "https://github.com/servosity/msp-skills"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Servosity/aws-billing-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Access key ID for an IAM principal with Cost Explorer read access. Resolved by the AWS SDK's default credential chain.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AWS_ACCESS_KEY_ID"
+        },
+        {
+          "default": "https://ce.us-east-1.amazonaws.com",
+          "description": "Base URL for the AWS Billing Intelligence API. Leave the prefilled default unless your account uses a different regional or self-hosted host.",
+          "name": "AWS_BILLING_BASE_URL"
+        },
+        {
+          "description": "Slack channel or DM ID that `report --slack` posts to by default (the --slack-channel flag overrides it). Leave blank to pass the destination on every run.",
+          "name": "AWS_BILLING_SLACK_CHANNEL"
+        },
+        {
+          "default": "us-east-1",
+          "description": "Region for the EC2, CloudWatch and S3 calls. Cost Explorer is always served from us-east-1 regardless of this value.",
+          "name": "AWS_REGION"
+        },
+        {
+          "description": "Secret access key paired with AWS_ACCESS_KEY_ID.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AWS_SECRET_ACCESS_KEY"
+        },
+        {
+          "description": "Session token, required only when the keys above are temporary STS or SSO credentials. Leave blank for long-lived IAM user keys.",
+          "isSecret": true,
+          "name": "AWS_SESSION_TOKEN"
+        }
+      ],
+      "fileSha256": "a0541c759e6ffd32d279ad30c9b27548db018343c97b7cbd524b5f2e6c2cf74e",
+      "identifier": "https://github.com/Servosity/msp-skills/releases/download/aws-billing-v0.1.3/aws-billing-mcp.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "3dd91cb429",
+    "published_at": "2026-09-10T12:16:12.141949Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Servosity/aws-billing-mcp",
+    "server_version": "0.1.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-10T12:16:12.141949Z"
+  },
+  "title": "Amazon Web Services MCP",
+  "type": "mcp_server",
+  "version": "0.1.3"
+}

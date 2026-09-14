@@ -1,0 +1,69 @@
+{
+  "description": "Shared memory for AI agents, as a graph in your own Postgres. Writes never call an LLM.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ayushcodes10-echo-mem.stdio.7c95fc8416",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ayushcodes10/echo-mem",
+    "homepage": "https://github.com/ayushcodes10/echo-mem",
+    "repository": "https://github.com/ayushcodes10/echo-mem"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "echo-mem==0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ayushcodes10/echo-mem",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Postgres connection string. `echo-memory quickstart` starts a suitable database and prints this.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ECHO_MEMORY_DATABASE_URL"
+        },
+        {
+          "description": "Whose memory this is. Scopes every read and write.",
+          "isRequired": true,
+          "name": "ECHO_MEMORY_USER_ID"
+        },
+        {
+          "description": "Which tool is writing: claude-code, cursor, codex, claude-desktop. Recorded on every fact, and what makes a cross-tool recall visible afterwards.",
+          "isRequired": true,
+          "name": "ECHO_MEMORY_AGENT_ID"
+        }
+      ],
+      "identifier": "echo-mem",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7c95fc8416",
+    "published_at": "2026-09-12T19:57:28.83446Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ayushcodes10/echo-mem",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-12T19:57:28.83446Z"
+  },
+  "title": "Echo Memory",
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

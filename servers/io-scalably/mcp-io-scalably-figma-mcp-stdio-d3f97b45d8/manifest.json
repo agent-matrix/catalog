@@ -1,0 +1,85 @@
+{
+  "description": "Figma MCP: list frames in a file and fetch one frame's JSON and image safely. 2 tools.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:40+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-scalably-figma-mcp.stdio.d3f97b45d8",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/scalably-io/figma-mcp",
+    "homepage": "https://github.com/scalably-io/figma-mcp",
+    "repository": "https://github.com/scalably-io/figma-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@scalably-io/figma-mcp@1.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.scalably/figma-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Figma personal access token with file_content:read",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "FIGMA_TOKEN"
+        },
+        {
+          "description": "Figma REST API base URL, default https://api.figma.com/v1",
+          "name": "FIGMA_API_BASE_URL"
+        },
+        {
+          "description": "Per-request timeout in milliseconds, default 60000",
+          "name": "FIGMA_REQUEST_TIMEOUT_MS"
+        },
+        {
+          "description": "Upper bound on a Figma JSON response in bytes, default 104857600",
+          "name": "FIGMA_MAX_JSON_BYTES"
+        },
+        {
+          "description": "Upper bound on a downloaded frame PNG in bytes, default 104857600",
+          "name": "FIGMA_MAX_FRAME_BYTES"
+        },
+        {
+          "description": "Directory that all fetch_frame output directories must stay below, default ./figma-output",
+          "name": "FIGMA_OUTPUT_ROOT"
+        },
+        {
+          "description": "Test suite only: set to 1 to allow a plain-HTTP loopback API base. Never set it in normal use",
+          "name": "FIGMA_ALLOW_HTTP_FOR_TESTS"
+        }
+      ],
+      "identifier": "@scalably-io/figma-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d3f97b45d8",
+    "published_at": "2026-09-09T07:37:02.217343Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.scalably/figma-mcp",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-09T07:37:02.217343Z"
+  },
+  "title": "Figma MCP",
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

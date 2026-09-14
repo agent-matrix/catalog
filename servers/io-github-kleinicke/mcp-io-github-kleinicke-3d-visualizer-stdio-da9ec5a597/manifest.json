@@ -1,0 +1,77 @@
+{
+  "description": "Inspect, compare and export point clouds, meshes and calibrated depth data with inline 3D previews.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:47+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-kleinicke-3d-visualizer.stdio.da9ec5a597",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/kleinicke/ply-visualizer",
+    "homepage": "https://github.com/kleinicke/ply-visualizer",
+    "repository": "https://github.com/kleinicke/ply-visualizer"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "name": "--with",
+            "type": "named",
+            "value": "mcp>=2.2,<3"
+          },
+          "3d-visualizer==0.4.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.kleinicke/3d-visualizer",
+  "packages": [
+    {
+      "identifier": "3d-visualizer",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        },
+        {
+          "description": "Absolute directory containing the 3D files this server may access.",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "--root",
+          "type": "named"
+        }
+      ],
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "name": "--with",
+          "type": "named",
+          "value": "mcp>=2.2,<3"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "da9ec5a597",
+    "published_at": "2026-09-08T22:35:00.557034Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.kleinicke/3d-visualizer",
+    "server_version": "0.4.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-08T22:35:00.557034Z"
+  },
+  "title": "3D Visualizer",
+  "type": "mcp_server",
+  "version": "0.4.2"
+}

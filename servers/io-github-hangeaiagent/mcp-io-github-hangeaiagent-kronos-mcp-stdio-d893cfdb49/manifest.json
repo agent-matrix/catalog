@@ -1,0 +1,71 @@
+{
+  "description": "Stock price forecasting for China A-shares \u2014 Kronos K-line time-series model",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-hangeaiagent-kronos-mcp.stdio.d893cfdb49",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/agentpit-io/hunter-community",
+    "homepage": "https://github.com/agentpit-io/hunter-community",
+    "repository": "https://github.com/agentpit-io/hunter-community"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "kronos-mcp==0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.hangeaiagent/kronos-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "KRONOS-type API key from https://hunter.agentpit.io/dev/api-keys",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "KRONOS_API_KEY"
+        },
+        {
+          "default": "https://kronos.agentpit.io",
+          "description": "Override the upstream endpoint if you self-host",
+          "name": "KRONOS_URL"
+        },
+        {
+          "default": "180",
+          "description": "Read timeout in seconds. GPU inference takes 30-70s",
+          "name": "KRONOS_TIMEOUT"
+        }
+      ],
+      "identifier": "kronos-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d893cfdb49",
+    "published_at": "2026-09-11T03:53:17.03817Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.hangeaiagent/kronos-mcp",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-11T03:53:17.03817Z"
+  },
+  "title": "Kronos",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

@@ -1,0 +1,60 @@
+{
+  "description": "Browse Gopher and Gemini resources safely: SSRF protection, TLS/TOFU, structured JSON output.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:19+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cameronrye-gopher-mcp.stdio.9ec31c90e4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cameronrye/gopher-mcp",
+    "homepage": "https://github.com/cameronrye/gopher-mcp",
+    "repository": "https://github.com/cameronrye/gopher-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/cameronrye/gopher-mcp:0.10.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cameronrye/gopher-mcp",
+  "packages": [
+    {
+      "identifier": "ghcr.io/cameronrye/gopher-mcp:0.10.1",
+      "packageArguments": [
+        {
+          "description": "Serve over stdio. The image's default command starts the streamable-http transport on port 8000, so a client running this image as a local stdio server must override it.",
+          "isRequired": true,
+          "name": "--transport",
+          "type": "named",
+          "value": "stdio"
+        }
+      ],
+      "registryType": "oci",
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "9ec31c90e4",
+    "published_at": "2026-09-06T01:39:00.883824Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cameronrye/gopher-mcp",
+    "server_version": "0.10.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-06T01:39:00.883824Z"
+  },
+  "title": "Gopher & Gemini MCP Server",
+  "type": "mcp_server",
+  "version": "0.10.1"
+}

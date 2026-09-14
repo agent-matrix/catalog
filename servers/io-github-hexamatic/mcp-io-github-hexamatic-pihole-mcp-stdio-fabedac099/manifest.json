@@ -1,0 +1,101 @@
+{
+  "description": "Manage Pi-hole v6: DNS blocking, domains, clients, query analysis, DHCP, and multi-instance sync.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-hexamatic-pihole-mcp.stdio.fabedac099",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/hexamatic/pihole-mcp",
+    "homepage": "https://github.com/hexamatic/pihole-mcp",
+    "repository": "https://github.com/hexamatic/pihole-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/hexamatic/pihole-mcp:0.9.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.hexamatic/pihole-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of your Pi-hole web interface. For multiple Pi-holes use PIHOLE_1_URL, PIHOLE_2_URL, ... instead.",
+          "format": "string",
+          "isRequired": true,
+          "name": "PIHOLE_URL",
+          "placeholder": "http://192.168.1.2"
+        },
+        {
+          "description": "Pi-hole admin password, or an application password (recommended \u2014 bypasses TOTP 2FA)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PIHOLE_PASSWORD"
+        },
+        {
+          "description": "IANA timezone for rendered timestamps, e.g. Australia/Adelaide. Defaults to UTC in the container.",
+          "format": "string",
+          "name": "TZ"
+        },
+        {
+          "default": "false",
+          "description": "Expose only inspection tools. Every tool that can change Pi-hole is hidden and rejected if called.",
+          "format": "boolean",
+          "name": "PIHOLE_READ_ONLY"
+        },
+        {
+          "default": "false",
+          "description": "Set to true only for a Pi-hole serving a self-signed HTTPS certificate. A trusted certificate is the better fix.",
+          "format": "boolean",
+          "name": "PIHOLE_TLS_SKIP_VERIFY"
+        },
+        {
+          "default": "30s",
+          "description": "HTTP request timeout as a Go duration, e.g. 30s or 1m",
+          "format": "string",
+          "name": "PIHOLE_REQUEST_TIMEOUT"
+        },
+        {
+          "default": "3",
+          "description": "Retries after a transient Pi-hole API failure; 0 disables retrying",
+          "format": "number",
+          "name": "PIHOLE_MAX_RETRIES"
+        },
+        {
+          "default": "8s",
+          "description": "Upper bound on a single exponential-backoff wait, as a Go duration",
+          "format": "string",
+          "name": "PIHOLE_RETRY_MAX_DELAY"
+        }
+      ],
+      "identifier": "ghcr.io/hexamatic/pihole-mcp:0.9.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "fabedac099",
+    "published_at": "2026-09-11T04:51:05.017914Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.hexamatic/pihole-mcp",
+    "server_version": "0.9.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-11T04:51:05.017914Z"
+  },
+  "title": "Pi-hole MCP Server",
+  "type": "mcp_server",
+  "version": "0.9.0"
+}

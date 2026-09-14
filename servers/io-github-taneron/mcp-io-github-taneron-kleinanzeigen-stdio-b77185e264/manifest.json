@@ -1,0 +1,83 @@
+{
+  "description": "Search Kleinanzeigen.de, Germany's largest classifieds site, for second-hand listings",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:26+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-taneron-kleinanzeigen.stdio.b77185e264",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/taneron/willmehr",
+    "homepage": "https://github.com/taneron/willmehr",
+    "repository": "https://github.com/taneron/willmehr"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "kleinanzeigen-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.taneron/kleinanzeigen",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "choices": [
+            "full",
+            "public"
+          ],
+          "default": "full",
+          "description": "'full' (default) for a local install; 'public' paces requests and lowers the page and batch caps for an instance shared by several people.",
+          "name": "WILLMEHR_MODE"
+        },
+        {
+          "default": "800",
+          "description": "Minimum spacing between requests to kleinanzeigen.de, in milliseconds. Concurrency trips the site's bot detection, so requests are serialised.",
+          "name": "KZ_MIN_INTERVAL_MS"
+        },
+        {
+          "default": "5",
+          "description": "Cap on result pages a single search may fetch, roughly 25 listings each.",
+          "name": "KZ_MAX_PAGE_COUNT"
+        },
+        {
+          "default": "20",
+          "description": "Cap on listing ids per batch detail call.",
+          "name": "KZ_MAX_BATCH_SIZE"
+        },
+        {
+          "description": "Listing timestamps are printed without a timezone; set Europe/Berlin to interpret them exactly.",
+          "name": "TZ"
+        }
+      ],
+      "identifier": "kleinanzeigen-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b77185e264",
+    "published_at": "2026-09-01T21:03:45.788571Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.taneron/kleinanzeigen",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-01T21:03:45.788571Z"
+  },
+  "title": "kleinanzeigen-mcp",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

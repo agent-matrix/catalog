@@ -1,0 +1,162 @@
+{
+  "description": "MCP gateway for controlled SSH access with per-client auth, command policies, and audit logging.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-gelse-ssh-mcp.stdio.2e6cda6d29",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/gelse/ssh-mcp",
+    "homepage": "https://github.com/gelse/ssh-mcp",
+    "repository": "https://github.com/gelse/ssh-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Map the MCP HTTP port",
+            "name": "-p",
+            "type": "named",
+            "value": "8080:8080"
+          },
+          {
+            "description": "Mount the configuration directory",
+            "name": "-v",
+            "type": "named",
+            "value": "{config_dir}:/config",
+            "variables": {
+              "config_dir": {
+                "description": "Path to the local config directory containing ssh-mcp-config.json",
+                "isRequired": true
+              }
+            }
+          },
+          {
+            "description": "Mount the SSH private key read-only",
+            "name": "-v",
+            "type": "named",
+            "value": "{ssh_key}:/app/ssh_key:ro",
+            "variables": {
+              "ssh_key": {
+                "description": "Path to the SSH private key file",
+                "isRequired": true
+              }
+            }
+          },
+          {
+            "description": "Mount the logs directory",
+            "name": "-v",
+            "type": "named",
+            "value": "{logs_dir}:/logs",
+            "variables": {
+              "logs_dir": {
+                "description": "Path to the local logs directory"
+              }
+            }
+          },
+          "ghcr.io/gelse/ssh-mcp:0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.gelse/ssh-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "/config",
+          "description": "Directory containing ssh-mcp-config.json",
+          "name": "CONFIG_DIR"
+        },
+        {
+          "default": "/logs",
+          "description": "Directory for JSONL audit logs",
+          "name": "LOG_DIR"
+        },
+        {
+          "choices": [
+            "true",
+            "false"
+          ],
+          "default": "false",
+          "description": "Enable the configuration REST API and web dashboard",
+          "name": "CONFIG_API_ENABLED"
+        },
+        {
+          "description": "Bearer token for the configuration API",
+          "isSecret": true,
+          "name": "CONFIG_API_TOKEN"
+        }
+      ],
+      "identifier": "ghcr.io/gelse/ssh-mcp:0.3.0",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "Map the MCP HTTP port",
+          "name": "-p",
+          "type": "named",
+          "value": "8080:8080"
+        },
+        {
+          "description": "Mount the configuration directory",
+          "name": "-v",
+          "type": "named",
+          "value": "{config_dir}:/config",
+          "variables": {
+            "config_dir": {
+              "description": "Path to the local config directory containing ssh-mcp-config.json",
+              "isRequired": true
+            }
+          }
+        },
+        {
+          "description": "Mount the SSH private key read-only",
+          "name": "-v",
+          "type": "named",
+          "value": "{ssh_key}:/app/ssh_key:ro",
+          "variables": {
+            "ssh_key": {
+              "description": "Path to the SSH private key file",
+              "isRequired": true
+            }
+          }
+        },
+        {
+          "description": "Mount the logs directory",
+          "name": "-v",
+          "type": "named",
+          "value": "{logs_dir}:/logs",
+          "variables": {
+            "logs_dir": {
+              "description": "Path to the local logs directory"
+            }
+          }
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:8080/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "2e6cda6d29",
+    "published_at": "2026-09-14T07:42:18.398237Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.gelse/ssh-mcp",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-14T07:42:18.398237Z"
+  },
+  "title": "ssh-mcp",
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

@@ -1,0 +1,101 @@
+{
+  "description": "Publish ntfy notifications, read the message cache, and manage users and topic access",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:00+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ni-c-ntfy-mcp.stdio.a116abea00",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ni-c/ntfy-mcp",
+    "homepage": "https://github.com/ni-c/ntfy-mcp",
+    "repository": "https://github.com/ni-c/ntfy-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@ni-c/ntfy-mcp@0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ni-c/ntfy-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the ntfy server, e.g. https://ntfy.example.net. There is deliberately no default.",
+          "format": "string",
+          "isRequired": true,
+          "name": "NTFY_URL"
+        },
+        {
+          "description": "ntfy access token (tk_...). Optional: an open instance needs no credentials. Mutually exclusive with NTFY_USERNAME/NTFY_PASSWORD.",
+          "format": "string",
+          "isSecret": true,
+          "name": "NTFY_TOKEN"
+        },
+        {
+          "description": "Username for basic authentication. Must be set together with NTFY_PASSWORD.",
+          "format": "string",
+          "name": "NTFY_USERNAME"
+        },
+        {
+          "description": "Password for basic authentication. Must be set together with NTFY_USERNAME.",
+          "format": "string",
+          "isSecret": true,
+          "name": "NTFY_PASSWORD"
+        },
+        {
+          "description": "Comma-separated topics the server may use. The first is the default when a tool omits one, and the list restricts every read and write tool.",
+          "format": "string",
+          "name": "NTFY_TOPICS"
+        },
+        {
+          "description": "Set to exactly true to register only the six read tools (default: false \u2014 ntfy exists to publish)",
+          "format": "boolean",
+          "name": "NTFY_READ_ONLY"
+        },
+        {
+          "description": "Set to true to accept a self-signed certificate from the ntfy server (default: false)",
+          "format": "boolean",
+          "name": "NTFY_INSECURE_TLS"
+        },
+        {
+          "description": "Comma-separated tool names or list_* prefixes to register; 'essential' selects a curated preset (default: all tools)",
+          "format": "string",
+          "name": "NTFY_ALLOW_TOOLS"
+        },
+        {
+          "description": "Comma-separated tool names or list_* prefixes to remove from whatever the allow list left",
+          "format": "string",
+          "name": "NTFY_DENY_TOOLS"
+        }
+      ],
+      "identifier": "@ni-c/ntfy-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a116abea00",
+    "published_at": "2026-09-03T17:56:41.275481Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ni-c/ntfy-mcp",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-03T17:56:41.275481Z"
+  },
+  "title": "ntfy",
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

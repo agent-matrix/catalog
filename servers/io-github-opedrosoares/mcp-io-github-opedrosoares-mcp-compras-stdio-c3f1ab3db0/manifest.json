@@ -1,0 +1,72 @@
+{
+  "description": "Pre\u00e7os, atas, contratos e san\u00e7\u00f5es das APIs p\u00fablicas de compras do governo brasileiro",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:03+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-opedrosoares-mcp-compras.stdio.c3f1ab3db0",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/opedrosoares/MCP_Compras",
+    "homepage": "https://github.com/opedrosoares/MCP_Compras",
+    "repository": "https://github.com/opedrosoares/MCP_Compras"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "compras-mcp==0.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.opedrosoares/mcp-compras",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Chave gratuita do Portal da Transpar\u00eancia (CGU). Habilita as tools de san\u00e7\u00f5es (CEIS, CNEP, CEAF, CEPIM). Sem ela, as demais tools seguem funcionando. Cadastro: api.portaldatransparencia.gov.br/api-de-dados/cadastrar-email",
+          "format": "string",
+          "isSecret": true,
+          "name": "TRANSPARENCIA_API_KEY"
+        },
+        {
+          "description": "Opcional. Compartilha o cache TTL entre processos; sem ela o cache fica em mem\u00f3ria local.",
+          "format": "string",
+          "isSecret": true,
+          "name": "REDIS_URL"
+        },
+        {
+          "default": "false",
+          "description": "Default 'false': CPFs de servidores v\u00eam mascarados (123.***.***-45) por LGPD. Use 'true' apenas quando estritamente necess\u00e1rio.",
+          "format": "string",
+          "name": "INCLUIR_CPF_COMPLETO"
+        }
+      ],
+      "identifier": "compras-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c3f1ab3db0",
+    "published_at": "2026-09-09T18:52:03.166226Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.opedrosoares/mcp-compras",
+    "server_version": "0.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-09T18:52:03.166226Z"
+  },
+  "title": "MCP Compras.gov.br",
+  "type": "mcp_server",
+  "version": "0.4.0"
+}

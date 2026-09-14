@@ -1,0 +1,67 @@
+{
+  "description": "Authorize consequential AI agent actions before execution",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:18+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-decionis-mcp.stdio.538c1462dc",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/decionis/agent-safe-pipeline",
+    "homepage": "https://github.com/decionis/agent-safe-pipeline",
+    "repository": "https://github.com/decionis/agent-safe-pipeline"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@decionis/mcp@0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.decionis/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional path to the policy file; defaults to ./DECIONIS_POLICY.md in the working directory.",
+          "name": "DECIONIS_POLICY_PATH"
+        },
+        {
+          "description": "Optional Presence tenant API key. When set, decionis_request_presence_verification and decionis_get_presence_verification_status register and call presence.decionis.com; without it the server stays networkless.",
+          "isSecret": true,
+          "name": "DECIONIS_PRESENCE_API_KEY"
+        },
+        {
+          "description": "Optional Presence base URL (https only); defaults to https://presence.decionis.com.",
+          "name": "DECIONIS_PRESENCE_API_URL"
+        }
+      ],
+      "identifier": "@decionis/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "538c1462dc",
+    "published_at": "2026-09-14T03:10:45.110094Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.decionis/mcp",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-14T03:10:45.110094Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

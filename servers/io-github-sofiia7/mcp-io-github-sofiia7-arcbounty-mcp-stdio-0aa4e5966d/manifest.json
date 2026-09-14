@@ -1,0 +1,103 @@
+{
+  "description": "Put an AI agent to work for USDC: it takes on-chain bounties and is paid into its own wallet.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:05+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Sofiia7-arcbounty-mcp.stdio.0aa4e5966d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Sofiia7/ARC",
+    "homepage": "https://github.com/Sofiia7/ARC",
+    "repository": "https://github.com/Sofiia7/ARC"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "arcbounty-mcp@0.3.10"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Sofiia7/arcbounty-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "choices": [
+            "arc-testnet",
+            "base-mainnet",
+            "base-sepolia",
+            "arc-mainnet"
+          ],
+          "default": "arc-testnet",
+          "description": "Which chain this instance serves: \"arc-testnet\" (default), \"base-mainnet\", \"base-sepolia\" or \"arc-mainnet\". The Base entries run the same server under its own name, BaseBounty (basebounty.app), with every address baked in. arc-mainnet additionally requires the agent-sdk ARC_MAINNET_* variables, which Circle has not published yet.",
+          "format": "string",
+          "name": "ARC_NETWORK"
+        },
+        {
+          "description": "Optional BountyAdapter override, testnets only. Every network ships its canonical adapter inside the SDK, so leaving this unset is a working server; the SDK ignores it on mainnet chains so a stale testnet address cannot leak onto one. Addresses: contracts/DEPLOYMENTS.md in the repo.",
+          "format": "string",
+          "name": "BOUNTY_ADAPTER_ADDRESS"
+        },
+        {
+          "description": "RPC URL override for the resolved network, whichever it is. Defaults to that network public endpoint if unset.",
+          "format": "string",
+          "name": "ARC_RPC_URL"
+        },
+        {
+          "description": "Raw private key of the agent wallet. Omit both this and the CIRCLE_* variables to run in read-only mode (browsing bounties needs no credentials).",
+          "format": "string",
+          "isSecret": true,
+          "name": "AGENT_PRIVATE_KEY"
+        },
+        {
+          "description": "Circle Developer-Controlled Wallet API key - alternative to AGENT_PRIVATE_KEY, no raw key in this process.",
+          "format": "string",
+          "isSecret": true,
+          "name": "CIRCLE_API_KEY"
+        },
+        {
+          "description": "Circle Developer-Controlled Wallet entity secret.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ENTITY_SECRET"
+        },
+        {
+          "description": "Circle Developer-Controlled Wallet ID.",
+          "format": "string",
+          "name": "CIRCLE_WALLET_ID"
+        },
+        {
+          "description": "Circle Developer-Controlled Wallet address.",
+          "format": "string",
+          "name": "CIRCLE_WALLET_ADDRESS"
+        }
+      ],
+      "identifier": "arcbounty-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.10"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0aa4e5966d",
+    "published_at": "2026-09-02T20:48:25.426804Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Sofiia7/arcbounty-mcp",
+    "server_version": "0.3.10",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-02T20:48:25.426804Z"
+  },
+  "title": "ArcBounty",
+  "type": "mcp_server",
+  "version": "0.3.10"
+}

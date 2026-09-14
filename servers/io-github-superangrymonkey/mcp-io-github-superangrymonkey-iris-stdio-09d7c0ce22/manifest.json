@@ -1,0 +1,75 @@
+{
+  "description": "Microsoft 365 mail MCP: drafts into Outlook; sending off by default, opt-in via IRIS_ENABLE_SEND.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:06+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-SuperAngryMonkey-iris.stdio.09d7c0ce22",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/SuperAngryMonkey/iris",
+    "homepage": "https://github.com/SuperAngryMonkey/iris",
+    "repository": "https://github.com/SuperAngryMonkey/iris"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "iris-mcp==0.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.SuperAngryMonkey/iris",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Application (client) ID of YOUR OWN Entra app registration. There is no shared app; you register one.",
+          "isRequired": true,
+          "name": "IRIS_CLIENT_ID"
+        },
+        {
+          "description": "Directory (tenant) ID. Defaults to 'organizations'.",
+          "name": "IRIS_TENANT_ID"
+        },
+        {
+          "description": "Mail folder drafts are written to, created on first use. Defaults to 'AI Drafts'. Empty string uses Drafts.",
+          "name": "IRIS_DRAFT_FOLDER"
+        },
+        {
+          "description": "Path to a recipient allowlist file. If absent or empty, all recipients are permitted.",
+          "name": "IRIS_ALLOWLIST"
+        },
+        {
+          "description": "Set to '1' to enable sending. ALSO requires Mail.Send granted on the Entra app and a fresh sign-in. Off by default; when unset, iris cannot send and the send tool is not registered.",
+          "name": "IRIS_ENABLE_SEND"
+        }
+      ],
+      "identifier": "iris-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "09d7c0ce22",
+    "published_at": "2026-09-02T22:09:26.186251Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.SuperAngryMonkey/iris",
+    "server_version": "0.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-02T22:09:26.186251Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.1"
+}

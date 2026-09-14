@@ -1,0 +1,71 @@
+{
+  "description": "Search Ethereum-ecosystem funding opportunities; submit one behind a human approval step.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:06+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-The-RFP-Hub-rfp-hub.stdio.4800485235",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/The-RFP-Hub/the-rfp-hub",
+    "homepage": "https://github.com/The-RFP-Hub/the-rfp-hub",
+    "repository": "https://github.com/The-RFP-Hub/the-rfp-hub"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@the-rfp-hub/mcp@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.The-RFP-Hub/rfp-hub",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the RFP Hub API. Defaults to https://api.ethrfps.app. The origin of this URL is bound into every write approval.",
+          "name": "RFPHUB_API_BASE"
+        },
+        {
+          "description": "RFP Hub API credential. Needed ONLY to submit; searching and fetching are anonymous and never send it. Setting it is what registers the write tool at all: without it tools/list returns two tools. A write-scoped key is recommended: its submissions land pending a reviewer's decision.",
+          "isSecret": true,
+          "name": "RFPHUB_API_KEY"
+        }
+      ],
+      "identifier": "@the-rfp-hub/mcp",
+      "packageArguments": [
+        {
+          "description": "Directory for write approvals, rate-limit counters and the local audit log. Defaults to ~/.rfphub and must be writable \u2014 rate limiting fails closed. Pass it where this user has no writable home, and pass the same directory to `rfphub-mcp approve`.",
+          "format": "filepath",
+          "name": "--state-dir",
+          "type": "named"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4800485235",
+    "published_at": "2026-09-04T00:02:20.146126Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.The-RFP-Hub/rfp-hub",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-04T00:02:20.146126Z"
+  },
+  "title": "RFP Hub",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

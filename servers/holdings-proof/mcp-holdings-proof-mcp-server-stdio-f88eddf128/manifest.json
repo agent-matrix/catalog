@@ -1,0 +1,62 @@
+{
+  "description": "One API, all things verified \u2014 control, delegation, human approval, anti-impersonation.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.holdings-proof-mcp-server.stdio.f88eddf128",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ProofHoldings/mcp-server",
+    "homepage": "https://github.com/ProofHoldings/mcp-server",
+    "repository": "https://github.com/ProofHoldings/mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@proof-holdings/mcp-server@1.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "holdings.proof/mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Proof Holdings API key (Bearer). Optional: without it the server runs in public mode, where account creation, login and public verification tools work and every other tool asks for a key. Create one in the dashboard at https://proof.holdings. A key minted from inside a session with create_api_key takes effect only once it is set here and the server is restarted \u2014 this value is read at startup and has no runtime setter.",
+          "isSecret": true,
+          "name": "PROOF_API_KEY"
+        },
+        {
+          "description": "API base URL. Defaults to https://api.proof.holdings.",
+          "name": "PROOF_BASE_URL"
+        }
+      ],
+      "identifier": "@proof-holdings/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f88eddf128",
+    "published_at": "2026-09-09T14:15:41.186467Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "holdings.proof/mcp-server",
+    "server_version": "1.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-09T14:15:41.186467Z"
+  },
+  "title": "Proof Holdings",
+  "type": "mcp_server",
+  "version": "1.1.0"
+}

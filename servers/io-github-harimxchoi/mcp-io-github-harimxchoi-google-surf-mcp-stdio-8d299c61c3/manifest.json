@@ -1,0 +1,202 @@
+{
+  "description": "Web, academic and code search with graph RAG, data lineage, ontology and cross-project schema links.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:53+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-HarimxChoi-google-surf-mcp.stdio.8d299c61c3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/HarimxChoi/google-surf-mcp",
+    "homepage": "https://github.com/HarimxChoi/google-surf-mcp",
+    "repository": "https://github.com/HarimxChoi/google-surf-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "google-surf-mcp@1.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.HarimxChoi/google-surf-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "SearchApi API key. Required only for SearchApi primary or fallback modes.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SEARCH_API"
+        },
+        {
+          "description": "Provider for search and search_parallel: browser, searchapi, or fallback. Defaults to browser.",
+          "format": "string",
+          "name": "SURF_SEARCH_PROVIDER"
+        },
+        {
+          "description": "Provider for scholar_search: browser, searchapi, or fallback. Defaults to browser.",
+          "format": "string",
+          "name": "SURF_SCHOLAR_PROVIDER"
+        },
+        {
+          "description": "Browser engine: auto, native, or playwright. Auto uses one hidden native Chrome broker shared across local MCP sessions.",
+          "format": "string",
+          "name": "SURF_BROWSER_ENGINE"
+        },
+        {
+          "description": "Absolute path to the Chrome binary. Auto-detected on Windows/macOS/Linux when omitted.",
+          "format": "string",
+          "name": "CHROME_PATH"
+        },
+        {
+          "description": "Directory for the warm Chrome profile. Defaults to ~/.google-surf-mcp.",
+          "format": "string",
+          "name": "SURF_PROFILE_ROOT"
+        },
+        {
+          "description": "Enable local project memory and hybrid retrieval. Defaults to true.",
+          "format": "string",
+          "name": "SURF_RESEARCH"
+        },
+        {
+          "description": "Shared route for search and search_parallel: live or hybrid. Defaults to hybrid.",
+          "format": "string",
+          "name": "SURF_RETRIEVAL_MODE"
+        },
+        {
+          "description": "Embedded SurrealDB data directory. Defaults to <profile>/research.",
+          "format": "string",
+          "name": "SURF_RESEARCH_ROOT"
+        },
+        {
+          "description": "Local model for HNSW retrieval and shared reranking. Defaults to Xenova/multilingual-e5-small; use off to disable.",
+          "format": "string",
+          "name": "SURF_RESEARCH_VECTOR_MODEL"
+        },
+        {
+          "description": "Disable ONNX CPU memory arena and memory pattern. Defaults to true.",
+          "format": "string",
+          "name": "SURF_RESEARCH_VECTOR_LOW_MEMORY"
+        },
+        {
+          "description": "ONNX intra-op thread count from 1 to 16. Defaults to 4.",
+          "format": "string",
+          "name": "SURF_RESEARCH_VECTOR_THREADS"
+        },
+        {
+          "description": "Sparse-index at most one eligible small GitHub repository per search call. Defaults to true.",
+          "format": "string",
+          "name": "SURF_RESEARCH_REPO_AUTO"
+        },
+        {
+          "description": "Maximum searchable repository source-text size in MB. Assets are excluded. Defaults to 20.",
+          "format": "string",
+          "name": "SURF_RESEARCH_REPO_AUTO_MAX_MB"
+        },
+        {
+          "description": "Maximum repository source file count for automatic indexing. Defaults to 2000.",
+          "format": "string",
+          "name": "SURF_RESEARCH_REPO_AUTO_MAX_FILES"
+        },
+        {
+          "description": "Shared research broker idle lifetime in milliseconds. Defaults to 60000.",
+          "format": "string",
+          "name": "SURF_RESEARCH_BROKER_IDLE_MS"
+        },
+        {
+          "description": "Maximum concurrent research broker reads. Defaults to 4.",
+          "format": "string",
+          "name": "SURF_RESEARCH_READ_CONCURRENCY"
+        },
+        {
+          "description": "Timeout per embedded SurrealDB query in milliseconds. Defaults to 120000; timed-out retrieval lanes are reported as partial.",
+          "format": "string",
+          "name": "SURF_RESEARCH_QUERY_TIMEOUT_MS"
+        },
+        {
+          "description": "Optional token that raises GitHub API limits for repository inspection.",
+          "format": "string",
+          "isSecret": true,
+          "name": "GITHUB_TOKEN"
+        },
+        {
+          "description": "Browser locale, e.g. en-US.",
+          "format": "string",
+          "name": "SURF_LOCALE"
+        },
+        {
+          "description": "IANA timezone, e.g. America/New_York. Defaults to system timezone.",
+          "format": "string",
+          "name": "SURF_TZ"
+        },
+        {
+          "description": "Controls Playwright extraction, compatibility, and recovery paths. Native search hides normal system Chrome and shows it only for CAPTCHA recovery.",
+          "format": "string",
+          "name": "SURF_HEADLESS"
+        },
+        {
+          "description": "Idle ms before closing the sequential ctx and pool. 0 disables idle auto-close. Defaults to 30000.",
+          "format": "string",
+          "name": "SURF_IDLE_CLOSE_MS"
+        },
+        {
+          "description": "Set to 'true' to allow extract on private/loopback addresses (localhost, 10.x, 192.168.x, 169.254.x, etc). Default blocks them as an SSRF guard.",
+          "format": "string",
+          "name": "SURF_ALLOW_PRIVATE"
+        },
+        {
+          "description": "Enable the optional workflow-only LLM selector repair path. Defaults to false.",
+          "format": "string",
+          "name": "SURF_LLM_HEAL"
+        },
+        {
+          "description": "LLM selector repair provider: anthropic or orcarouter. Defaults to anthropic.",
+          "format": "string",
+          "name": "SURF_LLM_PROVIDER"
+        },
+        {
+          "description": "Optional model override. OrcaRouter defaults to orcarouter/auto.",
+          "format": "string",
+          "name": "SURF_LLM_MODEL"
+        },
+        {
+          "description": "Anthropic API key for optional LLM-assisted selector repair.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ANTHROPIC_API_KEY"
+        },
+        {
+          "description": "OrcaRouter API key for optional LLM-assisted selector repair.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ORCAROUTER_API_KEY"
+        }
+      ],
+      "identifier": "google-surf-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8d299c61c3",
+    "published_at": "2026-09-10T16:31:43.961638Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.HarimxChoi/google-surf-mcp",
+    "server_version": "1.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-10T16:31:43.961638Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.1.2"
+}

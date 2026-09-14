@@ -1,0 +1,87 @@
+{
+  "description": "SchoolPass for Claude \u2014 students, arrival/dismissal calendar, pickup changes, and school info",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:21+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-chrischall-schoolpass-mcp.stdio.4576deff87",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/chrischall/schoolpass-mcp",
+    "homepage": "https://github.com/chrischall/schoolpass-mcp",
+    "repository": "https://github.com/chrischall/schoolpass-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "schoolpass-mcp@0.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.chrischall/schoolpass-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your SchoolPass parent account email address.",
+          "format": "string",
+          "isRequired": true,
+          "name": "SCHOOLPASS_EMAIL"
+        },
+        {
+          "description": "Your SchoolPass parent account password.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SCHOOLPASS_PASSWORD"
+        },
+        {
+          "description": "The numeric school id (AppCode) SchoolPass uses to select your school.",
+          "format": "string",
+          "isRequired": true,
+          "name": "SCHOOLPASS_SCHOOL_CODE"
+        },
+        {
+          "description": "Optional regional API host override (default busapi-east16-ss.school-pass.net).",
+          "format": "string",
+          "name": "SCHOOLPASS_API_HOST"
+        },
+        {
+          "description": "Set to false to disable the on-disk session cache and re-authenticate on every process start. Defaults to enabled.",
+          "format": "string",
+          "name": "SCHOOLPASS_SESSION_CACHE"
+        },
+        {
+          "description": "Absolute path for the session cache file. Defaults to $MCP_DATA_DIR/.schoolpass-mcp/session.json.",
+          "format": "string",
+          "name": "SCHOOLPASS_SESSION_FILE"
+        }
+      ],
+      "identifier": "schoolpass-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4576deff87",
+    "published_at": "2026-09-04T22:32:12.342811Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.chrischall/schoolpass-mcp",
+    "server_version": "0.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-04T22:32:12.342811Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.4.0"
+}

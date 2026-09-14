@@ -1,0 +1,77 @@
+{
+  "description": "MCP server for Holded (Spanish ERP): invoicing, accounting, treasury, CRM, projects, payroll.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:25+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-t4dhg-mcp-holded.stdio.6855c425f1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/t4dhg/mcp-holded",
+    "homepage": "https://github.com/t4dhg/mcp-holded",
+    "repository": "https://github.com/t4dhg/mcp-holded"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@t4dhg/mcp-holded@2.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.t4dhg/mcp-holded",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Holded v2 Personal Access Token (pat_<id>_<secret>), created under Settings, Developers, API. A v1 key is rejected at startup.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "HOLDED_API_KEY"
+        },
+        {
+          "description": "Override the API base URL (default: https://api.holded.com/api/v2)",
+          "name": "HOLDED_BASE_URL"
+        },
+        {
+          "description": "Per-request timeout in milliseconds (default: 30000)",
+          "name": "HOLDED_TIMEOUT_MS"
+        },
+        {
+          "description": "Retry attempts for GET requests; writes are never retried (default: 3)",
+          "name": "HOLDED_MAX_RETRIES"
+        },
+        {
+          "description": "Log requests to stderr (default: false)",
+          "name": "DEBUG"
+        }
+      ],
+      "identifier": "@t4dhg/mcp-holded",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6855c425f1",
+    "published_at": "2026-09-08T06:14:25.945049Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.t4dhg/mcp-holded",
+    "server_version": "2.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-08T06:14:25.945049Z"
+  },
+  "title": "MCP Holded",
+  "type": "mcp_server",
+  "version": "2.1.0"
+}

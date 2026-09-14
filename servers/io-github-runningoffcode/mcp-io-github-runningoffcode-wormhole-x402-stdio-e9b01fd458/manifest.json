@@ -1,0 +1,70 @@
+{
+  "description": "Check anything before your agent trusts it; verify x402 payments and deliveries. Offline verdicts.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-runningoffcode-wormhole-x402.stdio.e9b01fd458",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/runningoffcode/agent-wormhole",
+    "homepage": "https://github.com/runningoffcode/agent-wormhole",
+    "repository": "https://github.com/runningoffcode/agent-wormhole"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "wormhole-x402@0.6.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.runningoffcode/wormhole-x402",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional. Hosted-mode key from dashboard.agentwormhole.com: adds URL checks with change history, and the operator's spend policy (budgets, approvals, kill switch) on payments.",
+          "format": "string",
+          "isSecret": true,
+          "name": "WORMHOLE_API_KEY"
+        },
+        {
+          "description": "Optional. Override the hosted verifier endpoint (default https://dashboard.agentwormhole.com/api/v1/verify).",
+          "format": "string",
+          "name": "WORMHOLE_VERIFY_URL"
+        },
+        {
+          "description": "Optional. Path to the address-provenance ledger written by wormhole-guard's readguard hook (default ~/.wormhole/addresses.jsonl).",
+          "format": "string",
+          "name": "WORMHOLE_ADDRESS_LEDGER"
+        }
+      ],
+      "identifier": "wormhole-x402",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.6.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e9b01fd458",
+    "published_at": "2026-09-04T02:07:46.919264Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.runningoffcode/wormhole-x402",
+    "server_version": "0.6.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-04T02:07:46.919264Z"
+  },
+  "title": "Agent Wormhole",
+  "type": "mcp_server",
+  "version": "0.6.2"
+}

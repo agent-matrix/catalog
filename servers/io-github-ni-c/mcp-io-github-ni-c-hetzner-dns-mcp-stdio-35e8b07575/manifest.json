@@ -1,0 +1,80 @@
+{
+  "description": "Manage DNS zones and records (zonefiles, RRSets, TTL, protection) via the Hetzner Cloud API",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:00+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ni-c-hetzner-dns-mcp.stdio.35e8b07575",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ni-c/hetzner-dns-mcp",
+    "homepage": "https://github.com/ni-c/hetzner-dns-mcp",
+    "repository": "https://github.com/ni-c/hetzner-dns-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "hetzner-dns-mcp@0.5.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ni-c/hetzner-dns-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Hetzner Cloud API token (project-scoped, Cloud Console -> Security -> API tokens)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "HETZNER_API_TOKEN"
+        },
+        {
+          "description": "Set to true to register only the read-only tools (default: false)",
+          "format": "boolean",
+          "name": "HETZNER_READ_ONLY"
+        },
+        {
+          "description": "Comma-separated tool names or list_* prefixes to register; 'essential' selects a curated preset (default: all tools)",
+          "format": "string",
+          "name": "HETZNER_ALLOW_TOOLS"
+        },
+        {
+          "description": "Comma-separated tool names or list_* prefixes to remove from whatever HETZNER_ALLOW_TOOLS left",
+          "format": "string",
+          "name": "HETZNER_DENY_TOOLS"
+        },
+        {
+          "description": "Override the Hetzner Cloud API base URL (default: https://api.hetzner.cloud/v1)",
+          "format": "string",
+          "name": "HETZNER_API_BASE_URL"
+        }
+      ],
+      "identifier": "hetzner-dns-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "35e8b07575",
+    "published_at": "2026-09-03T14:34:47.05513Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ni-c/hetzner-dns-mcp",
+    "server_version": "0.5.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-03T14:34:47.05513Z"
+  },
+  "title": "Hetzner DNS",
+  "type": "mcp_server",
+  "version": "0.5.0"
+}

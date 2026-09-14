@@ -1,0 +1,110 @@
+{
+  "description": "MCP server for Google Search Console: properties, sitemaps, search analytics and URL inspection",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:00+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ni-c-google-search-console-mcp.stdio.df771b292a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ni-c/google-search-console-mcp",
+    "homepage": "https://github.com/ni-c/google-search-console-mcp",
+    "repository": "https://github.com/ni-c/google-search-console-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/ni-c/google-search-console-mcp:0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ni-c/google-search-console-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Service account key as JSON, or base64-encoded JSON. One of the three credential options.",
+          "format": "string",
+          "isSecret": true,
+          "name": "GSC_SERVICE_ACCOUNT_KEY"
+        },
+        {
+          "description": "Path to a service account key file. Alternative to GSC_SERVICE_ACCOUNT_KEY.",
+          "format": "string",
+          "name": "GSC_SERVICE_ACCOUNT_KEY_FILE"
+        },
+        {
+          "description": "OAuth2 client id. Use together with GSC_CLIENT_SECRET and GSC_REFRESH_TOKEN.",
+          "format": "string",
+          "name": "GSC_CLIENT_ID"
+        },
+        {
+          "description": "OAuth2 client secret. All three OAuth2 variables are required together.",
+          "format": "string",
+          "isSecret": true,
+          "name": "GSC_CLIENT_SECRET"
+        },
+        {
+          "description": "OAuth2 refresh token. All three OAuth2 variables are required together.",
+          "format": "string",
+          "isSecret": true,
+          "name": "GSC_REFRESH_TOKEN"
+        },
+        {
+          "description": "Path to application default credentials, used when no GSC_ credential is set.",
+          "format": "string",
+          "name": "GOOGLE_APPLICATION_CREDENTIALS"
+        },
+        {
+          "description": "Default property, e.g. sc-domain:example.com or https://example.com/ \u2014 makes site_url optional",
+          "format": "string",
+          "name": "GSC_SITE_URL"
+        },
+        {
+          "description": "Comma-separated properties this server may touch; anything else is refused",
+          "format": "string",
+          "name": "GSC_ALLOWED_SITES"
+        },
+        {
+          "description": "Set to true to register only the read tools (default: false)",
+          "format": "boolean",
+          "name": "GSC_READ_ONLY"
+        },
+        {
+          "description": "Comma-separated tool names or list_* prefixes to register; 'essential' selects a curated preset (default: all tools)",
+          "format": "string",
+          "name": "GSC_ALLOW_TOOLS"
+        },
+        {
+          "description": "Comma-separated tool names or list_* prefixes to remove from whatever the allow list left",
+          "format": "string",
+          "name": "GSC_DENY_TOOLS"
+        }
+      ],
+      "identifier": "ghcr.io/ni-c/google-search-console-mcp:0.3.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "df771b292a",
+    "published_at": "2026-09-07T17:57:06.608378Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ni-c/google-search-console-mcp",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-07T17:57:06.608378Z"
+  },
+  "title": "Google Search Console",
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

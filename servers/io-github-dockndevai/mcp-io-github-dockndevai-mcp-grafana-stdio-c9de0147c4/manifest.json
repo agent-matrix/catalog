@@ -1,0 +1,68 @@
+{
+  "description": "Search & edit Grafana dashboards, query datasources (PromQL/LogQL/SQL), inspect alerts.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:32+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-dockndevai-mcp-grafana.stdio.c9de0147c4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/dockndevai/mcp-grafana",
+    "homepage": "https://github.com/dockndevai/mcp-grafana",
+    "repository": "https://github.com/dockndevai/mcp-grafana"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@dockndevai/mcp-grafana@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.dockndevai/mcp-grafana",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the Grafana instance (e.g. http://localhost:3000).",
+          "name": "GRAFANA_URL"
+        },
+        {
+          "description": "Grafana service-account token (Bearer). Use a Viewer-role account for read-only use.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GRAFANA_TOKEN"
+        },
+        {
+          "description": "Access mode: read-only | read-write | admin. Starts read-only; writes need read-write.",
+          "name": "GRAFANA_MODE"
+        }
+      ],
+      "identifier": "@dockndevai/mcp-grafana",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c9de0147c4",
+    "published_at": "2026-09-09T15:57:24.828568Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.dockndevai/mcp-grafana",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-09T15:57:24.828568Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

@@ -1,0 +1,67 @@
+{
+  "description": "First single-binary CLI for CIPP  -  offline SQLite store, fleet posture analytics, and",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:04+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Servosity-cipp-mcp.stdio.60f7b68939",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/servosity/msp-skills",
+    "homepage": "https://github.com/servosity/msp-skills",
+    "repository": "https://github.com/servosity/msp-skills"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Servosity/cipp-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Set the CIPP_API_KEY credential for the CIPP MCP server.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CIPP_API_KEY"
+        },
+        {
+          "description": "Base URL of your self-hosted CIPP instance's API, e.g. https://cipp.example.com/api. The shipped default points at an example host, so until you set this the CLI is not talking to your tenant at all.",
+          "isRequired": true,
+          "name": "CIPP_BASE_URL"
+        },
+        {
+          "description": "Set to 1 to keep credentials off disk. The token cache becomes a no-op, so the connector mints a fresh token each run instead of writing one to config.toml. Leave blank for the default cached behaviour.",
+          "name": "CIPP_NO_CONFIG_WRITE"
+        }
+      ],
+      "fileSha256": "645df260cfc9deb3ae099b066dbb4c2dead4c29990eb811b3aad3a9f75dab97d",
+      "identifier": "https://github.com/Servosity/msp-skills/releases/download/cipp-v0.1.6/cipp-mcp.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "60f7b68939",
+    "published_at": "2026-09-10T12:15:04.674086Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Servosity/cipp-mcp",
+    "server_version": "0.1.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-10T12:15:04.674086Z"
+  },
+  "title": "CIPP MCP",
+  "type": "mcp_server",
+  "version": "0.1.6"
+}

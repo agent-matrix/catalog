@@ -1,0 +1,114 @@
+{
+  "description": "Offline MCP server to explore CSV/JSON/Parquet/Excel: preview, query, diff, render interactive HTML",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-aurelio-nakamura-dataloupe.stdio.d26b8278c1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/aurelio-nakamura/dataloupe",
+    "homepage": "https://github.com/aurelio-nakamura/dataloupe",
+    "repository": "https://github.com/aurelio-nakamura/dataloupe"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Keep stdin open for the JSON-RPC stdio transport",
+            "isRequired": true,
+            "name": "-i",
+            "type": "named"
+          },
+          {
+            "description": "Remove the container when the server exits",
+            "isRequired": true,
+            "name": "--rm",
+            "type": "named"
+          },
+          {
+            "description": "Mount the directory holding your data files into the container at /data (the server's file access is confined here)",
+            "isRepeated": true,
+            "isRequired": true,
+            "name": "--mount",
+            "type": "named",
+            "value": "type=bind,src={source_path},dst=/data",
+            "variables": {
+              "source_path": {
+                "description": "Absolute path on the host to the directory containing your data files",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          "ghcr.io/aurelio-nakamura/dataloupe:0.15.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.aurelio-nakamura/dataloupe",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "/data",
+          "description": "Directory the server is allowed to read data files from (inside the container). Defaults to /data.",
+          "name": "DATALOUPE_MCP_ROOT"
+        }
+      ],
+      "identifier": "ghcr.io/aurelio-nakamura/dataloupe:0.15.0",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "Keep stdin open for the JSON-RPC stdio transport",
+          "isRequired": true,
+          "name": "-i",
+          "type": "named"
+        },
+        {
+          "description": "Remove the container when the server exits",
+          "isRequired": true,
+          "name": "--rm",
+          "type": "named"
+        },
+        {
+          "description": "Mount the directory holding your data files into the container at /data (the server's file access is confined here)",
+          "isRepeated": true,
+          "isRequired": true,
+          "name": "--mount",
+          "type": "named",
+          "value": "type=bind,src={source_path},dst=/data",
+          "variables": {
+            "source_path": {
+              "description": "Absolute path on the host to the directory containing your data files",
+              "format": "filepath",
+              "isRequired": true
+            }
+          }
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "d26b8278c1",
+    "published_at": "2026-09-01T22:45:33.85903Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.aurelio-nakamura/dataloupe",
+    "server_version": "0.15.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-01T22:45:33.85903Z"
+  },
+  "title": "Dataloupe",
+  "type": "mcp_server",
+  "version": "0.15.0"
+}
