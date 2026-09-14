@@ -1,0 +1,44 @@
+{
+  "description": "Prepaid travel data eSIMs: checkout links for people, autonomous purchases from a prepaid wallet.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:19+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-esimker-esim.sse.91ebfc4dd6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://esimker.com/api/mcp"
+    }
+  },
+  "name": "com.esimker/esim",
+  "provenance": {
+    "identity_key": "91ebfc4dd6",
+    "published_at": "2026-09-04T21:12:47.949822Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.esimker/esim",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-04T21:12:47.949822Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Bearer <wallet code>: the prepaid wallet's secret from create_wallet. Only the four wallet tools (get_wallet, create_deposit, get_deposit, purchase_esim) need it; the catalogue and the checkout flow work without it.",
+          "isSecret": true,
+          "name": "Authorization"
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://esimker.com/api/mcp"
+    }
+  ],
+  "title": "esimker eSIM store",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

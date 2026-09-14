@@ -1,0 +1,72 @@
+{
+  "description": "Agent-first secrets vault. Store, rotate, and share credentials from chat. 20 tools.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:45+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-jyswee-secretcarousel.stdio.7b84029c23",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/jyswee/secretcarousel",
+    "homepage": "https://github.com/jyswee/secretcarousel",
+    "repository": "https://github.com/jyswee/secretcarousel"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "isRequired": true,
+            "type": "positional",
+            "value": "mcp-serve"
+          },
+          "secretcarousel@2.20.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.jyswee/secretcarousel",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "SecretCarousel API key (sc_...). Optional: without a key the server starts in onboarding mode and can self-signup via the sc_signup tool.",
+          "isSecret": true,
+          "name": "SC_API_KEY"
+        }
+      ],
+      "identifier": "secretcarousel",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "isRequired": true,
+          "type": "positional",
+          "value": "mcp-serve"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.20.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7b84029c23",
+    "published_at": "2026-09-03T23:15:51.111399Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.jyswee/secretcarousel",
+    "server_version": "2.20.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-03T23:15:51.111399Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "2.20.0"
+}

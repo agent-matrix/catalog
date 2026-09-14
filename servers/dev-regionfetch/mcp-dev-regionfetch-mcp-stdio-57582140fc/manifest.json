@@ -1,0 +1,73 @@
+{
+  "description": "Fetch any public URL as a visitor in a chosen country, with a signed receipt of its origin.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:35+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.dev-regionfetch-mcp.stdio.57582140fc",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/regionfetch/regionfetch",
+    "homepage": "https://github.com/regionfetch/regionfetch",
+    "repository": "https://github.com/regionfetch/regionfetch"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "regionfetch-mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "dev.regionfetch/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Private key of a funded Base wallet. The server signs one fresh x402 authorization per tool call. Keep it in the host's env block; it is never a tool argument.",
+          "isSecret": true,
+          "name": "REGION_FETCH_WALLET_PRIVATE_KEY"
+        },
+        {
+          "default": "$0.10",
+          "description": "Per-payment ceiling, for example \"$0.10\". Use \"off\" to disable the cap.",
+          "name": "REGION_FETCH_MAX_PAYMENT"
+        },
+        {
+          "default": "https://regionfetch.dev",
+          "description": "Deployment origin.",
+          "name": "REGION_FETCH_BASE_URL"
+        },
+        {
+          "description": "A single pre-made x402 authorization. Funds exactly one request, so this is for one-shot testing only; prefer the wallet key.",
+          "isSecret": true,
+          "name": "REGION_FETCH_PAYMENT_SIGNATURE"
+        }
+      ],
+      "identifier": "regionfetch-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "57582140fc",
+    "published_at": "2026-09-01T04:48:50.69899Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "dev.regionfetch/mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-01T04:48:50.69899Z"
+  },
+  "title": "Region Fetch",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

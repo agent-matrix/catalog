@@ -1,0 +1,53 @@
+{
+  "description": "Search your newsletter and YouTube archive, drafted actions and working context from any MCP client.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:14+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-adviserry-adviserry.sse.d20c4abac0",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://adviserry.com/api/mcp"
+    }
+  },
+  "name": "com.adviserry/adviserry",
+  "provenance": {
+    "identity_key": "d20c4abac0",
+    "published_at": "2026-09-11T00:52:59.635746Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.adviserry/adviserry",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-11T00:52:59.635746Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Bearer token for your Adviserry account.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {mcp_token}",
+          "variables": {
+            "mcp_token": {
+              "description": "Your personal MCP token, from Settings > MCP Server Access at https://adviserry.com/settings. Per user and revocable.",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://adviserry.com/api/mcp"
+    }
+  ],
+  "title": "Adviserry",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

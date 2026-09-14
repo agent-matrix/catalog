@@ -1,0 +1,90 @@
+{
+  "description": "Lets AI agents read the real source of any Maven dependency, decompiled from ~/.m2 or Central.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:18+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-salitaba-maven-decoder-mcp.stdio.af708ce5ea",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/salitaba/maven-decoder-mcp",
+    "homepage": "https://github.com/salitaba/maven-decoder-mcp",
+    "repository": "https://github.com/salitaba/maven-decoder-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "maven-decoder-mcp==1.3.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.salitaba/maven-decoder-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to the local Maven repository. Defaults to ~/.m2/repository.",
+          "format": "filepath",
+          "name": "MAVEN_REPOSITORY"
+        },
+        {
+          "description": "Comma or whitespace separated list of remote Maven repository base URLs.",
+          "format": "string",
+          "name": "MAVEN_REMOTE_REPOS"
+        },
+        {
+          "description": "Username for authenticating against private remote Maven repositories.",
+          "format": "string",
+          "name": "MAVEN_REMOTE_USERNAME"
+        },
+        {
+          "description": "Password or token for authenticating against private remote Maven repositories.",
+          "format": "string",
+          "isSecret": true,
+          "name": "MAVEN_REMOTE_PASSWORD"
+        },
+        {
+          "description": "Set to true to disable all network access and use only the local repository.",
+          "format": "boolean",
+          "name": "MAVEN_OFFLINE"
+        },
+        {
+          "description": "Whether to automatically download missing artifacts from remote repositories. Defaults to true.",
+          "format": "boolean",
+          "name": "MAVEN_AUTO_DOWNLOAD"
+        },
+        {
+          "description": "Override directory used for decompilation and metadata caches.",
+          "format": "filepath",
+          "name": "MAVEN_DECODER_CACHE_DIR"
+        }
+      ],
+      "identifier": "maven-decoder-mcp",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.3.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "af708ce5ea",
+    "published_at": "2026-09-09T06:52:27.711662Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.salitaba/maven-decoder-mcp",
+    "server_version": "1.3.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-09T06:52:27.711662Z"
+  },
+  "title": "Maven Decoder",
+  "type": "mcp_server",
+  "version": "1.3.2"
+}

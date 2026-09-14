@@ -1,0 +1,74 @@
+{
+  "description": "Human oversight for AI agents: block a tool call on a verified human, with on-chain proof.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:50+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-louissarvin-proctor.stdio.84162a88f8",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/louissarvin/proctor",
+    "homepage": "https://github.com/louissarvin/proctor",
+    "repository": "https://github.com/louissarvin/proctor"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "proctor-mcp@1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.louissarvin/proctor",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the Proctor gate. Defaults to http://localhost:3700.",
+          "format": "string",
+          "name": "PROCTOR_API"
+        },
+        {
+          "description": "Hedera account id of the paying agent, e.g. 0.0.12345. Set this with HEDERA_AGENT_KEY to settle a real x402 payment. Omit both and the tool falls back to Proctor's operator endpoint, which opens a real decision but settles nothing.",
+          "format": "string",
+          "name": "HEDERA_AGENT_ID"
+        },
+        {
+          "description": "ECDSA private key for HEDERA_AGENT_ID. Spends money: scope it to a funded testnet account and nothing else.",
+          "format": "string",
+          "isSecret": true,
+          "name": "HEDERA_AGENT_KEY"
+        },
+        {
+          "description": "Comma-separated HTS token ids this agent may pay in. The agent's own guard: it refuses assets its operator never approved.",
+          "format": "string",
+          "name": "AGENT_ALLOWED_TOKENS"
+        }
+      ],
+      "identifier": "proctor-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "84162a88f8",
+    "published_at": "2026-09-10T13:04:50.926328Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.louissarvin/proctor",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-10T13:04:50.926328Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

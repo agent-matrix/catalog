@@ -1,0 +1,93 @@
+{
+  "description": "Unofficial read-only MCP server exposing several Mercury banking organizations to one AI session.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:32+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-dkaleganov-mercury-multiorg-mcp.stdio.0561ad07b5",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/dkaleganov/mercury-multiorg-mcp",
+    "homepage": "https://github.com/dkaleganov/mercury-multiorg-mcp",
+    "repository": "https://github.com/dkaleganov/mercury-multiorg-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mercury-multiorg-mcp==0.1.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.dkaleganov/mercury-multiorg-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Example only. Each organization needs one read-only Mercury API token in the environment variable named by its token_env in your registry. Names are yours to choose but must match MERCURY_TOKEN_[A-Z0-9_]+ (for example MERCURY_TOKEN_<ENTITY_KEY>); set one per organization and rename this example to match.",
+          "isSecret": true,
+          "name": "MERCURY_TOKEN_ACME_MAIN"
+        },
+        {
+          "description": "Alternative to --entities: path to the entity registry YAML. Ignored when --entities is passed.",
+          "format": "filepath",
+          "name": "MERCURY_ENTITIES_FILE"
+        },
+        {
+          "default": "https://api.mercury.com",
+          "description": "Mercury API host. Allowed without extra flags: https://api.mercury.com, https://api-sandbox.mercury.com (with sandbox tokens), or a loopback mock.",
+          "name": "MERCURY_API_BASE"
+        },
+        {
+          "default": "false",
+          "description": "Set to true to register get_statement_pdf and get_invoice_pdf, which return statement and invoice PDFs unredacted. Off by default.",
+          "format": "boolean",
+          "name": "MERCURY_ALLOW_DOCUMENTS"
+        }
+      ],
+      "identifier": "mercury-multiorg-mcp",
+      "packageArguments": [
+        {
+          "description": "Path to your private entity registry YAML: one entry per Mercury organization with key, display_name, and token_env (the environment variable holding that organization's read-only token). The MERCURY_ENTITIES_FILE environment variable is an alternative; this flag wins.",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "--entities",
+          "placeholder": "/private/path/entities.yaml",
+          "type": "named"
+        },
+        {
+          "description": "Optional private dotenv file loaded before tokens are resolved; existing environment variables win. Without this flag no dotenv file is read.",
+          "format": "filepath",
+          "name": "--env-file",
+          "placeholder": "/private/path/mercury.env",
+          "type": "named"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0561ad07b5",
+    "published_at": "2026-09-14T01:50:51.356921Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.dkaleganov/mercury-multiorg-mcp",
+    "server_version": "0.1.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-14T01:50:51.356921Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.4"
+}

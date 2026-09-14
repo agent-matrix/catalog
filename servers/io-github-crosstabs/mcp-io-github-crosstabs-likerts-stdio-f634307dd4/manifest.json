@@ -1,0 +1,72 @@
+{
+  "description": "Manage open-source in-product surveys, collections, responses and exports with scoped access.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:23+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-crosstabs-likerts.stdio.f634307dd4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/crosstabs/likerts",
+    "homepage": "https://github.com/crosstabs/likerts",
+    "repository": "https://github.com/crosstabs/likerts"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@likerts/mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.crosstabs/likerts",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://likerts-api.onrender.com",
+          "description": "Your Likerts API origin. Requires HTTPS outside exact loopback development hosts.",
+          "isRequired": true,
+          "name": "LIKERTS_API_URL"
+        },
+        {
+          "description": "Workspace-bound service credential with only the scopes needed by this agent.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "LIKERTS_TOKEN"
+        },
+        {
+          "description": "Optional collection credential for collection configuration and response submission only.",
+          "isSecret": true,
+          "name": "LIKERTS_COLLECTION_TOKEN"
+        }
+      ],
+      "identifier": "@likerts/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f634307dd4",
+    "published_at": "2026-09-13T00:52:17.55606Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.crosstabs/likerts",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-13T00:52:17.55606Z"
+  },
+  "title": "Likerts",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

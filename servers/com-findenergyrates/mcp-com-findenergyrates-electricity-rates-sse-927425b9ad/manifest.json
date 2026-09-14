@@ -1,0 +1,54 @@
+{
+  "description": "Live US retail electricity plans, utility price-to-compare rates, ZIP-to-utility lookup. Read-only.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-findenergyrates-electricity-rates.sse.927425b9ad",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://findenergyrates.com/mcp"
+    }
+  },
+  "name": "com.findenergyrates/electricity-rates",
+  "provenance": {
+    "identity_key": "927425b9ad",
+    "published_at": "2026-09-11T12:57:17.363139Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.findenergyrates/electricity-rates",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-11T12:57:17.363139Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Bearer API key. Required on every request; the server answers 401 without it. Keys are issued by email: write to support@findenergyrates.com with a line about what you are building. Free tier, rate-limited per day.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {api_key}",
+          "variables": {
+            "api_key": {
+              "description": "Your FindEnergyRates API key (starts with fer_). Request one from support@findenergyrates.com.",
+              "isRequired": true,
+              "isSecret": true,
+              "placeholder": "fer_..."
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://findenergyrates.com/mcp"
+    }
+  ],
+  "title": "FindEnergyRates Electricity Rates",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

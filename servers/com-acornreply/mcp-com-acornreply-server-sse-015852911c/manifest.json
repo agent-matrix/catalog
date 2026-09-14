@@ -1,0 +1,58 @@
+{
+  "description": "Read and edit your Acorn Reply knowledge base from any MCP client.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:14+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-acornreply-server.sse.015852911c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/middlefieldgs/acorn_reply",
+    "homepage": "https://github.com/middlefieldgs/acorn_reply",
+    "repository": "https://github.com/middlefieldgs/acorn_reply"
+  },
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://mcp.acornreply.com"
+    }
+  },
+  "name": "com.acornreply/server",
+  "provenance": {
+    "identity_key": "015852911c",
+    "published_at": "2026-09-09T01:03:51.226394Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.acornreply/server",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-09T01:03:51.226394Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Bearer credentials for your AcornReply workspace API key.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {api_key}",
+          "variables": {
+            "api_key": {
+              "description": "Your AcornReply workspace API key. Create one at acornreply.com/settings/mcp-api.",
+              "isRequired": true,
+              "isSecret": true,
+              "placeholder": "ak_..."
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://mcp.acornreply.com"
+    }
+  ],
+  "title": "Acorn Reply",
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

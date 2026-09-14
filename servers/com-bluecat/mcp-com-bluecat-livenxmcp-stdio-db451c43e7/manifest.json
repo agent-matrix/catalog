@@ -1,0 +1,95 @@
+{
+  "description": "MCP server for LiveAction LiveNX",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-bluecat-livenxmcp.stdio.db451c43e7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "name": "-p",
+            "type": "named",
+            "value": "9985:9985"
+          },
+          "quay.io/bluecat/livenxmcp:26.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.bluecat/livenxmcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the LiveNX backend API",
+          "isRequired": true,
+          "name": "LIVENXMCP_URL"
+        },
+        {
+          "description": "LiveNX API bearer token",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "LIVENXMCP_TOKEN"
+        },
+        {
+          "description": "LiveNX Prometheus username",
+          "isRequired": true,
+          "name": "LIVENXMCP_PROM_USERNAME"
+        },
+        {
+          "description": "LiveNX Prometheus password",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "LIVENXMCP_PROM_PASSWORD"
+        },
+        {
+          "description": "LiveNX ClickHouse base URL",
+          "isRequired": true,
+          "name": "LIVENXMCP_CLICKHOUSE_URL"
+        },
+        {
+          "description": "LiveNX ClickHouse password",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "LIVENXMCP_CLICKHOUSE_PASSWORD"
+        }
+      ],
+      "identifier": "quay.io/bluecat/livenxmcp:26.2",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "name": "-p",
+          "type": "named",
+          "value": "9985:9985"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:9985/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "db451c43e7",
+    "published_at": "2026-09-02T13:54:27.559629Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.bluecat/livenxmcp",
+    "server_version": "26.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-02T13:54:27.559629Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "26.2"
+}

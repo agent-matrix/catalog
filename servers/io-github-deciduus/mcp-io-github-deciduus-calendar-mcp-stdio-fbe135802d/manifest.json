@@ -1,0 +1,71 @@
+{
+  "description": "Google Calendar for LLM agents: find, create, update, move, delete events; free/busy; scheduling.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-deciduus-calendar-mcp.stdio.fbe135802d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/deciduus/calendar-mcp",
+    "homepage": "https://github.com/deciduus/calendar-mcp",
+    "repository": "https://github.com/deciduus/calendar-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "calendar-mcp-server==1.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.deciduus/calendar-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "OAuth 2.0 client ID for a Google Cloud project with the Google Calendar API enabled.",
+          "isRequired": true,
+          "name": "GOOGLE_CLIENT_ID"
+        },
+        {
+          "description": "OAuth 2.0 client secret matching GOOGLE_CLIENT_ID.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "GOOGLE_CLIENT_SECRET"
+        },
+        {
+          "default": ".gcp-saved-tokens.json",
+          "description": "Path to the saved OAuth token file written by 'calendar-mcp auth'.",
+          "name": "TOKEN_FILE_PATH"
+        }
+      ],
+      "identifier": "calendar-mcp-server",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "fbe135802d",
+    "published_at": "2026-09-05T11:09:22.812912Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.deciduus/calendar-mcp",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-05T11:09:22.812912Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

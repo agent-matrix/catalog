@@ -1,0 +1,76 @@
+{
+  "description": "Spending analysis and safe writes for Actual Budget: every delete previews and asks first.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:40+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-henfrydls-actual-budget-mcp.stdio.643d14502d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/henfrydls/actual-budget-mcp.git",
+    "homepage": "https://github.com/henfrydls/actual-budget-mcp.git",
+    "repository": "https://github.com/henfrydls/actual-budget-mcp.git"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/henfrydls/actual-budget-mcp:0.9.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.henfrydls/actual-budget-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "URL of your Actual Budget server. Inside the container localhost is the container, so use host.docker.internal",
+          "isRequired": true,
+          "name": "ACTUAL_SERVER_URL"
+        },
+        {
+          "description": "Password for your Actual Budget server. Not needed if you set ACTUAL_SESSION_TOKEN",
+          "isSecret": true,
+          "name": "ACTUAL_PASSWORD"
+        },
+        {
+          "description": "Session token for servers behind OIDC, which have no password. Use instead of ACTUAL_PASSWORD; if both are set, the token wins",
+          "isSecret": true,
+          "name": "ACTUAL_SESSION_TOKEN"
+        },
+        {
+          "description": "Your budget's Sync ID, found under Settings > Show advanced settings",
+          "isRequired": true,
+          "name": "ACTUAL_BUDGET_ID"
+        },
+        {
+          "description": "Set to 1 to hide every write tool from the model, exposing only reads and analysis",
+          "name": "ACTUAL_READ_ONLY"
+        }
+      ],
+      "identifier": "ghcr.io/henfrydls/actual-budget-mcp:0.9.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "643d14502d",
+    "published_at": "2026-09-13T00:48:19.763955Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.henfrydls/actual-budget-mcp",
+    "server_version": "0.9.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-13T00:48:19.763955Z"
+  },
+  "title": "Actual Budget",
+  "type": "mcp_server",
+  "version": "0.9.0"
+}

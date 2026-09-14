@@ -1,0 +1,95 @@
+{
+  "description": "Every ImmyBot endpoint typed, plus a local SQLite mirror that answers the cross-tenant questions",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:04+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Servosity-immybot-mcp.stdio.45b32245bb",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/servosity/msp-skills",
+    "homepage": "https://github.com/servosity/msp-skills",
+    "repository": "https://github.com/servosity/msp-skills"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Servosity/immybot-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Full API base URL. Leave blank: the CLI builds it from IMMYBOT_SUBDOMAIN. Set it only to point at a different host.",
+          "name": "IMMYBOT_BASE_URL"
+        },
+        {
+          "description": "Set the IMMYBOT_CLIENT_ID credential for the ImmyBot MCP server.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "IMMYBOT_CLIENT_ID"
+        },
+        {
+          "description": "Set the IMMYBOT_CLIENT_SECRET credential for the ImmyBot MCP server.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "IMMYBOT_CLIENT_SECRET"
+        },
+        {
+          "description": "Set the IMMYBOT_SUBDOMAIN credential for the ImmyBot MCP server.",
+          "isRequired": true,
+          "name": "IMMYBOT_SUBDOMAIN"
+        },
+        {
+          "description": "Set the IMMYBOT_TENANT_ID credential for the ImmyBot MCP server.",
+          "isRequired": true,
+          "name": "IMMYBOT_TENANT_ID"
+        },
+        {
+          "default": "https://login.microsoftonline.com/common/oauth2/v2.0/token",
+          "description": "Token endpoint the client-credentials exchange posts to. Leave the prefilled default unless your tenant uses a different token endpoint.",
+          "name": "IMMYBOT_TOKEN_URL"
+        },
+        {
+          "description": "Overrides the User-Agent the CLI sends on ImmyBot requests. Leave blank to use the CLI's own built-in User-Agent.",
+          "name": "IMMYBOT_USER_AGENT"
+        },
+        {
+          "description": "Binds this MCP server to one tenant-gated client profile, so every call answers for that customer. Leave blank to use the profile configured as default_client_profile.",
+          "name": "PRINTING_PRESS_CLIENT_PROFILE"
+        },
+        {
+          "description": "Set to 1 to keep credentials off disk. The token cache becomes a no-op, so the connector mints a fresh token each run instead of writing one to config.toml. Leave blank for the default cached behaviour.",
+          "name": "IMMYBOT_NO_CONFIG_WRITE"
+        }
+      ],
+      "fileSha256": "87a10c82e2dfd213a96ffc20cb8a621f9a81267e2549af6b7a967cadad581f30",
+      "identifier": "https://github.com/Servosity/msp-skills/releases/download/immybot-v0.1.3/immybot-mcp.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "45b32245bb",
+    "published_at": "2026-09-06T18:58:17.717306Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Servosity/immybot-mcp",
+    "server_version": "0.1.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-06T18:58:17.717306Z"
+  },
+  "title": "ImmyBot MCP",
+  "type": "mcp_server",
+  "version": "0.1.3"
+}

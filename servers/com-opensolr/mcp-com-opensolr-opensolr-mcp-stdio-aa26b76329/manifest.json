@@ -1,0 +1,65 @@
+{
+  "description": "Managed Apache Solr for agents: hybrid BM25+kNN search, server-side embeddings, RAG answers",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:27+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-opensolr-opensolr-mcp.stdio.aa26b76329",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/phpcip/opensolr-mcp",
+    "homepage": "https://github.com/phpcip/opensolr-mcp",
+    "repository": "https://github.com/phpcip/opensolr-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "opensolr-mcp==0.5.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.opensolr/opensolr-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Opensolr account email; try the shared demo account mcp@opensolr.com, whose indexes are deleted after 3 days and can be changed or deleted by anyone else using it, or get your own at https://opensolr.com/register (free 15-day trial, no card)",
+          "isRequired": true,
+          "name": "OPENSOLR_EMAIL"
+        },
+        {
+          "description": "Opensolr API key, found under Account > API in the control panel; the shared demo account's key is 420b8b23e7b12dc8ab838932145a5065 (preloaded index mcp_demo_d1__dense with 300 news articles, limits per index are 200 MB bandwidth and 50 MB disk, anything created is deleted after 3 days and other people can change or delete it)",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OPENSOLR_API_KEY"
+        }
+      ],
+      "identifier": "opensolr-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "aa26b76329",
+    "published_at": "2026-09-07T03:11:51.933164Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.opensolr/opensolr-mcp",
+    "server_version": "0.5.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-07T03:11:51.933164Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.5.0"
+}

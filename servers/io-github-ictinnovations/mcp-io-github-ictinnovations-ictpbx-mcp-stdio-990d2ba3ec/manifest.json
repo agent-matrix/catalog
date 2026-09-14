@@ -1,0 +1,84 @@
+{
+  "description": "Read ICTPBX state: extensions, DID numbers, SIP trunks, tenants and live PBX statistics.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ictinnovations-ictpbx-mcp.stdio.990d2ba3ec",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ictinnovations/ictpbx-mcp",
+    "homepage": "https://github.com/ictinnovations/ictpbx-mcp",
+    "repository": "https://github.com/ictinnovations/ictpbx-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "ictpbx-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ictinnovations/ictpbx-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "ICTCore REST base URL of your ICTPBX server, normally ending in /api, e.g. https://your-ictpbx/api.",
+          "format": "string",
+          "isRequired": true,
+          "name": "ICTPBX_BASE_URL"
+        },
+        {
+          "description": "API account email (ICTCore logs in by email).",
+          "format": "string",
+          "isRequired": true,
+          "name": "ICTPBX_USERNAME"
+        },
+        {
+          "description": "Password for the account.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ICTPBX_PASSWORD"
+        },
+        {
+          "default": "30000",
+          "description": "Per request timeout in milliseconds. Defaults to 30000.",
+          "format": "number",
+          "name": "ICTPBX_TIMEOUT_MS"
+        },
+        {
+          "default": "false",
+          "description": "Skip TLS certificate verification. Only for a self-signed test server.",
+          "format": "boolean",
+          "name": "ICTPBX_TLS_INSECURE"
+        }
+      ],
+      "identifier": "ictpbx-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "990d2ba3ec",
+    "published_at": "2026-09-01T08:22:13.509971Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ictinnovations/ictpbx-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-01T08:22:13.509971Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

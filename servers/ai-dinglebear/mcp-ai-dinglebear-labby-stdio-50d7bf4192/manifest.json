@@ -1,0 +1,84 @@
+{
+  "description": "Rust MCP gateway with Code Mode, authentication, setup, logs, CLI, HTTP API, and operator web UI.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:07+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-dinglebear-labby.stdio.50d7bf4192",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/dinglebear-ai/labby",
+    "homepage": "https://github.com/dinglebear-ai/labby",
+    "repository": "https://github.com/dinglebear-ai/labby"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@dinglebear/labby@1.17.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.dinglebear/labby",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional GitHub release tag override for the downloaded Labby binary.",
+          "format": "string",
+          "name": "LABBY_VERSION",
+          "placeholder": "v1.3.0"
+        },
+        {
+          "default": "dinglebear-ai/labby",
+          "description": "Optional GitHub owner/repo override for release asset downloads.",
+          "format": "string",
+          "name": "LABBY_REPO",
+          "placeholder": "dinglebear-ai/labby"
+        },
+        {
+          "default": "labby=info,labby_apis=warn",
+          "description": "Tracing filter for Labby runtime logs.",
+          "format": "string",
+          "name": "LABBY_LOG",
+          "placeholder": "labby=info,labby_apis=warn"
+        }
+      ],
+      "identifier": "@dinglebear/labby",
+      "packageArguments": [
+        {
+          "description": "Run Labby's stdio MCP server entrypoint.",
+          "format": "string",
+          "isRequired": true,
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.17.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "50d7bf4192",
+    "published_at": "2026-09-13T07:37:03.217333Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.dinglebear/labby",
+    "server_version": "1.17.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-13T07:37:03.217333Z"
+  },
+  "title": "Labby",
+  "type": "mcp_server",
+  "version": "1.17.3"
+}

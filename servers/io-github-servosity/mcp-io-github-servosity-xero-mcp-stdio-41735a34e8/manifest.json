@@ -1,0 +1,97 @@
+{
+  "description": "Every Xero Accounting read plus a local SQLite ledger  -  aging, reconciliation, and GL tie-out",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:04+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Servosity-xero-mcp.stdio.41735a34e8",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/servosity/msp-skills",
+    "homepage": "https://github.com/servosity/msp-skills",
+    "repository": "https://github.com/servosity/msp-skills"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Servosity/xero-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Set the XERO_ACCESS_TOKEN credential for the Xero MCP server.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "XERO_ACCESS_TOKEN"
+        },
+        {
+          "default": "https://login.xero.com/identity/connect/authorize",
+          "description": "Authorization endpoint the login flow opens. Change it only if Xero moves the endpoint.",
+          "name": "XERO_AUTHORIZATION_URL"
+        },
+        {
+          "default": "https://api.xero.com/api.xro/2.0",
+          "description": "Base URL for the Xero API. Leave the prefilled default unless your account uses a different regional or self-hosted host.",
+          "name": "XERO_BASE_URL"
+        },
+        {
+          "description": "Client ID of your Xero app (developer.xero.com > My Apps). Set it with the client secret to run the OAuth2 flow; leave blank if you paste an access token instead.",
+          "isSecret": true,
+          "name": "XERO_CLIENT_ID"
+        },
+        {
+          "description": "Client secret paired with XERO_CLIENT_ID.",
+          "isSecret": true,
+          "name": "XERO_CLIENT_SECRET"
+        },
+        {
+          "description": "Optional. Sets XERO_OAUTH2 for the Xero MCP server.",
+          "isSecret": true,
+          "name": "XERO_OAUTH2"
+        },
+        {
+          "description": "The Xero organisation ('tenant') GUID sent as the Xero-Tenant-Id header. Every call requires it; `connections list` returns the tenants your token can reach.",
+          "isRequired": true,
+          "name": "XERO_TENANT_ID"
+        },
+        {
+          "default": "https://identity.xero.com/connect/token",
+          "description": "Token endpoint the client-credentials exchange posts to. Leave the prefilled default unless your tenant uses a different token endpoint.",
+          "name": "XERO_TOKEN_URL"
+        },
+        {
+          "description": "Set to 1 to keep credentials off disk. The token cache becomes a no-op, so the connector mints a fresh token each run instead of writing one to config.toml. Leave blank for the default cached behaviour.",
+          "name": "XERO_NO_CONFIG_WRITE"
+        }
+      ],
+      "fileSha256": "f2b96cd3f59fa3c37be1d26d43a2c698d33c6ce6cea4df82b6a973663b2519d8",
+      "identifier": "https://github.com/Servosity/msp-skills/releases/download/xero-v0.1.4/xero-mcp.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "41735a34e8",
+    "published_at": "2026-09-06T18:44:51.071872Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Servosity/xero-mcp",
+    "server_version": "0.1.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-06T18:44:51.071872Z"
+  },
+  "title": "Xero MCP",
+  "type": "mcp_server",
+  "version": "0.1.4"
+}

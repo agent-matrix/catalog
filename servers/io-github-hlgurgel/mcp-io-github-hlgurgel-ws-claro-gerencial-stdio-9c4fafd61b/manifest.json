@@ -1,0 +1,71 @@
+{
+  "description": "Servidor MCP para integra\u00e7\u00e3o com os WebServices SOAP do Claro Gerencial (Redeinova)",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-hlgurgel-ws-claro-gerencial.stdio.9c4fafd61b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/hlgurgel/ws-claro-gerencial-mcp",
+    "homepage": "https://github.com/hlgurgel/ws-claro-gerencial-mcp",
+    "repository": "https://github.com/hlgurgel/ws-claro-gerencial-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "ws-claro-gerencial-mcp==0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.hlgurgel/ws-claro-gerencial",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Usu\u00e1rio de acesso ao webservice Claro Gerencial",
+          "format": "string",
+          "isRequired": true,
+          "name": "CLARO_USUARIO"
+        },
+        {
+          "description": "Senha de acesso ao webservice Claro Gerencial",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CLARO_SENHA"
+        },
+        {
+          "description": "Ambiente: homologacao ou producao",
+          "format": "string",
+          "name": "CLARO_AMBIENTE"
+        }
+      ],
+      "identifier": "ws-claro-gerencial-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9c4fafd61b",
+    "published_at": "2026-09-10T22:52:50.052589Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.hlgurgel/ws-claro-gerencial",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-10T22:52:50.052589Z"
+  },
+  "title": "Claro Gerencial",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

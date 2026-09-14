@@ -1,7 +1,7 @@
 {
   "description": "Connect AI agents to CloudBees Unify: feature flags, CI/CD, release orchestration, and security",
   "harvest": {
-    "last_seen_at": "2026-08-31T08:39:29+00:00",
+    "last_seen_at": "2026-09-14T07:54:22+00:00",
     "seen_in_latest_run": true
   },
   "id": "mcp.io-github-cloudbees-unify-mcp-server.sse.e22fe4ab96",
@@ -18,20 +18,34 @@
   "name": "io.github.cloudbees/unify-mcp-server",
   "provenance": {
     "identity_key": "e22fe4ab96",
-    "published_at": "2026-07-08T06:30:06.364906Z",
+    "published_at": "2026-09-07T07:35:27.709081Z",
     "registry_base_url": "https://registry.modelcontextprotocol.io",
     "server_name": "io.github.cloudbees/unify-mcp-server",
-    "server_version": "1.0.2",
+    "server_version": "1.0.3",
     "source": "mcp-registry",
-    "updated_at": "2026-07-08T06:30:06.364906Z"
+    "updated_at": "2026-09-07T07:35:27.709081Z"
   },
   "remotes": [
     {
+      "headers": [
+        {
+          "default": "default",
+          "description": "Comma-separated toolsets to expose. Omit to serve defaults only. Use 'all' for the full catalog, or any of: organization-administration, access-management, applications-components, workflows, feature-management, application-security, reports-analytics, policy-engine.",
+          "name": "X-MCP-Toolsets",
+          "placeholder": "workflows,feature-management"
+        },
+        {
+          "default": "false",
+          "description": "Set to 'true' to restrict the session to read-only tools. Omit or use any other value for full read-write access.",
+          "name": "X-MCP-Readonly",
+          "placeholder": "true"
+        }
+      ],
       "type": "streamable-http",
       "url": "https://mcp.cloudbees.io/v1/mcp"
     }
   ],
   "title": "CloudBees Unify MCP Server",
   "type": "mcp_server",
-  "version": "1.0.2"
+  "version": "1.0.3"
 }

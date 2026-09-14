@@ -1,0 +1,87 @@
+{
+  "description": "Domains your AI agent can buy, point and monitor, with four-layer health checks and alerts.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:07+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-clize-domains.stdio.60dc2bd90c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cooldk/clize-cli",
+    "homepage": "https://github.com/cooldk/clize-cli",
+    "repository": "https://github.com/cooldk/clize-cli"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "description": "Resolve bins from the @clize/domains package (its @clize/clize dependency provides them)",
+            "name": "--package",
+            "type": "named",
+            "value": "@clize/domains"
+          },
+          {
+            "description": "The MCP server entry point (the package's second bin; the default bin is the clize CLI)",
+            "type": "positional",
+            "value": "clize-mcp",
+            "valueHint": "clize-mcp"
+          },
+          "@clize/domains@0.35.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.clize/domains",
+  "packages": [
+    {
+      "identifier": "@clize/domains",
+      "packageArguments": [
+        {
+          "description": "Expose only the Agent Domains tools (omit for the full clize tool set)",
+          "name": "--profile",
+          "type": "named",
+          "value": "domains"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "description": "Resolve bins from the @clize/domains package (its @clize/clize dependency provides them)",
+          "name": "--package",
+          "type": "named",
+          "value": "@clize/domains"
+        },
+        {
+          "description": "The MCP server entry point (the package's second bin; the default bin is the clize CLI)",
+          "type": "positional",
+          "value": "clize-mcp",
+          "valueHint": "clize-mcp"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.35.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "60dc2bd90c",
+    "published_at": "2026-09-03T08:46:25.425135Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.clize/domains",
+    "server_version": "0.35.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-03T08:46:25.425135Z"
+  },
+  "title": "Agent Domains",
+  "type": "mcp_server",
+  "version": "0.35.4"
+}

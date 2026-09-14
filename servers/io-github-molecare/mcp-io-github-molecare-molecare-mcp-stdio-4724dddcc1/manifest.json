@@ -1,0 +1,83 @@
+{
+  "description": "Educational dermatology knowledge and mole tracking. No credentials needed. Not a medical device.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:59+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-MoleCare-molecare-mcp.stdio.4724dddcc1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/MoleCare/molecare-mcp",
+    "homepage": "https://github.com/MoleCare/molecare-mcp",
+    "repository": "https://github.com/MoleCare/molecare-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "molecare-mcp@1.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.MoleCare/molecare-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "http://localhost:8080/api",
+          "description": "Base URL of a MoleCare-compatible HTTP API. Omit to run in mock mode with synthetic data.",
+          "format": "string",
+          "name": "MOLECARE_API_URL"
+        },
+        {
+          "description": "API key for the MoleCare API. Only needed when MOLECARE_API_URL points at a real backend.",
+          "format": "string",
+          "isSecret": true,
+          "name": "MOLECARE_API_KEY"
+        },
+        {
+          "default": "http://localhost:5000",
+          "description": "MLflow tracking server for experiment and model-run tools. Mocked when unset.",
+          "format": "string",
+          "name": "MLFLOW_TRACKING_URI"
+        },
+        {
+          "default": "us-east-1",
+          "description": "AWS region for EC2 and CloudWatch operations tools. Credentials come from the standard AWS chain.",
+          "format": "string",
+          "name": "AWS_REGION"
+        },
+        {
+          "default": "info",
+          "description": "Logging verbosity (error, warn, info, debug).",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "molecare-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "4724dddcc1",
+    "published_at": "2026-09-09T23:10:51.449154Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.MoleCare/molecare-mcp",
+    "server_version": "1.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-09T23:10:51.449154Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.1.0"
+}

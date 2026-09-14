@@ -1,0 +1,82 @@
+{
+  "description": "Persistent cross-model memory for AI agents: verifiable, portable, client-side encrypted.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-chaelynet-chainmemory.stdio.b4502e495d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/chaelynet/chainmemory-mcp",
+    "homepage": "https://github.com/chaelynet/chainmemory-mcp",
+    "repository": "https://github.com/chaelynet/chainmemory-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "chainmemory-mcp@2.7.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.chaelynet/chainmemory",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "ChainMemory API key. REQUIRED for every tool except chainmemory_seal. Get one at https://faucet.chainmemory.ai",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CHAINMEMORY_API_KEY"
+        },
+        {
+          "description": "12-word BIP-39 phrase for the blind vault. Optional: without it the server works exactly as before, but sealed:true is unavailable. Generate one with chainmemory_new_seed. It never leaves your machine and cannot be recovered.",
+          "format": "string",
+          "isSecret": true,
+          "name": "CHAINMEMORY_SEED_PHRASE"
+        },
+        {
+          "description": "API base URL (default: https://api.chainmemory.ai)",
+          "format": "string",
+          "name": "CHAINMEMORY_API_BASE"
+        },
+        {
+          "description": "NOT NEEDED for normal use \u2014 leave it empty. Only the chainmemory_seal tool reads it, to sign a contract call yourself instead of letting the API anchor the memory (which chainmemory_remember already does). If you do set it, it is a wallet private key: use a dedicated wallet holding only a few AIC, never your main one. No other tool uses it.",
+          "format": "string",
+          "isSecret": true,
+          "name": "AICHAIN_KEY"
+        },
+        {
+          "description": "RPC endpoint used only by chainmemory_seal (default: https://rpc.chainmemory.ai). Leave it empty unless you set AICHAIN_KEY.",
+          "format": "string",
+          "name": "AICHAIN_RPC"
+        }
+      ],
+      "identifier": "chainmemory-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.7.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b4502e495d",
+    "published_at": "2026-09-13T17:20:51.677271Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.chaelynet/chainmemory",
+    "server_version": "2.7.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-13T17:20:51.677271Z"
+  },
+  "title": "ChainMemory",
+  "type": "mcp_server",
+  "version": "2.7.0"
+}

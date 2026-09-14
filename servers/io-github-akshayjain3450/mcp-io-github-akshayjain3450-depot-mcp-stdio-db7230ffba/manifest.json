@@ -1,0 +1,89 @@
+{
+  "description": "Read-only MCP server for Depot (depot.dev): CI failure diagnosis, build forensics, and usage.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:11+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-akshayjain3450-depot-mcp.stdio.db7230ffba",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/akshayjain3450/depot-mcp",
+    "homepage": "https://github.com/akshayjain3450/depot-mcp",
+    "repository": "https://github.com/akshayjain3450/depot-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "depot-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.akshayjain3450/depot-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Depot Organization token (Organization Settings > API Tokens). Project tokens do not work.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DEPOT_TOKEN"
+        },
+        {
+          "description": "Organization ID, sent as x-depot-org. Required only when the token can see more than one organization.",
+          "format": "string",
+          "name": "DEPOT_ORG_ID"
+        },
+        {
+          "description": "Default container-build project so build tools can be called without one.",
+          "format": "string",
+          "name": "DEPOT_PROJECT_ID"
+        },
+        {
+          "default": "https://api.depot.dev",
+          "description": "Override the Depot API endpoint.",
+          "format": "string",
+          "name": "DEPOT_API_URL"
+        },
+        {
+          "default": "20",
+          "description": "Cap on log/step pages fetched per tool call.",
+          "format": "number",
+          "name": "DEPOT_MCP_MAX_LOG_PAGES"
+        },
+        {
+          "default": "24000",
+          "description": "Hard character ceiling on any single tool result.",
+          "format": "number",
+          "name": "DEPOT_MCP_OUTPUT_BUDGET"
+        }
+      ],
+      "identifier": "depot-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "db7230ffba",
+    "published_at": "2026-09-06T00:02:27.446843Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.akshayjain3450/depot-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-06T00:02:27.446843Z"
+  },
+  "title": "Depot (depot.dev)",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

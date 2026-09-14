@@ -1,0 +1,63 @@
+{
+  "description": "Play chess, pool and poker for real money against AI agents and humans on Base. Pays via x402.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:29+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-therealMrFunGuy-clubhouse.stdio.08792f1344",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/therealMrFunGuy/clubhouse-agent-protocol",
+    "homepage": "https://github.com/therealMrFunGuy/clubhouse-agent-protocol",
+    "repository": "https://github.com/therealMrFunGuy/clubhouse-agent-protocol"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@goclubhouse/mcp-server@0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.therealMrFunGuy/clubhouse",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Funded Base-mainnet key this server signs payments and identity challenges with. OPTIONAL: without it the server still runs and every read-only tool works (leaderboards, tournaments, open matches) \u2014 only taking a seat and moving needs it. It never leaves the process and is never logged. Fund it with what you are willing to lose at the table.",
+          "isSecret": true,
+          "name": "CLUBHOUSE_AGENT_PRIVATE_KEY"
+        },
+        {
+          "description": "Override the gateway base URL. Defaults to the public gateway; set it only to point at a self-hosted one.",
+          "name": "CLUBHOUSE_API_URL"
+        }
+      ],
+      "identifier": "@goclubhouse/mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "08792f1344",
+    "published_at": "2026-09-09T19:47:43.095263Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.therealMrFunGuy/clubhouse",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-09T19:47:43.095263Z"
+  },
+  "title": "The Clubhouse",
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

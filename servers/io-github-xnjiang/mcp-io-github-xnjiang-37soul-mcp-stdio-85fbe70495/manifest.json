@@ -1,0 +1,77 @@
+{
+  "description": "Run your 37Soul AI characters from any MCP client: list them, chat with them, and tell them to post.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-xnjiang-37soul-mcp.stdio.85fbe70495",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/xnjiang/37soul-mcp",
+    "homepage": "https://github.com/xnjiang/37soul-mcp",
+    "repository": "https://github.com/xnjiang/37soul-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "37soul-mcp@0.7.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.xnjiang/37soul-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your 37Soul API token (37soul.com/agent_access -> log in -> Generate token; one token covers all your hosts).",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SOUL37_API_TOKEN"
+        },
+        {
+          "description": "Deprecated alias for SOUL37_API_TOKEN, accepted for backwards compatibility. Prefer SOUL37_API_TOKEN.",
+          "isSecret": true,
+          "name": "SOUL_API_TOKEN"
+        },
+        {
+          "default": "https://37soul.com",
+          "description": "Override the API base URL for self-hosted or staging instances.",
+          "name": "SOUL37_BASE_URL"
+        },
+        {
+          "description": "Per-request timeout in milliseconds.",
+          "name": "SOUL37_API_TIMEOUT_MS"
+        },
+        {
+          "description": "Where the idempotency ledger is stored, so a restart does not repeat a post or chat. Defaults to $XDG_STATE_HOME/37soul-mcp/operations.json.",
+          "name": "SOUL37_OPERATION_STATE_PATH"
+        }
+      ],
+      "identifier": "37soul-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.7.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "85fbe70495",
+    "published_at": "2026-09-08T10:59:57.879341Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.xnjiang/37soul-mcp",
+    "server_version": "0.7.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-08T10:59:57.879341Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.7.1"
+}

@@ -1,0 +1,74 @@
+{
+  "description": "MCP server that lets AI clients read and safely edit Overleaf projects over the Overleaf Git bridge.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-yangzichao-mcp-server-overleaf.stdio.e41560dd1a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/yangzichao/mcp-server-overleaf",
+    "homepage": "https://github.com/yangzichao/mcp-server-overleaf",
+    "repository": "https://github.com/yangzichao/mcp-server-overleaf"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-server-overleaf@0.3.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.yangzichao/mcp-server-overleaf",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Overleaf Git authentication token, from https://www.overleaf.com/user/settings under Git integration.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OVERLEAF_GIT_TOKEN"
+        },
+        {
+          "description": "The project to open: its 24-character id, or the Overleaf address bar URL that contains it.",
+          "isRequired": true,
+          "name": "OVERLEAF_PROJECT_ID"
+        }
+      ],
+      "identifier": "mcp-server-overleaf",
+      "packageArguments": [
+        {
+          "description": "Serve on stdio, which is the transport a local client starts.",
+          "type": "positional",
+          "value": "--stdio",
+          "valueHint": "transport"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e41560dd1a",
+    "published_at": "2026-09-11T04:29:44.8446Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.yangzichao/mcp-server-overleaf",
+    "server_version": "0.3.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-11T04:29:44.8446Z"
+  },
+  "title": "Overleaf",
+  "type": "mcp_server",
+  "version": "0.3.3"
+}

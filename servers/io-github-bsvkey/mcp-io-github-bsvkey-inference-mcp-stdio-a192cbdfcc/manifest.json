@@ -1,0 +1,76 @@
+{
+  "description": "Pay-per-token Claude & Grok inference, settled in BSV, via the inference.bsvkey.com gateway.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:44+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-BSVKey-inference-mcp.stdio.a192cbdfcc",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/BSVKey/inference-mcp",
+    "homepage": "https://github.com/BSVKey/inference-mcp",
+    "repository": "https://github.com/BSVKey/inference-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@bsvkey/inference-mcp@1.2.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.BSVKey/inference-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "A funded channel key in the form channelId:channelSecret. Open + fund a channel once at https://inference.bsvkey.com. Optional (can be passed per call).",
+          "isSecret": true,
+          "name": "BSVKEY_API_KEY"
+        },
+        {
+          "description": "Gateway base URL. Defaults to https://inference.bsvkey.com/v1; override to point at a self-hosted deployment.",
+          "name": "BSVKEY_BASE_URL"
+        },
+        {
+          "description": "A funded BSV private key (WIF) used by the x402_infer tool to pay per call in BSV (no channel). Signing is local; the key never leaves the process. Optional (can be passed per call).",
+          "isSecret": true,
+          "name": "BSVKEY_WIF"
+        },
+        {
+          "description": "The amount you funded your channel with on-chain. When set, usage receipts are verified against this instead of the broker-signed fundedSats. Optional (can be passed per call as fundedSats).",
+          "name": "BSVKEY_FUNDED_SATS"
+        },
+        {
+          "description": "Path to a JSON file where per-channel receipt continuity (seq + running totals) is persisted, so replays are caught across restarts. Optional; in-memory only if unset.",
+          "name": "BSVKEY_RECEIPT_STATE"
+        }
+      ],
+      "identifier": "@bsvkey/inference-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.2.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a192cbdfcc",
+    "published_at": "2026-09-09T01:49:40.107962Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.BSVKey/inference-mcp",
+    "server_version": "1.2.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-09T01:49:40.107962Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.2.2"
+}

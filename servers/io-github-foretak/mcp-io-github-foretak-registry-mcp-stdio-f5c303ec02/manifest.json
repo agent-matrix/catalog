@@ -1,0 +1,90 @@
+{
+  "description": "The company registry MCP: brreg orgnr, Companies House, Bolagsverket organisationsnummer.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:36+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-foretak-registry-mcp.stdio.f5c303ec02",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/foretak/registry-mcp",
+    "homepage": "https://github.com/foretak/registry-mcp",
+    "repository": "https://github.com/foretak/registry-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "registry-mcp==0.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.foretak/registry-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Contact address sent in the User-Agent to the national registry, as Br\u00f8nn\u00f8ysundregistrene asks of API clients. Unset means an anonymous client, which may be blocked upstream.",
+          "format": "string",
+          "name": "REGISTRY_MCP_CONTACT_EMAIL",
+          "placeholder": "you@example.com"
+        },
+        {
+          "description": "Path to the local SQLite response cache (24 h TTL). Defaults to ./data/cache.sqlite3.",
+          "format": "filepath",
+          "name": "REGISTRY_MCP_CACHE_PATH",
+          "placeholder": "./data/cache.sqlite3"
+        },
+        {
+          "description": "Companies House REST API key, required for the United Kingdom (GB). Free from developer.company-information.service.gov.uk. Unset means GB lookups return an upstream_error naming this variable; every other country still answers.",
+          "format": "string",
+          "isSecret": true,
+          "name": "COMPANIES_HOUSE_API_KEY"
+        },
+        {
+          "description": "Bolagsverket OAuth 2 client id, required for Sweden (SE) together with BOLAGSVERKET_CLIENT_SECRET. Free, no contract: request both from Bolagsverket's kundanm\u00e4lan form. Unset means SE lookups return an upstream_error naming both variables; every other country still answers.",
+          "format": "string",
+          "isSecret": true,
+          "name": "BOLAGSVERKET_CLIENT_ID"
+        },
+        {
+          "description": "Bolagsverket OAuth 2 client secret, the other half of BOLAGSVERKET_CLIENT_ID. Both are needed before Sweden (SE) can answer.",
+          "format": "string",
+          "isSecret": true,
+          "name": "BOLAGSVERKET_CLIENT_SECRET"
+        },
+        {
+          "description": "Which Bolagsverket environment the Swedish credentials belong to: 'production' (default) or 'test'. It selects the data host and the token host as a pair, so the two can never be mixed.",
+          "format": "string",
+          "name": "BOLAGSVERKET_ENVIRONMENT"
+        }
+      ],
+      "identifier": "registry-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f5c303ec02",
+    "published_at": "2026-09-09T11:46:24.872087Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.foretak/registry-mcp",
+    "server_version": "0.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-09T11:46:24.872087Z"
+  },
+  "title": "registry-mcp \u2014 national company registries",
+  "type": "mcp_server",
+  "version": "0.4.0"
+}

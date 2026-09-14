@@ -1,0 +1,53 @@
+{
+  "description": "Validate and submit authorised Asia private-flight briefs. Human-reviewed sourcing, not booking.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-jetblanc-charter-intake.sse.c9246deda1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://jetblanc.com/api/mcp"
+    }
+  },
+  "name": "com.jetblanc/charter-intake",
+  "provenance": {
+    "identity_key": "c9246deda1",
+    "published_at": "2026-09-10T10:06:51.334346Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.jetblanc/charter-intake",
+    "server_version": "1.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-10T10:06:51.334346Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Private bearer key from https://jetblanc.com/developers#access. Required for private tools.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {api_key}",
+          "variables": {
+            "api_key": {
+              "description": "Your private Jetblanc API key. Never use another customer's key.",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://jetblanc.com/api/mcp"
+    }
+  ],
+  "title": "Jetblanc Private-Flight Brief Intake",
+  "type": "mcp_server",
+  "version": "1.1.0"
+}

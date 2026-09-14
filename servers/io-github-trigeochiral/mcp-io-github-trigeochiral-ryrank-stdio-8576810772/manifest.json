@@ -1,0 +1,64 @@
+{
+  "description": "Cohere-compatible pay-per-call reranker, no signup, x402/USDC",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-trigeochiral-ryrank.stdio.8576810772",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/trigeochiral/ryrank-mcp",
+    "homepage": "https://github.com/trigeochiral/ryrank-mcp",
+    "repository": "https://github.com/trigeochiral/ryrank-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "ryrank-mcp==1.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.trigeochiral/ryrank",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://trigeochiral.com",
+          "description": "Base URL of the hosted RyRank API (default https://trigeochiral.com)",
+          "isRequired": true,
+          "name": "RYRANK_API"
+        },
+        {
+          "description": "Optional base64 x402 X-PAYMENT payload for paid calls past the free tier",
+          "isSecret": true,
+          "name": "RYRANK_XPAYMENT"
+        }
+      ],
+      "identifier": "ryrank-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8576810772",
+    "published_at": "2026-09-04T12:59:15.657115Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.trigeochiral/ryrank",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-04T12:59:15.657115Z"
+  },
+  "title": "RyRank",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

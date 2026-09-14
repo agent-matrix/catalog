@@ -1,0 +1,98 @@
+{
+  "description": "Drive a Tailscale node and its tailnet through the CLI and the control-plane API",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:25+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-tailscale-mcp-tailscale-mcp.stdio.01fc8931df",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/tailscale-mcp/tailscale-mcp",
+    "homepage": "https://github.com/tailscale-mcp/tailscale-mcp",
+    "repository": "https://github.com/tailscale-mcp/tailscale-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/tailscale-mcp/tailscale-mcp:1.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.tailscale-mcp/tailscale-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "A control-plane API access token. One of this, the OAuth client pair, or the OAuth JWT file is needed for the tailnet tools; without any of them only the local tools are offered.",
+          "isSecret": true,
+          "name": "TAILSCALE_API_KEY"
+        },
+        {
+          "description": "An OAuth client id, used with TAILSCALE_OAUTH_CLIENT_SECRET when there is no API access token.",
+          "name": "TAILSCALE_OAUTH_CLIENT_ID"
+        },
+        {
+          "description": "The OAuth client secret that goes with TAILSCALE_OAUTH_CLIENT_ID.",
+          "isSecret": true,
+          "name": "TAILSCALE_OAUTH_CLIENT_SECRET"
+        },
+        {
+          "description": "The tailnet the control-plane tools act on. Without it they act on the one the credential belongs to.",
+          "name": "TAILSCALE_TAILNET"
+        },
+        {
+          "choices": [
+            "minimal",
+            "core",
+            "full"
+          ],
+          "default": "core",
+          "description": "Which tools are offered: minimal, core or full.",
+          "name": "TAILSCALE_MCP_PRESET"
+        },
+        {
+          "choices": [
+            "true",
+            "false"
+          ],
+          "default": "false",
+          "description": "Offer the tools that change something. Read-only without it.",
+          "name": "TAILSCALE_MCP_ALLOW_WRITE"
+        },
+        {
+          "choices": [
+            "true",
+            "false"
+          ],
+          "default": "false",
+          "description": "Offer the tools that remove or sever something. Implies the write tier.",
+          "name": "TAILSCALE_MCP_ALLOW_DESTRUCTIVE"
+        }
+      ],
+      "identifier": "ghcr.io/tailscale-mcp/tailscale-mcp:1.1.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "01fc8931df",
+    "published_at": "2026-09-06T02:58:32.965505Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.tailscale-mcp/tailscale-mcp",
+    "server_version": "1.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-06T02:58:32.965505Z"
+  },
+  "title": "Tailscale",
+  "type": "mcp_server",
+  "version": "1.1.0"
+}

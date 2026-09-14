@@ -1,0 +1,186 @@
+{
+  "description": "ABAP development over SAP ADT: source, transports, ATC, unit tests, debugger. SSO/basic/OAuth",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:35+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-williansaez-abap-adt-mcp.stdio.fae6dc9d7e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/williansaez/abap-adt-mcp",
+    "homepage": "https://github.com/williansaez/abap-adt-mcp",
+    "repository": "https://github.com/williansaez/abap-adt-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "abap-adt-mcp@0.3.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.williansaez/abap-adt-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Path to a JSON file mapping destination names to system configs (url, client, authType basic/sso/oauth, credentials). Recommended; keep the file mode 0600. See systems.example.json",
+          "name": "SAP_SYSTEMS_FILE"
+        },
+        {
+          "description": "Inline JSON map of destinations (same shape as SAP_SYSTEMS_FILE). Contains credentials \u2014 prefer SAP_SYSTEMS_FILE",
+          "isSecret": true,
+          "name": "SAP_SYSTEMS"
+        },
+        {
+          "description": "Destination name used when a tool call omits `destination` (alternatively mark an entry with \"default\": true)",
+          "name": "SAP_DEFAULT_DESTINATION"
+        },
+        {
+          "description": "Default auth type for entries that don't specify one: sso (default), basic, or oauth",
+          "name": "SAP_AUTH_TYPE"
+        },
+        {
+          "description": "When set (1024-65535), serve Streamable HTTP on http://127.0.0.1:<port>/mcp with bearer-token auth instead of stdio",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "description": "Bind address for the HTTP transport (default 127.0.0.1). Set 0.0.0.0 only inside containers that publish the port",
+          "name": "MCP_HTTP_HOST"
+        },
+        {
+          "description": "Bearer token for the HTTP transport; auto-generated and written to ~/.abap-adt-mcp/http-token when unset",
+          "isSecret": true,
+          "name": "MCP_HTTP_TOKEN"
+        },
+        {
+          "description": "Maximum concurrent MCP sessions on the HTTP transport (default 16); further initialize requests get 503",
+          "name": "MCP_HTTP_MAX_SESSIONS"
+        },
+        {
+          "description": "Idle minutes after which an HTTP session (and its SAP sessions/locks) is closed (default 30)",
+          "name": "MCP_HTTP_SESSION_TTL_MINUTES"
+        },
+        {
+          "description": "Comma-separated Origin values allowed on the HTTP transport (loopback origins always allowed when bound to loopback; * allows any)",
+          "name": "MCP_HTTP_ALLOWED_ORIGINS"
+        },
+        {
+          "description": "Comma-separated Host header values allowed (DNS-rebinding protection; loopback hosts always allowed when bound to loopback)",
+          "name": "MCP_HTTP_ALLOWED_HOSTS"
+        },
+        {
+          "description": "When set, exportPackageSources may only write inside this directory",
+          "name": "MCP_EXPORT_ROOT"
+        },
+        {
+          "description": "Path of a JSONL audit trail: one record per tool call (tool, destination, duration, outcome ok/error/denied/unavailable, policy gate, redacted argument summary)",
+          "name": "MCP_AUDIT_FILE"
+        },
+        {
+          "description": "Set to 1 to make every destination read-only (server-side; only read-only annotated tools plus login/logout run). Per-destination policies live in systems.json",
+          "name": "MCP_READ_ONLY"
+        },
+        {
+          "description": "Toolsets to publish: comma list (core,source,objects,transports,analysis,tests,atc,data,discovery,runtime,refactoring,rap,services,git,debugger,traces) or a preset: all (default) or focused",
+          "name": "MCP_TOOLSETS"
+        },
+        {
+          "description": "Toolsets to hide, comma list (core cannot be disabled)",
+          "name": "MCP_DISABLED_TOOLSETS"
+        },
+        {
+          "description": "Character budget for a single tool response before results are paged/truncated (default 40000, minimum 5000). Raise it if your MCP host accepts larger tool outputs",
+          "name": "MCP_MAX_RESPONSE_CHARS"
+        },
+        {
+          "description": "Set to 1 to enable the reentranceTicket tool (disabled by default: it returns a live SAP logon credential into the conversation)",
+          "name": "SAP_ALLOW_REENTRANCE_TICKET"
+        },
+        {
+          "description": "Legacy single-system mode: base URL of the SAP system, e.g. https://host:44300",
+          "name": "SAP_URL"
+        },
+        {
+          "description": "Legacy single-system mode: SAP username",
+          "name": "SAP_USER"
+        },
+        {
+          "description": "Legacy single-system mode: SAP password",
+          "isSecret": true,
+          "name": "SAP_PASSWORD"
+        },
+        {
+          "description": "Legacy single-system mode: SAP client number, e.g. 100",
+          "name": "SAP_CLIENT"
+        },
+        {
+          "description": "Legacy single-system mode: logon language, e.g. EN",
+          "name": "SAP_LANGUAGE"
+        },
+        {
+          "description": "SSO destinations: path to a Chromium/Chrome/Edge binary for the browser login (auto-detected when unset)",
+          "name": "SAP_BROWSER_PATH"
+        },
+        {
+          "description": "SSO destinations: directory of the persistent browser profile that keeps the identity-provider session (default ~/.abap-adt-mcp/sso/<host>)",
+          "name": "SAP_BROWSER_PROFILE_DIR"
+        },
+        {
+          "description": "Legacy single-system mode: set to 1 to skip TLS certificate verification for that system only (sandboxes with self-signed certificates)",
+          "name": "SAP_TLS_INSECURE"
+        },
+        {
+          "description": "Legacy single-system mode with SAP_AUTH_TYPE=oauth: OAuth2 token endpoint (client_credentials)",
+          "name": "SAP_OAUTH_TOKEN_URL"
+        },
+        {
+          "description": "Legacy single-system mode with SAP_AUTH_TYPE=oauth: OAuth2 client id",
+          "name": "SAP_OAUTH_CLIENT_ID"
+        },
+        {
+          "description": "Legacy single-system mode with SAP_AUTH_TYPE=oauth: OAuth2 client secret",
+          "isSecret": true,
+          "name": "SAP_OAUTH_CLIENT_SECRET"
+        },
+        {
+          "description": "Legacy single-system mode with SAP_AUTH_TYPE=oauth: optional OAuth2 scope",
+          "name": "SAP_OAUTH_SCOPE"
+        },
+        {
+          "description": "Platform gate for toolsets the destination does not expose (debugger, traces, abapGit, ...): enforce (default, refuse before calling SAP), warn (log only) or off",
+          "name": "MCP_PROFILE_GATE"
+        },
+        {
+          "description": "Lifetime of the per-session source cache used by grepPackage, cdsViewInfo and syntaxCheckCode (default 300; 0 keeps entries until logout)",
+          "name": "MCP_SOURCE_CACHE_TTL_SECONDS"
+        }
+      ],
+      "identifier": "abap-adt-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "fae6dc9d7e",
+    "published_at": "2026-09-03T14:53:35.585221Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.williansaez/abap-adt-mcp",
+    "server_version": "0.3.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-03T14:53:35.585221Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.2"
+}

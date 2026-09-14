@@ -1,0 +1,66 @@
+{
+  "description": "Turn conversations into mind maps and whiteboards \u2014 in your TabTree account, or local files.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:12+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.app-tabtree-tabtree.stdio.ecb0d5a3a5",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ai4xedu/tabtree-mcp",
+    "homepage": "https://github.com/ai4xedu/tabtree-mcp",
+    "repository": "https://github.com/ai4xedu/tabtree-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "tabtree-mcp@1.2.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "app.tabtree/tabtree",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "TabTree subscription: paste a connector key from Settings \u2192 Account in the app (it starts with tt_live_). Maps Claude creates land in your library, on every device. Leave empty if you use a local folder instead.",
+          "isSecret": true,
+          "name": "TABTREE_API_KEY",
+          "placeholder": "tt_live_\u2026"
+        },
+        {
+          "description": "TabTree Classic (the local file): your backup folder \u2014 the one you picked with the lifebuoy button on the My maps screen. The connector reads and writes maps here, and sees nothing outside it. Leave empty if you use an account key instead.",
+          "format": "filepath",
+          "name": "TABTREE_DIR",
+          "placeholder": "/Users/you/Documents/TabTree"
+        }
+      ],
+      "identifier": "tabtree-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.2.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ecb0d5a3a5",
+    "published_at": "2026-09-09T23:17:34.587891Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "app.tabtree/tabtree",
+    "server_version": "1.2.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-09T23:17:34.587891Z"
+  },
+  "title": "TabTree",
+  "type": "mcp_server",
+  "version": "1.2.1"
+}

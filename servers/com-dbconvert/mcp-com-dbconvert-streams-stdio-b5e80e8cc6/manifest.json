@@ -1,0 +1,79 @@
+{
+  "description": "Read-only SQL across your PostgreSQL, MySQL, S3 buckets and local data files, in one query.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:17+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-dbconvert-streams.stdio.b5e80e8cc6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/slotix/dbconvert-streams-public",
+    "homepage": "https://github.com/slotix/dbconvert-streams-public",
+    "repository": "https://github.com/slotix/dbconvert-streams-public"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "name": "--rm",
+            "type": "named"
+          },
+          {
+            "description": "MCP speaks JSON-RPC over stdin, so the container needs its stdin held open.",
+            "name": "-i",
+            "type": "named"
+          },
+          "docker.io/slotix/stream-mcp:2.7.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.dbconvert/streams",
+  "packages": [
+    {
+      "identifier": "docker.io/slotix/stream-mcp:2.7.3",
+      "packageArguments": [
+        {
+          "description": "A source to serve read-only: postgres://\u2026, mysql://\u2026, s3://bucket/prefix, or an absolute folder path mounted into the container. Prefix with name= to choose what it is called in chat.",
+          "isRepeated": true,
+          "type": "positional",
+          "valueHint": "connection_string"
+        }
+      ],
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "name": "--rm",
+          "type": "named"
+        },
+        {
+          "description": "MCP speaks JSON-RPC over stdin, so the container needs its stdin held open.",
+          "name": "-i",
+          "type": "named"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "b5e80e8cc6",
+    "published_at": "2026-08-31T14:47:18.827519Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.dbconvert/streams",
+    "server_version": "2.7.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-31T14:47:18.827519Z"
+  },
+  "title": "DBConvert Streams (Federated SQL)",
+  "type": "mcp_server",
+  "version": "2.7.3"
+}

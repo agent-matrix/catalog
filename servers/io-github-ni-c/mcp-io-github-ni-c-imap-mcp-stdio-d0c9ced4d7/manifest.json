@@ -1,0 +1,152 @@
+{
+  "description": "Read, search and organise any IMAP mailbox, with writes off by default",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:00+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ni-c-imap-mcp.stdio.d0c9ced4d7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ni-c/imap-mcp",
+    "homepage": "https://github.com/ni-c/imap-mcp",
+    "repository": "https://github.com/ni-c/imap-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@ni-c/imap-mcp@0.5.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ni-c/imap-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Hostname of the IMAP server, e.g. imap.example.net",
+          "format": "string",
+          "isRequired": true,
+          "name": "IMAP_HOST"
+        },
+        {
+          "description": "Mailbox user name",
+          "format": "string",
+          "isRequired": true,
+          "name": "IMAP_USER"
+        },
+        {
+          "description": "Mailbox password or app password",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "IMAP_PASSWORD"
+        },
+        {
+          "description": "Defaults to 993 with implicit TLS, 143 otherwise",
+          "format": "number",
+          "name": "IMAP_PORT"
+        },
+        {
+          "description": "implicit (default), starttls or none",
+          "format": "string",
+          "name": "IMAP_TLS"
+        },
+        {
+          "description": "Default mailbox to work in (default: INBOX)",
+          "format": "string",
+          "name": "IMAP_MAILBOX"
+        },
+        {
+          "description": "IMAP keyword marking what the assistant has already seen (default: AiSeen)",
+          "format": "string",
+          "name": "IMAP_SEEN_KEYWORD"
+        },
+        {
+          "description": "Set to false to register the mailbox write tools; defaults to true",
+          "format": "boolean",
+          "name": "IMAP_READ_ONLY"
+        },
+        {
+          "description": "Comma-separated tool names or list_* prefixes to register; 'essential' selects a curated preset (default: all tools)",
+          "format": "string",
+          "name": "IMAP_ALLOW_TOOLS"
+        },
+        {
+          "description": "Comma-separated tool names or list_* prefixes to remove from whatever IMAP_ALLOW_TOOLS left",
+          "format": "string",
+          "name": "IMAP_DENY_TOOLS"
+        },
+        {
+          "description": "Directory attachments may be written to; unset means the server never touches the filesystem",
+          "format": "string",
+          "name": "IMAP_DOWNLOAD_DIR"
+        },
+        {
+          "description": "Set to true to accept self-signed certificates, scoped to this connection",
+          "format": "boolean",
+          "name": "IMAP_INSECURE_TLS"
+        },
+        {
+          "description": "Drafts folder to save into; by default the one flagged \\Drafts is used",
+          "format": "string",
+          "name": "IMAP_DRAFTS_MAILBOX"
+        },
+        {
+          "description": "Default number of messages a listing returns (default: 100)",
+          "format": "number",
+          "name": "IMAP_MAX_MESSAGES"
+        },
+        {
+          "description": "Ceiling for returning an attachment inline (default: 1048576)",
+          "format": "number",
+          "name": "IMAP_MAX_ATTACHMENT_BYTES"
+        },
+        {
+          "description": "Ceiling for writing an attachment to disk (default: 26214400)",
+          "format": "number",
+          "name": "IMAP_MAX_DOWNLOAD_BYTES"
+        },
+        {
+          "description": "Ceiling for reading a document's text with mode=text (default: 10485760, maximum: 67108864)",
+          "format": "number",
+          "name": "IMAP_MAX_EXTRACT_BYTES"
+        },
+        {
+          "description": "Comma-separated content-type allowlist for attachments",
+          "format": "string",
+          "name": "IMAP_ATTACHMENT_TYPES"
+        },
+        {
+          "description": "authserv-id your provider stamps into Authentication-Results; without it every verdict is reported as forgeable",
+          "format": "string",
+          "name": "IMAP_TRUSTED_AUTHSERV_ID"
+        }
+      ],
+      "identifier": "@ni-c/imap-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d0c9ced4d7",
+    "published_at": "2026-09-07T19:14:05.726322Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ni-c/imap-mcp",
+    "server_version": "0.5.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-07T19:14:05.726322Z"
+  },
+  "title": "IMAP mailbox",
+  "type": "mcp_server",
+  "version": "0.5.0"
+}

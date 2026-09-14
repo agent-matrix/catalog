@@ -1,0 +1,90 @@
+{
+  "description": "Monitor ICTBroadcast outbound campaigns, and start and stop them when writes are on.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ictinnovations-ictbroadcast-mcp.stdio.faba6f902e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ictinnovations/ictbroadcast-mcp",
+    "homepage": "https://github.com/ictinnovations/ictbroadcast-mcp",
+    "repository": "https://github.com/ictinnovations/ictbroadcast-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "ictbroadcast-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ictinnovations/ictbroadcast-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of your ICTBroadcast server, without the /rest suffix, e.g. https://your-ictbroadcast.",
+          "format": "string",
+          "isRequired": true,
+          "name": "ICTBROADCAST_BASE_URL"
+        },
+        {
+          "description": "API account username.",
+          "format": "string",
+          "isRequired": true,
+          "name": "ICTBROADCAST_USERNAME"
+        },
+        {
+          "description": "Password for the account.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ICTBROADCAST_PASSWORD"
+        },
+        {
+          "default": "false",
+          "description": "Unlocks starting and stopping campaigns, which begins live outbound calling and can cost money. When false those tools are not registered at all. Leave off unless you mean it.",
+          "format": "boolean",
+          "name": "ICTBROADCAST_MCP_ALLOW_WRITE"
+        },
+        {
+          "default": "30000",
+          "description": "Per request timeout in milliseconds. Defaults to 30000.",
+          "format": "number",
+          "name": "ICTBROADCAST_TIMEOUT_MS"
+        },
+        {
+          "default": "false",
+          "description": "Skip TLS certificate verification. Only for a self-signed test server.",
+          "format": "boolean",
+          "name": "ICTBROADCAST_TLS_INSECURE"
+        }
+      ],
+      "identifier": "ictbroadcast-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "faba6f902e",
+    "published_at": "2026-09-01T10:13:07.726024Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ictinnovations/ictbroadcast-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-01T10:13:07.726024Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

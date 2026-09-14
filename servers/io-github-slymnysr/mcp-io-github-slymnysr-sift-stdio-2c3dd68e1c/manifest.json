@@ -1,0 +1,82 @@
+{
+  "description": "Runs a command, keeps every byte on disk, returns only the lines that matter",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-slymnysr-sift.stdio.2c3dd68e1c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/slymnysr/sift",
+    "homepage": "https://github.com/slymnysr/sift",
+    "repository": "https://github.com/slymnysr/sift"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "The server half is an extra. The command line alone has no dependencies, and somebody who wants it should not have to carry a protocol library for it.",
+            "name": "--from",
+            "type": "named",
+            "value": "sift-cli[mcp]"
+          },
+          "sift-cli==1.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.slymnysr/sift",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "A free NVIDIA NIM key. Optional: without one every tool still runs the command, still keeps every byte, and still returns the exit code -- what is lost is the model's choice of lines, not the output. Also read from ~/.config/nvidia/api_key.",
+          "isSecret": true,
+          "name": "NVIDIA_API_KEY"
+        }
+      ],
+      "identifier": "sift-cli",
+      "packageArguments": [
+        {
+          "description": "Serve over stdio. The same server the sift-mcp command starts.",
+          "type": "positional",
+          "value": "mcp",
+          "valueHint": "mcp"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "The server half is an extra. The command line alone has no dependencies, and somebody who wants it should not have to carry a protocol library for it.",
+          "name": "--from",
+          "type": "named",
+          "value": "sift-cli[mcp]"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "2c3dd68e1c",
+    "published_at": "2026-09-09T19:44:45.901908Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.slymnysr/sift",
+    "server_version": "1.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-09T19:44:45.901908Z"
+  },
+  "title": "sift",
+  "type": "mcp_server",
+  "version": "1.1.0"
+}

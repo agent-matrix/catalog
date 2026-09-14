@@ -1,0 +1,100 @@
+{
+  "description": "Resy reservation management \u2014 search, book, cancel, favorites, and Priority Notify for Claude",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:21+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-chrischall-resy-mcp.stdio.ff75d3103e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/chrischall/resy-mcp",
+    "homepage": "https://github.com/chrischall/resy-mcp",
+    "repository": "https://github.com/chrischall/resy-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "resy-mcp@0.12.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.chrischall/resy-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your Resy account email. Optional \u2014 leave unset to use the fetchproxy browser bridge instead.",
+          "format": "string",
+          "name": "RESY_EMAIL"
+        },
+        {
+          "description": "Your Resy account password. Optional \u2014 leave unset to use the fetchproxy browser bridge instead.",
+          "format": "string",
+          "isSecret": true,
+          "name": "RESY_PASSWORD"
+        },
+        {
+          "description": "Pre-obtained x-resy-auth-token. Overrides email/password and the fetchproxy bridge. Power users / CI only.",
+          "format": "string",
+          "isSecret": true,
+          "name": "RESY_AUTH_TOKEN"
+        },
+        {
+          "description": "Set to '1' to disable the fetchproxy fallback (forces RESY_EMAIL+PASSWORD or RESY_AUTH_TOKEN).",
+          "format": "string",
+          "name": "RESY_DISABLE_FETCHPROXY"
+        },
+        {
+          "description": "Override the public web-app API key (rarely needed)",
+          "format": "string",
+          "name": "RESY_API_KEY"
+        },
+        {
+          "description": "Set to false to disable the on-disk token cache and re-authenticate on every process start. Defaults to enabled.",
+          "format": "string",
+          "name": "RESY_TOKEN_CACHE"
+        },
+        {
+          "description": "Absolute path for the token cache file. Defaults to $MCP_DATA_DIR/.resy-mcp/token.json.",
+          "format": "string",
+          "name": "RESY_TOKEN_FILE"
+        },
+        {
+          "description": "Seconds to wait for the signed-in page to make an API call the bridge can read the auth token from. Defaults to 30. Capture resolves on the next matching request, so an idle tab needs a longer window than a busy one.",
+          "format": "number",
+          "name": "RESY_CAPTURE_TIMEOUT"
+        },
+        {
+          "description": "Port for the fetchproxy bridge. The whole fleet shares 37149 (the Transporter extension dials it), so override only for local development, test isolation, or a hosted bridged registration \u2014 this is the variable to name in the registration's bridgePortEnv.",
+          "format": "number",
+          "name": "RESY_WS_PORT"
+        }
+      ],
+      "identifier": "resy-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.12.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ff75d3103e",
+    "published_at": "2026-09-02T19:13:51.205241Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.chrischall/resy-mcp",
+    "server_version": "0.12.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-02T19:13:51.205241Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.12.0"
+}

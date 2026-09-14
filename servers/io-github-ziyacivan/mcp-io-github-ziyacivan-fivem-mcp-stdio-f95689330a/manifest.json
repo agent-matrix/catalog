@@ -1,0 +1,80 @@
+{
+  "description": "Build, run and live-test FiveM servers with AI agents: RCON, DevCon, window control, mcpb bridge.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ziyacivan-fivem-mcp.stdio.f95689330a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ziyacivan/fivem-mcp",
+    "homepage": "https://github.com/ziyacivan/fivem-mcp",
+    "repository": "https://github.com/ziyacivan/fivem-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "fivem-mcp-server@0.5.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ziyacivan/fivem-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Machine running the FiveM client (DevCon host). Default 127.0.0.1",
+          "format": "string",
+          "name": "FIVEM_HOST"
+        },
+        {
+          "description": "FXServer game host:port for RCON/getinfo. Default <FIVEM_HOST>:30120",
+          "format": "string",
+          "name": "FIVEM_RCON_ADDRESS"
+        },
+        {
+          "description": "Matches rcon_password in server.cfg; required for server_command and the bridge",
+          "format": "string",
+          "isSecret": true,
+          "name": "FIVEM_RCON_PASSWORD"
+        },
+        {
+          "description": "Path to FXServer's redirected stdout (server.log); enables server-side console reads and bridge client results",
+          "format": "string",
+          "name": "FIVEM_SERVER_LOG"
+        },
+        {
+          "description": "Matches mcpb_token on the server when the bridge resource is configured with one",
+          "format": "string",
+          "isSecret": true,
+          "name": "FIVEM_MCPB_TOKEN"
+        }
+      ],
+      "identifier": "fivem-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f95689330a",
+    "published_at": "2026-09-02T21:11:39.044983Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ziyacivan/fivem-mcp",
+    "server_version": "0.5.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-02T21:11:39.044983Z"
+  },
+  "title": "FiveM MCP",
+  "type": "mcp_server",
+  "version": "0.5.0"
+}

@@ -1,0 +1,79 @@
+{
+  "description": "Operate a self-hosted notifyd instance: digest, jobs, retries, suppressions, projects, test sends.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:13+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-rmzlb-notifyd.stdio.e711852f99",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/rmzlb/notifyd",
+    "homepage": "https://github.com/rmzlb/notifyd",
+    "repository": "https://github.com/rmzlb/notifyd"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/rmzlb/notifyd:0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.rmzlb/notifyd",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "PostgreSQL connection string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DATABASE_URL"
+        },
+        {
+          "description": "Secret for subscriber tokens",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "JWT_SECRET"
+        },
+        {
+          "description": "Operator key; also the Bearer token for /mcp",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ADMIN_API_KEY"
+        },
+        {
+          "description": "resend | cloudflare | smtp | agentmail | log",
+          "name": "EMAIL_PROVIDER"
+        },
+        {
+          "description": "Default sender address",
+          "name": "EMAIL_FROM"
+        }
+      ],
+      "identifier": "ghcr.io/rmzlb/notifyd:0.3.0",
+      "registryType": "oci",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3400/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "e711852f99",
+    "published_at": "2026-09-11T14:49:53.254629Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.rmzlb/notifyd",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-11T14:49:53.254629Z"
+  },
+  "title": "notifyd",
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

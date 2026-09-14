@@ -1,0 +1,117 @@
+{
+  "description": "Local Bloomberg tools for xbbg users.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:36+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-xbbg-org-xbbg-mcp.stdio.9ff84315d2",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/xbbg-org/xbbg",
+    "homepage": "https://github.com/xbbg-org/xbbg",
+    "repository": "https://github.com/xbbg-org/xbbg"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.xbbg-org/xbbg-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional directory containing Bloomberg runtime libraries. Leave unset to use BLPAPI_ROOT, an authorized vendored SDK layout, or Python blpapi fallback.",
+          "format": "filepath",
+          "name": "XBBG_MCP_LIB_DIR"
+        },
+        {
+          "default": "localhost",
+          "description": "Bloomberg API host. Defaults to localhost.",
+          "format": "string",
+          "name": "XBBG_MCP_HOST"
+        },
+        {
+          "default": "8194",
+          "description": "Bloomberg API port. Defaults to 8194.",
+          "format": "number",
+          "name": "XBBG_MCP_PORT"
+        },
+        {
+          "default": "none",
+          "description": "Bloomberg auth method: none, user, app, userapp, dir, manual, or token.",
+          "format": "string",
+          "name": "XBBG_MCP_AUTH_METHOD"
+        },
+        {
+          "default": "500",
+          "description": "Maximum rows returned to the MCP client per response. Defaults to 500.",
+          "format": "number",
+          "name": "XBBG_MCP_MAX_ROWS"
+        },
+        {
+          "default": "50000",
+          "description": "Maximum data cells across returned rows and columns. Defaults to 50000.",
+          "format": "number",
+          "name": "XBBG_MCP_MAX_CELLS"
+        },
+        {
+          "default": "50000",
+          "description": "Maximum metadata properties retained per response. Defaults to 50000.",
+          "format": "number",
+          "name": "XBBG_MCP_MAX_METADATA_PROPERTIES"
+        },
+        {
+          "default": "65536",
+          "description": "Maximum metadata bytes parsed or returned per response. Defaults to 65536.",
+          "format": "number",
+          "name": "XBBG_MCP_MAX_METADATA_BYTES"
+        },
+        {
+          "default": "2048",
+          "description": "Maximum characters per string value returned to the MCP client. Defaults to 2048.",
+          "format": "number",
+          "name": "XBBG_MCP_MAX_STRING_CHARS"
+        },
+        {
+          "default": "8192",
+          "description": "Maximum UTF-8 bytes per string value, including a truncation marker. Defaults to 8192; minimum 3.",
+          "format": "number",
+          "name": "XBBG_MCP_MAX_STRING_BYTES"
+        },
+        {
+          "default": "1048576",
+          "description": "Maximum compact-JSON bytes in the structured result, including diagnostics. Defaults to 1048576; minimum 2048.",
+          "format": "number",
+          "name": "XBBG_MCP_MAX_RESULT_BYTES"
+        }
+      ],
+      "fileSha256": "b29fc89f2045ad613b556a0752bff0673ca000537d53d5f460d096540f87beb9",
+      "identifier": "https://github.com/xbbg-org/xbbg/releases/download/v1.4.12/xbbg-mcp-v1.4.12.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.4.12"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9ff84315d2",
+    "published_at": "2026-09-11T10:52:25.679387Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.xbbg-org/xbbg-mcp",
+    "server_version": "1.4.12",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-11T10:52:25.679387Z"
+  },
+  "title": "xbbg MCP",
+  "type": "mcp_server",
+  "version": "1.4.12"
+}

@@ -1,0 +1,68 @@
+{
+  "description": "Read your ParlayX account and the prediction markets from an MCP client.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:27+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-parlayx-mcp.stdio.571a249755",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@parlayx/mcp@0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.parlayx/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "The key id issued with your ParlayX signing keypair.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PARLAYX_KEY_ID"
+        },
+        {
+          "description": "Your Ed25519 private key seed, 64 lowercase hex characters. It stays on your machine.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PARLAYX_PRIVATE_KEY_HEX"
+        },
+        {
+          "description": "Set to 1 to register the four order tools. They stay hidden without it, and also require a key carrying the trade capability.",
+          "format": "string",
+          "name": "PARLAYX_MCP_ALLOW_TRADING"
+        }
+      ],
+      "identifier": "@parlayx/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "571a249755",
+    "published_at": "2026-09-05T21:38:30.042361Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.parlayx/mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-05T21:38:30.042361Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

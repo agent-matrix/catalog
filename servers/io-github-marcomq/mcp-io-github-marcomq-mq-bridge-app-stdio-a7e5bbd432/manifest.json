@@ -1,0 +1,80 @@
+{
+  "description": "Move data between 15+ databases, queues and files at high throughput, without it entering context",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:51+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-marcomq-mq-bridge-app.stdio.a7e5bbd432",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/marcomq/mq-bridge",
+    "homepage": "https://github.com/marcomq/mq-bridge",
+    "repository": "https://github.com/marcomq/mq-bridge"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "name": "--rm",
+            "type": "named"
+          },
+          {
+            "name": "-i",
+            "type": "named"
+          },
+          "ghcr.io/marcomq/mq-bridge-app:0.4.10"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.marcomq/mq-bridge-app",
+  "packages": [
+    {
+      "identifier": "ghcr.io/marcomq/mq-bridge-app:0.4.10",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp",
+          "valueHint": "command"
+        },
+        {
+          "name": "--transport",
+          "type": "named",
+          "value": "stdio"
+        }
+      ],
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "name": "--rm",
+          "type": "named"
+        },
+        {
+          "name": "-i",
+          "type": "named"
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "a7e5bbd432",
+    "published_at": "2026-09-03T21:13:34.951389Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.marcomq/mq-bridge-app",
+    "server_version": "0.4.10",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-03T21:13:34.951389Z"
+  },
+  "title": "mq-bridge-app",
+  "type": "mcp_server",
+  "version": "0.4.10"
+}

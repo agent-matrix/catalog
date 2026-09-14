@@ -1,0 +1,70 @@
+{
+  "description": "Provision and manage Krova Cloud Cubes \u2014 Firecracker microVMs with root access and no public IP.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:13+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.cloud-krova-mcp.stdio.1a543e5961",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/krovacloud/krova-node",
+    "homepage": "https://github.com/krovacloud/krova-node",
+    "repository": "https://github.com/krovacloud/krova-node"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@krovacloud/mcp@0.3.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "cloud.krova/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "A Krova Cloud API key, created under Settings \u2192 API keys. Scoped to one Space and inherits the permissions of the membership that created it.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "KROVA_API_KEY"
+        },
+        {
+          "description": "Optional. A Space id the Cube tools default to, so a client does not have to name a Space on every call.",
+          "format": "string",
+          "name": "KROVA_SPACE_ID"
+        },
+        {
+          "description": "Optional. Overrides the API base URL. Only needed against a non-production environment.",
+          "format": "string",
+          "name": "KROVA_BASE_URL"
+        }
+      ],
+      "identifier": "@krovacloud/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1a543e5961",
+    "published_at": "2026-09-05T17:05:15.489799Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "cloud.krova/mcp",
+    "server_version": "0.3.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-05T17:05:15.489799Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.5"
+}

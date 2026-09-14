@@ -1,0 +1,87 @@
+{
+  "description": "Ship a real marketing site from your coding agent: domain, HTTPS and a working inbox.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:07+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-clize-sites.stdio.f4d62d3f0b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cooldk/clize-cli",
+    "homepage": "https://github.com/cooldk/clize-cli",
+    "repository": "https://github.com/cooldk/clize-cli"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "description": "Resolve bins from the @clize/sites package (its @clize/clize dependency provides them)",
+            "name": "--package",
+            "type": "named",
+            "value": "@clize/sites"
+          },
+          {
+            "description": "The MCP server entry point (the package's second bin; the default bin is the clize CLI)",
+            "type": "positional",
+            "value": "clize-mcp",
+            "valueHint": "clize-mcp"
+          },
+          "@clize/sites@0.35.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.clize/sites",
+  "packages": [
+    {
+      "identifier": "@clize/sites",
+      "packageArguments": [
+        {
+          "description": "Expose only the Sites by Clize tools (omit for the full clize tool set)",
+          "name": "--profile",
+          "type": "named",
+          "value": "sites"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "description": "Resolve bins from the @clize/sites package (its @clize/clize dependency provides them)",
+          "name": "--package",
+          "type": "named",
+          "value": "@clize/sites"
+        },
+        {
+          "description": "The MCP server entry point (the package's second bin; the default bin is the clize CLI)",
+          "type": "positional",
+          "value": "clize-mcp",
+          "valueHint": "clize-mcp"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.35.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f4d62d3f0b",
+    "published_at": "2026-09-02T19:38:46.235696Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.clize/sites",
+    "server_version": "0.35.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-02T19:38:46.235696Z"
+  },
+  "title": "Sites by Clize",
+  "type": "mcp_server",
+  "version": "0.35.1"
+}

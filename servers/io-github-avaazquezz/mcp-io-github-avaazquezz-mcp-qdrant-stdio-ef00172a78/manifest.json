@@ -1,0 +1,78 @@
+{
+  "description": "MCP server that wraps the Qdrant vector database API as tools.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-avaazquezz-mcp-qdrant.stdio.ef00172a78",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/avaazquezz/Qdrant-MCP",
+    "homepage": "https://github.com/avaazquezz/Qdrant-MCP",
+    "repository": "https://github.com/avaazquezz/Qdrant-MCP"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-qdrant==1.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.avaazquezz/mcp-qdrant",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Qdrant server URL, e.g. http://localhost:6333 (mutually exclusive with QDRANT_LOCAL_PATH)",
+          "name": "QDRANT_URL"
+        },
+        {
+          "description": "Qdrant API key, if your instance requires one",
+          "isSecret": true,
+          "name": "QDRANT_API_KEY"
+        },
+        {
+          "description": "Path to an embedded Qdrant instance, instead of a URL",
+          "name": "QDRANT_LOCAL_PATH"
+        },
+        {
+          "default": "core",
+          "description": "Comma-separated toolsets to enable: core, search, payload, snapshots, observability",
+          "name": "QDRANT_MCP_TOOLSETS"
+        },
+        {
+          "default": "false",
+          "description": "Block every tool not marked read-only",
+          "name": "QDRANT_MCP_READ_ONLY"
+        }
+      ],
+      "identifier": "mcp-qdrant",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ef00172a78",
+    "published_at": "2026-08-31T21:11:55.229615Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.avaazquezz/mcp-qdrant",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-31T21:11:55.229615Z"
+  },
+  "title": "Qdrant MCP",
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

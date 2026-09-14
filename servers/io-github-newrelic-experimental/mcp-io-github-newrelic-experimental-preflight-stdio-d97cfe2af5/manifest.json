@@ -1,0 +1,72 @@
+{
+  "description": "New Relic MCP server for observing AI coding assistants (Claude Code, Cursor, Copilot, etc.)",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:00+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-newrelic-experimental-preflight.stdio.d97cfe2af5",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/newrelic-experimental/preflight",
+    "homepage": "https://github.com/newrelic-experimental/preflight",
+    "repository": "https://github.com/newrelic-experimental/preflight"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@newrelic/preflight@1.48.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.newrelic-experimental/preflight",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "New Relic ingest license key. Optional: without it Preflight runs local-only with the dashboard at localhost:7777.",
+          "format": "string",
+          "isSecret": true,
+          "name": "NEW_RELIC_LICENSE_KEY"
+        },
+        {
+          "description": "New Relic account id, used for dashboard and alert deployment. Optional.",
+          "format": "string",
+          "name": "NEW_RELIC_ACCOUNT_ID"
+        }
+      ],
+      "identifier": "@newrelic/preflight",
+      "packageArguments": [
+        {
+          "description": "Run as an MCP stdio server (required for MCP clients)",
+          "name": "--stdio",
+          "type": "named"
+        }
+      ],
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.48.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d97cfe2af5",
+    "published_at": "2026-09-09T19:02:21.75069Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.newrelic-experimental/preflight",
+    "server_version": "1.48.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-09T19:02:21.75069Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.48.3"
+}

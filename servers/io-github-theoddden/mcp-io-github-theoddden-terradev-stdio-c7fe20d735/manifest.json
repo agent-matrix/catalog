@@ -1,0 +1,104 @@
+{
+  "description": "Cross-cloud GPU orchestration CLI.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:29+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-theoddden-terradev.stdio.c7fe20d735",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/theoddden/Terradev",
+    "homepage": "https://github.com/theoddden/Terradev",
+    "repository": "https://github.com/theoddden/Terradev"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "terradev-cli==6.2.18"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.theoddden/terradev",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "RunPod API key \u2014 get at runpod.io/console/settings/api-keys",
+          "isSecret": true,
+          "name": "RUNPOD_API_KEY"
+        },
+        {
+          "description": "Vast.ai API key \u2014 get at console.vast.ai/api-keys",
+          "isSecret": true,
+          "name": "VAST_API_KEY"
+        },
+        {
+          "description": "Lambda Labs API key \u2014 get at cloud.lambdalabs.com/api-keys",
+          "isSecret": true,
+          "name": "LAMBDA_API_KEY"
+        },
+        {
+          "description": "HuggingFace API token \u2014 get at huggingface.co/settings/tokens",
+          "isSecret": true,
+          "name": "HF_TOKEN"
+        },
+        {
+          "description": "AWS access key ID (pair with AWS_SECRET_ACCESS_KEY)",
+          "isSecret": true,
+          "name": "AWS_ACCESS_KEY_ID"
+        },
+        {
+          "description": "AWS secret access key",
+          "isSecret": true,
+          "name": "AWS_SECRET_ACCESS_KEY"
+        },
+        {
+          "description": "Path to GCP service account JSON key file",
+          "name": "GOOGLE_APPLICATION_CREDENTIALS"
+        },
+        {
+          "description": "Bearer token for SSE/remote transport mode (stdio mode does not require this)",
+          "isSecret": true,
+          "name": "TERRADEV_MCP_BEARER_TOKEN"
+        }
+      ],
+      "identifier": "terradev-cli",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        },
+        {
+          "type": "positional",
+          "value": "serve"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "6.2.18"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c7fe20d735",
+    "published_at": "2026-09-08T16:22:15.905644Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.theoddden/terradev",
+    "server_version": "6.2.18",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-08T16:22:15.905644Z"
+  },
+  "title": "Terradev",
+  "type": "mcp_server",
+  "version": "6.2.18"
+}

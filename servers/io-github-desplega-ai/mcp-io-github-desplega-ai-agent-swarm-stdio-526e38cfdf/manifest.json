@@ -1,0 +1,87 @@
+{
+  "description": "Full Agent Swarm API and MCP server with local SQLite storage for multi-agent orchestration.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-desplega-ai-agent-swarm.stdio.526e38cfdf",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/desplega-ai/agent-swarm",
+    "homepage": "https://github.com/desplega-ai/agent-swarm",
+    "repository": "https://github.com/desplega-ai/agent-swarm"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@desplega.ai/agent-swarm@1.144.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.desplega-ai/agent-swarm",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API key for your local Agent Swarm instance.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AGENT_SWARM_API_KEY"
+        }
+      ],
+      "identifier": "@desplega.ai/agent-swarm",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "api"
+        },
+        {
+          "default": "3000",
+          "description": "Port for the local Agent Swarm API and MCP server.",
+          "name": "--port",
+          "type": "named"
+        }
+      ],
+      "registryType": "npm",
+      "transport": {
+        "headers": [
+          {
+            "description": "Bearer token using the API key for your local Agent Swarm instance (include the Bearer prefix).",
+            "isRequired": true,
+            "isSecret": true,
+            "name": "Authorization",
+            "placeholder": "Bearer <AGENT_SWARM_API_KEY>"
+          },
+          {
+            "description": "ID of an agent registered on your local Agent Swarm instance.",
+            "isRequired": true,
+            "name": "X-Agent-ID",
+            "placeholder": "00000000-0000-0000-0000-000000000000"
+          }
+        ],
+        "type": "streamable-http",
+        "url": "http://localhost:{--port}/mcp"
+      },
+      "version": "1.144.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "526e38cfdf",
+    "published_at": "2026-09-10T10:28:09.321833Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.desplega-ai/agent-swarm",
+    "server_version": "1.144.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-10T10:28:09.321833Z"
+  },
+  "title": "Agent Swarm",
+  "type": "mcp_server",
+  "version": "1.144.0"
+}

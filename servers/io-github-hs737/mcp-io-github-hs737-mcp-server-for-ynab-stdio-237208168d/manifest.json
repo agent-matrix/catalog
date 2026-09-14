@@ -1,0 +1,71 @@
+{
+  "description": "Connect your AI assistant to YNAB. Read-only by default, with reversible opt-in writes.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-hs737-mcp-server-for-ynab.stdio.237208168d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/hs737/mcp-server-for-ynab",
+    "homepage": "https://github.com/hs737/mcp-server-for-ynab",
+    "repository": "https://github.com/hs737/mcp-server-for-ynab"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-server-for-ynab==0.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.hs737/mcp-server-for-ynab",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "YNAB personal access token from app.ynab.com/settings/developer.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "YNAB_API_KEY"
+        },
+        {
+          "description": "Default plan (budget) id, so tools do not need it passed on every call.",
+          "format": "string",
+          "name": "YNAB_PLAN_ID"
+        },
+        {
+          "description": "Set to 1 to register the write tools. Unset means read-only, and the write tools are absent from tools/list entirely.",
+          "format": "string",
+          "name": "YNAB_ALLOW_WRITES"
+        }
+      ],
+      "identifier": "mcp-server-for-ynab",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "237208168d",
+    "published_at": "2026-09-06T13:40:23.374972Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.hs737/mcp-server-for-ynab",
+    "server_version": "0.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-06T13:40:23.374972Z"
+  },
+  "title": "MCP Server for YNAB",
+  "type": "mcp_server",
+  "version": "0.4.0"
+}

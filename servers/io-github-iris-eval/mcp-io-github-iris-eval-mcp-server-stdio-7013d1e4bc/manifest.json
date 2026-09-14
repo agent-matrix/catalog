@@ -1,0 +1,156 @@
+{
+  "description": "Stop shipping agents on vibes. Score every agent output for quality, safety, and cost.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:42+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-iris-eval-mcp-server.stdio.7013d1e4bc",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/iris-eval/mcp-server",
+    "homepage": "https://github.com/iris-eval/mcp-server",
+    "repository": "https://github.com/iris-eval/mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@iris-eval/mcp-server@0.12.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.iris-eval/mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API key for HTTP authentication (optional, recommended for production)",
+          "format": "string",
+          "isSecret": true,
+          "name": "IRIS_API_KEY"
+        },
+        {
+          "description": "SQLite database path",
+          "format": "string",
+          "name": "IRIS_DB_PATH"
+        },
+        {
+          "description": "Log level: debug, info, warn, error",
+          "format": "string",
+          "name": "IRIS_LOG_LEVEL"
+        },
+        {
+          "description": "Directory for the database, custom rules and preferences (default ~/.iris)",
+          "format": "string",
+          "name": "IRIS_HOME"
+        },
+        {
+          "description": "Enables evaluate_with_llm_judge and verify_citations with an Anthropic model. Optional: the deterministic rules never need a key",
+          "format": "string",
+          "isSecret": true,
+          "name": "IRIS_ANTHROPIC_API_KEY"
+        },
+        {
+          "description": "Enables evaluate_with_llm_judge and verify_citations with an OpenAI model. Optional: the deterministic rules never need a key",
+          "format": "string",
+          "isSecret": true,
+          "name": "IRIS_OPENAI_API_KEY"
+        },
+        {
+          "description": "Hard cap on the worst-case cost of one judge or citation call (default 0.25)",
+          "format": "string",
+          "name": "IRIS_LLM_JUDGE_MAX_COST_USD_PER_EVAL"
+        },
+        {
+          "description": "Let verify_citations fetch URLs (off by default)",
+          "format": "boolean",
+          "name": "IRIS_CITATION_ALLOW_FETCH"
+        },
+        {
+          "description": "Start the dashboard alongside the server (same as --dashboard)",
+          "format": "boolean",
+          "name": "IRIS_DASHBOARD"
+        },
+        {
+          "description": "Dashboard port (default 6920); IRIS_PORT is the MCP HTTP transport port (default 3000)",
+          "format": "number",
+          "name": "IRIS_DASHBOARD_PORT"
+        },
+        {
+          "description": "MCP HTTP transport port (default 3000); only used with --transport http",
+          "format": "number",
+          "name": "IRIS_PORT"
+        },
+        {
+          "description": "OTLP/HTTP collector URL; when set, every stored trace is also exported as OpenTelemetry spans (best-effort, asynchronous)",
+          "format": "string",
+          "name": "IRIS_OTEL_ENDPOINT"
+        },
+        {
+          "description": "Comma-separated domain allowlist for verify_citations fetches (only consulted when IRIS_CITATION_ALLOW_FETCH is on)",
+          "format": "string",
+          "name": "IRIS_CITATION_DOMAINS"
+        },
+        {
+          "description": "Transport: stdio (default) or http; same as --transport",
+          "format": "string",
+          "name": "IRIS_TRANSPORT"
+        },
+        {
+          "description": "Bind host for the HTTP transport (default 127.0.0.1); only used with --transport http",
+          "format": "string",
+          "name": "IRIS_HOST"
+        },
+        {
+          "description": "Comma-separated Origin allowlist for the HTTP transport and dashboard CORS (default http://localhost:*)",
+          "format": "string",
+          "name": "IRIS_ALLOWED_ORIGINS"
+        },
+        {
+          "description": "Bind host for the dashboard (default 127.0.0.1); same as --dashboard-host",
+          "format": "string",
+          "name": "IRIS_DASHBOARD_HOST"
+        },
+        {
+          "description": "Comma-separated key=value headers sent with every OTLP export (for example an auth token for your collector)",
+          "format": "string",
+          "name": "IRIS_OTEL_HEADERS"
+        },
+        {
+          "description": "service.name resource attribute on exported spans (default iris-mcp)",
+          "format": "string",
+          "name": "IRIS_OTEL_SERVICE_NAME"
+        },
+        {
+          "description": "Timeout in milliseconds for each OTLP export request",
+          "format": "number",
+          "name": "IRIS_OTEL_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "@iris-eval/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.12.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7013d1e4bc",
+    "published_at": "2026-09-08T03:15:13.977243Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.iris-eval/mcp-server",
+    "server_version": "0.12.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-08T03:15:13.977243Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.12.1"
+}

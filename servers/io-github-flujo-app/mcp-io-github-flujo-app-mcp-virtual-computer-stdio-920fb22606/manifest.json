@@ -1,0 +1,103 @@
+{
+  "description": "A persistent Docker computer rendered as a Three.js laptop, with an optional live Xfce desktop.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:36+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-flujo-app-mcp-virtual-computer.stdio.920fb22606",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/flujo-app/mcp-virtual-computer",
+    "homepage": "https://github.com/flujo-app/mcp-virtual-computer",
+    "repository": "https://github.com/flujo-app/mcp-virtual-computer"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-virtual-computer==0.2.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.flujo-app/mcp-virtual-computer",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "agent-workstation",
+          "description": "Stable identity of the one persistent Docker computer.",
+          "format": "string",
+          "isRequired": true,
+          "name": "COMPUTER_ID",
+          "placeholder": "agent-workstation"
+        },
+        {
+          "choices": [
+            "false",
+            "true"
+          ],
+          "default": "false",
+          "description": "Start the real Xfce desktop instead of the virtual desktop.",
+          "format": "boolean",
+          "name": "DESKTOP_ENVIRONMENT"
+        },
+        {
+          "choices": [
+            "false",
+            "true"
+          ],
+          "default": "true",
+          "description": "Allow outbound network access from the Docker computer.",
+          "format": "boolean",
+          "name": "NETWORK_ACCESS"
+        },
+        {
+          "choices": [
+            "false",
+            "true"
+          ],
+          "default": "true",
+          "description": "On Windows, install and start Docker Desktop lazily when needed.",
+          "format": "boolean",
+          "name": "AUTO_INSTALL_DOCKER"
+        },
+        {
+          "choices": [
+            "false",
+            "true"
+          ],
+          "default": "false",
+          "description": "Expose runtime status and runtime network/desktop switching tools.",
+          "format": "boolean",
+          "name": "EXPOSE_LIFECYCLE_TOOLS"
+        }
+      ],
+      "identifier": "mcp-virtual-computer",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "920fb22606",
+    "published_at": "2026-09-01T06:45:56.408969Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.flujo-app/mcp-virtual-computer",
+    "server_version": "0.2.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-01T06:45:56.408969Z"
+  },
+  "title": "MCP Virtual Computer",
+  "type": "mcp_server",
+  "version": "0.2.5"
+}

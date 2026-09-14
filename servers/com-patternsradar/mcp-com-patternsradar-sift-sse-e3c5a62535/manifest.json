@@ -1,0 +1,53 @@
+{
+  "description": "Screen 2,400+ NSE equities with the Sift query language over 30 years of daily data.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:27+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-patternsradar-sift.sse.e3c5a62535",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://api.patternsradar.com/mcp"
+    }
+  },
+  "name": "com.patternsradar/sift",
+  "provenance": {
+    "identity_key": "e3c5a62535",
+    "published_at": "2026-09-06T13:16:03.071069Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.patternsradar/sift",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-06T13:16:03.071069Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "PatternsRadar API key. Free on every plan \u2014 create one at https://patternsradar.com/account",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {api_key}",
+          "variables": {
+            "api_key": {
+              "description": "Your PatternsRadar API key, starting with prdr_",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://api.patternsradar.com/mcp"
+    }
+  ],
+  "title": "PatternsRadar \u2014 NSE stock screener",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

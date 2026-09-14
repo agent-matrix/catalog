@@ -1,0 +1,93 @@
+{
+  "description": "Look up amateur radio repeaters from RepeaterBook.com by location, band, and mode.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:59+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-MicaelJarniac-repeaterbook.stdio.d4074b61ae",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/MicaelJarniac/repeaterbook",
+    "homepage": "https://github.com/MicaelJarniac/repeaterbook",
+    "repository": "https://github.com/MicaelJarniac/repeaterbook"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "The console script (repeaterbook-mcp) and the distribution (repeaterbook) have different names, and the server lives behind the 'mcp' extra.",
+            "name": "--from",
+            "type": "named",
+            "value": "repeaterbook[mcp]"
+          },
+          {
+            "type": "positional",
+            "value": "repeaterbook-mcp"
+          },
+          "repeaterbook==0.11.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.MicaelJarniac/repeaterbook",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Per-user RepeaterBook 'rbuapp_' API token. Required: every export needs an approved token, and the server refuses to start without it. No application registration needed - log in to your RepeaterBook account, open https://www.repeaterbook.com/user/api_apps.php, find 'RepeaterBook Python Client' (App #114), and generate a token for it.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "REPEATERBOOK_APP_TOKEN"
+        },
+        {
+          "default": ".",
+          "description": "Where the SQLite database and HTTP cache live. Created if missing; a leading '~' is expanded.",
+          "name": "REPEATERBOOK_WORKING_DIR"
+        },
+        {
+          "description": "Contact address used in the API User-Agent. Leave unset: it defaults to the address registered for App #114, and any other value returns 403 ua_mismatch. Set it only if you registered your own separate application with RepeaterBook.",
+          "format": "string",
+          "name": "REPEATERBOOK_APP_CONTACT"
+        }
+      ],
+      "identifier": "repeaterbook",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "The console script (repeaterbook-mcp) and the distribution (repeaterbook) have different names, and the server lives behind the 'mcp' extra.",
+          "name": "--from",
+          "type": "named",
+          "value": "repeaterbook[mcp]"
+        },
+        {
+          "type": "positional",
+          "value": "repeaterbook-mcp"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.11.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d4074b61ae",
+    "published_at": "2026-09-04T23:37:12.818826Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.MicaelJarniac/repeaterbook",
+    "server_version": "0.11.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-04T23:37:12.818826Z"
+  },
+  "title": "RepeaterBook",
+  "type": "mcp_server",
+  "version": "0.11.3"
+}

@@ -1,0 +1,79 @@
+{
+  "description": "Read-only MCP server for the Monzo banking API: OAuth, local transaction cache, spending analysis.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:04+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-partymola-monzo-mcp.stdio.6c4fbec3fc",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/partymola/monzo-mcp",
+    "homepage": "https://github.com/partymola/monzo-mcp",
+    "repository": "https://github.com/partymola/monzo-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "isRequired": true,
+            "name": "-v",
+            "type": "named",
+            "value": "{data_volume}:/data",
+            "variables": {
+              "data_volume": {
+                "default": "monzo-mcp-data",
+                "description": "Docker volume or host directory holding the OAuth credentials and the transaction cache. Without it the container starts but every tool reports that it is not configured, and anything authorised is lost when the container is replaced.",
+                "isRequired": true
+              }
+            }
+          },
+          "ghcr.io/partymola/monzo-mcp:v0.8.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.partymola/monzo-mcp",
+  "packages": [
+    {
+      "identifier": "ghcr.io/partymola/monzo-mcp:v0.8.0",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "isRequired": true,
+          "name": "-v",
+          "type": "named",
+          "value": "{data_volume}:/data",
+          "variables": {
+            "data_volume": {
+              "default": "monzo-mcp-data",
+              "description": "Docker volume or host directory holding the OAuth credentials and the transaction cache. Without it the container starts but every tool reports that it is not configured, and anything authorised is lost when the container is replaced.",
+              "isRequired": true
+            }
+          }
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "6c4fbec3fc",
+    "published_at": "2026-08-31T21:35:16.931774Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.partymola/monzo-mcp",
+    "server_version": "0.8.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-31T21:35:16.931774Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.8.0"
+}

@@ -1,0 +1,69 @@
+{
+  "description": "Fixed-price maintenance for public GitHub issues, paid in USDC on Solana.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:44+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.org-opencovenant-mizuki.stdio.e600c7f51b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/open-covenant/covenant",
+    "homepage": "https://github.com/open-covenant/covenant",
+    "repository": "https://github.com/open-covenant/covenant"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mizuki-mcp@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "org.opencovenant/mizuki",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Mizuki API base URL. Defaults to the public service.",
+          "format": "string",
+          "name": "MIZUKI_API_URL"
+        },
+        {
+          "description": "Maintainer API token. Only needed for repository, preflight, and payment-status tools; quoting and public reads work without it.",
+          "format": "string",
+          "isSecret": true,
+          "name": "MIZUKI_API_TOKEN"
+        },
+        {
+          "description": "Per-request timeout in milliseconds.",
+          "format": "string",
+          "name": "MIZUKI_MCP_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "mizuki-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e600c7f51b",
+    "published_at": "2026-09-02T12:23:57.483825Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "org.opencovenant/mizuki",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-02T12:23:57.483825Z"
+  },
+  "title": "Mizuki",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

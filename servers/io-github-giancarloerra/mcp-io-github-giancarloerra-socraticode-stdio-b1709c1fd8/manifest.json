@@ -1,0 +1,144 @@
+{
+  "description": "MCP server for enterprise local codebase indexing, semantic search, and code dependency graphs.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-giancarloerra-socraticode.stdio.b1709c1fd8",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/giancarloerra/socraticode",
+    "homepage": "https://github.com/giancarloerra/socraticode",
+    "repository": "https://github.com/giancarloerra/socraticode"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "socraticode@1.13.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.giancarloerra/socraticode",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Embedding provider to use: ollama (default), openai, google, lmstudio, or litellm",
+          "format": "string",
+          "name": "EMBEDDING_PROVIDER"
+        },
+        {
+          "description": "API key for OpenAI embeddings (required only when EMBEDDING_PROVIDER=openai)",
+          "format": "string",
+          "isSecret": true,
+          "name": "OPENAI_API_KEY"
+        },
+        {
+          "description": "API key for Google embeddings (required only when EMBEDDING_PROVIDER=google)",
+          "format": "string",
+          "isSecret": true,
+          "name": "GOOGLE_API_KEY"
+        },
+        {
+          "description": "URL of the Ollama server (default: auto-detected; Docker-managed or http://localhost:11434)",
+          "format": "string",
+          "name": "OLLAMA_URL"
+        },
+        {
+          "description": "Embedding model name (defaults per provider; required for lmstudio and litellm)",
+          "format": "string",
+          "name": "EMBEDDING_MODEL"
+        },
+        {
+          "description": "Embedding vector dimensions (defaults per provider; required for lmstudio and litellm)",
+          "format": "string",
+          "name": "EMBEDDING_DIMENSIONS"
+        },
+        {
+          "description": "Ollama mode: auto (default), docker, or external",
+          "format": "string",
+          "name": "OLLAMA_MODE"
+        },
+        {
+          "description": "Optional API key for authenticated Ollama proxies",
+          "format": "string",
+          "isSecret": true,
+          "name": "OLLAMA_API_KEY"
+        },
+        {
+          "description": "LM Studio OpenAI-compatible base URL (default: http://localhost:1234/v1)",
+          "format": "string",
+          "name": "LMSTUDIO_URL"
+        },
+        {
+          "description": "Optional API key when LM Studio authentication is enabled",
+          "format": "string",
+          "isSecret": true,
+          "name": "LMSTUDIO_API_KEY"
+        },
+        {
+          "description": "Allow compatible embedding servers without a models endpoint to be probed directly",
+          "format": "string",
+          "name": "LMSTUDIO_ALLOW_MISSING_MODEL_LISTING"
+        },
+        {
+          "description": "LiteLLM OpenAI-compatible base URL (default: http://localhost:4000/v1)",
+          "format": "string",
+          "name": "LITELLM_URL"
+        },
+        {
+          "description": "LiteLLM master or virtual API key (required when EMBEDDING_PROVIDER=litellm)",
+          "format": "string",
+          "isSecret": true,
+          "name": "LITELLM_API_KEY"
+        },
+        {
+          "description": "Forward the dimensions parameter through LiteLLM when explicitly enabled",
+          "format": "string",
+          "name": "LITELLM_SEND_DIMENSIONS"
+        },
+        {
+          "description": "Qdrant mode: managed (default, Docker-managed) or external (user-provided instance)",
+          "format": "string",
+          "name": "QDRANT_MODE"
+        },
+        {
+          "description": "Full URL for remote/cloud Qdrant (e.g. https://xyz.cloud.qdrant.io:6333). Only needed when QDRANT_MODE=external",
+          "format": "string",
+          "name": "QDRANT_URL"
+        },
+        {
+          "description": "API key for remote Qdrant instance. Only needed when QDRANT_MODE=external",
+          "format": "string",
+          "isSecret": true,
+          "name": "QDRANT_API_KEY"
+        }
+      ],
+      "identifier": "socraticode",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.13.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b1709c1fd8",
+    "published_at": "2026-09-10T16:52:27.481264Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.giancarloerra/socraticode",
+    "server_version": "1.13.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-10T16:52:27.481264Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.13.3"
+}

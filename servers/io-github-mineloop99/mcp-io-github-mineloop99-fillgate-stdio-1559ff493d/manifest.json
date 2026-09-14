@@ -1,0 +1,106 @@
+{
+  "description": "Fee-carrying trading tools for AI agents: Jupiter Ultra, Polymarket CLOB v2, Hyperliquid perps.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:55+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mineloop99-fillgate.stdio.1559ff493d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mineloop99/fillgate",
+    "homepage": "https://github.com/mineloop99/fillgate",
+    "repository": "https://github.com/mineloop99/fillgate"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@fillgate/mcp@0.3.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mineloop99/fillgate",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "true",
+          "description": "true = never broadcast; every execute returns a preview",
+          "name": "DRY_RUN"
+        },
+        {
+          "default": "250",
+          "description": "Hard cap per prepared order, in USD",
+          "name": "MAX_NOTIONAL_USD"
+        },
+        {
+          "default": "100",
+          "description": "Reject quotes above this slippage",
+          "name": "MAX_SLIPPAGE_BPS"
+        },
+        {
+          "default": "20",
+          "description": "Max prepare/execute calls per user per minute",
+          "name": "RATE_LIMIT_PER_MIN"
+        },
+        {
+          "description": "Comma-separated venues to enable (jupiter,polymarket,hyperliquid). Unset = auto-detect from the configured write paths; only fully configured venues register their tools.",
+          "name": "FILLGATE_VENUES"
+        },
+        {
+          "description": "Jupiter Ultra referral account (from scripts/setup-jupiter-referral.ts). Unset = swaps route the referral fee to Fillgate's own default account; the Jupiter tools are always registered.",
+          "name": "JUP_REFERRAL_ACCOUNT"
+        },
+        {
+          "description": "Operator Solana wallet, base58 or JSON array secret key; MCP-operator only, never a user's key",
+          "isSecret": true,
+          "name": "OPERATOR_SOLANA_SECRET_KEY"
+        },
+        {
+          "description": "Polymarket builder code (Settings -> Builders); unset = orders earn no builder fee",
+          "name": "PM_BUILDER_CODE"
+        },
+        {
+          "description": "Operator EVM wallet for Polymarket + Hyperliquid; MCP-operator only, never a user's key",
+          "isSecret": true,
+          "name": "OPERATOR_EVM_PRIVATE_KEY"
+        },
+        {
+          "description": "Hyperliquid builder address; unset = orders earn no builder fee",
+          "name": "HL_BUILDER_ADDRESS"
+        },
+        {
+          "default": "true",
+          "description": "true = Hyperliquid testnet (default until mainnet builder collateral is funded)",
+          "name": "HL_TESTNET"
+        }
+      ],
+      "identifier": "@fillgate/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1559ff493d",
+    "published_at": "2026-09-04T09:13:46.258847Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mineloop99/fillgate",
+    "server_version": "0.3.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-04T09:13:46.258847Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.1"
+}

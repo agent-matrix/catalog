@@ -1,0 +1,87 @@
+{
+  "description": "A real email inbox for AI agents: human-approved sends, untrusted-by-default inbound.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:07+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-clize-inbox.stdio.81c0a165fc",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cooldk/clize-cli",
+    "homepage": "https://github.com/cooldk/clize-cli",
+    "repository": "https://github.com/cooldk/clize-cli"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "description": "Resolve bins from the @clize/inbox package (its @clize/clize dependency provides them)",
+            "name": "--package",
+            "type": "named",
+            "value": "@clize/inbox"
+          },
+          {
+            "description": "The MCP server entry point (the package's second bin; the default bin is the clize CLI)",
+            "type": "positional",
+            "value": "clize-mcp",
+            "valueHint": "clize-mcp"
+          },
+          "@clize/inbox@0.34.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.clize/inbox",
+  "packages": [
+    {
+      "identifier": "@clize/inbox",
+      "packageArguments": [
+        {
+          "description": "Expose only the Agent Inbox tools (omit for the full clize tool set)",
+          "name": "--profile",
+          "type": "named",
+          "value": "inbox"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "description": "Resolve bins from the @clize/inbox package (its @clize/clize dependency provides them)",
+          "name": "--package",
+          "type": "named",
+          "value": "@clize/inbox"
+        },
+        {
+          "description": "The MCP server entry point (the package's second bin; the default bin is the clize CLI)",
+          "type": "positional",
+          "value": "clize-mcp",
+          "valueHint": "clize-mcp"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.34.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "81c0a165fc",
+    "published_at": "2026-09-02T17:11:12.683116Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.clize/inbox",
+    "server_version": "0.34.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-02T17:11:12.683116Z"
+  },
+  "title": "Agent Inbox",
+  "type": "mcp_server",
+  "version": "0.34.0"
+}

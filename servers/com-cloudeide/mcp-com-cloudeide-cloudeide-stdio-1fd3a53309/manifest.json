@@ -1,0 +1,74 @@
+{
+  "description": "Deploy from your terminal, and give an AI coding agent the same abilities over MCP.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:17+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-cloudeide-cloudeide.stdio.1fd3a53309",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cloudeide/cloudeide",
+    "homepage": "https://github.com/cloudeide/cloudeide",
+    "repository": "https://github.com/cloudeide/cloudeide"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "cloudeide@0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.cloudeide/cloudeide",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API token from Settings -> API tokens in the CloudeIDE dashboard. The server exits with a message if it is missing.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CLOUDEIDE_TOKEN"
+        },
+        {
+          "default": "https://cloudeide.com",
+          "description": "Base URL of the CloudeIDE API. Only needed for a self-hosted server.",
+          "format": "string",
+          "name": "CLOUDEIDE_API_URL"
+        }
+      ],
+      "identifier": "cloudeide",
+      "packageArguments": [
+        {
+          "description": "Runs the MCP server. The same binary is also a normal CLI without it.",
+          "type": "positional",
+          "value": "mcp",
+          "valueHint": "mcp"
+        }
+      ],
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1fd3a53309",
+    "published_at": "2026-09-01T12:47:30.588598Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.cloudeide/cloudeide",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-01T12:47:30.588598Z"
+  },
+  "title": "CloudeIDE",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

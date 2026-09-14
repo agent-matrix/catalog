@@ -1,0 +1,99 @@
+{
+  "description": "MemoryIndustry persistent memory MCP server: BM25+MMR retrieval and audit.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:57+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-LeandroPG19-memory-industry.stdio.57ff0fac68",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/LeandroPG19/Memorys",
+    "homepage": "https://github.com/LeandroPG19/Memorys",
+    "repository": "https://github.com/LeandroPG19/Memorys"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "memory-industry@0.25.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.LeandroPG19/memory-industry",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "PostgreSQL connection URL (e.g. postgresql://user:pass@localhost:5432/brain)",
+          "format": "string",
+          "isRequired": true,
+          "name": "DATABASE_URL"
+        },
+        {
+          "description": "Set to 'off' to disable v0.8 project scoping filters (admin/debug only).",
+          "format": "string",
+          "name": "CUBA_PROJECT_FILTER"
+        },
+        {
+          "description": "Directory used by cuba_sync export/import (default ./.memory-industry/, falls back to ./.cuba-memorys/).",
+          "format": "string",
+          "name": "CUBA_SYNC_DIR"
+        },
+        {
+          "description": "cuba_juez backend selector: nli | mcp_sampling | claude_cli | heuristic | auto (default auto).",
+          "format": "string",
+          "name": "CUBA_JUDGE"
+        },
+        {
+          "description": "Subprocess CLI used by ClaudeCodeJudge (default 'claude').",
+          "format": "string",
+          "name": "CUBA_JUEZ_CLI"
+        },
+        {
+          "description": "Model name passed to the judge backend (default 'claude-haiku-4-5').",
+          "format": "string",
+          "name": "CUBA_JUEZ_MODEL"
+        },
+        {
+          "description": "Isolated entities the REM cycle scans for relations per run (default 5, 0 disables).",
+          "format": "string",
+          "name": "CUBA_REM_RELATION_BATCH"
+        },
+        {
+          "description": "Directory holding the bge-reranker ONNX model; enables cross-encoder reranking (+93% nDCG on GPU).",
+          "format": "string",
+          "name": "CUBA_RERANKER_PATH"
+        },
+        {
+          "description": "Pad reranker batches to a constant 512 tokens. Defaults on for GPU builds, off on CPU.",
+          "format": "string",
+          "name": "CUBA_RERANK_FIXED_SHAPE"
+        }
+      ],
+      "identifier": "memory-industry",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.25.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "57ff0fac68",
+    "published_at": "2026-09-12T00:24:43.560093Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.LeandroPG19/memory-industry",
+    "server_version": "0.25.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-12T00:24:43.560093Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.25.0"
+}

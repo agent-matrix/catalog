@@ -1,0 +1,90 @@
+{
+  "description": "Monitor ICTContact / ICTDialer outbound campaigns, and start and stop them when writes are on.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ictinnovations-ictcontact-mcp.stdio.cff2519cc9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ictinnovations/ictcontact-mcp",
+    "homepage": "https://github.com/ictinnovations/ictcontact-mcp",
+    "repository": "https://github.com/ictinnovations/ictcontact-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "ictcontact-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ictinnovations/ictcontact-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of your ICTContact / ICTDialer server, without the /rest suffix, e.g. https://your-ictcontact.",
+          "format": "string",
+          "isRequired": true,
+          "name": "ICTCONTACT_BASE_URL"
+        },
+        {
+          "description": "API account username.",
+          "format": "string",
+          "isRequired": true,
+          "name": "ICTCONTACT_USERNAME"
+        },
+        {
+          "description": "Password for the account.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ICTCONTACT_PASSWORD"
+        },
+        {
+          "default": "false",
+          "description": "Unlocks starting and stopping campaigns, which begins live outbound calling and can cost money. When false those tools are not registered at all. Leave off unless you mean it.",
+          "format": "boolean",
+          "name": "ICTCONTACT_MCP_ALLOW_WRITE"
+        },
+        {
+          "default": "30000",
+          "description": "Per request timeout in milliseconds. Defaults to 30000.",
+          "format": "number",
+          "name": "ICTCONTACT_TIMEOUT_MS"
+        },
+        {
+          "default": "false",
+          "description": "Skip TLS certificate verification. Only for a self-signed test server.",
+          "format": "boolean",
+          "name": "ICTCONTACT_TLS_INSECURE"
+        }
+      ],
+      "identifier": "ictcontact-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "cff2519cc9",
+    "published_at": "2026-09-01T08:28:57.639798Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ictinnovations/ictcontact-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-01T08:28:57.639798Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

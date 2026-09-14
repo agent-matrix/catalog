@@ -1,0 +1,94 @@
+{
+  "description": "WordPress edit previews, scoped correction checks, and change records for trusted operators.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:19+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cgallic-wpguard-mcp.stdio.ec8f302fe7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cgallic/wpguard-mcp",
+    "homepage": "https://github.com/cgallic/wpguard-mcp",
+    "repository": "https://github.com/cgallic/wpguard-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Expose the MCP endpoint on host loopback only.",
+            "name": "--publish",
+            "type": "named",
+            "value": "127.0.0.1:8642:8642"
+          },
+          {
+            "description": "Persist the private site registry, corrections, and change records.",
+            "name": "--volume",
+            "type": "named",
+            "value": "wpguard-state:/state"
+          },
+          "ghcr.io/cgallic/wpguard-mcp:0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cgallic/wpguard-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Generate a strong secret for trusted operators. This token grants admin tool access.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "WPGUARD_MCP_TOKEN"
+        }
+      ],
+      "identifier": "ghcr.io/cgallic/wpguard-mcp:0.3.0",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "Expose the MCP endpoint on host loopback only.",
+          "name": "--publish",
+          "type": "named",
+          "value": "127.0.0.1:8642:8642"
+        },
+        {
+          "description": "Persist the private site registry, corrections, and change records.",
+          "name": "--volume",
+          "type": "named",
+          "value": "wpguard-state:/state"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "headers": [
+          {
+            "description": "Bearer followed by a space and the same WPGUARD_MCP_TOKEN configured below.",
+            "isRequired": true,
+            "isSecret": true,
+            "name": "Authorization"
+          }
+        ],
+        "type": "streamable-http",
+        "url": "http://127.0.0.1:8642/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "ec8f302fe7",
+    "published_at": "2026-09-10T15:00:03.482533Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cgallic/wpguard-mcp",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-10T15:00:03.482533Z"
+  },
+  "title": "WPGuard MCP",
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

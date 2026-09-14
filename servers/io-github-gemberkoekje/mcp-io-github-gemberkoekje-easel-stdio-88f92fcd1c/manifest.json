@@ -1,0 +1,77 @@
+{
+  "description": "A headless painting engine for AI agents: brushes, paint load, wet blending, canvas texture.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:52+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Gemberkoekje-easel.stdio.88f92fcd1c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Gemberkoekje/EaselAPI",
+    "homepage": "https://github.com/Gemberkoekje/EaselAPI",
+    "repository": "https://github.com/Gemberkoekje/EaselAPI"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "The whole launch command is: uvx --from \"easel-paint[mcp]\" easel-mcp. Two things make it longer than usual. The MCP server is an optional extra, because nothing else in the engine imports mcp and a painter working from Python or the shell never needs its 28 dependencies; and the console script is easel-mcp, not easel-paint, because the package is a painting engine of which the server is one face. A client that cannot assemble this should run that command verbatim.",
+            "isRequired": true,
+            "name": "--from",
+            "type": "named",
+            "value": "easel-paint[mcp]"
+          },
+          "easel-paint==0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Gemberkoekje/easel",
+  "packages": [
+    {
+      "identifier": "easel-paint",
+      "packageArguments": [
+        {
+          "description": "Directory the server reads and writes .easel session files, looks and exported PNGs in. Defaults to the working directory.",
+          "format": "filepath",
+          "name": "--dir",
+          "type": "named"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "The whole launch command is: uvx --from \"easel-paint[mcp]\" easel-mcp. Two things make it longer than usual. The MCP server is an optional extra, because nothing else in the engine imports mcp and a painter working from Python or the shell never needs its 28 dependencies; and the console script is easel-mcp, not easel-paint, because the package is a painting engine of which the server is one face. A client that cannot assemble this should run that command verbatim.",
+          "isRequired": true,
+          "name": "--from",
+          "type": "named",
+          "value": "easel-paint[mcp]"
+        }
+      ],
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "88f92fcd1c",
+    "published_at": "2026-09-13T12:09:21.719587Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Gemberkoekje/easel",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-13T12:09:21.719587Z"
+  },
+  "title": "Easel",
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

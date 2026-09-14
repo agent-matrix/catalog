@@ -1,0 +1,114 @@
+{
+  "description": "Convert currencies, get FX rates, and query historical ECB exchange rate data.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:26+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cyanheads-exchange-rates-mcp-server.stdio.a45653e52b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cyanheads/exchange-rates-mcp-server",
+    "homepage": "https://github.com/cyanheads/exchange-rates-mcp-server",
+    "repository": "https://github.com/cyanheads/exchange-rates-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "bun",
+          "@cyanheads/exchange-rates-mcp-server@0.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cyanheads/exchange-rates-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://api.frankfurter.dev/v1",
+          "description": "Frankfurter API base URL. Override for local testing or self-hosted instances.",
+          "format": "string",
+          "name": "FRANKFURTER_BASE_URL"
+        },
+        {
+          "default": "90",
+          "description": "Day range above which fx_get_timeseries spills results to DataCanvas for SQL analytics, when DataCanvas is enabled (CANVAS_PROVIDER_TYPE=duckdb). Longer ranges return inline otherwise.",
+          "format": "string",
+          "name": "FX_TIMESERIES_CANVAS_THRESHOLD_DAYS"
+        },
+        {
+          "default": "false",
+          "description": "Enable fx_dataframe_drop, which permanently removes one staged table or view from a DataCanvas. Disabled by default; the tool stays listed but uncallable until set to true.",
+          "format": "string",
+          "name": "FX_ENABLE_CANVAS_DROP"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "The hostname for the HTTP server.",
+          "format": "string",
+          "name": "MCP_HTTP_HOST"
+        },
+        {
+          "default": "3010",
+          "description": "The port to run the HTTP server on.",
+          "format": "string",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "default": "/mcp",
+          "description": "The endpoint path for the MCP server.",
+          "format": "string",
+          "name": "MCP_HTTP_ENDPOINT_PATH"
+        },
+        {
+          "default": "none",
+          "description": "Authentication mode to use: 'none', 'jwt', or 'oauth'.",
+          "format": "string",
+          "name": "MCP_AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Sets the minimum log level for output (e.g., 'debug', 'info', 'warn').",
+          "format": "string",
+          "name": "MCP_LOG_LEVEL"
+        }
+      ],
+      "identifier": "@cyanheads/exchange-rates-mcp-server",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "run"
+        },
+        {
+          "type": "positional",
+          "value": "start:http"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "bun",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3010/mcp"
+      },
+      "version": "0.4.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a45653e52b",
+    "published_at": "2026-09-12T21:40:41.946321Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cyanheads/exchange-rates-mcp-server",
+    "server_version": "0.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-12T21:40:41.946321Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.4.0"
+}

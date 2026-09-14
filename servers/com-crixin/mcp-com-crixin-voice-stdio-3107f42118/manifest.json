@@ -1,0 +1,90 @@
+{
+  "description": "Give your AI a real phone: place calls, send SMS, fetch recordings and transcripts. Local or hosted.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:17+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-crixin-voice.stdio.3107f42118",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Lazizatech/crixin",
+    "homepage": "https://github.com/Lazizatech/crixin",
+    "repository": "https://github.com/Lazizatech/crixin"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "crixin@0.7.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.crixin/voice",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Crixin platform key (crx_live_\u2026). Set this for hosted mode \u2014 no Twilio account needed.",
+          "isSecret": true,
+          "name": "CRIXIN_API_KEY"
+        },
+        {
+          "description": "Bring-your-own-Twilio mode: account SID.",
+          "name": "TWILIO_ACCOUNT_SID"
+        },
+        {
+          "description": "Bring-your-own-Twilio mode: auth token.",
+          "isSecret": true,
+          "name": "TWILIO_AUTH_TOKEN"
+        },
+        {
+          "description": "Bring-your-own-Twilio mode: caller number in E.164.",
+          "name": "TWILIO_PHONE_NUMBER"
+        },
+        {
+          "description": "Optional in BYO mode \u2014 enables transcribe_call locally.",
+          "isSecret": true,
+          "name": "DEEPGRAM_API_KEY"
+        }
+      ],
+      "identifier": "crixin",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "voice",
+          "valueHint": "voice"
+        },
+        {
+          "type": "positional",
+          "value": "mcp",
+          "valueHint": "mcp"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.7.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "3107f42118",
+    "published_at": "2026-09-04T12:12:35.681631Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.crixin/voice",
+    "server_version": "0.7.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-04T12:12:35.681631Z"
+  },
+  "title": "Crixin Voice",
+  "type": "mcp_server",
+  "version": "0.7.0"
+}

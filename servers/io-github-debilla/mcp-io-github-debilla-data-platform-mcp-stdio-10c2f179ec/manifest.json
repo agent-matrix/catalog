@@ -1,0 +1,93 @@
+{
+  "description": "Read-only BigQuery tools for plain-language data questions, with a cost gate on every query",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-deBilla-data-platform-mcp.stdio.10c2f179ec",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/deBilla/bigquery-mcp",
+    "homepage": "https://github.com/deBilla/bigquery-mcp",
+    "repository": "https://github.com/deBilla/bigquery-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "data-platform-mcp==0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.deBilla/data-platform-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "JSON map of environment name to BigQuery settings (project, location, impersonate, dataset_allowlist, byte caps). Omit when using a config file at ~/.config/data-platform-mcp/config.toml.",
+          "name": "BQ_MCP_ENVIRONMENTS"
+        },
+        {
+          "description": "Environment used when a tool call omits the environment argument.",
+          "name": "BQ_MCP_DEFAULT_ENVIRONMENT"
+        },
+        {
+          "description": "Path to a TOML config file, overriding ~/.config/data-platform-mcp/config.toml.",
+          "name": "BQ_MCP_CONFIG"
+        },
+        {
+          "description": "Read-only service account to impersonate, making read-only a property of the identity rather than of this code. Create it with `data-platform-mcp setup`.",
+          "name": "BQ_IMPERSONATE_SERVICE_ACCOUNT"
+        },
+        {
+          "description": "GCP project whose BigQuery datasets are queried. Falls back to the project associated with Application Default Credentials.",
+          "name": "BQ_PROJECT"
+        },
+        {
+          "description": "BigQuery location for jobs and datasets. Defaults to US.",
+          "name": "BQ_LOCATION"
+        },
+        {
+          "description": "Comma-separated dataset IDs the server may read. Empty means all datasets.",
+          "name": "BQ_DATASET_ALLOWLIST"
+        },
+        {
+          "description": "Scan size above which a query is returned for user confirmation instead of run. Defaults to 1 GiB.",
+          "name": "BQ_WARN_BYTES"
+        },
+        {
+          "description": "Hard per-query scan cap; a query estimated above this never runs. Defaults to 5 GiB.",
+          "name": "BQ_MAX_BYTES_BILLED"
+        },
+        {
+          "description": "Path for the JSONL tool-call audit log, or 'off' to disable it. SQL text is never recorded, only a hash and a length.",
+          "name": "BQ_MCP_AUDIT_LOG"
+        }
+      ],
+      "identifier": "data-platform-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "10c2f179ec",
+    "published_at": "2026-09-03T06:12:38.587932Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.deBilla/data-platform-mcp",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-03T06:12:38.587932Z"
+  },
+  "title": "BigQuery Data Platform",
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

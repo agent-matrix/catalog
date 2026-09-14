@@ -1,0 +1,84 @@
+{
+  "description": "Every CrowdStrike Falcon MSP operation, plus a Flight-Control-aware local store that answers",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:04+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Servosity-crowdstrike-mcp.stdio.60175ab001",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/servosity/msp-skills",
+    "homepage": "https://github.com/servosity/msp-skills",
+    "repository": "https://github.com/servosity/msp-skills"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Servosity/crowdstrike-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://api.crowdstrike.com",
+          "description": "Base URL for the CrowdStrike Falcon API. Leave the prefilled default unless your account uses a different regional or self-hosted host.",
+          "name": "CROWDSTRIKE_BASE_URL"
+        },
+        {
+          "description": "Set the CROWDSTRIKE_OAUTH_SCOPE credential for the CrowdStrike MCP server.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CROWDSTRIKE_OAUTH_SCOPE"
+        },
+        {
+          "default": "https://api.crowdstrike.com/oauth2/token",
+          "description": "Token endpoint the client-credentials exchange posts to. Leave the prefilled default unless your tenant uses a different token endpoint.",
+          "name": "CROWDSTRIKE_TOKEN_URL"
+        },
+        {
+          "description": "Set the FALCON_CLIENT_ID credential for the CrowdStrike MCP server.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "FALCON_CLIENT_ID"
+        },
+        {
+          "description": "Set the FALCON_CLIENT_SECRET credential for the CrowdStrike MCP server.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "FALCON_CLIENT_SECRET"
+        },
+        {
+          "description": "Set to 1 to keep credentials off disk. The token cache becomes a no-op, so the connector mints a fresh token each run instead of writing one to config.toml. Leave blank for the default cached behaviour.",
+          "name": "CROWDSTRIKE_NO_CONFIG_WRITE"
+        }
+      ],
+      "fileSha256": "68cb4ae53bc44e2ae5bac69a04395359ae2961746df83ca19d356c94256abfc1",
+      "identifier": "https://github.com/Servosity/msp-skills/releases/download/crowdstrike-v0.1.5/crowdstrike-mcp.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "60175ab001",
+    "published_at": "2026-09-10T12:25:38.598142Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Servosity/crowdstrike-mcp",
+    "server_version": "0.1.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-10T12:25:38.598142Z"
+  },
+  "title": "CrowdStrike MCP",
+  "type": "mcp_server",
+  "version": "0.1.5"
+}

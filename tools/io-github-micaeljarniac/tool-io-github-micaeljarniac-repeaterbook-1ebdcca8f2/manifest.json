@@ -1,0 +1,87 @@
+{
+  "artifacts": [
+    {
+      "kind": "pypi",
+      "spec": {
+        "package": "repeaterbook",
+        "version": "0.12.0"
+      }
+    }
+  ],
+  "description": "Look up amateur radio repeaters from RepeaterBook.com by location, band, and mode.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:59+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/MicaelJarniac/repeaterbook",
+  "id": "tool.io-github-micaeljarniac-repeaterbook.1ebdcca8f2",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/MicaelJarniac/repeaterbook",
+    "homepage": "https://github.com/MicaelJarniac/repeaterbook",
+    "repository": "https://github.com/MicaelJarniac/repeaterbook"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Look up amateur radio repeaters from RepeaterBook.com by location, band, and mode.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.MicaelJarniac/repeaterbook",
+      "request_type": "POST",
+      "url": "https://github.com/MicaelJarniac/repeaterbook"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          {
+            "description": "The console script (repeaterbook-mcp) and the distribution (repeaterbook) have different names, and the server lives behind the 'mcp' extra.",
+            "name": "--from",
+            "type": "named",
+            "value": "repeaterbook[mcp]"
+          },
+          {
+            "type": "positional",
+            "value": "repeaterbook-mcp"
+          },
+          "repeaterbook==0.12.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.MicaelJarniac/repeaterbook",
+  "provenance": {
+    "identity_key": "787c7f91fe",
+    "promoted_from": "mcp.io-github-MicaelJarniac-repeaterbook.stdio.787c7f91fe",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.MicaelJarniac/repeaterbook",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-MicaelJarniac-repeaterbook.stdio.787c7f91fe",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/MicaelJarniac/repeaterbook",
+  "summary": "Look up amateur radio repeaters from RepeaterBook.com by location, band, and mode.",
+  "tags": [
+    "amateur",
+    "band",
+    "location",
+    "look",
+    "radio",
+    "repeaterbook",
+    "repeaters"
+  ],
+  "title": "RepeaterBook",
+  "type": "tool",
+  "version": "0.12.0"
+}

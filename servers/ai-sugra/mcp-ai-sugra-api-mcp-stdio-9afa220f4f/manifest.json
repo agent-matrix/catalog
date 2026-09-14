@@ -1,0 +1,60 @@
+{
+  "description": "Gateway between LLM agents and world data through eight tools and a bundled endpoint catalog.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-sugra-api-mcp.stdio.9afa220f4f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Sugra-Systems/sugra-api-mcp",
+    "homepage": "https://github.com/Sugra-Systems/sugra-api-mcp",
+    "repository": "https://github.com/Sugra-Systems/sugra-api-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "sugra-api-mcp==0.12.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.sugra/api-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your Sugra API key (sugra_...). Required for data tools; catalog tools work without it. Free key: https://app.sugra.ai/settings/billing (50 req/day). Only env var needed for local installs and directory sandboxes.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "SUGRA_API_KEY"
+        }
+      ],
+      "identifier": "sugra-api-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.12.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9afa220f4f",
+    "published_at": "2026-09-12T08:30:56.990294Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.sugra/api-mcp",
+    "server_version": "0.12.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-12T08:30:56.990294Z"
+  },
+  "title": "Sugra API",
+  "type": "mcp_server",
+  "version": "0.12.0"
+}

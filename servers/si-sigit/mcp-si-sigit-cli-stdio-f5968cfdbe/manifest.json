@@ -1,0 +1,82 @@
+{
+  "description": "Run sigit.si locally: browse repos, search code, manage PRs, issues, and Cloud Sessions.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:44+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.si-sigit-cli.stdio.f5968cfdbe",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='cargo' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/getsigit/si",
+    "homepage": "https://github.com/getsigit/si",
+    "repository": "https://github.com/getsigit/si"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "si.sigit/cli",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "sigit.si session token. Optional: the server otherwise reuses whatever `si auth login` stored.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SIGIT_TOKEN"
+        },
+        {
+          "description": "The environment form of --toolsets, for clients that pass configuration as variables rather than arguments.",
+          "format": "string",
+          "name": "SIGIT_TOOLSETS"
+        }
+      ],
+      "identifier": "sigit-si-cli",
+      "packageArguments": [
+        {
+          "description": "Serve the CLI's commands as MCP tools over stdio instead of running one of them.",
+          "isRequired": true,
+          "type": "positional",
+          "value": "mcp",
+          "valueHint": "mcp"
+        },
+        {
+          "description": "Drop every tool that writes, leaving only the ones that read.",
+          "name": "--read-only",
+          "type": "named"
+        },
+        {
+          "description": "Comma-separated groups to expose, out of account, repo, issue, pr, code, hook, session, and billing. Defaults to all of them.",
+          "name": "--toolsets",
+          "type": "named"
+        }
+      ],
+      "registryBaseUrl": "https://crates.io",
+      "registryType": "cargo",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f5968cfdbe",
+    "published_at": "2026-09-04T11:12:02.22484Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "si.sigit/cli",
+    "server_version": "1.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-04T11:12:02.22484Z"
+  },
+  "title": "siGit CLI",
+  "type": "mcp_server",
+  "version": "1.1.0"
+}

@@ -1,0 +1,86 @@
+{
+  "description": "Read, create, update and delete gists on a self-hosted Opengist instance",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:00+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ni-c-opengist-mcp.stdio.c5ac0ea047",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ni-c/opengist-mcp",
+    "homepage": "https://github.com/ni-c/opengist-mcp",
+    "repository": "https://github.com/ni-c/opengist-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "opengist-mcp@0.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ni-c/opengist-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the Opengist instance, e.g. https://gist.example.com",
+          "format": "string",
+          "isRequired": true,
+          "name": "OPENGIST_URL"
+        },
+        {
+          "description": "Opengist Personal Access Token (starts with og_), created under Settings -> Access Tokens",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OPENGIST_TOKEN"
+        },
+        {
+          "description": "Set to true to not register any write tools (create, update, delete, fork, like)",
+          "format": "string",
+          "name": "OPENGIST_READ_ONLY"
+        },
+        {
+          "description": "Set to true to accept self-signed TLS certificates (scoped to the Opengist connection)",
+          "format": "string",
+          "name": "OPENGIST_INSECURE_TLS"
+        },
+        {
+          "description": "Comma-separated tool names or list_* prefixes to register; 'essential' selects a curated preset (default: all tools)",
+          "format": "string",
+          "name": "OPENGIST_ALLOW_TOOLS"
+        },
+        {
+          "description": "Comma-separated tool names or list_* prefixes to remove from whatever OPENGIST_ALLOW_TOOLS left",
+          "format": "string",
+          "name": "OPENGIST_DENY_TOOLS"
+        }
+      ],
+      "identifier": "opengist-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c5ac0ea047",
+    "published_at": "2026-09-03T14:35:24.733497Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ni-c/opengist-mcp",
+    "server_version": "0.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-03T14:35:24.733497Z"
+  },
+  "title": "Opengist",
+  "type": "mcp_server",
+  "version": "0.4.0"
+}

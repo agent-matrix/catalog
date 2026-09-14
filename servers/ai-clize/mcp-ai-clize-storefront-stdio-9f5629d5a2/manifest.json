@@ -1,0 +1,87 @@
+{
+  "description": "Let your AI agent run a real store: checkout, orders, refunds, shipping and support.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:07+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-clize-storefront.stdio.9f5629d5a2",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cooldk/clize-cli",
+    "homepage": "https://github.com/cooldk/clize-cli",
+    "repository": "https://github.com/cooldk/clize-cli"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "description": "Resolve bins from the @clize/storefront package (its @clize/clize dependency provides them)",
+            "name": "--package",
+            "type": "named",
+            "value": "@clize/storefront"
+          },
+          {
+            "description": "The MCP server entry point (the package's second bin; the default bin is the clize CLI)",
+            "type": "positional",
+            "value": "clize-mcp",
+            "valueHint": "clize-mcp"
+          },
+          "@clize/storefront@0.32.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "ai.clize/storefront",
+  "packages": [
+    {
+      "identifier": "@clize/storefront",
+      "packageArguments": [
+        {
+          "description": "Expose only the Agent Storefront tools (omit for the full clize tool set)",
+          "name": "--profile",
+          "type": "named",
+          "value": "storefront"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "description": "Resolve bins from the @clize/storefront package (its @clize/clize dependency provides them)",
+          "name": "--package",
+          "type": "named",
+          "value": "@clize/storefront"
+        },
+        {
+          "description": "The MCP server entry point (the package's second bin; the default bin is the clize CLI)",
+          "type": "positional",
+          "value": "clize-mcp",
+          "valueHint": "clize-mcp"
+        }
+      ],
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.32.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9f5629d5a2",
+    "published_at": "2026-09-01T11:31:18.99655Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.clize/storefront",
+    "server_version": "0.32.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-01T11:31:18.99655Z"
+  },
+  "title": "Agent Storefront",
+  "type": "mcp_server",
+  "version": "0.32.0"
+}

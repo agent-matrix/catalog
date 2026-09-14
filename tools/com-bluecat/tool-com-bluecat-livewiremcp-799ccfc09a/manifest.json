@@ -1,0 +1,71 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "quay.io/bluecat/livewiremcp:26.2"
+      }
+    }
+  ],
+  "description": "MCP server for BlueCat LiveWire",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "tool.com-bluecat-livewiremcp.799ccfc09a",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "tool": {
+      "description": "MCP server for BlueCat LiveWire",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "com.bluecat/livewiremcp",
+      "request_type": "POST",
+      "url": "mcp+stdio://oci/quay.io/bluecat/livewiremcp:26.2"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "name": "-p",
+            "type": "named",
+            "value": "9997:9997"
+          },
+          "quay.io/bluecat/livewiremcp:26.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.bluecat/livewiremcp",
+  "provenance": {
+    "identity_key": "21bcea9ad9",
+    "promoted_from": "mcp.com-bluecat-livewiremcp.stdio.21bcea9ad9",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.bluecat/livewiremcp",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.com-bluecat-livewiremcp.stdio.21bcea9ad9",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "summary": "MCP server for BlueCat LiveWire",
+  "tags": [
+    "bluecat",
+    "livewire",
+    "livewiremcp"
+  ],
+  "title": "Livewiremcp",
+  "type": "tool",
+  "version": "26.2"
+}

@@ -1,0 +1,86 @@
+{
+  "description": "Browse your Audiobookshelf libraries and keep listening progress, bookmarks and playlists in sync",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:00+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ni-c-audiobookshelf-mcp.stdio.0cf89ec50f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ni-c/audiobookshelf-mcp",
+    "homepage": "https://github.com/ni-c/audiobookshelf-mcp",
+    "repository": "https://github.com/ni-c/audiobookshelf-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "audiobookshelf-mcp@0.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ni-c/audiobookshelf-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the Audiobookshelf instance, e.g. https://abs.example.com",
+          "format": "string",
+          "isRequired": true,
+          "name": "AUDIOBOOKSHELF_URL"
+        },
+        {
+          "description": "API key from Settings -> Users -> API Keys (Audiobookshelf 2.26.0 or newer)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AUDIOBOOKSHELF_API_KEY"
+        },
+        {
+          "description": "Set to true to register only the 29 read tools and no write tools",
+          "format": "boolean",
+          "name": "AUDIOBOOKSHELF_READ_ONLY"
+        },
+        {
+          "description": "Set to true to accept self-signed certificates for this connection only",
+          "format": "boolean",
+          "name": "AUDIOBOOKSHELF_INSECURE_TLS"
+        },
+        {
+          "description": "Comma-separated tool names or list_* prefixes to register; 'essential' selects a curated preset (default: all tools)",
+          "format": "string",
+          "name": "AUDIOBOOKSHELF_ALLOW_TOOLS"
+        },
+        {
+          "description": "Comma-separated tool names or list_* prefixes to remove from whatever AUDIOBOOKSHELF_ALLOW_TOOLS left",
+          "format": "string",
+          "name": "AUDIOBOOKSHELF_DENY_TOOLS"
+        }
+      ],
+      "identifier": "audiobookshelf-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0cf89ec50f",
+    "published_at": "2026-09-07T19:10:27.805364Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ni-c/audiobookshelf-mcp",
+    "server_version": "0.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-07T19:10:27.805364Z"
+  },
+  "title": "Audiobookshelf",
+  "type": "mcp_server",
+  "version": "0.4.0"
+}

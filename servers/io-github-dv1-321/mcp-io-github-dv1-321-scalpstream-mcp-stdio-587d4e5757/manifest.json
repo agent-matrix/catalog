@@ -1,0 +1,65 @@
+{
+  "description": "Pay-per-call data over x402: air quality, border waits, fuel prices, market research.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:49+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-DV1-321-scalpstream-mcp.stdio.587d4e5757",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/DV1-321/scalpstream-mcp",
+    "homepage": "https://github.com/DV1-321/scalpstream-mcp",
+    "repository": "https://github.com/DV1-321/scalpstream-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/dv1-321/scalpstream-mcp:v0.1.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.DV1-321/scalpstream-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base-mainnet private key holding a little USDC, used to pay per call. Leave unset to run in preview-only mode, where every paid tool returns the free preview and the exact price instead. Gas is sponsored by the facilitator, so the wallet needs USDC and no ETH. Use a throwaway key.",
+          "isSecret": true,
+          "name": "EVM_BASE_PRIVATE_KEY"
+        },
+        {
+          "description": "Refuse any single call quoted above this many dollars. Defaults to 0.10. Checked before anything is signed, so a refusal costs nothing.",
+          "name": "SCALPMCP_MAX_PRICE_USD"
+        },
+        {
+          "description": "Refuse once this process has spent this many dollars in total. Defaults to 2.00.",
+          "name": "SCALPMCP_BUDGET_USD"
+        }
+      ],
+      "identifier": "ghcr.io/dv1-321/scalpstream-mcp:v0.1.5",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "587d4e5757",
+    "published_at": "2026-09-06T09:06:11.921589Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.DV1-321/scalpstream-mcp",
+    "server_version": "0.1.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-06T09:06:11.921589Z"
+  },
+  "title": "ScalpStream",
+  "type": "mcp_server",
+  "version": "0.1.5"
+}

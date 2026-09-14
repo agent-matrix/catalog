@@ -1,0 +1,108 @@
+{
+  "description": "Give an AI agent its own blockchain wallet: balances, USDC transfers, x402 payments under policy.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-keyban-prod-mcp-agent-wallet.stdio.3754c34623",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/keyban-io/dap",
+    "homepage": "https://github.com/keyban-io/dap",
+    "repository": "https://github.com/keyban-io/dap"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@keyban/agent-wallet-mcp@0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.keyban.prod.mcp/agent-wallet",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Keyban API key of the application the wallet belongs to. Never exposed to the model.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "KEYBAN_API_KEY"
+        },
+        {
+          "description": "Identifier of the Keyban application.",
+          "isRequired": true,
+          "name": "KEYBAN_APP_ID"
+        },
+        {
+          "description": "One-shot ECDSA private key (0x + 64 hex) authorizing the first-boot registration of this client as a FROST signer of the wallet.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "KEYBAN_INVITE_KEY"
+        },
+        {
+          "description": "Address of the deployed SchnorrAccount this server drives (0x + 40 hex).",
+          "isRequired": true,
+          "name": "KEYBAN_WALLET_ADDRESS"
+        },
+        {
+          "description": "Blockchain network the wallet operates on, for example base or xdc.",
+          "isRequired": true,
+          "name": "KEYBAN_NETWORK"
+        },
+        {
+          "default": "https://api.prod.keyban.io",
+          "description": "Base URL of the Keyban backend. Accepts a full URL, or one of the environment aliases dev, testing, staging, prod and sandbox.",
+          "name": "KEYBAN_BASE_URL"
+        },
+        {
+          "description": "Optional pre-generated FROST client share, base64-encoded JSON. Used by hosted runtimes with no OS keyring; it does not replace the invite key.",
+          "isSecret": true,
+          "name": "KEYBAN_DKG_BLOB"
+        },
+        {
+          "description": "Path the server writes its log to.",
+          "format": "filepath",
+          "name": "MCP_LOG_FILE"
+        },
+        {
+          "choices": [
+            "debug",
+            "info",
+            "warn",
+            "error"
+          ],
+          "default": "info",
+          "description": "Log verbosity.",
+          "name": "MCP_LOG_LEVEL"
+        }
+      ],
+      "identifier": "@keyban/agent-wallet-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "3754c34623",
+    "published_at": "2026-09-09T09:28:36.658895Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.keyban.prod.mcp/agent-wallet",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-09T09:28:36.658895Z"
+  },
+  "title": "Keyban Agent Wallet",
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

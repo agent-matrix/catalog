@@ -1,0 +1,55 @@
+{
+  "description": "Build & govern AI agents for regulated industries: EU/GCC residency, governance, audit.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:09+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.ai-nebelus-construction.sse.4ad13cb69d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://{host}/api/v1/construction/mcp/"
+    }
+  },
+  "name": "ai.nebelus/construction",
+  "provenance": {
+    "identity_key": "4ad13cb69d",
+    "published_at": "2026-09-13T20:38:38.016038Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "ai.nebelus/construction",
+    "server_version": "1.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-13T20:38:38.016038Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Organization API key with api.construction.* scope, sent as: Authorization: Bearer sk-ns-... (minted in the Nebelus console under Settings -> API keys). Alternatively, connect via OAuth 2.1 (Claude.ai/Desktop): auth is auto-discovered from the endpoint's /.well-known/oauth-protected-resource, no header needed.",
+          "isSecret": true,
+          "name": "Authorization"
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://{host}/api/v1/construction/mcp/",
+      "variables": {
+        "host": {
+          "choices": [
+            "api.nebelus.ai",
+            "api.ksa.nebelus.ai"
+          ],
+          "default": "api.nebelus.ai",
+          "description": "Regional API host selects data residency. EU = api.nebelus.ai, KSA = api.ksa.nebelus.ai. Your organization is bound to exactly one region.",
+          "isRequired": true
+        }
+      }
+    }
+  ],
+  "title": "Nebelus Agent Construction",
+  "type": "mcp_server",
+  "version": "1.0.0"
+}

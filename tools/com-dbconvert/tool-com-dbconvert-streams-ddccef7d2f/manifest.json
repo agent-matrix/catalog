@@ -1,0 +1,85 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "docker.io/slotix/stream-mcp:2.7.3"
+      }
+    }
+  ],
+  "description": "Read-only SQL across your PostgreSQL, MySQL, S3 buckets and local data files, in one query.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:17+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/slotix/dbconvert-streams-public",
+  "id": "tool.com-dbconvert-streams.ddccef7d2f",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/slotix/dbconvert-streams-public",
+    "homepage": "https://github.com/slotix/dbconvert-streams-public",
+    "repository": "https://github.com/slotix/dbconvert-streams-public"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Read-only SQL across your PostgreSQL, MySQL, S3 buckets and local data files, in one query.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "com.dbconvert/streams",
+      "request_type": "POST",
+      "url": "https://github.com/slotix/dbconvert-streams-public"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "name": "--rm",
+            "type": "named"
+          },
+          {
+            "description": "MCP speaks JSON-RPC over stdin, so the container needs its stdin held open.",
+            "name": "-i",
+            "type": "named"
+          },
+          "docker.io/slotix/stream-mcp:2.7.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.dbconvert/streams",
+  "provenance": {
+    "identity_key": "b5e80e8cc6",
+    "promoted_from": "mcp.com-dbconvert-streams.stdio.b5e80e8cc6",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.dbconvert/streams",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.com-dbconvert-streams.stdio.b5e80e8cc6",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/slotix/dbconvert-streams-public",
+  "summary": "Read-only SQL across your PostgreSQL, MySQL, S3 buckets and local data files, in one query.",
+  "tags": [
+    "across",
+    "buckets",
+    "mysql",
+    "only",
+    "postgresql",
+    "read",
+    "streams"
+  ],
+  "title": "DBConvert Streams (Federated SQL)",
+  "type": "tool",
+  "version": "2.7.3"
+}

@@ -1,0 +1,53 @@
+{
+  "description": "Draft, check and schedule posts to your connected social accounts from Claude, ChatGPT or Cursor.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-ihateposting-mcp.sse.4f61c8a626",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://ihateposting.com/api/mcp"
+    }
+  },
+  "name": "com.ihateposting/mcp",
+  "provenance": {
+    "identity_key": "4f61c8a626",
+    "published_at": "2026-09-11T10:41:19.595974Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.ihateposting/mcp",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-11T10:41:19.595974Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Your iHatePosting API key as a Bearer token. Create one in Settings > API & MCP.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {api_key}",
+          "variables": {
+            "api_key": {
+              "description": "iHatePosting API key (starts with pk_live_)",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://ihateposting.com/api/mcp"
+    }
+  ],
+  "title": "iHatePosting",
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

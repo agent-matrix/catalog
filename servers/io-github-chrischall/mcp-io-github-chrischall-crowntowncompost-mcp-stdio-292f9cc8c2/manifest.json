@@ -1,0 +1,80 @@
+{
+  "description": "Customer access to the Crown Town Compost portal: pickups, invoices, and skips (AI-built).",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-chrischall-crowntowncompost-mcp.stdio.292f9cc8c2",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/chrischall/crowntowncompost-mcp",
+    "homepage": "https://github.com/chrischall/crowntowncompost-mcp",
+    "repository": "https://github.com/chrischall/crowntowncompost-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "crowntowncompost-mcp@0.5.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.chrischall/crowntowncompost-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "A Cookie header from an already-signed-in portal session (\"sessionid=...; csrftoken=...\"). Supply this and no password is needed \u2014 the login is skipped entirely.",
+          "format": "string",
+          "isSecret": true,
+          "name": "CROWNTOWN_SESSION_COOKIE"
+        },
+        {
+          "description": "Your portal.crowntowncompost.com username or email address. Needed only if you are not supplying CROWNTOWN_SESSION_COOKIE.",
+          "format": "string",
+          "name": "CROWNTOWN_USERNAME"
+        },
+        {
+          "description": "Your Crown Town Compost customer-portal password. Needed only if you are not supplying CROWNTOWN_SESSION_COOKIE.",
+          "format": "string",
+          "isSecret": true,
+          "name": "CROWNTOWN_PASSWORD"
+        },
+        {
+          "description": "Set to false to disable the on-disk session cache and re-authenticate on every process start. Defaults to enabled.",
+          "format": "string",
+          "name": "CROWNTOWN_SESSION_CACHE"
+        },
+        {
+          "description": "Absolute path for the session cache file. Defaults to $MCP_DATA_DIR/.crowntowncompost-mcp/session.json.",
+          "format": "string",
+          "name": "CROWNTOWN_SESSION_FILE"
+        }
+      ],
+      "identifier": "crowntowncompost-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "292f9cc8c2",
+    "published_at": "2026-09-04T22:19:42.374693Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.chrischall/crowntowncompost-mcp",
+    "server_version": "0.5.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-04T22:19:42.374693Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.5.0"
+}

@@ -1,0 +1,84 @@
+{
+  "description": "Abnormal Security MCP: threats, search, remediation, ATO cases, vendor/BEC, and evidence download.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:52+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-GregDog-mcp-server-abnormal.stdio.2c9777d614",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/GregDog/mcp-server-abnormal",
+    "homepage": "https://github.com/GregDog/mcp-server-abnormal",
+    "repository": "https://github.com/GregDog/mcp-server-abnormal"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/gregdog/mcp-server-abnormal:v1.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.GregDog/mcp-server-abnormal",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Abnormal REST API bearer token",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ABNORMAL_API_TOKEN"
+        },
+        {
+          "default": "https://api.abnormalplatform.com/v1",
+          "description": "Abnormal API base URL",
+          "name": "ABNORMAL_BASE_URL"
+        },
+        {
+          "default": "false",
+          "description": "Enable response MCP tools (remediation)",
+          "name": "ABNORMAL_ALLOW_RESPONSE"
+        },
+        {
+          "default": "false",
+          "description": "Enable evidence download MCP tools (EML and attachments)",
+          "name": "ABNORMAL_ALLOW_EVIDENCE_DOWNLOAD"
+        },
+        {
+          "default": "10485760",
+          "description": "Max bytes per evidence download from Abnormal",
+          "name": "ABNORMAL_MAX_EVIDENCE_BYTES"
+        }
+      ],
+      "identifier": "ghcr.io/gregdog/mcp-server-abnormal:v1.0.1",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "serve"
+        }
+      ],
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "2c9777d614",
+    "published_at": "2026-09-10T13:50:55.967301Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.GregDog/mcp-server-abnormal",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-10T13:50:55.967301Z"
+  },
+  "title": "Abnormal MCP Server",
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

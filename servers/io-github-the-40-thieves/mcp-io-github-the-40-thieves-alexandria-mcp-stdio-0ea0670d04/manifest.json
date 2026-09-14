@@ -1,0 +1,121 @@
+{
+  "description": "Search, read, and cite across 152 libraries: 11 tools, 3 prompts, and a full-text resource.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:06+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-The-40-Thieves-alexandria-mcp.stdio.0ea0670d04",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/The-40-Thieves/alexandria-mcp",
+    "homepage": "https://github.com/The-40-Thieves/alexandria-mcp",
+    "repository": "https://github.com/The-40-Thieves/alexandria-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@the-40-thieves/alexandria-mcp@11.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.The-40-Thieves/alexandria-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "OpenAI key for routing (library_ask), synthesis (library_answer, library_research), and embeddings (library_ingest). Search and read tools work without it.",
+          "format": "string",
+          "isSecret": true,
+          "name": "OPENAI_API_KEY"
+        },
+        {
+          "description": "OpenAI-compatible gateway base URL shared by every LLM role (router, synth, research, embeddings, rerank). Falls back to https://api.openai.com/v1.",
+          "format": "string",
+          "name": "ALEXANDRIA_BASE_URL",
+          "placeholder": "https://gateway.example.com/v1"
+        },
+        {
+          "description": "API key paired with ALEXANDRIA_BASE_URL. Falls back to OPENAI_API_KEY.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ALEXANDRIA_API_KEY"
+        },
+        {
+          "description": "Unlocks the core source (CORE, 57M+ open access papers). Free key from core.ac.uk/services/api.",
+          "format": "string",
+          "isSecret": true,
+          "name": "CORE_API_KEY"
+        },
+        {
+          "description": "Unlocks the courtlistener source (US federal and state court opinions). Free key from courtlistener.com.",
+          "format": "string",
+          "isSecret": true,
+          "name": "COURTLISTENER_API_KEY"
+        },
+        {
+          "description": "Unlocks govinfo (Congressional Record, Federal Register, US Code); also accepted by congress and regulations. Free key from api.data.gov.",
+          "format": "string",
+          "isSecret": true,
+          "name": "GOVINFO_API_KEY"
+        },
+        {
+          "description": "Unlocks the googlebooks source (40M+ books). Free key from the Google Cloud Console (Books API).",
+          "format": "string",
+          "isSecret": true,
+          "name": "GOOGLE_BOOKS_API_KEY"
+        },
+        {
+          "description": "Unlocks githubsearch and githubmcp (GitHub code search); optional for ghsa and openiti. Public-repo read scope is enough.",
+          "format": "string",
+          "isSecret": true,
+          "name": "GITHUB_TOKEN"
+        },
+        {
+          "description": "Unlocks the nasaads source (NASA Astrophysics Data System). Free key from ui.adsabs.harvard.edu.",
+          "format": "string",
+          "isSecret": true,
+          "name": "NASA_ADS_API_KEY"
+        },
+        {
+          "description": "Unlocks the europeana source (50M+ European cultural heritage items). Free key from apis.europeana.eu.",
+          "format": "string",
+          "isSecret": true,
+          "name": "EUROPEANA_API_KEY"
+        },
+        {
+          "description": "Optional for semanticscholar and library_recommend; raises the rate limit. Free key from semanticscholar.org/product/api.",
+          "format": "string",
+          "isSecret": true,
+          "name": "SEMANTIC_SCHOLAR_API_KEY"
+        }
+      ],
+      "identifier": "@the-40-thieves/alexandria-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "11.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0ea0670d04",
+    "published_at": "2026-09-05T09:08:39.69614Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.The-40-Thieves/alexandria-mcp",
+    "server_version": "11.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-05T09:08:39.69614Z"
+  },
+  "title": "Alexandria",
+  "type": "mcp_server",
+  "version": "11.0.0"
+}

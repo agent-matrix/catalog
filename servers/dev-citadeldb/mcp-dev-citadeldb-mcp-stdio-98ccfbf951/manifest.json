@@ -1,0 +1,76 @@
+{
+  "description": "Encrypted-first embedded database with vector search and agent memory, exposed as MCP tools",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:34+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.dev-citadeldb-mcp.stdio.98ccfbf951",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/yp3y5akh0v/citadel",
+    "homepage": "https://github.com/yp3y5akh0v/citadel",
+    "repository": "https://github.com/yp3y5akh0v/citadel"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "citadeldb-mcp==2.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "dev.citadeldb/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Passphrase used to unlock the encrypted Citadel database",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "CITADEL_KEY"
+        }
+      ],
+      "identifier": "citadeldb-mcp",
+      "packageArguments": [
+        {
+          "description": "Path to the Citadel database/region file",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "--db",
+          "type": "named"
+        },
+        {
+          "description": "Embedder name; use e5-large after running citadeldb-mcp pull e5-large",
+          "isRequired": true,
+          "name": "--embedder",
+          "type": "named"
+        }
+      ],
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.4.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "98ccfbf951",
+    "published_at": "2026-09-12T02:09:38.169175Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "dev.citadeldb/mcp",
+    "server_version": "2.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-12T02:09:38.169175Z"
+  },
+  "title": "Citadel",
+  "type": "mcp_server",
+  "version": "2.4.0"
+}

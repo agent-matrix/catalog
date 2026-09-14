@@ -1,0 +1,162 @@
+{
+  "description": "WhatsApp MCP via web.js or browserless Baileys: messages, media, chats, groups and contacts",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:51+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mario-andreschak-mcp-whatsapp-web.stdio.f24e171c3c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mario-andreschak/mcp-whatsapp-web",
+    "homepage": "https://github.com/mario-andreschak/mcp-whatsapp-web",
+    "repository": "https://github.com/mario-andreschak/mcp-whatsapp-web"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-whatsapp-web@1.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mario-andreschak/mcp-whatsapp-web",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "choices": [
+            "webjs",
+            "baileys"
+          ],
+          "default": "webjs",
+          "description": "WhatsApp backend: webjs uses a persistent browser profile; baileys connects without a browser and requires separate pairing",
+          "format": "string",
+          "name": "WHATSAPP_BACKEND"
+        },
+        {
+          "description": "Baileys credentials and synchronized history directory (default: <working directory>/baileys-sessions). Use a private absolute path, owned by one server process.",
+          "format": "filepath",
+          "name": "BAILEYS_SESSION_DIR"
+        },
+        {
+          "choices": [
+            "trace",
+            "debug",
+            "info",
+            "warn",
+            "error",
+            "fatal"
+          ],
+          "default": "info",
+          "description": "Log level for the log file (logs/mcp-whatsapp.log)",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        },
+        {
+          "choices": [
+            "trace",
+            "debug",
+            "info",
+            "warn",
+            "error",
+            "fatal"
+          ],
+          "default": "warn",
+          "description": "Log level for stderr (visible in most MCP client logs)",
+          "format": "string",
+          "name": "LOG_STDERR_LEVEL"
+        },
+        {
+          "description": "webjs only: set to false to show the browser window instead of running headless",
+          "format": "boolean",
+          "name": "WHATSAPP_HEADLESS"
+        },
+        {
+          "default": "false",
+          "description": "webjs only: explicitly disable the browser sandbox for containers that require it. The sandbox is enabled by default.",
+          "format": "boolean",
+          "name": "WHATSAPP_NO_SANDBOX"
+        },
+        {
+          "description": "webjs only: browser executable. Chrome and Edge are auto-detected; set this to use a specific browser. Chrome/Edge is required for sending videos and GIFs.",
+          "format": "filepath",
+          "name": "BROWSER_EXECUTABLE_PATH"
+        },
+        {
+          "description": "webjs only: persistent browser profile directory (default: <working directory>/whatsapp-sessions)",
+          "format": "filepath",
+          "name": "WHATSAPP_SESSION_DIR"
+        },
+        {
+          "description": "Phone number pairing: when set (international, symbol-free format, e.g. 4915112345678), an 8-character pairing code is logged to stderr on startup instead of relying on the QR code",
+          "format": "string",
+          "name": "WHATSAPP_PAIRING_PHONE_NUMBER"
+        },
+        {
+          "description": "Path to an ffmpeg binary (only needed to override the ffmpeg installed automatically via the ffmpeg-static npm package)",
+          "format": "filepath",
+          "name": "FFMPEG_PATH"
+        },
+        {
+          "description": "webjs only: pin the WhatsApp Web version if a WhatsApp-side update breaks the client.",
+          "format": "string",
+          "name": "WA_WEB_VERSION"
+        },
+        {
+          "default": "60000",
+          "description": "webjs only: connection health check interval in milliseconds (<=0 disables)",
+          "format": "number",
+          "name": "HEALTH_CHECK_INTERVAL_MS"
+        },
+        {
+          "default": "45000",
+          "description": "How long tool calls wait for the WhatsApp client to become ready before erroring",
+          "format": "number",
+          "name": "TOOL_READY_TIMEOUT_MS"
+        },
+        {
+          "description": "When set, additionally exposes the MCP endpoint at http://127.0.0.1:<port>/mcp (Streamable HTTP) from the same process",
+          "format": "number",
+          "name": "MCP_HTTP_PORT"
+        },
+        {
+          "default": "127.0.0.1",
+          "description": "Bind address for the HTTP endpoint (do not expose publicly; the endpoint controls your personal WhatsApp account)",
+          "format": "string",
+          "name": "MCP_HTTP_HOST"
+        },
+        {
+          "description": "Enable OAuth for the HTTP endpoint: /mcp requires a bearer token and clients authenticate via a browser page showing the WhatsApp QR code / pairing form",
+          "format": "boolean",
+          "name": "MCP_OAUTH"
+        }
+      ],
+      "identifier": "mcp-whatsapp-web",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f24e171c3c",
+    "published_at": "2026-09-05T19:08:01.099784Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mario-andreschak/mcp-whatsapp-web",
+    "server_version": "1.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-05T19:08:01.099784Z"
+  },
+  "title": "WhatsApp Web MCP Server",
+  "type": "mcp_server",
+  "version": "1.2.0"
+}

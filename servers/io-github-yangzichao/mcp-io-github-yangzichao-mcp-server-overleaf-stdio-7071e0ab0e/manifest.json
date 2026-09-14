@@ -1,0 +1,79 @@
+{
+  "description": "Read and edit Overleaf papers from any AI client. Edits can arrive as tracked-change suggestions.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-yangzichao-mcp-server-overleaf.stdio.7071e0ab0e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/yangzichao/mcp-server-overleaf",
+    "homepage": "https://github.com/yangzichao/mcp-server-overleaf",
+    "repository": "https://github.com/yangzichao/mcp-server-overleaf"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "mcp-server-overleaf@0.3.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.yangzichao/mcp-server-overleaf",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Overleaf Git authentication token, from https://www.overleaf.com/user/settings under Git integration.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OVERLEAF_GIT_TOKEN"
+        },
+        {
+          "description": "The project to open: its 24-character id, or the Overleaf address bar URL that contains it.",
+          "isRequired": true,
+          "name": "OVERLEAF_PROJECT_ID"
+        },
+        {
+          "description": "Optional. An Overleaf browser session cookie, which turns on the tracked-changes tools: suggest an edit, read the review panel, leave a comment.",
+          "isSecret": true,
+          "name": "OVERLEAF_SESSION_COOKIE"
+        }
+      ],
+      "identifier": "mcp-server-overleaf",
+      "packageArguments": [
+        {
+          "description": "Serve on stdio, which is the transport a local client starts.",
+          "type": "positional",
+          "value": "--stdio",
+          "valueHint": "transport"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7071e0ab0e",
+    "published_at": "2026-09-11T14:43:48.54873Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.yangzichao/mcp-server-overleaf",
+    "server_version": "0.3.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-11T14:43:48.54873Z"
+  },
+  "title": "Overleaf",
+  "type": "mcp_server",
+  "version": "0.3.4"
+}

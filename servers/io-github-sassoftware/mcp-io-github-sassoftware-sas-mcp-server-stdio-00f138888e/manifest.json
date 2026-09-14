@@ -1,0 +1,124 @@
+{
+  "description": "Execute SAS code and query Compute, CAS, and model APIs on SAS Viya via OAuth 2.0.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:19+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-sassoftware-sas-mcp-server.stdio.00f138888e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/sassoftware/sas-mcp-server",
+    "homepage": "https://github.com/sassoftware/sas-mcp-server",
+    "repository": "https://github.com/sassoftware/sas-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Mount the SAS Viya CLI token cache into the container. The server reads ~/.sas/credentials.json, and $HOME is /app inside the image, so the .sas directory has to land at /app/.sas.",
+            "isRequired": true,
+            "name": "-v",
+            "type": "named",
+            "value": "{sas_token_dir}:/app/.sas",
+            "variables": {
+              "sas_token_dir": {
+                "description": "The .sas directory in your home directory, written by `sas-viya auth loginCode`. On Windows, C:\\Users\\<you>\\.sas.",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          "ghcr.io/sassoftware/sas-mcp-server:1.13.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.sassoftware/sas-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of your SAS Viya environment, e.g. https://viya.example.com. No trailing slash.",
+          "format": "string",
+          "isRequired": true,
+          "name": "VIYA_ENDPOINT"
+        },
+        {
+          "default": "true",
+          "description": "Set false only for a self-signed Viya certificate. Disables verification for the whole process, so prefer a trusted certificate.",
+          "format": "string",
+          "name": "SSL_VERIFY"
+        },
+        {
+          "default": "sas-mcp",
+          "description": "SASLogon OAuth client id used for the token refresh exchange.",
+          "format": "string",
+          "name": "CLIENT_ID"
+        },
+        {
+          "default": "SAS Job Execution compute context",
+          "description": "Compute context that backs SAS code execution.",
+          "format": "string",
+          "name": "COMPUTE_CONTEXT_NAME"
+        },
+        {
+          "description": "Expose only some tool tiers, e.g. 0-4 or 0,1,7. Empty exposes all 87 tools. Tiers: 0 Compute, 1 Data Discovery, 2 Data Operations, 3 Reports, 4 Batch Jobs, 5 AutoML, 6 Models, 7 Decisioning, 8 Workbench, 9 Business Glossary.",
+          "format": "string",
+          "name": "MCP_TIERS"
+        },
+        {
+          "default": "false",
+          "description": "Expose only tools that neither change server-side state nor cause server-side work (50 of 87). Composes with MCP_TIERS.",
+          "format": "string",
+          "name": "MCP_READ_ONLY"
+        }
+      ],
+      "identifier": "ghcr.io/sassoftware/sas-mcp-server:1.13.0",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "app-stdio"
+        }
+      ],
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "Mount the SAS Viya CLI token cache into the container. The server reads ~/.sas/credentials.json, and $HOME is /app inside the image, so the .sas directory has to land at /app/.sas.",
+          "isRequired": true,
+          "name": "-v",
+          "type": "named",
+          "value": "{sas_token_dir}:/app/.sas",
+          "variables": {
+            "sas_token_dir": {
+              "description": "The .sas directory in your home directory, written by `sas-viya auth loginCode`. On Windows, C:\\Users\\<you>\\.sas.",
+              "format": "filepath",
+              "isRequired": true
+            }
+          }
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "00f138888e",
+    "published_at": "2026-09-04T11:21:30.536693Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.sassoftware/sas-mcp-server",
+    "server_version": "1.13.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-04T11:21:30.536693Z"
+  },
+  "title": "SAS Viya",
+  "type": "mcp_server",
+  "version": "1.13.0"
+}

@@ -1,0 +1,92 @@
+{
+  "description": "Administer wg-easy (WireGuard Easy) v15: manage VPN clients, configs, QR codes and server status",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:00+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ni-c-wg-easy-mcp.stdio.5c6b7a214a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ni-c/wg-easy-mcp",
+    "homepage": "https://github.com/ni-c/wg-easy-mcp",
+    "repository": "https://github.com/ni-c/wg-easy-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "wg-easy-mcp@0.5.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ni-c/wg-easy-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the wg-easy web UI, e.g. https://vpn.example.com:51821",
+          "format": "string",
+          "isRequired": true,
+          "name": "WG_EASY_URL"
+        },
+        {
+          "description": "Username of a wg-easy admin account (2FA must be disabled)",
+          "format": "string",
+          "isRequired": true,
+          "name": "WG_EASY_USERNAME"
+        },
+        {
+          "description": "Password of the wg-easy admin account",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "WG_EASY_PASSWORD"
+        },
+        {
+          "description": "Set to true to accept self-signed TLS certificates (scoped to the wg-easy connection)",
+          "format": "string",
+          "name": "WG_EASY_INSECURE_TLS"
+        },
+        {
+          "description": "Set to true to register only the read tools (default: false)",
+          "format": "boolean",
+          "name": "WG_EASY_READ_ONLY"
+        },
+        {
+          "description": "Comma-separated tool names or list_* prefixes to register; 'essential' selects a curated preset (default: all tools)",
+          "format": "string",
+          "name": "WG_EASY_ALLOW_TOOLS"
+        },
+        {
+          "description": "Comma-separated tool names or list_* prefixes to remove from whatever WG_EASY_ALLOW_TOOLS left",
+          "format": "string",
+          "name": "WG_EASY_DENY_TOOLS"
+        }
+      ],
+      "identifier": "wg-easy-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5c6b7a214a",
+    "published_at": "2026-09-03T14:35:55.802533Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ni-c/wg-easy-mcp",
+    "server_version": "0.5.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-03T14:35:55.802533Z"
+  },
+  "title": "wg-easy",
+  "type": "mcp_server",
+  "version": "0.5.0"
+}

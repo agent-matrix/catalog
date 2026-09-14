@@ -1,0 +1,80 @@
+{
+  "description": "Saldos y movimientos bancarios de Interbanking (Argentina). Solo lectura.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:13+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-rje1974-interbanking.stdio.341494f2ad",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/rje1974/interbanking-mcp",
+    "homepage": "https://github.com/rje1974/interbanking-mcp",
+    "repository": "https://github.com/rje1974/interbanking-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "interbanking-mcp@1.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.rje1974/interbanking",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Client ID de tu aplicaci\u00f3n en el portal de desarrolladores de Interbanking",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "IB_CLIENT_ID"
+        },
+        {
+          "description": "Client Secret de la aplicaci\u00f3n. Se muestra una sola vez al crearla.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "IB_CLIENT_SECRET"
+        },
+        {
+          "description": "Debe coincidir con la Redirect URL configurada en el portal e incluir https://",
+          "format": "string",
+          "isRequired": true,
+          "name": "IB_REDIRECT_URL"
+        },
+        {
+          "description": "C\u00f3digo de suscriptor de Interbanking web (Administraci\u00f3n > Bancos y cuentas)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "IB_CUSTOMER_ID"
+        }
+      ],
+      "identifier": "interbanking-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "341494f2ad",
+    "published_at": "2026-09-12T01:21:31.061633Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.rje1974/interbanking",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-12T01:21:31.061633Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

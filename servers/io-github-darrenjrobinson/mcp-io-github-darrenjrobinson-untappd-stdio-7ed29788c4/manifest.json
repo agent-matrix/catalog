@@ -1,0 +1,88 @@
+{
+  "description": "MCP server exposing Untappd API tools for AI agents \u2014 full v4 read API coverage",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-darrenjrobinson-untappd.stdio.7ed29788c4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/darrenjrobinson/untappd-mcp-server",
+    "homepage": "https://github.com/darrenjrobinson/untappd-mcp-server",
+    "repository": "https://github.com/darrenjrobinson/untappd-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "untappd-mcp-server@2.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.darrenjrobinson/untappd",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Untappd API Client ID",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "UNTAPPD_CLIENT_ID"
+        },
+        {
+          "description": "Untappd API Client Secret",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "UNTAPPD_CLIENT_SECRET"
+        },
+        {
+          "description": "Untappd OAuth access token \u2014 unlocks the friend feed tool, user-scoped rate limits, and richer /user data. Optional: can instead be obtained interactively via the authenticate_untappd tool or `npx untappd-mcp-server auth` (stored in ~/.untappd-mcp-server/token.json)",
+          "format": "string",
+          "isSecret": true,
+          "name": "UNTAPPD_ACCESS_TOKEN"
+        },
+        {
+          "description": "Default username for authenticated user tools",
+          "format": "string",
+          "name": "UNTAPPD_USERNAME"
+        },
+        {
+          "description": "OAuth redirect URL for interactive authentication \u2014 must exactly match the Callback URL registered in your Untappd app settings; default http://localhost:8737/callback",
+          "format": "string",
+          "name": "UNTAPPD_REDIRECT_URL"
+        },
+        {
+          "description": "Override path for the saved token file; default ~/.untappd-mcp-server/token.json",
+          "format": "string",
+          "name": "UNTAPPD_TOKEN_PATH"
+        }
+      ],
+      "identifier": "untappd-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.0.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7ed29788c4",
+    "published_at": "2026-09-07T07:00:54.590631Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.darrenjrobinson/untappd",
+    "server_version": "2.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-07T07:00:54.590631Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "2.0.1"
+}

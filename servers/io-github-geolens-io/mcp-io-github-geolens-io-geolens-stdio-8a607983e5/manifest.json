@@ -1,0 +1,71 @@
+{
+  "description": "Read-only access to a self-hosted GeoLens spatial catalog: datasets, features, maps, sandboxed SQL.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-geolens-io-geolens.stdio.8a607983e5",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/geolens-io/geolens",
+    "homepage": "https://github.com/geolens-io/geolens",
+    "repository": "https://github.com/geolens-io/geolens"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "geolens-mcp==1.19.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.geolens-io/geolens",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the GeoLens instance, e.g. https://geolens.example.com (the /api suffix is appended automatically).",
+          "format": "string",
+          "isRequired": true,
+          "name": "GEOLENS_INSTANCE"
+        },
+        {
+          "description": "API key, sent as X-Api-Key. Omit for public-only access.",
+          "format": "string",
+          "isSecret": true,
+          "name": "GEOLENS_API_KEY"
+        },
+        {
+          "description": "JWT bearer token, used only when GEOLENS_API_KEY is unset.",
+          "format": "string",
+          "isSecret": true,
+          "name": "GEOLENS_TOKEN"
+        }
+      ],
+      "identifier": "geolens-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.19.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8a607983e5",
+    "published_at": "2026-09-12T14:14:16.284272Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.geolens-io/geolens",
+    "server_version": "1.19.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-12T14:14:16.284272Z"
+  },
+  "title": "GeoLens",
+  "type": "mcp_server",
+  "version": "1.19.1"
+}

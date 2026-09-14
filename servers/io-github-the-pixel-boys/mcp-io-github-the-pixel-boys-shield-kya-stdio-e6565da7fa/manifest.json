@@ -1,0 +1,87 @@
+{
+  "description": "KYA MCP gate: evaluate, ingest, request approval. Sole PEP is Shield.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:06+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-The-Pixel-Boys-shield-kya.stdio.e6565da7fa",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/The-Pixel-Boys/shield-kya",
+    "homepage": "https://github.com/The-Pixel-Boys/shield-kya",
+    "repository": "https://github.com/The-Pixel-Boys/shield-kya"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@shield-agent/kya@0.1.29"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.The-Pixel-Boys/shield-kya",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Control plane origin (e.g. http://127.0.0.1:8090 or hosted URL)",
+          "format": "string",
+          "isRequired": true,
+          "name": "KYA_BASE_URL"
+        },
+        {
+          "description": "API key for the control plane (required when auth is on)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "KYA_API_KEY"
+        },
+        {
+          "default": "ide",
+          "description": "Dual-plane host tag: ide (authoring) or runtime (production)",
+          "format": "string",
+          "name": "KYA_HOST"
+        },
+        {
+          "description": "Registered agent principal id",
+          "format": "string",
+          "name": "KYA_AGENT_ID"
+        }
+      ],
+      "identifier": "@shield-agent/kya",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "serve-mcp"
+        },
+        {
+          "type": "positional",
+          "value": "--stdio"
+        }
+      ],
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.29"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e6565da7fa",
+    "published_at": "2026-09-05T13:53:59.546595Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.The-Pixel-Boys/shield-kya",
+    "server_version": "0.1.29",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-05T13:53:59.546595Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.29"
+}

@@ -1,0 +1,82 @@
+{
+  "description": "Schedule posts, read comments and answer messages across twelve social networks.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:25+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-taliasoftworks-planvortex.stdio.30585668d4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/taliasoftworks/PlanVortexMCP",
+    "homepage": "https://github.com/taliasoftworks/PlanVortexMCP",
+    "repository": "https://github.com/taliasoftworks/PlanVortexMCP"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "planvortex-mcp@0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.taliasoftworks/planvortex",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Client id of a PlanVortex app. Every plan has apps, the free one included. Panel: Settings > Apps.",
+          "isRequired": true,
+          "name": "PLANVORTEX_CLIENT_ID"
+        },
+        {
+          "description": "Secret of that app.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "PLANVORTEX_CLIENT_SECRET"
+        },
+        {
+          "description": "Default organization id. Optional: saves a discovery call per conversation.",
+          "name": "PLANVORTEX_ORGANIZATION_ID"
+        },
+        {
+          "description": "Directories upload_media may read from. Empty means none.",
+          "name": "PLANVORTEX_MCP_UPLOAD_DIRS"
+        },
+        {
+          "description": "Set to 1 to remove the nine write tools.",
+          "name": "PLANVORTEX_MCP_READ_ONLY"
+        },
+        {
+          "description": "Set to 1 to add create_ai_plan, which generates a week of posts and spends AI credits.",
+          "name": "PLANVORTEX_MCP_ALLOW_AI"
+        }
+      ],
+      "identifier": "planvortex-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "30585668d4",
+    "published_at": "2026-09-04T12:15:19.859728Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.taliasoftworks/planvortex",
+    "server_version": "0.3.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-04T12:15:19.859728Z"
+  },
+  "title": "PlanVortex",
+  "type": "mcp_server",
+  "version": "0.3.0"
+}

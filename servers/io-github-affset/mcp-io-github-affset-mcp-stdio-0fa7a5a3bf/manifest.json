@@ -1,0 +1,86 @@
+{
+  "description": "Run affset from chat: stats, campaigns, zones, payouts, targeting, and team.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:11+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-affset-mcp.stdio.0fa7a5a3bf",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/affset/mcp",
+    "homepage": "https://github.com/affset/mcp",
+    "repository": "https://github.com/affset/mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@affset/mcp@0.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.affset/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Origin of your affset ad server API (no path, query, or embedded credentials).",
+          "format": "string",
+          "isRequired": true,
+          "name": "AFFSET_BASE_URL",
+          "placeholder": "https://api.affset.com"
+        },
+        {
+          "description": "Tenant API key (Bearer token). Its namespace must match AFFSET_NAMESPACE.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AFFSET_API_KEY"
+        },
+        {
+          "description": "Tenant namespace this key belongs to (lowercase letters, numbers, hyphens; 3\u201363 chars).",
+          "format": "string",
+          "isRequired": true,
+          "name": "AFFSET_NAMESPACE",
+          "placeholder": "your-namespace"
+        },
+        {
+          "default": "30000",
+          "description": "Optional per-request HTTP timeout in milliseconds (1000\u2013300000).",
+          "format": "number",
+          "name": "AFFSET_REQUEST_TIMEOUT_MS"
+        },
+        {
+          "default": "false",
+          "description": "Optional. Set to true to register only read-only tools (no create/update/delete/cut).",
+          "format": "boolean",
+          "name": "AFFSET_READ_ONLY"
+        }
+      ],
+      "identifier": "@affset/mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "0fa7a5a3bf",
+    "published_at": "2026-09-13T17:12:33.454095Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.affset/mcp",
+    "server_version": "0.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-13T17:12:33.454095Z"
+  },
+  "title": "affset",
+  "type": "mcp_server",
+  "version": "0.4.0"
+}

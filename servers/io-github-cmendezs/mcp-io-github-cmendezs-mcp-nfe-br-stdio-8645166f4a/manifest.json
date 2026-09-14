@@ -1,0 +1,68 @@
+{
+  "description": "MCP server for Brazilian e-invoicing: NF-e and NFC-e (modelo 55/65), schema 4.00, SEFAZ.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-cmendezs-mcp-nfe-br.stdio.8645166f4a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cmendezs/mcp-nfe-br",
+    "homepage": "https://github.com/cmendezs/mcp-nfe-br",
+    "repository": "https://github.com/cmendezs/mcp-nfe-br"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-nfe-br==0.9.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cmendezs/mcp-nfe-br",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Master switch. Set to '1' to disable all write-side tools across NF-e, NFC-e, NFS-e, AND CT-e (br__submit_nfe, br__distribute_dfe, br__submit_nfse, br__cancel_nfse, br__submit_cte, br__cancel_cte, br__correct_cte). Read-only mode for safe exploration. Setting only this variable is sufficient to disable all CT-e writes too \u2014 BR_CTE_READ_ONLY is an additional, independent gate, not a required second step.",
+          "format": "string",
+          "name": "BR_READ_ONLY"
+        },
+        {
+          "description": "Set to '1' to disable the three CT-e write-side tools (br__submit_cte, br__cancel_cte, br__correct_cte). Independent of BR_READ_ONLY \u2014 either variable being set to '1' is sufficient to block CT-e writes; use this one to gate CT-e alone while leaving NF-e/NFS-e writes enabled.",
+          "format": "string",
+          "name": "BR_CTE_READ_ONLY"
+        },
+        {
+          "description": "Logging level: DEBUG, INFO (default), WARNING, or ERROR",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "mcp-nfe-br",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.9.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8645166f4a",
+    "published_at": "2026-09-12T08:49:01.128551Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cmendezs/mcp-nfe-br",
+    "server_version": "0.9.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-12T08:49:01.128551Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.9.1"
+}

@@ -1,0 +1,54 @@
+{
+  "description": "Supervised API-write gateway for AI agents with policy, human approval and execution receipts.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.app-actiondock-actiondock.sse.5a4f2e772f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://actiondock.app/mcp"
+    }
+  },
+  "name": "app.actiondock/actiondock",
+  "provenance": {
+    "identity_key": "5a4f2e772f",
+    "published_at": "2026-09-10T13:49:57.414198Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "app.actiondock/actiondock",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-10T13:49:57.414198Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "ActionDock workspace API key",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {ACTIONDOCK_API_KEY}",
+          "variables": {
+            "ACTIONDOCK_API_KEY": {
+              "description": "Workspace API key created in the ActionDock dashboard",
+              "format": "string",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://actiondock.app/mcp"
+    }
+  ],
+  "title": "ActionDock",
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

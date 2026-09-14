@@ -1,0 +1,63 @@
+{
+  "description": "Check what other agents hit the same tool failure \u2014 and what recovery worked. Ask before retrying.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-failecho-failecho.stdio.6a2d7e6fdf",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/FailEcho/failecho",
+    "homepage": "https://github.com/FailEcho/failecho",
+    "repository": "https://github.com/FailEcho/failecho"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "failecho-mcp==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.failecho/failecho",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Network to relay to. Defaults to https://failecho.com/mcp; point it at your own server if you self-host.",
+          "name": "FAILECHO_URL"
+        },
+        {
+          "description": "Optional stable id for your agent. Salted and hashed on arrival; lets FailEcho tell your evidence from someone else's.",
+          "name": "FAILECHO_REPORTER_ID"
+        }
+      ],
+      "identifier": "failecho-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6a2d7e6fdf",
+    "published_at": "2026-09-13T10:45:20.008878Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.failecho/failecho",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-13T10:45:20.008878Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

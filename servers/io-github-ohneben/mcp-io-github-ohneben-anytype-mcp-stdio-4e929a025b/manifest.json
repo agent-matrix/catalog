@@ -1,0 +1,126 @@
+{
+  "description": "Self-hosted Anytype MCP server: the full Anytype API as an always-on Docker + HTTP endpoint.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:02+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ohneben-anytype-mcp.stdio.4e929a025b",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ohneben/Anytype-MCP",
+    "homepage": "https://github.com/ohneben/Anytype-MCP",
+    "repository": "https://github.com/ohneben/Anytype-MCP"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Publish the MCP endpoint on the host.",
+            "isRequired": true,
+            "name": "-p",
+            "type": "named",
+            "value": "{PORT}:{PORT}"
+          },
+          {
+            "description": "Let the container reach the Anytype desktop app on the host. Required on Linux, harmless on macOS and Windows.",
+            "isRequired": true,
+            "name": "--add-host",
+            "type": "named",
+            "value": "host.docker.internal:host-gateway"
+          },
+          "ghcr.io/ohneben/anytype-mcp:1.0.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ohneben/anytype-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Anytype API key, created in the desktop app under Settings -> API Keys.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ANYTYPE_API_KEY"
+        },
+        {
+          "default": "8769",
+          "description": "Port the MCP endpoint listens on, inside the container and on the host.",
+          "format": "number",
+          "name": "PORT"
+        },
+        {
+          "default": "http://host.docker.internal:31009",
+          "description": "Where the Anytype desktop API is reachable from inside the container.",
+          "format": "string",
+          "name": "ANYTYPE_API_BASE_URL"
+        },
+        {
+          "default": "2025-11-08",
+          "description": "Anytype API version header sent with every request.",
+          "format": "string",
+          "name": "ANYTYPE_VERSION"
+        },
+        {
+          "description": "Override the Host header sent to the Anytype API. Auto-derived when unset; Anytype rejects non-loopback hosts with 403.",
+          "format": "string",
+          "name": "ANYTYPE_API_HOST_HEADER"
+        },
+        {
+          "description": "Optional bearer token required on the /mcp endpoint. Empty means open, for localhost only.",
+          "format": "string",
+          "isSecret": true,
+          "name": "MCP_SHARED_TOKEN"
+        },
+        {
+          "default": "true",
+          "description": "Compact API responses before returning them to the client. Set to false for raw payloads.",
+          "format": "boolean",
+          "name": "ANYTYPE_MCP_SLIM_RESPONSES"
+        }
+      ],
+      "identifier": "ghcr.io/ohneben/anytype-mcp:1.0.4",
+      "registryType": "oci",
+      "runtimeArguments": [
+        {
+          "description": "Publish the MCP endpoint on the host.",
+          "isRequired": true,
+          "name": "-p",
+          "type": "named",
+          "value": "{PORT}:{PORT}"
+        },
+        {
+          "description": "Let the container reach the Anytype desktop app on the host. Required on Linux, harmless on macOS and Windows.",
+          "isRequired": true,
+          "name": "--add-host",
+          "type": "named",
+          "value": "host.docker.internal:host-gateway"
+        }
+      ],
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:{PORT}/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "4e929a025b",
+    "published_at": "2026-09-05T08:06:24.515596Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ohneben/anytype-mcp",
+    "server_version": "1.0.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-05T08:06:24.515596Z"
+  },
+  "title": "Anytype (self-hosted HTTP)",
+  "type": "mcp_server",
+  "version": "1.0.4"
+}

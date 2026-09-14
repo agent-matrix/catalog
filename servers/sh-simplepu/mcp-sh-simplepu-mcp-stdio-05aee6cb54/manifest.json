@@ -1,0 +1,80 @@
+{
+  "description": "Send tasks and notifications to people's phones. Answers build a queryable knowledge base.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:44+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.sh-simplepu-mcp.stdio.05aee6cb54",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/simplepush/simplepush-mcp",
+    "homepage": "https://github.com/simplepush/simplepush-mcp",
+    "repository": "https://github.com/simplepush/simplepush-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@simplepush/mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "sh.simplepu/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Personal API token from the API Token screen in the Simplepush app. Set this or SP_INTEGRATION_TOKEN.",
+          "isSecret": true,
+          "name": "SP_API_TOKEN"
+        },
+        {
+          "description": "Organization integration token from `sp integration create`. Set this or SP_API_TOKEN; unlocks member, topic and broadcast targeting and end-to-end encryption.",
+          "isSecret": true,
+          "name": "SP_INTEGRATION_TOKEN"
+        },
+        {
+          "description": "Personal encryption keys exported from the app, comma-separated: a bare base64 key is the Personal Password key, `topic=key` binds a key to one topic.",
+          "isSecret": true,
+          "name": "SP_KEYS"
+        },
+        {
+          "default": "https://api.simplepu.sh",
+          "description": "API origin.",
+          "name": "SP_BASE_URL"
+        },
+        {
+          "default": "900",
+          "description": "Ceiling on how long send_task may block waiting for answers.",
+          "name": "SP_MAX_WAIT_SECONDS"
+        }
+      ],
+      "identifier": "@simplepush/mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "05aee6cb54",
+    "published_at": "2026-09-07T13:56:21.240951Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "sh.simplepu/mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-07T13:56:21.240951Z"
+  },
+  "title": "Simplepush",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

@@ -1,0 +1,80 @@
+{
+  "description": "Safety-first MCP server for Discord with privacy-safe reads, audits, and reviewed administration",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:11+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.app-lasers-guildcontrol-discord.stdio.9f7787500d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/j-256/guildcontrol",
+    "homepage": "https://github.com/j-256/guildcontrol",
+    "repository": "https://github.com/j-256/guildcontrol"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "guildctl@2.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "app.lasers.guildcontrol/discord",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Discord bot token sent only to fixed Discord REST and vetted Gateway origins",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DISCORD_BOT_TOKEN"
+        }
+      ],
+      "identifier": "guildctl",
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "serve"
+        },
+        {
+          "type": "positional",
+          "value": "--config"
+        },
+        {
+          "description": "Absolute path to one strict versioned non-secret configuration document",
+          "format": "filepath",
+          "isRequired": true,
+          "placeholder": "/absolute/path/to/guildcontrol.json",
+          "type": "positional",
+          "valueHint": "config_file"
+        }
+      ],
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9f7787500d",
+    "published_at": "2026-09-03T12:51:22.563929Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "app.lasers.guildcontrol/discord",
+    "server_version": "2.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-03T12:51:22.563929Z"
+  },
+  "title": "GuildControl MCP",
+  "type": "mcp_server",
+  "version": "2.2.0"
+}

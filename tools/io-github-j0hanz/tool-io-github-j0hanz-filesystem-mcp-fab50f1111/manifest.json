@@ -1,0 +1,105 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/j0hanz/filesystem-mcp:2.1.2"
+      }
+    }
+  ],
+  "description": "Secure filesystem MCP server for reading, writing, searching, diffing, and patching files.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:43+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/j0hanz/filesystem-mcp",
+  "id": "tool.io-github-j0hanz-filesystem-mcp.fab50f1111",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/j0hanz/filesystem-mcp",
+    "homepage": "https://github.com/j0hanz/filesystem-mcp",
+    "repository": "https://github.com/j0hanz/filesystem-mcp"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Secure filesystem MCP server for reading, writing, searching, diffing, and patching files.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.j0hanz/filesystem-mcp",
+      "request_type": "POST",
+      "url": "https://github.com/j0hanz/filesystem-mcp"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Keep stdin open for stdio transport.",
+            "format": "boolean",
+            "isRequired": true,
+            "name": "-i",
+            "type": "named"
+          },
+          {
+            "description": "Remove the container on exit.",
+            "format": "boolean",
+            "isRequired": true,
+            "name": "--rm",
+            "type": "named"
+          },
+          {
+            "description": "Mount the directory to expose to the server.",
+            "isRepeated": true,
+            "isRequired": true,
+            "name": "-v",
+            "type": "named",
+            "value": "{host_dir}:/workspace:ro",
+            "variables": {
+              "host_dir": {
+                "description": "Host directory path to expose to the server.",
+                "format": "filepath",
+                "isRequired": true
+              }
+            }
+          },
+          "ghcr.io/j0hanz/filesystem-mcp:2.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.j0hanz/filesystem-mcp",
+  "provenance": {
+    "identity_key": "c972d21398",
+    "promoted_from": "mcp.io-github-j0hanz-filesystem-mcp.stdio.c972d21398",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.j0hanz/filesystem-mcp",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-j0hanz-filesystem-mcp.stdio.c972d21398",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/j0hanz/filesystem-mcp",
+  "summary": "Secure filesystem MCP server for reading, writing, searching, diffing, and patching files.",
+  "tags": [
+    "diffing",
+    "filesystem",
+    "patching",
+    "reading",
+    "searching",
+    "secure",
+    "writing"
+  ],
+  "title": "Filesystem MCP",
+  "type": "tool",
+  "version": "2.1.2"
+}

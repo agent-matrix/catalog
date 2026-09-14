@@ -1,0 +1,130 @@
+{
+  "description": "Query OpenTelemetry traces from LLM apps across Jaeger, Tempo, Traceloop, Datadog, and Sentry.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:53+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-mcpsmiths-tracehub-mcp.stdio.327db747c3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/mcpsmiths/tracehub-mcp",
+    "homepage": "https://github.com/mcpsmiths/tracehub-mcp",
+    "repository": "https://github.com/mcpsmiths/tracehub-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "tracehub-mcp==0.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.mcpsmiths/tracehub-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "choices": [
+            "jaeger",
+            "tempo",
+            "traceloop",
+            "datadog",
+            "sentry"
+          ],
+          "default": "jaeger",
+          "description": "Which observability backend to query.",
+          "format": "string",
+          "isRequired": true,
+          "name": "BACKEND_TYPE"
+        },
+        {
+          "description": "Backend API endpoint, e.g. http://localhost:16686 for Jaeger or https://api.datadoghq.com for Datadog.",
+          "format": "string",
+          "isRequired": true,
+          "name": "BACKEND_URL"
+        },
+        {
+          "description": "API key or auth token. Required for Traceloop, Datadog, and Sentry; not used by Jaeger or Tempo.",
+          "format": "string",
+          "isSecret": true,
+          "name": "BACKEND_API_KEY"
+        },
+        {
+          "description": "Datadog Application key, required in addition to BACKEND_API_KEY for the Datadog backend only.",
+          "format": "string",
+          "isSecret": true,
+          "name": "BACKEND_APP_KEY"
+        },
+        {
+          "description": "Grafana Cloud stack/instance ID, used with BACKEND_API_KEY for Basic Auth (Tempo backend only, required for Grafana Cloud-hosted Tempo, not needed for self-hosted Tempo).",
+          "format": "string",
+          "name": "BACKEND_TEMPO_INSTANCE_ID"
+        },
+        {
+          "description": "Sentry organization slug, required for the Sentry backend only.",
+          "format": "string",
+          "name": "BACKEND_SENTRY_ORG"
+        },
+        {
+          "description": "Sentry project slug, optional for the Sentry backend - narrows queries to one project.",
+          "format": "string",
+          "name": "BACKEND_SENTRY_PROJECT"
+        },
+        {
+          "default": "prd",
+          "description": "Comma-separated environments for the Traceloop backend only.",
+          "format": "string",
+          "name": "BACKEND_ENVIRONMENTS"
+        },
+        {
+          "default": "30",
+          "description": "Request timeout in seconds.",
+          "format": "number",
+          "name": "BACKEND_TIMEOUT"
+        },
+        {
+          "choices": [
+            "DEBUG",
+            "INFO",
+            "WARNING",
+            "ERROR"
+          ],
+          "default": "INFO",
+          "description": "Logging level.",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        },
+        {
+          "default": "500",
+          "description": "Maximum traces validated per query (1-1000).",
+          "format": "number",
+          "name": "MAX_TRACES_PER_QUERY"
+        }
+      ],
+      "identifier": "tracehub-mcp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "327db747c3",
+    "published_at": "2026-09-13T19:03:12.359362Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.mcpsmiths/tracehub-mcp",
+    "server_version": "0.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-13T19:03:12.359362Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.4.0"
+}

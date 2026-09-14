@@ -1,0 +1,59 @@
+{
+  "description": "Generate secured CRUD APIs over your database, run SQL, manage files, tasks and a headless browser",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:09+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-polterguy-magic.stdio.f2f6fb7bc9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/polterguy/magic",
+    "homepage": "https://github.com/polterguy/magic",
+    "repository": "https://github.com/polterguy/magic"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "docker.io/servergardens/magic-aio:v23.5.12"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.polterguy/magic",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Hostname of your own Magic instance, e.g. magic.example.com",
+          "format": "string",
+          "isRequired": true,
+          "name": "magic_host"
+        }
+      ],
+      "identifier": "docker.io/servergardens/magic-aio:v23.5.12",
+      "registryType": "oci",
+      "transport": {
+        "type": "streamable-http",
+        "url": "https://{magic_host}/magic/modules/mcp/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "f2f6fb7bc9",
+    "published_at": "2026-08-31T14:31:03.120682Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.polterguy/magic",
+    "server_version": "23.5.12",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-31T14:31:03.120682Z"
+  },
+  "title": "Magic Cloud",
+  "type": "mcp_server",
+  "version": "23.5.12"
+}

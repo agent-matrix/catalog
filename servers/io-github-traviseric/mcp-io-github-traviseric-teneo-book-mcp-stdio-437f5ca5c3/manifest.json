@@ -1,0 +1,77 @@
+{
+  "description": "Publish-ready nonfiction books from a topic: manuscript, cover, PDF/EPUB/DOCX. Free outline to try.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:07+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Traviseric-teneo-book-mcp.stdio.437f5ca5c3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Traviseric/teneo-book-mcp",
+    "homepage": "https://github.com/Traviseric/teneo-book-mcp",
+    "repository": "https://github.com/Traviseric/teneo-book-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "teneo-book-mcp@1.0.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Traviseric/teneo-book-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Per-agent API key from the Teneo dashboard. Books are charged to this key owner's Teneo credit balance.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "TENEO_API_KEY"
+        },
+        {
+          "description": "Optional Teneo API base URL. Defaults to https://teneo.io. Use https://staging.teneo.io for staging.",
+          "format": "string",
+          "name": "TENEO_BASE_URL"
+        },
+        {
+          "description": "Optional ecosystem service key alternative to TENEO_API_KEY.",
+          "format": "string",
+          "isSecret": true,
+          "name": "TENEO_SERVICE_KEY"
+        },
+        {
+          "description": "Required when using TENEO_SERVICE_KEY. Teneo user id whose credits are charged.",
+          "format": "string",
+          "name": "TENEO_ON_BEHALF_OF"
+        }
+      ],
+      "identifier": "teneo-book-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "437f5ca5c3",
+    "published_at": "2026-09-02T23:08:57.807611Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Traviseric/teneo-book-mcp",
+    "server_version": "1.0.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-02T23:08:57.807611Z"
+  },
+  "title": "Teneo Book Generation",
+  "type": "mcp_server",
+  "version": "1.0.3"
+}

@@ -1,0 +1,73 @@
+{
+  "description": "x402 micropayments MCP: Xiaohongshu notes and paid APIs settled in USDC on Base.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-yyxqqq777-agentpay.stdio.6cc388dd27",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/yyxqqq777/mcp-server-agentpay",
+    "homepage": "https://github.com/yyxqqq777/mcp-server-agentpay",
+    "repository": "https://github.com/yyxqqq777/mcp-server-agentpay"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-server-agentpay==0.1.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.yyxqqq777/agentpay",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "EVM private key for signing USDC micropayments on Base (wallet must hold USDC)",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AGENT_PRIVATE_KEY"
+        },
+        {
+          "default": "0.10",
+          "description": "Maximum USDC the agent may spend per API call (default: 0.10)",
+          "format": "string",
+          "name": "MAX_SPEND_PER_CALL"
+        },
+        {
+          "default": "https://agentpay-xhs-production.up.railway.app",
+          "description": "Optional override of the AgentPay gateway URL",
+          "format": "string",
+          "name": "GATEWAY_BASE_URL"
+        }
+      ],
+      "identifier": "mcp-server-agentpay",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6cc388dd27",
+    "published_at": "2026-09-07T05:01:25.717703Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.yyxqqq777/agentpay",
+    "server_version": "0.1.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-07T05:01:25.717703Z"
+  },
+  "title": "AgentPay",
+  "type": "mcp_server",
+  "version": "0.1.2"
+}

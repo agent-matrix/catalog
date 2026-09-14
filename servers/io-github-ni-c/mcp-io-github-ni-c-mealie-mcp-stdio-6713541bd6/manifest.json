@@ -1,0 +1,91 @@
+{
+  "description": "MCP server for Mealie, the self-hosted recipe manager and meal planner",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:00+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ni-c-mealie-mcp.stdio.6713541bd6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ni-c/mealie-mcp",
+    "homepage": "https://github.com/ni-c/mealie-mcp",
+    "repository": "https://github.com/ni-c/mealie-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@ni-c/mealie-mcp@0.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ni-c/mealie-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of the Mealie instance, e.g. https://mealie.example.com",
+          "format": "string",
+          "isRequired": true,
+          "name": "MEALIE_URL"
+        },
+        {
+          "description": "API token created in Mealie under Settings \u2192 API Tokens",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "MEALIE_API_TOKEN"
+        },
+        {
+          "description": "Exactly 'true' registers only the 17 read tools",
+          "format": "string",
+          "name": "MEALIE_READ_ONLY"
+        },
+        {
+          "description": "Accept-Language header, e.g. de-DE; localises unit and label names",
+          "format": "string",
+          "name": "MEALIE_ACCEPT_LANGUAGE"
+        },
+        {
+          "description": "Exactly 'true' accepts a self-signed certificate, scoped to this connection",
+          "format": "string",
+          "name": "MEALIE_INSECURE_TLS"
+        },
+        {
+          "description": "Comma-separated tool names or list_* prefixes to register; 'essential' selects a curated preset (default: all tools)",
+          "format": "string",
+          "name": "MEALIE_ALLOW_TOOLS"
+        },
+        {
+          "description": "Comma-separated tool names or list_* prefixes to remove from whatever MEALIE_ALLOW_TOOLS left",
+          "format": "string",
+          "name": "MEALIE_DENY_TOOLS"
+        }
+      ],
+      "identifier": "@ni-c/mealie-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6713541bd6",
+    "published_at": "2026-09-07T13:34:28.935206Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ni-c/mealie-mcp",
+    "server_version": "0.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-07T13:34:28.935206Z"
+  },
+  "title": "Mealie MCP Server",
+  "type": "mcp_server",
+  "version": "0.4.0"
+}

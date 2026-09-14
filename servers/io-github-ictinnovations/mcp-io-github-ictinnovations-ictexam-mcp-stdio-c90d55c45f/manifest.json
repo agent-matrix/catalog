@@ -1,0 +1,96 @@
+{
+  "description": "Read exams, gradebooks and item analysis; parse papers with AI and publish exams.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ictinnovations-ictexam-mcp.stdio.c90d55c45f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ictinnovations/ictexam-mcp",
+    "homepage": "https://github.com/ictinnovations/ictexam-mcp",
+    "repository": "https://github.com/ictinnovations/ictexam-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "ictexam-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ictinnovations/ictexam-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Base URL of your ICTExam site, e.g. https://app.ictlms.net (no trailing /api).",
+          "format": "string",
+          "isRequired": true,
+          "name": "ICTEXAM_BASE_URL"
+        },
+        {
+          "description": "A teacher or admin account email.",
+          "format": "string",
+          "isRequired": true,
+          "name": "ICTEXAM_EMAIL"
+        },
+        {
+          "description": "Password for the account.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ICTEXAM_PASSWORD"
+        },
+        {
+          "default": "/api",
+          "description": "Path the API is mounted under. Defaults to /api (behind the usual reverse proxy). Set empty to talk to the backend port directly.",
+          "format": "string",
+          "name": "ICTEXAM_API_PREFIX"
+        },
+        {
+          "default": "false",
+          "description": "Unlocks the write tools: parse a paper with AI (spends server AI credit), publish and unpublish exams. When false these tools are not registered at all. Leave off unless you mean it.",
+          "format": "boolean",
+          "name": "ICTEXAM_MCP_ALLOW_WRITE"
+        },
+        {
+          "default": "60000",
+          "description": "Per request timeout in milliseconds. Defaults to 60000 (AI parsing can be slow).",
+          "format": "number",
+          "name": "ICTEXAM_TIMEOUT_MS"
+        },
+        {
+          "default": "false",
+          "description": "Skip TLS certificate verification. Only for a self-signed test server.",
+          "format": "boolean",
+          "name": "ICTEXAM_TLS_INSECURE"
+        }
+      ],
+      "identifier": "ictexam-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c90d55c45f",
+    "published_at": "2026-09-01T08:01:11.271998Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ictinnovations/ictexam-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-01T08:01:11.271998Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

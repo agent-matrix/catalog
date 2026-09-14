@@ -1,0 +1,76 @@
+{
+  "description": "Parent/fan access to Artsonia student-art portfolios, comments, and fans (AI-built).",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-chrischall-artsonia-mcp.stdio.3a7c1d5342",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/chrischall/artsonia-mcp",
+    "homepage": "https://github.com/chrischall/artsonia-mcp",
+    "repository": "https://github.com/chrischall/artsonia-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "artsonia-mcp@0.12.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.chrischall/artsonia-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Your Artsonia login email address",
+          "format": "string",
+          "isRequired": true,
+          "name": "ARTSONIA_USERNAME"
+        },
+        {
+          "description": "Your Artsonia account password",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ARTSONIA_PASSWORD"
+        },
+        {
+          "description": "Set to false to disable the on-disk session cache and re-authenticate on every process start. Defaults to enabled.",
+          "format": "string",
+          "name": "ARTSONIA_SESSION_CACHE"
+        },
+        {
+          "description": "Absolute path for the session cache file. Defaults to $MCP_DATA_DIR/.artsonia-mcp/session-<user>.json.",
+          "format": "string",
+          "name": "ARTSONIA_SESSION_FILE"
+        }
+      ],
+      "identifier": "artsonia-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.12.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "3a7c1d5342",
+    "published_at": "2026-09-04T22:27:59.518412Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.chrischall/artsonia-mcp",
+    "server_version": "0.12.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-04T22:27:59.518412Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.12.0"
+}

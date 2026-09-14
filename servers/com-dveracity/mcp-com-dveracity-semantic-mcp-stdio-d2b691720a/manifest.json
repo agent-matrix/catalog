@@ -1,0 +1,75 @@
+{
+  "description": "Natural-language queries over a verified emissions knowledge graph, plus standards validation",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:19+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-dveracity-semantic-mcp.stdio.d2b691720a",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/d-veracity/semantic-mcp",
+    "homepage": "https://github.com/d-veracity/semantic-mcp",
+    "repository": "https://github.com/d-veracity/semantic-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@dveracity/semantic-mcp@0.5.6"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.dveracity/semantic-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "dVeracity API key (dvrc_...). Required for the stdio package; metered calls are billed to it. Not used by the remote endpoint, which authenticates with OAuth.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DVERACITY_API_KEY"
+        },
+        {
+          "description": "Optional. Override the API base URL; defaults to production.",
+          "format": "string",
+          "name": "DVERACITY_API_URL"
+        },
+        {
+          "description": "Optional. Agent AID enabling vLEI-verified identity mode.",
+          "format": "string",
+          "name": "DVERACITY_KERI_AID"
+        },
+        {
+          "description": "Optional. Path to the CESR presentation used with the agent AID.",
+          "format": "filepath",
+          "name": "DVERACITY_KERI_PRESENTATION"
+        }
+      ],
+      "identifier": "@dveracity/semantic-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.6"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d2b691720a",
+    "published_at": "2026-09-11T23:38:02.124669Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.dveracity/semantic-mcp",
+    "server_version": "0.5.6",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-11T23:38:02.124669Z"
+  },
+  "title": "dVeracity Semantic API",
+  "type": "mcp_server",
+  "version": "0.5.6"
+}

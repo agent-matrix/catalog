@@ -1,0 +1,66 @@
+{
+  "description": "The data control plane for AI agents \u2014 acquire, validate, land, and query data over MCP.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-datris-datris.stdio.b496876c0d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/datris/datris-platform-oss",
+    "homepage": "https://github.com/datris/datris-platform-oss",
+    "repository": "https://github.com/datris/datris-platform-oss"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "docker.io/datrisai/datris-mcp-server:1.28.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.datris/datris",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "URL of the Datris pipeline server",
+          "format": "string",
+          "isRequired": true,
+          "name": "PIPELINE_URL"
+        },
+        {
+          "description": "API key for the Datris pipeline server (if key validation is enabled)",
+          "format": "string",
+          "isSecret": true,
+          "name": "PIPELINE_API_KEY"
+        }
+      ],
+      "identifier": "docker.io/datrisai/datris-mcp-server:1.28.1",
+      "registryType": "oci",
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:3000/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "b496876c0d",
+    "published_at": "2026-09-08T20:00:41.833029Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.datris/datris",
+    "server_version": "1.28.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-08T20:00:41.833029Z"
+  },
+  "title": "Datris",
+  "type": "mcp_server",
+  "version": "1.28.1"
+}

@@ -1,0 +1,106 @@
+{
+  "description": "Manage Proxmox VE nodes, VMs, containers, storage and snapshots. Read-only by default.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:11+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-akmalovaa-proxmox-mcp.stdio.3b3f4f41d7",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/akmalovaa/proxmox-mcp",
+    "homepage": "https://github.com/akmalovaa/proxmox-mcp",
+    "repository": "https://github.com/akmalovaa/proxmox-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "proxmox-ve-mcp==2.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.akmalovaa/proxmox-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Proxmox host IP or hostname.",
+          "format": "string",
+          "isRequired": true,
+          "name": "PROXMOX_HOST"
+        },
+        {
+          "default": "root@pam",
+          "description": "API user, including the realm.",
+          "format": "string",
+          "name": "PROXMOX_USER"
+        },
+        {
+          "description": "API token name. Use this plus PROXMOX_TOKEN_VALUE, or PROXMOX_PASSWORD.",
+          "format": "string",
+          "name": "PROXMOX_TOKEN_NAME"
+        },
+        {
+          "description": "API token secret.",
+          "format": "string",
+          "isSecret": true,
+          "name": "PROXMOX_TOKEN_VALUE"
+        },
+        {
+          "description": "Password, used only when no API token is set.",
+          "format": "string",
+          "isSecret": true,
+          "name": "PROXMOX_PASSWORD"
+        },
+        {
+          "default": "8006",
+          "description": "Proxmox API port.",
+          "format": "number",
+          "name": "PROXMOX_PORT"
+        },
+        {
+          "default": "false",
+          "description": "Verify the TLS certificate. Proxmox self-signs by default.",
+          "format": "boolean",
+          "name": "PROXMOX_VERIFY_SSL"
+        },
+        {
+          "choices": [
+            "read",
+            "lifecycle",
+            "all"
+          ],
+          "default": "read",
+          "description": "Which tools exist: read-only, plus lifecycle, or everything.",
+          "format": "string",
+          "name": "PROXMOX_RISK_LEVEL"
+        }
+      ],
+      "identifier": "proxmox-ve-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "3b3f4f41d7",
+    "published_at": "2026-09-01T09:52:11.307974Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.akmalovaa/proxmox-mcp",
+    "server_version": "2.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-01T09:52:11.307974Z"
+  },
+  "title": "Proxmox VE",
+  "type": "mcp_server",
+  "version": "2.2.0"
+}

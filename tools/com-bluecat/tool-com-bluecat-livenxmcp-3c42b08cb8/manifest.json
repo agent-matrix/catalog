@@ -1,0 +1,71 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "quay.io/bluecat/livenxmcp:26.2"
+      }
+    }
+  ],
+  "description": "MCP server for LiveAction LiveNX",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "tool.com-bluecat-livenxmcp.3c42b08cb8",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "tool": {
+      "description": "MCP server for LiveAction LiveNX",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "com.bluecat/livenxmcp",
+      "request_type": "POST",
+      "url": "mcp+stdio://oci/quay.io/bluecat/livenxmcp:26.2"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "name": "-p",
+            "type": "named",
+            "value": "9985:9985"
+          },
+          "quay.io/bluecat/livenxmcp:26.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.bluecat/livenxmcp",
+  "provenance": {
+    "identity_key": "db451c43e7",
+    "promoted_from": "mcp.com-bluecat-livenxmcp.stdio.db451c43e7",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.bluecat/livenxmcp",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.com-bluecat-livenxmcp.stdio.db451c43e7",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "summary": "MCP server for LiveAction LiveNX",
+  "tags": [
+    "liveaction",
+    "livenx",
+    "livenxmcp"
+  ],
+  "title": "Livenxmcp",
+  "type": "tool",
+  "version": "26.2"
+}

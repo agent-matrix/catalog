@@ -1,0 +1,66 @@
+{
+  "description": "Scan untrusted content for prompt injection and check link reputation before an agent acts",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-ismalicious-mcp-server.stdio.8dd0427b39",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@ismalicious/mcp-server@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.ismalicious/mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API key from https://ismalicious.com/app/account",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ISMALICIOUS_API_KEY"
+        },
+        {
+          "description": "API secret paired with the key",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ISMALICIOUS_API_SECRET"
+        },
+        {
+          "description": "API base URL (defaults to https://ismalicious.com/api)",
+          "name": "ISMALICIOUS_API_BASE"
+        }
+      ],
+      "identifier": "@ismalicious/mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8dd0427b39",
+    "published_at": "2026-09-04T16:36:16.71973Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.ismalicious/mcp-server",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-04T16:36:16.71973Z"
+  },
+  "title": "isMalicious injection gate",
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

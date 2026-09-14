@@ -1,0 +1,68 @@
+{
+  "description": "Indicator reputation verdicts, CVE lookups (CVSS, EPSS, KEV) and prompt-injection scans for agents",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-ismalicious-mcp-server.stdio.be2ef70e27",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@ismalicious/mcp-server@0.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.ismalicious/mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "API key from https://ismalicious.com/app/account. Optional: without it the server starts in bootstrap mode and offers bootstrap_key.",
+          "isSecret": true,
+          "name": "ISMALICIOUS_API_KEY"
+        },
+        {
+          "description": "API secret paired with the key",
+          "isSecret": true,
+          "name": "ISMALICIOUS_API_SECRET"
+        },
+        {
+          "description": "API base URL (defaults to https://ismalicious.com/api)",
+          "name": "ISMALICIOUS_API_BASE"
+        },
+        {
+          "description": "Replaces every tool's timeout, in milliseconds (defaults: gate 15000, check_indicator 25000, CVE 10000)",
+          "name": "ISMALICIOUS_TIMEOUT_MS"
+        }
+      ],
+      "identifier": "@ismalicious/mcp-server",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "be2ef70e27",
+    "published_at": "2026-09-04T19:50:37.105864Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.ismalicious/mcp-server",
+    "server_version": "0.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-04T19:50:37.105864Z"
+  },
+  "title": "isMalicious threat intelligence for AI agents",
+  "type": "mcp_server",
+  "version": "0.2.0"
+}

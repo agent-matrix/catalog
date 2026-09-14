@@ -1,0 +1,100 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/psu3d0/agent-spreadsheet:0.16.0-full"
+      }
+    }
+  ],
+  "description": "Agent-safe Excel workbook analysis, editing, recalc, and verification tools.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:01+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/PSU3D0/agent-spreadsheet",
+  "id": "tool.io-github-psu3d0-agent-spreadsheet.e2305e026d",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/PSU3D0/agent-spreadsheet",
+    "homepage": "https://github.com/PSU3D0/agent-spreadsheet",
+    "repository": "https://github.com/PSU3D0/agent-spreadsheet"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "Agent-safe Excel workbook analysis, editing, recalc, and verification tools.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.PSU3D0/agent-spreadsheet",
+      "request_type": "POST",
+      "url": "https://github.com/PSU3D0/agent-spreadsheet"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "type": "positional",
+            "value": "-i"
+          },
+          {
+            "type": "positional",
+            "value": "--rm"
+          },
+          {
+            "type": "positional",
+            "value": "-v"
+          },
+          {
+            "type": "positional",
+            "value": "{workbook_dir}:/data",
+            "variables": {
+              "workbook_dir": {
+                "description": "Host directory containing Excel workbooks to expose to agent-spreadsheet-mcp",
+                "format": "filepath",
+                "isRequired": true,
+                "placeholder": "/path/to/workbooks"
+              }
+            }
+          },
+          "ghcr.io/psu3d0/agent-spreadsheet:0.16.0-full"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.PSU3D0/agent-spreadsheet",
+  "provenance": {
+    "identity_key": "8dbc1cb367",
+    "promoted_from": "mcp.io-github-PSU3D0-agent-spreadsheet.stdio.8dbc1cb367",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.PSU3D0/agent-spreadsheet",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-PSU3D0-agent-spreadsheet.stdio.8dbc1cb367",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/PSU3D0/agent-spreadsheet",
+  "summary": "Agent-safe Excel workbook analysis, editing, recalc, and verification tools.",
+  "tags": [
+    "analysis",
+    "editing",
+    "excel",
+    "recalc",
+    "safe",
+    "spreadsheet",
+    "workbook"
+  ],
+  "title": "Agent Spreadsheet MCP",
+  "type": "tool",
+  "version": "0.16.0"
+}

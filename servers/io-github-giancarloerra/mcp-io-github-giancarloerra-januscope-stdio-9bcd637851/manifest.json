@@ -1,0 +1,77 @@
+{
+  "description": "Local MCP proxy for tool restrictions, response redaction, audit logs, and database schema context.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-giancarloerra-januscope.stdio.9bcd637851",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/giancarloerra/januscope",
+    "homepage": "https://github.com/giancarloerra/januscope",
+    "repository": "https://github.com/giancarloerra/januscope"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "januscope@0.5.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.giancarloerra/januscope",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional identity attribution stamped onto every audit record. Free-form operator identifier (email, employee id) for SIEM joins. Omitted from records when unset.",
+          "format": "string",
+          "name": "JANUSCOPE_USER"
+        },
+        {
+          "description": "Optional org / team / cost-centre identifier stamped onto every audit record. Omitted when unset.",
+          "format": "string",
+          "name": "JANUSCOPE_TEAM"
+        },
+        {
+          "description": "Optional client-side correlation id stamped onto every audit record. Useful for cross-process tracing.",
+          "format": "string",
+          "name": "JANUSCOPE_SESSION"
+        }
+      ],
+      "identifier": "januscope",
+      "packageArguments": [
+        {
+          "description": "Bundled policy preset name (for example postgres-crystaldba) or absolute path to a YAML/JSON policy. The target MCP's prerequisites and environment variables must also be configured; inspect them with januscope lenses show <name>.",
+          "format": "string",
+          "isRequired": true,
+          "name": "--config",
+          "type": "named"
+        }
+      ],
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.5.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "9bcd637851",
+    "published_at": "2026-09-10T15:35:11.489954Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.giancarloerra/januscope",
+    "server_version": "0.5.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-10T15:35:11.489954Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.5.0"
+}

@@ -1,0 +1,88 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/cgallic/wpguard-mcp:0.3.1"
+      }
+    }
+  ],
+  "description": "WordPress edit previews, scoped correction checks, and change records for trusted operators.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:19+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/cgallic/wpguard-mcp",
+  "id": "tool.io-github-cgallic-wpguard-mcp.4b3359eaae",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/cgallic/wpguard-mcp",
+    "homepage": "https://github.com/cgallic/wpguard-mcp",
+    "repository": "https://github.com/cgallic/wpguard-mcp"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "WordPress edit previews, scoped correction checks, and change records for trusted operators.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.cgallic/wpguard-mcp",
+      "request_type": "POST",
+      "url": "https://github.com/cgallic/wpguard-mcp"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Expose the MCP endpoint on host loopback only.",
+            "name": "--publish",
+            "type": "named",
+            "value": "127.0.0.1:8642:8642"
+          },
+          {
+            "description": "Persist the private site registry, corrections, and change records.",
+            "name": "--volume",
+            "type": "named",
+            "value": "wpguard-state:/state"
+          },
+          "ghcr.io/cgallic/wpguard-mcp:0.3.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.cgallic/wpguard-mcp",
+  "provenance": {
+    "identity_key": "47dcf765bf",
+    "promoted_from": "mcp.io-github-cgallic-wpguard-mcp.stdio.47dcf765bf",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.cgallic/wpguard-mcp",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-cgallic-wpguard-mcp.stdio.47dcf765bf",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/cgallic/wpguard-mcp",
+  "summary": "WordPress edit previews, scoped correction checks, and change records for trusted operators.",
+  "tags": [
+    "checks",
+    "correction",
+    "edit",
+    "previews",
+    "scoped",
+    "wordpress",
+    "wpguard"
+  ],
+  "title": "WPGuard MCP",
+  "type": "tool",
+  "version": "0.3.1"
+}

@@ -1,0 +1,64 @@
+{
+  "description": "Fail-closed MCP adapter for untrusted model output over a local Tkach runtime.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:50+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ECD5A-tkach-security.stdio.80f96f293f",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='cargo' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/ECD5A/Tkach-Security",
+    "homepage": "https://github.com/ECD5A/Tkach-Security",
+    "repository": "https://github.com/ECD5A/Tkach-Security"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ECD5A/tkach-security",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "127.0.0.1:8080",
+          "description": "Loopback address of the already running Tkach HTTP runtime.",
+          "format": "string",
+          "name": "TKACH_HTTP_ADDR"
+        },
+        {
+          "description": "Trusted bearer proof for the local runtime.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "TKACH_BEARER_TOKEN"
+        }
+      ],
+      "identifier": "tkach-mcp",
+      "registryType": "cargo",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "80f96f293f",
+    "published_at": "2026-09-12T07:32:20.587021Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ECD5A/tkach-security",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-12T07:32:20.587021Z"
+  },
+  "title": "Tkach Security",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

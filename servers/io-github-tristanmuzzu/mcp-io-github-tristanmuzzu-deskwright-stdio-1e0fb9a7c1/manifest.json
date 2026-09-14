@@ -1,0 +1,79 @@
+{
+  "description": "Agents use real GNOME/Wayland apps: on your screen, or an invisible second desktop you never see",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:31+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-tristanmuzzu-deskwright.stdio.1e0fb9a7c1",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/tristanmuzzu/deskwright",
+    "homepage": "https://github.com/tristanmuzzu/deskwright",
+    "repository": "https://github.com/tristanmuzzu/deskwright"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "pipx",
+          {
+            "description": "Required at install time. PyGObject ships no PyPI wheels, so the environment must be able to see the distro package (python3-gi / python3-gobject / python-gobject). `deskwright-setup --check` prints the exact install line for the running distro.",
+            "isRequired": true,
+            "name": "--system-site-packages",
+            "type": "named"
+          },
+          "deskwright==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.tristanmuzzu/deskwright",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "primary",
+          "description": "Which desktop to drive: 'primary' (the screen you are looking at), 'headless' for an invisible virtual-monitor session, or 'headless:<name>' to pick one of several.",
+          "name": "DESKWRIGHT_SESSION"
+        },
+        {
+          "default": "auto",
+          "description": "Force the input path: 'mutter' for GNOME's org.gnome.Mutter.RemoteDesktop (no consent dialog), 'portal' for org.freedesktop.portal.RemoteDesktop (one consent, then persisted). Auto-selected when unset.",
+          "name": "DESKWRIGHT_INPUT_BACKEND"
+        }
+      ],
+      "identifier": "deskwright",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeArguments": [
+        {
+          "description": "Required at install time. PyGObject ships no PyPI wheels, so the environment must be able to see the distro package (python3-gi / python3-gobject / python-gobject). `deskwright-setup --check` prints the exact install line for the running distro.",
+          "isRequired": true,
+          "name": "--system-site-packages",
+          "type": "named"
+        }
+      ],
+      "runtimeHint": "pipx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "1e0fb9a7c1",
+    "published_at": "2026-09-01T09:19:16.923697Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.tristanmuzzu/deskwright",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-01T09:19:16.923697Z"
+  },
+  "title": "Deskwright",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

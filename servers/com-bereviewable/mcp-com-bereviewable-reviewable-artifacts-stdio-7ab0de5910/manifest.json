@@ -1,0 +1,63 @@
+{
+  "description": "Reviewable workspace discovery and private HTML review creation via stdio MCP.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:16+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-bereviewable-reviewable-artifacts.stdio.7ab0de5910",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "reviewable-artifacts-mcp@0.4.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.bereviewable/reviewable-artifacts",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Optional advanced HTTPS origin override for self-hosted, staging, loopback, or a reachable interim service when the canonical domain is blocked.",
+          "name": "REVIEWABLE_MCP_BASE_URL"
+        },
+        {
+          "description": "Advanced compatibility credential for workspace reads and private-review creation. It takes precedence over a stored browser grant; keep it local and do not combine it with reviewer share URLs.",
+          "isSecret": true,
+          "name": "REVIEWABLE_MCP_WORKSPACE_KEY"
+        },
+        {
+          "description": "Advanced least-privilege credential: one or more reviewer share URLs for read-only access to those reviews. Takes precedence over a stored browser grant; owner links are rejected.",
+          "isSecret": true,
+          "name": "REVIEWABLE_MCP_REVIEWS"
+        }
+      ],
+      "identifier": "reviewable-artifacts-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "7ab0de5910",
+    "published_at": "2026-09-08T15:51:29.389286Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.bereviewable/reviewable-artifacts",
+    "server_version": "0.4.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-08T15:51:29.389286Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.4.1"
+}

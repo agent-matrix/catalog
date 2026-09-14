@@ -1,0 +1,69 @@
+{
+  "description": "MCP server exposing 8004Swap (no-KYC agent-to-agent RFQ swap) as tools any MCP agent can call.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:05+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Stakemate369-8004swap-mcp.stdio.927c4f4cc3",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/Stakemate369/8004swap",
+    "homepage": "https://github.com/Stakemate369/8004swap",
+    "repository": "https://github.com/Stakemate369/8004swap"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@stakemate/8004swap-mcp-server@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Stakemate369/8004swap-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Dedicated wallet private key for this agent (testnet). Required only for tools that sign: request_quote, fill_quote, register_agent. check_agent_status works without it. Never reuse a key that holds funds outside this testnet.",
+          "format": "string",
+          "isSecret": true,
+          "name": "AGENT_PRIVATE_KEY"
+        },
+        {
+          "description": "8004Swap Relay WebSocket URL. Defaults to the current Base Sepolia testnet deployment if omitted.",
+          "format": "string",
+          "name": "RELAY_URL"
+        },
+        {
+          "description": "Base Sepolia RPC URL. Defaults to https://sepolia.base.org if omitted.",
+          "format": "string",
+          "name": "RPC_URL"
+        }
+      ],
+      "identifier": "@stakemate/8004swap-mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "927c4f4cc3",
+    "published_at": "2026-08-31T21:49:54.577667Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Stakemate369/8004swap-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-31T21:49:54.577667Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

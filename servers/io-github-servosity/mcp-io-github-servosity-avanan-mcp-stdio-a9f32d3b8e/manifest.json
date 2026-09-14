@@ -1,0 +1,83 @@
+{
+  "description": "Every Avanan API operation, plus shift-start triage, campaign grouping, and quarantine evidence.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:04+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Servosity-avanan-mcp.stdio.a9f32d3b8e",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/servosity/msp-skills",
+    "homepage": "https://github.com/servosity/msp-skills",
+    "repository": "https://github.com/servosity/msp-skills"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Servosity/avanan-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Set the AVANAN_APP_ID credential for the Avanan MCP server.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AVANAN_APP_ID"
+        },
+        {
+          "default": "https://smart-api-production-1-us.avanan.net",
+          "description": "Base URL for the Avanan API. Leave the prefilled default unless your account uses a different regional or self-hosted host.",
+          "name": "AVANAN_BASE_URL"
+        },
+        {
+          "description": "Set the AVANAN_CLIENT_SECRET credential for the Avanan MCP server.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AVANAN_CLIENT_SECRET"
+        },
+        {
+          "description": "Bearer token for the Avanan Smart API. Minted from your Avanan client ID and secret by `auth login`, or pasted here directly.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "AVANAN_TOKEN"
+        },
+        {
+          "description": "Overrides the User-Agent the CLI sends on Avanan requests. Leave blank to use the CLI's own built-in User-Agent.",
+          "name": "AVANAN_USER_AGENT"
+        },
+        {
+          "description": "Binds this MCP server to one tenant-gated client profile, so every call answers for that customer. Leave blank to use the profile configured as default_client_profile.",
+          "name": "PRINTING_PRESS_CLIENT_PROFILE"
+        }
+      ],
+      "fileSha256": "cc462c36796ae8096a707d50b961e410f3c1532caae406131541492981358a06",
+      "identifier": "https://github.com/Servosity/msp-skills/releases/download/avanan-v0.1.3/avanan-mcp.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "a9f32d3b8e",
+    "published_at": "2026-09-06T18:55:52.182837Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Servosity/avanan-mcp",
+    "server_version": "0.1.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-06T18:55:52.182837Z"
+  },
+  "title": "Avanan MCP",
+  "type": "mcp_server",
+  "version": "0.1.3"
+}

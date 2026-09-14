@@ -1,0 +1,72 @@
+{
+  "description": "Read and operate a Comunio fantasy football team: squad, market, offers, lineup",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:45+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-josetorronteras-comunio.stdio.5898dfa9db",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/josetorronteras/comunio-mcp",
+    "homepage": "https://github.com/josetorronteras/comunio-mcp",
+    "repository": "https://github.com/josetorronteras/comunio-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/josetorronteras/comunio-mcp:1.0.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.josetorronteras/comunio",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Email or username of the Comunio account the server acts for.",
+          "isRequired": true,
+          "name": "COMUNIO_USERNAME"
+        },
+        {
+          "description": "Password of that Comunio account.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "COMUNIO_PASSWORD"
+        },
+        {
+          "default": "Europe/Madrid",
+          "description": "IANA timezone used for the x-timezone header and the login offset. Defaults to Europe/Madrid.",
+          "name": "COMUNIO_TIMEZONE"
+        },
+        {
+          "description": "Overrides the browser user agent sent to Comunio. Only needed if the API starts refusing the default.",
+          "name": "COMUNIO_USER_AGENT"
+        }
+      ],
+      "identifier": "ghcr.io/josetorronteras/comunio-mcp:1.0.2",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "5898dfa9db",
+    "published_at": "2026-09-09T21:35:10.727759Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.josetorronteras/comunio",
+    "server_version": "1.0.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-09T21:35:10.727759Z"
+  },
+  "title": "Comunio",
+  "type": "mcp_server",
+  "version": "1.0.2"
+}

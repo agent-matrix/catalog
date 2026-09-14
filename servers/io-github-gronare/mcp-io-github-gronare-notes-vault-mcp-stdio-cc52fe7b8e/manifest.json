@@ -1,0 +1,115 @@
+{
+  "description": "Indexed search, schema-checked writes and session hooks for a markdown notes vault",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:39+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-gronare-notes-vault-mcp.stdio.cc52fe7b8e",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/gronare/notes-vault-mcp",
+    "homepage": "https://github.com/gronare/notes-vault-mcp",
+    "repository": "https://github.com/gronare/notes-vault-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "notes-vault-mcp==0.4.3"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.gronare/notes-vault-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Directory holding the vault. Set this or the four S3_* variables.",
+          "format": "filepath",
+          "name": "VAULT_PATH"
+        },
+        {
+          "description": "S3 or MinIO endpoint URL holding the vault",
+          "format": "string",
+          "name": "S3_ENDPOINT"
+        },
+        {
+          "description": "Access key for the vault bucket",
+          "format": "string",
+          "isSecret": true,
+          "name": "S3_ACCESS_KEY"
+        },
+        {
+          "description": "Secret key for the vault bucket",
+          "format": "string",
+          "isSecret": true,
+          "name": "S3_SECRET_KEY"
+        },
+        {
+          "description": "Bucket holding the vault",
+          "format": "string",
+          "name": "S3_BUCKET"
+        },
+        {
+          "description": "Key prefix inside the bucket",
+          "format": "string",
+          "name": "S3_PREFIX"
+        },
+        {
+          "default": "us-east-1",
+          "description": "Region for the vault bucket",
+          "format": "string",
+          "name": "S3_REGION"
+        },
+        {
+          "default": "~/.cache/notes-vault-mcp",
+          "description": "Where the SQLite index lives",
+          "format": "filepath",
+          "name": "VAULT_CACHE_DIR"
+        },
+        {
+          "description": "Local schema file overriding the one in the vault",
+          "format": "filepath",
+          "name": "VAULT_SCHEMA"
+        },
+        {
+          "description": "Bearer token required by the streamable HTTP transport",
+          "format": "string",
+          "isSecret": true,
+          "name": "VAULT_TOKEN"
+        },
+        {
+          "description": "Set to off to disable the stop hook",
+          "format": "string",
+          "name": "VAULT_STOP_HOOK"
+        }
+      ],
+      "identifier": "notes-vault-mcp",
+      "registryBaseUrl": "https://pypi.org",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.3"
+    }
+  ],
+  "provenance": {
+    "identity_key": "cc52fe7b8e",
+    "published_at": "2026-09-11T08:57:47.745538Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.gronare/notes-vault-mcp",
+    "server_version": "0.4.3",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-11T08:57:47.745538Z"
+  },
+  "title": "Notes Vault",
+  "type": "mcp_server",
+  "version": "0.4.3"
+}

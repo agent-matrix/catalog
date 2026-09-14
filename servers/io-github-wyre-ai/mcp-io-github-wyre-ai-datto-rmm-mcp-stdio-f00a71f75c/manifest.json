@@ -1,0 +1,90 @@
+{
+  "description": "MCP server for Datto RMM \u2014 devices, alerts, sites, jobs, and audit data.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:08+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-WYRE-AI-datto-rmm-mcp.stdio.f00a71f75c",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/WYRE-AI/datto-rmm-mcp",
+    "homepage": "https://github.com/WYRE-AI/datto-rmm-mcp",
+    "repository": "https://github.com/WYRE-AI/datto-rmm-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/wyre-ai/datto-rmm-mcp:v1.7.9"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.WYRE-AI/datto-rmm-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Datto RMM API key",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DATTO_API_KEY"
+        },
+        {
+          "description": "Datto RMM API secret key",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "DATTO_API_SECRET"
+        },
+        {
+          "default": "concord",
+          "description": "Datto RMM API platform/zone: pinotage, merlot, concord, vidal, zinfandel, or syrah",
+          "format": "string",
+          "name": "DATTO_PLATFORM"
+        },
+        {
+          "default": "stdio",
+          "description": "Transport mode for the server. Set to 'stdio' for local CLI use; the image defaults to 'http' for gateway hosting.",
+          "format": "string",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "env",
+          "description": "Credential source: 'env' reads vars locally, 'gateway' expects header injection from the WYRE MCP Gateway.",
+          "format": "string",
+          "name": "AUTH_MODE"
+        },
+        {
+          "default": "info",
+          "description": "Log verbosity: debug, info, warn, error",
+          "format": "string",
+          "name": "LOG_LEVEL"
+        }
+      ],
+      "identifier": "ghcr.io/wyre-ai/datto-rmm-mcp:v1.7.9",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "f00a71f75c",
+    "published_at": "2026-09-07T17:55:02.557262Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.WYRE-AI/datto-rmm-mcp",
+    "server_version": "1.7.9",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-07T17:55:02.557262Z"
+  },
+  "title": "Datto RMM",
+  "type": "mcp_server",
+  "version": "1.7.9"
+}

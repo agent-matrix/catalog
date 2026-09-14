@@ -1,0 +1,71 @@
+{
+  "description": "Detect and redact PII, PHI, PCI and secrets in text and files before an AI agent sees them.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:24+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-strac-io-strac-mcp-dlp.stdio.8b4db7e06d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/strac-io/strac-mcp-dlp",
+    "homepage": "https://github.com/strac-io/strac-mcp-dlp",
+    "repository": "https://github.com/strac-io/strac-mcp-dlp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "strac-mcp-dlp==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.strac-io/strac-mcp-dlp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Strac API key. Request one at https://www.strac.io/mcp-integrations. Keys are prefixed sk_live_ (production) or sk_test_ (sandbox).",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "STRAC_API_KEY"
+        },
+        {
+          "description": "Override the Strac API base URL. Defaults to https://api.live.tokenidvault.com for sk_live_ keys and https://api.test.tokenidvault.com for sk_test_ keys.",
+          "format": "string",
+          "name": "STRAC_API_BASE"
+        },
+        {
+          "default": "60",
+          "description": "Request timeout in seconds. Defaults to 60.",
+          "format": "number",
+          "name": "STRAC_API_TIMEOUT"
+        }
+      ],
+      "identifier": "strac-mcp-dlp",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "8b4db7e06d",
+    "published_at": "2026-09-03T22:56:50.357896Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.strac-io/strac-mcp-dlp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-03T22:56:50.357896Z"
+  },
+  "title": "Strac MCP DLP",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

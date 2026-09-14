@@ -1,0 +1,68 @@
+{
+  "description": "Pay-per-token Claude & Grok inference, settled in BSV, via the inference.bsvkey.com gateway.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:44+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-BSVKey-inference-mcp.stdio.aa15ef75b4",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/BSVKey/inference-mcp",
+    "homepage": "https://github.com/BSVKey/inference-mcp",
+    "repository": "https://github.com/BSVKey/inference-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@bsvkey/inference-mcp@1.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.BSVKey/inference-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "A funded channel key in the form channelId:channelSecret. Open + fund a channel once at https://inference.bsvkey.com. Optional (can be passed per call).",
+          "isSecret": true,
+          "name": "BSVKEY_API_KEY"
+        },
+        {
+          "description": "Gateway base URL. Defaults to https://inference.bsvkey.com/v1; override to point at a self-hosted deployment.",
+          "name": "BSVKEY_BASE_URL"
+        },
+        {
+          "description": "A funded BSV private key (WIF) used by the x402_infer tool to pay per call in BSV (no channel). Signing is local; the key never leaves the process. Optional (can be passed per call).",
+          "isSecret": true,
+          "name": "BSVKEY_WIF"
+        }
+      ],
+      "identifier": "@bsvkey/inference-mcp",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "aa15ef75b4",
+    "published_at": "2026-09-07T18:29:05.997703Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.BSVKey/inference-mcp",
+    "server_version": "1.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-07T18:29:05.997703Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.2.0"
+}

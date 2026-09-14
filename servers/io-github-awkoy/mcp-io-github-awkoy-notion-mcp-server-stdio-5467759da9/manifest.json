@@ -1,0 +1,64 @@
+{
+  "description": "Token-auth Notion MCP: pages, databases, blocks, comments, files. Runs headless in CI and agents.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:15+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-awkoy-notion-mcp-server.stdio.5467759da9",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/awkoy/notion-mcp-server",
+    "homepage": "https://github.com/awkoy/notion-mcp-server",
+    "repository": "https://github.com/awkoy/notion-mcp-server"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "notion-mcp-server@3.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.awkoy/notion-mcp-server",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Notion Personal Access Token (ntn_...) or Internal Integration Secret. Create at https://app.notion.com/developers/tokens",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "NOTION_TOKEN"
+        },
+        {
+          "description": "Optional default parent page ID used by create_page / create_database when no parent is passed.",
+          "name": "NOTION_PAGE_ID"
+        }
+      ],
+      "identifier": "notion-mcp-server",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "3.0.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "5467759da9",
+    "published_at": "2026-09-02T10:19:36.062482Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.awkoy/notion-mcp-server",
+    "server_version": "3.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-02T10:19:36.062482Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "3.0.0"
+}

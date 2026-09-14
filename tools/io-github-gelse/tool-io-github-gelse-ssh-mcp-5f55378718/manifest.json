@@ -1,0 +1,117 @@
+{
+  "artifacts": [
+    {
+      "kind": "oci",
+      "spec": {
+        "image": "ghcr.io/gelse/ssh-mcp:0.3.0"
+      }
+    }
+  ],
+  "description": "MCP gateway for controlled SSH access with per-client auth, command policies, and audit logging.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:37+00:00",
+    "seen_in_latest_run": true
+  },
+  "homepage": "https://github.com/gelse/ssh-mcp",
+  "id": "tool.io-github-gelse-ssh-mcp.5f55378718",
+  "license": "Unknown",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/gelse/ssh-mcp",
+    "homepage": "https://github.com/gelse/ssh-mcp",
+    "repository": "https://github.com/gelse/ssh-mcp"
+  },
+  "mcp_registration": {
+    "tool": {
+      "description": "MCP gateway for controlled SSH access with per-client auth, command policies, and audit logging.",
+      "input_schema": {},
+      "integration_type": "MCP",
+      "name": "io.github.gelse/ssh-mcp",
+      "request_type": "POST",
+      "url": "https://github.com/gelse/ssh-mcp"
+    }
+  },
+  "mcp_registration_source": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          {
+            "description": "Map the MCP HTTP port",
+            "name": "-p",
+            "type": "named",
+            "value": "8080:8080"
+          },
+          {
+            "description": "Mount the configuration directory",
+            "name": "-v",
+            "type": "named",
+            "value": "{config_dir}:/config",
+            "variables": {
+              "config_dir": {
+                "description": "Path to the local config directory containing ssh-mcp-config.json",
+                "isRequired": true
+              }
+            }
+          },
+          {
+            "description": "Mount the SSH private key read-only",
+            "name": "-v",
+            "type": "named",
+            "value": "{ssh_key}:/app/ssh_key:ro",
+            "variables": {
+              "ssh_key": {
+                "description": "Path to the SSH private key file",
+                "isRequired": true
+              }
+            }
+          },
+          {
+            "description": "Mount the logs directory",
+            "name": "-v",
+            "type": "named",
+            "value": "{logs_dir}:/logs",
+            "variables": {
+              "logs_dir": {
+                "description": "Path to the local logs directory"
+              }
+            }
+          },
+          "ghcr.io/gelse/ssh-mcp:0.3.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.gelse/ssh-mcp",
+  "provenance": {
+    "identity_key": "2e6cda6d29",
+    "promoted_from": "mcp.io-github-gelse-ssh-mcp.stdio.2e6cda6d29",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.gelse/ssh-mcp",
+    "source": "promotion:tool-from-mcp"
+  },
+  "provided_by": {
+    "id": "mcp.io-github-gelse-ssh-mcp.stdio.2e6cda6d29",
+    "kind": "mcp_server",
+    "transport": "STDIO"
+  },
+  "schema_version": 1,
+  "source_url": "https://github.com/gelse/ssh-mcp",
+  "summary": "MCP gateway for controlled SSH access with per-client auth, command policies, and audit logging.",
+  "tags": [
+    "access",
+    "auth",
+    "client",
+    "command",
+    "controlled",
+    "gateway",
+    "ssh"
+  ],
+  "title": "ssh-mcp",
+  "type": "tool",
+  "version": "0.3.0"
+}

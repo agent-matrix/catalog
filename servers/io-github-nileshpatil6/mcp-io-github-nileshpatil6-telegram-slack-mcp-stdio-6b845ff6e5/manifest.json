@@ -1,0 +1,111 @@
+{
+  "description": "Read and reply to your personal Telegram chats and all your Slack workspaces.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:00+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-nileshpatil6-telegram-slack-mcp.stdio.6b845ff6e5",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/nileshpatil6/telegram-slack-mcp",
+    "homepage": "https://github.com/nileshpatil6/telegram-slack-mcp",
+    "repository": "https://github.com/nileshpatil6/telegram-slack-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          {
+            "choices": [
+              "telegram",
+              "slack"
+            ],
+            "description": "Which server to run: 'telegram' or 'slack'",
+            "format": "string",
+            "isRequired": true,
+            "name": "server",
+            "type": "positional",
+            "value": "telegram"
+          },
+          "telegram-slack-mcp@0.4.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.nileshpatil6/telegram-slack-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "api_id from https://my.telegram.org (Telegram server only)",
+          "format": "string",
+          "name": "TELEGRAM_API_ID"
+        },
+        {
+          "description": "api_hash from https://my.telegram.org (Telegram server only)",
+          "format": "string",
+          "isSecret": true,
+          "name": "TELEGRAM_API_HASH"
+        },
+        {
+          "description": "Set to 1 to allow sending Telegram messages as you. Off by default.",
+          "format": "string",
+          "name": "TELEGRAM_ALLOW_SEND"
+        },
+        {
+          "description": "One Slack user token (xoxp-) per workspace, comma separated (Slack server only)",
+          "format": "string",
+          "isSecret": true,
+          "name": "SLACK_USER_TOKENS"
+        },
+        {
+          "description": "Set to 1 to allow posting to Slack as you. Off by default.",
+          "format": "string",
+          "name": "SLACK_ALLOW_SEND"
+        },
+        {
+          "description": "Where the Telegram session is stored. Defaults to ~/.chat-mcp",
+          "format": "string",
+          "name": "CHAT_MCP_DATA_DIR"
+        }
+      ],
+      "identifier": "telegram-slack-mcp",
+      "registryType": "npm",
+      "runtimeArguments": [
+        {
+          "choices": [
+            "telegram",
+            "slack"
+          ],
+          "description": "Which server to run: 'telegram' or 'slack'",
+          "format": "string",
+          "isRequired": true,
+          "name": "server",
+          "type": "positional",
+          "value": "telegram"
+        }
+      ],
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.4.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6b845ff6e5",
+    "published_at": "2026-08-31T16:18:51.899283Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.nileshpatil6/telegram-slack-mcp",
+    "server_version": "0.4.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-08-31T16:18:51.899283Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.4.0"
+}

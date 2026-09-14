@@ -1,0 +1,71 @@
+{
+  "description": "Non-custodial Kaspa policy enforcement for AI agents; signers retain custody.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-zapsoblige-hash-policyvault.stdio.d9b2abbd05",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/zapsoblige-hash/PolicyVault",
+    "homepage": "https://github.com/zapsoblige-hash/PolicyVault",
+    "repository": "https://github.com/zapsoblige-hash/PolicyVault"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "policyvault-mcp@1.4.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.zapsoblige-hash/policyvault",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Bare origin of the PolicyVault server (e.g. https://app.policy-vault.org, or your self-hosted origin). Refused if it embeds credentials or a path.",
+          "format": "string",
+          "isRequired": true,
+          "name": "POLICYVAULT_MCP_SERVER_URL"
+        },
+        {
+          "description": "Machine-identity bearer credential (pvmk_...), minted by the vault operator in the PolicyVault app with exactly the scopes the agent should hold. Never logged; deleted from the process environment after being read.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "POLICYVAULT_MCP_TOKEN"
+        },
+        {
+          "description": "Optional comma-separated scope list to narrow which tools are advertised (display-side only; enforcement is always server-side).",
+          "format": "string",
+          "name": "POLICYVAULT_MCP_SCOPES"
+        }
+      ],
+      "identifier": "policyvault-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.4.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d9b2abbd05",
+    "published_at": "2026-09-02T02:09:54.755168Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.zapsoblige-hash/policyvault",
+    "server_version": "1.4.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-02T02:09:54.755168Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.4.1"
+}

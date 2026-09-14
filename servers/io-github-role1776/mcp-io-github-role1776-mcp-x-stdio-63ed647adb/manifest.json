@@ -1,0 +1,304 @@
+{
+  "description": "Search, read and publish X posts and manage users, lists and media via the X API v2.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:03+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-Role1776-mcp-x.stdio.63ed647adb",
+  "lifecycle": {
+    "reason": "Missing required package metadata (runtimeHint not provided and registryType='mcpb' not in the inference table)",
+    "status": "disabled"
+  },
+  "links": {
+    "documentation": "https://github.com/Role1776/mcp-x",
+    "homepage": "https://github.com/Role1776/mcp-x",
+    "repository": "https://github.com/Role1776/mcp-x"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.Role1776/mcp-x",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "OAuth 1.0a consumer key. developer.x.com -> your project -> your app -> Keys and tokens.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "X_API_KEY"
+        },
+        {
+          "description": "OAuth 1.0a consumer secret, issued together with X_API_KEY.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "X_API_KEY_SECRET"
+        },
+        {
+          "description": "User access token. Set the app permissions to Read and Write BEFORE generating it: a token keeps the permissions it was created with, and a read-only one fails every write until it is regenerated.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "X_ACCESS_TOKEN"
+        },
+        {
+          "description": "User access token secret, issued together with X_ACCESS_TOKEN.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "X_ACCESS_TOKEN_SECRET"
+        },
+        {
+          "description": "Absolute path to an existing directory - the only one x_media_upload may read files from. Anything outside it is refused, symlinks included. Checked at startup.",
+          "format": "filepath",
+          "isRequired": true,
+          "name": "MEDIA_ROOT",
+          "placeholder": "/tmp/mcp-x-media"
+        },
+        {
+          "choices": [
+            "stdio",
+            "http"
+          ],
+          "default": "stdio",
+          "description": "stdio (client spawns the process) or http (streamable HTTP listener).",
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "default": "mcp-x",
+          "description": "Server name reported in the MCP initialize handshake.",
+          "name": "MCP_NAME"
+        },
+        {
+          "default": "/mcp",
+          "description": "HTTP path the MCP endpoint is served on. Used only when MCP_TRANSPORT=http.",
+          "name": "MCP_PATH"
+        },
+        {
+          "default": "8080",
+          "description": "TCP port to listen on. Used only when MCP_TRANSPORT=http.",
+          "name": "SERVER_PORT"
+        },
+        {
+          "default": "60s",
+          "description": "HTTP read timeout as a Go duration. Used only when MCP_TRANSPORT=http.",
+          "name": "SERVER_READ_TIMEOUT"
+        },
+        {
+          "default": "60s",
+          "description": "HTTP write timeout as a Go duration. Used only when MCP_TRANSPORT=http.",
+          "name": "SERVER_WRITE_TIMEOUT"
+        },
+        {
+          "choices": [
+            "local",
+            "prod"
+          ],
+          "default": "local",
+          "description": "local (text, debug) or prod (JSON, info). Logs go to stderr.",
+          "name": "LOG_MODE"
+        },
+        {
+          "default": "100",
+          "description": "Idle connections the outbound HTTP client keeps per host.",
+          "format": "number",
+          "name": "MAX_IDLE_CONNS_PER_HOST"
+        },
+        {
+          "choices": [
+            "false",
+            "true"
+          ],
+          "default": "false",
+          "description": "Log the raw requests sent to the X API. Verbose; the output can contain request details, so keep it off outside debugging.",
+          "format": "boolean",
+          "name": "X_DEBUG"
+        },
+        {
+          "default": "5",
+          "description": "Queries accepted in one x_posts_search or x_posts_count call.",
+          "format": "number",
+          "name": "POSTS_MAX_QUERIES"
+        },
+        {
+          "default": "5",
+          "description": "Usernames accepted in one x_posts_by_user call.",
+          "format": "number",
+          "name": "POSTS_MAX_USERNAMES"
+        },
+        {
+          "default": "100",
+          "description": "Post ids accepted in one x_posts_lookup call. The X API caps this at 100.",
+          "format": "number",
+          "name": "POSTS_MAX_IDS"
+        },
+        {
+          "default": "10",
+          "description": "Posts returned per query when the call does not ask for a count. Every post returned is billed.",
+          "format": "number",
+          "name": "POSTS_DEFAULT_RESULTS"
+        },
+        {
+          "default": "100",
+          "description": "Upper bound for posts per query. The X API caps this at 100.",
+          "format": "number",
+          "name": "POSTS_MAX_RESULTS"
+        },
+        {
+          "default": "7",
+          "description": "How far back post searches look when the call does not say, in days.",
+          "format": "number",
+          "name": "POSTS_DEFAULT_DAYS"
+        },
+        {
+          "default": "7",
+          "description": "Furthest back a post search may look, in days. Recent search cannot exceed 7.",
+          "format": "number",
+          "name": "POSTS_MAX_DAYS"
+        },
+        {
+          "default": "15000",
+          "description": "Timeout for a posts call in milliseconds when the call does not request one.",
+          "format": "number",
+          "name": "POSTS_DEFAULT_TIMEOUT_MS"
+        },
+        {
+          "default": "2000",
+          "description": "Lowest timeout a posts call may request, in milliseconds.",
+          "format": "number",
+          "name": "POSTS_MIN_TIMEOUT_MS"
+        },
+        {
+          "default": "60000",
+          "description": "Highest timeout a posts call may request, in milliseconds.",
+          "format": "number",
+          "name": "POSTS_MAX_TIMEOUT_MS"
+        },
+        {
+          "default": "100",
+          "description": "Usernames accepted in one x_users_lookup call. The X API caps this at 100.",
+          "format": "number",
+          "name": "USERS_MAX_USERNAMES"
+        },
+        {
+          "default": "100",
+          "description": "User ids accepted in one x_users_lookup call. The X API caps this at 100.",
+          "format": "number",
+          "name": "USERS_MAX_IDS"
+        },
+        {
+          "default": "100",
+          "description": "Users returned per page when the call does not ask for a count.",
+          "format": "number",
+          "name": "USERS_DEFAULT_RESULTS"
+        },
+        {
+          "default": "1000",
+          "description": "Upper bound for users per page.",
+          "format": "number",
+          "name": "USERS_MAX_RESULTS"
+        },
+        {
+          "default": "15000",
+          "description": "Timeout for a users call in milliseconds when the call does not request one.",
+          "format": "number",
+          "name": "USERS_DEFAULT_TIMEOUT_MS"
+        },
+        {
+          "default": "2000",
+          "description": "Lowest timeout a users call may request, in milliseconds.",
+          "format": "number",
+          "name": "USERS_MIN_TIMEOUT_MS"
+        },
+        {
+          "default": "60000",
+          "description": "Highest timeout a users call may request, in milliseconds.",
+          "format": "number",
+          "name": "USERS_MAX_TIMEOUT_MS"
+        },
+        {
+          "default": "25",
+          "description": "Items returned per list page when the call does not ask for a count.",
+          "format": "number",
+          "name": "LISTS_DEFAULT_RESULTS"
+        },
+        {
+          "default": "100",
+          "description": "Upper bound for items per list page. The X API caps this at 100.",
+          "format": "number",
+          "name": "LISTS_MAX_RESULTS"
+        },
+        {
+          "default": "15000",
+          "description": "Timeout for a lists call in milliseconds when the call does not request one.",
+          "format": "number",
+          "name": "LISTS_DEFAULT_TIMEOUT_MS"
+        },
+        {
+          "default": "2000",
+          "description": "Lowest timeout a lists call may request, in milliseconds.",
+          "format": "number",
+          "name": "LISTS_MIN_TIMEOUT_MS"
+        },
+        {
+          "default": "60000",
+          "description": "Highest timeout a lists call may request, in milliseconds.",
+          "format": "number",
+          "name": "LISTS_MAX_TIMEOUT_MS"
+        },
+        {
+          "default": "4194304",
+          "description": "Bytes per upload segment. The X APPEND endpoint caps a segment at 5 MB.",
+          "format": "number",
+          "name": "MEDIA_CHUNK_BYTES"
+        },
+        {
+          "default": "2000",
+          "description": "How often the upload status is polled while X transcodes a video, in milliseconds.",
+          "format": "number",
+          "name": "MEDIA_POLL_INTERVAL_MS"
+        },
+        {
+          "default": "120000",
+          "description": "Timeout for a whole upload in milliseconds when the call does not request one.",
+          "format": "number",
+          "name": "MEDIA_DEFAULT_TIMEOUT_MS"
+        },
+        {
+          "default": "5000",
+          "description": "Lowest timeout an upload may request, in milliseconds.",
+          "format": "number",
+          "name": "MEDIA_MIN_TIMEOUT_MS"
+        },
+        {
+          "default": "600000",
+          "description": "Highest timeout an upload may request, in milliseconds.",
+          "format": "number",
+          "name": "MEDIA_MAX_TIMEOUT_MS"
+        }
+      ],
+      "fileSha256": "d67810d11ea472c17c7936e75bcda52a11f5b519bce2cd324e162eddbe3cc53c",
+      "identifier": "https://github.com/Role1776/mcp-x/releases/download/v0.1.1/mcp-x_0.1.1_windows_arm64.mcpb",
+      "registryType": "mcpb",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "63ed647adb",
+    "published_at": "2026-09-09T12:47:44.590542Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.Role1776/mcp-x",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-09T12:47:44.590542Z"
+  },
+  "title": "X (Twitter)",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

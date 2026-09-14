@@ -1,0 +1,87 @@
+{
+  "description": "Wafeq accounting API: all 251 endpoints as safety-categorized MCP tools, over stdio or HTTP.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:02+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ohneben-wafeq-mcp.stdio.6a6a2b26ad",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ohneben/Wafeq-MCP",
+    "homepage": "https://github.com/ohneben/Wafeq-MCP",
+    "repository": "https://github.com/ohneben/Wafeq-MCP"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/ohneben/wafeq-mcp:2.0.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ohneben/wafeq-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "choices": [
+            "stdio",
+            "http"
+          ],
+          "default": "stdio",
+          "description": "Server transport. Set to 'stdio' for local MCP clients; the image otherwise starts the Streamable HTTP transport.",
+          "isRequired": true,
+          "name": "MCP_TRANSPORT"
+        },
+        {
+          "description": "Private organization API key, sent as `Authorization: Api-Key <key>`. Wafeq -> Settings -> Developer -> API keys. Required unless WAFEQ_ACCESS_TOKEN is set.",
+          "isSecret": true,
+          "name": "WAFEQ_API_KEY"
+        },
+        {
+          "description": "OAuth2 app access token, sent as `Authorization: Bearer <token>`. Use instead of WAFEQ_API_KEY.",
+          "isSecret": true,
+          "name": "WAFEQ_ACCESS_TOKEN"
+        },
+        {
+          "description": "Comma-separated resource groups to expose, e.g. invoices,bills,reports. Empty exposes all 251 generated tools.",
+          "name": "WAFEQ_TOOL_GROUPS"
+        },
+        {
+          "default": "https://api.wafeq.com/v1",
+          "description": "Overrides the Wafeq API base URL. Defaults to https://api.wafeq.com/v1",
+          "name": "WAFEQ_API_BASE_URL"
+        },
+        {
+          "description": "Bearer token required on the /mcp endpoint when running the HTTP transport. Empty leaves the endpoint open, so bind it to localhost only.",
+          "isSecret": true,
+          "name": "MCP_SHARED_TOKEN"
+        }
+      ],
+      "identifier": "ghcr.io/ohneben/wafeq-mcp:2.0.0",
+      "registryType": "oci",
+      "runtimeHint": "docker",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "6a6a2b26ad",
+    "published_at": "2026-09-08T12:59:00.630732Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ohneben/wafeq-mcp",
+    "server_version": "2.0.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-08T12:59:00.630732Z"
+  },
+  "title": "Wafeq",
+  "type": "mcp_server",
+  "version": "2.0.0"
+}

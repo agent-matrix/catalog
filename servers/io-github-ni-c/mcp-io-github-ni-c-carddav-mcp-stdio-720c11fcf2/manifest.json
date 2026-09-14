@@ -1,0 +1,115 @@
+{
+  "description": "Read and write CardDAV address books: contacts, groups and photos over the open standard",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:00+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ni-c-carddav-mcp.stdio.720c11fcf2",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ni-c/carddav-mcp",
+    "homepage": "https://github.com/ni-c/carddav-mcp",
+    "repository": "https://github.com/ni-c/carddav-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/ni-c/carddav-mcp:0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ni-c/carddav-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Root of the CardDAV server, e.g. https://dav.example.net. An address book collection URL also works.",
+          "format": "string",
+          "isRequired": true,
+          "name": "CARDDAV_URL"
+        },
+        {
+          "description": "Account name. Most hosted services want an app-specific password with it.",
+          "format": "string",
+          "name": "CARDDAV_USERNAME"
+        },
+        {
+          "description": "Password or app-specific password. Deleted from the environment once read.",
+          "format": "string",
+          "isSecret": true,
+          "name": "CARDDAV_PASSWORD"
+        },
+        {
+          "description": "Bearer token, as an alternative to username and password. Not both.",
+          "format": "string",
+          "isSecret": true,
+          "name": "CARDDAV_TOKEN"
+        },
+        {
+          "description": "Comma-separated address books this server may touch, by path or final path segment. Default: all of them.",
+          "format": "string",
+          "name": "CARDDAV_ADDRESSBOOKS"
+        },
+        {
+          "description": "Contacts a listing returns by default, 1 to 500 (default: 100)",
+          "format": "number",
+          "name": "CARDDAV_MAX_CONTACTS"
+        },
+        {
+          "description": "Set to true to register only the read tools (default: false)",
+          "format": "boolean",
+          "name": "CARDDAV_READ_ONLY"
+        },
+        {
+          "description": "Set to true to accept a self-signed certificate on the configured host only (default: false)",
+          "format": "boolean",
+          "name": "CARDDAV_INSECURE_TLS"
+        },
+        {
+          "description": "Set to true to allow a plain http:// URL to a host that is not loopback, which sends the credentials and every contact unencrypted (default: false)",
+          "format": "boolean",
+          "name": "CARDDAV_ALLOW_PLAINTEXT"
+        },
+        {
+          "description": "Comma-separated tool names or list_* prefixes to register; 'essential' selects a curated preset (default: all tools)",
+          "format": "string",
+          "name": "CARDDAV_ALLOW_TOOLS"
+        },
+        {
+          "description": "Comma-separated tool names or list_* prefixes to remove from whatever the allow list left",
+          "format": "string",
+          "name": "CARDDAV_DENY_TOOLS"
+        },
+        {
+          "description": "Deliberately unprefixed, and reaches every MCP server in the environment. Set to false to make guarded tools use the two-call token instead of a dialog (default: true)",
+          "format": "boolean",
+          "name": "ELICITATION"
+        }
+      ],
+      "identifier": "ghcr.io/ni-c/carddav-mcp:0.1.1",
+      "registryType": "oci",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "720c11fcf2",
+    "published_at": "2026-09-06T22:10:12.225716Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ni-c/carddav-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-06T22:10:12.225716Z"
+  },
+  "title": "CardDAV address books",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

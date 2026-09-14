@@ -1,0 +1,63 @@
+{
+  "description": "Self-hosted catalogue of your skills, agents and MCP servers, searchable by meaning over MCP",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:17+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-bobpanil-vivatlas.stdio.6d85d295f8",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/bobpanil/VIVATLAS",
+    "homepage": "https://github.com/bobpanil/VIVATLAS",
+    "repository": "https://github.com/bobpanil/VIVATLAS"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "docker",
+          "ghcr.io/bobpanil/vivatlas:1.0.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.bobpanil/vivatlas",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Signs sessions and encrypts stored tokens. Set once and keep it; left empty, the container generates one and keeps it in /data.",
+          "isSecret": true,
+          "name": "SECRET_KEY"
+        },
+        {
+          "description": "Gemini key for the descriptions, search embeddings and picture choice. Optional; Ollama works too (OLLAMA_URL). Also settable in the admin panel.",
+          "isSecret": true,
+          "name": "GOOGLE_API_KEY"
+        }
+      ],
+      "identifier": "ghcr.io/bobpanil/vivatlas:1.0.1",
+      "registryType": "oci",
+      "transport": {
+        "type": "streamable-http",
+        "url": "http://localhost:8710/mcp-server/mcp"
+      }
+    }
+  ],
+  "provenance": {
+    "identity_key": "6d85d295f8",
+    "published_at": "2026-09-07T08:37:09.30328Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.bobpanil/vivatlas",
+    "server_version": "1.0.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-07T08:37:09.30328Z"
+  },
+  "title": "VIVATLAS",
+  "type": "mcp_server",
+  "version": "1.0.1"
+}

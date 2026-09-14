@@ -1,0 +1,65 @@
+{
+  "description": "Reference invoice-intake MCP servers: read/draft/commit split, typed errors, approval gate, audit",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:22+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-justdukkan-invoice-intake-mcp.stdio.e701950315",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/justdukkan/invoice-intake-mcp",
+    "homepage": "https://github.com/justdukkan/invoice-intake-mcp",
+    "repository": "https://github.com/justdukkan/invoice-intake-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "invoice-intake-mcp==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.justdukkan/invoice-intake-mcp",
+  "packages": [
+    {
+      "identifier": "invoice-intake-mcp",
+      "packageArguments": [
+        {
+          "choices": [
+            "read",
+            "commit"
+          ],
+          "description": "read = reads + reversible staging (give this to specialist agents); commit = irreversible posting (orchestrator only)",
+          "isRequired": true,
+          "name": "--role",
+          "type": "named",
+          "value": "read"
+        }
+      ],
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e701950315",
+    "published_at": "2026-09-13T12:24:21.396644Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.justdukkan/invoice-intake-mcp",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-13T12:24:21.396644Z"
+  },
+  "title": "Invoice Intake (reference)",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

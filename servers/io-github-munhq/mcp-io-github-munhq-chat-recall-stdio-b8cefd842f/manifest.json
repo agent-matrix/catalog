@@ -1,0 +1,79 @@
+{
+  "description": "One searchable memory across Claude Code, Gemini, Codex, OpenCode, Antigravity and Cursor sessions.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:56+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-munhq-chat-recall.stdio.b8cefd842f",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/munhq/chat-recall",
+    "homepage": "https://github.com/munhq/chat-recall",
+    "repository": "https://github.com/munhq/chat-recall"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "chat-recall@0.6.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.munhq/chat-recall",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Server to sync to. Defaults to the hosted service at https://chatrecall.dev; set it to your own instance to self-host. Self-hosting is free for one person.",
+          "format": "string",
+          "name": "CHAT_RECALL_SERVER"
+        },
+        {
+          "choices": [
+            "lean",
+            "full"
+          ],
+          "default": "lean",
+          "description": "Which tools to register: \"lean\" (default, 27 tools \u2014 tool choice degrades as the list grows) or \"full\" (all 61 tools, plus recall_help \u2014 a directory of the rest). Every tool works when called by name either way.",
+          "format": "string",
+          "name": "CHAT_RECALL_MCP_PROFILE"
+        },
+        {
+          "description": "Set to 1 to load the whole server inside each session. By default every session with the same profile and server shares one background daemon, and each session is a thin relay onto it \u2014 the engine is loaded once per machine instead of once per session. Turn it off for a sandbox with no writable runtime directory.",
+          "format": "string",
+          "name": "CHAT_RECALL_NO_DAEMON"
+        },
+        {
+          "description": "Seconds with no session attached before the shared daemon exits and returns its memory. Default 900. Set 0 to keep it resident.",
+          "format": "string",
+          "name": "CHAT_RECALL_DAEMON_IDLE_SECS"
+        }
+      ],
+      "identifier": "chat-recall",
+      "registryType": "npm",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.6.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "b8cefd842f",
+    "published_at": "2026-09-02T08:05:23.448897Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.munhq/chat-recall",
+    "server_version": "0.6.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-02T08:05:23.448897Z"
+  },
+  "title": "chat-recall",
+  "type": "mcp_server",
+  "version": "0.6.0"
+}

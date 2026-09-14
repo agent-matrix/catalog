@@ -1,0 +1,79 @@
+{
+  "description": "x402 micropayments MCP: Xiaohongshu notes and paid APIs settled in USDC on Base.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:38+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-yyxqqq777-agentpay.stdio.c856c99846",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/yyxqqq777/mcp-server-agentpay",
+    "homepage": "https://github.com/yyxqqq777/mcp-server-agentpay",
+    "repository": "https://github.com/yyxqqq777/mcp-server-agentpay"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-server-agentpay==0.1.1"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.yyxqqq777/agentpay",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "https://agentpay-xhs-production.up.railway.app",
+          "description": "URL of the x402 payment gateway (e.g. https://agentpay-xhs-production.up.railway.app)",
+          "format": "string",
+          "isRequired": true,
+          "name": "GATEWAY_BASE_URL"
+        },
+        {
+          "description": "EVM private key for signing USDC micropayments on Base",
+          "format": "string",
+          "isSecret": true,
+          "name": "AGENT_PRIVATE_KEY"
+        },
+        {
+          "default": "0.10",
+          "description": "Maximum USDC the agent may spend per API call (default: 0.10)",
+          "format": "string",
+          "name": "MAX_SPEND_PER_CALL"
+        },
+        {
+          "default": "production",
+          "description": "Payment verification mode: demo (no on-chain) or production",
+          "format": "string",
+          "name": "PAYMENT_MODE"
+        }
+      ],
+      "identifier": "mcp-server-agentpay",
+      "registryType": "pypi",
+      "runtimeHint": "uvx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.1"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c856c99846",
+    "published_at": "2026-09-07T02:46:57.496628Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.yyxqqq777/agentpay",
+    "server_version": "0.1.1",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-07T02:46:57.496628Z"
+  },
+  "title": "AgentPay",
+  "type": "mcp_server",
+  "version": "0.1.1"
+}

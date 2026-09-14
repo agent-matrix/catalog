@@ -1,0 +1,91 @@
+{
+  "description": "Wontopos (WOS) long-term memory (beta) - one memory across Claude Code, Cursor, and your agents.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-wontopos-mcp.stdio.f6471fc705",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "wontopos-mcp@1.0.18"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.wontopos/mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Wontopos API key (wos-live-...). Create one in the console at wontopos.com.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "WONTOPOS_API_KEY"
+        },
+        {
+          "description": "Default store for every tool call (default: \"default\").",
+          "format": "string",
+          "name": "WONTOPOS_USER_ID"
+        },
+        {
+          "description": "Engine to read with: tablet-2 (default \u2014 same token price as tablet-1, and the one that serves photos and re-ask), tablet-1, scroll-1, or scroll-1.2.",
+          "format": "string",
+          "name": "WONTOPOS_MODEL"
+        },
+        {
+          "description": "Default re-ask passes for search, 0-3 (default 0). Each pass is another engine call and is billed for what it delivers; the agent can raise it per call.",
+          "format": "string",
+          "name": "WONTOPOS_VERIFY"
+        },
+        {
+          "description": "Default photo results per search, 0-5 (default 0). Zero because this server answers a model, which cannot look at a picture.",
+          "format": "string",
+          "name": "WONTOPOS_MAX_IMAGES"
+        },
+        {
+          "description": "A different API host. Leave unset for the default.",
+          "format": "string",
+          "name": "WONTOPOS_BASE_URL"
+        },
+        {
+          "description": "Set to 1 for read-only mode: recall/search/list_memories/engram/stats/revisions only, no write or delete tools.",
+          "format": "string",
+          "name": "WONTOPOS_READ_ONLY"
+        },
+        {
+          "description": "Set to 1 to let tools take a user_id argument (multi-store). Default: every call is pinned to WONTOPOS_USER_ID.",
+          "format": "string",
+          "name": "WONTOPOS_ALLOW_STORE_OVERRIDE"
+        }
+      ],
+      "identifier": "wontopos-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.18"
+    }
+  ],
+  "provenance": {
+    "identity_key": "f6471fc705",
+    "published_at": "2026-09-05T16:30:35.321434Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.wontopos/mcp",
+    "server_version": "1.0.18",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-05T16:30:35.321434Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.0.18"
+}

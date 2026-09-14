@@ -1,0 +1,79 @@
+{
+  "description": "Reads a PyTorch .py, a Neurarch graph, or a HF repo; agents inspect, lint, verify and rank designs.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:00+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-neurarch-ai-neurarch-mcp.stdio.c7a1e49f99",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/neurarch-ai/neurarch-mcp",
+    "homepage": "https://github.com/neurarch-ai/neurarch-mcp",
+    "repository": "https://github.com/neurarch-ai/neurarch-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "neurarch-mcp@0.14.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.neurarch-ai/neurarch-mcp",
+  "packages": [
+    {
+      "identifier": "neurarch-mcp",
+      "packageArguments": [
+        {
+          "description": "Path to a PyTorch .py file or .neurarch.json graph, or zoo:<id> for a bundled reference architecture (examples/ in the repo)",
+          "isRequired": true,
+          "type": "positional",
+          "valueHint": "model_path"
+        },
+        {
+          "description": "Reload the model file when the Neurarch app saves it",
+          "name": "--watch",
+          "type": "named"
+        },
+        {
+          "description": "Expose the six mutation tools (off by default)",
+          "name": "--write",
+          "type": "named"
+        },
+        {
+          "description": "Allow hf:<org/name> refs and load_hf_model (the one network switch)",
+          "name": "--hf",
+          "type": "named"
+        },
+        {
+          "description": "Advertise the core tools only; all stay callable",
+          "name": "--tools=core",
+          "type": "named"
+        }
+      ],
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.14.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c7a1e49f99",
+    "published_at": "2026-09-01T18:54:39.432923Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.neurarch-ai/neurarch-mcp",
+    "server_version": "0.14.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-01T18:54:39.432923Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.14.0"
+}

@@ -1,0 +1,94 @@
+{
+  "description": "Call your local Ollama or vLLM model over MCP with schema-validated JSON output",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:20+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-setheerwagen-mcp-ollama-vllm.stdio.e522af4be6",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/setheerwagen/local-ai-mcp-servers",
+    "homepage": "https://github.com/setheerwagen/local-ai-mcp-servers",
+    "repository": "https://github.com/setheerwagen/local-ai-mcp-servers"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-ollama-vllm==1.0.2"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.setheerwagen/mcp-ollama-vllm",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "default": "ollama",
+          "description": "Backend to use: ollama, vllm or openai",
+          "format": "string",
+          "name": "LOCAL_BACKEND"
+        },
+        {
+          "description": "Model endpoint URL; must be local or on your own network. Required for the openai backend",
+          "format": "string",
+          "name": "LOCAL_HOST"
+        },
+        {
+          "description": "Optional bearer token, openai backend only; sent as a header, never logged",
+          "format": "string",
+          "isSecret": true,
+          "name": "LOCAL_API_KEY"
+        },
+        {
+          "default": "600",
+          "description": "Read timeout in seconds",
+          "format": "number",
+          "name": "LOCAL_TIMEOUT"
+        },
+        {
+          "default": "nomic-embed-text",
+          "description": "Default embedding model",
+          "format": "string",
+          "name": "LOCAL_EMBED_MODEL"
+        },
+        {
+          "default": "/v1/embeddings",
+          "description": "Optional, openai backend only: embedding endpoint path",
+          "format": "string",
+          "name": "LOCAL_EMBED_PATH"
+        },
+        {
+          "default": "auto",
+          "description": "Optional, openai backend only: auto, response_format or none",
+          "format": "string",
+          "name": "LOCAL_SCHEMA_MODE"
+        }
+      ],
+      "identifier": "mcp-ollama-vllm",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.0.2"
+    }
+  ],
+  "provenance": {
+    "identity_key": "e522af4be6",
+    "published_at": "2026-09-08T20:26:11.385224Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.setheerwagen/mcp-ollama-vllm",
+    "server_version": "1.0.2",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-08T20:26:11.385224Z"
+  },
+  "title": "Ollama / vLLM Bridge",
+  "type": "mcp_server",
+  "version": "1.0.2"
+}

@@ -1,0 +1,52 @@
+{
+  "description": "YouTube discovery, transcripts, library search, and monitors with API keys or OAuth.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:30+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-scripthaul-api.sse.8445092f8d",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {},
+  "mcp_registration": {
+    "server": {
+      "transport": "SSE",
+      "url": "https://api.scripthaul.com/mcp"
+    }
+  },
+  "name": "com.scripthaul/api",
+  "provenance": {
+    "identity_key": "8445092f8d",
+    "published_at": "2026-09-13T14:20:09.187043Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.scripthaul/api",
+    "server_version": "1.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-13T14:20:09.187043Z"
+  },
+  "remotes": [
+    {
+      "headers": [
+        {
+          "description": "Optional API-key authentication. OAuth clients omit this header template and use MCP authorization discovery.",
+          "isSecret": true,
+          "name": "Authorization",
+          "value": "Bearer {SCRIPTHAUL_API_KEY}",
+          "variables": {
+            "SCRIPTHAUL_API_KEY": {
+              "description": "ScriptHaul API key shown once after verification or key creation.",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ],
+      "type": "streamable-http",
+      "url": "https://api.scripthaul.com/mcp"
+    }
+  ],
+  "title": "ScriptHaul API",
+  "type": "mcp_server",
+  "version": "1.1.0"
+}

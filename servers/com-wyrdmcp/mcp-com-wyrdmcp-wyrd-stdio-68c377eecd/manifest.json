@@ -1,0 +1,66 @@
+{
+  "description": "Exposes one granted folder to any AI client, read-only, behind a path-containment fence.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:53:33+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.com-wyrdmcp-wyrd.stdio.68c377eecd",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/MortalPastry/wyrd-mcp",
+    "homepage": "https://github.com/MortalPastry/wyrd-mcp",
+    "repository": "https://github.com/MortalPastry/wyrd-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "wyrd-mcp@0.1.4"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "com.wyrdmcp/wyrd",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Absolute path to the single folder to serve, read-only. Used when --grant is not passed. The server refuses to start if neither is set.",
+          "format": "filepath",
+          "name": "WYRD_GRANT"
+        }
+      ],
+      "identifier": "wyrd-mcp",
+      "packageArguments": [
+        {
+          "description": "Absolute path to the single folder to serve, read-only. Wins over WYRD_GRANT. Any path inside it can be requested, hidden entries included, such as .env and .git/config, apart from a handful of name spellings refused as input: a drive-letter-and-colon prefix such as C:notes on every host, and on Windows a colon inside a component (which names a data stream rather than a file) or a reserved device name such as NUL.md. What comes back is narrower than what can be requested: a directory is refused, and so are bytes that are not valid UTF-8. That limits what is readable, not what is reachable; grant a subfolder containing only what you mean to share.",
+          "format": "filepath",
+          "name": "--grant",
+          "type": "named"
+        }
+      ],
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.4"
+    }
+  ],
+  "provenance": {
+    "identity_key": "68c377eecd",
+    "published_at": "2026-09-09T03:57:37.935675Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "com.wyrdmcp/wyrd",
+    "server_version": "0.1.4",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-09T03:57:37.935675Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.4"
+}

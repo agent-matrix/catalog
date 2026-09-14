@@ -1,0 +1,79 @@
+{
+  "description": "The Oura v2 API as an MCP server. Paginates, fixes the date range, warns when data is missing.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:10+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-proscar87-oura-mcp.stdio.d2eb65c0ac",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/proscar87/oura-mcp",
+    "homepage": "https://github.com/proscar87/oura-mcp",
+    "repository": "https://github.com/proscar87/oura-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "uvx",
+          "mcp-oura==0.3.5"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.proscar87/oura-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Set to 1 to use Oura's official synthetic data with no credentials. The recommended way to try the server before authenticating.",
+          "name": "OURA_SANDBOX"
+        },
+        {
+          "description": "client_id of your Oura application, for OAuth2. Register one at https://cloud.ouraring.com/oauth/applications with the redirect http://localhost:9876/callback/ (the trailing slash is required).",
+          "name": "OURA_CLIENT_ID"
+        },
+        {
+          "description": "client_secret of your Oura application. Only needed when running `oura-mcp --authorize` and when refreshing the token.",
+          "isSecret": true,
+          "name": "OURA_CLIENT_SECRET"
+        },
+        {
+          "description": "Where the OAuth2 credentials file lives. Defaults to ~/.config/oura-mcp/credentials.json, mode 600.",
+          "name": "OURA_CREDENTIALS"
+        },
+        {
+          "description": "Oura Personal Access Token. Only if you already had one: Oura stopped issuing them in December 2025.",
+          "isSecret": true,
+          "name": "OURA_PAT"
+        },
+        {
+          "description": "Path to a file holding the personal token. Preferable to OURA_PAT: an MCP server is registered in a JSON that gets backed up and shared when asking for help; a separate file rotates without touching the config.",
+          "name": "OURA_PAT_FILE"
+        }
+      ],
+      "identifier": "mcp-oura",
+      "registryType": "pypi",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.3.5"
+    }
+  ],
+  "provenance": {
+    "identity_key": "d2eb65c0ac",
+    "published_at": "2026-09-12T07:11:30.706783Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.proscar87/oura-mcp",
+    "server_version": "0.3.5",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-12T07:11:30.706783Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.3.5"
+}

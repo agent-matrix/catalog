@@ -1,0 +1,96 @@
+{
+  "description": "List and track faxes on ICTFax, and send faxes when writes are enabled, over ICTCore REST.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:41+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-ictinnovations-ictfax-mcp.stdio.6908b204ee",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/ictinnovations/ictfax-mcp",
+    "homepage": "https://github.com/ictinnovations/ictfax-mcp",
+    "repository": "https://github.com/ictinnovations/ictfax-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "ictfax-mcp@0.1.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.ictinnovations/ictfax-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "ICTCore REST base URL of your ICTFax server, normally ending in /api, e.g. https://your-ictfax/api.",
+          "format": "string",
+          "isRequired": true,
+          "name": "ICTFAX_BASE_URL"
+        },
+        {
+          "description": "API account email (ICTCore logs in by email).",
+          "format": "string",
+          "isRequired": true,
+          "name": "ICTFAX_USERNAME"
+        },
+        {
+          "description": "Password for the account.",
+          "format": "string",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "ICTFAX_PASSWORD"
+        },
+        {
+          "default": "1",
+          "description": "Account id to send faxes from. Defaults to 1.",
+          "format": "number",
+          "name": "ICTFAX_ACCOUNT_ID"
+        },
+        {
+          "default": "false",
+          "description": "Unlocks uploading documents and sending faxes, which dials a real number and can cost money. When false those tools are not registered at all. Leave off unless you mean it.",
+          "format": "boolean",
+          "name": "ICTFAX_MCP_ALLOW_WRITE"
+        },
+        {
+          "default": "30000",
+          "description": "Per request timeout in milliseconds. Defaults to 30000.",
+          "format": "number",
+          "name": "ICTFAX_TIMEOUT_MS"
+        },
+        {
+          "default": "false",
+          "description": "Skip TLS certificate verification. Only for a self-signed test server.",
+          "format": "boolean",
+          "name": "ICTFAX_TLS_INSECURE"
+        }
+      ],
+      "identifier": "ictfax-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "0.1.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "6908b204ee",
+    "published_at": "2026-09-01T08:56:50.433581Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.ictinnovations/ictfax-mcp",
+    "server_version": "0.1.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-01T08:56:50.433581Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "0.1.0"
+}

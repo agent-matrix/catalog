@@ -1,0 +1,65 @@
+{
+  "description": "Connect Claude to Clio: 34 tools for matters, custom fields, notes, documents, folders, billing.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:55:02+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-oktopeak-clio-mcp.stdio.c158662676",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/oktopeak/clio-mcp",
+    "homepage": "https://github.com/oktopeak/clio-mcp",
+    "repository": "https://github.com/oktopeak/clio-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "npx",
+          "@oktopeak/clio-mcp@2.2.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.oktopeak/clio-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "URL of Oktopeak's hosted token broker for the Clio App Directory listed install. Do not set CLIO_CLIENT_ID/CLIO_CLIENT_SECRET alongside this \u2014 the shared app's secret lives only on the broker, never on this machine.",
+          "format": "string",
+          "isRequired": true,
+          "name": "TOKEN_BROKER_URL"
+        },
+        {
+          "description": "Optional. Leave unset to auto-generate a key stored in the OS keychain (or ~/.clio-mcp/key.hex as fallback on headless Linux/WSL2). If set, must be a 64-character hex string \u2014 it will be migrated to the OS keychain on first use.",
+          "format": "string",
+          "isSecret": true,
+          "name": "ENCRYPTION_KEY"
+        }
+      ],
+      "identifier": "@oktopeak/clio-mcp",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.2.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "c158662676",
+    "published_at": "2026-09-02T12:05:14.604048Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.oktopeak/clio-mcp",
+    "server_version": "2.2.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-02T12:05:14.604048Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "2.2.0"
+}

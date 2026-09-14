@@ -1,0 +1,91 @@
+{
+  "description": "ReSharper CLI inspection/cleanup via MCP. Unofficial: not affiliated with or endorsed by JetBrains.",
+  "harvest": {
+    "last_seen_at": "2026-09-14T07:54:13+00:00",
+    "seen_in_latest_run": true
+  },
+  "id": "mcp.io-github-andypgray-resharper-cli-mcp.stdio.ba8e5e3b71",
+  "lifecycle": {
+    "status": "active"
+  },
+  "links": {
+    "documentation": "https://github.com/andypgray/resharper-cli-mcp",
+    "homepage": "https://github.com/andypgray/resharper-cli-mcp",
+    "repository": "https://github.com/andypgray/resharper-cli-mcp"
+  },
+  "mcp_registration": {
+    "server": {
+      "exec": {
+        "cmd": [
+          "dnx",
+          "Zphil.ReSharperCli==1.7.0"
+        ],
+        "env": {}
+      },
+      "transport": "STDIO"
+    }
+  },
+  "name": "io.github.andypgray/resharper-cli-mcp",
+  "packages": [
+    {
+      "environmentVariables": [
+        {
+          "description": "Solution to analyse when the working directory holds zero or several. The solutionPath tool argument overrides it for one call.",
+          "name": "JB_SOLUTION_PATH"
+        },
+        {
+          "description": "Explicit .DotSettings file for jb, mounted as a Custom layer above the solution's and every project's own settings.",
+          "name": "JB_SETTINGS_PATH"
+        },
+        {
+          "description": "ReSharper cache directory. Defaults to ~/.jb-cache.",
+          "name": "JB_CACHE_HOME"
+        },
+        {
+          "description": "Semicolon-separated ReSharper plugin IDs to load.",
+          "name": "JB_EXTENSIONS"
+        },
+        {
+          "description": "Custom NuGet source for those ReSharper plugins.",
+          "name": "JB_EXTENSION_SOURCE"
+        },
+        {
+          "description": "Cap in seconds on one jb run, and on the wait for one already in flight. Defaults to 600, clamped to 60-86,400.",
+          "name": "RESHARPER_MCP_TIMEOUT_SECS"
+        },
+        {
+          "description": "Set to off to stop the background cache pre-warm that runs when a client connects.",
+          "name": "RESHARPER_MCP_PREWARM"
+        },
+        {
+          "description": "Minimum level for the rolling file log. Defaults to Warning.",
+          "name": "RESHARPER_MCP_LOG_LEVEL"
+        },
+        {
+          "description": "Output budget the response is rendered to fit. Set by the MCP client rather than by hand; 25,000 characters when unset.",
+          "name": "MAX_MCP_OUTPUT_TOKENS"
+        }
+      ],
+      "identifier": "Zphil.ReSharperCli",
+      "registryBaseUrl": "https://api.nuget.org/v3/index.json",
+      "registryType": "nuget",
+      "runtimeHint": "dnx",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "1.7.0"
+    }
+  ],
+  "provenance": {
+    "identity_key": "ba8e5e3b71",
+    "published_at": "2026-09-08T09:24:02.608539Z",
+    "registry_base_url": "https://registry.modelcontextprotocol.io",
+    "server_name": "io.github.andypgray/resharper-cli-mcp",
+    "server_version": "1.7.0",
+    "source": "mcp-registry",
+    "updated_at": "2026-09-08T09:24:02.608539Z"
+  },
+  "title": null,
+  "type": "mcp_server",
+  "version": "1.7.0"
+}
