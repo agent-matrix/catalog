@@ -1,0 +1,79 @@
+{
+  "description": "Signaliz MCP gives agents GTM intelligence tools for verified email lookup, company and people search, signal enrichment, lead generation, and AI-assisted revenue workflows.",
+  "id": "signaliz-mcp",
+  "links": {
+    "documentation": "https://signaliz.docs.buildwithfern.com/signaliz-api-public-docs/introduction",
+    "homepage": "https://signaliz.com",
+    "repository": "https://github.com/signaliz/signaliz-mcp"
+  },
+  "mcp_registration": {
+    "prompts": [],
+    "resources": [],
+    "server": {
+      "associated_prompts": [],
+      "associated_resources": [],
+      "associated_tools": [
+        "verify_email",
+        "find_verified_email",
+        "enrich_company_signals",
+        "find_people",
+        "find_companies",
+        "generate_leads"
+      ],
+      "description": "GTM intelligence, enrichment, verified email, people and company search, and lead generation tools for agents.",
+      "exec": {
+        "cmd": [
+          "npx",
+          "-y",
+          "@signaliz/mcp-server"
+        ],
+        "env": {
+          "SIGNALIZ_API_KEY": ""
+        }
+      },
+      "name": "signaliz-mcp",
+      "transport": "STDIO"
+    },
+    "tools": [
+      {
+        "description": "Verify professional email deliverability and return source-backed sending guidance.",
+        "name": "verify_email"
+      },
+      {
+        "description": "Find and verify a professional email from a name and company domain.",
+        "name": "find_verified_email"
+      },
+      {
+        "description": "Research a company for source-backed buying signals and GTM triggers.",
+        "name": "enrich_company_signals"
+      },
+      {
+        "description": "Find professional contacts by company, title, seniority, function, and location.",
+        "name": "find_people"
+      },
+      {
+        "description": "Find companies by market, location, firmographic, and GTM-fit criteria.",
+        "name": "find_companies"
+      },
+      {
+        "description": "Generate B2B lead lists from an ICP or natural-language search prompt.",
+        "name": "generate_leads"
+      }
+    ]
+  },
+  "name": "Signaliz MCP",
+  "packages": [
+    {
+      "identifier": "@signaliz/mcp-server",
+      "registryType": "npm",
+      "transport": {
+        "type": "stdio"
+      },
+      "version": "2.0.6"
+    }
+  ],
+  "summary": "GTM intelligence, enrichment, verified email, people and company search, and lead generation tools for agents.",
+  "title": "Signaliz MCP",
+  "type": "mcp_server",
+  "version": "2.0.6"
+}
