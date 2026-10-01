@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "type": "mcp_server",
+  "id": "hyperconsciousness",
+  "name": "Hyperconsciousness",
+  "version": "0.1.0-alpha.6",
+  "summary": "Developer-alpha Rust MCP server for local encrypted, append-only knowledge with scoped, expiring grants.",
+  "description": "Hyperconsciousness is an MIT-licensed developer-alpha knowledge engine with a Rust CLI and a local STDIO MCP server. It stores signed, encrypted, append-only records and supports device sync. Grant scopes and expiry control agent access.\n\nBuild from source with Rust 1.88 or newer:\n\n```sh\ngit clone https://github.com/louis030195/hyperconsciousness.git\ncd hyperconsciousness\ngit checkout d619a4e59be9c33121389b9cf14e5a93b47b3eb4\ncargo build --release --locked\n```\n\nFollow the repository README to initialize a store and create a scoped grant. Configure the MCP client to run the absolute path to `target/release/hc` with arguments `[\"mcp\", \"--as\", \"<grant-id>\", \"--dir\", \"/absolute/path/to/store\"]`. The grant ID and store path must come from your local setup. Add `--write` only when granting capture access.\n\nThis entry requires local setup; it does not provide a hosted endpoint. Plaintext returned through MCP is visible to the receiving model or client. See the repository README for the developer-alpha limitations and current setup instructions.",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/louis030195/hyperconsciousness.git",
+        "ref": "d619a4e59be9c33121389b9cf14e5a93b47b3eb4"
+      }
+    }
+  ],
+  "mcp_registration": {
+    "resources": [],
+    "prompts": [],
+    "server": {
+      "name": "hyperconsciousness",
+      "description": "Developer-alpha Rust MCP server for local encrypted, append-only knowledge with scoped, expiring grants.",
+      "transport": "STDIO",
+      "associated_tools": [],
+      "associated_resources": [],
+      "associated_prompts": []
+    }
+  }
+}
