@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "type": "mcp_server",
+  "id": "mcp-server-overleaf",
+  "name": "io.github.yangzichao/mcp-server-overleaf",
+  "title": "Overleaf MCP",
+  "version": "0.6.3",
+  "summary": "Read, search, edit, and compile shared Overleaf LaTeX projects through a local MCP server.",
+  "description": "Edit LaTeX through Overleaf Git or use tracked changes with an optional editor session. Git publishing requires explicit confirmation.",
+  "artifacts": [
+    {
+      "kind": "git",
+      "spec": {
+        "repo": "https://github.com/yangzichao/mcp-server-overleaf",
+        "ref": "v0.6.3"
+      }
+    }
+  ],
+  "links": {
+    "repository": "https://github.com/yangzichao/mcp-server-overleaf",
+    "documentation": "https://github.com/yangzichao/mcp-server-overleaf/blob/v0.6.3/docs/project-workflows.md"
+  },
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "mcp-server-overleaf",
+      "version": "0.6.3",
+      "runtimeHint": "npx",
+      "transport": {
+        "type": "stdio"
+      },
+      "packageArguments": [
+        {
+          "description": "Serve on stdio, which is the transport a local client starts.",
+          "type": "positional",
+          "value": "--stdio",
+          "valueHint": "transport"
+        }
+      ],
+      "environmentVariables": [
+        {
+          "description": "Overleaf Git authentication token, from https://www.overleaf.com/user/settings under Git integration.",
+          "isRequired": true,
+          "isSecret": true,
+          "name": "OVERLEAF_GIT_TOKEN"
+        },
+        {
+          "description": "The project to open: its 24-character id, or the Overleaf address bar URL that contains it.",
+          "isRequired": true,
+          "name": "OVERLEAF_PROJECT_ID"
+        },
+        {
+          "description": "Optional. An Overleaf browser session cookie, which turns on the tracked-changes tools: suggest an edit, read the review panel, leave a comment.",
+          "isSecret": true,
+          "name": "OVERLEAF_SESSION_COOKIE"
+        }
+      ]
+    }
+  ],
+  "mcp_registration": {
+    "server": {
+      "name": "mcp-server-overleaf",
+      "description": "Read, search, edit, and compile shared Overleaf LaTeX projects through a local MCP server.",
+      "transport": "STDIO",
+      "exec": {
+        "cmd": [
+          "npx",
+          "--yes",
+          "mcp-server-overleaf@0.6.3",
+          "--stdio"
+        ],
+        "env": {}
+      }
+    }
+  }
+}
